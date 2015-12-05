@@ -394,13 +394,16 @@
     "labels.less",
     "jumbotron.less",
     "responsive-embed.less",
+    "component-animations.less",
     "dropdowns.less",
     "modals.less"
   ],
   "js": [
     "dropdown.js",
     "modal.js",
-    "scrollspy.js"
+    "collapse.js",
+    "scrollspy.js",
+    "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=4210ba85b96f27884884"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=6149c4d607abb149d1d4"
 }
