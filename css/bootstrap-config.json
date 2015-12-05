@@ -399,7 +399,8 @@
   ],
   "js": [
     "dropdown.js",
-    "modal.js"
+    "modal.js",
+    "scrollspy.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=e2bdd589b4271242d64c"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=4210ba85b96f27884884"
 }
