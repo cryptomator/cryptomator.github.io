@@ -385,6 +385,7 @@
     "type.less",
     "code.less",
     "grid.less",
+    "tables.less",
     "forms.less",
     "buttons.less",
     "responsive-utilities.less",
@@ -394,6 +395,7 @@
     "navbar.less",
     "labels.less",
     "jumbotron.less",
+    "alerts.less",
     "responsive-embed.less",
     "component-animations.less",
     "dropdowns.less",
@@ -406,5 +408,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=b5ecaad841be482f83e4"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=8201b2001487018f6998"
 }
