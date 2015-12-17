@@ -10,8 +10,16 @@ module.exports = function(grunt) {
 		clean: ["docs/"],
 
 		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			dev: {
+        options: {
+          mangle: false,
+          compress: false,
+          preserveComments: 'all',
+          beautify: true
+        },
+				files: {
+					'js/app.min.js': ['js/app.js']
+				}
 			},
 			dist: {
 				files: {
@@ -48,7 +56,8 @@ module.exports = function(grunt) {
 				options: {
 					port: 9000,
 					hostname: 'localhost',
-					livereload: true
+					livereload: true,
+					open: true
 				}
 			}
 		},
@@ -60,6 +69,10 @@ module.exports = function(grunt) {
 		},
 
 		watch: {
+			js: {
+        files: 'js/app.js',
+        tasks: ['jshint', 'uglify:dev']
+      },
 			livereload: {
 				files: ['*.html', 'js/**/*.js', 'partials/**', 'css/**'],
 				options: {livereload: true}
@@ -76,7 +89,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-open');
 
 	grunt.registerTask('test', [
 		'jshint',
@@ -87,13 +99,14 @@ module.exports = function(grunt) {
 		'clean',
 		'jshint',
 		'jasmine',
-		'uglify'
+		'uglify:dist'
 	]);
 
-	grunt.registerTask('serve',[
+	grunt.registerTask('serve', [
+		'jshint',
+		'uglify:dev',
 		'connect:livereload',
-		'open:livereload',
-		'watch:livereload'
+		'watch'
 	]);
 
 };

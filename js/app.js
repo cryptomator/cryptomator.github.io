@@ -54,14 +54,27 @@ angular.module('cryptomator').controller('DonateCtrl', ['$scope', '$window', fun
 
 }]);
 
-angular.module('cryptomator').controller('CookiesCtrl', ['$scope', '$cookies', 'googleAnalytics', function($scope, $cookies, googleAnalytics) {
+angular.module('cryptomator').controller('CookiesCtrl', ['$http', '$scope', '$cookies', 'googleAnalytics', function($http, $scope, $cookies, googleAnalytics) {
 
+  var euIsoCountryCodes = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'];
+
+  $scope.consentRequired = false;
   $scope.consentDismissed = false;
   $scope.consentGiven = !_.isEmpty($cookies.get('cookieConsent'));
 
   if ($scope.consentGiven) {
     googleAnalytics.initialize();
     googleAnalytics.sendPageView();
+  } else {
+    $http.jsonp('http://freegeoip.net/json/?callback=JSON_CALLBACK', {timeout: 5000}).success(function(data) {
+      $scope.consentRequired = _.contains(euIsoCountryCodes, data.country_code);
+      if (!$scope.consentRequired) {
+        googleAnalytics.initialize();
+        googleAnalytics.sendPageView();
+      }
+    }).error(function() {
+      $scope.consentRequired = true;
+    });
   }
 
   $scope.agree = function() {
