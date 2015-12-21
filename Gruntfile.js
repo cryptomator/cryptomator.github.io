@@ -9,6 +9,8 @@ module.exports = function(grunt) {
 
 		clean: ["docs/"],
 
+		/* JAVASCRIPT */
+
 		uglify: {
 			dev: {
         options: {
@@ -18,12 +20,12 @@ module.exports = function(grunt) {
           beautify: true
         },
 				files: {
-					'js/app.min.js': ['js/app.js']
+					'dist/app.min.js': ['js/app.js']
 				}
 			},
 			dist: {
 				files: {
-					'js/app.min.js': ['js/app.js']
+					'dist/app.min.js': ['js/app.js']
 				}
 			}
 		},
@@ -51,8 +53,79 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/* CSS */
+
+		concat: {
+			fakecssmin: {
+				files: {
+					'dist/index.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/downloads.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/datenschutz.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/help.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/impressum.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/privacy.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/thankyou.min.css': ['css/bootstrap.css', 'css/main.css']
+	      }
+			}
+		},
+
+		uncss: {
+			options: {
+				stylesheets: ['css/bootstrap.css', 'css/main.css'],
+				ignore: []
+			},
+		  index: {
+				options: {
+					ignore: ['.col-md-3', '.open > .dropdown-menu']
+				},
+		    files: {'dist/index.css': ['index.html']}
+		  },
+			downloads: {
+				options: {
+					stylesheets: ['../css/bootstrap.css', '../css/main.css']
+				},
+		    files: {'dist/downloads.css': ['downloads/index.html']}
+		  },
+			datenschutz: {
+		    files: {'dist/datenschutz.css': ['datenschutz.html']}
+		  },
+			help: {
+		    files: {'dist/help.css': ['help.html']}
+		  },
+			impressum: {
+		    files: {'dist/impressum.css': ['impressum.html']}
+		  },
+			privacy: {
+		    files: {'dist/privacy.css': ['privacy.html']}
+		  },
+			thankyou: {
+		    files: {'dist/thankyou.css': ['thankyou.html']}
+		  }
+		},
+
+		cssmin: {
+			dist: {
+			  options: {
+			    shorthandCompacting: false,
+			    roundingPrecision: -1,
+					keepSpecialComments: 0
+			  },
+				files: {
+					'dist/index.min.css': ['dist/index.css'],
+					'dist/downloads.min.css': ['dist/downloads.css'],
+					'dist/datenschutz.min.css': ['dist/datenschutz.css'],
+					'dist/help.min.css': ['dist/help.css'],
+					'dist/impressum.min.css': ['dist/impressum.css'],
+					'dist/privacy.min.css': ['dist/privacy.css'],
+					'dist/thankyou.min.css': ['dist/thankyou.css']
+				}
+			}
+		},
+
+		/* SERVING */
+
 		connect: {
-			livereload: {
+			localhost: {
 				options: {
 					port: 9000,
 					hostname: 'localhost',
@@ -62,18 +135,16 @@ module.exports = function(grunt) {
 			}
 		},
 
-		open: {
-			livereload: {
-				path: 'http://localhost:<%= connect.livereload.options.port %>/'
-			}
-		},
-
 		watch: {
+			css: {
+        files: 'css/main.css',
+        tasks: ['concat:cssmin']
+      },
 			js: {
         files: 'js/app.js',
         tasks: ['jshint', 'uglify:dev']
       },
-			livereload: {
+			html: {
 				files: ['*.html', 'js/**/*.js', 'partials/**', 'css/**'],
 				options: {livereload: true}
 			}
@@ -88,6 +159,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-uncss');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('test', [
@@ -99,13 +172,21 @@ module.exports = function(grunt) {
 		'clean',
 		'jshint',
 		'jasmine',
-		'uglify:dist'
+		'uglify:dist',
+		'uncss',
+		'cssmin:dist'
+	]);
+
+	grunt.registerTask('distserve', [
+		'connect',
+		'watch'
 	]);
 
 	grunt.registerTask('serve', [
 		'jshint',
 		'uglify:dev',
-		'connect:livereload',
+		'concat:fakecssmin',
+		'connect',
 		'watch'
 	]);
 
