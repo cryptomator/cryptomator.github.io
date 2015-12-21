@@ -1,17 +1,6 @@
 /*** uncss> filename: css/bootstrap.css ***/
 
 /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-/*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=20884001c667cad6966d)
- * Config saved to config.json and https://gist.github.com/20884001c667cad6966d
- */
-
-/*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -21,8 +10,8 @@
 
 html {
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -44,8 +33,47 @@ a:hover {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
+}
+
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .navbar {
+    display: none;
+  }
 }
 
 @font-face {
@@ -76,8 +104,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333333;
-  background-color: #ffffff;
+  color: #333;
+  background-color: #fff;
 }
 
 a {
@@ -126,14 +154,14 @@ p {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
 }
 
 .container {
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 @media (min-width: 768px) {
@@ -155,15 +183,15 @@ p {
 }
 
 .row {
-  margin-left: -15px;
   margin-right: -15px;
+  margin-left: -15px;
 }
 
 .col-md-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 
 @media (min-width: 992px) {
@@ -177,17 +205,17 @@ p {
 }
 
 .form-control::-moz-placeholder {
-  color: #999999;
+  color: #999;
   opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #999999;
+  color: #999;
 }
 
 .form-control::-ms-expand {
-  border: 0;
   background-color: transparent;
+  border: 0;
 }
 
 .navbar {
@@ -241,10 +269,10 @@ p {
 
 .navbar-brand {
   float: left;
+  height: 50px;
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px;
 }
 
 .navbar-brand:hover,
@@ -264,7 +292,7 @@ p {
 }
 
 .navbar-default .navbar-brand {
-  color: #777777;
+  color: #777;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -283,8 +311,8 @@ p {
 .navbar:after,
 .navbar-header:before,
 .navbar-header:after {
-  content: " ";
   display: table;
+  content: " ";
 }
 
 .clearfix:after,
@@ -298,6 +326,8 @@ p {
 @-ms-viewport {
   width: device-width;
 }
+
+/*# sourceMappingURL=bootstrap.css.map */
 
 /*** uncss> filename: css/main.css ***/
 

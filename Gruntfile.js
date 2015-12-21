@@ -20,11 +20,13 @@ module.exports = function(grunt) {
           beautify: true
         },
 				files: {
+					'dist/bootstrap.min.js': ['js/bootstrap.js'],
 					'dist/app.min.js': ['js/app.js']
 				}
 			},
 			dist: {
 				files: {
+					'dist/bootstrap.min.js': ['js/bootstrap.js'],
 					'dist/app.min.js': ['js/app.js']
 				}
 			}
