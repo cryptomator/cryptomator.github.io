@@ -49,3 +49,13 @@ div.modal.screenshot .modal-body {
   content: "SHA1: ";
   color: #888;
 }
+
+
+/*
+ * architecture.html
+ */
+
+ article.layer-explanation {
+   min-height: 100vh;
+   padding: 20px 0;
+ }

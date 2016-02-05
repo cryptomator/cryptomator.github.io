@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cryptomator - Architectural Details</title>
+  <link rel="stylesheet" href="dist/architecture.min.css"/>
+  <script defer="defer" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.compat.min.js"></script>
+  <script defer="defer" src="dist/app.min.js"></script>
+  <script defer="defer" src="dist/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+
+      <nav class="col-xs-3">
+        <ul class="nav nav-pills nav-stacked" style="position: fixed;">
+          <li><a href="#frontendLayer">Virtual Filesystem</a></li>
+          <li><a href="#statsLayer">Throughput Measuring</a></li>
+          <li><a href="#nameEncryptionLayer">Filename Encryption</a></li>
+          <li><a href="#contentEncryptionLayer">File Content Encryption</a></li>
+          <li><a href="#nameShorteningLayer">Name Shortening</a></li>
+          <li><a href="#storageLayer">Target Directory</a></li>
+        </ul>
+      </nav>
+
+      <div class="col-xs-offset-3 col-xs-9">
+        <article class="layer-explanation">
+          <h2 id="frontendLayer">Virtual Filesystem</h2>
+          <p class="lead">Cryptomator provides a virtual drive. Add, edit, remove files as you're used to with just any disk drive.</p>
+          <p>Currently WebDAV is our frontend of choice, as it is supported on every major operating system.</p>
+        </article>
+
+        <article class="layer-explanation">
+          <h2 id="statsLayer">Throughput Measuring</h2>
+          <p class="lead">Files are processed by several layers. Before any encryption takes place in- and output is measured to provide net throughput statistics.</p>
+          <p>Whenever a file gets encrypted, all bytes passing through this layer are added to the write count. The same happens for decrypted bytes during read.</p>
+        </article>
+
+        <article class="layer-explanation">
+          <h2 id="nameEncryptionLayer">Filename Encryption</h2>
+          <p class="lead">This is where filenames get encrypted before we deal with the actual file contents.</p>
+          <p>File name encryption happens like this: <code>enc = siv(name)</code>.</p>
+        </article>
+
+        <article class="layer-explanation">
+          <h2 id="contentEncryptionLayer">File Content Encryption</h2>
+          <p class="lead">This is the core layer where Cryptomator processes your file contents.</p>
+          <p>File content encryption happens like this: <code>enc = header + ctr(content + randomLengthPadding)</code>.</p>
+        </article>
+
+        <article class="layer-explanation">
+          <h2 id="nameShorteningLayer">Name Shortening</h2>
+          <p class="lead">This layer doesn't modify any file contents. Its sole purpose is to limit the path length to ensure compatibility with certain Microsoft products.</p>
+          <p>Path length limitation is achieved by two separate mechanisms. First all directories are reordered into a flat hierarchy. This works as follows: <code>flatPath = generateUniqueId()</code>.</p>
+          <p>But even with this flattened directory structure, file names might be longer than 255 characters, especially after file name encryption done by the previous layer. So whenever a filename reaches a certain threshold, it is replaced by a randomly generated unique name and marked as an alias by the <code>.lng</code> file extension. Additionally a metadata file is created in the <code>m</code> directory that allows a reverse-mapping back to the original name.</p>
+        </article>
+
+        <article class="layer-explanation">
+          <h2 id="storageLayer">Target Directory</h2>
+          <p class="lead">After your files have been processed by all these layers, they are finally stored into your chosen directory. This is where Cryptomator's job is done and the sync client of your favourite cloud provider will start synchronisation.</p>
+          <p>kthxbye</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
