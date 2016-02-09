@@ -1,0 +1,23 @@
+#cookieConsent {
+  position: fixed;
+  bottom: 0;
+  background-color: $background-color;
+  border-top: 1px solid $grey-color;
+  padding: $spacing-unit/2;
+  width: 100%;
+}
+
+footer {
+  background-color: $grey-color-dark;
+  color: #FFF;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
+}
+
+.fullheight {
+  min-height: 100vh;
+}
+
+img.avatar {
+  margin: 40px;
+}

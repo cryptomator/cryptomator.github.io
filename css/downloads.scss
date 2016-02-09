@@ -1,0 +1,18 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+
+/*
+ * Top Animation
+ */
+
+.sha1sum {
+  font-size: 70%;
+  font-family: monospace;
+}
+
+.sha1sum::before {
+  content: "SHA1: ";
+  color: #888;
+}

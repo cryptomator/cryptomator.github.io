@@ -1,0 +1,86 @@
+/*
+ * Top Animation
+ */
+.stage {
+  position: relative;
+  height: 250px; }
+  .stage > div {
+    display: inline-block;
+    position: absolute;
+    height: 250px; }
+  .stage .file {
+    z-index: -1;
+    width: 60px;
+    left: 50%;
+    margin-left: -30px;
+    padding-top: 100px; }
+@keyframes plaintext {
+  0% {
+    opacity: 0;
+    left: 10%; }
+  12.5% {
+    opacity: 1;
+    left: 30%; }
+  25% {
+    opacity: 1;
+    left: 50%; } }
+  .stage .file-pdf,
+  .stage .file-jpg,
+  .stage .file-zip,
+  .stage .file-mp3 {
+    animation: plaintext 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .stage .file-jpg {
+    animation-delay: 2.5s; }
+  .stage .file-zip {
+    animation-delay: 5s; }
+  .stage .file-mp3 {
+    animation-delay: 7.5s; }
+@keyframes encryption {
+  10% {
+    transform: rotate(7deg); }
+  20% {
+    transform: rotate(-7deg); }
+  25% {
+    transform: rotate(0deg); } }
+  .stage .cryptomator {
+    width: 250px;
+    margin-left: -125px;
+    left: 50%;
+    animation: encryption 2.5s linear;
+    animation-delay: 2.5s;
+    animation-iteration-count: infinite; }
+@keyframes ciphertext {
+  from {
+    left: 50%; }
+  to {
+    left: 90%; } }
+  .stage .file-encrypted {
+    animation: ciphertext 2.5s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .stage .cloud {
+    right: 0px;
+    padding-top: 80px; }
+
+/*
+ * How it works explanation
+ */
+#howto {
+  background-color: #7aaf21;
+  color: #FFF; }
+
+.explanation-cleartext,
+.explanation-ciphertext {
+  height: 60vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.explanation-cleartext {
+  background-image: url(/img/screen_create@2x.png); }
+
+.explanation-ciphertext {
+  background-image: url(/img/screen_unlock@2x.png); }

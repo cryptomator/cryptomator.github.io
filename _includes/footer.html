@@ -1,0 +1,45 @@
+<footer>
+
+  <section class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <h4>About Cryptomator</h4>
+        <ul>
+          <li><a href="#">Presskit</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-4">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/feed.xml">RSS feed</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-4">
+        <h4>Contribute</h4>
+        <ul>
+          <li><a href="#">Report a Bug</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <p class="text-center small">© cryptomator.org
+      • <a href="/privacy/">Privacy Policy</a>
+      • <a href="/impressum/">Impressum</a>
+      • <a href="/datenschutz/">Datenschutz</a>
+    </p>
+  </section>
+
+</footer>
+
+<section class="container-fluid" id="cookieConsent" data-ng-controller="CookiesCtrl" data-ng-show="consentRequired &amp;&amp; !(consentGiven || consentDismissed)">
+  <div class="pull-right">
+    <button class="btn btn-sm btn-default" data-ng-click="agree()">Agree, don't show this again</button>
+    <button class="btn btn-sm btn-default" data-ng-click="dismiss()">Ignore</button>
+  </div>
+  <p>This website wants to use cookies for statistical purposes. <a href="/privacy/">More info</a></p>
+</section>
