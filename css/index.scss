@@ -103,21 +103,33 @@
 
 .explanation-cleartext,
 .explanation-ciphertext {
-  height: 60vh;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
 }
 
 .explanation-cleartext {
   background-image: url(/img/screen_create@2x.png);
+  background-attachment: scroll;
+
+  &.fully-in-sight {
+    background-attachment: fixed;
+  }
 }
 
 .explanation-ciphertext {
   background-image: url(/img/screen_unlock@2x.png);
+  background-attachment: fixed;
+
+  &.fully-in-sight {
+    background-attachment: scroll;
+  }
 }
 
 .explanation-cleartext section,
 .explanation-ciphertext section {
-  
+  position: absolute;
+  height: 200px;
+  top: 50%;
+  margin-top: -100px;
 }

@@ -91,3 +91,29 @@ angular.module('cryptomator').controller('CookiesCtrl', ['$http', '$scope', '$co
   };
 
 }]);
+
+/**
+ * Toggles a class depending on whether an element is in sight.
+ * A threshold determines if the class should be toggled instantaneously when the first pixel becomes visible (threshold=0)
+ * or when the element reaches the top of the window (threshold=1).
+ *
+ * <div scroll-toggle-class="some-class" scroll-threshold="0.2">This gets styled when scrolled up 20% of the viewport</div>
+ */
+angular.module('cryptomator').directive('scrollToggleClass', ['$window', function($window) {
+  return {
+    restrict: 'A',
+    scope: {
+      styleClass: '@scrollToggleClass',
+      threshold: '=scrollThreshold'
+    },
+    link: function(scope, elem, attrs) {
+      var elemY = $(elem).offset().top;
+      $($window).on('scroll', function() {
+        var scrollY = $(this).scrollTop();
+        var winHeight = $(this).height();
+        var inView = (elemY < scrollY + winHeight * (1-scope.threshold));
+        $(elem).toggleClass(scope.styleClass, inView);
+      });
+    }
+  };
+}]);
