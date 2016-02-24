@@ -97,22 +97,35 @@ angular.module('cryptomator').controller('CookiesCtrl', ['$http', '$scope', '$co
  * A threshold determines if the class should be toggled instantaneously when the first pixel becomes visible (threshold=0)
  * or when the element reaches the top of the window (threshold=1).
  *
- * <div scroll-toggle-class="some-class" scroll-threshold="0.2">This gets styled when scrolled up 20% of the viewport</div>
+ * <div scroll-toggle-class="{'state1': -100, 'state2': 0, 'state3': +100}">
+ *   This gets styled with state1 when 100px between upper viewport bound and element top, state2 when scrolled to element top, state3 when element is already 100px covered
+ * </div>
  */
 angular.module('cryptomator').directive('scrollToggleClass', ['$window', function($window) {
+
+  var findHighest = function(styleClasses, position) {
+    return _.findLastKey(styleClasses, function(threshold) {
+      return threshold <= position;
+    });
+  };
+
   return {
     restrict: 'A',
     scope: {
-      styleClass: '@scrollToggleClass',
-      threshold: '=scrollThreshold'
+      styleClasses: '=scrollToggleClass'
     },
     link: function(scope, elem, attrs) {
-      var elemY = $(elem).offset().top;
+      var lastScrollTop = 0;
       $($window).on('scroll', function() {
-        var scrollY = $(this).scrollTop();
-        var winHeight = $(this).height();
-        var inView = (elemY < scrollY + winHeight * (1-scope.threshold));
-        $(elem).toggleClass(scope.styleClass, inView);
+        var elemTop = $(elem).offset().top;
+        var scrollTop = $(this).scrollTop();
+
+        var delta = scrollTop - elemTop;
+        var activeStyleClass = findHighest(scope.styleClasses, delta);
+
+        _.forEach(_.keys(scope.styleClasses), function(styleClass) {
+          $(elem).toggleClass(styleClass, styleClass == activeStyleClass);
+        });
       });
     }
   };

@@ -5,7 +5,7 @@ permalink: /
 stylesheets: ['/css/index.css']
 ---
 
-<section class="fullheight" id="top">
+<section id="top">
 
   <div class="container stage">
     <div class="file file-pdf">
@@ -38,26 +38,31 @@ stylesheets: ['/css/index.css']
 
 </section>
 
+<section id="howto" style="background-color: #79b01a;">
+  <div class="page-header text-center">
+    <h2>What does Cryptomator do?</h2>
+  </div>
 
-<section class="fullheight" id="howto">
-
-  <div class="container-fluid">
-    <div class="page-header text-center">
-      <h2>How does Cryptomator work?</h2>
-    </div>
-    <div class="explanation-cleartext row fullheight" data-scroll-toggle-class="fully-in-sight" data-scroll-threshold="1">
-      <section class="col-xs-4 text-left">
+  <div class="container-fluid" data-scroll-toggle-class="{'scrollPhase1': -200, 'scrollPhase2': 300}">
+    <div class="row">
+      <div class="col-xs-6" id="howto-cleartext"></div>
+      <div class="col-xs-6">
         <h3>This is cleartext</h3>
         <p>In this paragraph I want to point out, that you can access your files just like on any regular drive.</p>
-      </section>
+      </div>
     </div>
 
-    <div class="explanation-ciphertext row fullheight" data-scroll-toggle-class="fully-in-sight" data-scroll-threshold="1">
-      <section class="col-xs-offset-8 col-xs-4 text-right">
+    <div class="row" style="background-color: #85b62f;">
+      <div class="col-xs-6" id="howto-ciphertext"></div>
+      <div class="col-xs-6">
         <h3>This is ciphertext</h3>
         <p>After encryption your files look like this.</p>
-      </section>
+      </div>
     </div>
   </div>
+
+</section>
+
+<section class="fullheight">
 
 </section>

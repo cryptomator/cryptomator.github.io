@@ -97,39 +97,35 @@
  */
 
 #howto {
-  background-color: #7aaf21;
   color: #FFF;
-}
 
-.explanation-cleartext,
-.explanation-ciphertext {
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-}
-
-.explanation-cleartext {
-  background-image: url(/img/screen_create@2x.png);
-  background-attachment: scroll;
-
-  &.fully-in-sight {
-    background-attachment: fixed;
+  #howto-cleartext,
+  #howto-ciphertext {
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 50vw auto;
   }
-}
 
-.explanation-ciphertext {
-  background-image: url(/img/screen_unlock@2x.png);
-  background-attachment: fixed;
-
-  &.fully-in-sight {
+  #howto-cleartext {
+    background-image: url(/img/screenshot_cleartext_en@2x.png);
     background-attachment: scroll;
+    background-position: 0 0;
   }
-}
 
-.explanation-cleartext section,
-.explanation-ciphertext section {
-  position: absolute;
-  height: 200px;
-  top: 50%;
-  margin-top: -100px;
+  .scrollPhase1 #howto-cleartext,
+  .scrollPhase2 #howto-cleartext {
+    background-attachment: fixed;
+    background-position: 0 200px;
+  }
+
+  #howto-ciphertext {
+    background-image: url(/img/screenshot_ciphertext_en@2x.png);
+    background-attachment: fixed;
+    background-position: 0 200px;
+  }
+
+  .scrollPhase2 #howto-ciphertext{
+    background-attachment: scroll;
+    background-position: 0 0;
+  }
 }
