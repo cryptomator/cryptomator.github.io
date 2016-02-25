@@ -11,97 +11,160 @@
   position: relative;
   height: 250px;
 
-  > div {
-    display: inline-block;
+  > hr {
     position: absolute;
-    height: 250px;
+    border: 0;
+    border-bottom: 4px dashed #eee;
+    background: none;
+    width: 90%;
+    top: 50%;
+    left: 2.5%;
   }
 
-  .file-left {
-    z-index: -1;
-    width: 112px;
-    left: 50%;
-    margin-left: -56px;
-    padding-top: 80px;
+  .row {
+    height: 100%;
   }
 
-  @keyframes plaintext {
-    0% {opacity: 0; left: 10%;}
-    12.5% {opacity: 1; left: 30%;}
-    25% {opacity: 1; left: 50%;}
+  .file-container {
+    position: relative;
+    height: 100%;
+  }
+
+  .file {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left: 100%;
+    margin-left: -10%;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @keyframes file-left-move {
+    0% { opacity: 0; left: 0%; }
+    12.5% { opacity: 1; left: 50%; }
+    25% { opacity: 1; left: 100%; }
+  }
+
+  @keyframes grow {
+    0% { width: 25%; }
+    25% { width: 100%; }
   }
 
   .file-pdf,
   .file-jpg,
   .file-zip,
   .file-mp3 {
-    animation: plaintext 10s;
+    animation: file-left-move 16s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+
+    > img {
+      animation: grow 16s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+    }
   }
 
   .file-jpg {
-    animation-delay: 2.5s;
+    animation-delay: 4s;
+
+    > img {
+      animation-delay: 4s;
+    }
   }
 
   .file-zip {
-    animation-delay: 5s;
+    animation-delay: 8s;
+
+    > img {
+      animation-delay: 8s;
+    }
   }
 
   .file-mp3 {
-    animation-delay: 7.5s;
+    animation-delay: 12s;
+
+    > img {
+      animation-delay: 12s;
+    }
   }
 
   @keyframes encryption {
-    10% {
-      transform: rotate(5deg);
-    }
-    20% {
-      transform: rotate(-5deg);
-    }
-    25% {
-      transform: rotate(0deg);
-    }
+    7.5% { transform: scale(1.05); }
+    12.5% { transform: scale(0.975); }
+    15% { transform: scale(1.0); }
   }
 
   .cryptomator {
-    width: 250px;
-    margin-left: -125px;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    margin-left: -10%;
+    top: 0;
     left: 50%;
-    animation: encryption 2.5s ease-in-out;
-    animation-delay: 2.5s;
+    animation: encryption 4s ease-in-out;
+    animation-delay: 4s;
     animation-iteration-count: infinite;
-  }
 
-  @keyframes ciphertext {
-    from {
-      right: 50%;
-      transform: scale(1.0, 1.0);
-    }
-    to {
-      right: 175px;
-      transform: scale(0.8, 0.8);
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
   }
 
-  .file-right {
-    z-index: -1;
-    width: 112px;
-    right: 50%;
-    margin-right: -56px;
-    padding-top: 80px;
+  @keyframes file-right-move {
+    from { left: 0; }
+    to { left: 80%; }
+  }
+
+  @keyframes shrink {
+    from { width: 100%; }
+    to { width: 25%; }
   }
 
   .file-encrypted {
-    animation: ciphertext 2.5s;
-    animation-delay: 3s;
+    left: 0%;
+    animation: file-right-move 4s;
+    animation-delay: 4.6s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+
+    > img {
+      animation: shrink 4s;
+      animation-delay: 4.6s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+    }
   }
 
   .cloud {
-    right: 0px;
-    padding-top: 12px;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin-top: -2%;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
 
 }
