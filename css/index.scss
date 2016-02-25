@@ -17,12 +17,12 @@
     height: 250px;
   }
 
-  .file {
+  .file-left {
     z-index: -1;
-    width: 60px;
+    width: 112px;
     left: 50%;
-    margin-left: -30px;
-    padding-top: 100px;
+    margin-left: -56px;
+    padding-top: 80px;
   }
 
   @keyframes plaintext {
@@ -54,10 +54,10 @@
 
   @keyframes encryption {
     10% {
-      transform: rotate(7deg);
+      transform: rotate(5deg);
     }
     20% {
-      transform: rotate(-7deg);
+      transform: rotate(-5deg);
     }
     25% {
       transform: rotate(0deg);
@@ -68,14 +68,28 @@
     width: 250px;
     margin-left: -125px;
     left: 50%;
-    animation: encryption 2.5s linear;
+    animation: encryption 2.5s ease-in-out;
     animation-delay: 2.5s;
     animation-iteration-count: infinite;
   }
 
   @keyframes ciphertext {
-    from {left: 50%;}
-    to {left: 90%;}
+    from {
+      right: 50%;
+      transform: scale(1.0, 1.0);
+    }
+    to {
+      right: 175px;
+      transform: scale(0.8, 0.8);
+    }
+  }
+
+  .file-right {
+    z-index: -1;
+    width: 112px;
+    right: 50%;
+    margin-right: -56px;
+    padding-top: 80px;
   }
 
   .file-encrypted {
@@ -87,7 +101,7 @@
 
   .cloud {
     right: 0px;
-    padding-top: 80px;
+    padding-top: 12px;
   }
 
 }
