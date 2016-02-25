@@ -5,10 +5,15 @@ permalink: /impressum/
 ---
 
 ### Angaben gemäß § 5 TMG und verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+setoLabs GbR
+Buntspechtweg 47
+53123 Bonn
+
+Vertreten durch:
+Tobias Hagemann
 Sebastian Stenzel
-Rheinaustraße 107
-53225 Bonn
-eMail: sebastian [dot] stenzel [at] gmail [dot] com
+
+eMail: webmaster [at] cryptomator [dot] org
 
 Quelle: *Impressumgenerator, [http://www.e-recht24.de](http://www.e-recht24.de)*
 
