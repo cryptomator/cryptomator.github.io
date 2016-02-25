@@ -55,10 +55,11 @@ stylesheets: ['/css/index.css']
     <div class="hidden-xs text-center">
       <h3>Pay what you want</h3>
       <div class="btn-group">
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 €</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 €</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 €</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10)}">Other</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
         <button type="button" class="btn btn-lg btn-success" data-conditional-modal="{'#paymentModal': pwyw !== 0}">
           <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
           <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
@@ -75,8 +76,18 @@ stylesheets: ['/css/index.css']
         </div>
         <div class="modal-body">
           <div class="input-group">
-            <div class="input-group-addon">€</div>
-            <input type="number" class="form-control" placeholder="Amount" data-ng-model="pwyw">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
+                <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
+                <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
+              </ul>
+            </div><!-- /btn-group -->
+            <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
             <div class="input-group-addon">.00</div>
           </div>
         </div>
