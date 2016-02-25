@@ -11,14 +11,14 @@ setoLabs GbR
 Buntspechtweg 47  
 53123 Bonn
 
-## Vertreten durch:
+### Vertreten durch:
 Tobias Hagemann  
 Sebastian Stenzel
 
-## Kontakt:
+### Kontakt:
 E-Mail:  webmaster [at] cryptomator [dot] org
 
-## Umsatzsteuer-ID:
+### Umsatzsteuer-ID:
 Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:  
 DE288239286
 
