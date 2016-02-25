@@ -101,7 +101,7 @@
 
   #howto-cleartext,
   #howto-ciphertext {
-    height: 500px;
+    height: 600px;
     background-repeat: no-repeat;
     background-size: 50vw auto;
   }
@@ -115,13 +115,13 @@
   .scrollPhase1 #howto-cleartext,
   .scrollPhase2 #howto-cleartext {
     background-attachment: fixed;
-    background-position: 0 200px;
+    background-position: 0 300px;
   }
 
   #howto-ciphertext {
     background-image: url(/img/screenshot_ciphertext_en@2x.png);
     background-attachment: fixed;
-    background-position: 0 200px;
+    background-position: 0 300px;
   }
 
   .scrollPhase2 #howto-ciphertext{

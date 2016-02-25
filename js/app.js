@@ -31,13 +31,34 @@ angular.module('cryptomator').factory('googleAnalytics', ['$window', function($w
   };
 }]);
 
+angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', function($scope) {
+
+  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
+  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
+
+  $scope.pwyw = 5;
+
+  $scope.isAcceptableAmount = function(amount) {
+    return _.isNumber(amount) && amount >= 1;
+  };
+
+}]);
+
+angular.module('cryptomator').controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
+
+  $scope.copyBitcoinAddress = function() {
+    $window.prompt('Copy Bitcoin Address', '1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh');
+  };
+
+}]);
+
 angular.module('cryptomator').controller('DownloadCtrl', ['$scope', 'googleAnalytics', function($scope, googleAnalytics) {
 
   $scope.isOSWindows = navigator.appVersion.indexOf('Win') != -1;
   $scope.isOSMac = navigator.appVersion.indexOf('Mac') != -1 && navigator.appVersion.indexOf('iPhone') == -1;
   $scope.isOSLinux = (navigator.appVersion.indexOf('Linux') != -1 || navigator.appVersion.indexOf('X11') != -1) && navigator.appVersion.indexOf('Android') == -1;
-  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') == -1;
-  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') == -1;
+  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
+  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
   $scope.showAllDownloads = false;
 
   $scope.logDownload = function(fileName) {
@@ -90,6 +111,30 @@ angular.module('cryptomator').controller('CookiesCtrl', ['$http', '$scope', '$co
     $scope.consentDismissed = true;
   };
 
+}]);
+
+/**
+ * Triggers a bootstrap modal dialog, if the condition evaluates to true.
+ *
+ * <button conditional-modal="{'#modalDialog1': foo == 1, '#modalDialog2': foo == 2}">click</button>
+ */
+angular.module('cryptomator').directive('conditionalModal', [function() {
+  return {
+    restrict: 'A',
+    scope: {
+      modalSelectors: '=conditionalModal'
+    },
+    link: function(scope, elem, attrs) {
+      $(elem).on('click', function() {
+        var firstMatchingSelector = _.findKey(scope.modalSelectors, function(condition) {
+          return condition;
+        });
+        if (firstMatchingSelector) {
+          $(firstMatchingSelector).modal();
+        }
+      });
+    }
+  };
 }]);
 
 /**

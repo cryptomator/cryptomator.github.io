@@ -4,6 +4,7 @@ title: 'Cryptomator: Free Cloud Encryption for Dropbox &amp; Others'
 permalink: /
 stylesheets: ['/css/index.css']
 ---
+{% raw %}
 
 <section id="top">
 
@@ -31,19 +32,69 @@ stylesheets: ['/css/index.css']
     </div>
   </div>
 
-  <div class="page-header text-center">
+  <div class="container page-header text-center">
     <h1>Cryptomator</h1>
     <h2>Free client-side AES encryption for your cloud files.<br/>Open source software: No backdoors, no registration.</h2>
   </div>
 
 </section>
 
+<section id="call-to-action" style="min-height: 30vh; margin-top: 10vh; margin-bottom: 10vh;" data-ng-controller="CallToActionCtrl">
+  <div class="container text-center">
+    <h2>Get Cryptomator</h2>
+  </div>
+
+  <div class="container text-center" data-ng-show="isOSiOS">
+    <p>App Store!</p>
+  </div>
+
+  <div class="container" data-ng-show="!isOSiOS &amp;&amp; !isOSAndroid">
+    <div class="row visible-xs">
+      <button type="button" class="btn btn-lg btn-success col-xs-8 col-xs-offset-2"><span class="glyphicon glyphicon-download-alt"></span> Free Download</button>
+    </div>
+    <div class="hidden-xs text-center">
+      <h3>Pay what you want</h3>
+      <div class="btn-group">
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 €</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 €</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 €</button>
+        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10)}">Other</button>
+        <button type="button" class="btn btn-lg btn-success" data-conditional-modal="{'#paymentModal': pwyw !== 0}">
+          <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
+          <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id="paymentModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Pay with Paypal</h4>
+        </div>
+        <div class="modal-body">
+          <div class="input-group">
+            <div class="input-group-addon">€</div>
+            <input type="number" class="form-control" placeholder="Amount" data-ng-model="pwyw">
+            <div class="input-group-addon">.00</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code=EUR&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</section>
+
 <section id="howto" style="background-color: #79b01a;">
-  <div class="page-header text-center">
+  <div class="container page-header text-center">
     <h2>What does Cryptomator do?</h2>
   </div>
 
-  <div class="container-fluid" data-scroll-toggle-class="{'scrollPhase1': -200, 'scrollPhase2': 300}">
+  <div class="container-fluid" data-scroll-toggle-class="{'scrollPhase1': -300, 'scrollPhase2': 300}">
     <div class="row">
       <div class="col-xs-6" id="howto-cleartext"></div>
       <div class="col-xs-6">
@@ -63,6 +114,6 @@ stylesheets: ['/css/index.css']
 
 </section>
 
-<section class="fullheight">
+<section class="fullheight"></section>
 
-</section>
+{% endraw %}
