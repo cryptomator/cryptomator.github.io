@@ -51,9 +51,7 @@
   .tablet,
   .smartphone {
     opacity: 0;
-    animation: device-fade 12s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: device-fade 12s linear infinite;
   }
 
   .laptop {
@@ -89,6 +87,7 @@
     > img {
       position: absolute;
       margin: auto;
+      width: 100%;
       top: 0;
       left: 0;
       right: 0;
@@ -110,14 +109,10 @@
   .file-jpg,
   .file-zip,
   .file-mp3 {
-    animation: file-left-move 16s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
+    animation: file-left-move 16s ease-in infinite;
 
     > img {
-      animation: grow 16s;
-      animation-timing-function: ease-in;
-      animation-iteration-count: infinite;
+      animation: grow 16s ease-in infinite;
     }
   }
 
@@ -169,9 +164,7 @@
     margin-left: -10%;
     top: 0;
     left: 50%;
-    animation: encryption 4s ease-in-out;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
+    animation: encryption 4s ease-in-out 5s infinite;
 
     > img {
       position: absolute;
@@ -195,16 +188,13 @@
 
   .file-encrypted {
     left: 0%;
-    animation: file-right-move 4s;
-    animation-delay: 5.3s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
+    animation: file-right-move 4s ease-out 5.3s infinite;
+    animation-delay: ;
+    animation-timing-function: ;
+    animation-iteration-count: ;
 
     > img {
-      animation: shrink 4s;
-      animation-delay: 5.3s;
-      animation-timing-function: ease-out;
-      animation-iteration-count: infinite;
+      animation: shrink 4s ease-out 5.3s infinite;
     }
   }
 
