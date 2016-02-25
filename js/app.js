@@ -37,9 +37,9 @@ angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', function
   $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
 
   $scope.pwyw = 5;
-  $scope.currencyEUR = {name: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'};
-  $scope.currencyGBP = {name: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'};
-  $scope.currencyUSD = {name: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'};
+  $scope.currencyEUR = {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'};
+  $scope.currencyGBP = {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'};
+  $scope.currencyUSD = {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'};
   $scope.currency = $scope.currencyEUR;
 
   $scope.isAcceptableAmount = function(amount) {
