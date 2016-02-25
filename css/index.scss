@@ -16,9 +16,58 @@
     border: 0;
     border-bottom: 4px dashed #eee;
     background: none;
-    width: 90%;
+    width: 77.5%;
     top: 50%;
-    left: 2.5%;
+    left: 10%;
+  }
+
+  @keyframes device-fade {
+    0% { opacity: 0; transform: scale(0.8); }
+    2.5% { opacity: 1; transform: scale(1.05); }
+    3% { opacity: 1; transform: scale(1.0); }
+    30% { opacity: 1; transform: scale(1.0); }
+    33% { opacity: 0; transform: scale(0.8); }
+  }
+
+  .device {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    margin-left: -7.5%;
+    top: 0;
+    left: 10%;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .laptop,
+  .tablet,
+  .smartphone {
+    opacity: 0;
+    animation: device-fade 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .laptop {
+    width: 100%;
+  }
+
+  .tablet {
+    width: 50%;
+    animation-delay: 4s;
+  }
+
+  .smartphone {
+    width: 25%;
+    animation-delay: 8s;
   }
 
   .row {
@@ -48,9 +97,8 @@
   }
 
   @keyframes file-left-move {
-    0% { opacity: 0; left: 0%; }
-    12.5% { opacity: 1; left: 50%; }
-    25% { opacity: 1; left: 100%; }
+    0% { left: 20%; }
+    25% { left: 100%; }
   }
 
   @keyframes grow {
@@ -63,44 +111,55 @@
   .file-zip,
   .file-mp3 {
     animation: file-left-move 16s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 
     > img {
       animation: grow 16s;
-      animation-timing-function: ease-out;
+      animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
     }
   }
 
-  .file-jpg {
-    animation-delay: 4s;
+  .file-pdf {
+    animation-delay: 1s;
 
     > img {
-      animation-delay: 4s;
+      animation-delay: 1s;
+    }
+  }
+
+  .file-jpg {
+    animation-delay: 5s;
+
+    > img {
+      animation-delay: 5s;
     }
   }
 
   .file-zip {
-    animation-delay: 8s;
+    animation-delay: 9s;
 
     > img {
-      animation-delay: 8s;
+      animation-delay: 9s;
     }
   }
 
   .file-mp3 {
-    animation-delay: 12s;
+    animation-delay: 13s;
 
     > img {
-      animation-delay: 12s;
+      animation-delay: 13s;
     }
   }
 
   @keyframes encryption {
-    7.5% { transform: scale(1.05); }
-    12.5% { transform: scale(0.975); }
-    15% { transform: scale(1.0); }
+    7.5% { transform: rotate(0deg); }
+    9% { transform: rotate(1deg); }
+    10.5% { transform: rotate(-1deg); }
+    12% { transform: rotate(1deg); }
+    13.5% { transform: rotate(-1deg); }
+    15% { transform: rotate(0deg); }
   }
 
   .cryptomator {
@@ -111,7 +170,7 @@
     top: 0;
     left: 50%;
     animation: encryption 4s ease-in-out;
-    animation-delay: 4s;
+    animation-delay: 5s;
     animation-iteration-count: infinite;
 
     > img {
@@ -137,14 +196,14 @@
   .file-encrypted {
     left: 0%;
     animation: file-right-move 4s;
-    animation-delay: 4.6s;
-    animation-timing-function: linear;
+    animation-delay: 5.6s;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 
     > img {
       animation: shrink 4s;
-      animation-delay: 4.6s;
-      animation-timing-function: ease-in;
+      animation-delay: 5.6s;
+      animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
     }
   }
@@ -154,8 +213,9 @@
     width: 20%;
     height: 100%;
     top: 0;
-    right: 0;
+    right: 12.5%;
     margin-top: -2%;
+    margin-right: -10%;
 
     > img {
       position: absolute;
