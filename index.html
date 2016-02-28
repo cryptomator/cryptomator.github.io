@@ -146,25 +146,35 @@ stylesheets: ['/css/index.css']
   </div>
 </section>
 
-<section id="howto" style="background-color: #79b01a;">
-  <div class="container page-header text-center">
-    <h2>What does Cryptomator do?</h2>
+<section id="howto">
+  <div class="container text-center">
+    <h2>How does Cryptomator protect your cloud files?</h2>
   </div>
 
-  <div class="container-fluid" data-scroll-toggle-class="{'scrollPhase1': -300, 'scrollPhase2': 300}">
-    <div class="row">
-      <div class="col-xs-6" id="howto-cleartext"></div>
-      <div class="col-xs-6">
-        <h3>This is cleartext</h3>
-        <p>In this paragraph I want to point out, that you can access your files just like on any regular drive.</p>
+  <div data-scroll-toggle-class="{'scrollPhase1': -300, 'scrollPhase2': 300}">
+    <div id="howto-cleartext">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-6">
+            <h3>Transparent encryption</h3>
+            <p><em>Transparent encryption</em> means you will not notice any difference in working with your files.</p>
+            <p>While the <em>vault</em> containing your encrypted data resides somewhere in your cloud folder, Cryptomator provides a virtual hard drive through which you can access your files.</p>
+            <p>You can work on this drive as if it were a conventional USB flash drive.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="row" style="background-color: #85b62f;">
-      <div class="col-xs-6" id="howto-ciphertext"></div>
-      <div class="col-xs-6">
-        <h3>This is ciphertext</h3>
-        <p>After encryption your files look like this.</p>
+    <div id="howto-ciphertext">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-6">
+            <h3>Files get encrypted individually</h3>
+            <p>Everything you put onto the virtual hard drive ends up encrypted in your vault.</p>
+            <p>Other than disk encryption utilities, Cryptomator encrypts each file for its own. So if you edit just a small text file, only the corresponding encrypted file is changed.</p>
+            <p>This way the synchronization client of your cloud storage provider knows exactly what to be uploaded and what doesn't.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

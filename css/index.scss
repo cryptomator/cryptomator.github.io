@@ -222,14 +222,16 @@
  */
 
 #howto {
+  background-color: #79b01a;
   color: #FFF;
   padding-top: 40px;
 
   #howto-cleartext,
   #howto-ciphertext {
+    padding-top: 2em;
     height: 600px;
     background-repeat: no-repeat;
-    background-size: 50vw auto;
+    background-size: 50% auto;
   }
 
   #howto-cleartext {
