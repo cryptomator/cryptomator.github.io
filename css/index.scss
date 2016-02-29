@@ -294,9 +294,13 @@
 
     > blockquote {
       display: inline-block;
-      width: 25%;
-      margin-left: 37.5%;
-      margin-right: 37.5%;
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
+
+      > p {
+        white-space: pre-wrap;
+      }
     }
 
     &:hover {
