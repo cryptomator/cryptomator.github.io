@@ -198,3 +198,19 @@ pre {
         }
     }
 }
+
+
+
+/**
+ * Buttons
+ */
+.btn-outline-green {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+
+  &:hover, &:focus {
+    color: $brand-color;
+    background-color: #fff;
+  }
+}

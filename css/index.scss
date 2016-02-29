@@ -231,7 +231,14 @@
     padding-top: 2em;
     height: 600px;
     background-repeat: no-repeat;
-    background-size: 50% auto;
+
+    @media (max-width: 1855px) {
+      background-size: 50% auto;
+    }
+
+    @media (min-width: 1856px) {
+      background-size: auto 600px;
+    }
   }
 
   #howto-cleartext {
@@ -258,53 +265,70 @@
   }
 }
 
+.margin-top-20 {
+  margin-top: 20px;
+}
+
 /*
  * Testimonials Animation
  */
 
-#testimonials > .scroll-container {
-  height: 200px;
-  overflow: hidden;
-  position: relative;
+#testimonials {
+  padding-bottom: 48px;
 
-  @keyframes move-quotes {
-    0% { opacity: 0; left: 50%; }
-    5% { opacity: 1; left: 0%; }
-    15% { opacity: 1; left: 0%; }
-    20% { opacity: 0; left: -50%; }
-    25% { opacity: 1; left: -100%; }
-    35% { opacity: 1; left: -100%; }
-    40% { opacity: 0; left: -150%; }
-    45% { opacity: 1; left: -200%; }
-    55% { opacity: 1; left: -200%; }
-    60% { opacity: 0; left: -250%; }
-    65% { opacity: 1; left: -300%; }
-    75% { opacity: 1; left: -300%; }
-    80% { opacity: 0; left: -350%; }
-    85% { opacity: 1; left: -400%; }
-    95% { opacity: 1; left: -400%; }
-    100% { opacity: 0; left: -450%; }
-  }
+  > .scroll-container {
+    overflow: hidden;
+    position: relative;
 
-  > .scroller {
-    width: 100%;
-    position: absolute;
-    white-space: nowrap;
-    animation: move-quotes 20s infinite;
-
-    > blockquote {
-      display: inline-block;
-      width: 50%;
-      margin-left: 25%;
-      margin-right: 25%;
-
-      > p {
-        white-space: pre-wrap;
-      }
+    @keyframes move-quotes {
+      0% { opacity: 0; left: 100%; }
+      5% { opacity: 1; left: -50%; }
+      15% { opacity: 1; left: -50%; }
+      20% { opacity: 0; left: -150%; }
+      25% { opacity: 1; left: -250%; }
+      35% { opacity: 1; left: -250%; }
+      40% { opacity: 0; left: -350%; }
+      45% { opacity: 1; left: -450%; }
+      55% { opacity: 1; left: -450%; }
+      60% { opacity: 0; left: -550%; }
+      65% { opacity: 1; left: -650%; }
+      75% { opacity: 1; left: -650%; }
+      80% { opacity: 0; left: -750%; }
+      85% { opacity: 1; left: -850%; }
+      95% { opacity: 1; left: -850%; }
+      100% { opacity: 0; left: -950%; }
     }
 
-    &:hover {
-      animation-play-state: paused;
+    > .scroller {
+      width: 100%;
+      position: relative;
+      white-space: nowrap;
+      animation: move-quotes 20s infinite;
+
+      > blockquote {
+        display: inline-block;
+        vertical-align: middle;
+
+        @media (max-width: 480px) {
+          width: 96%;
+          margin-left: 52%;
+          margin-right: 52%;
+        }
+
+        @media (min-width: 481px) {
+          width: 50%;
+          margin-left: 75%;
+          margin-right: 75%;
+        }
+
+        > p {
+          white-space: pre-wrap;
+        }
+      }
+
+      &:hover {
+        animation-play-state: paused;
+      }
     }
   }
 }

@@ -142,6 +142,29 @@ angular.module('cryptomator').directive('conditionalModal', [function() {
 }]);
 
 /**
+ * Scrolls to the target specified by the given selector smoothly.
+ *
+ * <button smooth-scroll-to="#someDiv" smooth-scroll-offset="-80" smooth-scroll-duration="1000">click</button>
+ */
+angular.module('cryptomator').directive('smoothScrollTo', [function() {
+  return {
+    restrict: 'A',
+    scope: {
+      target: '@smoothScrollTo',
+      offset: '=smoothScrollOffset',
+      duration: '=smoothScrollDuration'
+    },
+    link: function(scope, elem, attrs) {
+      $(elem).on('click', function() {
+        $('html, body').animate({
+          scrollTop: $(scope.target).offset().top + scope.offset
+        }, scope.duration);
+      });
+    }
+  };
+}]);
+
+/**
  * Toggles a class depending on whether an element is in sight.
  * A threshold determines if the class should be toggled instantaneously when the first pixel becomes visible (threshold=0)
  * or when the element reaches the top of the window (threshold=1).
