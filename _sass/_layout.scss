@@ -5,6 +5,10 @@
   border-top: 1px solid $grey-color;
   padding: $spacing-unit/2;
   width: 100%;
+
+  > p {
+    margin-bottom: 0;
+  }
 }
 
 #site-footer {

@@ -38,8 +38,8 @@
 
 <section class="container-fluid" id="cookieConsent" data-ng-controller="CookiesCtrl" data-ng-show="consentRequired &amp;&amp; !(consentGiven || consentDismissed)">
   <div class="pull-right">
-    <button class="btn btn-sm btn-default" data-ng-click="agree()">Agree, don't show this again</button>
-    <button class="btn btn-sm btn-default" data-ng-click="dismiss()">Ignore</button>
+    <button type="button" class="btn btn-sm btn-default" data-ng-click="agree()">Agree, don't show this again</button>
+    <button type="button" class="btn btn-sm btn-default" data-ng-click="dismiss()">Ignore</button>
   </div>
   <p>This website wants to use cookies for statistical purposes. <a href="/privacy/">More info</a></p>
 </section>

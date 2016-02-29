@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 /*
- * Top Animation
+ * Stage Animation
  */
 
 .stage {
@@ -252,58 +252,59 @@
     background-position: 0 300px;
   }
 
-  .scrollPhase2 #howto-ciphertext{
+  .scrollPhase2 #howto-ciphertext {
     background-attachment: scroll;
     background-position: 0 0;
   }
 }
 
+/*
+ * Testimonials Animation
+ */
 
-#testimonials {
-  > .scroll-container {
-    height: 200px;
-    overflow: hidden;
-    position: relative;
+#testimonials > .scroll-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
 
-    @keyframes move-quotes {
-      0% { opacity: 0; left: 50%; }
-      5% { opacity: 1; left: 0%; }
-      15% { opacity: 1; left: 0%; }
-      20% { opacity: 0; left: -50%; }
-      25% { opacity: 1; left: -100%; }
-      35% { opacity: 1; left: -100%; }
-      40% { opacity: 0; left: -150%; }
-      45% { opacity: 1; left: -200%; }
-      55% { opacity: 1; left: -200%; }
-      60% { opacity: 0; left: -250%; }
-      65% { opacity: 1; left: -300%; }
-      75% { opacity: 1; left: -300%; }
-      80% { opacity: 0; left: -350%; }
-      85% { opacity: 1; left: -400%; }
-      95% { opacity: 1; left: -400%; }
-      100% { opacity: 0; left: -450%; }
+  @keyframes move-quotes {
+    0% { opacity: 0; left: 50%; }
+    5% { opacity: 1; left: 0%; }
+    15% { opacity: 1; left: 0%; }
+    20% { opacity: 0; left: -50%; }
+    25% { opacity: 1; left: -100%; }
+    35% { opacity: 1; left: -100%; }
+    40% { opacity: 0; left: -150%; }
+    45% { opacity: 1; left: -200%; }
+    55% { opacity: 1; left: -200%; }
+    60% { opacity: 0; left: -250%; }
+    65% { opacity: 1; left: -300%; }
+    75% { opacity: 1; left: -300%; }
+    80% { opacity: 0; left: -350%; }
+    85% { opacity: 1; left: -400%; }
+    95% { opacity: 1; left: -400%; }
+    100% { opacity: 0; left: -450%; }
+  }
+
+  > .scroller {
+    width: 100%;
+    position: absolute;
+    white-space: nowrap;
+    animation: move-quotes 20s infinite;
+
+    > blockquote {
+      display: inline-block;
+      width: 25%;
+      margin-left: 37.5%;
+      margin-right: 37.5%;
     }
 
-    > .scroller {
-      width: 100%;
-      position: absolute;
-      white-space: nowrap;
-      animation: move-quotes 20s infinite;
-
-      > blockquote {
-        display: inline-block;
-        width: 25%;
-        margin-left: 37.5%;
-        margin-right: 37.5%;
-      }
-
-      &:hover {
-        animation-play-state: paused;
-      }
+    &:hover {
+      animation-play-state: paused;
     }
   }
 }
 
-#testimonials>div>blockquote:hover {
+#testimonials > div > blockquote:hover {
   animation-play-state: paused;
 }
