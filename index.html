@@ -7,7 +7,6 @@ stylesheets: ['/css/index.css']
 {% raw %}
 
 <section id="top" style="min-height: 50vh;">
-
   <div class="container stage">
     <hr/>
     <div class="row">
@@ -48,10 +47,9 @@ stylesheets: ['/css/index.css']
     <h1>Cryptomator</h1>
     <h2>Free client-side AES encryption for your cloud files.<br/>Open source software: No backdoors, no registration.</h2>
   </div>
-
 </section>
 
-<section id="call-to-action" style="min-height: 30vh;" data-ng-controller="CallToActionCtrl">
+<section id="call-to-action" style="min-height: 50vh;" data-ng-controller="CallToActionCtrl">
   <div class="container text-center">
     <h2>Get Cryptomator</h2>
   </div>
@@ -98,7 +96,7 @@ stylesheets: ['/css/index.css']
                 <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
                 <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
               </ul>
-            </div><!-- /btn-group -->
+            </div><!-- /input-group-btn -->
             <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
             <div class="input-group-addon">.00</div>
           </div>
@@ -119,7 +117,7 @@ stylesheets: ['/css/index.css']
   <div class="scroll-container">
     <div class="scroller">
       <blockquote>
-        <p>I use Cryptomator for encrypted areas inside my ownCloud and Seafile storage for private data. Without it I wouldn't be able to use the cloud to this extent.</p>
+        <p>I use Cryptomator for encrypted areas inside my ownCloud and Seafile storage for private data. Without it I wouldn&apos;t be able to use the cloud to this extent.</p>
         <footer>Ulrich Zobel</footer>
       </blockquote>
 
@@ -129,7 +127,7 @@ stylesheets: ['/css/index.css']
       </blockquote>
 
       <blockquote>
-        <p>I've been incredibly impressed by your work on Cryptomator; I think you're going to help a lot of people!</p>
+        <p>I&apos;ve been incredibly impressed by your work on Cryptomator; I think you&apos;re going to help a lot of people!</p>
         <footer>Ben Elijah, inkandben.com</footer>
       </blockquote>
 
@@ -160,7 +158,7 @@ stylesheets: ['/css/index.css']
             <p><em>Transparent encryption</em> means you will not notice any difference in working with your files.</p>
             <p>While the <em>vault</em> containing your encrypted data resides somewhere in your cloud folder, Cryptomator provides a virtual hard drive through which you can access your files.</p>
             <p>You can work on this drive as if it were a conventional USB flash drive.</p>
-            <button type="button" class="btn btn-outline-green btn-lg margin-top-20" smooth-scroll-to="#howto-ciphertext" smooth-scroll-offset="-150" smooth-scroll-duration="2000"><span class="glyphicon glyphicon-arrow-down"></span> See how your encrypted files look like</button>
+            <button type="button" class="btn btn-primary-outline btn-lg margin-top-20" smooth-scroll-to="#howto-ciphertext" smooth-scroll-offset="-150" smooth-scroll-duration="2000"><span class="glyphicon glyphicon-arrow-down"></span> See how your encrypted files look like</button>
           </div>
         </div>
       </div>
@@ -173,15 +171,161 @@ stylesheets: ['/css/index.css']
             <h3>Files get encrypted individually</h3>
             <p>Everything you put onto the virtual hard drive ends up encrypted in your vault.</p>
             <p>Other than disk encryption utilities, Cryptomator encrypts each file for its own. So if you edit just a small text file, only the corresponding encrypted file is changed.</p>
-            <p>This way the synchronization client of your cloud storage provider knows exactly what to be uploaded and what doesn't.</p>
+            <p>This way the synchronization client of your cloud storage provider knows exactly what to be uploaded and what doesn&apos;t.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </section>
 
-<section class="fullheight"></section>
+<section id="features">
+  <div class="container">
+    <div class="text-center">
+      <h2>Features</h2>
+      <p class="lead">Cryptomator provides transparent, client-side encryption for your cloud. Securely protect your documents from unauthorized access. Cryptomator is open source software, so you can rest assured there are no backdoors.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="modal screenshot fade" id="screenCreateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-body">
+              <img src="img/screen_create_shadow.png" alt="Creating new vaults" width="752" />
+            </div>
+          </div>
+          <img src="img/screen_create.png" srcset="img/screen_create.png 1x, img/screen_create@2x.png 2x" alt="Creating new vaults" width="320" class="cursor-pointer" data-toggle="modal" data-target="#screenCreateModal" />
+          <div class="caption">
+            <h3>Create</h3>
+            <p>You can create as many encrypted directories as you like. Two in Dropbox, one in OneDrive, one on your flash drive.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="modal screenshot fade" id="screenUnlockModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-body">
+              <img src="img/screen_unlock_shadow.png" alt="Unlocking vaults" width="752" />
+            </div>
+          </div>
+          <img src="img/screen_unlock.png" srcset="img/screen_unlock.png 1x, img/screen_unlock@2x.png 2x" alt="Unlocking vaults" width="320" class="cursor-pointer" data-toggle="modal" data-target="#screenUnlockModal" />
+          <div class="caption">
+            <h3>Unlock</h3>
+            <p>Enter your password and start access your files. Wasn&apos;t that easy?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="text-center">
+          <div class="modal screenshot fade" id="screenUnlockedModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-body">
+              <img src="img/screen_unlocked_shadow.png" alt="Using vaults" width="752" />
+            </div>
+          </div>
+          <img src="img/screen_unlocked.png" srcset="img/screen_unlocked.png 1x, img/screen_unlocked@2x.png 2x" alt="Using vaults" width="320" class="cursor-pointer" data-toggle="modal" data-target="#screenUnlockedModal" />
+          <div class="caption">
+            <h3>Use</h3>
+            <p>Every unlocked vault is accessible as a virtual hard drive in your operating system. Want to transfer files from one vault to another? No problem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Secure</h4>
+        <p>Cryptomator encrypts your files&apos; contents and names using AES with up to 256 bit keylength. Scrypt hardens your key against bruteforcing.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Transparent</h4>
+        <p>Your applications can work with encrypted files without even noticing. Cryptomator will make your encrypted folder available as a virtual hard drive.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Lean</h4>
+        <p>Cryptomator doesn&apos;t flood your computer with funny support files or even drivers. Also Cryptomator&apos;s internals are very simple. We believe, that complexity kills security.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Easy</h4>
+        <p>Choose a password and continue working normally on your files. No configuration needed. No accounts required.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Trustworthy</h4>
+        <p>Cryptomator is secure. Ever read this sentence before? Well in this case you don&apos;t need to trust us. You can control us. Cryptomator is completely open source software.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Discreet</h4>
+        <p>Cryptomator doesn&apos;t need your cloud passwords. It works on your local machine and doesn&apos;t care about the accounts you use.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Compatible</h4>
+        <p>Dropbox, OneDrive, Google Drive, ...? Cryptomator works with every single cloud storage provider, as long as your files are sync&apos;ed to your computer.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Multiplatform</h4>
+        <p>Cryptomator is based on Java technology and runs on all major desktop operating systems. Smartphone apps will follow.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Free and open source</h4>
+        <p>Other than most cloud encryption tools, Cryptomator doesn&apos;t cost a penny. You don&apos;t even need to create an account! It is open source software licensed under the MIT X Consortium license, so you will never stand in front of locked doors in the future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="container">
+    <div class="text-center">
+      <h2>Subscribe to our Mailing List</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div>
+          <form action="//cryptomator.us10.list-manage.com/subscribe/post?u=e9345a3370a9a703b20c45e3c&amp;id=1a6e2c337b" method="post" name="mc-embedded-subscribe-form" class="form-horizontal validate" target="_blank" novalidate>
+            <div>
+              <div class="form-group">
+              	<label for="mce-EMAIL" class="col-sm-3 control-label">Email Address</label>
+                <div class="col-sm-9">
+              	   <input type="email" value="" name="EMAIL" class="required email form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mce-group[3693]-3693-1" class="col-sm-3 control-label">Android Beta</label>
+                <div class="col-sm-9">
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="2" name="group[3693][2]" /> Yes, I'm interested in the Android beta</label>
+                  </div>
+                </div>
+              </div>
+            	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_e9345a3370a9a703b20c45e3c_1a6e2c337b" tabindex="-1" value=""></div>
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <input type="submit" value="Subscribe" name="subscribe" class="btn btn-primary-outline"/>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endraw %}

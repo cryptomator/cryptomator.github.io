@@ -38,6 +38,16 @@ ul, ol, dl, figure,
 
 
 /**
+ * Set paddings for horizontal separator
+ */
+hr {
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
  * Images
  */
 img {
@@ -204,7 +214,7 @@ pre {
 /**
  * Buttons
  */
-.btn-outline-green {
+.btn-primary-outline {
   color: #fff;
   background-color: transparent;
   border-color: #fff;

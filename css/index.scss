@@ -14,6 +14,7 @@
 
   > hr {
     position: absolute;
+    padding: 0;
     border: 0;
     border-bottom: 4px dashed #eee;
     background: none;
@@ -224,11 +225,12 @@
 #howto {
   background-color: #79b01a;
   color: #FFF;
-  padding-top: 40px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 
   #howto-cleartext,
   #howto-ciphertext {
-    padding-top: 2em;
+    padding-top: 48px;
     height: 600px;
     background-repeat: no-repeat;
 
@@ -282,20 +284,20 @@
 
     @keyframes move-quotes {
       0% { opacity: 0; left: 100%; }
-      5% { opacity: 1; left: -50%; }
-      15% { opacity: 1; left: -50%; }
+      3% { opacity: 1; left: -50%; }
+      17% { opacity: 1; left: -50%; }
       20% { opacity: 0; left: -150%; }
-      25% { opacity: 1; left: -250%; }
-      35% { opacity: 1; left: -250%; }
+      23% { opacity: 1; left: -250%; }
+      37% { opacity: 1; left: -250%; }
       40% { opacity: 0; left: -350%; }
-      45% { opacity: 1; left: -450%; }
-      55% { opacity: 1; left: -450%; }
+      43% { opacity: 1; left: -450%; }
+      57% { opacity: 1; left: -450%; }
       60% { opacity: 0; left: -550%; }
-      65% { opacity: 1; left: -650%; }
-      75% { opacity: 1; left: -650%; }
+      63% { opacity: 1; left: -650%; }
+      77% { opacity: 1; left: -650%; }
       80% { opacity: 0; left: -750%; }
-      85% { opacity: 1; left: -850%; }
-      95% { opacity: 1; left: -850%; }
+      83% { opacity: 1; left: -850%; }
+      97% { opacity: 1; left: -850%; }
       100% { opacity: 0; left: -950%; }
     }
 
@@ -303,7 +305,7 @@
       width: 100%;
       position: relative;
       white-space: nowrap;
-      animation: move-quotes 20s infinite;
+      animation: move-quotes 30s infinite;
 
       > blockquote {
         display: inline-block;
@@ -316,9 +318,9 @@
         }
 
         @media (min-width: 481px) {
-          width: 50%;
-          margin-left: 75%;
-          margin-right: 75%;
+          width: 40%;
+          margin-left: 80%;
+          margin-right: 80%;
         }
 
         > p {
@@ -331,4 +333,16 @@
       }
     }
   }
+}
+
+#features {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+#newsletter {
+  background-color: #79b01a;
+  color: #FFF;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
