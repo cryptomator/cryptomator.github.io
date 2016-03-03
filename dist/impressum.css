@@ -31,10 +31,6 @@ a:hover {
   outline: 0;
 }
 
-strong {
-  font-weight: bold;
-}
-
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
