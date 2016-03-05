@@ -5,27 +5,6 @@
 
 
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #7aaf21;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  #222;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
 // Using media queries with like this:
 // @include media-query($palm) {
 //     .wrapper {
@@ -43,6 +22,7 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout"
+  "variables",
+  "base",
+  "layout"
 ;

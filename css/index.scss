@@ -2,6 +2,7 @@
 # front matter to make sure, jekyll translates this scss file
 ---
 @charset "utf-8";
+@import "variables";
 
 /*
  * Stage Animation
@@ -223,7 +224,7 @@
  */
 
 #howto {
-  background-color: #79b01a;
+  background-color: $bg-green-medium;
   color: #FFF;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -341,7 +342,7 @@
 }
 
 #newsletter {
-  background-color: #79b01a;
+  background-color: $bg-green-medium;
   color: #FFF;
   padding-top: 48px;
   padding-bottom: 48px;

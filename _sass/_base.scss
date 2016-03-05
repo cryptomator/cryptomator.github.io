@@ -224,3 +224,19 @@ pre {
     background-color: #fff;
   }
 }
+
+.btn-primary {
+  background-color: $brand-color;
+  border-color: $brand-color;
+
+  &:hover, &:focus, &:active {
+    background-color: darken($brand-color, 5%);
+    border-color: darken($brand-color, 5%);
+  }
+
+  &:active:hover, &:active:focus, &:active:hover:focus {
+    background-color: darken($brand-color, 8%);
+    border-color: darken($brand-color, 8%);
+  }
+
+}

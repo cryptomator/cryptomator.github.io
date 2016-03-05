@@ -6,7 +6,7 @@ stylesheets: ['/css/index.css']
 ---
 {% raw %}
 
-<section id="top" style="min-height: 50vh;">
+<section id="top" class="halfheight">
   <div class="container stage">
     <hr/>
     <div class="row">
@@ -49,65 +49,76 @@ stylesheets: ['/css/index.css']
   </div>
 </section>
 
-<section id="call-to-action" style="min-height: 50vh;" data-ng-controller="CallToActionCtrl">
-  <div class="container text-center">
-    <h2>Get Cryptomator</h2>
-  </div>
 
-  <div class="container text-center" data-ng-show="isOSiOS">
-    <p>App Store!</p>
-  </div>
-
-  <div class="container" data-ng-show="!isOSiOS &amp;&amp; !isOSAndroid">
-    <div class="row visible-xs">
-      <button type="button" class="btn btn-lg btn-success col-xs-8 col-xs-offset-2"><span class="glyphicon glyphicon-download-alt"></span> Free Download</button>
-    </div>
-    <div class="hidden-xs text-center">
-      <h3>Pay what you want</h3>
-      <div class="btn-group">
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
-        <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
-        <button type="button" class="btn btn-lg btn-success" data-conditional-modal="{'#paymentModal': pwyw !== 0}">
-          <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
-          <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" tabindex="-1" role="dialog" id="paymentModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Pay with Paypal</h4>
+<section id="call-to-action" class="halfheight" data-ng-controller="CallToActionCtrl">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-push-6 col-md-8 col-md-push-4">
+        <div class="text-center">
+          <h2>Get Cryptomator</h2>
         </div>
-        <div class="modal-body">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
-                <span class="caret"></span>
+
+        <div class="text-center" data-ng-show="isOSiOS">
+          <p>App Store!</p>
+        </div>
+
+        <div data-ng-show="!isOSiOS &amp;&amp; !isOSAndroid">
+          <div class="row visible-xs">
+            <button type="button" class="btn btn-lg btn-primary col-xs-8 col-xs-offset-2"><span class="glyphicon glyphicon-download-alt"></span> Free Download</button>
+          </div>
+          <div class="hidden-xs text-center">
+            <h3>Pay what you want</h3>
+            <div class="btn-group">
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
+              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#paymentModal': pwyw !== 0}">
+                <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
+                <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
               </button>
-              <ul class="dropdown-menu">
-                <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
-                <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
-                <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
-              </ul>
-            </div><!-- /input-group-btn -->
-            <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
-            <div class="input-group-addon">.00</div>
+            </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code={{currency.code}}&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+
+        <div class="modal" tabindex="-1" role="dialog" id="paymentModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Pay with Paypal</h4>
+              </div>
+              <div class="modal-body">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
+                      <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
+                      <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
+                    </ul>
+                  </div><!-- /input-group-btn -->
+                  <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
+                  <div class="input-group-addon">.00</div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code={{currency.code}}&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+      </div>
+      <div class="col-lg-6 col-lg-pull-6 col-md-4 col-md-pull-8">
+        <img src="img/screen_unlocked@2x.png" class="img-responsive center-block" />
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 </section>
 
 <section id="testimonials">
