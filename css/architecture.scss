@@ -4,6 +4,9 @@
 @charset "utf-8";
 @import "variables";
 
-article.layer-explanation {
-  padding: 20px 0;
+article {
+  &.layer-explanation {
+    padding-top: 2em;
+    margin-bottom: 8em;
+  }
 }

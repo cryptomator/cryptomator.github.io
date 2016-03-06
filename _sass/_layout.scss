@@ -30,7 +30,13 @@ img.avatar {
   margin: 40px;
 }
 
-#subnav li.active a {
-  background-color: $bg-green-light;
-  color: $brand-color;
+#subnav {
+  > ul {
+    position: fixed;
+
+    li.active a {
+      background-color: $bg-green-light;
+      color: $brand-color;
+    }
+  }
 }
