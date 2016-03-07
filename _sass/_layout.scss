@@ -40,3 +40,17 @@ img.avatar {
     }
   }
 }
+
+.green-background {
+  background-color: $bg-green-medium;
+  color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

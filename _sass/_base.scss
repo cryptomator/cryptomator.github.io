@@ -227,7 +227,7 @@ pre {
 
 .btn-primary {
   background-color: $brand-color;
-  border-color: $brand-color;
+  border-color: darken($brand-color, 8%);
 
   &:hover, &:focus, &:active {
     background-color: darken($brand-color, 5%);
@@ -238,5 +238,18 @@ pre {
     background-color: darken($brand-color, 8%);
     border-color: darken($brand-color, 8%);
   }
+}
 
+.btn-group > ul {
+  width: 100%;
+}
+
+.open>.dropdown-toggle.btn-primary,
+.open>.dropdown-toggle.btn-primary:hover,
+.open>.dropdown-toggle.btn-primary:focus,
+.open>.dropdown-toggle.btn-primary:active,
+.open>.dropdown-toggle.btn-primary:active:hover,
+.open>.dropdown-toggle.btn-primary:active:hover:focus {
+    background-color: darken($brand-color, 8%);
+    border-color: darken($brand-color, 8%);
 }

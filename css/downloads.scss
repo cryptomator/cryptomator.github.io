@@ -4,9 +4,13 @@
 @charset "utf-8";
 @import "variables";
 
-/*
- * Top Animation
- */
+.download {
+  padding-top: 20vh;
+}
+
+.download-btn-container {
+  margin: $spacing-unit 0;
+}
 
 .sha1sum {
   font-size: 70%;
