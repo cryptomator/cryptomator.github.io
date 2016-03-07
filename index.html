@@ -73,7 +73,7 @@ stylesheets: ['/css/index.css']
               <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
               <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
               <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
-              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#paymentModal': pwyw !== 0}">
+              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#paymentModal': pwyw !== 0}" data-ng-click="gotoDownloads(pwyw === 0)">
                 <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
                 <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
               </button>

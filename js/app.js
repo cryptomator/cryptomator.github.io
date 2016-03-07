@@ -31,7 +31,7 @@ angular.module('cryptomator').factory('googleAnalytics', ['$window', function($w
   };
 }]);
 
-angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', function($scope) {
+angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
 
   $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
   $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
@@ -44,6 +44,12 @@ angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', function
 
   $scope.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 1;
+  };
+
+  $scope.gotoDownloads = function(shouldGoToDownloads) {
+    if (shouldGoToDownloads) {
+      $window.location.href='/downloads/';
+    }
   };
 
 }]);
@@ -63,7 +69,11 @@ angular.module('cryptomator').controller('DownloadCtrl', ['$scope', 'googleAnaly
   $scope.isOSLinux = (navigator.appVersion.indexOf('Linux') != -1 || navigator.appVersion.indexOf('X11') != -1) && navigator.appVersion.indexOf('Android') == -1;
   $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
   $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
-  $scope.showAllDownloads = false;
+  $scope.initialized = false;
+
+  $scope.init = function() {
+    $scope.initialized = true;
+  };
 
   $scope.logDownload = function(fileName) {
     googleAnalytics.sendBtnClick(fileName);
@@ -160,6 +170,44 @@ angular.module('cryptomator').directive('smoothScrollTo', [function() {
           scrollTop: $(scope.target).offset().top + scope.offset
         }, scope.duration);
       });
+    }
+  };
+}]);
+
+/**
+ * If active on any element, the document will scroll by the full viewport height.
+ */
+angular.module('cryptomator').directive('pagewiseScrolling', ['$window', '$document', function($window, $document) {
+  var doc = $(document);
+
+  var scrollHandler = function(e) {
+    console.log('asd');
+    var delta = -e.deltaY || e.wheelDelta || -e.detail || e.originalEvent.wheelDelta || -e.originalEvent.detail;
+    var winHeight = $($window).height();
+    if (_.isNumber(delta)) {
+      e.preventDefault();
+    }
+    var oldTop = doc.scrollTop();
+    var newTop;
+    if (delta > 0) {
+      newTop = Math.ceil((oldTop - winHeight) / winHeight) * winHeight;
+    } else if (delta < 0) {
+      newTop = Math.ceil((oldTop + winHeight) / winHeight) * winHeight;
+    }
+    doc.scrollTop(newTop);
+  };
+
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attrs) {
+      console.log(_.isFunction(doc.scrollTop));
+      if (_.isFunction(doc.scrollTop)) {
+        $document.on('mousewheel DOMMouseScroll', scrollHandler);
+
+        elem.on('$destroy', function() {
+          $document.off('mousewheel DOMMouseScroll', scrollHandler);
+        });
+      }
     }
   };
 }]);
