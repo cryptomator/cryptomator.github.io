@@ -1,10 +1,6 @@
 ---
 layout: default
-title: 'Cryptomator: Free Cloud Encryption for Dropbox &amp; Others'
-permalink: /
-stylesheets: ['/css/index.css']
 ---
-{% raw %}
 
 <section id="top" class="halfheight top-most-element">
   <div class="container stage">
@@ -12,40 +8,40 @@ stylesheets: ['/css/index.css']
     <div class="row">
       <div class="col-xs-6 file-container">
         <div class="file file-pdf">
-          <img src="/img/file-pdf.png" srcset="img/file-pdf.png 1x, img/file-pdf@2x.png 2x"/>
+          <img src="/img/file-pdf.png" srcset="/img/file-pdf.png 1x, /img/file-pdf@2x.png 2x"/>
         </div>
         <div class="file file-jpg">
-          <img src="/img/file-jpg.png" srcset="img/file-jpg.png 1x, img/file-jpg@2x.png 2x"/>
+          <img src="/img/file-jpg.png" srcset="/img/file-jpg.png 1x, /img/file-jpg@2x.png 2x"/>
         </div>
         <div class="file file-zip">
-          <img src="/img/file-zip.png" srcset="img/file-zip.png 1x, img/file-zip@2x.png 2x"/>
+          <img src="/img/file-zip.png" srcset="/img/file-zip.png 1x, /img/file-zip@2x.png 2x"/>
         </div>
         <div class="file file-mp3">
-          <img src="/img/file-mp3.png" srcset="img/file-mp3.png 1x, img/file-mp3@2x.png 2x"/>
+          <img src="/img/file-mp3.png" srcset="/img/file-mp3.png 1x, /img/file-mp3@2x.png 2x"/>
         </div>
       </div>
       <div class="col-xs-6 file-container">
         <div class="file file-encrypted">
-          <img src="/img/file-encrypted.png" srcset="img/file-encrypted.png 1x, img/file-encrypted@2x.png 2x"/>
+          <img src="/img/file-encrypted.png" srcset="/img/file-encrypted.png 1x, /img/file-encrypted@2x.png 2x"/>
         </div>
       </div>
     </div>
     <div class="device">
-      <img class="laptop" src="/img/laptop.png" srcset="img/laptop.png 1x, img/laptop@2x.png 2x"/>
-      <img class="tablet" src="/img/tablet.png" srcset="img/tablet.png 1x, img/tablet@2x.png 2x"/>
-      <img class="smartphone" src="/img/smartphone.png" srcset="img/smartphone.png 1x, img/smartphone@2x.png 2x"/>
+      <img class="laptop" src="/img/laptop.png" srcset="/img/laptop.png 1x, /img/laptop@2x.png 2x"/>
+      <img class="tablet" src="/img/tablet.png" srcset="/img/tablet.png 1x, /img/tablet@2x.png 2x"/>
+      <img class="smartphone" src="/img/smartphone.png" srcset="/img/smartphone.png 1x, /img/smartphone@2x.png 2x"/>
     </div>
     <div class="cryptomator">
-      <img src="/img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x"/>
+      <img src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x"/>
     </div>
     <div class="cloud">
-      <img src="/img/cloud.png" srcset="img/cloud.png 1x, img/cloud@2x.png 2x"/>
+      <img src="/img/cloud.png" srcset="/img/cloud.png 1x, /img/cloud@2x.png 2x"/>
     </div>
   </div>
 
   <div class="container text-center">
     <h1>Cryptomator</h1>
-    <h2>Free client-side encryption for your cloud files.<br/>Open source software: No backdoors, no registration.</h2>
+    <h2>{{ page.labels.header.subheading }}</h2>
   </div>
 </section>
 
@@ -68,10 +64,10 @@ stylesheets: ['/css/index.css']
           <div class="hidden-xs text-center">
             <h3>Pay what you want</h3>
             <div class="btn-group">
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 [[currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 [[currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 [[currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 [[currency.symbol]]</button>
               <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
               <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#paymentModal': pwyw !== 0}" data-ng-click="gotoDownloads(pwyw === 0)">
                 <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
@@ -106,7 +102,7 @@ stylesheets: ['/css/index.css']
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code={{currency.code}}&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
+                <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[pwyw]]&amp;currency_code=[[currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
@@ -114,7 +110,7 @@ stylesheets: ['/css/index.css']
       </div>
 
       <div class="col-lg-6 col-lg-pull-6 col-md-4 col-md-pull-8">
-        <img src="img/screen_unlocked@2x.png" class="img-responsive center-block" />
+        <img src="/img/screen_unlocked@2x.png" class="img-responsive center-block"/>
       </div>
     </div><!-- /.row -->
   </div><!-- /.container -->
@@ -199,7 +195,7 @@ stylesheets: ['/css/index.css']
     <div class="row">
       <div class="col-md-4">
         <div class="text-center">
-          <img src="img/feature-1.svg" width="160" alt="Creating new vaults"/>
+          <img src="/img/feature-1.svg" width="160" alt="Creating new vaults"/>
           <div class="caption">
             <h3>Create</h3>
             <p>You can create as many encrypted directories as you like. Two in Dropbox, one in OneDrive, one on your flash drive.</p>
@@ -209,7 +205,7 @@ stylesheets: ['/css/index.css']
 
       <div class="col-md-4">
         <div class="text-center">
-          <img src="img/feature-2.svg" width="210" alt="Unlocking vaults"/>
+          <img src="/img/feature-2.svg" width="210" alt="Unlocking vaults"/>
           <div class="caption">
             <h3>Unlock</h3>
             <p>Enter your password and start access your files. Wasn&apos;t that easy?</p>
@@ -219,7 +215,7 @@ stylesheets: ['/css/index.css']
 
       <div class="col-md-4">
         <div class="text-center">
-          <img src="img/feature-3.svg" width="183" alt="Using vaults"/>
+          <img src="/img/feature-3.svg" width="183" alt="Using vaults"/>
           <div class="caption">
             <h3>Use</h3>
             <p>Every unlocked vault is accessible as a virtual hard drive in your operating system. Want to transfer files from one vault to another? No problem.</p>
@@ -323,5 +319,3 @@ stylesheets: ['/css/index.css']
     </div>
   </div>
 </section>
-
-{% endraw %}
