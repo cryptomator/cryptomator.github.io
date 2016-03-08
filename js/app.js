@@ -5,11 +5,6 @@
 
 var app = angular.module('cryptomator', ['ngCookies']);
 
-app.config(['$interpolateProvider', function($interpolateProvider) {
-  $interpolateProvider.startSymbol('[[');
-  $interpolateProvider.endSymbol(']]');
-}]);
-
 app.factory('googleAnalytics', ['$window', function($window) {
   var initialized = false;
 
