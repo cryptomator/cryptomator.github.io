@@ -1,6 +1,11 @@
-angular.module('cryptomator', ['ngCookies']);
+/**
+ * To whom it may concern: DO NOT use $location or $anchorScroll, or else all "normal" html anchors get kidnapped.
+ * We use normal $window.location.hash in many places.
+ */
 
-angular.module('cryptomator').factory('googleAnalytics', ['$window', function($window) {
+var app = angular.module('cryptomator', ['ngCookies']);
+
+app.factory('googleAnalytics', ['$window', function($window) {
   var initialized = false;
 
   return {
@@ -31,7 +36,7 @@ angular.module('cryptomator').factory('googleAnalytics', ['$window', function($w
   };
 }]);
 
-angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
 
   $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
   $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
@@ -54,7 +59,7 @@ angular.module('cryptomator').controller('CallToActionCtrl', ['$scope', '$window
 
 }]);
 
-angular.module('cryptomator').controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
 
   $scope.copyBitcoinAddress = function() {
     $window.prompt('Copy Bitcoin Address', '1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh');
@@ -62,7 +67,7 @@ angular.module('cryptomator').controller('DonateCtrl', ['$scope', '$window', fun
 
 }]);
 
-angular.module('cryptomator').controller('DownloadCtrl', ['$scope', 'googleAnalytics', function($scope, googleAnalytics) {
+app.controller('DownloadCtrl', ['$scope', '$window', 'googleAnalytics', function($scope, $window, googleAnalytics) {
 
   $scope.isOSWindows = navigator.appVersion.indexOf('Win') != -1;
   $scope.isOSMac = navigator.appVersion.indexOf('Mac') != -1 && navigator.appVersion.indexOf('iPhone') == -1;
@@ -73,6 +78,17 @@ angular.module('cryptomator').controller('DownloadCtrl', ['$scope', 'googleAnaly
 
   $scope.init = function() {
     $scope.initialized = true;
+    if (!_.isEmpty($window.location.hash)) {
+      // no-op
+    } else if ($scope.isOSWindows) {
+      $window.location.hash = 'winDownload';
+    } else if ($scope.isOSMac) {
+      $window.location.hash = 'osxDownload';
+    } else if ($scope.isOSLinux) {
+      $window.location.hash = 'debianDownload';
+    } else {
+      $window.location.hash = 'jarDownload';
+    }
   };
 
   $scope.logDownload = function(fileName) {
@@ -81,7 +97,7 @@ angular.module('cryptomator').controller('DownloadCtrl', ['$scope', 'googleAnaly
 
 }]);
 
-angular.module('cryptomator').controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
 
   $scope.copyBitcoinAddress = function() {
     $window.prompt('Copy Bitcoin Address', '1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh');
@@ -89,7 +105,7 @@ angular.module('cryptomator').controller('DonateCtrl', ['$scope', '$window', fun
 
 }]);
 
-angular.module('cryptomator').controller('CookiesCtrl', ['$http', '$scope', '$cookies', 'googleAnalytics', function($http, $scope, $cookies, googleAnalytics) {
+app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', 'googleAnalytics', function($http, $scope, $cookies, googleAnalytics) {
 
   var euIsoCountryCodes = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'];
 
@@ -132,7 +148,7 @@ angular.module('cryptomator').controller('CookiesCtrl', ['$http', '$scope', '$co
  *
  * <button conditional-modal="{'#modalDialog1': foo == 1, '#modalDialog2': foo == 2}">click</button>
  */
-angular.module('cryptomator').directive('conditionalModal', [function() {
+app.directive('conditionalModal', [function() {
   return {
     restrict: 'A',
     scope: {
@@ -154,15 +170,15 @@ angular.module('cryptomator').directive('conditionalModal', [function() {
 /**
  * Scrolls to the target specified by the given selector smoothly.
  *
- * <button smooth-scroll-to="#someDiv" smooth-scroll-offset="-80" smooth-scroll-duration="1000">click</button>
+ * <button scroll-to="#someDiv" scroll-offset="-80" scroll-duration="1000">click</button>
  */
-angular.module('cryptomator').directive('smoothScrollTo', [function() {
+app.directive('scrollTo', [function() {
   return {
     restrict: 'A',
     scope: {
-      target: '@smoothScrollTo',
-      offset: '=smoothScrollOffset',
-      duration: '=smoothScrollDuration'
+      target: '@scrollTo',
+      offset: '=scrollOffset',
+      duration: '=scrollDuration'
     },
     link: function(scope, elem, attrs) {
       $(elem).on('click', function() {
@@ -177,11 +193,10 @@ angular.module('cryptomator').directive('smoothScrollTo', [function() {
 /**
  * If active on any element, the document will scroll by the full viewport height.
  */
-angular.module('cryptomator').directive('pagewiseScrolling', ['$window', '$document', function($window, $document) {
+app.directive('pagewiseScrolling', ['$window', '$document', function($window, $document) {
   var doc = $(document);
 
   var scrollHandler = function(e) {
-    console.log('asd');
     var delta = -e.deltaY || e.wheelDelta || -e.detail || e.originalEvent.wheelDelta || -e.originalEvent.detail;
     var winHeight = $($window).height();
     if (_.isNumber(delta)) {
@@ -200,7 +215,6 @@ angular.module('cryptomator').directive('pagewiseScrolling', ['$window', '$docum
   return {
     restrict: 'A',
     link: function(scope, elem, attrs) {
-      console.log(_.isFunction(doc.scrollTop));
       if (_.isFunction(doc.scrollTop)) {
         $document.on('mousewheel DOMMouseScroll', scrollHandler);
 
@@ -221,7 +235,7 @@ angular.module('cryptomator').directive('pagewiseScrolling', ['$window', '$docum
  *   This gets styled with state1 when 100px between upper viewport bound and element top, state2 when scrolled to element top, state3 when element is already 100px covered
  * </div>
  */
-angular.module('cryptomator').directive('scrollToggleClass', ['$window', function($window) {
+app.directive('scrollToggleClass', ['$window', function($window) {
 
   var findHighest = function(styleClasses, position) {
     return _.findLastKey(styleClasses, function(threshold) {

@@ -5,10 +5,10 @@ permalink: /downloads/
 stylesheets: ['/css/downloads.css']
 ---
 
-<div class="container ng-cloak" data-ng-controller="DownloadCtrl" data-pagewise-scrolling="data-pagewise-scrolling">
+<div class="container" data-ng-controller="DownloadCtrl" data-pagewise-scrolling="data-pagewise-scrolling">
 
-  <section class="row fullheight download text-center" data-ng-init="init()" data-ng-show="!initialized">
-    <div class="page-header text-center">
+  <section id="loadScreen" class="fullheight download" data-ng-init="init()" data-ng-show="!initialized">
+    <div class="text-center">
       <h2>Cryptomator download</h2>
       <p class="lead">Choosing download for your operating system...</p>
     </div>
@@ -156,7 +156,7 @@ stylesheets: ['/css/downloads.css']
     </div>
   </section>
 
-  <section id="debianDownload" class="row fullheight download">
+  <section id="jarDownload" class="row fullheight download">
     <div class="col-md-6">
       <img src="/img/java_icon128@2x.png" class="img-responsive center-block"/>
     </div>
@@ -189,8 +189,8 @@ stylesheets: ['/css/downloads.css']
     </div>
   </section>
 
-  <section id="allVersions" class="fullheight">
-    <div class="page-header text-center">
+  <section id="allVersions" class="fullheight download">
+    <div class="text-center">
       <h2>All versions</h2>
       <p class="lead">Version 0.11 (3rd March, 2016)</p>
     </div>

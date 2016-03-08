@@ -1,3 +1,15 @@
+body {
+  box-sizing: border-box;
+}
+
+.top-most-element {
+  padding-top: 50px;
+
+  h1 {
+    margin-top: $spacing-unit/2;
+  }
+}
+
 #cookieConsent {
   position: fixed;
   bottom: 0;
