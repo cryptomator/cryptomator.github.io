@@ -41,8 +41,8 @@ ul, ol, dl, figure,
  * Set paddings for horizontal separator
  */
 hr {
-  padding-top: $spacing-unit / 2;
-  padding-bottom: $spacing-unit / 2;
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 
 
@@ -94,6 +94,26 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 
+h1 {
+  font-size: 36px;
+  @media (max-width: 1024px) {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  @media (max-width: 1024px) {
+    font-size: 18px;
+  }
+}
 
 
 /**

@@ -12,34 +12,34 @@ stylesheets: ['/css/index.css']
     <div class="row">
       <div class="col-xs-6 file-container">
         <div class="file file-pdf">
-          <img src="/img/file-pdf.png" srcset="img/file-pdf.png 1x, img/file-pdf@2x.png 2x"/>
+          <img src="/img/stage/file-pdf.png" srcset="/img/stage/file-pdf.png 1x, /img/stage/file-pdf@2x.png 2x"/>
         </div>
         <div class="file file-jpg">
-          <img src="/img/file-jpg.png" srcset="img/file-jpg.png 1x, img/file-jpg@2x.png 2x"/>
+          <img src="/img/stage/file-jpg.png" srcset="/img/stage/file-jpg.png 1x, /img/stage/file-jpg@2x.png 2x"/>
         </div>
         <div class="file file-zip">
-          <img src="/img/file-zip.png" srcset="img/file-zip.png 1x, img/file-zip@2x.png 2x"/>
+          <img src="/img/stage/file-zip.png" srcset="/img/stage/file-zip.png 1x, /img/stage/file-zip@2x.png 2x"/>
         </div>
         <div class="file file-mp3">
-          <img src="/img/file-mp3.png" srcset="img/file-mp3.png 1x, img/file-mp3@2x.png 2x"/>
+          <img src="/img/stage/file-mp3.png" srcset="/img/stage/file-mp3.png 1x, /img/stage/file-mp3@2x.png 2x"/>
         </div>
       </div>
       <div class="col-xs-6 file-container">
         <div class="file file-encrypted">
-          <img src="/img/file-encrypted.png" srcset="img/file-encrypted.png 1x, img/file-encrypted@2x.png 2x"/>
+          <img src="/img/stage/file-encrypted.png" srcset="/img/stage/file-encrypted.png 1x, /img/stage/file-encrypted@2x.png 2x"/>
         </div>
       </div>
     </div>
     <div class="device">
-      <img class="laptop" src="/img/laptop.png" srcset="img/laptop.png 1x, img/laptop@2x.png 2x"/>
-      <img class="tablet" src="/img/tablet.png" srcset="img/tablet.png 1x, img/tablet@2x.png 2x"/>
-      <img class="smartphone" src="/img/smartphone.png" srcset="img/smartphone.png 1x, img/smartphone@2x.png 2x"/>
+      <img class="laptop" src="/img/stage/laptop.png" srcset="/img/stage/laptop.png 1x, /img/stage/laptop@2x.png 2x"/>
+      <img class="tablet" src="/img/stage/tablet.png" srcset="/img/stage/tablet.png 1x, /img/stage/tablet@2x.png 2x"/>
+      <img class="smartphone" src="/img/stage/smartphone.png" srcset="/img/stage/smartphone.png 1x, /img/stage/smartphone@2x.png 2x"/>
     </div>
     <div class="cryptomator">
-      <img src="/img/logo.png" srcset="img/logo.png 1x, img/logo@2x.png 2x"/>
+      <img src="/img/stage/logo.png" srcset="/img/stage/logo.png 1x, /img/stage/logo@2x.png 2x"/>
     </div>
     <div class="cloud">
-      <img src="/img/cloud.png" srcset="img/cloud.png 1x, img/cloud@2x.png 2x"/>
+      <img src="/img/stage/cloud.png" srcset="/img/stage/cloud.png 1x, /img/stage/cloud@2x.png 2x"/>
     </div>
   </div>
 
@@ -49,75 +49,74 @@ stylesheets: ['/css/index.css']
   </div>
 </section>
 
-<section id="call-to-action" class="halfheight" data-ng-controller="CallToActionCtrl">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-lg-push-6 col-md-8 col-md-push-4">
-        <div class="text-center">
-          <h2>Get Cryptomator</h2>
-        </div>
+<section id="call-to-action" class="container halfheight" data-ng-controller="CallToActionCtrl">
+  <div class="row">
+    <div class="col-lg-6 col-md-4">
+      <img src="img/feature-image.png" srcset="/img/feature-image.png 1x, /img/feature-image@2x.png 2x" class="img-responsive center-block" />
+    </div>
 
-        <div class="text-center" data-ng-show="isOSiOS">
-          <p>App Store!</p>
-        </div>
+    <div class="col-lg-6 col-md-8">
+      <div class="text-center">
+        <h2>Get Cryptomator</h2>
+      </div>
 
-        <div data-ng-show="!isOSiOS &amp;&amp; !isOSAndroid">
-          <div class="row visible-xs">
-            <button type="button" class="btn btn-lg btn-primary col-xs-8 col-xs-offset-2"><span class="glyphicon glyphicon-download-alt"></span> Free Download</button>
+      <div data-ng-show="!(isOSiOS || isOSAndroid)">
+        <div class="visible-xs">
+          <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> Free Download</button>
+        </div>
+        <div class="hidden-xs text-center">
+          <h3>Pay what you want</h3>
+          <div class="btn-group">
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
+            <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#payment-modal': pwyw !== 0}" data-ng-click="gotoDownloads(pwyw === 0)">
+              <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
+              <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
+            </button>
           </div>
-          <div class="hidden-xs text-center">
-            <h3>Pay what you want</h3>
-            <div class="btn-group">
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
-              <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
-              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#paymentModal': pwyw !== 0}" data-ng-click="gotoDownloads(pwyw === 0)">
-                <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
-                <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
-              </button>
+        </div>
+      </div>
+
+      <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
+        <a href="https://itunes.apple.com/app/cryptomator/id953086535" target="_blank"><img src="img/appstore-badge.svg"/></a>
+      </div>
+
+      <div class="modal" tabindex="-1" role="dialog" id="payment-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Pay with Paypal</h4>
             </div>
-          </div>
-        </div>
+            <div class="modal-body">
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
+                    <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
+                    <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
+                  </ul>
+                </div><!-- /input-group-btn -->
+                <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
+                <div class="input-group-addon">.00</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code={{currency.code}}&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
 
-        <div class="modal" tabindex="-1" role="dialog" id="paymentModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Pay with Paypal</h4>
-              </div>
-              <div class="modal-body">
-                <div class="input-group">
-                  <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
-                      <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
-                      <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
-                    </ul>
-                  </div><!-- /input-group-btn -->
-                  <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
-                  <div class="input-group-addon">.00</div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code={{currency.code}}&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org" class="btn btn-primary">Proceed</a>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-      </div>
-
-      <div class="col-lg-6 col-lg-pull-6 col-md-4 col-md-pull-8">
-        <img src="img/screen_unlocked@2x.png" class="img-responsive center-block" />
-      </div>
-    </div><!-- /.row -->
-  </div><!-- /.container -->
+  </div><!-- /.row -->
 </section>
 
 <section id="testimonials">
@@ -142,19 +141,14 @@ stylesheets: ['/css/index.css']
       </blockquote>
 
       <blockquote>
-        <p>Cryptomator rulez4</p>
-        <footer>God4</footer>
-      </blockquote>
-
-      <blockquote>
-        <p>Cryptomator rulez5</p>
-        <footer>God5</footer>
+        <p>This is the kind of app, the world has been waiting for!</p>
+        <footer>Daniel</footer>
       </blockquote>
     </div>
   </div>
 </section>
 
-<section id="howto" class="green-background">
+<section id="howto" class="green-background xs-hidden">
   <div class="container text-center">
     <h2>How does Cryptomator protect your cloud files?</h2>
   </div>
@@ -181,7 +175,7 @@ stylesheets: ['/css/index.css']
             <h3>Files get encrypted individually</h3>
             <p>Everything you put onto the virtual hard drive ends up encrypted in your vault.</p>
             <p>Other than disk encryption utilities, Cryptomator encrypts each file for its own. So if you edit just a small text file, only the corresponding encrypted file is changed.</p>
-            <p>This way the synchronization client of your cloud storage provider knows exactly what to be uploaded and what doesn&apos;t.</p>
+            <p>This way the synchronization client of your cloud storage provider knows exactly what needs to be uploaded and what doesn&apos;t.</p>
           </div>
         </div>
       </div>
@@ -191,38 +185,35 @@ stylesheets: ['/css/index.css']
 
 <section id="features">
   <div class="container">
-    <div class="text-center">
-      <h2>Features</h2>
-      <p class="lead">Cryptomator provides transparent, client-side encryption for your cloud. Securely protect your documents from unauthorized access. Cryptomator is open source software, so you can rest assured there are no backdoors.</p>
-    </div>
+    <h2 class="text-center">What you need to do…</h2>
 
     <div class="row">
       <div class="col-md-4">
         <div class="text-center">
-          <img src="img/feature-1.svg" width="160" alt="Creating new vaults"/>
+          <img src="/img/feature-1.svg" alt="Creating new vaults" class="feature-icon"/>
           <div class="caption">
             <h3>Create</h3>
-            <p>You can create as many encrypted directories as you like. Two in Dropbox, one in OneDrive, one on your flash drive.</p>
+            <p>Create vaults in your Dropbox, Google Drive or wherever you like. Assign a passphrase and you're ready to go.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="text-center">
-          <img src="img/feature-2.svg" width="210" alt="Unlocking vaults"/>
+          <img src="/img/feature-2.svg" alt="Unlocking vaults" class="feature-icon"/>
           <div class="caption">
-            <h3>Unlock</h3>
-            <p>Enter your password and start access your files. Wasn&apos;t that easy?</p>
+            <h3>Drag &amp; Drop</h3>
+            <p>Store your sensitive data on the virtual drive provided by Cryptomator. Wasn&apos;t that easy?</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="text-center">
-          <img src="img/feature-3.svg" width="183" alt="Using vaults"/>
+          <img src="/img/feature-3.svg" alt="Cloud is encrypted" class="feature-icon"/>
           <div class="caption">
-            <h3>Use</h3>
-            <p>Every unlocked vault is accessible as a virtual hard drive in your operating system. Want to transfer files from one vault to another? No problem.</p>
+            <h3>Relax</h3>
+            <p>Cryptomator encrypts everything you put into the drive on-the-fly. Your cloud is now secure.</p>
           </div>
         </div>
       </div>
@@ -230,54 +221,29 @@ stylesheets: ['/css/index.css']
 
     <hr/>
 
+    <h2 class="text-center lead">Cryptomator provides transparent, client-side encryption for your cloud. Protect your documents from unauthorized access. Cryptomator is free and open source software, so you can rest assured there are no backdoors.</h2>
+
     <div class="row">
-      <div class="col-md-4">
-        <h4>Secure</h4>
-        <p>Cryptomator encrypts your files&apos; contents and names using AES with up to 256 bit keylength. Scrypt hardens your key against bruteforcing.</p>
+      <div class="col-md-6">
+        <img src="/img/screenshots/app1.png" srcset="/img/screenshots/app1.png 1x, /img/screenshots/app1@2x.png 2x" class="img-responsive center-block"/>
       </div>
-
-      <div class="col-md-4">
-        <h4>Transparent</h4>
-        <p>Your applications can work with encrypted files without even noticing. Cryptomator will make your encrypted folder available as a virtual hard drive.</p>
-      </div>
-
-      <div class="col-md-4">
-        <h4>Lean</h4>
-        <p>Cryptomator doesn&apos;t flood your computer with funny support files or even drivers. Also Cryptomator&apos;s internals are very simple. We believe, that complexity kills security.</p>
+      <div class="col-md-6">
+        <h3>Easy and Reliable</h3>
+        <p>We understand simplicity as a key aspect of security. With Cryptomator you don't have to deal with accounts, key management, cloud access grants or cipher configurations. Just choose a password and you're ready to go.</p>
+        <p>You don't even need to specify what cloud you use. Cryptomator encrypts files and doesn't care where you store them. This makes it a lightweight application, which we believe is a huge benefit for reliability. Complexity would kill security.</p>
+        <p>Cryptomator is a so-called <em>transparent</em> encryption utility. This means that you don't have to learn new workflows. Just work with your files as you're used to.</p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4">
-        <h4>Easy</h4>
-        <p>Choose a password and continue working normally on your files. No configuration needed. No accounts required.</p>
+      <div class="col-md-6">
+        <h3>Secure and Trustworthy</h3>
+        <p>Cryptomator encrypts file contents and names using AES. Your passphrase is protected against bruteforcing attempts using scrypt. Directory structures and file sizes get obfuscated. The only thing which cannot be encrypted without breaking your cloud synchronization is the modification date of your files.</p>
+        <p>Cryptomator is a free and open source software licensed under the MIT / X Consortium License. This allows anyone to check our code. It is impossible to introduce backdoors for third parties. Also we cannot hide vulnerabilities. And the best thing is: There is no need to trust us, as you can control us!</p>
+        <p>Vendor lock-ins are impossible. Even if we decided to stop development: The source code is already cloned by hundreds of other developers. As you don't need an account, you will never stand in front of locked doors.</p>
       </div>
-
-      <div class="col-md-4">
-        <h4>Trustworthy</h4>
-        <p>Cryptomator is secure. Ever read this sentence before? Well in this case you don&apos;t need to trust us. You can control us. Cryptomator is completely open source software.</p>
-      </div>
-
-      <div class="col-md-4">
-        <h4>Discreet</h4>
-        <p>Cryptomator doesn&apos;t need your cloud passwords. It works on your local machine and doesn&apos;t care about the accounts you use.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-4">
-        <h4>Compatible</h4>
-        <p>Dropbox, OneDrive, Google Drive, ...? Cryptomator works with every single cloud storage provider, as long as your files are sync&apos;ed to your computer.</p>
-      </div>
-
-      <div class="col-md-4">
-        <h4>Multiplatform</h4>
-        <p>Cryptomator is based on Java technology and runs on all major desktop operating systems. Smartphone apps will follow.</p>
-      </div>
-
-      <div class="col-md-4">
-        <h4>Free and open source</h4>
-        <p>Other than most cloud encryption tools, Cryptomator doesn&apos;t cost a penny. You don&apos;t even need to create an account! It is open source software licensed under the MIT X Consortium license, so you will never stand in front of locked doors in the future.</p>
+      <div class="col-md-6">
+        <img src="/img/screenshots/app2.png" srcset="/img/screenshots/app2.png 1x, /img/screenshots/app2@2x.png 2x" class="img-responsive center-block"/>
       </div>
     </div>
   </div>

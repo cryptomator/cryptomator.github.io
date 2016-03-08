@@ -12,10 +12,12 @@
   position: relative;
   height: 15vw; // relative to width by choice
   max-height: 250px;
+  margin-top: $spacing-unit/2;
 
   > hr {
     position: absolute;
     padding: 0;
+    margin: 0;
     border: 0;
     border-bottom: 4px dashed #eee;
     background: none;
@@ -219,6 +221,26 @@
 
 }
 
+#top h2 {
+  padding-bottom: 1em;
+}
+
+#call-to-action {
+  padding-bottom: $spacing-unit;
+
+  h2 {
+    padding-top: 1em;
+  }
+
+  .appStoreBtn {
+    margin: $spacing-unit/2 0;
+  }
+}
+
+#payment-modal .modal-dialog {
+  padding-top: 20vh;
+}
+
 /*
  * How it works explanation
  */
@@ -243,7 +265,7 @@
   }
 
   #howto-cleartext {
-    background-image: url(/img/screenshot_cleartext_en@2x.png);
+    background-image: url(/img/screenshots/finder_cleartext_en@2x.png);
     background-attachment: scroll;
     background-position: 0 0;
   }
@@ -255,7 +277,7 @@
   }
 
   #howto-ciphertext {
-    background-image: url(/img/screenshot_ciphertext_en@2x.png);
+    background-image: url(/img/screenshots/finder_ciphertext_en@2x.png);
     background-attachment: fixed;
     background-position: 0 300px;
   }
@@ -283,21 +305,22 @@
 
     @keyframes move-quotes {
       0% { opacity: 0; left: 100%; }
-      3% { opacity: 1; left: -50%; }
-      17% { opacity: 1; left: -50%; }
-      20% { opacity: 0; left: -150%; }
-      23% { opacity: 1; left: -250%; }
-      37% { opacity: 1; left: -250%; }
-      40% { opacity: 0; left: -350%; }
-      43% { opacity: 1; left: -450%; }
-      57% { opacity: 1; left: -450%; }
-      60% { opacity: 0; left: -550%; }
-      63% { opacity: 1; left: -650%; }
-      77% { opacity: 1; left: -650%; }
-      80% { opacity: 0; left: -750%; }
-      83% { opacity: 1; left: -850%; }
-      97% { opacity: 1; left: -850%; }
-      100% { opacity: 0; left: -950%; }
+
+      5% { opacity: 1; left: -50%; }
+      20% { opacity: 1; left: -50%; }
+      25% { opacity: 0; left: -150%; }
+
+      30% { opacity: 1; left: -250%; }
+      45% { opacity: 1; left: -250%; }
+      50% { opacity: 0; left: -350%; }
+
+      55% { opacity: 1; left: -450%; }
+      70% { opacity: 1; left: -450%; }
+      75% { opacity: 0; left: -550%; }
+      
+      80% { opacity: 1; left: -650%; }
+      95% { opacity: 1; left: -650%; }
+      100% { opacity: 0; left: -750%; }
     }
 
     > .scroller {
@@ -337,6 +360,15 @@
 #features {
   padding-top: 48px;
   padding-bottom: 48px;
+
+  .row {
+    padding-top: $spacing-unit;
+  }
+
+  img.feature-icon {
+    height: 145px;
+    padding-bottom: $spacing-unit/2;
+  }
 }
 
 #newsletter {

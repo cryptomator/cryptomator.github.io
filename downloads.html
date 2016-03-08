@@ -15,10 +15,10 @@ stylesheets: ['/css/downloads.css']
   </section>
 
   <section id="winDownload" class="row fullheight download">
-    <div class="col-md-6">
-      <img src="/img/windows_icon128@2x.png" class="img-responsive center-block"/>
+    <div class="col-md-6 col-lg-8">
+      <img src="/img/screenshots/dl_win.png" srcset="/img/screenshots/dl_win.png 1x, /img/screenshots/dl_win@2x.png 2x"  class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-4">
       <div class="text-center">
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
@@ -76,10 +76,10 @@ stylesheets: ['/css/downloads.css']
   </section>
 
   <section id="osxDownload" class="row fullheight download">
-    <div class="col-md-6">
-      <img src="/img/finder_icon128@2x.png" class="img-responsive center-block"/>
+    <div class="col-md-6 col-lg-8">
+      <img src="/img/screenshots/dl_osx.png" srcset="/img/screenshots/dl_osx.png 1x, /img/screenshots/dl_osx@2x.png 2x"  class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-4">
       <div class="text-center">
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
@@ -116,10 +116,10 @@ stylesheets: ['/css/downloads.css']
   </section>
 
   <section id="debianDownload" class="row fullheight download">
-    <div class="col-md-6">
-      <img src="/img/tux_icon128@2x.png" class="img-responsive center-block"/>
+    <div class="col-md-6 col-lg-8">
+      <img src="/img/screenshots/dl_debian.png" srcset="/img/screenshots/dl_debian.png 1x, /img/screenshots/dl_debian@2x.png 2x"  class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-4">
       <div class="text-center">
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
@@ -157,10 +157,10 @@ stylesheets: ['/css/downloads.css']
   </section>
 
   <section id="jarDownload" class="row fullheight download">
-    <div class="col-md-6">
-      <img src="/img/java_icon128@2x.png" class="img-responsive center-block"/>
+    <div class="col-md-6 col-lg-8">
+      <img src="/img/screenshots/dl_jar.png" srcset="/img/screenshots/dl_jar.png 1x, /img/screenshots/dl_jar@2x.png 2x" class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-lg-4">
       <div class="text-center">
         <div class="caption text-center">
           <h2>Executable JAR-File</h2>
@@ -192,7 +192,7 @@ stylesheets: ['/css/downloads.css']
   <section id="allVersions" class="fullheight download">
     <div class="text-center">
       <h2>All versions</h2>
-      <p class="lead">Version 0.11 (3rd March, 2016)</p>
+      <p class="lead">Version 1.0 (9th March, 2016)</p>
     </div>
 
     <table class="table table-hover">
@@ -208,6 +208,33 @@ stylesheets: ['/css/downloads.css']
         <tr><th>Version</th><th>Notes</th><th>Release Date</th><th>Windows</th><th>Mac OS X</th><th>Linux</th></tr>
       </thead>
       <tbody>
+        <!-- 1.0 -->
+        <tr>
+          <th>1.0</th>
+          <td>
+            <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.0.0" target="_blank" role="button">Changelog</a>
+          </td>
+          <td>2016-03-09</td>
+          <td>
+            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.0.exe" data-ng-click="logDownloadload('Cryptomator-1.0.0.exe')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.0.exe
+            </a>
+            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.0-amd64.exe" data-ng-click="logDownloadload('Cryptomator-1.0.0-amd64.exe')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.0-amd64.exe
+            </a>
+          </td>
+          <td>
+            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.0.dmg" data-ng-click="logDownloadload('Cryptomator-1.0.0.dmg')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.0.dmg
+            </a>
+          </td>
+          <td>
+            <a href="//bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-1.0.0.deb" data-ng-click="logDownloadload('Cryptomator-1.0.0.deb')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.0.deb
+            </a>
+          </td>
+        </tr>
+
         <!-- 0.11 -->
         <tr>
           <th>0.11 <span class="label label-warning">BETA</span></th>

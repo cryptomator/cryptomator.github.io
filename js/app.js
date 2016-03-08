@@ -38,8 +38,8 @@ app.factory('googleAnalytics', ['$window', function($window) {
 
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
 
-  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
-  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
+  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
+  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
 
   $scope.pwyw = 5;
   $scope.currencyEUR = {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'};
@@ -69,11 +69,11 @@ app.controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
 
 app.controller('DownloadCtrl', ['$scope', '$window', 'googleAnalytics', function($scope, $window, googleAnalytics) {
 
-  $scope.isOSWindows = navigator.appVersion.indexOf('Win') != -1;
-  $scope.isOSMac = navigator.appVersion.indexOf('Mac') != -1 && navigator.appVersion.indexOf('iPhone') == -1;
-  $scope.isOSLinux = (navigator.appVersion.indexOf('Linux') != -1 || navigator.appVersion.indexOf('X11') != -1) && navigator.appVersion.indexOf('Android') == -1;
-  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') != -1;
-  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') != -1;
+  $scope.isOSWindows = navigator.appVersion.indexOf('Win') !== -1;
+  $scope.isOSMac = navigator.appVersion.indexOf('Mac') !== -1 && navigator.appVersion.indexOf('iPhone') === -1;
+  $scope.isOSLinux = (navigator.appVersion.indexOf('Linux') !== -1 || navigator.appVersion.indexOf('X11') !== -1) && navigator.appVersion.indexOf('Android') === -1;
+  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
+  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
   $scope.initialized = false;
 
   $scope.init = function() {
