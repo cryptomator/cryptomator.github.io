@@ -2,6 +2,7 @@
 layout: container
 title: Datenschutz
 permalink: /datenschutz/
+sitemap: false
 ---
 
 # Datenschutzerklärung

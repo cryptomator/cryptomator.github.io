@@ -2,6 +2,7 @@
 layout: container
 title: Privacy
 permalink: /privacy/
+sitemap: false
 ---
 
 # Privacy Policy

@@ -2,6 +2,7 @@
 layout: container
 title: Impressum
 permalink: /impressum/
+sitemap: false
 ---
 
 # Impressum
