@@ -36,7 +36,7 @@ app.factory('googleAnalytics', ['$window', function($window) {
   };
 }]);
 
-app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('CallToActionCtrl', ['$scope', '$window', 'googleAnalytics', function($scope, $window, googleAnalytics) {
 
   $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
   $scope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
@@ -51,9 +51,13 @@ app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $windo
     return _.isNumber(amount) && amount >= 1;
   };
 
+  $scope.sendAppStoreBtnClick = function() {
+    googleAnalytics.sendBtnClick('appstore');
+  };
+
   $scope.gotoDownloads = function(shouldGoToDownloads) {
     if (shouldGoToDownloads) {
-      $window.location.href='/downloads/';
+      $window.location.href = '/downloads/';
     }
   };
 
@@ -107,38 +111,16 @@ app.controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
 
 app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', 'googleAnalytics', function($http, $scope, $cookies, googleAnalytics) {
 
-  var euIsoCountryCodes = ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'];
-
-  $scope.consentRequired = false;
-  $scope.consentDismissed = false;
   $scope.consentGiven = !_.isEmpty($cookies.get('cookieConsent'));
 
-  if ($scope.consentGiven) {
-    googleAnalytics.initialize();
-    googleAnalytics.sendPageView();
-  } else {
-    $http.jsonp('http://freegeoip.net/json/?callback=JSON_CALLBACK', {timeout: 5000}).success(function(data) {
-      $scope.consentRequired = _.includes(euIsoCountryCodes, data.country_code);
-      if (!$scope.consentRequired) {
-        googleAnalytics.initialize();
-        googleAnalytics.sendPageView();
-      }
-    }).error(function() {
-      $scope.consentRequired = true;
-    });
-  }
+  googleAnalytics.initialize();
+  googleAnalytics.sendPageView();
 
-  $scope.agree = function() {
+  $scope.confirm = function() {
     var expireDate = new Date();
     expireDate.setFullYear(expireDate.getFullYear() + 1);
     $cookies.put('cookieConsent', 'given_' + new Date().toISOString(), {expires: expireDate});
     $scope.consentGiven = true;
-    googleAnalytics.initialize();
-    googleAnalytics.sendPageView();
-  };
-
-  $scope.dismiss = function() {
-    $scope.consentDismissed = true;
   };
 
 }]);
