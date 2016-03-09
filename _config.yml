@@ -1,0 +1,21 @@
+# Site settings
+title: cryptomator.org
+description: >
+  Free & Open Source client-side encryption for Dropbox, Google Drive, you name it. Protect your cloud files. Free software. No accounts, no backdoors.
+url: "https://cryptomator.org" # the base hostname & protocol for your site
+
+# Plugins
+gems:
+  - jemoji
+  - jekyll-redirect-from
+
+# Outputting
+permalink: /blog/:year/:month/:day/:title.html
+
+# Compress CSS:
+sass:
+#  style: compressed
+
+# Github Flavoured Markdown
+kramdown:
+  input: GFM

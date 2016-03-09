@@ -1,0 +1,15 @@
+---
+layout: container
+title: Blog
+permalink: /blog/
+---
+
+<dl class="dl-horizontal top-most-element">
+  {% for post in site.posts %}
+  <dt>{{ post.date | date: "%Y-%m-%d" }}</dt>
+  <dd>
+    <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p>{{post.excerpt}}</p>
+  </dd>
+  {% endfor %}
+</dl>

@@ -1,0 +1,377 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+/*
+ * Stage Animation
+ */
+
+.stage {
+  position: relative;
+  height: 15vw; // relative to width by choice
+  max-height: 250px;
+  margin-top: $spacing-unit/2;
+
+  > hr {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 4px dashed #eee;
+    background: none;
+    width: 77.5%;
+    top: 50%;
+    left: 10%;
+  }
+
+  @keyframes device-fade {
+    0% { opacity: 0; transform: scale(0.8); }
+    2.5% { opacity: 1; transform: scale(1.05); }
+    3% { opacity: 1; transform: scale(1.0); }
+    33% { opacity: 1; transform: scale(1.0); }
+    36% { opacity: 0; transform: scale(0.8); }
+  }
+
+  .device {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    margin-left: -7.5%;
+    top: 0;
+    left: 10%;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .laptop,
+  .tablet,
+  .smartphone {
+    opacity: 0;
+    animation: device-fade 12s linear infinite;
+  }
+
+  .laptop {
+    width: 100%;
+  }
+
+  .tablet {
+    width: 50%;
+    animation-delay: 4s;
+  }
+
+  .smartphone {
+    width: 25%;
+    animation-delay: 8s;
+  }
+
+  .row {
+    height: 100%;
+  }
+
+  .file-container {
+    position: relative;
+    height: 100%;
+  }
+
+  .file {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left: 100%;
+    margin-left: -10%;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @keyframes file-left-move {
+    0% { left: 20%; }
+    25% { left: 100%; }
+  }
+
+  @keyframes grow {
+    0% { width: 25%; }
+    25% { width: 100%; }
+  }
+
+  .file-pdf,
+  .file-jpg,
+  .file-zip,
+  .file-mp3 {
+    animation: file-left-move 16s ease-in infinite;
+
+    > img {
+      animation: grow 16s ease-in infinite;
+    }
+  }
+
+  .file-pdf {
+    animation-delay: 1s;
+
+    > img {
+      animation-delay: 1s;
+    }
+  }
+
+  .file-jpg {
+    animation-delay: 5s;
+
+    > img {
+      animation-delay: 5s;
+    }
+  }
+
+  .file-zip {
+    animation-delay: 9s;
+
+    > img {
+      animation-delay: 9s;
+    }
+  }
+
+  .file-mp3 {
+    animation-delay: 13s;
+
+    > img {
+      animation-delay: 13s;
+    }
+  }
+
+  @keyframes encryption {
+    0% { transform: rotate(0deg); }
+    1.5% { transform: rotate(1deg); }
+    3% { transform: rotate(-1deg); }
+    4.5% { transform: rotate(1deg); }
+    6% { transform: rotate(-1deg); }
+    7.5% { transform: rotate(0deg); }
+  }
+
+  .cryptomator {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    margin-left: -10%;
+    top: 0;
+    left: 50%;
+    animation: encryption 4s ease-in-out 5s infinite;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @keyframes file-right-move {
+    from { left: 0; }
+    to { left: 80%; }
+  }
+
+  @keyframes shrink {
+    from { width: 100%; }
+    to { width: 25%; }
+  }
+
+  .file-encrypted {
+    left: 0%;
+    animation: file-right-move 4s ease-out 5.3s infinite;
+
+    > img {
+      animation: shrink 4s ease-out 5.3s infinite;
+    }
+  }
+
+  .cloud {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    right: 12.5%;
+    margin-top: -2%;
+    margin-right: -10%;
+
+    > img {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+}
+
+#top h2 {
+  padding-bottom: 1em;
+}
+
+#call-to-action {
+  padding-bottom: $spacing-unit;
+
+  h2 {
+    padding-top: 1em;
+  }
+
+  .appStoreBtn {
+    margin: $spacing-unit/2 0;
+  }
+}
+
+#payment-modal .modal-dialog {
+  padding-top: 20vh;
+}
+
+/*
+ * How it works explanation
+ */
+
+#howto {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  #howto-cleartext,
+  #howto-ciphertext {
+    padding-top: 48px;
+    height: 600px;
+    background-repeat: no-repeat;
+
+    @media (max-width: 1855px) {
+      background-size: 50% auto;
+    }
+
+    @media (min-width: 1856px) {
+      background-size: auto 600px;
+    }
+  }
+
+  #howto-cleartext {
+    background-image: url(/img/screenshots/finder_cleartext_en@2x.png);
+    background-attachment: scroll;
+    background-position: 0 0;
+  }
+
+  .scrollPhase1 #howto-cleartext,
+  .scrollPhase2 #howto-cleartext {
+    background-attachment: fixed;
+    background-position: 0 300px;
+  }
+
+  #howto-ciphertext {
+    background-image: url(/img/screenshots/finder_ciphertext_en@2x.png);
+    background-attachment: fixed;
+    background-position: 0 300px;
+  }
+
+  .scrollPhase2 #howto-ciphertext {
+    background-attachment: scroll;
+    background-position: 0 0;
+  }
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+/*
+ * Testimonials Animation
+ */
+
+#testimonials {
+  padding-bottom: 48px;
+
+  > .scroll-container {
+    overflow: hidden;
+    position: relative;
+
+    @keyframes move-quotes {
+      0% { opacity: 0; left: 100%; }
+
+      5% { opacity: 1; left: -50%; }
+      20% { opacity: 1; left: -50%; }
+      25% { opacity: 0; left: -150%; }
+
+      30% { opacity: 1; left: -250%; }
+      45% { opacity: 1; left: -250%; }
+      50% { opacity: 0; left: -350%; }
+
+      55% { opacity: 1; left: -450%; }
+      70% { opacity: 1; left: -450%; }
+      75% { opacity: 0; left: -550%; }
+      
+      80% { opacity: 1; left: -650%; }
+      95% { opacity: 1; left: -650%; }
+      100% { opacity: 0; left: -750%; }
+    }
+
+    > .scroller {
+      width: 100%;
+      position: relative;
+      white-space: nowrap;
+      animation: move-quotes 30s infinite;
+
+      > blockquote {
+        display: inline-block;
+        vertical-align: middle;
+
+        @media (max-width: 480px) {
+          width: 96%;
+          margin-left: 52%;
+          margin-right: 52%;
+        }
+
+        @media (min-width: 481px) {
+          width: 40%;
+          margin-left: 80%;
+          margin-right: 80%;
+        }
+
+        > p {
+          white-space: pre-wrap;
+        }
+      }
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+#features {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  .row {
+    padding-top: $spacing-unit;
+  }
+
+  img.feature-icon {
+    height: 145px;
+    padding-bottom: $spacing-unit/2;
+  }
+}
+
+#newsletter {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}

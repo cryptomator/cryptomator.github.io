@@ -66,6 +66,7 @@ module.exports = function(grunt) {
 					'dist/help.min.css': ['css/bootstrap.css', 'css/main.css'],
 					'dist/impressum.min.css': ['css/bootstrap.css', 'css/main.css'],
 					'dist/privacy.min.css': ['css/bootstrap.css', 'css/main.css'],
+					'dist/architecture.min.css': ['css/bootstrap.css', 'css/main.css'],
 					'dist/thankyou.min.css': ['css/bootstrap.css', 'css/main.css']
 	      }
 			}
@@ -99,6 +100,9 @@ module.exports = function(grunt) {
 		  },
 			privacy: {
 		    files: {'dist/privacy.css': ['privacy.html']}
+		  },
+			architecture: {
+		    files: {'dist/architecture.css': ['architecture.html']}
 		  },
 			thankyou: {
 		    files: {'dist/thankyou.css': ['thankyou.html']}
@@ -140,7 +144,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
         files: 'css/main.css',
-        tasks: ['concat:cssmin']
+        tasks: ['concat:fakecssmin']
       },
 			js: {
         files: 'js/app.js',

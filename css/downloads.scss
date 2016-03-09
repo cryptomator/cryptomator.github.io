@@ -1,0 +1,36 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+.download {
+  padding-top: 20vh;
+
+  h2 {
+    padding-top: 2em;
+  }
+}
+
+.download-btn-container {
+  margin: $spacing-unit 0;
+}
+
+.sha1sum {
+  font-size: 70%;
+  font-family: monospace;
+}
+
+.sha1sum::before {
+  content: "SHA1: ";
+  color: #888;
+}
+
+#loadScreen {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: $background-color;
+}
