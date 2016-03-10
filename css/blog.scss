@@ -1,0 +1,22 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+#blog {
+
+  .blog-post + .blog-post {
+    padding-top: $spacing-unit / 2;
+    border-top:1px solid $grey-color-light;
+  }
+
+  .blog-title > * {
+    display:inline-block;
+    vertical-align:middle;
+  }
+  .blog-title > a {
+    margin-left: 1em;
+  }
+
+}
