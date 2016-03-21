@@ -241,6 +241,44 @@
   padding-top: 20vh;
 }
 
+#reception {
+  padding-bottom:48px;
+
+  .reception-row + .reception-row {
+    margin-top: $spacing-unit;
+  }
+
+  .press-image-container {
+    width:70%;
+  }
+  .press-image-container-award {
+    width:45%;
+  }
+
+  .press-image-wdr {
+    margin-top:10%;
+  }
+
+  .press-link {
+    .press-image-color {display:none;}
+    .press-image-bw {display:block;}
+    &:hover {
+      .press-image-color {display:block;}
+      .press-image-bw {display:none;}
+    }
+  }
+
+  @media(max-width: $max-xs) {
+    .press-image-container {
+      height: $spacing-unit * 3;
+      padding-bottom: $spacing-unit;
+    }
+    .press-image-container-award {
+      margin-bottom:10%;
+    }
+  }
+}
+
 /*
  * How it works explanation
  */
