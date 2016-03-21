@@ -248,15 +248,17 @@
     margin-top: $spacing-unit;
   }
 
+  hr {
+    margin-top: $spacing-unit*2;
+    margin-bottom: $spacing-unit*2;
+  }
+
   .press-image-container {
-    width:70%;
+    display:inline-block;
+    margin:0 3em;
   }
   .press-image-container-award {
     width:45%;
-  }
-
-  .press-image-wdr {
-    margin-top:10%;
   }
 
   .press-link {
