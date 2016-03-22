@@ -57,7 +57,7 @@ stylesheets: ['/css/index.css']
 
     <div class="col-lg-6 col-md-8">
       <div class="text-center">
-        <h2>Get Cryptomator</h2>
+        <h2>Download for PC or Mac</h2>
       </div>
 
       <div data-ng-show="!(isOSiOS || isOSAndroid)">
@@ -80,8 +80,23 @@ stylesheets: ['/css/index.css']
         </div>
       </div>
 
-      <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
-        <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendAppStoreBtnClick()" target="_blank"><img src="img/appstore-badge.svg"/></a>
+      <div class="text-center">
+        <h2>App for your smartphone</h2>
+      </div>
+
+      <div class="text-center">
+        <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
+          <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendAppStoreBtnClick()" target="_blank"><img src="img/appstore-badge.svg"/></a>
+        </div>
+        <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
+            data-ng-click="androidBetaClick()" 
+            data-container="body"
+            data-toggle="popover"
+            data-placement="bottom"
+            data-content="The Cryptomator app for Android is currently in development.<br/>To get updated subscribe to our <a href='#newsletter'>newsletter</a>."
+            title="Cryptomator for Android">
+              Android<sup>™</sup> app
+        </button>
       </div>
 
       <div class="modal" tabindex="-1" role="dialog" id="payment-modal">
@@ -293,6 +308,7 @@ stylesheets: ['/css/index.css']
 </section>
 
 <section id="newsletter" class="green-background">
+  <a name="newsletter"></a>
   <div class="container">
     <div class="text-center">
       <h2>Let's stay in touch</h2>
@@ -314,7 +330,7 @@ stylesheets: ['/css/index.css']
                 <label for="mce-group[3693]-3693-1" class="col-sm-3 control-label">Android Beta</label>
                 <div class="col-sm-9">
                   <div class="checkbox">
-                    <label><input type="checkbox" value="2" name="group[3693][2]" /> Yes, I'm interested in the Android beta</label>
+                    <label><input id="androidBetaCheckbox" type="checkbox" value="2" name="group[3693][2]" /> Yes, I'm interested in the beta for Android</label>
                   </div>
                 </div>
               </div>

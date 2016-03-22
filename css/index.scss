@@ -234,6 +234,14 @@
 
   .appStoreBtn {
     margin: $spacing-unit/2 0;
+    display:inline-block;
+  }
+
+  .androidBetaBtn {
+    margin: $spacing-unit/2 0;
+    display:inline-block;
+    height:40px;
+    width:135px;
   }
 }
 

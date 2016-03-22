@@ -55,6 +55,11 @@ app.controller('CallToActionCtrl', ['$scope', '$window', 'googleAnalytics', func
     googleAnalytics.sendBtnClick('appstore');
   };
 
+  $scope.androidBetaClick = function() {
+    googleAnalytics.sendBtnClick('androidbeta');
+    angular.element('#androidBetaCheckbox').prop('checked', true);
+  };
+
   $scope.gotoDownloads = function(shouldGoToDownloads) {
     if (shouldGoToDownloads) {
       $window.location.href = '/downloads/';
@@ -246,3 +251,7 @@ app.directive('scrollToggleClass', ['$window', function($window) {
     }
   };
 }]);
+
+app.run(function(){
+  angular.element('[data-toggle="popover"]').popover({html:true});
+});
