@@ -1,0 +1,16 @@
+---
+layout: null
+---
+<article class="container faq-article">
+  <header>
+    <h2>{{ page.title }}</h2>
+  </header>
+  {% if page.image %}
+  <img src="/img/faq/{{ page.image }}" class="img-responsive center-block"/>
+  {% endif %}
+  <div class="row">
+    <div class="col-md-12">
+      {{ content }}
+    </div>
+  </div>
+</article>

@@ -20,3 +20,6 @@ sass:
 # Github Flavoured Markdown
 kramdown:
   input: GFM
+
+collections:
+- faqs

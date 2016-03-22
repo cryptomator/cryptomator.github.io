@@ -1,0 +1,18 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+
+#faq {
+  .faq-article {
+    padding-top: $spacing-unit;
+    &+ .faq-article {
+      margin-top: $spacing-unit;
+      border-top:1px solid $grey-color-light;
+    }
+  }
+
+  margin-bottom: $spacing-unit;
+}

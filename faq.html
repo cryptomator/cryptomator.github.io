@@ -3,32 +3,16 @@ layout: default
 title: FAQ
 permalink: /faq/
 redirect_from: '/help.html'
+stylesheets: ['/css/faq.css']
 ---
-
-<article id="macWarning" class="container fullheight top-most-element">
-
-  <div class="page-header">
-    <h2>&quot;Corrupted file in vault&quot; warning</h2>
-  </div>
-  <img src="/img/faq/macWarning.png" class="img-responsive center-block"/>
-  <div class="row">
-    <div class="col-md-12">
-      <h3>What does this mean?</h3>
-      <p>Cryptomator uses a so-called MAC to detect unauthorized file changes. In this case the file or files listed in this dialog did change.</p>
-
-      <h3>Is this dangerous?</h3>
-      <p>Unauthorized file modification can have two reasons: Either inevitable <a href="http://en.wikipedia.org/wiki/Data_degradation" target="_blank">bit rotting</a>, which is rather harmless from a security standpoint.</p>
-      <p>Or the file has been compromised by a cyber criminal planning a <a href="http://en.wikipedia.org/wiki/Chosen-ciphertext_attack" target="_blank">chosen ciphertext attack</a> with the intent to crack your key.</p>
-
-      <h3>What shall I do?</h3>
-      <ul>
-        <li>Keep calm, nothing has happened yet</li>
-        <li>Are multiple files affected at the same time?</li>
-        <li>Check your cloud storage provider's access log.</li>
-        <li>Do not decrypt affected files, if there is any chance an attacker might be able to read your decrypted contents.</li>
-      </ul>
-      <p>If you suspect a cyber attack, delete the file as soon as possible and empty your trash. The decrypted file must not fall into the hands of the attacker. You might also want to contact your cloud storage provider to get help securing your account.</p>
-    </div>
-  </div>
-
-</article>
+<div id="faq" class="fullheight top-most-element">
+  <section class="container">
+      <h1>FAQ</h1>
+  </section>
+  {% assign sortedFaqs = site.faqs | sort: 'path', 'last' %}
+  {% for faq in sortedFaqs %}
+    {% if faq.published %}
+      {{ faq.output }}
+    {% endif %}
+  {% endfor %}
+</div>
