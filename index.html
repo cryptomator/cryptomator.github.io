@@ -64,7 +64,7 @@ stylesheets: ['/css/index.css']
         <div class="visible-xs">
           <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> Free Download</button>
         </div>
-        <div class="hidden-xs text-center">
+        <div class="hidden-xs text-center hide-noscript">
           <h3>Pay what you want</h3>
           <div class="btn-group">
             <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
@@ -77,6 +77,11 @@ stylesheets: ['/css/index.css']
               <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
             </button>
           </div>
+        </div>
+        <div class="hidden-xs text-center show-noscript-block">
+          <a href="/downloads/" class="btn btn-lg btn-primary">
+            <span class="glyphicon glyphicon-download-alt"></span> Download
+          </a>
         </div>
       </div>
 

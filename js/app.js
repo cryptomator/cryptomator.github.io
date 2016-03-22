@@ -86,7 +86,7 @@ app.controller('DownloadCtrl', ['$scope', '$window', 'googleAnalytics', function
   $scope.initialized = false;
 
   $scope.init = function() {
-    $scope.initialized = true;
+    // $scope.initialized = true;
     if (!_.isEmpty($window.location.hash)) {
       // no-op
     } else if ($scope.isOSWindows) {
@@ -251,6 +251,10 @@ app.directive('scrollToggleClass', ['$window', function($window) {
     }
   };
 }]);
+
+app.config(function(){
+  angular.element('body').removeClass('noscript');
+});
 
 app.run(function(){
   angular.element('[data-toggle="popover"]').popover({html:true});

@@ -293,3 +293,17 @@ pre {
   color:#fff;
   font-weight:bold;
 }
+
+/**
+ * noscript
+ */
+
+.noscript .hide-noscript {
+  display:none !important;
+}
+.show-noscript-block {
+  display:none !important;
+}
+.noscript .show-noscript-block {
+  display:block !important;
+}
