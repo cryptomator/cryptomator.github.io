@@ -1,5 +1,5 @@
 ---
-title: Can I set a fixed port for the virutal drives?
+title: Can I set a fixed port for the virtual drives?
 published: true
 ---
 Yes you can. Just open Cryptomator and go to the settings dialog. To do this click on the gear symbol at the bottom of the vault list.
