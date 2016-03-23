@@ -1,5 +1,4 @@
 ---
-layout: faq
 title: What does MAC authentication failed mean?
 image: macWarning.png
 published: true

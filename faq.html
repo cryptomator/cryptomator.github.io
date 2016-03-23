@@ -6,13 +6,29 @@ redirect_from: '/help.html'
 stylesheets: ['/css/faq.css']
 ---
 <div id="faq" class="fullheight top-most-element">
-  <section class="container">
+  <section class="container text-center">
       <h1>FAQ</h1>
   </section>
   {% assign sortedFaqs = site.faqs | sort: 'path', 'last' %}
+  {% assign counter = 0 %}
   {% for faq in sortedFaqs %}
+    {% assign counter = counter | plus: 1 %}
     {% if faq.published %}
-      {{ faq.output }}
+      <article class="container faq-article">
+        <header class="text-center" data-toggle="collapse" href="#faq-{{ counter }}" aria-expanded="false" aria-controls="collapseExample">
+          <h2>{{ faq.title }}</h2>
+        </header>
+        <div class="collapse" id="faq-{{ counter }}">
+          {% if faq.image %}
+          <img src="/img/faq/{{ faq.image }}" class="img-responsive center-block"/>
+          {% endif %}
+          <div class="row">
+            <div class="col-md-12">
+              {{ faq.output }}
+            </div>
+          </div>
+        </div>
+      </article>
     {% endif %}
   {% endfor %}
 </div>

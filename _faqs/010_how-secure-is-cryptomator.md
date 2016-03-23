@@ -1,5 +1,5 @@
 ---
-layout: faq
 title: How secure is Cryptomator?
+published: false
 ---
 TODO
