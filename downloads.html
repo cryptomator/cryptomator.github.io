@@ -4,6 +4,11 @@ title: Downloads
 permalink: /downloads/
 stylesheets: ['/css/downloads.css']
 ---
+{% assign sortedReleases = site.releases | sort: 'path' | reverse %}
+{% assign latestRelease = sortedReleases[0] %}
+
+{% assign release = latestRelease %}
+{% include computeReleaseData.liquid %}
 
 <div class="container" data-ng-controller="DownloadCtrl">
 
@@ -23,7 +28,7 @@ stylesheets: ['/css/downloads.css']
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
           <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="1.0.0"/>
+          <meta itemprop="softwareVersion" content="{{winVersion}}"/>
           <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
           <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
           <meta itemprop="operatingSystem" content="Windows"/>
@@ -31,7 +36,7 @@ stylesheets: ['/css/downloads.css']
 
           <div class="download-btn-container">
             <div class="btn-group">
-              <a itemprop="downloadUrl" href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.2-x86.exe" data-ng-click="logDownload('Cryptomator-1.0.2-x86.exe')" class="btn btn-lg btn-primary" role="button">
+              <a itemprop="downloadUrl" href="{{win32Url}}" data-ng-click="logDownload('{{win32File}}')" class="btn btn-lg btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download Cryptomator 32 bit
               </a>
               <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,13 +51,13 @@ stylesheets: ['/css/downloads.css']
                 <li><a href="#allVersions">Other versions</a></li>
               </ul>
             </div>
-            <p class="small">Version 1.0.2 • 32 bit • Minimum: Windows Vista SP2</p>
-            <p class="sha1sum">9a26bd2f1c268a5c131f7b1bcc498ceb118c57fe</p>
+            <p class="small">Version {{winVersion}} • 32 bit • Minimum: Windows Vista SP2</p>
+            <p class="sha1sum">{{win32Checksum}}</p>
           </div>
 
           <div class="download-btn-container">
             <div class="btn-group">
-              <a itemprop="downloadUrl" href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.2-x64.exe" data-ng-click="logDownload('Cryptomator-1.0.2-x64.exe')" class="btn btn-lg btn-primary" role="button">
+              <a itemprop="downloadUrl" href="{{win64Url}}" data-ng-click="logDownload('{{win64File}}')" class="btn btn-lg btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download Cryptomator 64 bit
               </a>
               <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -67,8 +72,8 @@ stylesheets: ['/css/downloads.css']
                 <li><a href="#allVersions">Other versions</a></li>
               </ul>
             </div>
-            <p class="small">Version 1.0.2 • 64 bit • Minimum: Windows Vista SP2</p>
-            <p class="sha1sum">eb9f6e37b7bd5d52dc612d3ee6c1bc93f3563fd5</p>
+            <p class="small">Version {{winVersion}} • 64 bit • Minimum: Windows Vista SP2</p>
+            <p class="sha1sum">{{win64Checksum}}</p>
           </div>
         </div>
       </div>
@@ -84,7 +89,7 @@ stylesheets: ['/css/downloads.css']
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
           <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="1.0.0"/>
+          <meta itemprop="softwareVersion" content="{{osxVersion}}"/>
           <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
           <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
           <meta itemprop="operatingSystem" content="Mac OS X"/>
@@ -92,7 +97,7 @@ stylesheets: ['/css/downloads.css']
 
           <div class="download-btn-container">
             <div class="btn-group">
-              <a itemprop="downloadUrl" href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.0.dmg" data-ng-click="logDownload('Cryptomator-1.0.0.dmg')" class="btn btn-lg btn-primary" role="button">
+              <a itemprop="downloadUrl" href="{{osxUrl}}" data-ng-click="logDownload('{{osxFile}}')" class="btn btn-lg btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download Cryptomator
               </a>
               <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,8 +112,8 @@ stylesheets: ['/css/downloads.css']
                 <li><a href="#allVersions">Other versions</a></li>
               </ul>
             </div>
-            <p class="small">Version 1.0.0 • Minimum: OS X 10.8.3</p>
-            <p class="sha1sum">bbddad184de255ca387edd727d27e593b0fe4535</p>
+            <p class="small">Version {{osxVersion}} • Minimum: OS X 10.8.3</p>
+            <p class="sha1sum">{{osxChecksum}}</p>
           </div>
         </div>
       </div>
@@ -124,7 +129,7 @@ stylesheets: ['/css/downloads.css']
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
           <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="1.0.0"/>
+          <meta itemprop="softwareVersion" content="{{debianVersion}}"/>
           <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
           <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
           <meta itemprop="operatingSystem" content="Linux"/>
@@ -132,7 +137,7 @@ stylesheets: ['/css/downloads.css']
 
           <div class="download-btn-container">
             <div class="btn-group">
-              <a itemprop="downloadUrl" href="//bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-1.0.0.deb" data-ng-click="logDownload('Cryptomator-1.0.0.deb')" class="btn btn-lg btn-primary" role="button">
+              <a itemprop="downloadUrl" href="{{debianUrl}}" data-ng-click="logDownload('{{debianFile}}')" class="btn btn-lg btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download Cryptomator
               </a>
               <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -147,9 +152,9 @@ stylesheets: ['/css/downloads.css']
                 <li><a href="#allVersions">Other versions</a></li>
               </ul>
             </div>
-            <p class="small">Version 1.0.0 • For Debian-based OS</p>
+            <p class="small">Version {{debianVersion}} • For Debian-based OS</p>
             <p class="small">See <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detailed system requirements</a></p>
-            <p class="sha1sum">239065832fb32ade39d7484ba6d201e85bf0f9c6</p>
+            <p class="sha1sum">{{debianChecksum}}</p>
           </div>
         </div>
       </div>
@@ -192,7 +197,7 @@ stylesheets: ['/css/downloads.css']
   <section id="allVersions" class="fullheight download">
     <div class="text-center">
       <h2>All versions</h2>
-      <p class="lead">Version 1.0 (9th March, 2016)</p>
+      <p class="lead">Version {{latestRelease.title}} ({{latestRelease.date | date: "%b %d, %Y" }})</p>
     </div>
 
     <table class="table table-hover">
@@ -208,234 +213,54 @@ stylesheets: ['/css/downloads.css']
         <tr><th>Version</th><th>Notes</th><th>Release Date</th><th>Windows</th><th>Mac OS X</th><th>Linux</th></tr>
       </thead>
       <tbody>
-        <!-- 1.0 -->
+      {% for release in sortedReleases %}
+        {% include computeReleaseData.liquid %}
         <tr>
-          <th>1.0</th>
+          <th>
+            {{release.title}}
+            {% if release.beta %}
+               <span class="label label-warning">BETA</span>
+            {% endif %}
+          </th>
           <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.0.0" target="_blank" role="button">Changelog</a>
+            <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{release.tag}}" target="_blank" role="button">Changelog</a>
           </td>
-          <td>2016-03-09</td>
+          <td>{{release.date | date: "%Y-%m-%d" }}</td>
           <td>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.2-x86.exe" data-ng-click="logDownloadload('Cryptomator-1.0.2-x86.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.2-x86.exe
+            {% if win32Checksum %}
+            <a href="{{win32Url}}" data-ng-click="logDownloadload('{{win32File}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{win32File}}
             </a>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.2-x64.exe" data-ng-click="logDownloadload('Cryptomator-1.0.2-x64.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.2-x64.exe
+            {% endif %}
+            {% if win64Checksum %}
+            <a href="{{win64Url}}" data-ng-click="logDownloadload('{{win64File}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{win64File}}
             </a>
+            {% endif %}
+            {% if win32Checksum == nil and win64Checksum == nil %}
+            -
+            {% endif %}
           </td>
           <td>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-1.0.0.dmg" data-ng-click="logDownloadload('Cryptomator-1.0.0.dmg')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.0.dmg
+            {% if osxChecksum %}
+            <a href="{{osxUrl}}" data-ng-click="logDownloadload('{{osxFile}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{osxFile}}
             </a>
+            {% else %}
+            -
+            {% endif %}
           </td>
           <td>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-1.0.0.deb" data-ng-click="logDownloadload('Cryptomator-1.0.0.deb')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-1.0.0.deb
+            {% if debianChecksum %}
+            <a href="{{debianUrl}}" data-ng-click="logDownloadload('{{debianFile}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile}}
             </a>
+            {% else %}
+            -
+            {% endif %}
           </td>
         </tr>
-
-        <!-- 0.11 -->
-        <tr>
-          <th>0.11 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/0.11.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2016-03-03</td>
-          <td>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.11.0.exe" data-ng-click="logDownloadload('Cryptomator-0.11.0.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.11.0.exe
-            </a>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.11.0-amd64.exe" data-ng-click="logDownloadload('Cryptomator-0.11.0-amd64.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.11.0-amd64.exe
-            </a>
-          </td>
-          <td>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.11.0.dmg" data-ng-click="logDownloadload('Cryptomator-0.11.0.dmg')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.11.0.dmg
-            </a>
-          </td>
-          <td>
-            <a href="//bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-0.11.0.deb" data-ng-click="logDownloadload('Cryptomator-0.11.0.deb')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.11.0.deb
-            </a>
-          </td>
-        </tr>
-
-        <!-- 0.10 -->
-        <tr>
-          <th>0.10 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/0.10.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-10-29</td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.10.1.exe" data-ng-click="logDownloadload('Cryptomator-0.10.1.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.10.1.exe
-            </a>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.10.1-amd64.exe" data-ng-click="logDownloadload('Cryptomator-0.10.1-amd64.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.10.1-amd64.exe
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.10.1.dmg" data-ng-click="logDownloadload('Cryptomator-0.10.1.dmg')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.10.1.dmg
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-0.10.0.deb" data-ng-click="logDownloadload('Cryptomator-0.10.0.deb')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.10.0.deb
-            </a>
-          </td>
-        </tr>
-
-        <!-- 0.9 -->
-        <tr>
-          <th>0.9 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/0.9.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-10-16</td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.9.0.exe" data-ng-click="logDownloadload('Cryptomator-0.9.0.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.9.0.exe
-            </a>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.9.0-amd64.exe" data-ng-click="logDownloadload('Cryptomator-0.8.1-amd64.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.9.0-amd64.exe
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.9.0.dmg" data-ng-click="logDownloadload('Cryptomator-0.9.0.dmg')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.9.0.dmg
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-0.9.0.deb" data-ng-click="logDownloadload('Cryptomator-0.9.0.deb')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.9.0.deb
-            </a>
-          </td>
-        </tr>
-
-        <!-- 0.8 -->
-        <tr>
-          <th>0.8 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/0.8.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-08-04</td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.8.1.exe" data-ng-click="logDownloadload('Cryptomator-0.8.1.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.8.1.exe
-            </a>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.8.1-amd64.exe" data-ng-click="logDownloadload('Cryptomator-0.8.1-amd64.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.8.1-amd64.exe
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.8.2.dmg" data-ng-click="logDownloadload('Cryptomator-0.8.2.dmg')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.8.2.dmg
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/cryptomator-0.8.0.deb" data-ng-click="logDownloadload('Cryptomator-0.8.0.deb')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.8.0.deb
-            </a>
-          </td>
-        </tr>
-
-        <!-- 0.7 -->
-        <tr>
-          <th>0.7 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.7.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-05-30</td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.7.2.exe" data-ng-click="logDownloadload('Cryptomator-0.7.2.exe')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.7.2.exe
-            </a>
-          </td>
-          <td>
-            <a href="https://bintray.com/artifact/download/cryptomator/cryptomator/Cryptomator-0.7.0.dmg" data-ng-click="logDownloadload('Cryptomator-0.7.0.dmg')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Cryptomator-0.7.0.dmg
-            </a>
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-
-        <!-- 0.6 -->
-        <tr>
-          <th>0.6 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.6.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-03-14</td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-
-        <!-- 0.5 -->
-        <tr>
-          <th>0.5 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.5.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-02-22</td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-
-        <!-- 0.4 -->
-        <tr>
-          <th>0.4 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.4.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2015-01-13</td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
-
-        <!-- 0.3 -->
-        <tr>
-          <th>0.3 <span class="label label-warning">BETA</span></th>
-          <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.3.0" target="_blank" role="button">Changelog</a>
-          </td>
-          <td>2014-12-24</td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-          <td>
-            -
-          </td>
-        </tr>
+      {% endfor %}
       </tbody>
     </table>
 
