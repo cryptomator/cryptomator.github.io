@@ -4,21 +4,20 @@
 @charset "utf-8";
 @import "variables";
 
+.faq-article {
+  padding-top: 100px;
+
+  header {
+    cursor: pointer;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 #faq {
-  h1 {
-    padding-top: $spacing-unit / 2;
-  }
-  .faq-article {
-    padding-top: $spacing-unit;
-    &+ .faq-article {
-      margin-top: $spacing-unit;
-      border-top:1px solid $grey-color-light;
-    }
-    header {
-      cursor: pointer;
-    }
-  }
-
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit * 2;
 }

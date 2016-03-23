@@ -5,30 +5,35 @@ permalink: /faq/
 redirect_from: '/help.html'
 stylesheets: ['/css/faq.css']
 ---
-<div id="faq" class="fullheight top-most-element">
-  <section class="container text-center">
-      <h1>FAQ</h1>
-  </section>
-  {% assign sortedFaqs = site.faqs | sort: 'path', 'last' %}
-  {% assign counter = 0 %}
-  {% for faq in sortedFaqs %}
-    {% assign counter = counter | plus: 1 %}
-    {% if faq.published %}
-      <article class="container faq-article">
-        <header class="text-center" data-toggle="collapse" href="#faq-{{ counter }}" aria-expanded="false" aria-controls="collapseExample">
-          <h2>{{ faq.title }}</h2>
-        </header>
-        <div class="collapse" id="faq-{{ counter }}">
-          {% if faq.image %}
-          <img src="/img/faq/{{ faq.image }}" class="img-responsive center-block"/>
-          {% endif %}
-          <div class="row">
-            <div class="col-md-12">
-              {{ faq.output }}
-            </div>
+{% assign sortedFaqs = site.faqs | where: 'published', true | sort: 'path', 'last' %}
+
+<section class="container fullheight" id="faq">
+  <div class="row">
+    <nav class="hidden-xs hidden-sm" id="subnav">
+      <ul class="nav nav-pills nav-stacked">
+        {% for faq in sortedFaqs %}
+        <li><a href="#{{ faq.anchor }}">{{ faq.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="col-md-offset-3 col-md-9 col-xs-12">
+
+      {% for faq in sortedFaqs %}
+        <article class="faq-article" id="{{ faq.anchor }}">
+          <header>
+            <h2>{{ faq.title }}</h2>
+          </header>
+          <p class="lead">
+            {{ faq.abstract }}
+            <button class="btn btn-link" data-toggle="collapse" data-target="#{{ faq.anchor }}-content"> Show details ...</button>
+          </p>
+          <div class="collapse" id="{{ faq.anchor }}-content"> <!--class="collapse" -->
+            {{ faq.output }}
           </div>
-        </div>
-      </article>
-    {% endif %}
-  {% endfor %}
-</div>
+        </article>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

@@ -1,16 +1,17 @@
 ---
-title: Why is the masterkey stored in the cloud?
-published: false
+anchor: 'masterkeyFile'
+title: 'Why is the masterkey stored in the cloud?'
+published: true
+abstract: 'If you look into the storage location of a Cryptomator vault you will find a file called masterkey.cryptomator.'
 ---
-If you look into the storage location of a Cryptomator vault you will find a file called *masterkey.cryptomator*.
 
 ### What does this file contain?
 
-This file contains the key which is used to encrypt the files in the vault. The key itself is encrypted using your password.
+This file contains encrypted data which is needed to derive the masterkey from your password. The file does not contain the decrypted masterkey itself.
 
 
 ### Is this a security problem?
 
-No. The encrypted key in *masterkey.cryptomator* is as sensitive as the encrypted files itself.
+No. The encrypted key in *masterkey.cryptomator* is not more sensitive than the encrypted files themselves.
 
-For more details on how this exactly works, have a look on our <a href="/architecture/#virtualFilesystem">security architecture page</a>.
+For more details on how this exactly works, take a look on our <a href="/architecture/#masterkeyDerivation">security architecture page</a>.

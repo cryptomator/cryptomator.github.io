@@ -94,9 +94,10 @@ stylesheets: ['/css/index.css']
           <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendAppStoreBtnClick()" target="_blank"><img src="img/appstore-badge.svg"/></a>
         </div>
         <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
-            data-ng-click="androidBetaClick()" 
+            data-ng-click="androidBetaClick()"
             data-container="body"
             data-toggle="popover"
+            data-trigger="focus"
             data-placement="bottom"
             data-content="The Cryptomator app for Android is currently under development.<br/>To get updated subscribe to our <a href='#newsletter'>newsletter</a>."
             title="Cryptomator for Android">

@@ -1,9 +1,11 @@
 ---
-title: What does MAC authentication failed mean?
-image: macWarning.png
+anchor: 'macWarning'
+title: 'What does MAC authentication failed mean?'
 published: true
+abstract: 'Cryptomator uses a so-called MAC to detect unauthorized file changes. In this case the file or files listed in this dialog did change.'
 ---
-Cryptomator uses a so-called MAC to detect unauthorized file changes. In this case the file or files listed in this dialog did change.
+
+![MAC Warning Screen](/img/faq/macWarning.png)
 
 ### Is this dangerous?
 Unauthorized file modification can have two reasons: Either inevitable <a href="http://en.wikipedia.org/wiki/Data_degradation" target="_blank">bit rotting</a>, which is rather harmless from a security standpoint.

@@ -45,6 +45,8 @@ img.avatar {
 #subnav {
   > ul {
     position: fixed;
+    top: 100px;
+    max-width: 200px;
 
     li.active a {
       background-color: $bg-green-light;
