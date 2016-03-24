@@ -5,7 +5,7 @@ published: true
 abstract: 'Cryptomator uses a so-called MAC to detect unauthorized file changes. In this case the file or files listed in this dialog did change.'
 ---
 
-![MAC Warning Screen](/img/faq/macWarning.png)
+<img src="/img/faq/macWarning.png" srcset="/img/faq/macWarning.png 1x, /img/faq/macWarning@2x.png 2x" alt="MAC Warning Screen" />
 
 ### Is this dangerous?
 Unauthorized file modification can have two reasons: Either inevitable <a href="http://en.wikipedia.org/wiki/Data_degradation" target="_blank">bit rotting</a>, which is rather harmless from a security standpoint.

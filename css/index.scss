@@ -280,10 +280,16 @@
       img {
         border: none;
         opacity: 0.5;
+        -webkit-transition: -webkit-filter 100ms, opacity: 100ms;
+        transition: -webkit-filter 100ms, filter 100ms, opacity: 100ms;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
       }
 
       &:hover img {
         opacity: 1.0;
+        -webkit-filter: none;
+        filter: none;
       }
     }
   }
