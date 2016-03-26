@@ -18,7 +18,6 @@ app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) 
   $rootScope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
   $rootScope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
 
-  googleAnalytics.initialize();
   googleAnalytics.sendPageView();
 
   $rootScope.sendGaBtnClick = function(label) {
@@ -27,38 +26,41 @@ app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) 
 
 }]);
 
-app.factory('googleAnalytics', ['$window', function($window) {
-  var initialized = false;
+app.factory('stripe', ['$window', function($window) {
+  var Stripe = $window.Stripe;
+  Stripe.setPublishableKey('pk_test_6RFTDXtJP056xQooL9YZ0U7y');
 
   return {
-    initialize: function() {
-      /* jshint sub:true, asi:true, expr:true */
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })($window, $window.document, 'script','//www.google-analytics.com/analytics.js','ga');
-      /* jshint sub:false, asi:false, expr:false */
+    card: Stripe.card
+  };
+}]);
 
-      $window.ga('create', 'UA-57664706-1', 'auto');
-      $window.ga('require', 'displayfeatures');
-      initialized = true;
-    },
+app.factory('googleAnalytics', ['$window', function($window) {
+  /* jshint sub:true, asi:true, expr:true */
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })($window, $window.document, 'script','//www.google-analytics.com/analytics.js','ga');
+  /* jshint sub:false, asi:false, expr:false */
 
+  var ga = $window.ga;
+  ga('create', 'UA-57664706-1', 'auto');
+  ga('require', 'displayfeatures');
+
+  return {
     sendPageView: function() {
-      if (initialized) {
-        $window.ga('send', 'pageview');
-      }
+      ga('send', 'pageview');
     },
 
     sendBtnClick: function(eventLabel) {
-      if (initialized) {
-        $window.ga('send', 'event', 'button', 'click', eventLabel);
-      }
+      ga('send', 'event', 'button', 'click', eventLabel);
     }
   };
 }]);
 
-app.controller('PaymentCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('PaymentCtrl', ['$scope', '$window', 'stripe', function($scope, $window, stripe) {
+
+  var currentYear = new Date().getFullYear();
 
   $scope.paymentType = 'paypal';
   $scope.amount = 5;
@@ -66,6 +68,40 @@ app.controller('PaymentCtrl', ['$scope', '$window', function($scope, $window) {
   $scope.currencyGBP = {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'};
   $scope.currencyUSD = {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'};
   $scope.currency = $scope.currencyEUR;
+  $scope.creditCard = {
+    num: '',
+    cvc: '',
+    expMonth: '12',
+    expMonths: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+    expYear: _.toString(currentYear),
+    expYears: _.map(_.range(currentYear, currentYear + 10), _.toString),
+    validateNum: stripe.card.validateCardNumber,
+    validateCvc: stripe.card.validateCVC,
+    type: stripe.card.cardType
+  };
+  $scope.paymentInProgress = false;
+
+  $scope.payWithCreditCard = function() {
+    $scope.paymentInProgress = true;
+    stripe.card.createToken({
+      number: $scope.creditCard.num,
+      cvc: $scope.creditCard.cvc,
+      exp_month: $scope.creditCard.expMonth,
+      exp_year: $scope.creditCard.expYear
+    }, function(status, response) {
+      $scope.$apply(function() {
+        $scope.paymentInProgress = false;
+      });
+      console.log("response", response);
+
+      if (response.error) {
+
+      } else {
+
+      }
+
+    });
+  };
 
   $scope.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 1;

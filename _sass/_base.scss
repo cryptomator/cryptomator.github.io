@@ -266,6 +266,17 @@ pre {
   }
 }
 
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  background-color: $brand-color;
+  border-color: darken($brand-color, 8%);
+
+  &:hover, &:focus, &:active {
+    background-color: $brand-color;
+    border-color: darken($brand-color, 8%);
+  }
+}
+
 .btn-group > ul {
   width: 100%;
 }
