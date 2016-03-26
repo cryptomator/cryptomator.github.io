@@ -49,7 +49,7 @@ stylesheets: ['/css/index.css']
   </div>
 </section>
 
-<section id="call-to-action" class="container halfheight" data-ng-controller="CallToActionCtrl">
+<section id="call-to-action" class="container halfheight" data-ng-controller="PaymentCtrl">
   <div class="row">
     <div class="col-lg-6 col-md-4">
       <img src="img/feature-image.png" srcset="/img/feature-image.png 1x, /img/feature-image@2x.png 2x" class="img-responsive center-block" />
@@ -67,14 +67,14 @@ stylesheets: ['/css/index.css']
         <div class="hidden-xs text-center hide-noscript">
           <h3>Pay what you want</h3>
           <div class="btn-group">
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 0" data-ng-class="{active: pwyw == 0}">0 {{currency.symbol}}</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 5" data-ng-class="{active: pwyw == 5}">5 {{currency.symbol}}</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 10" data-ng-class="{active: pwyw == 10}">10 {{currency.symbol}}</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw = 20" data-ng-class="{active: pwyw == 20}">20 {{currency.symbol}}</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="pwyw=null" data-ng-class="{active: (pwyw !== 0 &amp;&amp; pwyw != 5 &amp;&amp; pwyw != 10 &amp;&amp; pwyw != 20)}">Other</button>
-            <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#payment-modal': pwyw !== 0}" data-ng-click="gotoDownloads(pwyw === 0)">
-              <span data-ng-show="pwyw !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
-              <span data-ng-show="pwyw === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="amount = 0" data-ng-class="{active: amount == 0}">0 [[currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="amount = 5" data-ng-class="{active: amount == 5}">5 [[currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="amount = 10" data-ng-class="{active: amount == 10}">10 [[currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="amount = 20" data-ng-class="{active: amount == 20}">20 [[currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="amount = null" data-ng-class="{active: (amount !== 0 &amp;&amp; amount != 5 &amp;&amp; amount != 10 &amp;&amp; amount != 20)}">Other</button>
+            <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{'#payment-modal': amount !== 0}" data-ng-click="gotoDownloads(amount === 0)">
+              <span data-ng-show="amount !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> Continue</span>
+              <span data-ng-show="amount === 0"><span class="glyphicon glyphicon-download-alt"></span> Download</span>
             </button>
           </div>
         </div>
@@ -91,10 +91,10 @@ stylesheets: ['/css/index.css']
 
       <div class="text-center">
         <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
-          <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendAppStoreBtnClick()" target="_blank"><img src="img/appstore-badge.svg"/></a>
+          <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="img/appstore-badge.svg"/></a>
         </div>
         <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
-            data-ng-click="androidBetaClick()"
+            data-ng-click="sendGaBtnClick('androidbeta')"
             data-container="body"
             data-toggle="popover"
             data-trigger="focus"
@@ -109,28 +109,62 @@ stylesheets: ['/css/index.css']
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Pay with PayPal</h4>
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" data-ng-class="{active: paymentType == 'paypal'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'paypal'">PayPal</a></li>
+                <!-- <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a href="#payWithCreditCard" role="tab" data-ng-click="paymentType = 'creditCard'">Credit Card</a></li> -->
+                <li role="presentation" data-ng-class="{active: paymentType == 'bankTransfer'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bankTransfer'">Bank Transfer</a></li>
+                <li role="presentation" data-ng-class="{active: paymentType == 'bitcoin'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bitcoin'">Bitcoin</a></li>
+              </ul>
             </div>
-            <div class="modal-body">
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
-                    <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
-                    <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
-                  </ul>
-                </div><!-- /input-group-btn -->
-                <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="pwyw">
-                <div class="input-group-addon">.00</div>
+            <div class="modal-body tab-content">
+
+              <!-- PayPal -->
+              <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'paypal'}">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
+                      <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
+                      <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
+                    </ul>
+                  </div><!-- /input-group-btn -->
+                  <input type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="amount">
+                  <div class="input-group-addon">.00</div>
+                </div>
               </div>
+
+              <!-- Credit Card
+              <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'creditCard'}">.b..</div>
+              -->
+
+              <!-- Bank Transfer -->
+              <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'bankTransfer'}">
+                <p>Please don't set up recurring payments yet, as our bank account will change soon due to legal reasons.</p>
+                <dl class="dl-horizontal">
+                  <dt>Recipient</dt>
+                  <dd>GbR Tobias Hagemann und Sebastian Stenzel</dd>
+                  <dt>IBAN</dt>
+                  <dd>DE59700222000020040254</dd>
+                  <dt>BIC</dt>
+                  <dd>FDDODEMMXXX</dd>
+                </dl>
+              </div>
+
+              <!-- Bitcoin -->
+              <div role="tabpanel" class="tab-pane text-center" data-ng-class="{active: paymentType == 'bitcoin'}">
+                <img src="/img/bitcoin-address.png" class="center-block"/>
+                <code>1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh</code>
+              </div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <a data-ng-disabled="!isAcceptableAmount(pwyw)" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount={{pwyw}}&amp;currency_code={{currency.code}}&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary">Proceed</a>
+              <a data-ng-disabled="!isAcceptableAmount(amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[amount]]&amp;currency_code=[[currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary">Proceed to PayPal</a>
+              <a href="/downloads" data-ng-show="paymentType == 'bankTransfer' || paymentType == 'bitcoin'" class="btn btn-primary">Proceed to Downloads</a>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

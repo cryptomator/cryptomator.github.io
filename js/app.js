@@ -5,6 +5,28 @@
 
 var app = angular.module('cryptomator', ['ngCookies']);
 
+app.config(['$interpolateProvider', function($interpolateProvider) {
+  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.endSymbol(']]');
+}]);
+
+app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) {
+
+  $rootScope.isOSWindows = navigator.appVersion.indexOf('Win') !== -1;
+  $rootScope.isOSMac = navigator.appVersion.indexOf('Mac') !== -1 && navigator.appVersion.indexOf('iPhone') === -1;
+  $rootScope.isOSLinux = (navigator.appVersion.indexOf('Linux') !== -1 || navigator.appVersion.indexOf('X11') !== -1) && navigator.appVersion.indexOf('Android') === -1;
+  $rootScope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
+  $rootScope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
+
+  googleAnalytics.initialize();
+  googleAnalytics.sendPageView();
+
+  $rootScope.sendGaBtnClick = function(label) {
+    googleAnalytics.sendBtnClick(label);
+  };
+
+}]);
+
 app.factory('googleAnalytics', ['$window', function($window) {
   var initialized = false;
 
@@ -36,12 +58,10 @@ app.factory('googleAnalytics', ['$window', function($window) {
   };
 }]);
 
-app.controller('CallToActionCtrl', ['$scope', '$window', 'googleAnalytics', function($scope, $window, googleAnalytics) {
+app.controller('PaymentCtrl', ['$scope', '$window', function($scope, $window) {
 
-  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
-  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
-
-  $scope.pwyw = 5;
+  $scope.paymentType = 'paypal';
+  $scope.amount = 5;
   $scope.currencyEUR = {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'};
   $scope.currencyGBP = {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'};
   $scope.currencyUSD = {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'};
@@ -49,15 +69,6 @@ app.controller('CallToActionCtrl', ['$scope', '$window', 'googleAnalytics', func
 
   $scope.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 1;
-  };
-
-  $scope.sendAppStoreBtnClick = function() {
-    googleAnalytics.sendBtnClick('appstore');
-  };
-
-  $scope.androidBetaClick = function() {
-    googleAnalytics.sendBtnClick('androidbeta');
-    angular.element('#androidBetaCheckbox').prop('checked', true);
   };
 
   $scope.gotoDownloads = function(shouldGoToDownloads) {
@@ -68,21 +79,8 @@ app.controller('CallToActionCtrl', ['$scope', '$window', 'googleAnalytics', func
 
 }]);
 
-app.controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
+app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
 
-  $scope.copyBitcoinAddress = function() {
-    $window.prompt('Copy Bitcoin Address', '1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh');
-  };
-
-}]);
-
-app.controller('DownloadCtrl', ['$scope', '$window', 'googleAnalytics', function($scope, $window, googleAnalytics) {
-
-  $scope.isOSWindows = navigator.appVersion.indexOf('Win') !== -1;
-  $scope.isOSMac = navigator.appVersion.indexOf('Mac') !== -1 && navigator.appVersion.indexOf('iPhone') === -1;
-  $scope.isOSLinux = (navigator.appVersion.indexOf('Linux') !== -1 || navigator.appVersion.indexOf('X11') !== -1) && navigator.appVersion.indexOf('Android') === -1;
-  $scope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
-  $scope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
   $scope.initialized = false;
 
   $scope.init = function() {
@@ -100,26 +98,11 @@ app.controller('DownloadCtrl', ['$scope', '$window', 'googleAnalytics', function
     }
   };
 
-  $scope.logDownload = function(fileName) {
-    googleAnalytics.sendBtnClick(fileName);
-  };
-
 }]);
 
-app.controller('DonateCtrl', ['$scope', '$window', function($scope, $window) {
-
-  $scope.copyBitcoinAddress = function() {
-    $window.prompt('Copy Bitcoin Address', '1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh');
-  };
-
-}]);
-
-app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', 'googleAnalytics', function($http, $scope, $cookies, googleAnalytics) {
+app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', function($http, $scope, $cookies) {
 
   $scope.consentGiven = !_.isEmpty($cookies.get('cookieConsent'));
-
-  googleAnalytics.initialize();
-  googleAnalytics.sendPageView();
 
   $scope.confirm = function() {
     var expireDate = new Date();
