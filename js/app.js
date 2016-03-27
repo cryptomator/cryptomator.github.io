@@ -28,7 +28,7 @@ app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) 
 
 app.factory('stripe', ['$window', function($window) {
   var Stripe = $window.Stripe;
-  Stripe.setPublishableKey('pk_test_6RFTDXtJP056xQooL9YZ0U7y');
+  Stripe.setPublishableKey('pk_live_lZc9TmxyYgWO3rVIBluV4wLn');
 
   return {
     card: Stripe.card
@@ -58,7 +58,7 @@ app.factory('googleAnalytics', ['$window', function($window) {
   };
 }]);
 
-app.controller('PaymentCtrl', ['$scope', '$window', 'stripe', function($scope, $window, stripe) {
+app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function($scope, $window, $http, stripe) {
 
   var currentYear = new Date().getFullYear();
 
@@ -80,6 +80,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', 'stripe', function($scope, $
     type: stripe.card.cardType
   };
   $scope.paymentInProgress = false;
+  $scope.paymentSuccessful = false;
 
   $scope.payWithCreditCard = function() {
     $scope.paymentInProgress = true;
@@ -89,15 +90,27 @@ app.controller('PaymentCtrl', ['$scope', '$window', 'stripe', function($scope, $
       exp_month: $scope.creditCard.expMonth,
       exp_year: $scope.creditCard.expYear
     }, function(status, response) {
-      $scope.$apply(function() {
-        $scope.paymentInProgress = false;
-      });
-      console.log("response", response);
-
       if (response.error) {
-
+        $scope.$apply(function() {
+          $scope.paymentError = response.error.message;
+          $scope.paymentInProgress = false;
+        });
       } else {
-
+        var amountInCents = $scope.amount * 100;
+        $http.jsonp('https://stripe.cryptomator.org/index.php?callback=JSON_CALLBACK&stripeToken=' + response.id + '&currency=' + $scope.currency.code + '&amountInCents=' + amountInCents)
+        .then(function(successResponse) {
+          if (successResponse.data.status == 'ok') {
+            $scope.paymentError = null;
+            $scope.paymentSuccessful = true;
+          } else {
+            $scope.paymentError = successResponse.data.error;
+          }
+          $scope.paymentInProgress = false;
+        }, function(errorResponse) {
+          console.warn('Payment failed.', errorResponse.data);
+          $scope.paymentError = 'Payment failed.';
+          $scope.paymentInProgress = false;
+        });
       }
 
     });

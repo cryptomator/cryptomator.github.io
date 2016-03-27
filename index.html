@@ -112,8 +112,7 @@ javascripts: ['https://js.stripe.com/v2/']
             <div class="modal-header">
               <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" data-ng-class="{active: paymentType == 'paypal'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'paypal'">PayPal</a></li>
-                <!-- TODO implement Stripe serverside stuff on stripe.cryptomator.org (PHP) and send token + currency + amount to this server. -->
-                <!-- <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a href="#payWithCreditCard" role="tab" data-ng-click="paymentType = 'creditCard'">Credit Card</a></li> -->
+                <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a href="#payWithCreditCard" role="tab" data-ng-click="paymentType = 'creditCard'">Credit Card</a></li>
                 <li role="presentation" data-ng-class="{active: paymentType == 'bankTransfer'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bankTransfer'">Bank Transfer</a></li>
                 <li role="presentation" data-ng-class="{active: paymentType == 'bitcoin'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bitcoin'">Bitcoin</a></li>
               </ul>
@@ -123,33 +122,8 @@ javascripts: ['https://js.stripe.com/v2/']
               <!-- PayPal -->
               <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'paypal'}">
                 <p>After pressing &quot;Proceed&quot;, you will be redirected to our PayPal site.</p>
-
-                <div class="form-group">
-                  <label class="control-label" for="inputPayPalAmount">Amount</label>
-                  <div class="input-group">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
-                        <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
-                        <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
-                      </ul>
-                    </div><!-- /input-group-btn -->
-                    <input id="inputPayPalAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="amount">
-                    <div class="input-group-addon">.00</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Credit Card -->
-              <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'creditCard'}">
-                  <p>Credit card payments are securely handled by Stripe.<br/>Please expect to be <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">charged by Stripe</a>.</p>
-
-                  <div class="form-group">
-                    <label class="control-label" for="inputCreditCardAmount">Amount</label>
+                <div class="row">
+                  <div class="form-group col-md-6 col-md-offset-3">
                     <div class="input-group">
                       <div class="input-group-btn">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -162,8 +136,36 @@ javascripts: ['https://js.stripe.com/v2/']
                           <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
                         </ul>
                       </div><!-- /input-group-btn -->
-                      <input id="inputCreditCardAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="amount">
+                      <input id="inputPayPalAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="amount">
                       <div class="input-group-addon">.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Credit Card -->
+              <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'creditCard'}">
+                <p>Credit card payments are securely handled by Stripe.<br/>Please expect to be <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">charged by Stripe</a>.</p>
+
+                <div data-ng-show="!paymentSuccessful">
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label class="control-label" for="inputCreditCardAmount">Amount</label>
+                      <div class="input-group">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon" data-ng-class="currency.glyphicon"></span>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a data-ng-click="currency = currencyEUR" class="glyphicon" data-ng-class="currencyEUR.glyphicon"></a></li>
+                            <li><a data-ng-click="currency = currencyGBP" class="glyphicon" data-ng-class="currencyGBP.glyphicon"></a></li>
+                            <li><a data-ng-click="currency = currencyUSD" class="glyphicon" data-ng-class="currencyUSD.glyphicon"></a></li>
+                          </ul>
+                        </div><!-- /input-group-btn -->
+                        <input id="inputCreditCardAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="amount">
+                        <div class="input-group-addon">.00</div>
+                      </div>
                     </div>
                   </div>
 
@@ -209,7 +211,7 @@ javascripts: ['https://js.stripe.com/v2/']
                       <div class="form-group">
                         <label class="control-label" for="inputCreditCardCVC">CVC</label>
                         <div class="input-group">
-                          <input id="inputCreditCardCVC" type="text" class="form-control" data-ng-model="creditCard.cvc">
+                          <input id="inputCreditCardCVC" type="password" class="form-control" data-ng-model="creditCard.cvc">
                           <span class="input-group-addon">
                             <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateCvc(creditCard.cvc), 'glyphicon-remove': !creditCard.validateCvc(creditCard.cvc)}"></span>
                           </span>
@@ -217,6 +219,7 @@ javascripts: ['https://js.stripe.com/v2/']
                       </div>
                     </div>
                   </div>
+                </div>
 
               </div>
 
@@ -242,16 +245,22 @@ javascripts: ['https://js.stripe.com/v2/']
 
             </div>
             <div class="modal-footer">
+              <span data-ng-show="paymentError" data-ng-bind="paymentError"></span>
+
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 
-              <a data-ng-disabled="!isAcceptableAmount(amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[amount]]&amp;currency_code=[[currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary">Proceed to PayPal</a>
+              <a data-ng-disabled="!isAcceptableAmount(amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[amount]]&amp;currency_code=[[currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary"><span class="glyphicon glyphicon-new-window"></span> Proceed to PayPal</a>
 
-              <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(amount) || !creditCard.validateCvc(creditCard.cvc) || !creditCard.validateNum(creditCard.num)" data-ng-show="paymentType == 'creditCard'" data-ng-click="payWithCreditCard()" class="btn btn-primary">
+              <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(amount) || !creditCard.validateCvc(creditCard.cvc) || !creditCard.validateNum(creditCard.num)" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
+                <span class="glyphicon glyphicon-credit-card"></span>
                 <span data-ng-show="!paymentInProgress">Pay now</span>
                 <span data-ng-show="paymentInProgress">Processing...</span>
               </button>
 
-              <a href="/downloads" data-ng-show="paymentType == 'bankTransfer' || paymentType == 'bitcoin'" class="btn btn-primary">Proceed to Downloads</a>
+
+              <a href="/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Payment successful</a>
+
+              <a href="/downloads" data-ng-show="paymentType == 'bankTransfer' || paymentType == 'bitcoin'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Proceed to Downloads</a>
             </div>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
