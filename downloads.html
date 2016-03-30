@@ -228,12 +228,12 @@ stylesheets: ['/css/downloads.css']
           <td>{{release.date | date: "%Y-%m-%d" }}</td>
           <td>
             {% if win32Checksum %}
-            <a href="{{win32Url}}" data-ng-click="sendGaBtnClick('{{win32File}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{win32Url}}" download="{{win32File}}" data-ng-click="sendGaBtnClick('{{win32File}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{win32File}}
             </a>
             {% endif %}
             {% if win64Checksum %}
-            <a href="{{win64Url}}" data-ng-click="sendGaBtnClick('{{win64File}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{win64Url}}" download="{{win64File}}" data-ng-click="sendGaBtnClick('{{win64File}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{win64File}}
             </a>
             {% endif %}
@@ -243,7 +243,7 @@ stylesheets: ['/css/downloads.css']
           </td>
           <td>
             {% if osxChecksum %}
-            <a href="{{osxUrl}}" data-ng-click="sendGaBtnClick('{{osxFile}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{osxUrl}}" download="{{osxFile}}" data-ng-click="sendGaBtnClick('{{osxFile}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{osxFile}}
             </a>
             {% else %}
@@ -252,7 +252,7 @@ stylesheets: ['/css/downloads.css']
           </td>
           <td>
             {% if debianChecksum %}
-            <a href="{{debianUrl}}" data-ng-click="sendGaBtnClick('{{debianFile}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{debianUrl}}" download="{{debianFile}}" data-ng-click="sendGaBtnClick('{{debianFile}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile}}
             </a>
             {% else %}

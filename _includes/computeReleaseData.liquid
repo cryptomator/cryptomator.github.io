@@ -1,17 +1,17 @@
 {% capture winVersion %}{% if release.artifacts.win.patch %}{{release.title}}.{{release.artifacts.win.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
-{% capture win32File %}{% if release.artifacts.win.file32 %}{{release.artifacts.win.file32}}{% else %}Cryptomator-{{ winVersion }}-x86.exe{% endif %}{% endcapture %}
-{% capture win64File %}{% if release.artifacts.win.file64 %}{{release.artifacts.win.file64}}{% else %}Cryptomator-{{ winVersion }}-x64.exe{% endif %}{% endcapture %}
-{% capture win32Url %}//bintray.com/artifact/download/cryptomator/cryptomator/{{win32File}}{% endcapture %}
-{% capture win64Url %}//bintray.com/artifact/download/cryptomator/cryptomator/{{win64File}}{% endcapture %}
+{% capture win32File %}{{release.artifacts.win.file32}}{% endcapture %}
+{% capture win64File %}{{release.artifacts.win.file64}}{% endcapture %}
+{% capture win32Url %}{{release.artifacts.win.url32}}{% endcapture %}
+{% capture win64Url %}{{release.artifacts.win.url64}}{% endcapture %}
 {% assign win32Checksum = release.artifacts.win.checksum32 %}
 {% assign win64Checksum = release.artifacts.win.checksum64 %}
 
 {% capture osxVersion %}{% if release.artifacts.osx.patch %}{{release.title}}.{{release.artifacts.osx.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
-{% capture osxFile %}{% if release.artifacts.osx.file %}{{release.artifacts.osx.file}}{% else %}Cryptomator-{{ osxVersion }}.dmg{% endif %}{% endcapture %}
-{% capture osxUrl %}//bintray.com/artifact/download/cryptomator/cryptomator/{{osxFile}}{% endcapture %}
+{% capture osxFile %}{{release.artifacts.osx.file}}{% endcapture %}
+{% capture osxUrl %}{{release.artifacts.osx.url}}{% endcapture %}
 {% assign osxChecksum = release.artifacts.osx.checksum %}
 
 {% capture debianVersion %}{% if release.artifacts.debian.patch %}{{release.title}}.{{release.artifacts.debian.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
-{% capture debianFile %}{% if release.artifacts.debian.file %}{{release.artifacts.debian.file}}{% else %}cryptomator-{{ debianVersion }}.deb{% endif %}{% endcapture %}
-{% capture debianUrl %}//bintray.com/artifact/download/cryptomator/cryptomator-deb/pool/contrib/c/cryptomator/{{debianFile}}{% endcapture %}
+{% capture debianFile %}{{release.artifacts.debian.file}}{% endcapture %}
+{% capture debianUrl %}{{release.artifacts.debian.url}}{% endcapture %}
 {% assign debianChecksum = release.artifacts.debian.checksum %}
