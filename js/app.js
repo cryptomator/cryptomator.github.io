@@ -18,6 +18,15 @@ app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) 
   $rootScope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
   $rootScope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
 
+  $rootScope.donation = {
+    amount: 5,
+    currencyEUR: {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'},
+    currencyGBP: {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'},
+    currencyUSD: {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'},
+    currency: null
+  };
+  $rootScope.donation.currency = $rootScope.donation.currencyEUR;
+
   googleAnalytics.sendPageView();
 
   $rootScope.sendGaBtnClick = function(label) {
@@ -58,16 +67,21 @@ app.factory('googleAnalytics', ['$window', function($window) {
   };
 }]);
 
+app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
+
+  $scope.gotoDownloads = function(shouldGoToDownloads) {
+    if (shouldGoToDownloads) {
+      $window.location.href = '/downloads/';
+    }
+  };
+
+}]);
+
 app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function($scope, $window, $http, stripe) {
 
   var currentYear = new Date().getFullYear();
 
   $scope.paymentType = 'paypal';
-  $scope.amount = 5;
-  $scope.currencyEUR = {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'};
-  $scope.currencyGBP = {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'};
-  $scope.currencyUSD = {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'};
-  $scope.currency = $scope.currencyEUR;
   $scope.creditCard = {
     num: '',
     cvc: '',
@@ -96,8 +110,8 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
           $scope.paymentInProgress = false;
         });
       } else {
-        var amountInCents = $scope.amount * 100;
-        $http.jsonp('https://stripe.cryptomator.org/index.php?callback=JSON_CALLBACK&stripeToken=' + response.id + '&currency=' + $scope.currency.code + '&amountInCents=' + amountInCents)
+        var amountInCents = $scope.donation.amount * 100;
+        $http.jsonp('https://stripe.cryptomator.org/index.php?callback=JSON_CALLBACK&stripeToken=' + response.id + '&currency=' + $scope.donation.currency.code + '&amountInCents=' + amountInCents)
         .then(function(successResponse) {
           if (successResponse.data.status == 'ok') {
             $scope.paymentError = null;
@@ -118,12 +132,6 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
 
   $scope.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 1;
-  };
-
-  $scope.gotoDownloads = function(shouldGoToDownloads) {
-    if (shouldGoToDownloads) {
-      $window.location.href = '/downloads/';
-    }
   };
 
 }]);
