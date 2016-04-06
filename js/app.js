@@ -79,6 +79,12 @@ app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $windo
 
 app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function($scope, $window, $http, stripe) {
 
+  function showPaymentModalIfDonateAnchorPresent() {
+    if ($window.location.hash == '#donate') {
+      angular.element('#payment-modal').modal('show');
+    }
+  }
+
   var currentYear = new Date().getFullYear();
 
   $scope.paymentType = 'paypal';
@@ -133,6 +139,8 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
   $scope.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 1;
   };
+
+  showPaymentModalIfDonateAnchorPresent();
 
 }]);
 
