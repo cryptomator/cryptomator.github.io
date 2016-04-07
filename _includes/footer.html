@@ -1,16 +1,19 @@
+{% assign i18n = 'footer' %}
+{% include i18n.liquid %}
+
 <footer id="site-footer">
 
   <section class="container">
     <div class="row">
       <div class="col-xs-4">
-        <h4>Resources</h4>
+        <h4>{{ i18n.resources.title }}</h4>
         <ul>
-          <li><a href="http://press.cryptomator.org/cryptomator_press_kit_en.zip">Press Kit (en)</a></li>
-          <li><a href="http://press.cryptomator.org/cryptomator_press_kit_de.zip">Press Kit (de)</a></li>
+          <li><a href="http://press.cryptomator.org/cryptomator_press_kit_en.zip">{{ i18n.resources.pressKit }} (en)</a></li>
+          <li><a href="http://press.cryptomator.org/cryptomator_press_kit_de.zip">{{ i18n.resources.pressKit }} (de)</a></li>
         </ul>
       </div>
       <div class="col-xs-4">
-        <h4>Connect</h4>
+        <h4>{{ i18n.connect.title }}</h4>
         <ul>
           <li><a href="/feed.xml">RSS feed</a></li>
           <li><a href="https://twitter.com/Cryptomator" target="_blank">Twitter</a></li>
@@ -18,10 +21,11 @@
         </ul>
       </div>
       <div class="col-xs-4">
-        <h4>Contribute</h4>
+        <h4>{{ i18n.contribute.title }}</h4>
         <ul>
-          <li><a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">Report a Bug</a></li>
+          <li><a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">{{ i18n.contribute.reportABug }}</a></li>
           <li><a href="https://github.com/cryptomator/cryptomator" target="_blank">GitHub</a></li>
+          <li><a href="#payment-modal" data-toggle="modal">{{ i18n.contribute.donate }}</a></li>
         </ul>
       </div>
     </div>
@@ -29,10 +33,10 @@
 
   <section class="container">
     <p class="text-center small">© cryptomator.org
-      • <a href="/privacy/">Privacy Policy</a>
-      • <a href="/contact/">Contact</a>
-      • <a href="/impressum/">Impressum</a>
-      • <a href="/datenschutz/">Datenschutz</a>
+      • <a href="{{ languageUrlPrefix }}/privacy/">Privacy Policy</a>
+      • <a href="{{ languageUrlPrefix }}/contact/">{{ i18n.contact }}</a>
+      • <a href="{{ languageUrlPrefix }}/impressum/">Impressum</a>
+      • <a href="{{ languageUrlPrefix }}/datenschutz/">Datenschutz</a>
     </p>
   </section>
 
@@ -42,5 +46,5 @@
   <div class="pull-right">
     <button type="button" class="btn btn-sm btn-default" data-ng-click="confirm()">Ok, don't show this again</button>
   </div>
-  <p>This website uses cookies for statistical purposes. For more infos please see our <a href="/privacy/">privacy policy</a>.</p>
+  <p>This website uses cookies for statistical purposes. For more infos please see our <a href="{{ languageUrlPrefix }}/privacy/">privacy policy</a>.</p>
 </section>

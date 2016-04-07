@@ -1,0 +1,33 @@
+---
+layout: default
+title: Blog
+permalink: /de/blog/
+stylesheets: ['/css/blog.css']
+
+sitemap: false
+---
+
+<div id="blog" class="fullheight">
+  <section class="top-most-element container blog-title">
+      <h1>Cryptomator Blog</h1>
+      <a href="/feed.xml"><img class="block-center" height="32" src="/img/rss-icon.svg" /></a>
+  </section>
+
+  <section class="container blog-posts">
+    {% for post in site.posts %}
+    <article class="blog-post">
+      <div class="row">
+        <p class="col-sm-2">{{ post.date | date: "%Y-%m-%d" }}</p>
+        <header class="col-sm-10">
+          <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+        </header>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+          {{post.excerpt}}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+</div>

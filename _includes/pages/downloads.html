@@ -1,0 +1,267 @@
+{% assign sortedReleases = site.releases | sort: 'path' | reverse %}
+{% assign latestRelease = sortedReleases[0] %}
+
+{% assign release = latestRelease %}
+{% include computeReleaseData.liquid %}
+
+{% assign i18n = 'downloads' %}
+{% include i18n.liquid %}
+
+<div class="container" data-ng-controller="DownloadCtrl">
+
+  <section id="loadScreen" class="fullheight download hide-noscript" data-ng-init="init()" data-ng-show="!initialized">
+    <div class="text-center">
+      <h2>{{ i18n.title }}</h2>
+      <p class="lead">{{ i18n.choosingDownload }}</p>
+    </div>
+  </section>
+
+  <section id="winDownload" class="row fullheight download">
+    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+      <img src="/img/screenshots/dl_win.png" srcset="/img/screenshots/dl_win.png 1x, /img/screenshots/dl_win@2x.png 2x"  class="img-responsive center-block"/>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="text-center">
+        <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+          <meta itemprop="applicationCategory" content="Productivity"/>
+          <meta itemprop="applicationSubCategory" content="Encryption"/>
+          <meta itemprop="softwareVersion" content="{{winVersion}}"/>
+          <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+          <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+          <meta itemprop="operatingSystem" content="Windows"/>
+          <h2>{{ i18n.windows.title }}</h2>
+
+          <div class="download-btn-container">
+            <div class="btn-group">
+              <a itemprop="downloadUrl" href="{{win32Url}}" data-ng-click="logDownload('{{win32File}}')" class="btn btn-lg btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.windows.button32Bit }}
+              </a>
+              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#debianDownload">{{ i18n.dropdown.linux }}</a></li>
+                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
+              </ul>
+            </div>
+            <p class="small">Version {{winVersion}} • 32 bit • Minimum: Windows Vista SP2</p>
+            <p class="sha1sum">{{win32Checksum}}</p>
+          </div>
+
+          <div class="download-btn-container">
+            <div class="btn-group">
+              <a itemprop="downloadUrl" href="{{win64Url}}" data-ng-click="logDownload('{{win64File}}')" class="btn btn-lg btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.windows.button64Bit }}
+              </a>
+              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#debianDownload">{{ i18n.dropdown.linux }}</a></li>
+                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
+              </ul>
+            </div>
+            <p class="small">Version {{winVersion}} • 64 bit • Minimum: Windows Vista SP2</p>
+            <p class="sha1sum">{{win64Checksum}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="osxDownload" class="row fullheight download">
+    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+      <img src="/img/screenshots/dl_osx.png" srcset="/img/screenshots/dl_osx.png 1x, /img/screenshots/dl_osx@2x.png 2x"  class="img-responsive center-block"/>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="text-center">
+        <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+          <meta itemprop="applicationCategory" content="Productivity"/>
+          <meta itemprop="applicationSubCategory" content="Encryption"/>
+          <meta itemprop="softwareVersion" content="{{osxVersion}}"/>
+          <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+          <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+          <meta itemprop="operatingSystem" content="Mac OS X"/>
+          <h2>{{ i18n.osx.title }}</h2>
+
+          <div class="download-btn-container">
+            <div class="btn-group">
+              <a itemprop="downloadUrl" href="{{osxUrl}}" data-ng-click="logDownload('{{osxFile}}')" class="btn btn-lg btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.osx.button }}
+              </a>
+              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
+                <li><a href="#debianDownload">{{ i18n.dropdown.linux }}</a></li>
+                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
+              </ul>
+            </div>
+            <p class="small">Version {{osxVersion}} • Minimum: OS X 10.8.3</p>
+            <p class="sha1sum">{{osxChecksum}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="debianDownload" class="row fullheight download">
+    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+      <img src="/img/screenshots/dl_debian.png" srcset="/img/screenshots/dl_debian.png 1x, /img/screenshots/dl_debian@2x.png 2x"  class="img-responsive center-block"/>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="text-center">
+        <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+          <meta itemprop="applicationCategory" content="Productivity"/>
+          <meta itemprop="applicationSubCategory" content="Encryption"/>
+          <meta itemprop="softwareVersion" content="{{debianVersion}}"/>
+          <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+          <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+          <meta itemprop="operatingSystem" content="Linux"/>
+          <h2>{{ i18n.linux.title }}</h2>
+
+          <div class="download-btn-container">
+            <div class="btn-group">
+              <a itemprop="downloadUrl" href="{{debianUrl}}" data-ng-click="logDownload('{{debianFile}}')" class="btn btn-lg btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.button }}
+              </a>
+              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
+                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
+              </ul>
+            </div>
+            <p class="small">Version {{debianVersion}} • {{ i18n.linux.debianBased }}</p>
+            <p class="small">{{ i18n.linux.requirements }}</p>
+            <p class="sha1sum">{{debianChecksum}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jarDownload" class="row fullheight download">
+    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+      <img src="/img/screenshots/dl_jar.png" srcset="/img/screenshots/dl_jar.png 1x, /img/screenshots/dl_jar@2x.png 2x" class="img-responsive center-block"/>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="text-center">
+        <div class="caption text-center">
+          <h2>{{ i18n.jar.title }}</h2>
+
+          <div class="download-btn-container">
+            <div class="btn-group">
+              <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-lg btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.jar.button }}
+              </a>
+              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
+                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#debianDownload">{{ i18n.dropdown.linux }}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
+              </ul>
+            </div>
+            <p class="small">{{ i18n.jar.requirements }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="allVersions" class="fullheight download">
+    <div class="text-center">
+      <h2>{{ i18n.allVersions.title }}</h2>
+      <p class="lead">{{ i18n.allVersions.version }} {{latestRelease.title}} ({{latestRelease.date | date: i18n.allVersions.dateFormat }})</p>
+    </div>
+
+    <table class="table table-hover">
+      <colgroup>
+        <col style="width: 10%"/>
+        <col style="width: 10%"/>
+        <col style="width: 20%"/>
+        <col style="width: 20%"/>
+        <col style="width: 20%"/>
+        <col style="width: 20%"/>
+      </colgroup>
+      <thead>
+        <tr><th>{{ i18n.allVersions.version }}</th><th>{{ i18n.allVersions.notes }}</th><th>{{ i18n.allVersions.releaseDate }}</th><th>Windows</th><th>Mac OS X</th><th>Linux</th></tr>
+      </thead>
+      <tbody>
+      {% for release in sortedReleases %}
+        {% include computeReleaseData.liquid %}
+        <tr>
+          <th>
+            {{release.title}}
+            {% if release.beta %}
+               <span class="label label-warning">BETA</span>
+            {% endif %}
+          </th>
+          <td>
+            <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{release.tag}}" target="_blank" role="button">{{ i18n.allVersions.changelog }}</a>
+          </td>
+          <td>{{release.date | date: "%Y-%m-%d" }}</td>
+          <td>
+            {% if win32Checksum %}
+            <a href="{{win32Url}}" download="{{win32File}}" data-ng-click="sendGaBtnClick('{{win32File}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{win32File}}
+            </a>
+            {% endif %}
+            {% if win64Checksum %}
+            <a href="{{win64Url}}" download="{{win64File}}" data-ng-click="sendGaBtnClick('{{win64File}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{win64File}}
+            </a>
+            {% endif %}
+            {% if win32Checksum == nil and win64Checksum == nil %}
+            -
+            {% endif %}
+          </td>
+          <td>
+            {% if osxChecksum %}
+            <a href="{{osxUrl}}" download="{{osxFile}}" data-ng-click="sendGaBtnClick('{{osxFile}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{osxFile}}
+            </a>
+            {% else %}
+            -
+            {% endif %}
+          </td>
+          <td>
+            {% if debianChecksum %}
+            <a href="{{debianUrl}}" download="{{debianFile}}" data-ng-click="sendGaBtnClick('{{debianFile}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile}}
+            </a>
+            {% else %}
+            -
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    <p>{{ i18n.allVersions.jarDownloadHint }}</p>
+  </section>
+
+</div>

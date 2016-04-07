@@ -1,24 +1,41 @@
+{% assign i18n = 'nav' %}
+{% include i18n.liquid %}
+
 <nav class="navbar navbar-collapse navbar-fixed-top navbar-default">
 
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">{{ i18n.toggleNavigation }} </span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Cryptomator</a>
+      <a class="navbar-brand" href="{{ languageUrlPrefix }}/">Cryptomator</a>
     </div>
 
-    <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="nav-collapse">
-      <li><a href="/downloads/">Free Download</a></li>
-      <li><a href="/architecture/">Security Architecture</a></li>
-      <!-- <li><a href="/blog/">Blog</a></li> -->
-      <li><a href="/faq/">FAQ</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><button id="donate-button" class="btn btn-primary navbar-btn" role="button" data-toggle="modal" data-target="#payment-modal">Donate</button></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="nav-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="{{ languageUrlPrefix }}/downloads/">{{ i18n.buttonFreeDownload }}</a></li>
+        <li><a href="{{ languageUrlPrefix }}/architecture/">{{ i18n.buttonSecurityArchitecture }}</a></li>
+        <!-- <li><a href="{{ languageUrlPrefix }}/blog/">{{ i18n.buttonBlog }}</a></li> -->
+        <li><a href="{{ languageUrlPrefix }}/faq/">{{ i18n.buttonFaq }}</a></li>
+        <li><a href="{{ languageUrlPrefix }}/contact/">{{ i18n.buttonContact }}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#payment-modal" data-toggle="modal"><span class="glyphicon" data-ng-class="donation.currency.glyphicon"></span> {{ i18n.buttonDonate }}</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> {{ language.title }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for currentLanguage in site.languages %}
+              {% if language.name != currentLanguage.name %}
+                <li><a href="{%unless currentLanguage.default%}/{{currentLanguage.name}}{%endunless%}{{ pageUrlWithoutLanguagePrefix }}">{{currentLanguage.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 
 </nav>
@@ -30,8 +47,8 @@
       <div class="modal-header">
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" data-ng-class="{active: paymentType == 'paypal'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'paypal'">PayPal</a></li>
-          <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'creditCard'">Credit Card</a></li>
-          <li role="presentation" data-ng-class="{active: paymentType == 'bankTransfer'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bankTransfer'">Bank Transfer</a></li>
+          <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'creditCard'">{{ i18n.paymentTypeCreditCard }}</a></li>
+          <li role="presentation" data-ng-class="{active: paymentType == 'bankTransfer'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bankTransfer'">{{ i18n.paymentTypeBankTransfer }}</a></li>
           <li role="presentation" data-ng-class="{active: paymentType == 'bitcoin'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bitcoin'">Bitcoin</a></li>
         </ul>
       </div>
@@ -39,7 +56,7 @@
 
         <!-- PayPal -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'paypal'}">
-          <p>After pressing &quot;Proceed&quot;, you will be redirected to our PayPal site.</p>
+          <p>{{ i18n.paypalPaymentHint }}</p>
           <div class="row">
             <div class="form-group col-md-6 col-md-offset-3">
               <div class="input-group">
@@ -63,12 +80,12 @@
 
         <!-- Credit Card -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'creditCard'}">
-          <p>Credit card payments are securely handled by Stripe.<br/>Please expect to be <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">charged by Stripe</a>.</p>
+          <p>{{ i18n.creditCardPaymentHint }}</p>
 
           <div data-ng-show="!paymentSuccessful">
             <div class="row">
               <div class="form-group col-md-6">
-                <label class="control-label" for="inputCreditCardAmount">Amount</label>
+                <label class="control-label" for="inputCreditCardAmount">{{ i18n.creditCardAmount }}</label>
                 <div class="input-group">
                   <div class="input-group-btn">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,7 +105,7 @@
             </div>
 
             <div class="form-group">
-              <label class="control-label" for="inputCreditCardNumber">Card Number</label>
+              <label class="control-label" for="inputCreditCardNumber">{{ i18n.creditCardNumber }}</label>
               <div class="input-group">
                 <input id="inputCreditCardNumber" type="text" class="form-control" data-ng-model="creditCard.num">
                 <span class="input-group-addon">
@@ -101,7 +118,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="control-label" for="inputPayPalAmount">Expiration Date</label>
+                  <label class="control-label" for="inputPayPalAmount">{{ i18n.creditCardExpirationDate }}</label>
                   <div class="input-group btn-group">
                     <div class="btn-group">
                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -143,9 +160,9 @@
 
         <!-- Bank Transfer -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'bankTransfer'}">
-          <p>Please don't set up recurring payments yet, as our bank account will change soon due to legal reasons.</p>
+          <p>{{ i18n.bankTransferPaymentHint }}</p>
           <dl class="dl-horizontal">
-            <dt>Recipient</dt>
+            <dt>{{ i18n.bankTransferRecipient }}</dt>
             <dd>GbR Tobias Hagemann und Sebastian Stenzel</dd>
             <dt>IBAN</dt>
             <dd>DE59700222000020040254</dd>
@@ -165,20 +182,20 @@
       <div class="modal-footer">
         <span data-ng-show="paymentError" data-ng-bind="paymentError"></span>
 
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ i18n.paymentCancel }}</button>
 
-        <a data-ng-disabled="!isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[donation.amount]]&amp;currency_code=[[donation.currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary"><span class="glyphicon glyphicon-new-window"></span> Proceed to PayPal</a>
+        <a data-ng-disabled="!isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[donation.amount]]&amp;currency_code=[[donation.currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org{{ languageUrlPrefixEscaped }}%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org{{ languageUrlPrefixEscaped }}&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary"><span class="glyphicon glyphicon-new-window"></span> {{ i18n.paymentProceedToPaypal }}</a>
 
         <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.validateCvc(creditCard.cvc) || !creditCard.validateNum(creditCard.num)" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
-          <span data-ng-show="!paymentInProgress">Pay now</span>
-          <span data-ng-show="paymentInProgress">Processing...</span>
+          <span data-ng-show="!paymentInProgress">{{ i18n.paymentPayNow }}</span>
+          <span data-ng-show="paymentInProgress">{{ i18n.paymentProcessing }}</span>
         </button>
 
 
-        <a href="/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Payment successful</a>
+        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.paymentSuccessful }}</a>
 
-        <a href="/downloads" data-ng-show="paymentType == 'bankTransfer' || paymentType == 'bitcoin'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Proceed to Downloads</a>
+        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'bankTransfer' || paymentType == 'bitcoin'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.paymentProceedToDownloads }}</a>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

@@ -1,0 +1,6 @@
+{% include language.liquid %}
+{% for currentI18n in site.i18n %}
+  {% if currentI18n.context == i18n and currentI18n.language == language.name %}
+    {% assign i18n = currentI18n %}
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,310 @@
+{% assign i18n = 'index' %}
+{% include i18n.liquid %}
+
+<section id="top" class="halfheight top-most-element">
+  <div class="container stage">
+    <hr/>
+    <div class="row">
+      <div class="col-xs-6 file-container">
+        <div class="file file-pdf">
+          <img src="/img/stage/file-pdf.png" srcset="/img/stage/file-pdf.png 1x, /img/stage/file-pdf@2x.png 2x"/>
+        </div>
+        <div class="file file-jpg">
+          <img src="/img/stage/file-jpg.png" srcset="/img/stage/file-jpg.png 1x, /img/stage/file-jpg@2x.png 2x"/>
+        </div>
+        <div class="file file-zip">
+          <img src="/img/stage/file-zip.png" srcset="/img/stage/file-zip.png 1x, /img/stage/file-zip@2x.png 2x"/>
+        </div>
+        <div class="file file-mp3">
+          <img src="/img/stage/file-mp3.png" srcset="/img/stage/file-mp3.png 1x, /img/stage/file-mp3@2x.png 2x"/>
+        </div>
+      </div>
+      <div class="col-xs-6 file-container">
+        <div class="file file-encrypted">
+          <img src="/img/stage/file-encrypted.png" srcset="/img/stage/file-encrypted.png 1x, /img/stage/file-encrypted@2x.png 2x"/>
+        </div>
+      </div>
+    </div>
+    <div class="device">
+      <img class="laptop" src="/img/stage/laptop.png" srcset="/img/stage/laptop.png 1x, /img/stage/laptop@2x.png 2x"/>
+      <img class="tablet" src="/img/stage/tablet.png" srcset="/img/stage/tablet.png 1x, /img/stage/tablet@2x.png 2x"/>
+      <img class="smartphone" src="/img/stage/smartphone.png" srcset="/img/stage/smartphone.png 1x, /img/stage/smartphone@2x.png 2x"/>
+    </div>
+    <div class="cryptomator">
+      <img src="/img/stage/logo.png" srcset="/img/stage/logo.png 1x, /img/stage/logo@2x.png 2x"/>
+    </div>
+    <div class="cloud">
+      <img src="/img/stage/cloud.png" srcset="/img/stage/cloud.png 1x, /img/stage/cloud@2x.png 2x"/>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <h1>Cryptomator</h1>
+    <h2>{{ i18n.subtitle }}</h2>
+  </div>
+</section>
+
+<section id="call-to-action" class="container halfheight" data-ng-controller="CallToActionCtrl">
+  <div class="row">
+    <div class="col-lg-6 col-md-4">
+      <img src="img/feature-image.png" srcset="/img/feature-image.png 1x, /img/feature-image@2x.png 2x" class="img-responsive center-block" />
+    </div>
+
+    <div class="col-lg-6 col-md-8">
+      <div class="text-center">
+        <h2>{{ i18n.download.title }}</h2>
+      </div>
+
+      <div data-ng-show="!(isOSiOS || isOSAndroid)">
+        <div class="visible-xs">
+          <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonFreeDownload }}</button>
+        </div>
+        <div class="hidden-xs text-center hide-noscript">
+          <h3>{{ i18n.download.payWhatYouWant }}</h3>
+          <div class="btn-group">
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 0" data-ng-class="{{"{"}}active: donation.amount == 0}">0 [[donation.currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 5" data-ng-class="{{"{"}}active: donation.amount == 5}">5 [[donation.currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 10" data-ng-class="{{"{"}}active: donation.amount == 10}">10 [[donation.currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 20" data-ng-class="{{"{"}}active: donation.amount == 20}">20 [[donation.currency.symbol]]</button>
+            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = null" data-ng-class="{{"{"}}active: (donation.amount !== 0 &amp;&amp; donation.amount != 5 &amp;&amp; donation.amount != 10 &amp;&amp; donation.amount != 20)}">{{ i18n.download.buttonOtherAmount }}</button>
+            <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{{"{"}}'#payment-modal': donation.amount !== 0}" data-ng-click="gotoDownloads(donation.amount === 0)">
+              <span data-ng-show="donation.amount !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> {{ i18n.download.buttonContinue }}</span>
+              <span data-ng-show="donation.amount === 0"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonDownload }}</span>
+            </button>
+          </div>
+        </div>
+        <div class="hidden-xs text-center show-noscript-block">
+          <a href="/downloads/" class="btn btn-lg btn-primary">
+            <span class="glyphicon glyphicon-download-alt"></span> Download
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h2>{{ i18n.apps.title }}</h2>
+      </div>
+
+      <div class="text-center">
+        <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
+          <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
+        </div>
+        <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
+            data-ng-click="sendGaBtnClick('androidbeta')"
+            data-container="body"
+            data-toggle="popover"
+            data-trigger="focus"
+            data-placement="bottom"
+            data-content="{{ i18n.apps.androidPopover.content }}"
+            title="{{ i18n.apps.androidPopover.title }}">
+              Android<sup>™</sup> app
+        </button>
+      </div>
+    </div>
+  </div><!-- /.row -->
+</section>
+
+<section id="reception">
+  <div class="container text-center">
+    <h2>{{ i18n.reception.title }}</h2>
+  </div>
+
+  <div class="container">
+    <div class="row reception-row">
+      <div class="col-sm-4">
+        <div class="award-image center-block">
+          <a href="http://www.cebitaward.de/preistraeger/finalisten-2016/cryptomator.html" target="_blank">
+            <img src="/img/reception/cebit-award.png" srcset="/img/reception/cebit-award.png 1x, /img/reception/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016" class="press-image press-image-cebit img-responsive center-block" />
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <p class="bigger-text">
+          {{ i18n.reception.cebitAwardInfo }}
+        </p>
+      </div>
+    </div>
+    <hr/>
+  </div>
+
+  <div class="container-fluid text-center press-images">
+      <a href="http://thenextweb.com/apple/2016/03/09/new-ios-desktop-app-cryptomator-encrypts-cloud-files-locally-upload/" target="_blank">
+        <img src="/img/reception/tnw-logo.png" srcset="/img/reception/tnw-logo.png 1x, /img/reception/tnw-logo@2x.png 2x"/>
+      </a>
+      <a href="http://t3n.de/news/cryptomator-cloud-verschluesselung-597606/" target="_blank">
+        <img src="/img/reception/t3n-logo.png" srcset="/img/reception/t3n-logo.png 1x, /img/reception/t3n-logo@2x.png 2x"/>
+      </a>
+      <a href="https://www1.wdr.de/nachrichten/rheinland/cebit-auszeichnung-102.html" target="_blank">
+        <img src="/img/reception/wdr-logo.png" srcset="/img/reception/wdr-logo.png 1x, /img/reception/wdr-logo@2x.png 2x"/>
+      </a>
+      <a href="http://www.heise.de/mac-and-i/meldung/Cryptomator-Konkurrent-fuer-Boxcryptor-3133597.html" target="_blank">
+        <img src="/img/reception/heise-logo.png" srcset="/img/reception/heise-logo.png 1x, /img/reception/heise-logo@2x.png 2x"/>
+      </a>
+      <a href="http://www.iculture.nl/cryptomator-iphone-versleuteling-cloud/" target="_blank">
+        <img src="/img/reception/iculture-logo.png" srcset="/img/reception/iculture-logo.png 1x, /img/reception/iculture-logo@2x.png 2x"/>
+      </a>
+  </div>
+</section>
+
+<section id="howto" class="green-background hidden-xs">
+  <div class="container text-center">
+    <h2>{{ i18n.howto.title }}</h2>
+  </div>
+
+  <div data-scroll-toggle-class="{{"{"}}'scrollPhase1': -300, 'scrollPhase2': 300}">
+    <div id="howto-cleartext">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-6">
+            <h3>{{ i18n.howto.transparency.title }}</h3>
+            {{ i18n.howto.transparency.content }}
+            <button type="button" class="btn btn-primary-outline btn-lg margin-top-20" scroll-to="#howto-ciphertext" scroll-offset="-150" scroll-duration="2000"><span class="glyphicon glyphicon-arrow-down"></span> {{ i18n.howto.transparency.scrollButton }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="howto-ciphertext">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-6">
+            <h3>{{ i18n.howto.individually.title }}</h3>
+            {{ i18n.howto.individually.content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <h2 class="text-center">{{ i18n.howto.title }}</h2>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="text-center">
+          <img src="/img/feature-1.svg" alt="Creating new vaults" class="feature-icon"/>
+          <div class="caption">
+            <h3>{{ i18n.features.create.title }}</h3>
+            <p>{{ i18n.features.create.content }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="text-center">
+          <img src="/img/feature-2.svg" alt="Unlocking vaults" class="feature-icon"/>
+          <div class="caption">
+            <h3>{{ i18n.features.dragNDrop.title }}</h3>
+            <p>{{ i18n.features.dragNDrop.content }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="text-center">
+          <img src="/img/feature-3.svg" alt="Cloud is encrypted" class="feature-icon"/>
+          <div class="caption">
+            <h3>{{ i18n.features.relax.title }}</h3>
+            <p>{{ i18n.features.relax.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h2 class="text-center lead">{{ i18n.features.teaser }}</h2>
+
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/img/screenshots/app1.png" srcset="/img/screenshots/app1.png 1x, /img/screenshots/app1@2x.png 2x" class="img-responsive center-block"/>
+      </div>
+      <div class="col-md-6">
+        <h3>{{ i18n.features.easyAndReliable.title }}</h3>
+        {{ i18n.features.easyAndReliable.content }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3>{{ i18n.features.secureAndTrustworthy.title }}</h3>
+        {{ i18n.features.secureAndTrustworthy.content }}
+      </div>
+      <div class="col-md-6">
+        <img src="/img/screenshots/app2.png" srcset="/img/screenshots/app2.png 1x, /img/screenshots/app2@2x.png 2x" class="img-responsive center-block"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container text-center">
+    <h2>{{ i18n.testimonials.title }}</h2>
+  </div>
+  <div class="scroll-container">
+    <div class="scroller">
+      <blockquote>
+        <p>I use Cryptomator for encrypted areas inside my ownCloud and Seafile storage for private data. Without it I wouldn&apos;t be able to use the cloud to this extent.</p>
+        <footer>Ulrich Zobel</footer>
+      </blockquote>
+
+      <blockquote>
+        <p>I have really been missing an app with cross platform encryption for cloud services. This is by far the best.</p>
+        <footer>Troels Bay</footer>
+      </blockquote>
+
+      <blockquote>
+        <p>I&apos;ve been incredibly impressed by your work on Cryptomator; I think you&apos;re going to help a lot of people!</p>
+        <footer>Ben Elijah, inkandben.com</footer>
+      </blockquote>
+
+      <blockquote>
+        <p>This is the kind of app, the world has been waiting for!</p>
+        <footer>Daniel Rieger, IT Product Expert</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter" class="green-background">
+  <a name="newsletter"></a>
+  <div class="container">
+    <div class="text-center">
+      <h2>{{ i18n.newsletter.title }}</h2>
+      <p class="lead">{{ i18n.newsletter.description }}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div>
+          <form action="//cryptomator.us10.list-manage.com/subscribe/post?u=e9345a3370a9a703b20c45e3c&amp;id=1a6e2c337b" method="post" name="mc-embedded-subscribe-form" class="form-horizontal validate" target="_blank" novalidate>
+            <div>
+              <div class="form-group">
+              	<label for="mce-EMAIL" class="col-sm-3 control-label">{{ i18n.newsletter.emailAddress }}</label>
+                <div class="col-sm-9">
+              	   <input type="email" value="" name="EMAIL" class="required email form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mce-group[3693]-3693-1" class="col-sm-3 control-label">Android Beta</label>
+                <div class="col-sm-9">
+                  <div class="checkbox">
+                    <label><input id="androidBetaCheckbox" type="checkbox" value="2" name="group[3693][2]" /> {{ i18n.newsletter.androidOptIn }}</label>
+                  </div>
+                </div>
+              </div>
+            	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_e9345a3370a9a703b20c45e3c_1a6e2c337b" tabindex="-1" value=""></div>
+              <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                  <input type="submit" value="{{ i18n.newsletter.buttonSubscribe }}" name="subscribe" class="btn btn-primary-outline"/>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
