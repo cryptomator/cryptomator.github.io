@@ -3,22 +3,22 @@ language: de
 anchor: nameEncryption
 title: Namen verschlüsseln
 ---
-<p class="lead">Before we deal with the actual file contents, filenames get encrypted.</p>
+<p class="lead">Bevor wir uns mit den eigentlichen Dateiinhalten beschäftigen, werden die Dateinamen verschlüsselt.</p>
 
-Cryptomator uses AES-SIV to encrypt file as well as directory names. Additionally to the name a unique directory ID of its parent directory is passed as associated data.
+Cryptomator nutzt AES-SIV, um Dateien und Verzeichnisnamen zu verschlüsseln. Zusätzlich wird eine eindeutige Verzeichnis-ID des übergeordneten Verzeichnisses als Zusatzdaten übergeben.
 
 <pre>
 cipheredName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))
 </pre>
 
-If it&apos;s a filename, we&apos;re done!
+Falls es sich um einen Dateinamen handelt, sind wir hier fertig.
 
-If it&apos;s a directory name, we append an underscore. We then create a file with this name, in which we write a unique identifier (e.g. <abbr title="Universally unique identifier" class="initialism">UUID</abbr>). The corresponding directory however is stored in a different location:
+Handelt es sich hingegen um einen Verzeichnisnamen, wird ein Unterstrich hinzugefügt. Dann erstellen wir eine Datei dieses Namens, in die wir eine eindeutige Kennzeichnung (genauer eine <abbr title="Universally unique identifier" class="initialism">UUID</abbr>) schreiben. Das dazugehörige Verzeichnis ist jedoch an einem anderen Ort gespeichert:
 
 <pre>
-dirId := createUuid()
-dirIdHash := base32(sha1(aesSiv(dirId, null, encryptionMasterKey, macMasterKey)))
-dirPath := vaultRoot + &apos;/d/&apos; + substr(dirIdHash, 0, 2) + &apos;/&apos; + substr(dirIdHash, 2, 30)
+verzeichnisId := erstelleUuid()
+verzeichnisIdHash := base32(sha1(aesSiv(verzeichnisId, null, encryptionMasterKey, macMasterKey)))
+verzeichnisPfad := tresorWurzelverzeichnis + &apos;/d/&apos; + substr(verzeichnisIdHash, 0, 2) + &apos;/&apos; + substr(verzeichnisIdHash, 2, 30)
 </pre>
 
-By making all directories effectively siblings (or cousins to be precise), we not only obfuscate the directory hierarchy but also limit path depth regardless of its actual hierarchy to ensure compatiblity with some cloud services.
+Indem wir alle Verzeichnisse nebeneinander legen, verschleiern wir nicht nur die Verzeichnishierarchie, sondern begrenzen auch die Pfadtiefe unabhängig von der eigentlichen Hierarchie, um die Kompatibilität mit einigen Cloud Services sicherzustellen.

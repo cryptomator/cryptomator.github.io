@@ -5,7 +5,7 @@ title: Filename Encryption
 ---
 <p class="lead">Before we deal with the actual file contents, filenames get encrypted.</p>
 
-Cryptomator uses AES-SIV to encrypt file as well as directory names. Additionally to the name a unique directory ID of its parent directory is passed as associated data.
+Cryptomator uses AES-SIV to encrypt file as well as directory names. Additionally to the name, a unique directory ID of its parent directory is passed as associated data.
 
 <pre>
 cipheredName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))
@@ -13,7 +13,7 @@ cipheredName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, m
 
 If it&apos;s a filename, we&apos;re done!
 
-If it&apos;s a directory name, we append an underscore. We then create a file with this name, in which we write a unique identifier (e.g. <abbr title="Universally unique identifier" class="initialism">UUID</abbr>). The corresponding directory however is stored in a different location:
+If it&apos;s a directory name, we append an underscore. We then create a file with this name, in which we write a unique identifier (i.e. <abbr title="Universally unique identifier" class="initialism">UUID</abbr>). The corresponding directory however is stored in a different location:
 
 <pre>
 dirId := createUuid()

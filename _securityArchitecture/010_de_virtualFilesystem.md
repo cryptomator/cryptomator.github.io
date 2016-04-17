@@ -3,6 +3,7 @@ language: de
 anchor: virtualFilesystem
 title: Virtuelles Dateisystem
 ---
-<p class="lead">Cryptomator provides a virtual drive. Add, edit, remove files as you&apos;re used to with just any disk drive.</p>
 
-Currently WebDAV is our frontend of choice, as it is supported on every major operating system. WebDAV is an HTTP-based protocol, in which Cryptomator acts as a server accepting so-called loopback connections on your local machine only. Whenever your file manager accesses files through this protocol, Cryptomator will process this request via the following layers.
+<p class="lead">Cryptomator stellt ein virtuelles Laufwerk bereit. Dateien lassen sich genauso hinzufügen, bearbeiten und entfernen, wie Sie es bei einem USB Stick gewöhnt sind.</p>
+
+Zurzeit nutzen wir dazu WebDAV, da es von allen meistgenutzten Betriebssystemen unterstützt wird. WebDAV ist ein HTTP-basiertes Protokol, in dem Cryptomator als ein Server fungiert, der sogenannte Loopback-Verbindungen ausschließlich von Ihrem lokalen Gerät akzeptiert. Immer wenn Ihr Dateimanager durch dieses Protokoll auf Ihre Dateien zugreift, wird Cryptomator diese Anfrage durch die folgenden Schichten verarbeiten.
