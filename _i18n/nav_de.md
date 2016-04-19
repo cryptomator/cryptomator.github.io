@@ -22,11 +22,11 @@ creditCardNumber: Kartennummer
 creditCardExpirationDate: Gültig bis
 bankTransferPaymentHint: >
   Bitte konfigurieren Sie noch keine Daueraufträge, da sich unsere Bankverbindung rechtlich bedingt ändern wird.
-bankTransferRecipient: Recipient
-paymentCancel: Cancel
-paymentProceedToPaypal: Proceed to PayPal
-paymentPayNow: Pay now
-paymentProcessing: Processing...
-paymentSuccessful: Payment successful
-paymentProceedToDownloads: Proceed to Downloads
+bankTransferRecipient: Empfänger
+paymentCancel: Abbrechen
+paymentProceedToPaypal: Weiter zu PayPal
+paymentPayNow: Jetzt zahlen
+paymentProcessing: Verarbeite...
+paymentSuccessful: Zahlung erfolgreich
+paymentProceedToDownloads: Weiter zum Download
 ---
