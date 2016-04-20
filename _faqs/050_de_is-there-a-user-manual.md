@@ -3,9 +3,8 @@ anchor: 'userManual'
 title: 'Gibt es ein Benutzerhandbuch?'
 language: de
 published: true
-abstract: 'Work on the user manual is in progress.'
+abstract: 'Das Benutzerhandbuch ist in Arbeit.'
 ---
-You may download the current draft in the following languages:
+Sie können den momentanen Entwurf hier herunterladen:
 
 * <a href="/resources/Cryptomator Benutzerhandbuch.pdf">Benutzerhandbuch (Deutsch)</a>
-* <a href="/resources/Cryptomator User Manual.pdf">User Manual (English)</a>

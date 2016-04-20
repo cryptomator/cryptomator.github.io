@@ -9,11 +9,11 @@ Diese Schlüssel sind zufällige Sequenzen, die durch einen <abbr title="Kryptog
 Beide Schlüssel werden durch eine <a href="https://tools.ietf.org/html/rfc3394" target="_blank">RFC 3394</a> Schlüsselumhüllung mit einem <abbr title="Schlüsselverschlüsselnder Schlüssel (engl.: Key encrypting key)" class="initialism">KEK</abbr> verschlüsselt, der aus dem Passwort des Tresors durch Verwendung von Script abgeleitet wird.
 
 <pre>
-encryptionMasterKey := createRandomBytes(32)
-macMasterKey := createRandomBytes(32)
-kek := scrypt(password, scryptSalt, scryptCostParam, scryptBlockSize)
-wrappedEncryptionMasterKey := aesKeyWrap(encryptionMasterKey, kek)
-wrappedMacMasterKey := aesKeyWrap(macMasterKey, kek)
+hauptschlüssel := erzeugeZufälligeBytes(32)
+macHauptschlüssel := erzeugeZufälligeBytes(32)
+kek := scrypt(passwort, scryptSalt, scryptKostenparameter, scryptBlockGröße)
+umhüllterHauptschlüssel := aesKeyWrap(hauptschlüssel, kek)
+umhüllterMacHauptschlüssel := aesKeyWrap(macHauptschlüssel, kek)
 </pre>
 
 Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig sind, werden dann als Zahlen oder eine Base64 Zeichenkette in einer JSON Datei namens <code>masterkey.cryptomator</code> gespeichert. Diese befindet sich im Wurzelverzeichnis des Tresors.
@@ -26,8 +26,8 @@ Beim Entsperren des Tresors wird der KEK benutzt, um die gespeicherten Hauptschl
   "scryptSalt": "QGk...jY=",
   "scryptCostParam": 16384,
   "scryptBlockSize": 8,
-  "primaryMasterKey": "QDi...Q==", /* wrappedEncryptionMasterKey */
-  "hmacMasterKey": "L83...Q==", /* wrappedMacMasterKey */
+  "primaryMasterKey": "QDi...Q==", /* umhüllterHauptschlüssel */
+  "hmacMasterKey": "L83...Q==", /* umhüllterMacHauptschlüssel */
   "versionMac": "3/U...9Q=" /* HMAC-256 der Tresorversion zum Vermeiden von Downgrade-Angriffen */
 }
 </pre>

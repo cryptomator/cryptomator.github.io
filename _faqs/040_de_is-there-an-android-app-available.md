@@ -3,7 +3,7 @@ anchor: 'androidApp'
 title: 'Gibt es eine Anroid-App?'
 language: de
 published: true
-abstract: 'We are currently developing an Android app with functionality equal to the iOS app. The app will be available in the second half of the year 2016.'
+abstract: 'Wir arbeiten zurzeit an einer Android App mit vergleichbarer Funktionalität wie die iOS App. Sie wird in der zweiten Jahreshälfte 2016 erhältlich sein.'
 ---
 
-If you want to get updated about this you may <a href="/#newsletter">subscribe to our newsletter</a>.
+Wenn Sie über Neuigkeiten informiert werden möchten, abonnieren Sie unseren <a href="/#newsletter">Newsletter</a>.

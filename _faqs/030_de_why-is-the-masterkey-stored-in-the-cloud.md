@@ -1,18 +1,18 @@
 ---
 anchor: 'masterkeyFile'
-title: 'Warum wird der "Masterkey" in der Cloud gespeichert?'
+title: 'Warum ist der "Hauptschlüssel" in der Cloud gespeichert?'
 language: de
 published: true
-abstract: 'If you look into the storage location of a Cryptomator vault you will find a file called masterkey.cryptomator.'
+abstract: 'Am Speicherort eines Tresors finden Sie eine Datei namens masterkey.cryptomator.'
 ---
 
-### What does this file contain?
+### Was enthält diese Datei?
 
-This file contains encrypted data which is needed to derive the masterkey from your password. The file does not contain the decrypted masterkey itself.
+Die Datei enthält verschlüsselte Daten, die benötigt werden, um aus Ihrem Passwort den Hauptschlüssel abzuleiten. Sie enthält jedoch nicht den entschlüsselten Hauptschlüssel selbst.
 
 
-### Is this a security problem?
+### Ist das ein Problem für die Sicherheit?
 
-No. The encrypted key in *masterkey.cryptomator* is not more sensitive than the encrypted files themselves.
+Nein. Der verschlüsselte Schlüssel in *masterkey.cryptomator* ist nicht anfälliger als die verschlüsselten Dateien selber.
 
-For more details on how this exactly works, take a look on our <a href="/architecture/#masterkeyDerivation">security architecture page</a>.
+Mehr Informationen finden Sie hier: <a href="/architecture/#masterkeyDerivation">Sicherheitsarchitektur-Seite</a>.

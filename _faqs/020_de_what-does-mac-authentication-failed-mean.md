@@ -3,20 +3,20 @@ anchor: 'macWarning'
 title: 'Was bedeutet MAC Authentifizierung fehlgeschlagen?'
 language: de
 published: true
-abstract: 'Cryptomator uses a so-called MAC to detect unauthorized file changes. In this case the file or files listed in this dialog did change.'
+abstract: 'Cryptomator nutzt sogenannte MAC, um nicht autorisierte Dateiänderungen zu erkennen. Erscheint die obengenannte Warnung, wurde eine solche Änderung einer oder mehrerer Dateien entdeckt.'
 ---
 
 <img src="/img/faq/macWarning.png" srcset="/img/faq/macWarning.png 1x, /img/faq/macWarning@2x.png 2x" alt="MAC Warning Screen" />
 
-### Is this dangerous?
-Unauthorized file modification can have two reasons: Either inevitable <a href="http://en.wikipedia.org/wiki/Data_degradation" target="_blank">bit rotting</a>, which is rather harmless from a security standpoint.
+### Ist das gefährlich?
+Nicht autorisierte Dateiänderungen können zwei Gründe haben: Entweder ist eine hardwarebedingte Änderung aufgetreten, die für die Sicherheit jedoch irrelevant ist.
 
-Or the file has been compromised by a cyber criminal planning a <a href="http://en.wikipedia.org/wiki/Chosen-ciphertext_attack" target="_blank">chosen ciphertext attack</a> with the intent to crack your key.
+Oder aber die Datei wurde von jemandem verändert, der über einen <a href="https://de.wikipedia.org/wiki/Chosen-Ciphertext-Angriff" target="_blank">Chosen-Ciphertext-Angriff</a> deinen Sicherheitsschlüssel knacken will.
 
-### What shall I do?
-* Keep calm, nothing has happened yet
-* Are multiple files affected at the same time?
-* Check your cloud storage provider's access log.
-* Do not decrypt affected files, if there is any chance an attacker might be able to read your decrypted contents.
+### Was kann ich tun?
+* Bleiben Sie ruhig, noch ist nichts passiert
+* Sind mehrere Dateien auf einmal betroffen?
+* Überprüfen Sie die Zugangsdatei vom Anbieter Ihres Cloudspeichers.
+* Entschlüsseln Sie Ihre Dateien nicht, bis ausgeschlossen ist, dass ein etwaiger Angreifer Ihre unverschlüsselten Dateien lesen könnte.
 
-If you suspect a cyber attack, delete the file as soon as possible and empty your trash. The decrypted file must not fall into the hands of the attacker. You might also want to contact your cloud storage provider to get help securing your account.
+Wenn Sie einen Angriff vermuten, löschen Sie die Datei so bald wie möglich und leeren den Papierkorb. Die entschlüsselte Datei darf nicht in die Hände eines Angreifers fallen. Außerdem können Sie den Anbieter Ihres Cloudspeichers kontaktieren, um Hilfe zum Sichern Ihres Accounts zu bekommen.
