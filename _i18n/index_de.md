@@ -7,36 +7,36 @@ subtitle: >
   Open Source Software: Keine Backdoors, keine Accounts.
 
 download:
-  title: WDownload for PC or Mac
-  buttonFreeDownload: WFree Download
-  payWhatYouWant: WPay whant you want
-  buttonOtherAmount: WOther
-  buttonContinue: WContinue
-  buttonDownload: WDownload
+  title: Download für PC oder Mac
+  buttonFreeDownload: Gratis Download
+  payWhatYouWant: Zahlen Sie, wieviel Sie wollen
+  buttonOtherAmount: Anderer Betrag
+  buttonContinue: Weiter
+  buttonDownload: Download
 
 apps:
-  title: WApp for your smartphone
+  title: App für Ihr Smartphone
   androidPopover:
-    title: WCryptomator for Android
+    title: Cryptomator for Android
     content: >
-      WThe Cryptomator app for Android is currently under development.<br/>
-      WTo get updated subscribe to our <a href='#newsletter'>newsletter</a>.
+      Die Cryptomator App für Android ist in Arbeit.<br/>
+      Um auf dem Laufenden zu bleiben, abonnieren Sie unseren <a href='#Newsletter'>newsletter</a>.
 
 reception:
-  title: WReception
+  title: Resonanz
   cebitAwardInfo: >
-    WAwardee of the CeBIT Innovation Award 2016:<br/>
-    Cryptomator won the <a href="http://www.cebitaward.de/preistraeger/finalisten-2016/cryptomator.html" target="_blank">Special Award for Usable Security and Privacy</a>.
+    Preisträger des CeBIT Innovation Award 2016:<br/>
+    Cryptomator ist Gewinner des <a href="http://www.cebitaward.de/preistraeger/finalisten-2016/cryptomator.html" target="_blank">Sonderpreis for Usable Security and Privacy</a>.
 
 howto:
-  title: WHow does Cryptomator protect your cloud files?
+  title: Wie schützt Cryptomator Ihre Cloud-Dateien?
   transparency:
-    title: WTransparent encryption
+    title: Transparente Verschlüsselung
     content: >
-      <p><em>WTransparent encryption</em> means you will not notice any difference in working with your files.</p>
-      <p>While the <em>vault</em> containing your encrypted data resides somewhere in your cloud folder, Cryptomator provides a virtual hard drive through which you can access your files.</p>
-      <p>You can work on this drive as if it were a conventional USB flash drive.</p>
-    scrollButton: WSee how your encrypted files look like
+      <p><em>Transparente Verschlüsselung</em> bedeutet, dass Sie keinen Unterschied im Umgang mit Ihren Dateien bemerken werden.</p>
+      <p>Während der <em>Tresor</em>, der Ihre verschlüsselten Dateien enthält, irgendwo in Ihrem Cloud-Ordner liegt, stellt Cryptomator ein virtuelles Laufwerk bereit, über welches Sie auf Ihre Dateien zugreifen können.</p>
+      <p>Sie können mit diesem Laufwerk arbeiten, als wäre es ein normaler USB-Stick.</p>
+    scrollButton: So sehen Ihre verschlüsselten Dateien aus
   individually:
     title: WFiles get encrypted individually
     content: >

@@ -3,24 +3,24 @@ anchor: 'sharingFiles'
 title: 'Wie teile ich Dateien mit Anderen?'
 language: de
 published: true
-abstract: 'To give others access to your encrypted files they will need access to the Cryptomator vault and your password.'
+abstract: 'Andere brauchen Zugang zu Ihrem Cryptomator Tresor und Ihrem Passwort, um auf Ihre verschlüsselten Dateien zugreifen können.'
 ---
-### How do I give others access to the Cryptmator vault?
+### Wie gebe ich jemandem Zugang zum Cryptomator Tresor?
 
-This depends on the cloud provider you are using. Some allow to share files using the context menu in your file system, others allow to share files using the web interface. Consult the documentation of your cloud provider on how to do it.
+Das kommt auf Ihren Cloudanbieter an. Bei manchen kann man Dateien über das Kontextmenü im Dateisystem teilen, bei anderen über die Weboberfläche. Lesen Sie in den Anleitungen Ihres Cloudanbieters nach, um welches Fall es sich handelt.
 
-### How do I transfer the password?
+### Wie gebe ich das Passwort weiter?
 
-In general you should only transfer the password in a secure way. For example an encrypted messaging service, encrypted mail or similar are feasible. If possible you may tell the password in person.
+Generell sollten Sie darauf achten, Ihr Passwort immer nur auf sicherem Wege weiterzugeben. Zum Beispiel druch Nutzung eines verschlüsselten Nachrichtendienstes, verschlüsselte Mails oder Ähnliches. Wenn möglich, sagen Sie Ihr Passwort der Person in direktem Kontakt.
 
-### What if I only want to share some of my files?
+### Wie kann ich nur manche meiner Dateien teilen anstatt alle?
 
-You can create as many vaults as you want. Share one with your family, one with your colleagues and use one privately.
+Sie können so viele Tresore anlegen, wie Sie möchten. Nutzen Sie zum Beispiel einen für Ihre Familie, einen für Kollegen und einen nur für Sie im Privaten usw.
 
-However you can't share individual files from within a vault.
+Es ist hingegen nicht möglich, nur einen Teil der Dateien innerhalb eines einzelnen Tresors freizugeben.
 
-### Can I revoke access to the vault by changing the password?
+### Kann ich den geteilten Zugang durch die Änderung des Passworts beenden?
 
-No. Even after changing the password another user could still access the vault using a backup copy of an old key. To disallow access you will have to create a new vault with a new password and migrate all contents. Only then everything gets re-encrypted.
+Nein. Selbst wenn SIe das Passwort geändert haben, können andere Nutzer immer noch über eine Sicherungskopie oder einen alten Schlüssel auf Ihren Tresor zugreifen. Um einen einmal erlaubten Zugriff zu beenden, müssen Sie einen neuen Tresor mit einem neuen Passwort erstellen und die vorher geteilten Daten in diesen transferieren. Erst dann ist alles wieder verschlüsselt.
 
-Please be aware that even if you do that a user who once had access may have made copies of all files stored in the vault at that time.
+Bitte bedenken Sie, dass Nutzer, denen Sie Zugang zu Ihrem Tresor gewährt hatten, Ihre Daten kopiert haben könnte, solange er/sie Zugriff hatte.
