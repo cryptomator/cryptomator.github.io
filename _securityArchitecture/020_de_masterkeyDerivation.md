@@ -5,8 +5,11 @@ title: 'Ableitung des "Masterkey"'
 ---
 <p class="lead">Jeder Tresor hat seinen eigenen 256 Bit- und einen MAC Hauptschlüssel, die für die Verschlüsselung von dateispezifischen Schlüsseln beziehungsweise für die Dateiauthentifizierung benutzt werden.</p>
 
-Diese Schlüssel sind zufällige Sequenzen, die durch einen <abbr title="Kryptographisch sicherer Zufallszahlengenerator (engl.: Cryptographically secure pseudorandom number generator)" class="initialism">CSPRNG</abbr> generiert werden.
-Beide Schlüssel werden durch eine <a href="https://tools.ietf.org/html/rfc3394" target="_blank">RFC 3394</a> Schlüsselumhüllung mit einem <abbr title="Schlüsselverschlüsselnder Schlüssel (engl.: Key encrypting key)" class="initialism">KEK</abbr> verschlüsselt, der aus dem Passwort des Tresors durch Verwendung von Script abgeleitet wird.
+Diese Schlüssel sind zufällige Sequenzen, die durch einen Kryptographisch sicheren Zufallszahlengenerator (CSPRNG) generiert werden.
+Aus dem Passwort des Tresors wird durch Verwendung von <a href="https://de.wikipedia.org/wiki/Scrypt">Scrypt</a> ein <abbr title="Schlüsselverschlüsselnder Schlüssel (engl.: Key encrypting key)" class="initialism">KEK</abbr> abgeleitet wird.
+Beide Hauptschlüssel werden durch <a href="https://tools.ietf.org/html/rfc3394" target="_blank">Schlüsselumhüllung</a> mit diesem KEK verschlüsselt.
+
+Der technische Ablauf ist folgender:
 
 <pre>
 hauptschlüssel := erzeugeZufälligeBytes(32)
@@ -16,9 +19,7 @@ umhüllterHauptschlüssel := aesKeyWrap(hauptschlüssel, kek)
 umhüllterMacHauptschlüssel := aesKeyWrap(macHauptschlüssel, kek)
 </pre>
 
-Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig sind, werden dann als Zahlen oder eine Base64 Zeichenkette in einer JSON Datei namens <code>masterkey.cryptomator</code> gespeichert. Diese befindet sich im Wurzelverzeichnis des Tresors.
-
-Beim Entsperren des Tresors wird der KEK benutzt, um die gespeicherten Hauptschlüssel zu enthüllen (d.h. entschlüsseln).
+Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig sind, werden dann in einer JSON Datei namens <code>masterkey.cryptomator</code> gespeichert. Diese befindet sich im Wurzelverzeichnis des Tresors und sieht in etwa so aus:
 
 <pre>
 {
@@ -31,3 +32,5 @@ Beim Entsperren des Tresors wird der KEK benutzt, um die gespeicherten Hauptschl
   "versionMac": "3/U...9Q=" /* HMAC-256 der Tresorversion zum Vermeiden von Downgrade-Angriffen */
 }
 </pre>
+
+Beim Entsperren des Tresors wird der KEK, der nur aus dem Passwort ermittelt werden kann, benutzt, um die gespeicherten Hauptschlüssel zu enthüllen (d.h. zu entschlüsseln). Erst mit den enthüllten Hauptschlüsseln ist die entschlüsselung der Daten möglich.

@@ -3,6 +3,6 @@ language: de
 anchor: storage
 title: Zielverzeichnis
 ---
-<p class="lead">After your files have been processed by all above layers, they are finally stored into your chosen directory.</p>
+<p class="lead">Nachdem die Dateien gemäß aller beschriebenen Schritte verarbeitet wurden werden sie im Zielverzeichnis des Tresors abelegt.</p>
 
-This is where Cryptomator&apos;s job is done and the synchronization client of your favorite cloud provider will start synchronization.
+Hiermit endet die Arbeit von Cryptomator und das Synchronisation-Programm des Cloud-Anbieters kann mit der Synchronisation der verschlüsselten Daten beginnen.

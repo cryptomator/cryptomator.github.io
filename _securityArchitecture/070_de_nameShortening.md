@@ -3,8 +3,8 @@ language: de
 anchor: nameShortening
 title: Kürzung der Pfade
 ---
-<p class="lead">This layer doesn&apos;t modify any file contents. Its sole purpose is to limit the path length to ensure compatibility with certain Microsoft products, that are stuck in the &apos;90s.</p>
+<p class="lead">Dieser Schritt ändert die Dateinhalte nicht. Der einzige Zweck ist es, die Kompatibilität mit einigen Microsoft Produkten sicherzustellen, die noch immer keine langen Pfade unterstützen.</p>
 
-Even with the flattened directory structure <a href="#nameEncryption">achieved during filename encryption</a>, the file path might be longer than 255 characters. So whenever a filename reaches a certain threshold, it is replaced by its much shorter SHA-1 hash and gets a <code>.lng</code> file extension. Additionally an equally named metadata file is created in the <code>m</code> directory containing a reverse-mapping back to the original name.
+Trotz der flachen Ordnerhierarchien die durch die <a href="#nameEncryption">Dateinamensverschlüsselung erzeugt wurde</a>, kann der Pfad zu einer Datei länger als 255 Zeichen sein. Immer wenn ein Dateiname einen Grenzwert überschreitet, wird dieser durch einen wesentlich kürzeren SHA-1 hash ersetzt und bekommt eine <code>.lng</code> erweiterung. Zusätzlich wird eine Datei gleichen Names im Verzeichnis <code>m</code> erstellt die die Zuordnung des ursprünglichen Namens erlaubt.
 
-This layer doesn&apos;t provide any additional security. Its sole purpose is to maximize compatibility.
+Durch diesen Schritt wird keine zusätzliche Sicherheit erreicht sondern lediglich die Kompatibilität maximiert.

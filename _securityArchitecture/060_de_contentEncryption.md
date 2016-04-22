@@ -3,33 +3,37 @@ language: de
 anchor: contentEncryption
 title: Inhalt verschlüsseln
 ---
-<p class="lead">This is where your actual file contents get encrypted.</p>
+<p class="lead">Hier wird der aktuelle Dateiinhalt verschlüsselt.</p>
 
-The cleartext is broken down into multiple chunks, each up to 32 KiB + 48 bytes consisting of:
+Der unverschlüsselte Dateiinhalt wird in mehrere Stücke zerteilt, jede bestehend aus 32 KiB.
+
+Diese Stücke werden dann jeweils verschlüsselt und folgendermaßen um weitere 48 Byte ergänzt:
 
 <ul>
-  <li>16 bytes nonce</li>
-  <li>up to 32 KiB encrypted payload using AES-CTR with the file content key</li>
+  <li>16 Byte "nonce"</li>
+  <li>bis zu 32 KiB mit AES-CTR und dem Dateischlüssel verschlüsselte Daten</li>
   <li>
-    32 bytes MAC of
+    32 Byte MAC über
     <ul>
-      <li>file header nonce (to bind this chunk to the file header)</li>
-      <li>chunk number as 8 byte big endian integer (to prevent reordering)</li>
-      <li>nonce</li>
-      <li>encrypted payload</li>
+      <li>die nonce aus dem Dateikopf (um zu verhindern, dass das Stück mit Stücken in anderen Dateien vertauscht werden kann),</li>
+      <li>die laufende Nummer des Stücks (um zu verhindern, dass Stücke innerhalb einer Datei vertauscht werden können),</li>
+      <li>die nonce des Stücks und</li>
+      <li>die verschlüsselten Daten,</li>
     </ul>
   </li>
 </ul>
 
-Afterwards the encrypted chunks are joined preserving the order of the cleartext chunks. The payload of the last chunk may be smaller than 32 KiB.
+Nach der Verschlüsselung werden diese Stücke wieder in der selben Reihenfolge zusammengefügt. Dabei kann das letzte Stück weniger als 32 KiB Daten enthalten wenn die Datei nicht eine Länge hat, die ein vielfaches von 32 KiB ist.
+
+Der technische Ablauf ist folgender:
 
 <pre>
-cleartextChunks[] := split(paddedCleartext, 32KiB)
-for (int i = 0; i < length(cleartextChunks); i++) {
-  chunkNonce := createRandomBytes(16)
-  encryptedPayload := aesCtr(cleartextChunks[i], fileKey, chunkNonce)
-  mac := hmacSha256(headerNonce . bigEndian(i) . chunkNonce . encryptedPayload, macMasterKey)
-  ciphertextChunks[i] := chunkNonce . encryptedPayload . mac
+unverschlüsselteStücke[] := zerstückeln(verlängerterUnverschlüsselterDateiinhalt, 32KiB)
+für (stückNummer von 0 bis länge(unverschlüsselteStücke)-1) {
+  stückNonce := erzeugeZufälligeBytes(16)
+  verschlüsselteDaten := aesCtr(unverschlüsselteStücke[i], dateischlüssel, stückNonce)
+  mac := hmacSha256(dateikopfNonce . bigEndian(i) . stückNonce . verschlüsselteDaten, macHauptschlüssel)
+  verschlüsselteStücke[i] := stückNonce . verschlüsselteDaten . mac
 }
-encryptedFileContent := join(encryptedChunks[])
+verschlüsselterDateiinhalt := zusammenfügen(verschlüsselteStücke[])
 </pre>
