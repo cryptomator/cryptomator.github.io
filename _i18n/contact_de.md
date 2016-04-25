@@ -2,28 +2,28 @@
 language: de
 context: contact
 
-title: Contact
+title: Kontakt
 speakToUs:
-  title: Want to speak to us?
+  title: So können Sie uns erreichen
   support:
     title: Support
-    contactUs: If you need assistance do not hesitate to contact us at
-    weSpeakGerman: ""
-    pgpKey: PGP Key
+    contactUs: Wenn Sie Hilfe brauchen, erreichern Sie uns unter
+    weSpeakGerman: "&nbsp;"
+    pgpKey: PGP Schlüssel
   press:
     title: Press
-    contactUs: For any press inquiries please contact us at
-    pgpKey: PGP Key
+    contactUs: Für Presseanfragen, kontaktieren Sie uns unter
+    pgpKey: PGP Schlüssel
 foundABug:
-  title: Found a Bug?
+  title: Sie haben einen Fehler gefunden?
   desktop:
-    title: Desktop App
+    title: Desktop Anwendung
     reportAtGitHub: >
-      If you found a bug concerning the Cryptomator Desktop Application you can report an issue on
-      <a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">the Cryptomator issues list</a>.
+      Fehler bezüglich der Cryptomator Desktop Anwendung können Sie auf der
+      <a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">Cryptomator Fehlerliste</a> melden.
   iosApp:
     title: iOS App
     reportAtGitHub: >
-      If you found a bug concerning the Cryptomator iOS App you can report an issue on
-      <a href="https://github.com/cryptomator/cryptomator-ios/issues" target="_blank">the Cryptomator for iOS issues list</a>.
+      Fehler bezüglich der Cryptomator iOS App können Sie auf der
+      <a href="https://github.com/cryptomator/cryptomator-ios/issues" target="_blank">Cryptomator iOS Fehlerliste</a> melden.
 ---

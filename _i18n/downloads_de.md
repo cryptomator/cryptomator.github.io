@@ -3,38 +3,38 @@ language: de
 context: downloads
 
 loadScreen:
-  title: Cryptomator download
-  choosingDownload: Choosing download for your operating system...
+  title: Cryptomator Download
+  choosingDownload: Wählen Sie den Download für Ihr Betriebssystem...
 windows:
-  title: Cryptomator for Windows
-  button32Bit: Download Cryptomator 32 bit
-  button64Bit: Download Cryptomator 64 bit
+  title: Cryptomator für Windows
+  button32Bit: 32 bit-Version herunterladen
+  button64Bit: 64 bit-Version herunterladen
 osx:
-  title: Cryptomator for OS X
-  button: Download Cryptomator
+  title: Cryptomator für OS X
+  button: Cryptomator herunterladen
 linux:
-  title: Cryptomator for Linux
-  button: Download Cryptomator
-  debianBased: For Debian-based OS
-  requirements: See <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detailed system requirements</a>
+  title: Cryptomator für Linux
+  button: Cryptomator herunterladen
+  debianBased: Für Debian-basierte Systeme
+  requirements: Siehe <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detaillierte Systemanforderungen</a>
 jar:
-  title: Executable JAR-File
-  button: Available on GitHub
-  requirements: Requires JRE 8 + JCE unlimited strength policy files
+  title: Ausführbare JAR-Datei
+  button: Verfügbar auf GitHub
+  requirements: Benötigt JRE 8 + JCE unlimited strength policy Dateien
 allVersions:
-  title: All versions
-  dateFormat: "%B %d, %Y"
+  title: Alle Versionen
+  dateFormat: "%d.%m.%Y"
   version: Version
-  notes: Notes
-  releaseDate: Release Date
+  notes: Hinweise
+  releaseDate: Veröffentlicht am
   releaseDateFormat: "%Y-%m-%d"
-  changelog: Changelog
+  changelog: Änderungen
   jarDownloadHint: >
-    All versions can be loaded as a JAR-file from <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub releases</a>.
+    Alle Versionen können als JAR-Datei von <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub releases</a> heruntergeladen werden.
 dropdown:
-  toggle: Toggle Dropdown
-  osx: Cryptomator for OS X
-  linux: Cryptomator for Linux
-  jar: Executable JAR-File
-  allVersions: Other versions
+  toggle: Dropdown umschalten
+  osx: Cryptomator für OS X
+  linux: Cryptomator für Linux
+  jar: Ausführbare JAR-Datei
+  allVersions: Andere Versionen
 ---

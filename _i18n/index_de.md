@@ -20,7 +20,7 @@ apps:
     title: Cryptomator for Android
     content: >
       Die Cryptomator App für Android ist in Arbeit.<br/>
-      Um auf dem Laufenden zu bleiben, abonnieren Sie unseren <a href='#Newsletter'>newsletter</a>.
+      Um auf dem Laufenden zu bleiben, abonnieren Sie unseren <a href='#Newsletter'>Newsletter</a>.
 
 reception:
   title: Resonanz
@@ -38,49 +38,48 @@ howto:
       <p>Sie können mit diesem Laufwerk arbeiten, als wäre es ein normaler USB-Stick.</p>
     scrollButton: So sehen Ihre verschlüsselten Dateien aus
   individually:
-    title: WFiles get encrypted individually
+    title: Dateien werden individuell verschlüsselt.
     content: >
-      <p>WEverything you put onto the virtual hard drive ends up encrypted in your vault.</p>
-      <p>Other than disk encryption utilities, Cryptomator encrypts each file for its own. So if you edit just a small text file, only the corresponding encrypted file is changed.</p>
-      <p>This way the synchronization client of your cloud storage provider knows exactly what needs to be uploaded and what doesn&apos;t.</p>
+      <p>Alles, was Sie auf dem virtuellen Laufwerk ablegen, landet verschlüsselt in Ihrem Tresor.</p>
+      <p>Anders als andere Festplattenverschlüsselungstools, verschlüsselt Cryptomator jede Datei für sich. Wenn Sie also z.B. nur eine kleine Textdatei bearbeiten, verändert sich auch nur die entsprechende verschlüsselte Datei.</p> 
+      <p>Dadurch weiß der Synchronisierungsdienst Ihres Cloudspeicher-Anbieters genau, was hochgeladen werden muss und was nicht.</p>
 
 features:
-  title: WWhat you need to do…
+  title: Was müssen Sie tun…
   create:
-    title: WCreate
+    title: Erstellen
     content: >
-      WCreate vaults in your Dropbox, Google Drive or wherever you like. Assign a passphrase and you're ready to go.
+      Erstellen Sie einen Tresor in der Dropbox, Google Drive oder wo immer Sie wollen. Weisen Sie eine Passphrase zu und schon kann es losgehen.
   dragNDrop:
-    title: WDrag &amp; Drop
+    title: Ziehen &amp; Ablegen
     content: >
-      WStore your sensitive data on the virtual drive provided by Cryptomator. Wasn&apos;t that easy?
+      Legen Sie Ihre brisanten Dateien auf dem von Cryptomator bereitgestellten virtuellen Laufwerk ab. Ist das nicht einfach?
   relax:
-    title: WRelax
+    title: Entspannen Sie
     content: >
-      WCryptomator encrypts everything you put into the drive on-the-fly. Your cloud is now secure.
+      Cryptomator verschlüsselt alle auf dem Laufwerk abgelegten Dateien noch vor dem Ablegen, sodass sie gar nicht unverschlüsselt in der Cloud landen. Damit ist Ihre Cloud nun sicher.
   teaser: >
-    WCryptomator provides transparent, client-side encryption for your cloud.
-    Protect your documents from unauthorized access. Cryptomator is free and open source software, so you can rest assured there are no backdoors.
+    Cryptomator bietet transparente, lokal auf Ihrem eigenen Gerät stattfindende Verschlüsselung für Ihre Cloud. Schützen Sie Ihre Dokumente vor unerlaubtem Zugriff. Cryptomator ist eine freie, quelloffene Software, sodass Sie sicher vor Hintertüren sind. 
   easyAndReliable:
-    title: WEasy and Reliable
+    title: Einfach und verlässlich
     content: >
-      <p>WWe understand simplicity as a key aspect of security. With Cryptomator you don't have to deal with accounts, key management, cloud access grants or cipher configurations. Just choose a password and you're ready to go.</p>
-      <p>You don't even need to specify what cloud you use. Cryptomator encrypts files and doesn't care where you store them. This makes it a lightweight application, which we believe is a huge benefit for reliability. Complexity would kill security.</p>
-      <p>Cryptomator is a so-called <em>transparent</em> encryption utility. This means that you don't have to learn new workflows. Just work with your files as you're used to.</p>
+      <p>Wie verstehen Einfachheit als Schlüsselaspekt für Sicherheit. Mit Cryptomator brauchen Sie sich nicht mit Accounts, Schlüsselverwaltung, Cloudzugriffsbewilligungen oder Chiffre-Einstellungen herumschlagen. Suchen Sie sich einfach ein Passwort aus und das war's schon.</p>
+      <p>Sie müssen nicht einmal angeben, welche Cloud Sie benutzen. Cryptomator verschlüsselt unabhängig vom gewählten Speicherort. Das macht die Anwendung so einfach, was wir als riesigen Gewinn für die Verlässlichkeit empfinden. Kompliziertheit zerstört Sicherheit.</p>
+      <p>Cryptomator ist ein sogenanntes <em>transparentes</em> Verschlüsselungswerkzeug. Das bedeutet, dass Sie keine neuen Arbeitsabläufe erlernen müssen. Arbeiten Sie mit Ihren Dateien so, wie sie es gewohnt sind.</p>
   secureAndTrustworthy:
-    title: WSecure and Trustworthy
+    title: Sicher und vertrauenswürdig
     content: >
-      <p>WCryptomator encrypts file contents and names using AES. Your passphrase is protected against bruteforcing attempts using scrypt. Directory structures and file sizes get obfuscated. The only thing which cannot be encrypted without breaking your cloud synchronization is the modification date of your files.</p>
-      <p>Cryptomator is a free and open source software licensed under the MIT / X Consortium License. This allows anyone to check our code. It is impossible to introduce backdoors for third parties. Also we cannot hide vulnerabilities. And the best thing is: There is no need to trust us, as you can control us!</p>
-      <p>Vendor lock-ins are impossible. Even if we decided to stop development: The source code is already cloned by hundreds of other developers. As you don't need an account, you will never stand in front of locked doors.</p>
+      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von AES. Ihre Passphrase wird durch Script gegen Aufbruchversuche geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert. Nur das Änderungsdatum Ihrer Dateien kann nicht verschlüsselt werden ohne die Cloudsynchronisierung zu stören.</p>
+      <p>Cryptomator ist eine freie, quelloffene Software lizensiert durch die MIT / X Consortium License. Dadurch kann jeder unseren Code einsehen. Es ist unmöglich für Dritte, Hintertüren einzubauen. Außerdem können wir Schwachstellen nicht verheimlichen. Und das Beste ist: Sie brauchen uns nicht vertrauen, weil Sie uns kontrollieren können!</p>
+      <p>Lock-in-Effekte sind ausgeschlossen. Das heißt, selbst wenn wir entscheiden würden, die Entwicklung einzustellen, haben bereits Hunderte anderer Entwickler den Quellcode kopiert. Da Sie keinen Account benötigen, werden Sie also niemals vor verschlossenen Türen stehen.</p>
 
 testimonials:
-  title: WWhat users say
+  title: Was Nutzer denken
 
 newsletter:
-  title: WLet's stay in touch
-  description: WSubscribe to our mailing list or follow <a href="https://twitter.com/Cryptomator" target="_blank">@Cryptomator</a> on Twitter.
-  emailAddress: WEmail Address
-  androidOptIn: WYes, I'm interested in the beta for Android
-  buttonSubscribe: WSubscribe
+  title: Bleiben Sie in Verbindung
+  description: Abonnieren Sie unseren Newsletter oder folgen Sie <a href="https://twitter.com/Cryptomator" target="_blank">@Cryptomator</a> auf Twitter.
+  emailAddress: E-Mail Addresse
+  androidOptIn: Ja, ich interessiere mich für die Betaversion der App für Android.
+  buttonSubscribe: Anmelden
 --- 
