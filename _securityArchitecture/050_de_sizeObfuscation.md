@@ -8,10 +8,10 @@ title: Dateigrößen verschleiern
 Die Datei sollte daduch nicht immens groß werden, daher wird die maximale Länge dieser Zufallsdaten aus der Größe der Datei errechnet.
 
 <pre>
-obergrenze := maximum(mininimum(10% * echteDateigröße, 16MiB), 4KiB)
-zufälligeLänge := zufälligerWertMit(obergrenze)
+upperBound := max(min(10% * realFileSize, 16MiB), 4KiB)
+paddingLength := randomInt(upperBound)
 </pre>
 
-Somit wird eine Datei um bis zu 10% verlängert, aber mindestens 0-4KiB und nie um mehr als 16MiB.
+Somit wird eine Datei um bis zu 10% verlängert, aber mindestens um 0-4KiB und nie um mehr als 16MiB.
 
-Der Inhalt der Dateiverlängerung ist nicht definiert, da - wie zuvor beschrieben, die echte Länge der Datei im Dateikopf gespeichert wird und ausreicht um das echte Dateiende zu ermitteln.
+Der Inhalt der Dateiverlängerung ist nicht definiert, da - wie zuvor beschrieben - die echte Länge der Datei im Dateikopf gespeichert wird und ausreicht um das echte Dateiende zu ermitteln.

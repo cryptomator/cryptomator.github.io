@@ -12,25 +12,25 @@ Beide Hauptschlüssel werden durch <a href="https://tools.ietf.org/html/rfc3394"
 Der technische Ablauf ist folgender:
 
 <pre>
-hauptschlüssel := erzeugeZufälligeBytes(32)
-macHauptschlüssel := erzeugeZufälligeBytes(32)
-kek := scrypt(passwort, scryptSalt, scryptKostenparameter, scryptBlockGröße)
-umhüllterHauptschlüssel := aesKeyWrap(hauptschlüssel, kek)
-umhüllterMacHauptschlüssel := aesKeyWrap(macHauptschlüssel, kek)
+encryptionMasterKey := createRandomBytes(32)
+macMasterKey := createRandomBytes(32)
+kek := scrypt(password, scryptSalt, scryptCostParam, scryptBlockSize)
+wrappedEncryptionMasterKey := aesKeyWrap(encryptionMasterKey, kek)
+wrappedMacMasterKey := aesKeyWrap(macMasterKey, kek)
 </pre>
 
 Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig sind, werden dann in einer JSON Datei namens <code>masterkey.cryptomator</code> gespeichert. Diese befindet sich im Wurzelverzeichnis des Tresors und sieht in etwa so aus:
 
 <pre>
 {
-  "version": 3, /* Tresorversion zum Überprüfen der Softwarekompatibilität */
+  "version": 3, /* vault version for checking software compatibility */
   "scryptSalt": "QGk...jY=",
   "scryptCostParam": 16384,
   "scryptBlockSize": 8,
-  "primaryMasterKey": "QDi...Q==", /* umhüllterHauptschlüssel */
-  "hmacMasterKey": "L83...Q==", /* umhüllterMacHauptschlüssel */
-  "versionMac": "3/U...9Q=" /* HMAC-256 der Tresorversion zum Vermeiden von Downgrade-Angriffen */
+  "primaryMasterKey": "QDi...Q==", /* wrappedEncryptionMasterKey */
+  "hmacMasterKey": "L83...Q==", /* wrappedMacMasterKey */
+  "versionMac": "3/U...9Q=" /* HMAC-256 of vault version to prevent downgrade attacks */
 }
 </pre>
 
-Beim Entsperren des Tresors wird der KEK, der nur aus dem Passwort ermittelt werden kann, benutzt, um die gespeicherten Hauptschlüssel zu enthüllen (d.h. zu entschlüsseln). Erst mit den enthüllten Hauptschlüsseln ist die entschlüsselung der Daten möglich.
+Beim Entsperren des Tresors wird der KEK, der aus dem Passwort und den Parametern in der Datei <code>masterkey.cryptomator</code> ermittelt wird, benutzt, um die gespeicherten Hauptschlüssel zu enthüllen (d.h. zu entschlüsseln). Erst mit den enthüllten Hauptschlüsseln ist die Entschlüsselung der Daten möglich.

@@ -3,7 +3,7 @@ anchor: fixedPort
 title: Kann ich einen festen Port für die virtuellen Laufwerke einstellen?
 language: de
 published: true
-abstract: 'Ja. Einfach Cryptomator öffnen und den Einstellungsdialog öffnen.'
+abstract: 'Ja. Einfach Cryptomator starten und den Einstellungsdialog öffnen.'
 ---
 Klicken Sie hierfür auf das Zahnradsymbol am unteren Rand der Tresorliste.
 

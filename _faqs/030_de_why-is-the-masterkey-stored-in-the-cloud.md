@@ -13,6 +13,6 @@ Die Datei enthält verschlüsselte Daten, die benötigt werden, um aus Ihrem Pas
 
 ### Ist das ein Problem für die Sicherheit?
 
-Nein. Der verschlüsselte Schlüssel in *masterkey.cryptomator* ist nicht anfälliger als die verschlüsselten Dateien selber.
+Nein. Der verschlüsselte Schlüssel in *masterkey.cryptomator* ist nicht sensibler als die verschlüsselten Dateien selber.
 
 Mehr Informationen finden Sie hier: <a href="/architecture/#masterkeyDerivation">Sicherheitsarchitektur-Seite</a>.

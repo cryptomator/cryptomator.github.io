@@ -23,9 +23,9 @@ Die Dateigröße wird im Dateikopf gespeichert, da die echte Dateigröße versch
 Technisch werden diese Daten wie folgt erzeugt:
 
 <pre>
-nonce := erzeugeZufälligeBytes(16)
-dateischlüssel := erzeugeZufälligeBytes(32)
-kopfdaten := bigEndian(dateigröße) . dateischlüssel
-verschlüsselteKopfdaten := aesCtr(kopfdaten, hauptschlüssel, nonce)
-mac := hmacSha256(nonce . verschlüsselteKopfdaten, macHauptschlüssel)
+headerNonce := createRandomBytes(16)
+contentKey := createRandomBytes(32)
+cleartextPayload := bigEndian(fileSize) . contentKey
+ciphertextPayload := aesCtr(cleartextPayload, encryptionMasterKey, headerNonce)
+mac := hmacSha256(headerNonce . ciphertextPayload, macMasterKey)
 </pre>

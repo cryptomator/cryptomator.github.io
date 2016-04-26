@@ -18,11 +18,9 @@ Bei Dateien ist das ergebnis der verschlüsselte Name.
 Handelt es sich hingegen um ein Verzeichnis, wird ein Unterstrich hinzugefügt. Dann wird eine Datei dieses Namens erstellt, in die wir eine eindeutige Kennzeichnung (genauer eine <abbr title="Universally unique identifier" class="initialism">UUID</abbr>) schreiben. Das dazugehörige Verzeichnis wird dann an folgendem Ort gespeichert:
 
 <pre>
-verzeichnisId := erstelleUuid()
-verzeichnisIdHash := base32(sha1(aesSiv(verzeichnisId, null, encryptionMasterKey, macMasterKey)))
-verzeichnisPfad := tresorWurzelverzeichnis + &apos;/d/&apos; + substr(verzeichnisIdHash, 0, 2) + &apos;/&apos; + substr(verzeichnisIdHash, 2, 30)
+dirId := createUuid()
+dirIdHash := base32(sha1(aesSiv(dirId, null, encryptionMasterKey, macMasterKey)))
+dirPath := vaultRoot + &apos;/d/&apos; + substr(dirIdHash, 0, 2) + &apos;/&apos; + substr(dirIdHash, 2, 30)
 </pre>
-
-Dabei steht &apos;substr(verzeichnisIdHash, 0, 2)&apos; für die ersten zwei Zeichen des verzeichnisIdHash und &apos;substr(verzeichnisIdHash, 2, 30)&apos; für die restlichen Zeichen.
 
 Indem wir alle Verzeichnisse nebeneinander liegen, wird nicht nur die Verzeichnishierarchie verschleiert, sondern es wird auch die Pfadtiefe begrenzt, um die Kompatibilität mit einigen Cloud-Diensten sicherzustellen.

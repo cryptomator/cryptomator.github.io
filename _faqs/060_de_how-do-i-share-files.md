@@ -15,12 +15,12 @@ Generell sollten Sie darauf achten, Ihr Passwort immer nur auf sicherem Wege wei
 
 ### Wie kann ich nur manche meiner Dateien teilen anstatt alle?
 
-Sie können so viele Tresore anlegen, wie Sie möchten. Nutzen Sie zum Beispiel einen für Ihre Familie, einen für Kollegen und einen nur für Sie im Privaten usw.
+Sie können so viele Tresore anlegen, wie Sie möchten. Nutzen Sie zum Beispiel einen für Ihre Familie, einen für Kollegen und einen nur für sich selbst.
 
 Es ist hingegen nicht möglich, nur einen Teil der Dateien innerhalb eines einzelnen Tresors freizugeben.
 
 ### Kann ich den geteilten Zugang durch die Änderung des Passworts beenden?
 
-Nein. Selbst wenn SIe das Passwort geändert haben, können andere Nutzer immer noch über eine Sicherungskopie oder einen alten Schlüssel auf Ihren Tresor zugreifen. Um einen einmal erlaubten Zugriff zu beenden, müssen Sie einen neuen Tresor mit einem neuen Passwort erstellen und die vorher geteilten Daten in diesen transferieren. Erst dann ist alles wieder verschlüsselt.
+Nein. Selbst wenn Sie das Passwort geändert haben, können andere Nutzer immer noch über eine Sicherungskopie oder einen alten Schlüssel auf Ihren Tresor zugreifen. Um einen einmal erlaubten Zugriff zu beenden, müssen Sie einen neuen Tresor mit einem neuen Passwort erstellen und die vorher geteilten Daten in diesen transferieren. Erst dann ist alles wieder vor Zugriffen geschützt.
 
-Bitte bedenken Sie, dass Nutzer, denen Sie Zugang zu Ihrem Tresor gewährt hatten, Ihre Daten kopiert haben könnte, solange er/sie Zugriff hatte.
+Bitte bedenken Sie, dass ein Nutzer, dem Sie Zugang zu Ihrem Tresor gewährt hatten, Ihre Daten kopiert haben könnte, solange dieser Zugriff hatte.

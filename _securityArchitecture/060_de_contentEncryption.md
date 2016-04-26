@@ -28,12 +28,12 @@ Nach der Verschlüsselung werden diese Stücke wieder in der selben Reihenfolge 
 Der technische Ablauf ist folgender:
 
 <pre>
-unverschlüsselteStücke[] := zerstückeln(verlängerterUnverschlüsselterDateiinhalt, 32KiB)
-für (stückNummer von 0 bis länge(unverschlüsselteStücke)-1) {
-  stückNonce := erzeugeZufälligeBytes(16)
-  verschlüsselteDaten := aesCtr(unverschlüsselteStücke[i], dateischlüssel, stückNonce)
-  mac := hmacSha256(dateikopfNonce . bigEndian(i) . stückNonce . verschlüsselteDaten, macHauptschlüssel)
-  verschlüsselteStücke[i] := stückNonce . verschlüsselteDaten . mac
+cleartextChunks[] := split(paddedCleartext, 32KiB)
+for (int i = 0; i < length(cleartextChunks); i++) {
+  chunkNonce := createRandomBytes(16)
+  encryptedPayload := aesCtr(cleartextChunks[i], fileKey, chunkNonce)
+  mac := hmacSha256(headerNonce . bigEndian(i) . chunkNonce . encryptedPayload, macMasterKey)
+  ciphertextChunks[i] := chunkNonce . encryptedPayload . mac
 }
-verschlüsselterDateiinhalt := zusammenfügen(verschlüsselteStücke[])
+encryptedFileContent := join(encryptedChunks[])
 </pre>
