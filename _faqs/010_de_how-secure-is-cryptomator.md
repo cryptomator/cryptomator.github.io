@@ -1,6 +1,6 @@
 ---
 anchor: howSecuryIsIt
-title: Wie Sicher ist Cryptomator?
+title: Wie sicher ist Cryptomator?
 language: de
 published: false
 ---

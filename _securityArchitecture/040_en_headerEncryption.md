@@ -8,7 +8,7 @@ title: File Header Encryption
 <ul>
   <li>16 bytes nonce used during header payload encryption</li>
   <li>
-    40 bytes AES-CTR encrypted payload consisting of:
+    40 bytes <a href="https://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Counter_.28CTR.29">AES-CTR</a> encrypted payload consisting of:
     <ul>
       <li>8 bytes file size</li>
       <li>32 bytes file content key</li>

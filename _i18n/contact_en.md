@@ -19,11 +19,11 @@ foundABug:
   desktop:
     title: Desktop App
     reportAtGitHub: >
-      If you found a bug concerning the Cryptomator Desktop Application you can report an issue on
-      <a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">the Cryptomator issues list</a>.
+      If you found a bug concerning the Cryptomator Desktop Application you can report an issue on the
+      <a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">Cryptomator issues list</a>.
   iosApp:
     title: iOS App
     reportAtGitHub: >
-      If you found a bug concerning the Cryptomator iOS App you can report an issue on
-      <a href="https://github.com/cryptomator/cryptomator-ios/issues" target="_blank">the Cryptomator for iOS issues list</a>.
+      If you found a bug concerning the Cryptomator iOS App you can report an issue on the
+      <a href="https://github.com/cryptomator/cryptomator-ios/issues" target="_blank">Cryptomator for iOS issues list</a>.
 ---

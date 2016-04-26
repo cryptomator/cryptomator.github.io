@@ -6,10 +6,10 @@ resources:
   title: Ressourcen
   pressKit: Pressemappe
 connect:
-  title: Uns Folgen
+  title: Uns folgen
 contribute:
-  title: Etwas Beitragen
-  reportABug: Einen Fehler Melden
+  title: Etwas beitragen
+  reportABug: Einen Fehler melden
   donate: Spenden
 contact: Kontakt
 ---

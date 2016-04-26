@@ -26,7 +26,7 @@ bankTransferRecipient: Recipient
 paymentCancel: Cancel
 paymentProceedToPaypal: Proceed to PayPal
 paymentPayNow: Pay now
-paymentProcessing: Processing...
+paymentProcessing: Processing…
 paymentSuccessful: Payment successful
 paymentProceedToDownloads: Proceed to Downloads
 ---

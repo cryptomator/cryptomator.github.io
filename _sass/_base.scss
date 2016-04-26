@@ -124,6 +124,11 @@ a {
     text-decoration: none;
 
     &:hover {
+        color: $brand-color;
+        text-decoration: underline;
+    }
+
+    &:focus, &:active {
         color: darken($brand-color, 15%);
         text-decoration: underline;
     }
@@ -159,13 +164,14 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
+    font-size: 13px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: $bg-green-light;
 }
 
 code {
+    color: $text-color;
     padding: 1px 5px;
 }
 
@@ -305,16 +311,28 @@ pre {
   font-weight:bold;
 }
 
+.btn-link,
+.btn-link:hover {
+  color: $brand-color;
+
+  &:focus, &:active {
+      color: darken($brand-color, 15%);
+      text-decoration: underline;
+  }
+}
+
+
 /**
  * noscript
  */
-
 .noscript .hide-noscript {
   display:none !important;
 }
+
 .show-noscript-block {
   display:none !important;
 }
+
 .noscript .show-noscript-block {
   display:block !important;
 }

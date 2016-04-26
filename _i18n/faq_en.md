@@ -2,5 +2,5 @@
 language: en
 context: faq
 
-buttonShowDetails: Show details ...
+buttonShowDetails: Show details…
 ---

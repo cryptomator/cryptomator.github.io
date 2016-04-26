@@ -5,27 +5,23 @@ title: Inhalt verschlüsseln
 ---
 <p class="lead">Hier wird der aktuelle Dateiinhalt verschlüsselt.</p>
 
-Der unverschlüsselte Dateiinhalt wird in mehrere Stücke zerteilt, jede bestehend aus 32 KiB.
-
-Diese Stücke werden dann jeweils verschlüsselt und folgendermaßen um weitere 48 Byte ergänzt:
+Der unverschlüsselte Dateiinhalt wird in mehrere Stücke zerteilt, jedes bestehend aus 32 KiB. Diese Stücke werden dann jeweils verschlüsselt und folgendermaßen um weitere 48 Bytes ergänzt:
 
 <ul>
-  <li>16 Byte "nonce"</li>
-  <li>bis zu 32 KiB mit AES-CTR und dem Dateischlüssel verschlüsselte Daten</li>
+  <li>16 Bytes mit dem nonce</li>
+  <li>bis zu 32 KiB mit AES-CTR und dem Dateiinhalteschlüssel verschlüsselte Daten</li>
   <li>
-    32 Byte MAC über
+    32 Bytes mit dem MAC über
     <ul>
       <li>die nonce aus dem Dateikopf (um zu verhindern, dass das Stück mit Stücken in anderen Dateien vertauscht werden kann),</li>
       <li>die laufende Nummer des Stücks (um zu verhindern, dass Stücke innerhalb einer Datei vertauscht werden können),</li>
       <li>die nonce des Stücks und</li>
-      <li>die verschlüsselten Daten,</li>
+      <li>die verschlüsselten Daten</li>
     </ul>
   </li>
 </ul>
 
-Nach der Verschlüsselung werden diese Stücke wieder in der selben Reihenfolge zusammengefügt. Dabei kann das letzte Stück weniger als 32 KiB Daten enthalten wenn die Datei nicht eine Länge hat, die ein vielfaches von 32 KiB ist.
-
-Der technische Ablauf ist folgender:
+Nach der Verschlüsselung werden diese Stücke wieder in derselben Reihenfolge zusammengefügt. Dabei kann das letzte Stück weniger als 32 KiB Daten enthalten, wenn die Datei nicht eine Länge hat, die ein Vielfaches von 32 KiB ist.
 
 <pre>
 cleartextChunks[] := split(paddedCleartext, 32KiB)

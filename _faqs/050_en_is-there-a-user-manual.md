@@ -7,4 +7,4 @@ abstract: 'Work on the user manual is in progress.'
 ---
 You may download the current draft:
 
-* <a href="/resources/Cryptomator User Manual.pdf">User Manual (English)</a>
+* [User Manual (English)](/resources/Cryptomator User Manual.pdf)

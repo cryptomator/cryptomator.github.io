@@ -4,11 +4,11 @@ context: downloads
 
 loadScreen:
   title: Cryptomator Download
-  choosingDownload: Wählen Sie den Download für Ihr Betriebssystem...
+  choosingDownload: Der Download für Ihr Betriebssystem wird gewählt…
 windows:
   title: Cryptomator für Windows
-  button32Bit: 32 bit-Version herunterladen
-  button64Bit: 64 bit-Version herunterladen
+  button32Bit: 32-Bit-Version herunterladen
+  button64Bit: 64-Bit-Version herunterladen
 osx:
   title: Cryptomator für OS X
   button: Cryptomator herunterladen
@@ -30,9 +30,10 @@ allVersions:
   releaseDateFormat: "%Y-%m-%d"
   changelog: Änderungen
   jarDownloadHint: >
-    Alle Versionen können als JAR-Datei von <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub releases</a> heruntergeladen werden.
+    Alle Versionen können als JAR-Datei von <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub Releases</a> heruntergeladen werden.
 dropdown:
   toggle: Dropdown umschalten
+  windows: Cryptomator für Windows
   osx: Cryptomator für OS X
   linux: Cryptomator für Linux
   jar: Ausführbare JAR-Datei

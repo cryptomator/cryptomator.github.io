@@ -5,7 +5,7 @@ title: Filename Encryption
 ---
 <p class="lead">Before we deal with the actual file contents, filenames get encrypted.</p>
 
-Cryptomator uses AES-SIV to encrypt file as well as directory names. Additionally to the name, a unique directory ID of its parent directory is passed as associated data.
+Cryptomator uses <a href="http://tools.ietf.org/html/rfc5297" target="_blank">AES-SIV</a> to encrypt file as well as directory names. Additionally to the name, a unique directory ID of its parent directory is passed as associated data.
 
 <pre>
 cipheredName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))

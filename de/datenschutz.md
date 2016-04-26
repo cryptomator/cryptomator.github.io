@@ -4,7 +4,6 @@ title: Datenschutz
 permalink: /de/datenschutz/
 sitemap: false
 ---
-
 # Datenschutzerklärung
 
 ## Datenschutz

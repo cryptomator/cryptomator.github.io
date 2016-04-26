@@ -9,7 +9,7 @@ subtitle: >
 download:
   title: Download für PC oder Mac
   buttonFreeDownload: Gratis Download
-  payWhatYouWant: Zahlen Sie, wieviel Sie wollen
+  payWhatYouWant: Zahlen Sie, wie viel Sie wollen
   buttonOtherAmount: Anderer Betrag
   buttonContinue: Weiter
   buttonDownload: Download
@@ -25,8 +25,8 @@ apps:
 reception:
   title: Resonanz
   cebitAwardInfo: >
-    Preisträger des CeBIT Innovation Award 2016:<br/>
-    Cryptomator ist Gewinner des <a href="http://www.cebitaward.de/preistraeger/finalisten-2016/cryptomator.html" target="_blank">Sonderpreis for Usable Security and Privacy</a>.
+    Preisträger des CeBIT Innovation Awards 2016:<br/>
+    Cryptomator ist Gewinner des <a href="http://www.cebitaward.de/preistraeger/finalisten-2016/cryptomator.html" target="_blank">Sonderpreises for Usable Security and Privacy</a>.
 
 howto:
   title: Wie schützt Cryptomator Ihre Cloud-Dateien?
@@ -38,11 +38,11 @@ howto:
       <p>Sie können mit diesem Laufwerk arbeiten, als wäre es ein normaler USB-Stick.</p>
     scrollButton: So sehen Ihre verschlüsselten Dateien aus
   individually:
-    title: Dateien werden individuell verschlüsselt.
+    title: Dateien werden individuell verschlüsselt
     content: >
       <p>Alles, was Sie auf dem virtuellen Laufwerk ablegen, landet verschlüsselt in Ihrem Tresor.</p>
-      <p>Anders als andere Festplattenverschlüsselungstools, verschlüsselt Cryptomator jede Datei für sich. Wenn Sie also z.B. nur eine kleine Textdatei bearbeiten, verändert sich auch nur die entsprechende verschlüsselte Datei.</p> 
-      <p>Dadurch weiß der Synchronisierungsdienst Ihres Cloudspeicher-Anbieters genau, was hochgeladen werden muss und was nicht.</p>
+      <p>Anders als andere Festplattenverschlüsselungstools, verschlüsselt Cryptomator jede Datei für sich. Wenn Sie also z.B. nur eine kleine Textdatei bearbeiten, verändert sich auch nur die entsprechende verschlüsselte Datei.</p>
+      <p>Dadurch weiß der Synchronisationsdienst Ihres Cloudspeicher-Anbieters genau, was hochgeladen werden muss und was nicht.</p>
 
 features:
   title: Was Sie tun müssen…
@@ -53,33 +53,33 @@ features:
   dragNDrop:
     title: Dateien ablegen
     content: >
-      Ziehen Sie Ihre sensiblen Dateien auf das von Cryptomator bereitgestellte virtuelle Laufwerk. Ist das nicht einfach?
+      Ziehen Sie Ihre sensiblen Dateien auf das von Cryptomator bereitgestellte virtuelle Laufwerk. War das nicht einfach?
   relax:
     title: Entspannen
     content: >
-      Cryptomator verschlüsselt alle auf dem Laufwerk abgelegten Dateien noch vor der Übertragung, sodass diese nie unverschlüsselt in der Cloud landen. Damit ist Ihre Cloud nun sicher.
+      Cryptomator verschlüsselt alle auf dem Laufwerk abgelegten Dateien noch vor der Übertragung, so dass diese nie unverschlüsselt in der Cloud landen. Damit ist Ihre Cloud nun sicher.
   teaser: >
-    Cryptomator bietet transparente, lokal auf Ihrem eigenen Gerät stattfindende Verschlüsselung für Ihre Cloud. Schützen Sie Ihre Dokumente vor unerlaubtem Zugriff. Cryptomator ist eine freie, quelloffene Software, sodass Sie sicher vor Hintertüren sind. 
+    Cryptomator bietet transparente, lokal auf Ihrem eigenen Gerät stattfindende Verschlüsselung für Ihre Cloud. Schützen Sie Ihre Dokumente vor unerlaubtem Zugriff. Cryptomator ist eine freie, quelloffene Software, so dass Sie sicher vor Hintertüren sind.
   easyAndReliable:
     title: Einfach und verlässlich
     content: >
-      <p>Wir verstehen Einfachheit als Schlüsselaspekt für Sicherheit. Mit Cryptomator brauchen Sie sich nicht mit Accounts, Schlüsselverwaltung, Zugriffsbrechten oder Verschlüsselungs-Einstellungen herumschlagen. Suchen Sie sich einfach ein Passwort aus und das war's schon.</p>
+      <p>Wir verstehen Einfachheit als Schlüsselaspekt für Sicherheit. Mit Cryptomator brauchen Sie sich nicht mit Accounts, Schlüsselverwaltung, Zugriffsrechten oder Verschlüsselungseinstellungen herumschlagen. Suchen Sie sich einfach ein Passwort aus und das war's schon.</p>
       <p>Sie müssen nicht einmal angeben, welche Cloud Sie benutzen. Cryptomator verschlüsselt unabhängig vom gewählten Speicherort. Das macht die Anwendung so einfach, was wir als riesigen Gewinn für die Verlässlichkeit empfinden. Komplexität zerstört Sicherheit.</p>
       <p>Cryptomator ist ein sogenanntes <em>transparentes</em> Verschlüsselungswerkzeug. Das bedeutet, dass Sie keine neuen Arbeitsabläufe erlernen müssen. Arbeiten Sie mit Ihren Dateien so, wie sie es gewohnt sind.</p>
   secureAndTrustworthy:
     title: Sicher und vertrauenswürdig
     content: >
-      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von AES. Ihr Passwort wird durch Script gegen Angriffe geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert. Nur das Änderungsdatum Ihrer Dateien kann nicht verschlüsselt werden ohne die Cloudsynchronisierung zu stören.</p>
-      <p>Cryptomator ist eine freie, quelloffene Software lizensiert unter der MIT / X Consortium License. Dadurch kann jeder unseren Code einsehen. Es ist unmöglich für Dritte, Hintertüren einzubauen. Außerdem können wir Schwachstellen nicht verheimlichen. Und das Beste ist: Sie brauchen uns nicht vertrauen, weil Sie uns kontrollieren können!</p>
+      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von AES. Ihr Passwort wird durch scrypt gegen Angriffe geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert. Nur das Änderungsdatum Ihrer Dateien kann nicht verschlüsselt werden, ohne die Cloudsynchronisation zu stören.</p>
+      <p>Cryptomator ist eine freie, quelloffene Software lizensiert unter der MIT / X Consortium Lizenz. Dadurch kann jeder unseren Code einsehen. Es ist unmöglich für Dritte, Hintertüren einzubauen. Außerdem können wir Schwachstellen nicht verheimlichen. Und das Beste ist: Sie brauchen uns nicht vertrauen, weil Sie uns kontrollieren können!</p>
       <p>Lock-in-Effekte sind ausgeschlossen. Das heißt, selbst wenn wir entscheiden würden, die Entwicklung einzustellen, haben bereits Hunderte anderer Entwickler den Quellcode kopiert. Da Sie keinen Account benötigen, werden Sie also niemals vor verschlossenen Türen stehen.</p>
 
 testimonials:
-  title: Was Nutzer denken
+  title: Was Nutzer sagen
 
 newsletter:
   title: Bleiben Sie in Verbindung
   description: Abonnieren Sie unseren Newsletter oder folgen Sie <a href="https://twitter.com/Cryptomator" target="_blank">@Cryptomator</a> auf Twitter.
-  emailAddress: E-Mail Addresse
-  androidOptIn: Ja, ich interessiere mich für die Betaversion der App für Android.
+  emailAddress: E-Mail-Adresse
+  androidOptIn: Ja, ich interessiere mich für die Beta-Version der Android-App
   buttonSubscribe: Anmelden
---- 
+---

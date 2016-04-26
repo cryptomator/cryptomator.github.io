@@ -7,4 +7,4 @@ abstract: 'Das Benutzerhandbuch ist in Arbeit.'
 ---
 Sie können den momentanen Entwurf hier herunterladen:
 
-* <a href="/resources/Cryptomator Benutzerhandbuch.pdf">Benutzerhandbuch (Deutsch)</a>
+* [Benutzerhandbuch (Deutsch)](/resources/Cryptomator Benutzerhandbuch.pdf)
