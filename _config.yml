@@ -24,3 +24,6 @@ kramdown:
 collections:
 - faqs
 - releases
+- languages
+- i18n
+- securityArchitecture

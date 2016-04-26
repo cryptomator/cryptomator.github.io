@@ -1,0 +1,25 @@
+{% include language.liquid %}
+
+{% assign sortedArticles = site.securityArchitecture | where: 'language', language.name | sort: 'path', 'last' %}
+
+<section class="container">
+  <div class="row">
+    <nav class="hidden-xs hidden-sm" id="subnav">
+      <ul class="nav nav-pills nav-stacked">
+        {% for article in sortedArticles %}
+          <li><a href="#{{ article.anchor }}">{{ article.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="col-md-offset-3 col-md-9 col-xs-12">
+      {% for article in sortedArticles %}
+        <article id="{{ article.anchor }}" class="layer-explanation">
+          <h2>{{ article.title }}</h2>
+          {{ article.content }}
+        </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

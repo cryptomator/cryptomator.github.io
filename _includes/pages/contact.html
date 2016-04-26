@@ -1,0 +1,64 @@
+{% assign i18n = 'contact' %}
+{% include i18n.liquid %}
+
+<div id="contact" class="container fullheight top-most-element">
+  <h1 class="text-center">{{ i18n.title }}</h1>
+
+  <section>
+    <div class="page-header">
+      <h2 class="text-center">{{ i18n.speakToUs.title }}</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-center">{{ i18n.speakToUs.support.title }}</h3>
+        <p>{{ i18n.speakToUs.support.contactUs }}:<br/>
+          <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a></p>
+        <p>{{ i18n.speakToUs.support.weSpeakGerman }}</p>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title cursor-pointer" data-toggle="collapse" data-target="#supportPgpKey">{{ i18n.speakToUs.support.pgpKey }}</div>
+          </div>
+          <div id="supportPgpKey" class="panel-body pgp-key collapse">
+            <pre>{% include pgpKeys/supportAtCryptomator %}</pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-center">{{ i18n.speakToUs.press.title }}</h3>
+        <p>{{ i18n.speakToUs.press.contactUs }}:<br/>
+          <a href="mailto:&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a></p>
+        <p>&nbsp;</p>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title cursor-pointer" data-toggle="collapse" data-target="#pressPgpKey">{{ i18n.speakToUs.press.pgpKey }}</div>
+          </div>
+          <div id="pressPgpKey" class="panel-body pgp-key collapse">
+            <pre>{% include pgpKeys/pressAtCryptomator %}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="page-header">
+      <h2 class="text-center">{{ i18n.foundABug.title }}</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-center">{{ i18n.foundABug.desktop.title }}</h3>
+        <p>
+          {{ i18n.foundABug.desktop.reportAtGitHub }}
+        </p>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-center">{{ i18n.foundABug.iosApp.title }}</h3>
+        <p>
+          {{ i18n.foundABug.iosApp.reportAtGitHub }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,32 @@
+{% if language == null %}
+  {% for currentLanguage in site.languages %}
+    {% if currentLanguage.default %}
+      {% assign defaultLanguage = currentLanguage %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign urlSegments = page.url | split:"/" %}
+  {% assign languageIdFromUrl = urlSegments[1] %}
+  {% for currentLanguage in site.languages %}
+    {% if currentLanguage.name == languageIdFromUrl %}
+      {% assign language = currentLanguage %}
+    {% endif %}
+  {% endfor %}
+  {% if language == null %}
+    {% assign language = defaultLanguage %}
+  {% endif %}
+
+  {% if language.default %}
+    {% assign languageUrlPrefix = '' %}
+    {% assign languageUrlPrefixEscaped = '' %}
+  {% else %}
+    {% capture languageUrlPrefix %}/{{ language.name }}{% endcapture %}
+    {% capture languageUrlPrefixEscaped %}%2F{{ language.name }}{% endcapture %}
+  {% endif %}
+
+  {% if (page.url | truncate: (languageUrlPrefix | size)) == languageUrlPrefix %}
+    {% assign pageUrlWithoutLanguagePrefix = page.url | remove_first:languageUrlPrefix %}
+  {% else %}
+    {% assign pageUrlWithoutLanguagePrefix = page.url %}
+  {% endif %}
+{% endif %}

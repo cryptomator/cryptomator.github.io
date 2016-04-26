@@ -2,10 +2,10 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="en" data-ng-app="cryptomator" data-ng-strict-di="true">
+{% include language.liquid %}
+<html lang="{{ language.name }}" data-ng-app="cryptomator" data-ng-strict-di="true">
 {% include head.html %}
 <body data-spy="scroll" data-target="#subnav" data-offset="100" class="noscript">
-
   {{ content }}
 
   <!-- nav is fixed to top, so it can be included at the end of page -->

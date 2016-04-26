@@ -30,6 +30,9 @@
   <link rel="payment" href="https://flattr.com/submit/auto?user_id=overheadhunter&amp;url=https%3A%2F%2Fcryptomator.org&amp;title=Cryptomator&amp;tags=encryption,security,cloud,privacy&amp;category=software" type="text/html" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
+{% for stylesheet in stylesheets %}
+  <link rel="stylesheet" href="{{ stylesheet }}">
+{% endfor %}
 {% for stylesheet in page.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet }}">
 {% endfor %}
