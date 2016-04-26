@@ -16,6 +16,7 @@ download:
 
 apps:
   title: App for your smartphone
+  appStoreLink: https://itunes.apple.com/app/cryptomator/id953086535
   androidPopover:
     title: Cryptomator for Android
     content: >
@@ -83,4 +84,4 @@ newsletter:
   emailAddress: Email Address
   androidOptIn: Yes, I'm interested in the beta for Android
   buttonSubscribe: Subscribe
---- 
+---

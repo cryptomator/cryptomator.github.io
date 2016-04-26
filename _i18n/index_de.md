@@ -16,11 +16,12 @@ download:
 
 apps:
   title: App für Ihr Smartphone
+  appStoreLink: https://itunes.apple.com/de/app/cryptomator/id953086535
   androidPopover:
     title: Cryptomator für Android
     content: >
       Die Cryptomator App für Android ist in Arbeit.<br/>
-      Um auf dem Laufenden zu bleiben, abonnieren Sie unseren <a href='#Newsletter'>Newsletter</a>.
+      Um auf dem Laufenden zu bleiben, abonnieren Sie unseren <a href='#newsletter'>Newsletter</a>.
 
 reception:
   title: Resonanz

@@ -86,7 +86,7 @@
 
       <div class="text-center">
         <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
-          <a href="https://itunes.apple.com/app/cryptomator/id953086535" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
+          <a href="{{ i18n.apps.appStoreLink }}" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
         </div>
         <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
             data-ng-click="sendGaBtnClick('androidbeta')"
