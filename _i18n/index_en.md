@@ -9,7 +9,7 @@ subtitle: >
 download:
   title: Download for PC or Mac
   buttonFreeDownload: Free Download
-  payWhatYouWant: Pay whant you want
+  payWhatYouWant: Pay what you want
   buttonOtherAmount: Other
   buttonContinue: Continue
   buttonDownload: Download
