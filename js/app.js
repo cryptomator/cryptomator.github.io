@@ -221,6 +221,46 @@ app.directive('scrollTo', [function() {
   };
 }]);
 
+app.directive('popoverForUserlanguage', ['$cookies', '$timeout', function($cookies, $timeout) {
+  return {
+    restrict: 'A',
+    link: function(scope, elem, attrs) {
+      if ($cookies.get('multiLanguageAware') === 'true') {
+        return;
+      }
+      var attrName = 'popover' + clientLanguage();
+      if (typeof attrs[attrName] !== 'undefined') {
+        $(elem).popover({
+          container: '.navbar-fixed-top',
+          content: attrs[attrName],
+          placement: 'bottom',
+          trigger: 'manual'
+        })
+        .click(function(){
+          $(elem).popover('hide');
+        });
+        $timeout(function(){
+          $(elem).popover('show');
+          $cookies.put('multiLanguageAware', 'true');
+        }, 1000);
+        $timeout(function(){
+          $(elem).popover('hide');
+        }, 11000);
+      }
+    }
+  };
+
+  function clientLanguage() {
+    var rawLanguage = window.navigator.userLanguage || window.navigator.language;
+    var hyphenIndex = rawLanguage.indexOf('-');
+    if (hyphenIndex !== -1) {
+      return rawLanguage.substring(0, hyphenIndex);
+    } else {
+      return rawLanguage;
+    }
+  }
+}]);
+
 /**
  * If active on any element, the document will scroll by the full viewport height.
  */

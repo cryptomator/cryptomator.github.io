@@ -25,7 +25,14 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#payment-modal" data-toggle="modal"><span class="glyphicon" data-ng-class="donation.currency.glyphicon"></span> {{ i18n.buttonDonate }}</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> {{ language.title }} <span class="caret"></span></a>
+          <a href="#"
+            data-popover-for-userlanguage
+            {% for currentLanguage in site.languages %}
+              {% if language.name != currentLanguage.name and currentLanguage.popoverText %}
+                data-popover{{ currentLanguage.name }}="{{ currentLanguage.popoverText }}"
+              {% endif %}
+            {% endfor %}
+            class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> {{ language.title }} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             {% for currentLanguage in site.languages %}
               {% if language.name != currentLanguage.name %}
