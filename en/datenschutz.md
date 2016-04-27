@@ -1,7 +1,8 @@
 ---
 layout: container
 title: Datenschutz
-permalink: /en/datenschutz/
+permalink: /datenschutz/
 sitemap: false
+singleLanguage: true
 ---
 {% include pages/de_datenschutz.md %}

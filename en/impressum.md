@@ -1,7 +1,8 @@
 ---
 layout: container
 title: Impressum
-permalink: /en/impressum/
+permalink: /impressum/
 sitemap: false
+singleLanguage: true
 ---
 {% include pages/de_impressum.md %}

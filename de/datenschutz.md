@@ -3,6 +3,7 @@ layout: container
 title: Datenschutz
 permalink: /de/datenschutz/
 sitemap: false
+singleLanguage: true
 ---
 # Datenschutzerklärung
 
