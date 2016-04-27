@@ -2,7 +2,7 @@
 {% include i18n.liquid %}
 
 <section id="top" class="halfheight top-most-element">
-  <div class="container stage">
+  <div class="container" id="stage">
     <hr/>
     <div class="row">
       <div class="col-xs-6 file-container">
@@ -61,7 +61,7 @@
         </div>
         <div class="hidden-xs text-center hide-noscript">
           <h3>{{ i18n.download.payWhatYouWant }}</h3>
-          <div class="btn-group">
+          <div class="btn-group" id="pwyw-buttons">
             <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 0" data-ng-class="{{"{"}}active: donation.amount == 0}">0 [[donation.currency.symbol]]</button>
             <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 5" data-ng-class="{{"{"}}active: donation.amount == 5}">5 [[donation.currency.symbol]]</button>
             <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 10" data-ng-class="{{"{"}}active: donation.amount == 10}">10 [[donation.currency.symbol]]</button>

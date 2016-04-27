@@ -21,7 +21,7 @@ h1.display-font {
  * Stage Animation
  */
 
-.stage {
+#stage {
   position: relative;
   height: 15vw; // relative to width by choice
   max-height: 250px;
@@ -243,6 +243,11 @@ h1.display-font {
 
   h2 {
     padding-top: 1em;
+  }
+
+  #pwyw-buttons .btn {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .appStoreBtn {
