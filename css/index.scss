@@ -4,6 +4,19 @@
 @charset "utf-8";
 @import "variables";
 
+h1.display-font {
+  font-size: 42px;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+}
+
+.display-font {
+  font-family: 'Dosis', $base-font-family;
+  font-style: normal;
+  font-weight: 700;
+}
+
 /*
  * Stage Animation
  */
