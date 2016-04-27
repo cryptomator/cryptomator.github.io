@@ -35,30 +35,31 @@ howto:
     title: Transparente Verschlüsselung
     content: >
       <p><em>Transparente Verschlüsselung</em> bedeutet, dass Sie keinen Unterschied im Umgang mit Ihren Dateien bemerken werden.</p>
-      <p>Während der <em>Tresor</em>, der Ihre verschlüsselten Dateien enthält, irgendwo in Ihrem Cloud-Ordner liegt, stellt Cryptomator ein virtuelles Laufwerk bereit, über welches Sie auf Ihre Dateien zugreifen können.</p>
-      <p>Sie können mit diesem Laufwerk arbeiten, als wäre es ein normaler USB-Stick.</p>
+      <p>Der <em>Tresor</em>, der Ihre verschlüsselten Dateien enthält, liegt in Ihrem Cloud-Ordner. Cryptomator stellt ein virtuelles Laufwerk bereit, über welches Sie auf Ihre Dateien wie gewohnt zugreifen können.</p>
+      <p>Mit dem virtuellen Laufwerk können Sie genau so arbeiten, wie Sie einen normalen USB-Stick verwenden.</p>
     scrollButton: So sehen Ihre verschlüsselten Dateien aus
   individually:
     title: Dateien werden individuell verschlüsselt
     content: >
       <p>Alles, was Sie auf dem virtuellen Laufwerk ablegen, landet verschlüsselt in Ihrem Tresor.</p>
-      <p>Anders als andere Festplattenverschlüsselungstools, verschlüsselt Cryptomator jede Datei für sich. Wenn Sie also z.B. nur eine kleine Textdatei bearbeiten, verändert sich auch nur die entsprechende verschlüsselte Datei.</p>
-      <p>Dadurch weiß der Synchronisationsdienst Ihres Cloudspeicher-Anbieters genau, was hochgeladen werden muss und was nicht.</p>
+      <p>Anders als andere Festplattenverschlüsselungstools, verschlüsselt Cryptomator jede Datei einzeln. Wenn Sie also z.B. nur eine kleine Textdatei bearbeiten, verändert sich auch nur die entsprechende verschlüsselte Datei.</p>
+      <p>Dadurch weiß der Synchronisationsdienst Ihres Cloudspeicher-Anbieters genau, was hochgeladen werden muss und was nicht. Damit wird der Datenverkehr (Traffic) minimiert.</p>
 
 features:
-  title: Was Sie tun müssen…
+  title: Wie es funktioniert…
   create:
     title: Erstellen
     content: >
-      Erstellen Sie einen Tresor in der Dropbox, Google Drive oder wo immer Sie wollen. Weisen Sie eine Passphrase zu und schon kann es losgehen.
+      Erstellen Sie einen Tresor in der Dropbox, Google Drive oder an einem beliebigen anderen Ort. Geben Sie dem Tresor ein Passwort - und schon kann es losgehen.
   dragNDrop:
     title: Dateien ablegen
     content: >
-      Ziehen Sie Ihre sensiblen Dateien auf das von Cryptomator bereitgestellte virtuelle Laufwerk. War das nicht einfach?
+      Ziehen Sie Ihre Dateien auf das von Cryptomator bereitgestellte virtuelle Laufwerk oder Speichern Sie Dokumente dort direkt.
   relax:
     title: Entspannen
     content: >
-      Cryptomator verschlüsselt alle auf dem Laufwerk abgelegten Dateien noch vor der Übertragung, so dass diese nie unverschlüsselt in der Cloud landen. Damit ist Ihre Cloud nun sicher.
+      Genießen Sie das gute Gefühl, dass Ihre Daten in der Cloud jetzt sicher sind. Cryptomator verschlüsselt Ihre Dateien noch vor der Übertragung, so dass keine unverschlüsselten Daten in der Cloud landen.
+  technicalTitle: Das Konzept hinter Cryptomator
   teaser: >
     Cryptomator bietet transparente, lokal auf Ihrem eigenen Gerät stattfindende Verschlüsselung für Ihre Cloud. Schützen Sie Ihre Dokumente vor unerlaubtem Zugriff. Cryptomator ist eine freie, quelloffene Software, so dass Sie sicher vor Hintertüren sind.
   easyAndReliable:
@@ -70,7 +71,7 @@ features:
   secureAndTrustworthy:
     title: Sicher und vertrauenswürdig
     content: >
-      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von AES. Ihr Passwort wird durch scrypt gegen Angriffe geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert. Nur das Änderungsdatum Ihrer Dateien kann nicht verschlüsselt werden, ohne die Cloudsynchronisation zu stören.</p>
+      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von <a href="https://de.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a>. Ihr Passwort wird durch <a href="https://de.wikipedia.org/wiki/Scrypt">Scrypt</a> gegen Angriffe geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert.</p>
       <p>Cryptomator ist eine freie, quelloffene Software lizensiert unter der MIT / X Consortium Lizenz. Dadurch kann jeder unseren Code einsehen. Es ist unmöglich für Dritte, Hintertüren einzubauen. Außerdem können wir Schwachstellen nicht verheimlichen. Und das Beste ist: Sie brauchen uns nicht vertrauen, weil Sie uns kontrollieren können!</p>
       <p>Lock-in-Effekte sind ausgeschlossen. Das heißt, selbst wenn wir entscheiden würden, die Entwicklung einzustellen, haben bereits Hunderte anderer Entwickler den Quellcode kopiert. Da Sie keinen Account benötigen, werden Sie also niemals vor verschlossenen Türen stehen.</p>
 
