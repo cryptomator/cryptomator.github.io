@@ -11,7 +11,7 @@ speakToUs:
     weSpeakGerman: "&nbsp;"
     pgpKey: PGP-Schlüssel
   press:
-    title: Press
+    title: Presse
     contactUs: Für Presseanfragen, kontaktieren Sie uns unter
     pgpKey: PGP-Schlüssel
 foundABug:
