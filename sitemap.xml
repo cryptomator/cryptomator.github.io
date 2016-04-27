@@ -1,0 +1,32 @@
+---
+layout: null
+sites:
+- index:
+  url: '/'
+  langs: ['en', 'de']
+- architecture:
+  url: '/architecture/'
+  langs: ['en', 'de']
+- contact:
+  url: '/contact/'
+  langs: ['en', 'de']
+- downloads:
+  url: '/downloads/'
+  langs: ['en', 'de']
+- faq:
+  url: '/faq/'
+  langs: ['en', 'de']
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  {% for s in page.sites %}<!-- {{ site.url }}{{ s.url }} -->
+    {% for l in s.langs %}<!-- {{ l }} -->
+    <url>
+      <loc>{{ site.url }}{{ l | prepend:'/' | remove:'/en' }}{{ s.url }}</loc>
+      {% for l2 in s.langs %}{% if l != l2 %}<xhtml:link rel="alternate" hreflang="{{ l2 }}" href="{{ site.url }}{{ l2 | prepend:'/' | remove:'/en' }}{{ s.url }}" />{% endif %}{% endfor %}
+    </url>
+    {% endfor %}
+  {% endfor %}
+
+</urlset>
