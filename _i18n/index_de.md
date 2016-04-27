@@ -50,11 +50,11 @@ features:
   create:
     title: Erstellen
     content: >
-      Erstellen Sie einen Tresor in der Dropbox, Google Drive oder an einem beliebigen anderen Ort. Geben Sie dem Tresor ein Passwort - und schon kann es losgehen.
+      Erstellen Sie einen Tresor in der Dropbox, Google Drive oder an einem beliebigen anderen Ort. Geben Sie dem Tresor ein Passwort – und schon kann es losgehen.
   dragNDrop:
     title: Dateien ablegen
     content: >
-      Ziehen Sie Ihre Dateien auf das von Cryptomator bereitgestellte virtuelle Laufwerk oder Speichern Sie Dokumente dort direkt.
+      Ziehen Sie Ihre Dateien auf das von Cryptomator bereitgestellte virtuelle Laufwerk oder speichern Sie Dokumente dort direkt.
   relax:
     title: Entspannen
     content: >
@@ -71,7 +71,7 @@ features:
   secureAndTrustworthy:
     title: Sicher und vertrauenswürdig
     content: >
-      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von <a href="https://de.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a>. Ihr Passwort wird durch <a href="https://de.wikipedia.org/wiki/Scrypt">Scrypt</a> gegen Angriffe geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert.</p>
+      <p>Cryptomator verschlüsselt Dateiinhalte und -namen unter Anwendung von <a href="https://de.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a>. Ihr Passwort wird durch <a href="https://de.wikipedia.org/wiki/Scrypt" target="_blank">scrypt</a> gegen Angriffe geschützt. Pfadstrukturen sowie Dateigrößen werden verschleiert.</p>
       <p>Cryptomator ist eine freie, quelloffene Software lizensiert unter der MIT / X Consortium Lizenz. Dadurch kann jeder unseren Code einsehen. Es ist unmöglich für Dritte, Hintertüren einzubauen. Außerdem können wir Schwachstellen nicht verheimlichen. Und das Beste ist: Sie brauchen uns nicht vertrauen, weil Sie uns kontrollieren können!</p>
       <p>Lock-in-Effekte sind ausgeschlossen. Das heißt, selbst wenn wir entscheiden würden, die Entwicklung einzustellen, haben bereits Hunderte anderer Entwickler den Quellcode kopiert. Da Sie keinen Account benötigen, werden Sie also niemals vor verschlossenen Türen stehen.</p>
 

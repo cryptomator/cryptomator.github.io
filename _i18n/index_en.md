@@ -59,7 +59,7 @@ features:
     title: Relax
     content: >
       Cryptomator encrypts everything you put into the drive on-the-fly. Your cloud is now secure.
-  technicalTitle: The concept of Cryptomator
+  technicalTitle: The Concept of Cryptomator
   teaser: >
     Cryptomator provides transparent, client-side encryption for your cloud.
     Protect your documents from unauthorized access. Cryptomator is free and open source software, so you can rest assured there are no backdoors.
@@ -72,7 +72,7 @@ features:
   secureAndTrustworthy:
     title: Secure and Trustworthy
     content: >
-      <p>Cryptomator encrypts file contents and names using <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a>. Your passphrase is protected against bruteforcing attempts using <a href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a>. Directory structures and file sizes get obfuscated. The only thing which cannot be encrypted without breaking your cloud synchronization is the modification date of your files.</p>
+      <p>Cryptomator encrypts file contents and names using <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a>. Your passphrase is protected against bruteforcing attempts using <a href="https://en.wikipedia.org/wiki/Scrypt" target="_blank">scrypt</a>. Directory structures and file sizes get obfuscated. The only thing which cannot be encrypted without breaking your cloud synchronization is the modification date of your files.</p>
       <p>Cryptomator is a free and open source software licensed under the MIT / X Consortium License. This allows anyone to check our code. It is impossible to introduce backdoors for third parties. Also we cannot hide vulnerabilities. And the best thing is: There is no need to trust us, as you can control us!</p>
       <p>Vendor lock-ins are impossible. Even if we decided to stop development: The source code is already cloned by hundreds of other developers. As you don't need an account, you will never stand in front of locked doors.</p>
 
