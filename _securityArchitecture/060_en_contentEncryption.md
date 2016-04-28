@@ -21,11 +21,11 @@ Afterwards the encrypted chunks are joined preserving the order of the cleartext
 cleartextChunks[] := split(paddedCleartext, 32KiB)
 for (int i = 0; i < length(cleartextChunks); i++) {
   chunkNonce := createRandomBytes(16)
-  encryptedPayload := aesCtr(cleartextChunks[i], fileKey, chunkNonce)
-  mac := hmacSha256(headerNonce . bigEndian(i) . chunkNonce . encryptedPayload, macMasterKey)
-  ciphertextChunks[i] := chunkNonce . encryptedPayload . mac
+  ciphertextPayload := aesCtr(cleartextChunks[i], contentKey, chunkNonce)
+  mac := hmacSha256(headerNonce . bigEndian(i) . chunkNonce . ciphertextPayload, macMasterKey)
+  ciphertextChunks[i] := chunkNonce . ciphertextPayload . mac
 }
-encryptedFileContent := join(encryptedChunks[])
+ciphertextFileContent := join(ciphertextChunks[])
 </pre>
 
 <img src="/img/architecture/file-content-encryption.png" srcset="/img/architecture/file-content-encryption.png 1x, /img/architecture/file-content-encryption@2x.png 2x" alt="File Content Encryption" />

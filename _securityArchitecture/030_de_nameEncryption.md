@@ -8,7 +8,7 @@ title: Verschlüsselung des Dateinamens
 Cryptomator nutzt den Modus <a href="http://tools.ietf.org/html/rfc5297" target="_blank">AES-SIV</a>, um Dateien und Verzeichnisnamen zu verschlüsseln. Zusätzlich wird eine eindeutige Verzeichnis-ID des übergeordneten Verzeichnisses als Zusatzdaten übergeben. Dies verhindert das Verschieben von verschlüsselten Dateien in andere Verzeichnisse.
 
 <pre>
-cipheredName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))
+ciphertextName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))
 </pre>
 
 Bei Dateien ist das Ergebnis der verschlüsselte Name.

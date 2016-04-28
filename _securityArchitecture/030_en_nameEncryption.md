@@ -8,7 +8,7 @@ title: Filename Encryption
 Cryptomator uses <a href="http://tools.ietf.org/html/rfc5297" target="_blank">AES-SIV</a> to encrypt file as well as directory names. Additionally to the name, a unique directory ID of its parent directory is passed as associated data.
 
 <pre>
-cipheredName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))
+ciphertextName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey, macMasterKey))
 </pre>
 
 If it&apos;s a filename, we&apos;re done!
