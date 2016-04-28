@@ -1,25 +1,19 @@
 ---
 language: de
 anchor: contentEncryption
-title: Inhalt verschlüsseln
+title: Verschlüsselung des Dateiinhalts
 ---
 <p class="lead">Hier wird der aktuelle Dateiinhalt verschlüsselt.</p>
 
 Der unverschlüsselte Dateiinhalt wird in mehrere Stücke zerteilt, jedes bestehend aus 32 KiB. Diese Stücke werden dann jeweils verschlüsselt und folgendermaßen um weitere 48 Bytes ergänzt:
 
-<ul>
-  <li>16 Bytes mit dem nonce</li>
-  <li>bis zu 32 KiB mit AES-CTR und dem Dateiinhalteschlüssel verschlüsselte Daten</li>
-  <li>
-    32 Bytes mit dem MAC über
-    <ul>
-      <li>die nonce aus dem Dateikopf (um zu verhindern, dass das Stück mit Stücken in anderen Dateien vertauscht werden kann),</li>
-      <li>die laufende Nummer des Stücks (um zu verhindern, dass Stücke innerhalb einer Datei vertauscht werden können),</li>
-      <li>die nonce des Stücks und</li>
-      <li>die verschlüsselten Daten</li>
-    </ul>
-  </li>
-</ul>
+- 16 Bytes mit dem nonce
+- bis zu 32 KiB mit AES-CTR und dem Dateiinhalteschlüssel verschlüsselte Daten
+- 32 Bytes mit dem MAC über
+  - die nonce aus dem Dateikopf (um zu verhindern, dass das Stück mit Stücken in anderen Dateien vertauscht werden kann),
+  - die laufende Nummer des Stücks (um zu verhindern, dass Stücke innerhalb einer Datei vertauscht werden können),
+  - die nonce des Stücks und
+  - die verschlüsselten Daten
 
 Nach der Verschlüsselung werden diese Stücke wieder in derselben Reihenfolge zusammengefügt. Dabei kann das letzte Stück weniger als 32 KiB Daten enthalten, wenn die Datei nicht eine Länge hat, die ein Vielfaches von 32 KiB ist.
 
@@ -33,3 +27,6 @@ for (int i = 0; i < length(cleartextChunks); i++) {
 }
 encryptedFileContent := join(encryptedChunks[])
 </pre>
+
+<img src="/img/architecture/file-content-encryption.png" srcset="/img/architecture/file-content-encryption.png 1x, /img/architecture/file-content-encryption@2x.png 2x" alt="Verschlüsselung des Dateiinhalts" />
+<figcaption>* Zufällig bei jeder Stückänderung</figcaption>

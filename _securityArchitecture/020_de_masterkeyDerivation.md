@@ -17,7 +17,9 @@ wrappedEncryptionMasterKey := aesKeyWrap(encryptionMasterKey, kek)
 wrappedMacMasterKey := aesKeyWrap(macMasterKey, kek)
 </pre>
 
-Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig sind, werden dann in einer JSON-Datei namens `masterkey.cryptomator` gespeichert. Diese befindet sich im Wurzelverzeichnis des Tresors und sieht in etwa so aus:
+<img src="/img/architecture/key-derivation.png" srcset="/img/architecture/key-derivation.png 1x, /img/architecture/key-derivation@2x.png 2x" alt="Ableitung des KEK" />
+
+Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig sind, werden dann in einer JSON-Datei namens <code>masterkey.cryptomator</code> gespeichert. Diese befindet sich im Wurzelverzeichnis des Tresors und sieht in etwa so aus:
 
 <pre>
 {
@@ -31,4 +33,6 @@ Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig s
 }
 </pre>
 
-Beim Entsperren des Tresors wird der KEK, der aus dem Passwort und den Parametern in der Datei `masterkey.cryptomator` ermittelt wird, benutzt, um die gespeicherten Hauptschlüssel zu enthüllen (d.h. zu entschlüsseln). Erst mit den enthüllten Hauptschlüsseln ist die Entschlüsselung der Daten möglich.
+Beim Entsperren des Tresors wird der KEK, der aus dem Passwort und den Parametern in der Datei <code>masterkey.cryptomator</code> ermittelt wird, benutzt, um die gespeicherten Hauptschlüssel zu enthüllen (d.h. zu entschlüsseln). Erst mit den enthüllten Hauptschlüsseln ist die Entschlüsselung der Daten möglich.
+
+<img src="/img/architecture/masterkey-decryption.png" srcset="/img/architecture/masterkey-decryption.png 1x, /img/architecture/masterkey-decryption@2x.png 2x" alt="Entschlüsselung des Hauptschlüssels" />

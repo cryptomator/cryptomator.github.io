@@ -1,7 +1,7 @@
 ---
 language: de
 anchor: nameEncryption
-title: Namen verschlüsseln
+title: Verschlüsselung des Dateinamens
 ---
 <p class="lead">Neben den Dateiinhalten werden auch die Dateinamen verschlüsselt.</p>
 
@@ -22,3 +22,6 @@ dirPath := vaultRoot + &apos;/d/&apos; + substr(dirIdHash, 0, 2) + &apos;/&apos;
 </pre>
 
 Indem alle Verzeichnisse nebeneinander liegen, wird nicht nur die Verzeichnishierarchie verschleiert, sondern es wird auch die Pfadtiefe begrenzt, um die Kompatibilität mit einigen Cloud-Diensten sicherzustellen.
+
+<img src="/img/architecture/filename-encryption.png" srcset="/img/architecture/filename-encryption.png 1x, /img/architecture/filename-encryption@2x.png 2x" alt="Verschlüsselung des Dateinamen" />
+<figcaption>* Eindeutige Kennzeichnung wird für jedes Verzeichnis erstellt</figcaption>

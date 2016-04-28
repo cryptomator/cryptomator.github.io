@@ -7,19 +7,13 @@ title: File Content Encryption
 
 The cleartext is broken down into multiple chunks, each up to 32 KiB + 48 bytes consisting of:
 
-<ul>
-  <li>16 bytes nonce</li>
-  <li>up to 32 KiB encrypted payload using AES-CTR with the file content key</li>
-  <li>
-    32 bytes MAC of
-    <ul>
-      <li>file header nonce (to bind this chunk to the file header)</li>
-      <li>chunk number as 8 byte big endian integer (to prevent reordering)</li>
-      <li>nonce</li>
-      <li>encrypted payload</li>
-    </ul>
-  </li>
-</ul>
+- 16 bytes nonce
+- up to 32 KiB encrypted payload using AES-CTR with the file content key
+- 32 bytes MAC of
+  - file header nonce (to bind this chunk to the file header)
+  - chunk number as 8 byte big endian integer (to prevent reordering)
+  - nonce
+  - encrypted payload
 
 Afterwards the encrypted chunks are joined preserving the order of the cleartext chunks. The payload of the last chunk may be smaller than 32 KiB.
 
@@ -33,3 +27,6 @@ for (int i = 0; i < length(cleartextChunks); i++) {
 }
 encryptedFileContent := join(encryptedChunks[])
 </pre>
+
+<img src="/img/architecture/file-content-encryption.png" srcset="/img/architecture/file-content-encryption.png 1x, /img/architecture/file-content-encryption@2x.png 2x" alt="File Content Encryption" />
+<figcaption>* Random per chunk change</figcaption>

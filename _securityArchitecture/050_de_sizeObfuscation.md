@@ -1,7 +1,7 @@
 ---
 language: de
 anchor: sizeObfuscation
-title: Dateigrößen verschleiern
+title: Verschleierung der Dateigröße
 ---
 <p class="lead">Um es zu erschweren, eine Datei anhand einer bekannten Größe zu identifizieren, wird die Datei vor der Verschlüsselung um ein zufälliges Padding verlängert.</p>
 

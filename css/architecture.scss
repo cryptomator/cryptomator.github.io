@@ -8,5 +8,10 @@ article {
   &.layer-explanation {
     padding-top: 100px;
     margin-bottom: 4.5em;
+
+    img {
+      display: block;
+      margin: $spacing-unit/2 auto;
+    }
   }
 }
