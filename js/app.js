@@ -153,7 +153,7 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
     } else if ($scope.isOSMac) {
       $window.location.hash = 'osxDownload';
     } else if ($scope.isOSLinux) {
-      $window.location.hash = 'debianDownload';
+      $window.location.hash = 'linuxDownload';
     } else {
       $window.location.hash = 'jarDownload';
     }

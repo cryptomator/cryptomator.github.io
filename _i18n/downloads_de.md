@@ -7,15 +7,18 @@ loadScreen:
   choosingDownload: Der Download für Ihr Betriebssystem wird gewählt…
 windows:
   title: Cryptomator für Windows
-  button32Bit: 32-Bit-Version herunterladen
-  button64Bit: 64-Bit-Version herunterladen
+  button64: 64-Bit-Version herunterladen
+  button32: 32-Bit-Version herunterladen
 osx:
   title: Cryptomator für OS X
   button: Cryptomator herunterladen
 linux:
   title: Cryptomator für Linux
-  button: Cryptomator herunterladen
+  buttonDebian32: Cryptomator 32-Bit für Debian
+  buttonDebian64: Cryptomator 64-Bit für Debian
+  buttonRedhat64: Cryptomator 64-Bit für Red Hat
   debianBased: Für Debian-basierte Systeme
+  redhatBased: Für Red Hat-basierte Systeme
   requirements: Siehe <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detaillierte Systemanforderungen</a>
 jar:
   title: Ausführbare JAR-Datei

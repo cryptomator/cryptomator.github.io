@@ -1,17 +1,29 @@
 {% capture winVersion %}{% if release.artifacts.win.patch %}{{release.title}}.{{release.artifacts.win.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
-{% capture win32File %}{{release.artifacts.win.file32}}{% endcapture %}
-{% capture win64File %}{{release.artifacts.win.file64}}{% endcapture %}
-{% capture win32Url %}{{release.artifacts.win.url32}}{% endcapture %}
-{% capture win64Url %}{{release.artifacts.win.url64}}{% endcapture %}
-{% assign win32Checksum = release.artifacts.win.checksum32 %}
-{% assign win64Checksum = release.artifacts.win.checksum64 %}
+{% capture winFile64 %}{{release.artifacts.win.file64}}{% endcapture %}
+{% capture winUrl64 %}{{release.artifacts.win.url64}}{% endcapture %}
+{% assign winSha1Checksum64 = release.artifacts.win.sha1Checksum64 %}
+{% assign winSha256Checksum64 = release.artifacts.win.sha256Checksum64 %}
+{% capture winFile32 %}{{release.artifacts.win.file32}}{% endcapture %}
+{% capture winUrl32 %}{{release.artifacts.win.url32}}{% endcapture %}
+{% assign winSha1Checksum32 = release.artifacts.win.sha1Checksum32 %}
+{% assign winSha256Checksum32 = release.artifacts.win.sha256Checksum32 %}
 
 {% capture osxVersion %}{% if release.artifacts.osx.patch %}{{release.title}}.{{release.artifacts.osx.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
 {% capture osxFile %}{{release.artifacts.osx.file}}{% endcapture %}
 {% capture osxUrl %}{{release.artifacts.osx.url}}{% endcapture %}
-{% assign osxChecksum = release.artifacts.osx.checksum %}
+{% assign osxSha1Checksum = release.artifacts.osx.sha1Checksum %}
+{% assign osxSha256Checksum = release.artifacts.osx.sha256Checksum %}
 
-{% capture debianVersion %}{% if release.artifacts.debian.patch %}{{release.title}}.{{release.artifacts.debian.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
-{% capture debianFile %}{{release.artifacts.debian.file}}{% endcapture %}
-{% capture debianUrl %}{{release.artifacts.debian.url}}{% endcapture %}
-{% assign debianChecksum = release.artifacts.debian.checksum %}
+{% capture linuxVersion %}{% if release.artifacts.linux.patch %}{{release.title}}.{{release.artifacts.linux.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
+{% capture debianFile64 %}{{release.artifacts.linux.debianFile64}}{% endcapture %}
+{% capture debianUrl64 %}{{release.artifacts.linux.debianUrl64}}{% endcapture %}
+{% assign debianSha1Checksum64 = release.artifacts.linux.debianSha1Checksum64 %}
+{% assign debianSha256Checksum64 = release.artifacts.linux.debianSha256Checksum64 %}
+{% capture debianFile32 %}{{release.artifacts.linux.debianFile32}}{% endcapture %}
+{% capture debianUrl32 %}{{release.artifacts.linux.debianUrl32}}{% endcapture %}
+{% assign debianSha1Checksum32 = release.artifacts.linux.debianSha1Checksum32 %}
+{% assign debianSha256Checksum32 = release.artifacts.linux.debianSha256Checksum32 %}
+{% capture redhatFile64 %}{{release.artifacts.linux.redhatFile64}}{% endcapture %}
+{% capture redhatUrl64 %}{{release.artifacts.linux.redhatUrl64}}{% endcapture %}
+{% assign redhatSha1Checksum64 = release.artifacts.linux.redhatSha1Checksum64 %}
+{% assign redhatSha256Checksum64 = release.artifacts.linux.redhatSha256Checksum64 %}

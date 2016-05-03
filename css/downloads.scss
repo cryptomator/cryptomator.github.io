@@ -8,7 +8,7 @@
   padding-top: 20vh;
 
   h2 {
-    padding-top: 2em;
+    padding-top: 1em;
   }
 }
 
@@ -16,13 +16,13 @@
   margin: $spacing-unit 0;
 }
 
-.sha1sum {
-  font-size: 70%;
+.sha256sum {
+  font-size: 50%;
   font-family: monospace;
 }
 
-.sha1sum::before {
-  content: "SHA1: ";
+.sha256sum::before {
+  content: "SHA256: ";
   color: #888;
 }
 
