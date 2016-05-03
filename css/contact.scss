@@ -6,17 +6,17 @@
 
 #contact {
   >:first-child {
-    padding-top:$spacing-unit/2;
+    padding-top: $spacing-unit/2;
   }
-  
+
   .pgp-key {
-    padding:0;
+    padding: 0;
     pre {
-      background-color:$background-color;
-      font-size:0.8em;
-      overflow:auto;
-      margin:0;
-      border:none;
+      background-color: $background-color;
+      font-size: $base-font-size * 0.8;
+      overflow: auto;
+      margin: 0;
+      border: none;
     }
   }
 }

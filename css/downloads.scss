@@ -9,6 +9,9 @@
 
   h2 {
     padding-top: 1em;
+    @media (max-width: $max-md) {
+      padding-top: 0em;
+    }
   }
 }
 
@@ -17,8 +20,9 @@
 }
 
 .sha256sum {
-  font-size: 50%;
+  font-size: $base-font-size * 0.7;
   font-family: monospace;
+  word-break: break-all;
 }
 
 .sha256sum::before {

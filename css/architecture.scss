@@ -4,14 +4,15 @@
 @charset "utf-8";
 @import "variables";
 
-article {
-  &.layer-explanation {
-    padding-top: 100px;
-    margin-bottom: 4.5em;
+.layer-explanation {
+  padding-top: 50px+$spacing-unit*2;
 
-    img {
-      display: block;
-      margin: $spacing-unit/2 auto;
-    }
+  img {
+    display: block;
+    margin: $spacing-unit/2 auto;
   }
+}
+
+#architecture {
+  padding-bottom: 50px+$spacing-unit*2;
 }

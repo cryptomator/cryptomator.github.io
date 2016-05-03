@@ -27,7 +27,7 @@ body {
   background-color: $grey-color-dark;
   color: #FFF;
   padding-top: $spacing-unit;
-  padding-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit*2;
 }
 
 .fullheight {
@@ -45,7 +45,7 @@ img.avatar {
 #subnav {
   > ul {
     position: fixed;
-    top: 100px;
+    top: 50px+$spacing-unit*2;
     max-width: 200px;
 
     li.active a {
