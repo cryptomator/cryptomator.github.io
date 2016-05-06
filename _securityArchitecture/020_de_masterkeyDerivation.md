@@ -3,7 +3,7 @@ language: de
 anchor: masterkeyDerivation
 title: Ableitung des Hauptschlüssels
 ---
-<p class="lead">Jeder Tresor hat seinen eigenen 256 Bit- sowie einen MAC-Hauptschlüssel, die für die Verschlüsselung von dateispezifischen Schlüsseln beziehungsweise für die Dateiauthentifizierung benutzt werden.</p>
+<p class="lead">Jeder Tresor hat seinen eigenen 256 Bit-Verschlüsselungs- sowie einen MAC-Hauptschlüssel, die für die Verschlüsselung von dateispezifischen Schlüsseln beziehungsweise für die Dateiauthentifizierung benutzt werden.</p>
 
 Diese Schlüssel sind zufällige Sequenzen, die durch einen kryptographisch sicheren Zufallszahlengenerator (CSPRNG) generiert werden.
 
