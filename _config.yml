@@ -21,7 +21,6 @@ kramdown:
   input: GFM
 
 collections:
-- faqs
 - releases
 - languages
 - i18n
