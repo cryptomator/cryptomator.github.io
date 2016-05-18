@@ -1,0 +1,17 @@
+{% assign i18n = 'help' %}
+{% include i18n.liquid %}
+
+<div id="contact" class="container fullheight top-most-element">
+  <h1 class="text-center">{{ i18n.title }}</h1>
+
+  <section>
+    <div class="page-header">
+      <h2 class="text-center">{{ i18n.gethelp.title }}</h2>
+      <p class="lead">{{ i18n.gethelp.intro }}</p>
+    </div>
+    <div class="row">
+      <iframe title="Feedback Form" class="freshwidget-embedded-form col-xs-12" id="freshwidget-embedded-form" src="https://cryptomator.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&screenshot=no" scrolling="no" height="500px" frameborder="0" >
+      </iframe>
+    </div>
+  </section>
+</div>

@@ -5,9 +5,8 @@ context: nav
 toggleNavigation: Toggle navigation
 buttonFreeDownload: Free Download
 buttonSecurityArchitecture: Security Architecture
-buttonFaq: FAQ
+buttonHelp: Help &amp; Support
 buttonBlog: Blog
-buttonContact: Contact
 buttonDonate: Donate
 paymentTypeCreditCard: Credit Card
 paymentTypeBankTransfer: Bank Transfer

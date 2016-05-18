@@ -1,20 +1,15 @@
 ---
 layout: null
 sites:
-- index:
-  url: '/'
+- url: '/'
   langs: ['en', 'de']
-- architecture:
-  url: '/architecture/'
+- url: '/architecture/'
   langs: ['en', 'de']
-- contact:
-  url: '/contact/'
+- url: '/contact/'
   langs: ['en', 'de']
-- downloads:
-  url: '/downloads/'
+- url: '/downloads/'
   langs: ['en', 'de']
-- faq:
-  url: '/faq/'
+- url: '/help/'
   langs: ['en', 'de']
 ---
 <?xml version="1.0" encoding="UTF-8"?>
