@@ -11,5 +11,6 @@ contribute:
   title: Contribute
   reportABug: Report a Bug
   donate: Donate
+team: Team
 contact: Contact
 ---

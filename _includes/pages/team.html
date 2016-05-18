@@ -1,0 +1,43 @@
+{% assign i18n = 'team' %}
+{% include i18n.liquid %}
+
+<div id="team" class="container fullheight top-most-element">
+  <h1 class="text-center">{{ i18n.title }}</h1>
+
+  <section>
+    <div class="page-header">
+      <h2 class="text-center">{{ i18n.coreteam.title }}</h2>
+    </div>
+    <div class="row text-center">
+      {% for member in i18n.coreteam.members %}
+      <div class="col-lg-3 col-sm-4 col-xs-6 person">
+        <img src="{{ member.img }}" class="img img-responsive img-thumbnail"/>
+        <p class="name">{{ member.name }}</p>
+        <p>{{ member.role }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section data-ng-controller="ContributorsCtrl" data-ng-show="contributors.length > 0">
+    <div class="page-header">
+      <h2 class="text-center">{{ i18n.contributors.title }}</h2>
+    </div>
+    <div class="row text-center">
+      <div class="col-sm-2 col-xs-4 person" data-ng-repeat="contributor in contributors">
+        <a data-ng-href="[[ contributor.html_url ]]" target="_blank">
+          <img data-ng-src="[[ contributor.avatar_url ]]" class="img img-responsive img-thumbnail"/>
+          <p>[[ contributor.login ]]</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section data-ng-controller="ContributorsCtrl">
+    <div class="page-header">
+      <h2 class="text-center">{{ i18n.translators.title }}</h2>
+    </div>
+    <p class="text-center">{{ i18n.translators.thanks }}</p>
+  </section>
+
+</div>

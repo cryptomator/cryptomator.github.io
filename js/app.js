@@ -174,6 +174,28 @@ app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', function($http, $s
 
 }]);
 
+app.controller('ContributorsCtrl', ['$http', '$scope', function($http, $scope) {
+
+  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'MuscleRumble', 'gitter-badger'];
+
+  $scope.contributors = [];
+
+  $http.jsonp('https://api.github.com/repos/cryptomator/cryptomator/contributors?callback=JSON_CALLBACK')
+  .then(function(successResponse) {
+    if (_.isObject(successResponse.data) && _.isArray(successResponse.data.data)) {
+      console.log(successResponse.data.data);
+      $scope.contributors = _.reject(successResponse.data.data, function(c) { return _.includes(blacklistedContributors, c.login); });
+    } else {
+      $scope.contributors = [];
+    }
+    $scope.paymentInProgress = false;
+  }, function(errorResponse) {
+    console.warn('Getting GitHub contributors failed.', errorResponse.data);
+    $scope.contributors = [];
+  });
+
+}]);
+
 /**
  * Triggers a bootstrap modal dialog, if the condition evaluates to true.
  *

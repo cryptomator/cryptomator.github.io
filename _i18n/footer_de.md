@@ -11,5 +11,6 @@ contribute:
   title: Etwas beitragen
   reportABug: Einen Fehler melden
   donate: Spenden
+team: Team
 contact: Kontakt
 ---
