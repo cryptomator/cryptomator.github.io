@@ -5,7 +5,6 @@
 @import "variables";
 
 #blog {
-
   .blog-post + .blog-post {
     padding-top: $spacing-unit / 2;
     border-top:1px solid $grey-color-light;
@@ -15,8 +14,8 @@
     display:inline-block;
     vertical-align:middle;
   }
+
   .blog-title > a {
     margin-left: 1em;
   }
-
 }

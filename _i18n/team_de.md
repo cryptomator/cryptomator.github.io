@@ -10,10 +10,10 @@ coreteam:
     role: Gesamtarchitektur
     img: https://avatars.githubusercontent.com/u/1204330
   - name: Tobias Hagemann
-    role: iOS-Entwicklung
+    role: iOS-Entwicklung &amp; Design
     img: https://avatars.githubusercontent.com/u/2924160
   - name: Markus Kreusch
-    role: Desktop- und Android-Entwicklung
+    role: Desktop- &amp; Android-Entwicklung
     img: https://avatars.githubusercontent.com/u/1536532
   - name: Christian Schmickler
     role: Kommunikation

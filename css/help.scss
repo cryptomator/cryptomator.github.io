@@ -4,19 +4,8 @@
 @charset "utf-8";
 @import "variables";
 
-#team {
-  margin-bottom: $spacing-unit*2;
-
+#help {
   >:first-child {
     padding-top: $spacing-unit/2;
-  }
-
-  .person img {
-    width: 100%;
-  }
-
-  p.name {
-    margin: 0.5em;
-    font-size: 1.2em;
   }
 }
