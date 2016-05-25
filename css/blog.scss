@@ -5,9 +5,16 @@
 @import "variables";
 
 #blog {
+  >:first-child {
+    padding-top: $spacing-unit/2;
+  }
+
+  .blog-post {
+    padding-top: $spacing-unit/2;
+  }
+
   .blog-post + .blog-post {
-    padding-top: $spacing-unit / 2;
-    border-top:1px solid $grey-color-light;
+    border-top: 1px solid $grey-color-light;
   }
 
   .blog-title > * {
