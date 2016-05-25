@@ -19,7 +19,7 @@ app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) 
   $rootScope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
 
   $rootScope.donation = {
-    amount: 5,
+    amount: 10,
     currencyEUR: {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'},
     currencyGBP: {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'},
     currencyUSD: {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'},
@@ -281,42 +281,6 @@ app.directive('popoverForUserlanguage', ['$cookies', '$timeout', function($cooki
       return rawLanguage;
     }
   }
-}]);
-
-/**
- * If active on any element, the document will scroll by the full viewport height.
- */
-app.directive('pagewiseScrolling', ['$window', '$document', function($window, $document) {
-  var doc = $(document);
-
-  var scrollHandler = function(e) {
-    var delta = -e.deltaY || e.wheelDelta || -e.detail || e.originalEvent.wheelDelta || -e.originalEvent.detail;
-    var winHeight = $($window).height();
-    if (_.isNumber(delta)) {
-      e.preventDefault();
-    }
-    var oldTop = doc.scrollTop();
-    var newTop;
-    if (delta > 0) {
-      newTop = Math.ceil((oldTop - winHeight) / winHeight) * winHeight;
-    } else if (delta < 0) {
-      newTop = Math.ceil((oldTop + winHeight) / winHeight) * winHeight;
-    }
-    doc.scrollTop(newTop);
-  };
-
-  return {
-    restrict: 'A',
-    link: function(scope, elem, attrs) {
-      if (_.isFunction(doc.scrollTop)) {
-        $document.on('mousewheel DOMMouseScroll', scrollHandler);
-
-        elem.on('$destroy', function() {
-          $document.off('mousewheel DOMMouseScroll', scrollHandler);
-        });
-      }
-    }
-  };
 }]);
 
 /**

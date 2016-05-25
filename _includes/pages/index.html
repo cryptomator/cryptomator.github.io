@@ -44,63 +44,65 @@
   </div>
 </section>
 
-<section id="call-to-action" class="container halfheight" data-ng-controller="CallToActionCtrl">
-  <div class="row">
-    <div class="col-lg-6 col-md-4">
-      <img src="img/feature-image.png" srcset="/img/feature-image.png 1x, /img/feature-image@2x.png 2x" class="img-responsive center-block" />
-    </div>
-
-    <div class="col-lg-6 col-md-8">
-      <div class="text-center">
-        <h2>{{ i18n.download.title }}</h2>
+<section id="call-to-action" class="halfheight" data-ng-controller="CallToActionCtrl">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-4">
+        <img src="img/feature-image.png" srcset="/img/feature-image.png 1x, /img/feature-image@2x.png 2x" class="img-responsive center-block" />
       </div>
 
-      <div data-ng-show="!(isOSiOS || isOSAndroid)">
-        <div class="visible-xs">
-          <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonFreeDownload }}</button>
+      <div class="col-lg-6 col-md-8">
+        <div class="text-center">
+          <h2>{{ i18n.download.title }}</h2>
         </div>
-        <div class="hidden-xs text-center hide-noscript">
-          <h3>{{ i18n.download.payWhatYouWant }}</h3>
-          <div class="btn-group" id="pwyw-buttons">
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 0" data-ng-class="{{"{"}}active: donation.amount == 0}">0 [[donation.currency.symbol]]</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 5" data-ng-class="{{"{"}}active: donation.amount == 5}">5 [[donation.currency.symbol]]</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 10" data-ng-class="{{"{"}}active: donation.amount == 10}">10 [[donation.currency.symbol]]</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 20" data-ng-class="{{"{"}}active: donation.amount == 20}">20 [[donation.currency.symbol]]</button>
-            <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = null" data-ng-class="{{"{"}}active: (donation.amount !== 0 &amp;&amp; donation.amount != 5 &amp;&amp; donation.amount != 10 &amp;&amp; donation.amount != 20)}">{{ i18n.download.buttonOtherAmount }}</button>
-            <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{{"{"}}'#payment-modal': donation.amount !== 0}" data-ng-click="gotoDownloads(donation.amount === 0)">
-              <span data-ng-show="donation.amount !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> {{ i18n.download.buttonContinue }}</span>
-              <span data-ng-show="donation.amount === 0"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonDownload }}</span>
-            </button>
+
+        <div data-ng-show="!(isOSiOS || isOSAndroid)">
+          <div class="visible-xs">
+            <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonFreeDownload }}</button>
+          </div>
+          <div class="hidden-xs text-center hide-noscript">
+            <h3>{{ i18n.download.payWhatYouWant }}</h3>
+            <div class="btn-group" id="pwyw-buttons">
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 0" data-ng-class="{{"{"}}active: donation.amount == 0}">0 [[donation.currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 10" data-ng-class="{{"{"}}active: donation.amount == 10}">10 [[donation.currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 20" data-ng-class="{{"{"}}active: donation.amount == 20}">20 [[donation.currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 50" data-ng-class="{{"{"}}active: donation.amount == 50}">50 [[donation.currency.symbol]]</button>
+              <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = null" data-ng-class="{{"{"}}active: (donation.amount !== 0 &amp;&amp; donation.amount != 10 &amp;&amp; donation.amount != 20 &amp;&amp; donation.amount != 50)}">{{ i18n.download.buttonOtherAmount }}</button>
+              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{{"{"}}'#payment-modal': donation.amount !== 0}" data-ng-click="gotoDownloads(donation.amount === 0)">
+                <span data-ng-show="donation.amount !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> {{ i18n.download.buttonContinue }}</span>
+                <span data-ng-show="donation.amount === 0"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonDownload }}</span>
+              </button>
+            </div>
+          </div>
+          <div class="hidden-xs text-center show-noscript-block">
+            <a href="/downloads/" class="btn btn-lg btn-primary">
+              <span class="glyphicon glyphicon-download-alt"></span> Download
+            </a>
           </div>
         </div>
-        <div class="hidden-xs text-center show-noscript-block">
-          <a href="/downloads/" class="btn btn-lg btn-primary">
-            <span class="glyphicon glyphicon-download-alt"></span> Download
-          </a>
+
+        <div class="text-center">
+          <h2>{{ i18n.apps.title }}</h2>
+        </div>
+
+        <div class="text-center">
+          <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
+            <a href="{{ i18n.apps.appStoreLink }}" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
+          </div>
+          <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
+              data-ng-click="sendGaBtnClick('androidbeta')"
+              data-container="body"
+              data-toggle="popover"
+              data-trigger="focus"
+              data-placement="bottom"
+              data-content="{{ i18n.apps.androidPopover.content }}"
+              title="{{ i18n.apps.androidPopover.title }}">
+                Android<sup>™</sup> app
+          </button>
         </div>
       </div>
-
-      <div class="text-center">
-        <h2>{{ i18n.apps.title }}</h2>
-      </div>
-
-      <div class="text-center">
-        <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
-          <a href="{{ i18n.apps.appStoreLink }}" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
-        </div>
-        <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
-            data-ng-click="sendGaBtnClick('androidbeta')"
-            data-container="body"
-            data-toggle="popover"
-            data-trigger="focus"
-            data-placement="bottom"
-            data-content="{{ i18n.apps.androidPopover.content }}"
-            title="{{ i18n.apps.androidPopover.title }}">
-              Android<sup>™</sup> app
-        </button>
-      </div>
-    </div>
-  </div><!-- /.row -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 </section>
 
 <section id="reception">
