@@ -46,7 +46,7 @@ app.factory('stripe', ['$window', function($window) {
 
 app.factory('googleAnalytics', ['$window', function($window) {
   /* jshint sub:true, asi:true, expr:true */
-  var ga = window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  var ga = window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date();
   /* jshint sub:false, asi:false, expr:false */
 
   ga('create', 'UA-57664706-1', 'auto');
@@ -86,14 +86,24 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
   $scope.paymentType = 'paypal';
   $scope.creditCard = {
     num: '',
+    holdername: '',
     cvc: '',
-    expMonth: '12',
+    expMonth: null,
     expMonths: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
-    expYear: _.toString(currentYear),
+    expYear: null,
     expYears: _.map(_.range(currentYear, currentYear + 10), _.toString),
-    validateNum: stripe.card.validateCardNumber,
-    validateCvc: stripe.card.validateCVC,
-    type: stripe.card.cardType
+    validateNum: function() {
+      return stripe.card.validateCardNumber(this.num);
+    },
+    validateCvc: function() {
+      return stripe.card.validateCVC(this.cvc);
+    },
+    validateExpiry: function() {
+      return _.includes(this.expMonths, this.expMonth) && _.includes(this.expYears, this.expYear);
+    },
+    guessType: function() {
+      return stripe.card.cardType(this.num);
+    }
   };
   $scope.paymentInProgress = false;
   $scope.paymentSuccessful = false;
@@ -102,6 +112,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
     $scope.paymentInProgress = true;
     stripe.card.createToken({
       number: $scope.creditCard.num,
+      name: $scope.creditCard.holdername,
       cvc: $scope.creditCard.cvc,
       exp_month: $scope.creditCard.expMonth,
       exp_year: $scope.creditCard.expYear

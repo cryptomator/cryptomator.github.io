@@ -40,4 +40,8 @@
       border-bottom: none;
     }
   }
+
+  .iban span:after {
+    content: " ";
+  }
 }
