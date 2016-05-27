@@ -1,7 +1,7 @@
 {% assign i18n = 'blog' %}
 {% include i18n.liquid %}
 
-{% assign sortedPosts = site.posts | where: 'published', true | where: 'language', language.name | sort: 'path', 'last' %}
+{% assign sortedPosts = site.posts | where: 'published', true | where: 'language', language.name | sort: 'path', 'last' | reverse %}
 
 <div id="blog" class="container fullheight top-most-element">
   <section class="blog-title">
