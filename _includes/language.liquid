@@ -7,11 +7,24 @@
 
   {% assign urlSegments = page.url | split:"/" %}
   {% assign languageIdFromUrl = urlSegments[1] %}
-  {% for currentLanguage in site.languages %}
-    {% if currentLanguage.name == languageIdFromUrl %}
-      {% assign language = currentLanguage %}
-    {% endif %}
-  {% endfor %}
+  {% assign sizeOfLanguageIdFromUrl = languageIdFromUrl | size %}
+  {% if sizeOfLanguageIdFromUrl == 2 %}
+    {% for currentLanguage in site.languages %}
+      {% if currentLanguage.name == languageIdFromUrl %}
+        {% assign language = currentLanguage %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% for currentLanguage in site.languages %}
+      {% capture currentLanguageInFilename %}_{{ currentLanguage.name }}.{% endcapture %}
+      {% assign modifiedUrl = page.url | replace: currentLanguageInFilename, "#" %}
+      {% if modifiedUrl != page.url %}
+        {% assign language = currentLanguage %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
   {% if language == null %}
     {% assign language = defaultLanguage %}
   {% endif %}

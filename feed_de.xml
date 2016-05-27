@@ -1,17 +1,18 @@
 ---
 layout: null
+permalink: '/de/feed.xml'
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
+    <description>Freie clientseitige Verschlüsselung für Ihre Cloud-Daten. Open Source Software: Keine Hintertüren, keine Anmeldung.</description>
     <link>{{ site.url }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.url }}" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ "/de/feed.xml" | prepend: site.url }}" rel="self" type="application/rss+xml" />
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% assign sortedPosts = site.posts | where: 'published', true | where: 'language', "en" | sort: 'path', 'last' %}
+    {% assign sortedPosts = site.posts | where: 'published', true | where: 'language', "de" | sort: 'path', 'last' %}
     {% for post in sortedPosts limit:10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>

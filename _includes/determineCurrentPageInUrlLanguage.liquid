@@ -1,0 +1,9 @@
+{% capture languageInFilename %}_{{ language.name }}.{% endcapture %}
+{% capture currentLanguageInFilename %}_{{ currentLanguage.name }}.{% endcapture %}
+{% assign modifiedPageUrlWithoutLanguagePrefix = pageUrlWithoutLanguagePrefix | replace: languageInFilename, currentLanguageInFilename %}
+
+{% if modifiedPageUrlWithoutLanguagePrefix == pageUrlWithoutLanguagePrefix %}
+  {% capture currentPageUrlInUrlLanguage %}{% unless currentLanguage.default %}/{{currentLanguage.name}}{% endunless %}{{ pageUrlWithoutLanguagePrefix }}{% endcapture %}
+{% else %}
+  {% assign currentPageUrlInUrlLanguage = modifiedPageUrlWithoutLanguagePrefix %}
+{% endif %}
