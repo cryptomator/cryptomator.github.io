@@ -28,6 +28,11 @@ body {
   color: #FFF;
   padding-top: $spacing-unit;
   padding-bottom: $spacing-unit*2;
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
 }
 
 .fullheight {

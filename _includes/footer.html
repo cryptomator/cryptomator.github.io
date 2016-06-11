@@ -5,22 +5,43 @@
 
   <section class="container">
     <div class="row">
-      <div class="col-xs-4">
-        <h4>{{ i18n.resources.title }}</h4>
-        <ul>
-          <li><a href="http://press.cryptomator.org/cryptomator_press_kit_en.zip">{{ i18n.resources.pressKit }} (en)</a></li>
-          <li><a href="http://press.cryptomator.org/cryptomator_press_kit_de.zip">{{ i18n.resources.pressKit }} (de)</a></li>
-        </ul>
-      </div>
-      <div class="col-xs-4">
-        <h4>{{ i18n.connect.title }}</h4>
+      <div class="col-xs-6 col-sm-4 col-md-2">
+        <h4>{{ i18n.cryptomator.title }}</h4>
         <ul>
           <li><a href="{{ languageUrlPrefix }}/blog/">Blog</a></li>
-          <li><a href="https://twitter.com/Cryptomator" target="_blank">Twitter</a></li>
-          <li><a href="https://facebook.com/Cryptomator" target="_blank">Facebook</a></li>
+          <li><a href="{{ languageUrlPrefix }}/team/">{{ i18n.cryptomator.team }}</a></li>
+          <li><a href="http://www.redbubble.com/people/cryptomator/shop">Merchandise</a></li>
+          <li><a href="{{ i18n.cryptomator.pressKitUrl }}">{{ i18n.cryptomator.pressKit }}</a></li>
         </ul>
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-6 col-sm-4 col-md-2">
+        <h4>{{ i18n.legal.title }}</h4>
+        <ul>
+          <li><a href="{{ languageUrlPrefix }}/privacy/">Privacy Policy</a></li>
+          <li><a href="{{ languageUrlPrefix }}/impressum/">Impressum</a></li>
+          <li><a href="{{ languageUrlPrefix }}/datenschutz/">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4 col-md-2">
+        <h4>{{ i18n.help.title }}</h4>
+        <ul>
+          <li><a href="https://cryptomator.freshdesk.com/support/solutions">{{ i18n.help.knowledgeBase }}</a></li>
+          <li><a href="{{ languageUrlPrefix }}/help/">{{ i18n.help.support }}</a></li>
+        </ul>
+      </div>
+      <div class="clearfix visible-sm-block"></div>
+      <div class="col-xs-6 col-sm-4 col-md-2">
+        <h4>{{ i18n.connect.title }}</h4>
+        <ul>
+          <li><a href="https://twitter.com/Cryptomator" target="_blank">Twitter</a></li>
+          <li><a href="https://facebook.com/Cryptomator" target="_blank">Facebook</a></li>
+          <li><a href="{{ languageUrlPrefix }}/feed.xml">{{ i18n.connect.rssFeed }}</a></li>
+          <li><a href="{{ languageUrlPrefix }}/contact/">{{ i18n.connect.contact }}</a></li>
+        </ul>
+      </div>
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4 col-md-2">
         <h4>{{ i18n.contribute.title }}</h4>
         <ul>
           <li><a href="https://github.com/cryptomator/cryptomator/blob/master/CONTRIBUTING.md" target="_blank">{{ i18n.contribute.reportABug }}</a></li>
@@ -28,17 +49,17 @@
           <li><a href="#payment-modal" data-toggle="modal">{{ i18n.contribute.donate }}</a></li>
         </ul>
       </div>
+      <div class="col-xs-6 col-sm-4 col-md-2">
+        <h4>{{ i18n.l10n.title }}</h4>
+        <ul>
+        {% for language in site.languages %}
+          {% assign urlLanguage = currentLanguage %}
+          {% include determineCurrentPageInUrlLanguage.liquid %}
+          <li><a href="{{ currentPageUrlInUrlLanguage }}">{{language.title}}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
     </div>
-  </section>
-
-  <section class="container">
-    <p class="text-center small">© cryptomator.org
-      • <a href="{{ languageUrlPrefix }}/team/">{{ i18n.team }}</a>
-      • <a href="{{ languageUrlPrefix }}/contact/">{{ i18n.contact }}</a>
-      • <a href="{{ languageUrlPrefix }}/privacy/">Privacy Policy</a>
-      • <a href="{{ languageUrlPrefix }}/impressum/">Impressum</a>
-      • <a href="{{ languageUrlPrefix }}/datenschutz/">Datenschutz</a>
-    </p>
   </section>
 
 </footer>

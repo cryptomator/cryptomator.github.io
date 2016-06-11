@@ -2,15 +2,25 @@
 language: en
 context: footer
 
-resources:
-  title: Resources
+cryptomator:
+  title: Cryptomator
+  team: Team
   pressKit: Press Kit
+  pressKitUrl: http://press.cryptomator.org/cryptomator_press_kit_en.zip
+legal:
+  title: Legal
+help:
+  title: Help
+  knowledgeBase: Knowledge Base
+  support: Support
 connect:
   title: Connect
+  rssFeed: RSS Feed
+  contact: Contact
 contribute:
   title: Contribute
-  reportABug: Report a Bug
+  reportABug: Report Bug
   donate: Donate
-team: Team
-contact: Contact
+l10n:
+  title: Language
 ---
