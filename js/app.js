@@ -258,7 +258,7 @@ app.directive('popoverForUserlanguage', ['$cookies', '$timeout', function($cooki
   return {
     restrict: 'A',
     link: function(scope, elem, attrs) {
-      if ($cookies.get('multiLanguageAware') === 'true') {
+      if ($cookies.get('multiLanguageAware') === 'yes') {
         return;
       }
       var attrName = 'popover' + clientLanguage();
@@ -269,14 +269,19 @@ app.directive('popoverForUserlanguage', ['$cookies', '$timeout', function($cooki
           placement: 'bottom',
           trigger: 'manual'
         })
-        .click(function(){
+        .click(function() {
           $(elem).popover('hide');
         });
-        $timeout(function(){
+        // raise awareness for other language after 1s:
+        $timeout(function() {
           $(elem).popover('show');
-          $cookies.put('multiLanguageAware', 'true');
+          // do not show this popup again for 24 hours:
+          $cookies.put('multiLanguageAware', 'yes', {
+            expires: new Date(_.now() + 24 * 3600 * 1000)
+          });
         }, 1000);
-        $timeout(function(){
+        // close popup automatically after another 10s:
+        $timeout(function() {
           $(elem).popover('hide');
         }, 11000);
       }
