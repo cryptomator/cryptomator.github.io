@@ -50,6 +50,7 @@ app.factory('googleAnalytics', ['$window', function($window) {
   /* jshint sub:false, asi:false, expr:false */
 
   ga('create', 'UA-57664706-1', 'auto');
+  ga('set', 'anonymizeIp', true);
   ga('require', 'displayfeatures');
 
   return {
