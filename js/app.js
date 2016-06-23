@@ -188,7 +188,7 @@ app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', function($http, $s
 
 app.controller('ContributorsCtrl', ['$http', '$scope', function($http, $scope) {
 
-  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'MuscleRumble', 'gitter-badger'];
+  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'tobihagemann', 'gitter-badger'];
 
   $scope.contributors = [];
 
