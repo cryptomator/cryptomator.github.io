@@ -52,10 +52,10 @@
       <div class="col-xs-6 col-sm-4 col-md-2">
         <h4>{{ i18n.l10n.title }}</h4>
         <ul>
-        {% for language in site.languages %}
+        {% for currentLanguage in site.languages %}
           {% assign urlLanguage = currentLanguage %}
           {% include determineCurrentPageInUrlLanguage.liquid %}
-          <li><a href="{{ currentPageUrlInUrlLanguage }}">{{language.title}}</a></li>
+          <li><a href="{{ currentPageUrlInUrlLanguage }}">{{ currentLanguage.title }}</a></li>
         {% endfor %}
         </ul>
       </div>
