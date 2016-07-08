@@ -20,15 +20,13 @@
   margin: $spacing-unit 0;
 }
 
-.sha256sum {
-  font-size: $base-font-size * 0.7;
-  font-family: monospace;
-  word-break: break-all;
-}
+.popover {
+  max-width: none;
 
-.sha256sum::before {
-  content: "SHA256: ";
-  color: #888;
+  .popover-content {
+    font-size: $base-font-size * 0.8;
+    font-family: monospace;
+  }
 }
 
 #loadScreen {

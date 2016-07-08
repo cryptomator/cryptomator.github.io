@@ -48,8 +48,12 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{winVersion}} • 64 bit • Minimum: Windows Vista SP2</p>
-            <p class="sha256sum">{{winSha256Checksum64}}</p>
+
+            <p class="small">Version {{winVersion}} • Minimum: Windows Vista SP2 •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">
+                SHA256
+              </a>
+            </p>
           </div>
 
           <div class="download-btn-container">
@@ -69,8 +73,11 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{winVersion}} • 32 bit • Minimum: Windows Vista SP2</p>
-            <p class="sha256sum">{{winSha256Checksum32}}</p>
+            <p class="small">Version {{winVersion}} • Minimum: Windows Vista SP2 •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum32}}">
+                SHA256
+              </a>
+            </p>
           </div>
         </div>
       </div>
@@ -109,8 +116,11 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{osxVersion}} • Minimum: OS X 10.8.3</p>
-            <p class="sha256sum">{{osxSha256Checksum}}</p>
+            <p class="small">Version {{osxVersion}} • Minimum: OS X 10.8.3 •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{osxSha256Checksum}}">
+                SHA256
+              </a>
+            </p>
           </div>
         </div>
       </div>
@@ -150,8 +160,11 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{linuxVersion}} • 64 bit • {{ i18n.linux.debianBased }}</p>
-            <p class="sha256sum">{{debianSha256Checksum64}}</p>
+            <p class="small">Version {{linuxVersion}} • {{ i18n.linux.debianBased }} •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum64}}">
+                SHA256
+              </a>
+            </p>
           </div>
 
           <div class="download-btn-container">
@@ -171,8 +184,11 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{linuxVersion}} • 32 bit • {{ i18n.linux.debianBased }}</p>
-            <p class="sha256sum">{{debianSha256Checksum32}}</p>
+            <p class="small">Version {{linuxVersion}} • {{ i18n.linux.debianBased }} •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum32}}">
+                SHA256
+              </a>
+            </p>
           </div>
 
           <div class="download-btn-container">
@@ -192,8 +208,18 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{linuxVersion}} • 64 bit • {{ i18n.linux.redhatBased }}</p>
-            <p class="sha256sum">{{redhatSha256Checksum64}}</p>
+            <p class="small">Version {{linuxVersion}} • {{ i18n.linux.redhatBased }} •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">
+                SHA256
+              </a>
+            </p>
+          </div>
+
+          <div class="download-btn-container">
+            <a itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" data-ng-click="logDownload('arch')" class="btn btn-lg btn-primary" role="button">
+              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonArch }}
+            </a>
+            <p class="small">{{ i18n.linux.archBased }}</p>
           </div>
         </div>
       </div>
@@ -212,7 +238,7 @@
           <div class="download-btn-container">
             <div class="btn-group">
               <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.jar.button }}
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
               </a>
               <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="caret"></span>
@@ -291,17 +317,17 @@
           </td>
           <td>
             {% if debianSha1Checksum64 or debianSha256Checksum64 %}
-            <a href="{{debianUrl}}" download="{{debianFile64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{debianUrl64}}" download="{{debianFile64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile64}}
             </a>
             {% endif %}
             {% if debianSha1Checksum32 or debianSha256Checksum32 %}
-            <a href="{{debianUrl}}" download="{{debianFile32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{debianUrl32}}" download="{{debianFile32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile32}}
             </a>
             {% endif %}
             {% if redhatSha1Checksum64 or redhatSha256Checksum64 %}
-            <a href="{{redhatUrl}}" download="{{redhatFile64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-xs btn-default" role="button">
+            <a href="{{redhatUrl64}}" download="{{redhatFile64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-xs btn-default" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{redhatFile64}}
             </a>
             {% endif %}

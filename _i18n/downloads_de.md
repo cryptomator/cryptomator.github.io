@@ -17,8 +17,10 @@ linux:
   buttonDebian32: Cryptomator 32-Bit für Debian
   buttonDebian64: Cryptomator 64-Bit für Debian
   buttonRedhat64: Cryptomator 64-Bit für Red Hat
+  buttonArch: Cryptomator AUR
   debianBased: Für Debian-basierte Systeme
   redhatBased: Für Red Hat-basierte Systeme
+  archBased: Für Arch-basierte Systeme
   requirements: Siehe <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detaillierte Systemanforderungen</a>
 jar:
   title: Ausführbare JAR-Datei
