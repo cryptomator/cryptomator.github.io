@@ -13,7 +13,7 @@ ciphertextName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey,
 
 Bei Dateien ist das Ergebnis der verschlüsselte Name.
 
-Handelt es sich hingegen um ein Verzeichnis, wird ein Unterstrich angehängt. Dann wird eine Datei dieses Namens erstellt, in die wir eine eindeutige Kennzeichnung (genauer eine <abbr title="Universally unique identifier" class="initialism">UUID</abbr>) schreiben. Das dazugehörige Verzeichnis wird dann an folgendem Ort gespeichert:
+Handelt es sich hingegen um ein Verzeichnis, wird eine Null vorangestellt. Dann wird eine Datei dieses Namens erstellt, in die wir eine eindeutige Kennzeichnung (genauer eine <abbr title="Universally unique identifier" class="initialism">UUID</abbr>) schreiben. Das dazugehörige Verzeichnis wird dann an folgendem Ort gespeichert:
 
 <pre>
 dirId := createUuid()

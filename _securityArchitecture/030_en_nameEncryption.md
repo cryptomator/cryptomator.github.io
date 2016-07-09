@@ -13,7 +13,7 @@ ciphertextName := base32(aesSiv(cleartextName, parentDirId, encryptionMasterKey,
 
 If it&apos;s a filename, we&apos;re done!
 
-If it&apos;s a directory name, we append an underscore. We then create a file with this name, in which we write a unique identifier (i.e. <abbr title="Universally unique identifier" class="initialism">UUID</abbr>). The corresponding directory however is stored in a different location:
+If it&apos;s a directory name, we prepend a zero. We then create a file with this name, in which we write a unique identifier (i.e. <abbr title="Universally unique identifier" class="initialism">UUID</abbr>). The corresponding directory however is stored in a different location:
 
 <pre>
 dirId := createUuid()
