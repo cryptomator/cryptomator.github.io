@@ -29,7 +29,7 @@ The wrapped keys and the parameters needed to derive the KEK are then stored as 
   "scryptBlockSize": 8,
   "primaryMasterKey": "QDi...Q==", /* wrappedEncryptionMasterKey */
   "hmacMasterKey": "L83...Q==", /* wrappedMacMasterKey */
-  "versionMac": "3/U...9Q=" /* HMAC-256 of vault version to prevent downgrade attacks */
+  "versionMac": "3/U...9Q=" /* HMAC-256 of vault version to prevent undetected downgrade attacks */
 }
 </pre>
 

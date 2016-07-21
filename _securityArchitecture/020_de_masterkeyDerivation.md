@@ -29,7 +29,7 @@ Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig s
   "scryptBlockSize": 8,
   "primaryMasterKey": "QDi...Q==", /* wrappedEncryptionMasterKey */
   "hmacMasterKey": "L83...Q==", /* wrappedMacMasterKey */
-  "versionMac": "3/U...9Q=" /* HMAC-256 of vault version to prevent downgrade attacks */
+  "versionMac": "3/U...9Q=" /* HMAC-256 der Vault-Version um unerkannte Downgrade Angriffe zu verhindern */
 }
 </pre>
 

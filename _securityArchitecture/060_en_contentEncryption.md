@@ -11,7 +11,7 @@ The cleartext is broken down into multiple chunks, each up to 32 KiB + 48 bytes 
 - up to 32 KiB encrypted payload using AES-CTR with the file content key
 - 32 bytes MAC of
   - file header nonce (to bind this chunk to the file header)
-  - chunk number as 8 byte big endian integer (to prevent reordering)
+  - chunk number as 8 byte big endian integer (to prevent undetected reordering)
   - nonce
   - encrypted payload
 

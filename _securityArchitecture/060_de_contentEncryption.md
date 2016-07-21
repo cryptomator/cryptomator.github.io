@@ -10,8 +10,8 @@ Der unverschlüsselte Dateiinhalt wird in mehrere Stücke zerteilt, jedes besteh
 - 16 Bytes mit dem nonce
 - bis zu 32 KiB mit AES-CTR und dem Dateiinhalteschlüssel verschlüsselte Daten
 - 32 Bytes mit dem MAC über
-  - die nonce aus dem Dateikopf (um zu verhindern, dass das Stück mit Stücken in anderen Dateien vertauscht werden kann),
-  - die laufende Nummer des Stücks (um zu verhindern, dass Stücke innerhalb einer Datei vertauscht werden können),
+  - die nonce aus dem Dateikopf (um zu verhindern, dass das Stück unerkannt mit Stücken in anderen Dateien vertauscht wird),
+  - die laufende Nummer des Stücks (um zu verhindern, dass Stücke unerkannt innerhalb einer Datei vertauscht werden können),
   - die nonce des Stücks und
   - die verschlüsselten Daten
 
