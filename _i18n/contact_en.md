@@ -5,15 +5,17 @@ context: contact
 title: Contact
 speakToUs:
   title: Want to speak to us?
+  pgpKey: PGP Key
   support:
     title: Support
     contactUs: If you need assistance do not hesitate to contact us at
     weSpeakGerman: Wir sprechen auch Deutsch.
-    pgpKey: PGP Key
   press:
     title: Press
     contactUs: For any press inquiries please contact us at
-    pgpKey: PGP Key
+  security:
+    title: Security
+    contactUs: For security questions or reporting vulnerabilities contact us at
 foundABug:
   title: Found a Bug?
   desktop:

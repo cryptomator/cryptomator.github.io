@@ -11,32 +11,32 @@
     <div class="row">
       <div class="col-md-6">
         <h3 class="text-center">{{ i18n.speakToUs.support.title }}</h3>
-        <p>{{ i18n.speakToUs.support.contactUs }}:<br/>
-          <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a></p>
+        <p>
+          {{ i18n.speakToUs.support.contactUs }}:<br/>
+          <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
+        </p>
+        {% if i18n.speakToUs.support.weSpeakGerman %}
         <p>{{ i18n.speakToUs.support.weSpeakGerman }}</p>
+        {% endif %}
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="panel-title cursor-pointer" data-toggle="collapse" data-target="#supportPgpKey">{{ i18n.speakToUs.support.pgpKey }}</div>
-          </div>
-          <div id="supportPgpKey" class="panel-body pgp-key collapse">
-            <pre>{% include pgpKeys/supportAtCryptomator %}</pre>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
+
         <h3 class="text-center">{{ i18n.speakToUs.press.title }}</h3>
-        <p>{{ i18n.speakToUs.press.contactUs }}:<br/>
-          <a href="mailto:&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a></p>
+        <p>
+          {{ i18n.speakToUs.press.contactUs }}:<br/>
+          <a href="mailto:&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
+        </p>
+
+        <h3 class="text-center">{{ i18n.speakToUs.security.title }}</h3>
+        <p>
+          {{ i18n.speakToUs.security.contactUs }}:<br/>
+          <a href="mailto:&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
+        </p>
         <p>&nbsp;</p>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="panel-title cursor-pointer" data-toggle="collapse" data-target="#pressPgpKey">{{ i18n.speakToUs.press.pgpKey }}</div>
-          </div>
-          <div id="pressPgpKey" class="panel-body pgp-key collapse">
-            <pre>{% include pgpKeys/pressAtCryptomator %}</pre>
-          </div>
-        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h3 class="text-center">{{ i18n.speakToUs.pgpKey }}</h3>
+        <pre class="pre-scrollable">{% include pgpKeys/94D4D81D.asc %}</pre>
       </div>
     </div>
   </section>
