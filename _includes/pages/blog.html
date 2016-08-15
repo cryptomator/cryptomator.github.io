@@ -20,7 +20,7 @@
       </div>
       <div class="row">
         <div class="col-sm-10 col-sm-offset-2">
-          {{ post.excerpt }}
+          <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 320 }}</p>
         </div>
       </div>
     </article>

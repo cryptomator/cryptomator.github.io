@@ -3,14 +3,14 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | xml_escape }}{% endif %}">
   <meta name="apple-itunes-app" content="app-id=953086535">
 
 {% if page.path contains '_posts' %}
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:site_name" content="cryptomator.org">
   <meta property="og:url" content="{{ page.url | prepend: site.url }}">
-  <meta property="og:description" content="{{ page.excerpt | strip_html }}">
+  <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
   <meta property="og:type" content="article" />
   <meta property="article:author" content="{% if page.author %}{{ page.author }}{% else %}Cryptobot{% endif %}" />
   <meta property="article:published_time" content="{{ page.date | date: "%Y-%m-%d" }}" />
