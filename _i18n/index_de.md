@@ -7,7 +7,7 @@ subtitle: >
   Open Source Software: Keine Hintertüren, keine Anmeldung.
 
 download:
-  title: Download für PC oder Mac
+  title: Download für Windows, OS X, Linux
   buttonFreeDownload: Gratis Download
   payWhatYouWant: Zahlen Sie, wie viel Sie wollen
   buttonOtherAmount: Anderer Betrag
@@ -15,7 +15,7 @@ download:
   buttonDownload: Download
 
 apps:
-  title: App für Ihr Smartphone
+  title: App für Ihr Mobilgerät
   appStoreLink: https://itunes.apple.com/de/app/cryptomator/id953086535
   androidPopover:
     title: Cryptomator für Android

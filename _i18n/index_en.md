@@ -7,7 +7,7 @@ subtitle: >
   Open source software: No backdoors, no registration.
 
 download:
-  title: Download for PC or Mac
+  title: Download for Windows, OS X, Linux
   buttonFreeDownload: Free Download
   payWhatYouWant: Pay what you want
   buttonOtherAmount: Other
@@ -15,7 +15,7 @@ download:
   buttonDownload: Download
 
 apps:
-  title: App for your smartphone
+  title: App for your mobile device
   appStoreLink: https://itunes.apple.com/app/cryptomator/id953086535
   androidPopover:
     title: Cryptomator for Android

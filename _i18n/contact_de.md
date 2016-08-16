@@ -8,7 +8,7 @@ speakToUs:
   pgpKey: PGP-Schlüssel
   support:
     title: Support
-    contactUs: Wenn Sie Hilfe brauchen, erreichern Sie uns unter
+    contactUs: Wenn Sie Hilfe benötigen, <a href="/de/help/">erstellen Sie bitte ein Support-Ticket</a>. Falls Sie uns eine GPG-verschlüsselte Nachricht senden wollen, erreichern Sie uns unter
   press:
     title: Presse
     contactUs: Für Presseanfragen, kontaktieren Sie uns unter

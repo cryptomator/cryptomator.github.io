@@ -7,7 +7,7 @@ navbar:
   freeDownload: Free Download
   securityArchitecture: Security Architecture
   help: Help &amp; Support
-  blog: Blog
+  contact: Contact
   donate: Donate
 
 payment:
