@@ -17,7 +17,8 @@ linux:
   buttonDebian32: Cryptomator 32-Bit für Debian
   buttonDebian64: Cryptomator 64-Bit für Debian
   buttonRedhat64: Cryptomator 64-Bit für Red Hat
-  buttonArch: Cryptomator AUR
+  buttonPpa: PPA (Ubuntu)
+  buttonAur: AUR (Arch)
   debianBased: Für Debian-basierte Systeme
   redhatBased: Für Red Hat-basierte Systeme
   archBased: Für Arch-basierte Systeme

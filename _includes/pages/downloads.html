@@ -216,10 +216,14 @@
           </div>
 
           <div class="download-btn-container">
-            <a itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" data-ng-click="logDownload('arch')" class="btn btn-lg btn-primary" role="button">
-              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonArch }}
-            </a>
-            <p class="small">{{ i18n.linux.archBased }}</p>
+            <div class="btn-group">
+              <a class="btn btn-lg btn-primary" itemprop="downloadUrl" data-ng-click="logDownload('ppa')" data-container="body" data-toggle="popover" data-placement="bottom" data-content="sudo add-apt-repository ppa:sebastian-stenzel/cryptomator<br/>sudo apt-get update<br/>sudo apt-get install cryptomator" role="button">
+                <span class="glyphicon glyphicon-console" aria-hidden="true"></span> {{ i18n.linux.buttonPpa }}
+              </a>
+              <a class="btn btn-lg btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="logDownload('aur')"  role="button">
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
