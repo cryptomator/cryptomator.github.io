@@ -8,7 +8,7 @@ speakToUs:
   pgpKey: PGP Key
   support:
     title: Support
-    contactUs: If you need assistance <a href="/help/">please create a support ticket</a>. If you'd like to send us a GPG-encrypted message contact us at
+    contactUs: If you need assistance <a href="/help/">please create a support ticket</a>. If you'd like to send us a PGP-encrypted message contact us at
     weSpeakGerman: Wir sprechen auch Deutsch.
   press:
     title: Press
