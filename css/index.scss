@@ -98,10 +98,10 @@ h1.display-font {
 
   .file {
     position: absolute;
-    width: 20%;
+    width: 18%;
     height: 100%;
     left: 100%;
-    margin-left: -10%;
+    margin-left: -9%;
 
     > img {
       position: absolute;
@@ -235,11 +235,16 @@ h1.display-font {
 
 }
 
-#top h2 {
-  padding-bottom: 1em;
+#top {
+  min-height: 42vh;
+
+  h2 {
+    padding-bottom: 1em;
+  }
 }
 
 #call-to-action {
+  min-height: 42vh;
   padding-bottom: $spacing-unit;
 
   h2 {
@@ -265,19 +270,19 @@ h1.display-font {
 }
 
 #reception {
-  padding-bottom:48px;
+  padding-bottom: 48px;
 
   .reception-row + .reception-row {
     margin-top: $spacing-unit;
   }
 
   .award-image {
-    width:45%;
+    width: 45%;
   }
 
   @media (max-width: $max-xs) {
     .award-image {
-      margin-bottom:10%;
+      margin-bottom: 10%;
     }
   }
 
