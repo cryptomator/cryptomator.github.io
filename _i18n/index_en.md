@@ -85,4 +85,6 @@ newsletter:
   emailAddress: Email Address
   androidOptIn: Yes, I'm interested in the beta for Android
   buttonSubscribe: Subscribe
+  success: >
+    Thank you for subscribing! :love_letter: A confirmation link has been sent to your email address.
 ---

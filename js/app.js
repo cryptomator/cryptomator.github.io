@@ -125,8 +125,13 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
         });
       } else {
         var amountInCents = $scope.donation.amount * 100;
-        $http.jsonp('https://stripe.cryptomator.org/index.php?callback=JSON_CALLBACK&stripeToken=' + response.id + '&currency=' + $scope.donation.currency.code + '&amountInCents=' + amountInCents)
-        .then(function(successResponse) {
+        $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
+          stripeToken: response.id,
+          currency: $scope.donation.currency.code,
+          amountInCents: amountInCents
+        }), {
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }).then(function(successResponse) {
           if (successResponse.data.status == 'ok') {
             $scope.paymentError = null;
             $scope.paymentSuccessful = true;
@@ -149,6 +154,33 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
   };
 
   showPaymentModalIfDonateAnchorPresent();
+
+}]);
+
+app.controller('NewsletterCtrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.subscribeSuccessful = false;
+  $scope.subscribeInProgress = false;
+
+  $scope.subscribe = function() {
+    $scope.subscribeInProgress = true;
+    $http.post('https://api.cryptomator.org/mailtrain/subscribe.php', $.param({
+      email: $scope.email,
+      timezoneOffsetInMinutes: new Date().getTimezoneOffset(),
+      android: $scope.android
+    }), {
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    }).then(function(successResponse) {
+      $scope.subscribeSuccessful = true;
+      $scope.subscribeError = null;
+      $scope.subscribeInProgress = false;
+      console.log(successResponse.data);
+    }, function(errorResponse) {
+      console.warn('Newsletter subscription failed.', errorResponse.data);
+      $scope.subscribeError = errorResponse.data.error || 'Unable to subscribe to newsletter.';
+      $scope.subscribeInProgress = false;
+    });
+  };
 
 }]);
 
@@ -188,7 +220,7 @@ app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', function($http, $s
 
 app.controller('ContributorsCtrl', ['$http', '$scope', function($http, $scope) {
 
-  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'tobihagemann', 'gitter-badger'];
+  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'tobihagemann', 'marcjulian', 'gitter-badger'];
 
   $scope.contributors = [];
 

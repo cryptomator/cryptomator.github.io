@@ -110,7 +110,7 @@
     <h2>{{ i18n.howto.title }}</h2>
   </div>
 
-  <div data-scroll-toggle-class="{{"{"}}'scrollPhase1': -300, 'scrollPhase2': 300}">
+  <div data-scroll-toggle-class="{{"{"}}'scrollPhase1': -150, 'scrollPhase2': 410}">
     <div id="howto-cleartext">
       <div class="container">
         <div class="row">
@@ -282,7 +282,7 @@
   </div>
 </section>
 
-<section id="newsletter" class="green-background">
+<section id="newsletter" class="green-background" data-ng-controller="NewsletterCtrl">
   <a name="newsletter"></a>
   <div class="container">
     <div class="text-center">
@@ -290,36 +290,35 @@
       <p class="lead">{{ i18n.newsletter.description }}</p>
     </div>
 
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div>
-          <form action="//cryptomator.us10.list-manage.com/subscribe/post?u=e9345a3370a9a703b20c45e3c&amp;id=1a6e2c337b" method="post" name="mc-embedded-subscribe-form" class="form-horizontal validate" target="_blank" novalidate>
-            <div>
-              <div class="form-group">
-              	<label for="mce-EMAIL" class="col-sm-3 control-label">{{ i18n.newsletter.emailAddress }}</label>
-                <div class="col-sm-9">
-              	   <input type="email" value="" name="EMAIL" class="required email form-control" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="mce-group[3693]-3693-1" class="col-sm-3 control-label">Android Beta</label>
-                <div class="col-sm-9">
-                  <div class="checkbox">
-                    <label><input id="androidBetaCheckbox" type="checkbox" value="2" name="group[3693][2]" /> {{ i18n.newsletter.androidOptIn }}</label>
-                  </div>
-                </div>
-              </div>
-            	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;"><input type="text" name="b_e9345a3370a9a703b20c45e3c_1a6e2c337b" tabindex="-1" value=""></div>
-              <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-9">
-                  <input type="submit" value="{{ i18n.newsletter.buttonSubscribe }}" name="subscribe" class="btn btn-primary-outline"/>
-                </div>
+    <form data-ng-show="!subscribeSuccessful" data-ng-submit="subscribe()">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 form-horizontal">
+          <div class="form-group">
+          	<label for="email" class="col-sm-3">{{ i18n.newsletter.emailAddress }}</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="email" placeholder="" value="" data-ng-model="email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="android" class="col-sm-3">Android Beta</label>
+            <div class="col-sm-9">
+              <div class="checkbox">
+                <label><input type="checkbox" name="android" value="1" data-ng-model="android"> {{ i18n.newsletter.androidOptIn }}</label>
               </div>
             </div>
-          </form>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <input type="submit" value="{{ i18n.newsletter.buttonSubscribe }}" name="subscribe" class="btn btn-primary-outline" data-ng-disabled="subscribeInProgress">
+            </div>
+          </div>
+          <div class="row">
+            <p class="col-sm-offset-3 col-sm-9" data-ng-show="subscribeError" data-ng-bind="subscribeError"></p>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
+
+    <p class="text-center" data-ng-show="subscribeSuccessful">{{ i18n.newsletter.success }}</p>
   </div>
 </section>

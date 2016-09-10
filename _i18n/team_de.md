@@ -20,7 +20,7 @@ coreteam:
     img: https://avatars.githubusercontent.com/u/18163988
   - name: Marc Stammerjohann
     role: Android-Entwicklung
-    img: /img/team/marc.jpg
+    img: https://avatars.githubusercontent.com/u/8985933
   - name: Cryptobot
     role: <a href="https://github.com/cryptobot?tab=activity" target="_blank">Release Manager</a>
     img: https://avatars.githubusercontent.com/u/11858409

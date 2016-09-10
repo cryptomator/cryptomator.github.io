@@ -61,7 +61,8 @@ features:
       Genießen Sie das gute Gefühl, dass Ihre Daten in der Cloud jetzt sicher sind. Cryptomator verschlüsselt Ihre Dateien noch vor der Übertragung, so dass keine unverschlüsselten Daten in der Cloud landen.
   technicalTitle: Das Konzept hinter Cryptomator
   teaser: >
-    Cryptomator bietet transparente, lokal auf Ihrem eigenen Gerät stattfindende Verschlüsselung für Ihre Cloud. Schützen Sie Ihre Dokumente vor unerlaubtem Zugriff. Cryptomator ist eine freie, quelloffene Software, so dass Sie sicher vor Hintertüren sind.
+    Cryptomator bietet transparente, lokal auf Ihrem eigenen Gerät stattfindende Verschlüsselung für Ihre Cloud.
+    Schützen Sie Ihre Dokumente vor unerlaubtem Zugriff. Cryptomator ist eine freie, quelloffene Software, so dass Sie sicher vor Hintertüren sind.
   easyAndReliable:
     title: Einfach und verlässlich
     content: >
@@ -84,4 +85,6 @@ newsletter:
   emailAddress: E-Mail-Adresse
   androidOptIn: Ja, ich interessiere mich für die Beta-Version der Android-App
   buttonSubscribe: Anmelden
+  success: >
+    Vielen Dank für Ihre Anmeldung! :love_letter: Ein Bestätigungslink wurde an Ihre E-Mail-Adresse zugeschickt.
 ---

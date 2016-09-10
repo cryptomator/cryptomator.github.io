@@ -326,15 +326,15 @@ h1.display-font {
   #howto-cleartext,
   #howto-ciphertext {
     padding-top: 48px;
-    height: 600px;
+    height: 560px;
     background-repeat: no-repeat;
 
-    @media (max-width: 1855px) {
+    @media (max-width: 1732px) {
       background-size: 50% auto;
     }
 
-    @media (min-width: 1856px) {
-      background-size: auto 600px;
+    @media (min-width: 1733px) {
+      background-size: auto 560px;
     }
   }
 
@@ -347,13 +347,13 @@ h1.display-font {
   .scrollPhase1 #howto-cleartext,
   .scrollPhase2 #howto-cleartext {
     background-attachment: fixed;
-    background-position: 0 300px;
+    background-position: 0 150px;
   }
 
   #howto-ciphertext {
     background-image: url(/img/screenshots/finder_ciphertext_en@2x.png);
     background-attachment: fixed;
-    background-position: 0 300px;
+    background-position: 0 150px;
   }
 
   .scrollPhase2 #howto-ciphertext {
