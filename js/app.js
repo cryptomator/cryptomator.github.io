@@ -166,7 +166,6 @@ app.controller('NewsletterCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.subscribeInProgress = true;
     $http.post('https://api.cryptomator.org/mailtrain/subscribe.php', $.param({
       email: $scope.email,
-      timezoneOffsetInMinutes: new Date().getTimezoneOffset(),
       android: $scope.android
     }), {
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
