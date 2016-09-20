@@ -23,7 +23,7 @@ The wrapped keys and the parameters needed to derive the KEK are then stored as 
 
 <pre>
 {
-  "version": 4, /* vault version for checking software compatibility */
+  "version": 5, /* vault version for checking software compatibility */
   "scryptSalt": "QGk...jY=",
   "scryptCostParam": 16384,
   "scryptBlockSize": 8,

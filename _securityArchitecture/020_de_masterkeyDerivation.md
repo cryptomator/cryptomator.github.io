@@ -23,7 +23,7 @@ Die umhüllten Schlüssel sowie die Parameter, die zum Erlangen des KEK nötig s
 
 <pre>
 {
-  "version": 4, /* vault version for checking software compatibility */
+  "version": 5, /* vault version for checking software compatibility */
   "scryptSalt": "QGk...jY=",
   "scryptCostParam": 16384,
   "scryptBlockSize": 8,

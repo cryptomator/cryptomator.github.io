@@ -7,14 +7,14 @@ title: File Header Encryption
 
 - 16 bytes nonce used during header payload encryption
 - 40 bytes <a href="https://en.wikipedia.org/wiki/Block_cipher_modes_of_operation#Counter_.28CTR.29">AES-CTR</a> encrypted payload consisting of:
-  - 8 bytes file size
+  - 8 bytes filled with 1 for future use (formerly used for file size)
   - 32 bytes file content key
 - 32 bytes header MAC of the previous 56 bytes
 
 <pre>
 headerNonce := createRandomBytes(16)
 contentKey := createRandomBytes(32)
-cleartextPayload := bigEndian(fileSize) . contentKey
+cleartextPayload := 0xFFFFFFFFFFFFFFFF . contentKey
 ciphertextPayload := aesCtr(cleartextPayload, encryptionMasterKey, headerNonce)
 mac := hmacSha256(headerNonce . ciphertextPayload, macMasterKey)
 </pre>

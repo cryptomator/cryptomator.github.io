@@ -7,7 +7,7 @@ title: Verschlüsselung des Dateikopfs
 
 - 16 Bytes mit nonce, die für die Verschlüsselung der Kopfdaten verwendet wird
 - 40 Bytes mit <a href="https://de.wikipedia.org/wiki/Counter_Mode">AES-CTR</a> verschlüsselte Kopfdaten, bestehend aus:
-  - 8 Bytes mit der Dateigröße
+  - 8 Bytes gefüllt mit 1 für den zukünftigen Gebrauch (früher benutzt für die Dateigröße)
   - 32 Bytes mit dem Dateiinhalteschlüssel
 - 32 Bytes mit dem MAC der vorhergehenden 56 Bytes
 
@@ -16,7 +16,7 @@ Die Dateigröße wird im Dateikopf gespeichert, da die echte Dateigröße versch
 <pre>
 headerNonce := createRandomBytes(16)
 contentKey := createRandomBytes(32)
-cleartextPayload := bigEndian(fileSize) . contentKey
+cleartextPayload := 0xFFFFFFFFFFFFFFFF . contentKey
 ciphertextPayload := aesCtr(cleartextPayload, encryptionMasterKey, headerNonce)
 mac := hmacSha256(headerNonce . ciphertextPayload, macMasterKey)
 </pre>
