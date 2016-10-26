@@ -18,7 +18,7 @@ The cleartext is broken down into multiple chunks, each up to 32 KiB + 48 bytes 
 Afterwards the encrypted chunks are joined preserving the order of the cleartext chunks. The payload of the last chunk may be smaller than 32 KiB.
 
 <pre>
-cleartextChunks[] := split(paddedCleartext, 32KiB)
+cleartextChunks[] := split(cleartext, 32KiB)
 for (int i = 0; i < length(cleartextChunks); i++) {
   chunkNonce := createRandomBytes(16)
   ciphertextPayload := aesCtr(cleartextChunks[i], contentKey, chunkNonce)

@@ -18,7 +18,7 @@ Der unverschlüsselte Dateiinhalt wird in mehrere Stücke zerteilt, jedes besteh
 Nach der Verschlüsselung werden diese Stücke wieder in derselben Reihenfolge zusammengefügt. Dabei kann das letzte Stück weniger als 32 KiB Daten enthalten, wenn die Datei nicht eine Länge hat, die ein Vielfaches von 32 KiB ist.
 
 <pre>
-cleartextChunks[] := split(paddedCleartext, 32KiB)
+cleartextChunks[] := split(cleartext, 32KiB)
 for (int i = 0; i < length(cleartextChunks); i++) {
   chunkNonce := createRandomBytes(16)
   ciphertextPayload := aesCtr(cleartextChunks[i], contentKey, chunkNonce)
