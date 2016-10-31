@@ -1,20 +1,18 @@
 # Impressum
 
 ## Angaben gemäß § 5 TMG:
-setoLabs GbR  
-Buntspechtweg 47  
-53123 Bonn
+Cryptomator GbR  
+Grantham-Allee 2-8  
+53757 Sankt Augustin
 
 ### Vertreten durch:
 Tobias Hagemann  
+Markus Kreusch  
+Christian Schmickler  
 Sebastian Stenzel
 
 ### Kontakt:
-E-Mail:  webmaster [at] cryptomator [dot] org
-
-### Umsatzsteuer-ID:
-Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:  
-DE288239286
+E-Mail: webmaster [at] cryptomator [dot] org
 
 Quelle: [http://www.e-recht24.de](http://www.e-recht24.de)
 
