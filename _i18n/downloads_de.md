@@ -9,8 +9,8 @@ windows:
   title: Cryptomator für Windows
   button64: 64-Bit-Version herunterladen
   button32: 32-Bit-Version herunterladen
-osx:
-  title: Cryptomator für OS X
+mac:
+  title: Cryptomator für Mac
   button: Cryptomator herunterladen
 linux:
   title: Cryptomator für Linux
@@ -40,7 +40,7 @@ allVersions:
 dropdown:
   toggle: Dropdown umschalten
   windows: Cryptomator für Windows
-  osx: Cryptomator für OS X
+  mac: Cryptomator für Mac
   linux: Cryptomator für Linux
   jar: Ausführbare JAR-Datei
   allVersions: Andere Versionen

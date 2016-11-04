@@ -41,7 +41,7 @@
                 <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
                 <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
                 <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
                 <li role="separator" class="divider"></li>
@@ -66,7 +66,7 @@
                 <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
                 <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
                 <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
                 <li role="separator" class="divider"></li>
@@ -84,25 +84,25 @@
     </div>
   </section>
 
-  <section id="osxDownload" class="row fullheight download">
+  <section id="macDownload" class="row fullheight download">
     <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
-      <img src="/img/screenshots/dl_osx.png" srcset="/img/screenshots/dl_osx.png 1x, /img/screenshots/dl_osx@2x.png 2x"  class="img-responsive center-block"/>
+      <img src="/img/screenshots/dl_mac.png" srcset="/img/screenshots/dl_mac.png 1x, /img/screenshots/dl_mac@2x.png 2x"  class="img-responsive center-block"/>
     </div>
     <div class="col-md-6 col-lg-4">
       <div class="text-center">
         <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
           <meta itemprop="applicationCategory" content="Productivity"/>
           <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="{{osxVersion}}"/>
+          <meta itemprop="softwareVersion" content="{{macVersion}}"/>
           <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
           <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-          <meta itemprop="operatingSystem" content="Mac OS X"/>
-          <h2>{{ i18n.osx.title }}</h2>
+          <meta itemprop="operatingSystem" content="Mac"/>
+          <h2>{{ i18n.mac.title }}</h2>
 
           <div class="download-btn-container">
             <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{osxUrl}}" data-ng-click="logDownload('{{osxFile}}')" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.osx.button }}
+              <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="logDownload('{{macFile}}')" class="btn btn-lg btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.mac.button }}
               </a>
               <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="caret"></span>
@@ -116,8 +116,8 @@
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
               </ul>
             </div>
-            <p class="small">Version {{osxVersion}} • Minimum: OS X 10.8.3 •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{osxSha256Checksum}}">
+            <p class="small">Version {{macVersion}} • Minimum: OS X 10.8.3 •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">
                 SHA256
               </a>
             </p>
@@ -154,7 +154,7 @@
               </button>
               <ul class="dropdown-menu">
                 <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
                 <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
@@ -178,7 +178,7 @@
               </button>
               <ul class="dropdown-menu">
                 <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
                 <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
@@ -202,7 +202,7 @@
               </button>
               <ul class="dropdown-menu">
                 <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
                 <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
@@ -250,7 +250,7 @@
               </button>
               <ul class="dropdown-menu">
                 <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#osxDownload">{{ i18n.dropdown.osx }}</a></li>
+                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
                 <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
@@ -266,7 +266,7 @@
   <section id="allVersions" class="fullheight download">
     <div class="text-center">
       <h2>{{ i18n.allVersions.title }}</h2>
-      <p class="lead">{{ i18n.allVersions.version }} {{latestRelease.title}} ({{latestRelease.date | date: i18n.allVersions.dateFormat }})</p>
+      <p class="lead">{{ i18n.allVersions.version }} {{ latestRelease.title }} ({{ latestRelease.date | date: i18n.allVersions.dateFormat }})</p>
     </div>
 
     <table class="table table-hover">
@@ -279,7 +279,7 @@
         <col style="width: 20%"/>
       </colgroup>
       <thead>
-        <tr><th>{{ i18n.allVersions.version }}</th><th>{{ i18n.allVersions.notes }}</th><th>{{ i18n.allVersions.releaseDate }}</th><th>Windows</th><th>Mac OS X</th><th>Linux</th></tr>
+        <tr><th>{{ i18n.allVersions.version }}</th><th>{{ i18n.allVersions.notes }}</th><th>{{ i18n.allVersions.releaseDate }}</th><th>Windows</th><th>Mac</th><th>Linux</th></tr>
       </thead>
       <tbody>
       {% for release in sortedReleases %}
@@ -311,9 +311,9 @@
             {% endif %}
           </td>
           <td>
-            {% if osxSha1Checksum or osxSha256Checksum %}
-            <a href="{{osxUrl}}" download="{{osxFile}}" data-ng-click="sendGaBtnClick('{{osxFile}}')" class="btn btn-xs btn-default" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{osxFile}}
+            {% if macSha1Checksum or macSha256Checksum %}
+            <a href="{{macUrl}}" download="{{macFile}}" data-ng-click="sendGaBtnClick('{{macFile}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{macFile}}
             </a>
             {% else %}
             -

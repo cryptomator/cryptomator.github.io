@@ -8,11 +8,11 @@
 {% assign winSha1Checksum32 = release.artifacts.win.sha1Checksum32 %}
 {% assign winSha256Checksum32 = release.artifacts.win.sha256Checksum32 %}
 
-{% capture osxVersion %}{% if release.artifacts.osx.patch %}{{release.title}}.{{release.artifacts.osx.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
-{% capture osxFile %}{{release.artifacts.osx.file}}{% endcapture %}
-{% capture osxUrl %}{{release.artifacts.osx.url}}{% endcapture %}
-{% assign osxSha1Checksum = release.artifacts.osx.sha1Checksum %}
-{% assign osxSha256Checksum = release.artifacts.osx.sha256Checksum %}
+{% capture macVersion %}{% if release.artifacts.mac.patch %}{{release.title}}.{{release.artifacts.mac.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
+{% capture macFile %}{{release.artifacts.mac.file}}{% endcapture %}
+{% capture macUrl %}{{release.artifacts.mac.url}}{% endcapture %}
+{% assign macSha1Checksum = release.artifacts.mac.sha1Checksum %}
+{% assign macSha256Checksum = release.artifacts.mac.sha256Checksum %}
 
 {% capture linuxVersion %}{% if release.artifacts.linux.patch %}{{release.title}}.{{release.artifacts.linux.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
 {% capture debianFile64 %}{{release.artifacts.linux.debianFile64}}{% endcapture %}

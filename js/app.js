@@ -194,7 +194,7 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
     } else if ($scope.isOSWindows) {
       $window.location.hash = 'winDownload';
     } else if ($scope.isOSMac) {
-      $window.location.hash = 'osxDownload';
+      $window.location.hash = 'macDownload';
     } else if ($scope.isOSLinux) {
       $window.location.hash = 'linuxDownload';
     } else {

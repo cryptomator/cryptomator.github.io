@@ -7,7 +7,7 @@ subtitle: >
   Open source software: No backdoors, no registration.
 
 download:
-  title: Download for Windows, OS X, Linux
+  title: Download for Windows, Mac, Linux
   buttonFreeDownload: Free Download
   payWhatYouWant: Pay what you want
   buttonOtherAmount: Other
@@ -17,11 +17,6 @@ download:
 apps:
   title: App for your mobile device
   appStoreLink: https://itunes.apple.com/app/cryptomator/id953086535
-  androidPopover:
-    title: Cryptomator for Android
-    content: >
-      The Cryptomator app for Android is currently under development.<br/>
-      To get updated subscribe to our <a href='#newsletter'>newsletter</a>.
 
 reception:
   title: Reception
@@ -83,7 +78,7 @@ newsletter:
   title: Let's stay in touch
   description: Subscribe to our mailing list or follow <a href="https://twitter.com/Cryptomator" target="_blank">@Cryptomator</a> on Twitter.
   emailAddress: Email Address
-  androidOptIn: Yes, I'm interested in the beta for Android
+  androidOptIn: Yes, I'd like to be updated about new Android beta versions
   buttonSubscribe: Subscribe
   success: >
     Thank you for subscribing! :love_letter: A confirmation link has been sent to your email address.

@@ -258,14 +258,15 @@ h1.display-font {
 
   .appStoreBtn {
     margin: $spacing-unit/2 0;
-    display:inline-block;
+    display: inline-block;
   }
 
   .androidBetaBtn {
     margin: $spacing-unit/2 0;
-    display:inline-block;
-    height:40px;
-    width:135px;
+    display: inline-block;
+    width: 135px;
+    max-height: 40px;
+    padding: 9px 12px;
   }
 }
 

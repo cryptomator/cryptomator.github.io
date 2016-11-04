@@ -52,11 +52,10 @@
       </div>
 
       <div class="col-lg-6 col-md-8">
-        <div class="text-center">
-          <h2>{{ i18n.download.title }}</h2>
-        </div>
-
         <div data-ng-show="!(isOSiOS || isOSAndroid)">
+          <div class="text-center">
+            <h2>{{ i18n.download.title }}</h2>
+          </div>
           <div class="visible-xs">
             <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonFreeDownload }}</button>
           </div>
@@ -83,22 +82,8 @@
 
         <div class="text-center">
           <h2>{{ i18n.apps.title }}</h2>
-        </div>
-
-        <div class="text-center">
-          <div class="appStoreBtn text-center" data-ng-show="!isOSAndroid">
-            <a href="{{ i18n.apps.appStoreLink }}" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
-          </div>
-          <button type="button" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS"
-              data-ng-click="sendGaBtnClick('androidbeta')"
-              data-container="body"
-              data-toggle="popover"
-              data-trigger="focus"
-              data-placement="bottom"
-              data-content="{{ i18n.apps.androidPopover.content }}"
-              title="{{ i18n.apps.androidPopover.title }}">
-                Android<sup>™</sup> App
-          </button>
+          <a href="{{ i18n.apps.appStoreLink }}" class="appStoreBtn" data-ng-show="!isOSAndroid" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
+          <a href="{{ languageUrlPrefix }}/android/" class="androidBetaBtn btn btn-store" data-ng-show="!isOSiOS" data-ng-click="sendGaBtnClick('androidbeta')">Android<sup>™</sup> App</a>
         </div>
       </div>
     </div><!-- /.row -->
