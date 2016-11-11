@@ -7,24 +7,26 @@ loadScreen:
   choosingDownload: Der Download für Ihr Betriebssystem wird gewählt…
 windows:
   title: Cryptomator für Windows
-  button64: 64-Bit-Version herunterladen
-  button32: 32-Bit-Version herunterladen
+  button64: Download 64-Bit
+  button32: 32-Bit
 mac:
   title: Cryptomator für Mac
-  button: Cryptomator herunterladen
+  button: Download
 linux:
   title: Cryptomator für Linux
-  buttonDebian32: Cryptomator 32-Bit für Debian
-  buttonDebian64: Cryptomator 64-Bit für Debian
-  buttonRedhat64: Cryptomator 64-Bit für Red Hat
-  buttonPpa: PPA (Ubuntu)
-  buttonAur: AUR (Arch)
-  debianBased: Für Debian-basierte Systeme
-  redhatBased: Für Red Hat-basierte Systeme
-  archBased: Für Arch-basierte Systeme
+  ppa:
+    minimumRequirements: >
+      Für Ubuntu &quot;Vivid&quot;, Mint &quot;Sarah&quot;, elementary OS &quot;Loki&quot; oder sonstige Ubuntu-basierende Distributionen von 15.04 aufwärts
+    olderDistributions: >
+      Für ältere Distributionen empfehlen wir den Download des <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">.deb-Pakets</a>.
+  buttonDebian64: Download 64-Bit
+  buttonDebian32: 32-Bit
+  buttonRedhat64: Download 64-Bit
+  buttonAur: Zur AUR-Seite
   requirements: Siehe <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detaillierte Systemanforderungen</a>
 jar:
-  title: Ausführbare JAR-Datei
+  title: Sonstige Plattformen
+  subtitle: Ausführbare .jar-Datei
   button: Verfügbar auf GitHub
   requirements: Benötigt JRE 8 + JCE unlimited strength policy Dateien
 allVersions:
@@ -37,11 +39,4 @@ allVersions:
   changelog: Änderungen
   jarDownloadHint: >
     Alle Versionen können als JAR-Datei von <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub Releases</a> heruntergeladen werden.
-dropdown:
-  toggle: Dropdown umschalten
-  windows: Cryptomator für Windows
-  mac: Cryptomator für Mac
-  linux: Cryptomator für Linux
-  jar: Ausführbare JAR-Datei
-  allVersions: Andere Versionen
 ---

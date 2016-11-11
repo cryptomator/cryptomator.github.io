@@ -28,7 +28,7 @@
   max-width: none;
 
   .popover-content {
-    font-size: $base-font-size * 0.8;
+    font-size: $base-font-size*0.8;
     font-family: monospace;
   }
 }
@@ -40,4 +40,19 @@
   top: 0;
   z-index: 1;
   background-color: $background-color;
+}
+
+.panel-heading {
+  a, a:hover, a:focus, a:active {
+    color: inherit;
+  }
+}
+
+.no-margin-b {
+  margin-bottom: 0;
+}
+
+.download-caption {
+  margin-top: $spacing-unit/4;
+  margin-bottom: 0;
 }

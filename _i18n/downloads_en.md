@@ -7,28 +7,30 @@ loadScreen:
   choosingDownload: Choosing download for your operating system…
 windows:
   title: Cryptomator for Windows
-  button64: Download Cryptomator 64 Bit
-  button32: Download Cryptomator 32 Bit
+  button64: Download 64 Bit
+  button32: 32 Bit
 mac:
   title: Cryptomator for Mac
-  button: Download Cryptomator
+  button: Download
 linux:
   title: Cryptomator for Linux
-  buttonDebian64: Cryptomator 64 Bit for Debian
-  buttonDebian32: Cryptomator 32 Bit for Debian
-  buttonRedhat64: Cryptomator 64 Bit for Red Hat
-  buttonPpa: PPA (Ubuntu)
-  buttonAur: AUR (Arch)
-  debianBased: For Debian-based OS
-  redhatBased: For Red Hat-based OS
-  archBased: For Arch-based OS
+  ppa:
+    minimumRequirements: >
+      For Ubuntu &quot;Vivid&quot;, Mint &quot;Sarah&quot;, elementary OS &quot;Loki&quot;, or other distributions based on Ubuntu from 15.04 onwards
+    olderDistributions: >
+      For older distributions please use our <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">.deb package</a>.
+  buttonDebian64: Download 64 Bit
+  buttonDebian32: 32 Bit
+  buttonRedhat64: Download 64 Bit
+  buttonAur: Visit AUR Page
   requirements: See <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detailed system requirements</a>
 jar:
-  title: Executable JAR-File
+  title: Other Platforms
+  subtitle: Executable .jar File
   button: Available on GitHub
   requirements: Requires JRE 8 + JCE unlimited strength policy files
 allVersions:
-  title: All versions
+  title: All Versions
   dateFormat: "%B %d, %Y"
   version: Version
   notes: Notes
@@ -37,11 +39,4 @@ allVersions:
   changelog: Changelog
   jarDownloadHint: >
     All versions can be loaded as a JAR-file from <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub releases</a>.
-dropdown:
-  toggle: Toggle Dropdown
-  windows: Cryptomator for Windows
-  mac: Cryptomator for Mac
-  linux: Cryptomator for Linux
-  jar: Executable JAR-File
-  allVersions: Other versions
 ---

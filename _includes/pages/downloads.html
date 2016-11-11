@@ -20,65 +20,36 @@
     <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
       <img src="/img/screenshots/dl_win.png" srcset="/img/screenshots/dl_win.png 1x, /img/screenshots/dl_win@2x.png 2x"  class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="text-center">
-        <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-          <meta itemprop="applicationCategory" content="Productivity"/>
-          <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="{{winVersion}}"/>
-          <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-          <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-          <meta itemprop="operatingSystem" content="Windows"/>
-          <h2>{{ i18n.windows.title }}</h2>
+    <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+      <meta itemprop="applicationCategory" content="Productivity"/>
+      <meta itemprop="applicationSubCategory" content="Encryption"/>
+      <meta itemprop="softwareVersion" content="{{winVersion}}"/>
+      <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+      <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+      <meta itemprop="operatingSystem" content="Windows"/>
+      <h2>{{ i18n.windows.title }}</h2>
+      <p class="small">Version {{winVersion}} • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="logDownload('{{winFile64}}')" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.windows.button64 }}
-              </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
-                <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
-                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
-            </div>
-
-            <p class="small">Version {{winVersion}} • Minimum: Windows Vista SP2 •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">
-                SHA256
-              </a>
-            </p>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="no-margin-b">
+            .exe Installer
+          </h4>
+        </div>
+        <div class="panel-body small">
+          <p>Minimum: Windows Vista SP2</p>
+          <div class="btn-group">
+            <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="logDownload('{{winFile64}}')" class="btn btn-primary" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.windows.button64 }}
+            </a>
+            <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="logDownload('{{winFile32}}')" class="btn btn-primary" role="button">
+              {{ i18n.windows.button32 }}
+            </a>
           </div>
-
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="logDownload('{{winFile32}}')" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.windows.button32 }}
-              </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
-                <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
-                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
-            </div>
-            <p class="small">Version {{winVersion}} • Minimum: Windows Vista SP2 •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum32}}">
-                SHA256
-              </a>
-            </p>
-          </div>
+          <p class="download-caption">
+            <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">SHA256 (64 Bit)</a> •
+            <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum32}}">SHA256 (32 Bit)</a>
+          </p>
         </div>
       </div>
     </div>
@@ -88,40 +59,30 @@
     <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
       <img src="/img/screenshots/dl_mac.png" srcset="/img/screenshots/dl_mac.png 1x, /img/screenshots/dl_mac@2x.png 2x"  class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="text-center">
-        <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-          <meta itemprop="applicationCategory" content="Productivity"/>
-          <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="{{macVersion}}"/>
-          <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-          <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-          <meta itemprop="operatingSystem" content="Mac"/>
-          <h2>{{ i18n.mac.title }}</h2>
+    <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+      <meta itemprop="applicationCategory" content="Productivity"/>
+      <meta itemprop="applicationSubCategory" content="Encryption"/>
+      <meta itemprop="softwareVersion" content="{{macVersion}}"/>
+      <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+      <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+      <meta itemprop="operatingSystem" content="Mac"/>
+      <h2>{{ i18n.mac.title }}</h2>
+      <p class="small">Version {{macVersion}} • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="logDownload('{{macFile}}')" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.mac.button }}
-              </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
-                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
-            </div>
-            <p class="small">Version {{macVersion}} • Minimum: OS X 10.8.3 •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">
-                SHA256
-              </a>
-            </p>
-          </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="no-margin-b">
+            .dmg Image
+          </h4>
+        </div>
+        <div class="panel-body small">
+          <p>Minimum: OS X 10.8.3</p>
+          <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="logDownload('{{macFile}}')" class="btn btn-primary" role="button">
+            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.mac.button }}
+          </a>
+          <p class="download-caption">
+            <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">SHA256</a>
+          </p>
         </div>
       </div>
     </div>
@@ -131,96 +92,94 @@
     <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
       <img src="/img/screenshots/dl_linux.png" srcset="/img/screenshots/dl_linux.png 1x, /img/screenshots/dl_linux@2x.png 2x"  class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="text-center">
-        <div class="caption text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-          <meta itemprop="applicationCategory" content="Productivity"/>
-          <meta itemprop="applicationSubCategory" content="Encryption"/>
-          <meta itemprop="softwareVersion" content="{{debianVersion}}"/>
-          <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-          <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-          <meta itemprop="operatingSystem" content="Linux"/>
-          <h2>{{ i18n.linux.title }}</h2>
-          <p class="small">{{ i18n.linux.requirements }}</p>
+    <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+      <meta itemprop="applicationCategory" content="Productivity"/>
+      <meta itemprop="applicationSubCategory" content="Encryption"/>
+      <meta itemprop="softwareVersion" content="{{linuxVersion}}"/>
+      <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+      <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+      <meta itemprop="operatingSystem" content="Linux"/>
+      <h2>{{ i18n.linux.title }}</h2>
+      <p class="small">Version {{linuxVersion}} • <a href="#allVersions">{{ i18n.allVersions.title }}</a><br/>{{ i18n.linux.requirements }}</p>
 
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="logDownload('{{debianFile64}}')" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.buttonDebian64 }}
+      <div class="panel-group" id="linuxDownloadPanel">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin-b">
+              <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadPpa">
+                PPA<br/><span class="small">Ubuntu, Mint, elementary OS, ...</span>
               </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
-                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
-            </div>
-            <p class="small">Version {{linuxVersion}} • {{ i18n.linux.debianBased }} •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum64}}">
-                SHA256
-              </a>
-            </p>
+            </h4>
           </div>
-
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="logDownload('{{debianFile32}}')" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.buttonDebian32 }}
-              </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
-                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
+          <div id="linuxDownloadPpa" class="panel-collapse collapse in">
+            <div class="panel-body small">
+              <p>{{ i18n.linux.ppa.minimumRequirements }}</p>
+              <pre class="text-left text-nowrap">
+                sudo add-apt-repository ppa:sebastian-stenzel/cryptomator<br/>
+                sudo apt-get update<br/>
+                sudo apt-get install cryptomator
+              </pre>
+              <p class="download-caption">{{ i18n.linux.ppa.olderDistributions }}</p>
             </div>
-            <p class="small">Version {{linuxVersion}} • {{ i18n.linux.debianBased }} •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum32}}">
-                SHA256
-              </a>
-            </p>
           </div>
-
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="logDownload('{{redhatFile64}}')" class="btn btn-lg btn-primary" role="button">
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin-b">
+              <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">
+                .deb Package<br/><span class="small">Debian, older Ubuntu versions, ...</span>
+              </a>
+            </h4>
+          </div>
+          <div id="linuxDownloadDeb" class="panel-collapse collapse">
+            <div class="panel-body small">
+              <div class="btn-group">
+                <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="logDownload('{{debianFile64}}')" class="btn btn-primary" role="button">
+                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.buttonDebian64 }}
+                </a>
+                <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="logDownload('{{debianFile32}}')" class="btn btn-primary" role="button">
+                  {{ i18n.linux.buttonDebian32 }}
+                </a>
+              </div>
+              <p class="download-caption">
+                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum64}}">SHA256 (64 Bit)</a> •
+                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum32}}">SHA256 (32 Bit)</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin-b">
+              <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadRpm">
+                .rpm Package<br/><span class="small">Red Hat, openSUSE, Fedora, CentOS, ...</span>
+              </a>
+            </h4>
+          </div>
+          <div id="linuxDownloadRpm" class="panel-collapse collapse">
+            <div class="panel-body small">
+              <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="logDownload('{{redhatFile64}}')" class="btn btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.buttonRedhat64 }}
               </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
-                <li><a href="#jarDownload">{{ i18n.dropdown.jar }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
+              <p class="download-caption">
+                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">
+                  SHA256
+                </a>
+              </p>
             </div>
-            <p class="small">Version {{linuxVersion}} • {{ i18n.linux.redhatBased }} •
-              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">
-                SHA256
-              </a>
-            </p>
           </div>
-
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a class="btn btn-lg btn-primary" itemprop="downloadUrl" data-ng-click="logDownload('ppa')" data-container="body" data-toggle="popover" data-placement="bottom" data-content="sudo add-apt-repository ppa:sebastian-stenzel/cryptomator<br/>sudo apt-get update<br/>sudo apt-get install cryptomator" role="button">
-                <span class="glyphicon glyphicon-console" aria-hidden="true"></span> {{ i18n.linux.buttonPpa }}
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin-b">
+              <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAur">
+                AUR<br/><span class="small">Arch, Manjaro, ...</span>
               </a>
-              <a class="btn btn-lg btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="logDownload('aur')"  role="button">
+            </h4>
+          </div>
+          <div id="linuxDownloadAur" class="panel-collapse collapse">
+            <div class="panel-body small">
+              <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="logDownload('aur')"  role="button">
                 <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
               </a>
             </div>
@@ -234,30 +193,21 @@
     <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
       <img src="/img/screenshots/dl_jar.png" srcset="/img/screenshots/dl_jar.png 1x, /img/screenshots/dl_jar@2x.png 2x" class="img-responsive center-block"/>
     </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="text-center">
-        <div class="caption text-center">
-          <h2>{{ i18n.jar.title }}</h2>
+    <div class="col-md-6 col-lg-4 text-center">
+      <h2>{{ i18n.jar.title }}</h2>
+      <p class="small"><a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
-          <div class="download-btn-container">
-            <div class="btn-group">
-              <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-lg btn-primary" role="button">
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
-              </a>
-              <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="caret"></span>
-                <span class="sr-only">{{ i18n.dropdown.toggle }}</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#winDownload">{{ i18n.dropdown.windows }}</a></li>
-                <li><a href="#macDownload">{{ i18n.dropdown.mac }}</a></li>
-                <li><a href="#linuxDownload">{{ i18n.dropdown.linux }}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#allVersions">{{ i18n.dropdown.allVersions }}</a></li>
-              </ul>
-            </div>
-            <p class="small">{{ i18n.jar.requirements }}</p>
-          </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="no-margin-b">
+            {{ i18n.jar.subtitle }}
+          </h4>
+        </div>
+        <div class="panel-body small">
+          <p>{{ i18n.jar.requirements }}</p>
+          <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-primary" role="button">
+            <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
+          </a>
         </div>
       </div>
     </div>
