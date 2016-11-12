@@ -5,13 +5,14 @@ context: downloads
 loadScreen:
   title: Cryptomator download
   choosingDownload: Choosing download for your operating system…
-windows:
-  title: Cryptomator for Windows
+download:
+  button: Download
   button64: Download 64 Bit
   button32: 32 Bit
+windows:
+  title: Cryptomator for Windows
 mac:
   title: Cryptomator for Mac
-  button: Download
 linux:
   title: Cryptomator for Linux
   ppa:
@@ -19,9 +20,6 @@ linux:
       For Ubuntu &quot;Vivid&quot;, Mint &quot;Sarah&quot;, elementary OS &quot;Loki&quot;, or other distributions based on Ubuntu from 15.04 onwards
     olderDistributions: >
       For older distributions please use our <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">.deb package</a>.
-  buttonDebian64: Download 64 Bit
-  buttonDebian32: 32 Bit
-  buttonRedhat64: Download 64 Bit
   buttonAur: Visit AUR Page
   requirements: See <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detailed system requirements</a>
 jar:

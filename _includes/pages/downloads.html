@@ -40,10 +40,10 @@
           <p>Minimum: Windows Vista SP2</p>
           <div class="btn-group">
             <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="logDownload('{{winFile64}}')" class="btn btn-primary" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.windows.button64 }}
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
             </a>
             <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="logDownload('{{winFile32}}')" class="btn btn-primary" role="button">
-              {{ i18n.windows.button32 }}
+              {{ i18n.download.button32 }}
             </a>
           </div>
           <p class="download-caption">
@@ -78,7 +78,7 @@
         <div class="panel-body small">
           <p>Minimum: OS X 10.8.3</p>
           <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="logDownload('{{macFile}}')" class="btn btn-primary" role="button">
-            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.mac.button }}
+            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button }}
           </a>
           <p class="download-caption">
             <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">SHA256</a>
@@ -135,10 +135,10 @@
             <div class="panel-body small">
               <div class="btn-group">
                 <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="logDownload('{{debianFile64}}')" class="btn btn-primary" role="button">
-                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.buttonDebian64 }}
+                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                 </a>
                 <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="logDownload('{{debianFile32}}')" class="btn btn-primary" role="button">
-                  {{ i18n.linux.buttonDebian32 }}
+                  {{ i18n.download.button32 }}
                 </a>
               </div>
               <p class="download-caption">
@@ -158,13 +158,17 @@
           </div>
           <div id="linuxDownloadRpm" class="panel-collapse collapse">
             <div class="panel-body small">
-              <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="logDownload('{{redhatFile64}}')" class="btn btn-primary" role="button">
-                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.linux.buttonRedhat64 }}
-              </a>
-              <p class="download-caption">
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">
-                  SHA256
+              <div class="btn-group">
+                <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="logDownload('{{redhatFile64}}')" class="btn btn-primary" role="button">
+                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                 </a>
+                <a itemprop="downloadUrl" href="{{redhatUrl32}}" data-ng-click="logDownload('{{redhatFile32}}')" class="btn btn-primary" role="button">
+                  {{ i18n.download.button32 }}
+                </a>
+              </div>
+              <p class="download-caption">
+                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">SHA256 (64 Bit)</a> •
+                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum32}}">SHA256 (32 Bit)</a>
               </p>
             </div>
           </div>
@@ -285,7 +289,12 @@
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{redhatFile64}}
             </a>
             {% endif %}
-            {% if debianSha1Checksum64 == nil and debianSha256Checksum64 == nil and debianSha1Checksum32 == nil and debianSha256Checksum32 == nil and redhatSha1Checksum64 == nil and redhatSha256Checksum64 == nil %}
+            {% if redhatSha1Checksum32 or redhatSha256Checksum32 %}
+            <a href="{{redhatUrl32}}" download="{{redhatFile32}}" data-ng-click="sendGaBtnClick('{{redhatFile32}}')" class="btn btn-xs btn-default" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{redhatFile32}}
+            </a>
+            {% endif %}
+            {% if debianSha1Checksum64 == nil and debianSha256Checksum64 == nil and debianSha1Checksum32 == nil and debianSha256Checksum32 == nil and redhatSha1Checksum64 == nil and redhatSha256Checksum64 == nil and redhatSha1Checksum32 == nil and redhatSha256Checksum32 == nil %}
             -
             {% endif %}
           </td>
