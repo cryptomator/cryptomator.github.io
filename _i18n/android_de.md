@@ -13,6 +13,10 @@ download:
   direct: Direkter Download (APK)
   requirements: >
     Voraussetzungen: Android 4.1 (Jelly Bean) oder höher
+notes:
+  title: Hinweise
+  content: >
+    Zurzeit wird nur Dropbox unterstützt und soll keineswegs so bleiben. Das nächste Update (Version 0.2) beinhaltet zunächst zahlreiche Fehlerbehebungen. Ab Version 0.3 werden wir nach und nach die Unterstützung von Google Drive, OneDrive und WebDAV einbauen.
 feedback:
   title: Feedback
   content: >
