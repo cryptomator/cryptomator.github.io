@@ -13,17 +13,26 @@ download:
   direct: Direkter Download (APK)
   requirements: >
     Voraussetzungen: Android 4.1 (Jelly Bean) oder höher
-notes:
-  title: Hinweise
+changelog:
+  title: Änderungen
   content: >
-    Zurzeit wird nur Dropbox unterstützt und soll keineswegs so bleiben. Das nächste Update (Version 0.2) beinhaltet zunächst zahlreiche Fehlerbehebungen. Ab Version 0.3 werden wir nach und nach die Unterstützung von Google Drive, OneDrive und WebDAV einbauen.
+    <ul>
+    <li>Kompatibilität zu Android 4.1, 4.2 und 4.3 behoben</li>
+    <li>Fortschrittsanzeige für Download/Upload hinzugefügt</li>
+    <li>Dateigröße und Änderungsdatum zur Verzeichnisliste hinzugefügt</li>
+    <li>Dateien mit Endungen in Großbuchstaben (z.B. JPG statt jpg) können nun geöffnet werden</li>
+    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Designb</li>
+    </ul>
 feedback:
   title: Feedback
   content: >
     Die Beta-Version beinhaltet noch lange nicht alle Features, die wir für die finale Version vorgesehen haben, und hat uns bekannte Bugs, aber wir sind trotzdem offen für Vorschläge und natürlich Fehlerberichte.<br/>
-    Sie können uns Ihr Feedback in unserem Android-Repository auf <a href="https://github.com/cryptomator/cryptomator-android">GitHub</a> mitteilen.<br/>
-    Bitte lesen Sie unsere <a href="https://github.com/cryptomator/cryptomator-android/blob/master/CONTRIBUTING.md">Contribution Guidelines</a> sorgfältig durch. :cat:<br/>
+    Sie können uns Ihr Feedback auf <a href="https://github.com/cryptomator/cryptomator-android">GitHub</a> mitteilen. Bitte lesen Sie unsere <a href="https://github.com/cryptomator/cryptomator-android/blob/master/CONTRIBUTING.md">Contribution Guidelines</a> sorgfältig durch. :cat:<br/>
     Vielen Dank!
+notes:
+  title: Hinweise
+  content: >
+    Zurzeit wird nur Dropbox unterstützt. Ab Version 0.3 werden wir nach und nach die Unterstützung von Google Drive, OneDrive und WebDAV implementieren.
 updates:
   title: Updates
   content: >
