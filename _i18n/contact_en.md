@@ -4,7 +4,7 @@ context: contact
 
 title: Contact
 speakToUs:
-  title: Want to speak to us?
+  title: How you can reach us
   pgpKey: PGP Key
   support:
     title: Support
@@ -21,11 +21,16 @@ foundABug:
   desktop:
     title: Desktop App
     reportAtGitHub: >
-      If you found a bug concerning the Cryptomator Desktop Application you can report an issue on the
+      If you found a bug concerning the Cryptomator desktop application you can report an issue on the
       <a href="https://github.com/cryptomator/cryptomator/issues" target="_blank">Cryptomator issues list</a>.
   iosApp:
     title: iOS App
     reportAtGitHub: >
-      If you found a bug concerning the Cryptomator iOS App you can report an issue on the
+      If you found a bug concerning the Cryptomator iOS app you can report an issue on the
       <a href="https://github.com/cryptomator/cryptomator-ios/issues" target="_blank">Cryptomator for iOS issues list</a>.
+  androidApp:
+    title: Android App
+    reportAtGitHub: >
+      If you found a bug concerning the Cryptomator Android app you can report an issue on the
+      <a href="https://github.com/cryptomator/cryptomator-android/issues" target="_blank">Cryptomator for Android issues list</a>.
 ---

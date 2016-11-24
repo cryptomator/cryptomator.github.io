@@ -27,4 +27,9 @@ foundABug:
     reportAtGitHub: >
       Fehler bezüglich der Cryptomator iOS-App können Sie auf der
       <a href="https://github.com/cryptomator/cryptomator-ios/issues" target="_blank">Cryptomator iOS Fehlerliste</a> melden.
+  androidApp:
+    title: Android-App
+    reportAtGitHub: >
+      Fehler bezüglich der Cryptomator Android-App können Sie auf der
+      <a href="https://github.com/cryptomator/cryptomator-android/issues" target="_blank">Cryptomator Android Fehlerliste</a> melden.
 ---
