@@ -15,6 +15,18 @@
         <p class="name">{{ member.name }}</p>
         <p>{{ member.role }}</p>
       </div>
+      {% assign mod4 = forloop.index | modulo:4 %}
+      {% if mod4 == 0 and forloop.first == false and forloop.last == false %}
+      <div class="clearfix visible-lg-block"></div>
+      {% endif %}
+      {% assign mod3 = forloop.index | modulo:3 %}
+      {% if mod3 == 0 and forloop.first == false and forloop.last == false %}
+      <div class="clearfix visible-sm-block"></div>
+      {% endif %}
+      {% assign mod2 = forloop.index | modulo:2 %}
+      {% if mod2 == 0 and forloop.first == false and forloop.last == false %}
+      <div class="clearfix visible-xs-block"></div>
+      {% endif %}
       {% endfor %}
     </div>
   </section>
