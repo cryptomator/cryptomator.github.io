@@ -5,9 +5,10 @@
 
 var app = angular.module('cryptomator', ['ngCookies']);
 
-app.config(['$interpolateProvider', function($interpolateProvider) {
+app.config(['$interpolateProvider', '$httpProvider', function($interpolateProvider, $httpProvider) {
   $interpolateProvider.startSymbol('[[');
   $interpolateProvider.endSymbol(']]');
+  $httpProvider.defaults.withCredentials = true;
 }]);
 
 app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) {
@@ -164,19 +165,25 @@ app.controller('NewsletterCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.subscribe = function() {
     $scope.subscribeInProgress = true;
-    $http.post('https://api.cryptomator.org/mailtrain/subscribe.php', $.param({
-      email: $scope.email,
-      android: $scope.android
-    }), {
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-    }).then(function(successResponse) {
-      $scope.subscribeSuccessful = true;
-      $scope.subscribeError = null;
-      $scope.subscribeInProgress = false;
-      console.log(successResponse.data);
-    }, function(errorResponse) {
-      console.warn('Newsletter subscription failed.', errorResponse.data);
-      $scope.subscribeError = errorResponse.data.error || 'Unable to subscribe to newsletter.';
+    $http.get('https://api.cryptomator.org/mailtrain/subscribe.php')
+    .then(function(successGetResponse) {
+      $http.post('https://api.cryptomator.org/mailtrain/subscribe.php', $.param({
+        email: $scope.email,
+        android: $scope.android
+      }), {
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).then(function(successPostResponse) {
+        $scope.subscribeSuccessful = true;
+        $scope.subscribeError = null;
+        $scope.subscribeInProgress = false;
+      }, function(errorPostResponse) {
+        console.warn('Newsletter subscription failed.', errorPostResponse.data);
+        $scope.subscribeError = 'Unable to subscribe to newsletter.';
+        $scope.subscribeInProgress = false;
+      });
+    }, function(errorGetResponse) {
+      console.warn('Newsletter subscription failed.', errorGetResponse.data);
+      $scope.subscribeError = 'Unable to subscribe to newsletter.';
       $scope.subscribeInProgress = false;
     });
   };
@@ -226,7 +233,6 @@ app.controller('ContributorsCtrl', ['$http', '$scope', function($http, $scope) {
   $http.jsonp('https://api.github.com/repos/cryptomator/cryptomator/contributors?callback=JSON_CALLBACK')
   .then(function(successResponse) {
     if (_.isObject(successResponse.data) && _.isArray(successResponse.data.data)) {
-      console.log(successResponse.data.data);
       $scope.contributors = _.reject(successResponse.data.data, function(c) { return _.includes(blacklistedContributors, c.login); });
     } else {
       $scope.contributors = [];
