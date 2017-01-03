@@ -11,7 +11,7 @@ app.config(['$interpolateProvider', '$httpProvider', function($interpolateProvid
   $httpProvider.defaults.withCredentials = true;
 }]);
 
-app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) {
+app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cookies, googleAnalytics) {
 
   $rootScope.isOSWindows = navigator.appVersion.indexOf('Win') !== -1;
   $rootScope.isOSMac = navigator.appVersion.indexOf('Mac') !== -1 && navigator.appVersion.indexOf('iPhone') === -1;
@@ -34,6 +34,13 @@ app.run(['$rootScope', 'googleAnalytics', function($rootScope, googleAnalytics) 
     googleAnalytics.sendBtnClick(label);
   };
 
+  $rootScope.disableGaIssued = !_.isEmpty($cookies.get('disableGa'));
+
+  $rootScope.disableGa = function() {
+    googleAnalytics.disable();
+    $rootScope.disableGaIssued = true;
+  };
+
 }]);
 
 app.factory('stripe', ['$window', function($window) {
@@ -45,7 +52,10 @@ app.factory('stripe', ['$window', function($window) {
   };
 }]);
 
-app.factory('googleAnalytics', ['$window', function($window) {
+app.factory('googleAnalytics', ['$window', '$cookies', function($window, $cookies) {
+
+  window['ga-disable-UA-57664706-1'] = !_.isEmpty($cookies.get('disableGa'));
+
   /* jshint sub:true, asi:true, expr:true */
   var ga = window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date();
   /* jshint sub:false, asi:false, expr:false */
@@ -61,8 +71,15 @@ app.factory('googleAnalytics', ['$window', function($window) {
 
     sendBtnClick: function(eventLabel) {
       ga('send', 'event', 'button', 'click', eventLabel);
+    },
+
+    disable: function() {
+      var expireDate = new Date();
+      expireDate.setFullYear(expireDate.getFullYear() + 1);
+      $cookies.put('disableGa', 'issued_' + new Date().toISOString(), {expires: expireDate});
     }
   };
+
 }]);
 
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {

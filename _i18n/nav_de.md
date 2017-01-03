@@ -33,8 +33,6 @@ payment:
     processingBtn: Verarbeite…
     successful: Zahlung erfolgreich
   bankTransfer:
-    paymentHint: >
-      Bitte konfigurieren Sie noch keine Daueraufträge, da sich unsere Bankverbindung rechtlich bedingt zukünftig ändern wird.
     recipient: Empfänger
   cancelBtn: Abbrechen
   proceedToDownloads: Weiter zum Download

@@ -33,8 +33,6 @@ payment:
     processingBtn: Processing…
     successful: Payment successful
   bankTransfer:
-    paymentHint: >
-      Please don't set up recurring payments yet, as our bank account will change soon due to legal reasons.
     recipient: Recipient
   cancelBtn: Cancel
   proceedToDownloads: Proceed to Downloads
