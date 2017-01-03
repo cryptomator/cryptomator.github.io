@@ -43,6 +43,27 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
 
 }]);
 
+app.factory('paypal', ['$q', '$http', function($q, $http) {
+  return {
+    preparePayment: function(currency, total) {
+      var deferred = $q.defer();
+      $http.post('https://api.cryptomator.org/paypal/preparePayment.php', $.param({
+        currency: currency,
+        total: total
+      }), {
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).then(function(successResponse) {
+        var approvalLink = _.find(successResponse.data.links, {'rel': 'approval_url'}).href;
+        deferred.resolve(approvalLink);
+      }, function(errorResponse) {
+        console.warn('Payment failed.', errorResponse.data);
+        deferred.reject();
+      });
+      return deferred.promise;
+    }
+  };
+}]);
+
 app.factory('stripe', ['$window', function($window) {
   var Stripe = $window.Stripe;
   Stripe.setPublishableKey('pk_live_lZc9TmxyYgWO3rVIBluV4wLn');
@@ -92,7 +113,7 @@ app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $windo
 
 }]);
 
-app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function($scope, $window, $http, stripe) {
+app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe', function($scope, $window, $http, paypal, stripe) {
 
   function showPaymentModalIfDonateAnchorPresent() {
     if ($window.location.hash == '#donate') {
@@ -126,6 +147,15 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
   };
   $scope.paymentInProgress = false;
   $scope.paymentSuccessful = false;
+
+  $scope.payWithPaypal = function() {
+    paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount)
+    .then(function(approvalLink) {
+      $window.location.href = approvalLink;
+    }, function() {
+      // TODO
+    });
+  };
 
   $scope.payWithCreditCard = function() {
     $scope.paymentInProgress = true;
