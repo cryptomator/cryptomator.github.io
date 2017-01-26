@@ -45,7 +45,7 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
 
 app.factory('stripe', ['$window', function($window) {
   var Stripe = $window.Stripe;
-  Stripe.setPublishableKey('pk_live_lZc9TmxyYgWO3rVIBluV4wLn');
+  Stripe.setPublishableKey('pk_live_eSasX216vGvC26GdbVwA011V');
 
   return {
     card: Stripe.card
