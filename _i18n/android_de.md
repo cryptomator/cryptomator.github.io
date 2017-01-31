@@ -17,11 +17,11 @@ changelog:
   title: Änderungen
   content: >
     <ul>
-    <li>Kompatibilität zu Android 4.1, 4.2 und 4.3 behoben</li>
-    <li>Fortschrittsanzeige für Download/Upload hinzugefügt</li>
-    <li>Dateigröße und Änderungsdatum zur Verzeichnisliste hinzugefügt</li>
-    <li>Dateien mit Endungen in Großbuchstaben (z.B. JPG statt jpg) können nun geöffnet werden</li>
-    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Designb</li>
+    <li>Unterstützung für Google Drive hinzugefügt</li>
+    <li>Export-Funktionalität hinzugefügt</li>
+    <li>Caching von Klartext-Dateien verbessert</li>
+    <li>Upload von großen Dateien in Dropbox behoben</li>
+    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design</li>
     </ul>
 feedback:
   title: Feedback
@@ -32,9 +32,9 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Zurzeit wird nur Dropbox unterstützt. Ab Version 0.3 werden wir nach und nach die Unterstützung von Google Drive, OneDrive und WebDAV implementieren.
+    Zurzeit werden nur Dropbox und Google Drive unterstützt. Die Unterstützung von OneDrive und WebDAV werden folgen.
 updates:
   title: Updates
   content: >
-    Um auf dem Laufenden zu bleiben, können Sie unseren <a href='#newsletter'>Newsletter</a> abonnieren oder diese Seite gelegentlich besuchen.
+    Um auf dem Laufenden zu bleiben, können Sie unseren <a href="/de/#newsletter">Newsletter</a> abonnieren oder diese Seite gelegentlich besuchen.
 ---

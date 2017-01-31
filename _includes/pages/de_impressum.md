@@ -21,7 +21,7 @@ Registernummer: HRB 22635
 
 ### Umsatzsteuer-ID:
 Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:  
-_beantragt_
+DE815664888
 
 ### Angaben zur Berufshaftpflichtversicherung:
 Name und Sitz der Gesellschaft:  

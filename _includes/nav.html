@@ -92,7 +92,7 @@
 
           <div data-ng-show="!paymentSuccessful">
             <div class="row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-sm-6">
                 <label class="control-label" for="inputCreditCardAmount">{{ i18n.payment.creditCard.amount }}</label>
                 <div class="input-group">
                   <div class="input-group-btn">
@@ -129,19 +129,19 @@
             </div>
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-sm-6">
                 <div class="form-group">
-                  <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.creditCard.expirationDate }}</label>
+                  <label class="control-label" for="inputCreditCardExpirationDate">{{ i18n.payment.creditCard.expirationDate }}</label>
                   <div class="input-group btn-group">
                     <div class="btn-group">
                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        [[creditCard.expMonth || '{{ i18n.payment.creditCard.chooseMonth }}' ]]
+                        [[creditCard.expMonth || '{{ i18n.payment.creditCard.chooseMonth }}']]
                         <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
                         <li data-ng-repeat="month in creditCard.expMonths"><a data-ng-click="creditCard.expMonth = month">[[month]]</a></li>
                       </ul>
-                    </div><!-- /input-group-btn -->
+                    </div>
                     <div class="btn-group">
                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         [[creditCard.expYear || '{{ i18n.payment.creditCard.chooseYear }}']]
@@ -150,12 +150,12 @@
                       <ul class="dropdown-menu">
                         <li data-ng-repeat="year in creditCard.expYears"><a data-ng-click="creditCard.expYear = year">[[year]]</a></li>
                       </ul>
-                    </div><!-- /input-group-btn -->
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-sm-6">
                 <div class="form-group">
                   <label class="control-label" for="inputCreditCardCVC">{{ i18n.payment.creditCard.cvc }}</label>
                   <div class="input-group">
@@ -175,7 +175,7 @@
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'bankTransfer'}">
           <dl class="dl-horizontal">
             <dt>{{ i18n.payment.bankTransfer.recipient }}</dt>
-            <dd>Skymatic UG (haftungsbeschränkt)</dd>
+            <dd>Skymatic UG</dd>
             <dt>IBAN</dt>
             <dd class="iban"><span>DE04</span><span>7002</span><span>2200</span><span>0020</span><span>1862</span><span>59</span></dd>
             <dt>BIC</dt>
