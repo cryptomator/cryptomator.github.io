@@ -196,9 +196,7 @@
 
         <button type="button" class="btn btn-default" data-dismiss="modal">{{ i18n.payment.cancelBtn }}</button>
 
-        <!-- <a data-ng-disabled="!isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=finance@skymatic.de&amp;item_name=Cryptomator&amp;amount=[[donation.amount]]&amp;currency_code=[[donation.currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org{{ languageUrlPrefixEscaped }}%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org{{ languageUrlPrefixEscaped }}&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary"><span class="glyphicon glyphicon-new-window"></span> {{ i18n.payment.paypal.proceedBtn }}</a> -->
-
-        <button data-ng-disabled="!isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal()" class="btn btn-primary">FOO {{ i18n.payment.paypal.proceedBtn }}</button>
+        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal()" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
         <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.validateCvc() || !creditCard.validateNum() || !creditCard.validateExpiry()" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
