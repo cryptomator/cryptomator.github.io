@@ -29,7 +29,7 @@ payment:
     chooseMonth: Month
     chooseYear: Year
     cvc: CVC
-    payNowBtn: Pay now
+    payNowBtn: Pay Now
     processingBtn: Processing…
     successful: Payment successful
   bankTransfer:

@@ -36,5 +36,5 @@ notes:
 updates:
   title: Updates
   content: >
-    Um auf dem Laufenden zu bleiben, können Sie unseren <a href='#newsletter'>Newsletter</a> abonnieren oder diese Seite gelegentlich besuchen.
+    Um auf dem Laufenden zu bleiben, können Sie unseren <a href="/de/#newsletter">Newsletter</a> abonnieren oder diese Seite gelegentlich besuchen.
 ---
