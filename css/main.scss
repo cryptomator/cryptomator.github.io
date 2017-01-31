@@ -28,17 +28,22 @@
 ;
 
 /**
- * navbar
+ * modal
  */
-#payment-modal .modal-dialog {
+.modal-dialog {
   padding-top: 20vh;
 
   .modal-header {
     padding-bottom: 0;
+  }
+}
 
-    .nav-tabs {
-      border-bottom: none;
-    }
+/**
+ * navbar
+ */
+#payment-modal .modal-dialog {
+  .modal-header .nav-tabs {
+    border-bottom: none;
   }
 
   .iban span:after {

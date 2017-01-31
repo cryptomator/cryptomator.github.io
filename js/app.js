@@ -261,12 +261,13 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
 
   function showModalIfSuggestedByUrl() {
     var queryParams = parseQueryString($window.location.search);
-    console.log(queryParams);
-    if ($window.location.hash == '#thanks') {
-      angular.element('#thanks-modal').modal('show');
-    } else if ($window.location.hash == '#paymentFailed') {
-      angular.element('#payment-failed-modal').modal('show');
-      $scope.paymentFailedReason = queryParams.reason;
+    if (_.has(queryParams, 'payment')) {
+      if (queryParams.payment == 'success') {
+        angular.element('#thanks-modal').modal('show');
+      } else if (queryParams.payment == 'error') {
+        angular.element('#payment-failed-modal').modal('show');
+        $scope.paymentFailedReason = queryParams.reason;
+      }
     }
   }
 

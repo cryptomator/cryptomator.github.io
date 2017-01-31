@@ -40,11 +40,11 @@ allVersions:
 thanks:
   title: Vielen Dank für Ihre Spende an Cryptomator!
   content: Ihre Zahlung war erfolgreich und Sie wurden zur Downloads-Seite weitergeleitet.
-  dismiss: Juhu!
+  dismissBtn: Juhu!
 paymentFailed:
   title: Hoppla!
-  content: Die Zahlung an Cryptomator ist fehlgeschlagen.
+  content: Die Zahlung an Cryptomator ist fehlgeschlagen. Falls es sich dabei um einen unerwarteten Fehler handelt, <a href="/de/contact">kontaktieren Sie bitte unser Support-Team</a>. Vielen Dank!
   reason: Grund
-  dismiss: >
-    :shit: happens
+  dismissBtn: >
+    Okay, :shit: happens
 ---

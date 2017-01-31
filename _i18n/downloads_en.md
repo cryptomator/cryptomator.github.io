@@ -40,11 +40,11 @@ allVersions:
 thanks:
   title: Thank you for your donation to Cryptomator!
   content: Your payment was successful and you have been redirected to the Downloads page. Happy crypting!
-  dismiss: Hooray!
+  dismissBtn: Hooray!
 paymentFailed:
   title: Whoops!
-  content: Your donation to Cryptomator has failed.
+  content: Your payment to Cryptomator failed. If this is unexpected, please <a href="/contact">contact our support team</a>. Thank you!
   reason: Reason
-  dismiss: >
-    :shit: happens
+  dismissBtn: >
+    Okay, :shit: happens
 ---
