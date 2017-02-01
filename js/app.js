@@ -62,11 +62,12 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
 
 app.factory('paypal', ['$q', '$http', function($q, $http) {
   return {
-    preparePayment: function(currency, total) {
+    preparePayment: function(currency, total, locale) {
       var deferred = $q.defer();
       $http.post('https://api.cryptomator.org/paypal/preparePayment.php', $.param({
         currency: currency,
-        total: total
+        total: total,
+        locale: locale
       }), {
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       }).then(function(successResponse) {
@@ -165,9 +166,9 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
   $scope.paymentInProgress = false;
   $scope.paymentSuccessful = false;
 
-  $scope.payWithPaypal = function() {
+  $scope.payWithPaypal = function(locale) {
     $scope.paymentInProgress = true;
-    paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount)
+    paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount, locale)
     .then(function(approvalLink) {
       $window.location.href = approvalLink;
     }, function(errorResponse) {

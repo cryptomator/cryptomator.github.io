@@ -196,7 +196,7 @@
 
         <button type="button" class="btn btn-default" data-dismiss="modal">{{ i18n.payment.cancelBtn }}</button>
 
-        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal()" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
+        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
         <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.validateCvc() || !creditCard.validateNum() || !creditCard.validateExpiry()" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>

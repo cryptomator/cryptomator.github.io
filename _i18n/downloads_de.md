@@ -43,7 +43,9 @@ thanks:
   dismissBtn: Juhu!
 paymentFailed:
   title: Hoppla!
-  content: Die Zahlung an Cryptomator ist fehlgeschlagen. Falls es sich dabei um einen unerwarteten Fehler handelt, <a href="/de/contact">kontaktieren Sie bitte unser Support-Team</a>. Vielen Dank!
+  content: >
+    Die Zahlung an Cryptomator ist fehlgeschlagen. Falls es sich dabei um einen unerwarteten Fehler handelt, <a href="/de/contact">kontaktieren Sie bitte unser Support-Team</a>.<br/>
+    Vielen Dank! :cat:
   reason: Grund
   dismissBtn: >
     Okay, :shit: happens
