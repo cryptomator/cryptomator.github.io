@@ -62,11 +62,12 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
 
 app.factory('paypal', ['$q', '$http', function($q, $http) {
   return {
-    preparePayment: function(currency, total, locale) {
+    preparePayment: function(currency, total, message, locale) {
       var deferred = $q.defer();
       $http.post('https://api.cryptomator.org/paypal/preparePayment.php', $.param({
         currency: currency,
         total: total,
+        message: message,
         locale: locale
       }), {
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -168,7 +169,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
 
   $scope.payWithPaypal = function(locale) {
     $scope.paymentInProgress = true;
-    paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount, locale)
+    paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount, $scope.donation.message, locale)
     .then(function(approvalLink) {
       $window.location.href = approvalLink;
     }, function(errorResponse) {
@@ -197,7 +198,8 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
         $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
           stripeToken: response.id,
           currency: $scope.donation.currency.code,
-          amountInCents: amountInCents
+          amountInCents: amountInCents,
+          message: $scope.donation.message
         }), {
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function(successResponse) {
