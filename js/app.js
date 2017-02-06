@@ -269,7 +269,6 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
         angular.element('#thanks-modal').modal('show');
       } else if (queryParams.payment == 'error') {
         angular.element('#payment-failed-modal').modal('show');
-        $scope.paymentFailedReason = queryParams.reason;
       }
     }
   }

@@ -46,7 +46,6 @@ paymentFailed:
   content: >
     Your payment to Cryptomator failed. If this is unexpected, please <a href="/contact">contact our support team</a>.<br/>
     Thank you! :cat:
-  reason: Reason
   dismissBtn: >
     Okay, :shit: happens
 ---
