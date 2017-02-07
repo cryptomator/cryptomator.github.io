@@ -75,8 +75,7 @@ app.factory('paypal', ['$q', '$http', function($q, $http) {
         var approvalLink = _.find(successResponse.data.links, {'rel': 'approval_url'}).href;
         deferred.resolve(approvalLink);
       }, function(errorResponse) {
-        console.warn('Payment failed.', errorResponse.data);
-        deferred.reject();
+        deferred.reject(errorResponse.data);
       });
       return deferred.promise;
     }
@@ -194,11 +193,10 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
           $scope.paymentInProgress = false;
         });
       } else {
-        var amountInCents = $scope.donation.amount * 100;
         $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
           stripeToken: response.id,
           currency: $scope.donation.currency.code,
-          amountInCents: amountInCents,
+          amount: $scope.donation.amount,
           message: $scope.donation.message
         }), {
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
