@@ -5,6 +5,23 @@
 
 var app = angular.module('cryptomator', ['ngCookies']);
 
+function parseQueryString(queryStr) {
+  // Remove the '?' at the start of the string and split out each assignment
+  return _.chain(queryStr.slice(1).split('&'))
+    // Split each array item into [key, value]; ignore empty string if search is empty
+    .map(function(item) {
+      if (item) {
+        return item.split('=');
+      }
+    })
+    // Remove undefined in the case the search is empty
+    .compact()
+    // Turn [key, value] arrays into object parameters
+    .fromPairs()
+    // Return the value of the chain operation
+    .value();
+}
+
 app.config(['$interpolateProvider', '$httpProvider', function($interpolateProvider, $httpProvider) {
   $interpolateProvider.startSymbol('[[');
   $interpolateProvider.endSymbol(']]');
@@ -41,6 +58,28 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
     $rootScope.disableGaIssued = true;
   };
 
+}]);
+
+app.factory('paypal', ['$q', '$http', function($q, $http) {
+  return {
+    preparePayment: function(currency, total, message, locale) {
+      var deferred = $q.defer();
+      $http.post('https://api.cryptomator.org/paypal/preparePayment.php', $.param({
+        currency: currency,
+        total: total,
+        message: message,
+        locale: locale
+      }), {
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).then(function(successResponse) {
+        var approvalLink = _.find(successResponse.data.links, {'rel': 'approval_url'}).href;
+        deferred.resolve(approvalLink);
+      }, function(errorResponse) {
+        deferred.reject(errorResponse.data);
+      });
+      return deferred.promise;
+    }
+  };
 }]);
 
 app.factory('stripe', ['$window', function($window) {
@@ -92,9 +131,9 @@ app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $windo
 
 }]);
 
-app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function($scope, $window, $http, stripe) {
+app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe', function($scope, $window, $http, paypal, stripe) {
 
-  function showPaymentModalIfDonateAnchorPresent() {
+  function showModalIfSuggestedByUrl() {
     if ($window.location.hash == '#donate') {
       angular.element('#payment-modal').modal('show');
     }
@@ -127,6 +166,18 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
   $scope.paymentInProgress = false;
   $scope.paymentSuccessful = false;
 
+  $scope.payWithPaypal = function(locale) {
+    $scope.paymentInProgress = true;
+    paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount, $scope.donation.message, locale)
+    .then(function(approvalLink) {
+      $window.location.href = approvalLink;
+    }, function(errorResponse) {
+      console.warn('Payment failed.', errorResponse);
+      $scope.paymentError = 'Payment failed.';
+      $scope.paymentInProgress = false;
+    });
+  };
+
   $scope.payWithCreditCard = function() {
     $scope.paymentInProgress = true;
     stripe.card.createToken({
@@ -142,11 +193,11 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
           $scope.paymentInProgress = false;
         });
       } else {
-        var amountInCents = $scope.donation.amount * 100;
         $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
           stripeToken: response.id,
           currency: $scope.donation.currency.code,
-          amountInCents: amountInCents
+          amount: $scope.donation.amount,
+          message: $scope.donation.message
         }), {
           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function(successResponse) {
@@ -171,7 +222,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'stripe', function(
     return _.isNumber(amount) && amount >= 1;
   };
 
-  showPaymentModalIfDonateAnchorPresent();
+  showModalIfSuggestedByUrl();
 
 }]);
 
@@ -209,6 +260,17 @@ app.controller('NewsletterCtrl', ['$scope', '$http', function($scope, $http) {
 
 app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
 
+  function showModalIfSuggestedByUrl() {
+    var queryParams = parseQueryString($window.location.search);
+    if (_.has(queryParams, 'payment')) {
+      if (queryParams.payment == 'success') {
+        angular.element('#thanks-modal').modal('show');
+      } else if (queryParams.payment == 'error') {
+        angular.element('#payment-failed-modal').modal('show');
+      }
+    }
+  }
+
   $scope.initialized = false;
 
   $scope.init = function() {
@@ -225,6 +287,8 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
       $window.location.hash = 'jarDownload';
     }
   };
+
+  showModalIfSuggestedByUrl();
 
 }]);
 

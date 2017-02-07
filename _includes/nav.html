@@ -65,8 +65,10 @@
         <!-- PayPal -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'paypal'}">
           <p>{{ i18n.payment.paypal.paymentHint }}</p>
+
           <div class="row">
-            <div class="form-group col-md-6 col-md-offset-3">
+            <div class="form-group col-sm-6">
+              <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.paypal.amount }}</label>
               <div class="input-group">
                 <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -83,6 +85,11 @@
                 <div class="input-group-addon">.00</div>
               </div>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="inputPayPalMessage">{{ i18n.payment.paypal.message }}</label>
+            <input id="inputPayPalMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
           </div>
         </div>
 
@@ -113,62 +120,64 @@
             </div>
 
             <div class="form-group">
-              <label class="control-label" for="inputCreditCardNumber">{{ i18n.payment.creditCard.number }}</label>
-              <div class="input-group">
-                <input id="inputCreditCardNumber" type="text" class="form-control" data-ng-model="creditCard.num">
-                <span class="input-group-addon">
-                  <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateNum(), 'glyphicon-remove': !creditCard.validateNum()}"></span>
-                  <span data-ng-show="creditCard.guessType() != 'Unknown'" data-ng-bind="creditCard.guessType()"></span>
-                </span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label" for="inputCreditCardHolderName">{{ i18n.payment.creditCard.holdername }}</label>
-              <input id="inputCreditCardHolderName" type="text" class="form-control" data-ng-model="creditCard.holdername">
+              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.creditCard.message }}</label>
+              <input id="inputCreditCardMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
             </div>
 
             <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="control-label" for="inputCreditCardExpirationDate">{{ i18n.payment.creditCard.expirationDate }}</label>
-                  <div class="input-group btn-group">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        [[creditCard.expMonth || '{{ i18n.payment.creditCard.chooseMonth }}']]
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li data-ng-repeat="month in creditCard.expMonths"><a data-ng-click="creditCard.expMonth = month">[[month]]</a></li>
-                      </ul>
-                    </div>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        [[creditCard.expYear || '{{ i18n.payment.creditCard.chooseYear }}']]
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li data-ng-repeat="year in creditCard.expYears"><a data-ng-click="creditCard.expYear = year">[[year]]</a></li>
-                      </ul>
-                    </div>
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="inputCreditCardNumber">{{ i18n.payment.creditCard.number }}</label>
+                <div class="input-group">
+                  <input id="inputCreditCardNumber" type="text" class="form-control" data-ng-model="creditCard.num">
+                  <span class="input-group-addon">
+                    <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateNum(), 'glyphicon-remove': !creditCard.validateNum()}"></span>
+                    <span data-ng-show="creditCard.guessType() != 'Unknown'" data-ng-bind="creditCard.guessType()"></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="inputCreditCardHolderName">{{ i18n.payment.creditCard.holdername }}</label>
+                <input id="inputCreditCardHolderName" type="text" class="form-control" data-ng-model="creditCard.holdername">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="inputCreditCardExpirationDate">{{ i18n.payment.creditCard.expirationDate }}</label>
+                <div class="input-group btn-group">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      [[creditCard.expMonth || '{{ i18n.payment.creditCard.chooseMonth }}']]
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li data-ng-repeat="month in creditCard.expMonths"><a data-ng-click="creditCard.expMonth = month">[[month]]</a></li>
+                    </ul>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      [[creditCard.expYear || '{{ i18n.payment.creditCard.chooseYear }}']]
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li data-ng-repeat="year in creditCard.expYears"><a data-ng-click="creditCard.expYear = year">[[year]]</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="control-label" for="inputCreditCardCVC">{{ i18n.payment.creditCard.cvc }}</label>
-                  <div class="input-group">
-                    <input id="inputCreditCardCVC" type="password" class="form-control" data-ng-model="creditCard.cvc">
-                    <span class="input-group-addon">
-                      <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateCvc(), 'glyphicon-remove': !creditCard.validateCvc()}"></span>
-                    </span>
-                  </div>
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="inputCreditCardCVC">{{ i18n.payment.creditCard.cvc }}</label>
+                <div class="input-group">
+                  <input id="inputCreditCardCVC" type="password" class="form-control" data-ng-model="creditCard.cvc">
+                  <span class="input-group-addon">
+                    <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateCvc(), 'glyphicon-remove': !creditCard.validateCvc()}"></span>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
 
         <!-- Bank Transfer -->
@@ -196,7 +205,7 @@
 
         <button type="button" class="btn btn-default" data-dismiss="modal">{{ i18n.payment.cancelBtn }}</button>
 
-        <a data-ng-disabled="!isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=setolabs@gmail.com&amp;item_name=Cryptomator&amp;amount=[[donation.amount]]&amp;currency_code=[[donation.currency.code]]&amp;no_shipping=1&amp;return=https%3A%2F%2Fcryptomator.org{{ languageUrlPrefixEscaped }}%2Fdownloads&amp;cancel_return=https%3A%2F%2Fcryptomator.org{{ languageUrlPrefixEscaped }}&amp;cbt=Proceed%20to%20Download%20Page&amp;page_style=Cryptomator&amp;lc=US" class="btn btn-primary"><span class="glyphicon glyphicon-new-window"></span> {{ i18n.payment.paypal.proceedBtn }}</a>
+        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
         <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.validateCvc() || !creditCard.validateNum() || !creditCard.validateExpiry()" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>

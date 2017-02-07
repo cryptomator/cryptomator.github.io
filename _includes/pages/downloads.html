@@ -306,4 +306,35 @@
     <p>{{ i18n.allVersions.jarDownloadHint }}</p>
   </section>
 
+  <div class="modal" tabindex="-1" role="dialog" id="thanks-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img class="pull-left" src="/img/logo.png" srcset="/img/logo.png 1x, /img/logo@2x.png 2x"/>
+          <h4>{{ i18n.thanks.title }}</h4>
+          <p>{{ i18n.thanks.content }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">{{ i18n.thanks.dismissBtn }}</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal" tabindex="-1" role="dialog" id="payment-failed-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>{{ i18n.paymentFailed.title }}</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{ i18n.paymentFailed.content }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">{{ i18n.paymentFailed.dismissBtn }}</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 </div>

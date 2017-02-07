@@ -56,3 +56,18 @@
   margin-top: $spacing-unit/4;
   margin-bottom: 0;
 }
+
+#thanks-modal {
+  .modal-body {
+    min-height: 158px;
+  }
+
+  img {
+    max-height: 128px;
+    margin-right: $spacing-unit/2;
+  }
+
+  h4 {
+    margin-top: $spacing-unit/2;
+  }
+}

@@ -37,4 +37,15 @@ allVersions:
   changelog: Changelog
   jarDownloadHint: >
     All versions can be loaded as a JAR-file from <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub releases</a>.
+thanks:
+  title: Thank you for your donation to Cryptomator!
+  content: Your payment was successful and you have been redirected to the Downloads page. Happy crypting!
+  dismissBtn: Hooray!
+paymentFailed:
+  title: Whoops!
+  content: >
+    Your payment to Cryptomator failed. If this is unexpected, please <a href="/contact">contact our support team</a>.<br/>
+    Thank you! :cat:
+  dismissBtn: >
+    Okay, :shit: happens
 ---
