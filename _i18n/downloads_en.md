@@ -5,6 +5,7 @@ context: downloads
 loadScreen:
   title: Cryptomator download
   choosingDownload: Choosing download for your operating system…
+quickGuide: Quick Guide
 download:
   button: Download
   button64: Download 64 Bit
