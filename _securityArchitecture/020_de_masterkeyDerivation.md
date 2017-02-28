@@ -5,7 +5,7 @@ title: Ableitung des Hauptschlüssels
 ---
 <p class="lead">Jeder Tresor hat seinen eigenen 256-Bit-Verschlüsselungs- sowie einen MAC-Hauptschlüssel, die für die Verschlüsselung von dateispezifischen Schlüsseln beziehungsweise für die Dateiauthentifizierung benutzt werden.</p>
 
-Diese Schlüssel sind zufällige Sequenzen, die durch einen kryptographisch sicheren Zufallszahlengenerator (CSPRNG) generiert werden. Wir nutzen <a href="http://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html">SecureRandom</a> mit SHA1PRNG, initialisiert mit einem Seed von 440 Bits aus <code>SecureRandom.getStrongInstance()</code>.
+Diese Schlüssel sind zufällige Sequenzen, die durch einen kryptographisch sicheren Zufallszahlengenerator (CSPRNG) generiert werden. Wir nutzen <a href="http://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html">SecureRandom</a> mit SHA1PRNG, initialisiert mit einem Seed von 440 Bits aus <code>SecureRandom.getInstanceStrong()</code>.
 
 Aus dem Passwort des Tresors wird durch Verwendung von <a href="https://de.wikipedia.org/wiki/Scrypt" target="_blank">scrypt</a> ein <abbr title="Key-encryption key" class="initialism">KEK</abbr> abgeleitet wird. Beide Hauptschlüssel werden durch <a href="https://tools.ietf.org/html/rfc3394" target="_blank">Key Wrapping</a> mit diesem KEK verschlüsselt.
 
