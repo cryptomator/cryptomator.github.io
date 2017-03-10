@@ -11,8 +11,10 @@
     <div class="row text-center">
       {% for member in i18n.coreteam.members %}
       <div class="col-lg-3 col-sm-4 col-xs-6 person">
-        <img src="{{ member.img }}" class="img img-responsive img-thumbnail"/>
-        <p class="name">{{ member.name }}</p>
+        <a href="{{ member.link }}" target="_blank">
+          <img src="{{ member.img }}" class="img img-responsive img-thumbnail"/>
+          <p class="name">{{ member.name }}</p>
+        </a>
         <p>{{ member.role }}</p>
       </div>
       {% assign mod4 = forloop.index | modulo:4 %}

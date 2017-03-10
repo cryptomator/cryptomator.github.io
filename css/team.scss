@@ -5,10 +5,10 @@
 @import "variables";
 
 #team {
-  padding-bottom: $spacing-unit*2;
+  padding-bottom: $spacing-unit * 2;
 
   >:first-child {
-    padding-top: $spacing-unit/2;
+    padding-top: $spacing-unit / 2;
   }
 
   .person img {
@@ -16,7 +16,8 @@
   }
 
   p.name {
-    margin: 0.5em;
-    font-size: 1.2em;
+    margin-top: $spacing-unit / 4;
+    margin-bottom: 0;
+    font-size: $base-font-size * 1.2;
   }
 }
