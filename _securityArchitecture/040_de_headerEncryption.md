@@ -11,7 +11,7 @@ title: Verschlüsselung des Dateikopfs
   - 32 Bytes mit dem Dateiinhalteschlüssel
 - 32 Bytes mit dem MAC der vorhergehenden 56 Bytes
 
-Die Dateigröße wird im Dateikopf gespeichert, da die echte Dateigröße verschleiert wird. Dies wird im nächsten Abschnitt beschrieben. Zudem wird jede Datei jeweils mit einem eigenen Dateischlüssel verschlüsselt. Dieser wird ebenfalls im Dateikopf abgelegt.
+Jede Datei wird mit einem eigenen Dateischlüssel verschlüsselt. Dieser wird ebenfalls im Dateikopf abgelegt.
 
 <pre>
 headerNonce := createRandomBytes(16)
