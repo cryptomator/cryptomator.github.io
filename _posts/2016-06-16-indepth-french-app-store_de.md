@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "In-Depth: Export Compliance for French iOS App Store"
-date:   2016-06-16
-author: Tobias
+title: "In-Depth: Export Compliance for French iOS App Store"
+date: 2016-06-16
+author: Tobias Hagemann
 notice: Aufgrund der technischen Natur dieses Blog-Beitrags, haben wir diesen nicht übersetzt. Viel Spaß beim Lesen!
 tags: [cryptomator, in-depth, ios]
 stylesheets: ['/css/blog-post.css']
