@@ -56,8 +56,10 @@
           <div class="text-center">
             <h2>{{ i18n.download.title }}</h2>
           </div>
-          <div class="visible-xs">
-            <button type="button" class="btn btn-lg btn-primary center-block"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonFreeDownload }}</button>
+          <div class="visible-xs text-center">
+            <a href="{{ languageUrlPrefix }}/downloads/" class="btn btn-lg btn-primary">
+              <span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonFreeDownload }}
+            </a>
           </div>
           <div class="hidden-xs text-center hide-noscript">
             <h3>{{ i18n.download.payWhatYouWant }}</h3>
@@ -74,7 +76,7 @@
             </div>
           </div>
           <div class="hidden-xs text-center show-noscript-block">
-            <a href="/downloads/" class="btn btn-lg btn-primary">
+            <a href="{{ languageUrlPrefix }}/downloads/" class="btn btn-lg btn-primary">
               <span class="glyphicon glyphicon-download-alt"></span> Download
             </a>
           </div>
