@@ -5,8 +5,8 @@
 
 <div id="blog" class="container fullheight top-most-element">
   <section class="blog-title">
-      <h1>{{ i18n.title }}</h1>
-      <a href="{{ languageUrlPrefix }}/feed.xml"><img height="32" src="/img/rss-icon.svg" /></a>
+    <h1>{{ i18n.title }}</h1>
+    <a href="{{ languageUrlPrefix }}/feed.xml"><img height="32" src="/img/rss-icon.svg" /></a>
   </section>
 
   <section class="blog-posts">
@@ -15,7 +15,7 @@
       <div class="row">
         <p class="col-sm-2">{{ post.date | date: "%Y-%m-%d" }}</p>
         <header class="col-sm-10">
-          <h3><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h3>
+          <h2><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></h2>
         </header>
       </div>
       <div class="row">
