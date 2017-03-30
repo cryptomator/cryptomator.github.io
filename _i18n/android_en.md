@@ -34,8 +34,7 @@ feedback:
 notes:
   title: Notes
   content: >
-    Currently, only Dropbox, Google Drive, and local storage are supported. OneDrive and WebDAV support will follow.<br/><br/>
-    There is probably still a crash bug, when uploading files on certain devices/configurations. We weren't able to reproduce the issue yet, but we have received all your crash reports. If the bug is still present, we'll try to fix it with version 0.5.0. Thank you for your patience!
+    Currently, only Dropbox, Google Drive, and local storage are supported. OneDrive and WebDAV support are planned for the next version 0.5.0.
 updates:
   title: Updates
   content: >

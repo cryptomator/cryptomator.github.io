@@ -34,8 +34,7 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Zurzeit werden Dropbox, Google Drive und der lokale Speicher unterstützt. Die Unterstützung von OneDrive und WebDAV werden folgen.<br/><br/>
-    Vermutlich ist noch ein Absturzfehler beim Upload von Dateien auf bestimmten Geräten/Konfigurationen vorhanden. Wir konnten das Problem bisher noch nicht reproduzieren, aber wir haben all Ihre Absturzberichte erhalten. Falls dieser Fehler noch da ist, versuchen wir diesen in Version 0.5.0 zu beheben. Vielen Dank für Ihre Geduld!
+    Zurzeit werden Dropbox, Google Drive und der lokale Speicher unterstützt. Die Unterstützung von OneDrive und WebDAV sind für die nächste Version 0.5.0 vorgesehen.
 updates:
   title: Updates
   content: >
