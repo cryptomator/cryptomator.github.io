@@ -6,6 +6,7 @@ navbar:
   toggle: Toggle navigation
   freeDownload: Free Download
   securityArchitecture: Security Architecture
+  coop: Cooperations
   help: Help &amp; Support
   contact: Contact
   donate: Donate
