@@ -11,3 +11,21 @@
     padding-top: $spacing-unit/2;
   }
 }
+
+dt {
+  margin-bottom: $spacing-unit/2;
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+
+  > a img {
+    @media (min-width: 768px) {
+      float: right!important;
+    }
+    @media (max-width: 767px) {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

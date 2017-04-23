@@ -25,4 +25,5 @@ collections:
 - languages
 - i18n
 - securityArchitecture
+- coop
 - androidBetaReleases
