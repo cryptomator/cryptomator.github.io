@@ -4,20 +4,12 @@
 @charset "utf-8";
 @import "variables";
 
-#team {
-  padding-bottom: $spacing-unit * 2;
+.person img {
+  width: 100%;
+}
 
-  >:first-child {
-    padding-top: $spacing-unit / 2;
-  }
-
-  .person img {
-    width: 100%;
-  }
-
-  p.name {
-    margin-top: $spacing-unit / 4;
-    margin-bottom: 0;
-    font-size: $base-font-size * 1.2;
-  }
+p.name {
+  margin-top: $spacing-unit / 4;
+  margin-bottom: 0;
+  font-size: $base-font-size * 1.2;
 }

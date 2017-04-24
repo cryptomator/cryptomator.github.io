@@ -3,18 +3,16 @@
 
 {% assign sortedArticles = site.coop | where: 'language', language.name | sort: 'path', 'last' %}
 
-<div id="coop" class="container fullheight top-most-element">
-  <h1 class="text-center">{{ i18n.title }}</h1>
+<h1 class="text-center">{{ i18n.title }}</h1>
 
-  <section>
-    <dl class="dl-horizontal">
-      {% for article in sortedArticles %}
-        <dt><a href="{{ article.url }}"><img src="{{ article.img }}" srcset="{{ article.img }} 1x, {{ article.img2x }} 2x" class="img-responsive"/></a></dt>
-        <dd>
-          <p>{{ article.excerpt }}</p>
-          <p><a class="btn btn-primary btn-sm" href="{{ article.url }}">{{ i18n.learnMore }}</a></p>
-        </dd>
-      {% endfor %}
-    </dl>
-  </section>
-</div>
+<section>
+  <dl class="dl-horizontal">
+    {% for article in sortedArticles %}
+      <dt><a href="{{ article.url }}"><img src="{{ article.img }}" srcset="{{ article.img }} 1x, {{ article.img2x }} 2x" class="img-responsive"/></a></dt>
+      <dd>
+        <p>{{ article.excerpt }}</p>
+        <p><a class="btn btn-primary btn-sm" href="{{ article.url }}">{{ i18n.learnMore }}</a></p>
+      </dd>
+    {% endfor %}
+  </dl>
+</section>

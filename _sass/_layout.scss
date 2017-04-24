@@ -2,6 +2,14 @@ body {
   box-sizing: border-box;
 }
 
+.container-layout {
+  padding-bottom: $spacing-unit*2;
+
+  >:first-child {
+    padding-top: $spacing-unit/2;
+  }
+}
+
 .top-most-element {
   padding-top: 50px;
 

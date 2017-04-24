@@ -4,21 +4,13 @@
 @charset "utf-8";
 @import "variables";
 
-#contact {
-  padding-bottom: $spacing-unit*2;
-
-  >:first-child {
-    padding-top: $spacing-unit/2;
-  }
-
-  .pgp-key {
-    padding: 0;
-    pre {
-      background-color: $background-color;
-      font-size: $base-font-size * 0.8;
-      overflow: auto;
-      margin: 0;
-      border: none;
-    }
+.pgp-key {
+  padding: 0;
+  pre {
+    background-color: $background-color;
+    font-size: $base-font-size * 0.8;
+    overflow: auto;
+    margin: 0;
+    border: none;
   }
 }

@@ -1,4 +1,5 @@
 ---
+layout: coop
 language: en
 title: Cyberduck
 

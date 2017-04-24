@@ -4,14 +4,6 @@
 @charset "utf-8";
 @import "variables";
 
-#coop {
-  padding-bottom: $spacing-unit*2;
-
-  >:first-child {
-    padding-top: $spacing-unit/2;
-  }
-}
-
 dt {
   margin-bottom: $spacing-unit/2;
   @media (max-width: 767px) {

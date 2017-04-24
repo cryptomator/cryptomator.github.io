@@ -21,9 +21,10 @@ kramdown:
   input: GFM
 
 collections:
-- releases
-- languages
-- i18n
-- securityArchitecture
-- coop
-- androidBetaReleases
+  releases:
+  languages:
+  i18n:
+  securityArchitecture:
+  coop:
+    output: true
+  androidBetaReleases:

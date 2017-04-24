@@ -4,27 +4,19 @@
 @charset "utf-8";
 @import "variables";
 
-#blog {
-  padding-bottom: $spacing-unit*2;
+.blog-post {
+  padding-top: $spacing-unit/2;
+}
 
-  >:first-child {
-    padding-top: $spacing-unit/2;
-  }
+.blog-post + .blog-post {
+  border-top: 1px solid $grey-color-light;
+}
 
-  .blog-post {
-    padding-top: $spacing-unit/2;
-  }
+.blog-title > * {
+  display:inline-block;
+  vertical-align:middle;
+}
 
-  .blog-post + .blog-post {
-    border-top: 1px solid $grey-color-light;
-  }
-
-  .blog-title > * {
-    display:inline-block;
-    vertical-align:middle;
-  }
-
-  .blog-title > a {
-    margin-left: 1em;
-  }
+.blog-title > a {
+  margin-left: 1em;
 }

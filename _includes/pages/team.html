@@ -1,57 +1,54 @@
 {% assign i18n = 'team' %}
 {% include i18n.liquid %}
 
-<div id="team" class="container fullheight top-most-element">
-  <h1 class="text-center">{{ i18n.title }}</h1>
+<h1 class="text-center">{{ i18n.title }}</h1>
 
-  <section>
-    <div class="page-header">
-      <h2 class="text-center">{{ i18n.coreteam.title }}</h2>
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.coreteam.title }}</h2>
+  </div>
+  <div class="row text-center">
+    {% for member in i18n.coreteam.members %}
+    <div class="col-lg-3 col-sm-4 col-xs-6 person">
+      <a href="{{ member.link }}" target="_blank">
+        <img src="{{ member.img }}" class="img-responsive img-thumbnail"/>
+        <p class="name">{{ member.name }}</p>
+      </a>
+      <p>{{ member.role }}</p>
     </div>
-    <div class="row text-center">
-      {% for member in i18n.coreteam.members %}
-      <div class="col-lg-3 col-sm-4 col-xs-6 person">
-        <a href="{{ member.link }}" target="_blank">
-          <img src="{{ member.img }}" class="img-responsive img-thumbnail"/>
-          <p class="name">{{ member.name }}</p>
-        </a>
-        <p>{{ member.role }}</p>
-      </div>
-      {% assign mod4 = forloop.index | modulo:4 %}
-      {% if mod4 == 0 and forloop.first == false and forloop.last == false %}
-      <div class="clearfix visible-lg-block"></div>
-      {% endif %}
-      {% assign mod3 = forloop.index | modulo:3 %}
-      {% if mod3 == 0 and forloop.first == false and forloop.last == false %}
-      <div class="clearfix visible-sm-block"></div>
-      {% endif %}
-      {% assign mod2 = forloop.index | modulo:2 %}
-      {% if mod2 == 0 and forloop.first == false and forloop.last == false %}
-      <div class="clearfix visible-xs-block"></div>
-      {% endif %}
-      {% endfor %}
-    </div>
-  </section>
+    {% assign mod4 = forloop.index | modulo:4 %}
+    {% if mod4 == 0 and forloop.first == false and forloop.last == false %}
+    <div class="clearfix visible-lg-block"></div>
+    {% endif %}
+    {% assign mod3 = forloop.index | modulo:3 %}
+    {% if mod3 == 0 and forloop.first == false and forloop.last == false %}
+    <div class="clearfix visible-sm-block"></div>
+    {% endif %}
+    {% assign mod2 = forloop.index | modulo:2 %}
+    {% if mod2 == 0 and forloop.first == false and forloop.last == false %}
+    <div class="clearfix visible-xs-block"></div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
 
-  <section data-ng-controller="ContributorsCtrl" data-ng-show="contributors.length > 0">
-    <div class="page-header">
-      <h2 class="text-center">{{ i18n.contributors.title }}</h2>
+<section data-ng-controller="ContributorsCtrl" data-ng-show="contributors.length > 0">
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.contributors.title }}</h2>
+  </div>
+  <div class="row text-center">
+    <div class="col-sm-2 col-xs-4 person" data-ng-repeat="contributor in contributors">
+      <a data-ng-href="[[ contributor.html_url ]]" target="_blank">
+        <img data-ng-src="[[ contributor.avatar_url ]]" class="img-responsive img-thumbnail"/>
+        <p>[[ contributor.login ]]</p>
+      </a>
     </div>
-    <div class="row text-center">
-      <div class="col-sm-2 col-xs-4 person" data-ng-repeat="contributor in contributors">
-        <a data-ng-href="[[ contributor.html_url ]]" target="_blank">
-          <img data-ng-src="[[ contributor.avatar_url ]]" class="img-responsive img-thumbnail"/>
-          <p>[[ contributor.login ]]</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section data-ng-controller="ContributorsCtrl">
-    <div class="page-header">
-      <h2 class="text-center">{{ i18n.translators.title }}</h2>
-    </div>
-    <p class="text-center">{{ i18n.translators.thanks }}</p>
-  </section>
-
-</div>
+<section data-ng-controller="ContributorsCtrl">
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.translators.title }}</h2>
+  </div>
+  <p class="text-center">{{ i18n.translators.thanks }}</p>
+</section>
