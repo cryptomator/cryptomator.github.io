@@ -6,11 +6,12 @@
 
 .pgp-key {
   padding: 0;
+
   pre {
     background-color: $background-color;
-    font-size: $base-font-size * 0.8;
-    overflow: auto;
+    border: 0;
+    font-size: $base-font-size * .8;
     margin: 0;
-    border: none;
+    overflow: auto;
   }
 }

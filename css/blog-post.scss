@@ -5,7 +5,7 @@
 @import "variables";
 
 .post-metadata {
-  margin-bottom: $spacing-unit/2;
+  margin-bottom: $spacing-unit / 2;
 }
 
 div.post-metadata-author {
@@ -15,8 +15,8 @@ div.post-metadata-author {
 
 span.post-metadata-author  {
   display: table-cell;
+  padding-left: $spacing-unit / 3;
   vertical-align: middle;
-  padding-left: $spacing-unit/3;
 }
 
 .post-metadata-text {
@@ -28,5 +28,5 @@ span.post-metadata-author  {
 }
 
 .post-content {
-  padding-bottom: $spacing-unit*2;
+  padding-bottom: $spacing-unit * 2;
 }

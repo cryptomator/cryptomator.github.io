@@ -3,8 +3,6 @@
 ---
 @charset "utf-8";
 
-
-
 // Using media queries with like this:
 // @include media-query($palm) {
 //     .wrapper {
@@ -18,8 +16,6 @@
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "variables",
@@ -27,9 +23,7 @@
   "layout"
 ;
 
-/**
- * modal
- */
+// Modal Dialog
 .modal-dialog {
   padding-top: 20vh;
 
@@ -38,15 +32,13 @@
   }
 }
 
-/**
- * navbar
- */
+// Navigation Bar
 #payment-modal .modal-dialog {
   .modal-header .nav-tabs {
-    border-bottom: none;
+    border-bottom: 0;
   }
 
-  .iban span:after {
-    content: " ";
+  .iban span::after {
+    content: ' ';
   }
 }

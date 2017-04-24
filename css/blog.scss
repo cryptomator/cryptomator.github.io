@@ -5,7 +5,7 @@
 @import "variables";
 
 .blog-post {
-  padding-top: $spacing-unit/2;
+  padding-top: $spacing-unit / 2;
 }
 
 .blog-post + .blog-post {
@@ -13,8 +13,8 @@
 }
 
 .blog-title > * {
-  display:inline-block;
-  vertical-align:middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .blog-title > a {

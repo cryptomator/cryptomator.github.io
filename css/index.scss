@@ -6,71 +6,69 @@
 
 h1.display-font {
   font-size: 42px;
+
   @media (max-width: 1024px) {
     font-size: 36px;
   }
 }
 
 .display-font {
+  color: $brand-color;
   font-family: 'Dosis', $base-font-family;
   font-style: normal;
   font-weight: 700;
-  color: $brand-color;
 }
 
-/*
- * Stage Animation
- */
-
+// Stage Animation
 #stage {
-  position: relative;
   height: 15vw; // relative to width by choice
+  margin-top: $spacing-unit / 2;
   max-height: 250px;
-  margin-top: $spacing-unit/2;
+  position: relative;
 
   > hr {
-    position: absolute;
-    padding: 0;
-    margin: 0;
+    background: none;
     border: 0;
     border-bottom: 4px dashed #eee;
-    background: none;
-    width: 77.5%;
-    top: 50%;
     left: 10%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    width: 77.5%;
   }
 
   @keyframes device-fade {
-    0% { opacity: 0; transform: scale(0.8); }
+    0% { opacity: 0; transform: scale(.8); }
     2.5% { opacity: 1; transform: scale(1.05); }
-    3% { opacity: 1; transform: scale(1.0); }
-    33% { opacity: 1; transform: scale(1.0); }
-    36% { opacity: 0; transform: scale(0.8); }
+    3% { opacity: 1; transform: scale(1); }
+    33% { opacity: 1; transform: scale(1); }
+    36% { opacity: 0; transform: scale(.8); }
   }
 
   .device {
-    position: absolute;
-    width: 15%;
     height: 100%;
-    margin-left: -7.5%;
-    top: 0;
     left: 10%;
+    margin-left: -7.5%;
+    position: absolute;
+    top: 0;
+    width: 15%;
 
     > img {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 
   .laptop,
   .tablet,
   .smartphone {
-    opacity: 0;
     animation: device-fade 12s linear infinite;
+    opacity: 0;
   }
 
   .laptop {
@@ -78,13 +76,13 @@ h1.display-font {
   }
 
   .tablet {
-    width: 50%;
     animation-delay: 4s;
+    width: 50%;
   }
 
   .smartphone {
-    width: 25%;
     animation-delay: 8s;
+    width: 25%;
   }
 
   .row {
@@ -92,25 +90,25 @@ h1.display-font {
   }
 
   .file-container {
-    position: relative;
     height: 100%;
+    position: relative;
   }
 
   .file {
-    position: absolute;
-    width: 18%;
     height: 100%;
     left: 100%;
     margin-left: -9%;
+    position: absolute;
+    width: 18%;
 
     > img {
-      position: absolute;
-      margin: auto;
-      width: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
     }
   }
 
@@ -177,21 +175,21 @@ h1.display-font {
   }
 
   .cryptomator {
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    margin-left: -10%;
-    top: 0;
-    left: 50%;
     animation: encryption 4s ease-in-out 5s infinite;
+    height: 100%;
+    left: 50%;
+    margin-left: -10%;
+    position: absolute;
+    top: 0;
+    width: 20%;
 
     > img {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 
@@ -206,8 +204,8 @@ h1.display-font {
   }
 
   .file-encrypted {
-    left: 0%;
     animation: file-right-move 4s ease-out 5.3s infinite;
+    left: 0%;
 
     > img {
       animation: shrink 4s ease-out 5.3s infinite;
@@ -215,21 +213,21 @@ h1.display-font {
   }
 
   .cloud {
-    position: absolute;
-    width: 20%;
     height: 100%;
-    top: 0;
-    right: 12.5%;
-    margin-top: -2%;
     margin-right: -10%;
+    margin-top: -2%;
+    position: absolute;
+    right: 12.5%;
+    top: 0;
+    width: 20%;
 
     > img {
-      position: absolute;
-      margin: auto;
-      top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 
@@ -256,17 +254,17 @@ h1.display-font {
     padding-right: 14px;
   }
 
-  .appStoreBtn {
-    margin: $spacing-unit/2 0;
+  .app-store-btn {
     display: inline-block;
+    margin: $spacing-unit / 2 0;
   }
 
-  .androidBetaBtn {
-    margin: $spacing-unit/2 0;
+  .android-beta-btn {
     display: inline-block;
-    width: 135px;
+    margin: $spacing-unit / 2 0;
     max-height: 40px;
     padding: 9px 12px;
+    width: 135px;
   }
 }
 
@@ -288,47 +286,44 @@ h1.display-font {
   }
 
   hr {
-    margin-top: $spacing-unit*2;
-    margin-bottom: $spacing-unit*2;
+    margin-bottom: $spacing-unit * 2;
+    margin-top: $spacing-unit * 2;
   }
 
   .press-images {
     a {
       display: inline-block;
-      margin:1em 3em;
+      margin: 1em 3em;
       text-decoration: none;
 
       img {
-        border: none;
-        opacity: 0.5;
-        -webkit-transition: -webkit-filter 100ms, opacity 100ms;
-        transition: -webkit-filter 100ms, filter 100ms, opacity 100ms;
+        border: 0;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
+        opacity: .5;
+        -webkit-transition: -webkit-filter 100ms, opacity 100ms;
+        transition: -webkit-filter 100ms, filter 100ms, opacity 100ms;
       }
 
       &:hover img {
-        opacity: 1.0;
         -webkit-filter: none;
         filter: none;
+        opacity: 1;
       }
     }
   }
 }
 
-/*
- * How it works explanation
- */
-
+// How it works explanation
 #howto {
-  padding-top: 48px;
   padding-bottom: 48px;
+  padding-top: 48px;
 
   #howto-cleartext,
   #howto-ciphertext {
-    padding-top: 48px;
-    height: 560px;
     background-repeat: no-repeat;
+    height: 560px;
+    padding-top: 48px;
 
     @media (max-width: 1732px) {
       background-size: 50% auto;
@@ -340,24 +335,24 @@ h1.display-font {
   }
 
   #howto-cleartext {
-    background-image: url(/img/screenshots/finder_cleartext_en@2x.png);
     background-attachment: scroll;
+    background-image: url('/img/screenshots/finder_cleartext_en@2x.png');
     background-position: 0 0;
   }
 
-  .scrollPhase1 #howto-cleartext,
-  .scrollPhase2 #howto-cleartext {
+  .scroll-phase-1 #howto-cleartext,
+  .scroll-phase-2 #howto-cleartext {
     background-attachment: fixed;
     background-position: 0 150px;
   }
 
   #howto-ciphertext {
-    background-image: url(/img/screenshots/finder_ciphertext_en@2x.png);
     background-attachment: fixed;
+    background-image: url('/img/screenshots/finder_ciphertext_en@2x.png');
     background-position: 0 150px;
   }
 
-  .scrollPhase2 #howto-ciphertext {
+  .scroll-phase-2 #howto-ciphertext {
     background-attachment: scroll;
     background-position: 0 0;
   }
@@ -367,10 +362,7 @@ h1.display-font {
   margin-top: 20px;
 }
 
-/*
- * Testimonials Animation
- */
-
+// Testimonials Animation
 #testimonials {
   padding-bottom: 48px;
 
@@ -379,45 +371,45 @@ h1.display-font {
     position: relative;
 
     @keyframes move-quotes {
-      0% { opacity: 0; left: 100%; }
+      0% { left: 100%; opacity: 0; }
 
-      5% { opacity: 1; left: -50%; }
-      20% { opacity: 1; left: -50%; }
-      25% { opacity: 0; left: -150%; }
+      5% { left: -50%; opacity: 1; }
+      20% { left: -50%; opacity: 1; }
+      25% { left: -150%; opacity: 0; }
 
-      30% { opacity: 1; left: -250%; }
-      45% { opacity: 1; left: -250%; }
-      50% { opacity: 0; left: -350%; }
+      30% { left: -250%; opacity: 1; }
+      45% { left: -250%; opacity: 1; }
+      50% { left: -350%; opacity: 0; }
 
-      55% { opacity: 1; left: -450%; }
-      70% { opacity: 1; left: -450%; }
-      75% { opacity: 0; left: -550%; }
+      55% { left: -450%; opacity: 1; }
+      70% { left: -450%; opacity: 1; }
+      75% { left: -550%; opacity: 0; }
 
-      80% { opacity: 1; left: -650%; }
-      95% { opacity: 1; left: -650%; }
-      100% { opacity: 0; left: -750%; }
+      80% { left: -650%; opacity: 1; }
+      95% { left: -650%; opacity: 1; }
+      100% { left: -750%; opacity: 0; }
     }
 
     > .scroller {
-      width: 100%;
+      animation: move-quotes 30s infinite;
       position: relative;
       white-space: nowrap;
-      animation: move-quotes 30s infinite;
+      width: 100%;
 
       > blockquote {
         display: inline-block;
         vertical-align: middle;
 
         @media (max-width: 480px) {
-          width: 96%;
           margin-left: 52%;
           margin-right: 52%;
+          width: 96%;
         }
 
         @media (min-width: 481px) {
-          width: 40%;
           margin-left: 80%;
           margin-right: 80%;
+          width: 40%;
         }
 
         > p {
@@ -433,8 +425,8 @@ h1.display-font {
 }
 
 #features {
-  padding-top: 48px;
   padding-bottom: 48px;
+  padding-top: 48px;
 
   .row {
     padding-top: $spacing-unit;
@@ -442,11 +434,11 @@ h1.display-font {
 
   img.feature-icon {
     height: 145px;
-    padding-bottom: $spacing-unit/2;
+    padding-bottom: $spacing-unit / 2;
   }
 }
 
 #newsletter {
-  padding-top: 48px;
   padding-bottom: 48px;
+  padding-top: 48px;
 }
