@@ -27,4 +27,5 @@ collections:
   securityArchitecture:
   coop:
     output: true
+    permalink: /:collection/:title.html
   androidBetaReleases:
