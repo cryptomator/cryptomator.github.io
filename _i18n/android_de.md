@@ -17,13 +17,10 @@ changelog:
   title: Änderungen
   content: >
     <ul>
-    <li>Unterstützung für lokalen Speicher hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/4" target="_blank">#4</a>]</li>
-    <li>Teilen-Funktionalität hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/25" target="_blank">#25</a>]</li>
-    <li>Verschieben-Funktionalität hinzugefügt</li>
-    <li>"Vorhandene überspringen"-Option im Ersetzen-Dialog hinzugefügt</li>
-    <li>Anfrage für Kontakte-Berechtigung in Google Drive entfernt; wir haben niemals Ihre Kontakt-Daten verwertet und technisch gesehen war es nicht mal eine Kontakte-Berechtigung, entschuldigen Sie die Verwirrung [<a href="https://github.com/cryptomator/cryptomator-android/issues/26" target="_blank">#26</a>]</li>
-    <li>Verzeichnisliste wird nun gefiltert (indem Dateien/Ordner versteckt werden, die u.a. mit "." beginnen) [<a href="https://github.com/cryptomator/cryptomator-android/issues/28" target="_blank">#28</a>]</li>
-    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design [<a href="https://github.com/cryptomator/cryptomator-android/issues/31" target="_blank">#31</a> und andere]</li>
+    <li>Unterstützung für OneDrive hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/10" target="_blank">#10</a>]</li>
+    <li>Unterstützung für WebDAV hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/11" target="_blank">#11</a>]</li>
+    <li>Deutsche Übersetzung hinzugefügt</li>
+    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design</li>
     </ul>
 feedback:
   title: Feedback
@@ -34,7 +31,7 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Zurzeit werden Dropbox, Google Drive und der lokale Speicher unterstützt. Die Unterstützung von OneDrive und WebDAV sind für die nächste Version 0.5.0 vorgesehen.
+    Die WebDAV-Anbindung unterstützt bisher keine selbstsignierten Zertifikate. In einem folgenen Patch wird dies ergänzt. Zudem werden noch nicht alle WebDAV-Server, insbesondere solche, die Weiterleitungen durchführen, unterstützt.
 updates:
   title: Updates
   content: >
