@@ -17,13 +17,10 @@ changelog:
   title: Changelog
   content: >
     <ul>
-    <li>Added local storage support [<a href="https://github.com/cryptomator/cryptomator-android/issues/4" target="_blank">#4</a>]</li>
-    <li>Added share functionality [<a href="https://github.com/cryptomator/cryptomator-android/issues/25" target="_blank">#25</a>]</li>
-    <li>Added move functionality</li>
-    <li>Added "skip existing" option in replace dialog</li>
-    <li>Removed request for contacts permission in Google Drive; we've never used your contacts information and it technically wasn't even a contacts permission, sorry for the confusion [<a href="https://github.com/cryptomator/cryptomator-android/issues/26" target="_blank">#26</a>]</li>
-    <li>Directory listing is now filtered (by hiding files/folders beginning with "." and others) [<a href="https://github.com/cryptomator/cryptomator-android/issues/28" target="_blank">#28</a>]</li>
-    <li>Further crash/bug fixes and design improvements [<a href="https://github.com/cryptomator/cryptomator-android/issues/31" target="_blank">#31</a> and others]</li>
+    <li>Added OneDrive support [<a href="https://github.com/cryptomator/cryptomator-android/issues/10" target="_blank">#10</a>]</li>
+    <li>Added WebDAV support [<a href="https://github.com/cryptomator/cryptomator-android/issues/11" target="_blank">#11</a>]</li>
+    <li>Added German translation</li>
+    <li>Further crash/bug fixes and design improvements</li>
     </ul>
 feedback:
   title: Feedback
@@ -34,7 +31,7 @@ feedback:
 notes:
   title: Notes
   content: >
-    Currently, only Dropbox, Google Drive, and local storage are supported. OneDrive and WebDAV support are planned for the next version 0.5.0.
+    WebDAV is still missing support for self-signed certificates. This will be added with an upcoming patch. In addition, not all WebDAV servers, especially ones which issue redirects, are supported.
 updates:
   title: Updates
   content: >
