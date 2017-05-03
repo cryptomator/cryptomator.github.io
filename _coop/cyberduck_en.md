@@ -11,13 +11,13 @@ bannerimg@2x: /img/coop/cyberduck-banner@2x.jpg
 bannercaption: Illustration by <a href="http://ktoons.org/" target="_blank">Katharina Hagemann</a>
 excerpt: Cyberduck is a libre remote file browser for Mac and Windows. As of version 6.0, Cyberduck supports Cryptomator vaults and thus is the perfect tool for all, who do not want to synchronize their cloud files locally.
 ---
-Cyberduck allows access to your cloud storage without an additional sync client. FTP, SFTP, WebDAV, S3, Backblaze B2, Azure, and OpenStack Swift are the supported protocols. As of version 6.0, Cyberduck is compatible with Cryptomator and uses the same client-side encryption. All vaults created with one of the applications can be opened with the other.
+Cyberduck allows access to your cloud storage without an additional sync client. FTP, SFTP, WebDAV, S3, Backblaze B2, Azure, and OpenStack Swift are some of the supported protocols. As of version 6.0, Cyberduck is compatible with Cryptomator and uses the same client-side encryption. All vaults created with one of the applications can be opened with the other.
 
-We are happy about this cooperation because it allows you to access your vaults in a new way: Cryptomator is designed to operate on a local copy of the cloud data. Such copy is usually created by the sync client of your cloud provider. With Cyberduck, access to Cryptomator vaults is now possible without a local copy. Files are only loaded on demand when accessing them.
+We are excited about this cooperation because it allows you to access your vaults in a new way: Cryptomator is designed to operate on a local copy of the cloud data. Such copy is usually created by the sync client of your cloud provider. With Cyberduck, access to Cryptomator vaults is now possible without a local copy. Files are only loaded on demand when accessing them.
 
-Thus, Cyberduck is the perfect addition to Cryptomator for those, who do not want a local copy of their files, but want to only load files on demand.
+Thus, Cyberduck is the perfect addition to Cryptomator for those, who do not want a local copy of their files, but only want to load files on demand.
 
-Cyberduck is open-source software, too. The same principles which apply to Cryptomator apply to Cyberduck as well. Everybody can view the source code, thus it is impossible for third parties to implement backdoors and vulnerabilities can not be hidden.
+Cyberduck is open-source software, too. The same principles which apply to Cryptomator apply to Cyberduck as well. Everybody can view the source code, thus it is impossible to implement backdoors or to hide vulnerabilities.
 
 <a class="btn btn-primary" href="https://cyberduck.io/" target="_blank"><span class="glyphicon glyphicon-link"></span> Visit cyberduck.io</a>
 
