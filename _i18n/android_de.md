@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Die WebDAV-Anbindung unterstützt bisher keine selbstsignierten Zertifikate. In einem folgenen Patch wird dies ergänzt. Zudem werden noch nicht alle WebDAV-Server, insbesondere solche, die Weiterleitungen durchführen, unterstützt.
+    Die WebDAV-Anbindung unterstützt bisher keine selbstsignierten Zertifikate. In einem folgenden Patch wird dies ergänzt. Zudem werden noch nicht alle WebDAV-Server, insbesondere solche, die Weiterleitungen durchführen, unterstützt.
 updates:
   title: Updates
   content: >
