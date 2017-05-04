@@ -5,14 +5,14 @@
 @import "variables";
 
 .layer-explanation {
-  padding-top: 50px+$spacing-unit*2;
+  padding-top: 50px + $spacing-unit * 2;
 
   img {
     display: block;
-    margin: $spacing-unit/2 auto;
+    margin: $spacing-unit / 2 auto;
   }
 }
 
 #architecture {
-  padding-bottom: 50px+$spacing-unit*2;
+  padding-bottom: 50px + $spacing-unit * 2;
 }

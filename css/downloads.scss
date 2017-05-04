@@ -5,19 +5,20 @@
 @import "variables";
 
 .download {
+  padding-bottom: $spacing-unit * 2;
   padding-top: 20vh;
-  padding-bottom: $spacing-unit*2;
 
   h2 {
     padding-top: 1em;
+
     @media (max-width: $max-md) {
-      padding-top: 0em;
+      padding-top: 0;
     }
   }
 }
 
 #allVersions {
-  padding-top: 50px+$spacing-unit*2;
+  padding-top: 50px + $spacing-unit * 2;
 }
 
 .download-btn-container {
@@ -28,22 +29,25 @@
   max-width: none;
 
   .popover-content {
-    font-size: $base-font-size*0.8;
     font-family: monospace;
+    font-size: $base-font-size * .8;
   }
 }
 
 #loadScreen {
-  position: fixed;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 1;
   background-color: $background-color;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .panel-heading {
-  a, a:hover, a:focus, a:active {
+  a,
+  a:hover,
+  a:focus,
+  a:active {
     color: inherit;
   }
 }
@@ -53,8 +57,8 @@
 }
 
 .download-caption {
-  margin-top: $spacing-unit/4;
   margin-bottom: 0;
+  margin-top: $spacing-unit / 4;
 }
 
 #thanks-modal {
@@ -63,11 +67,11 @@
   }
 
   img {
+    margin-right: $spacing-unit / 2;
     max-height: 128px;
-    margin-right: $spacing-unit/2;
   }
 
   h4 {
-    margin-top: $spacing-unit/2;
+    margin-top: $spacing-unit / 2;
   }
 }

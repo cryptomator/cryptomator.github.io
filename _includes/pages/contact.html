@@ -1,70 +1,67 @@
 {% assign i18n = 'contact' %}
 {% include i18n.liquid %}
 
-<div id="contact" class="container fullheight top-most-element">
-  <h1 class="text-center">{{ i18n.title }}</h1>
+<h1 class="text-center">{{ i18n.title }}</h1>
 
-  <section>
-    <div class="page-header">
-      <h2 class="text-center">{{ i18n.speakToUs.title }}</h2>
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.speakToUs.title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center">{{ i18n.speakToUs.support.title }}</h3>
+      <p>
+        {{ i18n.speakToUs.support.contactUs }}:<br/>
+        <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
+      </p>
+      {% if i18n.speakToUs.support.weSpeakGerman %}
+      <p>{{ i18n.speakToUs.support.weSpeakGerman }}</p>
+      {% endif %}
+
+
+      <h3 class="text-center">{{ i18n.speakToUs.press.title }}</h3>
+      <p>
+        {{ i18n.speakToUs.press.contactUs }}:<br/>
+        <a href="mailto:&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
+      </p>
+
+      <h3 class="text-center">{{ i18n.speakToUs.security.title }}</h3>
+      <p>
+        {{ i18n.speakToUs.security.contactUs }}:<br/>
+        <a href="mailto:&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
+      </p>
+      <p>&nbsp;</p>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h3 class="text-center">{{ i18n.speakToUs.support.title }}</h3>
-        <p>
-          {{ i18n.speakToUs.support.contactUs }}:<br/>
-          <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
-        </p>
-        {% if i18n.speakToUs.support.weSpeakGerman %}
-        <p>{{ i18n.speakToUs.support.weSpeakGerman }}</p>
-        {% endif %}
 
-
-        <h3 class="text-center">{{ i18n.speakToUs.press.title }}</h3>
-        <p>
-          {{ i18n.speakToUs.press.contactUs }}:<br/>
-          <a href="mailto:&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#112;&#114;&#101;&#115;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
-        </p>
-
-        <h3 class="text-center">{{ i18n.speakToUs.security.title }}</h3>
-        <p>
-          {{ i18n.speakToUs.security.contactUs }}:<br/>
-          <a href="mailto:&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;">&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;</a>
-        </p>
-        <p>&nbsp;</p>
-      </div>
-
-      <div class="col-md-6">
-        <h3 class="text-center">{{ i18n.speakToUs.pgpKey }}</h3>
-        <pre class="pre-scrollable">{% include pgpKeys/94D4D81D.asc %}</pre>
-      </div>
+    <div class="col-md-6">
+      <h3 class="text-center">{{ i18n.speakToUs.pgpKey }}</h3>
+      <pre class="pre-scrollable">{% include pgpKeys/94D4D81D.asc %}</pre>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="page-header">
-      <h2 class="text-center">{{ i18n.foundABug.title }}</h2>
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.foundABug.title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.foundABug.desktop.title }}</h3>
+      <p>
+        {{ i18n.foundABug.desktop.reportAtGitHub }}
+      </p>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <h3 class="text-center">{{ i18n.foundABug.desktop.title }}</h3>
-        <p>
-          {{ i18n.foundABug.desktop.reportAtGitHub }}
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h3 class="text-center">{{ i18n.foundABug.iosApp.title }}</h3>
-        <p>
-          {{ i18n.foundABug.iosApp.reportAtGitHub }}
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h3 class="text-center">{{ i18n.foundABug.androidApp.title }}</h3>
-        <p>
-          {{ i18n.foundABug.androidApp.reportAtGitHub }}
-        </p>
-      </div>
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.foundABug.iosApp.title }}</h3>
+      <p>
+        {{ i18n.foundABug.iosApp.reportAtGitHub }}
+      </p>
     </div>
-  </section>
-
-</div>
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.foundABug.androidApp.title }}</h3>
+      <p>
+        {{ i18n.foundABug.androidApp.reportAtGitHub }}
+      </p>
+    </div>
+  </div>
+</section>

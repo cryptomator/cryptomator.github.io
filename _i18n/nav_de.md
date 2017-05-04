@@ -6,7 +6,7 @@ navbar:
   toggle: Navigation umschalten
   freeDownload: Kostenloser Download
   securityArchitecture: Sicherheitsarchitektur
-  help: Hilfe &amp; Support
+  coop: Kooperationen
   contact: Kontakt
   donate: Spenden
 

@@ -4,58 +4,55 @@
 {% assign i18n = 'android' %}
 {% include i18n.liquid %}
 
-<div id="android" class="container fullheight top-most-element">
-  <h1 class="text-center">{{ i18n.title }} <span class="label label-warning">BETA</span></h1>
-  <div class="alert alert-warning" role="alert">{{ i18n.disclaimer }}</div>
+<h1 class="text-center">{{ i18n.title }} <span class="label label-warning">BETA</span></h1>
+<div class="alert alert-warning" role="alert">{{ i18n.disclaimer }}</div>
 
-  <section>
-    <div class="page-header">
-      <h2 class="text-center">{{ i18n.download.title }}</h2>
-    </div>
-    <div class="text-center">
-      <p class="lead">{{ i18n.download.version }} {{ latestRelease.title }} ({{ latestRelease.date | date: i18n.download.dateFormat }})</p>
-      <a itemprop="downloadUrl" href="{{ latestRelease.googlePlayUrl }}" data-ng-click="logDownload('androidGooglePlay')" class="btn btn-lg btn-primary" role="button">
-        <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.download.googlePlay }}
-      </a>
-      <a itemprop="downloadUrl" href="{{ latestRelease.directDownloadUrl }}" data-ng-click="logDownload('androidDirect')" class="btn btn-lg btn-primary" role="button">
-        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.direct }}
-      </a>
-      <p class="small">{{ i18n.download.requirements }}</p>
-    </div>
-  </section>
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.download.title }}</h2>
+  </div>
+  <div class="text-center">
+    <p class="lead">{{ i18n.download.version }} {{ latestRelease.title }} ({{ latestRelease.date | date: i18n.download.dateFormat }})</p>
+    <a itemprop="downloadUrl" href="{{ latestRelease.googlePlayUrl }}" data-ng-click="logDownload('androidGooglePlay')" class="btn btn-lg btn-primary" role="button">
+      <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.download.googlePlay }}
+    </a>
+    <a itemprop="downloadUrl" href="{{ latestRelease.directDownloadUrl }}" data-ng-click="logDownload('androidDirect')" class="btn btn-lg btn-primary" role="button">
+      <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.direct }}
+    </a>
+    <p class="small">{{ i18n.download.requirements }}</p>
+  </div>
+</section>
 
-  <section>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="page-header">
-          <h2 class="text-center">{{ i18n.changelog.title }}</h2>
-        </div>
-        <p>{{ i18n.changelog.content }}</p>
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="page-header">
+        <h2 class="text-center">{{ i18n.changelog.title }}</h2>
       </div>
-      <div class="col-md-6">
-        <div class="page-header">
-          <h2 class="text-center">{{ i18n.feedback.title }}</h2>
-        </div>
-        <p>{{ i18n.feedback.content }}</p>
-      </div>
+      <p>{{ i18n.changelog.content }}</p>
     </div>
-  </section>
-
-  <section>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="page-header">
-          <h2 class="text-center">{{ i18n.notes.title }}</h2>
-        </div>
-        <p>{{ i18n.notes.content }}</p>
+    <div class="col-md-6">
+      <div class="page-header">
+        <h2 class="text-center">{{ i18n.feedback.title }}</h2>
       </div>
-      <div class="col-md-6">
-        <div class="page-header">
-          <h2 class="text-center">{{ i18n.updates.title }}</h2>
-        </div>
-        <p>{{ i18n.updates.content }}</p>
-      </div>
+      <p>{{ i18n.feedback.content }}</p>
     </div>
-  </section>
+  </div>
+</section>
 
-</div>
+<section>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="page-header">
+        <h2 class="text-center">{{ i18n.notes.title }}</h2>
+      </div>
+      <p>{{ i18n.notes.content }}</p>
+    </div>
+    <div class="col-md-6">
+      <div class="page-header">
+        <h2 class="text-center">{{ i18n.updates.title }}</h2>
+      </div>
+      <p>{{ i18n.updates.content }}</p>
+    </div>
+  </div>
+</section>

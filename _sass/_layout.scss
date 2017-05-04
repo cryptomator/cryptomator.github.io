@@ -2,20 +2,28 @@ body {
   box-sizing: border-box;
 }
 
+.container-layout {
+  padding-bottom: $spacing-unit * 2;
+
+  >:first-child {
+    padding-top: $spacing-unit / 2;
+  }
+}
+
 .top-most-element {
   padding-top: 50px;
 
   h1 {
-    margin-top: $spacing-unit/2;
+    margin-top: $spacing-unit / 2;
   }
 }
 
-#cookieConsent {
-  position: fixed;
-  bottom: 0;
+#cookie-consent {
   background-color: $background-color;
   border-top: 1px solid $grey-color;
-  padding: $spacing-unit/2;
+  bottom: 0;
+  padding: $spacing-unit / 2;
+  position: fixed;
   width: 100%;
 
   > p {
@@ -25,9 +33,9 @@ body {
 
 #site-footer {
   background-color: $grey-color-dark;
-  color: #FFF;
+  color: $white-color;
+  padding-bottom: $spacing-unit * 2;
   padding-top: $spacing-unit;
-  padding-bottom: $spacing-unit*2;
 
   ul {
     list-style-type: none;
@@ -45,9 +53,9 @@ img.avatar {
 
 #subnav {
   > ul {
-    position: fixed;
-    top: 50px+$spacing-unit*2;
     max-width: 200px;
+    position: fixed;
+    top: 50px + $spacing-unit * 2;
 
     li.active a {
       background-color: $bg-green-light;
@@ -58,10 +66,10 @@ img.avatar {
 
 .green-background {
   background-color: $bg-green-medium;
-  color: #fff;
+  color: $white-color;
 
   a {
-    color: #fff;
+    color: $white-color;
     text-decoration: underline;
 
     &:hover {

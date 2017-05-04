@@ -4,16 +4,8 @@
 @charset "utf-8";
 @import "variables";
 
-#help {
-  padding-bottom: $spacing-unit*2;
-
-  >:first-child {
-    padding-top: $spacing-unit/2;
-  }
-}
-
 #freshwidget-embedded-form {
+  height: 500px;
   max-width: 720px;
   width: 100%;
-  height: 500px;
 }
