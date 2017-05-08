@@ -19,12 +19,9 @@ Cyberduck ist also die perfekte Ergänzung zu Cryptomator für alle, die keine l
 
 Auch Cyberduck ist Open-Source-Software, d.h. die gleichen Prinzipien von Cryptomator gelten ebenso für Cyberduck. Jeder kann den Programmcode einsehen, daher ist es unmöglich, Hintertüren einzubauen oder Schwachstellen zu verheimlichen.
 
-Mit Mountain Duck, basierend auf der Open-Source-Grundlage von Cyberduck, lassen sich Server- und Cloudspeicher als lokales Laufwerk in Finder unter macOS und im File Explorer unter Windows bereitstellen. Die Unterstützung von Cryptomator-Tresoren in Mountain Duck 2.0 ist bereits heute als Beta verfügbar.
-
-Cyberduck und Mountain Duck nutzen die Java-basierte kryptographische Bibliothek <a href="https://github.com/cryptomator/cryptolib" target="_blank">CryptoLib</a>, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
+Cyberduck nutzt die Java-basierte kryptographische Bibliothek <a href="https://github.com/cryptomator/cryptolib" target="_blank">CryptoLib</a>, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
 
 <a class="btn btn-primary" href="https://cyberduck.io/" target="_blank"><span class="glyphicon glyphicon-link"></span> Weitere Infos unter cyberduck.io</a>
-<a class="btn btn-primary" href="https://mountainduck.io/" target="_blank"><span class="glyphicon glyphicon-link"></span> Weitere Infos unter mountainduck.io</a>
 
 <div class="row">
   <div class="col-sm-12 col-md-4">
