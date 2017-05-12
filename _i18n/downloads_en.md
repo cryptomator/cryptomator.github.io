@@ -6,6 +6,7 @@ loadScreen:
   title: Cryptomator download
   choosingDownload: Choosing download for your operating system…
 quickGuide: Quick Guide
+tutorialVideo: Tutorial Video
 download:
   button: Download
   button64: Download 64 Bit
