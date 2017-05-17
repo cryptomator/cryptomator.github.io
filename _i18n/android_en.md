@@ -20,7 +20,7 @@ changelog:
     <li>Added OneDrive support [<a href="https://github.com/cryptomator/cryptomator-android/issues/10" target="_blank">#10</a>]</li>
     <li>Added WebDAV support [<a href="https://github.com/cryptomator/cryptomator-android/issues/11" target="_blank">#11</a>]</li>
     <li>Added German translation</li>
-    <li>Further crash/bug fixes and design improvements</li>
+    <li>Further crash/bug fixes and design improvements [<a href="https://github.com/cryptomator/cryptomator-android/issues/53" target="_blank">#53</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/46" target="_blank">#46</a>, and other]</li>
     </ul>
 feedback:
   title: Feedback
@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Notes
   content: >
-    WebDAV is still missing support for self-signed certificates. This will be added with an upcoming patch. In addition, not all WebDAV servers, especially ones which issue redirects, are supported.
+    Everything is fine! :cat:
 updates:
   title: Updates
   content: >
