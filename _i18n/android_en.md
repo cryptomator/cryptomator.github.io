@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Notes
   content: >
-    Everything is fine! :cat:
+    There are known issues with some WebDAV servers (e.g., GMX MediaCenter) that will be fixed with the next minor update.
 updates:
   title: Updates
   content: >

@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Alles ist gut! :cat:
+    Die Verbindung zu einigen WebDAV-Servern funktioniert nicht richtig (wie z.B. mit GMX MediaCenter). Das Problem wird mit dem nächsten Update behoben.
 updates:
   title: Updates
   content: >
