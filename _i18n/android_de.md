@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Die Verbindung zu einigen WebDAV-Servern funktioniert nicht richtig (wie z.B. mit GMX MediaCenter). Das Problem wird mit dem nächsten Update behoben.
+    Die <a href="https://github.com/cryptomator/cryptomator-android/issues/61" target="_blank">Verbindung zu einigen WebDAV-Servern funktioniert nicht richtig (wie z.B. mit GMX MediaCenter)</a>. Das Problem wird mit dem nächsten Update behoben. Außerdem untersuchen wir ein <a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">Problem mit OneDrive</a>.
 updates:
   title: Updates
   content: >

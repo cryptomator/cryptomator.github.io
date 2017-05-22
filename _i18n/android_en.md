@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Notes
   content: >
-    There are known issues with some WebDAV servers (e.g., GMX MediaCenter) that will be fixed with the next minor update.
+    There are <a href="https://github.com/cryptomator/cryptomator-android/issues/61" target="_blank">known issues with some WebDAV servers (e.g., GMX MediaCenter)</a> that will be fixed with the next minor update. We're also investigating an <a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">issue with OneDrive</a>.
 updates:
   title: Updates
   content: >
