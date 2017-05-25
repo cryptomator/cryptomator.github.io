@@ -36,4 +36,6 @@ updates:
   title: Updates
   content: >
     To get updated consider subscribing to our <a href="/#newsletter">newsletter</a> or visit this page once in a while.
+screenshots:
+  title: Screenshots
 ---
