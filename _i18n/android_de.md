@@ -20,7 +20,7 @@ changelog:
     <li>Unterstützung für OneDrive hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/10" target="_blank">#10</a>]</li>
     <li>Unterstützung für WebDAV hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/11" target="_blank">#11</a>]</li>
     <li>Deutsche Übersetzung hinzugefügt</li>
-    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design [<a href="https://github.com/cryptomator/cryptomator-android/issues/46" target="_blank">#46</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/53" target="_blank">#53</a> und andere]</li>
+    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design [<a href="https://github.com/cryptomator/cryptomator-android/issues/46" target="_blank">#46</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/53" target="_blank">#53</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/61" target="_blank">#61</a> und andere]</li>
     </ul>
 feedback:
   title: Feedback
