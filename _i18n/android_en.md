@@ -20,7 +20,7 @@ changelog:
     <li>Added OneDrive support [<a href="https://github.com/cryptomator/cryptomator-android/issues/10" target="_blank">#10</a>]</li>
     <li>Added WebDAV support [<a href="https://github.com/cryptomator/cryptomator-android/issues/11" target="_blank">#11</a>]</li>
     <li>Added German translation</li>
-    <li>Further crash/bug fixes and design improvements [<a href="https://github.com/cryptomator/cryptomator-android/issues/53" target="_blank">#53</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/46" target="_blank">#46</a>, and other]</li>
+    <li>Further crash/bug fixes and design improvements [<a href="https://github.com/cryptomator/cryptomator-android/issues/46" target="_blank">#46</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/53" target="_blank">#53</a>, and other]</li>
     </ul>
 feedback:
   title: Feedback
@@ -31,7 +31,7 @@ feedback:
 notes:
   title: Notes
   content: >
-    There are <a href="https://github.com/cryptomator/cryptomator-android/issues/61" target="_blank">known issues with some WebDAV servers (e.g., GMX MediaCenter)</a> that will be fixed with the next minor update. We're also investigating an <a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">issue with OneDrive</a>.
+    We're currently investigating an <a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">issue with OneDrive</a>.
 updates:
   title: Updates
   content: >
