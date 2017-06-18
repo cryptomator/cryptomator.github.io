@@ -28,7 +28,7 @@
       <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
       <meta itemprop="operatingSystem" content="Windows"/>
       <h2>{{ i18n.windows.title }}</h2>
-      <p class="small">Version {{winVersion}} • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
+      <p class="small">Version {{winVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{winVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -69,7 +69,7 @@
       <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
       <meta itemprop="operatingSystem" content="Mac"/>
       <h2>{{ i18n.mac.title }}</h2>
-      <p class="small">Version {{macVersion}} • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
+      <p class="small">Version {{macVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{macVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -104,7 +104,7 @@
       <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
       <meta itemprop="operatingSystem" content="Linux"/>
       <h2>{{ i18n.linux.title }}</h2>
-      <p class="small">Version {{linuxVersion}} • <a href="#allVersions">{{ i18n.allVersions.title }}</a><br/>{{ i18n.linux.requirements }}</p>
+      <p class="small">Version {{linuxVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{linuxVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a><br/>{{ i18n.linux.requirements }}</p>
 
       <div class="panel-group" id="linuxDownloadPanel">
         <div class="panel panel-default">
@@ -226,7 +226,7 @@
   <section id="allVersions" class="fullheight download">
     <div class="text-center">
       <h2>{{ i18n.allVersions.title }}</h2>
-      <p class="lead">{{ i18n.allVersions.version }} {{ latestRelease.title }} ({{ latestRelease.date | date: i18n.allVersions.dateFormat }})</p>
+      <p class="lead">{{ i18n.allVersions.version }} {{ latestRelease.tags[0] }} ({{ latestRelease.dates[0] | date: i18n.allVersions.dateFormat }})</p>
     </div>
 
     <table class="table table-hover">
@@ -239,12 +239,12 @@
         <col style="width: 20%"/>
       </colgroup>
       <thead>
-        <tr><th>{{ i18n.allVersions.version }}</th><th>{{ i18n.allVersions.notes }}</th><th>{{ i18n.allVersions.releaseDate }}</th><th>Windows</th><th>Mac</th><th>Linux</th></tr>
+        <tr><th>{{ i18n.allVersions.version }}</th><th>{{ i18n.allVersions.changelog }}</th><th>{{ i18n.allVersions.releaseDate }}</th><th>Windows</th><th>Mac</th><th>Linux</th></tr>
       </thead>
       <tbody>
       {% for release in sortedReleases %}
         {% include computeReleaseData.liquid %}
-        <tr>
+        <tr data-ng-show="!{{release.beta}} || ({{release.beta}} &amp;&amp; showOldBetaReleases)">
           <th>
             {{release.title}}
             {% if release.beta %}
@@ -252,9 +252,15 @@
             {% endif %}
           </th>
           <td>
-            <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{release.tag}}" target="_blank" role="button">{{ i18n.allVersions.changelog }}</a>
+            {% for tag in release.tags %}
+              <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{tag}}" target="_blank" role="button">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
           </td>
-          <td>{{release.date | date: "%Y-%m-%d" }}</td>
+          <td>
+            {% for date in release.dates %}
+              {{ date | date: "%Y-%m-%d" }}{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </td>
           <td>
             {% if winSha1Checksum64 or winSha256Checksum64 %}
             <a href="{{winUrl64}}" download="{{winFile64}}" data-ng-click="sendGaBtnClick('{{winFile64}}')" class="btn btn-xs btn-default" role="button">
@@ -309,7 +315,8 @@
       </tbody>
     </table>
 
-    <p>{{ i18n.allVersions.jarDownloadHint }}</p>
+    <button type="button" class="btn btn-default" data-ng-click="showOldBetaReleases = true" data-ng-show="!showOldBetaReleases">{{ i18n.allVersions.showOldBetaReleases }}</button>
+    <button type="button" class="btn btn-default" data-ng-click="showOldBetaReleases = false" data-ng-show="showOldBetaReleases">{{ i18n.allVersions.hideOldBetaReleases }}</button>
   </section>
 
   <div class="modal" tabindex="-1" role="dialog" id="thanks-modal">
