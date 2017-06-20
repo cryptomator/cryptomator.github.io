@@ -61,6 +61,15 @@
   margin-top: $spacing-unit / 4;
 }
 
+.release {
+  margin-bottom: 0;
+}
+
+.former-release {
+  font-size: $small-font-size;
+  text-indent: 1em;
+}
+
 #thanks-modal {
   .modal-body {
     min-height: 158px;

@@ -253,12 +253,12 @@
           </th>
           <td>
             {% for tag in release.tags %}
-              <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{tag}}" target="_blank" role="button">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+              <p class="release{% if forloop.first == false %} former-release{% endif %}"><a href="https://github.com/cryptomator/cryptomator/releases/tag/{{tag}}" target="_blank" role="button">{{ tag }}</a></p>
             {% endfor %}
           </td>
           <td>
             {% for date in release.dates %}
-              {{ date | date: "%Y-%m-%d" }}{% if forloop.last == false %}, {% endif %}
+              <p class="release{% if forloop.first == false %} former-release{% endif %}">{{ date | date: "%Y-%m-%d" }}</p>
             {% endfor %}
           </td>
           <td>
