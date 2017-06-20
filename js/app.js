@@ -288,6 +288,8 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
     }
   };
 
+  $scope.showOldBetaReleases = false;
+
   showModalIfSuggestedByUrl();
 
 }]);

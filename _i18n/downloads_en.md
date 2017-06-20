@@ -35,12 +35,11 @@ allVersions:
   title: All Versions
   dateFormat: "%B %d, %Y"
   version: Version
-  notes: Notes
+  changelog: Changelog
   releaseDate: Release Date
   releaseDateFormat: "%Y-%m-%d"
-  changelog: Changelog
-  jarDownloadHint: >
-    All versions can be loaded as a JAR-file from <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub releases</a>.
+  showOldBetaReleases: Show old beta versions
+  hideOldBetaReleases: Hide old beta versions
 thanks:
   title: Thank you for your donation to Cryptomator!
   content: Your payment was successful and you have been redirected to the Downloads page. Happy crypting!

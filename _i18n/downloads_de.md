@@ -35,12 +35,11 @@ allVersions:
   title: Alle Versionen
   dateFormat: "%d.%m.%Y"
   version: Version
-  notes: Hinweise
+  changelog: Änderungen
   releaseDate: Veröffentlicht am
   releaseDateFormat: "%Y-%m-%d"
-  changelog: Änderungen
-  jarDownloadHint: >
-    Alle Versionen können als JAR-Datei von <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">GitHub Releases</a> heruntergeladen werden.
+  showOldBetaReleases: Alte Beta-Versionen anzeigen
+  hideOldBetaReleases: Alte Beta-Versionen verstecken
 thanks:
   title: Vielen Dank für Ihre Spende an Cryptomator!
   content: Ihre Zahlung war erfolgreich und Sie wurden zur Downloads-Seite weitergeleitet.
