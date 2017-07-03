@@ -12,7 +12,7 @@
     <h2 class="text-center">{{ i18n.download.title }}</h2>
   </div>
   <div class="text-center">
-    <p class="lead">{{ i18n.download.version }} {{ latestRelease.title }} ({{ latestRelease.date | date: i18n.download.dateFormat }})</p>
+    <p class="lead">{{ i18n.download.version }} {{ latestRelease.version }} ({{ latestRelease.date | date: i18n.download.dateFormat }})</p>
     <a itemprop="downloadUrl" href="{{ latestRelease.googlePlayUrl }}" data-ng-click="logDownload('androidGooglePlay')" class="btn btn-lg btn-primary" role="button">
       <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.download.googlePlay }}
     </a>

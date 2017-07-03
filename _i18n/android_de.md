@@ -17,10 +17,15 @@ changelog:
   title: Änderungen
   content: >
     <ul>
-    <li>Unterstützung für OneDrive hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/10" target="_blank">#10</a>]</li>
-    <li>Unterstützung für WebDAV hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/11" target="_blank">#11</a>]</li>
-    <li>Deutsche Übersetzung hinzugefügt</li>
-    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design [<a href="https://github.com/cryptomator/cryptomator-android/issues/46" target="_blank">#46</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/53" target="_blank">#53</a>, <a href="https://github.com/cryptomator/cryptomator-android/issues/61" target="_blank">#61</a> und andere]</li>
+    <li>Kompatibilität zur Tresor-Version 6 hinzugefügt</li>
+    <li>Unterstützung für externen Speicher hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/50" target="_blank">#50</a>]</li>
+    <li>Unterstützung für Fingerabdruck hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/14" target="_blank">#14</a>]</li>
+    <li>Mehrfachselektion für Dateiupload hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/30" target="_blank">#30</a>]</li>
+    <li>Erstellen und Editieren von Textdatein hinzugefügt</li>
+    <li>Abmelden von Cloudspeicher-Diensten in Einstellungen hinzugefügt</li>
+    <li>Dateinamen-Blacklist verbessert, man kann nun Dateien und Ordner sehen, die mit einem Punkt "." beginnen [<a href="https://github.com/cryptomator/cryptomator-android/issues/60" target="_blank">#60</a>]</li>
+    <li>Unerreichbare Tresore in OneDrive behoben [<a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">#55</a>]</li>
+    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design und Performance</li>
     </ul>
 feedback:
   title: Feedback
@@ -31,7 +36,11 @@ feedback:
 notes:
   title: Hinweise
   content: >
-    Wir untersuchen derzeit ein <a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">Problem mit OneDrive</a>.
+    <ul>
+    <li>Möglicherweise müssen Sie sich erneut beim Cloudspeicher-Dienst anmelden.</li>
+    <li>Falls Sie noch keinen Schutz (PIN/Passwort o.ä.) für die Bildschirmsperre eingerichtet haben, werden Sie in der App dazu aufgefordert.</li>
+    <li>Die App benötigt eine neue Berechtigung für die Unterstützung des Fingerabdrucks.</li>
+    </ul>
 updates:
   title: Updates
   content: >
