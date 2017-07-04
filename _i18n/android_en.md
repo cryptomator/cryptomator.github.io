@@ -37,6 +37,7 @@ notes:
   title: Notes
   content: >
     <ul>
+    <li><strong>To users with Android 5.0 or higher:</strong> If you're updating Cryptomator from an older version and already added vaults from local storage, you may have to remove the vault from the list and add it again.</li>
     <li>You may have to log in to the cloud storage service again.</li>
     <li>If you haven't assigned a screen lock protection (e.g., PIN or password) already, you'll be asked to do so in the app.</li>
     <li>The app requires a new permission for fingerprint support.</li>

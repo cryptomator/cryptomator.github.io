@@ -37,6 +37,7 @@ notes:
   title: Hinweise
   content: >
     <ul>
+    <li><strong>An Nutzer mit Android 5.0 oder höher:</strong> Falls Sie Cryptomator von einer älteren Version aktualisieren und bereits einen Tresor aus dem lokalen Speicher hinzugefügt haben, müssen Sie möglicherweise den Tresor aus der Liste entfernen und neu hinzufügen.</li>
     <li>Möglicherweise müssen Sie sich erneut beim Cloudspeicher-Dienst anmelden.</li>
     <li>Falls Sie noch keinen Schutz (PIN/Passwort o.ä.) für die Bildschirmsperre eingerichtet haben, werden Sie in der App dazu aufgefordert.</li>
     <li>Die App benötigt eine neue Berechtigung für die Unterstützung des Fingerabdrucks.</li>
