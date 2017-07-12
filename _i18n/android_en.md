@@ -17,15 +17,10 @@ changelog:
   title: Changelog
   content: >
     <ul>
-    <li>Added compatibility to vault version 6</li>
-    <li>Added external storage support [<a href="https://github.com/cryptomator/cryptomator-android/issues/50" target="_blank">#50</a>]</li>
-    <li>Added fingerprint support [<a href="https://github.com/cryptomator/cryptomator-android/issues/14" target="_blank">#14</a>]</li>
-    <li>Added multiple selection for file upload [<a href="https://github.com/cryptomator/cryptomator-android/issues/30" target="_blank">#30</a>]</li>
-    <li>Added creation and editing of text files</li>
-    <li>Added logout of cloud storage services in settings</li>
-    <li>Improved filename blacklist, you can now see files and folders that start with a period "." [<a href="https://github.com/cryptomator/cryptomator-android/issues/60" target="_blank">#60</a>]</li>
-    <li>Fixed inaccessible vaults in OneDrive [<a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">#55</a>]</li>
-    <li>Further crash/bug fixes and design/performance improvements</li>
+    <li>Improved and fixed local storage support on Android 5.0 or higher [<a href="https://github.com/cryptomator/cryptomator-android/issues/68" target="_blank">#68</a>]</li>
+    <li>Improved logging for WebDAV</li>
+    <li>Fixed move operation in WebDAV</li>
+    <li>Fixed fingerprint support on some devices (e.g., OnePlus 2) [<a href="https://github.com/cryptomator/cryptomator-android/issues/70" target="_blank">#70</a>]</li>
     </ul>
 feedback:
   title: Feedback
@@ -37,7 +32,6 @@ notes:
   title: Notes
   content: >
     <ul>
-    <li><strong>To users with Android 5.0 or higher:</strong> If you're updating Cryptomator from an older version and already added vaults from local storage, you may have to remove the vault from the list and add it again.</li>
     <li>You may have to log in to the cloud storage service again.</li>
     <li>If you haven't assigned a screen lock protection (e.g., PIN or password) already, you'll be asked to do so in the app.</li>
     <li>The app requires a new permission for fingerprint support.</li>

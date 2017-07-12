@@ -17,15 +17,10 @@ changelog:
   title: Änderungen
   content: >
     <ul>
-    <li>Kompatibilität zur Tresor-Version 6 hinzugefügt</li>
-    <li>Unterstützung für externen Speicher hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/50" target="_blank">#50</a>]</li>
-    <li>Unterstützung für Fingerabdruck hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/14" target="_blank">#14</a>]</li>
-    <li>Mehrfachselektion für Dateiupload hinzugefügt [<a href="https://github.com/cryptomator/cryptomator-android/issues/30" target="_blank">#30</a>]</li>
-    <li>Erstellen und Editieren von Textdatein hinzugefügt</li>
-    <li>Abmelden von Cloudspeicher-Diensten in Einstellungen hinzugefügt</li>
-    <li>Dateinamen-Blacklist verbessert, man kann nun Dateien und Ordner sehen, die mit einem Punkt "." beginnen [<a href="https://github.com/cryptomator/cryptomator-android/issues/60" target="_blank">#60</a>]</li>
-    <li>Unerreichbare Tresore in OneDrive behoben [<a href="https://github.com/cryptomator/cryptomator-android/issues/55" target="_blank">#55</a>]</li>
-    <li>Weitere Absturz- und Fehlerbehebungen sowie Verbesserungen am Design und Performance</li>
+    <li>Unterstützung für lokalen Speicher verbessert und behoben auf Android 5.0 oder höher [<a href="https://github.com/cryptomator/cryptomator-android/issues/68" target="_blank">#68</a>]</li>
+    <li>Logging für WebDAV verbessert</li>
+    <li>Verschieben-Operation in WebDAV behoben</li>
+    <li>Unterstützung für Fingerabdruck auf einigen Geräten (z.B. OnePlus 2) behoben [<a href="https://github.com/cryptomator/cryptomator-android/issues/70" target="_blank">#70</a>]</li>
     </ul>
 feedback:
   title: Feedback
@@ -37,7 +32,6 @@ notes:
   title: Hinweise
   content: >
     <ul>
-    <li><strong>An Nutzer mit Android 5.0 oder höher:</strong> Falls Sie Cryptomator von einer älteren Version aktualisieren und bereits einen Tresor aus dem lokalen Speicher hinzugefügt haben, müssen Sie möglicherweise den Tresor aus der Liste entfernen und neu hinzufügen.</li>
     <li>Möglicherweise müssen Sie sich erneut beim Cloudspeicher-Dienst anmelden.</li>
     <li>Falls Sie noch keinen Schutz (PIN/Passwort o.ä.) für die Bildschirmsperre eingerichtet haben, werden Sie in der App dazu aufgefordert.</li>
     <li>Die App benötigt eine neue Berechtigung für die Unterstützung des Fingerabdrucks.</li>
