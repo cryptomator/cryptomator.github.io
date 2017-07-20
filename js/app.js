@@ -37,7 +37,7 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
   $rootScope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
 
   $rootScope.donation = {
-    amount: 10,
+    amount: 25,
     currencyEUR: {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'},
     currencyGBP: {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'},
     currencyUSD: {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'},
