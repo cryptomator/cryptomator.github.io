@@ -7,7 +7,7 @@ navbar:
   freeDownload: Free Download
   securityArchitecture: Security Architecture
   coop: Cooperations
-  contact: Contact
+  support: Support
   donate: Donate
 
 payment:

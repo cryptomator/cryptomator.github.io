@@ -26,7 +26,7 @@ feedback:
   title: Feedback
   content: >
     The beta version is not feature-complete and has known issues, but we're of course open for feature requests, suggestions, and obviously bug reports.<br/>
-    You can send us feedback on <a href="https://github.com/cryptomator/cryptomator-android" target="_blank">GitHub</a>. Please review and follow our <a href="https://github.com/cryptomator/cryptomator-android/blob/master/CONTRIBUTING.md" target="_blank">contribution guidelines</a>. :cat:<br/>
+    You can send us feedback in the <a href="https://community.cryptomator.org/c/help/android" target="_blank">Cryptomator Community</a> and on <a href="https://github.com/cryptomator/cryptomator-android" target="_blank">GitHub</a>. Please review and follow our <a href="https://github.com/cryptomator/cryptomator-android/blob/master/CONTRIBUTING.md" target="_blank">contribution guidelines</a>. :cat:<br/>
     Thank you!
 notes:
   title: Notes

@@ -9,6 +9,9 @@
   </div>
   <div class="row">
     <div class="col-md-6">
+      <h3 class="text-center">{{ i18n.speakToUs.community.title }}</h3>
+      <p>{{ i18n.speakToUs.community.contactUs }}</p>
+
       <h3 class="text-center">{{ i18n.speakToUs.support.title }}</h3>
       <p>
         {{ i18n.speakToUs.support.contactUs }}:<br/>
@@ -17,7 +20,6 @@
       {% if i18n.speakToUs.support.weSpeakGerman %}
       <p>{{ i18n.speakToUs.support.weSpeakGerman }}</p>
       {% endif %}
-
 
       <h3 class="text-center">{{ i18n.speakToUs.press.title }}</h3>
       <p>
@@ -42,25 +44,27 @@
 
 <section>
   <div class="page-header">
-    <h2 class="text-center">{{ i18n.foundABug.title }}</h2>
+    <h2 class="text-center">{{ i18n.github.title }}</h2>
   </div>
   <div class="row">
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.foundABug.desktop.title }}</h3>
+      <h3 class="text-center">{{ i18n.github.desktop.title }}</h3>
       <p>
-        {{ i18n.foundABug.desktop.reportAtGitHub }}
+        {{ i18n.github.desktop.repository }}
       </p>
     </div>
+
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.foundABug.iosApp.title }}</h3>
+      <h3 class="text-center">{{ i18n.github.iosApp.title }}</h3>
       <p>
-        {{ i18n.foundABug.iosApp.reportAtGitHub }}
+        {{ i18n.github.iosApp.repository }}
       </p>
     </div>
+
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.foundABug.androidApp.title }}</h3>
+      <h3 class="text-center">{{ i18n.github.androidApp.title }}</h3>
       <p>
-        {{ i18n.foundABug.androidApp.reportAtGitHub }}
+        {{ i18n.github.androidApp.repository }}
       </p>
     </div>
   </div>

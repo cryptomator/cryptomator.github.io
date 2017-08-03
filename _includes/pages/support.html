@@ -1,0 +1,48 @@
+{% assign i18n = 'support' %}
+{% include i18n.liquid %}
+
+<h1 class="text-center">{{ i18n.title }}</h1>
+
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.gethelp }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.documentation.title }}</h3>
+      <p>
+        {{ i18n.documentation.content }}
+      </p>
+      <p>
+        <a href="https://community.cryptomator.org/c/kb" class="btn btn-primary" target="_blank">
+          <span class="glyphicon glyphicon-book"></span> {{ i18n.documentation.action }}
+        </a>
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.community.title }}</h3>
+      <p>
+        {{ i18n.community.content }}
+      </p>
+      <p>
+        <a href="https://community.cryptomator.org/" class="btn btn-primary" target="_blank">
+          <span class="glyphicon glyphicon-user"></span> {{ i18n.community.action }}
+        </a>
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.enterprise.title }}</h3>
+      <p>
+        {{ i18n.enterprise.content }}
+      </p>
+      <p>
+        <a href="mailto:&#115;&#097;&#108;&#101;&#115;&#064;&#099;&#114;&#121;&#112;&#116;&#111;&#109;&#097;&#116;&#111;&#114;&#046;&#111;&#114;&#103;" class="btn btn-primary" target="_blank">
+          <span class="glyphicon glyphicon-envelope"></span> {{ i18n.enterprise.action }}
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

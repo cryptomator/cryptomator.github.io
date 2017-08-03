@@ -11,7 +11,7 @@ legal:
   title: Rechtliches
 help:
   title: Hilfe
-  knowledgeBase: Knowledge Base
+  community: Community
   support: Support
 connect:
   title: Uns folgen
