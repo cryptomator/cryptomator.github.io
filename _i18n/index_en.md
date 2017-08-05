@@ -37,7 +37,7 @@ howto:
     title: Files get encrypted individually
     content: >
       <p>Everything you put onto the virtual hard drive ends up encrypted in your vault.</p>
-      <p>Other than disk encryption utilities, Cryptomator encrypts each file for its own. So if you edit just a small text file, only the corresponding encrypted file is changed.</p>
+      <p>Compared to other disk encryption utilities, Cryptomator encrypts each file individually. So if you edit just a small text file, only the corresponding encrypted file is changed.</p>
       <p>This way the synchronization client of your cloud storage provider knows exactly what needs to be uploaded and what doesn&apos;t.</p>
 
 features:
