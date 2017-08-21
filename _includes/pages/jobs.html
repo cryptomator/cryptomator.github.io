@@ -1,0 +1,50 @@
+{% assign i18n = 'jobs' %}
+{% include i18n.liquid %}
+
+<h1 class="text-center">{{ i18n.title }}</h1>
+
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.subtitle }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3 class="text-center">{{ i18n.one.title }}</h3>
+      <p>
+        {{ i18n.one.content }}
+      </p>
+      <p>
+        <a href="/jobs/2017-08 Technischer Support_Online.pdf" class="btn btn-primary" target="_blank">
+          <span class="glyphicon glyphicon-file"></span> {{ i18n.action }}
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3 class="text-center">{{ i18n.two.title }}</h3>
+      <p>
+        {{ i18n.two.content }}
+      </p>
+      <p>
+        <a href="/jobs/2017-08 iOS-App-Entwicklung_Online.pdf" class="btn btn-primary" target="_blank">
+          <span class="glyphicon glyphicon-file"></span> {{ i18n.action }}
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3 class="text-center">{{ i18n.three.title }}</h3>
+      <p>
+        {{ i18n.three.content }}
+      </p>
+      <p>
+        <a href="/jobs/2017-08 Cloud-Infrastruktur-Aufbau_Online.pdf" class="btn btn-primary" target="_blank">
+          <span class="glyphicon glyphicon-file"></span> {{ i18n.action }}
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

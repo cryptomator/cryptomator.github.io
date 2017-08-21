@@ -21,6 +21,7 @@ contribute:
   title: Contribute
   reportABug: Report Bug
   donate: Donate
+  jobs: Jobs
 l10n:
   title: Language
 ---

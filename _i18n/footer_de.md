@@ -21,6 +21,7 @@ contribute:
   title: Etwas beitragen
   reportABug: Fehler melden
   donate: Spenden
+  jobs: Jobs
 l10n:
   title: Sprache
 ---
