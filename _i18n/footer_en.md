@@ -19,7 +19,7 @@ connect:
   contact: Contact
 contribute:
   title: Contribute
-  reportABug: Report Bug
+  translate: Translate
   donate: Donate
   jobs: Jobs
 l10n:

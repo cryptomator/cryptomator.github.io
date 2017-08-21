@@ -19,7 +19,7 @@ connect:
   contact: Kontakt
 contribute:
   title: Etwas beitragen
-  reportABug: Fehler melden
+  translate: Übersetzen
   donate: Spenden
   jobs: Jobs
 l10n:
