@@ -14,6 +14,6 @@ community:
   action: Cryptomator Community
 enterprise:
   title: Enterprise Support
-  content: Falls Sie direkten Support vom Cryptomator-Entwickler-Team benötigen oder spezifische SLA-Anforderungen haben, kontaktieren Sie unser Sales-Team.
+  content: Für bezahlten Support oder Support-Verträge mit SLAs, kontaktieren Sie unser Sales-Team.
   action: Sales kontaktieren
 ---
