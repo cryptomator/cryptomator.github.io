@@ -17,25 +17,23 @@ changelog:
   title: Änderungen
   content: >
     <ul>
-    <li>Unterstützung für lokalen Speicher verbessert und behoben auf Android 5.0 oder höher [<a href="https://github.com/cryptomator/cryptomator-android/issues/68" target="_blank">#68</a>]</li>
-    <li>Logging für WebDAV verbessert</li>
-    <li>Verschieben-Operation in WebDAV behoben</li>
-    <li>Unterstützung für Fingerabdruck auf einigen Geräten (z.B. OnePlus 2) behoben [<a href="https://github.com/cryptomator/cryptomator-android/issues/70" target="_blank">#70</a>]</li>
+    <li>Funktion zum automatischen Sperren aller Tresore hinzugefügt</li>
+    <li>Funktion zum Ändern des Passworts eines Tresors hinzugefügt</li>
+    <li>Laufende Uploads können jetzt abgebrochen werden</li>
+    <li>WebDAV-Server, die Digest-Authentication nutzen, werden jetzt unterstützt</li>
+    <li>Passwörter können während der Eingabe angezeigt werden</li>
+    <li>Weitere Fehlerbehebungen und Laufzeit- und Oberflächenverbesserungen</li>
     </ul>
 feedback:
   title: Feedback
   content: >
-    Die Beta-Version beinhaltet noch lange nicht alle Features, die wir für die finale Version vorgesehen haben, und hat uns bekannte Bugs, aber wir sind trotzdem offen für Vorschläge und natürlich Fehlerberichte.<br/>
+    Wir sind offen für Vorschläge und natürlich Fehlerberichte. Berücksichtigen Sie bitte dabei, dass es sich um eine Beta-Verison handelt.<br/>
     Sie können uns Ihr Feedback in der <a href="https://community.cryptomator.org/c/help/android" target="_blank">Cryptomator Community</a> und auf <a href="https://github.com/cryptomator/cryptomator-android" target="_blank">GitHub</a> mitteilen. Bitte lesen Sie unsere <a href="https://github.com/cryptomator/cryptomator-android/blob/master/CONTRIBUTING.md" target="_blank">Contribution Guidelines</a> sorgfältig durch. :cat:<br/>
     Vielen Dank!
 notes:
   title: Hinweise
   content: >
-    <ul>
-    <li>Möglicherweise müssen Sie sich erneut beim Cloudspeicher-Dienst anmelden.</li>
-    <li>Falls Sie noch keinen Schutz (PIN/Passwort o.ä.) für die Bildschirmsperre eingerichtet haben, werden Sie in der App dazu aufgefordert.</li>
-    <li>Die App benötigt eine neue Berechtigung für die Unterstützung des Fingerabdrucks.</li>
-    </ul>
+    Die Version 0.7.0 betrachten wir als ernstzunehmenden Release Candidate für die erste finale Version 1.0.0. Wir sind fast am Ziel! :tada:
 updates:
   title: Updates
   content: >
