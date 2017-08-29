@@ -32,7 +32,7 @@ howto:
       <p><em>Transparent encryption</em> means you will not notice any difference in working with your files.</p>
       <p>While the <em>vault</em> containing your encrypted data resides somewhere in your cloud folder, Cryptomator provides a virtual hard drive through which you can access your files.</p>
       <p>You can work on this drive as if it were a conventional USB flash drive.</p>
-    scrollButton: See how your encrypted files look like
+    scrollButton: See how your encrypted files look
   individually:
     title: Files get encrypted individually
     content: >
