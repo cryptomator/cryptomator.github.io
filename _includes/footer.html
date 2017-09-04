@@ -54,7 +54,6 @@
         <h4>{{ i18n.l10n.title }}</h4>
         <ul>
         {% for currentLanguage in site.languages %}
-          {% assign urlLanguage = currentLanguage %}
           {% include determineCurrentPageInUrlLanguage.liquid %}
           <li><a href="{{ currentPageUrlInUrlLanguage }}">{{ currentLanguage.title }}</a></li>
         {% endfor %}

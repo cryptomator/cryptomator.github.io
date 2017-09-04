@@ -35,7 +35,6 @@
           <ul class="dropdown-menu">
             {% for currentLanguage in site.languages %}
               {% if language.name != currentLanguage.name %}
-                {% assign urlLanguage = currentLanguage %}
                 {% include determineCurrentPageInUrlLanguage.liquid %}
                 <li><a href="{{ currentPageUrlInUrlLanguage }}">{{currentLanguage.title}}</a></li>
               {% endif %}
