@@ -13,7 +13,7 @@ community:
   content: Ask for help in the Cryptomator Community or search existing solutions.
   action: Cryptomator Community
 enterprise:
-  title: Enterprise Support
-  content: For paid support or SLA contracts, contact our sales team to get an offer.
-  action: Contact Sales
+  title: Business Support
+  content: For details regarding our business support please refer to our <i>For Business</i> page.
+  action: For Business
 ---

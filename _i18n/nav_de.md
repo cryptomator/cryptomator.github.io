@@ -9,6 +9,7 @@ navbar:
   coop: Kooperationen
   support: Support
   donate: Spenden
+  business: Für Unternehmen
 
 payment:
   type:
