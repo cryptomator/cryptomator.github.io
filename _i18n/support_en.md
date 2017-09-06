@@ -14,6 +14,6 @@ community:
   action: Cryptomator Community
 enterprise:
   title: Enterprise Support
-  content: For paid support or SLA contracts, contact our sales team to get an offer.
-  action: Contact Sales
+  content: For details on our enterprise support, please visit our <i>Enterprise</i> page.
+  action: Enterprise
 ---
