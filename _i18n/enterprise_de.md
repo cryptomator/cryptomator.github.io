@@ -2,8 +2,8 @@
 language: de
 context: enterprise
 
-title: Unternehmen
-subtitle: Cryptomator kann kundenspezifisch adaptiert werden
+title: Enterprise
+subtitle: Setzen Sie Cryptomator in Ihrem Unternehmen ein
 whitelabel:
   title: White-Labeling
   content: >
@@ -11,7 +11,7 @@ whitelabel:
 support:
   title: Enterprise Support
   content: >
-    Für Ihre Anforderungen bieten wir unterschiedliche Support-Pakete an. Schreiben Sie uns, gerne erstellen wir Ihnen ein Angebot.
+    Für Ihre Anforderungen bieten wir unterschiedliche Support-Pakete an.
 libraries:
   title: Krypto-Bibliotheken
   content: >
@@ -19,6 +19,6 @@ libraries:
 development:
   title: Individualentwicklung
   content: >
-    Basierend auf dem Cryptomator-Verschlüsselungsschema entwickeln wir für Sie individuelle Anwendungen und Systeme. Wir beraten Sie gerne.
+    Basierend auf dem Cryptomator-Verschlüsselungsschema entwickeln wir für Sie individuelle Anwendungen und Systeme.
 contactUs: Kontaktieren Sie uns
 ---

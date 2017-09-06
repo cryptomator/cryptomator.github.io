@@ -8,7 +8,7 @@ navbar:
   securityArchitecture: Sicherheitsarchitektur
   coop: Kooperationen
   support: Support
-  enterprise: Unternehmen
+  enterprise: Enterprise
   donate: Spenden
 
 payment:

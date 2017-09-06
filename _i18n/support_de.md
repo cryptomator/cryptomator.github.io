@@ -14,6 +14,6 @@ community:
   action: Cryptomator Community
 enterprise:
   title: Enterprise Support
-  content: Details zu unserem Enterprise Support finden Sie auf unserer Seite für <i>Unternehmen</i>.
-  action: Unternehmen
+  content: Details zu unserem Enterprise Support finden Sie auf unserer Seite für <i>Enterprise</i>.
+  action: Enterprise
 ---
