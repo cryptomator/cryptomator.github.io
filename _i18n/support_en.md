@@ -13,7 +13,7 @@ community:
   content: Ask for help in the Cryptomator Community or search existing solutions.
   action: Cryptomator Community
 enterprise:
-  title: Business Support
-  content: For details regarding our business support please refer to our <i>For Business</i> page.
-  action: For Business
+  title: Enterprise Support
+  content: For details on our enterprise support, please visit our <i>Enterprise</i> page.
+  action: Enterprise
 ---

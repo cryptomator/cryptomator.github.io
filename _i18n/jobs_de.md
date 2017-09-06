@@ -7,10 +7,10 @@ subtitle: Werde Teil des Cryptomator-Teams
 action: Mehr Details
 one:
   title: Technischer Support
-  content: Unterstütze uns bei Anfragen aus der Community und von Kunden und erstelle Inhalte für unser neues Support-Forum.
+  content: Unterstütze uns bei Anfragen von Kunden sowie aus der Community und erstelle Inhalte für unsere Knowledge Base.
 two:
   title: iOS-App-Entwicklung
-  content: Unterstütze uns bei der Weiterentwicklung der Cryptomator-iOS-App.
+  content: Unterstütze uns bei der Weiterentwicklung der Cryptomator-App für iOS.
 three:
   title: Cloud-Infrastruktur
   content: Hilf uns dabei, unsere Cloud-Dienste zu vereinheitlichen und eine homogene Infrastruktur zu schaffen.

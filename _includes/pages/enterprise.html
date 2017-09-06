@@ -1,0 +1,47 @@
+{% assign i18n = 'enterprise' %}
+{% include i18n.liquid %}
+
+<h1 class="text-center">{{ i18n.title }}</h1>
+
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.subtitle }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-adjust"></span> {{ i18n.whitelabel.title }}</h3>
+      <p>
+        {{ i18n.whitelabel.content }}
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-user"></span> {{ i18n.support.title }}</h3>
+      <p>
+        {{ i18n.support.content }}
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-book"></span> {{ i18n.libraries.title }}</h3>
+      <p>
+        {{ i18n.libraries.content }}
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-edit"></span> {{ i18n.development.title }}</h3>
+      <p>
+        {{ i18n.development.content }}
+      </p>
+    </div>
+  </div>
+
+  <p class="text-center">
+    <a class="btn btn-lg btn-primary" href="mailto:sales@cryptomator.org">
+      <span class="glyphicon glyphicon-envelope"></span>
+      {{ i18n.contactUs }}
+    </a>
+  </p>
+</section>

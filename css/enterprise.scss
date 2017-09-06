@@ -1,0 +1,10 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+.row {
+	margin-bottom: $spacing-unit;
+	margin-top: $spacing-unit;
+}

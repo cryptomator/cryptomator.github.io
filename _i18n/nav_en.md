@@ -4,12 +4,12 @@ context: nav
 
 navbar:
   toggle: Toggle navigation
-  freeDownload: Free Download
+  download: Download
   securityArchitecture: Security Architecture
   coop: Cooperations
   support: Support
+  enterprise: Enterprise
   donate: Donate
-  business: For Business
 
 payment:
   type:

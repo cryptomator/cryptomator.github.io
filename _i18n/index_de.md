@@ -8,7 +8,6 @@ subtitle: >
 
 download:
   title: Download für Windows, Mac, Linux
-  buttonFreeDownload: Gratis Download
   payWhatYouWant: Zahlen Sie, wie viel Sie wollen
   buttonOtherAmount: Anderer Betrag
   buttonContinue: Weiter
