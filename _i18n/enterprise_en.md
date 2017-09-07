@@ -9,7 +9,7 @@ whitelabel:
   content: >
     End-to-end encryption with your branding: We develop individualized versions of the Cryptomator apps for you.
 support:
-  title: Enterprise Support
+  title: Support Plans
   content: >
     We offer various support plans for your needs.
 libraries:
@@ -20,5 +20,5 @@ development:
   title: Custom Development
   content: >
     Based on Cryptomator's encryption scheme, we develop custom applications and systems for you.
-contactUs: Contact Us
+contactUs: Contact Us for an Offer
 ---

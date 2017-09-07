@@ -9,7 +9,7 @@ whitelabel:
   content: >
     Ende-zu-Ende Verschlüsselung mit den Cryptomator-Apps in Ihrem Markendesign: Wir entwickeln für Sie individuelle Versionen der Apps.
 support:
-  title: Enterprise Support
+  title: Support-Pakete
   content: >
     Für Ihre Anforderungen bieten wir unterschiedliche Support-Pakete an.
 libraries:
@@ -20,5 +20,5 @@ development:
   title: Individualentwicklung
   content: >
     Basierend auf dem Cryptomator-Verschlüsselungsschema entwickeln wir für Sie individuelle Anwendungen und Systeme.
-contactUs: Kontaktieren Sie uns
+contactUs: Kontaktieren Sie uns für ein Angebot
 ---
