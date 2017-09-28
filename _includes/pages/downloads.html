@@ -39,10 +39,10 @@
         <div class="panel-body small">
           <p>Minimum: Windows Vista SP2</p>
           <div class="btn-group">
-            <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="logDownload('{{winFile64}}')" class="btn btn-primary" role="button">
+            <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="sendGaBtnClick('{{winFile64}}')" class="btn btn-primary" role="button">
               <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
             </a>
-            <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="logDownload('{{winFile32}}')" class="btn btn-primary" role="button">
+            <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="sendGaBtnClick('{{winFile32}}')" class="btn btn-primary" role="button">
               {{ i18n.download.button32 }}
             </a>
           </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="panel-body small">
           <p>Minimum: OS X 10.8.3</p>
-          <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="logDownload('{{macFile}}')" class="btn btn-primary" role="button">
+          <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="sendGaBtnClick('{{macFile}}')" class="btn btn-primary" role="button">
             <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button }}
           </a>
           <p class="download-caption">
@@ -138,10 +138,10 @@
           <div id="linuxDownloadDeb" class="panel-collapse collapse">
             <div class="panel-body small">
               <div class="btn-group">
-                <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="logDownload('{{debianFile64}}')" class="btn btn-primary" role="button">
+                <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-primary" role="button">
                   <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                 </a>
-                <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="logDownload('{{debianFile32}}')" class="btn btn-primary" role="button">
+                <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-primary" role="button">
                   {{ i18n.download.button32 }}
                 </a>
               </div>
@@ -163,10 +163,10 @@
           <div id="linuxDownloadRpm" class="panel-collapse collapse">
             <div class="panel-body small">
               <div class="btn-group">
-                <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="logDownload('{{redhatFile64}}')" class="btn btn-primary" role="button">
+                <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-primary" role="button">
                   <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                 </a>
-                <a itemprop="downloadUrl" href="{{redhatUrl32}}" data-ng-click="logDownload('{{redhatFile32}}')" class="btn btn-primary" role="button">
+                <a itemprop="downloadUrl" href="{{redhatUrl32}}" data-ng-click="sendGaBtnClick('{{redhatFile32}}')" class="btn btn-primary" role="button">
                   {{ i18n.download.button32 }}
                 </a>
               </div>
@@ -187,7 +187,7 @@
           </div>
           <div id="linuxDownloadAur" class="panel-collapse collapse">
             <div class="panel-body small">
-              <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="logDownload('aur')"  role="button">
+              <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="sendGaBtnClick('aur')"  role="button">
                 <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
               </a>
             </div>

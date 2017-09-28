@@ -13,10 +13,10 @@
   </div>
   <div class="text-center">
     <p class="lead">{{ i18n.download.version }} {{ latestRelease.version }} ({{ latestRelease.date | date: i18n.download.dateFormat }})</p>
-    <a itemprop="downloadUrl" href="{{ latestRelease.googlePlayUrl }}" data-ng-click="logDownload('androidGooglePlay')" class="btn btn-lg btn-primary" role="button">
+    <a itemprop="downloadUrl" href="{{ latestRelease.googlePlayUrl }}" data-ng-click="sendGaBtnClick('androidGooglePlay')" class="btn btn-lg btn-primary" role="button">
       <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.download.googlePlay }}
     </a>
-    <a itemprop="downloadUrl" href="{{ latestRelease.directDownloadUrl }}" data-ng-click="logDownload('androidDirect')" class="btn btn-lg btn-primary" role="button">
+    <a itemprop="downloadUrl" href="{{ latestRelease.directDownloadUrl }}" data-ng-click="sendGaBtnClick('androidDirect')" class="btn btn-lg btn-primary" role="button">
       <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.direct }}
     </a>
     <p class="small">{{ i18n.download.requirements }}</p>
