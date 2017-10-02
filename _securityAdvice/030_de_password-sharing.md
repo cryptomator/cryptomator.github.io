@@ -1,7 +1,7 @@
 ---
 language: de
-anchor: desktop
-title: Desktop
+anchor: sharing
+title: Teilen von Tresoren
 ---
 <p class="lead"></p>
 
