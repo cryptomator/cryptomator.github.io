@@ -24,6 +24,7 @@ collections:
   releases:
   languages:
   i18n:
+  securityAdvice:
   securityArchitecture:
   coop:
     output: true

@@ -1,0 +1,38 @@
+{% assign i18n = 'security' %}
+{% include i18n.liquid %}
+
+<h1 class="text-center">{{ i18n.title }}</h1>
+
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.gethelp }}</h2>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-4 col-md-offset-2">
+      <h3 class="text-center">{{ i18n.advice.title }}</h3>
+      <p class="text-center">
+        {{ i18n.advice.content }}
+      </p>
+      <p class="text-center">
+        <a href="{{ languageUrlPrefix }}/security/advice" class="btn btn-primary">
+          <span class="glyphicon glyphicon-leaf"></span> {{ i18n.advice.action }}
+        </a>
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="text-center">{{ i18n.architecture.title }}</h3>
+      <p class="text-center">
+        {{ i18n.architecture.content }}
+      </p>
+      <p class="text-center">
+        <a href="{{ languageUrlPrefix }}/security/architecture" class="btn btn-primary">
+          <span class="glyphicon glyphicon-equalizer"></span> {{ i18n.architecture.action }}
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>
