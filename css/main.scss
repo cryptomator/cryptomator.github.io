@@ -32,6 +32,28 @@
   }
 }
 
+.image-modal {
+  .modal-body {
+    min-height: 158px;
+
+    > h4 {
+      margin-top: $spacing-unit / 2;
+    }
+
+    > * {
+      margin-left: 128px + $spacing-unit / 2;
+    }
+
+    > img {
+      margin-right: $spacing-unit / 2;
+      width: 128px;
+      margin-left: 0;
+    }
+
+  }
+  
+}
+
 // Navigation Bar
 #payment-modal .modal-dialog {
   .modal-header .nav-tabs {

@@ -69,18 +69,3 @@
   font-size: $small-font-size;
   text-indent: 1em;
 }
-
-#thanks-modal {
-  .modal-body {
-    min-height: 158px;
-  }
-
-  img {
-    margin-right: $spacing-unit / 2;
-    max-height: 128px;
-  }
-
-  h4 {
-    margin-top: $spacing-unit / 2;
-  }
-}
