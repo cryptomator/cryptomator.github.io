@@ -1,8 +1,4 @@
-{% include language.liquid %}
-
-{% assign sortedArticles = site.securityArchitecture | where: 'language', language.name | sort: 'path', 'last' %}
-
-<section class="container" id="architecture">
+<section class="container" id="article-list">
   <div class="row">
     <nav class="hidden-xs hidden-sm" id="subnav">
       <ul class="nav nav-pills nav-stacked">
@@ -20,6 +16,5 @@
         </article>
       {% endfor %}
     </div>
-
   </div>
 </section>

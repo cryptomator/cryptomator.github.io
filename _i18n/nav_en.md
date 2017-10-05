@@ -5,7 +5,7 @@ context: nav
 navbar:
   toggle: Toggle navigation
   download: Download
-  securityArchitecture: Security Architecture
+  security: Security
   coop: Cooperations
   support: Support
   enterprise: Enterprise

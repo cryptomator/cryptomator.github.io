@@ -4,6 +4,10 @@
 @charset "utf-8";
 @import "variables";
 
+#article-list {
+  padding-bottom: 50px + $spacing-unit * 2;
+}
+
 .layer-explanation {
   padding-top: 50px + $spacing-unit * 2;
 
@@ -13,6 +17,3 @@
   }
 }
 
-#architecture {
-  padding-bottom: 50px + $spacing-unit * 2;
-}
