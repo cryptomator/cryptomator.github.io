@@ -6,7 +6,6 @@ cryptomator:
   title: Cryptomator
   team: Team
   pressKit: Pressemappe
-  pressKitUrl: http://press.cryptomator.org/cryptomator_press_kit_de.zip
 legal:
   title: Rechtliches
 help:
