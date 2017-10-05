@@ -3,7 +3,7 @@ language: en
 context: security
 
 title: Security
-gethelp: Hints and details
+gethelp: Hints and Details
 architecture:
   title: Security Architecture
   content: How Cryptomator encrypts your data
