@@ -56,4 +56,5 @@ androidScreenshots:
   screenshot1: Übersicht aller Tresore in Listendarstellung
   screenshot2: Unterstützte Cloudspeicher-Dienste
   screenshot3: Entsperren des Tresors
+  screenshot4: Entsperren über Fingerabdruck optional möglich
 ---

@@ -38,4 +38,5 @@ androidScreenshots:
   screenshot1: Overview of all vaults in a list
   screenshot2: Supported cloud storage services
   screenshot3: Unlock vault
+  screenshot4: Unlock via fingerprint (optional)
 ---
