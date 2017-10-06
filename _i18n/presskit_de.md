@@ -20,14 +20,14 @@ iosScreenshots:
     title: iPhone
   ipad:
     title: iPad
-  screenshot1: Übersicht aller Tresor in Listendarstellung
+  screenshot1: Übersicht aller Tresore in Listendarstellung
   screenshot2: Unterstützte Cloudspeicher-Dienste
   screenshot3: Entsperren über Touch ID optional möglich
   screenshot4: Navigieren innerhalb eines Tresors
   screenshot5: Anzeige von verschlüsselten Daten
 androidScreenshots:
   title: Android Screenshots
-  screenshot1: Übersicht aller Tresor in Listendarstellung
+  screenshot1: Übersicht aller Tresore in Listendarstellung
   screenshot2: Unterstützte Cloudspeicher-Dienste
   screenshot3: Entsperren des Tresors
 ---
