@@ -7,7 +7,7 @@ title: Android Screenshots
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail text-center">
       <a href="/img/presskit/de/android-screenshot-1.png"><img src="/img/presskit/de/android-screenshot-1.png"/></a>
-      <div class="caption">Übersicht aller Tresore in Listendarstellung • 1080x1920 • PNG</div>
+      <div class="caption">Übersicht aller Tresore in einer Liste • 1080x1920 • PNG</div>
     </div>
   </div>
   <div class="col-sm-6 col-md-4">
@@ -27,7 +27,7 @@ title: Android Screenshots
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail text-center">
       <a href="/img/presskit/de/android-screenshot-4.png"><img src="/img/presskit/de/android-screenshot-4.png"/></a>
-      <div class="caption">Entsperren über Fingerabdruck optional möglich • 1080x1920 • PNG</div>
+      <div class="caption">Entsperren über Fingerabdruck (optional) • 1080x1920 • PNG</div>
     </div>
   </div>
 </div>
