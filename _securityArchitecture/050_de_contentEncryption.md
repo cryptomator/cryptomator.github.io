@@ -28,5 +28,5 @@ for (int i = 0; i < length(cleartextChunks); i++) {
 ciphertextFileContent := join(ciphertextChunks[])
 </pre>
 
-<img src="/img/architecture/file-content-encryption.png" srcset="/img/architecture/file-content-encryption.png 1x, /img/architecture/file-content-encryption@2x.png 2x" alt="Verschlüsselung des Dateiinhalts" />
+<img class="article-img" src="/img/architecture/file-content-encryption.png" srcset="/img/architecture/file-content-encryption.png 1x, /img/architecture/file-content-encryption@2x.png 2x" alt="Verschlüsselung des Dateiinhalts" />
 <figcaption>* Zufällig bei jeder Stückänderung</figcaption>

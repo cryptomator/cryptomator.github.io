@@ -12,7 +12,7 @@ dirId := createUuid()
 
 Cryptomator nutzt dann <a href="http://tools.ietf.org/html/rfc5297" target="_blank">AES-SIV</a>, um den Namen von Dateien und Verzeichnissen zu verschlüsseln. Die eindeutige ID des Ordners, indem sich die Datei oder der Ordner befindet, wird als Zusatzdaten übergeben. Dies verhindert das unerkannte Verschieben von verschlüsselten Dateien in andere Verzeichnisse.
 
-<img src="/img/architecture/filename-encryption.png" srcset="/img/architecture/filename-encryption.png 1x, /img/architecture/filename-encryption@2x.png 2x" alt="Verschlüsselung des Dateinamen" />
+<img class="article-img" src="/img/architecture/filename-encryption.png" srcset="/img/architecture/filename-encryption.png 1x, /img/architecture/filename-encryption@2x.png 2x" alt="Verschlüsselung des Dateinamen" />
 <figcaption>* Eindeutige Kennzeichnung wird für jedes Verzeichnis erstellt</figcaption>
 <br>
 <pre>

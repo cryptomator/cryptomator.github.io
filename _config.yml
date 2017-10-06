@@ -30,3 +30,4 @@ collections:
     output: true
     permalink: /:collection/:title.html
   androidBetaReleases:
+  presskit:

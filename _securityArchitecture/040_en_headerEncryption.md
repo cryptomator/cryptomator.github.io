@@ -19,5 +19,5 @@ ciphertextPayload := aesCtr(cleartextPayload, encryptionMasterKey, headerNonce)
 mac := hmacSha256(headerNonce . ciphertextPayload, macMasterKey)
 </pre>
 
-<img src="/img/architecture/file-header-encryption.png" srcset="/img/architecture/file-header-encryption.png 1x, /img/architecture/file-header-encryption@2x.png 2x" alt="File Header Encryption" />
+<img class="article-img" src="/img/architecture/file-header-encryption.png" srcset="/img/architecture/file-header-encryption.png 1x, /img/architecture/file-header-encryption@2x.png 2x" alt="File Header Encryption" />
 <figcaption>* Random per file change</figcaption>

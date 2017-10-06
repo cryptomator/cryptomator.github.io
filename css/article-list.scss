@@ -10,10 +10,9 @@
 
 .layer-explanation {
   padding-top: 50px + $spacing-unit * 2;
-
-  img {
-    display: block;
-    margin: $spacing-unit / 2 auto;
-  }
 }
 
+.article-img {
+  display: block;
+  margin: $spacing-unit / 2 auto;
+}
