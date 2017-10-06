@@ -68,7 +68,7 @@ img.avatar {
   background-color: $bg-green-medium;
   color: $white-color;
 
-  a {
+  a:not(.btn) {
     color: $white-color;
     text-decoration: underline;
 
