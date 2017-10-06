@@ -8,6 +8,14 @@ highResAssets:
   cryptomatorLogo: Cryptomator Logo
   cryptomatoriOSIcon: Cryptomator iOS Icon
   cryptomatorLogoWithText: Cryptomator Logo with Text
+developerInfo:
+  title: Skymatic
+  foundingTeam:
+    title: Founding Team
+    photo1: >
+      Christian Schmickler, Tobias Hagemann, Sebastian Stenzel, Markus Kreusch • Photo: Simon Hecht
+    photo2: >
+      Sebastian Stenzel, Markus Kreusch, Tobias Hagemann, Christian Schmickler • Photo: Simon Hecht
 macScreenshots:
   title: macOS Screenshots
   screenshot1: Locked vault

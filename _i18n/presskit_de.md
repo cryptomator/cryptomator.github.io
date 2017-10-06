@@ -13,6 +13,12 @@ developerInfo:
   content: >
     <p>Das Bonner Startup Skymatic befasst sich mit dem Thema „Digitale Selbstverteidigung für alle“. Mit der Software Cryptomator hilft Skymatic allen Nutzern von Cloud-Speichern dabei, die Sicherheit der eigenen Daten selbst in die Hand zu nehmen.</p>
     <p>Skymatic ist Unterzeichner der <em>Charta zur Stärkung der vertrauenswürdigen Kommunikation</em> sowie Mitglied der <em>Allianz für Cyber-Sicherheit</em> des BSI.<p>
+  foundingTeam:
+    title: Gründerteam
+    photo1: >
+      Christian Schmickler, Tobias Hagemann, Sebastian Stenzel, Markus Kreusch • Foto: Simon Hecht
+    photo2: >
+      Sebastian Stenzel, Markus Kreusch, Tobias Hagemann, Christian Schmickler • Foto: Simon Hecht
 macScreenshots:
   title: macOS Screenshots
   screenshot1: Tresor im gesperrten Zustand
