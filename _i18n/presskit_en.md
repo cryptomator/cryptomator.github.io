@@ -16,6 +16,11 @@ developerInfo:
       Christian Schmickler, Tobias Hagemann, Sebastian Stenzel, Markus Kreusch • Photo: Simon Hecht
     photo2: >
       Sebastian Stenzel, Markus Kreusch, Tobias Hagemann, Christian Schmickler • Photo: Simon Hecht
+reception:
+  title: Reception
+awards:
+  title: Awards
+  cebit2016: CeBIT Innovation Award 2016 for Usable Security and Privacy
 macScreenshots:
   title: macOS Screenshots
   screenshot1: Locked vault

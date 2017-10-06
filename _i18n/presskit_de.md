@@ -19,6 +19,11 @@ developerInfo:
       Christian Schmickler, Tobias Hagemann, Sebastian Stenzel, Markus Kreusch • Foto: Simon Hecht
     photo2: >
       Sebastian Stenzel, Markus Kreusch, Tobias Hagemann, Christian Schmickler • Foto: Simon Hecht
+reception:
+  title: Resonanz
+awards:
+  title: Awards
+  cebit2016: CeBIT Innovation Award 2016 for Usable Security and Privacy
 macScreenshots:
   title: macOS Screenshots
   screenshot1: Tresor im gesperrten Zustand

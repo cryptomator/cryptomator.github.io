@@ -4,6 +4,34 @@
 @charset "utf-8";
 @import "variables";
 
+section {
+  margin-top: $spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
 .thumbnail {
   padding: $spacing-unit / 2;
+}
+
+.press-images {
+  a {
+    display: inline-block;
+    margin: 1em 3em;
+    text-decoration: none;
+
+    img {
+      border: 0;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: .5;
+      -webkit-transition: -webkit-filter 100ms, opacity 100ms;
+      transition: -webkit-filter 100ms, filter 100ms, opacity 100ms;
+    }
+
+    &:hover img {
+      -webkit-filter: none;
+      filter: none;
+      opacity: 1;
+    }
+  }
 }
