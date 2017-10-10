@@ -1,21 +1,26 @@
 {% assign i18n = 'android' %}
 {% include i18n.liquid %}
 
-<section id="teaser" class="fullheight top-most-element green-background">
-  <div class="text-center">
-    <h1 class="display-font">{{ i18n.title }}</h1>
-    <h2>{{ i18n.subtitle }}</h2>
-  </div>
-
-  <div class="text-center">
-    <a href="{{ languageUrlPrefix }}/android/beta/" data-ng-click="sendGaBtnClick('tryAndroidBeta')" class="btn btn-lg btn-default">
-      {{ i18n.tryBeta }}
-    </a>
+<section id="teaser" class="top-most-element green-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-push-4">
+        <div class="text-center">
+          <h1 class="display-font">{{ i18n.title }}</h1>
+          <h2>{{ i18n.subtitle }}</h2>
+          <a href="{{ languageUrlPrefix }}/android/beta/" data-ng-click="sendGaBtnClick('tryAndroidBeta')" class="btn btn-lg btn-default">
+            {{ i18n.tryBeta }}
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-pull-8">
+        <img src="/img/android/teaser.png" srcset="/img/android/teaser.png 1x, /img/android/teaser@2x.png 2x" class="img-responsive center-block" />
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="newsletter" data-ng-controller="NewsletterCtrl">
-  <a name="newsletter"></a>
   <div class="container">
     <div class="text-center">
       <h2>{{ i18n.newsletter.title }}</h2>

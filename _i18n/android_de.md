@@ -2,8 +2,8 @@
 language: de
 context: android
 
-title: Cryptomator für Android
-subtitle: 17.10.17 1.0
+title: Cryptomator für&nbsp;Android
+subtitle: 17.10.17 • 1.0
 tryBeta: Beta ausprobieren
 
 newsletter:

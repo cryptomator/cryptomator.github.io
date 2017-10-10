@@ -21,12 +21,21 @@ h1.display-font {
 #teaser {
   min-height: 84vh;
 
+  img {
+    padding-top: $spacing-unit * 2;
+    padding-bottom: $spacing-unit * 2;
+  }
+
   h1 {
     padding-top: 21vh;
   }
 
   h2 {
-    padding-bottom: 1em;
+    margin-bottom: $spacing-unit * 2;
+  }
+
+  .btn {
+    margin-bottom: 50px + $spacing-unit * 2;
   }
 }
 
