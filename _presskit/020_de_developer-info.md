@@ -9,6 +9,8 @@ Skymatic ist Unterzeichner der _Charta zur Stärkung der vertrauenswürdigen Kom
 
 ### Gründerteam
 
+Das Kernteam besteht aus Tobias Hagemann (Informatiker), Markus Kreusch (Wirtschaftsinformatiker und gelernter Anwendungsentwickler), Christian Schmickler (Betriebswirt und Absolvent der Psychologie) und Sebastian Stenzel (Wirtschaftsinformatiker und gelernter Anwendungsentwickler).
+
 <div class="row">
   <div class="col-sm-12 col-md-6">
     <div class="thumbnail text-center">
