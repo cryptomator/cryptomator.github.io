@@ -85,7 +85,7 @@
         <div class="text-center">
           <h2>{{ i18n.apps.title }}</h2>
           <a href="{{ i18n.apps.appStoreLink }}" class="app-store-btn" data-ng-show="!isOSAndroid" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
-          <a href="{{ languageUrlPrefix }}/android/" class="android-beta-btn btn btn-store" data-ng-show="!isOSiOS" data-ng-click="sendGaBtnClick('androidbeta')">Android<sup>™</sup> App</a>
+          <a href="{{ languageUrlPrefix }}/android/" class="android-btn btn btn-store" data-ng-show="!isOSiOS" data-ng-click="sendGaBtnClick('android')">Android<sup>™</sup> App</a>
         </div>
       </div>
     </div><!-- /.row -->
@@ -307,14 +307,6 @@
           	<label for="email" class="col-sm-3">{{ i18n.newsletter.emailAddress }}</label>
             <div class="col-sm-9">
               <input type="email" class="form-control" name="email" placeholder="" value="" data-ng-model="email" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="android" class="col-sm-3">Android Beta</label>
-            <div class="col-sm-9">
-              <div class="checkbox">
-                <label><input type="checkbox" name="android" value="1" data-ng-model="android"> {{ i18n.newsletter.androidOptIn }}</label>
-              </div>
             </div>
           </div>
           <div class="form-group">

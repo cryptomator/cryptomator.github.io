@@ -3,8 +3,17 @@ language: de
 context: android
 
 title: Cryptomator für&nbsp;Android
-subtitle: 17.10.17 • 1.0
-tryBeta: Beta ausprobieren
+subtitle: Schützen Sie Ihre Cloud-Daten vor unberechtigtem Zugriff
+downloadDirect: APK Download
+requirements: >
+  Voraussetzungen: Android 4.3 (Jelly Bean) oder höher
+
+apkDownload:
+  title: Direkter Download
+  content: >
+    Cryptomator für Android ist zurzeit nicht als APK-Download erwerblich.<br/>
+    Wir arbeiten dran. In der Zwischenzeit können Sie die letzte Beta-Version herunterladen.
+  downloadBeta: Beta 0.7.0 herunterladen
 
 newsletter:
   title: Bleiben Sie in Verbindung
