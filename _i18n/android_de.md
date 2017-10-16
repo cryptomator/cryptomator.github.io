@@ -3,7 +3,7 @@ language: de
 context: android
 
 title: Cryptomator für&nbsp;Android
-subtitle: Schützen Sie jetzt Ihre Cloud-Daten
+subtitle: Schützen Sie Ihre Cloud-Daten vor unberechtigtem Zugriff
 downloadDirect: APK Download
 requirements: >
   Voraussetzungen: Android 4.3 (Jelly Bean) oder höher

@@ -31,11 +31,11 @@ h1.display-font {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: $spacing-unit * 2;
 
     @media (max-width: 1024px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
