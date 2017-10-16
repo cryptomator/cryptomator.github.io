@@ -1,26 +1,44 @@
+{% assign sortedReleases = site.androidReleases | sort: 'path' | reverse %}
+{% assign latestRelease = sortedReleases[0] %}
+
 {% assign i18n = 'android' %}
 {% include i18n.liquid %}
 
-<section id="teaser" class="top-most-element green-background">
+<section id="stage" class="top-most-element green-background">
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-push-4">
         <div class="text-center">
           <h1 class="display-font">{{ i18n.title }}</h1>
           <h2>{{ i18n.subtitle }}</h2>
-          <a href="{{ languageUrlPrefix }}/android/beta/" data-ng-click="sendGaBtnClick('tryAndroidBeta')" class="btn btn-lg btn-default">
-            {{ i18n.tryBeta }}
-          </a>
+          <div>
+            <a href="{{ latestRelease.googlePlayUrl }}" class="google-play-btn btn-download" data-ng-click="sendGaBtnClick('androidGooglePlay')" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
+            <a href="#apk-download" class="apk-btn btn btn-store btn-download">{{ i18n.downloadDirect }}</a>
+            <p class="small">{{ i18n.requirements }}</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-md-pull-8">
-        <img src="/img/android/{{ language.name }}/teaser.png" srcset="/img/android/{{ language.name }}/teaser.png 1x, /img/android/{{ language.name }}/teaser@2x.png 2x" class="img-responsive center-block" />
+        <img src="/img/android/{{ language.name }}/teaser.png" srcset="/img/android/{{ language.name }}/teaser.png 1x, /img/android/{{ language.name }}/teaser@2x.png 2x" class="teaser img-responsive center-block" />
       </div>
     </div>
   </div>
 </section>
 
-<section id="newsletter" data-ng-controller="NewsletterCtrl">
+<section id="apk-download">
+  <div class="container">
+    <div class="text-center">
+      <h2>{{ i18n.apkDownload.title }}</h2>
+      <p class="lead">{{ i18n.apkDownload.lead }}</p>
+      <p>{{ i18n.apkDownload.content }}</p>
+      <a href="{{ latestRelease.directDownloadUrl }}" data-ng-click="sendGaBtnClick('androidDirect')" class="btn btn-primary">
+        {{ i18n.apkDownload.downloadBeta }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter" class="green-background" data-ng-controller="NewsletterCtrl">
   <div class="container">
     <div class="text-center">
       <h2>{{ i18n.newsletter.title }}</h2>
@@ -38,7 +56,7 @@
           </div>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-              <input type="submit" value="{{ i18n.newsletter.buttonSubscribe }}" name="subscribe" class="btn btn-primary" data-ng-disabled="subscribeInProgress">
+              <input type="submit" value="{{ i18n.newsletter.buttonSubscribe }}" name="subscribe" class="btn btn-primary-outline" data-ng-disabled="subscribeInProgress">
             </div>
           </div>
           <div class="row">

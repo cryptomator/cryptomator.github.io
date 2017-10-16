@@ -18,10 +18,10 @@ h1.display-font {
   font-weight: 700;
 }
 
-#teaser {
+#stage {
   min-height: 84vh;
 
-  img {
+  .teaser {
     padding-top: $spacing-unit * 2;
     padding-bottom: $spacing-unit * 2;
   }
@@ -31,12 +31,34 @@ h1.display-font {
   }
 
   h2 {
+    font-size: 24px;
     margin-bottom: $spacing-unit * 2;
+
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
   }
 
-  .btn {
-    margin-bottom: 50px + $spacing-unit * 2;
+  .btn-download {
+    display: inline-block;
+    margin: $spacing-unit / 3 3px;
+    max-height: 40px;
+    width: 135px;
   }
+}
+
+.google-play-btn img {
+  max-height: 40px;
+  width: 135px;
+}
+
+.apk-btn {
+  padding: 9px 12px;
+}
+
+#apk-download {
+  padding-bottom: 48px;
+  padding-top: 48px;
 }
 
 #newsletter {

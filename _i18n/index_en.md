@@ -77,7 +77,6 @@ newsletter:
   title: Let's stay in touch
   description: Subscribe to our mailing list or follow <a href="https://twitter.com/Cryptomator" target="_blank">@Cryptomator</a> on Twitter.
   emailAddress: Email Address
-  androidOptIn: Yes, I'd like to be updated about new Android beta versions
   buttonSubscribe: Subscribe
   success: >
     Thank you for subscribing! :love_letter: A confirmation link has been sent to your email address.

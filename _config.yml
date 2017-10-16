@@ -29,5 +29,5 @@ collections:
   coop:
     output: true
     permalink: /:collection/:title.html
-  androidBetaReleases:
+  androidReleases:
   presskit:
