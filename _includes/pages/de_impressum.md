@@ -12,7 +12,8 @@ Christian Schmickler
 Sebastian Stenzel
 
 ### Kontakt:
-E-Mail: webmaster [at] cryptomator [dot] org
+E-Mail: webmaster [at] cryptomator [dot] org  
+[Zur Kontaktseite](/de/contact/)
 
 ### Registereintrag:
 Eintragung im Handelsregister.  
