@@ -30,6 +30,10 @@ coreteam:
     role: Android Development
     link: https://github.com/SailReal
     img: https://avatars.githubusercontent.com/u/1786772
+  - name: Armin Schrenk
+    role: Desktop Development
+    link: https://github.com/infeo
+    img: https://avatars.githubusercontent.com/u/9036915
   - name: Cryptobot
     role: Release Manager
     link: https://github.com/cryptobot

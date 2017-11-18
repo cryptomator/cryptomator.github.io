@@ -133,7 +133,7 @@ app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $windo
       angular.element('#please-donate-modal').modal('show');
     }
   };
- 
+
   $scope.donateNowPressed = function() {
     $scope.sendGaBtnClick('donateNow');
     angular.element('#please-donate-modal').modal('hide');
@@ -320,7 +320,7 @@ app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', function($http, $s
 
 app.controller('ContributorsCtrl', ['$http', '$scope', function($http, $scope) {
 
-  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'tobihagemann', 'marcjulian', 'gitter-badger'];
+  var blacklistedContributors = ['overheadhunter', 'markuskreusch', 'tobihagemann', 'marcjulian', 'SailReal', 'infeo', 'gitter-badger'];
 
   $scope.contributors = [];
 
