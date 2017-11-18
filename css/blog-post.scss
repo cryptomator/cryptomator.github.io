@@ -31,10 +31,12 @@ span.post-metadata-author  {
   padding-bottom: $spacing-unit * 2;
 }
 
-.banner {
-  margin-bottom: $spacing-unit / 4;
-}
+.img-caption {
+  > img {
+    margin-bottom: $spacing-unit / 4;
+  }
 
-.caption {
-  font-size: $small-font-size;
+  > p {
+    font-size: $small-font-size;
+  }
 }
