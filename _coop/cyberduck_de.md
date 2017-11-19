@@ -7,9 +7,19 @@ title: Cyberduck
 img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png
 bannerimg: /img/coop/cyberduck-banner.jpg
-bannerimg@2x: /img/coop/cyberduck-banner@2x.jpg
+bannerimg2x: /img/coop/cyberduck-banner@2x.jpg
 bannercaption: Illustration von <a href="http://ktoons.org/" target="_blank">Katharina Hagemann</a>
-excerpt: Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
+excerpt: >
+  Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
+lead: >
+  Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
+screenshots:
+- img: /img/coop/cyberduck-screenshot-1.png
+  caption: Verschlüsselter Ordner-Inhalt
+- img: /img/coop/cyberduck-screenshot-2.png
+  caption: Tresor entsperren
+- img: /img/coop/cyberduck-screenshot-3.png
+  caption: Entschlüsselter Ordner-Inhalt
 ---
 Cyberduck erlaubt Ihnen den Zugriff auf Ihren Cloudspeicher ohne einen zusätzlichen Sync-Client. FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure & OneDrive, Google Drive und Dropbox werden unterstützt. Ab Version 6.0 ist Cyberduck kompatibel mit Cryptomator und verwendet die gleiche clientseitige Verschlüsselung. Alle Tresore, die mit einer der Anwendungen angelegt wurden, können entsprechend mit der anderen geöffnet werden.
 
@@ -22,26 +32,3 @@ Auch Cyberduck ist Open-Source-Software, d.h. die gleichen Prinzipien von Crypto
 Cyberduck nutzt die Java-basierte kryptographische Bibliothek <a href="https://github.com/cryptomator/cryptolib" target="_blank">CryptoLib</a>, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
 
 <a class="btn btn-primary" href="https://cyberduck.io/cryptomator/" target="_blank"><span class="glyphicon glyphicon-link"></span> Weitere Infos unter cyberduck.io</a>
-
-<div class="row">
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail text-center">
-      <img src="/img/coop/cyberduck-screenshot-1.png"/>
-      <div class="caption">Verschlüsselter Ordner-Inhalt</div>
-    </div>
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail text-center">
-      <img src="/img/coop/cyberduck-screenshot-2.png"/>
-      <div class="caption">Tresor entsperren</div>
-    </div>
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail text-center">
-      <img src="/img/coop/cyberduck-screenshot-3.png"/>
-      <div class="caption">Entschlüsselter Ordner-Inhalt</div>
-    </div>
-  </div>
-</div>

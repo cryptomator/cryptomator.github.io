@@ -7,9 +7,19 @@ title: Cyberduck
 img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png
 bannerimg: /img/coop/cyberduck-banner.jpg
-bannerimg@2x: /img/coop/cyberduck-banner@2x.jpg
+bannerimg2x: /img/coop/cyberduck-banner@2x.jpg
 bannercaption: Illustration by <a href="http://ktoons.org/" target="_blank">Katharina Hagemann</a>
-excerpt: Cyberduck is a libre remote file browser for Mac and Windows. As of version 6.0, Cyberduck supports Cryptomator vaults and thus is the perfect tool for all, who do not want to synchronize their cloud files locally.
+excerpt: >
+  Cyberduck is a libre remote file browser for Mac and Windows. As of version 6.0, Cyberduck supports Cryptomator vaults and thus is the perfect tool for all, who do not want to synchronize their cloud files locally.
+lead: >
+  Cyberduck is a libre remote file browser for Mac and Windows. As of version 6.0, Cyberduck supports Cryptomator vaults and thus is the perfect tool for all, who do not want to synchronize their cloud files locally.
+screenshots:
+- img: /img/coop/cyberduck-screenshot-1.png
+  caption: Encrypted Folder Contents
+- img: /img/coop/cyberduck-screenshot-2.png
+  caption: Unlock Vault
+- img: /img/coop/cyberduck-screenshot-3.png
+  caption: Decrypted Folder Contents
 ---
 Cyberduck allows access to your cloud storage without an additional sync client. FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure & OneDrive, Google Drive, and Dropbox are the supported protocols. As of version 6.0, Cyberduck is compatible with Cryptomator and uses the same client-side encryption. All vaults created with one of the applications can be opened with the other.
 
@@ -22,26 +32,3 @@ Cyberduck is open-source software, too. The same principles which apply to Crypt
 Cyberduck uses the same Java-based cryptographic library <a href="https://github.com/cryptomator/cryptolib" target="_blank">CryptoLib</a> as the desktop version and Android app of Cryptomator.
 
 <a class="btn btn-primary" href="https://cyberduck.io/cryptomator/" target="_blank"><span class="glyphicon glyphicon-link"></span> Visit cyberduck.io</a>
-
-<div class="row">
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail text-center">
-      <img src="/img/coop/cyberduck-screenshot-1.png"/>
-      <div class="caption">Encrypted Folder Contents</div>
-    </div>
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail text-center">
-      <img src="/img/coop/cyberduck-screenshot-2.png"/>
-      <div class="caption">Unlock Vault</div>
-    </div>
-  </div>
-  <div class="clearfix visible-sm-block"></div>
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail text-center">
-      <img src="/img/coop/cyberduck-screenshot-3.png"/>
-      <div class="caption">Decrypted Folder Contents</div>
-    </div>
-  </div>
-</div>
