@@ -4,28 +4,30 @@
 @charset "utf-8";
 @import "variables";
 
-dt {
-  margin-bottom: $spacing-unit / 2;
-
-  @media (max-width: 767px) {
-    text-align: center;
-  }
-
-  img {
-    @media (min-width: 768px) {
-      float: right !important;
-    }
+.articles > dl {
+  > dt {
+    margin-bottom: $spacing-unit / 2;
 
     @media (max-width: 767px) {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: center;
+    }
+
+    img {
+      @media (min-width: 768px) {
+        float: right !important;
+      }
+
+      @media (max-width: 767px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
-}
 
-dd {
-  margin-bottom: $spacing-unit;
+  > dd {
+    margin-bottom: $spacing-unit;
+  }
 }
 
 .banner {
