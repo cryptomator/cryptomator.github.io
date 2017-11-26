@@ -34,12 +34,16 @@ body {
 #site-footer {
   background-color: $grey-color-dark;
   color: $white-color;
-  padding-bottom: $spacing-unit * 2;
+  padding-bottom: $spacing-unit;
   padding-top: $spacing-unit;
 
   ul {
     list-style-type: none;
     margin-left: 0;
+  }
+
+  section {
+    padding-bottom: $spacing-unit;
   }
 }
 
