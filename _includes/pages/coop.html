@@ -10,6 +10,7 @@
     {% for article in sortedArticles %}
       <dt><a href="{{ article.url }}"><img src="{{ article.img }}" srcset="{{ article.img }} 1x, {{ article.img2x }} 2x" class="img-responsive"/></a></dt>
       <dd>
+        <h2>{{ article.title }}</h2>
         <p>{{ article.excerpt }}</p>
         <p><a class="btn btn-primary" href="{{ article.url }}">{{ i18n.learnMore }}</a></p>
       </dd>

@@ -4,8 +4,8 @@
 @charset "utf-8";
 @import "variables";
 
-.articles > dl {
-  > dt {
+.articles {
+  dt {
     margin-bottom: $spacing-unit / 2;
 
     @media (max-width: 767px) {
@@ -25,7 +25,7 @@
     }
   }
 
-  > dd {
+  dd {
     margin-bottom: $spacing-unit;
   }
 }
@@ -38,12 +38,11 @@
   font-size: $small-font-size;
 }
 
-.thumbnail > img {
+.thumbnail img {
   max-height: 430px;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner img {
   max-height: 430px;
 }
 

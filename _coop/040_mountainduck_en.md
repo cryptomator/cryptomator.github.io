@@ -2,6 +2,7 @@
 layout: coop
 stylesheets: ['/css/coop.css']
 language: en
+permalink: /coop/mountainduck_en.html
 
 title: Mountain Duck
 img: /img/coop/mountainduck.png

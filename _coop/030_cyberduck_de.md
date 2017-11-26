@@ -2,6 +2,7 @@
 layout: coop
 stylesheets: ['/css/coop.css']
 language: de
+permalink: /coop/cyberduck_de.html
 
 title: Cyberduck
 img: /img/coop/cyberduck.png
