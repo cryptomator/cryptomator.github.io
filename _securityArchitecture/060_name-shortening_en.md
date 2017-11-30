@@ -9,10 +9,10 @@ Even with the flattened directory structure [achieved during filename encryption
 
 <pre>
 if (length(ciphertextName) <= 129) {
-  inflatedName := ciphertextName
+  deflatedName := ciphertextName
 } else {
-  inflatedName := base32(sha1(ciphertextName)) + '.lng'
-  metadataPath := vaultRoot + '/m/' + substr(inflatedName, 0, 2) + '/' + substr(inflatedName, 2, 2)
+  deflatedName := base32(sha1(ciphertextName)) + '.lng'
+  metadataPath := vaultRoot + '/m/' + substr(deflatedName, 0, 2) + '/' + substr(deflatedName, 2, 2)
   metadataContent := ciphertextName
 }
 </pre>
