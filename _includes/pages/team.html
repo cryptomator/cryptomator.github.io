@@ -7,29 +7,13 @@
   <div class="page-header">
     <h2 class="text-center">{{ i18n.coreteam.title }}</h2>
   </div>
-  <div class="row text-center">
-    {% for member in i18n.coreteam.members %}
-    <div class="col-lg-3 col-sm-4 col-xs-6 person">
-      <a href="{{ member.link }}" target="_blank">
-        <img src="{{ member.img }}" class="img-responsive img-thumbnail"/>
-        <p class="name">{{ member.name }}</p>
-      </a>
-      <p>{{ member.role }}</p>
-    </div>
-    {% assign mod4 = forloop.index | modulo:4 %}
-    {% if mod4 == 0 and forloop.first == false and forloop.last == false %}
-    <div class="clearfix visible-lg-block"></div>
-    {% endif %}
-    {% assign mod3 = forloop.index | modulo:3 %}
-    {% if mod3 == 0 and forloop.first == false and forloop.last == false %}
-    <div class="clearfix visible-sm-block"></div>
-    {% endif %}
-    {% assign mod2 = forloop.index | modulo:2 %}
-    {% if mod2 == 0 and forloop.first == false and forloop.last == false %}
-    <div class="clearfix visible-xs-block"></div>
-    {% endif %}
-    {% endfor %}
-  </div>
+  <p><img src="/img/team/skymatic-logo.png" srcset="/img/team/skymatic-logo.png 1x, /img/team/skymatic-logo@2x.png 2x" class="img-responsive center-block"/></p>
+  <p class="text-center">{{ i18n.coreteam.content }}</p>
+  <p class="text-center">
+    <a href="https://skymatic.de/team/" class="btn btn-primary">
+      <span class="glyphicon glyphicon-link"></span> {{ i18n.coreteam.action }}
+    </a>
+  </p>
 </section>
 
 <section data-ng-controller="ContributorsCtrl" data-ng-show="contributors.length > 0">
