@@ -6,7 +6,7 @@ title: Meet our Team
 coreteam:
   title: Skymatic
   content: Cryptomator is created and maintained by Skymatic.
-  action: Visit skymatic.de
+  action: Get to know our Team on skymatic.de
 contributors:
   title: Contributors
 translators:
