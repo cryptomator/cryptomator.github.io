@@ -254,16 +254,11 @@ h1.display-font {
     padding-right: 14px;
   }
 
-  .app-store-btn {
-    display: inline-block;
-    margin: $spacing-unit / 2 0;
-  }
-
-  .android-btn {
+  .app-store-btn,
+  .google-play-btn {
     display: inline-block;
     margin: $spacing-unit / 2 0;
     max-height: 40px;
-    padding: 9px 12px;
     width: 135px;
   }
 }
