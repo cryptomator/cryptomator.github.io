@@ -26,41 +26,57 @@
 #downloadNav {
   padding-bottom: $spacing-unit / 2;
   padding-top: $spacing-unit / 2;
-}
 
-.nav-pills {
-  a {
-    color: $white-color;
-  }
+  .nav-pills {
+    margin: 0;
 
-  > li > a {
-    background-color: transparent;
-    border: 1px solid transparent;
-    color: $white-color;
-    text-decoration: none;
+    > li+li {
+      margin-left: $spacing-unit;
+    }
 
-    &:hover,
-    &:focus {
-      background-color: $white-color;
+    a {
+      color: $white-color;
+    }
+
+    > li > a {
+      background-color: transparent;
+      border: 1px solid transparent;
+      color: $white-color;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: $white-color;
+        border: 1px solid $white-color;
+        color: $brand-color;
+      }
+    }
+
+    > li.active > a {
+      background-color: transparent;
       border: 1px solid $white-color;
-      color: $brand-color;
+
+      &:hover,
+      &:focus {
+        background-color: $white-color;
+        color: $brand-color;
+      }
     }
   }
 
-  > li.active > a {
-    background-color: transparent;
-    border: 1px solid $white-color;
-
-    &:hover,
-    &:focus {
-      background-color: $white-color;
-      color: $brand-color;
-    }
+  .center-pills {
+    display: inline-block;
   }
-}
 
-.center-pills {
-  display: inline-block;
+  .fontawesome {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    min-width: 1rem;
+    position: relative;
+    top: 1px;
+    width: 1em;
+  }
 }
 
 #getStarted {
