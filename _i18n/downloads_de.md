@@ -47,7 +47,7 @@ supportUs:
   title: Cryptomator unterstützen
   subtitle: Cryptomator für Desktop ist eine freie, quelloffene Software
   content: >
-    Die Entwicklung der Desktopanwendung wird durch Ihre Spende ermöglicht. Vielen Dank! :heart:
+    Die Entwicklung der Desktopanwendung wird durch Ihre Spende ermöglicht. :rocket:
   donate: Spenden
 allVersions:
   title: Alle Desktop-Versionen

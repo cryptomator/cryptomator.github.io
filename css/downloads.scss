@@ -4,6 +4,15 @@
 @charset "utf-8";
 @import "variables";
 
+#loadScreen {
+  background-color: $background-color;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 .download {
   padding-bottom: $spacing-unit * 2;
   padding-top: 50px + $spacing-unit * 2;
@@ -14,6 +23,33 @@
     @media (max-width: $max-md) {
       padding-top: 0;
     }
+  }
+}
+
+.panel-heading {
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    color: inherit;
+  }
+}
+
+.no-margin-b {
+  margin-bottom: 0;
+}
+
+.download-caption {
+  margin-bottom: 0;
+  margin-top: $spacing-unit / 4;
+}
+
+.popover {
+  max-width: none;
+
+  .popover-content {
+    font-family: monospace;
+    font-size: $base-font-size * .8;
   }
 }
 
@@ -96,46 +132,6 @@
 #allVersions {
   padding-bottom: $spacing-unit * 2;
   padding-top: $spacing-unit * 2;
-}
-
-.download-btn-container {
-  margin: $spacing-unit 0;
-}
-
-.popover {
-  max-width: none;
-
-  .popover-content {
-    font-family: monospace;
-    font-size: $base-font-size * .8;
-  }
-}
-
-#loadScreen {
-  background-color: $background-color;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.panel-heading {
-  a,
-  a:hover,
-  a:focus,
-  a:active {
-    color: inherit;
-  }
-}
-
-.no-margin-b {
-  margin-bottom: 0;
-}
-
-.download-caption {
-  margin-bottom: 0;
-  margin-top: $spacing-unit / 4;
 }
 
 .release {

@@ -47,7 +47,7 @@ supportUs:
   title: Support Cryptomator
   subtitle: Cryptomator for Desktop is free and open-source software
   content: >
-    Development of the desktop application is made possible by your donation. Thank you! :heart:
+    Development of the desktop application is made possible by your donation. :rocket:
   donate: Donate
 allVersions:
   title: All Desktop Versions
