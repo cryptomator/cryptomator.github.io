@@ -80,12 +80,4 @@ newsletter:
   buttonSubscribe: Anmelden
   success: >
     Vielen Dank für Ihre Anmeldung! :love_letter: Ein Bestätigungslink wurde an Ihre E-Mail-Adresse zugeschickt.
-
-pleaseDonate:
-  title: Cryptomator unterstützen
-  content: >
-    <p>Die Entwicklung der Desktopanwendung wird durch Ihre Spende ermöglicht.</p>
-    <p>Möchten Sie spenden, bevor Sie Cryptomator herunterladen?</p>
-  donateLaterButton: Später spenden
-  donateButton: Jetzt spenden
 ---

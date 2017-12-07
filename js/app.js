@@ -47,8 +47,8 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
 
   googleAnalytics.sendPageView();
 
-  $rootScope.sendGaBtnClick = function(label, value) {
-    googleAnalytics.sendBtnClick(label, value);
+  $rootScope.sendGaBtnClick = function(label) {
+    googleAnalytics.sendBtnClick(label);
   };
 
   $rootScope.disableGaIssued = !_.isEmpty($cookies.get('disableGa'));
@@ -108,12 +108,8 @@ app.factory('googleAnalytics', ['$window', '$cookies', function($window, $cookie
       ga('send', 'pageview');
     },
 
-    sendBtnClick: function(eventLabel, value) {
-      if ((typeof value === 'undefined') || value === null) {
-        ga('send', 'event', 'button', 'click', eventLabel);
-      } else {
-        ga('send', 'event', 'button', 'click', eventLabel, value);
-      }
+    sendBtnClick: function(eventLabel) {
+      ga('send', 'event', 'button', 'click', eventLabel);
     },
 
     disable: function() {
@@ -127,17 +123,10 @@ app.factory('googleAnalytics', ['$window', '$cookies', function($window, $cookie
 
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
 
-  $scope.donationContinuePressed = function(amount) {
-    $scope.sendGaBtnClick('donateContinue', amount);
-    if (amount == 0) {
-      angular.element('#please-donate-modal').modal('show');
+  $scope.gotoDownloads = function(shouldGoToDownloads) {
+    if (shouldGoToDownloads) {
+      $window.location.href = '/downloads/';
     }
-  };
-
-  $scope.donateNowPressed = function() {
-    $scope.sendGaBtnClick('donateNow');
-    angular.element('#please-donate-modal').modal('hide');
-    angular.element('#payment-modal').modal('show');
   };
 
 }]);
@@ -275,7 +264,7 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
     var queryParams = parseQueryString($window.location.search);
     if (_.has(queryParams, 'payment')) {
       if (queryParams.payment == 'success') {
-        angular.element('#thanks-modal').modal('show');
+        angular.element('#payment-success-modal').modal('show');
       } else if (queryParams.payment == 'error') {
         angular.element('#payment-failed-modal').modal('show');
       }

@@ -40,7 +40,7 @@ allVersions:
   releaseDateFormat: "%Y-%m-%d"
   showOldBetaReleases: Show old beta versions
   hideOldBetaReleases: Hide old beta versions
-thanks:
+paymentSuccess:
   title: Thank you for your donation to Cryptomator!
   content: Your payment was successful and you have been redirected to the Downloads page. Happy crypting!
   dismissBtn: Hooray!
