@@ -33,6 +33,12 @@ getStarted:
     Quick Guide [Link: Cryptomator Community]
   quickGuideLink: https://community.cryptomator.org/t/how-do-i-set-up-cryptomator/26
   embedLink: https://www.youtube.com/embed/g9A0zihHZ14
+supportUs:
+  title: Support Cryptomator
+  subtitle: Cryptomator for Desktop is free and open-source software
+  content: >
+    Development of the desktop application is made possible by your donation. Thank you! :heart:
+  donate: Donate
 allVersions:
   title: All Desktop Versions
   dateFormat: "%B %d, %Y"

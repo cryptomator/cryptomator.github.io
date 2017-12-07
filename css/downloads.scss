@@ -59,12 +59,22 @@
 
 #getStarted {
   padding-bottom: $spacing-unit * 2;
-  padding-top: 50px + $spacing-unit * 2;
+  padding-top: $spacing-unit * 2;
+}
+
+#supportUs {
+  padding-bottom: $spacing-unit * 2;
+  padding-top: $spacing-unit * 2;
+
+  a {
+    margin-top: $spacing-unit / 2;
+    text-decoration: none;
+  }
 }
 
 #allVersions {
   padding-bottom: $spacing-unit * 2;
-  padding-top: 50px + $spacing-unit * 2;
+  padding-top: $spacing-unit * 2;
 }
 
 .download-btn-container {
