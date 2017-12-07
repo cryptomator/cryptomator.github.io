@@ -282,7 +282,7 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
     }
   };
 
-  $scope.knownDownloadNav = ['winDownload', 'macDownload', 'linuxDownload', 'jarDownload'];
+  $scope.knownDownloadNav = ['winDownload', 'macDownload', 'linuxDownload', 'androidDownload', 'iosDownload', 'jarDownload'];
   $scope.knownUrlHashes = ['#allVersions'];
   $scope.showDownloadNav = function(forceUpdateUrl, nav) {
     if (_.includes($scope.knownDownloadNav, nav)) {
@@ -293,6 +293,10 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
       nav = 'macDownload';
     } else if ($scope.isOSLinux) {
       nav = 'linuxDownload';
+    } else if ($scope.isOSAndroid) {
+      nav = 'androidDownload';
+    } else if ($scope.isOSiOS) {
+      nav = 'iosDownload';
     } else {
       nav = 'jarDownload';
     }

@@ -83,7 +83,7 @@
 
         <div class="text-center">
           <h2>{{ i18n.apps.title }}</h2>
-          <a href="{{ i18n.apps.appStoreLink }}" class="app-store-btn" data-ng-show="!isOSAndroid" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/appstore-badge.svg"/></a>
+          <a href="{{ i18n.apps.appStoreLink }}" class="app-store-btn" data-ng-show="!isOSAndroid" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/ios/{{ language.name }}/appstore-badge.svg"/></a>
           <a href="{{ languageUrlPrefix }}/android/" class="android-btn btn btn-store" data-ng-show="!isOSiOS" data-ng-click="sendGaBtnClick('android')">Android<sup>™</sup> App</a>
         </div>
       </div>

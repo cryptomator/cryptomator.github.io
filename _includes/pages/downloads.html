@@ -36,9 +36,7 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="no-margin-b">
-                .exe Installer
-              </h4>
+              <h4 class="no-margin-b">.exe Installer</h4>
             </div>
             <div class="panel-body small">
               <p>Minimum: Windows Vista SP2</p>
@@ -79,9 +77,7 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="no-margin-b">
-                .dmg Image
-              </h4>
+              <h4 class="no-margin-b">.dmg Image</h4>
             </div>
             <div class="panel-body small">
               <p>Minimum: OS X 10.8.3</p>
@@ -195,11 +191,82 @@
               </div>
               <div id="linuxDownloadAur" class="panel-collapse collapse">
                 <div class="panel-body small">
-                  <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="sendGaBtnClick('aur')"  role="button">
+                  <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="sendGaBtnClick('aur')" role="button">
                     <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="androidDownload" class="download" data-ng-show="downloadNav == 'androidDownload'">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+          <img src="/img/screenshots/{{ language.name }}/dl_android.png" srcset="/img/screenshots/{{ language.name }}/dl_android.png 1x, /img/screenshots/{{ language.name }}/dl_android@2x.png 2x" class="img-responsive center-block"/>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center">
+          <h2>{{ i18n.android.title }}</h2>
+
+          <div class="panel-group" id="androidDownloadPanel">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="no-margin-b">
+                  <a data-toggle="collapse" data-parent="#androidDownloadPanel" href="#androidDownloadGooglePlay">
+                    Google Play
+                  </a>
+                </h4>
+              </div>
+              <div id="androidDownloadGooglePlay" class="panel-collapse collapse in">
+                <div class="panel-body small">
+                  <p>Minimum: Android 4.3</p>
+                  <a href="{{ i18n.android.link }}" class="google-play-btn" data-ng-click="sendGaBtnClick('androidGooglePlay')" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="no-margin-b">
+                  <a data-toggle="collapse" data-parent="#androidDownloadPanel" href="#androidDownloadApk">
+                    APK
+                  </a>
+                </h4>
+              </div>
+              <div id="androidDownloadApk" class="panel-collapse collapse">
+                <div class="panel-body small">
+                  <p>{{ i18n.android.noticeApk }}</p>
+                  <a class="btn btn-primary" href="http://updates.cryptomator.org/android/Cryptomator-0.7.0.apk" target="_blank" data-ng-click="sendGaBtnClick('androidDirect')" role="button">
+                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.android.buttonApk }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="iosDownload" class="download" data-ng-show="downloadNav == 'iosDownload'">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+          <img src="/img/screenshots/{{ language.name }}/dl_ios.png" srcset="/img/screenshots/{{ language.name }}/dl_ios.png 1x, /img/screenshots/{{ language.name }}/dl_ios@2x.png 2x" class="img-responsive center-block"/>
+        </div>
+        <div class="col-md-6 col-lg-4 text-center">
+          <h2>{{ i18n.ios.title }}</h2>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="no-margin-b">App Store</h4>
+            </div>
+            <div class="panel-body small">
+              <p>Minimum: iOS 8.0</p>
+              <a href="{{ i18n.ios.link }}" class="app-store-btn" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/ios/{{ language.name }}/appstore-badge.svg"/></a>
             </div>
           </div>
         </div>
@@ -218,13 +285,11 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="no-margin-b">
-                {{ i18n.jar.subtitle }}
-              </h4>
+              <h4 class="no-margin-b">{{ i18n.jar.subtitle }}</h4>
             </div>
             <div class="panel-body small">
               <p>{{ i18n.jar.requirements }}</p>
-              <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-primary" role="button">
+              <a class="btn btn-primary" href="https://github.com/cryptomator/cryptomator/releases" target="_blank" data-ng-click="sendGaBtnClick('jar')" role="button">
                 <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
               </a>
             </div>
@@ -240,6 +305,8 @@
         <li data-ng-class="{'active': downloadNav == 'winDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'winDownload')">Windows</a></li>
         <li data-ng-class="{'active': downloadNav == 'macDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'macDownload')">macOS</a></li>
         <li data-ng-class="{'active': downloadNav == 'linuxDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'linuxDownload')">Linux</a></li>
+        <li data-ng-class="{'active': downloadNav == 'androidDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'androidDownload')">Android</a></li>
+        <li data-ng-class="{'active': downloadNav == 'iosDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'iosDownload')">iOS</a></li>
         <li data-ng-class="{'active': downloadNav == 'jarDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'jarDownload')">JAR</a></li>
       </ul>
     </div>

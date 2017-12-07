@@ -22,6 +22,16 @@ linux:
       For older distributions please use our <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">.deb package</a>.
   buttonAur: Visit AUR Page
   requirements: See <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detailed system requirements</a>
+android:
+  title: Cryptomator for Android
+  link: https://play.google.com/store/apps/details?id=org.cryptomator&hl=en
+  noticeApk: >
+    Cryptomator for Android is currently not available for purchase as APK download.<br/>
+    We're working on it. In the meantime, you can download the latest beta version.
+  buttonApk: Download Beta 0.7.0
+ios:
+  title: Cryptomator for iOS
+  link: https://itunes.apple.com/us/app/cryptomator/id953086535
 jar:
   title: Other Platforms
   subtitle: Executable .jar File

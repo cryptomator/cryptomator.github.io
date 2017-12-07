@@ -17,6 +17,12 @@
   }
 }
 
+.app-store-btn img,
+.google-play-btn img {
+  max-height: 40px;
+  width: 135px;
+}
+
 #downloadNav {
   padding-bottom: $spacing-unit / 2;
   padding-top: $spacing-unit / 2;
@@ -68,7 +74,6 @@
 
   a {
     margin-top: $spacing-unit / 2;
-    text-decoration: none;
   }
 }
 
