@@ -16,7 +16,7 @@ download:
 windows:
   title: Cryptomator for Windows
 mac:
-  title: Cryptomator for Mac
+  title: Cryptomator for macOS
 linux:
   title: Cryptomator for Linux
   ppa:
@@ -32,14 +32,14 @@ jar:
   button: Available on GitHub
   requirements: Requires JRE 8 + JCE unlimited strength policy files
 allVersions:
-  title: All Versions
+  title: All Desktop Versions
   dateFormat: "%B %d, %Y"
   version: Version
   changelog: Changelog
   releaseDate: Release Date
   releaseDateFormat: "%Y-%m-%d"
-  showOldBetaReleases: Show old beta versions
-  hideOldBetaReleases: Hide old beta versions
+  showOldBetaReleases: Show Old Beta Versions
+  hideOldBetaReleases: Hide Old Beta Versions
 paymentSuccess:
   title: Thank you for your donation to Cryptomator!
   content: Your payment was successful and you have been redirected to the Downloads page. Happy crypting!

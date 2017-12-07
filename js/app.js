@@ -276,16 +276,30 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
   $scope.init = function() {
     $scope.initialized = true;
     if (!_.isEmpty($window.location.hash)) {
+      $scope.showDownloadNav(false, $window.location.hash.split('#')[1]);
+    } else {
+      $scope.showDownloadNav(false);
+    }
+  };
+
+  $scope.knownDownloadNav = ['winDownload', 'macDownload', 'linuxDownload', 'jarDownload'];
+  $scope.knownUrlHashes = ['#allVersions'];
+  $scope.showDownloadNav = function(forceUpdateUrl, nav) {
+    if (_.includes($scope.knownDownloadNav, nav)) {
       // no-op
     } else if ($scope.isOSWindows) {
-      $window.location.hash = 'winDownload';
+      nav = 'winDownload';
     } else if ($scope.isOSMac) {
-      $window.location.hash = 'macDownload';
+      nav = 'macDownload';
     } else if ($scope.isOSLinux) {
-      $window.location.hash = 'linuxDownload';
+      nav = 'linuxDownload';
     } else {
-      $window.location.hash = 'jarDownload';
+      nav = 'jarDownload';
     }
+    if (forceUpdateUrl || !_.includes($scope.knownUrlHashes, $window.location.hash)) {
+      $window.location.hash = nav;
+    }
+    $scope.downloadNav = nav;
   };
 
   $scope.showOldBetaReleases = false;

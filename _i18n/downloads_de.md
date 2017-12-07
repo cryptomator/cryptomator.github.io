@@ -16,7 +16,7 @@ download:
 windows:
   title: Cryptomator für Windows
 mac:
-  title: Cryptomator für Mac
+  title: Cryptomator für macOS
 linux:
   title: Cryptomator für Linux
   ppa:
@@ -32,7 +32,7 @@ jar:
   button: Verfügbar auf GitHub
   requirements: Benötigt JRE 8 + JCE unlimited strength policy Dateien
 allVersions:
-  title: Alle Versionen
+  title: Alle Desktop-Versionen
   dateFormat: "%d.%m.%Y"
   version: Version
   changelog: Änderungen

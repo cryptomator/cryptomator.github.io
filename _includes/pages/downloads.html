@@ -7,223 +7,240 @@
 {% assign i18n = 'downloads' %}
 {% include i18n.liquid %}
 
-<div class="container" data-ng-controller="DownloadCtrl">
+<div data-ng-controller="DownloadCtrl">
 
-  <section id="loadScreen" class="fullheight download hide-noscript" data-ng-init="init()" data-ng-show="!initialized">
+  <section id="loadScreen" class="container fullheight download hide-noscript" data-ng-init="init()" data-ng-show="!initialized">
     <div class="text-center">
       <h2>{{ i18n.loadScreen.title }}</h2>
       <p class="lead">{{ i18n.loadScreen.choosingDownload }}</p>
     </div>
   </section>
 
-  <section id="winDownload" class="row fullheight download">
-    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
-      <img src="/img/screenshots/dl_win.png" srcset="/img/screenshots/dl_win.png 1x, /img/screenshots/dl_win@2x.png 2x" class="img-responsive center-block"/>
-    </div>
-    <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-      <meta itemprop="applicationCategory" content="Productivity"/>
-      <meta itemprop="applicationSubCategory" content="Encryption"/>
-      <meta itemprop="softwareVersion" content="{{winVersion}}"/>
-      <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-      <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-      <meta itemprop="operatingSystem" content="Windows"/>
-      <h2>{{ i18n.windows.title }}</h2>
-      <p class="small">Version {{winVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{winVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="no-margin-b">
-            .exe Installer
-          </h4>
-        </div>
-        <div class="panel-body small">
-          <p>Minimum: Windows Vista SP2</p>
-          <div class="btn-group">
-            <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="sendGaBtnClick('{{winFile64}}')" class="btn btn-primary" role="button">
-              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
-            </a>
-            <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="sendGaBtnClick('{{winFile32}}')" class="btn btn-primary" role="button">
-              {{ i18n.download.button32 }}
-            </a>
-          </div>
-          <p class="download-caption">
-            <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">SHA256 (64 Bit)</a> •
-            <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum32}}">SHA256 (32 Bit)</a>
-          </p>
-        </div>
+  <section id="winDownload" class="container download" data-ng-show="downloadNav == 'winDownload'">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+        <img src="/img/screenshots/dl_win.png" srcset="/img/screenshots/dl_win.png 1x, /img/screenshots/dl_win@2x.png 2x" class="img-responsive center-block"/>
       </div>
+      <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+        <meta itemprop="applicationCategory" content="Productivity"/>
+        <meta itemprop="applicationSubCategory" content="Encryption"/>
+        <meta itemprop="softwareVersion" content="{{winVersion}}"/>
+        <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+        <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+        <meta itemprop="operatingSystem" content="Windows"/>
+        <h2>{{ i18n.windows.title }}</h2>
+        <p class="small">Version {{winVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{winVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
-      <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
-    </div>
-  </section>
-
-  <section id="macDownload" class="row fullheight download">
-    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
-      <img src="/img/screenshots/dl_mac.png" srcset="/img/screenshots/dl_mac.png 1x, /img/screenshots/dl_mac@2x.png 2x" class="img-responsive center-block"/>
-    </div>
-    <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-      <meta itemprop="applicationCategory" content="Productivity"/>
-      <meta itemprop="applicationSubCategory" content="Encryption"/>
-      <meta itemprop="softwareVersion" content="{{macVersion}}"/>
-      <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-      <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-      <meta itemprop="operatingSystem" content="Mac"/>
-      <h2>{{ i18n.mac.title }}</h2>
-      <p class="small">Version {{macVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{macVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="no-margin-b">
-            .dmg Image
-          </h4>
-        </div>
-        <div class="panel-body small">
-          <p>Minimum: OS X 10.8.3</p>
-          <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="sendGaBtnClick('{{macFile}}')" class="btn btn-primary" role="button">
-            <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button }}
-          </a>
-          <p class="download-caption">
-            <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">SHA256</a>
-          </p>
-        </div>
-      </div>
-
-      <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
-    </div>
-  </section>
-
-  <section id="linuxDownload" class="row fullheight download">
-    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
-      <img src="/img/screenshots/dl_linux.png" srcset="/img/screenshots/dl_linux.png 1x, /img/screenshots/dl_linux@2x.png 2x" class="img-responsive center-block"/>
-    </div>
-    <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-      <meta itemprop="applicationCategory" content="Productivity"/>
-      <meta itemprop="applicationSubCategory" content="Encryption"/>
-      <meta itemprop="softwareVersion" content="{{linuxVersion}}"/>
-      <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-      <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
-      <meta itemprop="operatingSystem" content="Linux"/>
-      <h2>{{ i18n.linux.title }}</h2>
-      <p class="small">Version {{linuxVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{linuxVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a><br/>{{ i18n.linux.requirements }}</p>
-
-      <div class="panel-group" id="linuxDownloadPanel">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="no-margin-b">
-              <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadPpa">
-                PPA<br/><span class="small">Ubuntu, Mint, elementary OS, ...</span>
-              </a>
+              .exe Installer
             </h4>
           </div>
-          <div id="linuxDownloadPpa" class="panel-collapse collapse in">
-            <div class="panel-body small">
-              <p>{{ i18n.linux.ppa.minimumRequirements }}</p>
-              <pre class="text-left text-nowrap">
-                sudo add-apt-repository ppa:sebastian-stenzel/cryptomator<br/>
-                sudo apt-get update<br/>
-                sudo apt-get install cryptomator
-              </pre>
-              <p class="download-caption">{{ i18n.linux.ppa.olderDistributions }}</p>
+          <div class="panel-body small">
+            <p>Minimum: Windows Vista SP2</p>
+            <div class="btn-group">
+              <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="sendGaBtnClick('{{winFile64}}')" class="btn btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
+              </a>
+              <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="sendGaBtnClick('{{winFile32}}')" class="btn btn-primary" role="button">
+                {{ i18n.download.button32 }}
+              </a>
+            </div>
+            <p class="download-caption">
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">SHA256 (64 Bit)</a> •
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum32}}">SHA256 (32 Bit)</a>
+            </p>
+          </div>
+        </div>
+
+        <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="macDownload" class="container download" data-ng-show="downloadNav == 'macDownload'">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+        <img src="/img/screenshots/dl_mac.png" srcset="/img/screenshots/dl_mac.png 1x, /img/screenshots/dl_mac@2x.png 2x" class="img-responsive center-block"/>
+      </div>
+      <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+        <meta itemprop="applicationCategory" content="Productivity"/>
+        <meta itemprop="applicationSubCategory" content="Encryption"/>
+        <meta itemprop="softwareVersion" content="{{macVersion}}"/>
+        <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+        <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+        <meta itemprop="operatingSystem" content="Mac"/>
+        <h2>{{ i18n.mac.title }}</h2>
+        <p class="small">Version {{macVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{macVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin-b">
+              .dmg Image
+            </h4>
+          </div>
+          <div class="panel-body small">
+            <p>Minimum: OS X 10.8.3</p>
+            <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="sendGaBtnClick('{{macFile}}')" class="btn btn-primary" role="button">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button }}
+            </a>
+            <p class="download-caption">
+              <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">SHA256</a>
+            </p>
+          </div>
+        </div>
+
+        <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="linuxDownload" class="container download" data-ng-show="downloadNav == 'linuxDownload'">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+        <img src="/img/screenshots/dl_linux.png" srcset="/img/screenshots/dl_linux.png 1x, /img/screenshots/dl_linux@2x.png 2x" class="img-responsive center-block"/>
+      </div>
+      <div class="col-md-6 col-lg-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+        <meta itemprop="applicationCategory" content="Productivity"/>
+        <meta itemprop="applicationSubCategory" content="Encryption"/>
+        <meta itemprop="softwareVersion" content="{{linuxVersion}}"/>
+        <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+        <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
+        <meta itemprop="operatingSystem" content="Linux"/>
+        <h2>{{ i18n.linux.title }}</h2>
+        <p class="small">Version {{linuxVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{linuxVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a><br/>{{ i18n.linux.requirements }}</p>
+
+        <div class="panel-group" id="linuxDownloadPanel">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="no-margin-b">
+                <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadPpa">
+                  PPA<br/><span class="small">Ubuntu, Mint, elementary OS, ...</span>
+                </a>
+              </h4>
+            </div>
+            <div id="linuxDownloadPpa" class="panel-collapse collapse in">
+              <div class="panel-body small">
+                <p>{{ i18n.linux.ppa.minimumRequirements }}</p>
+                <pre class="text-left text-nowrap">
+                  sudo add-apt-repository ppa:sebastian-stenzel/cryptomator<br/>
+                  sudo apt-get update<br/>
+                  sudo apt-get install cryptomator
+                </pre>
+                <p class="download-caption">{{ i18n.linux.ppa.olderDistributions }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="no-margin-b">
-              <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">
-                .deb Package<br/><span class="small">Debian, older Ubuntu versions, ...</span>
-              </a>
-            </h4>
-          </div>
-          <div id="linuxDownloadDeb" class="panel-collapse collapse">
-            <div class="panel-body small">
-              <div class="btn-group">
-                <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-primary" role="button">
-                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="no-margin-b">
+                <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">
+                  .deb Package<br/><span class="small">Debian, older Ubuntu versions, ...</span>
                 </a>
-                <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-primary" role="button">
-                  {{ i18n.download.button32 }}
+              </h4>
+            </div>
+            <div id="linuxDownloadDeb" class="panel-collapse collapse">
+              <div class="panel-body small">
+                <div class="btn-group">
+                  <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
+                  </a>
+                  <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-primary" role="button">
+                    {{ i18n.download.button32 }}
+                  </a>
+                </div>
+                <p class="download-caption">
+                  <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum64}}">SHA256 (64 Bit)</a> •
+                  <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum32}}">SHA256 (32 Bit)</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="no-margin-b">
+                <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadRpm">
+                  .rpm Package<br/><span class="small">Red Hat, openSUSE, Fedora, CentOS, ...</span>
+                </a>
+              </h4>
+            </div>
+            <div id="linuxDownloadRpm" class="panel-collapse collapse">
+              <div class="panel-body small">
+                <div class="btn-group">
+                  <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
+                  </a>
+                  <a itemprop="downloadUrl" href="{{redhatUrl32}}" data-ng-click="sendGaBtnClick('{{redhatFile32}}')" class="btn btn-primary" role="button">
+                    {{ i18n.download.button32 }}
+                  </a>
+                </div>
+                <p class="download-caption">
+                  <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">SHA256 (64 Bit)</a> •
+                  <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum32}}">SHA256 (32 Bit)</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="no-margin-b">
+                <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAur">
+                  AUR<br/><span class="small">Arch, Manjaro, ...</span>
+                </a>
+              </h4>
+            </div>
+            <div id="linuxDownloadAur" class="panel-collapse collapse">
+              <div class="panel-body small">
+                <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="sendGaBtnClick('aur')"  role="button">
+                  <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
                 </a>
               </div>
-              <p class="download-caption">
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum64}}">SHA256 (64 Bit)</a> •
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum32}}">SHA256 (32 Bit)</a>
-              </p>
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="no-margin-b">
-              <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadRpm">
-                .rpm Package<br/><span class="small">Red Hat, openSUSE, Fedora, CentOS, ...</span>
-              </a>
-            </h4>
-          </div>
-          <div id="linuxDownloadRpm" class="panel-collapse collapse">
-            <div class="panel-body small">
-              <div class="btn-group">
-                <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-primary" role="button">
-                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
-                </a>
-                <a itemprop="downloadUrl" href="{{redhatUrl32}}" data-ng-click="sendGaBtnClick('{{redhatFile32}}')" class="btn btn-primary" role="button">
-                  {{ i18n.download.button32 }}
-                </a>
-              </div>
-              <p class="download-caption">
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">SHA256 (64 Bit)</a> •
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum32}}">SHA256 (32 Bit)</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="no-margin-b">
-              <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAur">
-                AUR<br/><span class="small">Arch, Manjaro, ...</span>
-              </a>
-            </h4>
-          </div>
-          <div id="linuxDownloadAur" class="panel-collapse collapse">
-            <div class="panel-body small">
-              <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="sendGaBtnClick('aur')"  role="button">
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
+        <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
+      </div>
     </div>
   </section>
 
-  <section id="jarDownload" class="row fullheight download">
-    <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
-      <img src="/img/screenshots/dl_jar.png" srcset="/img/screenshots/dl_jar.png 1x, /img/screenshots/dl_jar@2x.png 2x" class="img-responsive center-block"/>
-    </div>
-    <div class="col-md-6 col-lg-4 text-center">
-      <h2>{{ i18n.jar.title }}</h2>
-      <p class="small"><a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
+  <section id="jarDownload" class="container download" data-ng-show="downloadNav == 'jarDownload'">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 hidden-sm hidden-xs">
+        <img src="/img/screenshots/dl_jar.png" srcset="/img/screenshots/dl_jar.png 1x, /img/screenshots/dl_jar@2x.png 2x" class="img-responsive center-block"/>
+      </div>
+      <div class="col-md-6 col-lg-4 text-center">
+        <h2>{{ i18n.jar.title }}</h2>
+        <p class="small"><a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="no-margin-b">
-            {{ i18n.jar.subtitle }}
-          </h4>
-        </div>
-        <div class="panel-body small">
-          <p>{{ i18n.jar.requirements }}</p>
-          <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-primary" role="button">
-            <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
-          </a>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="no-margin-b">
+              {{ i18n.jar.subtitle }}
+            </h4>
+          </div>
+          <div class="panel-body small">
+            <p>{{ i18n.jar.requirements }}</p>
+            <a href="https://github.com/cryptomator/cryptomator/releases" class="btn btn-primary" role="button">
+              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="allVersions" class="fullheight download">
+  <section id="downloadNav" class="green-background text-center">
+    <ul class="nav nav-pills center-pills">
+      <li data-ng-class="{'active': downloadNav == 'winDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'winDownload')">Windows</a></li>
+      <li data-ng-class="{'active': downloadNav == 'macDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'macDownload')">macOS</a></li>
+      <li data-ng-class="{'active': downloadNav == 'linuxDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'linuxDownload')">Linux</a></li>
+      <li data-ng-class="{'active': downloadNav == 'jarDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'jarDownload')">JAR</a></li>
+    </ul>
+  </section>
+
+  <section id="allVersions" class="container">
     <div class="text-center">
       <h2>{{ i18n.allVersions.title }}</h2>
       <p class="lead">{{ i18n.allVersions.version }} {{ latestRelease.tags[0] }} ({{ latestRelease.dates[0] | date: i18n.allVersions.dateFormat }})</p>
