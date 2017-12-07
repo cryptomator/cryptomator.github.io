@@ -29,7 +29,7 @@
         <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
         <meta itemprop="operatingSystem" content="Windows"/>
         <h2>{{ i18n.windows.title }}</h2>
-        <p class="small">Version {{winVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{winVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
+        <p class="small">Version {{winVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{winVersion}}">{{ i18n.allVersions.changelog }}</a></p>
 
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -53,8 +53,6 @@
             </p>
           </div>
         </div>
-
-        <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
       </div>
     </div>
   </section>
@@ -72,7 +70,7 @@
         <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
         <meta itemprop="operatingSystem" content="Mac"/>
         <h2>{{ i18n.mac.title }}</h2>
-        <p class="small">Version {{macVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{macVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
+        <p class="small">Version {{macVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{macVersion}}">{{ i18n.allVersions.changelog }}</a></p>
 
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -90,8 +88,6 @@
             </p>
           </div>
         </div>
-
-        <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
       </div>
     </div>
   </section>
@@ -109,7 +105,7 @@
         <meta itemprop="description" content="Client-side AES encryption for your cloud files."/>
         <meta itemprop="operatingSystem" content="Linux"/>
         <h2>{{ i18n.linux.title }}</h2>
-        <p class="small">Version {{linuxVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{linuxVersion}}">{{ i18n.allVersions.changelog }}</a> • <a href="#allVersions">{{ i18n.allVersions.title }}</a><br/>{{ i18n.linux.requirements }}</p>
+        <p class="small">Version {{linuxVersion}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{linuxVersion}}">{{ i18n.allVersions.changelog }}</a><br/>{{ i18n.linux.requirements }}</p>
 
         <div class="panel-group" id="linuxDownloadPanel">
           <div class="panel panel-default">
@@ -199,8 +195,6 @@
             </div>
           </div>
         </div>
-
-        <p class="small"><a href="https://cryptomator.freshdesk.com/support/solutions/articles/16000052007" target="_blank">{{ i18n.quickGuide }}</a> • <a href="{{ i18n.tutorialVideo.link }}" target="_blank">{{ i18n.tutorialVideo.title }}</a></p>
       </div>
     </div>
   </section>
@@ -212,7 +206,6 @@
       </div>
       <div class="col-md-6 col-lg-4 text-center">
         <h2>{{ i18n.jar.title }}</h2>
-        <p class="small"><a href="#allVersions">{{ i18n.allVersions.title }}</a></p>
 
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -238,6 +231,16 @@
       <li data-ng-class="{'active': downloadNav == 'linuxDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'linuxDownload')">Linux</a></li>
       <li data-ng-class="{'active': downloadNav == 'jarDownload'}"><a class="cursor-pointer" role="tab" data-ng-click="showDownloadNav(true, 'jarDownload')">JAR</a></li>
     </ul>
+  </section>
+
+  <section id="getStarted" class="container">
+    <div class="text-center">
+      <h2>{{ i18n.getStarted.title }}</h2>
+      <p class="lead"><a href="{{ i18n.getStarted.quickGuideLink }}" target="_blank">{{ i18n.getStarted.subtitle }}</a></p>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{ i18n.getStarted.embedLink }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
   </section>
 
   <section id="allVersions" class="container">

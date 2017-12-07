@@ -5,10 +5,6 @@ context: downloads
 loadScreen:
   title: Cryptomator Download
   choosingDownload: Der Download für Ihr Betriebssystem wird gewählt…
-quickGuide: Kurzanleitung
-tutorialVideo:
-  title: Tutorial-Video
-  link: https://www.youtube.com/watch?v=AIS5vbUAFc0
 download:
   button: Download
   button64: Download 64-Bit
@@ -31,6 +27,12 @@ jar:
   subtitle: Ausführbare .jar-Datei
   button: Verfügbar auf GitHub
   requirements: Benötigt JRE 8 + JCE unlimited strength policy Dateien
+getStarted:
+  title: Erste Schritte mit Cryptomator
+  subtitle: >
+    Kurzanleitung [Link: Cryptomator Community]
+  quickGuideLink: https://community.cryptomator.org/t/wie-richte-ich-cryptomator-ein/801
+  embedLink: https://www.youtube.com/embed/AIS5vbUAFc0
 allVersions:
   title: Alle Desktop-Versionen
   dateFormat: "%d.%m.%Y"

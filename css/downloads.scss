@@ -57,6 +57,11 @@
   display: inline-block;
 }
 
+#getStarted {
+  padding-bottom: $spacing-unit * 2;
+  padding-top: 50px + $spacing-unit * 2;
+}
+
 #allVersions {
   padding-bottom: $spacing-unit * 2;
   padding-top: 50px + $spacing-unit * 2;
