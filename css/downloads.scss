@@ -66,6 +66,10 @@
   .nav-pills {
     margin: 0;
 
+    li {
+      padding: 0 2px;
+    }
+
     a {
       color: $white-color;
     }
