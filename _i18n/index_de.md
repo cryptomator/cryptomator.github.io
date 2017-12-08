@@ -16,6 +16,7 @@ download:
 apps:
   title: App für Ihr Mobilgerät
   appStoreLink: https://itunes.apple.com/de/app/cryptomator/id953086535
+  googlePlayLink: https://play.google.com/store/apps/details?id=org.cryptomator&hl=de
 
 reception:
   title: Resonanz
