@@ -27,7 +27,7 @@ android:
   link: https://play.google.com/store/apps/details?id=org.cryptomator&hl=en
   noticeApk: >
     Cryptomator for Android is currently not available for purchase as APK download.<br/>
-    We're working on it. In the meantime, you can download the latest beta version.
+    In the meantime, you can still download the old beta version.
   buttonApk: Download Beta 0.7.0
 ios:
   title: Cryptomator for iOS

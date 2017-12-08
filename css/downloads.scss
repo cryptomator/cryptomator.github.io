@@ -66,10 +66,6 @@
   .nav-pills {
     margin: 0;
 
-    > li+li {
-      margin-left: $spacing-unit;
-    }
-
     a {
       color: $white-color;
     }
@@ -98,10 +94,6 @@
         color: $brand-color;
       }
     }
-  }
-
-  .center-pills {
-    display: inline-block;
   }
 
   .fontawesome {
