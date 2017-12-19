@@ -47,8 +47,8 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
 
   googleAnalytics.sendPageView();
 
-  $rootScope.sendGaBtnClick = function(label) {
-    googleAnalytics.sendBtnClick(label);
+  $rootScope.sendGaBtnClick = function(label, value) {
+    googleAnalytics.sendBtnClick(label, value);
   };
 
   $rootScope.disableGaIssued = !_.isEmpty($cookies.get('disableGa'));
@@ -108,8 +108,12 @@ app.factory('googleAnalytics', ['$window', '$cookies', function($window, $cookie
       ga('send', 'pageview');
     },
 
-    sendBtnClick: function(eventLabel) {
-      ga('send', 'event', 'button', 'click', eventLabel);
+    sendBtnClick: function(eventLabel, value) {
+      if ((typeof value === 'undefined') || value === null) {
+        ga('send', 'event', 'button', 'click', eventLabel);
+      } else {
+        ga('send', 'event', 'button', 'click', eventLabel, value);
+      }
     },
 
     disable: function() {
@@ -122,6 +126,20 @@ app.factory('googleAnalytics', ['$window', '$cookies', function($window, $cookie
 }]);
 
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
+
+  $scope.donationContinuePressed = function(amount) {
+    $scope.sendGaBtnClick('donateContinue', amount);
+    if (amount == 0) {
+      angular.element('#please-donate-modal').modal('show');
+    }
+  };
+
+  $scope.donateNowPressed = function() {
+    $scope.sendGaBtnClick('donateNow');
+    $scope.donation.amount = 15;
+    angular.element('#please-donate-modal').modal('hide');
+    angular.element('#payment-modal').modal('show');
+  };
 
   $scope.gotoDownloads = function(shouldGoToDownloads) {
     if (shouldGoToDownloads) {

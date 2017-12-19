@@ -69,7 +69,7 @@
               <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 15" data-ng-class="{{"{"}}active: donation.amount == 15}">15 [[donation.currency.symbol]]</button>
               <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = 25" data-ng-class="{{"{"}}active: donation.amount == 25}">25 [[donation.currency.symbol]]</button>
               <button type="button" class="btn btn-lg btn-default" data-ng-click="donation.amount = null" data-ng-class="{{"{"}}active: (donation.amount !== 0 &amp;&amp; donation.amount != 9 &amp;&amp; donation.amount != 15 &amp;&amp; donation.amount != 25)}">{{ i18n.download.buttonOtherAmount }}</button>
-              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{{"{"}}'#payment-modal': donation.amount !== 0}" data-ng-click="gotoDownloads(donation.amount === 0)">
+              <button type="button" class="btn btn-lg btn-primary" data-conditional-modal="{{"{"}}'#payment-modal': donation.amount !== 0}" data-ng-click="donationContinuePressed(donation.amount)">
                 <span data-ng-show="donation.amount !== 0"><span class="glyphicon glyphicon-shopping-cart"></span> {{ i18n.download.buttonContinue }}</span>
                 <span data-ng-show="donation.amount === 0"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.download.buttonDownload }}</span>
               </button>

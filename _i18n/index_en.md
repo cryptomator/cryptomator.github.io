@@ -81,4 +81,12 @@ newsletter:
   buttonSubscribe: Subscribe
   success: >
     Thank you for subscribing! :love_letter: A confirmation link has been sent to your email address.
+
+pleaseDonate:
+  title: Support Cryptomator
+  content: >
+    <p>Development of the desktop application is made possible by your donation.</p>
+    <p>Would you like to donate before downloading Cryptomator?</p>
+  donateLaterButton: Donate Later
+  donateButton: Donate Now
 ---
