@@ -22,9 +22,11 @@ payment:
     message: Message (optional)
     proceedBtn: Proceed to PayPal
   creditCard:
-    paymentHint: >
+    paymentHint1: >
       Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC.
       Please expect to be <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">charged by Stripe</a>.
+    paymentHint2: >
+      <strong>Important:</strong> Credit card plausibility checks might fail when using anonymizing services such as proxies or Tor.
     amount: Amount
     message: Message (optional)
     number: Card Number

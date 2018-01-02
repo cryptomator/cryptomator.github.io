@@ -95,7 +95,7 @@
 
         <!-- Credit Card -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'creditCard'}">
-          <p>{{ i18n.payment.creditCard.paymentHint }}</p>
+          <p>{{ i18n.payment.creditCard.paymentHint1 }}</p>
 
           <div data-ng-show="!paymentSuccessful">
             <div class="row">
@@ -178,6 +178,8 @@
               </div>
             </div>
           </div>
+
+          <p>{{ i18n.payment.creditCard.paymentHint2 }}</p>
         </div>
 
         <!-- Bank Transfer -->
@@ -196,7 +198,7 @@
         <div role="tabpanel" class="tab-pane text-center" data-ng-class="{active: paymentType == 'bitcoin'}">
           <img src="/img/bitcoin-address.png" srcset="/img/bitcoin-address.png 1x, /img/bitcoin-address@2x.png 2x" class="center-block"/>
 
-          <code>1NeRKGXG5ZJ6CBVVbxaFrwq5kWG34vT8wh</code>
+          <code>1LK1UUMLNoMfbLd56ySavpZ96tTZHHSZds</code>
         </div>
 
       </div>
