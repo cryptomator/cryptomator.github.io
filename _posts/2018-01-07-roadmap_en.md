@@ -3,12 +3,12 @@ layout: post
 title: "Cryptomator Roadmap Early 2018"
 date: 2018-01-07
 author: Sebastian Stenzel
-authorlink: https://twitter.com/overheadhunter
+authorlink: https://github.com/overheadhunter
 authorimg: https://avatars0.githubusercontent.com/u/1204330?s=96
 tags: [cryptomator, desktop]
 stylesheets: ['/css/blog-post.css']
 
-published: false
+published: true
 language: en
 
 sitemap: false
