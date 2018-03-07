@@ -8,41 +8,24 @@
     <h2 class="text-center">{{ i18n.subtitle }}</h2>
   </div>
 
+  {% for job in i18n.jobs %}
+  {% assign mod3 = forloop.index0 | modulo: 3 %}
+  {% if mod3 == 0 %}
   <div class="row">
+  {% endif %}
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.one.title }}</h3>
+      <h3 class="text-center">{{ job.title }}</h3>
       <p>
-        {{ i18n.one.content }}
+        {{ job.content }}
       </p>
       <p class="text-center">
-        <a href="/jobs/2017-08 Technischer Support_Online.pdf" class="btn btn-primary" target="_blank">
+        <a href="{{ job.url }}" class="btn btn-primary" target="_blank">
           <span class="glyphicon glyphicon-file"></span> {{ i18n.action }}
         </a>
       </p>
     </div>
-
-    <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.two.title }}</h3>
-      <p>
-        {{ i18n.two.content }}
-      </p>
-      <p class="text-center">
-        <a href="/jobs/2017-08 iOS-App-Entwicklung_Online.pdf" class="btn btn-primary" target="_blank">
-          <span class="glyphicon glyphicon-file"></span> {{ i18n.action }}
-        </a>
-      </p>
-    </div>
-
-    <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.three.title }}</h3>
-      <p>
-        {{ i18n.three.content }}
-      </p>
-      <p class="text-center">
-        <a href="/jobs/2017-08 Cloud-Infrastruktur-Aufbau_Online.pdf" class="btn btn-primary" target="_blank">
-          <span class="glyphicon glyphicon-file"></span> {{ i18n.action }}
-        </a>
-      </p>
-    </div>
+  {% if mod3 == 2 or forloop.last %}
   </div>
+  {% endif %}
+  {% endfor %}
 </section>
