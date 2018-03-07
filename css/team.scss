@@ -3,13 +3,3 @@
 ---
 @charset "utf-8";
 @import "variables";
-
-.person img {
-  width: 100%;
-}
-
-p.name {
-  font-size: $base-font-size * 1.2;
-  margin-bottom: 0;
-  margin-top: $spacing-unit / 4;
-}
