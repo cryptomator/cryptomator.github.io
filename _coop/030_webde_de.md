@@ -18,6 +18,7 @@ screenshots:
 - img: /img/coop/webde-screenshot-3.png
 - img: /img/coop/webde-screenshot-4.png
 - img: /img/coop/webde-screenshot-5.png
+- img: /img/coop/webde-screenshot-6.png
 ---
 Beim WEB.DE Online-Speicher können sich Nutzer darauf verlassen, dass ihre Cloud-Dateien ausschließlich in Deutschland gespeichert werden und somit per Gesetz streng geschützt sind. Dafür steht das „Cloud made in Germany“-Versprechen von WEB.DE.
 

@@ -18,6 +18,7 @@ screenshots:
 - img: /img/coop/gmx-screenshot-3.png
 - img: /img/coop/gmx-screenshot-4.png
 - img: /img/coop/gmx-screenshot-5.png
+- img: /img/coop/gmx-screenshot-6.png
 ---
 MediaCenter is the free cloud solution for all GMX users. With the "Cloud made in Germany" promise, GMX guarantees compliance with strict data protection guidelines and the exclusive storage of all files in Germany.
 

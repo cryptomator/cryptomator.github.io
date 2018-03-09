@@ -18,6 +18,7 @@ screenshots:
 - img: /img/coop/webde-screenshot-3.png
 - img: /img/coop/webde-screenshot-4.png
 - img: /img/coop/webde-screenshot-5.png
+- img: /img/coop/webde-screenshot-6.png
 ---
 With WEB.DE Online-Speicher, users can rely on the fact that their cloud files are stored exclusively in Germany and are therefore strictly protected by law. This is what WEB.DE's "Cloud made in Germany" promise stands for.
 
