@@ -10,6 +10,8 @@ Jeder Ordner erhält zunächst eine eindeutige ID. Die ID des Wurzel-Verzeichnis
 dirId := createUuid()
 </pre>
 
+Der Klartextname einer Datei wird mit UTF-8 in <a href="http://unicode.org/reports/tr15/#Norm_Forms" target="_blank">Normalization Form C</a> kodiert, um eine eindeutige Bitfolge zu erhalten.
+
 Cryptomator nutzt dann <a href="http://tools.ietf.org/html/rfc5297" target="_blank">AES-SIV</a>, um den Namen von Dateien und Verzeichnissen zu verschlüsseln. Die eindeutige ID des Ordners, indem sich die Datei oder der Ordner befindet, wird als Zusatzdaten übergeben. Dies verhindert das unerkannte Verschieben von verschlüsselten Dateien in andere Verzeichnisse.
 
 <img class="article-img" src="/img/architecture/filename-encryption.png" srcset="/img/architecture/filename-encryption.png 1x, /img/architecture/filename-encryption@2x.png 2x" alt="Verschlüsselung des Dateinamen" />

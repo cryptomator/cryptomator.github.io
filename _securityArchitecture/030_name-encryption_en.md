@@ -10,6 +10,8 @@ At first, each folder gets a unique identifier called _directory ID_. The direct
 dirId := createUuid()
 </pre>
 
+The cleartext name of a file gets encoded using UTF-8 in <a href="http://unicode.org/reports/tr15/#Norm_Forms" target="_blank">Normalization Form C</a> to get a unique binary representation.
+
 Cryptomator uses <a href="http://tools.ietf.org/html/rfc5297" target="_blank">AES-SIV</a> to encrypt file as well as directory names. The directory ID of the parent folder is passed as associated data. This prevents undetected movement of files between directories.
 
 <img class="article-img" src="/img/architecture/filename-encryption.png" srcset="/img/architecture/filename-encryption.png 1x, /img/architecture/filename-encryption@2x.png 2x" alt="Filename Encryption" />
