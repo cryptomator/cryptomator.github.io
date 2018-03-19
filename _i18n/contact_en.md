@@ -9,10 +9,6 @@ speakToUs:
   community:
     title: Community
     contactUs: If you have questions or need help, <a href="https://community.cryptomator.org/" target="_blank">please visit the Cryptomator Community</a>.
-  support:
-    title: Support
-    contactUs: If we explicitly ask you to send us an email (e.g., for sending a <a href="https://community.cryptomator.org/t/where-is-the-log-file-located/24" target="_blank">log file</a>), contact us at
-    weSpeakGerman: Wir sprechen auch Deutsch.
   press:
     title: Press
     contactUs: For any press inquiries, contact us at

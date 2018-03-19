@@ -9,9 +9,6 @@ speakToUs:
   community:
     title: Community
     contactUs: Wenn Sie Fragen haben oder Hilfe benötigen, <a href="https://community.cryptomator.org/" target="_blank">besuchen Sie bitte die Cryptomator Community</a>.
-  support:
-    title: Support
-    contactUs: Falls wir Sie ausdrücklich um eine E-Mail bitten (bspw. zum Versenden einer <a href="https://community.cryptomator.org/t/where-is-the-log-file-located/24" target="_blank">Log-Datei</a>), erreichen Sie uns unter
   press:
     title: Presse
     contactUs: Für Presseanfragen kontaktieren Sie uns unter
