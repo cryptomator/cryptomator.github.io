@@ -84,8 +84,8 @@
 
         <div class="text-center">
           <h2>{{ i18n.apps.title }}</h2>
-          <a href="{{ i18n.apps.appStoreLink }}" class="app-store-btn" data-ng-show="!isOSAndroid" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/ios/{{ language.name }}/appstore-badge.svg"/></a>
-          <a href="{{ i18n.apps.googlePlayLink }}" class="google-play-btn" data-ng-show="!isOSAndroid" data-ng-click="sendGaBtnClick('androidGooglePlay')" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
+          <a href="{{ i18n.apps.appStoreLink }}" class="app-store-btn" data-ng-show="!isOSAndroid" target="_blank"><img src="/img/ios/{{ language.name }}/appstore-badge.svg"/></a>
+          <a href="{{ i18n.apps.googlePlayLink }}" class="google-play-btn" data-ng-show="!isOSAndroid" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
         </div>
       </div>
     </div><!-- /.row -->
@@ -99,7 +99,7 @@
           <p>{{ i18n.pleaseDonate.content }}</p>
         </div>
         <div class="modal-footer">
-          <a href="{{ languageUrlPrefix }}/downloads/" class="btn btn-default" data-ng-click="sendGaBtnClick('donateLater')">{{ i18n.pleaseDonate.donateLaterButton }}</a>
+          <a href="{{ languageUrlPrefix }}/downloads/" class="btn btn-default">{{ i18n.pleaseDonate.donateLaterButton }}</a>
           <button type="button" class="btn btn-primary" data-ng-click="donateNowPressed()">
             <span class="glyphicon glyphicon-thumbs-up"></span>
             {{ i18n.pleaseDonate.donateButton }}

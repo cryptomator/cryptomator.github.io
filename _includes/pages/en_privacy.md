@@ -9,13 +9,7 @@ Cryptomator.org does not write log files. However this website is hosted on GitH
 IP addresses, and other such information are not linked to any information that is personally identifiable.
 
 ## Cookies
-According to the Directive 2002/58 on Privacy and Electronic Communications, this website will inform you in case it utilizes cookies set by our statistics package Google Analytics to gather information about language and location of our users. Google, as a third party, uses cookies to identify and track visitors, their usage of this website, and their website access preferences. Visitors who do not wish to have cookies placed on their computers should set their browsers or browser plugin to refuse such cookies before using Cryptomator.org's websites.
-
-## Google Analytics Privacy Policy
-Cryptomator.org's privacy policy does not apply to third parties. Thus you should consult the respective Google Privacy Policy available on [google.com/policies/privacy](http://google.com/policies/privacy/).
+According to the Directive 2002/58 on Privacy and Electronic Communications, this website will inform you in case it utilizes cookies. Visitors who do not wish to have cookies placed on their computers should set their browsers or browser plugin to refuse such cookies before using Cryptomator.org's websites.
 
 ## Privacy Policy Changes
 Cryptomator.org may change its Privacy Policy from time to time. We encourage visitors to frequently check this page for any changes to its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute your acceptance of such change.
-
-
-Effective Date: December 17, 2015

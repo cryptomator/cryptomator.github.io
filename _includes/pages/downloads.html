@@ -41,10 +41,10 @@
             <div class="panel-body small">
               <p>Minimum: Windows Vista SP2</p>
               <div class="btn-group">
-                <a itemprop="downloadUrl" href="{{winUrl64}}" data-ng-click="sendGaBtnClick('{{winFile64}}')" class="btn btn-primary" role="button">
+                <a itemprop="downloadUrl" href="{{winUrl64}}" class="btn btn-primary" role="button">
                   <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                 </a>
-                <a itemprop="downloadUrl" href="{{winUrl32}}" data-ng-click="sendGaBtnClick('{{winFile32}}')" class="btn btn-primary" role="button">
+                <a itemprop="downloadUrl" href="{{winUrl32}}" class="btn btn-primary" role="button">
                   {{ i18n.download.button32 }}
                 </a>
               </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="panel-body small">
               <p>Minimum: OS X 10.8.3</p>
-              <a itemprop="downloadUrl" href="{{macUrl}}" data-ng-click="sendGaBtnClick('{{macFile}}')" class="btn btn-primary" role="button">
+              <a itemprop="downloadUrl" href="{{macUrl}}" class="btn btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button }}
               </a>
               <p class="download-caption">
@@ -142,10 +142,10 @@
               <div id="linuxDownloadDeb" class="panel-collapse collapse">
                 <div class="panel-body small">
                   <div class="btn-group">
-                    <a itemprop="downloadUrl" href="{{debianUrl64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-primary" role="button">
+                    <a itemprop="downloadUrl" href="{{debianUrl64}}" class="btn btn-primary" role="button">
                       <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                     </a>
-                    <a itemprop="downloadUrl" href="{{debianUrl32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-primary" role="button">
+                    <a itemprop="downloadUrl" href="{{debianUrl32}}" class="btn btn-primary" role="button">
                       {{ i18n.download.button32 }}
                     </a>
                   </div>
@@ -167,10 +167,10 @@
               <div id="linuxDownloadRpm" class="panel-collapse collapse">
                 <div class="panel-body small">
                   <div class="btn-group">
-                    <a itemprop="downloadUrl" href="{{redhatUrl64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-primary" role="button">
+                    <a itemprop="downloadUrl" href="{{redhatUrl64}}" class="btn btn-primary" role="button">
                       <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
                     </a>
-                    <a itemprop="downloadUrl" href="{{redhatUrl32}}" data-ng-click="sendGaBtnClick('{{redhatFile32}}')" class="btn btn-primary" role="button">
+                    <a itemprop="downloadUrl" href="{{redhatUrl32}}" class="btn btn-primary" role="button">
                       {{ i18n.download.button32 }}
                     </a>
                   </div>
@@ -191,7 +191,7 @@
               </div>
               <div id="linuxDownloadAur" class="panel-collapse collapse">
                 <div class="panel-body small">
-                  <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" data-ng-click="sendGaBtnClick('aur')" role="button">
+                  <a class="btn btn-primary" itemprop="downloadUrl" href="https://aur.archlinux.org/packages/cryptomator/" target="_blank" role="button">
                     <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.linux.buttonAur }}
                   </a>
                 </div>
@@ -224,7 +224,7 @@
               <div id="androidDownloadGooglePlay" class="panel-collapse collapse in">
                 <div class="panel-body small">
                   <p>Minimum: Android 4.3</p>
-                  <a href="{{ i18n.android.link }}" class="google-play-btn" data-ng-click="sendGaBtnClick('androidGooglePlay')" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
+                  <a href="{{ i18n.android.link }}" class="google-play-btn" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@
               <div id="androidDownloadApk" class="panel-collapse collapse">
                 <div class="panel-body small">
                   <p>{{ i18n.android.noticeApk }}</p>
-                  <a class="btn btn-primary" href="http://updates.cryptomator.org/android/Cryptomator-0.7.0.apk" target="_blank" data-ng-click="sendGaBtnClick('androidDirect')" role="button">
+                  <a class="btn btn-primary" href="http://updates.cryptomator.org/android/Cryptomator-0.7.0.apk" target="_blank" role="button">
                     <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.android.buttonApk }}
                   </a>
                 </div>
@@ -266,7 +266,7 @@
             </div>
             <div class="panel-body small">
               <p>Minimum: iOS 8.0</p>
-              <a href="{{ i18n.ios.link }}" class="app-store-btn" data-ng-click="sendGaBtnClick('appstore')" target="_blank"><img src="/img/ios/{{ language.name }}/appstore-badge.svg"/></a>
+              <a href="{{ i18n.ios.link }}" class="app-store-btn" target="_blank"><img src="/img/ios/{{ language.name }}/appstore-badge.svg"/></a>
             </div>
           </div>
         </div>
@@ -289,7 +289,7 @@
             </div>
             <div class="panel-body small">
               <p>{{ i18n.jar.requirements }}</p>
-              <a class="btn btn-primary" href="https://github.com/cryptomator/cryptomator/releases" target="_blank" data-ng-click="sendGaBtnClick('jar')" role="button">
+              <a class="btn btn-primary" href="https://github.com/cryptomator/cryptomator/releases" target="_blank" role="button">
                 <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.jar.button }}
               </a>
             </div>
@@ -399,12 +399,12 @@
             </td>
             <td>
               {% if winSha1Checksum64 or winSha256Checksum64 %}
-              <a href="{{winUrl64}}" download="{{winFile64}}" data-ng-click="sendGaBtnClick('{{winFile64}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{winUrl64}}" download="{{winFile64}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{winFile64}}
               </a>
               {% endif %}
               {% if winSha1Checksum32 or winSha256Checksum32 %}
-              <a href="{{winUrl32}}" download="{{winFile32}}" data-ng-click="sendGaBtnClick('{{winFile32}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{winUrl32}}" download="{{winFile32}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{winFile32}}
               </a>
               {% endif %}
@@ -414,7 +414,7 @@
             </td>
             <td>
               {% if macSha1Checksum or macSha256Checksum %}
-              <a href="{{macUrl}}" download="{{macFile}}" data-ng-click="sendGaBtnClick('{{macFile}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{macUrl}}" download="{{macFile}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{macFile}}
               </a>
               {% else %}
@@ -423,22 +423,22 @@
             </td>
             <td>
               {% if debianSha1Checksum64 or debianSha256Checksum64 %}
-              <a href="{{debianUrl64}}" download="{{debianFile64}}" data-ng-click="sendGaBtnClick('{{debianFile64}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{debianUrl64}}" download="{{debianFile64}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile64}}
               </a>
               {% endif %}
               {% if debianSha1Checksum32 or debianSha256Checksum32 %}
-              <a href="{{debianUrl32}}" download="{{debianFile32}}" data-ng-click="sendGaBtnClick('{{debianFile32}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{debianUrl32}}" download="{{debianFile32}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile32}}
               </a>
               {% endif %}
               {% if redhatSha1Checksum64 or redhatSha256Checksum64 %}
-              <a href="{{redhatUrl64}}" download="{{redhatFile64}}" data-ng-click="sendGaBtnClick('{{redhatFile64}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{redhatUrl64}}" download="{{redhatFile64}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{redhatFile64}}
               </a>
               {% endif %}
               {% if redhatSha1Checksum32 or redhatSha256Checksum32 %}
-              <a href="{{redhatUrl32}}" download="{{redhatFile32}}" data-ng-click="sendGaBtnClick('{{redhatFile32}}')" class="btn btn-xs btn-default" role="button">
+              <a href="{{redhatUrl32}}" download="{{redhatFile32}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{redhatFile32}}
               </a>
               {% endif %}

@@ -28,7 +28,7 @@ app.config(['$interpolateProvider', '$httpProvider', function($interpolateProvid
   $httpProvider.defaults.withCredentials = true;
 }]);
 
-app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cookies, googleAnalytics) {
+app.run(['$rootScope', '$cookies', function($rootScope, $cookies) {
 
   $rootScope.isOSWindows = navigator.appVersion.indexOf('Win') !== -1;
   $rootScope.isOSMac = navigator.appVersion.indexOf('Mac') !== -1 && navigator.appVersion.indexOf('iPhone') === -1;
@@ -44,19 +44,6 @@ app.run(['$rootScope', '$cookies', 'googleAnalytics', function($rootScope, $cook
     currency: null
   };
   $rootScope.donation.currency = $rootScope.donation.currencyEUR;
-
-  googleAnalytics.sendPageView();
-
-  $rootScope.sendGaBtnClick = function(label, value) {
-    googleAnalytics.sendBtnClick(label, value);
-  };
-
-  $rootScope.disableGaIssued = !_.isEmpty($cookies.get('disableGa'));
-
-  $rootScope.disableGa = function() {
-    googleAnalytics.disable();
-    $rootScope.disableGaIssued = true;
-  };
 
 }]);
 
@@ -91,51 +78,15 @@ app.factory('stripe', ['$window', function($window) {
   };
 }]);
 
-app.factory('googleAnalytics', ['$window', '$cookies', function($window, $cookies) {
-
-  window['ga-disable-UA-57664706-1'] = !_.isEmpty($cookies.get('disableGa'));
-
-  /* jshint sub:true, asi:true, expr:true */
-  var ga = window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date();
-  /* jshint sub:false, asi:false, expr:false */
-
-  ga('create', 'UA-57664706-1', 'auto');
-  ga('set', 'anonymizeIp', true);
-  ga('require', 'displayfeatures');
-
-  return {
-    sendPageView: function() {
-      ga('send', 'pageview');
-    },
-
-    sendBtnClick: function(eventLabel, value) {
-      if ((typeof value === 'undefined') || value === null) {
-        ga('send', 'event', 'button', 'click', eventLabel);
-      } else {
-        ga('send', 'event', 'button', 'click', eventLabel, value);
-      }
-    },
-
-    disable: function() {
-      var expireDate = new Date();
-      expireDate.setFullYear(expireDate.getFullYear() + 1);
-      $cookies.put('disableGa', 'issued_' + new Date().toISOString(), {expires: expireDate});
-    }
-  };
-
-}]);
-
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
 
   $scope.donationContinuePressed = function(amount) {
-    $scope.sendGaBtnClick('donateContinue', amount);
     if (amount == 0) {
       angular.element('#please-donate-modal').modal('show');
     }
   };
 
   $scope.donateNowPressed = function() {
-    $scope.sendGaBtnClick('donateNow');
     $scope.donation.amount = 15;
     angular.element('#please-donate-modal').modal('hide');
     angular.element('#payment-modal').modal('show');

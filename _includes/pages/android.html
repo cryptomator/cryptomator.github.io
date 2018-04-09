@@ -12,7 +12,7 @@
           <h1 class="display-font">{{ i18n.title }}</h1>
           <h2>{{ i18n.subtitle }}</h2>
           <div>
-            <a href="{{ latestRelease.googlePlayUrl }}" class="google-play-btn btn-download" data-ng-click="sendGaBtnClick('androidGooglePlay')" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
+            <a href="{{ latestRelease.googlePlayUrl }}" class="google-play-btn btn-download" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
             <a href="#apk-download" class="apk-btn btn btn-store btn-download">{{ i18n.downloadDirect }}</a>
             <p class="small">{{ i18n.requirements }}</p>
           </div>
@@ -31,7 +31,7 @@
       <h2>{{ i18n.apkDownload.title }}</h2>
       <p class="lead">{{ i18n.apkDownload.lead }}</p>
       <p>{{ i18n.apkDownload.content }}</p>
-      <a href="{{ latestRelease.directDownloadUrl }}" data-ng-click="sendGaBtnClick('androidDirect')" class="btn btn-primary">
+      <a href="{{ latestRelease.directDownloadUrl }}" class="btn btn-primary">
         {{ i18n.apkDownload.downloadBeta }}
       </a>
     </div>
