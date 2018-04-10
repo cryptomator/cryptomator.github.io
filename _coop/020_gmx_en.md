@@ -7,7 +7,7 @@ permalink: /coop/gmx_en.html
 title: GMX Tresor
 img: /img/coop/gmx.png
 img2x: /img/coop/gmx@2x.png
-bannerimg: /img/coop/gmx-banner.png
+bannerimg: /img/coop/gmx-banner.jpg
 excerpt: >
   The cooperation with GMX resulted in the GMX Tresor. This provides users of GMX MediaCenter with the option to add further protection: With this application, they are automatically encrypted on the respective device and then transferred to the cloud.
 lead: >

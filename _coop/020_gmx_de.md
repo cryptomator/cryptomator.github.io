@@ -7,7 +7,7 @@ permalink: /coop/gmx_de.html
 title: GMX Tresor
 img: /img/coop/gmx.png
 img2x: /img/coop/gmx@2x.png
-bannerimg: /img/coop/gmx-banner.png
+bannerimg: /img/coop/gmx-banner.jpg
 excerpt: >
   Aus der Kooperation mit GMX entstand der GMX Tresor. Dieser bietet Nutzern des GMX MediaCenters die Möglichkeit, Dateien bei Bedarf zusätzlich zu schützen: Mit dieser Anwendung werden sie automatisch auf dem jeweiligen Gerät verschlüsselt und danach in die Cloud übertragen.
 lead: >
