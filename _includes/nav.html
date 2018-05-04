@@ -57,7 +57,7 @@
           <li role="presentation" data-ng-class="{active: paymentType == 'paypal'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'paypal'">PayPal</a></li>
           <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'creditCard'">{{ i18n.payment.type.creditCard }}</a></li>
           <li role="presentation" data-ng-class="{active: paymentType == 'bankTransfer'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bankTransfer'">{{ i18n.payment.type.bankTransfer }}</a></li>
-          <li role="presentation" data-ng-class="{active: paymentType == 'bitcoin'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bitcoin'">Bitcoin</a></li>
+          <li role="presentation" data-ng-class="{active: paymentType == 'crypto'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'crypto'">Crypto</a></li>
         </ul>
       </div>
       <div class="modal-body tab-content">
@@ -194,11 +194,30 @@
           </dl>
         </div>
 
-        <!-- Bitcoin -->
-        <div role="tabpanel" class="tab-pane text-center" data-ng-class="{active: paymentType == 'bitcoin'}">
-          <img src="/img/bitcoin-address.png" srcset="/img/bitcoin-address.png 1x, /img/bitcoin-address@2x.png 2x" class="center-block"/>
+        <!-- Crypto -->
+        <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'crypto'}">
+          <p>{{ i18n.payment.crypto.paymentHint }}</p>
 
-          <code>1LK1UUMLNoMfbLd56ySavpZ96tTZHHSZds</code>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label class="control-label" for="inputCryptoAmount">{{ i18n.payment.crypto.amount }}</label>
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon" data-ng-class="donation.currency.glyphicon"></span>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a data-ng-click="donation.currency = donation.currencyEUR" class="glyphicon" data-ng-class="donation.currencyEUR.glyphicon"></a></li>
+                    <li><a data-ng-click="donation.currency = donation.currencyGBP" class="glyphicon" data-ng-class="donation.currencyGBP.glyphicon"></a></li>
+                    <li><a data-ng-click="donation.currency = donation.currencyUSD" class="glyphicon" data-ng-class="donation.currencyUSD.glyphicon"></a></li>
+                  </ul>
+                </div><!-- /input-group-btn -->
+                <input id="inputCryptoAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="donation.amount">
+                <div class="input-group-addon">.00</div>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -215,10 +234,12 @@
           <span data-ng-show="paymentInProgress">{{ i18n.payment.creditCard.processingBtn }}</span>
         </button>
 
+        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'crypto'" data-ng-click="payWithCrypto('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.crypto.proceedBtn }}</button>
+
 
         <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.creditCard.successful }}</a>
 
-        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'bankTransfer' || paymentType == 'bitcoin'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.payment.proceedToDownloads }}</a>
+        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'bankTransfer'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.payment.proceedToDownloads }}</a>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

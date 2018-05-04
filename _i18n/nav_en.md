@@ -40,6 +40,12 @@ payment:
     successful: Payment successful
   bankTransfer:
     recipient: Recipient
+  crypto:
+    paymentHint: >
+      Select the crypto currency in the next step.
+      After pressing &quot;Proceed&quot;, you will be redirected to our CoinPayments site.
+    amount: Amount (Fiat)
+    proceedBtn: Proceed to CoinPayments
   cancelBtn: Cancel
   proceedToDownloads: Proceed to Downloads
 ---

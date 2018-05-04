@@ -187,6 +187,11 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
     });
   };
 
+  $scope.payWithCrypto = function(locale) {
+    $scope.paymentInProgress = true;
+    $window.location.href = 'https://www.coinpayments.net/index.php?cmd=_pay&reset=1&merchant=963d3aa90995dc5542113e7801e31e2a&currency=' + $scope.donation.currency.code + '&amountf=' + $scope.donation.amount + '&item_name=Cryptomator+Donation&want_shipping=0&success_url=https%3A%2F%2Fcryptomator.org%2Fdownloads%2F%3Fpayment%3Dsuccess&allow_extra=1&lang=' + locale;
+  };
+
   $scope.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 1;
   };

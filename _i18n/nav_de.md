@@ -17,7 +17,7 @@ payment:
     bankTransfer: Überweisung
   paypal:
     paymentHint: >
-      Nach dem Klick auf &quot;Weiter&quot;, werden Sie auf unsere PayPal-Seite geleitet.
+      Nach dem Klick auf &quot;Weiter&quot; werden Sie auf unsere PayPal-Seite geleitet.
     amount: Betrag
     message: Nachricht (optional)
     proceedBtn: Weiter zu PayPal
@@ -40,6 +40,12 @@ payment:
     successful: Zahlung erfolgreich
   bankTransfer:
     recipient: Empfänger
+  crypto:
+    paymentHint: >
+      Die Cryptowährung wird im nächsten Schritt ausgewählt.
+      Nach dem Klick auf &quot;Weiter&quot; werden Sie auf unsere CoinPayments-Seite geleitet.
+    amount: Betrag (Fiat)
+    proceedBtn: Weiter zu CoinPayments
   cancelBtn: Abbrechen
   proceedToDownloads: Weiter zum Download
 ---
