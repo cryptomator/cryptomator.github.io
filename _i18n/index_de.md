@@ -22,7 +22,7 @@ reception:
   title: Resonanz
   cebitAwardInfo: >
     Preisträger des CeBIT Innovation Awards 2016:<br/>
-    Cryptomator ist Gewinner des <a href="http://www.cebitaward.de/preistraeger/preistraeger-2016/cryptomator.html" target="_blank">Sonderpreises for Usable Security and Privacy</a>.
+    Cryptomator ist Gewinner des <a href="https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank">Sonderpreises for Usable Security and Privacy</a>.
 
 howto:
   title: Wie schützt Cryptomator Ihre Cloud-Dateien?
