@@ -7,3 +7,8 @@
 .row {
 	margin-bottom: $spacing-unit;
 }
+
+.lib {
+  border-left: 4px solid $brand-color;
+  padding-left: $spacing-unit / 4;
+}

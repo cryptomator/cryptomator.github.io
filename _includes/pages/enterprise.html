@@ -62,3 +62,22 @@
     </a>
   </p>
 </section>
+
+<section>
+  <div class="page-header">
+    <h2 class="text-center">{{ i18n.libs.subtitle }}</h2>
+  </div>
+
+  <p>
+    {{ i18n.libs.teaser }}
+  </p>
+
+  <dl>
+    {% for lib in i18n.libs.list %}
+      <dt class="lib"><a href="{{ lib.url }}">{{ lib.title }}</a></dt>
+      <dd class="lib">
+        <p>{{ lib.description }}</p>
+      </dd>
+    {% endfor %}
+  </dl>
+</section>
