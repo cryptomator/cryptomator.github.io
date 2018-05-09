@@ -37,9 +37,9 @@ libs:
     description: >
       Use CryptoLib for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
       <ul>
-        <li>Encrypt and decrypt Cryptomator compatible data directly retrieved from the cloud
+        <li>Encrypt and decrypt Cryptomator vaults directly retrieved from the cloud
         <li>Suitable for accessing the cloud directly without synchronization, e.g. in apps for Android™
-        <li>High-level API functions for en- and decryption
+        <li>High-level API functions for encryption and decryption
         <li>Java 7+ compatible
       </ul>
     url: https://github.com/cryptomator/cryptolib
@@ -47,7 +47,7 @@ libs:
     description: >
       Use CryptoFS for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
       <ul>
-        <li>Encrypt and decrypt Cryptomator compatible data present on the local file system
+        <li>Encrypt and decrypt Cryptomator vaults that are present on the local filesystem
         <li>Suitable for accessing data synchronized to a local directory
         <li>Implements a <code>java.nio.file.spi.FileSystemProvider</code> according to JSR-203 using the CryptoLib library
         <li>Java 8+ compatible
@@ -55,27 +55,27 @@ libs:
     url: https://github.com/cryptomator/cryptofs
   - title: WebDAV-NIO-Adapter-Servlet
     description: >
-      Add a WebDAV server to your java application.
+      Add a WebDAV server to your Java application.
       <ul>
-        <li>Make the contents of a local directory (any java.nio.file.Path) available via WebDAV.
-        <li>Provides a JEE Servlet
+        <li>Make the contents of a local directory (any <code>java.nio.file.Path</code>) available via WebDAV
+        <li>Provides a JEE servlet
         <li>Java 8+ compatible
       </ul>
     url: https://github.com/cryptomator/webdav-nio-adapter-servlet
   - title: WebDAV-NIO-Adapter
     description: >
-      Launch and mount a WebDAV server from within your java application.
+      Launch and mount a WebDAV server from within your Java application.
       <ul>
-        <li>Mounting support for Windows, macOS and Linux
+        <li>Mounting support for Windows, macOS, and Linux
         <li>Based on WebDAV-NIO-Adapter-Servlet
         <li>Java 8+ compatible
       </ul>
     url: https://github.com/cryptomator/webdav-nio-adapter
   - title: FUSE-NIO-Adapter (Beta)
     description: >
-      Provide a FUSE drive from within your java application.
+      Provide a FUSE drive from within your Java application.
       <ul>
-        <li>Make the contents of a local directory (any java.nio.file.Path) available via FUSE.
+        <li>Make the contents of a local directory (any <code>java.nio.file.Path</code>) available via FUSE
         <li>Mounting support for macOS and Linux
         <li>Java 9+ compatible
       </ul>
@@ -84,7 +84,7 @@ libs:
     description: >
       Provide a Dokany drive from within your java application.
       <ul>
-        <li>Make the contents of a local directory (any java.nio.file.Path) available via Dokany.
+        <li>Make the contents of a local directory (any <code>java.nio.file.Path</code>) available via Dokany
         <li>Mounting support for Windows
         <li>Java 8+ compatible
       </ul>

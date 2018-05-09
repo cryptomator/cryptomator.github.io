@@ -35,19 +35,19 @@ libs:
   list:
   - title: CryptoLib
     description: >
-      Nutzen Sie CryptoLib um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
+      Nutzen Sie CryptoLib, um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
       <ul>
-        <li>Ver- und Entschlüsselung von Cryptomator Tresoren direkt aus der Cloud
+        <li>Ver- und Entschlüsselung von Cryptomator-Tresoren direkt aus der Cloud
         <li>Anwendbar für direkten Cloudzugriff ohne Synchronisierung, z.B. für Apps für Android™
-        <li>High-level Funktionen für Ver- und Entschlüsselung
+        <li>High-Level-Funktionen für Ver- und Entschlüsselung
         <li>Java 7+ kompatibel
       </ul>
     url: https://github.com/cryptomator/cryptolib
   - title: CryptoFS
     description: >
-      Nutzen Sie CryptoLib um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
+      Nutzen Sie CryptoLib, um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
       <ul>
-        <li>Ver- und Entschlüsselung von Cryptomator Tresoren im lokalen Dateisystem
+        <li>Ver- und Entschlüsselung von Cryptomator-Tresoren im lokalen Dateisystem
         <li>Nutzbar für den Zugriff auf Daten, die in ein lokales Verzeichnis synchronisiert wurden
         <li>Implementiert <code>java.nio.file.spi.FileSystemProvider</code> entsprechend JSR-203 durch Nutzung von CryptoLib
         <li>Java 8+ kompatibel
@@ -57,14 +57,14 @@ libs:
     description: >
       Fügen Sie Ihrer Java-Anwendung einen WebDAV-Server hinzu.
       <ul>
-        <li>Die Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per WebDAV bereitgestellt.
-        <li>Implementiert ein JEE Servlet
+        <li>Inhalte eines lokalen Verzeichnisses (jeder <code>java.nio.file.Path</code>) werden per WebDAV bereitgestellt
+        <li>Implementiert ein JEE-Servlet
         <li>Java 8+ kompatibel
       </ul>
     url: https://github.com/cryptomator/webdav-nio-adapter-servlet
   - title: WebDAV-NIO-Adapter
     description: >
-      Starten Sie einen WebDAV Server aus Ihrer Java-Anwendung und binden Sie diesen als Laufwerk ein.
+      Starten Sie einen WebDAV-Server aus Ihrer Java-Anwendung und binden Sie diesen als Laufwerk ein.
       <ul>
         <li>Laufwerkseinbindung auf Windows, macOS und Linux
         <li>Basiert auf WebDAV-NIO-Adapter-Servlet
@@ -75,7 +75,7 @@ libs:
     description: >
       Stellen Sie ein FUSE-Laufwerk aus Ihrer Java-Anwendung bereit.
       <ul>
-        <li>Die Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per FUSE bereitgestellt.
+        <li>Inhalte eines lokalen Verzeichnisses (jeder <code>java.nio.file.Path</code>) werden per FUSE bereitgestellt
         <li>Laufwerkseinbindung auf macOS und Linux
         <li>Java 9+ kompatibel
       </ul>
@@ -84,7 +84,7 @@ libs:
     description: >
       Stellen Sie ein Dokany-Laufwerk aus Ihrer Java-Anwendung bereit.
       <ul>
-        <li>Die Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per Dokany bereitgestellt.
+        <li>Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per Dokany bereitgestellt
         <li>Laufwerkseinbindung auf Windows
         <li>Java 8+ kompatibel
       </ul>
