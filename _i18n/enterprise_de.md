@@ -35,26 +35,58 @@ libs:
   list:
   - title: CryptoLib
     description: >
-      CryptoLib ist eine Java-7-kompatible Bibliothek, welche High-Level-API-Funktionen zur Verwendung von nach <a href="/de/security/architecture">Cryptomator-Verschlüsselungsschema</a> verschlüsselten Daten anbietet.
+      Nutzen Sie CryptoLib um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
+      <ul>
+        <li>Ver- und Entschlüsselung von Cryptomator Tresoren direkt aus der Cloud
+        <li>Anwendbar für direkten Cloudzugriff ohne Synchronisierung, z.B. für Apps für Android™
+        <li>High-level Funktionen für Ver- und Entschlüsselung
+        <li>Java 7+ kompatibel
+      </ul>
     url: https://github.com/cryptomator/cryptolib
   - title: CryptoFS
     description: >
-      CryptoFS ist eine Java 8-kompatible Bibliothek, die Dateien nach dem <a href="/de/security/architecture">Cryptomator-Verschlüsselungsschema</a> ver- und entschlüsselt. CryptoFS implementiert einen <code>java.nio.file.spi.FileSystemProvider</code> gemäß JSR-203. Die Verschlüsselung erfolgt durch Nutzung der Bibliothek CryptoLib.
+      Nutzen Sie CryptoLib um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
+      <ul>
+        <li>Ver- und Entschlüsselung von Cryptomator Tresoren im lokalen Dateisystem
+        <li>Nutzbar für den Zugriff auf Daten, die in ein lokales Verzeichnis synchronisiert wurden
+        <li>Implementiert <code>java.nio.file.spi.FileSystemProvider</code> entsprechend JSR-203 durch Nutzung von CryptoLib
+        <li>Java 8+ kompatibel
+      </ul>
     url: https://github.com/cryptomator/cryptofs
-  - title: WebDAV-NIO-Adapter
-    description: >
-      WebDAV-NIO-Adapter ist ein Adapter zwischen zwei standardisierten Filesystem-Interfaces. Nach außen („Provided Interface“) wird ein WebDAV-Zugriff auf Dateien („Resources“) und Ordner („Collections“) ermöglicht. Intern („Required Interface“) werden die Zugriffe dann auf ein Java-NIO-Filesystem abgebildet.
-    url: https://github.com/cryptomator/webdav-nio-adapter
   - title: WebDAV-NIO-Adapter-Servlet
     description: >
-      WebDAV-NIO-Adapter-Servlet stellt die Inhalte eines Ordners, der durch ein <code>java.nio.file.Path</code> spezifiziert, über ein WebDAV-Servlet bereit.
+      Fügen Sie Ihrer Java-Anwendung einen WebDAV-Server hinzu.
+      <ul>
+        <li>Die Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per WebDAV bereitgestellt.
+        <li>Implementiert ein JEE Servlet
+        <li>Java 8+ kompatibel
+      </ul>
     url: https://github.com/cryptomator/webdav-nio-adapter-servlet
+  - title: WebDAV-NIO-Adapter
+    description: >
+      Starten Sie einen WebDAV Server aus Ihrer Java-Anwendung und binden Sie diesen als Laufwerk ein.
+      <ul>
+        <li>Laufwerkseinbindung auf Windows, macOS und Linux
+        <li>Basiert auf WebDAV-NIO-Adapter-Servlet
+        <li>Java 8+ kompatibel
+      </ul>
+    url: https://github.com/cryptomator/webdav-nio-adapter
   - title: FUSE-NIO-Adapter (Beta)
     description: >
-      FUSE-NIO-Adapter ist ein Adapter zwischen zwei standardisierten Filesystem-Interfaces. Die Bibliothek stellt die Inhalte eines Ordners, der durch ein <code>java.nio.file.Path</code> spezifiziert ist, über ein FUSE-Dateisystem bereit.
+      Stellen Sie ein FUSE-Laufwerk aus Ihrer Java-Anwendung bereit.
+      <ul>
+        <li>Die Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per FUSE bereitgestellt.
+        <li>Laufwerkseinbindung auf macOS und Linux
+        <li>Java 9+ kompatibel
+      </ul>
     url: https://github.com/cryptomator/fuse-nio-adapter
   - title: Dokany-NIO-Adapter (Beta)
     description: >
-      Dokany-NIO-Adapter ist ein Adapter zwischen zwei standardisierten Filesystem-Interfaces. Die Bibliothek stellt die Inhalte eines Ordners, der durch ein <code>java.nio.file.Path</code> spezifiziert ist, über ein Dokany-Dateisystem bereit.
+      Stellen Sie ein Dokany-Laufwerk aus Ihrer Java-Anwendung bereit.
+      <ul>
+        <li>Die Inhalte eines lokalen Verzeichnisses (jeder java.nio.file.Path) werden per Dokany bereitgestellt.
+        <li>Laufwerkseinbindung auf Windows
+        <li>Java 8+ kompatibel
+      </ul>
     url: https://github.com/cryptomator/dokany-nio-adapter
 ---

@@ -35,26 +35,58 @@ libs:
   list:
   - title: CryptoLib
     description: >
-      CryptoLib is a Java 7-compatible library that provides high-level API functions for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
+      Use CryptoLib for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
+      <ul>
+        <li>Encrypt and decrypt Cryptomator compatible data directly retrieved from the cloud
+        <li>Suitable for accessing the cloud directly without synchronization, e.g. in apps for Android™
+        <li>High-level API functions for en- and decryption
+        <li>Java 7+ compatible
+      </ul>
     url: https://github.com/cryptomator/cryptolib
   - title: CryptoFS
     description: >
-      CryptoFS is a Java 8-compatible library that encrypts and decrypts files according to <a href="/security/architecture">Cryptomator's encryption scheme</a>. CryptoFS implements a <code>java.nio.file.spi.FileSystemProvider</code> according to JSR-203 using the CryptoLib library.
+      Use CryptoFS for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
+      <ul>
+        <li>Encrypt and decrypt Cryptomator compatible data present on the local file system
+        <li>Suitable for accessing data synchronized to a local directory
+        <li>Implements a <code>java.nio.file.spi.FileSystemProvider</code> according to JSR-203 using the CryptoLib library
+        <li>Java 8+ compatible
+      </ul>
     url: https://github.com/cryptomator/cryptofs
-  - title: WebDAV-NIO-Adapter
-    description: >
-      WebDAV-NIO-Adapter is an adapter between two standardized filesystem interfaces. Externally, provided interfaces enable WebDAV access to files (resources) and folders (collections). Internally, required interfaces map the accesses to a Java NIO filesystem.
-    url: https://github.com/cryptomator/webdav-nio-adapter
   - title: WebDAV-NIO-Adapter-Servlet
     description: >
-      WebDAV-NIO-Adapter-Servlet serves directory contents specified by a <code>java.nio.file.Path</code> via a WebDAV servlet.
+      Add a WebDAV server to your java application.
+      <ul>
+        <li>Make the contents of a local directory (any java.nio.file.Path) available via WebDAV.
+        <li>Provides a JEE Servlet
+        <li>Java 8+ compatible
+      </ul>
     url: https://github.com/cryptomator/webdav-nio-adapter-servlet
+  - title: WebDAV-NIO-Adapter
+    description: >
+      Launch and mount a WebDAV server from within your java application.
+      <ul>
+        <li>Mounting support for Windows, macOS and Linux
+        <li>Based on WebDAV-NIO-Adapter-Servlet
+        <li>Java 8+ compatible
+      </ul>
+    url: https://github.com/cryptomator/webdav-nio-adapter
   - title: FUSE-NIO-Adapter (Beta)
     description: >
-      FUSE-NIO-Adapter is an adapter between two standardized filesystem interfaces. It provides directory contents specified by a <code>java.nio.file.Path</code> via a FUSE filesystem.
+      Provide a FUSE drive from within your java application.
+      <ul>
+        <li>Make the contents of a local directory (any java.nio.file.Path) available via FUSE.
+        <li>Mounting support for macOS and Linux
+        <li>Java 9+ compatible
+      </ul>
     url: https://github.com/cryptomator/fuse-nio-adapter
   - title: Dokany-NIO-Adapter (Beta)
     description: >
-      Dokany-NIO-Adapter is an adapter between two standardized filesystem interfaces. It provides directory contents specified by a <code>java.nio.file.Path</code> via a Dokany filesystem.
+      Provide a Dokany drive from within your java application.
+      <ul>
+        <li>Make the contents of a local directory (any java.nio.file.Path) available via Dokany.
+        <li>Mounting support for Windows
+        <li>Java 8+ compatible
+      </ul>
     url: https://github.com/cryptomator/dokany-nio-adapter
 ---
