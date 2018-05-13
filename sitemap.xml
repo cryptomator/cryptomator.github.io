@@ -3,13 +3,13 @@ layout: null
 sites:
 - url: '/'
   langs: ['en', 'de']
-- url: '/architecture/'
+- url: '/security/'
   langs: ['en', 'de']
 - url: '/contact/'
   langs: ['en', 'de']
 - url: '/downloads/'
   langs: ['en', 'de']
-- url: '/help/'
+- url: '/support/'
   langs: ['en', 'de']
 ---
 <?xml version="1.0" encoding="UTF-8"?>
