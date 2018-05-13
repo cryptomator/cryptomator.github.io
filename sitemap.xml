@@ -1,27 +1,15 @@
 ---
 layout: null
-sites:
-- url: '/'
-  langs: ['en', 'de']
-- url: '/security/'
-  langs: ['en', 'de']
-- url: '/contact/'
-  langs: ['en', 'de']
-- url: '/downloads/'
-  langs: ['en', 'de']
-- url: '/support/'
-  langs: ['en', 'de']
+sitemaps:
+- url: '/sitemap-pages.xml'
+- url: '/sitemap-coop.xml'
+- url: '/sitemap-blog.xml'
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  {% for s in page.sites %}<!-- {{ site.url }}{{ s.url }} -->
-    {% for l in s.langs %}<!-- {{ l }} -->
-    <url>
-      <loc>{{ site.url }}{{ l | prepend:'/' | remove:'/en' }}{{ s.url }}</loc>
-      {% for l2 in s.langs %}{% if l != l2 %}<xhtml:link rel="alternate" hreflang="{{ l2 }}" href="{{ site.url }}{{ l2 | prepend:'/' | remove:'/en' }}{{ s.url }}" />{% endif %}{% endfor %}
-    </url>
-    {% endfor %}
-  {% endfor %}
-
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for s in page.sitemaps %}<!-- {{ site.url }}{{ s.url }} -->
+  <sitemap>
+    <loc>{{ site.url }}{{ s.url }}</loc>
+  </sitemap>
+{% endfor %}
+</sitemapindex>
