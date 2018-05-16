@@ -1,5 +1,7 @@
 User-agent: *
-Disallow: /img/*_icon128.png$
-Disallow: /privacy.html
-Disallow: /impressum.html
-Disallow: /datenschutz.html
+Disallow: /privacy/
+Disallow: /de/privacy/
+Disallow: /impressum/
+Disallow: /de/impressum/
+Disallow: /datenschutz/
+Disallow: /de/datenschutz/
