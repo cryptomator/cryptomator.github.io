@@ -17,6 +17,8 @@ pages:
   priority: 0.8
 - url: '/enterprise'
   priority: 0.8
+- url: '/sponsors'
+  priority: 0.8
 - url: '/blog'
   priority: 0.5
 - url: '/team'

@@ -1,0 +1,19 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+.heading-stat {
+  font-weight: 400;
+  margin-bottom: $spacing-unit / 4;
+}
+
+.img-opportunity {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.heading-opportunity {
+  font-weight: 400;
+  margin-bottom: $spacing-unit / 4;
+}

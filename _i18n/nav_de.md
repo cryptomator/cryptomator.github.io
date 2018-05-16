@@ -9,6 +9,7 @@ navbar:
   coop: Kooperationen
   support: Support
   enterprise: Enterprise
+  sponsors: Sponsoren
   donate: Spenden
 
 payment:
