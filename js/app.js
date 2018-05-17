@@ -69,13 +69,36 @@ app.factory('paypal', ['$q', '$http', function($q, $http) {
   };
 }]);
 
-app.factory('stripe', ['$window', function($window) {
-  var Stripe = $window.Stripe;
-  Stripe.setPublishableKey('pk_live_eSasX216vGvC26GdbVwA011V');
-
+app.factory('scriptLoader', ['$window', function($window){
   return {
-    card: Stripe.card
+    load: function(url, callback) {
+      var script = $window.document.createElement('script');
+      script.src = url;
+      script.type = "text/javascript";
+      script.onload = callback;
+      $window.document.body.appendChild(script);
+    }
   };
+}]);
+
+app.factory('stripe', ['$window', 'scriptLoader', function($window, scriptLoader) {
+  var stripeInitialized = false;
+  var result = {
+    initialize: function(callback) {
+      if (stripeInitialized) {
+        callback();
+      } else {
+        scriptLoader.load("https://js.stripe.com/v2/", function(){
+          var Stripe = $window.Stripe;
+          Stripe.setPublishableKey('pk_live_eSasX216vGvC26GdbVwA011V')
+          result.card = Stripe.card;
+          callback();
+        });
+      }
+    }
+  };
+
+  return result;
 }]);
 
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
@@ -111,7 +134,20 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
   var currentYear = new Date().getFullYear();
 
   $scope.paymentType = 'paypal';
+  $scope.enablingStripe = false;
+  $scope.stripeEnabled = false;
   $scope.creditCard = {
+    enabling: false,
+    enabled: false,
+    enable: function() {
+      $scope.creditCard.enabling = true;
+      stripe.initialize(function(){
+        $scope.$apply(function(){
+          $scope.creditCard.enabling = false;
+          $scope.creditCard.enabled = true;
+        });
+      });
+    },
     num: '',
     holdername: '',
     cvc: '',
@@ -120,16 +156,16 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripe',
     expYear: null,
     expYears: _.map(_.range(currentYear, currentYear + 10), _.toString),
     validateNum: function() {
-      return stripe.card.validateCardNumber(this.num);
+      return $scope.creditCard.enabled && stripe.card.validateCardNumber(this.num);
     },
     validateCvc: function() {
-      return stripe.card.validateCVC(this.cvc);
+      return $scope.creditCard.enabled && stripe.card.validateCVC(this.cvc);
     },
     validateExpiry: function() {
       return _.includes(this.expMonths, this.expMonth) && _.includes(this.expYears, this.expYear);
     },
     guessType: function() {
-      return stripe.card.cardType(this.num);
+      return $scope.creditCard.enabled && stripe.card.cardType(this.num);
     }
   };
   $scope.paymentInProgress = false;

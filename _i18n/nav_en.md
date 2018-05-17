@@ -23,7 +23,7 @@ payment:
     proceedBtn: Proceed to PayPal
   creditCard:
     paymentHint1: >
-      Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC.
+      Credit card payments are securely handled by <a href="https://stripe.com">Stripe</a>. We will not be able to see your card number or CVC.
       Please expect to be <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">charged by Stripe</a>.
     paymentHint2: >
       <strong>Important:</strong> Credit card plausibility checks might fail when using anonymizing services such as proxies or Tor.
@@ -38,6 +38,8 @@ payment:
     payNowBtn: Pay Now
     processingBtn: Processing…
     successful: Payment successful
+    enableStripeBtn: Continue with Stripe
+    enablingStripeBtn: Loading…
   bankTransfer:
     recipient: Recipient
   crypto:
