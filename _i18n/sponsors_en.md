@@ -11,19 +11,19 @@ stats:
     value: 22k
     title: Monthly Downloads
   linesOfCode:
-    value: 20.7k
+    value: 25.4k
     title: Lines of Code
-  resolvedIssues:
-    value: 6k
-    title: Resolved Issues
   developmentHours:
-    value: 5.7k
+    value: 6.6k
     title: Development Hours
-  publishedBinaries:
-    value: 72
-    title: Published Binaries
+  githubStars:
+    value: 2.2k
+    title: GitHub Stars
+  resolvedIssues:
+    value: 2.9k
+    title: Resolved Issues
   languages:
-    value: 10
+    value: 25
     title: Languages
 opportunities:
   title: Become a Sponsor
@@ -36,7 +36,7 @@ opportunities:
         <ul>
           <li>on cryptomator.org <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="128k+ impressions per month"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
           <li>on cryptomator.org's sponsors site</li>
-          <li>in the project repo's README <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="5.3k+ unique visitors per month"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+          <li>in the project repo's README <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="11.8k visits per month"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
           <li>in newsletters <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="4.3k+ subscribers"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
         </ul>
         <li>Tweet when you become a sponsor <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="2.9k+ followers"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
@@ -49,7 +49,7 @@ opportunities:
         <li>Your company logo</li>
         <ul>
           <li>on cryptomator.org's sponsors site</li>
-          <li>in the project repo's README <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="5.3k+ unique visitors per month"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+          <li>in the project repo's README <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="11.8k visits per month"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
         </ul>
       </ul>
   bronze:
