@@ -64,5 +64,5 @@ opportunities:
       </ul>
   action: Contact Us
   notice: >
-    TODO
+    Minimum term 1 year, payment annually in advance. Sponsors are listed chronologically within the selected tier. The logo will be put online within 5 working days after receipt of payment. You will receive an invoice with VAT.
 ---

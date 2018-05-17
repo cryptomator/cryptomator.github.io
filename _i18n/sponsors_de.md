@@ -5,14 +5,14 @@ context: sponsors
 title: Sponsoren
 lead:
   content: >
-    Cryptomator wird als Open-Source-Projekt trotz des hohen Entwicklungsaufwands kostenlos bereitgestellt und ist daher auf Spenden angewiesen. Wenn Sie auch an der Weiterentwicklung interessiert sind, bieten wir Ihnen als Sponsor die Möglichkeit, uns öffentlich zu unterstützen.
+    Cryptomator wird als Open-Source-Projekt trotz des hohen Entwicklungs&shy;aufwands kostenlos bereitgestellt und ist daher auf Spenden angewiesen. Wenn Sie auch an der Weiterentwicklung interessiert sind, bieten wir Ihnen als Sponsor die Möglichkeit, uns öffentlich zu unterstützen.
 stats:
   monthlyDownloads:
     value: 22k
     title: Monatliche Downloads
   linesOfCode:
     value: 25,4k
-    title: Lines of Code
+    title: Codezeilen
   developmentHours:
     value: 6,6k
     title: Entwicklungsstunden
@@ -64,5 +64,5 @@ opportunities:
       </ul>
   action: Kontaktieren Sie uns
   notice: >
-    TODO
+    Mindestlaufzeit 1 Jahr, Zahlung jährlich im Voraus. Sponsoren werden innerhalb der gewählten Kategorie chronologisch gelistet. Das Logo wird innerhalb von 5 Arbeitstagen nach Geldeingang online gestellt. Ihnen wird eine Rechnung mit ausgewiesener Umsatzsteuer ausgestellt.
 ---
