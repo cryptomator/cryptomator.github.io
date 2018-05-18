@@ -60,7 +60,8 @@ allVersions:
   hideOldBetaReleases: Alte Beta-Versionen verstecken
 paymentSuccess:
   title: Vielen Dank für Ihre Spende an Cryptomator!
-  content: Ihre Zahlung war erfolgreich und Sie wurden zur Downloads-Seite weitergeleitet.
+  content: >
+    Ihre Zahlung war erfolgreich und Sie wurden zur Downloads-Seite weitergeleitet. :tada:
   dismissBtn: Juhu!
 paymentFailed:
   title: Hoppla!

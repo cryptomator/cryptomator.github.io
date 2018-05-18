@@ -24,21 +24,19 @@ payment:
     proceedBtn: Weiter zu PayPal
   creditCard:
     paymentHint1: >
-      Kreditkartenzahlungen werden auf sichere Weise über Stripe bearbeitet. Dabei sind weder Ihre Kartennummer noch der CVC durch uns einsehbar.
+      Kreditkartenzahlungen werden auf sichere Weise über <a href="https://stripe.com" target="_blank">Stripe</a> bearbeitet. Dabei sind weder Ihre Kartennummer noch der CVC durch uns einsehbar.
       In Ihrer Abrechnung wird <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">eine Buchung von Stripe</a> enthalten sein.
     paymentHint2: >
       <strong>Wichtig:</strong> Kreditkarten-Plausibilitätsprüfungen können fehlschlagen, wenn Sie Anonymisierungsdienste wie Proxies oder Tor nutzen.
     amount: Betrag
     message: Nachricht (optional)
-    number: Kartennummer
-    holdername: Karteninhaber
-    expirationDate: Gültig bis
-    chooseMonth: Monat
-    chooseYear: Jahr
-    cvc: CVC (Prüfnummer)
+    card: Kreditkarte
+    loadingStripe: Lade Stripe…
     payNowBtn: Jetzt zahlen
     processingBtn: Verarbeite…
-    successful: Zahlung erfolgreich
+    successful: Juhu!
+    successfulMessage: >
+      Vielen Dank für Ihre Spende an Cryptomator! Ihre Zahlung war erfolgreich und Sie kommen im nächsten Schritt zur Downloads-Seite. :tada:
   bankTransfer:
     recipient: Empfänger
   crypto:

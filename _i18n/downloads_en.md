@@ -60,7 +60,8 @@ allVersions:
   hideOldBetaReleases: Hide Old Beta Versions
 paymentSuccess:
   title: Thank you for your donation to Cryptomator!
-  content: Your payment was successful and you have been redirected to the Downloads page. Happy crypting!
+  content: >
+    Your payment was successful and you have been redirected to the Downloads page. Happy crypting! :tada:
   dismissBtn: Hooray!
 paymentFailed:
   title: Whoops!

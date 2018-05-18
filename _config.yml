@@ -20,6 +20,11 @@ sass:
 kramdown:
   input: GFM
 
+# Emoji
+emoji:
+  src: "/img"
+
+#Collections
 collections:
   releases:
   languages:

@@ -12,7 +12,7 @@ permalink: '/de/feed.xml'
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% assign sortedPosts = site.posts | where: 'published', true | where: 'language', 'de' | sort: 'path', 'last' | reverse %}
+    {% assign sortedPosts = site.posts | where: 'published', true | where: 'language', "de" | sort: 'path', 'last' | reverse %}
     {% for post in sortedPosts limit:10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
