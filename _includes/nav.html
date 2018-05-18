@@ -95,93 +95,49 @@
 
         <!-- Credit Card -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'creditCard'}">
-          <p>{{ i18n.payment.creditCard.paymentHint1 }}</p>
-
           <div data-ng-show="!paymentSuccessful">
-            <div data-ng-show="creditCard.enabled">
-              <div class="row">
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="inputCreditCardAmount">{{ i18n.payment.creditCard.amount }}</label>
-                  <div class="input-group">
-                    <div class="input-group-btn">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon" data-ng-class="donation.currency.glyphicon"></span>
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a data-ng-click="donation.currency = donation.currencyEUR" class="glyphicon" data-ng-class="donation.currencyEUR.glyphicon"></a></li>
-                        <li><a data-ng-click="donation.currency = donation.currencyGBP" class="glyphicon" data-ng-class="donation.currencyGBP.glyphicon"></a></li>
-                        <li><a data-ng-click="donation.currency = donation.currencyUSD" class="glyphicon" data-ng-class="donation.currencyUSD.glyphicon"></a></li>
-                      </ul>
-                    </div><!-- /input-group-btn -->
-                    <input id="inputCreditCardAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="donation.amount">
-                    <div class="input-group-addon">.00</div>
-                  </div>
-                </div>
-              </div>
+            <p>{{ i18n.payment.creditCard.paymentHint1 }}</p>
 
-              <div class="form-group">
-                <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.creditCard.message }}</label>
-                <input id="inputCreditCardMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
-              </div>
-
-              <div class="row">
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="inputCreditCardNumber">{{ i18n.payment.creditCard.number }}</label>
-                  <div class="input-group">
-                    <input id="inputCreditCardNumber" type="text" class="form-control" data-ng-model="creditCard.num">
-                    <span class="input-group-addon">
-                      <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateNum(), 'glyphicon-remove': !creditCard.validateNum()}"></span>
-                      <span data-ng-show="creditCard.guessType() != 'Unknown'" data-ng-bind="creditCard.guessType()"></span>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="inputCreditCardHolderName">{{ i18n.payment.creditCard.holdername }}</label>
-                  <input id="inputCreditCardHolderName" type="text" class="form-control" data-ng-model="creditCard.holdername">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="inputCreditCardExpirationDate">{{ i18n.payment.creditCard.expirationDate }}</label>
-                  <div class="input-group btn-group">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        [[creditCard.expMonth || '{{ i18n.payment.creditCard.chooseMonth }}']]
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li data-ng-repeat="month in creditCard.expMonths"><a data-ng-click="creditCard.expMonth = month">[[month]]</a></li>
-                      </ul>
-                    </div>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        [[creditCard.expYear || '{{ i18n.payment.creditCard.chooseYear }}']]
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li data-ng-repeat="year in creditCard.expYears"><a data-ng-click="creditCard.expYear = year">[[year]]</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group col-sm-6">
-                  <label class="control-label" for="inputCreditCardCVC">{{ i18n.payment.creditCard.cvc }}</label>
-                  <div class="input-group">
-                    <input id="inputCreditCardCVC" type="password" class="form-control" data-ng-model="creditCard.cvc">
-                    <span class="input-group-addon">
-                      <span class="glyphicon" data-ng-class="{'glyphicon-ok': creditCard.validateCvc(), 'glyphicon-remove': !creditCard.validateCvc()}"></span>
-                    </span>
-                  </div>
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="inputCreditCardAmount">{{ i18n.payment.creditCard.amount }}</label>
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="glyphicon" data-ng-class="donation.currency.glyphicon"></span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a data-ng-click="donation.currency = donation.currencyEUR" class="glyphicon" data-ng-class="donation.currencyEUR.glyphicon"></a></li>
+                      <li><a data-ng-click="donation.currency = donation.currencyGBP" class="glyphicon" data-ng-class="donation.currencyGBP.glyphicon"></a></li>
+                      <li><a data-ng-click="donation.currency = donation.currencyUSD" class="glyphicon" data-ng-class="donation.currencyUSD.glyphicon"></a></li>
+                    </ul>
+                  </div><!-- /input-group-btn -->
+                  <input id="inputCreditCardAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="donation.amount">
+                  <div class="input-group-addon">.00</div>
                 </div>
               </div>
             </div>
+
+            <div class="form-group">
+              <label for="inputCreditCardElement">{{ i18n.payment.creditCard.card }}</label>
+              <div id="inputCreditCardPlaceholder" data-ng-show="!creditCard.enabled">
+                <input type="text" class="form-control" data-ng-focus="creditCard.enable()" data-ng-disabled="creditCard.enabling" placeholder="[[creditCard.enabling ? '{{ i18n.payment.creditCard.loadingStripe }}' : '']]">
+              </div>
+              <div id="inputCreditCardElement" data-ng-show="creditCard.enabled"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.creditCard.message }}</label>
+              <input id="inputCreditCardMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
+            </div>
+
+            <p>{{ i18n.payment.creditCard.paymentHint2 }}</p>
           </div>
 
-          <p data-ng-show="creditCard.enabled">{{ i18n.payment.creditCard.paymentHint2 }}</p>
+          <div data-ng-show="paymentSuccessful">
+            <p>{{ i18n.payment.creditCard.successfulMessage }}</p>
+          </div>
         </div>
 
         <!-- Bank Transfer -->
@@ -230,13 +186,7 @@
 
         <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
-        <button data-ng-disabled="creditCard.enabling" data-ng-show="paymentType == 'creditCard' &amp;&amp; !creditCard.enabled" data-ng-click="creditCard.enable()" class="btn btn-primary">
-          <span class="glyphicon glyphicon-credit-card"></span>
-          <span data-ng-show="!creditCard.enabling">{{ i18n.payment.creditCard.enableStripeBtn }}</span>
-          <span data-ng-show="creditCard.enabling">{{ i18n.payment.creditCard.enablingStripeBtn }}</span>
-        </button>
-
-        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.validateCvc() || !creditCard.validateNum() || !creditCard.validateExpiry()" data-ng-show="paymentType == 'creditCard' &amp;&amp; creditCard.enabled &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
+        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.complete" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
           <span data-ng-show="!paymentInProgress">{{ i18n.payment.creditCard.payNowBtn }}</span>
           <span data-ng-show="paymentInProgress">{{ i18n.payment.creditCard.processingBtn }}</span>
