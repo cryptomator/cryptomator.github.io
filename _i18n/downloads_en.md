@@ -43,7 +43,7 @@ getStarted:
     Quick Guide [Link: Cryptomator Community]
   quickGuideLink: https://community.cryptomator.org/t/how-do-i-set-up-cryptomator/26
   embedLink: https://www.youtube-nocookie.com/embed/g9A0zihHZ14?autoplay=1&rel=0
-  videoProvidedByYoutube: By clicking you accept, that the video is served by <a href="https://youtube.com">YouTube</a>.
+  videoProvidedByYoutube: By clicking, you accept that the video is served by <a href="https://youtube.com" target="_blank">YouTube</a>.
 supportUs:
   title: Support Cryptomator
   subtitle: Cryptomator for Desktop is free and open-source software

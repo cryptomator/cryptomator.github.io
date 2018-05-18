@@ -83,7 +83,7 @@ app.factory('scriptLoader', ['$window', function($window){
 
 app.factory('stripeLoader', ['$window', 'scriptLoader', function($window, scriptLoader) {
   var stripe = null;
-  var result = {
+  return {
     load: function(callback) {
       if (stripe) {
         callback(stripe);
@@ -95,7 +95,6 @@ app.factory('stripeLoader', ['$window', 'scriptLoader', function($window, script
       }
     }
   };
-  return result;
 }]);
 
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
