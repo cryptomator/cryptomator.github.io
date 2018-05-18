@@ -256,6 +256,24 @@ app.controller('NewsletterCtrl', ['$scope', '$http', function($scope, $http) {
 
 }]);
 
+app.directive('delayedIframeSrc', ['$document', function($document) {
+  return {
+    link: function(scope, element, attr) {
+      var trigger = angular.element(element[0].querySelector('.delayed-iframe-trigger'));
+      var delayed = angular.element(element[0].querySelector('.delayed-iframe-delayed'));
+      var iframe = element.find('iframe');
+
+      trigger.css("cursor","pointer");
+      delayed.css("display", "none");
+      trigger.on('click', function(event) {
+        trigger.css("display", "none");
+        iframe.attr("src", attr.delayedIframeSrc);
+        delayed.css("display", "");
+      });
+    }
+  };
+}]);
+
 app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
 
   function showModalIfSuggestedByUrl() {

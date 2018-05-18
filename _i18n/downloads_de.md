@@ -42,7 +42,8 @@ getStarted:
   subtitle: >
     Kurzanleitung [Link: Cryptomator Community]
   quickGuideLink: https://community.cryptomator.org/t/wie-richte-ich-cryptomator-ein/801
-  embedLink: https://www.youtube.com/embed/AIS5vbUAFc0
+  embedLink: https://www.youtube-nocookie.com/embed/AIS5vbUAFc0?autoplay=1&rel=0
+  videoProvidedByYoutube: Durch Klicken stimmen Sie zu, dass das Video durch <a href="https://youtube.com">YouTube</a> bereitgestellt wird.
 supportUs:
   title: Cryptomator unterstützen
   subtitle: Cryptomator für Desktop ist eine freie, quelloffene Software

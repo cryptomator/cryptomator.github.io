@@ -340,8 +340,14 @@
     <div class="container text-center">
       <h2>{{ i18n.getStarted.title }}</h2>
       <p class="lead"><a href="{{ i18n.getStarted.quickGuideLink }}" target="_blank">{{ i18n.getStarted.subtitle }}</a></p>
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="{{ i18n.getStarted.embedLink }}" frameborder="0" allowfullscreen></iframe>
+      <div data-delayed-iframe-src="{{ i18n.getStarted.embedLink }}">
+        <div class="delayed-iframe-trigger">
+          <img src="/img/get-started-preview.png" class="img-fluid" />
+          <p>{{ i18n.getStarted.videoProvidedByYoutube }}</p>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 delayed-iframe-delayed">
+          <iframe class="embed-responsive-item" src="/transparent.html" style="background:black" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </section>
