@@ -14,7 +14,7 @@ permalink: /blog/:year/:month/:day/:title.html
 
 # Compress CSS:
 sass:
-#  style: compressed
+  style: compressed
 
 # Github Flavoured Markdown
 kramdown:
@@ -24,7 +24,7 @@ kramdown:
 emoji:
   src: "/img"
 
-#Collections
+# Collections
 collections:
   releases:
   languages:
