@@ -228,38 +228,33 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
     }
   }
 
-  var currentYear = new Date().getFullYear();
-
-
   $scope.paymentType = 'paypal';
-  $scope.paymentInProgress = false;
-  $scope.paymentSuccessful = false;
-  $scope.creditCardValid = false;
-  $scope.creditCardValidationError = '';
 
-  $scope.payWithPaypal = function(locale) {
-    $scope.paymentInProgress = true;
+  $scope.paypal = {};
+  $scope.paypal.pay = function(locale) {
+    $scope.paypal.paymentInProgress = true;
     paypal.preparePayment($scope.donation.currency.code, $scope.donation.amount, $scope.donation.message, locale)
     .then(function(approvalLink) {
       $window.location.href = approvalLink;
     }, function(errorResponse) {
       console.warn('Payment failed.', errorResponse);
-      $scope.paymentError = 'Payment failed.';
-      $scope.paymentInProgress = false;
+      $scope.paypal.paymentError = 'Payment failed.';
+      $scope.paypal.paymentInProgress = false;
     });
   };
 
-  $scope.creditCardLoaded = function(stripe, card) {
-    $scope.payWithCreditCard = function() {
-      $scope.paymentInProgress = true;
+  $scope.creditCard = {};
+  $scope.creditCard.loaded = function(stripe, card) {
+    $scope.creditCard.pay = function() {
+      $scope.creditCard.paymentInProgress = true;
       stripe.createToken(card).then(function(result) {
         if (result.error) {
           $scope.$apply(function() {
-            $scope.paymentError = result.error.message;
-            $scope.paymentInProgress = false;
+            $scope.creditCard.paymentError = result.error.message;
+            $scope.creditCard.paymentInProgress = false;
           });
         } else {
-          $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
+          $http.post('https://api.cryptomator.org/stripe/charge_creditcard.php', $.param({
             stripeToken: result.token.id,
             currency: $scope.donation.currency.code,
             amount: $scope.donation.amount,
@@ -268,31 +263,32 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(successResponse) {
             if (successResponse.data.status == 'ok') {
-              $scope.paymentError = null;
-              $scope.paymentSuccessful = true;
+              $scope.creditCard.paymentError = null;
+              $scope.creditCard.paymentSuccessful = true;
             } else {
-              $scope.paymentError = successResponse.data.error;
+              $scope.creditCard.paymentError = successResponse.data.error;
             }
-            $scope.paymentInProgress = false;
+            $scope.creditCard.paymentInProgress = false;
           }, function(errorResponse) {
             console.warn('Payment failed.', errorResponse.data);
-            $scope.paymentError = 'Payment failed.';
-            $scope.paymentInProgress = false;
+            $scope.creditCard.paymentError = 'Payment failed.';
+            $scope.creditCard.paymentInProgress = false;
           });
         }
       });
     };
   };
 
-  $scope.sepaLoaded = function(stripe, iban) {
-    $scope.payWithSepa = function() {
-      $scope.paymentInProgress = true;
+  $scope.sepa = {};
+  $scope.sepa.loaded = function(stripe, iban) {
+    $scope.sepa.pay = function() {
+      $scope.sepa.paymentInProgress = true;
       var sourceData = {
         type: 'sepa_debit',
         currency: 'eur',
         owner: {
-          name: $scope.sepaName,
-          email: $scope.sepaMail
+          name: $scope.sepa.name,
+          email: $scope.sepa.mail
         },
         mandate: {
           notification_method: 'email',
@@ -301,22 +297,40 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
 
       // Call `stripe.createSource` with the IBAN Element and additional options.
       stripe.createSource(iban, sourceData).then(function(result) {
-        console.log('create soruce: ', result);
         if (result.error) {
           $scope.$apply(function() {
-            $scope.paymentError = result.error.message;
-            $scope.paymentInProgress = false;
+            $scope.sepa.paymentError = result.error.message;
+            $scope.sepa.paymentInProgress = false;
           });
         } else {
-          // Send the Source to your server. TODO
-          // stripeSourceHandler(result.source);
+          $http.post('https://api.cryptomator.org/stripe/charge_sepa.php', $.param({
+            source: result.source.id,
+            email: $scope.sepa.mail,
+            amount: $scope.donation.amount,
+            message: $scope.donation.message
+          }), {
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          }).then(function(successResponse) {
+            if (successResponse.data.status == 'ok') {
+              $scope.sepa.paymentError = null;
+              $scope.sepa.paymentSuccessful = true;
+            } else {
+              $scope.sepa.paymentError = successResponse.data.error;
+            }
+            $scope.sepa.paymentInProgress = false;
+          }, function(errorResponse) {
+            console.warn('Payment failed.', errorResponse.data);
+            $scope.sepa.paymentError = 'Payment failed.';
+            $scope.sepa.paymentInProgress = false;
+          });
         }
       });
     };
   };
 
-  $scope.payWithCrypto = function(locale) {
-    $scope.paymentInProgress = true;
+  $scope.crypto = {};
+  $scope.crypto.pay = function(locale) {
+    $scope.crypto.paymentInProgress = true;
     $window.location.href = 'https://www.coinpayments.net/index.php?cmd=_pay&reset=1&merchant=963d3aa90995dc5542113e7801e31e2a&currency=' + $scope.donation.currency.code + '&amountf=' + $scope.donation.amount + '&item_name=Cryptomator+Donation&want_shipping=0&success_url=https%3A%2F%2Fcryptomator.org%2Fdownloads%2F%3Fpayment%3Dsuccess&allow_extra=1&lang=' + locale;
   };
 
@@ -458,7 +472,6 @@ app.controller('ContributorsCtrl', ['$http', '$scope', function($http, $scope) {
     } else {
       $scope.contributors = [];
     }
-    $scope.paymentInProgress = false;
   }, function(errorResponse) {
     console.warn('Getting GitHub contributors failed.', errorResponse.data);
     $scope.contributors = [];

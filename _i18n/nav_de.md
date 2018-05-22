@@ -35,7 +35,7 @@ payment:
     loadingStripe: Lade Stripe…
     payNowBtn: Jetzt zahlen
     processingBtn: Verarbeite…
-    successful: Juhu!
+    successfulBtn: Juhu!
     successfulMessage: >
       Vielen Dank für Ihre Spende an Cryptomator! Ihre Zahlung war erfolgreich und Sie kommen im nächsten Schritt zur Downloads-Seite. :tada:
   sepa:
@@ -44,7 +44,9 @@ payment:
     email: E-Mail
     message: Nachricht (optional)
     loadingStripe: Lade Stripe…
-    proceedBtn: Jetzt zahlen
+    payNowBtn: Jetzt zahlen
+    processingBtn: Verarbeite…
+    successfulBtn: Juhu!
     paymentHint: >
       Durch Angabe der IBAN und Absenden des Formulars ermächtige ich Skymatic UG und Stripe, unseren Zahlungsdienstleister, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Skymatic UG und Stripe auf mein Konto gezogenen Lastschriften einzulösen.
       Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
