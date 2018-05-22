@@ -97,6 +97,54 @@ app.factory('stripeLoader', ['$window', 'scriptLoader', function($window, script
   };
 }]);
 
+// <stripe-credit-card-field loaded="stripeLoaded()" loading-text="Stripe is loading..." valid="creditCardValid" validationError="creditCardValidationError"/>
+app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
+  var cardElement = document.createElement('div');
+  cardElement.style.display = 'none';
+  var placeholder = document.createElement('input');
+  placeholder.setAttribute('type', 'text');
+  placeholder.classList.add('form-control');
+
+  return {
+    restrict: 'E',
+    scope: {
+      loaded: '&',
+      loadingText: '@',
+      valid: '=',
+      validationError: '='
+    },
+    link: function(scope, element, attrs) {
+      element.append(placeholder);
+      element.append(cardElement);
+
+      placeholder.onfocus = function() {
+        placeholder.setAttribute('placeholder', scope.loadingText);
+        stripeLoader.load(function(stripe) {
+          var elements = stripe.elements();
+          var card = elements.create('card');
+          card.mount(cardElement);
+          card.on('ready', function() {
+            placeholder.remove();
+            cardElement.style.display = 'block';
+            card.focus();
+            scope.loaded({stripe: stripe, card: card});
+          });
+          card.addEventListener('change', function(event) {
+            scope.$apply(function() {
+              scope.valid = event.complete;
+              if (event.error) {
+                scope.validationError = event.error.message;
+              } else {
+                scope.validationError = '';
+              }
+            });
+          });
+        });
+      };
+    }
+  };
+}]);
+
 app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $window) {
 
   $scope.donationContinuePressed = function(amount) {
@@ -129,69 +177,12 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
 
   var currentYear = new Date().getFullYear();
 
-  $scope.paymentType = 'paypal';
-  $scope.creditCard = {
-    enabling: false,
-    enabled: false,
-    enable: function() {
-      $scope.creditCard.enabling = true;
-      stripeLoader.load(function(stripe) {
-        var elements = stripe.elements();
-        var card = elements.create('card');
-        card.mount('#inputCreditCardElement');
-        card.on('ready', function() {
-          $scope.$apply(function() {
-            $scope.creditCard.enabled = true;
-          });
-          card.focus();
-        });
-        card.addEventListener('change', function(event) {
-          $scope.$apply(function() {
-            $scope.creditCard.complete = event.complete;
-            if (event.error) {
-              $scope.paymentError = event.error.message;
-            } else {
-              $scope.paymentError = '';
-            }
-          });
-        });
 
-        $scope.creditCard.createToken = function() {
-          stripe.createToken(card).then(function(result) {
-            if (result.error) {
-              $scope.$apply(function() {
-                $scope.paymentError = result.error.message;
-              });
-            } else {
-              console.log(result);
-              $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
-                stripeToken: result.token.id,
-                currency: $scope.donation.currency.code,
-                amount: $scope.donation.amount,
-                message: $scope.donation.message
-              }), {
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-              }).then(function(successResponse) {
-                if (successResponse.data.status == 'ok') {
-                  $scope.paymentError = null;
-                  $scope.paymentSuccessful = true;
-                } else {
-                  $scope.paymentError = successResponse.data.error;
-                }
-                $scope.paymentInProgress = false;
-              }, function(errorResponse) {
-                console.warn('Payment failed.', errorResponse.data);
-                $scope.paymentError = 'Payment failed.';
-                $scope.paymentInProgress = false;
-              });
-            }
-          });
-        };
-      });
-    }
-  };
+  $scope.paymentType = 'paypal';
   $scope.paymentInProgress = false;
   $scope.paymentSuccessful = false;
+  $scope.creditCardValid = false;
+  $scope.creditCardValidationError = '';
 
   $scope.payWithPaypal = function(locale) {
     $scope.paymentInProgress = true;
@@ -205,9 +196,38 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
     });
   };
 
-  $scope.payWithCreditCard = function() {
-    $scope.paymentInProgress = true;
-    $scope.creditCard.createToken();
+  $scope.stripeLoaded = function(stripe, card) {
+    $scope.payWithCreditCard = function() {
+      $scope.paymentInProgress = true;
+      stripe.createToken(card).then(function(result) {
+        if (result.error) {
+          $scope.$apply(function() {
+            $scope.paymentError = result.error.message;
+          });
+        } else {
+          $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
+            stripeToken: result.token.id,
+            currency: $scope.donation.currency.code,
+            amount: $scope.donation.amount,
+            message: $scope.donation.message
+          }), {
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          }).then(function(successResponse) {
+            if (successResponse.data.status == 'ok') {
+              $scope.paymentError = null;
+              $scope.paymentSuccessful = true;
+            } else {
+              $scope.paymentError = successResponse.data.error;
+            }
+            $scope.paymentInProgress = false;
+          }, function(errorResponse) {
+            console.warn('Payment failed.', errorResponse.data);
+            $scope.paymentError = 'Payment failed.';
+            $scope.paymentInProgress = false;
+          });
+        }
+      });
+    };
   };
 
   $scope.payWithCrypto = function(locale) {

@@ -121,11 +121,8 @@
             </div>
 
             <div class="form-group">
-              <label for="inputCreditCardElement">{{ i18n.payment.creditCard.card }}</label>
-              <div id="inputCreditCardPlaceholder" data-ng-show="!creditCard.enabled">
-                <input type="text" class="form-control" data-ng-focus="creditCard.enable()" data-ng-disabled="creditCard.enabling" placeholder="[[creditCard.enabling ? '{{ i18n.payment.creditCard.loadingStripe }}' : '']]">
-              </div>
-              <div id="inputCreditCardElement" data-ng-show="creditCard.enabled"></div>
+              <label>{{ i18n.payment.creditCard.card }}</label>
+              <stripe-credit-card-field loaded="stripeLoaded(stripe, card)" loading-text="{{ i18n.payment.creditCard.loadingStripe }}" valid="creditCardValid" validation-error="paymentError"/>
             </div>
 
             <div class="form-group">
@@ -187,7 +184,7 @@
 
         <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="payWithPaypal('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
-        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.complete" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
+        <button data-ng-disabled="paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCardValid" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="payWithCreditCard()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
           <span data-ng-show="!paymentInProgress">{{ i18n.payment.creditCard.payNowBtn }}</span>
           <span data-ng-show="paymentInProgress">{{ i18n.payment.creditCard.processingBtn }}</span>
