@@ -15,6 +15,7 @@ navbar:
 payment:
   type:
     creditCard: Credit Card
+    sepa: SEPA Direct Debit
     bankTransfer: Bank Transfer
   paypal:
     paymentHint: >
@@ -37,6 +38,16 @@ payment:
     successful: Hooray!
     successfulMessage: >
       Thank you for your donation to Cryptomator! Your payment was successful and you'll get to the Downloads page in the next step. Happy crypting! :tada:
+  sepa:
+    amount: Amount
+    name: Name
+    email: Email
+    message: Message (optional)
+    loadingStripe: Loading Stripe…
+    proceedBtn: Pay Now
+    paymentHint: >
+      By providing your IBAN and confirming this payment, you authorise Skymatic UG and Stripe, our payment service provider to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from Skymatic UG and Stripe.
+      As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited.
   bankTransfer:
     recipient: Recipient
   crypto:

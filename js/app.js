@@ -97,7 +97,7 @@ app.factory('stripeLoader', ['$window', 'scriptLoader', function($window, script
   };
 }]);
 
-// <stripe-credit-card-field loaded="stripeLoaded()" loading-text="Stripe is loading..." valid="creditCardValid" validationError="creditCardValidationError"/>
+// <stripe-credit-card-field loaded="creditCardLoaded()" loading-text="Stripe is loading..." valid="creditCardValid" validation-error="creditCardValidationError"/>
 app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
   var cardElement = document.createElement('div');
   cardElement.style.display = 'none';
@@ -118,6 +118,7 @@ app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
       element.append(cardElement);
 
       placeholder.onfocus = function() {
+        placeholder.setAttribute('disabled', 'disabled');
         placeholder.setAttribute('placeholder', scope.loadingText);
         stripeLoader.load(function(stripe) {
           var elements = stripe.elements();
@@ -130,6 +131,58 @@ app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
             scope.loaded({stripe: stripe, card: card});
           });
           card.addEventListener('change', function(event) {
+            scope.$apply(function() {
+              scope.valid = event.complete;
+              if (event.error) {
+                scope.validationError = event.error.message;
+              } else {
+                scope.validationError = '';
+              }
+            });
+          });
+        });
+      };
+    }
+  };
+}]);
+
+// <stripe-sepa-field loaded="sepaLoaded()" loading-text="Stripe is loading..." valid="ibanValid" validation-error="ibanValidationError"/>
+app.directive('stripeSepaField', ['stripeLoader', function(stripeLoader) {
+  var cardElement = document.createElement('div');
+  cardElement.style.display = 'none';
+  var placeholder = document.createElement('input');
+  placeholder.setAttribute('type', 'text');
+  placeholder.classList.add('form-control');
+
+  return {
+    restrict: 'E',
+    scope: {
+      loaded: '&',
+      loadingText: '@',
+      valid: '=',
+      validationError: '='
+    },
+    link: function(scope, element, attrs) {
+      element.append(placeholder);
+      element.append(cardElement);
+
+      placeholder.onfocus = function() {
+        placeholder.setAttribute('disabled', 'disabled');
+        placeholder.setAttribute('placeholder', scope.loadingText);
+        stripeLoader.load(function(stripe) {
+          var elements = stripe.elements();
+          var options = {
+            supportedCountries: ['SEPA']
+          };
+          var iban = elements.create('iban', options);
+          iban.mount(cardElement);
+          iban.on('ready', function() {
+            placeholder.remove();
+            cardElement.style.display = 'block';
+            iban.focus();
+            scope.loaded({stripe: stripe, iban: iban});
+          });
+          iban.addEventListener('change', function(event) {
             scope.$apply(function() {
               scope.valid = event.complete;
               if (event.error) {
@@ -196,13 +249,14 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
     });
   };
 
-  $scope.stripeLoaded = function(stripe, card) {
+  $scope.creditCardLoaded = function(stripe, card) {
     $scope.payWithCreditCard = function() {
       $scope.paymentInProgress = true;
       stripe.createToken(card).then(function(result) {
         if (result.error) {
           $scope.$apply(function() {
             $scope.paymentError = result.error.message;
+            $scope.paymentInProgress = false;
           });
         } else {
           $http.post('https://api.cryptomator.org/stripe/pay.php', $.param({
@@ -225,6 +279,37 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
             $scope.paymentError = 'Payment failed.';
             $scope.paymentInProgress = false;
           });
+        }
+      });
+    };
+  };
+
+  $scope.sepaLoaded = function(stripe, iban) {
+    $scope.payWithSepa = function() {
+      $scope.paymentInProgress = true;
+      var sourceData = {
+        type: 'sepa_debit',
+        currency: 'eur',
+        owner: {
+          name: $scope.sepaName,
+          email: $scope.sepaMail
+        },
+        mandate: {
+          notification_method: 'email',
+        },
+      };
+
+      // Call `stripe.createSource` with the IBAN Element and additional options.
+      stripe.createSource(iban, sourceData).then(function(result) {
+        console.log('create soruce: ', result);
+        if (result.error) {
+          $scope.$apply(function() {
+            $scope.paymentError = result.error.message;
+            $scope.paymentInProgress = false;
+          });
+        } else {
+          // Send the Source to your server. TODO
+          // stripeSourceHandler(result.source);
         }
       });
     };
