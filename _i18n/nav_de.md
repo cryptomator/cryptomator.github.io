@@ -13,6 +13,16 @@ navbar:
   donate: Spenden
 
 payment:
+  amount: Betrag
+  frequency: Spende
+  frequencyOnce: Einmalig
+  frequencyMonthly: Monatlich
+  message: Nachricht (optional)
+  name: Name
+  email: E-Mail
+  loadingStripe: Lade Stripe…
+  paymentHintMonthly: >
+    Monatliche Zahlungen können jederzeit <a href="/de/support/" target="_blank">storniert</a> werden.
   type:
     creditCard: Kreditkarte
     sepa: SEPA Lastschrift
@@ -20,8 +30,6 @@ payment:
   paypal:
     paymentHint: >
       Nach dem Klick auf &quot;Weiter&quot; werden Sie auf unsere PayPal-Seite geleitet.
-    amount: Betrag
-    message: Nachricht (optional)
     proceedBtn: Weiter zu PayPal
   creditCard:
     paymentHint1: >
@@ -29,24 +37,8 @@ payment:
       In Ihrer Abrechnung wird <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">eine Buchung von Stripe</a> enthalten sein.
     paymentHint2: >
       <strong>Wichtig:</strong> Kreditkarten-Plausibilitätsprüfungen können fehlschlagen, wenn Sie Anonymisierungsdienste wie Proxies oder Tor nutzen.
-    amount: Betrag
-    message: Nachricht (optional)
     card: Kreditkarte
-    loadingStripe: Lade Stripe…
-    payNowBtn: Jetzt zahlen
-    processingBtn: Verarbeite…
-    successfulBtn: Juhu!
-    successfulMessage: >
-      Vielen Dank für Ihre Spende an Cryptomator! Ihre Zahlung war erfolgreich und Sie kommen im nächsten Schritt zur Downloads-Seite. :tada:
   sepa:
-    amount: Betrag
-    name: Name
-    email: E-Mail
-    message: Nachricht (optional)
-    loadingStripe: Lade Stripe…
-    payNowBtn: Jetzt zahlen
-    processingBtn: Verarbeite…
-    successfulBtn: Juhu!
     paymentHint: >
       Durch Angabe der IBAN und Absenden des Formulars ermächtige ich Skymatic UG und Stripe, unseren Zahlungsdienstleister, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Skymatic UG und Stripe auf mein Konto gezogenen Lastschriften einzulösen.
       Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
@@ -60,4 +52,9 @@ payment:
     proceedBtn: Weiter zu CoinPayments
   cancelBtn: Abbrechen
   proceedToDownloads: Weiter zum Download
+  payNowBtn: Jetzt zahlen
+  processingBtn: Verarbeite…
+  successfulBtn: Juhu!
+  successfulMessage: >
+    Vielen Dank für Ihre Spende an Cryptomator! Ihre Zahlung war erfolgreich und Sie kommen im nächsten Schritt zur Downloads-Seite. :tada:
 ---

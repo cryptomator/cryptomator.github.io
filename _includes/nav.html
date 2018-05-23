@@ -70,7 +70,7 @@
 
           <div class="row">
             <div class="form-group col-sm-6">
-              <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.paypal.amount }}</label>
+              <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.amount }}</label>
               <div class="input-group">
                 <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -90,7 +90,7 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label" for="inputPayPalMessage">{{ i18n.payment.paypal.message }}</label>
+            <label class="control-label" for="inputPayPalMessage">{{ i18n.payment.message }}</label>
             <input id="inputPayPalMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
           </div>
         </div>
@@ -102,7 +102,7 @@
 
             <div class="row">
               <div class="form-group col-sm-6">
-                <label class="control-label" for="inputCreditCardAmount">{{ i18n.payment.creditCard.amount }}</label>
+                <label class="control-label" for="inputCreditCardAmount">{{ i18n.payment.amount }}</label>
                 <div class="input-group">
                   <div class="input-group-btn">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -119,23 +119,41 @@
                   <div class="input-group-addon">.00</div>
                 </div>
               </div>
+              <div class="form-group col-sm-6">
+                <label class="control-label">{{ i18n.payment.frequency }}</label>
+                <div class="input-group btn-group">
+                  <button type="button" class="btn btn-default" data-ng-click="donation.frequency = 'once'" data-ng-class="{{"{"}}active: donation.frequency == 'once'}">{{ i18n.payment.frequencyOnce }}</button>
+                  <button type="button" class="btn btn-default" data-ng-click="donation.frequency = 'monthly'" data-ng-class="{{"{"}}active: donation.frequency == 'monthly'}">{{ i18n.payment.frequencyMonthly }}</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" data-ng-show="donation.frequency == 'monthly'">
+              <label class="control-label" for="inputSepaName">{{ i18n.payment.name }}</label>
+              <input id="inputSepaName" type="text" class="form-control" data-ng-model="creditCard.name">
+            </div>
+
+            <div class="form-group" data-ng-show="donation.frequency == 'monthly'">
+              <label class="control-label" for="inputSepaEmail">{{ i18n.payment.email }}</label>
+              <input id="inputSepaEmail" type="email" class="form-control" data-ng-model="creditCard.email">
             </div>
 
             <div class="form-group">
               <label>{{ i18n.payment.creditCard.card }}</label>
-              <stripe-credit-card-field loaded="creditCard.loaded(stripe, card)" loading-text="{{ i18n.payment.creditCard.loadingStripe }}" valid="creditCard.creditCardValid" validation-error="creditCard.paymentError"/>
+              <stripe-credit-card-field loaded="creditCard.loaded(stripe, card)" loading-text="{{ i18n.payment.loadingStripe }}" valid="creditCard.creditCardValid" validation-error="creditCard.paymentError"/>
             </div>
 
             <div class="form-group">
-              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.creditCard.message }}</label>
+              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.message }}</label>
               <input id="inputCreditCardMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
             </div>
 
             <p>{{ i18n.payment.creditCard.paymentHint2 }}</p>
+            <p data-ng-show="donation.frequency == 'monthly'">{{ i18n.payment.paymentHintMonthly }}</p>
           </div>
 
           <div data-ng-show="creditCard.paymentSuccessful">
-            <p>{{ i18n.payment.creditCard.successfulMessage }}</p>
+            <p>{{ i18n.payment.successfulMessage }}</p>
           </div>
         </div>
 
@@ -144,40 +162,48 @@
           <div data-ng-show="!sepa.paymentSuccessful">
             <div class="row">
               <div class="form-group col-sm-6">
-                <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.sepa.amount }}</label>
+                <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.amount }}</label>
                 <div class="input-group">
                   <div class="input-group-addon"><span class="glyphicon glyphicon-euro"></span></div>
                   <input id="inputPayPalAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="donation.amount">
                   <div class="input-group-addon">.00</div>
                 </div>
               </div>
+              <div class="form-group col-sm-6">
+                <label class="control-label">{{ i18n.payment.frequency }}</label>
+                <div class="input-group btn-group">
+                  <button type="button" class="btn btn-default" data-ng-click="donation.frequency = 'once'" data-ng-class="{{"{"}}active: donation.frequency == 'once'}">{{ i18n.payment.frequencyOnce }}</button>
+                  <button type="button" class="btn btn-default" data-ng-click="donation.frequency = 'monthly'" data-ng-class="{{"{"}}active: donation.frequency == 'monthly'}">{{ i18n.payment.frequencyMonthly }}</button>
+                </div>
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="control-label" for="inputSepaName">{{ i18n.payment.sepa.name }}</label>
+              <label class="control-label" for="inputSepaName">{{ i18n.payment.name }}</label>
               <input id="inputSepaName" type="text" class="form-control" data-ng-model="sepa.name">
             </div>
 
             <div class="form-group">
-              <label class="control-label" for="inputSepaMail">{{ i18n.payment.sepa.email }}</label>
-              <input id="inputSepaMail" type="email" class="form-control" data-ng-model="sepa.mail">
+              <label class="control-label" for="inputSepaEmail">{{ i18n.payment.email }}</label>
+              <input id="inputSepaEmail" type="email" class="form-control" data-ng-model="sepa.email">
             </div>
 
             <div class="form-group">
               <label>IBAN</label>
-              <stripe-sepa-field loaded="sepa.loaded(stripe, iban)" loading-text="{{ i18n.payment.sepa.loadingStripe }}" valid="sepa.ibanValid" validation-error="sepa.paymentError"/>
+              <stripe-sepa-field loaded="sepa.loaded(stripe, iban)" loading-text="{{ i18n.payment.loadingStripe }}" valid="sepa.ibanValid" validation-error="sepa.paymentError"/>
             </div>
 
             <div class="form-group">
-              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.sepa.message }}</label>
+              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.message }}</label>
               <input id="inputCreditCardMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
             </div>
 
             <p>{{ i18n.payment.sepa.paymentHint }}</p>
+            <p data-ng-show="donation.frequency == 'monthly'">{{ i18n.payment.paymentHintMonthly }}</p>
           </div>
 
           <div data-ng-show="sepa.paymentSuccessful">
-            <p>{{ i18n.payment.creditCard.successfulMessage }}</p>
+            <p>{{ i18n.payment.successfulMessage }}</p>
           </div>
         </div>
 
@@ -199,7 +225,7 @@
 
           <div class="row">
             <div class="form-group col-sm-6">
-              <label class="control-label" for="inputCryptoAmount">{{ i18n.payment.crypto.amount }}</label>
+              <label class="control-label" for="inputCryptoAmount">{{ i18n.payment.amount }}</label>
               <div class="input-group">
                 <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -232,20 +258,20 @@
         <button data-ng-disabled="paypal.paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="paypal.pay('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
         <!-- CreditCard -->
-        <button data-ng-disabled="creditCard.paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.creditCardValid" data-ng-show="paymentType == 'creditCard' &amp;&amp; !creditCard.paymentSuccessful" data-ng-click="creditCard.pay()" class="btn btn-primary">
+        <button data-ng-disabled="creditCard.paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.isValid()" data-ng-show="paymentType == 'creditCard' &amp;&amp; !creditCard.paymentSuccessful" data-ng-click="creditCard.pay()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
-          <span data-ng-show="!creditCard.paymentInProgress">{{ i18n.payment.creditCard.payNowBtn }}</span>
-          <span data-ng-show="creditCard.paymentInProgress">{{ i18n.payment.creditCard.processingBtn }}</span>
+          <span data-ng-show="!creditCard.paymentInProgress">{{ i18n.payment.payNowBtn }}</span>
+          <span data-ng-show="creditCard.paymentInProgress">{{ i18n.payment.processingBtn }}</span>
         </button>
-        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; creditCard.paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.creditCard.successfulBtn }}</a>
+        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; creditCard.paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.successfulBtn }}</a>
 
         <!-- SEPA -->
-        <button data-ng-disabled="sepa.paymentInProgress || !isAcceptableAmount(donation.amount) || !sepa.ibanValid || !sepa.name || !sepa.mail" data-ng-show="paymentType == 'sepa' &amp;&amp; !sepa.paymentSuccessful" data-ng-click="sepa.pay()" class="btn btn-primary">
+        <button data-ng-disabled="sepa.paymentInProgress || !isAcceptableAmount(donation.amount) || !sepa.isValid()" data-ng-show="paymentType == 'sepa' &amp;&amp; !sepa.paymentSuccessful" data-ng-click="sepa.pay()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
-          <span data-ng-show="!sepa.paymentInProgress">{{ i18n.payment.sepa.payNowBtn }}</span>
-          <span data-ng-show="sepa.paymentInProgress">{{ i18n.payment.sepa.processingBtn }}</span>
+          <span data-ng-show="!sepa.paymentInProgress">{{ i18n.payment.payNowBtn }}</span>
+          <span data-ng-show="sepa.paymentInProgress">{{ i18n.payment.processingBtn }}</span>
         </button>
-        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'sepa' &amp;&amp; sepa.paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.sepa.successfulBtn }}</a>
+        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'sepa' &amp;&amp; sepa.paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.successfulBtn }}</a>
 
         <!-- Bank Transfer -->
         <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'bankTransfer'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.payment.proceedToDownloads }}</a>

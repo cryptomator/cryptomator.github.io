@@ -41,7 +41,8 @@ app.run(['$rootScope', '$cookies', function($rootScope, $cookies) {
     currencyEUR: {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'},
     currencyGBP: {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'},
     currencyUSD: {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'},
-    currency: null
+    currency: null,
+    frequency: 'once'
   };
   $rootScope.donation.currency = $rootScope.donation.currencyEUR;
 
@@ -244,6 +245,9 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
   };
 
   $scope.creditCard = {};
+  $scope.creditCard.isValid = function() {
+    return $scope.creditCard.creditCardValid && ($scope.donation.frequency == 'once' || $scope.creditCard.name && $scope.creditCard.email);
+  };
   $scope.creditCard.loaded = function(stripe, card) {
     $scope.creditCard.pay = function() {
       $scope.creditCard.paymentInProgress = true;
@@ -258,6 +262,9 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
             stripeToken: result.token.id,
             currency: $scope.donation.currency.code,
             amount: $scope.donation.amount,
+            frequency: $scope.donation.frequency,
+            name: $scope.creditCard.name,
+            email: $scope.creditCard.email,
             message: $scope.donation.message
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -280,6 +287,9 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
   };
 
   $scope.sepa = {};
+  $scope.sepa.isValid = function() {
+    return $scope.sepa.ibanValid && $scope.sepa.name && $scope.sepa.email;
+  };
   $scope.sepa.loaded = function(stripe, iban) {
     $scope.sepa.pay = function() {
       $scope.sepa.paymentInProgress = true;
@@ -288,14 +298,12 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
         currency: 'eur',
         owner: {
           name: $scope.sepa.name,
-          email: $scope.sepa.mail
+          email: $scope.sepa.email
         },
         mandate: {
           notification_method: 'email',
         },
       };
-
-      // Call `stripe.createSource` with the IBAN Element and additional options.
       stripe.createSource(iban, sourceData).then(function(result) {
         if (result.error) {
           $scope.$apply(function() {
@@ -305,8 +313,10 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
         } else {
           $http.post('https://api.cryptomator.org/stripe/charge_sepa.php', $.param({
             source: result.source.id,
-            email: $scope.sepa.mail,
             amount: $scope.donation.amount,
+            frequency: $scope.donation.frequency,
+            name: $scope.sepa.name,
+            email: $scope.sepa.email,
             message: $scope.donation.message
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -339,6 +349,31 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
   };
 
   showModalIfSuggestedByUrl();
+
+}]);
+
+app.controller('CancelRecurringDonationCtrl', ['$scope', '$http', function($scope, $http) {
+
+  $scope.cancelRecurringDonationSuccessful = false;
+  $scope.cancelRecurringDonationInProgress = false;
+
+  $scope.recurringDonation = {};
+  $scope.cancelRecurringDonation = function() {
+    $scope.cancelRecurringDonationInProgress = true;
+    $http.post('https://api.cryptomator.org/stripe/find_subscription.php', $.param({
+      email: $scope.recurringDonation.email
+    }), {
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    }).then(function(successPostResponse) {
+      $scope.cancelRecurringDonationSuccessful = true;
+      $scope.cancelRecurringDonationError = null;
+      $scope.cancelRecurringDonationInProgress = false;
+    }, function(errorPostResponse) {
+      console.warn('Recurring donation cancellation request failed.', errorPostResponse.data);
+      $scope.cancelRecurringDonationError = 'Unable to request cancellation of recurring donation.';
+      $scope.cancelRecurringDonationInProgress = false;
+    });
+  };
 
 }]);
 

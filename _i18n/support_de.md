@@ -16,4 +16,11 @@ enterprise:
   title: Enterprise Support
   content: Details zu unserem Enterprise Support finden Sie auf unserer Seite für <i>Enterprise</i>.
   action: Enterprise
+cancelRecurringDonation:
+  title: Wiederkehrende Spende stornieren
+  content: Falls Sie Ihre wiederkehrende Spende an Cryptomator stornieren möchten, geben Sie bitte die E-Mail-Adresse ein, die Sie beim Einrichten der Spende angegeben haben.
+  email: E-Mail-Adresse
+  actionBtn: Stornierung anfordern
+  success: >
+    :envelope: Ein Bestätigungslink wurde an Ihre E-Mail-Adresse zugeschickt.<br>Falls Sie Schwierigkeiten haben, <a href="mailto:sales@cryptomator.org">kontaktieren Sie uns</a> bitte.
 ---
