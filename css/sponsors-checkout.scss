@@ -1,0 +1,23 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+.equal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel-body {
+  padding: $spacing-unit * 1.5;
+}
+
+.img-sponsorship {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.heading-sponsorship {
+  font-weight: 400;
+  margin-bottom: $spacing-unit / 4;
+}

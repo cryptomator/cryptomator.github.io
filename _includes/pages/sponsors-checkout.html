@@ -1,0 +1,105 @@
+{% assign i18n = 'sponsors-checkout' %}
+{% include i18n.liquid %}
+
+<div data-ng-controller="SponsorsCheckoutCtrl">
+
+  <h1 class="text-center">{{ i18n.title }}</h1>
+
+  <div class="row equal panel panel-default">
+    <div class="col-md-8 panel-body">
+      <section>
+        <h2>{{ i18n.basicInfo.title }}</h2>
+
+        <div class="form-group">
+          <label class="control-label" for="displayName">{{ i18n.basicInfo.displayName }} <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="{{ i18n.basicInfo.displayNameInfo }}"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></label>
+          <input id="displayName" type="text" class="form-control" data-ng-model="displayName">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="name">{{ i18n.basicInfo.name }}</label>
+          <input id="name" type="text" class="form-control" data-ng-model="name">
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="email">{{ i18n.basicInfo.email }}</label>
+          <input id="email" type="email" class="form-control" data-ng-model="email">
+        </div>
+      </section>
+
+      <section>
+        <h2>{{ i18n.paymentInfo.title }}</h2>
+
+        <div class="form-group">
+          <label>{{ i18n.paymentInfo.paymentMethod }}</label>
+          <div class="input-group btn-group">
+            <button type="button" class="btn btn-default" data-ng-click="paymentType = 'creditCard'" data-ng-class="{{"{"}}active: paymentType == 'creditCard'}">{{ i18n.paymentInfo.creditCard }}</button>
+            <button type="button" class="btn btn-default" data-ng-click="paymentType = 'sepa'" data-ng-class="{{"{"}}active: paymentType == 'sepa'}">{{ i18n.paymentInfo.sepa }}</button>
+          </div>
+        </div>
+
+        <div class="form-group" data-ng-show="paymentType == 'creditCard'">
+          <label>{{ i18n.paymentInfo.creditCard }}</label>
+          <stripe-credit-card-field loaded="creditCard.loaded(stripe, card)" loading-text="{{ i18n.paymentInfo.loadingStripe }}" valid="creditCard.valid" validation-error="creditCard.validationError"/>
+          <p data-ng-bind="creditCard.validationError"></p>
+          <p class="small">{{ i18n.paymentInfo.creditCardNotice }}</p>
+        </div>
+
+        <div class="form-group" data-ng-show="paymentType == 'sepa'">
+          <label>IBAN</label>
+          <stripe-sepa-field loaded="sepa.loaded(stripe, card)" loading-text="{{ i18n.paymentInfo.loadingStripe }}" valid="sepa.valid" validation-error="sepa.validationError"/>
+          <p data-ng-bind="sepa.validationError"></p>
+          <p class="small">{{ i18n.paymentInfo.sepaNotice }}</p>
+        </div>
+      </section>
+
+      <section>
+        <p>
+          <button data-ng-disabled="paymentInProgress || !creditCard.valid" data-ng-show="paymentType == 'creditCard' &amp;&amp; !paymentSuccessful" data-ng-click="creditCard.pay()" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-credit-card"></span>
+            <span data-ng-show="!sepa.paymentInProgress">{{ i18n.submit.payNow }}</span>
+            <span data-ng-show="sepa.paymentInProgress">{{ i18n.submit.processing }}</span>
+          </button>
+
+          <button data-ng-disabled="paymentInProgress || !sepa.valid" data-ng-show="paymentType == 'sepa' &amp;&amp; !paymentSuccessful" data-ng-click="sepa.pay()" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-credit-card"></span>
+            <span data-ng-show="!sepa.paymentInProgress">{{ i18n.submit.payNow }}</span>
+            <span data-ng-show="sepa.paymentInProgress">{{ i18n.submit.processing }}</span>
+          </button>
+        </p>
+
+        <p class="small text-center">{{ i18n.submit.help }}</p>
+      </section>
+    </div>
+
+    <div class="col-md-4 panel-body green-background">
+      <div data-ng-show="sponsorshipType == 'Gold'">
+        <div class="text-center">
+          <img src="/img/sponsors/gold.png" srcset="/img/sponsors/gold.png 1x, /img/sponsors/gold@2x.png 2x" class="img-responsive img-sponsorship center-block"/>
+          <h2 class="heading-sponsorship">{{ i18n.sponsorshipInfo.gold.title }}</h2>
+          <h3>{{ i18n.sponsorshipInfo.gold.subtitle }}</h3>
+          <p>{{ i18n.sponsorshipInfo.automaticRenewal }}</p>
+        </div>
+        <p>{{ i18n.sponsorshipInfo.gold.content }}</p>
+      </div>
+      <div data-ng-show="sponsorshipType == 'Silver'">
+        <div class="text-center">
+          <img src="/img/sponsors/silver.png" srcset="/img/sponsors/silver.png 1x, /img/sponsors/silver@2x.png 2x" class="img-responsive img-sponsorship center-block"/>
+          <h2 class="heading-sponsorship">{{ i18n.sponsorshipInfo.silver.title }}</h2>
+          <h3>{{ i18n.sponsorshipInfo.silver.subtitle }}</h3>
+          <p>{{ i18n.sponsorshipInfo.automaticRenewal }}</p>
+        </div>
+        <p>{{ i18n.sponsorshipInfo.silver.content }}</p>
+      </div>
+      <div data-ng-show="sponsorshipType == 'Bronze'">
+        <div class="text-center">
+          <img src="/img/sponsors/bronze.png" srcset="/img/sponsors/bronze.png 1x, /img/sponsors/bronze@2x.png 2x" class="img-responsive img-sponsorship center-block"/>
+          <h2 class="heading-sponsorship">{{ i18n.sponsorshipInfo.bronze.title }}</h2>
+          <h3>{{ i18n.sponsorshipInfo.bronze.subtitle }}</h3>
+          <p>{{ i18n.sponsorshipInfo.automaticRenewal }}</p>
+        </div>
+        <p>{{ i18n.sponsorshipInfo.bronze.content }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
