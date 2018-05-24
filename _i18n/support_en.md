@@ -20,7 +20,7 @@ cancelRecurringDonation:
   title: Cancel Recurring Donation
   content: If you would like to cancel your recurring donation to Cryptomator, please enter the email address you've used when setting up the donation.
   email: Email Address
-  actionBtn: Request Cancellation
+  action: Request Cancellation
   success: >
     :envelope: A confirmation link has been sent to your email address.<br>If you're having trouble, please <a href="mailto:sales@cryptomator.org">contact us</a>.
 ---

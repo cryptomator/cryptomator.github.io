@@ -27,7 +27,6 @@ submit:
   processing: Processing…
   help: Need any help? Don't hesitate to <a href="mailto:sales@cryptomator.org">contact us</a>.
 sponsorshipInfo:
-  automaticRenewal: Automatically renews after 1 year
   gold:
     title: Gold
     subtitle: €3,600 per year
@@ -41,6 +40,7 @@ sponsorshipInfo:
           <li>in newsletters</li>
         </ul>
         <li>Tweet when you become a sponsor</li>
+        <li>Automatically renews after 1 year</li>
       </ul>
   silver:
     title: Silver
@@ -52,6 +52,7 @@ sponsorshipInfo:
           <li>on cryptomator.org's sponsors site</li>
           <li>in the project repo's README</li>
         </ul>
+        <li>Automatically renews after 1 year</li>
       </ul>
   bronze:
     title: Bronze
@@ -62,5 +63,8 @@ sponsorshipInfo:
         <ul>
           <li>on cryptomator.org's sponsors site</li>
         </ul>
+        <li>Automatically renews after 1 year</li>
       </ul>
+success: >
+  :envelope: A confirmation link has been sent to your email address.<br>If you're having trouble, please <a href="mailto:sales@cryptomator.org">contact us</a>.
 ---

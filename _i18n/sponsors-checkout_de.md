@@ -27,10 +27,9 @@ submit:
   processing: Verarbeit…
   help: Haben Sie Fragen? Zögern Sie nicht, <a href="mailto:sales@cryptomator.org">uns zu kontaktieren</a>.
 sponsorshipInfo:
-  automaticRenewal: Automatische Erneuerung nach 1 Jahr
   gold:
     title: Gold
-    subtitle: 3.600€ zzgl. USt. pro Jahr
+    subtitle: 3.600€ pro Jahr
     content: >
       <ul>
         <li>Ihr Unternehmenslogo</li>
@@ -41,10 +40,11 @@ sponsorshipInfo:
           <li>in Newslettern</li>
         </ul>
         <li>Tweet, wenn Sie Sponsor werden</li>
+        <li>Automatische Erneuerung nach 1 Jahr</li>
       </ul>
   silver:
     title: Silber
-    subtitle: 1.200€ zzgl. USt. pro Jahr
+    subtitle: 1.200€ pro Jahr
     content: >
       <ul>
         <li>Ihr Unternehmenslogo</li>
@@ -52,15 +52,19 @@ sponsorshipInfo:
           <li>auf der Sponsorenseite von cryptomator.org</li>
           <li>im README des Projektrepos</li>
         </ul>
+        <li>Automatische Erneuerung nach 1 Jahr</li>
       </ul>
   bronze:
     title: Bronze
-    subtitle: 300€ zzgl. USt. pro Jahr
+    subtitle: 300€ pro Jahr
     content: >
       <ul>
         <li>Ihr Name</li>
         <ul>
           <li>auf der Sponsorenseite von cryptomator.org</li>
         </ul>
+        <li>Automatische Erneuerung nach 1 Jahr</li>
       </ul>
+success: >
+  :envelope: Ein Bestätigungslink wurde an Ihre E-Mail-Adresse zugeschickt.<br>Falls Sie Schwierigkeiten haben, <a href="mailto:sales@cryptomator.org">kontaktieren Sie uns</a> bitte.
 ---
