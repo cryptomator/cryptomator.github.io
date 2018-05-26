@@ -27,6 +27,7 @@ defendor:
   teaser: >
     Suchen Sie nach einer Möglichkeit, Ihre Netzlaufwerke sicherer zu machen? Da Cryptomator für Cloudspeicher optimiert ist und hauptsächlich von Privatanwendern genutzt wird, bieten wir mit Defendor ein neues Tool für Unternehmen und Teams an. Defendor fügt Sicherheitsfunktionen wie Anti-Malware-Filter, Dateiverschlüsselung, Dateiversionierung und Backups zu Ihren Cloud- oder netzwerkbasierten Dateispeichern hinzu.
   action: Weitere Infos unter defendor.skymatic.de
+  url: https://defendor.skymatic.de
 
 libs:
   subtitle: Open-Source-Bibliotheken unter AGPLv3

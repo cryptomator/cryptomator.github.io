@@ -27,6 +27,7 @@ defendor:
   teaser: >
     Are you looking for a way to make your network drives more secure? Since Cryptomator is optimized for cloud storages and mainly used by consumers, we've been working on Defendor which is a new tool made for businesses and teams. Defendor adds security features, such as anti-malware filters, file encryption, file versioning, and backups, to your corporate cloud- or network-based file storages.
   action: Visit defendor.skymatic.de
+  url: https://defendor.skymatic.de/en
 
 libs:
   subtitle: Open-Source Libraries Under AGPLv3
