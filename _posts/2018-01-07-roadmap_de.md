@@ -10,8 +10,6 @@ stylesheets: ['/css/blog-post.css']
 
 published: true
 language: de
-
-sitemap: false
 ---
 Da verständlicherweise nicht alle unsere Nutzer alle Entwicklungsaktivitäten auf GitHub verfolgen können, möchte ich an dieser Stelle ein paar Absätze dazu schreiben, welche technischen Neuerungen 2018 bei Cryptomator anstehen und wie sie sich auf die Nutzung auswirken.
 

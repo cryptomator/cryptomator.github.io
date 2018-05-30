@@ -2,7 +2,7 @@
 layout: container
 title: Privacy
 permalink: /privacy/
-sitemap: false
 singleLanguage: true
+noindex: true
 ---
 {% include pages/en_privacy.md %}

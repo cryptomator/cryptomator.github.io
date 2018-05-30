@@ -2,7 +2,7 @@
 layout: container
 title: Datenschutz
 permalink: /de/datenschutz/
-sitemap: false
 singleLanguage: true
+noindex: true
 ---
 {% include pages/de_datenschutz.md %}

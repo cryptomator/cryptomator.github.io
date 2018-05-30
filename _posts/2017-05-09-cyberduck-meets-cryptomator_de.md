@@ -7,8 +7,6 @@ stylesheets: ['/css/blog-post.css']
 
 published: true
 language: de
-
-sitemap: false
 ---
 Cyberduck 6.0 mit der Unterstützung von Cryptomator-Tresoren ist seit heute erhältlich. Die neue Version ist unter <a href="https://cyberduck.io/" target="_blank">cyberduck.io</a> herunterladbar. Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows und ist somit das perfekte Tool für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
 

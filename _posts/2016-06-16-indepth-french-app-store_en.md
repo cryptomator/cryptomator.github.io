@@ -10,8 +10,6 @@ stylesheets: ['/css/blog-post.css']
 
 published: true
 language: en
-
-sitemap: false
 ---
 Cyptomator for iOS has finally been approved by the French administration. You can download it now in the <a href="https://itunes.apple.com/fr/app/cryptomator/id953086535" target="_blank">French App Store</a>. We'd like to share our experience on how to receive export compliance for the French iOS App Store.
 

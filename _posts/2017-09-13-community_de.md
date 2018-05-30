@@ -7,8 +7,6 @@ stylesheets: ['/css/blog-post.css']
 
 published: true
 language: de
-
-sitemap: false
 ---
 Unsere Online-Community hat endlich ein Zuhause gefunden. Hier erreichen Sie uns von nun an bei technischen Fragen und bekommen gleichzeitig die Möglichkeit, sich untereinander auszutauschen. Die Seite wurde ins Leben gerufen, um langfristig eine umfassende Knowledge Base zu errichten, die dabei helfen soll, Fragen schnell zu beantworten.
 
