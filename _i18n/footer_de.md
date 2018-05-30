@@ -23,4 +23,6 @@ contribute:
   jobs: Jobs
 l10n:
   title: Sprache
+skymatic:
+  url: https://skymatic.de
 ---

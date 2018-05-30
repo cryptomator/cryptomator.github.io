@@ -7,6 +7,7 @@ coreteam:
   title: Skymatic
   content: Cryptomator ist ein Produkt von Skymatic.
   action: Lernen Sie unser Team kennen
+  url: https://skymatic.de/team/
 contributors:
   title: Mitwirkende
 translators:
