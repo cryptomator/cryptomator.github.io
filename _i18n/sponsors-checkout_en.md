@@ -46,6 +46,7 @@ basicInfo:
     Your display name will be used for listing it on our sponsors site (and other locations depending on the sponsorship). Usually, it's your company's name or your own name.
   name: Name
   email: Email
+  vatId: VAT ID (optional)
 paymentInfo:
   title: Payment Information
   paymentMethod: Payment Method

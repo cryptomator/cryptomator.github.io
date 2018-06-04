@@ -302,7 +302,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
         },
         mandate: {
           notification_method: 'email',
-        },
+        }
       };
       stripe.createSource(iban, sourceData).then(function(result) {
         if (result.error) {
@@ -389,9 +389,10 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
           $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
             stripe_source: result.token.id,
             plan: $scope.plan,
-            displayName: $scope.displayName,
+            display_name: $scope.displayName,
             name: $scope.name,
-            email: $scope.email
+            email: $scope.email,
+            vat_id: $scope.vatId
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(successResponse) {
@@ -425,7 +426,7 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
         },
         mandate: {
           notification_method: 'email',
-        },
+        }
       };
       stripe.createSource(iban, sourceData).then(function(result) {
         if (result.error) {
@@ -437,9 +438,10 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
           $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
             stripe_source: result.source.id,
             plan: $scope.plan,
-            displayName: $scope.displayName,
+            display_name: $scope.displayName,
             name: $scope.name,
-            email: $scope.email
+            email: $scope.email,
+            vat_id: $scope.vatId
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(successResponse) {

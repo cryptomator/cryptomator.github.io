@@ -36,17 +36,22 @@
 
         <div class="form-group">
           <label class="control-label" for="displayName">{{ i18n.basicInfo.displayName }} <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="{{ i18n.basicInfo.displayNameInfo }}"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></label>
-          <input id="displayName" type="text" class="form-control" data-ng-model="displayName">
+          <input id="displayName" type="text" class="form-control" data-ng-model="displayName" required>
         </div>
 
         <div class="form-group">
           <label class="control-label" for="name">{{ i18n.basicInfo.name }}</label>
-          <input id="name" type="text" class="form-control" data-ng-model="name">
+          <input id="name" type="text" class="form-control" data-ng-model="name" required>
         </div>
 
         <div class="form-group">
           <label class="control-label" for="email">{{ i18n.basicInfo.email }}</label>
-          <input id="email" type="email" class="form-control" data-ng-model="email">
+          <input id="email" type="email" class="form-control" data-ng-model="email" required>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="email">{{ i18n.basicInfo.vatId }}</label>
+          <input id="vatId" type="text" class="form-control" data-ng-model="vatId">
         </div>
       </section>
 

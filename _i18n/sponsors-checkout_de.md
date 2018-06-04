@@ -46,6 +46,7 @@ basicInfo:
     Ihr Anzeigename wird verwendet, um Sie auf unserer Sponsorenseite zu listen (und abhängig vom Sponsoring an weiteren Orten). Üblicherweise ist dieser Ihr Unternehmensname oder Ihr eigener Name.
   name: Name
   email: E-Mail
+  vatId: USt-IdNr. (optional)
 paymentInfo:
   title: Zahlungsdaten
   paymentMethod: Zahlungsmethode
