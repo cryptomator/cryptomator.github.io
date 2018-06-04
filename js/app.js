@@ -390,7 +390,7 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
             $scope.paymentInProgress = false;
           });
         } else {
-          $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
+          $http.post('https://api.cryptomator.org/sponsors/create_de.php', $.param({
             stripe_source: result.token.id,
             plan: $scope.plan,
             name: $scope.name,
@@ -437,7 +437,7 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
             $scope.paymentInProgress = false;
           });
         } else {
-          $http.post('https://api.cryptomator.org/stripe/charge_sepa.php', $.param({
+          $http.post('https://api.cryptomator.org/sponsors/create_de.php', $.param({
             stripe_source: result.source.id,
             plan: $scope.plan,
             name: $scope.name,
