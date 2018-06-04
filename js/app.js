@@ -359,56 +359,53 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
     if (_.has(queryParams, 'plan')) {
       if (queryParams.plan == 'gold') {
         $scope.plan = 'GOLD';
-        $scope.amount = 4032;
-        $scope.taxAmount = 432;
+        $scope.amount = 3600;
       } else if (queryParams.plan == 'silver') {
         $scope.plan = 'SILVER';
-        $scope.amount = 1428;
-        $scope.taxAmount = 228;
+        $scope.amount = 1200;
       } else {
         $scope.plan = 'BRONZE';
-        $scope.amount = 357;
-        $scope.taxAmount = 57;
+        $scope.amount = 300;
       }
     }
   }
 
   $scope.plan = 'BRONZE';
-  $scope.amount = 357;
-  $scope.taxAmount = 57;
+  $scope.amount = 300;
   $scope.paymentType = 'creditCard';
   setPlanByUrl();
 
   $scope.creditCard = {};
   $scope.creditCard.loaded = function(stripe, card) {
-    $scope.creditCard.pay = function() {
-      $scope.paymentInProgress = true;
+    $scope.creditCard.createRequest = function() {
+      $scope.requestInProgress = true;
       stripe.createToken(card).then(function(result) {
         if (result.error) {
           $scope.$apply(function() {
-            $scope.paymentError = result.error.message;
-            $scope.paymentInProgress = false;
+            $scope.requestError = result.error.message;
+            $scope.requestInProgress = false;
           });
         } else {
-          $http.post('https://api.cryptomator.org/sponsors/create_de.php', $.param({
+          $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
             stripe_source: result.token.id,
             plan: $scope.plan,
+            displayName: $scope.displayName,
             name: $scope.name,
             email: $scope.email
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(successResponse) {
             if (successResponse.data.status == 'ok') {
-              $scope.paymentError = null;
-              $scope.paymentSuccessful = true;
+              $scope.requestError = null;
+              $scope.requestSuccessful = true;
             } else {
-              $scope.paymentError = successResponse.data.error;
+              $scope.requestError = successResponse.data.error;
             }
-            $scope.paymentInProgress = false;
+            $scope.requestInProgress = false;
           }, function(errorResponse) {
             console.warn('Payment failed.', errorResponse.data);
-            $scope.paymentError = 'Payment failed.';
-            $scope.paymentInProgress = false;
+            $scope.requestError = 'Payment failed.';
+            $scope.requestInProgress = false;
           });
         }
       });
@@ -417,8 +414,8 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
 
   $scope.sepa = {};
   $scope.sepa.loaded = function(stripe, iban) {
-    $scope.sepa.pay = function() {
-      $scope.sepa.paymentInProgress = true;
+    $scope.sepa.createRequest = function() {
+      $scope.sepa.requestInProgress = true;
       var sourceData = {
         type: 'sepa_debit',
         currency: 'eur',
@@ -433,29 +430,30 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
       stripe.createSource(iban, sourceData).then(function(result) {
         if (result.error) {
           $scope.$apply(function() {
-            $scope.paymentError = result.error.message;
-            $scope.paymentInProgress = false;
+            $scope.requestError = result.error.message;
+            $scope.requestInProgress = false;
           });
         } else {
-          $http.post('https://api.cryptomator.org/sponsors/create_de.php', $.param({
+          $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
             stripe_source: result.source.id,
             plan: $scope.plan,
+            displayName: $scope.displayName,
             name: $scope.name,
             email: $scope.email
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(successResponse) {
             if (successResponse.data.status == 'ok') {
-              $scope.paymentError = null;
-              $scope.paymentSuccessful = true;
+              $scope.requestError = null;
+              $scope.requestSuccessful = true;
             } else {
-              $scope.paymentError = successResponse.data.error;
+              $scope.requestError = successResponse.data.error;
             }
-            $scope.paymentInProgress = false;
+            $scope.requestInProgress = false;
           }, function(errorResponse) {
             console.warn('Payment failed.', errorResponse.data);
-            $scope.paymentError = 'Payment failed.';
-            $scope.paymentInProgress = false;
+            $scope.requestError = 'Payment failed.';
+            $scope.requestInProgress = false;
           });
         }
       });

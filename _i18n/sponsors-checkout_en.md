@@ -46,11 +46,6 @@ basicInfo:
     Your display name will be used for listing it on our sponsors site (and other locations depending on the sponsorship). Usually, it's your company's name or your own name.
   name: Name
   email: Email
-  country: Country
-  countryInfo: >
-    Currently, the automatic payment process is only possible in Germany. If you are located in another country, please <a href='mailto:sales@cryptomator.org'>contact us</a>.
-country:
-  germany: Germany
 paymentInfo:
   title: Payment Information
   paymentMethod: Payment Method
@@ -64,11 +59,11 @@ paymentInfo:
     As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited.
   loadingStripe: Loading Stripe…
 submit:
-  amountSuffix1: per year (incl.
-  amountSuffix2: VAT)
-  payNow: Pay Now
+  amountSuffix: net per year
+  requestNow: Request Now
   processing: Processing…
+  notice: By pressing "Request Now", you confirm the sponsorship request. We will then contact you to confirm the payment and further details.
   help: Need any help? Don't hesitate to <a href="mailto:sales@cryptomator.org">contact us</a>.
 success: >
-  :envelope: A confirmation link has been sent to your email address.<br>If you're having trouble, please <a href="mailto:sales@cryptomator.org">contact us</a>.
+  :envelope: Thank you, we have received your request. We will contact you as soon as possible so that we can confirm the payment and list you as a sponsor on our site.<br>If you have any questions, please <a href="mailto:sales@cryptomator.org">contact us</a>.
 ---

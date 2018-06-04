@@ -48,13 +48,6 @@
           <label class="control-label" for="email">{{ i18n.basicInfo.email }}</label>
           <input id="email" type="email" class="form-control" data-ng-model="email">
         </div>
-
-        <div class="form-group">
-          <label class="control-label" for="country">{{ i18n.basicInfo.country }} <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="{{ i18n.basicInfo.countryInfo }}"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></label>
-          <select id="country" class="form-control">
-            <option>{{ i18n.country.germany }}</option>
-          </select>
-        </div>
       </section>
 
       <hr>
@@ -88,28 +81,30 @@
       <hr>
 
       <section>
-        <p class="text-center"><strong>{% if i18n.language == 'en' %}€{% endif %}[[ amount ]]{% if i18n.language == 'de' %}€{% endif %} {{ i18n.submit.amountSuffix1 }} {% if i18n.language == 'en' %}€{% endif %}[[ taxAmount ]]{% if i18n.language == 'de' %}€{% endif %} {{ i18n.submit.amountSuffix2 }}</strong></p>
+        <p class="text-center"><strong>{% if i18n.language == 'en' %}€{% endif %}[[ amount ]]{% if i18n.language == 'de' %}€{% endif %} {{ i18n.submit.amountSuffix }}</strong></p>
 
         <p>
-          <button data-ng-disabled="paymentInProgress || !creditCard.valid" data-ng-show="paymentType == 'creditCard'" data-ng-click="creditCard.pay()" class="btn btn-primary btn-lg btn-block">
-            <span class="glyphicon glyphicon-credit-card"></span>
-            <span data-ng-show="!sepa.paymentInProgress">{{ i18n.submit.payNow }}</span>
-            <span data-ng-show="sepa.paymentInProgress">{{ i18n.submit.processing }}</span>
+          <button data-ng-disabled="requestInProgress || !creditCard.valid" data-ng-show="paymentType == 'creditCard'" data-ng-click="creditCard.createRequest()" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <span data-ng-show="!requestInProgress">{{ i18n.submit.requestNow }}</span>
+            <span data-ng-show="requestInProgress">{{ i18n.submit.processing }}</span>
           </button>
 
-          <button data-ng-disabled="paymentInProgress || !sepa.valid" data-ng-show="paymentType == 'sepa'" data-ng-click="sepa.pay()" class="btn btn-primary btn-lg btn-block">
-            <span class="glyphicon glyphicon-credit-card"></span>
-            <span data-ng-show="!sepa.paymentInProgress">{{ i18n.submit.payNow }}</span>
-            <span data-ng-show="sepa.paymentInProgress">{{ i18n.submit.processing }}</span>
+          <button data-ng-disabled="requestInProgress || !sepa.valid" data-ng-show="paymentType == 'sepa'" data-ng-click="sepa.createRequest()" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <span data-ng-show="!requestInProgress">{{ i18n.submit.requestNow }}</span>
+            <span data-ng-show="requestInProgress">{{ i18n.submit.processing }}</span>
           </button>
         </p>
 
+        <p data-ng-show="requestError" data-ng-bind="requestError" class="text-center"></p>
+        <p class="small text-center">{{ i18n.submit.notice }}</p>
         <p class="small text-center">{{ i18n.submit.help }}</p>
       </section>
     </div>
   </div>
 
-  <div class="row" data-ng-show="paymentSuccessful">
+  <div class="row" data-ng-show="requestSuccessful">
     <div class="col-md-8 col-md-offset-2">
       <p class="text-center">{{ i18n.success }}</p>
     </div>

@@ -46,11 +46,6 @@ basicInfo:
     Ihr Anzeigename wird verwendet, um Sie auf unserer Sponsorenseite zu listen (und abhängig vom Sponsoring an weiteren Orten). Üblicherweise ist dieser Ihr Unternehmensname oder Ihr eigener Name.
   name: Name
   email: E-Mail
-  country: Land
-  countryInfo: >
-    Zurzeit ist der automatische Zahlungsprozess nur in Deutschland möglich. Falls Sie in einem anderen Land ansässig sind, <a href='mailto:sales@cryptomator.org'>kontaktieren Sie uns</a> bitte.
-country:
-  germany: Deutschland
 paymentInfo:
   title: Zahlungsdaten
   paymentMethod: Zahlungsmethode
@@ -64,11 +59,11 @@ paymentInfo:
     Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
   loadingStripe: Lade Stripe…
 submit:
-  amountSuffix1: pro Jahr (inkl.
-  amountSuffix2: USt.)
-  payNow: Jetzt zahlen
-  processing: Verarbeit…
+  amountSuffix: netto pro Jahr
+  requestNow: Jetzt anfragen
+  processing: Verarbeite…
+  notice: Mit dem Klick von "Jetzt anfragen" bestätigen Sie die Sponsoring-Anfrage. Wir werden dann mit Ihnen Kontakt aufnehmen, um die Zahlung und weitere Details zu bestätigen.
   help: Haben Sie Fragen? Zögern Sie nicht, <a href="mailto:sales@cryptomator.org">uns zu kontaktieren</a>.
 success: >
-  :envelope: Ein Bestätigungslink wurde an Ihre E-Mail-Adresse zugeschickt.<br>Falls Sie Schwierigkeiten haben, <a href="mailto:sales@cryptomator.org">kontaktieren Sie uns</a> bitte.
+  :envelope: Vielen Dank, wir haben Ihre Anfrage erhalten. Wir melden uns bei Ihnen sobald wie möglich, damit wir die Zahlung bestätigen und Sie als Sponsor auf unserer Seite listen können.<br>Falls Sie Fragen haben, <a href="mailto:sales@cryptomator.org">kontaktieren Sie uns</a> bitte.
 ---
