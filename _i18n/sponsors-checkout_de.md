@@ -3,33 +3,9 @@ language: de
 context: sponsors-checkout
 
 title: Sponsoring Checkout
-basicInfo:
-  title: Grunddaten
-  displayName: Anzeigename
-  displayNameInfo: >
-    Ihr Anzeigename wird verwendet, um Sie auf unserer Sponsorenseite zu listen (und abhängig vom Sponsoring an weiteren Orten). Üblicherweise ist dieser Ihr Unternehmensname oder Ihr eigener Name.
-  name: Name
-  email: E-Mail
-paymentInfo:
-  title: Zahlungsdaten
-  paymentMethod: Zahlungsmethode
-  creditCard: Kreditkarte
-  creditCardNotice: >
-    Kreditkartenzahlungen werden auf sichere Weise über <a href="https://stripe.com" target="_blank">Stripe</a> bearbeitet. Dabei sind weder Ihre Kartennummer noch der CVC durch uns einsehbar. In Ihrer Abrechnung wird <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">eine Buchung von Stripe</a> enthalten sein.<br>
-    Hinweis: Kreditkarten-Plausibilitätsprüfungen können fehlschlagen, wenn Sie Anonymisierungsdienste wie Proxies oder Tor nutzen.
-  sepa: SEPA Lastschrift
-  sepaNotice: >
-    Durch Angabe der IBAN und Absenden des Formulars ermächtige ich Skymatic UG und <a href="https://stripe.com" target="_blank">Stripe</a>, unseren Zahlungsdienstleister, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Skymatic UG und Stripe auf mein Konto gezogenen Lastschriften einzulösen.<br>
-    Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
-  loadingStripe: Lade Stripe…
-submit:
-  payNow: Jetzt zahlen
-  processing: Verarbeit…
-  help: Haben Sie Fragen? Zögern Sie nicht, <a href="mailto:sales@cryptomator.org">uns zu kontaktieren</a>.
 sponsorshipInfo:
   gold:
     title: Gold
-    subtitle: 3.600€ pro Jahr
     content: >
       <ul>
         <li>Ihr Unternehmenslogo</li>
@@ -44,7 +20,6 @@ sponsorshipInfo:
       </ul>
   silver:
     title: Silber
-    subtitle: 1.200€ pro Jahr
     content: >
       <ul>
         <li>Ihr Unternehmenslogo</li>
@@ -56,7 +31,6 @@ sponsorshipInfo:
       </ul>
   bronze:
     title: Bronze
-    subtitle: 300€ pro Jahr
     content: >
       <ul>
         <li>Ihr Name</li>
@@ -65,6 +39,36 @@ sponsorshipInfo:
         </ul>
         <li>Automatische Erneuerung nach 1 Jahr</li>
       </ul>
+basicInfo:
+  title: Grunddaten
+  displayName: Anzeigename
+  displayNameInfo: >
+    Ihr Anzeigename wird verwendet, um Sie auf unserer Sponsorenseite zu listen (und abhängig vom Sponsoring an weiteren Orten). Üblicherweise ist dieser Ihr Unternehmensname oder Ihr eigener Name.
+  name: Name
+  email: E-Mail
+  country: Land
+  countryInfo: >
+    Zurzeit ist der automatische Zahlungsprozess nur in Deutschland möglich. Falls Sie in einem anderen Land ansässig sind, <a href='mailto:sales@cryptomator.org'>kontaktieren Sie uns</a> bitte.
+country:
+  germany: Deutschland
+paymentInfo:
+  title: Zahlungsdaten
+  paymentMethod: Zahlungsmethode
+  creditCard: Kreditkarte
+  creditCardNotice: >
+    Kreditkartenzahlungen werden auf sichere Weise über <a href="https://stripe.com" target="_blank">Stripe</a> bearbeitet. Dabei sind weder Ihre Kartennummer noch der CVC durch uns einsehbar. In Ihrer Abrechnung wird <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">eine Buchung von Stripe</a> enthalten sein.<br>
+    Hinweis: Kreditkarten-Plausibilitätsprüfungen können fehlschlagen, wenn Sie Anonymisierungsdienste wie Proxies oder Tor nutzen.
+  sepa: SEPA Lastschrift
+  sepaNotice: >
+    Durch Angabe der IBAN und Absenden des Formulars ermächtige ich Skymatic UG und <a href="https://stripe.com" target="_blank">Stripe</a>, unseren Zahlungsdienstleister, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Skymatic UG und Stripe auf mein Konto gezogenen Lastschriften einzulösen.<br>
+    Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
+  loadingStripe: Lade Stripe…
+submit:
+  amountSuffix1: pro Jahr (inkl.
+  amountSuffix2: USt.)
+  payNow: Jetzt zahlen
+  processing: Verarbeit…
+  help: Haben Sie Fragen? Zögern Sie nicht, <a href="mailto:sales@cryptomator.org">uns zu kontaktieren</a>.
 success: >
   :envelope: Ein Bestätigungslink wurde an Ihre E-Mail-Adresse zugeschickt.<br>Falls Sie Schwierigkeiten haben, <a href="mailto:sales@cryptomator.org">kontaktieren Sie uns</a> bitte.
 ---

@@ -354,22 +354,30 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
 
 app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoader', function($scope, $window, $http, stripeLoader) {
 
-  function setSponsorshipTypeByUrl() {
+  function setPlanByUrl() {
     var queryParams = parseQueryString($window.location.search);
-    if (_.has(queryParams, 'type')) {
-      if (queryParams.type == 'gold') {
-        $scope.sponsorshipType = 'Gold';
-      } else if (queryParams.type == 'silver') {
-        $scope.sponsorshipType = 'Silver';
+    if (_.has(queryParams, 'plan')) {
+      if (queryParams.plan == 'gold') {
+        $scope.plan = 'GOLD';
+        $scope.amount = 4032;
+        $scope.taxAmount = 432;
+      } else if (queryParams.plan == 'silver') {
+        $scope.plan = 'SILVER';
+        $scope.amount = 1428;
+        $scope.taxAmount = 228;
       } else {
-        $scope.sponsorshipType = 'Bronze';
+        $scope.plan = 'BRONZE';
+        $scope.amount = 357;
+        $scope.taxAmount = 57;
       }
     }
   }
 
+  $scope.plan = 'BRONZE';
+  $scope.amount = 357;
+  $scope.taxAmount = 57;
   $scope.paymentType = 'creditCard';
-  $scope.sponsorshipType = 'Bronze';
-  setSponsorshipTypeByUrl();
+  setPlanByUrl();
 
   $scope.creditCard = {};
   $scope.creditCard.loaded = function(stripe, card) {
@@ -384,7 +392,7 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
         } else {
           $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
             stripe_source: result.token.id,
-            tier: $scope.sponsorshipType,
+            plan: $scope.plan,
             name: $scope.name,
             email: $scope.email
           }), {
@@ -431,7 +439,7 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
         } else {
           $http.post('https://api.cryptomator.org/stripe/charge_sepa.php', $.param({
             stripe_source: result.source.id,
-            tier: $scope.sponsorshipType,
+            plan: $scope.plan,
             name: $scope.name,
             email: $scope.email
           }), {
