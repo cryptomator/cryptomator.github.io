@@ -8,7 +8,7 @@ cryptomator:
   pressKit: Press Kit
 legal:
   title: Legal
-  sitenotice: Site Notice
+  sitenotice: Impressum
   privacy: Privacy Policy
 help:
   title: Help
