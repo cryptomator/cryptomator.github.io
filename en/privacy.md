@@ -4,4 +4,4 @@ title: Privacy
 permalink: /privacy/
 noindex: true
 ---
-{% include pages/de_privacy.md %}
+{% include pages/en_privacy.md %}
