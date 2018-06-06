@@ -8,6 +8,8 @@ cryptomator:
   pressKit: Pressemappe
 legal:
   title: Rechtliches
+  sitenotice: Impressum
+  privacy: Datenschutzerklärung
 help:
   title: Hilfe
   community: Community

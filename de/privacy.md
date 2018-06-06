@@ -1,8 +1,9 @@
 ---
 layout: container
-title: Privacy
+title: Datenschutz
 permalink: /de/privacy/
-singleLanguage: true
+redirect_from:
+  - /datenschutz/
 noindex: true
 ---
-{% include pages/en_privacy.md %}
+{% include pages/de_privacy.md %}

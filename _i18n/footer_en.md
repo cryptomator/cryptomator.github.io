@@ -8,6 +8,8 @@ cryptomator:
   pressKit: Press Kit
 legal:
   title: Legal
+  sitenotice: Site Notice
+  privacy: Privacy Policy
 help:
   title: Help
   community: Community
