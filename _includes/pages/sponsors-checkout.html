@@ -77,7 +77,7 @@
 
         <div class="form-group" data-ng-show="paymentType == 'sepa'">
           <label>IBAN</label>
-          <stripe-sepa-field loaded="sepa.loaded(stripe, card)" loading-text="{{ i18n.paymentInfo.loadingStripe }}" valid="sepa.valid" validation-error="sepa.validationError"/>
+          <stripe-sepa-field loaded="sepa.loaded(stripe, iban)" loading-text="{{ i18n.paymentInfo.loadingStripe }}" valid="sepa.valid" validation-error="sepa.validationError"/>
           <p data-ng-bind="sepa.validationError"></p>
           <p class="small">{{ i18n.paymentInfo.sepaNotice }}</p>
         </div>

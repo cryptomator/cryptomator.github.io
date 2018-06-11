@@ -416,13 +416,13 @@ app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoa
   $scope.sepa = {};
   $scope.sepa.loaded = function(stripe, iban) {
     $scope.sepa.createRequest = function() {
-      $scope.sepa.requestInProgress = true;
+      $scope.requestInProgress = true;
       var sourceData = {
         type: 'sepa_debit',
         currency: 'eur',
         owner: {
-          name: $scope.sepa.name,
-          email: $scope.sepa.email
+          name: $scope.name,
+          email: $scope.email
         },
         mandate: {
           notification_method: 'email',
