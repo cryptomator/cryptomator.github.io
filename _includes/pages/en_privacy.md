@@ -17,15 +17,15 @@ You can set your browser so that you are informed about the setting of cookies a
 ## Server log files
 The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are:
 
--  the browser type and browser version
--  the operating system used
--  the referrer URL
+- the browser type and browser version
+- the operating system used
+- the referrer URL
 - the host name of the accessing computer
 - the time of the server request
 
 This data cannot be assigned to specific persons. This data is not combined with other data sources. We reserve the right to check the data subsequently if we become aware of concrete indications of an illegal use.
 
-# Newsletter
+## Newsletter
 If you would like to subscribe to the newsletter offered on the website, we require an e-mail address from you as well as information that allows us to verify that you are the owner of the e-mail address provided and that you agree to receive the newsletter. Further data will not be collected. We use this data exclusively for the dispatch of the requested information and do not pass them on to third parties.
 
 You can revoke your consent to the storage of the data, the e-mail address and its use for sending the newsletter at any time, for example via the "unsubscribe" link in the newsletter.
@@ -52,4 +52,4 @@ You have the right to free-of-charge information about your stored personal data
 ## Opposition to advertisting e-mails
 We object to the use of contact data published within the scope of the Impressum obligation to send unrequested advertising and information material. The operators of these pages expressly reserve the right to take legal action in the event of unsolicited advertising information, such as spam e-mails.
 
-Source: Translation of <a href="/de/privacy">Datenschutzerklärung</a>
+Source: Translation of [Datenschutzerklärung](/de/privacy)

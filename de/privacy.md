@@ -1,6 +1,6 @@
 ---
 layout: container
-title: Datenschutz
+title: Datenschutzerklärung
 permalink: /de/privacy/
 redirect_from:
   - /datenschutz/

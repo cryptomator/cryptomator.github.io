@@ -1,6 +1,6 @@
 ---
 layout: container
-title: Privacy
+title: Privacy Policy
 permalink: /privacy/
 noindex: true
 ---

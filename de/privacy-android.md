@@ -1,6 +1,6 @@
 ---
 layout: container
-title: Datenschutzerklärung - Cryptomator für Android
+title: Datenschutzerklärung • Cryptomator für Android
 permalink: /de/privacy-android/
 noindex: true
 ---

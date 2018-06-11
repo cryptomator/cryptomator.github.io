@@ -1,6 +1,6 @@
 ---
 layout: container
-title: Privacy - Cryptomator for Android
+title: Privacy Policy • Cryptomator for Android
 permalink: /privacy-android/
 noindex: true
 ---
