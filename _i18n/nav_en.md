@@ -33,14 +33,14 @@ payment:
     proceedBtn: Proceed to PayPal
   creditCard:
     paymentHint1: >
-      Credit card payments are securely handled by <a href="https://stripe.com" target="_blank">Stripe</a>. We will not be able to see your card number or CVC.
+      Credit card payments are securely handled by stripe. We will not be able to see your card number or CVC.
       Please expect to be <a href="https://support.stripe.com/questions/i-have-a-charge-on-my-card-from-stripe-but-i-m-not-a-stripe-user" target="_blank">charged by Stripe</a>.
     paymentHint2: >
       <strong>Important:</strong> Credit card plausibility checks might fail when using anonymizing services such as proxies or Tor.
     card: Credit Card
   sepa:
     paymentHint: >
-      By providing your IBAN and confirming this payment, you authorize Skymatic UG and Stripe, our payment service provider to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from Skymatic UG and Stripe.
+      By providing your IBAN and confirming this payment, you authorize Skymatic UG and <a href="https://stripe.com" target="_blank">Stripe</a>, our payment service provider to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from Skymatic UG and Stripe.
       As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited.
   bankTransfer:
     recipient: Recipient

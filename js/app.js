@@ -100,12 +100,6 @@ app.factory('stripeLoader', ['$window', 'scriptLoader', function($window, script
 
 // <stripe-credit-card-field loaded="creditCardLoaded()" loading-text="Stripe is loading..." valid="creditCardValid" validation-error="creditCardValidationError"/>
 app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
-  var cardElement = document.createElement('div');
-  cardElement.style.display = 'none';
-  var placeholder = document.createElement('input');
-  placeholder.setAttribute('type', 'text');
-  placeholder.classList.add('form-control');
-
   return {
     restrict: 'E',
     scope: {
@@ -115,6 +109,12 @@ app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
       validationError: '='
     },
     link: function(scope, element, attrs) {
+      var cardElement = document.createElement('div');
+      cardElement.style.display = 'none';
+      var placeholder = document.createElement('input');
+      placeholder.setAttribute('type', 'text');
+      placeholder.classList.add('form-control');
+
       element.append(placeholder);
       element.append(cardElement);
 
@@ -149,12 +149,6 @@ app.directive('stripeCreditCardField', ['stripeLoader', function(stripeLoader) {
 
 // <stripe-sepa-field loaded="sepaLoaded()" loading-text="Stripe is loading..." valid="ibanValid" validation-error="ibanValidationError"/>
 app.directive('stripeSepaField', ['stripeLoader', function(stripeLoader) {
-  var cardElement = document.createElement('div');
-  cardElement.style.display = 'none';
-  var placeholder = document.createElement('input');
-  placeholder.setAttribute('type', 'text');
-  placeholder.classList.add('form-control');
-
   return {
     restrict: 'E',
     scope: {
@@ -164,6 +158,12 @@ app.directive('stripeSepaField', ['stripeLoader', function(stripeLoader) {
       validationError: '='
     },
     link: function(scope, element, attrs) {
+      var cardElement = document.createElement('div');
+      cardElement.style.display = 'none';
+      var placeholder = document.createElement('input');
+      placeholder.setAttribute('type', 'text');
+      placeholder.classList.add('form-control');
+
       element.append(placeholder);
       element.append(cardElement);
 
@@ -302,7 +302,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
         },
         mandate: {
           notification_method: 'email',
-        },
+        }
       };
       stripe.createSource(iban, sourceData).then(function(result) {
         if (result.error) {
@@ -349,6 +349,118 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
   };
 
   showModalIfSuggestedByUrl();
+
+}]);
+
+app.controller('SponsorsCheckoutCtrl', ['$scope', '$window', '$http', 'stripeLoader', function($scope, $window, $http, stripeLoader) {
+
+  function setPlanByUrl() {
+    var queryParams = parseQueryString($window.location.search);
+    if (_.has(queryParams, 'plan')) {
+      if (queryParams.plan == 'gold') {
+        $scope.plan = 'GOLD';
+        $scope.amount = 3600;
+      } else if (queryParams.plan == 'silver') {
+        $scope.plan = 'SILVER';
+        $scope.amount = 1200;
+      } else {
+        $scope.plan = 'BRONZE';
+        $scope.amount = 300;
+      }
+    }
+  }
+
+  $scope.plan = 'BRONZE';
+  $scope.amount = 300;
+  $scope.paymentType = 'creditCard';
+  setPlanByUrl();
+
+  $scope.creditCard = {};
+  $scope.creditCard.loaded = function(stripe, card) {
+    $scope.creditCard.createRequest = function() {
+      $scope.requestInProgress = true;
+      stripe.createToken(card).then(function(result) {
+        if (result.error) {
+          $scope.$apply(function() {
+            $scope.requestError = result.error.message;
+            $scope.requestInProgress = false;
+          });
+        } else {
+          $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
+            stripe_source: result.token.id,
+            plan: $scope.plan,
+            display_name: $scope.displayName,
+            name: $scope.name,
+            email: $scope.email,
+            vat_id: $scope.vatId
+          }), {
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          }).then(function(successResponse) {
+            if (successResponse.data.status == 'ok') {
+              $scope.requestError = null;
+              $scope.requestSuccessful = true;
+            } else {
+              $scope.requestError = successResponse.data.error;
+            }
+            $scope.requestInProgress = false;
+          }, function(errorResponse) {
+            console.warn('Payment failed.', errorResponse.data);
+            $scope.requestError = 'Payment failed.';
+            $scope.requestInProgress = false;
+          });
+        }
+      });
+    };
+  };
+
+  $scope.sepa = {};
+  $scope.sepa.loaded = function(stripe, iban) {
+    $scope.sepa.createRequest = function() {
+      $scope.requestInProgress = true;
+      var sourceData = {
+        type: 'sepa_debit',
+        currency: 'eur',
+        owner: {
+          name: $scope.name,
+          email: $scope.email
+        },
+        mandate: {
+          notification_method: 'email',
+        }
+      };
+      stripe.createSource(iban, sourceData).then(function(result) {
+        if (result.error) {
+          $scope.$apply(function() {
+            $scope.requestError = result.error.message;
+            $scope.requestInProgress = false;
+          });
+        } else {
+          $http.post('https://api.cryptomator.org/sponsors/create.php', $.param({
+            stripe_source: result.source.id,
+            plan: $scope.plan,
+            display_name: $scope.displayName,
+            name: $scope.name,
+            email: $scope.email,
+            vat_id: $scope.vatId
+          }), {
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          }).then(function(successResponse) {
+            if (successResponse.data.status == 'ok') {
+              $scope.requestError = null;
+              $scope.requestSuccessful = true;
+            } else {
+              $scope.requestError = successResponse.data.error;
+            }
+            $scope.requestInProgress = false;
+          }, function(errorResponse) {
+            console.warn('Payment failed.', errorResponse.data);
+            $scope.requestError = 'Payment failed.';
+            $scope.requestInProgress = false;
+          });
+        }
+      });
+    };
+  };
 
 }]);
 

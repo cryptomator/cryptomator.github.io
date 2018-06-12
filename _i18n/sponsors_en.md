@@ -29,7 +29,7 @@ opportunities:
   title: Become a Sponsor
   gold:
     title: Gold
-    subtitle: $300 per month
+    subtitle: €300 per month
     content: >
       <ul>
         <li>Your company logo</li>
@@ -43,7 +43,7 @@ opportunities:
       </ul>
   silver:
     title: Silver
-    subtitle: $100 per month
+    subtitle: €100 per month
     content: >
       <ul>
         <li>Your company logo</li>
@@ -54,7 +54,7 @@ opportunities:
       </ul>
   bronze:
     title: Bronze
-    subtitle: $25 per month
+    subtitle: €25 per month
     content: >
       <ul>
         <li>Your name</li>
@@ -62,7 +62,7 @@ opportunities:
           <li>on cryptomator.org's sponsors site</li>
         </ul>
       </ul>
-  action: Contact Us
+  choose: Choose
   notice: >
-    Minimum term 1 year, payment annually in advance. Sponsors are listed chronologically within the selected tier. The logo will be put online within 5 working days after receipt of payment. You will receive an invoice with VAT.
+    Minimum term 1 year, payment annually in advance. Sponsors are listed chronologically within the selected tier. The logo will be put online within 5 working days after receipt of payment. You will receive an invoice with VAT. <a href="mailto:sales@cryptomator.org">Contact us</a> if you have questions.
 ---
