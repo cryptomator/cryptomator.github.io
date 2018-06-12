@@ -4,31 +4,6 @@ context: sponsors-checkout
 
 title: Sponsoring Checkout
 sponsorshipInfo:
-  gold:
-    title: Gold
-    content: >
-      <ul>
-        <li>Ihr Unternehmenslogo</li>
-        <ul>
-          <li>auf cryptomator.org</li>
-          <li>auf der Sponsorenseite von cryptomator.org</li>
-          <li>im README des Projektrepos</li>
-          <li>in Newslettern</li>
-        </ul>
-        <li>Tweet, wenn Sie Sponsor werden</li>
-        <li>Automatische Erneuerung nach 1 Jahr</li>
-      </ul>
-  silver:
-    title: Silber
-    content: >
-      <ul>
-        <li>Ihr Unternehmenslogo</li>
-        <ul>
-          <li>auf der Sponsorenseite von cryptomator.org</li>
-          <li>im README des Projektrepos</li>
-        </ul>
-        <li>Automatische Erneuerung nach 1 Jahr</li>
-      </ul>
   bronze:
     title: Bronze
     content: >
@@ -37,6 +12,31 @@ sponsorshipInfo:
         <ul>
           <li>auf der Sponsorenseite von cryptomator.org</li>
         </ul>
+        <li>Automatische Erneuerung nach 1 Jahr</li>
+      </ul>
+  silver:
+    title: Silber
+    content: >
+      <ul>
+        <li>Ihr Unternehmenslink &amp; -logo</li>
+        <ul>
+          <li>auf der Sponsorenseite von cryptomator.org</li>
+          <li>im README des Projektrepos</li>
+        </ul>
+        <li>Automatische Erneuerung nach 1 Jahr</li>
+      </ul>
+  gold:
+    title: Gold
+    content: >
+      <ul>
+        <li>Ihr Unternehmenslink &amp; -logo</li>
+        <ul>
+          <li>auf cryptomator.org</li>
+          <li>auf der Sponsorenseite von cryptomator.org</li>
+          <li>im README des Projektrepos</li>
+          <li>in Newslettern</li>
+        </ul>
+        <li>Tweet, wenn Sie Sponsor werden</li>
         <li>Automatische Erneuerung nach 1 Jahr</li>
       </ul>
 basicInfo:
