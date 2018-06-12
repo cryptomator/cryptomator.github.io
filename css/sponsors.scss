@@ -4,6 +4,25 @@
 @charset "utf-8";
 @import "variables";
 
+.equal {
+  display: flex;
+
+  @media (max-width: $max-sm) {
+    display: block;
+  }
+}
+
+.equal > * {
+  display: flex;
+}
+
+.panel {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .heading-stat {
   font-weight: 400;
   margin-bottom: $spacing-unit / 4;

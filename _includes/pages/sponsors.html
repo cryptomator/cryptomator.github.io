@@ -2,9 +2,7 @@
 {% include i18n.liquid %}
 
 <h1 class="text-center">{{ i18n.title }}</h1>
-<p class="lead">
-  {{ i18n.lead.content }}
-</p>
+<p class="lead">{{ i18n.lead.content }}</p>
 
 <section>
   <div class="row">
@@ -41,7 +39,7 @@
     <h2 class="text-center">{{ i18n.opportunities.title }}</h2>
   </div>
 
-  <div class="row">
+  <div class="row equal">
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
@@ -51,9 +49,9 @@
             <h4>{{ i18n.opportunities.gold.subtitle }}</h4>
           </div>
           <p>{{ i18n.opportunities.gold.content }}</p>
-          <p class="text-center">
-            <a class="btn btn-primary" href="{{ languageUrlPrefix }}/sponsors/checkout/?plan=gold"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.opportunities.choose }}</a>
-          </p>
+        </div>
+        <div class="panel-footer text-center">
+          <a class="btn btn-primary" href="{{ languageUrlPrefix }}/sponsors/checkout/?plan=gold"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.opportunities.choose }}</a>
         </div>
       </div>
     </div>
@@ -66,9 +64,9 @@
             <h4>{{ i18n.opportunities.silver.subtitle }}</h4>
           </div>
           <p>{{ i18n.opportunities.silver.content }}</p>
-          <p class="text-center">
-            <a class="btn btn-primary" href="{{ languageUrlPrefix }}/sponsors/checkout/?plan=silver"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.opportunities.choose }}</a>
-          </p>
+        </div>
+        <div class="panel-footer text-center">
+          <a class="btn btn-primary" href="{{ languageUrlPrefix }}/sponsors/checkout/?plan=silver"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.opportunities.choose }}</a>
         </div>
       </div>
     </div>
@@ -81,15 +79,13 @@
             <h4>{{ i18n.opportunities.bronze.subtitle }}</h4>
           </div>
           <p>{{ i18n.opportunities.bronze.content }}</p>
-          <p class="text-center">
-            <a class="btn btn-primary" href="{{ languageUrlPrefix }}/sponsors/checkout/?plan=bronze"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.opportunities.choose }}</a>
-          </p>
+        </div>
+        <div class="panel-footer text-center">
+          <a class="btn btn-primary" href="{{ languageUrlPrefix }}/sponsors/checkout/?plan=bronze"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.opportunities.choose }}</a>
         </div>
       </div>
     </div>
   </div>
 
-  <p>
-    {{ i18n.opportunities.notice }}
-  </p>
+  <p>{{ i18n.opportunities.notice }}</p>
 </section>
