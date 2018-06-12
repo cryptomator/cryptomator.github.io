@@ -11,7 +11,7 @@ whitelabel:
 support:
   title: Support-Pakete
   content: >
-    Für Ihre Anforderungen bieten wir unterschiedliche Support-Pakete an.
+    Für Ihre Anforderungen bieten wir unterschiedliche <a href="/de/support">Support-Pakete</a> an.
 libraries:
   title: Krypto-Bibliotheken
   content: >

@@ -5,44 +5,48 @@
 
 <section>
   <div class="page-header">
-    <h2 class="text-center">{{ i18n.gethelp }}</h2>
+    <h2 class="text-center">{{ i18n.plans.title }}</h2>
   </div>
 
-  <div class="row">
+  <div class="row equal">
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.documentation.title }}</h3>
-      <p>
-        {{ i18n.documentation.content }}
-      </p>
-      <p class="text-center">
-        <a href="https://community.cryptomator.org/c/kb" class="btn btn-primary" target="_blank">
-          <span class="glyphicon glyphicon-book"></span> {{ i18n.documentation.action }}
-        </a>
-      </p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3 class="heading-plan text-center">{{ i18n.plans.community.title }}</h3>
+          <p>{{ i18n.plans.community.content }}</p>
+        </div>
+        <div class="panel-footer text-center">
+          <a href="https://community.cryptomator.org/" class="btn btn-primary" target="_blank">
+            <span class="glyphicon glyphicon-user"></span> {{ i18n.plans.community.action }}
+          </a>
+        </div>
+      </div>
     </div>
-
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.community.title }}</h3>
-      <p>
-        {{ i18n.community.content }}
-      </p>
-      <p class="text-center">
-        <a href="https://community.cryptomator.org/" class="btn btn-primary" target="_blank">
-          <span class="glyphicon glyphicon-user"></span> {{ i18n.community.action }}
-        </a>
-      </p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3 class="heading-plan text-center">{{ i18n.plans.pro.title }}</h3>
+          <p>{{ i18n.plans.pro.content }}</p>
+        </div>
+        <div class="panel-footer text-center">
+          <a href="mailto:sales@cryptomator.org" class="btn btn-primary">
+            <span class="glyphicon glyphicon-envelope"></span> {{ i18n.plans.pro.action }}
+          </a>
+        </div>
+      </div>
     </div>
-
     <div class="col-md-4">
-      <h3 class="text-center">{{ i18n.enterprise.title }}</h3>
-      <p>
-        {{ i18n.enterprise.content }}
-      </p>
-      <p class="text-center">
-        <a href="{{ languageUrlPrefix }}/enterprise/" class="btn btn-primary" target="_blank">
-          <span class="glyphicon glyphicon-bookmark"></span> {{ i18n.enterprise.action }}
-        </a>
-      </p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3 class="heading-plan text-center">{{ i18n.plans.enterprise.title }}</h3>
+          <p>{{ i18n.plans.enterprise.content }}</p>
+        </div>
+        <div class="panel-footer text-center">
+          <a href="mailto:sales@cryptomator.org" class="btn btn-primary">
+            <span class="glyphicon glyphicon-envelope"></span> {{ i18n.plans.enterprise.action }}
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

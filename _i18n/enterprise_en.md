@@ -11,7 +11,7 @@ whitelabel:
 support:
   title: Support Plans
   content: >
-    We offer various support plans for your needs.
+    We offer various <a href="/support">support plans</a> for your needs.
 libraries:
   title: Crypto Libraries
   content: >
