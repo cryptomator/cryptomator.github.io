@@ -2,6 +2,9 @@
 language: de
 context: index
 
+defendor: >
+  Sie suchen einen zentralen Cryptomator für Ihr Unternehmen? Informieren Sie sich über unser neues Produkt <a class="alert-link" href="https://defendor.skymatic.de/" target="_blank">Defendor</a> mit erweitertem Zugriffsmanagement, Verschlüsselung, Malware-Schutz, Backups und mehr!
+
 subtitle: >
   Freie clientseitige Verschlüsselung für Ihre Cloud-Daten.<br/>
   Open Source Software: Keine Hintertüren, keine Anmeldung.

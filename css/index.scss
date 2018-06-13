@@ -19,7 +19,12 @@ h1.display-font {
   font-weight: 700;
 }
 
-// Stage Animation
+#defendor {
+  > .alert {
+    margin-top: $spacing-unit;
+  }
+}
+
 #stage {
   height: 15vw; // relative to width by choice
   margin-top: $spacing-unit / 2;
@@ -234,16 +239,13 @@ h1.display-font {
 }
 
 #top {
-  min-height: 42vh;
-
   h2 {
     padding-bottom: 1em;
   }
 }
 
 #call-to-action {
-  min-height: 42vh;
-  padding-bottom: $spacing-unit;
+  padding-bottom: 48px;
 
   h2 {
     padding-top: 1em;
@@ -309,7 +311,6 @@ h1.display-font {
   }
 }
 
-// How it works explanation
 #howto {
   padding-bottom: 48px;
   padding-top: 48px;
@@ -357,7 +358,6 @@ h1.display-font {
   margin-top: 20px;
 }
 
-// Testimonials Animation
 #testimonials {
   padding-bottom: 48px;
 

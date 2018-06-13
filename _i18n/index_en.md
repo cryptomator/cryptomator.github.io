@@ -2,6 +2,9 @@
 language: en
 context: index
 
+defendor: >
+  Looking for centralized Cryptomator for your organization? Check out our new product <a class="alert-link" href="https://defendor.skymatic.de/en/" target="_blank">Defendor</a> with advanced access management, encryption, malware protection, backups, and more!
+
 subtitle: >
   Free client-side encryption for your cloud files.<br/>
   Open source software: No backdoors, no registration.
