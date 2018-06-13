@@ -25,6 +25,10 @@ stats:
   languages:
     value: 25
     title: Sprachen
+bronzeSponsors:
+  title: Bronze-Sponsoren
+  list:
+  - Fachhochschule St. Pölten
 opportunities:
   title: Werden Sie Sponsor
   bronze:

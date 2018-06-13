@@ -25,6 +25,10 @@ stats:
   languages:
     value: 25
     title: Languages
+bronzeSponsors:
+  title: Bronze Sponsors
+  list:
+  - St. Pölten University of Applied Sciences
 opportunities:
   title: Become a Sponsor
   bronze:
