@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Become a Cryptomator Sponsor"
+date: 2018-06-18
+tags: [cryptomator, sponsors]
+stylesheets: ['/css/blog-post.css']
+
+published: true
+language: en
+
+excerpt: As you know, we're providing Cryptomator as a pay-what-you-want software and we want to keep it that way. In the meantime, we've grown to a small team working full time on this project. And we all need to pay our bills. Therefore we need your help! If you use Cryptomator in your company or know a company that uses open-source software, please ask if they want to become an official sponsor of Cryptomator. Alternatively, you can support Cryptomator through recurring donations.
+---
+Dear community,
+
+As you know, we're providing Cryptomator as a pay-what-you-want software and we want to keep it that way. In the meantime, we've grown to a small team working full time on this project. And we all need to pay our bills.
+
+Therefore we need your help! If you use Cryptomator in your company or know a company that uses open-source software, please ask if they want to become an official sponsor of Cryptomator. Alternatively, you can support Cryptomator through [recurring donations](https://cryptomator.org/sponsors/#donate).
+
+We have prepared three sponsoring plans with different benefits for you. Head on to our [sponsors page](https://cryptomator.org/sponsors/) for more information.
+
+Your Cryptomator team
+
+<img class="img-responsive" src="/img/blog/cryptobot-sponsor.png" srcset="/img/blog/cryptobot-sponsor.png 1x, /img/blog/cryptobot-sponsor@2x.png 2x" alt="Cryptobot Sponsor" />
