@@ -69,4 +69,8 @@ opportunities:
   choose: Choose
   notice: >
     Minimum term 1 year, payment annually in advance. Sponsors are listed chronologically within the selected tier. The logo will be put online within 5 working days after receipt of payment. You will receive an invoice with VAT. <a href="mailto:sales@cryptomator.org">Contact us</a> if you have questions.
+recurringDonation:
+  title: Recurring Donation
+  content: >
+    You can also <a href="#payment-modal" data-toggle="modal">donate</a> a custom amount. Choose between a one-time and monthly donation. Recurring donations are currently only available for credit cards. Monthly payments can be <a href="/support/">canceled</a> anytime.
 ---

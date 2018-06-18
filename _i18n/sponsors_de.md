@@ -69,4 +69,7 @@ opportunities:
   choose: Wählen
   notice: >
     Mindestlaufzeit 1 Jahr, Zahlung jährlich im Voraus. Sponsoren werden innerhalb der gewählten Kategorie chronologisch gelistet. Das Logo wird innerhalb von 5 Arbeitstagen nach Geldeingang online gestellt. Ihnen wird eine Rechnung mit ausgewiesener Umsatzsteuer ausgestellt. <a href="mailto:sales@cryptomator.org">Kontaktieren Sie uns</a> bei Fragen.
+recurringDonation:
+  title: Wiederkehrende Spende
+  content: Sie können auch einen individuellen Betrag <a href="#payment-modal" data-toggle="modal">spenden</a>. Wählen Sie zwischen einer einmaligen und einer monatlichen Spende. Wiederkehrende Spenden sind derzeit nur für Kreditkarten möglich. Monatliche Zahlungen können jederzeit <a href="/de/support/">storniert</a> werden.
 ---
