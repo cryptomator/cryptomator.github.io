@@ -8,7 +8,7 @@ stylesheets: ['/css/blog-post.css']
 published: true
 language: en
 ---
-Cyberduck 6.0 with support for Cryptomator vaults has been released today. You can download the new version at <a href="https://cyberduck.io/" target="_blank">cyberduck.io</a>. Cyberduck is a libre remote file browser for Mac and Windows, making it the perfect tool for all, who do not want to synchronize their cloud files locally.
+Cyberduck 6.0 with support for Cryptomator vaults has been released today. You can download the new version at [cyberduck.io](https://cyberduck.io/){:target="_blank"}. Cyberduck is a libre remote file browser for Mac and Windows, making it the perfect tool for all, who do not want to synchronize their cloud files locally.
 
 <div class="img-caption">
   <img class="img-responsive img-rounded" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
@@ -17,4 +17,4 @@ Cyberduck 6.0 with support for Cryptomator vaults has been released today. You c
 
 Cyberduck allows access to your cloud storage without an additional sync client. FTP, SFTP, WebDAV, Amazon S3, Backblaze B2, Microsoft Azure & OneDrive, and OpenStack Swift are some of the supported protocols. All vaults created with Cyberduck or Cryptomator can be opened with the other.
 
-You can learn more about our cooperation with Cyberduck <a href="https://cryptomator.org/coop/cyberduck_en.html" target="_blank">at our dedicated coop page</a>.
+You can learn more about our cooperation with Cyberduck [at our dedicated coop page](https://cryptomator.org/coop/cyberduck_en.html){:target="_blank"}.

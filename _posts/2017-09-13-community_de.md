@@ -12,4 +12,4 @@ Unsere Online-Community hat endlich ein Zuhause gefunden. Hier erreichen Sie uns
 
 Wir freuen uns über jeden Besucher und sind jetzt schon gespannt auf Ihre Beiträge!
 
-<a href="https://community.cryptomator.org/" target="_blank">https://community.cryptomator.org/</a>
+[https://community.cryptomator.org/](https://community.cryptomator.org/){:target="_blank"}

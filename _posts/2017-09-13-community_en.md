@@ -12,4 +12,4 @@ Our online community has finally found a new home. From now on, you can reach us
 
 We welcome all visitors and are excited about your posts!
 
-<a href="https://community.cryptomator.org/" target="_blank">https://community.cryptomator.org/</a>
+[https://community.cryptomator.org/](https://community.cryptomator.org/){:target="_blank"}

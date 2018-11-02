@@ -11,7 +11,7 @@ stylesheets: ['/css/blog-post.css']
 published: true
 language: en
 ---
-Cyptomator for iOS has finally been approved by the French administration. You can download it now in the <a href="https://itunes.apple.com/fr/app/cryptomator/id953086535" target="_blank">French App Store</a>. We'd like to share our experience on how to receive export compliance for the French iOS App Store.
+Cyptomator for iOS has finally been approved by the French administration. You can download it now in the [French App Store](https://itunes.apple.com/fr/app/cryptomator/id953086535){:target="_blank"}. We'd like to share our experience on how to receive export compliance for the French iOS App Store.
 
 Just to be clear, you also need the U.S. Encryption Registration (ERN) approval from the U.S. Bureau of Industry (BIS). But this has already been covered by many sites, just google for `export compliance ern ios app store`.
 
@@ -56,7 +56,7 @@ Let's take a look on how we've filled out our export compliance documentation in
 Our answer to question 4 is probably less common among typical apps using encryption. Additionally to Apple's CommonCrypto, we're making use of OpenSSL and scrypt, which aren't bundled with the standard library of iOS. Only then you're going to be asked question 5 and only then you have to submit a copy of the French encryption declaration approval from the ANSSI.
 
 ### How do I submit an application to the ANSSI?
-Thought you'd never ask. Thankfully, there is an English website for this: <a href="http://www.ssi.gouv.fr/en/regulation/cryptology/how-to-submit-an-application/" target="_blank">http://www.ssi.gouv.fr/en/regulation/cryptology/how-to-submit-an-application/</a>
+Thought you'd never ask. Thankfully, there is an English website for this: [http://www.ssi.gouv.fr/en/regulation/cryptology/how-to-submit-an-application/](http://www.ssi.gouv.fr/en/regulation/cryptology/how-to-submit-an-application/){:target="_blank"}
 
 But the fun stops there. From now on, everything is in French. Yup. That's right. Everything. Even the responses you receive are in French. And you have to submit your request via mail (yes, not email).
 
