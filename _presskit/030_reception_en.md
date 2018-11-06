@@ -10,7 +10,7 @@ title: Reception
   <a href="http://t3n.de/news/cryptomator-cloud-verschluesselung-597606/" target="_blank">
     <img src="/img/reception/t3n-logo.png" srcset="/img/reception/t3n-logo.png 1x, /img/reception/t3n-logo@2x.png 2x"/>
   </a>
-  <a href="https://www1.wdr.de/nachrichten/rheinland/cebit-auszeichnung-102.html" target="_blank">
+  <a href="https://www1.wdr.de/fernsehen/aktuelle-stunde/angeklickt-fbi-und-apple-100.html" target="_blank">
     <img src="/img/reception/wdr-logo.png" srcset="/img/reception/wdr-logo.png 1x, /img/reception/wdr-logo@2x.png 2x"/>
   </a>
   <a href="http://www.heise.de/mac-and-i/meldung/Cryptomator-Konkurrent-fuer-Boxcryptor-3133597.html" target="_blank">
