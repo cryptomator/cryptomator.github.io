@@ -15,6 +15,9 @@
 {% assign macSha256Checksum = release.artifacts.mac.sha256Checksum %}
 
 {% capture linuxVersion %}{% if release.artifacts.linux.patch %}{{release.title}}.{{release.artifacts.linux.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
+{% capture appImageFile64 %}{{release.artifacts.linux.appImageFile64}}{% endcapture %}
+{% capture appImageUrl64 %}{{release.artifacts.linux.appImageUrl64}}{% endcapture %}
+{% assign appImageSha256Checksum64 = release.artifacts.linux.appImageSha256Checksum64 %}
 {% capture debianFile64 %}{{release.artifacts.linux.debianFile64}}{% endcapture %}
 {% capture debianUrl64 %}{{release.artifacts.linux.debianUrl64}}{% endcapture %}
 {% assign debianSha1Checksum64 = release.artifacts.linux.debianSha1Checksum64 %}

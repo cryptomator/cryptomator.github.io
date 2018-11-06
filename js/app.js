@@ -499,8 +499,8 @@ app.controller('NewsletterCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('https://api.cryptomator.org/mailtrain/subscribe.php')
     .then(function(successGetResponse) {
       $http.post('https://api.cryptomator.org/mailtrain/subscribe.php', $.param({
-        email: $scope.email,
-        android: $scope.android
+        listid: 'ryCzTHl2',
+        email: $scope.email
       }), {
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       }).then(function(successPostResponse) {

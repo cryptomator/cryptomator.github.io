@@ -15,13 +15,16 @@ mac:
   title: Cryptomator for macOS
 linux:
   title: Cryptomator for Linux
+  appImage:
+    howTo: >
+      To run the AppImage, make it executable by running after you have downloaded it:
   ppa:
     minimumRequirements: >
-      For Ubuntu &quot;Vivid&quot;, Mint &quot;Sarah&quot;, elementary OS &quot;Loki&quot;, or other distributions based on Ubuntu from 15.04 onwards
+      For Ubuntu &quot;Bionic&quot;, Mint &quot;Tara&quot;, elementary OS &quot;Juno&quot;, or other distributions based on Ubuntu from 18.04 onwards
     olderDistributions: >
-      For older distributions please use our <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">.deb package</a>.
+      For older distributions please use our <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAppImage">AppImage</a>.
   buttonAur: Visit AUR Page
-  requirements: See <a href="http://www.oracle.com/technetwork/java/javase/certconfig-2095354.html" target="_blank">detailed system requirements</a>
+  requirements: See <a href="https://www.oracle.com/technetwork/java/javase/documentation/jdk10certconfig-4417031.html" target="_blank">detailed system requirements</a>
 android:
   title: Cryptomator for Android
   link: https://play.google.com/store/apps/details?id=org.cryptomator&hl=en
@@ -34,9 +37,9 @@ ios:
   link: https://itunes.apple.com/us/app/cryptomator/id953086535
 jar:
   title: Other Platforms
-  subtitle: Executable .jar File
+  subtitle: Executable JAR File
   button: Available on GitHub
-  requirements: Requires JRE 8 + JCE unlimited strength policy files
+  requirements: Requires JRE 10
 getStarted:
   title: Get Started with Cryptomator
   subtitle: >

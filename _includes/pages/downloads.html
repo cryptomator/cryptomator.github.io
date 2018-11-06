@@ -36,21 +36,15 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="no-margin-b">.exe Installer</h4>
+              <h4 class="no-margin-b">EXE Installer</h4>
             </div>
             <div class="panel-body small">
-              <p>Minimum: Windows Vista SP2</p>
-              <div class="btn-group">
-                <a itemprop="downloadUrl" href="{{winUrl64}}" class="btn btn-primary" role="button">
-                  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
-                </a>
-                <a itemprop="downloadUrl" href="{{winUrl32}}" class="btn btn-primary" role="button">
-                  {{ i18n.download.button32 }}
-                </a>
-              </div>
+              <p>Minimum: Windows 7 SP1</p>
+              <a itemprop="downloadUrl" href="{{winUrl64}}" class="btn btn-primary" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
+              </a>
               <p class="download-caption">
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">SHA256 (64 Bit)</a> •
-                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum32}}">SHA256 (32 Bit)</a>
+                <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">SHA256</a>
               </p>
             </div>
           </div>
@@ -79,10 +73,10 @@
 
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="no-margin-b">.dmg Image</h4>
+              <h4 class="no-margin-b">DMG Image</h4>
             </div>
             <div class="panel-body small">
-              <p>Minimum: OS X 10.8.3</p>
+              <p>Minimum: macOS 10.10</p>
               <a itemprop="downloadUrl" href="{{macUrl}}" class="btn btn-primary" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button }}
               </a>
@@ -117,13 +111,32 @@
           <div class="panel-group" id="linuxDownloadPanel">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h4 class="no-margin-b">
-                  <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadPpa">
-                    PPA<br/><span class="small">Ubuntu, Mint, elementary OS, ...</span>
-                  </a>
-                </h4>
+                <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAppImage">
+                  <h4 class="no-margin-b">AppImage</h4>
+                </a>
               </div>
-              <div id="linuxDownloadPpa" class="panel-collapse collapse in">
+              <div id="linuxDownloadAppImage" class="panel-collapse collapse in">
+                <div class="panel-body small">
+                  <p>{{ i18n.linux.appImage.howTo }}</p>
+                  <pre class="text-left text-nowrap">
+                    chmod a+x {{appImageFile64}}
+                  </pre>
+                  <a itemprop="downloadUrl" href="{{appImageUrl64}}" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
+                  </a>
+                  <p class="download-caption">
+                    <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{appImageSha256Checksum64}}">SHA256</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadPpa">
+                  <h4 class="no-margin-b">PPA</h4>
+                </a>
+              </div>
+              <div id="linuxDownloadPpa" class="panel-collapse collapse">
                 <div class="panel-body small">
                   <p>{{ i18n.linux.ppa.minimumRequirements }}</p>
                   <pre class="text-left text-nowrap">
@@ -135,63 +148,11 @@
                 </div>
               </div>
             </div>
-            <div class="panel panel-default">
+            <!-- <div class="panel panel-default">
               <div class="panel-heading">
-                <h4 class="no-margin-b">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadDeb">
-                    .deb Package<br/><span class="small">Debian, older Ubuntu versions, ...</span>
-                  </a>
-                </h4>
-              </div>
-              <div id="linuxDownloadDeb" class="panel-collapse collapse">
-                <div class="panel-body small">
-                  <div class="btn-group">
-                    <a itemprop="downloadUrl" href="{{debianUrl64}}" class="btn btn-primary" role="button">
-                      <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
-                    </a>
-                    <a itemprop="downloadUrl" href="{{debianUrl32}}" class="btn btn-primary" role="button">
-                      {{ i18n.download.button32 }}
-                    </a>
-                  </div>
-                  <p class="download-caption">
-                    <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum64}}">SHA256 (64 Bit)</a> •
-                    <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{debianSha256Checksum32}}">SHA256 (32 Bit)</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="no-margin-b">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadRpm">
-                    .rpm Package<br/><span class="small">Red Hat, openSUSE, Fedora, CentOS, ...</span>
-                  </a>
-                </h4>
-              </div>
-              <div id="linuxDownloadRpm" class="panel-collapse collapse">
-                <div class="panel-body small">
-                  <div class="btn-group">
-                    <a itemprop="downloadUrl" href="{{redhatUrl64}}" class="btn btn-primary" role="button">
-                      <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{ i18n.download.button64 }}
-                    </a>
-                    <a itemprop="downloadUrl" href="{{redhatUrl32}}" class="btn btn-primary" role="button">
-                      {{ i18n.download.button32 }}
-                    </a>
-                  </div>
-                  <p class="download-caption">
-                    <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum64}}">SHA256 (64 Bit)</a> •
-                    <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{redhatSha256Checksum32}}">SHA256 (32 Bit)</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="no-margin-b">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAur">
-                    AUR<br/><span class="small">Arch, Manjaro, ...</span>
-                  </a>
-                </h4>
+                <a class="collapsed" data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAur">
+                  <h4 class="no-margin-b">AUR</h4>
+                </a>
               </div>
               <div id="linuxDownloadAur" class="panel-collapse collapse">
                 <div class="panel-body small">
@@ -200,7 +161,7 @@
                   </a>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <a href="https://bintray.com/" target="_blank"><img src="/img/bintray-logo.png" srcset="/img/bintray-logo.png 1x, /img/bintray-logo@2x.png 2x" class="img-responsive center-block"/></a>
@@ -434,6 +395,11 @@
               {% endif %}
             </td>
             <td>
+              {% if appImageSha256Checksum64 %}
+              <a href="{{appImageUrl64}}" download="{{appImageFile64}}" class="btn btn-xs btn-default" role="button">
+                <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{appImageFile64}}
+              </a>
+              {% endif %}
               {% if debianSha1Checksum64 or debianSha256Checksum64 %}
               <a href="{{debianUrl64}}" download="{{debianFile64}}" class="btn btn-xs btn-default" role="button">
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{debianFile64}}
@@ -454,7 +420,7 @@
                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> {{redhatFile32}}
               </a>
               {% endif %}
-              {% if debianSha1Checksum64 == nil and debianSha256Checksum64 == nil and debianSha1Checksum32 == nil and debianSha256Checksum32 == nil and redhatSha1Checksum64 == nil and redhatSha256Checksum64 == nil and redhatSha1Checksum32 == nil and redhatSha256Checksum32 == nil %}
+              {% if appImageSha256Checksum64 == nil and debianSha1Checksum64 == nil and debianSha256Checksum64 == nil and debianSha1Checksum32 == nil and debianSha256Checksum32 == nil and redhatSha1Checksum64 == nil and redhatSha256Checksum64 == nil and redhatSha1Checksum32 == nil and redhatSha256Checksum32 == nil %}
               -
               {% endif %}
             </td>
