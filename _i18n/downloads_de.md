@@ -11,8 +11,12 @@ download:
   button32: 32-Bit
 windows:
   title: Cryptomator für Windows
+  notice: >
+    Für den Dokany-Treiber benötigt die Installation <a href="https://go.microsoft.com/fwlink/?LinkId=746572" target="_blank">Microsoft Visual C++ Redistributable for Visual Studio 2017</a>. Dokany ist optional, bietet jedoch eine bessere Integration in Windows als die Alternative WebDAV.
 mac:
   title: Cryptomator für macOS
+  notice: >
+    Wir empfehlen die Installation von <a href="https://osxfuse.github.io/" target="_blank">FUSE for macOS</a>. FUSE ist optional, bietet jedoch eine bessere Integration in macOS als die Alternative WebDAV.
 linux:
   title: Cryptomator für Linux
   appImage:
