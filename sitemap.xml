@@ -7,7 +7,8 @@ sitemaps:
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for s in page.sitemaps %}<!-- {{ site.url }}{{ s.url }} -->
+{% for s in page.sitemaps %}
+  <!-- {{ site.url }}{{ s.url }} -->
   <sitemap>
     <loc>{{ site.url }}{{ s.url }}</loc>
   </sitemap>

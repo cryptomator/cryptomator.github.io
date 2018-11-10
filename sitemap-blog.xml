@@ -5,8 +5,8 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {% assign sortedPostsEn = site.posts | where: 'published', true | where: 'language', 'en' | sort: 'path', 'last' | reverse %}
 {% assign sortedPostsDe = site.posts | where: 'published', true | where: 'language', 'de' | sort: 'path', 'last' | reverse %}
-{% for postEn in sortedPostsEn %}<!-- {{ postEn.title | xml_escape }} -->
-{% assign postDe = sortedPostsDe[forloop.index0] %}
+{% for postEn in sortedPostsEn %}
+  {% assign postDe = sortedPostsDe[forloop.index0] %}<!-- {{ postEn.title | xml_escape }} -->
   <url>
     <loc>{{ site.url }}{{ postEn.url }}</loc>
     <priority>0.5</priority>

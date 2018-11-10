@@ -5,8 +5,8 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {% assign sortedArticlesEn = site.coop | where: 'language', 'en' | sort: 'path', 'last' %}
 {% assign sortedArticlesDe = site.coop | where: 'language', 'de' | sort: 'path', 'last' %}
-{% for articleEn in sortedArticlesEn %}<!-- {{ articleEn.title | xml_escape }} -->
-{% assign articleDe = sortedArticlesDe[forloop.index0] %}
+{% for articleEn in sortedArticlesEn %}
+  {% assign articleDe = sortedArticlesDe[forloop.index0] %}<!-- {{ articleEn.title | xml_escape }} -->
   <url>
     <loc>{{ site.url }}{{ articleEn.url }}</loc>
     <priority>0.8</priority>
