@@ -137,6 +137,11 @@
               <label class="control-label" for="inputCreditCardEmail">{{ i18n.payment.email }}</label>
               <input id="inputCreditCardEmail" type="email" class="form-control" data-ng-model="creditCard.email">
             </div>
+            
+            <div class="form-group">
+              <label>{{ i18n.payment.creditCard.captcha }}</label>
+              <google-recaptcha widget-id="captcha.widgetId" on-finished="captcha.finished(token)" response-token="captcha.token" />
+            </div>
 
             <div class="form-group">
               <label>{{ i18n.payment.creditCard.card }}</label>
@@ -258,7 +263,7 @@
         <button data-ng-disabled="paypal.paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="paypal.pay('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
 
         <!-- CreditCard -->
-        <button data-ng-disabled="creditCard.paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.isValid()" data-ng-show="paymentType == 'creditCard' &amp;&amp; !creditCard.paymentSuccessful" data-ng-click="creditCard.pay()" class="btn btn-primary">
+        <button data-ng-disabled="creditCard.paymentInProgress || !isAcceptableAmount(donation.amount) || !creditCard.isValid() || !captcha.token" data-ng-show="paymentType == 'creditCard' &amp;&amp; !creditCard.paymentSuccessful" data-ng-click="creditCard.pay()" class="btn btn-primary">
           <span class="glyphicon glyphicon-credit-card"></span>
           <span data-ng-show="!creditCard.paymentInProgress">{{ i18n.payment.payNowBtn }}</span>
           <span data-ng-show="creditCard.paymentInProgress">{{ i18n.payment.processingBtn }}</span>

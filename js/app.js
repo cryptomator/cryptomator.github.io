@@ -82,6 +82,68 @@ app.factory('scriptLoader', ['$window', function($window){
   };
 }]);
 
+app.factory('recaptchaLoader', ['$window', 'scriptLoader', function($window, scriptLoader) {
+  var recaptcha = null;
+  return {
+    load: function(callback) {
+      if (recaptcha) {
+        callback(recaptcha);
+      } else {
+        $window.grecaptchaCallback = function() {
+          recaptcha = $window.grecaptcha;
+          callback(recaptcha);
+        };
+        scriptLoader.load("https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&render=explicit");
+      }
+    }
+  };
+}]);
+
+// <google-recaptcha widget-id="widgetId" on-finished="callback(responseToken)" response-token="token" />
+app.directive('googleRecaptcha', ['recaptchaLoader', function(recaptchaLoader) {
+  return {
+    restrict: 'E',
+    scope: {
+      widgetId: '=',
+      onFinished: '&',
+      responseToken: '='
+    },
+    link: function(scope, element, attrs) {
+      var captchaWrapper = document.createElement('div');
+      captchaWrapper.classList.add('captcha-wrapper');
+      var captchaLoadBtn = document.createElement('button');
+      captchaLoadBtn.classList.add('btn');
+      captchaLoadBtn.classList.add('btn-default');
+      captchaLoadBtn.textContent = 'Load reCAPTCHA';
+      
+      captchaWrapper.append(captchaLoadBtn);
+      element.append(captchaWrapper);
+      
+      var recaptchaCallback = function(result) {
+        scope.$apply(function() {
+          scope.responseToken = result;
+        });
+        console.log('recaptchaCallback', result, scope.onFinished);
+        scope.onFinished(result);
+      };
+      
+      captchaLoadBtn.onclick = function() {
+        recaptchaLoader.load(function(recaptcha) {
+          captchaLoadBtn.remove();
+          var widgetId = recaptcha.render(captchaWrapper, {
+            'sitekey': '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv',
+            'data-size': 'compact',
+            'callback' : recaptchaCallback
+          });
+          scope.$apply(function() {
+            scope.widgetId = widgetId;
+          });
+        });
+      };
+    }
+  };
+}]);
+
 app.factory('stripeLoader', ['$window', 'scriptLoader', function($window, scriptLoader) {
   var stripe = null;
   return {
@@ -221,7 +283,7 @@ app.controller('CallToActionCtrl', ['$scope', '$window', function($scope, $windo
 
 }]);
 
-app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLoader', function($scope, $window, $http, paypal, stripeLoader) {
+app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLoader', 'recaptchaLoader', function($scope, $window, $http, paypal, stripeLoader, recaptchaLoader) {
 
   function showModalIfSuggestedByUrl() {
     if ($window.location.hash == '#donate') {
@@ -230,6 +292,14 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
   }
 
   $scope.paymentType = 'paypal';
+  
+  $scope.captcha = {};
+  $scope.captcha.widgetId = null;
+  $scope.captcha.token = null;
+  $scope.captcha.finished = function(token) {
+    // todo: not yet invoked...
+    console.log('captcha responseToken: ', token);
+  };
 
   $scope.paypal = {};
   $scope.paypal.pay = function(locale) {
@@ -265,7 +335,8 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
             frequency: $scope.donation.frequency,
             name: $scope.creditCard.name,
             email: $scope.creditCard.email,
-            message: $scope.donation.message
+            message: $scope.donation.message,
+            captcha: $scope.captcha.token
           }), {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           }).then(function(successResponse) {
@@ -280,6 +351,10 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
             console.warn('Payment failed.', errorResponse.data);
             $scope.creditCard.paymentError = 'Payment failed.';
             $scope.creditCard.paymentInProgress = false;
+          });
+          recaptchaLoader.load(function(recaptcha) {
+            $scope.captcha.token = null;
+            recaptcha.reset($scope.captcha.widgetId);
           });
         }
       });
