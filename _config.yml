@@ -34,5 +34,4 @@ collections:
   coop:
     output: true
     permalink: /:collection/:title.html
-  androidReleases:
   presskit:

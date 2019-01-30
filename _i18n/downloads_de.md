@@ -32,10 +32,6 @@ linux:
 android:
   title: Cryptomator für Android
   link: https://play.google.com/store/apps/details?id=org.cryptomator&hl=de
-  noticeApk: >
-    Cryptomator für Android ist zurzeit nicht als APK-Download erwerblich.<br/>
-    In der Zwischenzeit können Sie die alte Beta-Version herunterladen.
-  buttonApk: Beta 0.7.0 herunterladen
 ios:
   title: Cryptomator für iOS
   link: https://itunes.apple.com/de/app/cryptomator/id953086535

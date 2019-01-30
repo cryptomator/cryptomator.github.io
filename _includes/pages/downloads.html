@@ -181,38 +181,13 @@
         <div class="col-md-6 col-lg-4 text-center">
           <h2>{{ i18n.android.title }}</h2>
 
-          <div class="panel-group" id="androidDownloadPanel">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="no-margin-b">
-                  <a data-toggle="collapse" data-parent="#androidDownloadPanel" href="#androidDownloadGooglePlay">
-                    Google Play
-                  </a>
-                </h4>
-              </div>
-              <div id="androidDownloadGooglePlay" class="panel-collapse collapse in">
-                <div class="panel-body small">
-                  <p>Minimum: Android 4.3</p>
-                  <a href="{{ i18n.android.link }}" class="google-play-btn" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
-                </div>
-              </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="no-margin-b">Google Play</h4>
             </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="no-margin-b">
-                  <a data-toggle="collapse" data-parent="#androidDownloadPanel" href="#androidDownloadApk">
-                    APK
-                  </a>
-                </h4>
-              </div>
-              <div id="androidDownloadApk" class="panel-collapse collapse">
-                <div class="panel-body small">
-                  <p>{{ i18n.android.noticeApk }}</p>
-                  <a class="btn btn-primary" href="http://updates.cryptomator.org/android/Cryptomator-0.7.0.apk" target="_blank" role="button">
-                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span> {{ i18n.android.buttonApk }}
-                  </a>
-                </div>
-              </div>
+            <div class="panel-body small">
+              <p>Minimum: Android 4.3</p>
+              <a href="{{ i18n.android.link }}" class="google-play-btn" target="_blank"><img src="/img/android/{{ language.name }}/googleplay-badge.png"/></a>
             </div>
           </div>
         </div>
