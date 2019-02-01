@@ -12,7 +12,7 @@ download:
 windows:
   title: Cryptomator für Windows
   notice: >
-    Für den Dokany-Treiber benötigt die Installation <a href="https://go.microsoft.com/fwlink/?LinkId=746572" target="_blank">Microsoft Visual C++ Redistributable for Visual Studio 2017</a>. Dokany ist optional, bietet jedoch eine bessere Integration in Windows als die Alternative WebDAV.
+    Für den Dokany-Treiber benötigt die Installation <a href="https://go.microsoft.com/fwlink/?LinkId=746572" target="_blank">Microsoft Visual C++ Redistributable for Visual Studio 2017</a>. Dokany ist optional, wird jedoch empfohlen, da es eine bessere Integration in Windows als die Alternative WebDAV bietet.
 mac:
   title: Cryptomator für macOS
   notice: >
