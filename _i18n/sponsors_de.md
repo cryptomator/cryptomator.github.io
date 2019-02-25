@@ -8,22 +8,22 @@ lead:
     Cryptomator wird als Open-Source-Projekt trotz des hohen Entwicklungs&shy;aufwands kostenlos bereitgestellt und ist daher auf Spenden angewiesen. Wenn Sie auch an der Weiterentwicklung interessiert sind, bieten wir Ihnen als Sponsor die Möglichkeit, uns öffentlich zu unterstützen.
 stats:
   monthlyDownloads:
-    value: 22k
+    value: 35k
     title: Monatliche Downloads
   linesOfCode:
-    value: 25,4k
+    value: 37k
     title: Codezeilen
   developmentHours:
-    value: 6,6k
+    value: 7,0k
     title: Entwicklungsstunden
   githubStars:
-    value: 2,2k
+    value: 2,7k
     title: GitHub Stars
   resolvedIssues:
-    value: 2,9k
+    value: 3,3k
     title: Gelöste Issues
   languages:
-    value: 25
+    value: 26
     title: Sprachen
 bronzeSponsors:
   title: Bronze-Sponsoren
@@ -49,7 +49,7 @@ opportunities:
         <li>Ihr Unternehmenslink &amp; -logo</li>
         <ul>
           <li>auf der Sponsorenseite von cryptomator.org</li>
-          <li>im README des Projektrepos <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="11,8k+ Besuche pro Monat"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+          <li>im README des Projektrepos <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="17,1k+ Besuche pro Monat"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
         </ul>
       </ul>
   gold:
@@ -59,12 +59,12 @@ opportunities:
       <ul>
         <li>Ihr Unternehmenslink &amp; -logo</li>
         <ul>
-          <li>auf cryptomator.org <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="128k+ Impressionen pro Monat"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+          <li>auf cryptomator.org <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="172k+ Impressionen pro Monat"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
           <li>auf der Sponsorenseite von cryptomator.org</li>
-          <li>im README des Projektrepos <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="11,8k+ Besuche pro Monat"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
-          <li>in Newslettern <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="4,3k+ Abonnenten"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+          <li>im README des Projektrepos <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="17,1k+ Besuche pro Monat"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+          <li>in Newslettern <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="4,7k+ Abonnenten"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
         </ul>
-        <li>Tweet, wenn Sie Sponsor werden <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="2,9k+ Follower"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
+        <li>Tweet, wenn Sie Sponsor werden <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="3,5k+ Follower"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
       </ul>
   choose: Wählen
   notice: >
