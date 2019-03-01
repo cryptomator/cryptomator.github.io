@@ -28,18 +28,13 @@ linux:
     olderDistributions: >
       Für ältere Distributionen empfehlen wir den Download der <a data-toggle="collapse" data-parent="#linuxDownloadPanel" href="#linuxDownloadAppImage">AppImage</a>.
   buttonAur: Zur AUR-Seite
-  requirements: Siehe <a href="https://www.oracle.com/technetwork/java/javase/documentation/jdk10certconfig-4417031.html" target="_blank">detaillierte Systemanforderungen</a>
+  requirements: Siehe <a href="https://www.oracle.com/technetwork/java/javase/documentation/jdk11certconfig-5069638.html" target="_blank">detaillierte Systemanforderungen</a>
 android:
   title: Cryptomator für Android
   link: https://play.google.com/store/apps/details?id=org.cryptomator&hl=de
 ios:
   title: Cryptomator für iOS
   link: https://itunes.apple.com/de/app/cryptomator/id953086535
-jar:
-  title: Sonstige Plattformen
-  subtitle: Ausführbare JAR-Datei
-  button: Verfügbar auf GitHub
-  requirements: Benötigt JRE 10
 getStarted:
   title: Erste Schritte mit Cryptomator
   subtitle: >
