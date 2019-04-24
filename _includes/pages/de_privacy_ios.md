@@ -11,7 +11,7 @@ Die App Cryptomator wird von der Skymatic UG betrieben und angeboten:
 Skymatic UG (haftungsbeschränkt)<br/>
 Grantham-Allee 2-8<br/>
 53757 Sankt Augustin<br/>
-Vertreten durch: Tobias Hagemann, Markus Kreusch, Christian Schmickler, Sebastian Stenzel<br/>
+Vertreten durch: Tobias Hagemann, Sebastian Stenzel<br/>
 Kontakt: support [at] cryptomator [dot] org
 
 ## Datenerfassung und Verarbeitung

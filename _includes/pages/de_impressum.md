@@ -7,8 +7,6 @@ Grantham-Allee 2-8<br/>
 
 ## Vertreten durch:
 Tobias Hagemann<br/>
-Markus Kreusch<br/>
-Christian Schmickler<br/>
 Sebastian Stenzel
 
 ## Kontakt:
