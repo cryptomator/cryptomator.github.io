@@ -17,7 +17,7 @@ stats:
     value: 7.0k
     title: Development Hours
   githubStars:
-    value: 2.7k
+    value: 3.0k
     title: GitHub Stars
   resolvedIssues:
     value: 3.3k
