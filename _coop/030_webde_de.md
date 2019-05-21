@@ -7,7 +7,7 @@ permalink: /coop/webde_de.html
 title: WEB.DE Tresor
 img: /img/coop/webde.png
 img2x: /img/coop/webde@2x.png
-bannerimg: /img/coop/webde-banner.png
+bannerimg: /img/coop/webde-banner.jpg
 excerpt: >
   Dank des in Kooperation mit WEB.DE entwickelten WEB.DE Tresors können Nutzer des WEB.DE Online-Speichers besonders sensible Cloud-Dateien jetzt zusätzlich selbst schützen: Einfach über die Windows-Anwendung oder per App verschlüsseln und anschließend sicher in die Cloud übertragen.
 lead: >
