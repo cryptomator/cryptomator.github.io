@@ -23,7 +23,7 @@ stats:
     value: 3,3k
     title: Gelöste Issues
   languages:
-    value: 26
+    value: 30
     title: Sprachen
 bronzeSponsors:
   title: Bronze-Sponsoren
