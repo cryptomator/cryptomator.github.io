@@ -9,7 +9,7 @@ img: /img/coop/mountainduck.png
 img2x: /img/coop/mountainduck@2x.png
 bannerimg: /img/coop/cyberduck-banner.jpg
 bannerimg2x: /img/coop/cyberduck-banner@2x.jpg
-bannercaption: Illustration by <a href="http://ktoons.org/" target="_blank">Katharina Hagemann</a>
+bannercaption: Illustration by <a href="https://ktoons.org/" target="_blank">Katharina Hagemann</a>
 excerpt: >
   Based on the solid open-source foundation of Cyberduck, Mountain Duck lets you mount server and cloud storage as a local disk in Finder on macOS and in File Explorer on Windows. As of version 2.0, Mountain Duck supports Cryptomator vaults.
 lead: >

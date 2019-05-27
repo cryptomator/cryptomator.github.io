@@ -9,7 +9,7 @@ img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png
 bannerimg: /img/coop/cyberduck-banner.jpg
 bannerimg2x: /img/coop/cyberduck-banner@2x.jpg
-bannercaption: Illustration by <a href="http://ktoons.org/" target="_blank">Katharina Hagemann</a>
+bannercaption: Illustration by <a href="https://ktoons.org/" target="_blank">Katharina Hagemann</a>
 excerpt: >
   Cyberduck is a libre remote file browser for Mac and Windows. As of version 6.0, Cyberduck supports Cryptomator vaults and thus is the perfect tool for all, who do not want to synchronize their cloud files locally.
 lead: >

@@ -9,7 +9,7 @@ img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png
 bannerimg: /img/coop/cyberduck-banner.jpg
 bannerimg2x: /img/coop/cyberduck-banner@2x.jpg
-bannercaption: Illustration von <a href="http://ktoons.org/" target="_blank">Katharina Hagemann</a>
+bannercaption: Illustration von <a href="https://ktoons.org/" target="_blank">Katharina Hagemann</a>
 excerpt: >
   Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
 lead: >

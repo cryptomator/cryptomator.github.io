@@ -24,3 +24,14 @@ title: Logos
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail text-center">
+      <a href="/resources/presskit/cryptomator-logo.svg"><img src="/resources/presskit/cryptomator-logo.svg"/></a>
+      <div class="caption">Cryptomator Logo • SVG</div>
+    </div>
+  </div>
+</div>
+
+Das Cryptomator-Logo ist unter der CC BY-NC-SA 4.0 lizenziert und die Urheberin ist [Katharina Hagemann](https://ktoons.org/){:target="_blank"}. Die verwendete Schriftart ist [Dosis](https://fonts.google.com/specimen/Dosis){:target="_blank"} (Bold) unter der Open Font License.
