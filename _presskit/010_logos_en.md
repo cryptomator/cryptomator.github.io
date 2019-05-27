@@ -34,4 +34,4 @@ title: Logos
   </div>
 </div>
 
-The Cryptomator logo is licensed under CC BY-NC-SA 4.0 and the author is [Katharina Hagemann](https://ktoons.org/){:target="_blank"}. The font used is [Dosis](https://fonts.google.com/specimen/Dosis){:target="_blank"} (Bold) under the Open Font License.
+The Cryptomator logo is licensed under CC BY-SA 4.0 and the author is [Katharina Hagemann](https://ktoons.org/){:target="_blank"}. The font used is [Dosis](https://fonts.google.com/specimen/Dosis){:target="_blank"} (Bold) under the Open Font License.
