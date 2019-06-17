@@ -45,6 +45,9 @@
               </a>
               <p class="download-caption">
                 <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{winSha256Checksum64}}">SHA256</a>
+                {% if winSignatureUrl64 %}
+                • <a href="{{winSignatureUrl64}}">{{ i18n.allVersions.pgpSignature }}</a>
+                {% endif %}
               </p>
               <p class="download-caption">{{ i18n.windows.notice }}</p>
             </div>
@@ -83,6 +86,9 @@
               </a>
               <p class="download-caption">
                 <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{macSha256Checksum}}">SHA256</a>
+                {% if macSignatureUrl %}
+                • <a href="{{macSignatureUrl}}">{{ i18n.allVersions.pgpSignature }}</a>
+                {% endif %}
               </p>
               <p class="download-caption">{{ i18n.mac.notice }}</p>
             </div>
@@ -128,6 +134,9 @@
                   </a>
                   <p class="download-caption">
                     <a class="cursor-pointer" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{appImageSha256Checksum64}}">SHA256</a>
+                    {% if appImageSignatureUrl64 %}
+                    • <a href="{{appImageSignatureUrl64}}">{{ i18n.allVersions.pgpSignature }}</a>
+                    {% endif %}
                   </p>
                 </div>
               </div>
@@ -378,6 +387,17 @@
 
       <button type="button" class="btn btn-default" data-ng-click="showOldBetaReleases = true" data-ng-show="!showOldBetaReleases">{{ i18n.allVersions.showOldBetaReleases }}</button>
       <button type="button" class="btn btn-default" data-ng-click="showOldBetaReleases = false" data-ng-show="showOldBetaReleases">{{ i18n.allVersions.hideOldBetaReleases }}</button>
+    </div>
+  </section>
+
+  <section id="pgpKey">
+    <div class="container">
+      <h2 class="text-center">{{ i18n.pgpKey.title }}</h2>
+      <div class="row">
+        <div class="col-md-6 col-md-push-3">
+          <pre class="pre-scrollable">{% include pgpKeys/34C80F11.asc %}</pre>
+        </div>
+      </div>
     </div>
   </section>
 

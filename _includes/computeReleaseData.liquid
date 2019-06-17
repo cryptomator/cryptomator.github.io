@@ -1,36 +1,44 @@
 {% capture winVersion %}{% if release.artifacts.win.patch %}{{release.title}}.{{release.artifacts.win.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
 {% capture winFile64 %}{{release.artifacts.win.file64}}{% endcapture %}
 {% capture winUrl64 %}{{release.artifacts.win.url64}}{% endcapture %}
+{% capture winSignatureUrl64 %}{{release.artifacts.win.signatureUrl64}}{% endcapture %}
 {% assign winSha1Checksum64 = release.artifacts.win.sha1Checksum64 %}
 {% assign winSha256Checksum64 = release.artifacts.win.sha256Checksum64 %}
 {% capture winFile32 %}{{release.artifacts.win.file32}}{% endcapture %}
 {% capture winUrl32 %}{{release.artifacts.win.url32}}{% endcapture %}
+{% capture winSignatureUrl32 %}{{release.artifacts.win.signatureUrl32}}{% endcapture %}
 {% assign winSha1Checksum32 = release.artifacts.win.sha1Checksum32 %}
 {% assign winSha256Checksum32 = release.artifacts.win.sha256Checksum32 %}
 
 {% capture macVersion %}{% if release.artifacts.mac.patch %}{{release.title}}.{{release.artifacts.mac.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
 {% capture macFile %}{{release.artifacts.mac.file}}{% endcapture %}
 {% capture macUrl %}{{release.artifacts.mac.url}}{% endcapture %}
+{% capture macSignatureUrl %}{{release.artifacts.mac.signatureUrl}}{% endcapture %}
 {% assign macSha1Checksum = release.artifacts.mac.sha1Checksum %}
 {% assign macSha256Checksum = release.artifacts.mac.sha256Checksum %}
 
 {% capture linuxVersion %}{% if release.artifacts.linux.patch %}{{release.title}}.{{release.artifacts.linux.patch}}{% else %}{{release.title}}.0{% endif %}{% endcapture %}
 {% capture appImageFile64 %}{{release.artifacts.linux.appImageFile64}}{% endcapture %}
 {% capture appImageUrl64 %}{{release.artifacts.linux.appImageUrl64}}{% endcapture %}
+{% capture appImageSignatureUrl64 %}{{release.artifacts.linux.appImageSignatureUrl64}}{% endcapture %}
 {% assign appImageSha256Checksum64 = release.artifacts.linux.appImageSha256Checksum64 %}
 {% capture debianFile64 %}{{release.artifacts.linux.debianFile64}}{% endcapture %}
 {% capture debianUrl64 %}{{release.artifacts.linux.debianUrl64}}{% endcapture %}
+{% capture debianSignatureUrl64 %}{{release.artifacts.linux.debianSignatureUrl64}}{% endcapture %}
 {% assign debianSha1Checksum64 = release.artifacts.linux.debianSha1Checksum64 %}
 {% assign debianSha256Checksum64 = release.artifacts.linux.debianSha256Checksum64 %}
 {% capture debianFile32 %}{{release.artifacts.linux.debianFile32}}{% endcapture %}
 {% capture debianUrl32 %}{{release.artifacts.linux.debianUrl32}}{% endcapture %}
+{% capture debianSignatureUrl32 %}{{release.artifacts.linux.debianSignatureUrl32}}{% endcapture %}
 {% assign debianSha1Checksum32 = release.artifacts.linux.debianSha1Checksum32 %}
 {% assign debianSha256Checksum32 = release.artifacts.linux.debianSha256Checksum32 %}
 {% capture redhatFile64 %}{{release.artifacts.linux.redhatFile64}}{% endcapture %}
 {% capture redhatUrl64 %}{{release.artifacts.linux.redhatUrl64}}{% endcapture %}
+{% capture redhatSignatureUrl64 %}{{release.artifacts.linux.redhatSignatureUrl64}}{% endcapture %}
 {% assign redhatSha1Checksum64 = release.artifacts.linux.redhatSha1Checksum64 %}
 {% assign redhatSha256Checksum64 = release.artifacts.linux.redhatSha256Checksum64 %}
 {% capture redhatFile32 %}{{release.artifacts.linux.redhatFile32}}{% endcapture %}
 {% capture redhatUrl32 %}{{release.artifacts.linux.redhatUrl32}}{% endcapture %}
+{% capture redhatSignatureUrl32 %}{{release.artifacts.linux.redhatSignatureUrl32}}{% endcapture %}
 {% assign redhatSha1Checksum32 = release.artifacts.linux.redhatSha1Checksum32 %}
 {% assign redhatSha256Checksum32 = release.artifacts.linux.redhatSha256Checksum32 %}

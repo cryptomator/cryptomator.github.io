@@ -55,8 +55,11 @@ allVersions:
   changelog: Changelog
   releaseDate: Release Date
   releaseDateFormat: "%Y-%m-%d"
+  pgpSignature: PGP Signature
   showOldBetaReleases: Show Old Beta Versions
   hideOldBetaReleases: Hide Old Beta Versions
+pgpKey:
+  title: PGP Key
 paymentSuccess:
   title: Thank you for your donation to Cryptomator!
   content: >
