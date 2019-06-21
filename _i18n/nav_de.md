@@ -41,7 +41,7 @@ payment:
     card: Kreditkarte
   sepa:
     paymentHint: >
-      Durch Angabe der IBAN und Absenden des Formulars ermächtige ich Skymatic UG und <a href="https://stripe.com" target="_blank">Stripe</a>, unseren Zahlungsdienstleister, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Skymatic UG und Stripe auf mein Konto gezogenen Lastschriften einzulösen.
+      Durch Angabe der IBAN und Absenden des Formulars ermächtige ich Skymatic GmbH und <a href="https://stripe.com" target="_blank">Stripe</a>, unseren Zahlungsdienstleister, Zahlungen von meinem Konto mittels Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Skymatic GmbH und Stripe auf mein Konto gezogenen Lastschriften einzulösen.
       Hinweis: Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen.
   bankTransfer:
     recipient: Empfänger

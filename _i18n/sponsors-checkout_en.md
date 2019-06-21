@@ -56,7 +56,7 @@ paymentInfo:
     Notice: Credit card plausibility checks might fail when using anonymizing services such as proxies or Tor.
   sepa: SEPA Direct Debit
   sepaNotice: >
-    By providing your IBAN and confirming this payment, you authorize Skymatic UG and <a href="https://stripe.com" target="_blank">Stripe</a>, our payment service provider to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from Skymatic UG and Stripe.<br>
+    By providing your IBAN and confirming this payment, you authorize Skymatic GmbH and <a href="https://stripe.com" target="_blank">Stripe</a>, our payment service provider to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from Skymatic GmbH and Stripe.<br>
     As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited.
   loadingStripe: Loading Stripe…
 submit:

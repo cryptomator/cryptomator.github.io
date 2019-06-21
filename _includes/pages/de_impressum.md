@@ -1,7 +1,7 @@
 # Impressum
 
 ## Angaben gemäß § 5 TMG:
-Skymatic UG (haftungsbeschränkt)<br/>
+Skymatic GmbH<br/>
 Grantham-Allee 2-8<br/>
 53757 Sankt Augustin
 

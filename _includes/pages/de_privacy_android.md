@@ -6,16 +6,16 @@ Cryptomator ist eine App zur clientseitigen Verschlüsselung von Cloud-Daten. St
 Nachfolgend wird erläutert welche und wie personenbezogene Daten durch die App erfasst und wie diese verarbeitet und weitergegeben werden. Sofern nachfolgend nicht anders erläutert, findet die Verarbeitung von Daten nur lokal auf dem jeweiligen Gerät statt. Eine Übertragung an Server der Skymatuc UG oder Dritte erfolgt nicht.
 
 ## Anbieter
-Die App Cryptomator wird von der Skymatic UG betrieben und angeboten:
+Die App Cryptomator wird von der Skymatic GmbH betrieben und angeboten:
 
-Skymatic UG (haftungsbeschränkt)<br/>
+Skymatic GmbH<br/>
 Grantham-Allee 2-8<br/>
 53757 Sankt Augustin<br/>
 Vertreten durch: Tobias Hagemann, Sebastian Stenzel<br/>
 Kontakt: support [at] cryptomator [dot] org
 
 ## Datenerfassung und Verarbeitung
-Nachfolgend wird die Datenerfassung und Verarbeitung durch die App beschrieben. Wie zuvor erwähnt findet keine Übermittlung an Server der Skymatic UG statt. Die nachfolgend beschriebenen Vorgänge finden, sofern nicht im Einzelfall anders angegeben, vollständig auf dem Gerät statt.
+Nachfolgend wird die Datenerfassung und Verarbeitung durch die App beschrieben. Wie zuvor erwähnt findet keine Übermittlung an Server der Skymatic GmbH statt. Die nachfolgend beschriebenen Vorgänge finden, sofern nicht im Einzelfall anders angegeben, vollständig auf dem Gerät statt.
 
 ### Cloud-Zugriff
 Die App Cryptomator erlaubt die Speicherung beliebiger in Dateien vorliegenden Informationen in sogenannten Tresoren. Diese Tresore können über die Anbindung an verschiedene Cloud-Anbieter in der Cloud gespeichert werden. Die enthaltenen Dateien und Metadaten werden dabei entsprechend des [Verschlüsselungsschemas](https://cryptomator.org/security/architecture/#masterkeyDerivation) verschlüsselt und anschließend in die Cloud übermittelt. Die Verarbeitung der Daten in der Cloud erfolgt anschließend durch den jeweiligen Anbieter.
@@ -46,4 +46,4 @@ Die App erlaubt es, über die Öffnen- und Teilen-Funktion Dateien an andere App
 Die App erlaubt es, über die Export-Funktion Dateien auf dem Gerät zu speichern. Dabei werden die Dateien entschlüsselt und im Gerätespeicher abgelegt. Anschließend ist der Zugriff durch alle Apps möglich, die die Berechtigung haben auf den Gerätespeicher zuzugreifen.
 
 ## Recht auf Auskunft, Löschung, Sperrung
-Sie haben das Recht, unentgeltlich Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung zu erhalten sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Da die Verarbeitung der Daten nicht auf Servern der Skymatic UG erfolgt, sondern lediglich auf Ihrem Gerät, müssen Sie diese Schritte selbst vornehmen. Bezüglich der Datenverarbeitung in der Cloud wenden Sie sich bitte an Ihren Cloud-Anbieter. Tresore können Sie jederzeit manuell aus Ihrem Cloud-Speicher oder aus dem lokalen Speicher löschen. Sie können sonstige Daten durch Deinstallation der App oder durch das Einstellungsmenü unter _Apps > Cryptomator > Speicher > Daten Löschen_ löschen. Bei weiteren Fragen können Sie sich an uns wenden.
+Sie haben das Recht, unentgeltlich Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung zu erhalten sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Da die Verarbeitung der Daten nicht auf Servern der Skymatic GmbH erfolgt, sondern lediglich auf Ihrem Gerät, müssen Sie diese Schritte selbst vornehmen. Bezüglich der Datenverarbeitung in der Cloud wenden Sie sich bitte an Ihren Cloud-Anbieter. Tresore können Sie jederzeit manuell aus Ihrem Cloud-Speicher oder aus dem lokalen Speicher löschen. Sie können sonstige Daten durch Deinstallation der App oder durch das Einstellungsmenü unter _Apps > Cryptomator > Speicher > Daten Löschen_ löschen. Bei weiteren Fragen können Sie sich an uns wenden.
