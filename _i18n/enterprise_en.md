@@ -8,10 +8,6 @@ whitelabel:
   title: White Labeling
   content: >
     End-to-end encryption with your branding: We develop individualized versions of the Cryptomator apps for you.
-support:
-  title: Support Plans
-  content: >
-    We offer various <a href="/support">support plans</a> for your needs.
 libraries:
   title: Crypto Libraries
   content: >
@@ -72,7 +68,7 @@ libs:
         <li>Java 8+ compatible
       </ul>
     url: https://github.com/cryptomator/webdav-nio-adapter
-  - title: FUSE-NIO-Adapter (Beta)
+  - title: FUSE-NIO-Adapter
     description: >
       Provide a FUSE drive from within your Java application.
       <ul>
@@ -81,7 +77,7 @@ libs:
         <li>Java 9+ compatible
       </ul>
     url: https://github.com/cryptomator/fuse-nio-adapter
-  - title: Dokany-NIO-Adapter (Beta)
+  - title: Dokany-NIO-Adapter
     description: >
       Provide a Dokany drive from within your java application.
       <ul>
