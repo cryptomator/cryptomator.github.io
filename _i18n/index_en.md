@@ -18,7 +18,7 @@ download:
 
 apps:
   title: App for your mobile device
-  appStoreLink: https://itunes.apple.com/us/app/cryptomator/id953086535
+  appStoreLink: https://apps.apple.com/us/app/cryptomator/id953086535
   googlePlayLink: https://play.google.com/store/apps/details?id=org.cryptomator&hl=en
 
 reception:

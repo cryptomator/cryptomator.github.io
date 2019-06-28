@@ -34,7 +34,7 @@ android:
   link: https://play.google.com/store/apps/details?id=org.cryptomator&hl=de
 ios:
   title: Cryptomator für iOS
-  link: https://itunes.apple.com/de/app/cryptomator/id953086535
+  link: https://apps.apple.com/de/app/cryptomator/id953086535
 getStarted:
   title: Erste Schritte mit Cryptomator
   subtitle: >
