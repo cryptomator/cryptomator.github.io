@@ -36,3 +36,15 @@
   font-weight: 400;
   margin-bottom: $spacing-unit / 4;
 }
+
+.sponsor-images {
+  a {
+    display: inline-block;
+    margin: 1em 3em;
+    text-decoration: none;
+
+    img {
+      border: 0;
+    }
+  }
+}

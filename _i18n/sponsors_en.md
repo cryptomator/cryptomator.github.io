@@ -25,6 +25,12 @@ stats:
   languages:
     value: 30
     title: Languages
+silverSponsors:
+  title: Silver Sponsors
+  list:
+  - link: https://thebestvpn.com/
+    img: /img/sponsors/thebestvpn.png
+    img2x: /img/sponsors/thebestvpn@2x.png
 bronzeSponsors:
   title: Bronze Sponsors
   list:
