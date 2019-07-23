@@ -19,12 +19,6 @@ h1.display-font {
   font-weight: 700;
 }
 
-#defendor {
-  > .alert {
-    margin-top: $spacing-unit;
-  }
-}
-
 #stage {
   height: 15vw; // relative to width by choice
   margin-top: $spacing-unit / 2;

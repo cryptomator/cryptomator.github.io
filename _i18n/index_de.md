@@ -2,9 +2,6 @@
 language: de
 context: index
 
-defendor: >
-  Sie suchen einen zentralen Cryptomator für Ihr Unternehmen? Informieren Sie sich über unser neues Produkt <a class="alert-link" href="https://server.cryptomator.org/" target="_blank">Cryptomator Server</a> mit erweitertem Zugriffsmanagement, Verschlüsselung, Malware-Schutz, Backups, DSGVO-Konformität und mehr!
-
 subtitle: >
   Freie clientseitige Verschlüsselung für Ihre Cloud-Daten.<br/>
   Open Source Software: Keine Hintertüren, keine Anmeldung.
