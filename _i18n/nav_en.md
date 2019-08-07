@@ -25,7 +25,6 @@ payment:
     Monthly payments can be <a href="/support/" target="_blank">canceled</a> anytime.
   type:
     creditCard: Credit Card
-    sepa: SEPA Direct Debit
     bankTransfer: Bank Transfer
   paypal:
     paymentHint: >
@@ -39,10 +38,6 @@ payment:
       <strong>Important:</strong> Credit card plausibility checks might fail when using anonymizing services such as proxies or Tor.
     captcha: Bot Protection
     card: Credit Card
-  sepa:
-    paymentHint: >
-      By providing your IBAN and confirming this payment, you authorize Skymatic GmbH and <a href="https://stripe.com" target="_blank">Stripe</a>, our payment service provider to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from Skymatic GmbH and Stripe.
-      As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited.
   bankTransfer:
     recipient: Recipient
   crypto:

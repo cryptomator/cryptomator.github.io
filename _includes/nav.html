@@ -57,7 +57,6 @@
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" data-ng-class="{active: paymentType == 'paypal'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'paypal'">PayPal</a></li>
           <li role="presentation" data-ng-class="{active: paymentType == 'creditCard'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'creditCard'">{{ i18n.payment.type.creditCard }}</a></li>
-          <!-- <li role="presentation" data-ng-class="{active: paymentType == 'sepa'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'sepa'">{{ i18n.payment.type.sepa }}</a></li> -->
           <li role="presentation" data-ng-class="{active: paymentType == 'bankTransfer'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'bankTransfer'">{{ i18n.payment.type.bankTransfer }}</a></li>
           <li role="presentation" data-ng-class="{active: paymentType == 'crypto'}"><a class="cursor-pointer" role="tab" data-ng-click="paymentType = 'crypto'">Crypto</a></li>
         </ul>
@@ -162,56 +161,6 @@
           </div>
         </div>
 
-        <!-- SEPA -->
-        <!-- <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'sepa'}">
-          <div data-ng-show="!sepa.paymentSuccessful">
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label class="control-label" for="inputPayPalAmount">{{ i18n.payment.amount }}</label>
-                <div class="input-group">
-                  <div class="input-group-addon"><span class="glyphicon glyphicon-euro"></span></div>
-                  <input id="inputPayPalAmount" type="number" step="1" class="form-control" placeholder="Amount" data-ng-model="donation.amount">
-                  <div class="input-group-addon">.00</div>
-                </div>
-              </div>
-              <div class="form-group col-sm-6">
-                <label class="control-label">{{ i18n.payment.frequency }}</label>
-                <div class="input-group btn-group">
-                  <button type="button" class="btn btn-default" data-ng-click="donation.frequency = 'once'" data-ng-class="{{"{"}}active: donation.frequency == 'once'}">{{ i18n.payment.frequencyOnce }}</button>
-                  <button type="button" class="btn btn-default" data-ng-click="donation.frequency = 'monthly'" data-ng-class="{{"{"}}active: donation.frequency == 'monthly'}">{{ i18n.payment.frequencyMonthly }}</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label" for="inputSepaName">{{ i18n.payment.name }}</label>
-              <input id="inputSepaName" type="text" class="form-control" data-ng-model="sepa.name">
-            </div>
-
-            <div class="form-group">
-              <label class="control-label" for="inputSepaEmail">{{ i18n.payment.email }}</label>
-              <input id="inputSepaEmail" type="email" class="form-control" data-ng-model="sepa.email">
-            </div>
-
-            <div class="form-group">
-              <label>IBAN</label>
-              <stripe-sepa-field loaded="sepa.loaded(stripe, iban)" loading-text="{{ i18n.payment.loadingStripe }}" valid="sepa.ibanValid" validation-error="sepa.paymentError"/>
-            </div>
-
-            <div class="form-group">
-              <label class="control-label" for="inputCreditCardMessage">{{ i18n.payment.message }}</label>
-              <input id="inputCreditCardMessage" type="text" maxlength="350" class="form-control" data-ng-model="donation.message">
-            </div>
-
-            <p>{{ i18n.payment.sepa.paymentHint }}</p>
-            <p data-ng-show="donation.frequency == 'monthly'">{{ i18n.payment.paymentHintMonthly }}</p>
-          </div>
-
-          <div data-ng-show="sepa.paymentSuccessful">
-            <p>{{ i18n.payment.successfulMessage }}</p>
-          </div>
-        </div> -->
-
         <!-- Bank Transfer -->
         <div role="tabpanel" class="tab-pane" data-ng-class="{active: paymentType == 'bankTransfer'}">
           <dl class="dl-horizontal">
@@ -253,11 +202,8 @@
       </div>
       <div class="modal-footer">
         <p data-ng-show="paymentType == 'creditCard' &amp;&amp; creditCard.paymentError" data-ng-bind="creditCard.paymentError" class="text-left"></p>
-        <p data-ng-show="paymentType == 'sepa' &amp;&amp; sepa.paymentError" data-ng-bind="sepa.paymentError" class="text-left"></p>
-
 
         <button type="button" class="btn btn-default" data-dismiss="modal">{{ i18n.payment.cancelBtn }}</button>
-
 
         <!-- PayPal -->
         <button data-ng-disabled="paypal.paymentInProgress || !isAcceptableAmount(donation.amount)" data-ng-show="paymentType == 'paypal'" data-ng-click="paypal.pay('{{ language.name }}')" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span> {{ i18n.payment.paypal.proceedBtn }}</button>
@@ -269,14 +215,6 @@
           <span data-ng-show="creditCard.paymentInProgress">{{ i18n.payment.processingBtn }}</span>
         </button>
         <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'creditCard' &amp;&amp; creditCard.paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.successfulBtn }}</a>
-
-        <!-- SEPA -->
-        <!-- <button data-ng-disabled="sepa.paymentInProgress || !isAcceptableAmount(donation.amount) || !sepa.isValid()" data-ng-show="paymentType == 'sepa' &amp;&amp; !sepa.paymentSuccessful" data-ng-click="sepa.pay()" class="btn btn-primary">
-          <span class="glyphicon glyphicon-credit-card"></span>
-          <span data-ng-show="!sepa.paymentInProgress">{{ i18n.payment.payNowBtn }}</span>
-          <span data-ng-show="sepa.paymentInProgress">{{ i18n.payment.processingBtn }}</span>
-        </button>
-        <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'sepa' &amp;&amp; sepa.paymentSuccessful" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> {{ i18n.payment.successfulBtn }}</a> -->
 
         <!-- Bank Transfer -->
         <a href="{{ languageUrlPrefix }}/downloads" data-ng-show="paymentType == 'bankTransfer'" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> {{ i18n.payment.proceedToDownloads }}</a>

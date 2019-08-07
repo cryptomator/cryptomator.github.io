@@ -72,9 +72,8 @@ opportunities:
         </ul>
         <li>Tweet when you become a sponsor <a tabindex="0" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-content="3.5k+ followers"><span class="glyphicon glyphicon-info-sign text-muted"></span></a></li>
       </ul>
-  choose: Choose
   notice: >
-    Minimum term 1 year, payment annually in advance. Sponsors are listed chronologically within the selected tier. The logo will be put online within 5 working days after receipt of payment. You will receive an invoice with VAT. <a href="mailto:sales@cryptomator.org">Contact us</a> if you have questions.
+    <a href="mailto:sales@cryptomator.org">Contact us</a> if you are interested or have any questions. Minimum term 1 year, payment annually in advance. Sponsors are listed chronologically within the selected tier. The logo will be put online within 5 working days after receipt of payment. You will receive an invoice with VAT.
 recurringDonation:
   title: Recurring Donation
   content: >
