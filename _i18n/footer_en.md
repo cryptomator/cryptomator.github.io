@@ -22,7 +22,6 @@ contribute:
   title: Contribute
   translate: Translate
   donate: Donate
-  jobs: Jobs
 l10n:
   title: Language
 skymatic:

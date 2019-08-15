@@ -22,7 +22,6 @@ contribute:
   title: Etwas beitragen
   translate: Übersetzen
   donate: Spenden
-  jobs: Jobs
 l10n:
   title: Sprache
 skymatic:
