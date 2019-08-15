@@ -11,8 +11,6 @@ download:
   button32: 32 Bit
 windows:
   title: Cryptomator for Windows
-  notice: >
-    For the Dokany driver, the installer requires <a href="https://go.microsoft.com/fwlink/?LinkId=746572" target="_blank">Microsoft Visual C++ Redistributable for Visual Studio 2017</a>. Dokany is optional but recommended because it offers better integration into Windows than the alternative WebDAV.
 mac:
   title: Cryptomator for macOS
   notice: >
