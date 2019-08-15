@@ -12,6 +12,7 @@ legal:
   privacy: Privacy Policy
 help:
   title: Help
+  docs: Docs
   community: Community
   support: Support
 connect:

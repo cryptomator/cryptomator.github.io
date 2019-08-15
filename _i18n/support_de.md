@@ -3,6 +3,11 @@ language: de
 context: support
 
 title: Support
+docs:
+  title: Dokumentation
+  content: >
+    Die Dokumentation zu Cryptomator finden Sie unter <a href="https://docs.cryptomator.org/" target="_blank">docs.cryptomator.org</a> und bietet sich als erste Anlaufstelle an.
+  action: docs.cryptomator.org
 community:
   title: Cryptomator Community
   content: >
