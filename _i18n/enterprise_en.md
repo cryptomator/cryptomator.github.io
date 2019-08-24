@@ -32,7 +32,7 @@ libs:
   list:
   - title: CryptoLib
     description: >
-      Use CryptoLib for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
+      Use CryptoLib for encrypting and decrypting data according to <a href="https://docs.cryptomator.org/en/latest/security/architecture/" target="_blank">Cryptomator's encryption scheme</a>.
       <ul>
         <li>Encrypt and decrypt Cryptomator vaults directly retrieved from the cloud
         <li>Suitable for accessing the cloud directly without synchronization, e.g. in apps for Android™
@@ -42,7 +42,7 @@ libs:
     url: https://github.com/cryptomator/cryptolib
   - title: CryptoFS
     description: >
-      Use CryptoFS for encrypting and decrypting data according to <a href="/security/architecture">Cryptomator's encryption scheme</a>.
+      Use CryptoFS for encrypting and decrypting data according to <a href="https://docs.cryptomator.org/en/latest/security/architecture/" target="_blank">Cryptomator's encryption scheme</a>.
       <ul>
         <li>Encrypt and decrypt Cryptomator vaults that are present on the local filesystem
         <li>Suitable for accessing data synchronized to a local directory

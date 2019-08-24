@@ -5,12 +5,6 @@ pages:
   priority: 1.0
 - url: '/downloads'
   priority: 0.8
-- url: '/security'
-  priority: 0.8
-- url: '/security/advice'
-  priority: 0.8
-- url: '/security/architecture'
-  priority: 0.8
 - url: '/coop'
   priority: 0.8
 - url: '/support'

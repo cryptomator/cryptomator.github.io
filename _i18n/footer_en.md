@@ -12,9 +12,9 @@ legal:
   privacy: Privacy Policy
 help:
   title: Help
+  support: Support
   docs: Docs
   community: Community
-  support: Support
 connect:
   title: Connect
   rssFeed: RSS Feed

@@ -5,10 +5,10 @@ context: nav
 navbar:
   toggle: Toggle navigation
   download: Download
-  security: Security
   coop: Cooperations
   support: Support
   enterprise: Enterprise
+  docs: Docs
   sponsors: Sponsors
   donate: Donate
 

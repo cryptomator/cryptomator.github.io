@@ -1,4 +1,0 @@
-{% include language.liquid %}
-
-{% assign sortedArticles = site.securityAdvice | where: 'language', language.name | sort: 'path', 'last' %}
-{% include article-list.html %}

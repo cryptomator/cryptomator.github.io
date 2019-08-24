@@ -32,7 +32,7 @@ libs:
   list:
   - title: CryptoLib
     description: >
-      Nutzen Sie CryptoLib, um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
+      Nutzen Sie CryptoLib, um Daten entsprechend des <a href="https://docs.cryptomator.org/en/latest/security/architecture/" target="_blank">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
       <ul>
         <li>Ver- und Entschlüsselung von Cryptomator-Tresoren direkt aus der Cloud
         <li>Anwendbar für direkten Cloudzugriff ohne Synchronisierung, z.B. für Apps für Android™
@@ -42,7 +42,7 @@ libs:
     url: https://github.com/cryptomator/cryptolib
   - title: CryptoFS
     description: >
-      Nutzen Sie CryptoLib, um Daten entsprechend des <a href="/security/architecture">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
+      Nutzen Sie CryptoLib, um Daten entsprechend des <a href="https://docs.cryptomator.org/en/latest/security/architecture/" target="_blank">Cryptomator Verschlüsselungsschemas</a> zu ver- und entschlüsseln.
       <ul>
         <li>Ver- und Entschlüsselung von Cryptomator-Tresoren im lokalen Dateisystem
         <li>Nutzbar für den Zugriff auf Daten, die in ein lokales Verzeichnis synchronisiert wurden
