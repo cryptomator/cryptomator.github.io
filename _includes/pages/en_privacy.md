@@ -53,3 +53,10 @@ You have the right to free-of-charge information about your stored personal data
 We object to the use of contact data published within the scope of the Impressum obligation to send unrequested advertising and information material. The operators of these pages expressly reserve the right to take legal action in the event of unsolicited advertising information, such as spam e-mails.
 
 Source: Translation of [Datenschutzerklärung](/de/privacy)
+
+# Privacy Policy for Mobile Apps
+
+The privacy policy for Cryptomator's mobile apps can be found on the following pages:
+
+- [Privacy Policy - Cryptomator for iOS](/privacy-ios/)
+- [Privacy Policy - Cryptomator for Android](/privacy-android/)

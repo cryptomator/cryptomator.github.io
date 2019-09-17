@@ -53,3 +53,10 @@ Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeichert
 Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.
 
 Quelle: [e-recht24.de](https://www.e-recht24.de)
+
+# Datenschutzerklärung für mobile Apps
+
+Die Datenschutzerklärung für die mobilen Apps von Cryptomator finden Sie auf folgenden Seiten:
+
+- [Datenschutzerklärung - Cryptomator für iOS](/de/privacy-ios/)
+- [Datenschutzerklärung - Cryptomator für Android](/de/privacy-android/)
