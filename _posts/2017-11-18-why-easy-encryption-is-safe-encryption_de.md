@@ -4,7 +4,7 @@ title: "Gastbeitrag: Why Easy Encryption Is Safe Encryption"
 date: 2017-11-18
 author: Sam Bocetta
 authorlink: https://twitter.com/sambocetta
-authorimg: https://pbs.twimg.com/profile_images/899554966339244032/kYfKqA_f_400x400.jpg
+authorimg: https://twitter.com/sambocetta/profile_image?size=original
 notice: Dies ist ein Gastbeitrag von Sam Bocetta.
 tags: [other, guest]
 stylesheets: ['/css/blog-post.css']
