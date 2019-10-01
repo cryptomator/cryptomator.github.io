@@ -12,5 +12,5 @@ contributors:
   title: Mitwirkende
 translators:
   title: Übersetzer
-  thanks: Ein besonderer Dank gilt allen unseren Übersetzern auf <a href="https://poeditor.com/projects/po_edit?id=52217" target="_blank">POEditor</a>, die Cryptomator auf vielen verschiedenen Sprachen verfügbar gemacht haben.
+  thanks: Ein besonderer Dank gilt allen unseren Übersetzern auf <a href="https://translate.cryptomator.org/" target="_blank">Crowdin</a>, die Cryptomator auf vielen verschiedenen Sprachen verfügbar gemacht haben.
 ---

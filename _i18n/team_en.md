@@ -12,5 +12,5 @@ contributors:
   title: Contributors
 translators:
   title: Translators
-  thanks: Thanks to all the translators on <a href="https://poeditor.com/projects/po_edit?id=52217" target="_blank">POEditor</a>, who made Cryptomator available on all the different languages.
+  thanks: Thanks to all the translators on <a href="https://translate.cryptomator.org/" target="_blank">Crowdin</a>, who made Cryptomator available on all the different languages.
 ---
