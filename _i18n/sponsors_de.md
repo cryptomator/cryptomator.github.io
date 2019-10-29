@@ -35,6 +35,7 @@ bronzeSponsors:
   title: Bronze-Sponsoren
   list:
   - Fachhochschule St. Pölten
+  - gee-whiz GmbH
 opportunities:
   title: Werden Sie Sponsor
   bronze:
