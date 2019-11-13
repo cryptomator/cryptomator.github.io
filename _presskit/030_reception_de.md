@@ -31,6 +31,9 @@ title: Resonanz
   <a href="https://www.computerwoche.de/a/sicherheit-fuer-die-datei-cloud,3226113,2" target="_blank">
     <img src="/img/reception/computerwoche-logo.png" srcset="/img/reception/computerwoche-logo.png 1x, /img/reception/computerwoche-logo@2x.png 2x"/>
   </a>
+  <a href="https://www.cardrates.com/news/cryptomator-secures-sensitive-financial-data/" target="_blank">
+    <img src="/img/reception/cardrates-logo.png" srcset="/img/reception/cardrates-logo.png 1x, /img/reception/cardrates-logo@2x.png 2x"/>
+  </a>
   <a href="https://www.iculture.nl/cryptomator-iphone-versleuteling-cloud/" target="_blank">
     <img src="/img/reception/iculture-logo.png" srcset="/img/reception/iculture-logo.png 1x, /img/reception/iculture-logo@2x.png 2x"/>
   </a>
