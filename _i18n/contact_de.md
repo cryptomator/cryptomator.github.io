@@ -6,6 +6,9 @@ title: Kontakt
 speakToUs:
   title: So können Sie uns erreichen
   pgpKey: PGP-Schlüssel
+  docs:
+    title: Dokumentation
+    contactUs: Unsere <a href="https://docs.cryptomator.org/" target="_blank">Dokumentation</a> bietet zahlreiche Informationen, wenn Sie den Umgang mit und die Funktionsweise von Cryptomator kennenlernen möchten.
   community:
     title: Community
     contactUs: Wenn Sie Fragen haben oder Hilfe benötigen, <a href="https://community.cryptomator.org/" target="_blank">besuchen Sie bitte die Cryptomator Community</a>.

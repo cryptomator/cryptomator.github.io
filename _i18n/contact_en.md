@@ -6,6 +6,9 @@ title: Contact
 speakToUs:
   title: How You Can Reach Us
   pgpKey: PGP Key
+  docs:
+    title: Documentation
+    contactUs: Check out our <a href="https://docs.cryptomator.org/" target="_blank">documentation</a> if you'd like to learn the ins and outs of Cryptomator.
   community:
     title: Community
     contactUs: If you have questions or need help, <a href="https://community.cryptomator.org/" target="_blank">please visit the Cryptomator Community</a>.
