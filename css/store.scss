@@ -1,0 +1,53 @@
+---
+# front matter to make sure, jekyll translates this scss file
+---
+@charset "utf-8";
+@import "variables";
+
+.products {
+  dt {
+    margin-bottom: $spacing-unit / 2;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+
+    img {
+      @media (min-width: 768px) {
+        float: right !important;
+      }
+
+      @media (max-width: 767px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  dd {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.equal {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $max-sm) {
+    display: block;
+  }
+}
+
+.panel-body {
+  padding: $spacing-unit * 1.5;
+}
+
+.img-license {
+  margin-bottom: $spacing-unit / 2;
+}
+
+.heading-license {
+  font-weight: 400;
+  margin-bottom: $spacing-unit / 4;
+}

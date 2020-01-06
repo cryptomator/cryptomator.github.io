@@ -1,0 +1,27 @@
+{% assign i18n = 'store' %}
+{% include i18n.liquid %}
+
+<div>
+
+  <h1 class="text-center">{{ i18n.title }}</h1>
+
+  <section class="products">
+    <dl class="dl-horizontal">
+      <dt><img src="/img/store/desktop.png" srcset="/img/store/desktop.png 1x, /img/store/desktop@2x.png 2x" class="img-responsive"/></dt>
+      <dd>
+        <h2>{{ i18n.desktopLicense.title }}</h2>
+        <p>{{ i18n.desktopLicense.excerpt }}</p>
+        <p><a class="btn btn-primary" href="{{ languageUrlPrefix }}/store/desktop/">{{ i18n.choose }}</a></p>
+      </dd>
+    </dl>
+    <dl class="dl-horizontal">
+      <dt><img src="/img/store/android.png" srcset="/img/store/android.png 1x, /img/store/android@2x.png 2x" class="img-responsive"/></dt>
+      <dd>
+        <h2>{{ i18n.androidLicense.title }}</h2>
+        <p>{{ i18n.androidLicense.excerpt }}</p>
+        <p><a class="btn btn-primary" href="{{ languageUrlPrefix }}/store/android/">{{ i18n.choose }}</a></p>
+      </dd>
+    </dl>
+  </section>
+
+</div>

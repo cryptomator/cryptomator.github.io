@@ -36,15 +36,16 @@ app.run(['$rootScope', '$cookies', function($rootScope, $cookies) {
   $rootScope.isOSiOS = navigator.appVersion.indexOf('iPhone') !== -1;
   $rootScope.isOSAndroid = navigator.appVersion.indexOf('Android') !== -1;
 
+  $rootScope.currencies = {
+    EUR: {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'},
+    USD: {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'},
+    GBP: {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'}
+  };
   $rootScope.donation = {
     amount: 25,
-    currencyEUR: {code: 'EUR', symbol: '€', glyphicon: 'glyphicon-eur'},
-    currencyGBP: {code: 'GBP', symbol: '£', glyphicon: 'glyphicon-gbp'},
-    currencyUSD: {code: 'USD', symbol: '$', glyphicon: 'glyphicon-usd'},
-    currency: null,
+    currency: $rootScope.currencies.EUR,
     frequency: 'once'
   };
-  $rootScope.donation.currency = $rootScope.donation.currencyEUR;
 
 }]);
 
@@ -257,7 +258,7 @@ app.controller('PaymentCtrl', ['$scope', '$window', '$http', 'paypal', 'stripeLo
     .then(function(approvalLink) {
       $window.location.href = approvalLink;
     }, function(errorResponse) {
-      console.warn('Payment failed.', errorResponse);
+      console.warn('Payment failed.', errorResponse.data);
       $scope.paypal.paymentError = 'Payment failed.';
       $scope.paypal.paymentInProgress = false;
     });
@@ -500,6 +501,109 @@ app.controller('DownloadCtrl', ['$scope', '$window', function($scope, $window) {
   $scope.showOldBetaReleases = false;
 
   showModalIfSuggestedByUrl();
+
+}]);
+
+app.factory('paddleLoader', ['$window', 'scriptLoader', function($window, scriptLoader) {
+  var paddle = null;
+  return {
+    load: function(callback) {
+      if (paddle) {
+        callback(paddle);
+      } else {
+        scriptLoader.load("https://cdn.paddle.com/paddle/paddle.js", function() {
+          paddle = $window.Paddle;
+          paddle.Setup({ vendor: 39223 });
+          callback(paddle);
+        });
+      }
+    }
+  };
+}]);
+
+app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', function($scope, $window, $http, paddleLoader) {
+
+  $scope.desktopLicense = {
+    amount: 15,
+    currency: $scope.currencies.EUR
+  };
+  $scope.desktopLicense.isAcceptableAmount = function(amount) {
+    return _.isNumber(amount) && amount >= 15;
+  };
+  $scope.desktopLicense.checkout = function() {
+    $scope.desktopLicense.checkoutError = null;
+    $scope.desktopLicense.checkoutInProgress = true;
+    $http.post('https://store.cryptomator.org/paddle/desktop/generate-pay-link.php', $.param({
+      currency: $scope.desktopLicense.currency.code,
+      amount: $scope.desktopLicense.amount
+    }), {
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    }).then(function(successResponse) {
+      paddleLoader.load(function(paddle) {
+        paddle.Checkout.open({
+          override: successResponse.data.pay_link,
+          email: $scope.desktopLicense.email,
+          allowQuantity: false,
+          successCallback: function(data) {
+            paddle.Order.details(data.checkout.id, function(data) {
+              $scope.desktopLicense.checkoutInProgress = false;
+              $scope.desktopLicense.checkoutSuccessful = true;
+              if (data.lockers[0].license_code) {
+                $scope.desktopLicense.key = data.lockers[0].license_code;
+              }
+            });
+          },
+          closeCallback: function(data) {
+            $scope.desktopLicense.checkoutInProgress = false;
+          }
+        });
+      });
+    }, function(errorResponse) {
+      console.warn('Generating pay link failed.', errorResponse.data);
+      if (errorResponse.data.message) {
+        $scope.desktopLicense.checkoutError = errorResponse.data.message;
+      } else {
+        $scope.desktopLicense.checkoutError = 'Checkout failed.';
+      }
+      $scope.desktopLicense.checkoutInProgress = false;
+    });
+  };
+
+  $scope.androidLicense = {
+    productId: 578277
+  };
+  $scope.androidLicense.loadPrice = function() {
+    paddleLoader.load(function(paddle) {
+      paddle.Product.Prices($scope.androidLicense.productId, 1, function(prices) {
+        $scope.$apply(function() {
+          $scope.androidLicense.price = prices.price.gross;
+        });
+      });
+    });
+  };
+  $scope.androidLicense.checkout = function() {
+    $scope.androidLicense.checkoutError = null;
+    $scope.androidLicense.checkoutInProgress = true;
+    paddleLoader.load(function(paddle) {
+      paddle.Checkout.open({
+        product: $scope.androidLicense.productId,
+        email: $scope.androidLicense.email,
+        allowQuantity: false,
+        successCallback: function(data) {
+          paddle.Order.details(data.checkout.id, function(data) {
+            $scope.androidLicense.checkoutInProgress = false;
+            $scope.androidLicense.checkoutSuccessful = true;
+            if (data.lockers[0].license_code) {
+              $scope.androidLicense.key = data.lockers[0].license_code;
+            }
+          });
+        },
+        closeCallback: function(data) {
+          $scope.androidLicense.checkoutInProgress = false;
+        }
+      });
+    });
+  };
 
 }]);
 
