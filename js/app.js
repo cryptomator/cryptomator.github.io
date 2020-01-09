@@ -546,15 +546,19 @@ app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', funct
           allowQuantity: false,
           successCallback: function(data) {
             paddle.Order.details(data.checkout.id, function(data) {
-              $scope.desktopLicense.checkoutInProgress = false;
-              $scope.desktopLicense.checkoutSuccessful = true;
-              if (data.lockers[0].license_code) {
-                $scope.desktopLicense.key = data.lockers[0].license_code;
-              }
+              $scope.$apply(function() {
+                $scope.desktopLicense.checkoutInProgress = false;
+                $scope.desktopLicense.checkoutSuccessful = true;
+                if (data.lockers[0].license_code) {
+                  $scope.desktopLicense.key = data.lockers[0].license_code;
+                }
+              });
             });
           },
           closeCallback: function(data) {
-            $scope.desktopLicense.checkoutInProgress = false;
+            $scope.$apply(function() {
+              $scope.desktopLicense.checkoutInProgress = false;
+            });
           }
         });
       });
@@ -591,15 +595,19 @@ app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', funct
         allowQuantity: false,
         successCallback: function(data) {
           paddle.Order.details(data.checkout.id, function(data) {
-            $scope.androidLicense.checkoutInProgress = false;
-            $scope.androidLicense.checkoutSuccessful = true;
-            if (data.lockers[0].license_code) {
-              $scope.androidLicense.key = data.lockers[0].license_code;
-            }
+            $scope.$apply(function() {
+              $scope.androidLicense.checkoutInProgress = false;
+              $scope.androidLicense.checkoutSuccessful = true;
+              if (data.lockers[0].license_code) {
+                $scope.androidLicense.key = data.lockers[0].license_code;
+              }
+            });
           });
         },
         closeCallback: function(data) {
-          $scope.androidLicense.checkoutInProgress = false;
+          $scope.$apply(function() {
+            $scope.androidLicense.checkoutInProgress = false;
+          });
         }
       });
     });
