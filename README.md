@@ -1,3 +1,5 @@
+![](https://github.com/cryptomator/cryptomator.github.io/workflows/gh-pages/badge.svg?branch=redesign2020)
+
 # Usage
 ## Requirements
 * Hugo
