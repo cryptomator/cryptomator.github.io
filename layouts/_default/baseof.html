@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
+    {{ if .Site.IsServer }}
+      {{ $css := resources.Get "css/main.css" | postCSS }}
+      <link rel="stylesheet" href="{{ $css.Permalink }}">
+    {{ else }}
+      {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+    {{ end }}
+    
   </head>
   <body>
     <!-- Code that all your templates share, like a header -->
