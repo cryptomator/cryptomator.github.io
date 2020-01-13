@@ -1,8 +1,0 @@
-{% if page.singleLanguage != true %}
-  {% for currentLanguage in site.languages %}
-    {% if currentLanguage.name != language.name %}
-      {% include determineCurrentPageInUrlLanguage.liquid %}
-      <link rel="alternate" hreflang="{{ currentLanguage.name }}" href="{{ currentPageUrlInUrlLanguage }}" />
-    {% endif %}
-  {% endfor %}
-{% endif %}
