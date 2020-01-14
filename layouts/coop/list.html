@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="container mx-auto">
+    <h1 class="text-center text-2xl">{{ i18n "coop_title" }}</h1>
+
+    {{ range (.Pages.ByParam "prio") }}
+      <article class="flex flex-row mb-4">
+        <img src="{{ .Params.Img }}" class="m-2"/>
+        <div>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description }}</p>
+          <a href="{{ .RelPermalink }}" class="inline-block border rounded">{{ i18n "coop_more_info" }}</a>
+        </div>
+      </article>
+    {{ end }}
+  </section>
+{{ end }}

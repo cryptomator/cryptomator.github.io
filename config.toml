@@ -1,3 +1,10 @@
 baseURL = "https://cryptomator.org/"
-languageCode = "en-us"
 title = "Cryptomator"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    weight = 1
+  [languages.de]
+    weight = 2

@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <article class="container mx-auto">
+    <header class="mb-4">
+      <h1 class="text-center text-2xl">{{ .Title }}</h1>
+      <p class="text-lg">{{ .Description }}</p>
+    </header>
+
+    <section>
+      {{ .Content }}
+    </section>
+  </article>
+{{ end }}
