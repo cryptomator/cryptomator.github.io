@@ -1,5 +1,5 @@
 const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./content/**/*.html', './layouts/**/*.html'],
+  content: ['./content/**/*.html', './content/**/*.md', './layouts/**/*.html'],
   css: ['**/*.css']
 })
 

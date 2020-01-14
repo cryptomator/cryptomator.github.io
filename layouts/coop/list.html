@@ -4,11 +4,13 @@
 
     {{ range (.Pages.ByParam "prio") }}
       <article class="flex flex-row mb-4">
-        <img src="{{ .Params.Img }}" class="m-2"/>
+        <div class="m-2 w-32">
+          <img src="{{ .Params.Img }}" class="w-32"/>
+        </div>
         <div>
-          <h2>{{ .Title }}</h2>
-          <p>{{ .Description }}</p>
-          <a href="{{ .RelPermalink }}" class="inline-block border rounded">{{ i18n "coop_more_info" }}</a>
+          <h2 class="text-xl">{{ .Title }}</h2>
+          <p class="mb-4">{{ .Description }}</p>
+          <a href="{{ .RelPermalink }}" class="inline-block border rounded p-1">{{ i18n "coop_more_info" }}</a>
         </div>
       </article>
     {{ end }}
