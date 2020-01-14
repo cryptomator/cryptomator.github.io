@@ -15,3 +15,5 @@ Wir freuen uns über diese Kooperation, weil sie Ihnen eine neue Möglichkeit gi
 Mountain Duck ist also die perfekte Ergänzung zu Cryptomator für alle, die keine lokale Kopie ihrer Cloud-Daten möchten, sondern die Daten nur beim Zugriff laden wollen.
 
 Mountain Duck basiert auf dem bewährten Open-Source-Fundament von Cyberduck und nutzt die Java-basierte kryptographische Bibliothek <a href="https://github.com/cryptomator/cryptolib" target="_blank">CryptoLib</a>, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
+
+<a class="inline-block border rounded" href="https://mountainduck.io/#cryptomator" target="_blank"><span class="glyphicon glyphicon-link"></span> Visit mountainduck.io</a>
