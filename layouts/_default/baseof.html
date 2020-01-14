@@ -16,11 +16,13 @@
     {{ end }}
     
   </head>
-  <body>
+  <body class="bg-gray-800">
+    <section class="bg-white pb-2">
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
+    </section>
     {{ partial "footer.html" . }}
   </body>
 </html>
