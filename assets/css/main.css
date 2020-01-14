@@ -1,5 +1,26 @@
 /* purgecss start ignore */
 @tailwind  base;
-@tailwind  components;
+
+/* default styles: */
+a {
+    @apply text-primary no-underline;
+}
+
+a:hover {
+    @apply text-primary underline;
+}
+
+@tailwind components;
 /* purgecss end ignore */
+
 @tailwind utilities;
+
+
+/* custom classes: */
+.btn {
+    @apply inline-block border rounded p-2 border-primary text-primary no-underline;
+}
+
+.btn:hover {
+    @apply bg-primary text-white no-underline;
+}
