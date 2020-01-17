@@ -14,7 +14,6 @@
       {{ $css := resources.Get "css/fontawesome.css" | postCSS | minify | fingerprint }}
       <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
     {{ end }}
-    
   </head>
   <body class="bg-gray-800">
     {{ partial "nav.html" . }}

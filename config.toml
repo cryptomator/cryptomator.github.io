@@ -10,4 +10,4 @@ DefaultContentLanguage = "en"
     weight = 2
 
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
