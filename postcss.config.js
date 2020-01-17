@@ -1,6 +1,7 @@
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./content/**/*.html', './content/**/*.md', './layouts/**/*.html'],
-  css: ['**/*.css']
+  css: ['**/*.css'],
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [] // we need to override the default purgecss regex for strange tailwind class names like "md:w-1/2"
 })
 
 module.exports = {
