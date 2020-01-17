@@ -13,9 +13,6 @@ a:hover {
 @tailwind components;
 /* purgecss end ignore */
 
-@tailwind utilities;
-
-
 /* custom classes: */
 .btn {
     @apply inline-block border rounded p-2 border-primary text-primary no-underline;
@@ -24,3 +21,5 @@ a:hover {
 .btn:hover {
     @apply bg-primary text-white no-underline;
 }
+
+@tailwind utilities;
