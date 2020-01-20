@@ -10,6 +10,10 @@ module.exports = {
         'tertiary': '#005E71',
       }
     },
+    fontFamily: {
+      'headline': ['Quicksand', 'sans-serif'],
+      'body': ['Nunito Sans', 'sans-serif'],
+    },
     screens: {
       'md': {'min': '768px'},
       'lg': {'min': '1280px'},
