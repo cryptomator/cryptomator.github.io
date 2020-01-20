@@ -15,11 +15,14 @@ a:hover {
 
 /* custom classes: */
 .btn {
-    @apply inline-block border rounded p-2 border-primary text-primary no-underline;
+    @apply inline-block border rounded p-2 bg-primary border-primary text-tertiary no-underline;
 }
 
 .btn:hover {
-    @apply bg-primary text-white no-underline;
+    @apply shadow-md no-underline text-tertiary;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    transform: translate(0, -1px);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
 }
 
 @tailwind utilities;
