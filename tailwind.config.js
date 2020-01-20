@@ -1,9 +1,7 @@
 module.exports = {
   theme: {
-    screens: {
-      'sm': {'max': '767px'},
-      'md': {'min': '768px', 'max': '1279px'},
-      'lg': {'min': '1280px'},
+    container: {
+      center: true,
     },
     extend: {
       colors: {
@@ -11,6 +9,10 @@ module.exports = {
         'secondary': '#008A7B',
         'tertiary': '#005E71',
       }
+    },
+    screens: {
+      'md': {'min': '768px'},
+      'lg': {'min': '1280px'},
     },
   },
   variants: {},
