@@ -23,7 +23,7 @@
     </section>
     {{ partial "footer.html" . }}
 
-    {{ $jquery := resources.Get "js/jquery/jquery.slim.min.js" | fingerprint }}
+    {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $jquery.Permalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
 
     {{ if .Site.IsServer }}
