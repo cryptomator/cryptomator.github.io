@@ -16,8 +16,16 @@ DefaultContentLanguage = "en"
     target = "static"
 
   [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
     source = "node_modules/@fortawesome/fontawesome-free/webfonts"
     target = "static/webfonts"
+
+  [[module.mounts]]
+    source = "node_modules/jquery/dist"
+    target = "assets/js/jquery"
 
 [markup.goldmark.renderer]
 unsafe = true

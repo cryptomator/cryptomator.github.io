@@ -22,5 +22,16 @@
     {{ end }}
     </section>
     {{ partial "footer.html" . }}
+
+    {{ $jquery := resources.Get "js/jquery/jquery.slim.min.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $jquery.Permalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
+
+    {{ if .Site.IsServer }}
+      {{ $js := resources.Get "js/main.js" }}
+      <script type="text/javascript" src="{{ $js.Permalink }}" defer></script>
+    {{ else }}
+      {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+      <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+    {{ end }}
   </body>
 </html>
