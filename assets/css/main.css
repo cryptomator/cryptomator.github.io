@@ -25,4 +25,20 @@ a:hover {
     transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
 }
 
+@keyframes hover {
+    0%{
+        transform:rotate(0deg) translateY(0)
+    }
+    50%{
+        transform:rotate(-3deg) translateY(-10px)
+    }
+    to{
+        transform:rotate(0deg) translateY(0)
+    }
+}
+
+.animate-hover {
+    animation:hover 10s ease-in-out infinite;
+}
+
 @tailwind utilities;
