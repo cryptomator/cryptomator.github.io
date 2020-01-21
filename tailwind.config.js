@@ -10,6 +10,7 @@ module.exports = {
         'tertiary': '#005E71',
       },
       width: {
+        'container-md': '768px',
         'container-lg': '1280px',
       },
     },
