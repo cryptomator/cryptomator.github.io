@@ -1,0 +1,8 @@
+/* default styles: */
+a {
+    @apply text-primary no-underline;
+}
+
+a:hover {
+    @apply text-primary underline;
+}

@@ -9,5 +9,15 @@ DefaultContentLanguage = "en"
   [languages.de]
     weight = 2
 
+[module]
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  [[module.mounts]]
+    source = "node_modules/@fortawesome/fontawesome-free/webfonts"
+    target = "static/webfonts"
+
 [markup.goldmark.renderer]
 unsafe = true

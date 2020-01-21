@@ -7,12 +7,8 @@
     {{ if .Site.IsServer }}
       {{ $css := resources.Get "css/main.css" | postCSS }}
       <link rel="stylesheet" href="{{ $css.Permalink }}">
-      {{ $css := resources.Get "css/fontawesome.css" | postCSS }}
-      <link rel="stylesheet" href="{{ $css.Permalink }}">
     {{ else }}
       {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
-      {{ $css := resources.Get "css/fontawesome.css" | postCSS | minify | fingerprint }}
       <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
     {{ end }}
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600|Quicksand:500,700&display=swap" rel="stylesheet">
