@@ -8,7 +8,10 @@ module.exports = {
         'primary': '#49B04A',
         'secondary': '#008A7B',
         'tertiary': '#005E71',
-      }
+      },
+      width: {
+        'container-lg': '1280px',
+      },
     },
     fontFamily: {
       'headline': ['Quicksand', 'sans-serif'],
