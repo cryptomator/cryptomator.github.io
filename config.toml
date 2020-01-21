@@ -20,7 +20,7 @@ DefaultContentLanguage = "en"
     target = "assets"
 
   [[module.mounts]]
-    source = "node_modules/@fortawesome/fontawesome-free/webfonts"
+    source = "node_modules/@fortawesome/fontawesome-pro/webfonts"
     target = "static/webfonts"
 
   [[module.mounts]]

@@ -16,7 +16,7 @@
     "postcss-import": "^12.0.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@fortawesome/fontawesome-pro": "^5.12.0",
     "jquery": "^3.4.1",
     "tailwindcss": "^1.1.4"
   }

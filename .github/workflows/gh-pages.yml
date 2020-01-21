@@ -39,7 +39,10 @@ jobs:
       run: npm install -g postcss-cli autoprefixer
 
     - name: NPM install
-      run: npm install
+      run: |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_AUTH_TOKEN }}"
+        npm install
 
     - name: Build
       run: hugo --minify
