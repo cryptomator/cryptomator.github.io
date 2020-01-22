@@ -1,0 +1,29 @@
+title: "1.0"
+beta: false
+tags: [1.0.5, 1.0.4, 1.0.3, 1.0.2, 1.0.1, 1.0.0]
+dates: [2016-05-10, 2016-05-03, 2016-03-25, 2016-03-21, 2016-03-16, 2016-03-09]
+artifacts:
+  win:
+    patch: 4
+    file32: Cryptomator-1.0.4-x86.exe
+    url32: https://bintray.com/cryptomator/cryptomator/download_file?file_path=Cryptomator-1.0.4-x86.exe
+    sha256Checksum32: "cd34158ac018301a6656126c3455c267751c247171e67950e87b9aac62c38a34"
+    file64: Cryptomator-1.0.4-x64.exe
+    url64: https://bintray.com/cryptomator/cryptomator/download_file?file_path=Cryptomator-1.0.4-x64.exe
+    sha256Checksum64: "af5b7b8e04e9376e2c6dbb9d20a63a1dc6cc2fbcbf0aa7099f2e7fe7be6a6f23"
+  mac:
+    patch: 5
+    file: Cryptomator-1.0.5.dmg
+    url: https://bintray.com/cryptomator/cryptomator/download_file?file_path=Cryptomator-1.0.5.dmg
+    sha256Checksum: "3cbdc16ea6fb33406324f786e5305cd6fcf1d53a65d59be46333eea85e33fae3"
+  linux:
+    patch: 5
+    debianFile32: cryptomator-1.0.5-i386.deb
+    debianUrl32: https://github.com/cryptomator/cryptomator/releases/download/1.0.5/cryptomator-1.0.5-i386.deb
+    debianSha256Checksum32: "6cf700bd6af11778207919407916fbc4fc6860a005b06370168d961a4de80a15"
+    debianFile64: cryptomator-1.0.5-amd64.deb
+    debianUrl64: https://github.com/cryptomator/cryptomator/releases/download/1.0.5/cryptomator-1.0.5-amd64.deb
+    debianSha256Checksum64: "166a531282335983b42e6a5fd747c816ec674fcab7e79b9f0891a3ef3b120def"
+    redhatFile64: cryptomator-1.0.5-amd64.rpm
+    redhatUrl64: https://github.com/cryptomator/cryptomator/releases/download/1.0.5/cryptomator-1.0.5-amd64.rpm
+    redhatSha256Checksum64: "8326b4e9cdaf769720d71499270c54594a6e834ba606458de67ed00f6860e3df"

@@ -1,0 +1,22 @@
+title: "0.8"
+beta: true
+tags: [0.8.2, 0.8.1, 0.8.0]
+dates: [2015-10-02, 2015-08-06, 2015-08-04]
+artifacts:
+  win:
+    patch: 1
+    file32: Cryptomator-0.8.1-x86.exe
+    url32: https://github.com/cryptomator/cryptomator/releases/download/0.8.1/Cryptomator-0.8.1-x86.exe
+    sha1Checksum32: empty
+    file64: Cryptomator-0.8.1-x64.exe
+    url64: https://github.com/cryptomator/cryptomator/releases/download/0.8.1/Cryptomator-0.8.1-x64.exe
+    sha1Checksum64: empty
+  mac:
+    patch: 2
+    file: Cryptomator-0.8.2.dmg
+    url: https://github.com/cryptomator/cryptomator/releases/download/0.8.2/Cryptomator-0.8.2.dmg
+    sha1Checksum: empty
+  linux:
+    debianFile64: cryptomator-0.8.0-amd64.deb
+    debianUrl64: https://github.com/cryptomator/cryptomator/releases/download/0.8.0/cryptomator-0.8.0-amd64.deb
+    debianSha1Checksum64: empty
