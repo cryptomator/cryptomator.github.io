@@ -1,0 +1,9 @@
+{{- $paramNames := split (.Get 0) "." -}}
+{{- $scratch := newScratch }}
+{{- $scratch.Set "value" $.Page.Params -}}
+{{- range $paramName := $paramNames -}}
+    {{- with $scratch.Get "value" -}}
+        {{- $scratch.Set "value" (index . (lower $paramName)) -}}
+    {{- end -}}
+{{- end -}}
+{{- $scratch.Get "value" -}}

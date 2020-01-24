@@ -1,0 +1,43 @@
+---
+title: "Windows"
+weight: 1
+slug: win
+date: 2020-01-01T00:13:37+00:00
+draft: false
+buttonLabel: >
+  <i class="fab fa-windows"></i> Windows
+screenshot: https://cryptomator.org/img/screenshots/dl_win.png
+---
+
+<div class="w-full md:w-2/5 py-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+  <meta itemprop="name" content="Cryptomator"/>
+  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
+  <meta itemprop="applicationCategory" content="Productivity"/>
+  <meta itemprop="softwareVersion" content="{{%siteparam releases.exe.version%}}"/>
+  <meta itemprop="applicationSubCategory" content="Encryption"/>
+  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+  <meta itemprop="operatingSystem" content="Windows"/>
+  <h1 class="text-2xl">Cryptomator for Windows</h1>
+  <p class="text-sm">Version {{%siteparam releases.exe.version%}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{%siteparam releases.exe.version%}}" target="_blank" rel="noopener">Changelog</a></p>
+
+  <div class="border rounded-lg bg-white w-4/5 mx-auto my-4">
+    <div class="bg-gray-200 rounded-t-lg p-1 border-b">
+      <h2 class="text-lg">EXE Installer</h2>
+    </div>
+    <div class="py-2">
+      <p class="py-2 text-sm">Minimum: Windows 7 SP1</p>
+      <p>
+        <a itemprop="downloadUrl" href="{{%siteparam releases.exe.downloadUrl%}}" class="btn w-1/2" role="button">
+          <span class="fa fa-download" aria-hidden="true"></span> Download
+        </a>
+      </p>
+      <p class="text-xs">
+        <a data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{%siteparam releases.exe.checksum%}}">SHA256</a>
+        • <a href="{{%siteparam releases.exe.signatureUrl%}}">PGP Signature</a>
+      </p>
+    </div>
+  </div>
+  
+  <p><a href="https://bintray.com/" target="_blank"><img src="https://cryptomator.org/img/bintray-logo.png" class="inline"/></a></p>
+</div>
+

@@ -1,0 +1,11 @@
+# Coop
+- id: coop_title
+  translation: "Cooperations"
+- id: "coop_more_info"
+  translation: "More Info"
+
+# Downloads
+- id: downloads_all_versions_title
+  translation: "Looking for older versions?"
+- id: downloads_all_versions_button
+  translation: "Releases Archive on GitHub"

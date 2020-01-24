@@ -1,0 +1,43 @@
+---
+title: "Linux"
+weight: 3
+slug: linux
+date: 2020-01-01T00:13:37+00:00
+draft: false
+buttonLabel: >
+    <i class="fab fa-linux"></i> Linux
+screenshot: https://cryptomator.org/img/screenshots/dl_linux.png
+---
+
+<div class="w-full md:w-2/5 py-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+    <meta itemprop="name" content="Cryptomator"/>
+    <meta itemprop="description" content="A free software to encrypt your cloud files."/>
+    <meta itemprop="applicationCategory" content="Productivity"/>
+    <meta itemprop="softwareVersion" content="{{%siteparam releases.appimage.version%}}"/>
+    <meta itemprop="applicationSubCategory" content="Encryption"/>
+    <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+    <meta itemprop="operatingSystem" content="Mac"/>
+    <h1 class="text-2xl">Cryptomator for Linux</h1>
+    <p class="text-sm">Version {{%siteparam releases.appimage.version%}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{%siteparam releases.appimage.version%}}" target="_blank" rel="noopener">Changelog</a></p>
+  
+    <div class="border rounded-lg bg-white w-4/5 mx-auto my-4">
+      <div class="bg-gray-200 rounded-t-lg p-1 border-b">
+        <h2 class="text-lg">AppImage</h2>
+      </div>
+      <div class="py-2">
+        <p class="py-2 text-sm">See {{<extlink "https://www.oracle.com/technetwork/java/javase/documentation/jdk11certconfig-5069638.html" "System Requirements">}}</p>
+        <p>
+          <a itemprop="downloadUrl" href="{{%siteparam releases.appimage.downloadUrl%}}" class="btn w-1/2" role="button">
+            <span class="fa fa-download" aria-hidden="true"></span> Download
+          </a>
+        </p>
+        <p class="text-xs">
+            <a data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{%siteparam releases.appimage.checksum%}}">SHA256</a> • 
+            <a href="{{%siteparam releases.appimage.signatureUrl%}}">PGP Signature</a>
+        </p>
+        <p class="text-sm m-4">To run the AppImage, make it executable by running <span class="font-mono whitespace-no-wrap bg-gray-300">chmod +x</span> after you have downloaded it.</p>
+      </div>
+    </div>
+    
+    <p><a href="https://bintray.com/" target="_blank"><img src="https://cryptomator.org/img/bintray-logo.png" class="inline"/></a></p>
+</div>

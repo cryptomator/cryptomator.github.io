@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+    {{ range .Pages }}
+    <section class="container flex flex-wrap py-4 download-details-{{ .Weight }}">
+        <figure class="w-1/2 mx-auto md:w-3/5">
+            <img src="{{ .Params.Screenshot }}"/>
+        </figure>
+        {{ .Content}}
+    </section>
+    {{ end }}
+
+    <section class="bg-dark py-4 mb-12">
+        <div class="container flex text-white md:text-lg text-xs">
+            {{ range .Pages }}
+                <div class="flex-1 px-1">
+                    <button class="btn-secondary py-2 w-full">{{ safeHTML .Params.ButtonLabel }}</button>
+                </div>
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="container text-center">
+        <h3 class="text-2xl">{{ i18n "downloads_all_versions_title" . }}</h3>
+        <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" rel="noopener" role="button" class="btn text-xl py-2">
+            <i class="fab fa-github"></i> {{ i18n "downloads_all_versions_button" .}}
+        </a>
+    </section>>
+
+  {{ end }}
