@@ -1,0 +1,13 @@
+---
+title: "Download Cryptomator"
+date: 2020-01-01T00:13:37+00:00
+draft: false
+type: downloads
+i18n:
+    win:
+        title: Cryptomator for Windows
+    downloadBtn: Download
+    versionStr: Version %s
+    changelog: Changelog
+    pgpSignature: PGP Signature
+---
