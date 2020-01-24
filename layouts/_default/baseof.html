@@ -26,6 +26,9 @@
     {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $jquery.Permalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
 
+    {{ $alpine := resources.Get "js/alpinejs/alpine.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $alpine.Permalink }}" integrity="{{ $alpine.Data.Integrity }}"></script>
+
     {{ if .Site.IsServer }}
       {{ $js := resources.Get "js/main.js" }}
       <script type="text/javascript" src="{{ $js.Permalink }}" defer></script>

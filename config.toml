@@ -27,6 +27,10 @@ DefaultContentLanguage = "en"
     source = "node_modules/jquery/dist"
     target = "assets/js/jquery"
 
+  [[module.mounts]]
+    source = "node_modules/alpinejs/dist"
+    target = "assets/js/alpinejs"
+
 [markup.goldmark.renderer]
 unsafe = true
 
