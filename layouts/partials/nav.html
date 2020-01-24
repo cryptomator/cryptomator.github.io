@@ -1,20 +1,29 @@
-<nav class="flex justify-between h-16">
-    <div class="lg:ml-8 whitespace-no-wrap w-1/6">
-        <img src="http://placekitten.com/64/64" class="object-contain inline"/>
-        <span class="hidden lg:inline"><a href="{{ .Site.LanguagePrefix }}/">CRYPTOMATOR</a></span>
+<nav class="md:flex md:justify-between md:items-center">
+    <div class="flex justify-between items-center">
+        <a class="flex items-center hover:no-underline m-2 lg:ml-8" href="{{ .Site.LanguagePrefix }}/">
+            <img src="http://placekitten.com/64/64" class="h-12" />
+            <span class="font-headline font-bold text-white ml-2 hidden lg:block">CRYPTOMATOR</span>
+        </a>
+
+        <div class="md:hidden">
+            <button type="button" class="text-white border rounded px-2 py-1 m-2 hover:text-primary hover:border-primary" id="nav-dropdown-btn">
+                <i class="fas fa-bars fa-fw" id="nav-dropdown-btn-icon-bars"></i>
+                <i class="far fa-times fa-fw hidden" id="nav-dropdown-btn-icon-times"></i>
+            </button>
+        </div>
     </div>
 
-    <ul class="self-center lg:mr-8 w-5/6 text-right">
-        <li class="inline p-2"><a href="{{ .Site.LanguagePrefix }}/downloads">Download</a></li>
-        <li class="inline p-2"><a href="{{ .Site.LanguagePrefix }}/coop">Kooperationen</a></li>
-        <li class="inline p-2">Enterprise</li>
-        <li class="inline p-2">Docs</li>
-        <li class="inline p-2">FAQ</li>
-        <li class="hidden md:inline p-2">|</li>
-        <li class="inline p-2">Sponsoren</li>
-        <li class="inline p-2">Spenden</li>
-        <li class="inline p-2">Sprache</li>
-        <li class="inline p-2">F</li>
-        <li class="inline p-2">T</li>
+    <ul class="hidden text-white md:flex lg:mr-8" id="nav-dropdown-menu">
+        <li class="p-2"><a class="text-white hover:no-underline" href="{{ .Site.LanguagePrefix }}/downloads">Download</a></li>
+        <li class="p-2"><a class="text-white hover:no-underline" href="{{ .Site.LanguagePrefix }}/coop">Kooperationen</a></li>
+        <li class="p-2">Enterprise</li>
+        <li class="p-2">Docs</li>
+        <li class="p-2">FAQ</li>
+        <li class="hidden md:block p-2">|</li>
+        <li class="p-2">Sponsoren</li>
+        <li class="p-2">Spenden</li>
+        <li class="p-2">Sprache</li>
+        <li class="p-2"><i class="fab fa-facebook-f"></i></li>
+        <li class="p-2"><i class="fab fa-twitter"></i></li>
     </ul>
 </nav>
