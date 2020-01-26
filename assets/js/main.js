@@ -17,20 +17,3 @@ $('#testimonial-carousel .prev-button').click(function () {
     lastItem.prependTo(wrapper);
     lastItem.animate({ marginLeft: 0 }, 300, 'swing');
 });
-
-$('#nav-dropdown-btn').click(function () {
-    let menu = $('#nav-dropdown-menu');
-    let btnIconBars = $('#nav-dropdown-btn-icon-bars');
-    let btnIconTimes = $('#nav-dropdown-btn-icon-times');
-    if (menu.hasClass('hidden')) {
-        menu.addClass('block');
-        menu.removeClass('hidden');
-        btnIconTimes.removeClass('hidden');
-        btnIconBars.addClass('hidden');
-    } else {
-        menu.addClass('hidden');
-        menu.removeClass('block');
-        btnIconBars.removeClass('hidden');
-        btnIconTimes.addClass('hidden');
-    }
-});
