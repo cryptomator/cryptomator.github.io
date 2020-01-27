@@ -19,16 +19,16 @@
             <h2 class="text-center text-2xl">{{ i18n "home_trustingbrands_title" . }}</h2>
             <div class="flex flex-wrap justify-center w-full md:w-3/4 mx-auto">
                 <a href="{{ .Site.LanguagePrefix }}/coop/webde/">
-                    <img src="/img/home/3rdparty/webde-logo.svg" class="mx-12 my-4 h-20"/>
+                    <img src="/img/home/3rdparty/webde-logo.svg" class="mx-12 my-4 h-20" alt="WEB.DE Logo"/>
                 </a>
                 <a href="{{ .Site.LanguagePrefix }}/coop/gmx/">
-                    <img src="/img/home/3rdparty/gmx-logo.svg" class="mx-12 my-4 h-20"/>
+                    <img src="/img/home/3rdparty/gmx-logo.svg" class="mx-12 my-4 h-20" alt="GMX Logo"/>
                 </a>
                 <a href="{{ .Site.LanguagePrefix }}/coop/1und1/">
-                    <img src="/img/home/3rdparty/1und1-logo.png" class="mx-12 my-4 h-20"/>
+                    <img src="/img/home/3rdparty/1und1-logo.png" class="mx-12 my-4 h-20" alt="1&amp;1 Logo"/>
                 </a>
                 <a href="https://connect2id.com/blog/deterministic-encryption-with-aes-siv" target="_blank" rel="noopener">
-                    <img src="/img/home/3rdparty/connect2id-logo.svg" class="mx-12 my-4 h-20"/>
+                    <img src="/img/home/3rdparty/connect2id-logo.svg" class="mx-12 my-4 h-20" alt="connect2id Logo"/>
                 </a>
             </div>
         </section>
@@ -59,37 +59,36 @@
 
         <section class="container pb-10">
             <h2 class="text-center text-2xl">{{ i18n "home_reception_title" . }}</h2>
-            <div class="flex flex-wrap justify-around">
+            <div class="flex flex-wrap justify-around text-center">
                 <div class="w-full md:w-1/3 p-6">
                     <a href="https://www.hostingadvice.com/blog/cryptomator-brings-open-source-encryption-to-the-cloud-storage-realm/" target="_blank" rel="noopener">
-                        <img src="/img/home/3rdparty/hostingadvice-logo.png" class="mx-auto mb-4 h-10"/>
+                        <img src="/img/home/3rdparty/hostingadvice-logo.png" class="inline mb-4 h-10" alt="HostingAdvice Logo"/>
                     </a>
-                    <p class="text-center">Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
+                    <p>Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
                 </div>
 
                 <div class="w-full md:w-1/3 p-6">
                     <a href="https://thenextweb.com/apple/2016/03/09/new-ios-desktop-app-cryptomator-encrypts-cloud-files-locally-upload/" target="_blank" rel="noopener">
-                        <img src="/img/home/3rdparty/tnw-logo.png" class="mx-auto mb-4 h-10"/>
+                        <img src="/img/home/3rdparty/tnw-logo.png" class="inline mb-4 h-10" alt="TNW Logo"/>
                     </a>
-                    <p class="text-center">Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
+                    <p>Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
                 </div>
 
                 <div class="w-full md:w-1/3 p-6">
                     <a href="https://www.cardrates.com/news/cryptomator-secures-sensitive-financial-data/" target="_blank" rel="noopener">
-                        <img src="/img/home/3rdparty/cardrates-logo.png" class="mx-auto mb-4 h-10"/>
+                        <img src="/img/home/3rdparty/cardrates-logo.png" class="inline mb-4 h-10" alt="CardRates Logo"/>
                     </a>
-                    <p class="text-center">Cryptomator is more accessible than other solutions because its desktop version is free, and it only charges a small fee for using its mobile app. And even if a hacker accesses a user's vault, Cryptomator's encrypted files are useless without the proper key to decode them.</p>
+                    <p>Cryptomator is more accessible than other solutions because its desktop version is free, and it only charges a small fee for using its mobile app. And even if a hacker accesses a user's vault, Cryptomator's encrypted files are useless without the proper key to decode them.</p>
                 </div>
             </div>
         </section>
 
         <section class="container pb-10">
-            <figure>
+            <figure class="text-center">
                 <a href="https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank" rel="noopener">
-                    <img src="/img/home/3rdparty/cebit-award.png" srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 
-                    2016" class="mx-auto mb-4">
+                    <img src="/img/home/3rdparty/cebit-award.png" srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016" class="inline">
                 </a>
-                <figcaption class="text-center">
+                <figcaption class="text-center mt-4">
                     <h2 class="text-xl md:text-2xl mb-0">{{ i18n "home_cebit_title" . }}</h2>
                     <p class="text-md">{{ i18n "home_cebit_subtitle" . }}</p>
                 </figcaption>
