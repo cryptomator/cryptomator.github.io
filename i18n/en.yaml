@@ -9,3 +9,7 @@
   translation: "Looking for older versions?"
 - id: downloads_all_versions_button
   translation: "Releases Archive on GitHub"
+
+# FAQ
+- id: faq_title
+  translation: "FAQ"
