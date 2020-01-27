@@ -1,12 +1,22 @@
-/* default styles: */
-a {
+/* links on dark background: */
+a:not(.btn) {
+    @apply text-white no-underline;
+}
+
+a:not(.btn):hover {
+    @apply text-secondary no-underline;
+}
+
+/* links on light background: */
+.bg-gray-100 a:not(.btn) {
     @apply text-primary no-underline;
 }
 
-a:hover {
+.bg-gray-100 a:not(.btn):hover {
     @apply text-primary underline;
 }
 
+/* margins after headings and paragraphs */
 h1, h2, h3, p {
     @apply mb-4;
 }
