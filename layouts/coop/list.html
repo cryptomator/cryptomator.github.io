@@ -3,16 +3,30 @@
     <h1 class="text-center text-2xl">{{ i18n "coop_title" }}</h1>
 
     {{ range (.Pages.ByParam "prio") }}
-      <article class="flex flex-row mb-4">
-        <div class="m-2 w-32">
-          <img src="{{ .Params.Img }}" class="w-32"/>
+      <article class="flex mb-10">
+        <div class="p-2 w-1/6">
+          <img src="{{ .Params.Img }}" class="object-fit mx-auto"/>
         </div>
-        <div>
+        <div class="w-5/6">
           <h2 class="text-xl">{{ .Title }}</h2>
           <p class="mb-4">{{ .Description }}</p>
-          <a href="{{ .RelPermalink }}" class="btn">{{ i18n "coop_more_info" }}</a>
+          <a href="{{ .RelPermalink }}" class="btn py-1 px-4">{{ i18n "coop_more_info" }}</a>
         </div>
       </article>
     {{ end }}
+
+    <hr/>
+
+    <article class="flex my-10">
+        <div class="p-2 w-1/6 text-center ">
+            <i class="fa fa-question-circle text-6xl text-gray-400"></i>
+        </div>
+        <div class="w-5/6">
+            <h2 class="text-xl">{{ i18n "coop_your_business_title" . }}</h2>
+            <p class="mb-4">{{ i18n "coop_your_business_paragraph" . }}</p>
+            <a href="{{ .Site.LanguagePrefix }}/enterprise" class="btn py-1 px-4">{{ i18n "coop_more_info" }}</a>
+        </div>
+    </article>
+
   </section>
 {{ end }}

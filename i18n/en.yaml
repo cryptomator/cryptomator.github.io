@@ -3,6 +3,10 @@
   translation: "Cooperations"
 - id: "coop_more_info"
   translation: "More Info"
+- id: "coop_your_business_title"
+  translation: "Your Business?"
+- id: "coop_your_business_paragraph"
+  translation: "Interested in Cryptomator for your business? Explore various fields of application."
 
 # Downloads
 - id: downloads_all_versions_title
