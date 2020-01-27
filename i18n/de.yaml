@@ -13,3 +13,15 @@
 # FAQ
 - id: faq_title
   translation: "FAQ"
+
+# Home
+- id: home_trustingbrands_title
+  translation: "Marken, die unserer Technologie vertrauen"
+- id: home_testimonials_title
+  translation: "Stimmen unserer Nutzer"
+- id: home_reception_title
+  translation: "Internationale Meinungen"
+- id: home_cebit_title
+  translation: "Preisträger des CeBIT Innovation Awards 2016"
+- id: home_cebit_subtitle
+  translation: "Cryptomator ist Gewinner des Sonderpreises for Usable Security and Privacy."

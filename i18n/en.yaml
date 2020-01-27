@@ -13,3 +13,15 @@
 # FAQ
 - id: faq_title
   translation: "FAQ"
+
+# Home
+- id: home_trustingbrands_title
+  translation: "Brands Trusting our Technology"
+- id: home_testimonials_title
+  translation: "What our Users Say"
+- id: home_reception_title
+  translation: "Reception"
+- id: home_cebit_title
+  translation: "Awardee of the CeBIT Innovation Award 2016"
+- id: home_cebit_subtitle
+  translation: "Cryptomator won the Special Award for Usable Security and Privacy."

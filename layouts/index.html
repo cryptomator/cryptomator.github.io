@@ -1,8 +1,8 @@
 {{ define "main" }}
-    <section class="bg-dark bg-center" style="background-image: url(/img/header-background.png); background-size: auto 100%;">
+    <section class="bg-dark bg-center" style="background-image: url(/img/home/header-background.png); background-size: auto 100%;">
         <header class="w-full lg:w-container-lg mx-auto py-16 md:py-32 lg:py-64 flex justify-between items-center text-white">
             <div class="hidden md:block md:w-1/3 lg:w-2/5 px-4">
-                <img src="/img/woman-cloud.png" class="object-scale-down mx-auto lg:w-3/4 animate-hover"/>
+                <img src="/img/home/woman-cloud.png" class="object-scale-down mx-auto lg:w-3/4 animate-hover"/>
             </div>
             <div class="w-full md:w-2/3 lg:w-3/5 px-4">
                 <h1 class="text-xl md:text-2xl lg:text-4xl mb-6">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
@@ -16,16 +16,25 @@
 
     <div class="bg-dark text-white">
         <section class="container pb-8">
-            <h2 class="text-center text-2xl">Marken, die unserer Technologie vertrauen</h2>
-            <div class="flex flex-wrap justify-around">
-                <img src="http://placekitten.com/200/200" class="p-4"/>
-                <img src="http://placekitten.com/200/200" class="p-4"/>
-                <img src="http://placekitten.com/200/200" class="p-4"/>
+            <h2 class="text-center text-2xl">{{ i18n "home_trustingbrands_title" . }}</h2>
+            <div class="flex flex-wrap justify-center w-full md:w-3/4 mx-auto">
+                <a href="{{ .Site.LanguagePrefix }}/coop/webde/">
+                    <img src="/img/home/3rdparty/webde-logo.svg" class="mx-12 my-4 h-20"/>
+                </a>
+                <a href="{{ .Site.LanguagePrefix }}/coop/gmx/">
+                    <img src="/img/home/3rdparty/gmx-logo.svg" class="mx-12 my-4 h-20"/>
+                </a>
+                <a href="{{ .Site.LanguagePrefix }}/coop/1und1/">
+                    <img src="/img/home/3rdparty/1und1-logo.png" class="mx-12 my-4 h-20"/>
+                </a>
+                <a href="https://connect2id.com/blog/deterministic-encryption-with-aes-siv" target="_blank" rel="noopener">
+                    <img src="/img/home/3rdparty/connect2id-logo.svg" class="mx-12 my-4 h-20"/>
+                </a>
             </div>
         </section>
 
-        <section class="py-8">
-            <h2 class="text-center text-2xl">Stimmen unserer Nutzer</h2>
+        <section class="py-10">
+            <h2 class="text-center text-2xl">{{ i18n "home_testimonials_title" . }}</h2>
             <div class="flex justify-center items-center mb-6 " id="testimonial-carousel">
                 <button class="prev-button"><i class="fal fa-chevron-left text-5xl"></i></button>
                 <ul class="w-full md:w-container-md lg:w-container-lg flex flex-no-wrap overflow-hidden">
@@ -48,32 +57,41 @@
             </div>
         </section>
 
-        <section class="container pb-8">
-            <h2 class="text-center text-2xl">Internationale Meinungen</h2>
+        <section class="container pb-10">
+            <h2 class="text-center text-2xl">{{ i18n "home_reception_title" . }}</h2>
             <div class="flex flex-wrap justify-around">
                 <div class="w-full md:w-1/3 p-6">
-                    <img src="http://placekitten.com/200/50" class="mx-auto mb-4"/>
+                    <a href="https://www.hostingadvice.com/blog/cryptomator-brings-open-source-encryption-to-the-cloud-storage-realm/" target="_blank" rel="noopener">
+                        <img src="/img/home/3rdparty/hostingadvice-logo.png" class="mx-auto mb-4 h-10"/>
+                    </a>
                     <p class="text-center">Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
                 </div>
 
                 <div class="w-full md:w-1/3 p-6">
-                    <img src="http://placekitten.com/100/50" class="mx-auto mb-4"/>
+                    <a href="https://thenextweb.com/apple/2016/03/09/new-ios-desktop-app-cryptomator-encrypts-cloud-files-locally-upload/" target="_blank" rel="noopener">
+                        <img src="/img/home/3rdparty/tnw-logo.png" class="mx-auto mb-4 h-10"/>
+                    </a>
                     <p class="text-center">Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
                 </div>
 
                 <div class="w-full md:w-1/3 p-6">
-                    <img src="http://placekitten.com/150/50" class="mx-auto mb-4"/>
+                    <a href="https://www.cardrates.com/news/cryptomator-secures-sensitive-financial-data/" target="_blank" rel="noopener">
+                        <img src="/img/home/3rdparty/cardrates-logo.png" class="mx-auto mb-4 h-10"/>
+                    </a>
                     <p class="text-center">Cryptomator is more accessible than other solutions because its desktop version is free, and it only charges a small fee for using its mobile app. And even if a hacker accesses a user's vault, Cryptomator's encrypted files are useless without the proper key to decode them.</p>
                 </div>
             </div>
         </section>
 
-        <section class="container pb-8">
+        <section class="container pb-10">
             <figure>
-                <img src="http://placekitten.com/300/300" class="mx-auto mb-4"/>
+                <a href="https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank" rel="noopener">
+                    <img src="/img/home/3rdparty/cebit-award.png" srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 
+                    2016" class="mx-auto mb-4">
+                </a>
                 <figcaption class="text-center">
-                    <h2 class="text-2xl">Preisträger des CeBIT Innovation Awards 2016</h2>
-                    <p class="text-lg">Cryptomator ist Gewinner des Sonderpreises for Usable Security and Privacy.</p>
+                    <h2 class="text-xl md:text-2xl mb-0">{{ i18n "home_cebit_title" . }}</h2>
+                    <p class="text-md">{{ i18n "home_cebit_subtitle" . }}</p>
                 </figcaption>
             </figure>
         </section>
