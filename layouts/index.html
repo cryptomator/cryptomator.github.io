@@ -5,17 +5,17 @@
                 <img src="/img/woman-cloud.png" class="object-scale-down mx-auto lg:w-3/4 animate-hover"/>
             </div>
             <div class="w-full md:w-2/3 lg:w-3/5 px-4">
-                <h1 class="text-xl md:text-2xl lg:text-4xl pb-6 font-headline font-medium">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
-                <p class="text-md md:text-lg pb-6">Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch.</p>
+                <h1 class="text-xl md:text-2xl lg:text-4xl mb-6">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
+                <p class="text-md md:text-lg mb-6">Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch.</p>
                 <a href="{{ .Site.LanguagePrefix }}/downloads" role="button" class="btn text-tertiary hover:text-tertiary text-lg px-8">Jetzt herunterladen</a>
             </div>
         </header>
     </section>
-    
+
     {{.Content}}
 
     <div class="bg-dark text-white">
-        <section class="container py-8">
+        <section class="container pb-8">
             <h2 class="text-center text-2xl">Marken, die unserer Technologie vertrauen</h2>
             <div class="flex flex-wrap justify-around">
                 <img src="http://placekitten.com/200/200" class="p-4"/>
@@ -26,7 +26,7 @@
 
         <section class="py-8">
             <h2 class="text-center text-2xl">Stimmen unserer Nutzer</h2>
-            <div class="flex justify-center items-center py-6 " id="testimonial-carousel">
+            <div class="flex justify-center items-center mb-6 " id="testimonial-carousel">
                 <button class="prev-button"><i class="fal fa-chevron-left text-5xl"></i></button>
                 <ul class="w-full md:w-container-md lg:w-container-lg flex flex-no-wrap overflow-hidden">
                     {{ range $.Site.Data.testimonials }}
@@ -39,7 +39,7 @@
                                     <p>{{ .TwitterHandle }}</p>
                                 </div>
                             </div>
-                            <p class="mt-4"><i class="fa fa-quote-left text-secondary text-xl"></i> {{ .Quote }}</p>
+                            <p class="mt-4 mb-0"><i class="fa fa-quote-left text-secondary text-xl"></i> {{ .Quote }}</p>
                         </div>
                     </li>
                     {{ end }}
@@ -48,29 +48,29 @@
             </div>
         </section>
 
-        <section class="container py-8">
+        <section class="container pb-8">
             <h2 class="text-center text-2xl">Internationale Meinungen</h2>
             <div class="flex flex-wrap justify-around">
                 <div class="w-full md:w-1/3 p-6">
-                    <img src="http://placekitten.com/200/50" class="mx-auto"/>
-                    <p class="text-center">Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
+                    <img src="http://placekitten.com/200/50" class="mx-auto mb-4"/>
+                    <p class="text-center mb-0">Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
                 </div>
 
                 <div class="w-full md:w-1/3 p-6">
-                    <img src="http://placekitten.com/100/50" class="mx-auto"/>
-                    <p class="text-center">Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
+                    <img src="http://placekitten.com/100/50" class="mx-auto mb-4"/>
+                    <p class="text-center mb-0">Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
                 </div>
 
                 <div class="w-full md:w-1/3 p-6">
-                    <img src="http://placekitten.com/150/50" class="mx-auto"/>
-                    <p class="text-center">Cryptomator is more accessible than other solutions because its desktop version is free, and it only charges a small fee for using its mobile app. And even if a hacker accesses a user's vault, Cryptomator's encrypted files are useless without the proper key to decode them.</p>
+                    <img src="http://placekitten.com/150/50" class="mx-auto mb-4"/>
+                    <p class="text-center mb-0">Cryptomator is more accessible than other solutions because its desktop version is free, and it only charges a small fee for using its mobile app. And even if a hacker accesses a user's vault, Cryptomator's encrypted files are useless without the proper key to decode them.</p>
                 </div>
             </div>
         </section>
 
-        <section class="container py-8">
+        <section class="container pb-8">
             <figure>
-                <img src="http://placekitten.com/300/300" class="mx-auto"/>
+                <img src="http://placekitten.com/300/300" class="mx-auto mb-4"/>
                 <figcaption class="text-center">
                     <h2 class="text-2xl">Preisträger des CeBIT Innovation Awards 2016</h2>
                     <p class="text-lg">Cryptomator ist Gewinner des Sonderpreises for Usable Security and Privacy.</p>
@@ -78,6 +78,4 @@
             </figure>
         </section>
     </div>
-
-
 {{ end }}

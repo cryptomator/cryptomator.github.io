@@ -6,3 +6,7 @@ a {
 a:hover {
     @apply text-primary underline;
 }
+
+h1, h2, h3, p {
+    @apply mb-4;
+}

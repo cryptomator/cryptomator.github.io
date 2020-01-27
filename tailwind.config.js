@@ -19,8 +19,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      'headline': ['Quicksand', 'sans-serif'],
-      'body': ['Nunito Sans', 'sans-serif'],
+      'headline': 'Quicksand, sans-serif',
+      'body': 'Nunito Sans, sans-serif',
     },
     screens: {
       'md': {'min': '768px'},
@@ -28,5 +28,13 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    function({ addBase, config }) {
+      addBase({
+        'h1': { fontSize: config('theme.fontSize.2xl'), fontFamily: config('theme.fontFamily.headline'), fontWeight: config('theme.fontWeight.medium') },
+        'h2': { fontSize: config('theme.fontSize.xl'), fontFamily: config('theme.fontFamily.headline'), fontWeight: config('theme.fontWeight.medium') },
+        'h3': { fontSize: config('theme.fontSize.lg'), fontFamily: config('theme.fontFamily.headline'), fontWeight: config('theme.fontWeight.medium') },
+      })
+    }
+  ],
 }
