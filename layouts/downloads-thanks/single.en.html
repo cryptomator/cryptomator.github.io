@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <header class="container px-6 py-8">
+    <h1>Thanks for Downloading Cryptomator!</h1>
+    <p>Your download should have started automatically. Otherwise click here: {{ .Content }}</p>
+  </header>
+
+  <section class="container flex py-8">
+    <div class="w-1/2 p-8">
+      <h2 class="text-2xl"><i class="fa fa-question-circle"></i> Getting Started</h2>
+      <p>If you are a first-time user, you might be interested to:</p>
+      <ul>
+        <li>Read our <a href="https://docs.cryptomator.org/" target="_blank" rel="noopener">documentation</a>, which should guide you in case you would like some instructions</li>
+        <li>Join our <a href="https://community.cryptomator.org/" target="_blank" rel="noopener">community forum</a>, which is a great place to ask for support or share your thoughts</li>
+      </ul>
+    </div>
+
+    <div class="w-1/2 p-8">
+      <h2 class="text-2xl"><i class="fa fa-donate"></i> Support Cryptomator</h2>
+      <p>Development of the desktop application would not be possible without the support of our users.</p>
+      <p>Would you like to donate?</p>
+      <p>Would you like to contribute code/translations/issues?</p>
+    </div>
+  </section>
+{{ end }}
