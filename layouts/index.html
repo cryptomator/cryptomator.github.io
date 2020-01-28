@@ -42,10 +42,12 @@
                     <li class="flex-none w-full md:w-1/2 lg:w-1/3 p-4">
                         <div class="rounded-lg border border-secondary p-4">
                             <div class="flex">
-                                <img src="{{ .Image }}" class="rounded-lg flex-grow-0"/>
-                                <div class="flex-grow pl-4">
-                                    <h3 class="text-xl">{{ .Name }}</h3>
-                                    <p>{{ .TwitterHandle }}</p>
+                                <div class="w-1/6">
+                                    <img src="{{ .Image }}" class="rounded-lg object-fit"/>
+                                </div>
+                                <div class="w-5/6 pl-4">
+                                    <h3 class="text-xl mb-0">{{ .Name }}</h3>
+                                    <p><a href="{{ .URL }}" target="_blank" rel="noopener">{{ .TwitterHandle }}</a></p>
                                 </div>
                             </div>
                             <p class="mt-4"><i class="fa fa-quote-left text-secondary text-xl"></i> {{ .Quote }}</p>

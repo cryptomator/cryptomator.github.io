@@ -1,9 +1,11 @@
 /* links on dark background: */
-a:not(.btn) {
+a:not(.btn),
+body .bg-dark a:not(.btn) {
     @apply text-white no-underline;
 }
 
-a:not(.btn):hover {
+a:not(.btn):hover,
+body .bg-dark a:not(.btn):hover {
     @apply text-secondary no-underline;
 }
 
