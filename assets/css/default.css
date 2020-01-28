@@ -19,7 +19,7 @@ body .bg-dark a:not(.btn):hover {
 }
 
 /* margins for text elements */
-blockquote, h1, h2, h3, p, pre, table {
+blockquote, h1, h2, h3, ol, p, pre, table, ul {
     @apply mb-4;
 }
 
@@ -47,4 +47,8 @@ blockquote {
 
 pre, code {
     @apply text-sm bg-gray-300 rounded p-1;
+}
+
+th {
+    @apply text-left;
 }
