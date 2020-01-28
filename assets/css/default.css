@@ -19,7 +19,7 @@ body .bg-dark a:not(.btn):hover {
 }
 
 /* margins for text elements */
-h1, h2, h3, p {
+blockquote, h1, h2, h3, p, pre, table {
     @apply mb-4;
 }
 
@@ -38,4 +38,13 @@ ul {
 
 ol {
     @apply list-decimal list-inside;
+}
+
+/* text styles */
+blockquote {
+    @apply text-lg border-l-4 px-3 py-2;
+}
+
+pre, code {
+    @apply text-sm bg-gray-300 rounded p-1;
 }

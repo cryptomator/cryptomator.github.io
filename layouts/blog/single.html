@@ -2,7 +2,7 @@
   <article class="container px-6 py-8">
     <header class="mb-4">
       <h1><a href="{{ .Site.LanguagePrefix }}/blog">{{ i18n "blog_title" }}</a> / {{ .Title }}</a></h1>
-      <div class="flex items-center">
+      <div class="flex items-center mb-4">
         {{ if .Params.Author }}
           {{ if .Params.Authorimg }}
             {{ if .Params.Authorlink }}
@@ -25,6 +25,9 @@
         {{ end }}
         <span><a href="{{ .Permalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
       </div>
+      {{ if .Params.Notice }}
+        <p class="italic">{{ .Params.Notice }}</p>
+      {{ end }}
     </header>
 
     <hr/>
