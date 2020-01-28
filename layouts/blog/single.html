@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <article class="container px-6 py-8">
+    <header class="mb-4">
+      <h1><a href="{{ .Site.LanguagePrefix }}/blog">{{ i18n "blog_title" }}</a> / {{ .Title }}</a></h1>
+      <div class="flex items-center">
+        {{ if .Params.Author }}
+          {{ if .Params.Authorimg }}
+            {{ if .Params.Authorlink }}
+              <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">
+            {{ end }}
+            <img src="{{ .Params.Authorimg }}" class="w-12 rounded-full mr-2"/>
+            {{ if .Params.Authorlink }}
+              </a>
+            {{ end }}
+          {{ end }}
+          <span class="mr-1">
+            {{ i18n "blob_post_author_prefix" }}
+            {{ if .Params.Authorlink }}
+              <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">{{ .Params.Author }}</a>
+            {{ else }}
+              {{ .Params.Author }}
+            {{ end }}
+          </span>
+          <span class="mr-1">•</span class="mr-2">
+        {{ end }}
+        <span><a href="{{ .Permalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
+      </div>
+    </header>
+
+    <hr/>
+
+    <section>
+      {{ .Content }}
+    </section>
+  </article>
+{{ end }}

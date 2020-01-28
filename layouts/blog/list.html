@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <section class="container py-8">
+    <h1 class="text-center text-2xl">{{ i18n "blog_title" }}</h1>
+
+    {{ range .Pages.ByDate.Reverse }}
+      <div class="p-3">
+        <article class="border rounded shadow p-4">
+          <h2 class="text-xl mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="text-sm text-gray-500 mb-2">{{ dateFormat "2006-01-02" .Params.Date }}</p>
+          <p>{{ .Summary }}</p>
+        </article>
+      </div>
+    {{ end }}
+  </section>
+{{ end }}

@@ -16,11 +16,24 @@ a:not(.btn):hover {
     @apply text-primary underline;
 }
 
-/* margins after headings and paragraphs */
+/* margins for text elements */
 h1, h2, h3, p {
     @apply mb-4;
 }
 
 p:last-child {
     @apply mb-0;
+}
+
+hr {
+    @apply my-8;
+}
+
+/* list styles */
+ul {
+    @apply list-disc list-inside;
+}
+
+ol {
+    @apply list-decimal list-inside;
 }

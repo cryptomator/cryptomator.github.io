@@ -1,3 +1,9 @@
+# Blog
+- id: blog_title
+  translation: "Blog"
+- id: blob_post_author_prefix
+  translation: "by"
+
 # Coop
 - id: coop_title
   translation: "Cooperations"

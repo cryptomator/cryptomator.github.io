@@ -2,6 +2,7 @@ baseURL = "https://cryptomator.org/"
 title = "Cryptomator"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
+enableemoji = true
 
 [languages]
   [languages.en]
@@ -54,3 +55,6 @@ unsafe = true
       downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/cryptomator-1.4.15-x86_64.AppImage"
       signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/cryptomator-1.4.15-x86_64.AppImage.asc"
       checksum = "9d52051abc07727e2b6868e70347910d41347147078213e3ea846d26d113c047"
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:slug/"
