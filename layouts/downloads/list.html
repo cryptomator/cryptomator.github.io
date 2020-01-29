@@ -14,7 +14,7 @@
             <div class="container flex text-white md:text-lg text-xs">
                 {{ range .Pages }}
                     <div class="flex-1 px-1">
-                        <button :class="{ 'text-secondary': tab === 'download-{{ .Weight }}', 'border-secondary': tab === 'download-{{ .Weight }}' }" @click="tab = 'download-{{ .Weight }}'" class="btn-secondary py-2 w-full">{{ safeHTML .Params.ButtonLabel }}</button>
+                        <button :class="{ 'text-secondary border-secondary': tab === 'download-{{ .Weight }}' }" @click="tab = 'download-{{ .Weight }}'" class="btn-secondary py-2 w-full">{{ safeHTML .Params.ButtonLabel }}</button>
                     </div>
                 {{ end }}
             </div>
