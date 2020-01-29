@@ -9,6 +9,7 @@ authorimg: https://twitter.com/sambocetta/profile_image?size=original
 notice: Dies ist ein Gastbeitrag von Sam Bocetta.
 tags: [other, guest]
 aliases: ["/blog/2017/11/18/why-easy-encryption-is-safe-encryption_de.html"]
+discourseEmbedUrl: https://cryptomator.org/blog/2017/11/18/why-easy-encryption-is-safe-encryption_en.html
 ---
 Another day, another data breach. Two weeks ago, the {{<extlink "http://www.canberratimes.com.au/national/public-service/data-breach-sees-records-of-50000-australian-workers-exposed-20171102-gzdef3.html" "headline news">}} in Australia was that some 50,000 workers had their personal records exposed. And just as every summer now inevitably becomes the hottest on record, every data breach is always the largest in history. This is certainly the case here – such a scale of data loss is unprecedented in Australia, if not elsewhere.
 

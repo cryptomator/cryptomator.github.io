@@ -1,39 +1,54 @@
 {{ define "main" }}
-  <article class="container px-6 py-8">
-    <header class="mb-4">
-      <h1><a href="{{ .Site.LanguagePrefix }}/blog">{{ i18n "blog_title" }}</a> / {{ .Title }}</a></h1>
-      <div class="flex items-center mb-4">
-        {{ if .Params.Author }}
-          {{ if .Params.Authorimg }}
-            {{ if .Params.Authorlink }}
-              <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">
+  <div class="container px-6 py-8">
+    <article class="mb-12">
+      <header class="mb-4">
+        <h1><a href="{{ .Site.LanguagePrefix }}/blog">{{ i18n "blog_title" }}</a> / {{ .Title }}</a></h1>
+        <div class="flex items-center mb-4">
+          {{ if .Params.Author }}
+            {{ if .Params.Authorimg }}
+              {{ if .Params.Authorlink }}
+                <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">
+              {{ end }}
+              <img src="{{ .Params.Authorimg }}" class="w-12 rounded-full mr-2"/>
+              {{ if .Params.Authorlink }}
+                </a>
+              {{ end }}
             {{ end }}
-            <img src="{{ .Params.Authorimg }}" class="w-12 rounded-full mr-2"/>
-            {{ if .Params.Authorlink }}
-              </a>
-            {{ end }}
+            <span class="mr-1">
+              {{ i18n "blob_post_author_prefix" }}
+              {{ if .Params.Authorlink }}
+                <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">{{ .Params.Author }}</a>
+              {{ else }}
+                {{ .Params.Author }}
+              {{ end }}
+            </span>
+            <span class="mr-1">•</span class="mr-2">
           {{ end }}
-          <span class="mr-1">
-            {{ i18n "blob_post_author_prefix" }}
-            {{ if .Params.Authorlink }}
-              <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">{{ .Params.Author }}</a>
-            {{ else }}
-              {{ .Params.Author }}
-            {{ end }}
-          </span>
-          <span class="mr-1">•</span class="mr-2">
+          <span><a href="{{ .Permalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
+        </div>
+        {{ if .Params.Notice }}
+          <p class="italic">{{ .Params.Notice }}</p>
         {{ end }}
-        <span><a href="{{ .Permalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
-      </div>
-      {{ if .Params.Notice }}
-        <p class="italic">{{ .Params.Notice }}</p>
-      {{ end }}
-    </header>
+      </header>
 
-    <hr/>
+      <hr/>
 
-    <section>
-      {{ .Content }}
-    </section>
-  </article>
+      <section>
+        {{ .Content }}
+      </section>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  <!-- TODO: always use permalink of en language -->
+  <script type="text/javascript" x-url="{{ if .Params.DiscourseEmbedUrl }}{{ .Params.DiscourseEmbedUrl }}{{ else }}{{ .Permalink }}{{ end }}">
+    var url = document.currentScript.getAttribute('x-url');
+    DiscourseEmbed = { discourseUrl: 'https://community.cryptomator.org/', discourseEmbedUrl: url };
+    (function() {
+      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+    })();
+  </script>
 {{ end }}

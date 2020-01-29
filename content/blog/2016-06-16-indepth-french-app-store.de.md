@@ -9,6 +9,7 @@ authorimg: https://avatars.githubusercontent.com/u/2924160?s=96
 notice: Aufgrund der technischen Natur dieses Blog-Beitrags, haben wir diesen nicht übersetzt. Viel Spaß beim Lesen!
 tags: [cryptomator, in-depth, ios]
 aliases: ["/blog/2016/06/16/indepth-french-app-store_de.html"]
+discourseEmbedUrl: https://cryptomator.org/blog/2016/06/16/indepth-french-app-store_en.html
 ---
 Cyptomator for iOS has finally been approved by the French administration. You can download it now in the {{<extlink "https://itunes.apple.com/fr/app/cryptomator/id953086535" "French App Store">}}. We'd like to share our experience on how to receive export compliance for the French iOS App Store.
 
