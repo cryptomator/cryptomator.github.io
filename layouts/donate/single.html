@@ -1,0 +1,42 @@
+{{ define "main" }}
+<header class="container px-6 py-8">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</header>
+
+<section class="container py-8">
+  <div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal' }">
+    <div class="border-b pt-2 border-primary text-lg text-gray-600 flex justify-center">
+      <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'paypal' }" @click="tab = 'paypal'">
+        <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
+      </button>
+      <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'card' }" @click="tab = 'card'">
+        <i class="fa fa-credit-card" aria-hidden="true"></i> Credit Card
+      </button>
+      <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'bank' }" @click="tab = 'bank'">
+        <i class="fa fa-landmark" aria-hidden="true"></i> Bank Transfer
+      </button>
+      <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'crypto' }" @click="tab = 'crypto'">
+        <i class="fa fa-alien-monster" aria-hidden="true"></i> Crypto
+      </button>
+    </div>
+    <div class="p-4">
+
+      <!-- Bank Transfer -->
+      <div x-show="tab === 'bank'" class="table">
+        <dl class="flex flex-wrap">
+          <dt class="text-gray-600 font-semibold text-right w-1/3 pr-2">Recipient</dt>
+          <dd class="w-2/3">Skymatic GmbH</dd>
+          <dt class="text-gray-600 font-semibold text-right w-1/3 pr-2">IBAN</dt>
+          <dd class="w-2/3">
+            <span>DE04</span><span class="ml-2">7002</span><span class="ml-2">2200</span><span class="ml-2">0020</span><span class="ml-2">1862</span><span class="ml-2">59</span>
+          </dd>
+          <dt class="text-gray-600 font-semibold text-right w-1/3 pr-2">BIC</dt>
+          <dd class="w-2/3">FDDODEMMXXX</dd>
+        </dl>
+      </div>
+      
+    </div>
+  </div>
+</section>
+{{ end }}
