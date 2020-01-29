@@ -5,7 +5,7 @@ date: 2017-11-18
 draft: false
 author: Sam Bocetta
 authorlink: https://twitter.com/sambocetta
-authorimg: https://twitter.com/sambocetta/profile_image?size=original
+authorimg: https://avatars.io/twitter/sambocetta/medium
 notice: This is a guest post by Sam Bocetta.
 tags: [other, guest]
 aliases: ["/blog/2017/11/18/why-easy-encryption-is-safe-encryption_en.html"]
