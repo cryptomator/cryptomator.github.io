@@ -1,29 +1,66 @@
-<nav x-data="{ isOpen: false }" class="md:flex md:justify-between md:items-center">
+<nav x-data="{ isNavOpen: false }" class="md:flex md:justify-between md:items-center">
     <div class="flex justify-between items-center">
         <a class="flex items-center hover:no-underline m-2 lg:ml-8" href="{{ .Site.LanguagePrefix }}/">
             <img src="http://placekitten.com/64/64" class="h-12" />
-            <span class="font-headline font-bold text-white ml-2 hidden lg:block">CRYPTOMATOR</span>
+            <span class="font-headline font-bold text-white ml-2 md:hidden lg:block">CRYPTOMATOR</span>
         </a>
 
         <div class="md:hidden">
-            <button @click="isOpen = !isOpen" type="button" class="text-white border rounded px-2 py-1 m-2 hover:text-primary hover:border-primary">
-                <i class="far fa-times fa-fw" x-show="isOpen"></i>
-                <i class="fas fa-bars fa-fw" x-show="!isOpen"></i>
+            <button @click="isNavOpen = !isNavOpen" type="button" class="text-white border rounded px-2 py-1 m-2 hover:text-secondary hover:border-secondary">
+                <i x-show="isNavOpen" class="far fa-times fa-fw"></i>
+                <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
             </button>
         </div>
     </div>
 
-    <ul :class="isOpen ? 'block' : 'hidden'" class="list-none text-white mb-0 md:flex lg:mr-8">
-        <li class="p-2"><a class="text-white hover:no-underline" href="{{ .Site.LanguagePrefix }}/downloads">Download</a></li>
-        <li class="p-2"><a class="text-white hover:no-underline" href="{{ .Site.LanguagePrefix }}/coop">Kooperationen</a></li>
-        <li class="p-2">Enterprise</li>
-        <li class="p-2"><a class="text-white hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a></li>
-        <li class="p-2"><a class="text-white hover:no-underline" href="{{ .Site.LanguagePrefix }}/faq">FAQ</a></li>
-        <li class="hidden md:block p-2">|</li>
-        <li class="p-2">Sponsoren</li>
-        <li class="p-2"><a class="text-white hover:no-underline" href="{{ .Site.LanguagePrefix }}/donate">Spenden</a></li>
-        <li class="p-2">Sprache</li>
-        <li class="p-2"><a class="text-white hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        <li class="p-2"><a class="text-white hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-    </ul>
+    <div :class="isNavOpen ? 'block' : 'hidden'" class="text-white mb-0 md:block lg:mr-8">
+        <div class="md:flex items-center">
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/downloads">Download</a>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/coop">Kooperationen</a>
+            <span class="block p-2">Enterprise</span>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/faq">FAQ</a>
+            <span class="hidden p-2 md:block">|</span>
+            <hr class="border-secondary my-2 md:hidden"/>
+            <span class="block p-2">Sponsoren</span>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/donate">Spenden</a>
+            <div x-data="{ isLangDropdownOpen: false }" class="hidden relative p-2 md:block">
+                <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">
+                    <i class="fas fa-globe"></i>
+                    <span class="ml-1">{{ .Site.Language.Lang | upper }}</span>
+                    <i class="fas fa-caret-down ml-1"></i>
+                </button>
+                <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" class="absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded-lg shadow-xl">
+                    {{ range .Translations }}
+                    <a href="{{ .Permalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center">
+                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="block md:hidden">
+                <hr class="border-secondary my-2 md:hidden"/>
+                <div class="p-2">
+                    <i class="fas fa-globe fa-fw"></i>
+                    <span>Aktuelle Sprache: {{ .Site.Language.Lang | upper }}</span>
+                </div>
+                <div class="mt-1">
+                    {{ range .Translations }}
+                    <a href="{{ .Permalink }}" class="block px-2 py-1 text-gray-400 hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
+                    {{ end }}
+                </div>
+                <hr class="border-secondary my-2 md:hidden"/>
+                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank">
+                    <i class="fab fa-twitter fa-fw"></i>
+                    <span>Cryptomator on Twitter</span>
+                </a>
+                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank">
+                    <i class="fab fa-facebook-f fa-fw"></i>
+                    <span>Cryptomator on Facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </nav>

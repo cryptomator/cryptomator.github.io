@@ -7,8 +7,10 @@ enableemoji = true
 [languages]
   [languages.en]
     weight = 1
+    languageName = "English"
   [languages.de]
     weight = 2
+    languageName = "Deutsch"
 
 [module]
 
