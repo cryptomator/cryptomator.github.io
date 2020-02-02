@@ -24,43 +24,45 @@
             <hr class="border-secondary my-2 md:hidden"/>
             <span class="block p-2">Sponsoren</span>
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/donate">Spenden</a>
-            <div x-data="{ isLangDropdownOpen: false }" class="hidden relative p-2 md:block">
-                <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">
-                    <i class="fas fa-globe"></i>
-                    <span class="ml-1">{{ .Site.Language.Lang | upper }}</span>
-                    <i class="fas fa-caret-down ml-1"></i>
-                </button>
-                <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" class="absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded-lg shadow-xl">
-                    {{ range .Translations }}
-                    <a href="{{ .Permalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
-                    {{ end }}
+            <div x-data="{ isLangDropdownOpen: false }" class="hidden p-2 md:block">
+                <div class="relative">
+                    <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">
+                        <i class="fas fa-globe"></i>
+                        <span class="ml-1">{{ .Site.Language.Lang | upper }}</span>
+                        <i class="fas fa-caret-down ml-1"></i>
+                    </button>
+                    <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" class="absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded-lg shadow-xl">
+                        {{ range .Translations }}
+                        <a href="{{ .Permalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
+                        {{ end }}
+                    </div>
                 </div>
             </div>
             <div class="hidden lg:flex items-center">
                 <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </div>
-            <div class="block md:hidden">
-                <hr class="border-secondary my-2 md:hidden"/>
-                <div class="p-2">
-                    <i class="fas fa-globe fa-fw"></i>
-                    <span>Aktuelle Sprache: {{ .Site.Language.Lang | upper }}</span>
-                </div>
-                <div class="mt-1">
-                    {{ range .Translations }}
-                    <a href="{{ .Permalink }}" class="block px-2 py-1 text-gray-400 hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
-                    {{ end }}
-                </div>
-                <hr class="border-secondary my-2 md:hidden"/>
-                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank">
-                    <i class="fab fa-twitter fa-fw"></i>
-                    <span>Cryptomator on Twitter</span>
-                </a>
-                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank">
-                    <i class="fab fa-facebook-f fa-fw"></i>
-                    <span>Cryptomator on Facebook</span>
-                </a>
+        </div>
+        <div class="block md:hidden">
+            <hr class="border-secondary my-2 md:hidden"/>
+            <div class="p-2">
+                <i class="fas fa-globe fa-fw"></i>
+                <span>Aktuelle Sprache: {{ .Site.Language.Lang | upper }}</span>
             </div>
+            <div class="mt-1">
+                {{ range .Translations }}
+                <a href="{{ .Permalink }}" class="block px-2 py-1 text-gray-400 hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
+                {{ end }}
+            </div>
+            <hr class="border-secondary my-2 md:hidden"/>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank">
+                <i class="fab fa-twitter fa-fw"></i>
+                <span>Cryptomator on Twitter</span>
+            </a>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank">
+                <i class="fab fa-facebook-f fa-fw"></i>
+                <span>Cryptomator on Facebook</span>
+            </a>
         </div>
     </div>
 </nav>
