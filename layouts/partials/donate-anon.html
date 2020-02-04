@@ -1,4 +1,4 @@
-<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal' }">
+<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal', captcha: {}, status: { cardValidation: '', paymentError: '', success: false}, amount: 0}">
     <div class="border-b pt-2 border-primary text-lg text-gray-600 flex justify-center">
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'paypal' }" @click="tab = 'paypal'">
         <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
@@ -29,16 +29,23 @@
       <div x-show="tab === 'card'" class="p-4">
         <p class="text-sm">Credit card payments are securely handled by stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
 
+        <label class="block">Amount:</label>
+        <input type="text" value="2" x-model="amount"/>
+
         <label class="block">Please prove you're human</label>
         <div x-ref="captchaWrapper" class="flex justify-center">
-          <button x-on:click="loadRecaptcha($refs.captchaWrapper)" class="border rounded p-2 text-primary"><i class="fa fa-user-robot"></i> Load reCAPTCHA</button>
+          <button x-on:click="loadRecaptcha($refs.captchaWrapper, captcha)" class="border rounded p-2 text-primary"><i class="fa fa-user-robot"></i> Load reCAPTCHA</button>
         </div>
 
         <label class="block">Credit Card</label>
         <div>
-          <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus="loadStripe($refs.stripePlaceholder, $refs.stripeHint)"/>
-          <p class="text-sm" x-ref="stripeHint"></p>
+          <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="window.card = new CreditCard($refs.stripePlaceholder, status)"/>
+          <p class="text-sm" x-text="status.cardValidation"></p>
         </div>
+
+        <button class="btn" x-bind:disabled="!captcha.value" x-on:click="window.card.charge(amount)"><i class="fa fa-credit-card"></i> Pay Now</button>
+
+        <p class="text-sm" x-text="status.paymentError"></p>
 
         {{ if .Site.IsServer }}
           {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}
