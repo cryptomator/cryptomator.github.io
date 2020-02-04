@@ -20,6 +20,16 @@
     @apply border-secondary no-underline text-secondary outline-none;
 }
 
+input,
+.StripeElement {
+    @apply border rounded p-2;
+}
+
+input:focus,
+.StripeElement--focus {
+    @apply border-secondary outline-none;
+}
+
 @keyframes hover {
     0% {
         transform: rotate(0deg) translateY(0);
