@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <div class="container py-8">
+    <nav class="fixed hidden p-1 md:block">
+      <h1 class="text-2xl px-2 pt-2">{{ i18n "presskit_title" }}</h1>
+      {{ range .Pages }}
+        <a class="block p-2" href="#{{ .Params.Anchor }}">{{ .Title }}</a>
+      {{ end }}
+    </nav>
+
+    <div class="md:w-2/3 md:ml-auto lg:w-3/4 ">
+      {{ range .Pages }}
+        <article class="p-3" id="{{ .Params.Anchor }}">
+          <h2 class="text-xl mb-1">{{ .Title }}</h2>
+          {{ .Content }}
+        </article>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

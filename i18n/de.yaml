@@ -31,3 +31,7 @@
   translation: "Preisträger des CeBIT Innovation Awards 2016"
 - id: home_cebit_subtitle
   translation: "Cryptomator ist Gewinner des Sonderpreises for Usable Security and Privacy."
+
+# Press Kit
+- id: presskit_title
+  translation: "Pressemappe"

@@ -31,7 +31,7 @@
                         <span class="ml-1">{{ .Site.Language.Lang | upper }}</span>
                         <i class="fas fa-caret-down ml-1"></i>
                     </button>
-                    <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" class="absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded-lg shadow-xl">
+                    <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" class="absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded shadow-xl">
                         {{ range .Translations }}
                         <a href="{{ .Permalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
                         {{ end }}

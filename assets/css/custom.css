@@ -21,17 +21,32 @@
 }
 
 @keyframes hover {
-    0%{
-        transform:rotate(0deg) translateY(0)
+    0% {
+        transform: rotate(0deg) translateY(0);
     }
-    50%{
-        transform:rotate(-3deg) translateY(-10px)
+    50% {
+        transform: rotate(-3deg) translateY(-10px);
     }
-    to{
-        transform:rotate(0deg) translateY(0)
+    to {
+        transform: rotate(0deg) translateY(0);
     }
 }
 
 .animate-hover {
-    animation:hover 10s ease-in-out infinite;
+    animation: hover 10s ease-in-out infinite;
+}
+
+.aspect-16x9 {
+    padding-bottom: 56.25%;
+}
+
+.img-muted {
+    filter: grayscale(100%);
+    opacity: .5;
+    transition: filter 100ms, opacity 100ms;
+}
+
+.img-muted:hover {
+    filter: none;
+    opacity: 1;
 }
