@@ -1,4 +1,4 @@
-<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal', captcha: {}, status: { cardValidation: '', paymentError: '', success: false, inProgress: false }, amount: 0}">
+<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal' }">
     <div class="border-b pt-2 border-primary text-lg text-gray-600 flex justify-center">
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'paypal' }" @click="tab = 'paypal'">
         <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
@@ -26,28 +26,69 @@
       </div>
 
       <!-- Card -->
-      <div x-show="tab === 'card'" class="p-4">
-        <p class="text-sm">Credit card payments are securely handled by stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
+      <div x-show="tab === 'card'" class="p-0">
+        <div x-data="{paymentData: {amount: 10, currency: 'EUR', captcha: null, errorMessage: '', frequency: 'once', success: false, inProgress: false, validCardNum: false}}">
 
-        <label class="block">Amount:</label>
-        <input type="text" value="2" x-model="amount"/>
+          <div class="flex justify-between py-4">
+            <div class="w-1/2 pr-4">
+              <label class="block">Amount:</label>
+              <div class="flex items-center border rounded bg-gray-300">
+                <select x-model="paymentData.currency" class="border-0 flex-grow-0 w-12 bg-gray-300">
+                  <option value="EUR">€</option>
+                  <option value="USD">$</option>
+                </select>
+                <input type="number" min="1" step="1" x-model="paymentData.amount" class="border-0 min-w-0 flex-shrink flex-grow pr-0 text-right rounded-none bg-white"/>
+                <div class="flex-grow-0 w-12 align-middle">.00</div>
+              </div>
+            </div>
 
-        <label class="block">Please prove you're human</label>
-        <div x-ref="captchaWrapper" class="flex justify-center">
-          <button x-on:click="loadRecaptcha($refs.captchaWrapper, captcha)" class="border rounded p-2 text-primary"><i class="fa fa-user-robot"></i> Load reCAPTCHA</button>
+            <div class="w-1/2 pl-4">
+              <label class="block">Frequency:</label>
+              <div class="flex border rounded bg-gray-300">
+                <button class="hover:bg-gray-400 font-bold w-1/2 py-2 rounded-l" :class="{'bg-gray-400': paymentData.frequency === 'once'}" @click="paymentData.frequency = 'once'">
+                  Once
+                  <i class="fa fa-check" x-show="paymentData.frequency === 'once'"></i>
+                </button>
+                <button class="hover:bg-gray-400 font-bold w-1/2 py-2 rounded-r" :class="{'bg-gray-400': paymentData.frequency === 'recurring'}" @click="paymentData.frequency = 'recurring'">
+                  Recurring
+                  <i class="fa fa-check" x-show="paymentData.frequency === 'recurring'"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div x-show="paymentData.frequency === 'once'">
+            <label class="block">Credit Card</label>
+            <div> <!-- wrapper needed for stripe text field -->
+              <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="window.oneTimePayment = new OneTimePayment($refs.stripePlaceholder, paymentData)"/>
+            </div>
+
+            <p class="text-sm">Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
+
+            <div class="flex justify-center p-4">
+              <div x-ref="captchaWrapper" x-show="!paymentData.captcha">
+                <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn w-64">
+                  Continue...
+                </button>
+              </div>
+
+              <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn  w-64">
+                <i class="fa fa-credit-card"></i>
+                Pay Now
+                <i class="fa fa-spinner fa-spin" x-show="paymentData.inProgress" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <p class="text-sm text-center text-red-600" x-text="paymentData.errorMessage"></p>
+          </div>
+
+          <div x-show="paymentData.frequency === 'recurring'" class="text-center">
+            <p class="text-sm">Credit card payment plans are securely handled by Stripe.</p>
+            <button type="submit" class="btn text-lg" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
+              <i class="fa fa-external-link" aria-hidden="true"></i> Continue to Stripe
+            </button>
+          </div>
         </div>
-
-        <label class="block">Credit Card</label>
-        <div>
-          <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="window.card = new CreditCard($refs.stripePlaceholder, status)"/>
-          <p class="text-sm" x-text="status.cardValidation"></p>
-        </div>
-
-        <button class="btn" x-bind:disabled="!captcha.value || status.inProgress" x-on:click="window.card.charge(amount, captcha.value)"><i class="fa fa-credit-card"></i> Pay Now</button>
-
-        <i class="fa fa-spinner fa-spin" x-show="status.inProgress" aria-hidden="true"></i>
-
-        <p class="text-sm" x-text="status.paymentError"></p>
 
         {{ if .Site.IsServer }}
           {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}

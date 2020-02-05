@@ -21,11 +21,13 @@
 }
 
 input,
+select,
 .StripeElement {
     @apply border rounded p-2;
 }
 
 input:focus,
+select:focus,
 .StripeElement--focus {
     @apply border-secondary outline-none;
 }

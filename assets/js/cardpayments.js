@@ -1,34 +1,20 @@
 "use strict";
 
-/**
- * Lazily load reCAPTCHA and initialize it in the given wrapper element
- * @param {*} wrapper A <div> or other element in which the reCAPTCHA iframe will get injected.
- * @param {*} resultObj An object whose 'value' property will be set to the captcha: `{ value: 'asdasdasd' }`
- */
-function loadRecaptcha(wrapper, resultObj) {
-    window.grecaptchaCallback = () => {
-        $(wrapper).empty();
-        grecaptcha.render(wrapper, {
-            'sitekey': '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv',
-            'data-size': 'compact',
-            'callback': (captcha) => resultObj.value = captcha
-        });
-    }
-    $.getScript("https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&render=explicit");
-}
+//const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
+const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
 
-const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
+const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
 
-class CreditCard {
+class OneTimePayment {
 
     /**
      * Lazily load Stripe and replace the given placholder form field with a Stripe Elements' auto-validating Credit Card field.
      * @param {*} placeholder A placeholder <input> that will get hidden once Stripe is fully initialized
-     * @param {*} status A object to which status changes will be written: `{ cardValidation: 'Wrong CVC', paymentError: 'Payment failed.', success: false, inProgress: false }`
+     * @param {*} paymentData A object to which status changes will be written: `{amount: 20, currency: 'EUR', captcha: 'asd', errorMessage: 'Wrong CVC', success: false, inProgress: false }`
      */
-    constructor(placeholder, status) {
+    constructor(placeholder, paymentData) {
         this._placeholder  = placeholder;
-        this._status = status;
+        this._paymentData = paymentData;
         this._cardElement = document.createElement('div');
 
         // initialize:
@@ -65,28 +51,45 @@ class CreditCard {
      * @param {*} event 
      */
     onCardChanged(event) {
+        this._paymentData.validCardNum = event.complete;
         if (event.error) {
-            this._status.cardValidation = event.error.message;
+            this._paymentData.errorMessage = event.error.message;
         } else {
-            this._status.cardValidation = '';
+            this._paymentData.errorMessage = '';
         }
+    }
+
+    /**
+     * Lazily load reCAPTCHA and initialize it in the given wrapper element
+     * @param {*} wrapper A <div> or other element in which the reCAPTCHA iframe will get injected.
+     */
+    loadRecaptcha(wrapper) {
+        window.grecaptchaCallback = () => {
+            $(wrapper).empty();
+            grecaptcha.render(wrapper, {
+                'sitekey': RECAPTCHA_SITEKEY,
+                'data-size': 'compact',
+                'callback': (captcha) => this._paymentData.captcha = captcha
+            });
+        }
+        $.getScript("https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&render=explicit");
     }
 
      /**
       * Attempt charging the card
-      * @param {*} amount How much $$$?
       * @param {*} recaptchaToken Captcha required!
       */
-    charge(amount, recaptchaToken) {
-        this._status.inProgress = true;
-        this._status.paymentError = '';
-        this._status.success = false;
+    charge() {
+        // TODO plausibility checks in this._paymentData.captcha (captcha set? amount is integer? currency is EUR/USD?)
+        this._paymentData.inProgress = true;
+        this._paymentData.errorMessage = '';
+        this._paymentData.success = false;
         Promise.all([this._stripe, this._card]).then(([stripe, card]) => {
             stripe.createPaymentMethod('card', card).then(result => {
                 if (result.error) {
                     this.onPaymentFailed(result.error.message);
                 } else {
-                    this.chargeWithPaymentId(amount, recaptchaToken, result.paymentMethod.id);
+                    this.chargeWithPaymentId(result.paymentMethod.id);
                 }
             });
         });
@@ -94,23 +97,19 @@ class CreditCard {
 
     /**
       * Attempt charging the card
-      * @param {*} amount How much $$$?
-      * @param {*} recaptchaToken Captcha required!
       * @param {*} paymentMethodId ID of the payment method previously created
       */
-    chargeWithPaymentId(amount, recaptchaToken, paymentMethodId) {
+    chargeWithPaymentId(paymentMethodId) {
         $.ajax({
             url: 'http://localhost/stripe/charge_creditcard.php',
             type: 'POST',
             data: {
                 payment_method_id: paymentMethodId,
-                currency: 'EUR', /* TODO */
-                amount: amount,
-                frequency: 'once', /* TODO */
-                name: null, /* recurring only */
-                email: null, /* recurring only */
+                currency: this._paymentData.currency,
+                amount: this._paymentData.amount,
+                frequency: 'once', /* recurring payments will be handled via Stripe Checkout */
                 message: 'test', /* TODO */
-                captcha: recaptchaToken
+                captcha: this._paymentData.captcha
             }
         }).done(data => {
             if (data.status == 'ok') {
@@ -184,21 +183,62 @@ class CreditCard {
     }
 
     onPaymentFailed(error) {
-        this._status.success = false;
-        this._status.paymentError = error;
-        this._status.inProgress = false;
+        this._paymentData.success = false;
+        this._paymentData.errorMessage = error;
+        this._paymentData.inProgress = false;
         if (grecaptcha) {
+            this._paymentData.captcha = '';
             grecaptcha.reset();
         }
     }
 
     onPaymentSucceeded() {
-        this._status.success = true;
-        this._status.paymentError = '';
-        this._status.inProgress = false;
+        this._paymentData.success = true;
+        this._paymentData.errorMessage = '';
+        this._paymentData.inProgress = false;
         if (grecaptcha) {
+            this._paymentData.captcha = '';
             grecaptcha.reset();
         }
+    }
+
+}
+
+class RecurringPayment {
+
+    /**
+     * Creates a new recurring payment object.
+     * @param {*} amount 
+     * @param {*} currency 
+     */
+    constructor(amount, currency){
+        this._amount = amount;
+        this._currency = currency;
+        this._stripe = $.ajax({
+            url: 'https://js.stripe.com/v3/',
+            cache: true,
+            dataType: 'script'
+        }).then(response => {
+            return window.Stripe(STRIPE_PK);
+        });
+    }
+    
+    checkout() {
+        let sku = this._currency == 'EUR' ? 'sku_GgCLkKRa4HVKEj' : 'sku_GgCLJIZ1po4foj';
+        this._stripe.then(stripe => {
+            stripe.redirectToCheckout({
+                items: [
+                    {sku: sku, quantity: 1 * this._amount}
+                ],
+                successUrl: 'https://your-website.com/success',
+                cancelUrl: 'https://cryptomator.org/donate'
+            }).then(result => {
+                console.log(result);
+                if (result.error) {
+                    console.log(result.error.message);
+                }
+            });
+        });
     }
 
 }
