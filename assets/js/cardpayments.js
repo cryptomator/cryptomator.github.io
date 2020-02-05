@@ -24,7 +24,7 @@ class CreditCard {
     /**
      * Lazily load Stripe and replace the given placholder form field with a Stripe Elements' auto-validating Credit Card field.
      * @param {*} placeholder A placeholder <input> that will get hidden once Stripe is fully initialized
-     * @param {*} status A object to which status changes will be written: `{ cardValidation: 'Wrong CVC', paymentError: 'Payment failed.', success: false }`
+     * @param {*} status A object to which status changes will be written: `{ cardValidation: 'Wrong CVC', paymentError: 'Payment failed.', success: false, inProgress: false }`
      */
     constructor(placeholder, status) {
         this._placeholder  = placeholder;
@@ -78,12 +78,14 @@ class CreditCard {
       * @param {*} recaptchaToken Captcha required!
       */
     charge(amount, recaptchaToken) {
+        this._status.inProgress = true;
+        this._status.paymentError = '';
+        this._status.success = false;
         Promise.all([this._stripe, this._card]).then(([stripe, card]) => {
             stripe.createPaymentMethod('card', card).then(result => {
                 if (result.error) {
-                    this._status.paymentError = result.error.message;
+                    this.onPaymentFailed(result.error.message);
                 } else {
-                    this._status.paymentError = '';
                     this.chargeWithPaymentId(amount, recaptchaToken, result.paymentMethod.id);
                 }
             });
@@ -98,7 +100,7 @@ class CreditCard {
       */
     chargeWithPaymentId(amount, recaptchaToken, paymentMethodId) {
         $.ajax({
-            url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
+            url: 'http://localhost/stripe/charge_creditcard.php',
             type: 'POST',
             data: {
                 payment_method_id: paymentMethodId,
@@ -110,12 +112,93 @@ class CreditCard {
                 message: 'test', /* TODO */
                 captcha: recaptchaToken
             }
-        }).then(response => {
-            if (response.data.status == 'ok') {
-                this._status.success = true;
+        }).done(data => {
+            if (data.status == 'ok') {
+                this.onPaymentSucceeded();
+            } else if (data.status == 'requires_action' && data.confirmation_method == 'manual') {
+                this.manuallyConfirmPayment(data.payment_intent_client_secret);
+            } else if (data.status == 'requires_action' && data.confirmation_method == 'automatic') {
+                this.automaticallyConfirmPayment(data.payment_intent_client_secret, data.payment_method);
+            } else {
+                this.onPaymentFailed(response.error);
             }
+        }).fail(xhr => {
+            this.onPaymentFailed(xhr.responseJSON.error);
         });
+    }
 
+    /**
+     * Reattempts charging a previously intended payment, proceeding from where it left of before interrupted by SCA.
+     * @param {*} paymentIntendId 
+     */
+    chargeWithPaymentIntendId(paymentIntendId) {
+        $.ajax({
+            url: 'http://localhost/stripe/charge_creditcard.php',
+            type: 'POST',
+            data: {
+                payment_intent_id: paymentIntendId,
+                message: 'test' /* TODO */
+            }
+        }).done(data => {
+            if (data.status == 'ok') {
+                this.onPaymentSucceeded();
+            } else {
+                this.onPaymentFailed(data.error);
+            }
+        }).fail(xhr => {
+            this.onPaymentFailed(xhr.responseJSON.error);
+        });
+    }
+
+    /**
+     * Performs manual client-side SCA
+     * @param {*} paymentIntendClientSecret 
+     */
+    manuallyConfirmPayment(paymentIntendClientSecret) {
+        this._stripe.then(stripe => {
+            stripe.handleCardAction(paymentIntendClientSecret).then(result => {
+                if (result.error) {
+                    this.onPaymentFailed(result.error.message);
+                } else {
+                    this.chargeWithPaymentIntendId(result.paymentIntent.id);
+                }
+            });
+        });
+    }
+
+    /**
+     * Performs automatic client-side SCA
+     * @param {*} paymentIntendClientSecret 
+     * @param {*} paymentMethod 
+     */
+    automaticallyConfirmPayment(paymentIntendClientSecret, paymentMethod) {
+        this._stripe.then(stripe => {
+            stripe.handleCardPayment(paymentIntendClientSecret, { payment_method: paymentMethod }).then(result => {
+                if (result.error) {
+                    this.onPaymentFailed(result.error.message);
+                } else {
+                    this.chargeWithPaymentIntendId(result.paymentIntent.id);
+                }
+            });
+        });
+    }
+
+    onPaymentFailed(error) {
+        this._status.success = false;
+        this._status.paymentError = error;
+        this._status.inProgress = false;
+        if (grecaptcha) {
+            grecaptcha.reset();
+        }
+    }
+
+    onPaymentSucceeded() {
+        this._status.success = true;
+        this._status.paymentError = '';
+        this._status.inProgress = false;
+        if (grecaptcha) {
+            grecaptcha.reset();
+        }
     }
 
 }

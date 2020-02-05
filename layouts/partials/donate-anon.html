@@ -1,4 +1,4 @@
-<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal', captcha: {}, status: { cardValidation: '', paymentError: '', success: false}, amount: 0}">
+<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal', captcha: {}, status: { cardValidation: '', paymentError: '', success: false, inProgress: false }, amount: 0}">
     <div class="border-b pt-2 border-primary text-lg text-gray-600 flex justify-center">
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'paypal' }" @click="tab = 'paypal'">
         <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
@@ -43,7 +43,9 @@
           <p class="text-sm" x-text="status.cardValidation"></p>
         </div>
 
-        <button class="btn" x-bind:disabled="!captcha.value" x-on:click="window.card.charge(amount)"><i class="fa fa-credit-card"></i> Pay Now</button>
+        <button class="btn" x-bind:disabled="!captcha.value || status.inProgress" x-on:click="window.card.charge(amount, captcha.value)"><i class="fa fa-credit-card"></i> Pay Now</button>
+
+        <i class="fa fa-spinner fa-spin" x-show="status.inProgress" aria-hidden="true"></i>
 
         <p class="text-sm" x-text="status.paymentError"></p>
 
