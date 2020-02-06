@@ -11,7 +11,7 @@
       <li><i class="fa fa-check text-secondary" aria-hidden="true"></i> Donate anonymously</li>
       <li><i class="fa fa-check text-secondary" aria-hidden="true"></i> Choose your prefered payment method</li>
     </ul>
-    {{ partial "donate-anon.html" }}
+    {{ partial "donate-anon.html" . }}
   </section>
 
   <section class="w-full lg:w-1/2 px-1 py-8">
@@ -20,7 +20,7 @@
       <li><i class="fa fa-check text-secondary" aria-hidden="true"></i> Get a receipt</li>
       <li><i class="fa fa-check text-secondary" aria-hidden="true"></i> Register your software and unlock themes</li>
     </ul>
-    {{ partial "donate-getkey.html" }}
+    {{ partial "donate-getkey.html" . }}
   </section>
 </div>
 {{ end }}
