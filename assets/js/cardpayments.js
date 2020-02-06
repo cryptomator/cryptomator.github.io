@@ -1,8 +1,10 @@
 "use strict";
 
-//const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
-const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
-const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'}; // test
+const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
+const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GgW49BkhumHMIR'}; // live
+
+//const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
+//const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'}; // test
 
 const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
 
@@ -42,7 +44,7 @@ class OneTimePayment {
     /**
      * Called as soon as the credit card input field initialized and is ready to be shown
      */
-    onCardReady(asd) {
+    onCardReady() {
         $(this._cardElement).show();
         $(this._placeholder).hide();
         this._card.then(card => card.focus());
@@ -79,7 +81,6 @@ class OneTimePayment {
 
      /**
       * Attempt charging the card
-      * @param {*} recaptchaToken Captcha required!
       */
     charge() {
         // TODO plausibility checks in this._paymentData.captcha (captcha set? amount is integer? currency is EUR/USD?)
@@ -103,14 +104,14 @@ class OneTimePayment {
       */
     chargeWithPaymentId(paymentMethodId) {
         $.ajax({
-            url: 'http://localhost/stripe/charge_creditcard.php',
+            url: 'http://api.cryptomator.org/stripe/charge_creditcard.php',
             type: 'POST',
             data: {
                 payment_method_id: paymentMethodId,
                 currency: this._paymentData.currency,
                 amount: this._paymentData.amount,
-                frequency: 'once', /* recurring payments will be handled via Stripe Checkout */
-                message: 'test', /* TODO */
+                frequency: 'once',
+                message: 'Good job, team! TODO replace default message in cardpayments.js', /* TODO */
                 captcha: this._paymentData.captcha
             }
         }).done(data => {
@@ -134,11 +135,11 @@ class OneTimePayment {
      */
     chargeWithPaymentIntendId(paymentIntendId) {
         $.ajax({
-            url: 'http://localhost/stripe/charge_creditcard.php',
+            url: 'http://api.cryptomator.org/stripe/charge_creditcard.php',
             type: 'POST',
             data: {
                 payment_intent_id: paymentIntendId,
-                message: 'test' /* TODO */
+                message: 'Good job, team! TODO replace default message in cardpayments.js', /* TODO */
             }
         }).done(data => {
             if (data.status == 'ok') {
@@ -210,12 +211,12 @@ class RecurringPayment {
 
     /**
      * Creates a new recurring payment object.
-     * @param {*} amount 
-     * @param {*} currency 
+     * @param {*} amount integer $$$
+     * @param {*} currency EUR or USD
      */
     constructor(amount, currency){
         this._amount = parseInt(amount);
-        this._currency = currency;
+        this._plan = STRIPE_PLANS[currency];
         this._stripe = $.ajax({
             url: 'https://js.stripe.com/v3/',
             cache: true,
@@ -226,11 +227,10 @@ class RecurringPayment {
     }
     
     checkout() {
-        let plan = STRIPE_PLANS[this._currency];
         this._stripe.then(stripe => {
             stripe.redirectToCheckout({
                 items: [
-                    {plan: plan, quantity: this._amount}
+                    {plan: this._plan, quantity: this._amount}
                 ],
                 successUrl: window.location.href + '/thanks',
                 cancelUrl: window.location.href
