@@ -13,10 +13,10 @@
         <i class="fa fa-alien-monster" aria-hidden="true"></i> Crypto
       </button>
     </div>
-    <div class="p-4">
+    <div class="px-4 py-8">
 
       <!-- PayPal -->
-      <div x-show="tab === 'paypal'" class="text-center p-4">
+      <div x-show="tab === 'paypal'" class="text-center">
         <p>After pressing &quot;Proceed&quot;, you will be redirected to our PayPal site.</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
@@ -26,10 +26,10 @@
       </div>
 
       <!-- Card -->
-      <div x-show="tab === 'card'" class="p-0">
+      <div x-show="tab === 'card'">
         <div x-data="{paymentData: {amount: 10, currency: 'EUR', captcha: null, errorMessage: '', frequency: 'once', success: false, inProgress: false, validCardNum: false}}">
 
-          <div class="flex justify-between py-4">
+          <div class="flex justify-between">
             <div class="w-1/2 pr-4">
               <label class="block">Amount:</label>
               <div class="flex items-center border rounded bg-gray-300">
@@ -45,11 +45,11 @@
             <div class="w-1/2 pl-4">
               <label class="block">Frequency:</label>
               <div class="flex border rounded bg-gray-300">
-                <button class="hover:bg-gray-400 font-bold w-1/2 py-2 rounded-l" :class="{'bg-gray-400': paymentData.frequency === 'once'}" @click="paymentData.frequency = 'once'">
+                <button class="font-bold w-1/2 py-2 rounded-l hover:bg-gray-400 focus:bg-gray-400 focus:outline-none" :class="{'bg-gray-400': paymentData.frequency === 'once'}" @click="paymentData.frequency = 'once'">
                   Once
                   <i class="fa fa-check" x-show="paymentData.frequency === 'once'"></i>
                 </button>
-                <button class="hover:bg-gray-400 font-bold w-1/2 py-2 rounded-r" :class="{'bg-gray-400': paymentData.frequency === 'recurring'}" @click="paymentData.frequency = 'recurring'">
+                <button class="font-bold w-1/2 py-2 rounded-r hover:bg-gray-400 focus:bg-gray-400 focus:outline-none" :class="{'bg-gray-400': paymentData.frequency === 'recurring'}" @click="paymentData.frequency = 'recurring'">
                   Recurring
                   <i class="fa fa-check" x-show="paymentData.frequency === 'recurring'"></i>
                 </button>
@@ -57,16 +57,16 @@
             </div>
           </div>
           
-          <div x-show="paymentData.frequency === 'once'">
+          <div x-show="paymentData.frequency === 'once'" class="pt-4">
             <label class="block">Credit Card</label>
             <div> <!-- wrapper needed for stripe text field -->
               <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="window.oneTimePayment = new OneTimePayment($refs.stripePlaceholder, paymentData)"/>
             </div>
 
-            <p class="text-sm">Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
+            <div class="text-center pt-4">
+              <p>Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
 
-            <div class="flex justify-center p-4">
-              <div x-ref="captchaWrapper" x-show="!paymentData.captcha">
+              <div x-ref="captchaWrapper" x-show="!paymentData.captcha" class="flex justify-center">
                 <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn w-64">
                   Continue...
                 </button>
@@ -82,10 +82,10 @@
             <p class="text-sm text-center text-red-600" x-text="paymentData.errorMessage"></p>
           </div>
 
-          <div x-show="paymentData.frequency === 'recurring'" class="text-center">
-            <p class="text-sm">Credit card payment plans are securely handled by Stripe.</p>
+          <div x-show="paymentData.frequency === 'recurring'" class="text-center pt-4">
+            <p>Credit card payment plans are securely handled by Stripe.</p>
             <button type="submit" class="btn text-lg" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
-              <i class="fa fa-external-link" aria-hidden="true"></i> Continue to Stripe
+              <i class="fa fa-external-link" aria-hidden="true"></i> Proceed to Stripe
             </button>
           </div>
         </div>
@@ -114,7 +114,7 @@
       </div>
 
       <!-- Crypto -->
-      <div x-show="tab === 'crypto'" class="text-center p-4">
+      <div x-show="tab === 'crypto'" class="text-center">
         <p>Select the crypto currency in the next step. After pressing &quot;Proceed&quot;, you will be redirected to our CoinPayments site.</p>
         <form action="https://www.coinpayments.net/index.php" method="post" target="_top">
           <input type="hidden" name="cmd" value="_donate" />

@@ -2,6 +2,7 @@
 
 //const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
 const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
+const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'}; // test
 
 const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
 
@@ -21,6 +22,7 @@ class OneTimePayment {
         $(this._cardElement).hide();
         $(this._placeholder).after(this._cardElement);
         $(this._placeholder).attr('placeholder', 'Loading...');
+        $(this._placeholder).attr('disabled', true);
         this._stripe = $.ajax({
             url: 'https://js.stripe.com/v3/',
             cache: true,
@@ -212,7 +214,7 @@ class RecurringPayment {
      * @param {*} currency 
      */
     constructor(amount, currency){
-        this._amount = amount;
+        this._amount = parseInt(amount);
         this._currency = currency;
         this._stripe = $.ajax({
             url: 'https://js.stripe.com/v3/',
@@ -224,16 +226,15 @@ class RecurringPayment {
     }
     
     checkout() {
-        let sku = this._currency == 'EUR' ? 'sku_GgCLkKRa4HVKEj' : 'sku_GgCLJIZ1po4foj';
+        let plan = STRIPE_PLANS[this._currency];
         this._stripe.then(stripe => {
             stripe.redirectToCheckout({
                 items: [
-                    {sku: sku, quantity: 1 * this._amount}
+                    {plan: plan, quantity: this._amount}
                 ],
-                successUrl: 'https://your-website.com/success',
-                cancelUrl: 'https://cryptomator.org/donate'
+                successUrl: window.location.href + '/thanks',
+                cancelUrl: window.location.href
             }).then(result => {
-                console.log(result);
                 if (result.error) {
                     console.log(result.error.message);
                 }
