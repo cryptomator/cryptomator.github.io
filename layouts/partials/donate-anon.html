@@ -1,27 +1,27 @@
 <div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal' }">
     <div class="border-b pt-2 border-primary text-lg text-gray-600 flex justify-center">
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'paypal' }" @click="tab = 'paypal'">
-        <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
+        <i class="fab fa-paypal" aria-hidden="true"></i> {{ i18n "donate_paypal_title" }}
       </button>
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'card' }" @click="tab = 'card'">
-        <i class="fa fa-credit-card" aria-hidden="true"></i> Credit Card
+        <i class="fa fa-credit-card" aria-hidden="true"></i> {{ i18n "donate_creditcard_title" }}
       </button>
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'bank' }" @click="tab = 'bank'">
-        <i class="fa fa-landmark" aria-hidden="true"></i> Bank Transfer
+        <i class="fa fa-landmark" aria-hidden="true"></i> {{ i18n "donate_banktransfer_title" }}
       </button>
       <button class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none" :class="{ 'border-primary text-primary bg-white': tab === 'crypto' }" @click="tab = 'crypto'">
-        <i class="fa fa-alien-monster" aria-hidden="true"></i> Crypto
+        <i class="fa fa-alien-monster" aria-hidden="true"></i> {{ i18n "donate_crypto_title" }}
       </button>
     </div>
     <div class="px-4 py-8">
 
       <!-- PayPal -->
       <div x-show="tab === 'paypal'" class="text-center">
-        <p>After pressing &quot;Proceed&quot;, you will be redirected to our PayPal site.</p>
+        <p>{{ i18n "donate_paypal_instruction" }}</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
-          <button type="submit" class="btn text-lg"><i class="fa fa-external-link" aria-hidden="true"></i> Proceed to PayPal</button>
+          <button type="submit" class="btn text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{i18n "donate_paypal_calltoaction" }}</button>
         </form>
       </div>
 
@@ -31,7 +31,7 @@
 
           <div class="flex justify-between">
             <div class="w-1/2 pr-4">
-              <label class="block">Amount:</label>
+              <label class="block">{{ i18n "donate_creditcard_amount" }}</label>
               <div class="flex items-center border rounded bg-gray-300">
                 <select x-model="paymentData.currency" class="border-0 flex-grow-0 w-12 bg-gray-300">
                   <option value="EUR">€</option>
@@ -43,14 +43,14 @@
             </div>
 
             <div class="w-1/2 pl-4">
-              <label class="block">Frequency:</label>
+              <label class="block">{{ i18n "donate_creditcard_frequency" }}</label>
               <div class="flex border rounded bg-gray-300">
                 <button class="font-bold w-1/2 py-2 rounded-l hover:bg-gray-400 focus:bg-gray-400 focus:outline-none" :class="{'bg-gray-400': paymentData.frequency === 'once'}" @click="paymentData.frequency = 'once'">
-                  Once
+                  {{ i18n "donate_creditcard_frequency_once" }}
                   <i class="fa fa-check" x-show="paymentData.frequency === 'once'"></i>
                 </button>
                 <button class="font-bold w-1/2 py-2 rounded-r hover:bg-gray-400 focus:bg-gray-400 focus:outline-none" :class="{'bg-gray-400': paymentData.frequency === 'recurring'}" @click="paymentData.frequency = 'recurring'">
-                  Recurring
+                  {{ i18n "donate_creditcard_frequency_recurring" }}
                   <i class="fa fa-check" x-show="paymentData.frequency === 'recurring'"></i>
                 </button>
               </div>
@@ -58,23 +58,21 @@
           </div>
           
           <div x-show="paymentData.frequency === 'once'" class="pt-4">
-            <label class="block">Credit Card</label>
+            <label class="block">{{ i18n "donate_creditcard_number" }}</label>
             <div> <!-- wrapper needed for stripe text field -->
               <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="window.oneTimePayment = new OneTimePayment($refs.stripePlaceholder, paymentData)"/>
             </div>
 
             <div class="text-center pt-4">
-              <p>Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
+              <p>{{ i18n "donate_creditcard_once_instruction" | safeHTML }}</p>
 
               <div x-ref="captchaWrapper" x-show="!paymentData.captcha" class="flex justify-center">
-                <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn w-64">
-                  Continue...
-                </button>
+                <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
               </div>
 
-              <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn  w-64">
+              <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn w-64">
                 <i class="fa fa-credit-card"></i>
-                Pay Now
+                {{ i18n "donate_creditcard_once_paynow" }}
                 <i class="fa fa-spinner fa-spin" x-show="paymentData.inProgress" aria-hidden="true"></i>
               </button>
             </div>
@@ -83,9 +81,9 @@
           </div>
 
           <div x-show="paymentData.frequency === 'recurring'" class="text-center pt-4">
-            <p>Credit card payment plans are securely handled by Stripe.</p>
-            <button type="submit" class="btn text-lg" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
-              <i class="fa fa-external-link" aria-hidden="true"></i> Proceed to Stripe
+            <p>{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
+            <button type="submit" class="btn text-lg w-64" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
+              <i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
           </div>
         </div>
@@ -102,7 +100,7 @@
       <!-- Bank Transfer -->
       <div x-show="tab === 'bank'">
         <dl class="flex flex-wrap">
-          <dt class="text-gray-600 font-semibold text-right w-1/3 pr-2">Recipient</dt>
+          <dt class="text-gray-600 font-semibold text-right w-1/3 pr-2">{{ i18n "donate_banktransfer_recipient" }}</dt>
           <dd class="w-2/3">Skymatic GmbH</dd>
           <dt class="text-gray-600 font-semibold text-right w-1/3 pr-2">IBAN</dt>
           <dd class="w-2/3">
@@ -115,7 +113,7 @@
 
       <!-- Crypto -->
       <div x-show="tab === 'crypto'" class="text-center">
-        <p>Select the crypto currency in the next step. After pressing &quot;Proceed&quot;, you will be redirected to our CoinPayments site.</p>
+        <p>{{ i18n "donate_crypto_instruction" }}</p>
         <form action="https://www.coinpayments.net/index.php" method="post" target="_top">
           <input type="hidden" name="cmd" value="_donate" />
           <input type="hidden" name="reset" value="1" />
@@ -127,7 +125,7 @@
           <input type="hidden" name="allow_amount" value="1" />
           <input type="hidden" name="success_url" value="https://cryptomator.org/donate/success" /> <!-- TODO return url anpassen -->
           <input type="hidden" name="allow_extra" value="1" />
-          <button type="submit" class="btn text-lg"><i class="fa fa-external-link" aria-hidden="true"></i> Proceed to CoinPayments</button>
+          <button type="submit" class="btn text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
         </form>
       </div>
       

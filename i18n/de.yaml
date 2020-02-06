@@ -10,6 +10,49 @@
 - id: "coop_more_info"
   translation: "Mehr Infos"
 
+# Donate
+- id: donate_paypal_title
+  translation: PayPal
+- id: donate_paypal_instruction
+  translation: Nach dem Klick auf "Weiter" werden Sie auf unsere PayPal-Seite geleitet.
+- id: donate_paypal_calltoaction
+  translation: Weiter zu PayPal
+
+- id: donate_creditcard_title
+  translation: Kreditkarte
+- id: donate_creditcard_amount
+  translation: Betrag
+- id: donate_creditcard_frequency
+  translation: Spende
+- id: donate_creditcard_frequency_once
+  translation: Einmalig
+- id: donate_creditcard_frequency_recurring
+  translation: Monatlich
+- id: donate_creditcard_number
+  translation: Kreditkarte
+- id: donate_creditcard_once_instruction
+  translation: Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">eine Buchung von Stripe</a> enthalten sein.
+- id: donate_creditcard_once_loadcaptcha
+  translation: Weiter...
+- id: donate_creditcard_once_paynow
+  translation: Jetzt bezahlen
+- id: donate_creditcard_recurring_instruction
+  translation: Wiederkehrende Kreditkartenzahlungen werden über unsere Stripe-Seite erstellt.
+- id: donate_creditcard_recurring_calltoaction
+  translation: Weiter zu Stripe
+
+- id: donate_banktransfer_title
+  translation: Überweisung
+- id: donate_banktransfer_recipient
+  translation: Empfänger
+
+- id: donate_crypto_title
+  translation: Crypto
+- id: donate_crypto_instruction
+  translation: Die Cryptowährung wird im nächsten Schritt ausgewählt. Nach dem Klick auf "Weiter" werden Sie auf unsere CoinPayments-Seite geleitet.
+- id: donate_crypto_calltoaction
+  translation: Weiter zu CoinPayments
+
 # Downloads
 - id: downloads_all_versions_title
   translation: "Suchst du alte Versionen?"

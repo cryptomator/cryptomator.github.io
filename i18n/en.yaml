@@ -14,6 +14,49 @@
 - id: "coop_your_business_paragraph"
   translation: "Interested in Cryptomator for your business? Explore various fields of application."
 
+# Donate
+- id: donate_paypal_title
+  translation: PayPal
+- id: donate_paypal_instruction
+  translation: After pressing "Proceed", you will be redirected to our PayPal site.
+- id: donate_paypal_calltoaction
+  translation: Proceed to PayPal
+
+- id: donate_creditcard_title
+  translation: Credit Card
+- id: donate_creditcard_amount
+  translation: Amount
+- id: donate_creditcard_frequency
+  translation: Frequency
+- id: donate_creditcard_frequency_once
+  translation: One-Time
+- id: donate_creditcard_frequency_recurring
+  translation: Monthly
+- id: donate_creditcard_number
+  translation: Credit Card Number
+- id: donate_creditcard_once_instruction
+  translation: Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.
+- id: donate_creditcard_once_loadcaptcha
+  translation: Continue...
+- id: donate_creditcard_once_paynow
+  translation: Pay Now
+- id: donate_creditcard_recurring_instruction
+  translation: Recurring credit card payments will be set up on our Stripe page.
+- id: donate_creditcard_recurring_calltoaction
+  translation: Proceed to Stripe
+
+- id: donate_banktransfer_title
+  translation: Bank Transfer
+- id: donate_banktransfer_recipient
+  translation: Recipient
+
+- id: donate_crypto_title
+  translation: Crypto
+- id: donate_crypto_instruction
+  translation: Select the crypto currency in the next step. After pressing "Proceed", you will be redirected to our CoinPayments site.
+- id: donate_crypto_calltoaction
+  translation: Proceed to CoinPayments
+
 # Downloads
 - id: downloads_all_versions_title
   translation: "Looking for older versions?"
