@@ -2,7 +2,7 @@
     <div class="flex justify-between items-center">
         <a class="flex items-center hover:no-underline m-2 lg:ml-8" href="{{ .Site.LanguagePrefix }}/">
             <img src="http://placekitten.com/64/64" class="h-12" />
-            <span class="font-headline font-bold text-white ml-2 md:hidden lg:block">CRYPTOMATOR</span>
+            <span class="font-headline font-bold text-white ml-2">CRYPTOMATOR</span>
         </a>
 
         <div class="md:hidden">
@@ -17,19 +17,16 @@
         <div class="md:flex items-center">
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/downloads">Download</a>
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/coop">Kooperationen</a>
-            <span class="block p-2">Enterprise</span>
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/faq">FAQ</a>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
             <span class="hidden p-2 md:block">|</span>
             <hr class="border-secondary my-2 md:hidden"/>
-            <span class="block p-2">Sponsoren</span>
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/donate">Spenden</a>
             <div x-data="{ isLangDropdownOpen: false }" class="hidden p-2 md:block">
                 <div class="relative">
                     <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">
-                        <i class="fas fa-globe"></i>
                         <span class="ml-1">{{ .Site.Language.Lang | upper }}</span>
-                        <i class="fas fa-caret-down ml-1"></i>
+                        <i class="far fa-chevron-down text-xs ml-1"></i>
                     </button>
                     <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" class="absolute right-0 mt-2 py-2 w-48 bg-gray-100 rounded shadow-xl">
                         {{ range .Translations }}
@@ -38,10 +35,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden lg:flex items-center">
-                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            </div>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
         <div class="block md:hidden">
             <hr class="border-secondary my-2 md:hidden"/>
