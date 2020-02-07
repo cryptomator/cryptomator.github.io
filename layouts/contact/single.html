@@ -1,0 +1,74 @@
+{{ define "main" }}
+<header class="container px-6 py-8">
+  <h1>{{ .Title }}</h1>
+</header>
+
+<section class="container px-2 py-8">
+  <h2 class="text-2xl"><i class="fa fa-user-headset text-primary mr-2" aria-hidden="true"></i>Get Help</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+      <div class="p-2 border-b border-primary">
+        <h3 class="text-lg mb-0"><i class="fa fa-book text-primary mx-2" aria-hidden="true"></i>Documentation</h3>
+      </div>
+      <div class="p-2">
+        <p>If you're looking for instructions on how to use Cryptomator, please visit our documentation.</p>
+      </div>
+    </div>
+    
+    <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+      <div class="p-2 border-b border-primary">
+        <h3 class="text-lg mb-0"><i class="fa fa-question-circle text-primary mx-2" aria-hidden="true"></i>FAQ</h3 class="text-lg mb-0">
+      </div>
+      <div class="p-2">
+        <p>If you have questions that you feel others might have too, check out our FAQ.</p>
+      </div>
+    </div>
+
+    <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+      <div class="p-2 border-b border-primary">
+        <h3 class="text-lg mb-0"><i class="fa fa-users text-primary mx-2" aria-hidden="true"></i>Community</h3>
+      </div>
+      <div class="p-2">
+        <p>If you have a problem, visit our community forums. You'll find answers by other users as well as our developers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container px-2 py-8">
+  <h2 class="text-2xl"><i class="fa fa-hands-helping text-primary mr-2" aria-hidden="true"></i>Contribute</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3">
+    <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+      <div class="p-2 border-b border-primary">
+        <h3 class="text-lg mb-0"><i class="fa fa-bug text-primary mx-2" aria-hidden="true"></i>Report Bugs</h3>
+      </div>
+      <div class="p-2">
+        <p>If you found a bug, please see if it has already been reported before you open a new issue on our GitHub page.</p>
+      </div>
+    </div>
+
+    <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+      <div class="p-2 border-b border-primary">
+        <h3 class="text-lg mb-0"><i class="fa fa-language text-primary mx-2" aria-hidden="true"></i>Help Translate</h3>
+      </div>
+      <div class="p-2">
+        <p>If you want to see Cryptomator in your favourite language, you can easily help translating it within your web browser.</p>
+      </div>
+    </div>
+
+    <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+      <div class="p-2 border-b border-primary">
+        <h3 class="text-lg mb-0"><i class="fa fa-user-secret text-primary mx-2" aria-hidden="true"></i>Report Vulnerabilities</h3 class="text-lg mb-0">
+      </div>
+      <div class="p-2">
+        <p>If you want to contact us before responsibly disclosing an issue, feel free to send us a message. You can find our PGP key here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="container">
+  {{ .Content }}
+</section>
+{{ end }}
