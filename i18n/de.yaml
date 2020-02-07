@@ -5,8 +5,6 @@
   translation: "von"
 
 # Coop
-- id: coop_title
-  translation: "Kooperationen"
 - id: "coop_more_info"
   translation: "Mehr Infos"
 

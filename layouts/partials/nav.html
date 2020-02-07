@@ -15,13 +15,13 @@
 
     <div :class="isNavOpen ? 'block' : 'hidden'" class="text-white mb-0 md:block lg:mr-8">
         <div class="md:flex items-center">
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/downloads">Download</a>
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/coop">Kooperationen</a>
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/faq">FAQ</a>
+            {{ with .Site.GetPage "/downloads" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            {{ with .Site.GetPage "/coop" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            {{ with .Site.GetPage "/faq" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
             <span class="hidden p-2 md:block">|</span>
             <hr class="border-secondary my-2 md:hidden"/>
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/donate">Spenden</a>
+            {{ with .Site.GetPage "/donate" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             <div x-data="{ isLangDropdownOpen: false }" class="hidden p-2 md:block">
                 <div class="relative">
                     <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">

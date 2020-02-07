@@ -5,8 +5,6 @@
   translation: "by"
 
 # Coop
-- id: coop_title
-  translation: "Cooperations"
 - id: "coop_more_info"
   translation: "More Info"
 - id: "coop_your_business_title"
