@@ -30,8 +30,10 @@
   translation: Kreditkarte
 - id: donate_creditcard_once_instruction
   translation: Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">eine Buchung von Stripe</a> enthalten sein.
+- id: donate_creditcard_once_loading
+  translation: Lädt…
 - id: donate_creditcard_once_loadcaptcha
-  translation: Weiter...
+  translation: Weiter…
 - id: donate_creditcard_once_paynow
   translation: Jetzt bezahlen
 - id: donate_creditcard_recurring_instruction

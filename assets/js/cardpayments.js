@@ -13,9 +13,11 @@ class OneTimePayment {
     /**
      * Lazily load Stripe and replace the given placholder form field with a Stripe Elements' auto-validating Credit Card field.
      * @param {*} placeholder A placeholder <input> that will get hidden once Stripe is fully initialized
-     * @param {*} paymentData A object to which status changes will be written: `{amount: 20, currency: 'EUR', captcha: 'asd', errorMessage: 'Wrong CVC', success: false, inProgress: false }`
+     * @param {*} paymentData An object to which status changes will be written: `{amount: 20, currency: 'EUR', captcha: 'asd', errorMessage: 'Wrong CVC', success: false, inProgress: false }`
+     * @param {*} placeholderLoading Localized string used as placeholder for the placeholder <input> when Stripe is being loaded
+     * @param {*} languageCode The IETF language tag of the locale to display Stripe placeholders and error strings in
      */
-    constructor(placeholder, paymentData) {
+    constructor(placeholder, paymentData, placeholderLoading, languageCode) {
         this._placeholder  = placeholder;
         this._paymentData = paymentData;
         this._cardElement = document.createElement('div');
@@ -23,7 +25,7 @@ class OneTimePayment {
         // initialize:
         $(this._cardElement).hide();
         $(this._placeholder).after(this._cardElement);
-        $(this._placeholder).attr('placeholder', 'Loading...');
+        $(this._placeholder).attr('placeholder', placeholderLoading);
         $(this._placeholder).attr('disabled', true);
         this._stripe = $.ajax({
             url: 'https://js.stripe.com/v3/',
@@ -33,7 +35,17 @@ class OneTimePayment {
             return window.Stripe(STRIPE_PK);
         });
         this._card = this._stripe.then(stripe => {
-            let card = stripe.elements().create('card');
+            let card = stripe.elements({
+                locale: languageCode
+            }).create('card', {
+                style: {
+                    base: {
+                        fontFamily: 'Nunito Sans, sans-serif',
+                        fontSize: '16px',
+                        lineHeight: '1.5'
+                    }
+                }
+            });
             card.mount(this._cardElement);
             card.on('ready', this.onCardReady.bind(this));
             card.on('change', this.onCardChanged.bind(this));

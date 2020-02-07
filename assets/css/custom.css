@@ -21,10 +21,11 @@
 
 .btn-primary:hover,
 .btn-primary:focus {
-    @apply text-white;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-    transform: translate(0, -1px);
-    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+    @apply text-white transition transform duration-200 ease-in-out shadow-md -translate-y-px;
+}
+
+.btn-primary:disabled {
+    @apply shadow-none translate-y-0;
 }
 
 .btn-secondary {
@@ -78,7 +79,7 @@ input.show-invalid:invalid {
 .img-muted {
     filter: grayscale(100%);
     opacity: .5;
-    transition: filter 100ms, opacity 100ms;
+    transition: filter .1s, opacity .1s;
 }
 
 .img-muted:hover {

@@ -2,15 +2,13 @@ module.exports = {
   theme: {
     container: {
       center: true,
+      padding: '1rem'
     },
     extend: {
       colors: {
         'primary': '#49B04A',
-        /*'secondarylight': '#009F69',*/
         'secondary': '#008A7B',
-        /*'tertiarylight': '#00747E',*/
         'tertiary': '#005E71',
-        /*'tertiarydark': '#2F4858',*/
         'dark': '#1E2B33', 
       },
       width: {
