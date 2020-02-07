@@ -14,14 +14,14 @@
     </div>
 
     <div :class="isNavOpen ? 'block' : 'hidden'" class="text-white mb-0 md:block lg:mr-8">
-        <div class="md:flex items-center">
+        <div class="md:flex md:items-center">
             {{ with .Site.GetPage "/downloads" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             {{ with .Site.GetPage "/coop" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             {{ with .Site.GetPage "/faq" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
+            {{ with .Site.GetPage "/donate" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             <span class="hidden p-2 md:block">|</span>
             <hr class="border-secondary my-2 md:hidden"/>
-            {{ with .Site.GetPage "/donate" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
             <div x-data="{ isLangDropdownOpen: false }" class="hidden p-2 md:block">
                 <div class="relative">
                     <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">
@@ -35,18 +35,18 @@
                     </div>
                 </div>
             </div>
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <div class="hidden md:flex md:items-center">
+                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
         </div>
         <div class="block md:hidden">
-            <hr class="border-secondary my-2 md:hidden"/>
-            <div class="p-2">
-                <i class="fas fa-globe fa-fw"></i>
-                <span>Aktuelle Sprache: {{ .Site.Language.Lang | upper }}</span>
+            <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+                <i class="fas fa-globe fa-fw"></i> {{ .Site.Language.Lang | upper }}
             </div>
             <div class="mt-1">
                 {{ range .Translations }}
-                <a href="{{ .Permalink }}" class="block px-2 py-1 text-gray-400 hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
+                <a href="{{ .Permalink }}" class="block text-white px-2 py-1 hover:text-secondary hover:no-underline">{{ .Language.LanguageName }}</a>
                 {{ end }}
             </div>
             <hr class="border-secondary my-2 md:hidden"/>
