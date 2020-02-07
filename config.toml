@@ -12,6 +12,11 @@ enableemoji = true
     weight = 2
     languageName = "Deutsch"
 
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
+
 [module]
 
   [[module.mounts]]
