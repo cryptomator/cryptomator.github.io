@@ -25,5 +25,5 @@ Once installed on the respective device and after assigning a special vault pass
 Only the user knows his or her own vault's password, with which the vault's files can be decrypted again. This ensures that your own files in the cloud are protected against unauthorized access.
 
 <p class="text-center">
-    <a class="btn" href="https://produkte.web.de/online-speicher/cloud-verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit web.de</a>
+    <a class="btn btn-primary" href="https://produkte.web.de/online-speicher/cloud-verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit web.de</a>
 </p>

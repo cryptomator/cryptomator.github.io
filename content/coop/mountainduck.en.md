@@ -25,5 +25,5 @@ Thus, Mountain Duck is the perfect addition to Cryptomator for those, who do not
 Mountain Duck is based on the solid open-source foundation of Cyberduck. It uses the same Java-based cryptographic library {{<extlink "https://github.com/cryptomator/cryptolib" "CryptoLib">}} as the desktop version and Android app of Cryptomator.
 
 <p class="text-center">
-    <a class="btn" href="https://mountainduck.io/#cryptomator" target="_blank"><i class="fas fa-link"></i> Visit mountainduck.io</a>
+    <a class="btn btn-primary" href="https://mountainduck.io/#cryptomator" target="_blank"><i class="fas fa-link"></i> Visit mountainduck.io</a>
 </p>

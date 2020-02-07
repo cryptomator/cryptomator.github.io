@@ -27,5 +27,5 @@ Auch Cyberduck ist Open-Source-Software, d.h. die gleichen Prinzipien von Crypto
 Cyberduck nutzt die Java-basierte kryptographische Bibliothek {{<extlink "https://github.com/cryptomator/cryptolib" "CryptoLib">}}, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
 
 <p class="text-center">
-    <a class="btn" href="https://cyberduck.io/cryptomator" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter cyberduck.io</a>
+    <a class="btn btn-primary" href="https://cyberduck.io/cryptomator" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter cyberduck.io</a>
 </p>

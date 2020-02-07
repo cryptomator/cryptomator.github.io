@@ -21,7 +21,7 @@
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
-          <button type="submit" class="btn text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{i18n "donate_paypal_calltoaction" }}</button>
+          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{i18n "donate_paypal_calltoaction" }}</button>
         </form>
       </div>
 
@@ -67,10 +67,10 @@
               <p>{{ i18n "donate_creditcard_once_instruction" | safeHTML }}</p>
 
               <div x-ref="captchaWrapper" x-show="!paymentData.captcha" class="flex justify-center">
-                <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
+                <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn btn-primary w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
               </div>
 
-              <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn w-64">
+              <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn btn-primary w-64">
                 <i class="fa fa-credit-card"></i>
                 {{ i18n "donate_creditcard_once_paynow" }}
                 <i class="fa fa-spinner fa-spin" x-show="paymentData.inProgress" aria-hidden="true"></i>
@@ -82,7 +82,7 @@
 
           <div x-show="paymentData.frequency === 'recurring'" class="text-center pt-4">
             <p>{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
-            <button type="submit" class="btn text-lg w-64" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
+            <button type="submit" class="btn btn-primary text-lg w-64" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
               <i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
           </div>
@@ -125,7 +125,7 @@
           <input type="hidden" name="allow_amount" value="1" />
           <input type="hidden" name="success_url" value="https://cryptomator.org/donate/success" /> <!-- TODO return url anpassen -->
           <input type="hidden" name="allow_extra" value="1" />
-          <button type="submit" class="btn text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
+          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
         </form>
       </div>
       

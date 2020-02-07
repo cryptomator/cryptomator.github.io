@@ -25,5 +25,5 @@ Bei der Einrichtung des Tresors legt der Nutzer ein geheimes Passwort fest, welc
 Nur der Anwender selbst kennt das Tresor-Passwort. So ist sichergestellt, dass Cloud-Dateien zu jedem Zeitpunkt zuverlässig gegen unerwünschte Zugriffe geschützt sind.
 
 <p class="text-center">
-    <a class="btn" href="https://www.gmx.net/cloud/verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter gmx.net</a>
+    <a class="btn btn-primary" href="https://www.gmx.net/cloud/verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter gmx.net</a>
 </p>

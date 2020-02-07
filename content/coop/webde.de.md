@@ -25,5 +25,5 @@ Einmal auf dem jeweiligen Gerät installiert und nach Vergabe eines speziellen T
 Nur der Nutzer selbst kennt sein Tresor-Passwort, mit dem sich die Tresor-Dateien wieder entschlüsseln lassen. Dadurch ist gewährleistet, dass die eigenen Dateien in der Cloud gegen unbefugte Zugriffe geschützt sind.
 
 <p class="text-center">
-    <a class="btn" href="https://produkte.web.de/online-speicher/cloud-verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter web.de</a>
+    <a class="btn btn-primary" href="https://produkte.web.de/online-speicher/cloud-verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter web.de</a>
 </p>

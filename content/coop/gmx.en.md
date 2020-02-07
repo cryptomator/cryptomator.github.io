@@ -25,5 +25,5 @@ When setting up the vault, the user sets a secret password that remains with him
 Only the user knows the vault's password. This ensures that cloud files are reliably protected against unwanted access at all times.
 
 <p class="text-center">
-    <a class="btn" href="https://www.gmx.net/cloud/verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit gmx.net</a>
+    <a class="btn btn-primary" href="https://www.gmx.net/cloud/verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit gmx.net</a>
 </p>
