@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <header class="container px-6 py-8">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  {{ range .Sections.ByParam "prio" }}
+  <section class="container p-8">
+    <h2 class="text-2xl"><i class="{{ .Params.faIcon }} text-primary mr-2" aria-hidden="true"></i>{{ .Title }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      {{ range .Pages }}
+        <div class="m-4 md:m-2 rounded border border-gray-200 shadow-lg bg-white">
+          <div class="p-2 border-b border-primary">
+            <h3 class="text-lg mb-0"><i class="{{ .Params.faIcon }} text-primary mx-2" aria-hidden="true"></i>{{ .Title }}</h3>
+          </div>
+          <div class="p-2">
+            {{ .Content }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end}}
+
+{{ end }}
