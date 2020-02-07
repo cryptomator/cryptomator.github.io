@@ -22,14 +22,21 @@
 
 input,
 select,
+textarea,
 .StripeElement {
     @apply border rounded p-2;
 }
 
 input:focus,
 select:focus,
+textarea:focus,
 .StripeElement--focus {
     @apply border-secondary outline-none;
+}
+
+input:focus:invalid,
+input.show-invalid:invalid {
+    @apply border-red-500;
 }
 
 @keyframes hover {

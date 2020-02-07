@@ -1,3 +1,47 @@
-<div class="rounded border border-gray-200 shadow-lg bg-white" x-data="{ tab: 'paypal' }">
-  TODO
+<div x-data="{checkoutData: {amount: 25, currency: 'EUR', email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}}" class="rounded border border-gray-200 shadow-lg bg-white p-4">
+  <form x-show="!checkoutData.success" x-ref="form">
+    <div class="w-1/2 mb-4">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Amount</label>
+      <div class="flex items-center rounded bg-gray-300">
+        <div class="relative w-16">
+          <select x-model="checkoutData.currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
+            <option value="EUR">€</option>
+            <option value="USD">$</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
+            <i class="far fa-chevron-down text-xs"></i>
+          </div>
+        </div>
+        <input type="number" min="10" step="1" x-model="checkoutData.amount" class="flex-grow rounded-none pr-0 text-right bg-white" placeholder="Amount (min. 10)" required/>
+        <div class="px-3">.00</div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email</label>
+      <input x-model="checkoutData.email" type="email" class="appearance-none w-full" placeholder="Email address" required/>
+    </div>
+    <div class="text-center mt-8">
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout()" type="submit" class="btn btn-primary w-64 text-lg mb-2">
+        <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
+      </button>
+      <p class="text-sm">Payments are securely handled by Paddle.</p>
+    </div>
+  </form>
+
+  <div x-show="checkoutData.success">
+    <h3 class="mb-4">{{ ":+1:" | emojify }} Your payment was successful!</h3>
+    <div>
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Donation Key</label>
+      <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="5" placeholder="Loading…" readonly></textarea>
+      <p class="text-sm">This is your donation key. Enter it in the Cryptomator settings under "Donate". The donation key has also been sent to your email address.</p>
+    </div>
+  </div>
 </div>
+
+{{ if .Site.IsServer }}
+  {{ $desktopKeyJs := resources.Get "js/desktopkey.js" }}
+  <script type="text/javascript" src="{{ $desktopKeyJs.Permalink }}" defer></script>
+{{ else }}
+  {{ $desktopKeyJs := resources.Get "js/desktopkey.js" | minify | fingerprint }}
+  <script type="text/javascript" src="{{ $desktopKeyJs.Permalink }}" integrity="{{ $desktopKeyJs.Data.Integrity }}" defer></script>
+{{ end }}
