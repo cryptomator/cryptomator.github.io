@@ -5,4 +5,4 @@ draft: false
 weight: 10
 ---
 
-Erstelle mit Cryptomator einen Tresor innerhalb deines Dropbox-Ordners. Wenn du zukünftig Daten in Dropbox ablegen willst, füge diese nicht direkt zur Dropbox hinzu, sondern stattdessen in den entsperrten Tresor. Um von einem anderen Rechner nun auf die verschlüsselten Dropbox-Inhalte zuzugreifen, musst du dort in Cryptomator dein Tresor-Passwort eingeben.
+Erstelle mit Cryptomator einen Tresor innerhalb deines Dropbox-Ordners. Speichere nun deine sensiblen Daten nicht direkt im Dropbox-Ordner sondern stattdessen im entsperrten Cryptomator-Tresor.
