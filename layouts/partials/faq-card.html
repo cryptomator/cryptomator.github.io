@@ -1,10 +1,8 @@
-<div class="w-full md:w-1/2 lg:w-1/3 p-2" id="{{ .File.TranslationBaseName }}">
-    <article class="rounded border border-gray-200 shadow-lg bg-white">
-        <div class="p-2 border-b border-primary">
-            <h2 class="text-lg mb-0"><a href="{{ .RelPermalink }}"></a>{{ .Title }}</a></h2>
-        </div>
-        <div class="p-2 text-sm">
-            {{ .Content }}
-        </div>
-    </article>
-</div>
+<article class="rounded border border-gray-200 shadow-lg bg-white" id="{{ .File.TranslationBaseName }}">
+    <div class="p-2 border-b border-primary">
+        <h2 class="text-lg mb-0"><a href="{{ .RelPermalink }}"></a>{{ .Title }}</a></h2>
+    </div>
+    <div class="p-2 text-sm">
+        {{ .Content }}
+    </div>
+</article>
