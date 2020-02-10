@@ -1,7 +1,5 @@
 ---
 title: "GMX Tresor"
-date: 2020-01-14T10:41:24+01:00
-draft: false
 prio: 20
 img: /img/coop/gmx.png
 img2x: /img/coop/gmx@2x.png

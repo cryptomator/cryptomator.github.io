@@ -1,7 +1,5 @@
 ---
 title: "Mountainduck"
-date: 2020-01-14T10:41:24+01:00
-draft: false
 prio: 50
 img: /img/coop/mountainduck.png
 img2x: /img/coop/mountainduck@2x.png

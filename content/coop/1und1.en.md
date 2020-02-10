@@ -1,7 +1,5 @@
 ---
 title: "1&1 Verschlüsselung"
-date: 2020-01-14T10:41:24+01:00
-draft: false
 prio: 20
 img: /img/coop/1und1.png
 img2x: /img/coop/1und1@2x.png

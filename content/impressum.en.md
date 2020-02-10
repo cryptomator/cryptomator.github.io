@@ -1,7 +1,5 @@
 ---
 title: "Impressum"
-date: 2020-01-01T00:13:37+00:00
-draft: false
 ---
 
 ## Angaben gemäß § 5 TMG:

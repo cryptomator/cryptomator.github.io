@@ -2,7 +2,6 @@
 title: "In-Depth: Export Compliance for French iOS App Store"
 slug: indepth-french-app-store
 date: 2016-06-16
-draft: false
 author: Tobias Hagemann
 authorlink: https://github.com/tobihagemann
 authorimg: https://avatars.githubusercontent.com/u/2924160?s=96

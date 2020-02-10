@@ -1,7 +1,5 @@
 ---
 title: "Cyberduck"
-date: 2020-01-14T10:41:24+01:00
-draft: false
 prio: 40
 img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png

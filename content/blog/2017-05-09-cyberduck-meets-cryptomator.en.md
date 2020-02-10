@@ -2,7 +2,6 @@
 title: "Cyberduck Meets Cryptomator"
 slug: cyberduck-meets-cryptomator
 date: 2017-05-09
-draft: false
 tags: [cryptomator, cyberduck]
 aliases: ["/blog/2017/05/09/cyberduck-meets-cryptomator_en.html"]
 discourseEmbedUrl: https://cryptomator.org/blog/2017/05/09/cyberduck-meets-cryptomator_en.html

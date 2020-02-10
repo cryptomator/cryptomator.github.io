@@ -1,7 +1,5 @@
 ---
 title: "WEB.DE Tresor"
-date: 2020-01-14T10:41:24+01:00
-draft: false
 prio: 30
 img: /img/coop/webde.png
 img2x: /img/coop/webde@2x.png

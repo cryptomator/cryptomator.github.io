@@ -2,7 +2,6 @@
 title: "Guest Post: Why Easy Encryption Is Safe Encryption"
 slug: why-easy-encryption-is-safe-encryption
 date: 2017-11-18
-draft: false
 author: Sam Bocetta
 authorlink: https://twitter.com/sambocetta
 authorimg: https://avatars.io/twitter/sambocetta/medium

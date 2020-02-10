@@ -2,7 +2,6 @@
 title: "A New Home for Our Community"
 slug: community
 date: 2017-09-13
-draft: false
 tags: [cryptomator, community]
 aliases: ["/blog/2017/09/13/community_en.html"]
 discourseEmbedUrl: https://cryptomator.org/blog/2017/09/13/community_en.html
