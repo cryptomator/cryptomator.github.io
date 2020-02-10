@@ -13,14 +13,54 @@ hr {
 
 /* list styles */
 ul {
-    @apply list-disc list-inside;
+    @apply list-disc ml-8;
 }
 
 ol {
-    @apply list-decimal list-inside;
+    @apply list-decimal ml-8;
 }
 
 /* text styles */
+h1 {
+    @apply text-xl font-headline font-medium;
+}
+
+h2 {
+    @apply text-lg font-headline font-medium;
+}
+
+h3 {
+    @apply text-lg font-headline;
+}
+
+@screen md {
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-lg;
+    }
+}
+
+@screen lg {
+    h1 {
+        @apply text-4xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+}
+
 a {
     @apply text-primary no-underline;
 }

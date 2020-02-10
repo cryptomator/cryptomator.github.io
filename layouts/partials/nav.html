@@ -1,7 +1,7 @@
-<nav x-data="{ isNavOpen: false }" class="md:flex md:justify-between md:items-center">
-    <div class="flex justify-between items-center">
-        <a class="flex items-center hover:no-underline m-2 lg:ml-8" href="{{ .Site.LanguagePrefix }}/">
-            <img src="http://placekitten.com/64/64" class="h-12" />
+<nav x-data="{ isNavOpen: false }" class="w-full md:absolute md:flex md:justify-between md:items-center">
+    <div class="flex justify-between items-center lg:ml-8">
+        <a class="flex items-center hover:no-underline p-2 lg:pl-0" href="{{ .Site.LanguagePrefix }}/">
+            <img src="/presskit/cryptomator-logo.svg" class="h-8" />
             <span class="font-headline font-bold text-white ml-2">CRYPTOMATOR</span>
         </a>
 
@@ -13,16 +13,16 @@
         </div>
     </div>
 
-    <div :class="isNavOpen ? 'block' : 'hidden'" class="text-white mb-0 md:block lg:mr-8">
+    <div :class="isNavOpen ? 'block' : 'hidden'" class="text-white bg-dark mb-0 md:block md:bg-transparent lg:mr-8">
         <div class="md:flex md:items-center">
-            {{ with .Site.GetPage "/downloads" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-            {{ with .Site.GetPage "/coop" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-            {{ with .Site.GetPage "/faq" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-            <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
-            {{ with .Site.GetPage "/donate" }}<a class="block text-white p-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-            <span class="hidden p-2 md:block">|</span>
+            {{ with .Site.GetPage "/downloads" }}<a class="block text-white p-2 lg:px-4 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            {{ with .Site.GetPage "/coop" }}<a class="block text-white p-2 lg:px-4 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            {{ with .Site.GetPage "/faq" }}<a class="block text-white p-2 lg:px-4 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            <a class="block text-white p-2 lg:px-4 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
+            {{ with .Site.GetPage "/donate" }}<a class="block text-white p-2 lg:px-4 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            <span class="hidden p-2 lg:px-4 md:block">|</span>
             <hr class="border-secondary my-2 md:hidden"/>
-            <div x-data="{ isLangDropdownOpen: false }" class="hidden p-2 md:block">
+            <div x-data="{ isLangDropdownOpen: false }" class="hidden p-2 lg:px-4 md:block">
                 <div class="relative">
                     <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="relative flex items-center">
                         <span class="ml-1">{{ .Site.Language.Lang | upper }}</span>
@@ -36,8 +36,8 @@
                 </div>
             </div>
             <div class="hidden md:flex md:items-center">
-                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a class="block text-white p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="block text-white p-2 lg:px-4 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="block text-white p-2 lg:px-4 lg:pr-0 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
         <div class="block md:hidden">

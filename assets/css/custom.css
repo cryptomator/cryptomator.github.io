@@ -86,3 +86,13 @@ input.show-invalid:invalid {
     filter: none;
     opacity: 1;
 }
+
+.min-vh-80 {
+    min-height: 80vh;
+}
+
+@responsive {
+    .min-vh-90 {
+        min-height: 90vh;
+    }
+}

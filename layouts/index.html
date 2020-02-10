@@ -1,18 +1,18 @@
 {{ define "main" }}
-    <section class="bg-dark bg-center" style="background-image: url(/img/home/header-background.png); background-size: auto 100%;">
-        <header class="w-full lg:w-container-lg mx-auto py-16 md:py-32 lg:py-64 flex justify-between items-center text-white">
-            <div class="hidden md:block md:w-1/3 lg:w-2/5 px-4">
+    <section class="flex items-center bg-dark bg-center min-vh-80 md:min-vh-90" style="background-image: url(/img/home/header-background.png); background-size: auto 100%;">
+        <header class="container mx-auto py-16 md:py-32 lg:py-64 flex justify-between items-center text-white">
+            <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
                 <img src="/img/home/woman-cloud.png" class="object-scale-down mx-auto lg:w-3/4 animate-hover"/>
             </div>
-            <div class="w-full md:w-2/3 lg:w-3/5 px-4">
-                <h1 class="text-xl md:text-2xl lg:text-4xl mb-6">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
-                <p class="text-md md:text-lg mb-6">Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch.</p>
+            <div class="w-full md:w-2/3 lg:w-3/5">
+                <h1 class="mb-6">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
+                <p class="mb-6 md:text-lg">Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch.</p>
                 <a href="{{ .Site.LanguagePrefix }}/downloads" role="button" class="btn btn-primary text-lg px-8">Jetzt herunterladen</a>
             </div>
         </header>
     </section>
 
-    {{.Content}}
+    {{ .Content }}
 
     <div class="bg-dark text-white">
         <section class="container pb-8">
@@ -33,11 +33,11 @@
             </div>
         </section>
 
-        <section class="py-10">
+        <section class="container py-10">
             <h2 class="text-center text-2xl">{{ i18n "home_testimonials_title" . }}</h2>
             <div class="flex justify-center items-center mb-6 " id="testimonial-carousel">
                 <button class="prev-button"><i class="fal fa-chevron-left text-5xl"></i></button>
-                <ul class="list-none w-full mb-0 md:w-container-md lg:w-container-lg flex flex-no-wrap overflow-hidden">
+                <ul class="list-none w-full m-0 flex flex-no-wrap overflow-hidden">
                     {{ range $.Site.Data.testimonials }}
                     <li class="flex-none w-full md:w-1/2 lg:w-1/3 p-4">
                         <div class="rounded-lg border border-secondary p-4">
@@ -92,7 +92,7 @@
                 </a>
                 <figcaption class="text-center mt-4">
                     <h2 class="text-xl md:text-2xl mb-0">{{ i18n "home_cebit_title" . }}</h2>
-                    <p class="text-md">{{ i18n "home_cebit_subtitle" . }}</p>
+                    <p>{{ i18n "home_cebit_subtitle" . }}</p>
                 </figcaption>
             </figure>
         </section>
