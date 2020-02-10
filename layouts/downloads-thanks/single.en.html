@@ -1,40 +1,39 @@
 {{ define "main" }}
-  <div class="container py-8"> <!-- TODO replace bg-teal-100 with bg-primary-3000: -->
+  {{ $release := index .Site.Params.releases .Params.release }}
+  <div class="container py-8" x-data="{showShaSignature: false}"> <!-- TODO replace bg-teal-100 with bg-primary-3000: -->
     <div class="mx-auto w-3/4 md:w-2/3 lg:w-1/2 bg-teal-100 border-t-4 border-primary rounded-b text-dark p-3 shadow-md flex" role="alert">
       <div class="px-2">
         <i class="fa fa-download text-primary" aria-hidden="true"></i>
       </div>
       <div>
         <p class="font-bold mb-1">Your download starts automatically.</p>
-        <p class="text-sm">Didn't work? Click here to restart: {{ .Content }}</p>
+        <p class="text-sm">Didn't work? Click here to restart: <a href="{{ $release.downloadUrl }}" download="{{ $release.filename }}" target="_self" x-data="{}" x-init="$el.blur()">{{ $release.filename }}</a><!-- TODO change $el.blur() to $el.click() --></p>
       </div>
     </div>
+    <p class="my-1 text-center text-xs"><a href="#" x-on:click.prevent="showShaSignature = !showShaSignature">Show SHA256 Signature</a> • <a href="{{ $release.signatureUrl }}" target="_blank" rel="noopener">Download PGP Signature</a></p>
+    <p x-show="showShaSignature" class="text-sm font-mono text-center">{{ $release.checksum }}</p>
   </div>
 
   <header class="container px-6 py-8 text-center">
     <h1 class="text-3xl">Thanks for choosing Cryptomator!</h1>
-    <p class="text-lg">Cryptomator will help you keep your most valuable files protected.</p>
+    {{ .Content }}
   </header>
 
-  <section class="container flex flex-wrap py-8">
-    <div class="w-full md:w-1/2 p-8">
-      <div class="rounded-b shadow-lg bg-white p-4">
-        <h2 class="text-2xl"><i class="fa fa-question-circle text-primary"></i> Getting Started</h2>
-        <p>If you are a first-time user, you might be interested to:</p>
-        <ul>
-          <li>Read our <a href="https://docs.cryptomator.org/" target="_blank" rel="noopener">documentation</a>, which should guide you in case you would like some instructions</li>
-          <li>Join our <a href="https://community.cryptomator.org/" target="_blank" rel="noopener">community forum</a>, which is a great place to ask for support or share your thoughts</li>
-        </ul>
-      </div>
+  <section class="container grid grid-cols-1 md:grid-cols-2 py-8 gap-4">
+    <div class="rounded-b shadow-lg bg-white p-4">
+      <h2 class="text-2xl"><i class="fa fa-question-circle text-primary"></i> Getting Started</h2>
+      <p>If you are a first-time user, you might be interested to:</p>
+      <ul>
+        <li>Read our <a href="https://docs.cryptomator.org/" target="_blank" rel="noopener">documentation</a>, which should guide you in case you would like some instructions</li>
+        <li>Join our <a href="https://community.cryptomator.org/" target="_blank" rel="noopener">community forum</a>, which is a great place to ask for support or share your thoughts</li>
+      </ul>
     </div>
 
-    <div class="w-full md:w-1/2 p-8">
-      <div class="rounded-b shadow-lg bg-white p-4">
-        <h2 class="text-2xl"><i class="fa fa-donate text-primary"></i> Support Cryptomator</h2>
-        <p>Development of the desktop application would not be possible without the support of our users.</p>
-        <p>Would you like to <a href="{{ .Site.LanguagePrefix }}/donate">donate</a>?</p>
-        <p>Would you like to contribute code/translations/issues?</p>
-      </div>
+    <div class="rounded-b shadow-lg bg-white p-4">
+      <h2 class="text-2xl"><i class="fa fa-donate text-primary"></i> Support Cryptomator</h2>
+      <p>Development of the desktop application would not be possible without the support of our users.</p>
+      <p>Would you like to <a href="{{ .Site.LanguagePrefix }}/donate">donate</a>?</p>
+      <p>Would you like to contribute code/translations/issues?</p>
     </div>
   </section>
 {{ end }}
