@@ -80,3 +80,6 @@ pre, code {
 th {
     @apply text-left;
 }
+
+/* see https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak] { display: none; }

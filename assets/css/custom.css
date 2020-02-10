@@ -94,3 +94,15 @@ input.show-invalid:invalid {
 .min-vh-80 {
     min-height: 80vh;
 }
+
+nav a {
+    color: inherit;
+}
+
+nav a:hover {
+    color: inherit;
+}
+
+.bg-trans-white {
+    background-color: rgba(255, 255, 255, 0.05);
+}
