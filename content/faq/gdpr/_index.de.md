@@ -1,4 +1,4 @@
 ---
 title: "DSGVO"
-prio: 2
+weight: 2
 ---
