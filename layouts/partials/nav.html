@@ -6,7 +6,7 @@
 <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : '{{ $defaultPos }}'" class="w-full text-{{ $textColor }} font-{{ $fontWeight }} absolute lg:px-8 {{ $backgroundColor }} border-b {{ $borderColor }}">
     <div class="flex justify-between items-stretch w-full">
         <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="{{ .Site.LanguagePrefix }}/">
-            <img src="/presskit/cryptomator-logo.svg" class="h-8" />
+            <img src="/presskit/cryptomator-logo.svg" class="h-8" alt="Logo"/>
             <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
         </a>
 
@@ -59,7 +59,7 @@
         </ul>
 
         <!-- Toggle Button for Smartphone Navigation -->
-        <button @click="isNavOpen = !isNavOpen" type="button" class="md:hidden border border-{{ $textColor }} rounded px-2 py-1 m-2">
+        <button @click="isNavOpen = !isNavOpen" type="button" class="md:hidden border border-{{ $textColor }} rounded px-2 py-1 m-2" aria-label="Toggle Navigation">
             <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
             <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
         </button>
