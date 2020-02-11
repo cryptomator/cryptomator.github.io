@@ -1,7 +1,7 @@
 {{ define "main" }}
     <div x-data="{ tab: guessDownloadTab() }">
         {{ range .Pages }}
-            <section x-show="tab === '{{ .Slug }}'" class="container flex flex-wrap py-12 min-vh-66">
+            <section x-show="tab === '{{ .Slug }}'" class="container flex flex-wrap items-center py-12 min-vh-66">
                 <figure class="w-1/2 mx-auto md:w-3/5">
                     <img src="{{ .Params.Screenshot }}"/>
                 </figure>
