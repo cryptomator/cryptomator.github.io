@@ -1,7 +1,7 @@
 {{ define "main" }}
-    <div x-data="{ tab: 'download-1' }">
+    <div x-data="{ tab: guessDownloadTab() }">
         {{ range .Pages }}
-            <section x-show="tab === 'download-{{ .Weight }}'" class="container flex flex-wrap py-12">
+            <section x-show="tab === '{{ .Slug }}'" class="container flex flex-wrap py-12 min-vh-66">
                 <figure class="w-1/2 mx-auto md:w-3/5">
                     <img src="{{ .Params.Screenshot }}"/>
                 </figure>
@@ -12,7 +12,7 @@
         <section class="bg-dark py-4">
             <div class="container grid grid-cols-5 gap-2 text-white md:text-lg text-xs">
                 {{ range .Pages }}
-                    <button :class="{ 'text-secondary border-secondary': tab === 'download-{{ .Weight }}' }" @click="tab = 'download-{{ .Weight }}'" class="btn btn-secondary py-2 w-full">{{ safeHTML .Params.ButtonLabel }}</button>
+                    <button :class="{ 'text-secondary border-secondary': tab === '{{ .Slug }}' }" @click="tab = '{{ .Slug }}'" class="btn btn-secondary py-2 w-full">{{ safeHTML .Params.ButtonLabel }}</button>
                 {{ end }}
             </div>
         </section>
@@ -24,4 +24,12 @@
             <i class="fab fa-github"></i> {{ i18n "downloads_all_versions_button" .}}
         </a>
     </section>
+
+    {{ if .Site.IsServer }}
+        {{ $downloadJs := resources.Get "js/download.js" }}
+        <script type="text/javascript" src="{{ $downloadJs.Permalink }}" defer></script>
+    {{ else }}
+        {{ $downloadJs := resources.Get "js/download.js" | minify | fingerprint }}
+        <script type="text/javascript" src="{{ $downloadJs.Permalink }}" integrity="{{ $downloadJs.Data.Integrity }}" defer></script>
+    {{ end }}
 {{ end }}
