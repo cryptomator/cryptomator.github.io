@@ -28,13 +28,13 @@
     @apply shadow-none translate-y-0;
 }
 
-.btn-secondary {
-    @apply border border-transparent;
+.btn-outline-gray-500 {
+    @apply border border-transparent text-gray-500;
 }
 
-.btn-secondary:hover,
-.btn-secondary:focus {
-    @apply border-secondary text-secondary;
+.btn-outline-gray-500:hover,
+.btn-outline-gray-500:focus {
+    @apply border-gray-500;
 }
 
 input,
