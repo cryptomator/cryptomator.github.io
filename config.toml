@@ -39,6 +39,10 @@ enableemoji = true
     source = "node_modules/alpinejs/dist"
     target = "assets/js/alpinejs"
 
+  [[module.mounts]]
+    source = "node_modules/lazysizes"
+    target = "assets/js/lazysizes"
+
 [markup.goldmark.renderer]
 unsafe = true
 
