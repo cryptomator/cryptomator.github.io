@@ -1,28 +1,28 @@
 {{ define "main" }}
-<div class="container min-vh-80 py-8">
-  <header>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  </header>
+  <div class="container min-vh-80 py-12">
+    <header>
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+    </header>
 
-  <div class="flex flex-wrap flex-row-reverse">
-    <section class="w-full py-8 lg:w-1/2 lg:pl-3">
-      <h2>Just donate</h2>
-      <ul class="fa-ul">
-        <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Donate anonymously</li>
-        <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Choose your prefered payment method</li>
-      </ul>
-      {{ partial "donate-anon.html" . }}
-    </section>
+    <div class="flex flex-wrap flex-row-reverse">
+      <section class="w-full py-8 lg:w-1/2 lg:pl-3">
+        <h2>Just donate</h2>
+        <ul class="fa-ul">
+          <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Donate anonymously</li>
+          <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Choose your prefered payment method</li>
+        </ul>
+        {{ partial "donate-anon.html" . }}
+      </section>
 
-    <section class="w-full py-8 lg:w-1/2 lg:pr-3">
-      <h2>Buy a license key</h2>
-      <ul class="fa-ul">
-        <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Get a receipt</li>
-        <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Register your software and unlock themes</li>
-      </ul>
-      {{ partial "donate-getkey.html" . }}
-    </section>
+      <section class="w-full py-8 lg:w-1/2 lg:pr-3">
+        <h2>Buy a license key</h2>
+        <ul class="fa-ul">
+          <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Get a receipt</li>
+          <li class="mb-1"><span class="fa-li"><i class="far fa-check text-secondary" aria-hidden="true"></i></span>Register your software and unlock themes</li>
+        </ul>
+        {{ partial "donate-getkey.html" . }}
+      </section>
+    </div>
   </div>
-</div>
 {{ end }}

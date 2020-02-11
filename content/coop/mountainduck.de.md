@@ -1,5 +1,5 @@
 ---
-title: "Mountainduck"
+title: "Mountain Duck"
 prio: 50
 img: /img/coop/mountainduck.png
 img2x: /img/coop/mountainduck@2x.png

@@ -1,32 +1,36 @@
 {{ define "main" }}
-  <section class="container py-8">
-    <h1 class="text-center text-2xl">{{ .Title }}</h1>
+  <div class="container min-vh-80 py-12">
+    <header class="mb-6">
+      <h1>{{ .Title }}</h1>
+    </header>
 
     {{ range (.Pages.ByParam "prio") }}
-      <article class="flex mb-10">
-        <div class="p-2 w-1/6">
-          <img src="{{ .Params.Img }}" class="object-fit mx-auto"/>
-        </div>
-        <div class="w-5/6">
-          <h2 class="text-xl">{{ .Title }}</h2>
-          <p class="mb-4">{{ .Description }}</p>
-          <a href="{{ .RelPermalink }}" class="btn btn-primary py-1 px-4">{{ i18n "coop_more_info" }}</a>
-        </div>
-      </article>
+      <section class="mb-6">
+        <article class="flex border rounded shadow bg-white p-4">
+          <div class="w-1/6 text-center">
+            <a href="{{ .RelPermalink }}"><img class="inline-block" src="{{ .Params.Img }}"/></a>
+          </div>
+          <div class="w-5/6">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="mb-4">{{ .Description }}</p>
+          </div>
+        </article>
+      </section>
     {{ end }}
 
     <hr/>
 
-    <article class="flex my-10">
-        <div class="p-2 w-1/6 text-center ">
-            <i class="fa fa-question-circle text-6xl text-gray-400"></i>
+    <section class="mb-6">
+      <article class="flex border rounded shadow bg-white p-4">
+        <div class="w-1/6 text-center">
+          <a href="{{ .RelPermalink }}"><i class="fa fa-question-circle fa-5x text-gray-400"></i></a>
         </div>
         <div class="w-5/6">
-            <h2 class="text-xl">{{ i18n "coop_your_business_title" . }}</h2>
-            <p class="mb-4">{{ i18n "coop_your_business_paragraph" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/enterprise" class="btn btn-primary py-1 px-4">{{ i18n "coop_more_info" }}</a>
+          <h2>{{ i18n "coop_your_business_title" . }}</h2>
+          <p class="mb-4">{{ i18n "coop_your_business_paragraph" . }}</p>
+          <a href="{{ .Site.LanguagePrefix }}/enterprise" class="btn btn-primary px-4">{{ i18n "coop_more_info" }}</a>
         </div>
-    </article>
-
-  </section>
+      </article>
+    </section>
+  </div>
 {{ end }}

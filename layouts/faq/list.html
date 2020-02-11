@@ -1,29 +1,30 @@
 {{ define "main" }}
-  <header class="container py-8">
-    <h1 class="text-center text-4xl">
-      {{- if .Sections -}}
-        {{- i18n "faq_title" -}}
-      {{- else -}}
-        <a href="{{ .Parent.RelPermalink }}">{{- i18n "faq_title" -}}</a>/{{- .Title -}}
-      {{- end -}}
-    </h1>
-  </header>
+  <div class="container min-vh-80 py-12">
+    <header class="mb-6">
+      <h1>
+        {{- if .Sections -}}
+          {{- i18n "faq_title" -}}
+        {{- else -}}
+          <a href="{{ .Parent.RelPermalink }}">{{- i18n "faq_title" -}}</a>/{{- .Title -}}
+        {{- end -}}
+      </h1>
+    </header>
 
-  {{ range .Sections.ByWeight }}
-  <section class="container p-2">
-    <h2 class="text-2xl"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-      {{ range .Pages.ByWeight }}
-        {{ partial "faq-card.html" . }}
-      {{ end }}
-    </div>
-  </section>
-  {{ else }}
-  <section class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-    {{ range .Pages.ByWeight }}
-      {{ partial "faq-card.html" . }}
+    {{ range .Sections.ByWeight }}
+      <section class="mb-6">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          {{ range .Pages.ByWeight }}
+            {{ partial "faq-card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+    {{ else }}
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+        {{ range .Pages.ByWeight }}
+          {{ partial "faq-card.html" . }}
+        {{ end }}
+      </section>
     {{ end }}
-  </section>
-  {{ end}}
-
+  </div>
 {{ end }}

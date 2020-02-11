@@ -3,7 +3,7 @@ blockquote, h1, h2, h3, ol, p, pre, table, ul {
     @apply mb-4;
 }
 
-p:last-child {
+blockquote:last-child, h1:last-child, h2:last-child, h3:last-child, ol:last-child, p:last-child, pre:last-child, table:last-child, ul:last-child {
     @apply mb-0;
 }
 
