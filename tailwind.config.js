@@ -11,6 +11,9 @@ module.exports = {
         'tertiary': '#005E71',
         'dark': '#1E2B33', 
       },
+      fontSize: {
+        '7xl': '5rem',
+      },
     },
     fontFamily: {
       'headline': 'Quicksand, sans-serif',
