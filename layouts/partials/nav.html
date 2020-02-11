@@ -29,7 +29,7 @@
                 {{ end }}
             </li>
             <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
+                <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
             </li>
             <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
                 {{ with .Site.GetPage "/donate" }}
@@ -52,10 +52,10 @@
                 </div>
             </li>
             <li class="flex items-center border-b-2 border-transparent hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+                <a class="p-2 hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw"></i></a>
             </li>
             <li class="flex items-center border-b-2 border-transparent hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a>
+                <a class="p-2 hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-fw"></i></a>
             </li>
         </ul>
 
@@ -71,7 +71,7 @@
         {{ with .Site.GetPage "/downloads" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
         {{ with .Site.GetPage "/coop" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
         {{ with .Site.GetPage "/faq" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-        <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank">Docs</a>
+        <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
         {{ with .Site.GetPage "/donate" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
 
         <hr class="border-primary my-2"/>
@@ -87,11 +87,11 @@
 
         <hr class="border-primary my-2"/>
 
-        <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank">
+        <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-twitter fa-fw"></i>
             <span>Cryptomator on Twitter</span>
         </a>
-        <a class="block p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank">
+        <a class="block p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-facebook-f fa-fw"></i>
             <span>Cryptomator on Facebook</span>
         </a>
