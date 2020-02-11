@@ -1,6 +1,6 @@
 ---
 title: "Community"
-faIcon: "fa fa-users"
+faIcon: "fas fa-users"
 weight: 3
 ---
 

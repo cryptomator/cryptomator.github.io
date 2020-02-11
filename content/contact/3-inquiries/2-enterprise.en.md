@@ -1,6 +1,6 @@
 ---
 title: "Enterprise"
-faIcon: "fa fa-briefcase"
+faIcon: "fas fa-briefcase"
 weight: 2
 ---
 

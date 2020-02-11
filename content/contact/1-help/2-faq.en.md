@@ -1,6 +1,6 @@
 ---
 title: "FAQ"
-faIcon: "fa fa-question-circle"
+faIcon: "fas fa-question-circle"
 weight: 2
 ---
 

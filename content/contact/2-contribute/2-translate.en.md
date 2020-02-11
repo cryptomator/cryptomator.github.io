@@ -1,6 +1,6 @@
 ---
 title: "Translate"
-faIcon: "fa fa-language"
+faIcon: "fas fa-language"
 weight: 2
 ---
 

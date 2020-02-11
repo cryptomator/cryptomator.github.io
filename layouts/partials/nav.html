@@ -1,6 +1,5 @@
 {{ $textColor := cond .IsHome "white" "primary" }}
 {{ $fontWeight := cond .IsHome "normal" "semibold" }}
-{{ $faStyle := cond .IsHome "far" "fas" }}
 {{ $backgroundColor := cond .IsHome "bg-trans-white" "bg-white" }}
 {{ $borderColor := cond .IsHome "border-transparent" "border-primary" }}
 {{ $defaultPos := cond .IsHome "absolute" "relative" }}
@@ -41,7 +40,7 @@
             <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent hover:border-{{ $textColor }}">
                 <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="font-{{ $fontWeight }} whitespace-no-wrap p-2">
                     <span>{{ .Site.Language.Lang | upper }}</span>
-                    <i class="{{ $faStyle }} fa-chevron-down text-xs"></i>
+                    <i class="fas fa-chevron-down text-xs"></i>
                 </button>
                 <div class="relative">
                     <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-4 py-2 w-48 bg-gray-100 rounded shadow">
@@ -61,8 +60,8 @@
 
         <!-- Toggle Button for Smartphone Navigation -->
         <button @click="isNavOpen = !isNavOpen" type="button" class="md:hidden border border-{{ $textColor }} rounded px-2 py-1 m-2">
-            <i x-show="isNavOpen" class="far fa-times fa-fw"></i>
-            <i x-show="!isNavOpen" class="far fa-bars fa-fw"></i>
+            <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+            <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
         </button>
     </div>
 

@@ -1,6 +1,6 @@
 ---
 title: "Documentation"
-faIcon: "fa fa-book"
+faIcon: "fas fa-book"
 weight: 1
 ---
 

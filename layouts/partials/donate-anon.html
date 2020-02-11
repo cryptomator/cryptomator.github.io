@@ -5,15 +5,15 @@
         <span :class="{'hidden md:inline-block': tab !== 'paypal'}">{{ i18n "donate_paypal_title" }}</span>
       </button>
       <button @click="tab = 'card'" :class="{'border-primary text-primary bg-white': tab === 'card'}" class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none">
-        <i class="fa fa-credit-card" aria-hidden="true"></i>
+        <i class="fas fa-credit-card" aria-hidden="true"></i>
         <span :class="{'hidden md:inline-block': tab !== 'card'}">{{ i18n "donate_creditcard_title" }}</span>
       </button>
       <button @click="tab = 'bank'" :class="{'border-primary text-primary bg-white': tab === 'bank'}" class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none">
-        <i class="fa fa-landmark" aria-hidden="true"></i>
+        <i class="fas fa-landmark" aria-hidden="true"></i>
         <span :class="{'hidden md:inline-block': tab !== 'bank'}">{{ i18n "donate_banktransfer_title" }}</span>
       </button>
       <button @click="tab = 'crypto'" :class="{'border-primary text-primary bg-white': tab === 'crypto'}" class="border border-b-0 border-transparent rounded-t px-4 py-2 -m-px hover:text-primary focus:text-primary focus:outline-none">
-        <i class="fa fa-alien-monster" aria-hidden="true"></i>
+        <i class="fas fa-alien-monster" aria-hidden="true"></i>
         <span :class="{'hidden md:inline-block': tab !== 'crypto'}">{{ i18n "donate_crypto_title" }}</span>
       </button>
     </div>
@@ -25,7 +25,7 @@
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
-          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{i18n "donate_paypal_calltoaction" }}</button>
+          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fas fa-external-link" aria-hidden="true"></i> {{i18n "donate_paypal_calltoaction" }}</button>
         </form>
       </div>
 
@@ -42,7 +42,7 @@
                     <option value="USD">$</option>
                   </select>
                   <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-                    <i class="far fa-chevron-down text-xs"></i>
+                    <i class="fas fa-chevron-down text-xs"></i>
                   </div>
                 </div>
                 <input type="number" min="1" step="1" x-model="paymentData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0"/>
@@ -54,11 +54,11 @@
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_frequency" }}</label>
               <div class="flex">
                 <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 font-bold': paymentData.frequency === 'once'}" @click="paymentData.frequency = 'once'">
-                  <i class="far fa-check" x-show="paymentData.frequency === 'once'"></i>
+                  <i class="fas fa-check" x-show="paymentData.frequency === 'once'"></i>
                   {{ i18n "donate_creditcard_frequency_once" }}
                 </button>
                 <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 font-bold': paymentData.frequency === 'recurring'}" @click="paymentData.frequency = 'recurring'">
-                  <i class="far fa-check" x-show="paymentData.frequency === 'recurring'"></i>
+                  <i class="fas fa-check" x-show="paymentData.frequency === 'recurring'"></i>
                   {{ i18n "donate_creditcard_frequency_recurring" }}
                 </button>
               </div>
@@ -81,9 +81,9 @@
               </div>
 
               <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn btn-primary w-64">
-                <i class="fa fa-credit-card"></i>
+                <i class="fas fa-credit-card"></i>
                 {{ i18n "donate_creditcard_once_paynow" }}
-                <i class="fa fa-spinner fa-spin" x-show="paymentData.inProgress" aria-hidden="true"></i>
+                <i class="fas fa-spinner fa-spin" x-show="paymentData.inProgress" aria-hidden="true"></i>
               </button>
             </div>
 
@@ -93,7 +93,7 @@
           <div x-show="paymentData.frequency === 'recurring'" class="text-center mt-4">
             <p>{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
             <button type="submit" class="btn btn-primary text-lg w-64" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
-              <i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
+              <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
           </div>
         </div>
@@ -135,7 +135,7 @@
           <input type="hidden" name="allow_amount" value="1" />
           <input type="hidden" name="success_url" value="https://cryptomator.org/donate/success" /> <!-- TODO return url anpassen -->
           <input type="hidden" name="allow_extra" value="1" />
-          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fa fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
+          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
         </form>
       </div>
       

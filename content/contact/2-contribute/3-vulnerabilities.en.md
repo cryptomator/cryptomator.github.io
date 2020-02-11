@@ -1,6 +1,6 @@
 ---
 title: "Report Vulnerabilities"
-faIcon: "fa fa-user-secret"
+faIcon: "fas fa-user-secret"
 weight: 3
 ---
 
