@@ -20,12 +20,12 @@
   </head>
   <body class="bg-dark font-body">
     {{ partial "nav.html" . }}
-    <section class="bg-gray-100">
+    <div class="bg-gray-100 min-vh-80">
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
-    </section>
+    </div>
     {{ partial "footer.html" . }}
 
     {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
