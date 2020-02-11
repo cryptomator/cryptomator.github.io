@@ -1,3 +1,6 @@
+- id: site_meta_description
+  translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
+
 # Blog
 - id: blog_title
   translation: "Blog"

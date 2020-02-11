@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="{{ i18n "site_meta_description" }}"/>
     <title>{{ .Title }}</title>
     {{ if .Site.IsServer }}
       {{ $css := resources.Get "css/main.css" | postCSS }}
-      <link rel="stylesheet" href="{{ $css.Permalink }}">
+      <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen">
     {{ else }}
       {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+      <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
     {{ end }}
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600|Quicksand:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600|Quicksand:400,500,700&display=swap" rel="stylesheet" media="all">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/blog/feed.xml">
   </head>
   <body class="bg-dark font-body">
