@@ -1,9 +1,10 @@
 {{ $textColor := cond .IsHome "white" "primary" }}
 {{ $fontWeight := cond .IsHome "normal" "semibold" }}
 {{ $backgroundColor := cond .IsHome "bg-trans-white" "bg-white" }}
-{{ $borderColor := cond .IsHome "border-transparent" "border-primary" }}
+{{ $navBorderColor := cond .IsHome "border-transparent" "border-primary" }}
 {{ $defaultPos := cond .IsHome "absolute" "relative" }}
-<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : '{{ $defaultPos }}'" class="w-full text-{{ $textColor }} font-{{ $fontWeight }} absolute lg:px-8 {{ $backgroundColor }} border-b {{ $borderColor }}">
+{{ $currentRelPermalink := .RelPermalink }}
+<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : '{{ $defaultPos }}'" class="w-full text-{{ $textColor }} font-{{ $fontWeight }} absolute lg:px-8 {{ $backgroundColor }} border-b {{ $navBorderColor }}">
     <div class="flex justify-between items-stretch w-full">
         <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="{{ .Site.LanguagePrefix }}/">
             <img src="/presskit/cryptomator-logo.svg" class="h-8" alt="Logo"/>
@@ -12,29 +13,33 @@
 
         <!-- Regular Navigation -->
         <ul class="hidden md:flex items-stretch mb-0">
-            <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-                {{ with .Site.GetPage "/downloads" }}
+            {{ with .Site.GetPage "/downloads" }}
+            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
                 <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                {{ end }}
             </li>
-            <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-                {{ with .Site.GetPage "/coop" }}
+            {{ end }}
+            {{ with .Site.GetPage "/coop" }}
+            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
                 <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                {{ end }}
             </li>
-            <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-                {{ with .Site.GetPage "/faq" }}
+            {{ end }}
+            {{ with .Site.GetPage "/faq" }}
+            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
                 <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                {{ end }}
             </li>
+            {{ end }}
             <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
                 <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
             </li>
-            <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-                {{ with .Site.GetPage "/donate" }}
+            {{ with .Site.GetPage "/donate" }}
+            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
                 <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                {{ end }}
             </li>
+            {{ end }}
             <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}">
             </li>
             <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent hover:border-{{ $textColor }}">
