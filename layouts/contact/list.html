@@ -6,12 +6,12 @@
 
     {{ range .Sections.ByParam "prio" }}
       <section class="mb-6">
-        <h2><i class="{{ .Params.faIcon }} text-primary mr-2" aria-hidden="true"></i>{{ .Title }}</h2>
+        <h2><i class="{{ .Params.faIcon }} fa-fw text-primary mr-2" aria-hidden="true"></i>{{ .Title }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           {{ range .Pages }}
-            <div class="rounded border border-gray-200 shadow-lg bg-white">
+            <div class="rounded border border-gray-200 shadow bg-white">
               <div class="p-2 border-b border-primary">
-                <h3><i class="{{ .Params.faIcon }} text-primary mx-2" aria-hidden="true"></i>{{ .Title }}</h3>
+                <h3><i class="{{ .Params.faIcon }} fa-fw text-primary mx-2" aria-hidden="true"></i>{{ .Title }}</h3>
               </div>
               <div class="p-2">
                 {{ .Content }}
