@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ $release := index .Site.Params.releases .Params.release }}
-  <div class="container py-8" x-data="{showShaSignature: false}"> <!-- TODO replace bg-teal-100 with bg-primary-3000: -->
+  <div class="container py-12" x-data="{showShaSignature: false}"> <!-- TODO replace bg-teal-100 with bg-primary-3000: -->
     <div class="mx-auto w-3/4 md:w-2/3 lg:w-1/2 bg-teal-100 border-t-4 border-primary rounded-b text-dark p-3 shadow flex" role="alert">
       <div class="px-2">
         <i class="fas fa-download text-primary" aria-hidden="true"></i>
