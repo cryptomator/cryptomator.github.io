@@ -25,12 +25,12 @@
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
-          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fas fa-external-link" aria-hidden="true"></i> {{i18n "donate_paypal_calltoaction" }}</button>
+          <button type="submit" class="btn btn-primary text-lg w-64"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_paypal_calltoaction" }}</button>
         </form>
       </div>
 
       <!-- Card -->
-      <div x-show="tab === 'card'">
+      <div x-show="tab === 'card'" x-cloak>
         <div x-data="{paymentData: {amount: 10, currency: 'EUR', captcha: null, errorMessage: '', frequency: 'once', success: false, inProgress: false, validCardNum: false}}">
           <div class="flex flex-wrap md:flex-no-wrap">
             <div class="w-full mb-4 md:w-1/2 md:pr-3">
@@ -45,8 +45,8 @@
                     <i class="fas fa-chevron-down text-xs"></i>
                   </div>
                 </div>
-                <input type="number" min="1" step="1" x-model="paymentData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0"/>
-                <div class="px-3">.00</div>
+                <input type="number" min="1" step="1" x-model="paymentData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+                <div class="px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
               </div>
             </div>
 
@@ -108,7 +108,7 @@
       </div>
 
       <!-- Bank Transfer -->
-      <div x-show="tab === 'bank'">
+      <div x-show="tab === 'bank'" x-cloak>
         <dl class="flex flex-wrap items-baseline">
           <dt class="block uppercase tracking-wide text-gray-700 text-xs font-bold w-full md:text-right md:w-1/3 md:pr-2">{{ i18n "donate_banktransfer_recipient" }}</dt>
           <dd class="mb-2 md:w-2/3 md:mb-0">Skymatic GmbH</dd>
@@ -122,7 +122,7 @@
       </div>
 
       <!-- Crypto -->
-      <div x-show="tab === 'crypto'" class="text-center">
+      <div x-show="tab === 'crypto'" x-cloak class="text-center">
         <p>{{ i18n "donate_crypto_instruction" }}</p>
         <form action="https://www.coinpayments.net/index.php" method="post" target="_top">
           <input type="hidden" name="cmd" value="_donate" />

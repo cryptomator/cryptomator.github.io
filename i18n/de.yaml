@@ -12,6 +12,15 @@
   translation: "Mehr Infos"
 
 # Donate
+- id: donate_anon_title
+  translation: Einfach spenden
+- id: donate_anon_feature_1
+  translation: Unterstützung der Open-Source-Entwicklung von Cryptomator
+- id: donate_anon_feature_2
+  translation: Bevorzugte Zahlungsmethode auswählen
+- id: donate_anon_feature_3
+  translation: Pay what you want
+
 - id: donate_paypal_title
   translation: PayPal
 - id: donate_paypal_instruction
@@ -23,6 +32,10 @@
   translation: Kreditkarte
 - id: donate_creditcard_amount
   translation: Betrag
+- id: donate_creditcard_amount_placeholder
+  translation: min. 1
+- id: donate_creditcard_amount_suffix
+  translation: ",00"
 - id: donate_creditcard_frequency
   translation: Spende
 - id: donate_creditcard_frequency_once
@@ -55,6 +68,39 @@
   translation: Die Cryptowährung wird im nächsten Schritt ausgewählt. Nach dem Klick auf "Weiter" werden Sie auf unsere CoinPayments-Seite geleitet.
 - id: donate_crypto_calltoaction
   translation: Weiter zu CoinPayments
+
+- id: donate_getkey_title
+  translation: Spendenschlüssel kaufen
+- id: donate_getkey_feature_1
+  translation: Software registrieren und Dark-Mode freischalten
+- id: donate_getkey_feature_2
+  translation: Manche sagen, es wäre ein "Awesome People"-Zertifikat
+- id: donate_getkey_feature_3
+  translation: Rechnung erhalten
+
+- id: donate_getkey_amount
+  translation: Betrag
+- id: donate_getkey_amount_placeholder
+  translation: min. 10
+- id: donate_getkey_amount_suffix
+  translation: ",00"
+- id: donate_getkey_email
+  translation: E-Mail
+- id: donate_getkey_email_placeholder
+  translation: E-Mail-Adresse
+- id: donate_getkey_instruction
+  translation: Zahlungen werden über Paddle abgewickelt.
+- id: donate_getkey_checkout
+  translation: Zur Zahlung
+
+- id: donate_getkey_success
+  translation: Deine Zahlung war erfolgreich!
+- id: donate_getkey_key
+  translation: Spendenschlüssel
+- id: donate_getkey_key_placeholder
+  translation: Lädt…
+- id: donate_getkey_key_instruction
+  translation: Dies ist dein Spendenschlüssel. Gib ihn in den Cryptomator-Einstellungen unter "Spenden" ein. Der Spendenschlüssel wurde auch an deine E-Mail-Adresse geschickt.
 
 # Downloads
 - id: downloads_all_versions_title

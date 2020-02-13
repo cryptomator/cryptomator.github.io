@@ -1,7 +1,7 @@
 <div x-data="{checkoutData: {amount: 25, currency: 'EUR', email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}}" class="rounded border border-gray-200 shadow bg-white px-4 py-8">
   <form x-show="!checkoutData.success" x-ref="form">
     <div class="w-full md:w-1/2 mb-4">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Amount</label>
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_amount" }}</label>
       <div class="flex items-center rounded bg-gray-300">
         <div class="relative w-16">
           <select x-model="checkoutData.currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
@@ -12,29 +12,27 @@
             <i class="fas fa-chevron-down text-xs"></i>
           </div>
         </div>
-        <input type="number" min="10" step="1" x-model="checkoutData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="Amount (min. 10)" required/>
-        <div class="px-3">.00</div>
+        <input type="number" min="10" step="1" x-model="checkoutData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_amount_placeholder" }}" required/>
+        <div class="px-3">{{ i18n "donate_getkey_amount_suffix" }}</div>
       </div>
     </div>
     <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email</label>
-      <input x-model="checkoutData.email" type="email" class="appearance-none w-full" placeholder="Email address" required/>
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_email" }}</label>
+      <input x-model="checkoutData.email" type="email" class="appearance-none w-full" placeholder="{{ i18n "donate_getkey_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
-      <p>Payments are securely handled by Paddle.</p>
+      <p>{{ i18n "donate_getkey_instruction" }}</p>
       <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout()" type="submit" class="btn btn-primary w-64 text-lg">
-        <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
+        <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "donate_getkey_checkout" }}
       </button>
     </div>
   </form>
 
-  <div x-show="checkoutData.success">
-    <h3 class="mb-4">{{ ":+1:" | emojify }} Your payment was successful!</h3>
-    <div>
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Donation Key</label>
-      <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="5" placeholder="Loading…" readonly></textarea>
-      <p>This is your donation key. Enter it in the Cryptomator settings under "Donate". The donation key has also been sent to your email address.</p>
-    </div>
+  <div x-show="checkoutData.success" x-cloak>
+    <h3>{{ ":+1:" | emojify }} {{ i18n "donate_getkey_success" }}</h3>
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_key" }}</label>
+    <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="5" placeholder="{{ i18n "donate_getkey_key_placeholder" }}" readonly></textarea>
+    <p>{{ i18n "donate_getkey_key_instruction" }}</p>
   </div>
 </div>
 
