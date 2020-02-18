@@ -10,12 +10,16 @@
 # Coop
 - id: "coop_more_info"
   translation: "Mehr Infos"
+- id: "coop_your_business_title"
+  translation: "Dein Unternehmen?"
+- id: "coop_your_business_paragraph"
+  translation: "Interesse an Cryptomator für dein Unternehmen? Entdecke die vielfältigen Einsatzmöglichkeiten."
 
 # Donate
 - id: donate_anon_title
   translation: Einfach spenden
 - id: donate_anon_feature_1
-  translation: Unterstützung der Open-Source-Entwicklung von Cryptomator
+  translation: Open-Source-Entwicklung von Cryptomator unterstützen
 - id: donate_anon_feature_2
   translation: Bevorzugte Zahlungsmethode auswählen
 - id: donate_anon_feature_3

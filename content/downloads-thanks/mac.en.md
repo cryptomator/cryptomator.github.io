@@ -1,6 +1,6 @@
 ---
 title: "Thank you for downloading Cryptomator!"
-url: "downloads/mac/thanks"
+url: "/downloads/mac/thanks"
 release: "dmg"
 ---
 
