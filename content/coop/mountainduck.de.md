@@ -6,11 +6,10 @@ img2x: /img/coop/mountainduck@2x.png
 description: Mit Mountain Duck lassen sich Server- und Cloudspeicher als Laufwerk in Finder unter macOS und im File Explorer unter Windows bereitstellen. Ab Version 2.0 unterstützt Mountain Duck Cryptomator-Tresore.
 aliases: ["/coop/mountainduck_de.html"]
 ---
-
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x">
+<figure class="text-center my-8">
+    <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
     <figcaption>
-        <p class="text-sm text-gray-500"> Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+        <p class="text-sm text-gray-500"> Illustration von {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
     </figcaption>
 </figure>
 

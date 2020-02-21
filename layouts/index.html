@@ -76,22 +76,22 @@
 
         <section class="container py-12">
             <h2 class="text-center mb-8 md:mb-12 lg:mb-16">{{ i18n "home_reception_title" . }}</h2>
-            <div class="flex flex-wrap justify-around text-center">
-                <div class="w-full md:w-1/3 p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div>
                     <a href="https://www.hostingadvice.com/blog/cryptomator-brings-open-source-encryption-to-the-cloud-storage-realm/" target="_blank" rel="noopener">
                         <img data-src="/img/home/3rdparty/hostingadvice-logo.png" class="lazyload object-contain h-10 w-full mb-4" alt="HostingAdvice Logo"/>
                     </a>
                     <p>Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
                 </div>
 
-                <div class="w-full md:w-1/3 p-6">
+                <div>
                     <a href="https://thenextweb.com/apple/2016/03/09/new-ios-desktop-app-cryptomator-encrypts-cloud-files-locally-upload/" target="_blank" rel="noopener">
                         <img data-src="/img/home/3rdparty/tnw-logo.png" class="lazyload object-contain h-10 w-full mb-4" alt="TNW Logo"/>
                     </a>
                     <p>Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
                 </div>
 
-                <div class="w-full md:w-1/3 p-6">
+                <div>
                     <a href="https://www.cardrates.com/news/cryptomator-secures-sensitive-financial-data/" target="_blank" rel="noopener">
                         <img data-src="/img/home/3rdparty/cardrates-logo.png" class="lazyload object-contain h-10 w-full mb-4" alt="CardRates Logo"/>
                     </a>
@@ -100,7 +100,7 @@
             </div>
         </section>
 
-        <section class="container py-12">
+        <section class="container pt-12 pb-24">
             <figure class="text-center">
                 <a href="https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank" rel="noopener">
                     <img class="lazyload inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">

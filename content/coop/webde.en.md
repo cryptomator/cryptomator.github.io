@@ -9,8 +9,8 @@ aliases: ["/coop/webde_de.html"]
 
 With WEB.DE Tresor, users of the WEB.DE Online-Speicher can now additionally protect particularly sensitive cloud files themselves: Simply encrypt them via the Windows application or via the app and then transfer them securely into the cloud.
 
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full rounded-lg" src="/img/coop/webde-banner.jpg">
+<figure class="text-center my-8">
+    <img class="inline-block rounded-lg" src="/img/coop/webde-banner.jpg" alt="WEB.DE Coop Banner"/>
 </figure>
 
 With WEB.DE Online-Speicher, users can rely on the fact that their cloud files are stored exclusively in Germany and are therefore strictly protected by law. This is what WEB.DE's "Cloud made in Germany" promise stands for.

@@ -9,8 +9,8 @@ aliases: ["/coop/gmx_de.html"]
 
 Der GMX Tresor bietet Nutzern der GMX Cloud die Möglichkeit, Dateien zusätzlich zu schützen: Dank dieser Anwendung werden sie automatisch auf dem jeweiligen Gerät verschlüsselt und danach in die Cloud übertragen.
 
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full" src="/img/coop/gmx-banner.jpg">
+<figure class="text-center my-8">
+    <img class="inline-block rounded" src="/img/coop/gmx-banner.jpg" alt="GMX Coop Banner"/>
 </figure>
 
 GMX Cloud ist die kostenlose Cloud-Lösung für alle GMX Nutzer. Mit dem „Cloud made in Germany“-Versprechen garantiert GMX die Einhaltung strenger Datenschutzrichtlinien und die ausschließliche Speicherung aller Dateien in Deutschland.

@@ -7,8 +7,8 @@ description: Based on the solid open-source foundation of Cyberduck, Mountain Du
 aliases: ["/coop/mountainduck_en.html"]
 ---
 
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x">
+<figure class="text-center my-8">
+    <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
     <figcaption>
         <p class="text-sm text-gray-500"> Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
     </figcaption>

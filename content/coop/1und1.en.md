@@ -7,10 +7,8 @@ description: "With 1&1 Verschlüsselung, customers of 1&1 have the possibility t
 aliases: ["/coop/1und1_en.html"]
 ---
 
-With 1&1 Verschlüsselung, customers of 1&1 have the possibility to encrypt their sensitive files quickly and easily before uploading. On the basis of Cryptomator, two apps and a Windows application have been developed, which enable client-side encryption on the device.
-
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full" src="/img/coop/1und1-banner.png">
+<figure class="text-center my-8">
+    <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
 </figure>
 
 Encryption is done using a unique, individual key. The files are converted into an unreadable sequence of characters. Only with this key, the files can be made readable again.

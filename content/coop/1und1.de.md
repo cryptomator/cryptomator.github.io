@@ -7,10 +7,8 @@ description: "Mit dem 1&1 Verschlüsselung haben Kunden von 1&1 die Möglichkeit
 aliases: ["/coop/1und1_de.html"]
 ---
 
-Mit dem 1&1 Verschlüsselung haben Kunden von 1&1 die Möglichkeit, ihre sensiblen Dateien vor dem Upload ganz einfach und schnell zu verschlüsseln. Auf Basis von Cryptomator sind zwei Apps und eine Windows-Applikation entstanden, die eine clientseitige und komfortable Verschlüsselung auf dem Gerät ermöglichen.
-
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full" src="/img/coop/1und1-banner.png">
+<figure class="text-center my-8">
+    <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
 </figure>
 
 Die Verschlüsselung erfolgt mithilfe eines einzigartigen, individuellen Schlüssels. Die Dateien werden in eine nicht lesbare Abfolge von Zeichen umgewandelt. Nur mit diesem Schlüssel können die Dateien wieder lesbar gemacht werden.

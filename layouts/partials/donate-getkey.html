@@ -22,7 +22,7 @@
     </div>
     <div class="text-center mt-8">
       <p>{{ i18n "donate_getkey_instruction" }}</p>
-      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout()" type="submit" class="btn btn-primary w-64 text-lg">
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout()" type="submit" class="btn btn-primary">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "donate_getkey_checkout" }}
       </button>
     </div>

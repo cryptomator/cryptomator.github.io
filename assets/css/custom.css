@@ -1,6 +1,6 @@
 /* custom classes: */
 .btn {
-    @apply inline-block border rounded no-underline p-2;
+    @apply inline-block border rounded no-underline px-4 py-2;
 }
 
 .btn:hover,

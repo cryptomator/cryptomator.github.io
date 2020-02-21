@@ -9,8 +9,8 @@ aliases: ["/coop/webde_de.html"]
 
 Mit dem WEB.DE Tresor können Nutzer des WEB.DE Online-Speichers besonders sensible Cloud-Dateien jetzt zusätzlich selbst schützen: Einfach über die Windows-Anwendung oder per App verschlüsseln und anschließend sicher in die Cloud übertragen.
 
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full rounded-lg" src="/img/coop/webde-banner.jpg">
+<figure class="text-center my-8">
+    <img class="inline-block rounded-lg" src="/img/coop/webde-banner.jpg" alt="WEB.DE Banner"/>
 </figure>
 
 Beim WEB.DE Online-Speicher können sich Nutzer darauf verlassen, dass ihre Cloud-Dateien ausschließlich in Deutschland gespeichert werden und somit per Gesetz streng geschützt sind. Dafür steht das „Cloud made in Germany“-Versprechen von WEB.DE.

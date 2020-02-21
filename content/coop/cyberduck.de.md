@@ -3,14 +3,14 @@ title: "Cyberduck"
 prio: 40
 img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png
-description: Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
+description: "Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen."
 aliases: ["/coop/cyberduck_de.html"]
 ---
 
-<figure class="mx-auto lg:w-10/12 w-full">
-    <img class="w-full" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x">
+<figure class="text-center my-8">
+    <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
     <figcaption>
-        <p class="text-sm text-gray-500"> Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+        <p class="text-sm text-gray-500"> Illustration von {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
     </figcaption>
 </figure>
 
