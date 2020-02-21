@@ -1,5 +1,5 @@
 ---
-title: "Was unterscheided Cryptomator von VeraCrypt?"
+title: "Was unterscheidet Cryptomator von VeraCrypt?"
 weight: 2
 ---
 
