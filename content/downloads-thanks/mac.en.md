@@ -2,6 +2,9 @@
 title: "Thank you for downloading Cryptomator!"
 url: "/downloads/mac/thanks"
 release: "dmg"
+
+_build:
+  list: false
 ---
 
 After downloading, simply double-click on _{{%siteparam releases.dmg.filename%}}_ and move Cryptomator.app to your Applications folder.
