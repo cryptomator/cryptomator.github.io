@@ -8,7 +8,7 @@ aliases: ["/coop/1und1_en.html"]
 ---
 
 <figure class="text-center my-8">
-    <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
+  <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
 </figure>
 
 Encryption is done using a unique, individual key. The files are converted into an unreadable sequence of characters. Only with this key, the files can be made readable again.

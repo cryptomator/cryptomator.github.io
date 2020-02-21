@@ -10,7 +10,7 @@ aliases: ["/coop/gmx_en.html"]
 GMX Tresor offers users of GMX Cloud the possibility to additionally protect their files: Thanks to this application, they are automatically encrypted on the respective device and then transferred to the cloud.
 
 <figure class="text-center my-8">
-    <img class="inline-block rounded" src="/img/coop/gmx-banner.jpg" alt="GMX Coop Banner"/>
+  <img class="inline-block rounded" src="/img/coop/gmx-banner.jpg" alt="GMX Coop Banner"/>
 </figure>
 
 GMX Cloud is the free cloud solution for all GMX users. With the "Cloud made in Germany" promise, GMX guarantees compliance with strict data protection guidelines and the exclusive storage of all files in Germany.
@@ -23,5 +23,5 @@ When setting up the vault, the user sets a secret password that remains with him
 Only the user knows the vault's password. This ensures that cloud files are reliably protected against unwanted access at all times.
 
 <p class="text-center">
-    <a class="btn btn-primary" href="https://www.gmx.net/cloud/verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit gmx.net</a>
+  <a class="btn btn-primary" href="https://www.gmx.net/cloud/verschluesselung/" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit gmx.net</a>
 </p>

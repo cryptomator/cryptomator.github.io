@@ -1,84 +1,84 @@
 /* margins for text elements */
 blockquote, h1, h2, h3, ol, p, pre, table, ul {
-    @apply mb-4;
+  @apply mb-4;
 }
 
 blockquote:last-child, h1:last-child, h2:last-child, h3:last-child, ol:last-child, p:last-child, pre:last-child, table:last-child, ul:last-child {
-    @apply mb-0;
+  @apply mb-0;
 }
 
 hr {
-    @apply my-8;
+  @apply my-8;
 }
 
 /* list styles */
 ul {
-    @apply list-disc ml-8;
+  @apply list-disc ml-8;
 }
 
 ol {
-    @apply list-decimal ml-8;
+  @apply list-decimal ml-8;
 }
 
 /* text styles */
 h1 {
-    @apply text-xl font-headline font-medium;
+  @apply text-xl font-headline font-medium;
 }
 
 h2 {
-    @apply text-lg font-headline font-medium;
+  @apply text-lg font-headline font-medium;
 }
 
 h3 {
-    @apply text-lg font-headline;
+  @apply text-lg font-headline;
 }
 
 @screen md {
-    h1 {
-        @apply text-2xl;
-    }
-
-    h2 {
-        @apply text-xl;
-    }
-
-    h3 {
-        @apply text-lg;
-    }
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
 }
 
 @screen lg {
-    h1 {
-        @apply text-4xl;
-    }
-
-    h2 {
-        @apply text-2xl;
-    }
-
-    h3 {
-        @apply text-xl;
-    }
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+  
+  h3 {
+    @apply text-xl;
+  }
 }
 
 a {
-    @apply text-primary no-underline;
+  @apply text-primary no-underline;
 }
 
 a:hover {
-    @apply text-primary underline;
+  @apply text-primary underline;
 }
 
 blockquote {
-    @apply text-lg border-l-4 px-3 py-2;
+  @apply text-lg border-l-4 px-3 py-2;
 }
 
 pre, code {
-    @apply text-sm bg-gray-300 rounded p-1;
+  @apply text-sm bg-gray-300 rounded p-1;
 }
 
 th {
-    @apply text-left;
+  @apply text-left;
 }
 
 /* see https://github.com/alpinejs/alpine#x-cloak */

@@ -5,105 +5,105 @@
 {{ $defaultPos := cond .IsHome "absolute" "relative" }}
 {{ $currentRelPermalink := .RelPermalink }}
 <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : '{{ $defaultPos }}'" class="w-full text-{{ $textColor }} font-{{ $fontWeight }} absolute lg:px-8 {{ $backgroundColor }} border-t-2 {{ $navBorderColor }} shadow">
-    <div class="flex justify-between items-stretch w-full">
-        <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="{{ .Site.LanguagePrefix }}/">
-            <img src="/presskit/cryptomator-logo.svg" class="h-8" alt="Logo"/>
-            <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
-        </a>
-
-        <template>
-            <!-- purgecss needs to find these classes (because hugo runs purgecss _before_ building the site 🤦‍♂️) -->
-            <i class="hidden hover:border-primary hover:border-white"></i>
-        </template>
-
-        <!-- Regular Navigation -->
-        <ul class="hidden md:flex items-stretch list-none m-0">
-            {{ with .Site.GetPage "/downloads" }}
-            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-            {{ with .Site.GetPage "/coop" }}
-            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-            {{ with .Site.GetPage "/faq" }}
-            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-            <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
-            </li>
-            {{ with .Site.GetPage "/donate" }}
-            {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-            <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-                <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </li>
-            {{ end }}
-
-            <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}"></li>
-
-            <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
-                <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="font-{{ $fontWeight }} whitespace-no-wrap p-2">
-                    <span>{{ .Site.Language.Lang | upper }}</span>
-                    <i class="fas fa-chevron-down text-xs"></i>
-                </button>
-                <div class="relative">
-                    <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md">
-                        {{ range .Translations }}
-                        <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
-                        {{ end }}
-                    </div>
-                </div>
-            </li>
-            <li class="flex items-center border-b-2 border-transparent">
-                <a class="p-2 hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw" aria-label="Twitter"></i></a>
-            </li>
-            <li class="flex items-center border-b-2 border-transparent">
-                <a class="p-2 hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-fw" aria-label="Facebook"></i></a>
-            </li>
-        </ul>
-
-        <!-- Toggle Button for Smartphone Navigation -->
-        <button @click="isNavOpen = !isNavOpen" type="button" class="self-center md:hidden border border-{{ $textColor }} rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
-            <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
-            <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+  <div class="flex justify-between items-stretch w-full">
+    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="{{ .Site.LanguagePrefix }}/">
+      <img src="/presskit/cryptomator-logo.svg" class="h-8" alt="Logo"/>
+      <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+    </a>
+    
+    <template>
+      <!-- purgecss needs to find these classes (because hugo runs purgecss _before_ building the site 🤦‍♂️) -->
+      <i class="hidden hover:border-primary hover:border-white"></i>
+    </template>
+    
+    <!-- Regular Navigation -->
+    <ul class="hidden md:flex items-stretch list-none m-0">
+      {{ with .Site.GetPage "/downloads" }}
+      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
+        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      {{ with .Site.GetPage "/coop" }}
+      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
+        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      {{ with .Site.GetPage "/faq" }}
+      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
+        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
+        <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
+      </li>
+      {{ with .Site.GetPage "/donate" }}
+      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
+        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      
+      <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}"></li>
+      
+      <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="font-{{ $fontWeight }} whitespace-no-wrap p-2">
+          <span>{{ .Site.Language.Lang | upper }}</span>
+          <i class="fas fa-chevron-down text-xs"></i>
         </button>
-    </div>
-
-    <!-- Smartphone Navigation -->
-    <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="md:hidden">
-        {{ with .Site.GetPage "/downloads" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-        {{ with .Site.GetPage "/coop" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-        {{ with .Site.GetPage "/faq" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-        <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
-        {{ with .Site.GetPage "/donate" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-
-        <hr class="border-primary my-2"/>
-
-        <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-            <i class="fas fa-globe fa-fw"></i> {{ .Site.Language.Lang | upper }}
-        </div>
-        <div class="mt-1">
+        <div class="relative">
+          <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md">
             {{ range .Translations }}
-            <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline">{{ .Language.LanguageName }}</a>
+            <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
             {{ end }}
+          </div>
         </div>
-
-        <hr class="border-primary my-2"/>
-
-        <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">
-            <i class="fab fa-twitter fa-fw"></i>
-            <span>Cryptomator on Twitter</span>
-        </a>
-        <a class="block p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener">
-            <i class="fab fa-facebook-f fa-fw"></i>
-            <span>Cryptomator on Facebook</span>
-        </a>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw" aria-label="Twitter"></i></a>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-facebook-f fa-fw" aria-label="Facebook"></i></a>
+      </li>
+    </ul>
+    
+    <!-- Toggle Button for Smartphone Navigation -->
+    <button @click="isNavOpen = !isNavOpen" type="button" class="self-center md:hidden border border-{{ $textColor }} rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+      <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+      <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+    </button>
+  </div>
+  
+  <!-- Smartphone Navigation -->
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="md:hidden">
+    {{ with .Site.GetPage "/downloads" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    {{ with .Site.GetPage "/coop" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    {{ with .Site.GetPage "/faq" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
+    {{ with .Site.GetPage "/donate" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> {{ .Site.Language.Lang | upper }}
     </div>
+    <div class="mt-1">
+      {{ range .Translations }}
+      <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline">{{ .Language.LanguageName }}</a>
+      {{ end }}
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-fw"></i>
+      <span>Cryptomator on Twitter</span>
+    </a>
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-facebook-f fa-fw"></i>
+      <span>Cryptomator on Facebook</span>
+    </a>
+  </div>
 </nav>

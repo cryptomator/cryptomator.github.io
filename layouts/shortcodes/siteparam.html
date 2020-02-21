@@ -2,8 +2,8 @@
 {{- $scratch := newScratch }}
 {{- $scratch.Set "value" $.Site.Params -}}
 {{- range $paramName := $paramNames -}}
-    {{- with $scratch.Get "value" -}}
-        {{- $scratch.Set "value" (index . (lower $paramName)) -}}
-    {{- end -}}
+  {{- with $scratch.Get "value" -}}
+    {{- $scratch.Set "value" (index . (lower $paramName)) -}}
+  {{- end -}}
 {{- end -}}
 {{- $scratch.Get "value" -}}

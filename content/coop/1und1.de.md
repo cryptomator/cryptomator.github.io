@@ -8,7 +8,7 @@ aliases: ["/coop/1und1_de.html"]
 ---
 
 <figure class="text-center my-8">
-    <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
+  <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
 </figure>
 
 Die Verschlüsselung erfolgt mithilfe eines einzigartigen, individuellen Schlüssels. Die Dateien werden in eine nicht lesbare Abfolge von Zeichen umgewandelt. Nur mit diesem Schlüssel können die Dateien wieder lesbar gemacht werden.

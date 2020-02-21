@@ -8,10 +8,10 @@ aliases: ["/coop/cyberduck_en.html"]
 ---
 
 <figure class="text-center my-8">
-    <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
-    <figcaption>
-        <p class="text-sm text-gray-500"> Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
-    </figcaption>
+  <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
+  <figcaption>
+    <p class="text-sm text-gray-500"> Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+  </figcaption>
 </figure>
 
 Cyberduck allows access to your cloud storage without an additional sync client. FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure & OneDrive, Google Drive, and Dropbox are the supported protocols. As of version 6.0, Cyberduck is compatible with Cryptomator and uses the same client-side encryption. All vaults created with one of the applications can be opened with the other.
@@ -25,5 +25,5 @@ Cyberduck is open-source software, too. The same principles which apply to Crypt
 Cyberduck uses the same Java-based cryptographic library {{<extlink "https://github.com/cryptomator/cryptolib" "CryptoLib">}} as the desktop version and Android app of Cryptomator.
 
 <p class="text-center">
-    <a class="btn btn-primary" href="https://cyberduck.io/cryptomator" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit cyberduck.io</a>
+  <a class="btn btn-primary" href="https://cyberduck.io/cryptomator" target="_blank" rel="noopener"><i class="fas fa-link"></i> Visit cyberduck.io</a>
 </p>
