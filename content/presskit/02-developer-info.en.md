@@ -20,7 +20,7 @@ Sebastian Stenzel has extensive expertise in the field of cryptography and is re
 
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 lg:w-1/2">
-    <figure class="rounded border border-gray-200 shadow bg-white text-center p-2 mb-8">
+    <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/skymatic-team-rhein.jpg"><img class="inline-block mb-2" src="/presskit/skymatic-team-rhein.jpg" alt="Christian Schmickler, Tobias Hagemann, Sebastian Stenzel, Markus Kreusch"/></a>
       <figcaption>
         <p class="text-sm text-gray-500">Christian Schmickler, Tobias Hagemann, Sebastian Stenzel, Markus Kreusch • Photo: Simon Hecht • 5167x3445 • JPG</p>
@@ -28,7 +28,7 @@ Sebastian Stenzel has extensive expertise in the field of cryptography and is re
     </figure>
   </div>
   <div class="w-full px-3 lg:w-1/2">
-    <figure class="rounded border border-gray-200 shadow bg-white text-center p-2 mb-8">
+    <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/skymatic-team-office.jpg"><img class="inline-block mb-2" src="/presskit/skymatic-team-office.jpg" alt="Sebastian Stenzel, Markus Kreusch, Tobias Hagemann, Christian Schmickler"/></a>
       <figcaption>
         <p class="text-sm text-gray-500">Sebastian Stenzel, Markus Kreusch, Tobias Hagemann, Christian Schmickler • Photo: Simon Hecht • 4756x3171 • JPG</p>
