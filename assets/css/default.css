@@ -77,6 +77,10 @@ pre, code {
   @apply text-sm bg-gray-300 rounded p-1;
 }
 
+code {
+  @apply break-words;
+}
+
 th {
   @apply text-left;
 }

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1>{{ .Title }}</h1>
+      <p class="text-lg text-gray-600">{{ .Description }}</p>
+    </header>
+
+    {{ .Content }}
+  </div>
+
+  <section class="container text-center pt-12 pb-24">
+    <h3 class="text-2xl">{{ i18n "enterprise_contact_us_title" . }}</h3>
+    <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-primary">
+      <i class="fas fa-envelope"></i> {{ i18n "enterprise_contact_us_button" . }}
+    </a>
+  </section>
+{{ end }}

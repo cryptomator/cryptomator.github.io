@@ -8,114 +8,120 @@
   translation: "by"
 
 # Coop
-- id: "coop_more_info"
+- id: coop_more_info
   translation: "More Info"
-- id: "coop_your_business_title"
+- id: coop_your_business_title
   translation: "Your Business?"
-- id: "coop_your_business_paragraph"
+- id: coop_your_business_paragraph
   translation: "Interested in Cryptomator for your business? Explore various fields of application."
 
 # Donate
 - id: donate_anon_title
-  translation: Just donate
+  translation: "Just donate"
 - id: donate_anon_feature_1
-  translation: Support Cryptomator's open-source development
+  translation: "Support Cryptomator's open-source development"
 - id: donate_anon_feature_2
-  translation: Choose your preferred payment method
+  translation: "Choose your preferred payment method"
 - id: donate_anon_feature_3
-  translation: Pay what you want
+  translation: "Pay what you want"
 
 - id: donate_paypal_title
-  translation: PayPal
+  translation: "PayPal"
 - id: donate_paypal_instruction
-  translation: After pressing "Proceed", you will be redirected to our PayPal site.
+  translation: "After pressing \"Proceed\", you will be redirected to our PayPal site."
 - id: donate_paypal_calltoaction
-  translation: Proceed to PayPal
+  translation: "Proceed to PayPal"
 
 - id: donate_creditcard_title
-  translation: Credit Card
+  translation: "Credit Card"
 - id: donate_creditcard_amount
-  translation: Amount
+  translation: "Amount"
 - id: donate_creditcard_amount_placeholder
-  translation: min. 1
+  translation: "min. 1"
 - id: donate_creditcard_amount_suffix
   translation: ".00"
 - id: donate_creditcard_frequency
-  translation: Frequency
+  translation: "Frequency"
 - id: donate_creditcard_frequency_once
-  translation: One-Time
+  translation: "One-Time"
 - id: donate_creditcard_frequency_recurring
-  translation: Monthly
+  translation: "Monthly"
 - id: donate_creditcard_number
-  translation: Credit Card
+  translation: "Credit Card"
 - id: donate_creditcard_once_instruction
-  translation: Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.
+  translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href=\"https://support.stripe.com/questions/\"unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
 - id: donate_creditcard_once_loading
-  translation: Loading…
+  translation: "Loading…"
 - id: donate_creditcard_once_loadcaptcha
-  translation: Continue…
+  translation: "Continue…"
 - id: donate_creditcard_once_paynow
-  translation: Pay Now
+  translation: "Pay Now"
 - id: donate_creditcard_recurring_instruction
-  translation: Recurring credit card payments will be set up on our Stripe page.
+  translation: "Recurring credit card payments will be set up on our Stripe page."
 - id: donate_creditcard_recurring_calltoaction
-  translation: Proceed to Stripe
+  translation: "Proceed to Stripe"
 
 - id: donate_banktransfer_title
-  translation: Bank Transfer
+  translation: "Bank Transfer"
 - id: donate_banktransfer_recipient
-  translation: Recipient
+  translation: "Recipient"
 
 - id: donate_crypto_title
-  translation: Crypto
+  translation: "Crypto"
 - id: donate_crypto_instruction
-  translation: Select the crypto currency in the next step. After pressing "Proceed", you will be redirected to our CoinPayments site.
+  translation: "Select the crypto currency in the next step. After pressing \"Proceed\", you will be redirected to our CoinPayments site."
 - id: donate_crypto_calltoaction
-  translation: Proceed to CoinPayments
+  translation: "Proceed to CoinPayments"
 
 - id: donate_getkey_title
-  translation: Buy a donation key
+  translation: "Buy a donation key"
 - id: donate_getkey_feature_1
-  translation: Register your software and unlock dark mode
+  translation: "Register your software and unlock dark mode"
 - id: donate_getkey_feature_2
-  translation: Some might say it's an awesome people certificate
+  translation: "Some might say it's an awesome people certificate"
 - id: donate_getkey_feature_3
-  translation: Get an invoice
+  translation: "Get an invoice"
 
 - id: donate_getkey_amount
-  translation: Amount
+  translation: "Amount"
 - id: donate_getkey_amount_placeholder
-  translation: min. 10
+  translation: "min. 10"
 - id: donate_getkey_amount_suffix
   translation: ".00"
 - id: donate_getkey_email
-  translation: Email
+  translation: "Email"
 - id: donate_getkey_email_placeholder
-  translation: Email address
+  translation: "Email address"
 - id: donate_getkey_instruction
-  translation: Payments are securely handled by Paddle.
+  translation: "Payments are securely handled by Paddle."
 - id: donate_getkey_checkout
-  translation: Checkout
+  translation: "Checkout"
 
 - id: donate_getkey_success
-  translation: Your payment was successful!
+  translation: "Your payment was successful!"
 - id: donate_getkey_key
-  translation: Donation Key
+  translation: "Donation Key"
 - id: donate_getkey_key_placeholder
-  translation: Loading…
+  translation: "Loading…"
 - id: donate_getkey_key_instruction
-  translation: This is your donation key. Enter it in the Cryptomator settings under "Donate". The donation key has also been sent to your email address.
+  translation: "This is your donation key. Enter it in the Cryptomator settings under \"Donate\". The donation key has also been sent to your email address."
 
 - id: donate_become_sponsor_title
-  translation: Want to become an official sponsor?
+  translation: "Want to become an official sponsor?"
 - id: donate_become_sponsor_button
-  translation: Become a Sponsor
+  translation: "Become a Sponsor"
 
 # Downloads
 - id: downloads_all_versions_title
   translation: "Looking for older versions?"
 - id: downloads_all_versions_button
   translation: "Releases Archive on GitHub"
+
+# Enterprise
+- id: enterprise_contact_us_title
+  translation: "Are you interested?"
+- id: enterprise_contact_us_button
+  translation: "Contact Us for an Offer"
 
 # FAQ
 - id: faq_title

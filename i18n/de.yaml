@@ -8,114 +8,120 @@
   translation: "von"
 
 # Coop
-- id: "coop_more_info"
+- id: coop_more_info
   translation: "Mehr Infos"
-- id: "coop_your_business_title"
+- id: coop_your_business_title
   translation: "Dein Unternehmen?"
-- id: "coop_your_business_paragraph"
+- id: coop_your_business_paragraph
   translation: "Interesse an Cryptomator für dein Unternehmen? Entdecke die vielfältigen Einsatzmöglichkeiten."
 
 # Donate
 - id: donate_anon_title
-  translation: Einfach spenden
+  translation: "Einfach spenden"
 - id: donate_anon_feature_1
-  translation: Open-Source-Entwicklung von Cryptomator unterstützen
+  translation: "Open-Source-Entwicklung von Cryptomator unterstützen"
 - id: donate_anon_feature_2
-  translation: Bevorzugte Zahlungsmethode auswählen
+  translation: "Bevorzugte Zahlungsmethode auswählen"
 - id: donate_anon_feature_3
-  translation: Pay what you want
+  translation: "Pay what you want"
 
 - id: donate_paypal_title
-  translation: PayPal
+  translation: "PayPal"
 - id: donate_paypal_instruction
-  translation: Nach dem Klick auf "Weiter" werden Sie auf unsere PayPal-Seite geleitet.
+  translation: "Nach dem Klick auf \"Weiter\" werden Sie auf unsere PayPal-Seite geleitet."
 - id: donate_paypal_calltoaction
-  translation: Weiter zu PayPal
+  translation: "Weiter zu PayPal"
 
 - id: donate_creditcard_title
-  translation: Kreditkarte
+  translation: "Kreditkarte"
 - id: donate_creditcard_amount
-  translation: Betrag
+  translation: "Betrag"
 - id: donate_creditcard_amount_placeholder
-  translation: min. 1
+  translation: "min. 1"
 - id: donate_creditcard_amount_suffix
   translation: ",00"
 - id: donate_creditcard_frequency
-  translation: Spende
+  translation: "Spende"
 - id: donate_creditcard_frequency_once
-  translation: Einmalig
+  translation: "Einmalig"
 - id: donate_creditcard_frequency_recurring
-  translation: Monatlich
+  translation: "Monatlich"
 - id: donate_creditcard_number
-  translation: Kreditkarte
+  translation: "Kreditkarte"
 - id: donate_creditcard_once_instruction
-  translation: Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">eine Buchung von Stripe</a> enthalten sein.
+  translation: "Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a href=\"https://support.stripe.com/questions/\"unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">eine Buchung von Stripe</a> enthalten sein."
 - id: donate_creditcard_once_loading
-  translation: Lädt…
+  translation: "Lädt…"
 - id: donate_creditcard_once_loadcaptcha
-  translation: Weiter…
+  translation: "Weiter…"
 - id: donate_creditcard_once_paynow
-  translation: Jetzt bezahlen
+  translation: "Jetzt bezahlen"
 - id: donate_creditcard_recurring_instruction
-  translation: Wiederkehrende Kreditkartenzahlungen werden über unsere Stripe-Seite erstellt.
+  translation: "Wiederkehrende Kreditkartenzahlungen werden über unsere Stripe-Seite erstellt."
 - id: donate_creditcard_recurring_calltoaction
-  translation: Weiter zu Stripe
+  translation: "Weiter zu Stripe"
 
 - id: donate_banktransfer_title
-  translation: Überweisung
+  translation: "Überweisung"
 - id: donate_banktransfer_recipient
-  translation: Empfänger
+  translation: "Empfänger"
 
 - id: donate_crypto_title
-  translation: Crypto
+  translation: "Crypto"
 - id: donate_crypto_instruction
-  translation: Die Cryptowährung wird im nächsten Schritt ausgewählt. Nach dem Klick auf "Weiter" werden Sie auf unsere CoinPayments-Seite geleitet.
+  translation: "Die Cryptowährung wird im nächsten Schritt ausgewählt. Nach dem Klick auf \"Weiter\" werden Sie auf unsere CoinPayments-Seite geleitet."
 - id: donate_crypto_calltoaction
-  translation: Weiter zu CoinPayments
+  translation: "Weiter zu CoinPayments"
 
 - id: donate_getkey_title
-  translation: Spendenschlüssel kaufen
+  translation: "Spendenschlüssel kaufen"
 - id: donate_getkey_feature_1
-  translation: Software registrieren und Dark-Mode freischalten
+  translation: "Software registrieren und Dark-Mode freischalten"
 - id: donate_getkey_feature_2
-  translation: Manche sagen, es wäre ein "Awesome People"-Zertifikat
+  translation: "Manche sagen, es wäre ein \"Awesome People\"-Zertifikat"
 - id: donate_getkey_feature_3
-  translation: Rechnung erhalten
+  translation: "Rechnung erhalten"
 
 - id: donate_getkey_amount
-  translation: Betrag
+  translation: "Betrag"
 - id: donate_getkey_amount_placeholder
-  translation: min. 10
+  translation: "min. 10"
 - id: donate_getkey_amount_suffix
   translation: ",00"
 - id: donate_getkey_email
-  translation: E-Mail
+  translation: "E-Mail"
 - id: donate_getkey_email_placeholder
-  translation: E-Mail-Adresse
+  translation: "E-Mail-Adresse"
 - id: donate_getkey_instruction
-  translation: Zahlungen werden über Paddle abgewickelt.
+  translation: "Zahlungen werden über Paddle abgewickelt."
 - id: donate_getkey_checkout
-  translation: Zur Zahlung
+  translation: "Zur Zahlung"
 
 - id: donate_getkey_success
-  translation: Deine Zahlung war erfolgreich!
+  translation: "Deine Zahlung war erfolgreich!"
 - id: donate_getkey_key
-  translation: Spendenschlüssel
+  translation: "Spendenschlüssel"
 - id: donate_getkey_key_placeholder
-  translation: Lädt…
+  translation: "Lädt…"
 - id: donate_getkey_key_instruction
-  translation: Dies ist dein Spendenschlüssel. Gib ihn in den Cryptomator-Einstellungen unter "Spenden" ein. Der Spendenschlüssel wurde auch an deine E-Mail-Adresse geschickt.
+  translation: "Dies ist dein Spendenschlüssel. Gib ihn in den Cryptomator-Einstellungen unter \"Spenden\" ein. Der Spendenschlüssel wurde auch an deine E-Mail-Adresse geschickt."
 
 - id: donate_become_sponsor_title
-  translation: Möchtest du ein offizieller Sponsor werden?
+  translation: "Möchtest du ein offizieller Sponsor werden?"
 - id: donate_become_sponsor_button
-  translation: Werde Sponsor
+  translation: "Werde Sponsor"
 
 # Downloads
 - id: downloads_all_versions_title
   translation: "Suchst du alte Versionen?"
 - id: downloads_all_versions_button
   translation: "Release-Archiv auf GitHub"
+
+# Enterprise
+- id: enterprise_contact_us_title
+  translation: "Haben wir dein Interesse geweckt?"
+- id: enterprise_contact_us_button
+  translation: "Kontaktiere uns für ein Angebot"
 
 # FAQ
 - id: faq_title
