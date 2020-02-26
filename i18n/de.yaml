@@ -2,8 +2,6 @@
   translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
 
 # Blog
-- id: blog_title
-  translation: "Blog"
 - id: blob_post_author_prefix
   translation: "von"
 
@@ -123,10 +121,6 @@
 - id: enterprise_contact_us_button
   translation: "Kontaktiere uns für ein Angebot"
 
-# FAQ
-- id: faq_title
-  translation: "FAQ"
-
 # Home
 - id: home_trustingbrands_title
   translation: "Marken, die unserer Technologie vertrauen"
@@ -138,7 +132,3 @@
   translation: "Preisträger des CeBIT Innovation Awards 2016"
 - id: home_cebit_subtitle
   translation: "Cryptomator ist Gewinner des Sonderpreises for Usable Security and Privacy."
-
-# Press Kit
-- id: presskit_title
-  translation: "Pressemappe"

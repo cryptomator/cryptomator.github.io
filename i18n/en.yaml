@@ -2,8 +2,6 @@
   translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
 
 # Blog
-- id: blog_title
-  translation: "Blog"
 - id: blob_post_author_prefix
   translation: "by"
 
@@ -123,10 +121,6 @@
 - id: enterprise_contact_us_button
   translation: "Contact Us for an Offer"
 
-# FAQ
-- id: faq_title
-  translation: "FAQ"
-
 # Home
 - id: home_trustingbrands_title
   translation: "Brands Trusting our Technology"
@@ -138,7 +132,3 @@
   translation: "Awardee of the CeBIT Innovation Award 2016"
 - id: home_cebit_subtitle
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
-
-# Press Kit
-- id: presskit_title
-  translation: "Press Kit"

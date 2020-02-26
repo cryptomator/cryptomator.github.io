@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1><a href="{{ .Parent.Parent.RelPermalink }}">{{ .Parent.Parent.Title }}</a> / <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</h1>
+    </header>
+    {{ .Content }}
+  </div>
+{{ end }}

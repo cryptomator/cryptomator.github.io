@@ -3,9 +3,9 @@
     <header class="mb-6">
       <h1>
         {{- if .Sections -}}
-          {{- i18n "faq_title" -}}
+          {{ .Title }}
         {{- else -}}
-          <a href="{{ .Parent.RelPermalink }}">{{- i18n "faq_title" -}}</a>/{{- .Title -}}
+          <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}
         {{- end -}}
       </h1>
     </header>
