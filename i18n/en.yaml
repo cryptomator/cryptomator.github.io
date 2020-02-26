@@ -1,5 +1,15 @@
 - id: site_meta_description
   translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
+- id: footer_contribute_title
+  translation: "Contribute"
+- id: footer_contribute_translate
+  translation: "Translate"
+- id: footer_follow_us_title
+  translation: "Follow Us"
+- id: footer_follow_us_rss_feed
+  translation: "RSS Feed"
+- id: footer_legal_title
+  translation: "Legal"
 
 # Blog
 - id: blob_post_author_prefix

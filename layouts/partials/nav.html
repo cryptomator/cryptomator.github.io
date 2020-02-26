@@ -1,9 +1,9 @@
-{{ $textColor := cond .IsHome "white" "primary" }}
-{{ $fontWeight := cond .IsHome "normal" "semibold" }}
-{{ $backgroundColor := cond .IsHome "bg-trans-white" "bg-white" }}
-{{ $navBorderColor := cond .IsHome "border-transparent" "border-primary" }}
-{{ $defaultPos := cond .IsHome "absolute" "relative" }}
-{{ $currentRelPermalink := .RelPermalink }}
+{{- $textColor := cond .IsHome "white" "primary" -}}
+{{- $fontWeight := cond .IsHome "normal" "semibold" -}}
+{{- $backgroundColor := cond .IsHome "bg-trans-white" "bg-white" -}}
+{{- $navBorderColor := cond .IsHome "border-transparent" "border-primary" -}}
+{{- $defaultPos := cond .IsHome "absolute" "relative" -}}
+{{- $currentRelPermalink := .RelPermalink -}}
 <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : '{{ $defaultPos }}'" class="w-full text-{{ $textColor }} font-{{ $fontWeight }} absolute lg:px-8 {{ $backgroundColor }} border-t-2 {{ $navBorderColor }} shadow">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="{{ .Site.LanguagePrefix }}/">
@@ -18,33 +18,33 @@
     
     <!-- Regular Navigation -->
     <ul class="hidden md:flex items-stretch list-none m-0">
-      {{ with .Site.GetPage "/downloads" }}
-      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      {{- with .Site.GetPage "/downloads" }}
+      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
       <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
         <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
-      {{ end }}
-      {{ with .Site.GetPage "/coop" }}
-      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      {{- end }}
+      {{- with .Site.GetPage "/coop" }}
+      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
       <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
         <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
-      {{ end }}
-      {{ with .Site.GetPage "/faq" }}
-      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      {{- end }}
+      {{- with .Site.GetPage "/faq" }}
+      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
       <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
         <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
-      {{ end }}
+      {{- end }}
       <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
         <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
       </li>
-      {{ with .Site.GetPage "/donate" }}
-      {{ $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+      {{- with .Site.GetPage "/donate" }}
+      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
       <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
         <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
-      {{ end }}
+      {{- end }}
       
       <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}"></li>
       
