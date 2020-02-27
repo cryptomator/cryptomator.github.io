@@ -125,6 +125,34 @@
 - id: downloads_all_versions_button
   translation: "Releases Archive on GitHub"
 
+# Downloads Thanks
+- id: downloads_thanks_notification_title
+  translation: "Your download starts automatically."
+- id: downloads_thanks_notification_detail
+  translation: "Didn't work? Click here to restart:"
+- id: downloads_thanks_sha256_signature
+  translation: "Show SHA256 Signature"
+- id: downloads_thanks_pgp_signature
+  translation: "Download PGP Signature"
+- id: downloads_thanks_title
+  translation: "Thanks for choosing Cryptomator!"
+- id: downloads_thanks_getting_started_title
+  translation: "Getting Started"
+- id: downloads_thanks_getting_started_detail
+  translation: "If you are a first-time user, you might be interested to:"
+- id: downloads_thanks_getting_started_detail_1
+  translation: "Read our <a href=\"https://docs.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">documentation</a>, which should guide you in case you would like some instructions."
+- id: downloads_thanks_getting_started_detail_2
+  translation: "Join our <a href=\"https://community.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">community forum</a>, which is a great place to ask for support or share your thoughts."
+- id: downloads_thanks_support_cryptomator_title
+  translation: "Support Cryptomator"
+- id: downloads_thanks_support_cryptomator_detail
+  translation: "Development of the desktop application would not be possible without the support of our users."
+- id: downloads_thanks_support_cryptomator_detail_1
+  translation: "Would you like to <a href=\"/donate\">donate</a>?"
+- id: downloads_thanks_support_cryptomator_detail_2
+  translation: "Would you like to contribute code/translations/issues?"
+
 # Enterprise
 - id: enterprise_contact_us_title
   translation: "Are you interested?"
