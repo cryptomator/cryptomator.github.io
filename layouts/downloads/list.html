@@ -9,10 +9,12 @@
       </section>
     {{ end }}
     
-    <section class="bg-white shadow py-4">
-      <div class="container grid grid-cols-6 md:grid-cols-10 gap-2 text-white text-xs md:text-base">
+    <section class="bg-white shadow py-2">
+      <div class="container flex flex-wrap justify-center text-white">
         {{ range $index, $element := .Pages }}
-          <button :class="{ 'text-primary border-primary hover:border-primary focus:border-primary': tab === '{{ .Slug }}' }" @click="tab = '{{ .Slug }}'" class="btn btn-outline-gray-500 px-2 w-full col-span-2 {{ if eq $index 3 }}col-start-2 md:col-start-auto{{ end }}">{{ safeHTML .Params.ButtonLabel }}</button>
+          <div class="w-1/3 md:w-1/5 p-2">
+            <button :class="{ 'text-primary border-primary hover:border-primary focus:border-primary': tab === '{{ .Slug }}' }" @click="tab = '{{ .Slug }}'" class="btn btn-outline-gray-500 px-2 w-full whitespace-no-wrap">{{ safeHTML .Params.ButtonLabel }}</button>
+          </div>
         {{ end }}
       </div>
     </section>
