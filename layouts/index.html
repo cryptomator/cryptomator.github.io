@@ -12,12 +12,12 @@
     </header>
   </section>
 
-  <div class="md:pt-3 md:pb-6 lg:pt-6 lg:pb-12">
+  <div>
     {{ .Content }}
   </div>
 
-  <div class="bg-dark text-white md:pt-3 md:pb-6 lg:pt-6 lg:pb-12">
-    <section class="container py-12">
+  <div class="bg-dark text-white">
+    <section class="container py-12 md:py-16 lg:py-20">
       <h2 class="text-center mb-8 md:mb-12 lg:mb-16">{{ i18n "home_trustingbrands_title" . }}</h2>
       <div class="grid grid-cols-1 gap-8 text-center md:grid-cols-3 md:w-3/4 lg:w-2/3 mx-auto">
         <a href="{{ .Site.LanguagePrefix }}/coop/webde/">
@@ -35,7 +35,7 @@
       </div>
     </section>
     
-    <section class="container py-12">
+    <section class="container py-12 md:py-16 lg:py-20">
       <h2 class="text-center mb-8 md:mb-12 lg:mb-16">{{ i18n "home_testimonials_title" . }}</h2>
       <div class="flex justify-center items-center" id="testimonial-carousel">
         <button class="prev-button" aria-hidden="true">
@@ -74,7 +74,7 @@
       </div>
     </section>
     
-    <section class="container py-12">
+    <section class="container py-12 md:py-16 lg:py-20">
       <h2 class="text-center mb-8 md:mb-12 lg:mb-16">{{ i18n "home_reception_title" . }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
         <div>
@@ -100,7 +100,7 @@
       </div>
     </section>
     
-    <section class="container pt-12 pb-24">
+    <section class="container pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40">
       <figure class="text-center">
         <a href="https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank" rel="noopener">
           <img class="lazyload inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">
