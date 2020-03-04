@@ -2,12 +2,12 @@
   <section class="flex items-center bg-dark bg-center min-vh-66" style="background-image: url(/img/home/header-background.png); background-size: auto 100%;">
     <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
       <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
-        <img data-src="/img/home/woman-cloud.png" class="lazyload object-scale-down mx-auto lg:w-3/4 animate-hover" alt="Relaxed woman on a cloud secured by a lock"/>
+        <img data-src="/img/home/woman-cloud.png" class="lazyload object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
-        <h1 class="mb-6">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
-        <p class="text-lg text-gray-400 mb-6">Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch.</p>
-        <a href="{{ .Site.LanguagePrefix }}/downloads" role="button" class="btn btn-primary text-lg px-8">Jetzt herunterladen</a>
+        <h1 class="mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
+        <p class="text-lg text-gray-400 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
+        <a href="{{ .Site.LanguagePrefix }}/downloads" role="button" class="btn btn-primary text-lg px-8">{{ i18n "home_header_button" . }}</a>
       </div>
     </header>
   </section>
@@ -50,7 +50,7 @@
               <div class="flex justify-between mb-4">
                 <div class="flex items-start">
                   <a class="flex-shrink-0 w-12 lg:w-16" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
-                    <img data-src="{{ .Image }}" class="lazyload object-contain rounded-lg border border-secondary" alt="Profile Picture of {{ .TwitterHandle }}"/>
+                    <img data-src="{{ .Image }}" class="lazyload object-contain rounded-lg border border-secondary" alt="{{ i18n "home_testimonials_image_alt" . }} {{ .TwitterHandle }}"/>
                   </a>
                   <a class="text-white px-3 hover:text-secondary hover:no-underline" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
                     <p class="font-headline lg:text-xl mb-0">{{ .Name }}</p>

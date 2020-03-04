@@ -160,10 +160,20 @@
   translation: "Kontaktiere uns für ein Angebot"
 
 # Home
+- id: home_header_title
+  translation: "Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud"
+- id: home_header_description
+  translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch."
+- id: home_header_button
+  translation: "Jetzt herunterladen"
+- id: home_header_woman_cloud_alt
+  translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
 - id: home_trustingbrands_title
   translation: "Marken, die unserer Technologie vertrauen"
 - id: home_testimonials_title
   translation: "Stimmen unserer Nutzer"
+- id: home_testimonials_image_alt
+  translation: "Profilbild von"
 - id: home_reception_title
   translation: "Internationale Meinungen"
 - id: home_cebit_title

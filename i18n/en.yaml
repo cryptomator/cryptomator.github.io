@@ -160,10 +160,20 @@
   translation: "Contact Us for an Offer"
 
 # Home
+- id: home_header_title
+  translation: "Put&nbsp;a&nbsp;lock on&nbsp;your&nbsp;cloud"
+- id: home_header_description
+  translation: "With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service."
+- id: home_header_button
+  translation: "Download Now"
+- id: home_header_woman_cloud_alt
+  translation: "Relaxed woman on a cloud secured by a lock"
 - id: home_trustingbrands_title
   translation: "Brands Trusting our Technology"
 - id: home_testimonials_title
   translation: "What our Users Say"
+- id: home_testimonials_image_alt
+  translation: "Profile picture of"
 - id: home_reception_title
   translation: "Reception"
 - id: home_cebit_title
