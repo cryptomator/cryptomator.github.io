@@ -28,13 +28,22 @@
   @apply shadow-none translate-y-0;
 }
 
+.btn-outline-primary {
+  @apply border border-primary text-primary;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  @apply bg-primary text-white transition transform duration-200 ease-in-out;
+}
+
 .btn-outline-gray-500 {
   @apply border border-transparent text-gray-500;
 }
 
 .btn-outline-gray-500:hover,
 .btn-outline-gray-500:focus {
-  @apply border-gray-500;
+  @apply border-gray-500 text-gray-500;
 }
 
 input,
@@ -54,6 +63,14 @@ textarea:focus,
 input:focus:invalid,
 input.show-invalid:invalid {
   @apply border-red-500;
+}
+
+input:disabled,
+input:read-only,
+select:disabled,
+textarea:disabled,
+textarea:read-only {
+  @apply bg-gray-200;
 }
 
 @keyframes hover {

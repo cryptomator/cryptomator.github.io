@@ -13,7 +13,7 @@
       <div class="container flex flex-wrap justify-center text-white p-2">
         {{ range $index, $element := .Pages }}
           <div class="w-1/3 md:w-1/5 p-2">
-            <button :class="{ 'text-primary border-primary hover:border-primary focus:border-primary': tab === '{{ .Slug }}' }" @click="tab = '{{ .Slug }}'" class="btn btn-outline-gray-500 px-2 w-full whitespace-no-wrap">{{ safeHTML .Params.ButtonLabel }}</button>
+            <button :class="{ 'text-primary hover:text-primary focus:text-primary border-primary hover:border-primary focus:border-primary': tab === '{{ .Slug }}' }" @click="tab = '{{ .Slug }}'" class="btn btn-outline-gray-500 px-2 w-full whitespace-no-wrap">{{ safeHTML .Params.ButtonLabel }}</button>
           </div>
         {{ end }}
       </div>
@@ -22,7 +22,7 @@
 
   <section class="container text-center pt-12 pb-24">
     <h3 class="text-2xl">{{ i18n "downloads_all_versions_title" . }}</h3>
-    <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" rel="noopener" role="button" class="btn btn-primary">
+    <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" rel="noopener" role="button" class="btn btn-outline-primary px-8">
       <i class="fab fa-github"></i> {{ i18n "downloads_all_versions_button" .}}
     </a>
   </section>
