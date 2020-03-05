@@ -100,10 +100,10 @@
 
         {{ if .Site.IsServer }}
           {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}
-          <script type="text/javascript" src="{{ $cardPaymentsJs.Permalink }}" defer></script>
+          <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" defer></script>
         {{ else }}
           {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" | minify | fingerprint }}
-          <script type="text/javascript" src="{{ $cardPaymentsJs.Permalink }}" integrity="{{ $cardPaymentsJs.Data.Integrity }}" defer></script>
+          <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" integrity="{{ $cardPaymentsJs.Data.Integrity }}" defer></script>
         {{ end }}
       </div>
 

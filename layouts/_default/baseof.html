@@ -7,15 +7,15 @@
     <title>{{ .Title }}</title>
     {{ if .Site.IsServer }}
       {{ $css := resources.Get "css/main.css" | postCSS }}
-      <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen">
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen">
     {{ else }}
       {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
     {{ end }}
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600|Quicksand:400,500,700&display=swap" rel="stylesheet" media="all">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/blog/feed.xml">
     {{ range .Translations }}
-    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
     {{ end }}
   </head>
   <body class="bg-dark font-body text-gray-900">
@@ -29,12 +29,12 @@
     {{ partial "footer.html" . }}
 
     {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $jquery.Permalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
+    <script type="text/javascript" src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
 
     {{ $alpine := resources.Get "js/alpinejs/alpine.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $alpine.Permalink }}" integrity="{{ $alpine.Data.Integrity }}"></script>
+    <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}"></script>
 
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $lazysizes.Permalink }}" integrity="{{ $lazysizes.Data.Integrity }}"></script>
+    <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}"></script>
   </body>
 </html>

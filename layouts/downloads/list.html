@@ -29,9 +29,9 @@
 
   {{ if .Site.IsServer }}
     {{ $downloadJs := resources.Get "js/download.js" }}
-    <script type="text/javascript" src="{{ $downloadJs.Permalink }}" defer></script>
+    <script type="text/javascript" src="{{ $downloadJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $downloadJs := resources.Get "js/download.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $downloadJs.Permalink }}" integrity="{{ $downloadJs.Data.Integrity }}" defer></script>
+    <script type="text/javascript" src="{{ $downloadJs.RelPermalink }}" integrity="{{ $downloadJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}

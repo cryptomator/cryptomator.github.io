@@ -24,7 +24,7 @@
             </span>
             <span class="mr-1">•</span class="mr-2">
           {{ end }}
-          <span><a href="{{ .Permalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
+          <span><a href="{{ .RelPermalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
         </div>
         {{ if .Params.Notice }}
           <p class="italic">{{ .Params.Notice }}</p>

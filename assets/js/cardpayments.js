@@ -116,7 +116,7 @@ class OneTimePayment {
    */
   chargeWithPaymentId(paymentMethodId) {
     $.ajax({
-      url: 'http://api.cryptomator.org/stripe/charge_creditcard.php',
+      url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
       type: 'POST',
       data: {
         payment_method_id: paymentMethodId,
@@ -147,7 +147,7 @@ class OneTimePayment {
    */
   chargeWithPaymentIntendId(paymentIntendId) {
     $.ajax({
-      url: 'http://api.cryptomator.org/stripe/charge_creditcard.php',
+      url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
       type: 'POST',
       data: {
         payment_intent_id: paymentIntendId,

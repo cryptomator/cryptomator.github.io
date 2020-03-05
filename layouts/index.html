@@ -115,9 +115,9 @@
 
   {{ if .Site.IsServer }}
     {{ $indexJs := resources.Get "js/index.js" }}
-    <script type="text/javascript" src="{{ $indexJs.Permalink }}" defer></script>
+    <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $indexJs := resources.Get "js/index.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $indexJs.Permalink }}" integrity="{{ $indexJs.Data.Integrity }}" defer></script>
+    <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" integrity="{{ $indexJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}

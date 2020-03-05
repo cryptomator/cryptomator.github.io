@@ -38,8 +38,8 @@
 
 {{ if .Site.IsServer }}
   {{ $desktopKeyJs := resources.Get "js/desktopkey.js" }}
-  <script type="text/javascript" src="{{ $desktopKeyJs.Permalink }}" defer></script>
+  <script type="text/javascript" src="{{ $desktopKeyJs.RelPermalink }}" defer></script>
 {{ else }}
   {{ $desktopKeyJs := resources.Get "js/desktopkey.js" | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $desktopKeyJs.Permalink }}" integrity="{{ $desktopKeyJs.Data.Integrity }}" defer></script>
+  <script type="text/javascript" src="{{ $desktopKeyJs.RelPermalink }}" integrity="{{ $desktopKeyJs.Data.Integrity }}" defer></script>
 {{ end }}
