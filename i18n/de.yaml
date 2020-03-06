@@ -11,6 +11,36 @@
 - id: footer_legal_title
   translation: "Rechtliches"
 
+# Android
+- id: android_getkey_title
+  translation: "Lizenzschlüssel kaufen"
+- id: android_getkey_amount
+  translation: "Betrag"
+- id: android_getkey_amount_placeholder
+  translation: "Lädt…"
+- id: android_getkey_email
+  translation: "E-Mail"
+- id: android_getkey_email_placeholder
+  translation: "E-Mail-Adresse"
+- id: android_getkey_instruction
+  translation: "Zahlungen werden über Paddle abgewickelt."
+- id: android_getkey_checkout
+  translation: "Zur Zahlung"
+
+- id: android_getkey_success
+  translation: "Deine Zahlung war erfolgreich!"
+- id: android_getkey_key
+  translation: "Lizenzschlüssel"
+- id: android_getkey_key_placeholder
+  translation: "Lädt…"
+- id: android_getkey_key_instruction
+  translation: "Dies ist dein Lizenzschlüssel. Gib ihn in der Cryptomator-App ein. Der Lizenzschlüssel wurde auch an deine E-Mail-Adresse geschickt."
+
+- id: android_download_title
+  translation: "APK herunterladen"
+- id: android_download_button
+  translation: "Download"
+
 # Blog
 - id: blob_post_author_prefix
   translation: "von"

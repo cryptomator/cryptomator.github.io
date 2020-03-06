@@ -11,6 +11,36 @@
 - id: footer_legal_title
   translation: "Legal"
 
+# Android
+- id: android_getkey_title
+  translation: "Buy a license key"
+- id: android_getkey_amount
+  translation: "Amount"
+- id: android_getkey_amount_placeholder
+  translation: "Loading…"
+- id: android_getkey_email
+  translation: "Email"
+- id: android_getkey_email_placeholder
+  translation: "Email address"
+- id: android_getkey_instruction
+  translation: "Payments are securely handled by Paddle."
+- id: android_getkey_checkout
+  translation: "Checkout"
+
+- id: android_getkey_success
+  translation: "Your payment was successful!"
+- id: android_getkey_key
+  translation: "License Key"
+- id: android_getkey_key_placeholder
+  translation: "Loading…"
+- id: android_getkey_key_instruction
+  translation: "This is your license key. Enter it in the Cryptomator app. The license key has also been sent to your email address."
+
+- id: android_download_title
+  translation: "Download APK"
+- id: android_download_button
+  translation: "Download"
+
 # Blog
 - id: blob_post_author_prefix
   translation: "by"

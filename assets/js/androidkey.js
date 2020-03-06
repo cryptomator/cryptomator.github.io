@@ -1,6 +1,6 @@
 "use strict";
 
-class DesktopLicense {
+class AndroidLicense {
 
   constructor(form, checkoutData) {
     this._form = form;
@@ -15,6 +15,14 @@ class DesktopLicense {
     });
   }
 
+  loadPrice() {
+    this._paddle.then(paddle => {
+      paddle.Product.Prices(this._checkoutData.productId, prices => {
+        this._checkoutData.price = prices.price.gross;
+      });
+    });
+  }
+
   checkout() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
@@ -24,24 +32,9 @@ class DesktopLicense {
     this._checkoutData.inProgress = true;
     this._checkoutData.errorMessage = '';
     this._checkoutData.success = false;
-    $.ajax({
-      url: 'https://store.cryptomator.org/paddle/desktop/generate-pay-link.php',
-      type: 'POST',
-      data: {
-        currency: this._checkoutData.currency,
-        amount: this._checkoutData.amount
-      }
-    }).done(data => {
-      this.openPaddleCheckout(data.pay_link);
-    }).fail(xhr => {
-      this.onCheckoutFailed(xhr.responseJSON.error || 'Generating pay link failed.');
-    });
-  }
-
-  openPaddleCheckout(payLink) {
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        override: payLink,
+        product: this._checkoutData.productId,
         email: this._checkoutData.email,
         allowQuantity: false,
         successCallback: data => {
@@ -52,7 +45,7 @@ class DesktopLicense {
           this._checkoutData.inProgress = false;
         }
       });
-    })
+    });
   }
 
   getPaddleOrderDetails(checkoutId) {
