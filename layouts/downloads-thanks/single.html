@@ -15,7 +15,6 @@
       <a href="{{ $release.signatureUrl }}" target="_blank" rel="noopener"><i class="fas fa-download fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature" }}</a>
     </p>
     <p x-show="showShaSignature" x-cloak class="text-sm text-center"><code class="break-all">{{ $release.checksum }}</code></p>
-    <p class="text-center mt-6"><a href="https://bintray.com/" target="_blank" rel="noopener"><img class="inline" src="/img/downloads/bintray-logo.png" srcset="/img/downloads/bintray-logo.png 1x, /img/downloads/bintray-logo@2x.png 2x" alt="Bintray Logo"/></a></p>
   </div>
 
   <header class="container py-12 text-center">
