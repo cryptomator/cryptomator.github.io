@@ -179,9 +179,11 @@
 - id: downloads_thanks_support_cryptomator_detail
   translation: "Development of the desktop application would not be possible without the support of our users."
 - id: downloads_thanks_support_cryptomator_detail_1
-  translation: "Would you like to <a href=\"/donate\">donate</a>?"
+  translation: "Would you like to <a href=\"/donate\">donate</a> or <a href=\"/sponsors\">become a sponsor</a>?"
 - id: downloads_thanks_support_cryptomator_detail_2
-  translation: "Would you like to contribute code/translations/issues?"
+  translation: "Would you like to <a href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">help translating Cryptomator</a>?"
+- id: downloads_thanks_support_cryptomator_detail_3
+  translation: "Would you like to <a href=\"https://github.com/cryptomator/cryptomator\" target=\"_blank\" rel=\"noopener\">contribute code</a> or <a href=\"https://github.com/cryptomator/cryptomator/issues/new/choose\" target=\"_blank\" rel=\"noopener\">report bugs</a>?"
 
 # Enterprise
 - id: enterprise_contact_us_title
