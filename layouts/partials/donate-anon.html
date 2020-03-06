@@ -31,13 +31,13 @@
 
       <!-- Card -->
       <div x-show="tab === 'card'" x-cloak>
-        <div x-data="{paymentData: {amount: 15, currency: 'EUR', captcha: null, errorMessage: '', frequency: 'once', success: false, inProgress: false, validCardNum: false}}">
+        <div x-data="{amount: 15, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment()}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
           <div class="flex flex-wrap md:flex-no-wrap">
             <div class="w-full mb-4 md:w-1/2 md:pr-3">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_amount" }}</label>
               <div class="flex items-center rounded bg-gray-300">
                 <div class="relative w-16">
-                  <select x-model="paymentData.currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
+                  <select x-model="currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
                     <option value="EUR">€</option>
                     <option value="USD">$</option>
                   </select>
@@ -45,7 +45,7 @@
                     <i class="fas fa-chevron-down text-xs"></i>
                   </div>
                 </div>
-                <input type="number" min="1" step="1" x-model="paymentData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+                <input type="number" min="1" step="1" x-model="amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
                 <div class="px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
               </div>
             </div>
@@ -53,46 +53,46 @@
             <div class="w-full mb-4 md:w-1/2 md:pl-3">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_frequency" }}</label>
               <div class="flex">
-                <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 font-bold': paymentData.frequency === 'once'}" @click="paymentData.frequency = 'once'">
-                  <i class="fas fa-check" x-show="paymentData.frequency === 'once'"></i>
+                <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 font-bold': frequency === 'once'}" @click="frequency = 'once'">
+                  <i class="fas fa-check" x-show="frequency === 'once'"></i>
                   {{ i18n "donate_creditcard_frequency_once" }}
                 </button>
-                <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 font-bold': paymentData.frequency === 'recurring'}" @click="paymentData.frequency = 'recurring'">
-                  <i class="fas fa-check" x-show="paymentData.frequency === 'recurring'"></i>
+                <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
+                  <i class="fas fa-check" x-show="frequency === 'recurring'"></i>
                   {{ i18n "donate_creditcard_frequency_recurring" }}
                 </button>
               </div>
             </div>
           </div>
           
-          <div x-show="paymentData.frequency === 'once'">
+          <div x-show="frequency === 'once'">
             <div class="mb-4">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
               <div> <!-- wrapper needed for stripe text field -->
-                <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="window.oneTimePayment = new OneTimePayment($refs.stripePlaceholder, paymentData, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
+                <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
               </div>
             </div>
 
             <div class="text-center mt-8">
               <p>{{ i18n "donate_creditcard_once_instruction" | safeHTML }}</p>
 
-              <div x-ref="captchaWrapper" x-show="!paymentData.captcha" class="flex justify-center">
-                <button x-bind:disabled="!paymentData.validCardNum" x-on:click="window.oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn btn-primary w-full md:w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
+              <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
+                <button x-bind:disabled="!oneTimePaymentStatus.validCardNum" x-on:click="oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn btn-primary w-full md:w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
               </div>
 
-              <button x-show="paymentData.captcha" x-bind:disabled="paymentData.inProgress" x-on:click="window.oneTimePayment.charge(paymentData.amount, paymentData.captcha)" class="btn btn-primary w-full md:w-64">
+              <button x-show="oneTimePaymentStatus.captcha" x-bind:disabled="oneTimePaymentStatus.inProgress" x-on:click="oneTimePayment.charge(amount, currency)" class="btn btn-primary w-full md:w-64">
                 <i class="fas fa-credit-card"></i>
                 {{ i18n "donate_creditcard_once_paynow" }}
-                <i class="fas fa-spinner fa-spin" x-show="paymentData.inProgress" aria-hidden="true"></i>
+                <i class="fas fa-spinner fa-spin" x-show="oneTimePaymentStatus.inProgress" aria-hidden="true"></i>
               </button>
             </div>
 
-            <p class="text-sm text-center text-red-600" x-text="paymentData.errorMessage"></p>
+            <p class="text-sm text-center text-red-600" x-text="oneTimePaymentStatus.errorMessage"></p>
           </div>
 
-          <div x-show="paymentData.frequency === 'recurring'" class="text-center mt-4">
+          <div x-show="frequency === 'recurring'" class="text-center mt-4">
             <p>{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
-            <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="new RecurringPayment(paymentData.amount, paymentData.currency).checkout()">
+            <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="recurringPayment.checkout(amount, currency)">
               <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
           </div>

@@ -9,24 +9,37 @@ const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GgW49BkhumHMIR'
 const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
 
 class OneTimePayment {
-  
+  _status;
+  _stripe;
+  _card;
+
+  /**
+   * Initializes the one-time payments helper and stores a references to the status object that can be observed by AlpineJS
+   * @param {Object} status 
+   * @param {boolean} status.validCardNum Whether the Stripe input field considers the credit card number valid
+   * @param {string} status.captcha The captcha (if reCAPTCHA validation finished) or null
+   * @param {string} status.errorMessage An error message or null
+   * @param {boolean} status.inProgress Whether an async payment task is currently running
+   * @param {boolean} status.success Whether the payment succeeded
+   */
+  constructor(status) {
+    this._status = status;
+  }
+
   /**
    * Lazily load Stripe and replace the given placholder form field with a Stripe Elements' auto-validating Credit Card field.
-   * @param {*} placeholder A placeholder <input> that will get hidden once Stripe is fully initialized
-   * @param {*} paymentData An object to which status changes will be written: `{amount: 20, currency: 'EUR', captcha: 'asd', errorMessage: 'Wrong CVC', success: false, inProgress: false }`
-   * @param {*} placeholderLoading Localized string used as placeholder for the placeholder <input> when Stripe is being loaded
-   * @param {*} languageCode The IETF language tag of the locale to display Stripe placeholders and error strings in
+   * @param {Element} placeholder A placeholder <input> that will get hidden once Stripe is fully initialized
+   * @param {string} placeholderLoading Localized string used as placeholder for the placeholder <input> when Stripe is being loaded
+   * @param {string} languageCode The IETF language tag of the locale to display Stripe placeholders and error strings in
    */
-  constructor(placeholder, paymentData, placeholderLoading, languageCode) {
-    this._placeholder  = placeholder;
-    this._paymentData = paymentData;
-    this._cardElement = document.createElement('div');
-    
+  initStripeField(placeholder, placeholderLoading, languageCode) {
+    let cardElement = document.createElement('div');
+
     // initialize:
-    $(this._cardElement).hide();
-    $(this._placeholder).after(this._cardElement);
-    $(this._placeholder).attr('placeholder', placeholderLoading);
-    $(this._placeholder).attr('disabled', true);
+    $(cardElement).hide();
+    $(placeholder).after(cardElement);
+    $(placeholder).attr('placeholder', placeholderLoading);
+    $(placeholder).attr('disabled', true);
     this._stripe = $.ajax({
       url: 'https://js.stripe.com/v3/',
       cache: true,
@@ -46,20 +59,15 @@ class OneTimePayment {
           }
         }
       });
-      card.mount(this._cardElement);
-      card.on('ready', this.onCardReady.bind(this));
+      card.mount(cardElement);
+      card.on('ready', event => {
+        $(cardElement).show();
+        $(placeholder).hide();
+        card.focus();
+      });
       card.on('change', this.onCardChanged.bind(this));
       return card;
     });
-  }
-  
-  /**
-   * Called as soon as the credit card input field initialized and is ready to be shown
-   */
-  onCardReady() {
-    $(this._cardElement).show();
-    $(this._placeholder).hide();
-    this._card.then(card => card.focus());
   }
   
   /**
@@ -67,11 +75,11 @@ class OneTimePayment {
    * @param {*} event 
    */
   onCardChanged(event) {
-    this._paymentData.validCardNum = event.complete;
+    this._status.validCardNum = event.complete;
     if (event.error) {
-      this._paymentData.errorMessage = event.error.message;
+      this._status.errorMessage = event.error.message;
     } else {
-      this._paymentData.errorMessage = '';
+      this._status.errorMessage = '';
     }
   }
   
@@ -85,7 +93,7 @@ class OneTimePayment {
       grecaptcha.render(wrapper, {
         'sitekey': RECAPTCHA_SITEKEY,
         'data-size': 'compact',
-        'callback': (captcha) => this._paymentData.captcha = captcha
+        'callback': (captcha) => this._status.captcha = captcha
       });
     }
     $.getScript("https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&render=explicit");
@@ -93,18 +101,20 @@ class OneTimePayment {
   
   /**
    * Attempt charging the card
+   * @param {number} amount How many units of the given currency to pay
+   * @param {string} currency Which currency to pay in
    */
-  charge() {
-    // TODO plausibility checks in this._paymentData.captcha (captcha set? amount is integer? currency is EUR/USD?)
-    this._paymentData.inProgress = true;
-    this._paymentData.errorMessage = '';
-    this._paymentData.success = false;
+  charge(amount, currency) {
+    // TODO plausibility checks (captcha set? amount is integer? currency is EUR/USD?)
+    this._status.inProgress = true;
+    this._status.errorMessage = '';
+    this._status.success = false;
     Promise.all([this._stripe, this._card]).then(([stripe, card]) => {
       stripe.createPaymentMethod('card', card).then(result => {
         if (result.error) {
           this.onPaymentFailed(result.error.message);
         } else {
-          this.chargeWithPaymentId(result.paymentMethod.id);
+          this.chargeWithPaymentId(result.paymentMethod.id, amount, currency);
         }
       });
     });
@@ -112,19 +122,21 @@ class OneTimePayment {
   
   /**
    * Attempt charging the card
-   * @param {*} paymentMethodId ID of the payment method previously created
+   * @param {string} paymentMethodId ID of the payment method previously created
+   * @param {number} amount How many units of the given currency to pay
+   * @param {string} currency Which currency to pay in
    */
-  chargeWithPaymentId(paymentMethodId) {
+  chargeWithPaymentId(paymentMethodId, amount, currency) {
     $.ajax({
       url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
       type: 'POST',
       data: {
         payment_method_id: paymentMethodId,
-        currency: this._paymentData.currency,
-        amount: this._paymentData.amount,
+        currency: currency,
+        amount: amount,
         frequency: 'once',
         message: 'Good job, team! TODO replace default message in cardpayments.js', /* TODO */
-        captcha: this._paymentData.captcha
+        captcha: this._status.captcha
       }
     }).done(data => {
       if (data.status == 'ok') {
@@ -143,7 +155,7 @@ class OneTimePayment {
   
   /**
    * Reattempts charging a previously intended payment, proceeding from where it left of before interrupted by SCA.
-   * @param {*} paymentIntendId 
+   * @param {string} paymentIntendId 
    */
   chargeWithPaymentIntendId(paymentIntendId) {
     $.ajax({
@@ -166,7 +178,7 @@ class OneTimePayment {
   
   /**
    * Performs manual client-side SCA
-   * @param {*} paymentIntendClientSecret 
+   * @param {string} paymentIntendClientSecret 
    */
   manuallyConfirmPayment(paymentIntendClientSecret) {
     this._stripe.then(stripe => {
@@ -182,8 +194,8 @@ class OneTimePayment {
   
   /**
    * Performs automatic client-side SCA
-   * @param {*} paymentIntendClientSecret 
-   * @param {*} paymentMethod 
+   * @param {string} paymentIntendClientSecret 
+   * @param {string} paymentMethod 
    */
   automaticallyConfirmPayment(paymentIntendClientSecret, paymentMethod) {
     this._stripe.then(stripe => {
@@ -198,21 +210,21 @@ class OneTimePayment {
   }
   
   onPaymentFailed(error) {
-    this._paymentData.success = false;
-    this._paymentData.errorMessage = error;
-    this._paymentData.inProgress = false;
+    this._status.success = false;
+    this._status.errorMessage = error;
+    this._status.inProgress = false;
     if (grecaptcha) {
-      this._paymentData.captcha = '';
+      this._status.captcha = '';
       grecaptcha.reset();
     }
   }
   
   onPaymentSucceeded() {
-    this._paymentData.success = true;
-    this._paymentData.errorMessage = '';
-    this._paymentData.inProgress = false;
+    this._status.success = true;
+    this._status.errorMessage = '';
+    this._status.inProgress = false;
     if (grecaptcha) {
-      this._paymentData.captcha = '';
+      this._status.captcha = '';
       grecaptcha.reset();
     }
   }
@@ -223,26 +235,21 @@ class RecurringPayment {
   
   /**
    * Creates a new recurring payment object.
-   * @param {*} amount integer $$$
-   * @param {*} currency EUR or USD
+   * @param {number} amount integer $$$
+   * @param {string} currency EUR or USD
    */
-  constructor(amount, currency){
-    this._amount = parseInt(amount);
-    this._plan = STRIPE_PLANS[currency];
-    this._stripe = $.ajax({
+  checkout(amount, currency) {
+    let plan = STRIPE_PLANS[currency];
+    $.ajax({
       url: 'https://js.stripe.com/v3/',
       cache: true,
       dataType: 'script'
     }).then(response => {
       return window.Stripe(STRIPE_PK);
-    });
-  }
-  
-  checkout() {
-    this._stripe.then(stripe => {
+    }).then(stripe => {
       stripe.redirectToCheckout({
         items: [
-          {plan: this._plan, quantity: this._amount}
+          {plan: plan, quantity: parseInt(amount)}
         ],
         successUrl: window.location.href + '/thanks',
         cancelUrl: window.location.href
