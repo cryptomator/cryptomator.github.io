@@ -123,7 +123,7 @@
 - id: donate_getkey_amount
   translation: "Amount"
 - id: donate_getkey_amount_placeholder
-  translation: "min. 10"
+  translation: "min. 15"
 - id: donate_getkey_amount_suffix
   translation: ".00"
 - id: donate_getkey_amount_help

@@ -4,7 +4,7 @@
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_amount" }}</label>
       <div class="flex items-center rounded bg-gray-300 mb-1">
         <div class="px-3">€ / $</div>
-        <input type="number" min="10" step="1" x-model="checkoutData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_amount_placeholder" }}" required/>
+        <input type="number" min="15" step="1" x-model="checkoutData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_amount_placeholder" }}" required/>
         <div class="px-3">{{ i18n "donate_getkey_amount_suffix" }}</div>
       </div>
       <p class="text-sm text-gray-600">{{ i18n "donate_getkey_amount_help" }}</p>
