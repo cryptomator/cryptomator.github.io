@@ -23,7 +23,7 @@ class AndroidLicense {
     });
   }
 
-  checkout() {
+  checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       return;
@@ -37,6 +37,7 @@ class AndroidLicense {
         product: this._checkoutData.productId,
         email: this._checkoutData.email,
         allowQuantity: false,
+        locale: locale,
         successCallback: data => {
           this.onCheckoutSucceeded();
           this.getPaddleOrderDetails(data.checkout.id)

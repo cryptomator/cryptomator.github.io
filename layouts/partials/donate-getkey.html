@@ -1,20 +1,13 @@
-<div x-data="{checkoutData: {amount: 25, currency: 'EUR', email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}}" class="rounded shadow bg-white px-4 py-8">
+<div x-data="{checkoutData: {amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}}" class="rounded shadow bg-white px-4 py-8">
   <form x-show="!checkoutData.success" x-ref="form">
     <div class="w-full md:w-1/2 mb-4">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_amount" }}</label>
-      <div class="flex items-center rounded bg-gray-300">
-        <div class="relative w-16">
-          <select x-model="checkoutData.currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
-            <option value="EUR">€</option>
-            <option value="USD">$</option>
-          </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-            <i class="fas fa-chevron-down text-xs"></i>
-          </div>
-        </div>
+      <div class="flex items-center rounded bg-gray-300 mb-1">
+        <div class="px-3">€ / $</div>
         <input type="number" min="10" step="1" x-model="checkoutData.amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_amount_placeholder" }}" required/>
         <div class="px-3">{{ i18n "donate_getkey_amount_suffix" }}</div>
       </div>
+      <p class="text-sm text-gray-600">{{ i18n "donate_getkey_amount_help" }}</p>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_email" }}</label>
@@ -22,16 +15,17 @@
     </div>
     <div class="text-center mt-8">
       <p>{{ i18n "donate_getkey_instruction" }}</p>
-      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout()" type="submit" class="btn btn-primary w-full md:w-64">
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "donate_getkey_checkout" }}
       </button>
+      <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-1" x-text="checkoutData.errorMessage"></p>
     </div>
   </form>
 
   <div x-show="checkoutData.success" x-cloak>
     <h3>{{ ":+1:" | emojify }} {{ i18n "donate_getkey_success" }}</h3>
     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="5" placeholder="{{ i18n "donate_getkey_key_placeholder" }}" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="6" placeholder="{{ i18n "donate_getkey_key_placeholder" }}" readonly></textarea>
     <p>{{ i18n "donate_getkey_key_instruction" }}</p>
   </div>
 </div>

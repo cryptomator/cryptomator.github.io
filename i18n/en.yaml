@@ -126,6 +126,8 @@
   translation: "min. 10"
 - id: donate_getkey_amount_suffix
   translation: ".00"
+- id: donate_getkey_amount_help
+  translation: "Currency is determined during checkout."
 - id: donate_getkey_email
   translation: "Email"
 - id: donate_getkey_email_placeholder

@@ -15,7 +15,7 @@ class DesktopLicense {
     });
   }
 
-  checkout() {
+  checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       return;
@@ -32,18 +32,19 @@ class DesktopLicense {
         amount: this._checkoutData.amount
       }
     }).done(data => {
-      this.openPaddleCheckout(data.pay_link);
+      this.openPaddleCheckout(data.pay_link, locale);
     }).fail(xhr => {
-      this.onCheckoutFailed(xhr.responseJSON.error || 'Generating pay link failed.');
+      this.onCheckoutFailed(xhr.responseJSON.message || 'Generating pay link failed.');
     });
   }
 
-  openPaddleCheckout(payLink) {
+  openPaddleCheckout(payLink, locale) {
     this._paddle.then(paddle => {
       paddle.Checkout.open({
         override: payLink,
         email: this._checkoutData.email,
         allowQuantity: false,
+        locale: locale,
         successCallback: data => {
           this.onCheckoutSucceeded();
           this.getPaddleOrderDetails(data.checkout.id)

@@ -14,16 +14,17 @@
     </div>
     <div class="text-center mt-8">
       <p>{{ i18n "android_getkey_instruction" }}</p>
-      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); androidLicense.checkout()" type="submit" class="btn btn-primary w-full md:w-64">
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "android_getkey_checkout" }}
       </button>
+      <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-1" x-text="checkoutData.errorMessage"></p>
     </div>
   </form>
 
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
     <h3>{{ ":+1:" | emojify }} {{ i18n "android_getkey_success" }}</h3>
     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "android_getkey_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="5" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
     <p>{{ i18n "android_getkey_key_instruction" }}</p>
   </div>
 </div>
