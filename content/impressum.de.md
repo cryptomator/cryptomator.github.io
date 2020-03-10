@@ -2,35 +2,43 @@
 title: "Impressum"
 ---
 
-## Angaben gemäß § 5 TMG:
+## Angaben gemäß § 5 TMG
 Skymatic GmbH<br/>
 Grantham-Allee 2-8<br/>
 53757 Sankt Augustin
 
-## Vertreten durch:
+Handelsregister: HRB 22635<br/>
+Registergericht: Amtsgericht Bonn
+
+<strong>Vertreten durch:</strong><br/>
 Tobias Hagemann<br/>
 Sebastian Stenzel
 
-## Kontakt:
+## Kontakt
 E-Mail: webmaster [at] cryptomator [dot] org<br/>
 [Zur Kontaktseite](/de/contact/)
 
-## Registereintrag:
-Eintragung im Handelsregister.<br/>
-Registergericht: Amtsgericht Bonn<br/>
-Registernummer: HRB 22635
-
-## Umsatzsteuer:
-Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br/>
+## Umsatzsteuer-ID
+Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br/>
 DE815664888
 
 ## Angaben zur Berufshaftpflichtversicherung
-Name und Sitz des Versicherers:<br/>
+<strong>Name und Sitz des Versicherers:</strong><br/>
 Markel International Insurance Company Limited, Niederlassung für Deutschland, Luisenstr. 14, 80333 München
 
-Geltungsraum der Versicherung: Weltweit außer USA und Kanada
+<strong>Geltungsraum der Versicherung:</strong><br/>
+Weltweit außer USA und Kanada
 
-## Streitschlichtung
+## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+Skymatic GmbH<br/>
+Grantham-Allee 2-8<br/>
+53757 Sankt Augustin
+
+## EU-Streitschlichtung
+Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: {{<extlink "https://ec.europa.eu/consumers/odr" "https://ec.europa.eu/consumers/odr">}}.<br/>
+Unsere E-Mail-Adresse finden Sie oben im Impressum.
+
+## Verbraucherstreitbeilegung/Universalschlichtungsstelle
 Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
 
 ## Haftung für Inhalte
@@ -48,4 +56,4 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 
 Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
 
-Quelle: [e-recht24.de](https://www.e-recht24.de)
+Quelle: {{<extlink "https://www.e-recht24.de" "eRecht24">}}
