@@ -3,13 +3,18 @@ language: de
 context: store-desktop
 
 title: Cryptomator
-lead: TODO Spendenschlüssel für Desktop-App, weil Dark-Mode und um die Entwicklung der Open-Source-Software zu unterstützen
+lead: Cryptomator wird als Open-Source-Projekt trotz des hohen Entwicklungs­aufwands kostenlos bereitgestellt und ist daher auf Spenden angewiesen. Wenn Sie auch an der Weiterentwicklung interessiert sind, können Sie uns mit dem Kauf eines Spendenschlüssels unterstützen.
 licenseInfo:
   title: Spendenschlüssel für Desktop-App
   content: >
-    TODO Dark-Mode, Pay-What-You-Want
+    <ul>
+      <li>Software registrieren und Dark-Mode freischalten</li>
+      <li>Manche sagen, es wäre ein "Awesome People"-Zertifikat</li>
+      <li>Rechnung erhalten</li>
+    </ul>
 payment:
   amount: Betrag
+  amountHelp: Währung wird im Zahlungsvorgang ermittelt.
   email: E-Mail
 submit:
   checkout: Zum Bezahlvorgang

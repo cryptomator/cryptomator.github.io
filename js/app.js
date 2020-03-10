@@ -524,8 +524,7 @@ app.factory('paddleLoader', ['$window', 'scriptLoader', function($window, script
 app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', function($scope, $window, $http, paddleLoader) {
 
   $scope.desktopLicense = {
-    amount: 15,
-    currency: $scope.currencies.EUR
+    amount: 25
   };
   $scope.desktopLicense.isAcceptableAmount = function(amount) {
     return _.isNumber(amount) && amount >= 15;
@@ -534,7 +533,6 @@ app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', funct
     $scope.desktopLicense.checkoutError = null;
     $scope.desktopLicense.checkoutInProgress = true;
     $http.post('https://store.cryptomator.org/paddle/desktop/generate-pay-link.php', $.param({
-      currency: $scope.desktopLicense.currency.code,
       amount: $scope.desktopLicense.amount
     }), {
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -570,46 +568,6 @@ app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', funct
         $scope.desktopLicense.checkoutError = 'Checkout failed.';
       }
       $scope.desktopLicense.checkoutInProgress = false;
-    });
-  };
-
-  $scope.androidLicense = {
-    productId: 578277
-  };
-  $scope.androidLicense.loadPrice = function() {
-    paddleLoader.load(function(paddle) {
-      paddle.Product.Prices($scope.androidLicense.productId, 1, function(prices) {
-        $scope.$apply(function() {
-          $scope.androidLicense.price = prices.price.gross;
-        });
-      });
-    });
-  };
-  $scope.androidLicense.checkout = function() {
-    $scope.androidLicense.checkoutError = null;
-    $scope.androidLicense.checkoutInProgress = true;
-    paddleLoader.load(function(paddle) {
-      paddle.Checkout.open({
-        product: $scope.androidLicense.productId,
-        email: $scope.androidLicense.email,
-        allowQuantity: false,
-        successCallback: function(data) {
-          paddle.Order.details(data.checkout.id, function(data) {
-            $scope.$apply(function() {
-              $scope.androidLicense.checkoutInProgress = false;
-              $scope.androidLicense.checkoutSuccessful = true;
-              if (data.lockers[0].license_code) {
-                $scope.androidLicense.key = data.lockers[0].license_code;
-              }
-            });
-          });
-        },
-        closeCallback: function(data) {
-          $scope.$apply(function() {
-            $scope.androidLicense.checkoutInProgress = false;
-          });
-        }
-      });
     });
   };
 

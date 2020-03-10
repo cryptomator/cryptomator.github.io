@@ -7,8 +7,5 @@ choose: Choose
 
 desktopLicense:
   title: Cryptomator
-  excerpt: TODO donation key for Desktop app, because dark mode and to support development of open-source software
-androidLicense:
-  title: Cryptomator for Android
-  excerpt: TODO license key for Android app, because direct installation via APK and not via Google Play
+  excerpt: Cryptomator is provided free of charge as an open-source project despite the high development effort and is therefore dependent on donations. If you are also interested in further development, please consider buying a donation key.
 ---

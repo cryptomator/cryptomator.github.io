@@ -7,8 +7,5 @@ choose: Auswählen
 
 desktopLicense:
   title: Cryptomator
-  excerpt: TODO Spendenschlüssel für Desktop-App, weil Dark-Mode und um die Entwicklung der Open-Source-Software zu unterstützen
-androidLicense:
-  title: Cryptomator für Android
-  excerpt: TODO Lizenzschlüssel für Android-App, um die App per APK zu installieren und nicht per Google Play
+  excerpt: Cryptomator wird als Open-Source-Projekt trotz des hohen Entwicklungs­aufwands kostenlos bereitgestellt und ist daher auf Spenden angewiesen. Wenn Sie auch an der Weiterentwicklung interessiert sind, können Sie uns mit dem Kauf eines Spendenschlüssels unterstützen.
 ---

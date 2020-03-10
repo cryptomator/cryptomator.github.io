@@ -3,13 +3,18 @@ language: en
 context: store-desktop
 
 title: Cryptomator
-lead: TODO donation key for Desktop app, because dark mode and to support development of open-source software
+lead: Cryptomator is provided free of charge as an open-source project despite the high development effort and is therefore dependent on donations. If you are also interested in further development, please consider buying a donation key.
 licenseInfo:
   title: Donation Key for Desktop App
   content: >
-    TODO dark mode, pay what you want
+    <ul>
+      <li>Register your software and unlock dark mode</li>
+      <li>Some might say it's an awesome people certificate</li>
+      <li>Get an invoice</li>
+    </ul>
 payment:
   amount: Amount
+  amountHelp: Currency is determined during checkout.
   email: Email
 submit:
   checkout: Checkout
