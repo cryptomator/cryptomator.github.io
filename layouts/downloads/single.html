@@ -1,7 +1,10 @@
+{{ define "head" }}
+  <link rel="dns-prefetch" href="https://dl.bintray.com">
+{{ end }}
 {{ define "main" }}
   <section class="container py-12 flex flex-wrap">
     <figure class="w-1/2 mx-auto md:w-3/5">
-      <img src="{{ .Params.Screenshot }}"/>
+      <img class="lazyload" data-src="{{ .Params.Screenshot }}"/>
     </figure>
     {{ .Content }}
   </section>

@@ -17,6 +17,9 @@
     {{ range .Translations }}
     <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
     {{ end }}
+    {{ block "head" . }}
+      <!-- optional additional page-specific stuff that goes into head -->
+    {{ end }}
   </head>
   <body class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
