@@ -1,3 +1,7 @@
+if (window.location.hash == '#donate') {
+  window.location.replace('/donate/');
+}
+
 $('#testimonial-carousel .next-button').click(function () {
   let wrapper = $('#testimonial-carousel ul');
   let firstItem = wrapper.children('li').first();
