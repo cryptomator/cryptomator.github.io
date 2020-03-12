@@ -36,7 +36,7 @@
             <div class="w-full mb-4 md:w-1/2 md:pr-3">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_amount" }}</label>
               <div class="flex items-center rounded bg-gray-300">
-                <div class="relative w-16">
+                <div class="flex-shrink-0 relative w-16">
                   <select x-model="currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
                     <option value="EUR">€</option>
                     <option value="USD">$</option>
@@ -45,8 +45,8 @@
                     <i class="fas fa-chevron-down text-xs"></i>
                   </div>
                 </div>
-                <input type="number" min="1" step="1" x-model="amount" class="flex-grow rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
-                <div class="px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
+                <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+                <div class="flex-shrink-0 px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
               </div>
             </div>
 

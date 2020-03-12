@@ -9,9 +9,6 @@ const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GgW49BkhumHMIR'
 const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
 
 class OneTimePayment {
-  _status;
-  _stripe;
-  _card;
 
   /**
    * Initializes the one-time payments helper and stores a references to the status object that can be observed by AlpineJS
