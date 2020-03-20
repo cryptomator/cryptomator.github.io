@@ -2,58 +2,35 @@
 title: "Impressum"
 ---
 
-## Angaben gemäß § 5 TMG
 Skymatic GmbH<br/>
 Grantham-Allee 2-8<br/>
 53757 Sankt Augustin
 
-Handelsregister: HRB 22635<br/>
-Registergericht: Amtsgericht Bonn
-
-<strong>Vertreten durch:</strong><br/>
-Tobias Hagemann<br/>
+<strong>Vertreten durch die Geschäftsführer:</strong><br/>
+Tobias Hagemann (verantwortlich gem. § 55 Abs. 2 RStV)<br/>
 Sebastian Stenzel
 
 ## Kontakt
 E-Mail: webmaster [at] cryptomator [dot] org<br/>
+Fax: 02241 / TODO<br/>
 [Zur Kontaktseite](/de/contact/)
 
-## Umsatzsteuer-ID
-Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br/>
-DE815664888
+## Handelsregister 
+Eingetragen im Handelsregister des Amtsgericht Bonn: HRB 22635
 
-## Angaben zur Berufshaftpflichtversicherung
+## Umsatzsteuer-ID
+gem. § 27 a Umsatzsteuergesetz: DE815664888
+
+## Weitere Informationen:
+Für von uns erbrachte Leistungen gelten unsere AGB. Sie finden sie unter [cryptomator.org/de/terms](/de/terms). Darin ist geregelt, dass deutsches Recht Anwendung findet und dass, soweit zulässig, als Gerichtsstand Bonn vereinbart wird.
+
+## Berufshaftpflichtversicherung
 <strong>Name und Sitz des Versicherers:</strong><br/>
 Markel International Insurance Company Limited, Niederlassung für Deutschland, Luisenstr. 14, 80333 München
 
 <strong>Geltungsraum der Versicherung:</strong><br/>
 Weltweit außer USA und Kanada
 
-## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
-Skymatic GmbH<br/>
-Grantham-Allee 2-8<br/>
-53757 Sankt Augustin
-
 ## EU-Streitschlichtung
-Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: {{<extlink "https://ec.europa.eu/consumers/odr" "https://ec.europa.eu/consumers/odr">}}.<br/>
-Unsere E-Mail-Adresse finden Sie oben im Impressum.
-
-## Verbraucherstreitbeilegung/Universalschlichtungsstelle
-Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-
-## Haftung für Inhalte
-Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
-
-Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
-
-## Haftung für Links
-Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-
-Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-
-## Urheberrecht
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
-
-Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
-
-Quelle: {{<extlink "https://www.e-recht24.de" "eRecht24">}}
+Wir sind gesetzlich verpflichtet, Sie auf die Europäische Online-Streitbeilegungs-Plattform (OS-Plattform) der Europäischen Kommission hinzuweisen, die Sie unter {{<extlink "https://ec.europa.eu/consumers/odr" "https://ec.europa.eu/consumers/odr">}} erreichen können. 
+Skymatic nimmt jedoch nicht an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil und wir sind dazu auch nicht verpflichtet.

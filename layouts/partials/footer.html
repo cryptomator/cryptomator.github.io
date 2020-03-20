@@ -53,6 +53,9 @@
         {{- with .Site.GetPage "/privacy" }}
         <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
+        {{- with .Site.GetPage "/terms" }}
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end }}
       </ul>
     </div>
   </section>
