@@ -151,6 +151,9 @@
 - id: donate_become_sponsor_button
   translation: "Become a Sponsor"
 
+- id: donate_accept_terms_and_privacy
+  translation: "I accept the <a href=\"/terms/\">Terms and Conditions</a> as well as the <a href=\"/privacy/\">Privacy Policy</a>"
+
 # Downloads
 - id: downloads_all_versions_title
   translation: "Looking for older versions?"

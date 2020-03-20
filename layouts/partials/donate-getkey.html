@@ -1,4 +1,4 @@
-<div x-data="{checkoutData: {amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}}" class="rounded shadow bg-white px-4 py-8">
+<div x-data="{checkoutData: {amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false}" class="rounded shadow bg-white px-4 py-8">
   <form x-show="!checkoutData.success" x-ref="form">
     <div class="w-full md:w-1/2 mb-4">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_amount" }}</label>
@@ -15,7 +15,8 @@
     </div>
     <div class="text-center mt-8">
       <p>{{ i18n "donate_getkey_instruction" }}</p>
-      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+      <p>{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "donate_getkey_checkout" }}
       </button>
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-1" x-text="checkoutData.errorMessage"></p>
