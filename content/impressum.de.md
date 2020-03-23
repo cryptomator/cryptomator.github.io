@@ -12,7 +12,7 @@ Sebastian Stenzel
 
 ## Kontakt
 E-Mail: webmaster [at] cryptomator [dot] org<br/>
-Fax: 02241 / TODO<br/>
+Fax: 02241 / 2667424<br/>
 [Zur Kontaktseite](/de/contact/)
 
 ## Handelsregister 
