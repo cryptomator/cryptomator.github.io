@@ -1,4 +1,4 @@
-<div x-data="{checkoutData: {productId: 578277, price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white text-center">
+<div x-data="{checkoutData: {productId: 578277, price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white text-center">
   <div class="px-4 py-2 border-b border-primary">
     <h3>{{ i18n "android_getkey_title" }}</h3>
   </div>
@@ -14,7 +14,8 @@
     </div>
     <div class="text-center mt-8">
       <p>{{ i18n "android_getkey_instruction" }}</p>
-      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress" x-on:click="$event.preventDefault(); androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+      <p>{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" x-on:click="$event.preventDefault(); androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "android_getkey_checkout" }}
       </button>
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-1" x-text="checkoutData.errorMessage"></p>
