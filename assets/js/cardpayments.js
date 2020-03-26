@@ -50,7 +50,7 @@ class OneTimePayment {
       }).create('card', {
         style: {
           base: {
-            fontFamily: 'Nunito Sans, sans-serif',
+            fontFamily: 'Open Sans, sans-serif',
             fontSize: '16px',
             lineHeight: '1.5'
           }

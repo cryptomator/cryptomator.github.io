@@ -18,7 +18,7 @@ module.exports = {
     },
     fontFamily: {
       'headline': 'Quicksand, sans-serif',
-      'body': 'Nunito Sans, sans-serif',
+      'body': 'Open Sans, sans-serif',
     },
     screens: {
       'md': { 'min': '768px' },
