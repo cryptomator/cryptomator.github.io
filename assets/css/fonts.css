@@ -17,19 +17,6 @@
 }
 
 /*
- * For text bodies [ASCII + ÄäÖöÜüß€]:
- * pyftsubset opensans-semibold.woff2 --unicodes=U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC --verbose --flavor=woff2 --output-file=opensans-semibold.reduced.woff2
- */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url('/fonts/opensans-semibold.reduced.woff2') format('woff2');
-    unicode-range: U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC;
-}
-
-/*
  * For h2 headings [ASCII + ÄäÖöÜüß€]:
  * pyftsubset quicksand-regular.woff2 --unicodes=U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC --verbose --flavor=woff2 --output-file=quicksand-regular.reduced.woff2
  */
