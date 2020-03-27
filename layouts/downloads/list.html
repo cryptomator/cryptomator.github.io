@@ -6,7 +6,7 @@
     {{ range .Pages }}
       <section x-show="tab === '{{ .Slug }}'" class="container flex flex-wrap items-center py-12 min-vh-66">
         <figure class="w-full md:w-1/2 lg:w-auto mx-auto pr-0 md:pr-8">
-          <img class="lazyload" data-src="{{ .Params.Screenshot }}" data-srcset="{{ .Params.Screenshot }} 1x, {{ .Params.Screenshot2x }} 2x"/>
+          <img class="lazyload" data-src="{{ .Params.Screenshot }}" data-srcset="{{ .Params.Screenshot }} 1x, {{ .Params.Screenshot2x }} 2x" style="width: 730px;"/>
         </figure>
         {{ .Content }}
       </section>
