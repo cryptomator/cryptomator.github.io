@@ -1,10 +1,7 @@
 {{ define "main" }}
-  <div class="container py-12">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-
-    <section>
-      Dankeschön. TODO
-    </section>
-  </div>
+<header class="container py-12 text-center">
+  <img src="/img/logo.svg" class="object-scale-down mx-auto w-1/4 mb-8" alt="Cryptomator Logo"/>
+  <h1 class="text-3xl">{{ .Title }}</h1>
+  {{ .Content }}
+</header>
 {{ end }}
