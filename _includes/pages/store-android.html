@@ -1,0 +1,69 @@
+{% assign i18n = 'store-android' %}
+{% include i18n.liquid %}
+
+<div data-ng-controller="StoreCtrl">
+
+  <h1 class="text-center">{{ i18n.title }}</h1>
+  <p class="text-center lead">{{ i18n.lead }}</p>
+
+  <div class="row equal panel panel-default" data-ng-show="!androidLicense.checkoutSuccessful">
+    <div class="col-md-4 col-md-push-8 panel-body green-background">
+      <div class="text-center">
+        <img src="/img/store/android.png" srcset="/img/store/android.png 1x, /img/store/android@2x.png 2x" class="img-responsive img-license center-block"/>
+        <h2 class="heading-license">{{ i18n.licenseInfo.title }}</h2>
+      </div>
+    </div>
+
+    <div class="col-md-8 col-md-pull-4 panel-body">
+      <section>
+        <div class="form-group">
+          <label class="control-label" for="price">{{ i18n.payment.price }}</label>
+          <input id="price" type="text" step="1" class="form-control" placeholder="{{ i18n.payment.loading }}" data-ng-init="androidLicense.loadPrice()" data-ng-model="androidLicense.price" readonly>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="email">{{ i18n.payment.email }}</label>
+          <input id="email" type="email" class="form-control" data-ng-model="androidLicense.email">
+        </div>
+      </section>
+
+      <hr>
+
+      <section>
+        <p>
+          <button data-ng-disabled="androidLicense.checkoutInProgress || !androidLicense.email" data-ng-click="androidLicense.checkout()" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span data-ng-show="!androidLicense.checkoutInProgress">{{ i18n.submit.checkout }}</span>
+            <span data-ng-show="androidLicense.checkoutInProgress">{{ i18n.submit.processing }}</span>
+          </button>
+        </p>
+
+        <p class="small text-center">{{ i18n.submit.notice }}</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="row" data-ng-show="androidLicense.checkoutSuccessful">
+    <div class="col-md-8 col-md-offset-2">
+      <p class="text-center">{{ i18n.success }}</p>
+      <div class="form-group">
+        <label for="license-key">{{ i18n.licenseKey }}</label>
+        <textarea data-ng-bind="androidLicense.key" class="form-control" id="license-key" name="jwt" aria-describedby="license-key-help" rows="5" readonly></textarea>
+        <small id="license-key-help" class="form-text text-muted">{{ i18n.licenseKeyHelp }}</small>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="text-center">
+  
+  <h2>Download APK</h2>
+
+  <p>Version 1.5.0-beta3 • Minimum: Android 4.3</p>
+
+  <a href="https://static.cryptomator.org/android/1.5.0-beta3/Cryptomator-1.5.0-beta3.apk" download="Cryptomator-1.5.0-beta3.apk" class="btn btn-primary btn-lg" role="button">
+    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download
+  </a>
+
+</div>

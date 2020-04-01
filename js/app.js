@@ -571,6 +571,46 @@ app.controller('StoreCtrl', ['$scope', '$window', '$http', 'paddleLoader', funct
     });
   };
 
+  $scope.androidLicense = {
+    productId: 578277
+  };
+  $scope.androidLicense.loadPrice = function() {
+    paddleLoader.load(function(paddle) {
+      paddle.Product.Prices($scope.androidLicense.productId, 1, function(prices) {
+        $scope.$apply(function() {
+          $scope.androidLicense.price = prices.price.gross;
+        });
+      });
+    });
+  };
+  $scope.androidLicense.checkout = function() {
+    $scope.androidLicense.checkoutError = null;
+    $scope.androidLicense.checkoutInProgress = true;
+    paddleLoader.load(function(paddle) {
+      paddle.Checkout.open({
+        product: $scope.androidLicense.productId,
+        email: $scope.androidLicense.email,
+        allowQuantity: false,
+        successCallback: function(data) {
+          paddle.Order.details(data.checkout.id, function(data) {
+            $scope.$apply(function() {
+              $scope.androidLicense.checkoutInProgress = false;
+              $scope.androidLicense.checkoutSuccessful = true;
+              if (data.lockers[0].license_code) {
+                $scope.androidLicense.key = data.lockers[0].license_code;
+              }
+            });
+          });
+        },
+        closeCallback: function(data) {
+          $scope.$apply(function() {
+            $scope.androidLicense.checkoutInProgress = false;
+          });
+        }
+      });
+    });
+  };
+
 }]);
 
 app.controller('CookiesCtrl', ['$http', '$scope', '$cookies', function($http, $scope, $cookies) {
