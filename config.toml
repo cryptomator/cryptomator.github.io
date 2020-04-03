@@ -67,9 +67,9 @@ unsafe = true
       signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/cryptomator-1.4.15-x86_64.AppImage.asc"
       checksum = "9d52051abc07727e2b6868e70347910d41347147078213e3ea846d26d113c047"
     [params.releases.android]
-      version = "1.5.0"
-      filename = "Cryptomator-1.5.0.apk"
-      downloadUrl = "TODO"
+      version = "1.5.0-beta4"
+      filename = "Cryptomator-1.5.0-beta4.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.5.0-beta4/Cryptomator-1.5.0-beta4.apk"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"
