@@ -3,6 +3,8 @@ title: Awards
 anchor: awards
 weight: 4
 ---
+Cryptomator is awardee of the CeBIT Innovation Award 2016 and won the Special Award for Usable Security and Privacy.
+
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 md:w-1/2 lg:w-1/3">
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
