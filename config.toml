@@ -12,6 +12,10 @@ enableemoji = true
     weight = 2
     languageName = "Deutsch"
 
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
 [outputFormats]
   [outputFormats.RSS]
     mediatype = "application/rss"

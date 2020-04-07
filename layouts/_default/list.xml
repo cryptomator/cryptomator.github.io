@@ -13,7 +13,7 @@
     </image>
     <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     <generator>Hugo</generator>
-    {{ range first 10 .Pages.ByDate.Reverse }}
+    {{ range first 10 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") }}
       <item>
         <title>{{ .Title }}</title>
         <description>{{ .Content | html }}</description>

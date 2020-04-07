@@ -12,7 +12,7 @@
       {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
     {{ end }}
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/blog/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml">
     {{ range .Translations }}
     <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
     {{ end }}
