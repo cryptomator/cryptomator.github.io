@@ -8,7 +8,7 @@ weight: 11
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/en/2017-10-17 Android Release.pdf"><i class="fad fa-file-pdf text-7xl text-gray-700 mb-2"></i></a>
       <figcaption>
-        <p class="text-sm text-gray-500">2017-10-17 • Android Release • PDF</p>
+        <p class="text-sm text-gray-500 mb-0">2017-10-17 • Android Release • PDF</p>
       </figcaption>
     </figure>
   </div>

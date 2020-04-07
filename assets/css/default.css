@@ -1,13 +1,13 @@
-/* margins for text elements */
-blockquote, h1, h2, h3, ol, p, pre, table, ul {
+/* margins for elements in articles */
+article blockquote, article h1, article h2, article h3, article ol, article p, article pre, article table, article ul {
   @apply mb-4;
 }
 
-blockquote:last-child, h1:last-child, h2:last-child, h3:last-child, ol:last-child, p:last-child, pre:last-child, table:last-child, ul:last-child {
-  @apply mb-0;
+article h1, article h2, article h3 {
+  @apply mt-8;
 }
 
-hr {
+article hr {
   @apply my-8;
 }
 

@@ -8,7 +8,7 @@ weight: 8
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/linux-screenshot-1.png"><img class="inline-block mb-2" src="/presskit/linux-screenshot-1.png" alt="Entsperren des Tresors"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Entsperren des Tresors • 1374x1056 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Entsperren des Tresors • 1374x1056 • PNG</p>
       </figcaption>
     </figure>
   </div>
@@ -16,7 +16,7 @@ weight: 8
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/linux-screenshot-2.png"><img class="inline-block mb-2" src="/presskit/linux-screenshot-2.png" alt="Entsperren des Tresors (Dark Mode)"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Entsperren des Tresors (Dark Mode) • 1374x1056 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Entsperren des Tresors (Dark Mode) • 1374x1056 • PNG</p>
       </figcaption>
     </figure>
   </div>

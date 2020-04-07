@@ -11,7 +11,7 @@ Cyberduck 6.0 with support for Cryptomator vaults has been released today. You c
 <figure class="text-center my-8">
   <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
   <figcaption>
-    <p class="text-sm text-gray-500">Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+    <p class="text-sm text-gray-500 mb-0">Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
   </figcaption>
 </figure>
 

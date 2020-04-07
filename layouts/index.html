@@ -56,7 +56,7 @@
                     <img data-src="{{ .Image }}" class="lazyload object-contain rounded-lg border border-secondary" alt="{{ i18n "home_testimonials_image_alt" . }} {{ .TwitterHandle }}"/>
                   </a>
                   <a class="text-white px-3 hover:text-secondary hover:no-underline" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
-                    <p class="font-headline lg:text-xl mb-0">{{ .Name }}</p>
+                    <p class="font-headline lg:text-xl">{{ .Name }}</p>
                     <p class="text-sm text-gray-500">{{ .TwitterHandle }}</p>
                   </a>
                 </div>
@@ -109,7 +109,7 @@
           <img class="lazyload inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">
         </a>
         <figcaption class="text-center">
-          <h2 class="text-xl md:text-2xl mb-0">{{ i18n "home_cebit_title" . }}</h2>
+          <h2 class="text-xl md:text-2xl">{{ i18n "home_cebit_title" . }}</h2>
           <p>{{ i18n "home_cebit_subtitle" . }}</p>
         </figcaption>
       </figure>

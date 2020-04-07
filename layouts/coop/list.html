@@ -11,14 +11,14 @@
             <a href="{{ .RelPermalink }}"><img class="inline-block" src="{{ .Params.Img }}" srcset="{{ .Params.Img }} 1x, {{ .Params.Img2x }} 2x"/></a>
           </div>
           <div class="w-5/6">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p class="mb-4">{{ .Description }}</p>
+            <h2 class="mt-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="mb-0">{{ .Description }}</p>
           </div>
         </article>
       </section>
     {{ end }}
 
-    <hr/>
+    <hr class="my-8"/>
 
     <section class="mb-6">
       <article class="flex border rounded shadow bg-white p-4">
@@ -26,8 +26,8 @@
           <a href="{{ .RelPermalink }}"><i class="fas fa-question-circle text-5xl md:text-7xl text-gray-400"></i></a>
         </div>
         <div class="w-5/6">
-          <h2>{{ i18n "coop_your_business_title" . }}</h2>
-          <p class="mb-4">{{ i18n "coop_your_business_paragraph" . }}</p>
+          <h2 class="mt-0">{{ i18n "coop_your_business_title" . }}</h2>
+          <p>{{ i18n "coop_your_business_paragraph" . }}</p>
           <a href="{{ .Site.LanguagePrefix }}/enterprise/" class="btn btn-outline-primary px-8">{{ i18n "coop_more_info" }}</a>
         </div>
       </article>

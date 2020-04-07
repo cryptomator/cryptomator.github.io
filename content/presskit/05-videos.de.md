@@ -13,7 +13,7 @@ _build:
         <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/oIv0n4MYgdw" frameborder="0" allowfullscreen></iframe>
       </div>
       <figcaption>
-        <p class="text-sm text-gray-500">Cryptomator • 1080p • YouTube</p>
+        <p class="text-sm text-gray-500 mb-0">Cryptomator • 1080p • YouTube</p>
       </figcaption>
     </figure>
   </div>
@@ -23,7 +23,7 @@ _build:
         <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/AIS5vbUAFc0" frameborder="0" allowfullscreen></iframe>
       </div>
       <figcaption>
-        <p class="text-sm text-gray-500">Cryptomator Tutorial • 1080p • YouTube</p>
+        <p class="text-sm text-gray-500 mb-0">Cryptomator Tutorial • 1080p • YouTube</p>
       </figcaption>
     </figure>
   </div>

@@ -35,7 +35,7 @@ Instead, the problem lies with the generally poor level of knowledge on security
 <figure class="my-8">
   <img class="inline-block rounded mb-1" src="https://imgs.xkcd.com/comics/pgp.png" srcset="https://imgs.xkcd.com/comics/pgp.png 1x, https://imgs.xkcd.com/comics/pgp_2x.png 2x" title="If you want to be extra safe, check that there's a big block of jumbled characters at the bottom." alt="PGP"/>
   <figcaption>
-    <p class="text-sm text-gray-500">Illustration by {{<extlink "https://xkcd.com/1181/" "Randall Munroe (xkcd)">}}</p>
+    <p class="text-sm text-gray-500 mb-0">Illustration by {{<extlink "https://xkcd.com/1181/" "Randall Munroe (xkcd)">}}</p>
   </figcaption>
 </figure>
 

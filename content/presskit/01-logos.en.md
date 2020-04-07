@@ -8,7 +8,7 @@ weight: 1
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/cryptomator-logo.png"><img class="inline-block mb-2" src="/presskit/cryptomator-logo.png" alt="Cryptomator Logo"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Cryptomator Logo • 1024x1024 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Cryptomator Logo • 1024x1024 • PNG</p>
       </figcaption>
     </figure>
   </div>
@@ -16,7 +16,7 @@ weight: 1
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/cryptomator-app-icon.png"><img class="inline-block mb-2" src="/presskit/cryptomator-app-icon.png" alt="Cryptomator Mobile App Icon"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Cryptomator Mobile App Icon • 1024x1024 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Cryptomator Mobile App Icon • 1024x1024 • PNG</p>
       </figcaption>
     </figure>
   </div>
@@ -24,7 +24,7 @@ weight: 1
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/cryptomator-logo-text.png"><img class="inline-block mb-2" src="/presskit/cryptomator-logo-text.png" alt="Cryptomator Logo with Text"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Cryptomator Logo with Text • 1944x384 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Cryptomator Logo with Text • 1944x384 • PNG</p>
       </figcaption>
     </figure>
   </div>
@@ -32,7 +32,7 @@ weight: 1
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/cryptomator-logo.svg"><img class="inline-block mb-2" src="/presskit/cryptomator-logo.svg" alt="Cryptomator Logo"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Cryptomator Logo • SVG</p>
+        <p class="text-sm text-gray-500 mb-0">Cryptomator Logo • SVG</p>
       </figcaption>
     </figure>
   </div>

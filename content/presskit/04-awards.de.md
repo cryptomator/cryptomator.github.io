@@ -10,7 +10,7 @@ Cryptomator ist Preisträger des CeBIT Innovation Awards 2016 und Gewinner des {
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/cebit-award-2016.jpg"><img class="inline-block mb-2" src="/presskit/cebit-award-2016.jpg" alt="CeBIT Innovation Award 2016 for Usable Security and Privacy"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">CeBIT Innovation Award 2016 for Usable Security and Privacy • 2666x2000 • JPG</p>
+        <p class="text-sm text-gray-500 mb-0">CeBIT Innovation Award 2016 for Usable Security and Privacy • 2666x2000 • JPG</p>
       </figcaption>
     </figure>
   </div>
@@ -18,7 +18,7 @@ Cryptomator ist Preisträger des CeBIT Innovation Awards 2016 und Gewinner des {
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/cebit-award-2016.png"><img class="inline-block mb-2" src="/presskit/cebit-award-2016.png" alt="CeBIT Innovation Award 2016 for Usable Security and Privacy"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">CeBIT Innovation Award 2016 for Usable Security and Privacy • 640x480 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">CeBIT Innovation Award 2016 for Usable Security and Privacy • 640x480 • PNG</p>
       </figcaption>
     </figure>
   </div>

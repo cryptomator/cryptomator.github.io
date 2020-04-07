@@ -123,3 +123,7 @@ nav a:hover {
 .bg-trans-white {
   background-color: rgba(255, 255, 255, 0.05);
 }
+
+.faq-card-content > *:last-child {
+  @apply mb-0;
+}

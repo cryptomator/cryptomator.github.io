@@ -2,7 +2,7 @@
   <div class="container py-12">
     <article class="mb-12">
       <header class="mb-6">
-        <h1><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</a></h1>
+        <h1 class="mt-0"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</a></h1>
         <div class="flex items-center mb-4">
           {{ if .Params.Author }}
             {{ if .Params.Authorimg }}
@@ -31,7 +31,7 @@
         {{ end }}
       </header>
 
-      <hr/>
+      <hr class="my-8"/>
 
       <section>
         {{ .Content }}

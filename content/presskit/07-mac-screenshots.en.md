@@ -8,7 +8,7 @@ weight: 7
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/mac-screenshot-1.png"><img class="inline-block mb-2" src="/presskit/mac-screenshot-1.png" alt="Unlock vault"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Unlock vault • 1528x1148 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Unlock vault • 1528x1148 • PNG</p>
       </figcaption>
     </figure>
   </div>
@@ -16,7 +16,7 @@ weight: 7
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
       <a href="/presskit/mac-screenshot-2.png"><img class="inline-block mb-2" src="/presskit/mac-screenshot-2.png" alt="Unlock vault (Dark Mode)"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500">Unlock vault (Dark Mode) • 1528x1148 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Unlock vault (Dark Mode) • 1528x1148 • PNG</p>
       </figcaption>
     </figure>
   </div>

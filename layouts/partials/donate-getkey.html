@@ -14,8 +14,8 @@
       <input x-model="checkoutData.email" type="email" class="appearance-none w-full" placeholder="{{ i18n "donate_getkey_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
-      <p>{{ i18n "donate_getkey_instruction" }}</p>
-      <p>{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="mb-4">{{ i18n "donate_getkey_instruction" }}</p>
+      <p class="mb-4">{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
       <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "donate_getkey_checkout" }}
       </button>
@@ -24,7 +24,7 @@
   </form>
 
   <div x-show="checkoutData.success" x-cloak>
-    <h3>{{ ":+1:" | emojify }} {{ i18n "donate_getkey_success" }}</h3>
+    <h3 class="mb-4">{{ ":+1:" | emojify }} {{ i18n "donate_getkey_success" }}</h3>
     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_getkey_key" }}</label>
     <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="6" placeholder="{{ i18n "donate_getkey_key_placeholder" }}" readonly></textarea>
     <p>{{ i18n "donate_getkey_key_instruction" }}</p>
