@@ -10,11 +10,11 @@
         <p class="text-sm">{{ i18n "downloads_thanks_notification_detail" }} <a href="{{ $release.downloadUrl }}" download="{{ $release.filename }}" target="_self" x-data="{}" x-init="$el.blur()">{{ $release.filename }}</a><!-- TODO change $el.blur() to $el.click() --></p>
       </div>
     </div>
-    <p class="grid grid-cols-2 gap-2 text-center text-xs w-full md:w-2/3 lg:w-1/2 mx-auto">
+    <p class="grid grid-cols-2 gap-2 text-center text-xs w-full md:w-2/3 lg:w-1/2 mx-auto mb-0">
       <a href="#" x-on:click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_sha256_signature" }}</a>
       <a href="{{ $release.signatureUrl }}" target="_blank" rel="noopener"><i class="fas fa-download fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature" }}</a>
     </p>
-    <p x-show="showShaSignature" x-cloak class="text-sm text-center"><code class="break-all">{{ $release.checksum }}</code></p>
+    <p x-show="showShaSignature" x-cloak class="text-sm text-center mt-3"><code class="break-all">{{ $release.checksum }}</code></p>
   </div>
 
   <header class="container py-12 text-center">

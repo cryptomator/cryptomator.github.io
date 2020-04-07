@@ -42,6 +42,8 @@
   translation: "Download APK"
 - id: android_download_button
   translation: "Download"
+- id: android_download_sha256_signature
+  translation: "Show SHA256 Signature"
 
 # Blog
 - id: blob_post_author_prefix

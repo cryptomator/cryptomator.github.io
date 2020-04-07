@@ -49,27 +49,28 @@ unsafe = true
 [params]
   [params.releases]
     [params.releases.exe]
-      version = "1.4.15"
-      filename = "Cryptomator-1.4.15-x64.exe"
-      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/Cryptomator-1.4.15-x64.exe"
-      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/Cryptomator-1.4.15-x64.exe.asc"
-      checksum = "e7618f0eba90012370d9ebc98e01496d5069728441e40d312aaab9316dc6a740"
+      version = "1.5.0-rc2"
+      filename = "Cryptomator-1.5.0-rc2-x64.exe"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc2/Cryptomator-1.5.0-rc2-x64.exe"
+      signatureUrl = "TODO"
+      checksum = "TODO"
     [params.releases.dmg]
-      version = "1.4.17"
-      filename = "Cryptomator-1.4.17.dmg"
-      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.17/Cryptomator-1.4.17.dmg"
-      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.17/Cryptomator-1.4.17.dmg.asc"
-      checksum = "85d4ce3c022065d15411d31eb71029ee2f643af6ab34deb492b23bc9e0120298"
+      version = "1.5.0-rc2"
+      filename = "Cryptomator-1.5.0-rc2.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc2/Cryptomator-1.5.0-rc2.dmg"
+      signatureUrl = "TODO"
+      checksum = "TODO"
     [params.releases.appimage]
-      version = "1.4.15"
-      filename = "cryptomator-1.4.15-x86_64.AppImage"
-      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/cryptomator-1.4.15-x86_64.AppImage"
-      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.4.15/cryptomator-1.4.15-x86_64.AppImage.asc"
-      checksum = "9d52051abc07727e2b6868e70347910d41347147078213e3ea846d26d113c047"
+      version = "1.5.0-rc2"
+      filename = "cryptomator-1.5.0-rc2-x86_64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc2/cryptomator-1.5.0-rc2-x86_64.AppImage"
+      signatureUrl = "TODO"
+      checksum = "TODO"
     [params.releases.android]
-      version = "1.5.0-beta4"
-      filename = "Cryptomator-1.5.0-beta4.apk"
-      downloadUrl = "https://static.cryptomator.org/android/1.5.0-beta4/Cryptomator-1.5.0-beta4.apk"
+      version = "1.5.0"
+      filename = "Cryptomator-1.5.0.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.5.0/Cryptomator-1.5.0.apk"
+      checksum = "8b9f6c75e346fa1211ee18594aac8797cc279bc7571e85101d65fcfbe1841e43"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"

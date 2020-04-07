@@ -42,6 +42,8 @@
   translation: "APK herunterladen"
 - id: android_download_button
   translation: "Download"
+- id: android_download_sha256_signature
+  translation: "SHA256-Signatur anzeigen"
 
 # Blog
 - id: blob_post_author_prefix
@@ -215,4 +217,4 @@
 - id: home_cebit_title
   translation: "Preisträger des CeBIT Innovation Awards 2016"
 - id: home_cebit_subtitle
-  translation: "Cryptomator ist Gewinner des Sonderpreises for Usable Security and Privacy."
+  translation: "Cryptomator ist Gewinner des Sonderpreises für Usable Security and Privacy."

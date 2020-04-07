@@ -132,7 +132,6 @@ class OneTimePayment {
         currency: currency,
         amount: amount,
         frequency: 'once',
-        message: 'Good job, team! TODO replace default message in cardpayments.js', /* TODO */
         captcha: this._status.captcha
       }
     }).done(data => {
@@ -159,8 +158,7 @@ class OneTimePayment {
       url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
       type: 'POST',
       data: {
-        payment_intent_id: paymentIntendId,
-        message: 'Good job, team! TODO replace default message in cardpayments.js', /* TODO */
+        payment_intent_id: paymentIntendId
       }
     }).done(data => {
       if (data.status == 'ok') {
