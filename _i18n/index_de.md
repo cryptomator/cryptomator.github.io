@@ -71,6 +71,10 @@ features:
       <p>Cryptomator ist eine freie, quelloffene Software lizensiert unter der GPLv3. Dadurch kann jeder unseren Code einsehen. Es ist unmöglich für Dritte, Hintertüren einzubauen. Außerdem können wir Schwachstellen nicht verheimlichen. Und das Beste ist: Sie brauchen uns nicht vertrauen, weil Sie uns kontrollieren können!</p>
       <p>Lock-in-Effekte sind ausgeschlossen. Das heißt, selbst wenn wir entscheiden würden, die Entwicklung einzustellen, haben bereits Hunderte anderer Entwickler den Quellcode kopiert. Da Sie keinen Account benötigen, werden Sie also niemals vor verschlossenen Türen stehen.</p>
 
+sponsors:
+  title: Mit Stolz gesponsert von
+  button: Werde Sponsor
+
 testimonials:
   title: Was Nutzer sagen
 

@@ -36,6 +36,24 @@
 
 <section>
   <div class="page-header">
+    <h2 class="text-center">{{ i18n.goldSponsors.title }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="container-fluid text-center sponsor-images">
+        {% for item in i18n.goldSponsors.list %}
+          <a href="{{ item.link }}" target="_blank">
+            <img src="{{ item.img }}"{% if page.img2x %} srcset="{{ item.img }} 1x, {{ item.img2x }} 2x"{% endif %} style="height: 128px;"/>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="page-header">
     <h2 class="text-center">{{ i18n.silverSponsors.title }}</h2>
   </div>
 

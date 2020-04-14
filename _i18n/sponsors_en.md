@@ -25,6 +25,11 @@ stats:
   languages:
     value: 30
     title: Languages
+goldSponsors:
+  title: Gold Sponsors
+  list:
+  - link: https://www.gee-whiz.de/
+    img: /img/sponsors/geewhiz.svg
 silverSponsors:
   title: Silver Sponsors
   list:

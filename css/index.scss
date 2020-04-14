@@ -352,6 +352,14 @@ h1.display-font {
   margin-top: 20px;
 }
 
+#sponsors {
+  padding-bottom: 48px;
+
+  .container-fluid {
+    padding-bottom: $spacing-unit / 2;
+  }
+}
+
 #testimonials {
   padding-bottom: 48px;
 
