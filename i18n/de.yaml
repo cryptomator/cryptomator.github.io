@@ -208,6 +208,10 @@
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
 - id: home_trustingbrands_title
   translation: "Marken, die unserer Technologie vertrauen"
+- id: home_sponsors_title
+  translation: "Mit Stolz gesponsert von"
+- id: home_sponsors_button
+  translation: "Werde Sponsor"
 - id: home_testimonials_title
   translation: "Stimmen unserer Nutzer"
 - id: home_testimonials_image_alt

@@ -208,6 +208,10 @@
   translation: "Relaxed woman on a cloud secured by a lock"
 - id: home_trustingbrands_title
   translation: "Brands Trusting our Technology"
+- id: home_sponsors_title
+  translation: "Proudly Sponsored By"
+- id: home_sponsors_button
+  translation: "Become a Sponsor"
 - id: home_testimonials_title
   translation: "What our Users Say"
 - id: home_testimonials_image_alt

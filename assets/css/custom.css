@@ -37,6 +37,15 @@
   @apply bg-primary text-white transition transform duration-200 ease-in-out;
 }
 
+.btn-outline-secondary {
+  @apply border border-secondary text-secondary;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  @apply bg-secondary text-white transition transform duration-200 ease-in-out;
+}
+
 .btn-outline-gray-500 {
   @apply border border-transparent text-gray-500;
 }
