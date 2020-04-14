@@ -53,21 +53,21 @@ unsafe = true
 [params]
   [params.releases]
     [params.releases.exe]
-      version = "1.5.0-rc2"
-      filename = "Cryptomator-1.5.0-rc2-x64.exe"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc2/Cryptomator-1.5.0-rc2-x64.exe"
+      version = "1.5.0-rc3"
+      filename = "Cryptomator-1.5.0-rc3-x64.exe"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc3/Cryptomator-1.5.0-rc3-x64.exe"
       signatureUrl = "TODO"
       checksum = "TODO"
     [params.releases.dmg]
-      version = "1.5.0-rc2"
-      filename = "Cryptomator-1.5.0-rc2.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc2/Cryptomator-1.5.0-rc2.dmg"
+      version = "1.5.0-rc3"
+      filename = "Cryptomator-1.5.0-rc3.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc3/Cryptomator-1.5.0-rc3.dmg"
       signatureUrl = "TODO"
       checksum = "TODO"
     [params.releases.appimage]
-      version = "1.5.0-rc2"
-      filename = "cryptomator-1.5.0-rc2-x86_64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc2/cryptomator-1.5.0-rc2-x86_64.AppImage"
+      version = "1.5.0-rc3"
+      filename = "cryptomator-1.5.0-rc3-x86_64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc3/cryptomator-1.5.0-rc3-x86_64.AppImage"
       signatureUrl = "TODO"
       checksum = "TODO"
     [params.releases.android]
