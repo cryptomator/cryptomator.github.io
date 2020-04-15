@@ -96,19 +96,21 @@ Haben Sie verlangt, dass die Dienstleistungen während der Widerrufsfrist beginn
 
 ### Muster-Widerrufsformular
 
-(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)
+Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es uns zu:
 
-An:<br/>
-Skymatic GmbH<br/>
-Grantham-Allee 2-8<br/>
-53757 Sankt Augustin<br/>
-E-Mail: info [at] skymatic [dot] de<br/>
-Fax: 02241 / 2667424<br/>
+```
+An:
+Skymatic GmbH
+Grantham-Allee 2-8
+53757 Sankt Augustin
+E-Mail: info [at] skymatic [dot] de
+Fax: 02241 / 2667424
 
-Hiermit widerrufe(n) ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen Inhalte
+Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen Inhalte
 
-Bestellt am: __________________</br>
-Name des Verbraucher: __________________</br>
-Anschrift des Verbraucher: __________________</br>
-Unterschrift des Verbraucher(s) (nur bei Mitteilung auf Papier): __________________</br>
-Datum: __________________</br>
+Bestellt am: __________________
+Name des Kunden: __________________
+Anschrift des Kunden: __________________
+Unterschrift (nur bei Mitteilung auf Papier): __________________
+Datum: __________________
+```
