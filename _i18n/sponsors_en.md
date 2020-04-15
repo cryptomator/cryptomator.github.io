@@ -40,7 +40,6 @@ bronzeSponsors:
   title: Bronze Sponsors
   list:
   - St. Pölten University of Applied Sciences
-  - gee-whiz GmbH
 opportunities:
   title: Become a Sponsor
   bronze:
