@@ -74,11 +74,19 @@ blockquote {
 }
 
 pre, code {
-  @apply text-sm bg-gray-300 rounded p-1;
+  @apply text-sm bg-gray-300 rounded;
+}
+
+pre {
+  @apply p-2;
 }
 
 code {
-  @apply break-words;
+  @apply break-words p-1;
+}
+
+pre > code {
+  @apply p-0;
 }
 
 th {
