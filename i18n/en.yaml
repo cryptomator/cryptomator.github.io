@@ -12,6 +12,10 @@
   translation: "Legal"
 - id: accept_terms_and_privacy
   translation: "I accept the <a href=\"/terms/\">Terms and Conditions</a> as well as the <a href=\"/privacy/\">Privacy Policy</a>."
+- id: accept_privacy
+  translation: "I accept the <a href=\"/privacy/\">Privacy Policy</a>."
+- id: accept_privacy_implicitly
+  translation: "By transferring, I accept the <a href=\"/privacy/\">Privacy Policy</a>."
 
 # Android
 - id: android_getkey_title

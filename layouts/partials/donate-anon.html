@@ -25,7 +25,7 @@
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" x-data="{acceptTerms: false}">
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
-          <p class="mb-4">{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+          <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
           <button type="submit" class="btn btn-primary w-full md:w-64" x-bind:disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_paypal_calltoaction" }}</button>
         </form>
       </div>
@@ -77,7 +77,7 @@
             <div class="text-center mt-8">
               <p class="mb-4">{{ i18n "donate_creditcard_once_instruction" | safeHTML }}</p>
 
-              <p class="mb-4">{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+              <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
 
               <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
                 <button x-bind:disabled="!oneTimePaymentStatus.validCardNum" x-on:click="oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn btn-primary w-full md:w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
@@ -95,7 +95,7 @@
 
           <div x-show="frequency === 'recurring'" class="text-center mt-4">
             <p>{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
-            <p>{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+            <p>{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
             <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="recurringPayment.checkout(amount, currency)" x-bind:disabled="!acceptTerms">
               <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
@@ -113,7 +113,7 @@
 
       <!-- Bank Transfer -->
       <div x-show="tab === 'bank'" x-cloak>
-        <dl class="flex flex-wrap items-baseline">
+        <dl class="flex flex-wrap items-baseline mb-4">
           <dt class="block uppercase tracking-wide text-gray-700 text-xs font-bold w-full md:text-right md:w-1/3 md:pr-2">{{ i18n "donate_banktransfer_recipient" }}</dt>
           <dd class="mb-2 md:w-2/3 md:mb-0">Skymatic GmbH</dd>
           <dt class="block uppercase tracking-wide text-gray-700 text-xs font-bold w-full md:text-right md:w-1/3 md:pr-2">IBAN</dt>
@@ -123,6 +123,7 @@
           <dt class="block uppercase tracking-wide text-gray-700 text-xs font-bold w-full md:text-right md:w-1/3 md:pr-2">BIC</dt>
           <dd class="md:w-2/3">FDDODEMMXXX</dd>
         </dl>
+        <p class="text-center">{{ i18n "accept_privacy_implicitly" | safeHTML }}</p>
       </div>
 
       <!-- Crypto -->
@@ -139,7 +140,7 @@
           <input type="hidden" name="allow_amount" value="1" />
           <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
           <input type="hidden" name="allow_extra" value="1" />
-          <p class="mb-4">{{ partial "accept-terms.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+          <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
           <button type="submit" class="btn btn-primary w-full md:w-64" x-bind:disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
         </form>
       </div>
