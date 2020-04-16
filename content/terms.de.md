@@ -2,7 +2,7 @@
 title: "AGB"
 ---
 
-_Stand: März 2020_
+_Stand: April 2020_
 
 <p class="text-lg leading-relaxed text-gray-700">Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.</p>
 
@@ -44,7 +44,7 @@ Die von Skymatic angebotenen Inhalte werden lizenziert, nicht verkauft. Sämtlic
 
 Skymatic gewährt dem Kunden ein nicht-exklusives und nicht unterlizenzierbares Nutzungsrecht an den bestellten Inhalten und untersagt ausdrücklich deren Vervielfältigung und Weiterverbreitung ohne schriftliche Genehmigung.
 
-Sofern die lizenzierten Inhalte den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitern, so bleiben die ursprünglichen Lizenzbedingungen davon unberührt. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte, für die die jeweiligen Open Source Lizenzen gelten.
+Sofern die lizenzierten Inhalte den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitern, so bleiben die ursprünglichen Lizenzbedingungen davon unberührt. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte, für die die jeweiligen Open-Source-Lizenzen gelten.
 
 ### §6 Haftung (Gewährleistung)
 
@@ -60,10 +60,9 @@ In keinem Fall übersteigt die Haftung des Unternehmens Ihnen gegenüber den Bet
 
 Im Übrigen gelten die gesetzlichen Gewährleistungsregelungen.
 
-
 ### §7 Datenschutz
 
-Im Kontext des Vertragsschlusses erforderliche Daten verarbeitet Skymatic im Rahmen der gesetzlichen Bestimmungen und unserer [Datenschutzerklärung.](/de/privacy)
+Im Kontext des Vertragsschlusses erforderliche Daten verarbeitet Skymatic im Rahmen der gesetzlichen Bestimmungen und unserer [Datenschutzerklärung](/de/privacy/).
 
 ### §8 Salvatorische Klausel
 
@@ -75,8 +74,7 @@ Verbrauchern steht ein Widerrufsrecht nach folgender Maßgabe zu, wobei Verbrauc
 
 ### Widerrufsrecht
 
-Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
-Die Widerrufsfrist beträgt vierzehn Tage, ab dem Tag des Vertragsabschlusses.
+Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage, ab dem Tag des Vertragsabschlusses.
 
 Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
 
@@ -108,7 +106,7 @@ Grantham-Allee 2-8
 E-Mail: info [at] skymatic [dot] de
 Fax: 02241 / 2667424
 
-Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen Inhalte
+Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen Inhalte:
 
 Bestellt am: __________________
 Name des Kunden: __________________
