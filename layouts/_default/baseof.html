@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ i18n "site_meta_description" }}"/>
+    <title>{{ .Title }}</title>
+    {{ if .Site.IsServer }}
+      {{ $css := resources.Get "css/main.css" | postCSS }}
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen">
+    {{ else }}
+      {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen">
+    {{ end }}
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml">
+    {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
+    {{ end }}
+    {{ block "head" . }}
+      <!-- optional additional page-specific stuff that goes into head -->
+    {{ end }}
+  </head>
+  <body class="bg-dark font-body text-gray-900">
+    {{ partial "nav.html" . }}
+    <div class="bg-gray-100 min-vh-80">
+    <!-- Code that all your templates share, like a header -->
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    </div>
+    {{ partial "footer.html" . }}
+
+    {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
+
+    {{ $alpine := resources.Get "js/alpinejs/alpine.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}"></script>
+
+    {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}"></script>
+  </body>
+</html>

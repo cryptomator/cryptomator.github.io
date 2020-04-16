@@ -1,0 +1,30 @@
+<div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+  <meta itemprop="name" content="Cryptomator"/>
+  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
+  <meta itemprop="applicationCategory" content="Productivity"/>
+  <meta itemprop="softwareVersion" content="{{ .Site.Params.releases.android.version }}"/>
+  <meta itemprop="applicationSubCategory" content="Encryption"/>
+  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
+  <meta itemprop="operatingSystem" content="Android"/>
+
+  <div class="rounded shadow bg-white">
+    <div class="px-4 py-2 border-b border-primary">
+      <h3>{{ i18n "android_download_title" }}</h3>
+    </div>
+    <div class="px-4 py-8" x-data="{showShaSignature: false}">
+      <p class="mb-4">
+        <img class="inline-block h-24" src="/img/logo.svg"/>
+      </p>
+      <p class="mb-4">Version {{ .Site.Params.releases.android.version }} • Minimum: Android 4.3</p>
+      <p class="mb-2">
+        <a href="{{ .Site.Params.releases.android.downloadUrl }}" class="btn btn-primary w-full md:w-48" role="button">
+          <span class="fas fa-download" aria-hidden="true"></span> {{ i18n "android_download_button" }}
+        </a>
+      </p>
+      <p class="text-xs">
+        <a href="#" x-on:click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
+      </p>
+      <p x-show="showShaSignature" x-cloak class="text-sm mt-4"><code class="break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
+    </div>
+  </div>
+</div>

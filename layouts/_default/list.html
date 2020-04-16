@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1>Posts</h1>
+    </header>
+    {{ range .Pages }}
+      <article>
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+      </article>
+    {{ end }}
+  </div>
+{{ end }}

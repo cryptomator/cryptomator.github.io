@@ -1,0 +1,62 @@
+---
+title: "Gastbeitrag: Why Easy Encryption Is Safe Encryption"
+slug: why-easy-encryption-is-safe-encryption
+date: 2017-11-18
+author: Sam Bocetta
+authorlink: https://twitter.com/sambocetta
+authorimg: https://avatars.io/twitter/sambocetta/medium
+notice: Dies ist ein Gastbeitrag von Sam Bocetta.
+tags: [other, guest]
+aliases: ["/blog/2017/11/18/why-easy-encryption-is-safe-encryption_de.html"]
+discourseEmbedUrl: https://cryptomator.org/blog/2017/11/18/why-easy-encryption-is-safe-encryption_en.html
+---
+Another day, another data breach. Two weeks ago, the {{<extlink "http://www.canberratimes.com.au/national/public-service/data-breach-sees-records-of-50000-australian-workers-exposed-20171102-gzdef3.html" "headline news">}} in Australia was that some 50,000 workers had their personal records exposed. And just as every summer now inevitably becomes the hottest on record, every data breach is always the largest in history. This is certainly the case here – such a scale of data loss is unprecedented in Australia, if not elsewhere.
+
+The breach is also typical in another way: it was caused by human error. Several government agencies had been working with a "third party contractor", and it was this company who were responsible for the leak. They remain unnamed, which is lucky for them, given the reputational damage that can be caused by breaches like this.
+
+On a practical level, the leak was caused by … drum roll please … an incorrectly configured cloud storage service. Sounds familiar, right?
+
+And whilst I don't know precisely what "incorrectly configured" means in this particular context, I can make a good guess. My bet would be that the data in the cloud was not encrypted, or at least was not encrypted in transit to the cloud.
+
+Further, I assume that whichever "third party contractor" we are dealing with here had policies that required employees to encrypt data before sending it anywhere. They were dealing with sensitive records, after all, and anything else would have been remiss.
+
+## Human Error
+This might sound like idle speculation, but I raise it to make a serious point: {{<extlink "https://www.dataprivacymonitor.com/cybersecurity/deeper-dive-human-error-is-to-blame-for-most-breaches/" "the majority of data breaches are caused by human error">}}. Research by Data Privacy Monitor found that in 2015, 37% of {{<extlink "http://e.bakerlaw.com/s/916f16a49296140a9d10ee92cc567ebd16e76582" "data loss was the direct cause of human error">}}. And it gets worse – if you broaden the definition of "error" to include falling for phishing scams, fully 59% of all data breaches fall into this category.
+
+In fact, it could be argued that almost all incidents of data breach are the result of human error. The other categories mentioned in the same research are (24%), external theft (17%), vendors (14%), internal theft (8%), and lost or improper disposal (6%). Barring internal theft, pretty much all of these categories rely on human error: external theft is made possible by employees leaving their laptops on trains, and by not having them encrypted, for instance.
+
+Given this, it's not surprising that analyses of the {{<extlink "https://www.venafi.com/blog/7-data-breaches-caused-human-error-did-encryption-play-role" "biggest data breaches in recent years">}} have pointed to the role of human error. In most cases, a phishing attack is used to gain access to protected data, but in a sizeable minority the problem is simply that once basic access to a system is achieved, an attacker has access to everything, because nothing is encrypted.
+
+## Human Ignorance
+I don't mean to suggest that everybody is stupid, or that it is easy to spot a sophisticated phishing attack. Even many of Sony's top executives {{<extlink "https://www.tripwire.com/state-of-security/latest-security-news/sony-hackers-used-phishing-emails-to-breach-company-networks/" "fell foul of such an attack">}}, of course, back in 2014.
+
+Instead, the problem lies with the generally poor level of knowledge on security issues, and nowhere is this more apparent than when it comes to encryption. If you work in tech, it's easy to forget that people don't understand encryption, despite the innumerable and {{<extlink "https://thebestvpn.com/cryptography/" "excellent guides">}} available.
+
+<figure class="my-8">
+  <img class="inline-block rounded mb-1" src="https://imgs.xkcd.com/comics/pgp.png" srcset="https://imgs.xkcd.com/comics/pgp.png 1x, https://imgs.xkcd.com/comics/pgp_2x.png 2x" title="If you want to be extra safe, check that there's a big block of jumbled characters at the bottom." alt="PGP"/>
+  <figcaption>
+    <p class="text-sm text-gray-500 mb-0">Illustration by {{<extlink "https://xkcd.com/1181/" "Randall Munroe (xkcd)">}}</p>
+  </figcaption>
+</figure>
+
+In my experience, the majority of employees (and perhaps people) fall into two categories. There are those that think that their because they need to enter a Gmail password (sometimes), all their emails are safe as long as they keep their password secret. Or maybe just share it with a few friends.
+
+Then there are those, more nihilistic, who figure that the government / hackers / the illuminati / whoever can see everything that is happening anyway, so security is pointless in any case. I remember that several friends were amazed {{<extlink "https://www.macrumors.com/2017/10/23/fbi-unable-to-crack-6900-devices/" "when the FBI couldn't get into encrypted iPhones">}} a few years ago – they had assumed that the government could _always_ get around _every_ security feature.
+
+This type of person is more difficult to encourage into good security habits, but the approach for both types of people should be the same.
+
+## Make Encryption Simple
+I'll let you into a little secret: I don't encrypt all my emails. Some, sure. But if I'm just writing to my mother about Christmas, I don't bother: call me lazy, but it's just too much hassle.
+
+My personal files are a different matter. I'm still amazed by people who say something along the lines of "I've got nothing to hide, so it doesn't matter if someone hacks my computer". You don't have to be a dissident in an oppressive regime to be damaged by a data leak. Emails, purchasing history, even your contact list, can easily be used to impersonate you online, even if there is no incriminating data there.
+
+There are endless guides about how to encourage employees, friends, your gran, to store and send data safely. Many point out that proper training and education can bring home to people the importance of encryption. This might be true, but to my mind the most factor in getting people to use encryption is to make it easy to do so.
+
+Ideally, what you need is an encrypted local drive, and one that is easy to move files in and out of. There are plenty of services available that work just like Dropbox or similar storage services, but automatically encrypt files as they are uploaded. Using these, encryption becomes second nature, and if files are encrypted locally you don't need to worry about sending them to cloud storage or anything else.
+
+And best of all, you need _zero_ knowledge about how encryption works. I would recommend, of course, reading about what you are actually doing when you encrypt files, but for the non-techies out there, making encryption simple is by far the best way of making it ubiquitous.
+
+---
+
+## About the Author
+Sam Bocetta is a defense contractor for the U.S. Navy, a defense analyst, and a freelance journalist. He specializes in finding radical – and often heretical – solutions to "impossible" ballistics problems. He now writes for {{<extlink "https://gunnewsdaily.com/" "Gun News Daily">}} about naval engineering, mechanical engineering, electrical engineering, marine ops, program management, defense contracting, export control, international commerce, patents, InfoSec, cryptography, cyberwarfare, and cyberdefense.

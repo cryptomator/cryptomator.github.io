@@ -1,0 +1,40 @@
+<div x-data="{checkoutData: {productId: 578277, price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white">
+  <div class="px-4 py-2 border-b border-primary text-center">
+    <h3>{{ i18n "android_getkey_title" }}</h3>
+  </div>
+
+  <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
+    <div class="w-full md:w-1/2 mb-4">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "android_getkey_amount" }}</label>
+      <input x-model="checkoutData.price" type="text" class="appearance-none w-full" placeholder="{{ i18n "android_getkey_amount_placeholder" }}" readonly/>
+    </div>
+    <div class="mb-4">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "android_getkey_email" }}</label>
+      <input x-model="checkoutData.email" type="email" class="appearance-none w-full" placeholder="{{ i18n "android_getkey_email_placeholder" }}" required/>
+    </div>
+    <div class="text-center mt-8">
+      <p class="mb-4">{{ i18n "android_getkey_instruction" }}</p>
+      <p class="mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" x-on:click="$event.preventDefault(); androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+        <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "android_getkey_checkout" }}
+      </button>
+      <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-1" x-text="checkoutData.errorMessage"></p>
+      <p class="text-sm w-full lg:w-4/5 mx-auto mt-4">{{ ":tada:" | emojify }} {{ i18n "android_getkey_coupon" | safeHTML }}</p>
+    </div>
+  </form>
+
+  <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
+    <h3 class="mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success" }}</h3>
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "android_getkey_key" }}</label>
+    <textarea x-model="checkoutData.licenseKey" class="appearance-none w-full mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
+    <p>{{ i18n "android_getkey_key_instruction" }}</p>
+  </div>
+</div>
+
+{{ if .Site.IsServer }}
+  {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
+  <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $androidKeyJs := resources.Get "js/androidkey.js" | minify | fingerprint }}
+  <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" integrity="{{ $androidKeyJs.Data.Integrity }}" defer></script>
+{{ end }}

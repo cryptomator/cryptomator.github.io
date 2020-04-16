@@ -1,4 +1,4 @@
+resources/
 node_modules/
-_site/
-.sass-cache
+public/
 *.DS_Store

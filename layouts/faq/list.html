@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1>
+        {{- if .Sections -}}
+          {{ .Title }}
+        {{- else -}}
+          <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}
+        {{- end -}}
+      </h1>
+    </header>
+
+    {{ range .Sections.ByWeight }}
+      <section class="mb-12">
+        <h2 class="mb-4"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          {{ range .Pages.ByWeight }}
+            {{ partial "faq-card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+    {{ else }}
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+        {{ range .Pages.ByWeight }}
+          {{ partial "faq-card.html" . }}
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
+{{ end }}

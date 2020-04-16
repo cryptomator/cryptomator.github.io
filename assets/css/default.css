@@ -1,0 +1,97 @@
+/* margins for elements in articles */
+article blockquote, article h1, article h2, article h3, article ol, article p, article pre, article table, article ul {
+  @apply mb-4;
+}
+
+article h1, article h2, article h3 {
+  @apply mt-8;
+}
+
+article hr {
+  @apply my-8;
+}
+
+/* list styles */
+ul {
+  @apply list-disc ml-8;
+}
+
+ol {
+  @apply list-decimal ml-8;
+}
+
+/* text styles */
+h1 {
+  @apply text-xl font-headline font-medium;
+}
+
+h2 {
+  @apply text-lg font-headline font-medium;
+}
+
+h3 {
+  @apply text-lg font-headline;
+}
+
+@screen md {
+  h1 {
+    @apply text-2xl;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@screen lg {
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+  
+  h3 {
+    @apply text-xl;
+  }
+}
+
+a {
+  @apply text-primary no-underline;
+}
+
+a:hover {
+  @apply text-primary underline;
+}
+
+blockquote {
+  @apply text-lg border-l-4 px-3 py-2;
+}
+
+pre, code {
+  @apply text-sm bg-gray-300 rounded;
+}
+
+pre {
+  @apply overflow-auto p-2;
+}
+
+code {
+  @apply break-words p-1;
+}
+
+pre > code {
+  @apply p-0;
+}
+
+th {
+  @apply text-left;
+}
+
+/* see https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak] { display: none; }

@@ -1,0 +1,29 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cryptomator Blog</title>
+    <description>Recent Blog Posts on cryptomator.org</description>
+    <link>{{ .Permalink }}</link>
+    <language>{{ .Language }}</language>
+    <atom:link href="{{ "blog/feed.xml" | absLangURL }}" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://cryptomator.org/img/logo.png</url>
+      <title>Cryptomator Blog</title>
+      <link>{{ .Permalink }}</link>
+    </image>
+    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    <generator>Hugo</generator>
+    {{ range first 10 (where .Site.RegularPages.ByDate.Reverse "Section" "blog") }}
+      <item>
+        <title>{{ .Title }}</title>
+        <description>{{ .Content | html }}</description>
+        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+        <link>{{ .Permalink }}</link>
+        <guid isPermaLink="true">{{ .Permalink }}</guid>
+        {{ range .Params.tags }}
+        <category>{{ . }}</category>
+        {{ end }}
+      </item>
+    {{ end }}
+  </channel>
+</rss>

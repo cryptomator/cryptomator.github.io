@@ -1,0 +1,53 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <article class="mb-12">
+      <header class="mb-6">
+        <h1 class="mt-0"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</a></h1>
+        <div class="flex items-center mb-4">
+          {{ if .Params.Author }}
+            {{ if .Params.Authorimg }}
+              {{ if .Params.Authorlink }}
+                <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">
+              {{ end }}
+              <img src="{{ .Params.Authorimg }}" class="w-12 rounded-full mr-2"/>
+              {{ if .Params.Authorlink }}
+                </a>
+              {{ end }}
+            {{ end }}
+            <span class="mr-1">
+              {{ i18n "blob_post_author_prefix" }}
+              {{ if .Params.Authorlink }}
+                <a href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">{{ .Params.Author }}</a>
+              {{ else }}
+                {{ .Params.Author }}
+              {{ end }}
+            </span>
+            <span class="mr-1">•</span class="mr-2">
+          {{ end }}
+          <span><a href="{{ .RelPermalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
+        </div>
+        {{ if .Params.Notice }}
+          <p class="italic">{{ .Params.Notice }}</p>
+        {{ end }}
+      </header>
+
+      <hr class="my-8"/>
+
+      <section>
+        {{ .Content }}
+      </section>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  <script type="text/javascript" x-url="{{ if .Params.DiscourseEmbedUrl }}{{ .Params.DiscourseEmbedUrl }}{{ else }}{{ if eq .Site.Language.Lang "en" }}{{ .Permalink }}{{ else }}{{ range first 1 (where .Translations "Lang" "==" "en") }}{{ .Permalink}}{{ end }}{{ end }}{{ end }}">
+    var url = document.currentScript.getAttribute('x-url');
+    DiscourseEmbed = { discourseUrl: 'https://community.cryptomator.org/', discourseEmbedUrl: url };
+    (function() {
+      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+    })();
+  </script>
+{{ end }}

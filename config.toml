@@ -1,0 +1,80 @@
+baseURL = "https://cryptomator.org/"
+title = "Cryptomator"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+enableemoji = true
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "English"
+  [languages.de]
+    weight = 2
+    languageName = "Deutsch"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
+
+[module]
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "node_modules/@fortawesome/fontawesome-pro/webfonts"
+    target = "static/webfonts"
+
+  [[module.mounts]]
+    source = "node_modules/jquery/dist"
+    target = "assets/js/jquery"
+
+  [[module.mounts]]
+    source = "node_modules/alpinejs/dist"
+    target = "assets/js/alpinejs"
+
+  [[module.mounts]]
+    source = "node_modules/lazysizes"
+    target = "assets/js/lazysizes"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+  [params.releases]
+    [params.releases.exe]
+      version = "1.5.0"
+      filename = "Cryptomator-1.5.0-x64.exe"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0-x64.exe"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0-x64.exe.asc"
+      checksum = "3295cf314bc67bb866ab0830478106cf55d203a5953a9cb304186dfe1dfb81f9"
+    [params.releases.dmg]
+      version = "1.5.0"
+      filename = "Cryptomator-1.5.0.dmg"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0.dmg"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0.dmg.asc"
+      checksum = "3b45453d08c46d4321e0ec6f259e2fa0e3d79773debd3b935e6a4fc5e631e3a8"
+    [params.releases.appimage]
+      version = "1.5.0"
+      filename = "cryptomator-1.5.0-x86_64.AppImage"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/cryptomator-1.5.0-x86_64.AppImage"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/cryptomator-1.5.0-x86_64.AppImage.asc"
+      checksum = "ce66aabcfc86d59069f1234612b25007904c21cf6c666b932186ee5ccea04baa"
+    [params.releases.android]
+      version = "1.5.1"
+      filename = "Cryptomator-1.5.1.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.5.1/Cryptomator-1.5.1.apk"
+      checksum = "66507cbe9f8cc1b176582d2cefc5ca09aaa0c9b2f288aa15ab2b503897466e1f"
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:slug/"

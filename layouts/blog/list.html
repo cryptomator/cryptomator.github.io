@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1>
+        {{ .Title }}
+        <a href="{{ .Site.LanguagePrefix }}/feed.xml"><i class="fas fa-rss-square"></i></a>
+      </h1>
+    </header>
+
+    {{ range .Pages.ByDate.Reverse }}
+      <section class="mb-6">
+        <article class="border rounded shadow bg-white p-4">
+          <h2 class="mt-0 mb-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="text-sm text-gray-600">{{ dateFormat "2006-01-02" .Params.Date }}</p>
+          <p class="mb-0">{{ .Summary }}</p>
+        </article>
+      </section>
+    {{ end }}
+  </div>
+{{ end }}

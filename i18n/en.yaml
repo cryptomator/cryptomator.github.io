@@ -1,0 +1,230 @@
+- id: site_meta_description
+  translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
+- id: footer_contribute_title
+  translation: "Contribute"
+- id: footer_contribute_translate
+  translation: "Translate"
+- id: footer_follow_us_title
+  translation: "Follow Us"
+- id: footer_follow_us_rss_feed
+  translation: "RSS Feed"
+- id: footer_legal_title
+  translation: "Legal"
+- id: accept_terms_and_privacy
+  translation: "I accept the <a href=\"/terms/\">Terms & Conditions</a> as well as the <a href=\"/privacy/\">Privacy Policy</a>."
+- id: accept_privacy
+  translation: "I accept the <a href=\"/privacy/\">Privacy Policy</a>."
+- id: accept_privacy_implicitly
+  translation: "By transferring, I accept the <a href=\"/privacy/\">Privacy Policy</a>."
+
+# Android
+- id: android_getkey_title
+  translation: "Buy a license key"
+- id: android_getkey_amount
+  translation: "Amount"
+- id: android_getkey_amount_placeholder
+  translation: "Loading…"
+- id: android_getkey_email
+  translation: "Email"
+- id: android_getkey_email_placeholder
+  translation: "Email address"
+- id: android_getkey_instruction
+  translation: "Payments are securely handled by Paddle."
+- id: android_getkey_checkout
+  translation: "Checkout"
+- id: android_getkey_coupon
+  translation: "Use coupon code <code class=\"text-xs\">STAYATHOME</code> during checkout to get 40% off!"
+
+- id: android_getkey_success
+  translation: "Your payment was successful!"
+- id: android_getkey_key
+  translation: "License Key"
+- id: android_getkey_key_placeholder
+  translation: "Loading…"
+- id: android_getkey_key_instruction
+  translation: "This is your license key. Enter it in the Cryptomator app. The license key has also been sent to your email address."
+
+- id: android_download_title
+  translation: "Download APK"
+- id: android_download_button
+  translation: "Download"
+- id: android_download_sha256_signature
+  translation: "Show SHA256 Signature"
+
+# Blog
+- id: blob_post_author_prefix
+  translation: "by"
+
+# Coop
+- id: coop_more_info
+  translation: "More Info"
+- id: coop_your_business_title
+  translation: "Your Business?"
+- id: coop_your_business_paragraph
+  translation: "Interested in Cryptomator for your business? Explore various fields of application."
+
+# Donate
+- id: donate_anon_title
+  translation: "Just donate"
+- id: donate_anon_feature_1
+  translation: "Support Cryptomator's open-source development"
+- id: donate_anon_feature_2
+  translation: "Choose your preferred payment method"
+- id: donate_anon_feature_3
+  translation: "Pay what you want"
+
+- id: donate_paypal_title
+  translation: "PayPal"
+- id: donate_paypal_instruction
+  translation: "After pressing \"Proceed\", you will be redirected to our PayPal site."
+- id: donate_paypal_calltoaction
+  translation: "Proceed to PayPal"
+
+- id: donate_creditcard_title
+  translation: "Credit Card"
+- id: donate_creditcard_amount
+  translation: "Amount"
+- id: donate_creditcard_amount_placeholder
+  translation: "min. 1"
+- id: donate_creditcard_amount_suffix
+  translation: ".00"
+- id: donate_creditcard_frequency
+  translation: "Frequency"
+- id: donate_creditcard_frequency_once
+  translation: "One-Time"
+- id: donate_creditcard_frequency_recurring
+  translation: "Monthly"
+- id: donate_creditcard_number
+  translation: "Credit Card"
+- id: donate_creditcard_once_instruction
+  translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href=\"https://support.stripe.com/questions/\"unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
+- id: donate_creditcard_once_loading
+  translation: "Loading…"
+- id: donate_creditcard_once_loadcaptcha
+  translation: "Continue…"
+- id: donate_creditcard_once_paynow
+  translation: "Pay Now"
+- id: donate_creditcard_recurring_instruction
+  translation: "Recurring credit card payments will be set up on our Stripe page."
+- id: donate_creditcard_recurring_calltoaction
+  translation: "Proceed to Stripe"
+
+- id: donate_banktransfer_title
+  translation: "Bank Transfer"
+- id: donate_banktransfer_recipient
+  translation: "Recipient"
+
+- id: donate_crypto_title
+  translation: "Crypto"
+- id: donate_crypto_instruction
+  translation: "Select the crypto currency in the next step. After pressing \"Proceed\", you will be redirected to our CoinPayments site."
+- id: donate_crypto_calltoaction
+  translation: "Proceed to CoinPayments"
+
+- id: donate_getkey_title
+  translation: "Buy a donation key"
+- id: donate_getkey_feature_1
+  translation: "Register your software and unlock dark mode"
+- id: donate_getkey_feature_2
+  translation: "Some might say it's an awesome people certificate"
+- id: donate_getkey_feature_3
+  translation: "Get an invoice"
+
+- id: donate_getkey_amount
+  translation: "Amount"
+- id: donate_getkey_amount_placeholder
+  translation: "min. 15"
+- id: donate_getkey_amount_suffix
+  translation: ".00"
+- id: donate_getkey_amount_help
+  translation: "Currency is determined during checkout."
+- id: donate_getkey_email
+  translation: "Email"
+- id: donate_getkey_email_placeholder
+  translation: "Email address"
+- id: donate_getkey_instruction
+  translation: "Payments are securely handled by Paddle."
+- id: donate_getkey_checkout
+  translation: "Checkout"
+
+- id: donate_getkey_success
+  translation: "Your payment was successful!"
+- id: donate_getkey_key
+  translation: "Donation Key"
+- id: donate_getkey_key_placeholder
+  translation: "Loading…"
+- id: donate_getkey_key_instruction
+  translation: "This is your donation key. Enter it in the Cryptomator settings under \"Donate\". The donation key has also been sent to your email address."
+
+- id: donate_become_sponsor_title
+  translation: "Want to become an official sponsor?"
+- id: donate_become_sponsor_button
+  translation: "Become a Sponsor"
+
+# Downloads
+- id: downloads_all_versions_title
+  translation: "Looking for older versions?"
+- id: downloads_all_versions_button
+  translation: "Releases Archive on GitHub"
+
+# Downloads Thanks
+- id: downloads_thanks_notification_title
+  translation: "Your download starts automatically."
+- id: downloads_thanks_notification_detail
+  translation: "Didn't work? Click here to restart:"
+- id: downloads_thanks_sha256_signature
+  translation: "Show SHA256 Signature"
+- id: downloads_thanks_pgp_signature
+  translation: "Download PGP Signature"
+- id: downloads_thanks_title
+  translation: "Thanks for choosing Cryptomator!"
+- id: downloads_thanks_getting_started_title
+  translation: "Getting Started"
+- id: downloads_thanks_getting_started_detail
+  translation: "If you are a first-time user, you might be interested to:"
+- id: downloads_thanks_getting_started_detail_1
+  translation: "Read our <a href=\"https://docs.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">documentation</a>, which should guide you in case you would like some instructions."
+- id: downloads_thanks_getting_started_detail_2
+  translation: "Join our <a href=\"https://community.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">community forum</a>, which is a great place to ask for support or share your thoughts."
+- id: downloads_thanks_support_cryptomator_title
+  translation: "Support Cryptomator"
+- id: downloads_thanks_support_cryptomator_detail
+  translation: "Development of the desktop application would not be possible without the support of our users."
+- id: downloads_thanks_support_cryptomator_detail_1
+  translation: "Would you like to <a href=\"/donate/\">donate</a> or <a href=\"/sponsors/\">become a sponsor</a>?"
+- id: downloads_thanks_support_cryptomator_detail_2
+  translation: "Would you like to <a href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">help translating Cryptomator</a>?"
+- id: downloads_thanks_support_cryptomator_detail_3
+  translation: "Would you like to <a href=\"https://github.com/cryptomator/cryptomator\" target=\"_blank\" rel=\"noopener\">contribute code</a> or <a href=\"https://github.com/cryptomator/cryptomator/issues/new/choose\" target=\"_blank\" rel=\"noopener\">report bugs</a>?"
+
+# Enterprise
+- id: enterprise_contact_us_title
+  translation: "Are you interested?"
+- id: enterprise_contact_us_button
+  translation: "Contact Us for an Offer"
+
+# Home
+- id: home_header_title
+  translation: "Put&nbsp;a&nbsp;lock on&nbsp;your&nbsp;cloud"
+- id: home_header_description
+  translation: "With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service."
+- id: home_header_button
+  translation: "Download Now"
+- id: home_header_woman_cloud_alt
+  translation: "Relaxed woman on a cloud secured by a lock"
+- id: home_trustingbrands_title
+  translation: "Brands Trusting our Technology"
+- id: home_sponsors_title
+  translation: "Proudly Sponsored By"
+- id: home_sponsors_button
+  translation: "Become a Sponsor"
+- id: home_testimonials_title
+  translation: "What our Users Say"
+- id: home_testimonials_image_alt
+  translation: "Profile picture of"
+- id: home_reception_title
+  translation: "Reception"
+- id: home_cebit_title
+  translation: "Awardee of the CeBIT Innovation Award 2016"
+- id: home_cebit_subtitle
+  translation: "Cryptomator won the Special Award for Usable Security and Privacy."

@@ -1,0 +1,55 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+    - redesign2020
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      # with:
+      #   submodules: true
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: npm-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          npm-${{ hashFiles('package-lock.json') }}
+          npm-
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.65.1'
+        # extended: true
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - name: Install Tools
+      run: npm install -g postcss-cli autoprefixer
+
+    - name: NPM install
+      run: |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_AUTH_TOKEN }}"
+        npm install
+
+    - name: Build
+      run: hugo --minify
+
+#    - name: Deploy
+#      uses: peaceiris/actions-gh-pages@v2
+#      env:
+#        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+#        PUBLISH_BRANCH: gh-pages
+#        PUBLISH_DIR: ./public

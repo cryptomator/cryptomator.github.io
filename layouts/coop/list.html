@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    {{ range (.Pages.ByParam "prio") }}
+      <section class="mb-6">
+        <article class="flex border rounded shadow bg-white p-4">
+          <div class="w-1/6 text-center mr-3">
+            <a href="{{ .RelPermalink }}"><img class="inline-block" src="{{ .Params.Img }}" srcset="{{ .Params.Img }} 1x, {{ .Params.Img2x }} 2x"/></a>
+          </div>
+          <div class="w-5/6">
+            <h2 class="mt-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="mb-0">{{ .Description }}</p>
+          </div>
+        </article>
+      </section>
+    {{ end }}
+
+    <hr class="my-8"/>
+
+    <section class="mb-6">
+      <article class="flex border rounded shadow bg-white p-4">
+        <div class="w-1/6 text-center mr-3">
+          <a href="{{ .RelPermalink }}"><i class="fas fa-question-circle text-5xl md:text-7xl text-gray-400"></i></a>
+        </div>
+        <div class="w-5/6">
+          <h2 class="mt-0">{{ i18n "coop_your_business_title" . }}</h2>
+          <p>{{ i18n "coop_your_business_paragraph" . }}</p>
+          <a href="{{ .Site.LanguagePrefix }}/enterprise/" class="btn btn-outline-primary px-8">{{ i18n "coop_more_info" }}</a>
+        </div>
+      </article>
+    </section>
+  </div>
+{{ end }}
