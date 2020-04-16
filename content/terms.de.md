@@ -52,7 +52,9 @@ Für Sach- und Rechtsmängel haftet Skymatic im Rahmen gesetzlicher Bestimmungen
 
 Die Haftung beschränkt sich auf im Online-Shop erworbene Lizenzen. Sofern ein lizenzierter Inhalt den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitert, beschränkt sich die Haftung auf den erweiterten Funktionsumfang. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte, für die die Haftung in den jeweiligen Open-Source-Lizenzen geregelt ist.
 
-Bei leicht fahrlässigen Pflichtverletzungen beschränkt sich die Haftung der Auftragnehmerin auf den nach der Art der Ware vorhersehbaren, vertragstypischen, unmittelbaren Durchschnittsschaden. Dies gilt auch bei leicht fahrlässigen Pflichtverletzungen eines gesetzlichen Vertreters oder Erfüllungsgehilfen der Auftragnehmerin. Die Auftragnehmerin haftet nicht bei leicht fahrlässiger Verletzung unwesentlicher Vertragspflichten.
+Einige von Skymatic bereitgestellte Produkte verschlüsseln Daten mit einem Schlüssel, der ausschließlich dem Nutzer bekannt ist. Sie nehmen zur Kenntnis, dass Skymatic keinerlei Möglichkeit hat, verlorene Daten oder Passwörter wiederherzustellen. Sie nehmen weiterhin zur Kenntnis, dass das Ziel der Verschlüsselung der Schutz der Privatsphäre ist, jedoch technisch keinerlei Schutz gegen den Verlust von Daten bietet. Skymatic haftet nicht für den Verlust von Daten, der sich durch Datensicherungen seitens des Nutzers (Backups) hätte vermeiden lassen.
+
+Bei leicht fahrlässigen Pflichtverletzungen beschränkt sich die Haftung von Skymatic auf den nach der Art der Ware vorhersehbaren, vertragstypischen, unmittelbaren Durchschnittsschaden. Dies gilt auch bei leicht fahrlässigen Pflichtverletzungen eines gesetzlichen Vertreters oder Erfüllungsgehilfen von Skymatic. Skymatic haftet nicht bei leicht fahrlässiger Verletzung unwesentlicher Vertragspflichten.
 
 In keinem Fall übersteigt die Haftung des Unternehmens Ihnen gegenüber den Betrag, den Sie ursprünglich für das Produkt bezahlt haben.
 
