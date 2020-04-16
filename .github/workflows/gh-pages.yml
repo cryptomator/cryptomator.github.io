@@ -3,7 +3,7 @@ name: GitHub Pages
 on:
   push:
     branches:
-    - master
+    - develop
 
 jobs:
   build:
@@ -53,3 +53,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         publish_branch: master
+        cname: cryptomator.org
