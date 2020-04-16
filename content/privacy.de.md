@@ -2,7 +2,7 @@
 title: "Datenschutzerklärung"
 ---
 
-_Stand: März 2020_
+_Stand: April 2020_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
@@ -36,7 +36,7 @@ Tobias Hagemann<br/>
 Sebastian Stenzel
 
 Kontakt:
-[datenschutz@cryptomator.org](mailto:datenschutz@cryptomator.org)
+[privacy@cryptomator.org](mailto:privacy@cryptomator.org)
 
 
 <h2 id="general">2. Allgemeines zur Datenverarbeitung</h2>
@@ -133,7 +133,7 @@ Zielte die Kontaktaufnahme auf den Abschluss eines Vertrags ab und ist dieser zu
 ### 5.5 Widerspruchs- und Beseitigungsmöglichkeit
 Der Nutzer hat jederzeit die Möglichkeit, seine Einwilligung zur Verarbeitung der personenbezogenen Daten zu widerrufen. Nimmt der Nutzer per E-Mail Kontakt zu uns auf, so kann er der Speicherung seiner personenbezogenen Daten jederzeit widersprechen. In einem solchen Fall kann die Konversation nicht fortgeführt werden.
 
-Den Widerspruch können Sie jederzeit formlos an [datenschutz@cryptomator.org](mailto:datenschutz@cryptomator.org) oder jede andere von uns bereitgestellte Kontaktmöglichkeit (z.B. postalisch) richten.
+Den Widerspruch können Sie jederzeit formlos an [privacy@cryptomator.org](mailto:privacy@cryptomator.org) oder jede andere von uns bereitgestellte Kontaktmöglichkeit (z.B. postalisch) richten.
 
 Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme gespeichert wurden, werden in diesem Fall gelöscht.
 
@@ -152,7 +152,7 @@ Im Falle einer Online-Bestellung über unseren Online-Shop werden folgende Daten
 * Bankverbindung (bei Bezahlung per Bankeinzug)
 * Kreditkartendaten (bei Bezahlung mit Kreditkarte)
 
-Im Rahmen des Bestellvorgangs wird eine Einwilligung des Nutzer zur Verarbeitung dieser Daten eingeholt und der Nutzer auf diese Datenschutzerklärung hingewiesen. Eine Weitergabe der Daten findet nur statt, soweit dies zur Erfüllung vertraglicher Verpflichtungen notwendig ist. Details hierzu finden sich im nachfolgenden Abschnitt (8. Weitergabe personenbezogener Daten an Dritte).
+Im Rahmen des Bestellvorgangs wird eine Einwilligung des Nutzer zur Verarbeitung dieser Daten eingeholt und der Nutzer auf diese Datenschutzerklärung hingewiesen. Eine Weitergabe der Daten findet nur statt, soweit dies zur Erfüllung vertraglicher Verpflichtungen notwendig ist. Details hierzu finden sich im nachfolgenden Abschnitt ([7. Weitergabe personenbezogener Daten an Dritte](#thirdparty)).
 
 ### 6.2 Rechtsgrundlage für die Datenverarbeitung
 Rechtsgrundlage für die vorübergehende Speicherung der Daten ist Art. 6 Abs. 1 lit. b DSGVO.
@@ -199,7 +199,7 @@ Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragl
 Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener i.S.d. DSGVO und es stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:
 
 ###	8.1 Recht auf Auskunft - Art. 15 DSGVO
-Mit dem Recht auf Auskunft erhält der Betroffene eine umfassende Einsicht in die ihn angehenden Daten und einige andere wichtige Kriterien, wie beispielsweise die Verarbeitungszwecke oder die Dauer der Speicherung. Es gelten die in § 34 BDSGgeregelten Ausnahmen von diesem Recht.
+Mit dem Recht auf Auskunft erhält der Betroffene eine umfassende Einsicht in die ihn angehenden Daten und einige andere wichtige Kriterien, wie beispielsweise die Verarbeitungszwecke oder die Dauer der Speicherung. Es gelten die in § 34 BDSG geregelten Ausnahmen von diesem Recht.
 
 ### 8.2 Recht auf Berichtigung - Art. 16 DSGVO
 Das Recht auf Berichtigung beinhaltet die Möglichkeit für den Betroffenen, unrichtige ihn angehende personenbezogene Daten korrigieren zu lassen.
@@ -211,10 +211,10 @@ Das Recht auf Löschung beinhaltet die Möglichkeit für den Betroffenen, Daten 
 Das Recht auf Einschränkung der Verarbeitung beinhaltet die Möglichkeit für den Betroffenen, eine weitere Verarbeitung der ihn angehenden personenbezogenen Daten vorerst zu verhindern. Eine Einschränkung tritt vor allem in der Prüfungsphase anderer Rechtewahrnehmungen durch den Betroffenen ein.
 
 ### 8.5 Recht auf Datenübertragbarkeit - Art. 20 DSGVO
-Das Recht auf Datenübertragbarkeit beinhaltet die Möglichkeit für den Betroffenen, die ihn angehenden personenbezogenen Daten in einem gängigen, maschinenlesbaren Format vom Verantwortlichen zu erhalten, um sie ggf. an einen anderen Verantwortlichen weiterleiten zu lassen. Gemäß Art. 20 Abs. 3 Satz 2 DSGVOsteht dieses Recht aber dann nicht zur Verfügung, wenn die Datenverarbeitung der Wahrnehmung öffentlicher Aufgaben dient.
+Das Recht auf Datenübertragbarkeit beinhaltet die Möglichkeit für den Betroffenen, die ihn angehenden personenbezogenen Daten in einem gängigen, maschinenlesbaren Format vom Verantwortlichen zu erhalten, um sie ggf. an einen anderen Verantwortlichen weiterleiten zu lassen. Gemäß Art. 20 Abs. 3 Satz 2 DSGVO steht dieses Recht aber dann nicht zur Verfügung, wenn die Datenverarbeitung der Wahrnehmung öffentlicher Aufgaben dient.
 
 ### 8.6 Recht auf Widerspruch - Art. 21 DSGVO
-Das Recht auf Widerspruch beinhaltet die Möglichkeit für Betroffene, in einer besonderen Situation der weiteren Verarbeitung ihrer personenbezogenen Daten zu widersprechen, soweit diese durch die Wahrnehmung öffentlicher Aufgaben oder öffentlicher sowie privater Interessen gerechtfertigt ist. Es gelten die in § 36 BDSGgeregelten Ausnahmen von diesem Recht.
+Das Recht auf Widerspruch beinhaltet die Möglichkeit für Betroffene, in einer besonderen Situation der weiteren Verarbeitung ihrer personenbezogenen Daten zu widersprechen, soweit diese durch die Wahrnehmung öffentlicher Aufgaben oder öffentlicher sowie privater Interessen gerechtfertigt ist. Es gelten die in § 36 BDSG geregelten Ausnahmen von diesem Recht.
 
 ### 8.7 Recht auf Beschwerde bei einer Aufsichtsbehörde
 Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, zu, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.
