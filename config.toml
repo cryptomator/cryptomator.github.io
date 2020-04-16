@@ -53,23 +53,23 @@ unsafe = true
 [params]
   [params.releases]
     [params.releases.exe]
-      version = "1.5.0-rc3"
-      filename = "Cryptomator-1.5.0-rc3-x64.exe"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc3/Cryptomator-1.5.0-rc3-x64.exe"
-      signatureUrl = "TODO"
-      checksum = "TODO"
+      version = "1.5.0"
+      filename = "Cryptomator-1.5.0-x64.exe"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0-x64.exe"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0-x64.exe.asc"
+      checksum = "3295cf314bc67bb866ab0830478106cf55d203a5953a9cb304186dfe1dfb81f9"
     [params.releases.dmg]
-      version = "1.5.0-rc3"
-      filename = "Cryptomator-1.5.0-rc3.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc3/Cryptomator-1.5.0-rc3.dmg"
-      signatureUrl = "TODO"
-      checksum = "TODO"
+      version = "1.5.0"
+      filename = "Cryptomator-1.5.0.dmg"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0.dmg"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/Cryptomator-1.5.0.dmg.asc"
+      checksum = "3b45453d08c46d4321e0ec6f259e2fa0e3d79773debd3b935e6a4fc5e631e3a8"
     [params.releases.appimage]
-      version = "1.5.0-rc3"
-      filename = "cryptomator-1.5.0-rc3-x86_64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.0-rc3/cryptomator-1.5.0-rc3-x86_64.AppImage"
-      signatureUrl = "TODO"
-      checksum = "TODO"
+      version = "1.5.0"
+      filename = "cryptomator-1.5.0-x86_64.AppImage"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/cryptomator-1.5.0-x86_64.AppImage"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.0/cryptomator-1.5.0-x86_64.AppImage.asc"
+      checksum = "ce66aabcfc86d59069f1234612b25007904c21cf6c666b932186ee5ccea04baa"
     [params.releases.android]
       version = "1.5.0"
       filename = "Cryptomator-1.5.0.apk"
