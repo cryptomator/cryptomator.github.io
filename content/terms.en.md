@@ -8,19 +8,19 @@ _Effective date: April 2020_
 
 ### §1 Validity
 
-These T&C apply in the version valid at the time of conclusion of the contract for the acquisition of licenses and the use of software licenses and digital content offered by Skymatic GmbH (Skymatic) on this website and made available to its contractual partners (customers). Deviating conditions of the contracting party do not apply unless Skymatic has expressly agreed to them in writing.
+These T&C apply in the version valid at the time of conclusion of the contract for the purchase of licenses and the use of software licenses and digital content offered by Skymatic GmbH (Skymatic) on this website and made available to its contractual partners (customers). Deviating conditions of the contracting party do not apply unless Skymatic has expressly agreed to them in writing.
 
 Additional agreements, supplements, and amendments made with the customer in individual cases must be in writing to be effective. Only the managing directors of Skymatic GmbH are entitled to do so.
 
-Business relations are subject to the law of the Federal Republic of Germany. The provisions of the UN Sales Convention shall not apply. If the contractual partner is a merchant, a legal entity under public law, or a special fund under public law, the exclusive place of jurisdiction for all disputes arising from this contract is the registered office of Skymatic GmbH. The same shall apply if the residence or habitual abode of the contractual partner is outside of Germany at the time of filing a suit.
+Business relations are subject to the law of the Federal Republic of Germany. The provisions of the United Nations Convention on Contracts for the International Sale of Goods shall not apply. If the contractual partner is a merchant, a legal entity under public law, or a special fund under public law, the exclusive place of jurisdiction for all disputes arising from this contract is the registered place of business of Skymatic GmbH. The same shall apply if the residence or habitual abode of the contractual partner is outside of Germany at the time of filing a suit.
 
 ### §2 Offer and Conclusion of Contract
 
-Contents presented on this website and their price markings do not constitute a legally binding offer of contract. By ordering the contents, the customer bindingly declares that he wants to purchase the contents, whereby he sets the price himself within the scope of "pay what you want" offers. Only upon acceptance of this offer by Skymatic does the contract become effective.
+Contents presented on this website and their price markings do not constitute a legally binding offer of contract. By ordering the contents, the customer bindingly declares that he wants to purchase the contents, whereby in case of "pay what you want" offers, he sets the price himself. Only upon acceptance of this offer by Skymatic, the contract becomes effective.
 
 The customer may reject and correct all entries made before the binding submission of the order or cancel the order process by leaving the site.
 
-In the course of ordering, the customer has the opportunity to call up and print out the order overview and these T&C. After conclusion of the contract, the text of the contract is not stored by Skymatic GmbH and is no longer accessible to the customer.
+In the course of ordering, the customer has the opportunity to see and print out the order overview and these T&C. After conclusion of the contract, the text of the contract is not stored by Skymatic GmbH and is no longer accessible to the customer.
 
 ### §3 Prices, Value-Added Tax, Payment
 
@@ -76,7 +76,7 @@ Consumers are entitled to a right of revocation in accordance with the following
 
 You have the right to revoke this contract within fourteen days without giving reasons. The revocation period is fourteen days from the date of conclusion of the contract.
 
-In order to exercise your right of revocation, you must inform us by means of a clear statement (e.g., a letter, fax, or email sent by post) of your decision to revoke this contract. You can use the attached sample revocation form for this purpose, but this is not mandatory.
+In order to exercise your right of revocation, you must inform us by means of a clear statement (e.g., a letter, fax, or email) of your decision to revoke this contract. You can use the attached sample revocation form for this purpose, but this is not mandatory.
 
 Skymatic GmbH<br/>
 Grantham-Allee 2-8<br/>
@@ -85,13 +85,13 @@ Germany<br/>
 Email: info [at] skymatic [dot] de<br/>
 Fax: 02241 / 2667424<br/>
 
-In order to comply with the revocation period, it is sufficient that you send the notification of the exercise of the right of revocation before the end of the revocation period.
+In order to comply with the revocation period, it is sufficient that you send the notice of the exercise of the right of revocation before the end of the revocation period.
 
 ### Consequences of Withdrawal
 
-If you revoke this agreement, we shall reimburse you for all payments we have received from you, including delivery charges (other than any additional charges arising from your choosing a different method of delivery from the cheapest standard delivery offered by us), immediately and no later than fourteen days from the date on which we receive notice of your revocation of this agreement. For this refund, we will use the same means of payment that you used for the original transaction, unless expressly agreed otherwise with you; in no event will you be charged for this refund.
+If you revoke this contract, we shall reimburse you for all payments we have received from you, including delivery charges (other than any additional charges arising from you choosing a different method of delivery than the cheapest standard delivery offered by us), immediately and no later than fourteen days from the date on which we receive notice of your revocation of this contract. For this refund, we will use the same payment method that you used for the original transaction, unless expressly agreed otherwise with you; in no event will you be charged for this refund.
 
-If you have requested that the services should commence during the cancellation period, you shall pay us a reasonable amount corresponding to the proportion of the services already provided by the time you notify us of the exercise of the right of cancellation in respect of this agreement compared to the total amount of services provided under the agreement.
+If you have requested that the services should commence during the cancellation period, you shall pay us a reasonable amount corresponding to the proportion of the services already provided by the time you notify us of the exercise of the right of cancellation in respect of this contract compared to the total amount of services provided under the contract.
 
 ---
 
@@ -113,6 +113,6 @@ I hereby revoke the contract I have concluded for the purchase of the following 
 Ordered on: __________________
 Name of the customer: __________________
 Address of the customer: __________________
-Signature (only in the case of paper-based declaration): __________________
+Signature (only in the case of paper-based notice): __________________
 Date: __________________
 ```

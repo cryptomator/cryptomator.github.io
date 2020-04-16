@@ -78,7 +78,7 @@ pre, code {
 }
 
 pre {
-  @apply p-2;
+  @apply overflow-auto p-2;
 }
 
 code {
