@@ -11,7 +11,7 @@
 - id: footer_legal_title
   translation: "Legal"
 - id: accept_terms_and_privacy
-  translation: "I accept the <a href=\"/terms/\">Terms and Conditions</a> as well as the <a href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a href=\"/terms/\">Terms & Conditions</a> as well as the <a href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_privacy
   translation: "I accept the <a href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_privacy_implicitly

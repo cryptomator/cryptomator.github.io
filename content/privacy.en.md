@@ -29,7 +29,8 @@ The responsible company within the meaning of the General Data Protection Regula
 
 Skymatic GmbH<br/>
 Grantham-Allee 2-8<br/>
-53757 Sankt Augustin
+53757 Sankt Augustin<br/>
+Germany
 
 Represented by:<br/>
 Tobias Hagemann<br/>
@@ -158,7 +159,7 @@ During the ordering process, the user's consent to the processing of this data i
 The legal basis for the temporary storage of data is Art. 6 para. 1 lit. f GDPR.
 
 ### 6.3 Purpose of Data Processing
-The data is used exclusively to process the order you have placed. In case of an order we save the text of the contract and send you the shipping confirmation by email. You can also view the Terms and Conditions at any time [here](/terms).
+The data is used exclusively to process the order you have placed. In case of an order we save the text of the contract and send you the shipping confirmation by email. You can also view the Terms & Conditions at any time [here](/terms).
 
 ### 6.4 Duration of Storage
 The data will be deleted as soon as they are no longer necessary for the purpose for which they were collected. In the case of the collection of data for order processing, this is the case as soon as the order is completely processed. Even after conclusion of the contract, it may still be necessary to store personal data of the contractual partner in order to comply with contractual or legal obligations.
