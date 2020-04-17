@@ -5,17 +5,7 @@
       <p class="text-lg leading-relaxed text-gray-700">{{ .Description }}</p>
     </header>
 
-    <div class="flex flex-wrap flex-row-reverse">
-      <section class="w-full py-8 lg:w-1/2 lg:pl-3">
-        <h2 class="mb-4">{{ i18n "donate_anon_title" }}</h2>
-        <ul class="fa-ul mb-4">
-          <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_anon_feature_1" }}</li>
-          <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_anon_feature_2" }}</li>
-          <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_anon_feature_3" }}</li>
-        </ul>
-        {{ partial "donate-anon.html" . }}
-      </section>
-
+    <div class="flex flex-wrap">
       <section class="w-full py-8 lg:w-1/2 lg:pr-3">
         <h2 class="mb-4">{{ i18n "donate_getkey_title" }}</h2>
         <ul class="fa-ul mb-4">
@@ -24,6 +14,16 @@
           <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_getkey_feature_3" }}</li>
         </ul>
         {{ partial "donate-getkey.html" . }}
+      </section>
+
+      <section class="w-full py-8 lg:w-1/2 lg:pl-3">
+        <h2 class="mb-4">{{ i18n "donate_anon_title" }}</h2>
+        <ul class="fa-ul mb-4">
+          <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_anon_feature_1" }}</li>
+          <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_anon_feature_2" }}</li>
+          <li class="mb-1"><span class="fa-li"><i class="fas fa-check text-secondary" aria-hidden="true"></i></span>{{ i18n "donate_anon_feature_3" }}</li>
+        </ul>
+        {{ partial "donate-anon.html" . }}
       </section>
     </div>
   </div>

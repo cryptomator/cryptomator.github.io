@@ -64,6 +64,41 @@
   translation: "Interested in Cryptomator for your business? Explore various fields of application."
 
 # Donate
+- id: donate_getkey_title
+  translation: "Buy a donation key"
+- id: donate_getkey_feature_1
+  translation: "Register your software and unlock dark mode"
+- id: donate_getkey_feature_2
+  translation: "Some might say it's an awesome people certificate"
+- id: donate_getkey_feature_3
+  translation: "Get an invoice"
+
+- id: donate_getkey_amount
+  translation: "Amount"
+- id: donate_getkey_amount_placeholder
+  translation: "min. 15"
+- id: donate_getkey_amount_suffix
+  translation: ".00"
+- id: donate_getkey_amount_help
+  translation: "Currency is determined during checkout."
+- id: donate_getkey_email
+  translation: "Email"
+- id: donate_getkey_email_placeholder
+  translation: "Email address"
+- id: donate_getkey_instruction
+  translation: "Payments are securely handled by Paddle."
+- id: donate_getkey_checkout
+  translation: "Checkout"
+
+- id: donate_getkey_success
+  translation: "Your payment was successful!"
+- id: donate_getkey_key
+  translation: "Donation Key"
+- id: donate_getkey_key_placeholder
+  translation: "Loading…"
+- id: donate_getkey_key_instruction
+  translation: "This is your donation key. Enter it in the Cryptomator settings under \"Donate\". The donation key has also been sent to your email address."
+
 - id: donate_anon_title
   translation: "Just donate"
 - id: donate_anon_feature_1
@@ -120,41 +155,6 @@
   translation: "Select the crypto currency in the next step. After pressing \"Proceed\", you will be redirected to our CoinPayments site."
 - id: donate_crypto_calltoaction
   translation: "Proceed to CoinPayments"
-
-- id: donate_getkey_title
-  translation: "Buy a donation key"
-- id: donate_getkey_feature_1
-  translation: "Register your software and unlock dark mode"
-- id: donate_getkey_feature_2
-  translation: "Some might say it's an awesome people certificate"
-- id: donate_getkey_feature_3
-  translation: "Get an invoice"
-
-- id: donate_getkey_amount
-  translation: "Amount"
-- id: donate_getkey_amount_placeholder
-  translation: "min. 15"
-- id: donate_getkey_amount_suffix
-  translation: ".00"
-- id: donate_getkey_amount_help
-  translation: "Currency is determined during checkout."
-- id: donate_getkey_email
-  translation: "Email"
-- id: donate_getkey_email_placeholder
-  translation: "Email address"
-- id: donate_getkey_instruction
-  translation: "Payments are securely handled by Paddle."
-- id: donate_getkey_checkout
-  translation: "Checkout"
-
-- id: donate_getkey_success
-  translation: "Your payment was successful!"
-- id: donate_getkey_key
-  translation: "Donation Key"
-- id: donate_getkey_key_placeholder
-  translation: "Loading…"
-- id: donate_getkey_key_instruction
-  translation: "This is your donation key. Enter it in the Cryptomator settings under \"Donate\". The donation key has also been sent to your email address."
 
 - id: donate_become_sponsor_title
   translation: "Want to become an official sponsor?"

@@ -64,6 +64,41 @@
   translation: "Interesse an Cryptomator für dein Unternehmen? Entdecke die vielfältigen Einsatzmöglichkeiten."
 
 # Donate
+- id: donate_getkey_title
+  translation: "Spendenschlüssel kaufen"
+- id: donate_getkey_feature_1
+  translation: "Software registrieren und Dark-Mode freischalten"
+- id: donate_getkey_feature_2
+  translation: "Manche sagen, es wäre ein \"Awesome People\"-Zertifikat"
+- id: donate_getkey_feature_3
+  translation: "Rechnung erhalten"
+
+- id: donate_getkey_amount
+  translation: "Betrag"
+- id: donate_getkey_amount_placeholder
+  translation: "min. 15"
+- id: donate_getkey_amount_suffix
+  translation: ",00"
+- id: donate_getkey_amount_help
+  translation: "Währung wird im Zahlungsvorgang ermittelt."
+- id: donate_getkey_email
+  translation: "E-Mail"
+- id: donate_getkey_email_placeholder
+  translation: "E-Mail-Adresse"
+- id: donate_getkey_instruction
+  translation: "Zahlungen werden über Paddle abgewickelt."
+- id: donate_getkey_checkout
+  translation: "Zur Zahlung"
+
+- id: donate_getkey_success
+  translation: "Deine Zahlung war erfolgreich!"
+- id: donate_getkey_key
+  translation: "Spendenschlüssel"
+- id: donate_getkey_key_placeholder
+  translation: "Lädt…"
+- id: donate_getkey_key_instruction
+  translation: "Dies ist dein Spendenschlüssel. Gib ihn in den Cryptomator-Einstellungen unter \"Spenden\" ein. Der Spendenschlüssel wurde auch an deine E-Mail-Adresse geschickt."
+
 - id: donate_anon_title
   translation: "Einfach spenden"
 - id: donate_anon_feature_1
@@ -120,41 +155,6 @@
   translation: "Die Cryptowährung wird im nächsten Schritt ausgewählt. Nach dem Klick auf \"Weiter\" werden Sie auf unsere CoinPayments-Seite geleitet."
 - id: donate_crypto_calltoaction
   translation: "Weiter zu CoinPayments"
-
-- id: donate_getkey_title
-  translation: "Spendenschlüssel kaufen"
-- id: donate_getkey_feature_1
-  translation: "Software registrieren und Dark-Mode freischalten"
-- id: donate_getkey_feature_2
-  translation: "Manche sagen, es wäre ein \"Awesome People\"-Zertifikat"
-- id: donate_getkey_feature_3
-  translation: "Rechnung erhalten"
-
-- id: donate_getkey_amount
-  translation: "Betrag"
-- id: donate_getkey_amount_placeholder
-  translation: "min. 15"
-- id: donate_getkey_amount_suffix
-  translation: ",00"
-- id: donate_getkey_amount_help
-  translation: "Währung wird im Zahlungsvorgang ermittelt."
-- id: donate_getkey_email
-  translation: "E-Mail"
-- id: donate_getkey_email_placeholder
-  translation: "E-Mail-Adresse"
-- id: donate_getkey_instruction
-  translation: "Zahlungen werden über Paddle abgewickelt."
-- id: donate_getkey_checkout
-  translation: "Zur Zahlung"
-
-- id: donate_getkey_success
-  translation: "Deine Zahlung war erfolgreich!"
-- id: donate_getkey_key
-  translation: "Spendenschlüssel"
-- id: donate_getkey_key_placeholder
-  translation: "Lädt…"
-- id: donate_getkey_key_instruction
-  translation: "Dies ist dein Spendenschlüssel. Gib ihn in den Cryptomator-Einstellungen unter \"Spenden\" ein. Der Spendenschlüssel wurde auch an deine E-Mail-Adresse geschickt."
 
 - id: donate_become_sponsor_title
   translation: "Möchtest du ein offizieller Sponsor werden?"
