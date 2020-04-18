@@ -70,6 +70,10 @@
             <div class="mb-4">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
               <div> <!-- wrapper needed for stripe text field -->
+                <template>
+                  <!-- purgecss needs to find these classes (because stripe text field is injected via js) -->
+                  <i class="hidden StripeElement StripeElement--focus"></i>
+                </template>
                 <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
               </div>
             </div>
@@ -88,11 +92,11 @@
                 {{ i18n "donate_creditcard_once_paynow" }}
                 <i class="fas fa-spinner fa-spin" x-show="oneTimePaymentStatus.inProgress" aria-hidden="true"></i>
               </button>
+
+              <p class="text-sm text-red-600 mt-1" x-text="oneTimePaymentStatus.errorMessage"></p>
             </div>
 
-            <p class="text-lg text-center" x-show="oneTimePaymentStatus.success">{{ i18n "donate_creditcard_once_success" | emojify }}</p>
-
-            <p class="text-sm text-center text-red-600" x-text="oneTimePaymentStatus.errorMessage"></p>
+            <p class="text-lg text-center mt-8" x-show="oneTimePaymentStatus.success">{{ ":+1:" | emojify }} {{ i18n "donate_creditcard_once_success" }}</p>
           </div>
 
           <div x-show="frequency === 'recurring'" class="text-center">
