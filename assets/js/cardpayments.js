@@ -2,9 +2,11 @@
 
 const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
 const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GgW49BkhumHMIR'}; // live
+const STRIPE_PHP_URL = 'https://api.cryptomator.org/stripe/prepare_payment.php';
 
 //const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
 //const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'}; // test
+//const STRIPE_PHP_URL = 'http://localhost/stripe/prepare_payment.php';
 
 const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
 
@@ -102,111 +104,46 @@ class OneTimePayment {
    * @param {string} currency Which currency to pay in
    */
   charge(amount, currency) {
-    // TODO plausibility checks (captcha set? amount is integer? currency is EUR/USD?)
     this._status.inProgress = true;
     this._status.errorMessage = '';
     this._status.success = false;
-    Promise.all([this._stripe, this._card]).then(([stripe, card]) => {
-      stripe.createPaymentMethod('card', card).then(result => {
-        if (result.error) {
-          this.onPaymentFailed(result.error.message);
-        } else {
-          this.chargeWithPaymentId(result.paymentMethod.id, amount, currency);
-        }
-      });
-    });
-  }
-  
-  /**
-   * Attempt charging the card
-   * @param {string} paymentMethodId ID of the payment method previously created
-   * @param {number} amount How many units of the given currency to pay
-   * @param {string} currency Which currency to pay in
-   */
-  chargeWithPaymentId(paymentMethodId, amount, currency) {
-    $.ajax({
-      url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
+
+    let preparedPayment = $.ajax({
+      url: STRIPE_PHP_URL,
       type: 'POST',
       data: {
-        payment_method_id: paymentMethodId,
         currency: currency,
         amount: amount,
-        frequency: 'once',
         captcha: this._status.captcha
       }
-    }).done(data => {
-      if (data.status == 'ok') {
-        this.onPaymentSucceeded();
-      } else if (data.status == 'requires_action' && data.confirmation_method == 'manual') {
-        this.manuallyConfirmPayment(data.payment_intent_client_secret);
-      } else if (data.status == 'requires_action' && data.confirmation_method == 'automatic') {
-        this.automaticallyConfirmPayment(data.payment_intent_client_secret, data.payment_method);
-      } else {
-        this.onPaymentFailed(response.error);
-      }
-    }).fail(xhr => {
-      this.onPaymentFailed(xhr.responseJSON.error);
     });
-  }
-  
-  /**
-   * Reattempts charging a previously intended payment, proceeding from where it left of before interrupted by SCA.
-   * @param {string} paymentIntendId 
-   */
-  chargeWithPaymentIntendId(paymentIntendId) {
-    $.ajax({
-      url: 'https://api.cryptomator.org/stripe/charge_creditcard.php',
-      type: 'POST',
-      data: {
-        payment_intent_id: paymentIntendId
-      }
-    }).done(data => {
-      if (data.status == 'ok') {
-        this.onPaymentSucceeded();
-      } else {
-        this.onPaymentFailed(data.error);
-      }
-    }).fail(xhr => {
-      this.onPaymentFailed(xhr.responseJSON.error);
-    });
-  }
-  
-  /**
-   * Performs manual client-side SCA
-   * @param {string} paymentIntendClientSecret 
-   */
-  manuallyConfirmPayment(paymentIntendClientSecret) {
-    this._stripe.then(stripe => {
-      stripe.handleCardAction(paymentIntendClientSecret).then(result => {
-        if (result.error) {
-          this.onPaymentFailed(result.error.message);
-        } else {
-          this.chargeWithPaymentIntendId(result.paymentIntent.id);
+
+    Promise.all([this._stripe, this._card, preparedPayment]).then(([stripe, card, preparedPayment]) => {
+      stripe.confirmCardPayment(preparedPayment.client_secret, {
+        payment_method: {
+          card: card
         }
-      });
+      }).then(function(result) {
+        if (result.error) {
+          this.onPaymentFailed(result.error);
+        } else {
+          // The payment has been processed!
+          if (result.paymentIntent.status === 'succeeded') {
+            this.onPaymentSucceeded();
+          }
+        }
+      }.bind(this));
     });
   }
   
   /**
-   * Performs automatic client-side SCA
-   * @param {string} paymentIntendClientSecret 
-   * @param {string} paymentMethod 
+   * @param {Object} error error object returned by stripe
+   * @param {string} error.message error message
    */
-  automaticallyConfirmPayment(paymentIntendClientSecret, paymentMethod) {
-    this._stripe.then(stripe => {
-      stripe.handleCardPayment(paymentIntendClientSecret, { payment_method: paymentMethod }).then(result => {
-        if (result.error) {
-          this.onPaymentFailed(result.error.message);
-        } else {
-          this.chargeWithPaymentIntendId(result.paymentIntent.id);
-        }
-      });
-    });
-  }
-  
   onPaymentFailed(error) {
+    console.warn('Stripe payment failed with error', error);
     this._status.success = false;
-    this._status.errorMessage = error;
+    this._status.errorMessage = error.message;
     this._status.inProgress = false;
     if (grecaptcha) {
       this._status.captcha = '';
@@ -215,6 +152,7 @@ class OneTimePayment {
   }
   
   onPaymentSucceeded() {
+    console.info('Stripe payment succeeded!');
     this._status.success = true;
     this._status.errorMessage = '';
     this._status.inProgress = false;

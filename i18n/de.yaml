@@ -106,6 +106,8 @@
   translation: "Weiter…"
 - id: donate_creditcard_once_paynow
   translation: "Jetzt bezahlen"
+- id: donate_creditcard_once_success
+  translation: "Zahlung erfolgreich! :tada:"
 - id: donate_creditcard_recurring_instruction
   translation: "Wiederkehrende Kreditkartenzahlungen werden über unsere Stripe-Seite erstellt."
 - id: donate_creditcard_recurring_calltoaction

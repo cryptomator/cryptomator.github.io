@@ -65,13 +65,8 @@
               </div>
             </div>
           </div>
-          
-          <div x-show="frequency === 'once'" class="text-center">
-            <p class="mb-4"><i class="fas fa-exclamation-triangle"></i> Currently under maintenance!</p>
-            <p>Frequency "Monthly" is not affected.</p>
-          </div>
 
-          <div x-show="frequency === 'once' && false">
+          <div x-show="frequency === 'once'">
             <div class="mb-4">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
               <div> <!-- wrapper needed for stripe text field -->
@@ -79,7 +74,7 @@
               </div>
             </div>
 
-            <div class="text-center mt-8">
+            <div class="text-center mt-8" x-show="!oneTimePaymentStatus.success">
               <p class="mb-4">{{ i18n "donate_creditcard_once_instruction" | safeHTML }}</p>
 
               <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
@@ -94,6 +89,8 @@
                 <i class="fas fa-spinner fa-spin" x-show="oneTimePaymentStatus.inProgress" aria-hidden="true"></i>
               </button>
             </div>
+
+            <p class="text-lg text-center" x-show="oneTimePaymentStatus.success">{{ i18n "donate_creditcard_once_success" | emojify }}</p>
 
             <p class="text-sm text-center text-red-600" x-text="oneTimePaymentStatus.errorMessage"></p>
           </div>

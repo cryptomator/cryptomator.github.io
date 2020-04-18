@@ -106,6 +106,8 @@
   translation: "Continue…"
 - id: donate_creditcard_once_paynow
   translation: "Pay Now"
+- id: donate_creditcard_once_success
+  translation: "Payment succeeded! :tada:"
 - id: donate_creditcard_recurring_instruction
   translation: "Recurring credit card payments will be set up on our Stripe page."
 - id: donate_creditcard_recurring_calltoaction
