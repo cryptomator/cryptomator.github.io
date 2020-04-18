@@ -32,8 +32,7 @@
 
       <!-- Card -->
       <div x-show="tab === 'card'" x-cloak>
-        <p class="text-center"><i class="fas fa-exclamation-triangle"></i> Currently under maintenance!</p>
-        <div x-show="false" x-data="{amount: 15, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment(), acceptTerms: false}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
+        <div x-data="{amount: 15, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment(), acceptTerms: false}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
           <div class="flex flex-wrap md:flex-no-wrap">
             <div class="w-full mb-4 md:w-1/2 md:pr-3">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_amount" }}</label>
@@ -67,7 +66,12 @@
             </div>
           </div>
           
-          <div x-show="frequency === 'once'">
+          <div x-show="frequency === 'once'" class="text-center">
+            <p class="mb-4"><i class="fas fa-exclamation-triangle"></i> Currently under maintenance!</p>
+            <p>Frequency "Monthly" is not affected.</p>
+          </div>
+
+          <div x-show="frequency === 'once' && false">
             <div class="mb-4">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
               <div> <!-- wrapper needed for stripe text field -->
@@ -94,9 +98,9 @@
             <p class="text-sm text-center text-red-600" x-text="oneTimePaymentStatus.errorMessage"></p>
           </div>
 
-          <div x-show="frequency === 'recurring'" class="text-center mt-4">
-            <p>{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
-            <p>{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+          <div x-show="frequency === 'recurring'" class="text-center">
+            <p class="mb-4">{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
+            <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
             <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="recurringPayment.checkout(amount, currency)" x-bind:disabled="!acceptTerms">
               <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
