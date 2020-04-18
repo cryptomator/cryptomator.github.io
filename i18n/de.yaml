@@ -72,6 +72,8 @@
   translation: "Bevorzugte Zahlungsmethode auswählen"
 - id: donate_anon_feature_3
   translation: "Pay what you want"
+- id: donate_anon_show_form_button
+  translation: "Weiter"
 
 - id: donate_paypal_title
   translation: "PayPal"
@@ -129,6 +131,8 @@
   translation: "Manche sagen, es wäre ein \"Awesome People\"-Zertifikat"
 - id: donate_getkey_feature_3
   translation: "Rechnung erhalten"
+- id: donate_getkey_show_form_button
+  translation: "Weiter"
 
 - id: donate_getkey_amount
   translation: "Betrag"
