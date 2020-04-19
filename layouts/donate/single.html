@@ -16,7 +16,7 @@
         <button x-show="!showForm" x-on:click.prevent="showForm = true" class="btn btn-primary text-lg px-8">
           <i class="fas fa-hand-point-right"></i> {{ i18n "donate_anon_show_form_button" }}
         </button>
-        <div x-show="showForm">
+        <div x-show="showForm" x-cloak>
           {{ partial "donate-anon.html" . }}
         </div>
       </section>
@@ -31,7 +31,7 @@
         <button x-show="!showForm" x-on:click.prevent="showForm = true" class="btn btn-primary text-lg px-8">
           <i class="fas fa-hand-point-right"></i> {{ i18n "donate_getkey_show_form_button" }}
         </button>
-        <div x-show="showForm">
+        <div x-show="showForm" x-cloak>
           {{ partial "donate-getkey.html" . }}
         </div>
       </section>
