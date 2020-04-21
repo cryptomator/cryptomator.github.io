@@ -143,7 +143,7 @@
 - id: donate_getkey_amount_suffix
   translation: ",00"
 - id: donate_getkey_amount_help
-  translation: "Währung wird im Zahlungsvorgang ermittelt."
+  translation: "Mindestbetrag ist 15. Währung wird im Zahlungsvorgang ermittelt."
 - id: donate_getkey_email
   translation: "E-Mail"
 - id: donate_getkey_email_placeholder
