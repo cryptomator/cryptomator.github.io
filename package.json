@@ -9,17 +9,21 @@
   },
   "author": "Sebastian Stenzel",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cryptomator/cryptomator.github.io.git"
+  },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.3.0",
-    "autoprefixer": "^9.7.3",
-    "postcss-cli": "^6.1.3",
+    "@fullhuman/postcss-purgecss": "^2.1.2",
+    "autoprefixer": "^9.7.6",
+    "postcss-cli": "^7.1.0",
     "postcss-import": "^12.0.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.12.1",
-    "alpinejs": "^2.1.0",
-    "jquery": "^3.4.1",
+    "@fortawesome/fontawesome-pro": "^5.13.0",
+    "alpinejs": "^2.3.0",
+    "jquery": "^3.5.0",
     "lazysizes": "^5.2.0",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.3.4"
   }
 }
