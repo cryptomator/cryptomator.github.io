@@ -7,7 +7,7 @@
     <language>{{ .Language }}</language>
     <atom:link href="{{ "blog/feed.xml" | absLangURL }}" rel="self" type="application/rss+xml" />
     <image>
-      <url>https://cryptomator.org/img/logo.png</url>
+      <url>{{ "/img/logo.png" | absURL }}</url>
       <title>Cryptomator Blog</title>
       <link>{{ .Permalink }}</link>
     </image>

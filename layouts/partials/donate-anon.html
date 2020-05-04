@@ -144,7 +144,7 @@
           <input type="hidden" name="amountf" value="15" />
           <input type="hidden" name="currency" value="EUR" />
           <input type="hidden" name="allow_amount" value="1" />
-          <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
+          <input type="hidden" name="success_url" value="{{ "/donate/thanks" | absURL }}" />
           <input type="hidden" name="allow_extra" value="1" />
           <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
           <button type="submit" class="btn btn-primary w-full md:w-64" x-bind:disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
