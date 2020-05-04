@@ -179,10 +179,10 @@ Zur Erfüllung unserer vertraglichen Verpflichtungen ist es teilweise unumgängl
 
 Für den Bezahlvorgang wird der Nutzer gegebenenfalls auf die Webseite des von ihm ausgewählten Zahlungsdienstleisters weitergeleitet oder Daten von Webseiten dieser Dienstleister nachgeladen. Dies können abhängig von der vom Nutzer gewählten Zahlungsweise sein:
 
-* PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{<extlink "https://www.paypal.com/de/webapps/mpp/ua/privacy-full" "https://www.paypal.com/de/webapps/mpp/ua/privacy-full">}}.
-* Stripe (Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{<extlink "https://stripe.com/de/privacy" "https://stripe.com/de/privacy">}}.
-* CoinPayments (CoinPayments Inc., Hodltech OÜ, Tornimäe 5, 10145 Tallinn, Estland). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{<extlink "https://www.coinpayments.net/help-privacy" "https://www.coinpayments.net/help-privacy">}}. 
-* Paddle (Paddle Payments Ltd., Core B, Block 71, The Plaza, Park West 12 Dublin, Irland). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{<extlink "https://paddle.com/privacy/" "https://paddle.com/privacy/">}}.
+* PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{< extlink "https://www.paypal.com/de/webapps/mpp/ua/privacy-full" "https://www.paypal.com/de/webapps/mpp/ua/privacy-full" >}}.
+* Stripe (Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{< extlink "https://stripe.com/de/privacy" "https://stripe.com/de/privacy" >}}.
+* CoinPayments (CoinPayments Inc., Hodltech OÜ, Tornimäe 5, 10145 Tallinn, Estland). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{< extlink "https://www.coinpayments.net/help-privacy" "https://www.coinpayments.net/help-privacy" >}}. 
+* Paddle (Paddle Payments Ltd., Core B, Block 71, The Plaza, Park West 12 Dublin, Irland). Bitte beachten Sie die diesbezüglichen Datenschutzhinweise unter: {{< extlink "https://paddle.com/privacy/" "https://paddle.com/privacy/" >}}.
 
 ### 7.2 Rechtsgrundlage für die Datenweitergabe
 Rechtsgrundlage für die Verarbeitung der Daten ist bei Vorliegen einer Einwilligung des Nutzers Art. 6 Abs. 1 lit. a DSGVO. Dient die Weitergabe der Erfüllung eines Vertrages, dessen Vertragspartei der Nutzer ist oder der Durchführung vorvertraglicher Maßnahmen, so ist zusätzliche Rechtsgrundlage für die Verarbeitung der Daten Art. 6 Abs. 1 lit. b DSGVO. Darüber hinaus ist Art. 6 Abs. 1 lit. f DSGVO ebenfalls zusätzlich Rechtsgrundlage.

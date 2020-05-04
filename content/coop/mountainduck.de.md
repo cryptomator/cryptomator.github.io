@@ -10,7 +10,7 @@ aliases: ["/coop/mountainduck_de.html"]
 <figure class="text-center my-8">
   <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
   <figcaption>
-    <p class="text-sm text-gray-500 mb-0"> Illustration von {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+    <p class="text-sm text-gray-500 mb-0"> Illustration von {{< extlink "https://ktoons.org" "Katharina Hagemann" >}}</p>
   </figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ Wir freuen uns über diese Kooperation, weil sie Ihnen eine neue Möglichkeit gi
 
 Mountain Duck ist also die perfekte Ergänzung zu Cryptomator für alle, die keine lokale Kopie ihrer Cloud-Daten möchten, sondern die Daten nur beim Zugriff laden wollen.
 
-Mountain Duck basiert auf dem bewährten Open-Source-Fundament von Cyberduck und nutzt die Java-basierte kryptographische Bibliothek {{<extlink "https://github.com/cryptomator/cryptolib" "CryptoLib">}}, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
+Mountain Duck basiert auf dem bewährten Open-Source-Fundament von Cyberduck und nutzt die Java-basierte kryptographische Bibliothek {{< extlink "https://github.com/cryptomator/cryptolib" "CryptoLib" >}}, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
 
 <p class="text-center">
   <a class="btn btn-primary" href="https://mountainduck.io/#cryptomator" target="_blank"><i class="fas fa-link"></i> Visit mountainduck.io</a>

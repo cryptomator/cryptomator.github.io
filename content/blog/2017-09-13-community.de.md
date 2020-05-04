@@ -10,4 +10,4 @@ Unsere Online-Community hat endlich ein Zuhause gefunden. Hier erreichen Sie uns
 
 Wir freuen uns über jeden Besucher und sind jetzt schon gespannt auf Ihre Beiträge!
 
-{{<extlink "https://community.cryptomator.org/" "https://community.cryptomator.org/">}}
+{{< extlink "https://community.cryptomator.org/" "https://community.cryptomator.org/" >}}

@@ -3,7 +3,7 @@ title: Awards
 anchor: awards
 weight: 4
 ---
-Cryptomator is awardee of the CeBIT Innovation Award 2016 and won the {{<extlink "https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" "Special Award for Usable Security and Privacy">}}.
+Cryptomator is awardee of the CeBIT Innovation Award 2016 and won the {{< extlink "https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" "Special Award for Usable Security and Privacy" >}}.
 
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 md:w-1/2 lg:w-1/3">

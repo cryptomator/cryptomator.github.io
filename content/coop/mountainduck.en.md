@@ -10,7 +10,7 @@ aliases: ["/coop/mountainduck_en.html"]
 <figure class="text-center my-8">
   <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
   <figcaption>
-    <p class="text-sm text-gray-500 mb-0"> Illustration by {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+    <p class="text-sm text-gray-500 mb-0"> Illustration by {{< extlink "https://ktoons.org" "Katharina Hagemann" >}}</p>
   </figcaption>
 </figure>
 
@@ -20,7 +20,7 @@ We are excited about this cooperation because it allows you to access your vault
 
 Thus, Mountain Duck is the perfect addition to Cryptomator for those, who do not want a local copy of their files, but only want to load files on demand.
 
-Mountain Duck is based on the solid open-source foundation of Cyberduck. It uses the same Java-based cryptographic library {{<extlink "https://github.com/cryptomator/cryptolib" "CryptoLib">}} as the desktop version and Android app of Cryptomator.
+Mountain Duck is based on the solid open-source foundation of Cyberduck. It uses the same Java-based cryptographic library {{< extlink "https://github.com/cryptomator/cryptolib" "CryptoLib" >}} as the desktop version and Android app of Cryptomator.
 
 <p class="text-center">
   <a class="btn btn-primary" href="https://mountainduck.io/#cryptomator" target="_blank"><i class="fas fa-link"></i> Visit mountainduck.io</a>

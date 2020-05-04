@@ -181,10 +181,10 @@ In order to fulfil our contractual obligations, it is sometimes unavoidable that
 
 For the payment process, the user may be redirected to the website of the payment service provider or data from websites of these service providers may be reloaded. This may depend on the payment method chosen by the user:
 
-* PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg). Please note the relevant privacy policy at: {{<extlink "https://www.paypal.com/de/webapps/mpp/ua/privacy-full" "https://www.paypal.com/de/webapps/mpp/ua/privacy-full">}}.
-* Stripe (Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland). Please note the relevant privacy policy at: {{<extlink "https://stripe.com/de/privacy" "https://stripe.com/de/privacy">}}.
-* CoinPayments (CoinPayments Inc., Hodltech OÜ, Tornimäe 5, 10145 Tallinn, Estland). Please note the relevant privacy policy at: {{<extlink "https://www.coinpayments.net/help-privacy" "https://www.coinpayments.net/help-privacy">}}. 
-* Paddle (Paddle Payments Ltd., Core B, Block 71, The Plaza, Park West 12 Dublin, Irland). Please note the relevant privacy policy at: {{<extlink "https://paddle.com/privacy/" "https://paddle.com/privacy/">}}.
+* PayPal (PayPal (Europe) S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg). Please note the relevant privacy policy at: {{< extlink "https://www.paypal.com/de/webapps/mpp/ua/privacy-full" "https://www.paypal.com/de/webapps/mpp/ua/privacy-full" >}}.
+* Stripe (Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland). Please note the relevant privacy policy at: {{< extlink "https://stripe.com/de/privacy" "https://stripe.com/de/privacy" >}}.
+* CoinPayments (CoinPayments Inc., Hodltech OÜ, Tornimäe 5, 10145 Tallinn, Estland). Please note the relevant privacy policy at: {{< extlink "https://www.coinpayments.net/help-privacy" "https://www.coinpayments.net/help-privacy" >}}. 
+* Paddle (Paddle Payments Ltd., Core B, Block 71, The Plaza, Park West 12 Dublin, Irland). Please note the relevant privacy policy at: {{< extlink "https://paddle.com/privacy/" "https://paddle.com/privacy/" >}}.
 
 ### 7.2 Legal Basis for Data Processing
 Legal basis for the processing of the data is in the presence of the consent of the user Art. 6 para. 1 lit. a GDPR. If the disclosure serves the fulfilment of a contract to which the user is a party or the implementation of pre-contractual measures, the additional legal basis for the processing of the data is Art. 6 para. 1 lit. b GDPR. Furthermore, Art. 6 para. 1 lit. f GDPR is also an additional legal basis.

@@ -7,7 +7,7 @@ Das Bonner Startup Skymatic befasst sich mit dem Thema „Digitale Selbstverteid
 
 Skymatic ist Unterzeichner der _Charta zur Stärkung der vertrauenswürdigen Kommunikation_ sowie Mitglied der _Allianz für Cyber-Sicherheit_ des BSI.
 
-Weitere Informationen zum Team gibt es {{<extlink "https://skymatic.de/team/" "auf der Website von Skymatic">}}.
+Weitere Informationen zum Team gibt es {{< extlink "https://skymatic.de/team/" "auf der Website von Skymatic" >}}.
 
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 lg:w-1/2">

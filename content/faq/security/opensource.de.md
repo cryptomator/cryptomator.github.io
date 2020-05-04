@@ -7,4 +7,4 @@ Die Bereitstellung des Quellcodes ist förderlich für Sicherheitssoftware im Al
 
 Sollten wir eines Tages bösartig werden und euch die Weiternutzung der Software verweigern, können andere unseren Code weiterverwenden, um den Fortbestand der Anwendungen sicherzustellen.
 
-Der Quellcode ist in diversen Projekten auf {{<extlink "https://github.com/cryptomator" "github.com/cryptomator">}} einsehbar.
+Der Quellcode ist in diversen Projekten auf {{< extlink "https://github.com/cryptomator" "github.com/cryptomator" >}} einsehbar.

@@ -7,6 +7,6 @@ _build:
   list: never
 ---
 
-Nach dem Download einfach die _{{%siteparam releases.dmg.filename%}}_ doppelklicken und Cryptomator.app in deinen Programme-Ordner bewegen.
+Nach dem Download einfach die _{{< siteparam releases.dmg.filename >}}_ doppelklicken und Cryptomator.app in deinen Programme-Ordner bewegen.
 
-Wir empfehlen die Installation von {{<extlink "https://osxfuse.github.io/" "FUSE for macOS" >}}. FUSE ist optional, bietet jedoch eine bessere Integration in macOS.
+Wir empfehlen die Installation von {{< extlink "https://osxfuse.github.io/" "FUSE for macOS"  >}}. FUSE ist optional, bietet jedoch eine bessere Integration in macOS.

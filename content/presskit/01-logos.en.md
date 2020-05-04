@@ -38,4 +38,4 @@ weight: 1
   </div>
 </div>
 
-The Cryptomator logo is licensed under CC BY-SA 4.0 and the author is {{<extlink "https://ktoons.org" "Katharina Hagemann">}}. The font used is {{<extlink "https://fonts.google.com/specimen/Quicksand" "Quicksand">}} (Bold) under the Open Font License.
+The Cryptomator logo is licensed under CC BY-SA 4.0 and the author is {{< extlink "https://ktoons.org" "Katharina Hagemann">}}. The font used is {{<extlink "https://fonts.google.com/specimen/Quicksand" "Quicksand" >}} (Bold) under the Open Font License.

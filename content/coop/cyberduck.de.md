@@ -10,7 +10,7 @@ aliases: ["/coop/cyberduck_de.html"]
 <figure class="text-center my-8">
   <img class="inline-block rounded mb-1" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
   <figcaption>
-    <p class="text-sm text-gray-500 mb-0"> Illustration von {{<extlink "https://ktoons.org" "Katharina Hagemann">}}</p>
+    <p class="text-sm text-gray-500 mb-0"> Illustration von {{< extlink "https://ktoons.org" "Katharina Hagemann" >}}</p>
   </figcaption>
 </figure>
 
@@ -22,7 +22,7 @@ Cyberduck ist also die perfekte Ergänzung zu Cryptomator für alle, die keine l
 
 Auch Cyberduck ist Open-Source-Software, d.h. die gleichen Prinzipien von Cryptomator gelten ebenso für Cyberduck. Jeder kann den Programmcode einsehen, daher ist es unmöglich, Hintertüren einzubauen oder Schwachstellen zu verheimlichen.
 
-Cyberduck nutzt die Java-basierte kryptographische Bibliothek {{<extlink "https://github.com/cryptomator/cryptolib" "CryptoLib">}}, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
+Cyberduck nutzt die Java-basierte kryptographische Bibliothek {{< extlink "https://github.com/cryptomator/cryptolib" "CryptoLib" >}}, die auch in der Desktop-Version und Android-App von Cryptomator zum Einsatz kommt.
 
 <p class="text-center">
   <a class="btn btn-primary" href="https://cyberduck.io/cryptomator" target="_blank" rel="noopener"><i class="fas fa-link"></i> Weitere Infos unter cyberduck.io</a>

@@ -7,4 +7,4 @@ Providing the source code is beneficial for security software in general and ind
 
 If we eventually turned evil and stop you from using our software, others can jump in and ensure the continued existence of the applications.
 
-You can find the source code of our various projects on {{<extlink "https://github.com/cryptomator" "github.com/cryptomator">}}.
+You can find the source code of our various projects on {{< extlink "https://github.com/cryptomator" "github.com/cryptomator" >}}.

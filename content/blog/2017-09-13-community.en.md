@@ -10,4 +10,4 @@ Our online community has finally found a new home. From now on, you can reach us
 
 We welcome all visitors and are excited about your posts!
 
-{{<extlink "https://community.cryptomator.org/" "https://community.cryptomator.org/">}}
+{{< extlink "https://community.cryptomator.org/" "https://community.cryptomator.org/" >}}
