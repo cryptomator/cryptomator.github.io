@@ -2,9 +2,6 @@
 title: Videos
 anchor: videos
 weight: 5
-
-_build:
-  list: false
 ---
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 lg:w-1/2">
