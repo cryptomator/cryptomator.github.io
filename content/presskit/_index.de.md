@@ -6,5 +6,5 @@ _build:
 cascade:
   _build:
     render: false
-    list: never
+    list: local
 ---
