@@ -14,9 +14,9 @@ weight: 7
   </div>
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
-      <a href="/presskit/mac-screenshot-2.png"><img class="inline-block mb-2 lazyload" data-src="/presskit/mac-screenshot-2.png" alt="Hinzufügen eines Tresors (Dark Mode)"/></a>
+      <a href="/presskit/mac-screenshot-2.png"><img class="inline-block mb-2 lazyload" data-src="/presskit/mac-screenshot-2.png" alt="Hinzufügen eines Tresors (Dunkel-Modus)"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500 mb-0">Hinzufügen eines Tresors (Dark Mode) • 1374x1140 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Hinzufügen eines Tresors (Dunkel-Modus) • 1374x1140 • PNG</p>
       </figcaption>
     </figure>
   </div>
@@ -30,9 +30,9 @@ weight: 7
   </div>
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2 mb-8">
-      <a href="/presskit/mac-screenshot-4.png"><img class="inline-block mb-2 lazyload" data-src="/presskit/mac-screenshot-4.png" alt="Entsperren des Tresors (Dark Mode)"/></a>
+      <a href="/presskit/mac-screenshot-4.png"><img class="inline-block mb-2 lazyload" data-src="/presskit/mac-screenshot-4.png" alt="Entsperren des Tresors (Dunkel-Modus)"/></a>
       <figcaption>
-        <p class="text-sm text-gray-500 mb-0">Entsperren des Tresors (Dark Mode) • 1374x1056 • PNG</p>
+        <p class="text-sm text-gray-500 mb-0">Entsperren des Tresors (Dunkel-Modus) • 1374x1056 • PNG</p>
       </figcaption>
     </figure>
   </div>

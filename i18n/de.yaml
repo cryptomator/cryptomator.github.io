@@ -126,7 +126,7 @@
 - id: donate_getkey_title
   translation: "Spendenschlüssel kaufen"
 - id: donate_getkey_feature_1
-  translation: "Software registrieren und Dark-Mode freischalten"
+  translation: "Software registrieren und Dunkel-Modus freischalten"
 - id: donate_getkey_feature_2
   translation: "Manche sagen, es wäre ein \"Awesome People\"-Zertifikat"
 - id: donate_getkey_feature_3
