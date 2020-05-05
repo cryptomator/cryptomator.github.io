@@ -170,8 +170,9 @@ class RecurringPayment {
    * Creates a new recurring payment object.
    * @param {number} amount integer $$$
    * @param {string} currency EUR or USD
+   * @param {string} languageCode The IETF language tag of the locale to display Stripe placeholders and error strings in
    */
-  checkout(amount, currency) {
+  checkout(amount, currency, languageCode) {
     let plan = STRIPE_PLANS[currency];
     $.ajax({
       url: 'https://js.stripe.com/v3/',
@@ -185,7 +186,8 @@ class RecurringPayment {
           {plan: plan, quantity: parseInt(amount)}
         ],
         successUrl: window.location.href + '/thanks',
-        cancelUrl: window.location.href
+        cancelUrl: window.location.href,
+        locale: languageCode
       }).then(result => {
         if (result.error) {
           console.log(result.error.message);

@@ -102,7 +102,7 @@
           <div x-show="frequency === 'recurring'" class="text-center">
             <p class="mb-4">{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
             <p class="mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-            <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="recurringPayment.checkout(amount, currency)" x-bind:disabled="!acceptTerms">
+            <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}')" x-bind:disabled="!acceptTerms">
               <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
             </button>
           </div>
