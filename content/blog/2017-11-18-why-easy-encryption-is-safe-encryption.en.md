@@ -4,7 +4,7 @@ slug: why-easy-encryption-is-safe-encryption
 date: 2017-11-18
 author: Sam Bocetta
 authorlink: https://twitter.com/sambocetta
-authorimg: https://avatars.io/twitter/sambocetta/medium
+authorimg: https://pbs.twimg.com/profile_images/1070151497109962753/kRRYOKSl_bigger.jpg
 notice: This is a guest post by Sam Bocetta.
 tags: [other, guest]
 aliases: ["/blog/2017/11/18/why-easy-encryption-is-safe-encryption_en.html"]
