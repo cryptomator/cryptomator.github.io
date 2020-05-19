@@ -2,101 +2,84 @@
 title: "AGB"
 ---
 
-_Stand: April 2020_
+_Stand: Mai 2020_
 
 <p class="text-lg leading-relaxed text-gray-700">Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.</p>
 
-### §1 Geltung
+## §1 Geltungsbereich
 
-Diese Geschäftsbedingungen gelten in ihrer jeweils zum Vertragsschluss gültigen Fassung für den Erwerb von Lizenzen und die Nutzung von Softwarelizenzen und digitalen Inhalten, welche von der Skymatic GmbH (Skymatic) auf dieser Website angeboten und ihren Vertragspartnern (Kunden) bereitgestellt werden. Abweichende Bedingungen des Vertragspartners gelten nicht, es sei denn Skymatic hat ausdrücklich und schriftlich zugestimmt.
+Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen für den Erwerb und die Nutzung von Codes zur Freischaltung von digitalen Inhalten und damit verbundener Lizenzen zwischen der Skymatic GmbH, Grantham-Allee 2-8, 53757 Sankt Augustin (i. F.: Skymatic) und dem Kunden. Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Kunden werden nicht Vertragsbestandteil.
 
-Im Einzelfall mit dem Kunden getroffene Nebenabreden, Ergänzungen und Änderungen bedürfen zu ihrer Wirksamkeit der Schriftform. Zu selbigen sind ausschließlich die Geschäftsführer der Skymatic GmbH berechtigt.
+## §2 Vertragsschluss
 
-Geschäftsbeziehungen unterliegen dem Recht der Bundesrepublik Deutschland. Die Bestimmungen des UN-Kaufrechts finden keine Anwendung. Ist der Vertragspartner Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen, ist ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag der Geschäftssitz der Skymatic GmbH. Selbiges gilt, wenn der Wohnsitz oder gewöhnliche Aufenthaltsort des Vertragspartners im Zeitpunkt der Klageerhebung außerhalb Deutschlands liegt.
+2.1 Auf dieser Website präsentierte Inhalte (z.B. Zusatzfeatures) und deren Preisauszeichnungen stellen ein rechtlich bindendes Vertragsangebot an den Kunden dar, welches dieser annehmen kann.
 
-### §2 Angebot und Vertragsschluss
+2.2 Mit der Bestellung der Inhalte erklärt der Kunde verbindlich, die Inhalte rechtsverbindlich erwerben zu wollen, wobei er im Rahmen von „Pay-What-You-Want“-Angeboten den Preis selbst festlegt und damit das Angebot von Skymatic annimmt.
 
-Auf dieser Website präsentierte Inhalte und deren Preisauszeichnungen stellen kein rechtlich bindendes Vertragsangebot dar. Mit der Bestellung der Inhalte erklärt der Kunde verbindlich, die Inhalte erwerben zu wollen, wobei er im Rahmen von "Pay-What-You-Want"-Angeboten den Preis selbst festlegt. Erst duch Annahme dieses Angebots durch Skymatic kommt es zum Vertragsschluss.
+2.3 Der Kunde kann vor dem verbindlichen Absenden der Bestellung alle getätigten Eingaben verwerfen und korrigieren oder den Bestellvorgang durch Verlassen der Seite abbrechen.
 
-Der Kunde kann vor dem verbindlichen Absenden der Bestellung alle getägtigen Eingaben verwerfen und korrigieren oder den Bestellvorgang durch Verlassen der Seite abbrechen.
+2.4 Im Zuge der Bestellung erhält der Kunde die Möglichkeit, die Bestellübersicht sowie diese AGB aufzurufen und auszudrucken. Nach Vertragsschluss werden die Bestelldaten, die gesetzlich vorgeschriebenen Informationen bei Fernabsatzverträgen und die Allgemeinen Geschäftsbedingungen nochmals per E-Mail an den Kunden übersandt. Der Vertragstext wird durch Skymatic nicht gespeichert.
 
-Im Zuge der Bestellung erhält der Kunde die Möglichkeit, die Bestellübersicht sowie diese AGB aufzurufen und auszudrucken. Nach Vertragsschluss wird der Vertragstext durch Skymatic GmbH nicht gespeichert und ist für den Kunden nicht mehr zugänglich.
+## §3 Preise, Zahlungsmodalitäten
 
-### §3 Preise, Umsatzsteuer, Zahlung
+3.1 Die Bereitstellung der Inhalte erfolgt grundsätzlich nach Vorkasse. Die Zahlung erfolgt per PayPal, Visa oder MasterCard. Die Referenzwährung ist Euro. Andere angebotene Währungen werden zu marktüblichen Tageskursen umgerechnet.
+ 
+3.2 Rechnungen werden durch einen Zahlungsdienstleister ausgestellt und können jederzeit online abgerufen werden. Ein entsprechender Link wird dem Kunden nach Vertragsschluss an die durch ihn angegebene E-Mail-Adresse gesendet.
 
-Sofern nicht anders angegeben, enthalten die angegebenen Preise die gesetzliche Umsatzsteuer und sonstige Preisbestandteile.
+## §4 Ausführung des Vertrages
 
-Skymatic kann nach eigenem Ermessen angebotene Inhalte und Preise ohne Angabe von Gründen und ohne Vorankündigung ändern oder den Verkauf der Inhalte einstellen.
+4.1 Dem Kunden wird nach Zahlungseingang ausschließlich auf elektronischem Weg eine Zeichenfolge („Code“) bereitgestellt. Hierzu wird dem Kunden eine E-Mail geschickt. Mit diesem Code kann der Kunde den Inhalt in der dazugehörigen Software (wie „Cryptomator“) freischalten.
 
-Die Bereitstellung der Inhalte erfolgt grundsätzlich nach Vorkasse. Die Zahlung erfolgt per PayPal, Visa oder MasterCard. Die Referenzwährung ist Euro. Andere angebotene Währungen werden zu marktüblichen Tageskursen umgerechnet.
+4.2 Der Kunde ist selbst dafür verantwortlich, dass die notwendigen technischen Vorkehrungen (Internetverbindung; aktueller Internetbrowser etc.) für den Zugang zu den Online-Diensten von Skymatic sowie auch zur Nutzung der digitalen Inhalte vorliegen.
 
-Rechnungen werden durch einen Zahlungsdienstleister ausgestellt und können jederzeit online abgerufen werden. Ein entsprechender Link wird dem Kunden nach Vertragsschluss an die durch ihn angegebene E-Mail-Adresse gesendet.
+## §5 Nutzungsrechte
 
-### §4 Bereitstellung und Rückerstattung digitaler Inhalte
+5.1 Der Kunde erwirbt an den von Skymatic angebotenen, freischaltbaren Inhalten ein einfaches (nicht-exklusives) und nicht unterlizenzierbares Nutzungsrecht.
 
-Digitale Inhalte werden dem Kunden nach Zahlungseingang ausschließlich auf elektronischem Weg bereitgestellt. Hierzu wird dem Kunden eine E-Mail geschickt, welche den Inhalt direkt oder aber einen Link zum Zugriff auf die Inhalte enthält.
+5.2 Sofern die lizenzierten Inhalte den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitern, so bleiben die ursprünglichen Lizenzbedingungen davon unberührt. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte wie Cryptomator, für die die jeweiligen Open-Source-Lizenzen gelten.
 
-Bezahlte digitale Inhalte sind im Allgemeinen nicht rückerstattungsfähig. Jegliche Rückerstattung oder Gutschrift liegt im alleinigen Ermessen des Unternehmens.
+5.3 Die zur Verfügung gestellten Daten und/oder Codes berechtigen ausschließlich den Kunden zur Nutzung der damit freischaltbaren digitalen Inhalte. Die Codes sind von ihm vor dem Zugriff Dritter geheim zu halten. Eine unberechtigte Nutzung Dritter ist zu verhindern.
 
-### §5 Lizenz-Umfang
+## §6 Haftung
 
-Die von Skymatic angebotenen Inhalte werden lizenziert, nicht verkauft. Sämtliche Inhalte sind durch Urheberrecht und andere gesetzliche Bestimmungen zum Schutz geistigen Eigentums geschützt.
+6.1 Einige von Skymatic bereitgestellte Produkte verschlüsseln Daten mit einem Schlüssel, der ausschließlich dem Kunden bekannt ist. Der Kunde nimmt zur Kenntnis, dass Skymatic keinerlei Möglichkeit hat, verlorene Daten oder Passwörter wiederherzustellen. Der Kunde nimmt weiterhin zur Kenntnis, dass das Ziel der Verschlüsselung der Schutz der Privatsphäre ist, jedoch technisch keinerlei Schutz gegen den Verlust von Daten bietet. Skymatic haftet nicht für den Verlust von Daten, der sich durch Datensicherungen seitens des Kundens (Backups) hätte vermeiden lassen.
 
-Skymatic gewährt dem Kunden ein nicht-exklusives und nicht unterlizenzierbares Nutzungsrecht an den bestellten Inhalten und untersagt ausdrücklich deren Vervielfältigung und Weiterverbreitung ohne schriftliche Genehmigung.
+6.2 Ansprüche des Kunden auf Schadensersatz oder Ersatz vergeblicher Aufwendungen richten sich nach den folgenden Regelungen:
 
-Sofern die lizenzierten Inhalte den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitern, so bleiben die ursprünglichen Lizenzbedingungen davon unberührt. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte, für die die jeweiligen Open-Source-Lizenzen gelten.
+* Für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung von der Skymatic, eines gesetzlichen Vertreters oder eines Erfüllungsgehilfen von Skymatic beruhen, haftet Skymatic unbeschränkt.
 
-### §6 Haftung (Gewährleistung)
+* Bei den übrigen Haftungsansprüchen haftet Skymatic unbeschränkt nur bei Nichtvorhandensein einer garantierten Beschaffenheit sowie für Vorsatz und grobe Fahrlässigkeit ihrer gesetzlichen Vertreter und Erfüllungsgehilfen.
 
-Für Sach- und Rechtsmängel haftet Skymatic im Rahmen gesetzlicher Bestimmungen. Mängel sind durch den Kunden innerhalb der Gewährleistungsfrist von zwei Jahren zu rügen.
+* Für leichte Fahrlässigkeit haftet Skymatic nur, sofern eine Pflicht verletzt wird, deren Einhaltung für die Erreichung des Vertragszwecks von besonderer Bedeutung ist (Kardinalpflicht). Bei der leicht fahrlässigen Verletzung einer Kardinalpflicht ist die Haftung beschränkt auf das Fünffache des vom Kunden geschuldeten Netto-Entgelts sowie auf solche Schäden, mit deren Entstehung im Rahmen der Vertragserfüllung typischerweise gerechnet werden muss.
 
-Die Haftung beschränkt sich auf im Online-Shop erworbene Lizenzen. Sofern ein lizenzierter Inhalt den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitert, beschränkt sich die Haftung auf den erweiterten Funktionsumfang. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte, für die die Haftung in den jeweiligen Open-Source-Lizenzen geregelt ist.
+6.3 Sofern ein lizenzierter Inhalt den Funktionsumfang eines unter anderer Lizenz erworbenen Produkts erweitert, beschränkt sich die Haftung auf den erweiterten Funktionsumfang. Dies gilt insbesondere für von Skymatic bereitgestellte Open-Source-Produkte, für die die Haftung in den jeweiligen Open-Source-Lizenzen geregelt ist.
 
-Einige von Skymatic bereitgestellte Produkte verschlüsseln Daten mit einem Schlüssel, der ausschließlich dem Nutzer bekannt ist. Sie nehmen zur Kenntnis, dass Skymatic keinerlei Möglichkeit hat, verlorene Daten oder Passwörter wiederherzustellen. Sie nehmen weiterhin zur Kenntnis, dass das Ziel der Verschlüsselung der Schutz der Privatsphäre ist, jedoch technisch keinerlei Schutz gegen den Verlust von Daten bietet. Skymatic haftet nicht für den Verlust von Daten, der sich durch Datensicherungen seitens des Nutzers (Backups) hätte vermeiden lassen.
+## §7 Urheberrecht
 
-Bei leicht fahrlässigen Pflichtverletzungen beschränkt sich die Haftung von Skymatic auf den nach der Art der Ware vorhersehbaren, vertragstypischen, unmittelbaren Durchschnittsschaden. Dies gilt auch bei leicht fahrlässigen Pflichtverletzungen eines gesetzlichen Vertreters oder Erfüllungsgehilfen von Skymatic. Skymatic haftet nicht bei leicht fahrlässiger Verletzung unwesentlicher Vertragspflichten.
+Skymatic ist Rechteinhaberin der angebotenen digitalen Inhalte, welche mit den Daten und/oder Codes freigeschaltet werden können. Sie hält alle ausschließlichen Nutzungsrechte. Durch den Erwerb der digitalen Inhalte werden Nutzungsrechte nur im unter „5. Nutzungsrechte“ beschriebenen Umfang eingeräumt.
 
-In keinem Fall übersteigt die Haftung des Unternehmens Ihnen gegenüber den Betrag, den Sie ursprünglich für das Produkt bezahlt haben.
+## §8 Datenschutz
 
-Im Übrigen gelten die gesetzlichen Gewährleistungsregelungen.
+Skymatic speichert die übermittelten personenbezogenen Daten, wie z.B. Name, Bankverbindung und E-Mail-Adresse, zur Abwicklung des Kaufvertrages. Nähere Informationen findet der Kunde in der [Datenschutzerklärung](/de/privacy/).
 
-### §7 Datenschutz
+## §9 Widerruf
 
-Im Kontext des Vertragsschlusses erforderliche Daten verarbeitet Skymatic im Rahmen der gesetzlichen Bestimmungen und unserer [Datenschutzerklärung](/de/privacy/).
+Handelt es sich bei dem Kunden um einen Verbraucher, steht ihm ein Widerrufsrecht zu.
 
-### §8 Salvatorische Klausel
+### Widerrufsbelehrung
 
-Sollten einzelne Klauseln dieser Vertragsbedingungen oder daneben etwa abgeschlossener individueller Vereinbarungen ganz oder teilweise ungültig sein, berührt das die Wirksamkeit der übrigen Klauseln nicht. Die unwirksame Klausel wird durch eine andere ersetzt, die dem wirtschaftlichen Zweck der unwirksamen Regelung am nächsten kommt und ihrerseits wirksam ist.
+Der Kunde hat das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses.  Um das Widerrufsrecht auszuüben, muss der Teilnehmer Skymatic (Skymatic GmbH, Grantham-Allee 2-8, 53757 Sankt Augustin, E-Mail: info@skymatic.de, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über seinen Entschluss, diesen Vertrag zu widerrufen, informieren. Der Kunde kann dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
 
-## Widerrufsbelehrung
+Zur Wahrung der Widerrufsfrist reicht es aus, dass der Kunde die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absendet.
 
-Verbrauchern steht ein Widerrufsrecht nach folgender Maßgabe zu, wobei Verbraucher jede natürliche Person ist, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können:
+### Folgen des Widerrufs
 
-### Widerrufsrecht
-
-Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage, ab dem Tag des Vertragsabschlusses.
-
-Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
-
-Skymatic GmbH<br/>
-Grantham-Allee 2-8<br/>
-53757 Sankt Augustin<br/>
-E-Mail: info [at] skymatic [dot] de<br/>
-Fax: 02241 / 2667424<br/>
-
-Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
-
-### Widerrufsfolgen
-
-Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.
-
-Haben Sie verlangt, dass die Dienstleistungen während der Widerrufsfrist beginnen soll, so haben Sie uns einen angemessenen Betrag zu zahlen, der dem Anteil der bis zu dem Zeitpunkt, zu dem Sie uns von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags unterrichten, bereits erbrachten Dienstleistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen entspricht.
-
----
+Wenn der Kunde diesen Vertrag widerruft, hat Skymatic alle Zahlungen, die sie von dem Kunden erhalten hat, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass der Teilnehmer eine andere Art der Lieferung als die von Skymatic angebotene, günstigste Standardlieferung gewählt hat), unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzahlen, an dem die Mitteilung über den Widerruf dieses Vertrags bei Skymatic eingegangen ist. Für diese Rückzahlung verwendet Skymatic dasselbe Zahlungsmittel, das der Kunde bei der ursprünglichen Transaktion eingesetzt hat, es sei denn, mit dem Kunden wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden dem Kunden wegen dieser Rückzahlung Entgelte berechnet.
 
 ### Muster-Widerrufsformular
 
-Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es uns zu:
+Wenn der Kunde den Vertrag nach Maßgabe der vorstehenden Widerrufsbelehrung widerrufen will, dann kann er dieses Formular ausfüllen und an Skymatic zurücksenden. Die Verwendung des Formulars ist aber nicht zwingend.
+
 
 ```
 An:
@@ -106,11 +89,31 @@ Grantham-Allee 2-8
 E-Mail: info [at] skymatic [dot] de
 Fax: 02241 / 2667424
 
-Hiermit widerrufe ich den von mir abgeschlossenen Vertrag über den Kauf der folgenden digitalen Inhalte:
+Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
 
 Bestellt am: __________________
-Name des Kunden: __________________
-Anschrift des Kunden: __________________
-Unterschrift (nur bei Mitteilung auf Papier): __________________
+Name des/der Verbraucher(s): __________________
+Anschrift des/der Verbraucher(s): __________________
+Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): __________________
 Datum: __________________
 ```
+
+_(*) Unzutreffendes streichen._
+
+## §10 Online-Plattform zur außergerichtlichen Streitschlichtung sowie Hinweis nach § 36 VSBG
+
+Skymatic ist verpflichtet, Teilnehmer, die Verbraucher sind, auf die Plattform zur Online-Streitbeilegung (OS-Plattform) der Europäischen Kommission hinzuweisen. Diese OS-Plattform ist über folgenden Link erreichbar: {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
+
+Skymatic nimmt an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle allerdings nicht teil.
+
+## §11 Anwendbares Recht, Vertragssprachen, Gerichtsstand
+
+11.1 Auf die Verträge findet nur das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (United Nations Convention on Contracts for the International Sale of Goods, CISG) an. Bei Verbrauchern gilt diese Rechtswahl nur, soweit hierdurch nicht zwingende verbraucherschützende Vorschriften des Staates, in dem der Kunde seinen gewöhnlichen Aufenthalt hat, entzogen werden.
+
+11.2 Erfüllungsort für alle Verpflichtungen beider Vertragsteile ist der Sitz von Skymatic.
+
+11.3 Vertragssprachen sind Deutsch und Englisch.
+
+11.4 Gerichtsstand ist, soweit rechtlich vereinbar, Bonn.
+
+11.5 Sollte eine Bestimmung dieser Bedingungen ganz oder teilweise unwirksam sein oder werden, so berührt dies nicht die Gültigkeit der übrigen Bestimmungen.
