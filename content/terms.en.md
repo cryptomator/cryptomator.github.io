@@ -86,12 +86,12 @@ Skymatic GmbH
 Grantham-Allee 2-8
 53757 Sankt Augustin
 Germany
-Email: info [at] skymatic [dot] de
+Email: info@skymatic.de
 Fax: 02241 / 2667424
 
 I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
 
-Ordered on: __________________
+Ordered on (*): __________________
 Name of the customer: __________________
 Address of the customer: __________________
 Signature (only in the case of paper-based notice): __________________

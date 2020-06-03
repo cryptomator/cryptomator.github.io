@@ -86,12 +86,12 @@ An:
 Skymatic GmbH
 Grantham-Allee 2-8
 53757 Sankt Augustin
-E-Mail: info [at] skymatic [dot] de
+E-Mail: info@skymatic.de
 Fax: 02241 / 2667424
 
 Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
 
-Bestellt am: __________________
+Bestellt am (*): __________________
 Name des/der Verbraucher(s): __________________
 Anschrift des/der Verbraucher(s): __________________
 Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): __________________
