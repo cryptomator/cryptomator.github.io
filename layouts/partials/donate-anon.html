@@ -70,10 +70,6 @@
             <div class="mb-4">
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
               <div> <!-- wrapper needed for stripe text field -->
-                <template>
-                  <!-- purgecss needs to find these classes (because stripe text field is injected via js) -->
-                  <i class="hidden StripeElement StripeElement--focus"></i>
-                </template>
                 <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
               </div>
             </div>

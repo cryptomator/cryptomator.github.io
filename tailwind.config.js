@@ -1,4 +1,19 @@
 module.exports = {
+  purge: {
+    enabled: process.env.HUGO_ENV !== 'development',
+    content: [
+      './content/**/*.html',
+      './content/**/*.md',
+      './layouts/**/*.html',
+    ],
+    options: {
+      whitelist: [
+        'hover:border-white',
+        'StripeElement',
+        'StripeElement--focus',
+      ],
+    },
+  },
   theme: {
     container: {
       center: true,

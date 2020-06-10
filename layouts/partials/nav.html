@@ -9,12 +9,7 @@
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
       <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
     </a>
-    
-    <template>
-      <!-- purgecss needs to find these classes (because hugo runs purgecss _before_ building the site 🤦‍♂️) -->
-      <i class="hidden hover:border-primary hover:border-white"></i>
-    </template>
-    
+
     <!-- Regular Navigation -->
     <ul class="hidden md:flex items-stretch list-none m-0">
       {{- with .Site.GetPage "/downloads" }}
