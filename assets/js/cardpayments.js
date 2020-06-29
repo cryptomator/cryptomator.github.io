@@ -1,7 +1,7 @@
 "use strict";
 
 const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
-const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GgW49BkhumHMIR'}; // live
+const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_HYOXl2Z3uV5TwB'}; // live
 const STRIPE_PHP_URL = 'https://api.cryptomator.org/stripe/prepare_payment.php';
 
 //const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
