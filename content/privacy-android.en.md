@@ -25,8 +25,8 @@ Die App Cryptomator erlaubt die Speicherung beliebiger in Dateien vorliegenden I
 ### Zugriff auf den Geräte-Speicher und Fotos, Medien und Dateien
 Zur Nutzung sogenannter lokaler Tresore und zur Bereitstellung der Teilen-, Import- und Export-Funktion benötigt die App Zugriff auf den Geräte-Speicher und Fotos, Medien und Dateien. Diese Daten werden nur auf Anfrage des Nutzers aus der App heraus genutzt und verarbeitet.
 
-### Fingerabdrucksensor
-Die App verwendet den Fingerabdrucksensor des Gerätes. Die App hat dabei keinen Zugriff auf die zugrundeliegenden Fingerabdrücke. Die Erfassung und Prüfung der Fingerabdrücke erfolgt ausschließlich durch die durch den Gerätehersteller bereitgestellte Software.
+### Biometrische Authentifizierungsmehtoden
+Die App bietet die Möglichkeit, Tresore mit unter Anderem einem Fingerabdruck- oder Gesichtserkennungssensor zu entsperren. Die App hat dabei keinen Zugriff auf die zugrundeliegenden Finger- oder Gesichtsabdrücke. Die Erfassung und Prüfung dieser erfolgt ausschließlich durch die durch den Gerätehersteller bereitgestellte Software.
 
 ### Logdatei
 Zu Diagnosezwecken im Fehlerfall schreibt die App eine Logdatei, die auf dem Gerät in einem Bereich gespeichert wird, der nur durch die App selbst nutzbar ist. Die Logdatei wird ohne Aktion des Nutzers nicht weitergegeben. Alte Logdaten, die über eine Größe von 1 MiB hinausgehen, werden automatisch gelöscht.
