@@ -7,7 +7,7 @@ description: "With 1&1 Verschlüsselung, customers of 1&1 have the possibility t
 aliases: ["/coop/1und1_en.html"]
 ---
 
-<figure class="text-center my-8">
+<figure class="text-center">
   <img class="inline-block rounded" src="/img/coop/1und1-banner.png" alt="1&amp;1 Coop Banner"/>
 </figure>
 

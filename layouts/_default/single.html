@@ -1,8 +1,10 @@
 {{ define "main" }}
-  <article class="container py-12">
-    <header class="mb-6">
-      <h1 class="mt-0 mb-0">{{ .Title }}</h1>
-    </header>
-    {{ .Content }}
-  </article>
+  <div class="container py-12">
+    <article class="prose prose-sm md:prose max-w-none md:max-w-none">
+      <header class="mb-6">
+        <h1>{{ .Title }}</h1>
+      </header>
+      {{ .Content }}
+    </article>
+  </div>
 {{ end }}

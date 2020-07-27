@@ -6,44 +6,46 @@ description: "Customize Cryptomator and our technologies for your organization. 
 
 <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
   <div class="rounded-b shadow bg-white">
-    <div class="px-4 py-2 border-b border-primary">
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
       <h3><i class="fas fa-adjust fa-fw text-primary"></i> White Labeling</h3>
     </div>
-    <div class="p-4">
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
       <p>End-to-end encryption with your branding: We develop individualized versions of the Cryptomator apps for you.</p>
     </div>
   </div>
 
   <div class="rounded-b shadow bg-white">
-    <div class="px-4 py-2 border-b border-primary">
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
       <h3><i class="fas fa-book fa-fw text-primary"></i> Crypto Libraries</h3>
     </div>
-    <div class="p-4">
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
       <p>Secure your server applications, synchronization clients, and other systems with Cryptomator technology: Our libraries can be integrated into many applications.</p>
     </div>
   </div>
 
   <div class="rounded-b shadow bg-white">
-    <div class="px-4 py-2 border-b border-primary">
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
       <h3><i class="fas fa-edit fa-fw text-primary"></i> Custom Development</h3>
     </div>
-    <div class="p-4">
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
       <p>Based on Cryptomator's encryption scheme, we develop custom applications and systems for you.</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2 class="mb-4">Open-Source Libraries Under AGPLv3</h2>
-  <p class="text-lg leading-relaxed text-gray-700 mb-4">Cryptomator's libraries are dual-licensed under the AGPLv3 for FOSS projects as well as a commercial license derived from the LGPL for independent software vendors and resellers. If you want to use these libraries in applications that are not licensed under the AGPL, feel free to contact us.</p>
+  <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+    <h2>Open-Source Libraries Under AGPLv3</h2>
+    <p>Cryptomator's libraries are dual-licensed under the AGPLv3 for FOSS projects as well as a commercial license derived from the LGPL for independent software vendors and resellers. If you want to use these libraries in applications that are not licensed under the AGPL, feel free to contact us.</p>
+  </div>
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
     <div class="rounded-b shadow bg-white">
-      <div class="px-4 py-2 border-b border-primary">
+      <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
         <h3><a href="https://github.com/cryptomator/cryptolib" target="_blank" rel="noopener">CryptoLib</a></h3>
       </div>
-      <div class="p-4 text-sm">
+      <div class="prose prose-sm max-w-none p-4">
         <p>Use CryptoLib for encrypting and decrypting data according to <a href="https://docs.cryptomator.org/en/latest/security/architecture/" target="_blank" rel="noopener">Cryptomator's encryption scheme</a>.</p>
-        <ul class="ml-5">
+        <ul>
           <li>Encrypt and decrypt Cryptomator vaults directly retrieved from the cloud</li>
           <li>Suitable for accessing the cloud directly without synchronization, e.g. in apps for Android</li>
           <li>High-level API functions for encryption and decryption</li>
@@ -53,12 +55,12 @@ description: "Customize Cryptomator and our technologies for your organization. 
     </div>
   
     <div class="rounded-b shadow bg-white">
-      <div class="px-4 py-2 border-b border-primary">
+      <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
         <h3><a href="https://github.com/cryptomator/cryptofs" target="_blank" rel="noopener">CryptoFS</a></h3>
       </div>
-      <div class="p-4 text-sm">
+      <div class="prose prose-sm max-w-none p-4">
         <p>Use CryptoFS for encrypting and decrypting data according to <a href="https://docs.cryptomator.org/en/latest/security/architecture/" target="_blank" rel="noopener">Cryptomator's encryption scheme</a>.</p>
-        <ul class="ml-5">
+        <ul>
           <li>Encrypt and decrypt Cryptomator vaults that are present on the local filesystem</li>
           <li>Suitable for accessing data synchronized to a local directory</li>
           <li>Implements a <code class="text-xs">java.nio.file.spi.FileSystemProvider</code> according to JSR-203 using the CryptoLib library</li>
@@ -68,12 +70,12 @@ description: "Customize Cryptomator and our technologies for your organization. 
     </div>
   
     <div class="rounded-b shadow bg-white">
-      <div class="px-4 py-2 border-b border-primary">
+      <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
         <h3><a href="https://github.com/cryptomator/webdav-nio-adapter-servlet" target="_blank" rel="noopener">WebDAV-NIO-Adapter-Servlet</a></h3>
       </div>
-      <div class="p-4 text-sm">
+      <div class="prose prose-sm max-w-none p-4">
         <p>Add a WebDAV server to your Java application.</p>
-        <ul class="ml-5">
+        <ul>
           <li>Make the contents of a local directory (any <code class="text-xs">java.nio.file.Path</code>) available via WebDAV</li>
           <li>Provides a JEE servlet</li>
           <li>Java 8+ compatible</li>
@@ -82,12 +84,12 @@ description: "Customize Cryptomator and our technologies for your organization. 
     </div>
 
     <div class="rounded-b shadow bg-white">
-      <div class="px-4 py-2 border-b border-primary">
+      <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
         <h3><a href="https://github.com/cryptomator/webdav-nio-adapter" target="_blank" rel="noopener">WebDAV-NIO-Adapter</a></h3>
       </div>
-      <div class="p-4 text-sm">
+      <div class="prose prose-sm max-w-none p-4">
         <p>Launch and mount a WebDAV server from within your Java application.</p>
-        <ul class="ml-5">
+        <ul>
           <li>Mounting support for Windows, macOS, and Linux</li>
           <li>Based on WebDAV-NIO-Adapter-Servlet</li>
           <li>Java 8+ compatible</li>
@@ -96,12 +98,12 @@ description: "Customize Cryptomator and our technologies for your organization. 
     </div>
   
     <div class="rounded-b shadow bg-white">
-      <div class="px-4 py-2 border-b border-primary">
+      <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
         <h3><a href="https://github.com/cryptomator/fuse-nio-adapter" target="_blank" rel="noopener">FUSE-NIO-Adapter</a></h3>
       </div>
-      <div class="p-4 text-sm">
+      <div class="prose prose-sm max-w-none p-4">
         <p>Provide a FUSE drive from within your Java application.</p>
-        <ul class="ml-5">
+        <ul>
           <li>Make the contents of a local directory (any <code class="text-xs">java.nio.file.Path</code>) available via FUSE</li>
           <li>Mounting support for macOS and Linux</li>
           <li>Java 9+ compatible</li>
@@ -110,12 +112,12 @@ description: "Customize Cryptomator and our technologies for your organization. 
     </div>
   
     <div class="rounded-b shadow bg-white">
-      <div class="px-4 py-2 border-b border-primary">
+      <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
         <h3><a href="https://github.com/cryptomator/dokany-nio-adapter" target="_blank" rel="noopener">Dokany-NIO-Adapter</a></h3>
       </div>
-      <div class="p-4 text-sm">
+      <div class="prose prose-sm max-w-none p-4">
         <p>Provide a Dokany drive from within your java application.</p>
-        <ul class="ml-5">
+        <ul>
           <li>Make the contents of a local directory (any <code class="text-xs">java.nio.file.Path</code>) available via Dokany</li>
           <li>Mounting support for Windows</li>
           <li>Java 8+ compatible</li>

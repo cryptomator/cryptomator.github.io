@@ -133,6 +133,11 @@ nav a:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.faq-card-content > *:last-child {
-  @apply mb-0;
+.m-remover {
+  margin: 0 !important;
+}
+
+/* see https://github.com/alpinejs/alpine#x-cloak */
+[x-cloak] {
+  display: none;
 }

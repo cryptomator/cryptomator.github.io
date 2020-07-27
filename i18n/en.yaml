@@ -33,7 +33,7 @@
 - id: android_getkey_checkout
   translation: "Checkout"
 - id: android_getkey_coupon
-  translation: "Use coupon code <code class=\"text-xs\">SUMMERSALE</code> during checkout to get 40% off!"
+  translation: "Use coupon code <code class=\"font-bold\">SUMMERSALE</code> during checkout to get 40% off!"
 
 - id: android_getkey_success
   translation: "Your payment was successful!"

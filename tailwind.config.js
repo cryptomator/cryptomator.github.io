@@ -39,7 +39,59 @@ module.exports = {
       'md': { 'min': '768px' },
       'lg': { 'min': '1280px' },
     },
+    typography: (theme) => ({
+      default: {
+        css: {
+          a: {
+            color: theme('colors.primary'),
+            textDecoration: 'none',
+            '&:hover': {
+              color: theme('colors.primary'),
+              textDecoration: 'underline',
+            },
+          },
+          h1: {
+            fontFamily: theme('fontFamily.headline'),
+            fontWeight: theme('fontWeight.medium'),
+          },
+          h2: {
+            fontFamily: theme('fontFamily.headline'),
+            fontWeight: theme('fontWeight.medium'),
+          },
+          h3: {
+            fontFamily: theme('fontFamily.headline'),
+            fontWeight: theme('fontWeight.normal'),
+          },
+        },
+      },
+      sm: {
+        css: {
+          a: {
+            color: theme('colors.primary'),
+            textDecoration: 'none',
+            '&:hover': {
+              color: theme('colors.primary'),
+              textDecoration: 'underline',
+            },
+          },
+          h1: {
+            fontFamily: theme('fontFamily.headline'),
+            fontWeight: theme('fontWeight.medium'),
+          },
+          h2: {
+            fontFamily: theme('fontFamily.headline'),
+            fontWeight: theme('fontWeight.medium'),
+          },
+          h3: {
+            fontFamily: theme('fontFamily.headline'),
+            fontWeight: theme('fontWeight.normal'),
+          },
+        },
+      },
+    }),
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

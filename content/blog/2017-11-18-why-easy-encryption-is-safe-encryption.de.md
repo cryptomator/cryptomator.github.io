@@ -32,11 +32,9 @@ I don't mean to suggest that everybody is stupid, or that it is easy to spot a s
 
 Instead, the problem lies with the generally poor level of knowledge on security issues, and nowhere is this more apparent than when it comes to encryption. If you work in tech, it's easy to forget that people don't understand encryption, despite the innumerable and {{< extlink "https://thebestvpn.com/cryptography/" "excellent guides" >}} available.
 
-<figure class="my-8">
-  <img class="inline-block rounded mb-1" src="https://imgs.xkcd.com/comics/pgp.png" srcset="https://imgs.xkcd.com/comics/pgp.png 1x, https://imgs.xkcd.com/comics/pgp_2x.png 2x" title="If you want to be extra safe, check that there's a big block of jumbled characters at the bottom." alt="PGP"/>
-  <figcaption>
-    <p class="text-sm text-gray-500 mb-0">Illustration by {{< extlink "https://xkcd.com/1181/" "Randall Munroe (xkcd)" >}}</p>
-  </figcaption>
+<figure>
+  <img class="inline-block rounded" src="https://imgs.xkcd.com/comics/pgp.png" srcset="https://imgs.xkcd.com/comics/pgp.png 1x, https://imgs.xkcd.com/comics/pgp_2x.png 2x" title="If you want to be extra safe, check that there's a big block of jumbled characters at the bottom." alt="PGP"/>
+  <figcaption>Illustration by {{< extlink "https://xkcd.com/1181/" "Randall Munroe (xkcd)" >}}</figcaption>
 </figure>
 
 In my experience, the majority of employees (and perhaps people) fall into two categories. There are those that think that their because they need to enter a Gmail password (sometimes), all their emails are safe as long as they keep their password secret. Or maybe just share it with a few friends.

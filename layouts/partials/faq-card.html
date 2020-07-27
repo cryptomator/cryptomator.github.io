@@ -1,8 +1,8 @@
 <article class="rounded shadow bg-white" id="{{ .File.TranslationBaseName }}">
-  <div class="px-4 py-2 border-b border-primary">
-    <h3 class="text-base md:text-lg mt-0 mb-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <div class="prose prose-sm max-w-none px-4 py-2 border-b border-primary">
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   </div>
-  <div class="faq-card-content p-4 text-sm">
+  <div class="prose prose-sm max-w-none p-4">
     {{ .Content }}
   </div>
 </article>

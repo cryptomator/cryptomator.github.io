@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container py-12">
-    <header class="mb-6">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
       <h1>
         {{- if .Sections -}}
           {{ .Title }}
@@ -12,7 +12,9 @@
 
     {{ range .Sections.ByWeight }}
       <section class="mb-12">
-        <h2 class="mb-4"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
           {{ range .Pages.ByWeight }}
             {{ partial "faq-card.html" . }}

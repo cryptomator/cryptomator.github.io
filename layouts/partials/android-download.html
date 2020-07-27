@@ -8,23 +8,21 @@
   <meta itemprop="operatingSystem" content="Android"/>
 
   <div class="rounded shadow bg-white">
-    <div class="px-4 py-2 border-b border-primary">
+    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
       <h3>{{ i18n "android_download_title" }}</h3>
     </div>
     <div class="px-4 py-8" x-data="{showShaSignature: false}">
-      <p class="mb-4">
-        <img class="inline-block h-24" src="/img/logo.svg"/>
-      </p>
-      <p class="mb-4">Version {{ .Site.Params.releases.android.version }} • Minimum: Android 4.3</p>
-      <p class="mb-2">
-        <a href="{{ .Site.Params.releases.android.downloadUrl }}" class="btn btn-primary w-full md:w-48" role="button">
-          <span class="fas fa-download" aria-hidden="true"></span> {{ i18n "android_download_button" }}
-        </a>
-      </p>
+      <img class="inline-block h-24 mb-4" src="/img/logo.svg"/>
+      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
+        <p>Version {{ .Site.Params.releases.android.version }} • Minimum: Android 4.3</p>
+      </div>
+      <a class="btn btn-primary w-full md:w-48 mb-2" href="{{ .Site.Params.releases.android.downloadUrl }}" role="button">
+        <span class="fas fa-download" aria-hidden="true"></span> {{ i18n "android_download_button" }}
+      </a>
       <p class="text-xs">
-        <a href="#" x-on:click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
+        <a class="text-primary no-underline hover:underline" href="#" x-on:click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
       </p>
-      <p x-show="showShaSignature" x-cloak class="text-sm mt-4"><code class="break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
+      <p x-show="showShaSignature" x-cloak class="text-sm mt-4"><code class="break-all text-sm bg-gray-300 rounded p-1">{{ .Site.Params.releases.android.checksum }}</code></p>
     </div>
   </div>
 </div>
