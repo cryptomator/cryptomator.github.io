@@ -30,6 +30,15 @@ module.exports = {
       fontSize: {
         '7xl': '5rem',
       },
+      animation: {
+        hover: 'hover 10s ease-in-out infinite',
+      },
+      keyframes: {
+        hover: {
+          '0%, 100%': { transform: 'rotate(0deg) translateY(0)' },
+          '50%': { transform: 'rotate(-3deg) translateY(-10px)' },
+        },
+      },
     },
     fontFamily: {
       'headline': 'Quicksand, sans-serif',
