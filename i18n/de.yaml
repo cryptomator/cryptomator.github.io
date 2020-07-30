@@ -99,7 +99,7 @@
 - id: donate_creditcard_number
   translation: "Kreditkarte"
 - id: donate_creditcard_once_instruction
-  translation: "Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a href=\"https://support.stripe.com/questions/\"unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">eine Buchung von Stripe</a> enthalten sein."
+  translation: "Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a class=\"text-primary no-underline hover:underline\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">eine Buchung von Stripe</a> enthalten sein."
 - id: donate_creditcard_once_loading
   translation: "Lädt…"
 - id: donate_creditcard_once_loadcaptcha

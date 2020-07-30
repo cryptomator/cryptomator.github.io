@@ -99,7 +99,7 @@
 - id: donate_creditcard_number
   translation: "Credit Card"
 - id: donate_creditcard_once_instruction
-  translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a href=\"https://support.stripe.com/questions/\"unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
+  translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class=\"text-primary no-underline hover:underline\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
 - id: donate_creditcard_once_loading
   translation: "Loading…"
 - id: donate_creditcard_once_loadcaptcha
