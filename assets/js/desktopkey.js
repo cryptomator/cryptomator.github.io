@@ -29,7 +29,8 @@ class DesktopLicense {
       type: 'POST',
       data: {
         currency: this._checkoutData.currency,
-        amount: this._checkoutData.amount
+        amount: this._checkoutData.amount,
+        quantity: this._checkoutData.quantity
       }
     }).done(data => {
       this.openPaddleCheckout(data.pay_link, locale);
@@ -43,7 +44,6 @@ class DesktopLicense {
       paddle.Checkout.open({
         override: payLink,
         email: this._checkoutData.email,
-        allowQuantity: false,
         locale: locale,
         successCallback: data => {
           this.onCheckoutSucceeded();

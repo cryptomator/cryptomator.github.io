@@ -20,9 +20,9 @@
 # Android
 - id: android_getkey_title
   translation: "Buy a license key"
-- id: android_getkey_amount
-  translation: "Amount"
-- id: android_getkey_amount_placeholder
+- id: android_getkey_price
+  translation: "Price"
+- id: android_getkey_price_placeholder
   translation: "Loading…"
 - id: android_getkey_email
   translation: "Email"
@@ -136,14 +136,18 @@
 - id: donate_getkey_show_form_button
   translation: "Proceed"
 
-- id: donate_getkey_amount
-  translation: "Amount"
-- id: donate_getkey_amount_placeholder
+- id: donate_getkey_quantity
+  translation: "Number of Licenses"
+- id: donate_getkey_quantity_help
+  translation: "License is valid for one user and can be used on multiple computers."
+- id: donate_getkey_price
+  translation: "Price per License"
+- id: donate_getkey_price_placeholder
   translation: "min. 15"
-- id: donate_getkey_amount_suffix
+- id: donate_getkey_price_suffix
   translation: ".00"
-- id: donate_getkey_amount_help
-  translation: "Minimum amount is 15. Currency is determined during checkout."
+- id: donate_getkey_price_help
+  translation: "Minimum amount is 15 per license. Currency is determined during checkout."
 - id: donate_getkey_email
   translation: "Email"
 - id: donate_getkey_email_placeholder
