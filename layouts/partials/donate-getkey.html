@@ -1,18 +1,19 @@
-<div x-data="{checkoutData: {amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false}" class="rounded shadow bg-white px-4 py-8">
+<div x-data="{checkoutData: {quantity: 1, amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false}" class="rounded shadow bg-white px-4 py-8">
   <form x-show="!checkoutData.success" x-ref="form">
-    <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_amount" }}</label>
-      <div class="flex flex-wrap md:flex-no-wrap md:items-center">
-        <div class="w-full mb-1 md:w-1/2 md:mb-0 md:pr-3">
-          <div class="flex items-center rounded bg-gray-300">
-            <div class="flex-shrink-0 text-gray-700 px-3">€ / $</div>
-            <input type="number" min="15" step="1" x-model="checkoutData.amount" class="flex-grow min-w-0 rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_amount_placeholder" }}" required/>
-            <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "donate_getkey_amount_suffix" }}</div>
-          </div>
+    <div class="flex flex-wrap md:flex-no-wrap">
+      <div class="w-full mb-4 md:w-1/2 md:pr-3">
+        <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_quantity" }}</label>
+        <input x-model="checkoutData.quantity" type="number" min="1" max="100" step="1" class="appearance-none w-full mb-2" placeholder="min. 1" required/>
+        <p class="text-xs text-gray-600">{{ i18n "donate_getkey_quantity_help" }}</p>
+      </div>
+      <div class="w-full mb-4 md:w-1/2 md:pl-3">
+        <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_price" }}</label>
+        <div class="flex items-center rounded bg-gray-300 mb-2">
+          <div class="flex-shrink-0 text-gray-700 px-3">€ / $</div>
+          <input x-model="checkoutData.amount" type="number" min="15" step="1" class="flex-grow min-w-0 rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_price_placeholder" }}" required/>
+          <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "donate_getkey_price_suffix" }}</div>
         </div>
-        <div class="w-full md:w-1/2 md:pl-3">
-          <p class="text-xs text-gray-600">{{ i18n "donate_getkey_amount_help" }}</p>
-        </div>
+        <p class="text-xs text-gray-600">{{ i18n "donate_getkey_price_help" }}</p>
       </div>
     </div>
     <div class="mb-4">
