@@ -22,7 +22,9 @@
       <p class="text-xs">
         <a class="text-primary no-underline hover:underline" href="#" x-on:click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
       </p>
-      <p x-show="showShaSignature" x-cloak class="text-sm mt-4"><code class="break-all text-sm bg-gray-300 rounded p-1">{{ .Site.Params.releases.android.checksum }}</code></p>
+      <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
+        <p><code class="break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
+      </div>
     </div>
   </div>
 </div>
