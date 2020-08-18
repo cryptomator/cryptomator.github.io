@@ -35,7 +35,7 @@ class DesktopLicense {
     }).done(data => {
       this.openPaddleCheckout(data.pay_link, locale);
     }).fail(xhr => {
-      this.onCheckoutFailed(xhr.responseJSON.message || 'Generating pay link failed.');
+      this.onCheckoutFailed(xhr.responseJSON?.message || 'Generating pay link failed.');
     });
   }
 
@@ -59,7 +59,12 @@ class DesktopLicense {
   getPaddleOrderDetails(checkoutId) {
     this._paddle.then(paddle => {
       paddle.Order.details(checkoutId, data => {
-        this._checkoutData.licenseKey = data.lockers[0].license_code;
+        let licenseKey = data.lockers?.[0]?.license_code;
+        if (licenseKey) {
+          this._checkoutData.licenseKey = licenseKey;
+        } else {
+          this._checkoutData.errorMessage = 'Retrieving donation key failed. Please check your emails instead.';
+        }
       });
     });
   }

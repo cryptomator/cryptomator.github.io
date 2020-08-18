@@ -89,7 +89,7 @@
                 <i class="fas fa-spinner fa-spin" x-show="oneTimePaymentStatus.inProgress" aria-hidden="true"></i>
               </button>
 
-              <p class="text-sm text-red-600 mt-1" x-text="oneTimePaymentStatus.errorMessage"></p>
+              <p class="text-sm text-red-600 mt-2" x-text="oneTimePaymentStatus.errorMessage"></p>
             </div>
 
             <p class="text-lg text-center mt-8" x-show="oneTimePaymentStatus.success">{{ ":+1:" | emojify }} {{ i18n "donate_creditcard_once_success" }}</p>
