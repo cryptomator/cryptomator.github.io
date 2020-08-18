@@ -181,8 +181,10 @@
 - id: downloads_thanks_notification_detail
   translation: "Hat nicht funktioniert? Klicke hier, um neu zu starten:"
 - id: downloads_thanks_sha256_signature
-  translation: "SHA256-Signatur anzeigen"
+  translation: "SHA256-Signatur"
 - id: downloads_thanks_pgp_signature
+  translation: "PGP-Signatur"
+- id: downloads_thanks_pgp_signature_download
   translation: "PGP-Signatur herunterladen"
 - id: downloads_thanks_title
   translation: "Danke, dass du dich für Cryptomator entschieden hast!"
