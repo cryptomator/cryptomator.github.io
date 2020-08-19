@@ -71,6 +71,12 @@ module.exports = {
             fontFamily: theme('fontFamily.headline'),
             fontWeight: theme('fontWeight.normal'),
           },
+          'code::before': {
+            content: 'unset',
+          },
+          'code::after': {
+            content: 'unset',
+          },
         },
       },
       sm: {
