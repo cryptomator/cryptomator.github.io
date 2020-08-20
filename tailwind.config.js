@@ -109,4 +109,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 }
