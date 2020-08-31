@@ -186,6 +186,8 @@
   translation: "PGP Signature"
 - id: downloads_thanks_pgp_signature_download
   translation: "Download PGP Signature"
+- id: downloads_thanks_pgp_key_fingerprint
+  translation: "Fingerprint"
 - id: downloads_thanks_title
   translation: "Thanks for choosing Cryptomator!"
 - id: downloads_thanks_getting_started_title

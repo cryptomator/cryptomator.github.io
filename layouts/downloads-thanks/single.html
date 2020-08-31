@@ -22,6 +22,7 @@
       <h3>{{ i18n "downloads_thanks_pgp_signature" }}</h3>
       <p><i class="fas fa-download fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature_download" }}: <a href="{{ $release.signatureUrl }}" target="_blank" rel="noopener">{{ $release.filename }}.asc</a></p>
       <p><pre class="text-left h-64">{{ partial "pgpkey-E6E6A235.asc" . }}</pre></p>
+      <p>{{ i18n "downloads_thanks_pgp_key_fingerprint" }}: <code class="break-all">58117AFA1F85B3EEC154677D615D449FE6E6A235</code></p>
     </div>
   </div>
 
