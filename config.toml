@@ -71,10 +71,10 @@ unsafe = true
       signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.8/cryptomator-1.5.8-x86_64.AppImage.asc"
       checksum = "10d942204bd699daa04df1f452385c8c4ec008e3cb8b55a62c78222e30061c4d"
     [params.releases.android]
-      version = "1.5.9"
-      filename = "Cryptomator-1.5.9.apk"
-      downloadUrl = "https://static.cryptomator.org/android/1.5.9/Cryptomator-1.5.9.apk"
-      checksum = "89bb6d2e11405a9114c373a5c958120829a00000c2f69153d5f5cdf9cead0349"
+      version = "1.5.10"
+      filename = "Cryptomator-1.5.10.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.5.10/Cryptomator-1.5.10.apk"
+      checksum = "7edd9443d06564bf6cdd86151355c2dee3fd783531952575d23ed07e3fe310e7"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"
