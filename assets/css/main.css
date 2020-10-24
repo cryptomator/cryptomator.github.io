@@ -4,5 +4,5 @@
 /* purgecss end ignore */
 @import "assets/css/custom.css";
 @import "assets/css/fonts.css";
-@import "node_modules/@fortawesome/fontawesome-pro/css/all";
+@import "node_modules/@skymatic/fontawesome-pro/css/all";
 @import "node_modules/tailwindcss/utilities.css";

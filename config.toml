@@ -32,7 +32,7 @@ enableemoji = true
     target = "assets"
 
   [[module.mounts]]
-    source = "node_modules/@fortawesome/fontawesome-pro/webfonts"
+    source = "node_modules/@skymatic/fontawesome-pro/webfonts"
     target = "static/webfonts"
 
   [[module.mounts]]
