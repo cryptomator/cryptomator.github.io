@@ -40,8 +40,8 @@ jobs:
 
     - name: NPM install
       run: |
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_AUTH_TOKEN }}"
+        npm config set "@skymatic:registry" https://npm.pkg.github.com/
+        npm config set '//npm.pkg.github.com/:_authToken' "${{ secrets.FONTAWESOME_AUTH_TOKEN }}"
         npm install
 
     - name: Build
