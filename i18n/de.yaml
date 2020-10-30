@@ -32,6 +32,8 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: android_getkey_checkout
   translation: "Zur Zahlung"
+- id: android_getkey_coupon
+  translation: "Verwende den Gutscheincode <code class=\"text-xs\">SPOOKYSALE</code> beim Bezahlvorgang, um 40% Rabatt zu erhalten!"
 
 - id: android_getkey_success
   translation: "Deine Zahlung war erfolgreich!"
