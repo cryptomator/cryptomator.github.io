@@ -5,7 +5,7 @@ title: "Datenschutzerklärung - Cryptomator für iOS"
 ## Allgemeines
 Cryptomator ist eine App zur clientseitigen Verschlüsselung von Cloud-Daten. Strenger Datenschutz ist daher für uns von wesentlicher Bedeutung.
 
-Nachfolgend wird erläutert welche und wie personenbezogene Daten durch die App erfasst und wie diese verarbeitet und weitergegeben werden. Sofern nachfolgend nicht anders erläutert, findet die Verarbeitung von Daten nur lokal auf dem jeweiligen Gerät statt. Eine Übertragung an Server der Skymatuc UG oder Dritte erfolgt nicht.
+Nachfolgend wird erläutert welche und wie personenbezogene Daten durch die App erfasst und wie diese verarbeitet und weitergegeben werden. Sofern nachfolgend nicht anders erläutert, findet die Verarbeitung von Daten nur lokal auf dem jeweiligen Gerät statt. Eine Übertragung an Server der Skymatic GmbH oder Dritte erfolgt nicht.
 
 ## Anbieter
 Die App Cryptomator wird von der Skymatic GmbH betrieben und angeboten:
