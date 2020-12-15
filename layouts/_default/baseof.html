@@ -63,5 +63,7 @@
 
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}"></script>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;3a52d186f8204763ab8c6efbbec09c3e&quot;}"></script>
   </body>
 </html>
