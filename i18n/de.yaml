@@ -69,7 +69,7 @@
 - id: donate_anon_feature_2
   translation: "Bevorzugte Zahlungsmethode auswählen"
 - id: donate_anon_feature_3
-  translation: "Pay what you want"
+  translation: "Kein Spendenschlüssel"
 - id: donate_anon_show_form_button
   translation: "Weiter"
 
