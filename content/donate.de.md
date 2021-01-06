@@ -1,7 +1,7 @@
 ---
 title: "Spenden"
 type: donate
-description: "Cryptomator wird als Open-Source-Projekt trotz des hohen Entwicklungs­aufwands kostenlos bereitgestellt und ist daher auf Spenden angewiesen. Wenn du auch an der Weiterentwicklung interessiert bist, kannst du uns mit dem Kauf eines Spendenschlüssels oder mit einer Spende beliebiger Höhe unterstützen."
+description: "Wenn du an der Weiterentwicklung von Cryptomator interessiert bist, kannst du uns mit dem Kauf eines Spendenschlüssels oder mit einer Spende beliebiger Höhe unterstützen. Vielen Dank!"
 paypalHostedButtonId: NUQ7XQSWMQEGS
 aliases: ["/de/store/desktop"]
 ---
