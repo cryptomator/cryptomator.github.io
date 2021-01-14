@@ -62,10 +62,8 @@ The personal data of the data subject will be deleted or blocked as soon as the 
 <h2 id="logfiles">3. Provision of the Website and Creation of Log Files</h2>
 
 ### 3.1 Description and Scope of Data Processing
-Each time our website is accessed, our system automatically collects data and information from the computer system of the calling computer. The following data is collected:
-
-Bei jedem Aufruf unserer Internetseite erfasst unser System automatisiert Daten und Informationen vom Computersystem des aufrufenden Rechners. 
-Folgende Daten werden hierbei erhoben:
+Each time our website is accessed, our system automatically collects data and information from the computer system of the calling computer.
+The following data is collected:
 
 *	browser name and version
 *	the user's operating system
