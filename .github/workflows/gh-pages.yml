@@ -52,5 +52,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
-        publish_branch: master
+        publish_branch: main
         cname: cryptomator.org
