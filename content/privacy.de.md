@@ -209,7 +209,7 @@ Bei Nutzung einer der Cryptomator-Anwendungen für Desktop, iOS oder Android kö
 * Softwareversion
 * Uhrzeit ausgeführter Aktionen innerhalb der Anwendung
 * Aufgetretene Fehlermeldungen und Warnungen
-* Ggf. Dateipfade (bei aktiviertem Debug-Mode)
+* Ggf. Dateipfade (bei aktiviertem Debug-Modus)
 
 Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des Nutzers findet nicht statt.
 

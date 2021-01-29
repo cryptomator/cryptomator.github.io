@@ -194,16 +194,16 @@ The transfer of data is mandatory for the fulfilment of contracts or for pre-con
 ## 8. Using the Cryptomator Application {#app}
 
 ### 8.1 Description and Scope of Data Processing
-When using one of the Cryptomator applications for desktop operating systems, iOS or Android, Data can be processed by us. This is the case when using one of the following functions:
+When using one of the Cryptomator applications for desktop operating systems, iOS or Android, data can be processed by us. This is the case when using one of the following functions:
 
-**Update-Check (Desktop, Android):** If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
+**Update Check (Desktop, Android):** If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
 
 * Operating system version
 * Software version
 * Time of the request
 * IP address
 
-**Sending of Error Protocols:** Locally created log file can help identifying problems. If the user decides to send one of these files via E-Mail, it may contain the following data:
+**Sending of Error Protocols:** Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
 
 * Operating system version
 * Software version
@@ -217,7 +217,7 @@ This data will not be stored together with other personal data of the user.
 The legal basis for the temporary storage of data is Art. 6 para. 1 lit. a GDPR as well as Art. 6 para. 1 lit. f GDPR.
 
 ### 8.3 Purpose of Data Processing
-The update check is necessary to inform the user about (security-relevant or other) updates. This serves both the continuously necessary adaptation to the operating environment, protects the user from problems and incompatibilities and enables him to use new program features.
+The update check is necessary to inform the user about (security-relevant or other) updates. This serves both the continuously necessary adaptation to the operating environment, protects the user from problems and incompatibilities, and enables him to use new program features.
 
 When sending an error log, it may contain data that you have customized (e.g., file names), that could identify you, or that may otherwise be sensitive to you.
 
