@@ -1,8 +1,9 @@
 ---
 title: "Privacy Policy"
+aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: April 2020_
+_Effective date: January 2021_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -15,15 +16,11 @@ This privacy policy consists of the following sections:
 5. [Email Contact](#email)
 6. [Use in the Course of Online Orders (E-Commerce)](#payments)
 7. [Disclosure of Personal Data to Third Parties](#thirdparty)
-8. [Rights of the Affected Person](#rights)
-
-Furthermore, we'd like to refer to our separate privacy policies for the mobile apps:
-
-- [Privacy Policy - Cryptomator for iOS](/privacy-ios/)
-- [Privacy Policy - Cryptomator for Android](/privacy-android/)
+8. [Using the Cryptomator Application](#app)
+9. [Rights of the Affected Person](#rights)
 
 
-<h2 id="contact">1. Name and address of the responsible company</h2>
+## 1. Name and address of the responsible company {#contact}
 
 The responsible company within the meaning of the General Data Protection Regulation (GDPR) and other nation data protection laws of the member states as well as other data protection regulations is:
 
@@ -40,7 +37,7 @@ Contact:
 [privacy@cryptomator.org](mailto:privacy@cryptomator.org)
 
 
-<h2 id="general">2. General Information on Data Processing</h2>
+## 2. General Information on Data Processing {#general}
 
 ###	2.1 Extent of Processing of Personal Data
 As a matter of principle, we collect and process personal data of our users only to the extent necessary to provide a functional website and our contents and services. The collection and use of personal data of our users is regularly only carried out with the consent of the user. An exception is made in cases where prior consent cannot be obtained for factual reasons and the processing of the data is permitted by law.
@@ -59,7 +56,7 @@ If processing is necessary to safeguard the legitimate interests of our company 
 ### 2.3 Data Deletion and Storage Duration
 The personal data of the data subject will be deleted or blocked as soon as the purpose of the storage no longer applies. Furthermore, data may be stored if this has been provided for by the European or national legislator in EU ordinances, laws or other regulations to which the person responsible is subject. Data will also be blocked or deleted when a storage period prescribed by the above-mentioned standards expires, unless there is a need to continue storing the data for the purpose of concluding or fulfilling a contract.
 
-<h2 id="logfiles">3. Provision of the Website and Creation of Log Files</h2>
+## 3. Provision of the Website and Creation of Log Files {#logfiles}
 
 ### 3.1 Description and Scope of Data Processing
 Each time our website is accessed, our system automatically collects data and information from the computer system of the calling computer.
@@ -94,7 +91,7 @@ If the data is stored in log files, this is the case after 7 days at the latest.
 ### 3.5 Opposition and Removal Possibility
 The collection of data for the provision of the website and the storage of the data in log files is essential for the operation of the website. Consequently, there is no possibility of objection on the part of the user.
 
-<h2 id="cookies">4. Use of Cookies</h2>
+## 4. Use of Cookies {#cookies}
 
 ### 4.1 Description and Scope of Data Processing
 Our website only uses technically necessary cookies. Cookies are text files that are stored in the internet browser or by the internet browser on the user's computer system. If a user visits a website, a cookie may be stored on the user's operating system. This cookie contains a characteristic string of characters that enables the browser to be uniquely identified when the website is reopened.
@@ -111,7 +108,7 @@ This purpose also include our legitimate interest in data processing in accordan
 Cookies are stored on the user's computer and transmitted by the user to our site. Therefore, as a user, you have full control over the use of cookies. By changing the settings in your internet browser, you can disable or restrict the transmission of cookies. Already stored cookies can be deleted at any time. This can also be done automatically. If cookies for our website are disabled, it may not be possible to use all the functions of the website to their full extent.
 
 
-<h2 id="email">5. Email Contact</h2>
+## 5. Email Contact {#email}
 
 ### 5.1 Description and Scope of Data Processing
 It is possible to contact us via the provided email address. In this case, the user's personal data transmitted with the email will be stored.
@@ -137,7 +134,7 @@ You can send your objection informally at any time to [privacy@cryptomator.org](
 All personal data stored in the course of contacting will be deleted in this case.
 
 
-<h2 id="payments">6. Use in the Course of Online Orders (E-Commerce)</h2>
+## 6. Use in the Course of Online Orders (E-Commerce) {#payments}
 
 ### 6.1 Description and Scope of Data Processing
 In case of an online order via our online shop the following data is collected:
@@ -163,14 +160,12 @@ The data is used exclusively to process the order you have placed. In case of an
 The data will be deleted as soon as they are no longer necessary for the purpose for which they were collected. In the case of the collection of data for order processing, this is the case as soon as the order is completely processed. Even after conclusion of the contract, it may still be necessary to store personal data of the contractual partner in order to comply with contractual or legal obligations.
 
 ### 6.5 Opposition and Removal Possibility
-Die Erfassung der Daten zur Bestellabwicklung und die Speicherung der Daten zu demselben Zweck ist zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
-
 The collection of data for order processing and the storage of data for the same purpose is mandatory. Consequently, there is no possibility of objection on the part of the user.
 
 
-<h2 id="thirdparty">7. Disclosure of Personal Data to Third Parties</h2>
+## 7. Disclosure of Personal Data to Third Parties {#thirdparty}
 
-### 7.1 Description and Scope of Data Processing
+### 7.1 Description and Scope of Data Disclosure
 In order to fulfil our contractual obligations, it is sometimes unavoidable that certain data is also passed on to third parties. In each case, this serves only to fulfil a contract or to carry out pre-contractual measures. Details can be found in the following table:
 
 | Category          | Disclosed data                                                             | Purpose                                                              |
@@ -184,10 +179,10 @@ For the payment process, the user may be redirected to the website of the paymen
 * CoinPayments (CoinPayments Inc., Hodltech OÜ, Tornimäe 5, 10145 Tallinn, Estland). Please note the relevant privacy policy at: {{< extlink "https://www.coinpayments.net/help-privacy" "https://www.coinpayments.net/help-privacy" >}}. 
 * Paddle (Paddle Payments Ltd., Core B, Block 71, The Plaza, Park West 12 Dublin, Irland). Please note the relevant privacy policy at: {{< extlink "https://paddle.com/privacy/" "https://paddle.com/privacy/" >}}.
 
-### 7.2 Legal Basis for Data Processing
+### 7.2 Legal Basis for Data Disclosure
 Legal basis for the processing of the data is in the presence of the consent of the user Art. 6 para. 1 lit. a GDPR. If the disclosure serves the fulfilment of a contract to which the user is a party or the implementation of pre-contractual measures, the additional legal basis for the processing of the data is Art. 6 para. 1 lit. b GDPR. Furthermore, Art. 6 para. 1 lit. f GDPR is also an additional legal basis.
 
-### 7.3 Purpose of Data Processing
+### 7.3 Purpose of Data Disclosure
 The passing on serves the fulfilment of our contractual and pre-contractual obligations. These purposes are also our legitimate interest in accordance with Art. 6 para. 1 lit. f GDPR.
 
 ### 7.4 Opposition and Removal Possibility
@@ -196,29 +191,67 @@ Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragl
 The transfer of data is mandatory for the fulfilment of contracts or for pre-contractual measures. Consequently, there is no possibility of objection on the part of the user.
 
 
-<h2 id="rights">8. Rights of the Affected Person</h2>
+## 8. Using the Cryptomator Application {#app}
+
+### 8.1 Description and Scope of Data Processing
+When using one of the Cryptomator applications for desktop operating systems, iOS or Android, data can be processed by us. This is the case when using one of the following functions:
+
+**Update Check (Desktop, Android):** If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
+
+* Operating system version
+* Software version
+* Time of the request
+* IP address
+
+**Sending of Error Protocols:** Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
+
+* Operating system version
+* Software version
+* Times of triggered application functions
+* Error messages and warnings
+* File paths (if running in debug mode)
+
+This data will not be stored together with other personal data of the user.
+
+### 8.2 Legal Basis for Data Processing
+The legal basis for the temporary storage of data is Art. 6 para. 1 lit. a GDPR as well as Art. 6 para. 1 lit. f GDPR.
+
+### 8.3 Purpose of Data Processing
+The update check is necessary to inform the user about (security-relevant or other) updates. This serves both the continuously necessary adaptation to the operating environment, protects the user from problems and incompatibilities, and enables him to use new program features.
+
+When sending an error log, it may contain data that you have customized (e.g., file names), that could identify you, or that may otherwise be sensitive to you.
+
+Log files are stored in order to evaluate constellations of operating system and program versions used, to detect problems and to offer updates if necessary. This purpose also include our legitimate interest in data processing in accordance with Art. 6 para. 1 lit. f GDPR.
+
+### 8.4 Duration of Storage
+The data will be deleted as soon as it is no longer required for the purpose for which it has been collected.
+
+If the data is stored in log files, this is the case after 30 days at the latest. Storage beyond this is possible. In this case, the user's personal data is deleted or anonymized so that it is no longer possible to assign the calling client.
+
+
+## 9. Rights of the Affected Person {#rights}
 
 If your personal data is processed, you are affected according to GDPR and you have the following rights to the person responsible:
 
-###	8.1 Right to information - Art. 15 GDPR
+###	9.1 Right to information - Art. 15 GDPR
 The right of access gives the data subject a full insight into the data concerning him or her and some other important criteria, such as the purposes of processing or the duration of storage. The exceptions to this right regulated in § 34 German Federal Data Protection Act (BDSG) apply.
 
-### 8.2 Right to rectification - Art. 16 GDPR
+### 9.2 Right to rectification - Art. 16 GDPR
 The right of rectification includes the possibility for the data subject to have incorrect personal data concerning him corrected.
 
-### 8.3 Right to Erasure - Art. 17 GDPR
+### 9.3 Right to Erasure - Art. 17 GDPR
 The right to erasure includes the possibility for the data subject to have data deleted by the person responsible. However, this is only possible if the personal data concerning him/her is no longer necessary, is processed unlawfully or if his/her consent to this has been revoked. The exceptions to this right regulated in § 35 BDSG apply.
 
-### 8.4 Right to Restriction of Processing - Art. 18 GDPR
+### 9.4 Right to Restriction of Processing - Art. 18 GDPR
 The right to restriction of processing includes the possibility for the data subject to prevent further processing of personal data relating to him/her for the time being. A restriction occurs mainly in the examination phase of the data subject's exercise of other rights.
 
-### 8.5 Right to Data Portability - Art. 20 GDPR
+### 9.5 Right to Data Portability - Art. 20 GDPR
 The right to data portability includes the possibility for the data subject to obtain the personal data concerning him/her from the data controller in a common machine-readable format, with the possibility of having them transferred to another data controller, if necessary. Pursuant to Art. 20 Paragraph 3 Sentence 2 GDPR, however, this right does not apply to processing necessary for the performance of a task carried out in the public interest.
 
-### 8.6 Right to Object - Art. 21 GDPR
+### 9.6 Right to Object - Art. 21 GDPR
 The right to object includes the possibility for data subjects to object, in a specific situation, to the further processing of their personal data, insofar as this is justified by the performance of public tasks or by public or private interests. The exceptions to this right regulated in Section § 36 BDSG apply.
 
-### 8.7 Right to Complain to a Supervisory Authority
+### 9.7 Right to Complain to a Supervisory Authority
 Without prejudice to any other administrative or judicial remedy, you shall have the right to complain to a supervisory authority, in particular in the member state of your residence, place of work or place of alleged infringement, if you believe that the processing of the personal data concerning you is against the GDPR violates.
 
 The supervisory authority to which the complaint has been submitted shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy pursuant to Article 78 of the GDPR.
