@@ -1,8 +1,9 @@
 ---
 title: "Datenschutzerklärung"
+aliases: ["/de/privacy-ios", "/de/privacy-android"]
 ---
 
-_Stand: April 2020_
+_Stand: Januar 2021_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
@@ -15,12 +16,8 @@ Diese Datenschutzerklärung strukturiert sich in folgende Abschnitte:
 5. [E-Mail-Kontaktmöglichkeit](#email)
 6. [Verwendung im Zuge von Online-Bestellungen (E-Commerce)](#payments)
 7. [Weitergabe personenbezogener Daten an Dritte](#thirdparty)
-8. [Rechte der betroffenen Person](#rights)
-
-Des Weiteren möchten wir auch auf die gesonderten Datenschutzerklärungen für unsere mobilen Apps verweisen:
-
-- [Datenschutzerklärung - Cryptomator für iOS](/de/privacy-ios/)
-- [Datenschutzerklärung - Cryptomator für Android](/de/privacy-android/)
+8. [Nutzung der Anwendung Cryptomator](#app)
+9. [Rechte der betroffenen Person](#rights)
 
 
 <h2 id="contact">1. Name und Anschrift der Verantwortlichen</h2>
@@ -187,36 +184,74 @@ Für den Bezahlvorgang wird der Nutzer gegebenenfalls auf die Webseite des von i
 ### 7.2 Rechtsgrundlage für die Datenweitergabe
 Rechtsgrundlage für die Verarbeitung der Daten ist bei Vorliegen einer Einwilligung des Nutzers Art. 6 Abs. 1 lit. a DSGVO. Dient die Weitergabe der Erfüllung eines Vertrages, dessen Vertragspartei der Nutzer ist oder der Durchführung vorvertraglicher Maßnahmen, so ist zusätzliche Rechtsgrundlage für die Verarbeitung der Daten Art. 6 Abs. 1 lit. b DSGVO. Darüber hinaus ist Art. 6 Abs. 1 lit. f DSGVO ebenfalls zusätzlich Rechtsgrundlage.
 
-### 7.3 Zweck der Datenverarbeitung
+### 7.3 Zweck der Datenweitergabe
 Die Weitergabe dient der Erfüllung unserer vertraglichen und vorvertraglichen Pflichten. In diesen Zwecken liegt zugleich unser berechtigtes Interesse gem. Art. 6 Abs. 1 lit. f DSGVO.
 
 ### 7.4 Widerspruchs- und Beseitigungsmöglichkeit
 Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragliche Maßnahmen zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
 
 
-<h2 id="rights">8. Rechte der betroffenen Person</h2>
+<h2 id="app">8. Nutzung der Anwendung Cryptomator</h2>
+
+### 8.1 Beschreibung und Umfang der Datenweitergabe
+Bei Nutzung einer der Cryptomator-Anwendungen für Desktop, iOS oder Android können Daten durch uns verarbeitet werden. Dies kann durch die Nutzung einer der nachfolgendend genannten Funktionen erfolgen.
+
+**Update-Check (Desktop, Android):** Falls der Nutzer manuell oder per automatischem Intervall die Update-Prüfung nutzt, stellt die Anwendung eine Verbindung zu einem Server her, um die neueste Version abzufragen. Dabei werden folgende Daten übermittelt:
+
+* Betriebssystem
+* Softwareversion
+* Uhrzeit der Anfrage
+* IP-Adresse
+
+**Übermittlung von Fehlerprotokollen:** Lokal auf dem Gerät des Nutzers erstellte Log-Dateien können bei der Fehlerbehebung behilflich sein. Sendet der Nutzer eine dieser Dateien per E-Mail, können folgende Daten übermittelt werden:
+
+* Betriebssystem
+* Softwareversion
+* Uhrzeit ausgeführter Aktionen innerhalb der Anwendung
+* Aufgetretene Fehlermeldungen und Warnungen
+* Ggf. Dateipfade (bei aktiviertem Debug-Mode)
+
+Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des Nutzers findet nicht statt.
+
+### 8.2 Rechtsgrundlage für die Datenverarbeitung
+Rechtsgrundlage für die vorübergehende Speicherung der Daten ist bei Einwilligung Art. 6 Abs. 1 lit. a DSGVO, zudem Art. 6 Abs. 1 lit. f DSGVO.
+
+### 8.3 Zweck der Datenverarbeitung
+Der Update-Check ist notwendig, um den Nutzer über (u.a. sicherheitsrelevante) Aktualisierungen zu informieren. Dies dient sowohl der laufend notwendigen Anpassung an die Betriebsumgebgung, schützt den Anwender vor Problemen und Inkompatibilitäten und ermöglicht ihm Funktionserweiterungen zu nutzen.
+
+Bei der Übermittlung des Fehlerprotokolls können darin Daten enthalten sein, die Sie selbst angepasst haben (z.B. Dateinamen), mit denen Sie identifiziert werden könnten oder die auf sonstige Weise für Sie sensibel sein können.
+
+Die Speicherung in Logfiles erfolgt, um Konstellationen aus eingesetzten Betriebssystem- und Programmversionen auszuwerten, Probleme aufzudecken und ggfs. Updates anzubieten. In diesen Zwecken liegt auch unser berechtigtes Interesse an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DSGVO.
+
+### 8.4 Dauer der Speicherung
+Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind.
+
+Im Falle der Speicherung der Daten in Logfiles ist dies nach spätestens 30 Tagen der Fall. Eine darüberhinausgehende Speicherung ist möglich. In diesem Fall werden die personenbezogenen Daten der Nutzer gelöscht oder verfremdet, sodass eine Zuordnung des aufrufenden Clients nicht mehr möglich ist.
+
+
+<h2 id="rights">9. Rechte der betroffenen Person</h2>
 
 Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener i.S.d. DSGVO und es stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:
 
-###	8.1 Recht auf Auskunft - Art. 15 DSGVO
+###	9.1 Recht auf Auskunft - Art. 15 DSGVO
 Mit dem Recht auf Auskunft erhält der Betroffene eine umfassende Einsicht in die ihn angehenden Daten und einige andere wichtige Kriterien, wie beispielsweise die Verarbeitungszwecke oder die Dauer der Speicherung. Es gelten die in § 34 BDSG geregelten Ausnahmen von diesem Recht.
 
-### 8.2 Recht auf Berichtigung - Art. 16 DSGVO
+### 9.2 Recht auf Berichtigung - Art. 16 DSGVO
 Das Recht auf Berichtigung beinhaltet die Möglichkeit für den Betroffenen, unrichtige ihn angehende personenbezogene Daten korrigieren zu lassen.
 
-### 8.3 Recht auf Löschung - Art. 17 DSGVO
+### 9.3 Recht auf Löschung - Art. 17 DSGVO
 Das Recht auf Löschung beinhaltet die Möglichkeit für den Betroffenen, Daten beim Verantwortlichen löschen zu lassen. Dies ist allerdings nur dann möglich, wenn die ihn angehenden personenbezogenen Daten nicht mehr notwendig sind, rechtswidrig verarbeitet werden oder eine diesbezügliche Einwilligung widerrufen wurde. Es gelten die in § 35 BDSG geregelten Ausnahmen von diesem Recht.
 
-### 8.4 Recht auf Einschränkung der Verarbeitung - Art. 18 DSGVO
+### 9.4 Recht auf Einschränkung der Verarbeitung - Art. 18 DSGVO
 Das Recht auf Einschränkung der Verarbeitung beinhaltet die Möglichkeit für den Betroffenen, eine weitere Verarbeitung der ihn angehenden personenbezogenen Daten vorerst zu verhindern. Eine Einschränkung tritt vor allem in der Prüfungsphase anderer Rechtewahrnehmungen durch den Betroffenen ein.
 
-### 8.5 Recht auf Datenübertragbarkeit - Art. 20 DSGVO
+### 9.5 Recht auf Datenübertragbarkeit - Art. 20 DSGVO
 Das Recht auf Datenübertragbarkeit beinhaltet die Möglichkeit für den Betroffenen, die ihn angehenden personenbezogenen Daten in einem gängigen, maschinenlesbaren Format vom Verantwortlichen zu erhalten, um sie ggf. an einen anderen Verantwortlichen weiterleiten zu lassen. Gemäß Art. 20 Abs. 3 Satz 2 DSGVO steht dieses Recht aber dann nicht zur Verfügung, wenn die Datenverarbeitung der Wahrnehmung öffentlicher Aufgaben dient.
 
-### 8.6 Recht auf Widerspruch - Art. 21 DSGVO
+### 9.6 Recht auf Widerspruch - Art. 21 DSGVO
 Das Recht auf Widerspruch beinhaltet die Möglichkeit für Betroffene, in einer besonderen Situation der weiteren Verarbeitung ihrer personenbezogenen Daten zu widersprechen, soweit diese durch die Wahrnehmung öffentlicher Aufgaben oder öffentlicher sowie privater Interessen gerechtfertigt ist. Es gelten die in § 36 BDSG geregelten Ausnahmen von diesem Recht.
 
-### 8.7 Recht auf Beschwerde bei einer Aufsichtsbehörde
+### 9.7 Recht auf Beschwerde bei einer Aufsichtsbehörde
 Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, zu, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.
 
 Die Aufsichtsbehörde, bei der die Beschwerde eingereicht wurde, unterrichtet den Beschwerdeführer über den Stand und die Ergebnisse der Beschwerde einschließlich der Möglichkeit eines gerichtlichen Rechtsbehelfs nach Art. 78 DSGVO.
