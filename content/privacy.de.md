@@ -20,7 +20,7 @@ Diese Datenschutzerklärung strukturiert sich in folgende Abschnitte:
 9. [Rechte der betroffenen Person](#rights)
 
 
-<h2 id="contact">1. Name und Anschrift der Verantwortlichen</h2>
+## 1. Name und Anschrift der Verantwortlichen {#contact}
 
 Die Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze der Mitgliedstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist:
 
@@ -36,7 +36,7 @@ Kontakt:
 [privacy@cryptomator.org](mailto:privacy@cryptomator.org)
 
 
-<h2 id="general">2. Allgemeines zur Datenverarbeitung</h2>
+## 2. Allgemeines zur Datenverarbeitung {#general}
 
 ###	2.1 Umfang der Verarbeitung personenbezogener Daten
 Wir erheben und verwenden personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Erhebung und Verwendung personenbezogener Daten unserer Nutzer erfolgt regelmäßig nur nach Einwilligung des Nutzers. Eine Ausnahme gilt in solchen Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist.
@@ -56,7 +56,7 @@ Ist die Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehm
 Die personenbezogenen Daten der betroffenen Person werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt. Eine Speicherung kann darüber hinaus dann erfolgen, wenn dies durch den europäischen oder nationalen Gesetzgeber in unionsrechtlichen Verordnungen, Gesetzen oder sonstigen Vorschriften, denen der Verantwortliche unterliegt, vorgesehen wurde. Eine Sperrung oder Löschung der Daten erfolgt auch dann, wenn eine durch die genannten Normen vorgeschriebene Speicherfrist abläuft, es sei denn, dass eine Erforderlichkeit zur weiteren Speicherung der Daten für einen Vertragsabschluss oder eine Vertragserfüllung besteht.
 
 
-<h2 id="logfiles">3. Bereitstellung der Webseite und Erstellung von Logfiles</h2>
+## 3. Bereitstellung der Webseite und Erstellung von Logfiles {#logfiles}
 
 ### 3.1 Beschreibung und Umfang der Datenverarbeitung
 Bei jedem Aufruf unserer Internetseite erfasst unser System automatisiert Daten und Informationen vom Computersystem des aufrufenden Rechners. 
@@ -92,7 +92,7 @@ Im Falle der Speicherung der Daten in Logfiles ist dies nach spätestens 7 Tagen
 Die Erfassung der Daten zur Bereitstellung der Website und die Speicherung der Daten in Logfiles ist für den Betrieb der Internetseite zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
 
 
-<h2 id="cookies">4. Verwendung von Cookies</h2>
+## 4. Verwendung von Cookies {#cookies}
 
 ### 4.1 Beschreibung und Umfang der Datenverarbeitung
 Unsere Webseite verwendet ausschließlich technisch notwendige Cookies. Bei Cookies handelt es sich um Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Ruft ein Nutzer eine Website auf, so kann ein Cookie auf dem Betriebssystem des Nutzers gespeichert werden. Dieser Cookie enthält eine charakteristische Zeichenfolge, die eine eindeutige Identifizierung des Browsers beim erneuten Aufrufen der Website ermöglicht.
@@ -109,7 +109,7 @@ In diesen Zwecken liegt auch unser berechtigtes Interesse in der Verarbeitung de
 Cookies werden auf dem Rechner des Nutzers gespeichert und von diesem an unserer Seite übermittelt. Daher haben Sie als Nutzer auch die volle Kontrolle über die Verwendung von Cookies. Durch eine Änderung der Einstellungen in Ihrem Internetbrowser können Sie die Übertragung von Cookies deaktivieren oder einschränken. Bereits gespeicherte Cookies können jederzeit gelöscht werden. Dies kann auch automatisiert erfolgen. Werden Cookies für unsere Website deaktiviert, können möglicherweise nicht mehr alle Funktionen der Website vollumfänglich genutzt werden.
 
 
-<h2 id="email">5. E-Mail-Kontaktmöglichkeit</h2>
+## 5. E-Mail-Kontaktmöglichkeit {#email}
 
 ### 5.1 Beschreibung und Umfang der Datenverarbeitung
 Eine Kontaktaufnahme mit uns ist über die bereitgestellte E-Mail-Adresse möglich. In diesem Fall werden die mit der E-Mail übermittelten personenbezogenen Daten des Nutzers gespeichert.
@@ -135,7 +135,7 @@ Den Widerspruch können Sie jederzeit formlos an [privacy@cryptomator.org](mailt
 Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme gespeichert wurden, werden in diesem Fall gelöscht.
 
 
-<h2 id="payments">6. Verwendung im Zuge von Online-Bestellungen (E-Commerce)</h2>
+## 6. Verwendung im Zuge von Online-Bestellungen (E-Commerce) {#payments}
 
 ### 6.1 Beschreibung und Umfang der Datenverarbeitung
 Im Falle einer Online-Bestellung über unseren Online-Shop werden folgende Daten erhoben:
@@ -164,7 +164,7 @@ Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erh
 Die Erfassung der Daten zur Bestellabwicklung und die Speicherung der Daten zu demselben Zweck ist zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
 
 
-<h2 id="thirdparty">7. Weitergabe personenbezogener Daten an Dritte</h2>
+## 7. Weitergabe personenbezogener Daten an Dritte {#thirdparty}
 
 ### 7.1 Beschreibung und Umfang der Datenweitergabe
 Zur Erfüllung unserer vertraglichen Verpflichtungen ist es teilweise unumgänglich, dass bestimmte Daten auch an Dritte weitergegeben werden. Dies dient jeweils nur zur Erfüllung eines Vertrages oder zur Durchführung vorvertraglicher Maßnahmen. Einzelheiten können Sie der folgenden Tabelle entnehmen:
@@ -191,7 +191,7 @@ Die Weitergabe dient der Erfüllung unserer vertraglichen und vorvertraglichen P
 Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragliche Maßnahmen zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
 
 
-<h2 id="app">8. Nutzung der Anwendung Cryptomator</h2>
+## 8. Nutzung der Anwendung Cryptomator {#app}
 
 ### 8.1 Beschreibung und Umfang der Datenweitergabe
 Bei Nutzung einer der Cryptomator-Anwendungen für Desktop, iOS oder Android können Daten durch uns verarbeitet werden. Dies kann durch die Nutzung einer der nachfolgendend genannten Funktionen erfolgen.
@@ -229,7 +229,7 @@ Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erh
 Im Falle der Speicherung der Daten in Logfiles ist dies nach spätestens 30 Tagen der Fall. Eine darüberhinausgehende Speicherung ist möglich. In diesem Fall werden die personenbezogenen Daten der Nutzer gelöscht oder verfremdet, sodass eine Zuordnung des aufrufenden Clients nicht mehr möglich ist.
 
 
-<h2 id="rights">9. Rechte der betroffenen Person</h2>
+## 9. Rechte der betroffenen Person {#rights}
 
 Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener i.S.d. DSGVO und es stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:
 

@@ -20,7 +20,7 @@ This privacy policy consists of the following sections:
 9. [Rights of the Affected Person](#rights)
 
 
-<h2 id="contact">1. Name and address of the responsible company</h2>
+## 1. Name and address of the responsible company {#contact}
 
 The responsible company within the meaning of the General Data Protection Regulation (GDPR) and other nation data protection laws of the member states as well as other data protection regulations is:
 
@@ -37,7 +37,7 @@ Contact:
 [privacy@cryptomator.org](mailto:privacy@cryptomator.org)
 
 
-<h2 id="general">2. General Information on Data Processing</h2>
+## 2. General Information on Data Processing {#general}
 
 ###	2.1 Extent of Processing of Personal Data
 As a matter of principle, we collect and process personal data of our users only to the extent necessary to provide a functional website and our contents and services. The collection and use of personal data of our users is regularly only carried out with the consent of the user. An exception is made in cases where prior consent cannot be obtained for factual reasons and the processing of the data is permitted by law.
@@ -56,7 +56,7 @@ If processing is necessary to safeguard the legitimate interests of our company 
 ### 2.3 Data Deletion and Storage Duration
 The personal data of the data subject will be deleted or blocked as soon as the purpose of the storage no longer applies. Furthermore, data may be stored if this has been provided for by the European or national legislator in EU ordinances, laws or other regulations to which the person responsible is subject. Data will also be blocked or deleted when a storage period prescribed by the above-mentioned standards expires, unless there is a need to continue storing the data for the purpose of concluding or fulfilling a contract.
 
-<h2 id="logfiles">3. Provision of the Website and Creation of Log Files</h2>
+## 3. Provision of the Website and Creation of Log Files {#logfiles}
 
 ### 3.1 Description and Scope of Data Processing
 Each time our website is accessed, our system automatically collects data and information from the computer system of the calling computer.
@@ -91,7 +91,7 @@ If the data is stored in log files, this is the case after 7 days at the latest.
 ### 3.5 Opposition and Removal Possibility
 The collection of data for the provision of the website and the storage of the data in log files is essential for the operation of the website. Consequently, there is no possibility of objection on the part of the user.
 
-<h2 id="cookies">4. Use of Cookies</h2>
+## 4. Use of Cookies {#cookies}
 
 ### 4.1 Description and Scope of Data Processing
 Our website only uses technically necessary cookies. Cookies are text files that are stored in the internet browser or by the internet browser on the user's computer system. If a user visits a website, a cookie may be stored on the user's operating system. This cookie contains a characteristic string of characters that enables the browser to be uniquely identified when the website is reopened.
@@ -108,7 +108,7 @@ This purpose also include our legitimate interest in data processing in accordan
 Cookies are stored on the user's computer and transmitted by the user to our site. Therefore, as a user, you have full control over the use of cookies. By changing the settings in your internet browser, you can disable or restrict the transmission of cookies. Already stored cookies can be deleted at any time. This can also be done automatically. If cookies for our website are disabled, it may not be possible to use all the functions of the website to their full extent.
 
 
-<h2 id="email">5. Email Contact</h2>
+## 5. Email Contact {#email}
 
 ### 5.1 Description and Scope of Data Processing
 It is possible to contact us via the provided email address. In this case, the user's personal data transmitted with the email will be stored.
@@ -134,7 +134,7 @@ You can send your objection informally at any time to [privacy@cryptomator.org](
 All personal data stored in the course of contacting will be deleted in this case.
 
 
-<h2 id="payments">6. Use in the Course of Online Orders (E-Commerce)</h2>
+## 6. Use in the Course of Online Orders (E-Commerce) {#payments}
 
 ### 6.1 Description and Scope of Data Processing
 In case of an online order via our online shop the following data is collected:
@@ -163,7 +163,7 @@ The data will be deleted as soon as they are no longer necessary for the purpose
 The collection of data for order processing and the storage of data for the same purpose is mandatory. Consequently, there is no possibility of objection on the part of the user.
 
 
-<h2 id="thirdparty">7. Disclosure of Personal Data to Third Parties</h2>
+## 7. Disclosure of Personal Data to Third Parties {#thirdparty}
 
 ### 7.1 Description and Scope of Data Disclosure
 In order to fulfil our contractual obligations, it is sometimes unavoidable that certain data is also passed on to third parties. In each case, this serves only to fulfil a contract or to carry out pre-contractual measures. Details can be found in the following table:
@@ -191,7 +191,7 @@ Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragl
 The transfer of data is mandatory for the fulfilment of contracts or for pre-contractual measures. Consequently, there is no possibility of objection on the part of the user.
 
 
-<h2 id="app">8. Using the Cryptomator Application</h2>
+## 8. Using the Cryptomator Application {#app}
 
 ### 8.1 Description and Scope of Data Processing
 When using one of the Cryptomator applications for desktop operating systems, iOS or Android, Data can be processed by us. This is the case when using one of the following functions:
@@ -229,7 +229,7 @@ The data will be deleted as soon as it is no longer required for the purpose for
 If the data is stored in log files, this is the case after 30 days at the latest. Storage beyond this is possible. In this case, the user's personal data is deleted or anonymized so that it is no longer possible to assign the calling client.
 
 
-<h2 id="rights">9. Rights of the Affected Person</h2>
+## 9. Rights of the Affected Person {#rights}
 
 If your personal data is processed, you are affected according to GDPR and you have the following rights to the person responsible:
 
