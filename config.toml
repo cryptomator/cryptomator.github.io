@@ -69,7 +69,7 @@ unsafe = true
       filename = "cryptomator-1.5.12-x86_64.AppImage"
       downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/cryptomator-1.5.12-x86_64.AppImage"
       signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/cryptomator-1.5.12-x86_64.AppImage.asc"
-      checksum = "3bc6cafcb5ef82f04554071a03b84f1b04440cad692778e9e41024f4c74b617b"
+      checksum = "bc4fc9dd812605dd38c2b3fc5e8cc79a506af8adb1267a90e22ddd670e280fa1"
     [params.releases.android]
       version = "1.5.11"
       filename = "Cryptomator-1.5.11.apk"
