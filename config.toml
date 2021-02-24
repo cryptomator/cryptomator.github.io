@@ -53,23 +53,23 @@ unsafe = true
 [params]
   [params.releases]
     [params.releases.exe]
-      version = "1.5.12"
-      filename = "Cryptomator-1.5.12-x64.exe"
-      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/Cryptomator-1.5.12-x64.exe"
-      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/Cryptomator-1.5.12-x64.exe.asc"
-      checksum = "02e6488e6c6ca714367b0a45adf8d8a4a40539ccc66effc52014e0f9b98ee615"
+      version = "1.5.13"
+      filename = "Cryptomator-1.5.13-x64.exe"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.13/Cryptomator-1.5.13-x64.exe"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.13/Cryptomator-1.5.13-x64.exe.asc"
+      checksum = "deb320201ad99cf8f8a1d1fd8403dd5e80c3dab121f84b040b241f390c1683ec"
     [params.releases.dmg]
-      version = "1.5.12"
-      filename = "Cryptomator-1.5.12.dmg"
-      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/Cryptomator-1.5.12.dmg"
-      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/Cryptomator-1.5.12.dmg.asc"
-      checksum = "b462b6c1bccbae76a886cf28e0d5c01482b3137a9300998a7a9f098ec607f563"
+      version = "1.5.13"
+      filename = "Cryptomator-1.5.13.dmg"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.13/Cryptomator-1.5.13.dmg"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.13/Cryptomator-1.5.13.dmg.asc"
+      checksum = "789a7e92d63997be03122efdab5e07de6c617fcd0fb36fb6c5807e3a6b119be0"
     [params.releases.appimage]
-      version = "1.5.12"
-      filename = "cryptomator-1.5.12-x86_64.AppImage"
-      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/cryptomator-1.5.12-x86_64.AppImage"
-      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.12/cryptomator-1.5.12-x86_64.AppImage.asc"
-      checksum = "bc4fc9dd812605dd38c2b3fc5e8cc79a506af8adb1267a90e22ddd670e280fa1"
+      version = "1.5.13"
+      filename = "cryptomator-1.5.13-x86_64.AppImage"
+      downloadUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.13/cryptomator-1.5.13-x86_64.AppImage"
+      signatureUrl = "https://dl.bintray.com/cryptomator/cryptomator/1.5.13/cryptomator-1.5.13-x86_64.AppImage.asc"
+      checksum = "9436ac495fbc6f000f4ab9b18228f656da6d59a104a684d381df8cceb6a9dad3"
     [params.releases.android]
       version = "1.5.12"
       filename = "Cryptomator-1.5.12.apk"
