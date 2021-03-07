@@ -32,6 +32,8 @@
   translation: "Payments are securely handled by Paddle."
 - id: android_getkey_checkout
   translation: "Checkout"
+- id: android_getkey_coupon
+  translation: "Use coupon code <code class=\"text-xs\">FIVEYEARS</code> during checkout to get 40% off!"
 
 - id: android_getkey_success
   translation: "Your payment was successful!"
@@ -141,11 +143,11 @@
 - id: donate_getkey_price
   translation: "Price per License"
 - id: donate_getkey_price_placeholder
-  translation: "min. 15"
+  translation: "min. 10"
 - id: donate_getkey_price_suffix
   translation: ".00"
 - id: donate_getkey_price_help
-  translation: "Minimum amount is 15 per license. Currency is determined during checkout."
+  translation: "Minimum amount is 10 per license. Currency is determined during checkout."
 - id: donate_getkey_email
   translation: "Email"
 - id: donate_getkey_email_placeholder
@@ -154,6 +156,8 @@
   translation: "Payments are securely handled by Paddle."
 - id: donate_getkey_checkout
   translation: "Checkout"
+- id: donate_getkey_offer
+  translation: "Minimum amount is reduced by 33% for a limited time!"
 
 - id: donate_getkey_success
   translation: "Your payment was successful!"

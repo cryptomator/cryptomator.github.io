@@ -32,6 +32,8 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: android_getkey_checkout
   translation: "Zur Zahlung"
+- id: android_getkey_coupon
+  translation: "Verwende den Gutscheincode <code class=\"text-xs\">FIVEYEARS</code> beim Bezahlvorgang, um 40% Rabatt zu erhalten!"
 
 - id: android_getkey_success
   translation: "Deine Zahlung war erfolgreich!"
@@ -141,11 +143,11 @@
 - id: donate_getkey_price
   translation: "Preis pro Lizenz"
 - id: donate_getkey_price_placeholder
-  translation: "min. 15"
+  translation: "min. 10"
 - id: donate_getkey_price_suffix
   translation: ",00"
 - id: donate_getkey_price_help
-  translation: "Mindestbetrag ist 15 pro Lizenz. Währung wird im Zahlungsvorgang ermittelt."
+  translation: "Mindestbetrag ist 10 pro Lizenz. Währung wird im Zahlungsvorgang ermittelt."
 - id: donate_getkey_email
   translation: "E-Mail"
 - id: donate_getkey_email_placeholder
@@ -154,6 +156,8 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: donate_getkey_checkout
   translation: "Zur Zahlung"
+- id: donate_getkey_offer
+  translation: "Der Mindestbetrag ist für eine begrenzte Zeit um 33% reduziert!"
 
 - id: donate_getkey_success
   translation: "Deine Zahlung war erfolgreich!"
