@@ -76,7 +76,7 @@
                   <i class="fab fa-twitter text-xl mt-1"></i>
                 </a>
               </div>
-              <p><i class="fas fa-quote-left text-secondary text-xl"></i> {{ .Quote }}</p>
+              <p><i class="fas fa-quote-left text-secondary text-xl"></i> {{ replace .Quote "\n" "<br/>" | safeHTML }}</p>
             </div>
           </li>
           {{ end }}
