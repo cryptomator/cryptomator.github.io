@@ -141,11 +141,11 @@
 - id: donate_getkey_price
   translation: "Price per License"
 - id: donate_getkey_price_placeholder
-  translation: "min. 10"
+  translation: "min. 15"
 - id: donate_getkey_price_suffix
   translation: ".00"
 - id: donate_getkey_price_help
-  translation: "Minimum amount is 10 per license. Currency is determined during checkout."
+  translation: "Minimum amount is 15 per license. Currency is determined during checkout."
 - id: donate_getkey_email
   translation: "Email"
 - id: donate_getkey_email_placeholder
