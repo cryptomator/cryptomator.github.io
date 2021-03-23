@@ -21,9 +21,9 @@
   "dependencies": {
     "@skymatic/fontawesome-pro": "^5.15.1",
     "@tailwindcss/typography": "^0.2.0",
-    "alpinejs": "^2.6.0",
-    "jquery": "^3.5.1",
-    "lazysizes": "^5.2.2",
-    "tailwindcss": "^1.7.2"
+    "alpinejs": "^2.8.1",
+    "jquery": "^3.6.0",
+    "lazysizes": "^5.3.0",
+    "tailwindcss": "^1.9.6"
   }
 }
