@@ -60,7 +60,7 @@
 - id: android_keyrecovery_success
   translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
 - id: android_keyrecovery_contact_us
-  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:sales@cryptomator.org\">kontaktiere uns</a>."
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
 
 # Blog
 - id: blob_post_author_prefix
