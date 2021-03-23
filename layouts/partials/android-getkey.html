@@ -1,4 +1,4 @@
-<div x-data="{checkoutData: {productId: 578277, price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white">
+<div x-data="{checkoutData: {price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white">
   <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary text-center">
     <h3>{{ i18n "android_getkey_title" }}</h3>
   </div>

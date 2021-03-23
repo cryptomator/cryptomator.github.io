@@ -1,5 +1,13 @@
 "use strict";
 
+const PADDLE_ENABLE_SANDBOX = false;
+const PADDLE_VENDOR_ID = 39223;
+const ANDROID_PRODUCT_ID = 578277;
+
+// const PADDLE_ENABLE_SANDBOX = true;
+// const PADDLE_VENDOR_ID = 1385;
+// const ANDROID_PRODUCT_ID = 9642;
+
 class AndroidLicense {
 
   constructor(form, checkoutData) {
@@ -10,14 +18,17 @@ class AndroidLicense {
         cache: true,
         dataType: 'script'
     }).then(() => {
-      window.Paddle.Setup({ vendor: 39223 });
+      if (PADDLE_ENABLE_SANDBOX) {
+        window.Paddle.Environment.set('sandbox');
+      }
+      window.Paddle.Setup({ vendor: PADDLE_VENDOR_ID });
       return window.Paddle;
     });
   }
 
   loadPrice() {
     this._paddle.then(paddle => {
-      paddle.Product.Prices(this._checkoutData.productId, prices => {
+      paddle.Product.Prices(ANDROID_PRODUCT_ID, prices => {
         this._checkoutData.price = prices.price.gross;
       });
     });
@@ -34,7 +45,7 @@ class AndroidLicense {
     this._checkoutData.success = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        product: this._checkoutData.productId,
+        product: ANDROID_PRODUCT_ID,
         email: this._checkoutData.email,
         allowQuantity: false,
         locale: locale,

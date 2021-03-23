@@ -1,5 +1,11 @@
 "use strict";
 
+const PADDLE_ENABLE_SANDBOX = false;
+const PADDLE_VENDOR_ID = 39223;
+
+// const PADDLE_ENABLE_SANDBOX = true;
+// const PADDLE_VENDOR_ID = 1385;
+
 class DesktopLicense {
 
   constructor(form, checkoutData) {
@@ -10,7 +16,10 @@ class DesktopLicense {
         cache: true,
         dataType: 'script'
     }).then(() => {
-      window.Paddle.Setup({ vendor: 39223 });
+      if (PADDLE_ENABLE_SANDBOX) {
+        window.Paddle.Environment.set('sandbox');
+      }
+      window.Paddle.Setup({ vendor: PADDLE_VENDOR_ID });
       return window.Paddle;
     });
   }
