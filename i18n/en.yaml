@@ -49,6 +49,19 @@
 - id: android_download_sha256_signature
   translation: "SHA256 Signature"
 
+- id: android_keyrecovery_title
+  translation: "Did you lose your license key?"
+- id: android_keyrecovery_instruction
+  translation: "To recover a lost license key or receipt, enter your email address below."
+- id: android_keyrecovery_email_placeholder
+  translation: "Email address"
+- id: android_keyrecovery_retrieve
+  translation: "Retrieve"
+- id: android_keyrecovery_success
+  translation: "We've sent details of your past transactions and licenses to you via email."
+- id: android_keyrecovery_contact_us
+  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+
 # Blog
 - id: blob_post_author_prefix
   translation: "by"
@@ -168,6 +181,19 @@
   translation: "Want to become an official sponsor?"
 - id: donate_become_sponsor_button
   translation: "Become a Sponsor"
+
+- id: donate_keyrecovery_title
+  translation: "Did you lose your donation key?"
+- id: donate_keyrecovery_instruction
+  translation: "To recover a lost donation key or receipt, enter your email address below."
+- id: donate_keyrecovery_email_placeholder
+  translation: "Email address"
+- id: donate_keyrecovery_retrieve
+  translation: "Retrieve"
+- id: donate_keyrecovery_success
+  translation: "We've sent details of your past transactions and licenses to you via email."
+- id: donate_keyrecovery_contact_us
+  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
 # Downloads
 - id: downloads_all_versions_title

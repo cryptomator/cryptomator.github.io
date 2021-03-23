@@ -49,6 +49,19 @@
 - id: android_download_sha256_signature
   translation: "SHA256-Signatur"
 
+- id: android_keyrecovery_title
+  translation: "Hast du deinen Lizenschlüssel verloren?"
+- id: android_keyrecovery_instruction
+  translation: "Um einen verlorenen Lizenschlüssel oder Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein."
+- id: android_keyrecovery_email_placeholder
+  translation: "E-Mail-Adresse"
+- id: android_keyrecovery_retrieve
+  translation: "Abrufen"
+- id: android_keyrecovery_success
+  translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
+- id: android_keyrecovery_contact_us
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:sales@cryptomator.org\">kontaktiere uns</a>."
+
 # Blog
 - id: blob_post_author_prefix
   translation: "von"
@@ -168,6 +181,19 @@
   translation: "Möchtest du ein offizieller Sponsor werden?"
 - id: donate_become_sponsor_button
   translation: "Werde Sponsor"
+
+- id: donate_keyrecovery_title
+  translation: "Hast du deinen Spendenschlüssel verloren?"
+- id: donate_keyrecovery_instruction
+  translation: "Um einen verlorenen Spendenschlüssel oder Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein."
+- id: donate_keyrecovery_email_placeholder
+  translation: "E-Mail-Adresse"
+- id: donate_keyrecovery_retrieve
+  translation: "Abrufen"
+- id: donate_keyrecovery_success
+  translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
+- id: donate_keyrecovery_contact_us
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:sales@cryptomator.org\">kontaktiere uns</a>."
 
 # Downloads
 - id: downloads_all_versions_title
