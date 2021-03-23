@@ -63,15 +63,14 @@ class AndroidLicense {
   getPaddleOrderDetails(checkoutId) {
     this._paddle.then(paddle => {
       paddle.Order.details(checkoutId, data => {
-        this._checkoutData.licenseKey = data.lockers[0].license_code;
+        let licenseKey = data.lockers?.[0]?.license_code;
+        if (licenseKey) {
+          this._checkoutData.licenseKey = licenseKey;
+        } else {
+          this._checkoutData.errorMessage = 'Retrieving license key failed. Please check your emails instead.';
+        }
       });
     });
-  }
-
-  onCheckoutFailed(error) {
-    this._checkoutData.success = false;
-    this._checkoutData.errorMessage = error;
-    this._checkoutData.inProgress = false;
   }
 
   onCheckoutSucceeded() {
