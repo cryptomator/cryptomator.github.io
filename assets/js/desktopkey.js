@@ -34,7 +34,7 @@ class DesktopLicense {
     this._checkoutData.errorMessage = '';
     this._checkoutData.success = false;
     $.ajax({
-      url: 'https://store.cryptomator.org/paddle/desktop/generate-pay-link.php',
+      url: 'https://store.cryptomator.org/api/desktop/generate-pay-link',
       type: 'POST',
       data: {
         currency: this._checkoutData.currency,
