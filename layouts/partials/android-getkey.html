@@ -25,7 +25,7 @@
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
     <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success" }}</h3>
     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "android_getkey_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed w-full mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed break-all w-full mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700">{{ i18n "android_getkey_key_instruction" }}</p>
   </div>
