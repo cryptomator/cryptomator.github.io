@@ -25,6 +25,9 @@ class Newsletter {
         type: 'POST',
         data: {
           email: this._data.email
+        },
+        xhrFields: {
+          withCredentials: true
         }
       }).done(_ => {
         this.onSubscribeSucceeded();
