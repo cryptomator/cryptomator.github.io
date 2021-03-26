@@ -250,6 +250,16 @@
   translation: "Download Now"
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
+- id: home_newsletter_title
+  translation: "Let's stay in touch"
+- id: home_newsletter_instruction
+  translation: "Subscribe to our mailing list or follow <a class=\"text-primary no-underline hover:underline\" href=\"https://twitter.com/Cryptomator\" target=\"_blank\" rel=\"noopener\">@Cryptomator</a> on Twitter."
+- id: home_newsletter_email_placeholder
+  translation: "Email address"
+- id: home_newsletter_subscribe
+  translation: "Subscribe"
+- id: home_newsletter_success
+  translation: "Thank you for subscribing! A confirmation link has been sent to your email address."
 - id: home_trustingbrands_title
   translation: "Brands Trusting our Technology"
 - id: home_sponsors_title
