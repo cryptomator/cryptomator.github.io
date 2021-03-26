@@ -18,7 +18,10 @@ class Newsletter {
     this._data.success = false;
     $.ajax({
       url: SUBSCRIBE_NEWSLETTER_URL,
-      type: 'GET'
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      }
     }).done(_ => {
       $.ajax({
         url: SUBSCRIBE_NEWSLETTER_URL,
