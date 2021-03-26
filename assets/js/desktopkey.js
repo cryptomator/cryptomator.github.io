@@ -2,9 +2,11 @@
 
 const PADDLE_ENABLE_SANDBOX = false;
 const PADDLE_VENDOR_ID = 39223;
+const GENERATE_PAY_LINK_URL = 'https://store.cryptomator.org/api/desktop/generate-pay-link';
 
 // const PADDLE_ENABLE_SANDBOX = true;
 // const PADDLE_VENDOR_ID = 1385;
+// const GENERATE_PAY_LINK_URL = 'http://localhost:8787/api/desktop/generate-pay-link';
 
 class DesktopLicense {
 
@@ -34,7 +36,7 @@ class DesktopLicense {
     this._checkoutData.errorMessage = '';
     this._checkoutData.success = false;
     $.ajax({
-      url: 'https://store.cryptomator.org/api/desktop/generate-pay-link',
+      url: GENERATE_PAY_LINK_URL,
       type: 'POST',
       data: {
         currency: this._checkoutData.currency,
