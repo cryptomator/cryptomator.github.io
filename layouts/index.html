@@ -40,9 +40,12 @@
 
     <section class="container text-center py-12 md:py-16 lg:py-20">
       <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-8 md:mb-12 lg:mb-16">{{ i18n "home_sponsors_title" . }}</h2>
-      <div class="grid grid-cols-1 gap-8 md:w-3/4 lg:w-2/3 mb-8 md:mb-12 lg:mb-16 mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-3/4 lg:w-2/3 mb-8 md:mb-12 lg:mb-16 mx-auto">
         <a href="https://www.gee-whiz.de/" target="_blank" rel="noopener">
-          <img class="inline-block h-20 lazyload" data-src="/img/home/3rdparty/geewhiz-logo.svg" alt="gee-whiz Logo"/>
+          <img class="inline-block h-20 lazyload" data-src="/img/sponsors/geewhiz.svg" alt="gee-whiz Logo"/>
+        </a>
+        <a href="https://proxy-hub.com/" target="_blank" rel="noopener">
+          <img class="inline-block h-20 lazyload" data-src="/img/sponsors/proxyhub.svg" alt="Proxy-Hub Logo"/>
         </a>
       </div>
       <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-secondary px-8">
