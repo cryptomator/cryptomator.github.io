@@ -74,7 +74,7 @@ class DesktopLicense {
         if (licenseKey) {
           this._checkoutData.licenseKey = licenseKey;
         } else {
-          this._checkoutData.errorMessage = 'Retrieving donation key failed. Please check your emails instead.';
+          this._checkoutData.errorMessage = 'Retrieving supporter certificate failed. Please check your emails instead.';
         }
       });
     });
