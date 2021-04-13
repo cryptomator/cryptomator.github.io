@@ -175,7 +175,7 @@
 - id: donate_getkey_key_placeholder
   translation: "Loading…"
 - id: donate_getkey_key_instruction
-  translation: "This is your supporter certificate. Enter it in the Cryptomator settings under \"Donate\". It has also been sent to your email address."
+  translation: "This is your supporter certificate. Enter it in the Cryptomator settings under \"Support Us\". It has also been sent to your email address."
 
 - id: donate_become_sponsor_title
   translation: "Want to become an official sponsor?"

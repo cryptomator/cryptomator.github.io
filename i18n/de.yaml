@@ -175,7 +175,7 @@
 - id: donate_getkey_key_placeholder
   translation: "Lädt…"
 - id: donate_getkey_key_instruction
-  translation: "Dies ist dein Supporter-Zertifikat. Gib es in den Cryptomator-Einstellungen unter \"Spenden\" ein. Es wurde auch an deine E-Mail-Adresse geschickt."
+  translation: "Dies ist dein Supporter-Zertifikat. Gib es in den Cryptomator-Einstellungen unter \"Unterstütze uns\" ein. Es wurde auch an deine E-Mail-Adresse geschickt."
 
 - id: donate_become_sponsor_title
   translation: "Möchtest du ein offizieller Sponsor werden?"
