@@ -5,8 +5,8 @@
       <p class="lead">{{ .Description }}</p>
     </header>
 
-    <div class="flex flex-wrap flex-row-reverse">
-      <section x-data="{showForm: false}" class="w-full py-6 lg:w-1/2 lg:pl-3">
+    <div class="flex flex-col space-y-6 lg:flex-row-reverse lg:space-x-6 lg:space-x-reverse lg:space-y-0">
+      <section x-data="{showForm: false}" class="w-full lg:w-1/2">
         <div class="rounded shadow bg-white">
           <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
             <h2>{{ i18n "donate_anon_title" }}</h2>
@@ -27,7 +27,7 @@
         </div>
       </section>
 
-      <section x-data="{showForm: false}" class="w-full py-6 lg:w-1/2 lg:pr-3">
+      <section x-data="{showForm: false}" class="w-full lg:w-1/2">
         <div class="rounded shadow bg-white">
           <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
             <h2>{{ i18n "donate_getkey_title" }}</h2>
