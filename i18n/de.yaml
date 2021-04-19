@@ -63,9 +63,9 @@
   translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
 
 - id: android_fdroid_title
-  translation: "App mittels F-Droid herunterladen"
+  translation: "Auf F-Droid herunterladen"
 - id: android_fdroid_repo
-  translation: "Folgenden <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\">Link</a> öffnen oder den QR-Code scannen um unser Repository hinzuzufügen."
+  translation: "Folgenden <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\">Link</a> öffnen oder den QR-Code scannen, um unser Repository hinzuzufügen."
 - id: android_fdroid_qr_code
   translation: "QR Code"
 
