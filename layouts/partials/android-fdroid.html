@@ -1,0 +1,26 @@
+<div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+  <meta itemprop="name" content="Cryptomator"/>
+  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
+  <meta itemprop="applicationCategory" content="Productivity"/>
+  <meta itemprop="softwareVersion" content="{{ .Site.Params.releases.android.version }}"/>
+  <meta itemprop="applicationSubCategory" content="Encryption"/>
+  <meta itemprop="image" content="{{ "/img/logo.png" | absURL }}"/>
+  <meta itemprop="operatingSystem" content="Android"/>
+
+  <div class="rounded shadow bg-white">
+    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
+      <h3>{{ i18n "android_fdroid_title" }}</h3>
+    </div>
+    <div class="px-4 py-8" x-data="{showQrCode: false}">
+      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
+        <p>{{ i18n "android_fdroid_repo" | safeHTML }}</p>
+      </div>
+      <p class="text-xs">
+        <a class="text-primary no-underline hover:underline" href="#" x-on:click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
+      </p>
+      <div x-show="showQrCode" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
+        <img class="inline-block mb-4" src="/img/android/fdroid-qr-code.png"/>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,15 +4,17 @@
       <h1>{{ .Title }}</h1>
       <p class="lead">{{ .Description }}</p>
     </header>
-    
-    <div class="flex flex-wrap">
-      <section class="w-full py-6 lg:w-1/2 lg:pr-3">
-        {{ partial "android-getkey.html" . }}
-      </section>
 
-      <section class="w-full py-6 lg:w-1/2 lg:pl-3">
-        {{ partial "android-download.html" . }}
-      </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <section class="row-span-2 rounded shadow bg-white">
+          {{ partial "android-getkey.html" . }}
+        </section>
+        <section class="row-span-1 rounded shadow bg-white">
+          {{ partial "android-download.html" . }}
+        </section>
+        <section class="row-span-1 rounded shadow bg-white">
+          {{ partial "android-fdroid.html" . }}
+        </section>
     </div>
   </div>
 

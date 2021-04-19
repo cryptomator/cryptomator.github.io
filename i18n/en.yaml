@@ -62,6 +62,13 @@
 - id: android_keyrecovery_contact_us
   translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
+- id: android_fdroid_title
+  translation: "Get it on F-Droid"
+- id: android_fdroid_repo
+  translation: "Open this <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\">link</a> or scan the QR code on your phone to add our repository."
+- id: android_fdroid_qr_code
+  translation: "QR Code"
+
 # Blog
 - id: blob_post_author_prefix
   translation: "by"
