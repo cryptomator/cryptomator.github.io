@@ -89,7 +89,7 @@
 - id: donate_anon_feature_2
   translation: "Choose your preferred payment method"
 - id: donate_anon_feature_3
-  translation: "No donation key"
+  translation: "No supporter certificate"
 - id: donate_anon_show_form_button
   translation: "Proceed"
 
@@ -144,7 +144,7 @@
   translation: "Proceed to CoinPayments"
 
 - id: donate_getkey_title
-  translation: "Buy a donation key"
+  translation: "Buy a supporter certificate"
 - id: donate_getkey_feature_1
   translation: "Register your software and unlock dark mode"
 - id: donate_getkey_feature_2
@@ -178,11 +178,11 @@
 - id: donate_getkey_success
   translation: "Your payment was successful!"
 - id: donate_getkey_key
-  translation: "Donation Key"
+  translation: "Supporter Certificate"
 - id: donate_getkey_key_placeholder
   translation: "Loading…"
 - id: donate_getkey_key_instruction
-  translation: "This is your donation key. Enter it in the Cryptomator settings under \"Donate\". The donation key has also been sent to your email address."
+  translation: "This is your supporter certificate. Enter it in the Cryptomator settings under \"Support Us\". It has also been sent to your email address."
 
 - id: donate_become_sponsor_title
   translation: "Want to become an official sponsor?"
@@ -190,9 +190,9 @@
   translation: "Become a Sponsor"
 
 - id: donate_keyrecovery_title
-  translation: "Did you lose your donation key?"
+  translation: "Did you lose your supporter certificate?"
 - id: donate_keyrecovery_instruction
-  translation: "To recover a lost donation key or receipt, enter your email address below."
+  translation: "To recover a lost certificate or receipt, enter your email address below."
 - id: donate_keyrecovery_email_placeholder
   translation: "Email address"
 - id: donate_keyrecovery_retrieve

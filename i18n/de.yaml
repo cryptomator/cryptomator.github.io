@@ -89,7 +89,7 @@
 - id: donate_anon_feature_2
   translation: "Bevorzugte Zahlungsmethode auswählen"
 - id: donate_anon_feature_3
-  translation: "Kein Spendenschlüssel"
+  translation: "Kein Supporter-Zertifikat"
 - id: donate_anon_show_form_button
   translation: "Weiter"
 
@@ -144,7 +144,7 @@
   translation: "Weiter zu CoinPayments"
 
 - id: donate_getkey_title
-  translation: "Spendenschlüssel kaufen"
+  translation: "Supporter-Zertifikat kaufen"
 - id: donate_getkey_feature_1
   translation: "Software registrieren und Dunkel-Modus freischalten"
 - id: donate_getkey_feature_2
@@ -178,11 +178,11 @@
 - id: donate_getkey_success
   translation: "Deine Zahlung war erfolgreich!"
 - id: donate_getkey_key
-  translation: "Spendenschlüssel"
+  translation: "Supporter-Zertifikat"
 - id: donate_getkey_key_placeholder
   translation: "Lädt…"
 - id: donate_getkey_key_instruction
-  translation: "Dies ist dein Spendenschlüssel. Gib ihn in den Cryptomator-Einstellungen unter \"Spenden\" ein. Der Spendenschlüssel wurde auch an deine E-Mail-Adresse geschickt."
+  translation: "Dies ist dein Supporter-Zertifikat. Gib es in den Cryptomator-Einstellungen unter \"Unterstütze uns\" ein. Es wurde auch an deine E-Mail-Adresse geschickt."
 
 - id: donate_become_sponsor_title
   translation: "Möchtest du ein offizieller Sponsor werden?"
@@ -190,9 +190,9 @@
   translation: "Werde Sponsor"
 
 - id: donate_keyrecovery_title
-  translation: "Hast du deinen Spendenschlüssel verloren?"
+  translation: "Hast du dein Supporter-Zertifikat verloren?"
 - id: donate_keyrecovery_instruction
-  translation: "Um einen verlorenen Spendenschlüssel oder Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein."
+  translation: "Um ein verlorenes Zertifikat oder einen Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein."
 - id: donate_keyrecovery_email_placeholder
   translation: "E-Mail-Adresse"
 - id: donate_keyrecovery_retrieve
