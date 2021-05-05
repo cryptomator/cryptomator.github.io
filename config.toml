@@ -8,9 +8,11 @@ enableemoji = true
   [languages.en]
     weight = 1
     languageName = "English"
+    languageCode = "en_US"
   [languages.de]
     weight = 2
     languageName = "Deutsch"
+    languageCode = "de_DE"
 
 [outputs]
   home = ["HTML", "RSS"]

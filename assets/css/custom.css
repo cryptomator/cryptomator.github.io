@@ -1,4 +1,11 @@
 /* custom classes: */
+.container-prose {
+  @apply w-full mx-auto;
+  max-width: 768px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .btn {
   @apply inline-block border rounded no-underline px-4 py-2;
 }
@@ -119,6 +126,23 @@ nav a:hover {
 
 .m-remover {
   margin: 0 !important;
+}
+
+.has-tooltip {
+  @apply relative inline-block;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply block;
+}
+
+.tooltip {
+  @apply absolute hidden z-50;
+}
+
+.tooltip-center {
+  @apply transform -translate-x-1/2;
+  left: 50%;
 }
 
 /* see https://github.com/alpinejs/alpine#x-cloak */

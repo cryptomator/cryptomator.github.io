@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="container-prose py-12">
+    <article>
+      {{ .Content }}
+    </article>
+    {{ if and .Params.Ctatitle .Params.Ctatext .Params.Ctalink .Params.Ctabutton }}
+      <section class="text-center max-w-xl mx-auto py-12">
+        <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ .Params.Ctatitle }}</h3>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ .Params.Ctatext }}</p>
+        <a href="{{ .Params.Ctalink }}" role="button" class="btn btn-primary px-8">{{ .Params.Ctabutton }}</a>
+      </section>
+    {{ end }}
+  </div>
+{{ end }}

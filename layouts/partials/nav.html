@@ -12,33 +12,29 @@
 
     <!-- Regular Navigation -->
     <ul class="hidden md:flex items-stretch list-none m-0">
-      {{- with .Site.GetPage "/downloads" }}
+      {{- range .Site.Data.nav.RelLinks }}
+      {{- with $.Site.GetPage . }}
       {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
       <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
         <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
       </li>
       {{- end }}
-      {{- with .Site.GetPage "/coop" }}
-      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
       {{- end }}
-      {{- with .Site.GetPage "/faq" }}
-      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-no-wrap p-2">
+          <span>{{ i18n "nav_learn_more" . }}</span>
+          <i class="fas fa-chevron-down text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLearnMoreDropdownOpen" @click.away="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-84 bg-white rounded shadow-md">
+            {{- range .Site.Data.nav.LearnMoreRelLinks }}
+            {{- with $.Site.GetPage . }}
+            <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+            {{- end}}
+            {{- end }}
+          </div>
+        </div>
       </li>
-      {{- end }}
-      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-{{ $textColor }}">
-        <a class="p-2 hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
-      </li>
-      {{- with .Site.GetPage "/donate" }}
-      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
-      {{- end }}
       
       <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}"></li>
       
@@ -49,9 +45,9 @@
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md">
-            {{ range .Translations }}
+            {{- range .Translations }}
             <a href="{{ .RelPermalink }}" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
-            {{ end }}
+            {{- end }}
           </div>
         </div>
       </li>
@@ -72,12 +68,25 @@
   
   <!-- Smartphone Navigation -->
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="md:hidden">
-    {{ with .Site.GetPage "/downloads" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-    {{ with .Site.GetPage "/coop" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-    {{ with .Site.GetPage "/faq" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a>
-    {{ with .Site.GetPage "/donate" }}<a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+    {{- range .Site.Data.nav.RelLinks }}
+    {{- with $.Site.GetPage . }}
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- end }}
+    {{- end }}
     
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      {{ i18n "nav_learn_more" . }}
+    </div>
+    <div class="mt-1">
+      {{- range .Site.Data.nav.LearnMoreRelLinks }}
+      {{- with $.Site.GetPage . }}
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+      {{- end }}
+      {{- end }}
+    </div>
+
     <hr class="border-primary my-2"/>
     
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">

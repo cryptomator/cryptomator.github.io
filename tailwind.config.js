@@ -27,9 +27,6 @@ module.exports = {
         'tertiary': '#005E71',
         'dark': '#1E2B33', 
       },
-      fontSize: {
-        '7xl': '5rem',
-      },
       animation: {
         hover: 'hover 10s ease-in-out infinite',
       },
@@ -39,14 +36,26 @@ module.exports = {
           '50%': { transform: 'rotate(-3deg) translateY(-10px)' },
         },
       },
+      // TODO: deprecate with tailwind 2.x
+      fontSize: {
+        '7xl': '4.5rem',
+      },
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem',
+      },
+      width: {
+        'max': 'max-content',
+      },
     },
     fontFamily: {
       'headline': 'Quicksand, sans-serif',
       'body': 'Open Sans, sans-serif',
     },
     screens: {
-      'md': { 'min': '768px' },
-      'lg': { 'min': '1280px' },
+      'md': '768px',
+      'lg': '1280px',
     },
     typography: (theme) => ({
       default: {
@@ -75,6 +84,15 @@ module.exports = {
             content: 'unset',
           },
           'code::after': {
+            content: 'unset',
+          },
+          blockquote: {
+            fontStyle: 'normal',
+          },
+          'blockquote p:first-of-type::before': {
+            content: 'unset',
+          },
+          'blockquote p:last-of-type::after': {
             content: 'unset',
           },
         },
