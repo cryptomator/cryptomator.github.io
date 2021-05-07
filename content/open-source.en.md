@@ -6,7 +6,7 @@ aliases: ["/faq/security", "/faq/security/opensource", "/faq/security/audits"]
 
 navtitle: "How Open Source Strengthens Security"
 ctatitle: "You want to encrypt your cloud storage with Cryptomator?"
-ctatext: "Cryptomator is free of charge and can be used without an account. You can start at any time. Just download and start directly."
+ctatext: "Cryptomator is free and can be used without an account. Just download and get started."
 ctalink: /downloads/
 ctabutton: "Encrypt Your Cloud Storage Now"
 ---

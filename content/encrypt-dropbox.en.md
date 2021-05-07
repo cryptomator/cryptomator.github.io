@@ -6,7 +6,7 @@ aliases: ["/faq/usage/encrypt-dropbox"]
 
 navtitle: "Encrypt Your Dropbox"
 ctatitle: "You want to encrypt your Dropbox with Cryptomator?"
-ctatext: "Cryptomator is free of charge and can be used without an account. You can start at any time. Just download and start directly."
+ctatext: "Cryptomator is free and can be used without an account. Just download and get started."
 ctalink: /downloads/
 ctabutton: "Encrypt Your Dropbox Now"
 ---
@@ -21,11 +21,9 @@ With Cryptomator, you can **encrypt your cloud storage** by creating a vault in 
 
 ## Free Dropbox encryption {#free-dropbox-encryption}
 
-Cryptomator for Windows, macOS, and Linux is free of charge. [Download Cryptomator now.](/downloads/)
+The desktop app of Cryptomator is free of charge and available for all major operating systems. [Download Cryptomator now and try it out.](/downloads/)
 
-If you also want to protect your files on your smartphone, you can get the mobile app for a one-time fee of 9.99 Euros.
-
-The app is available for iOS and Android.
+If you also want to protect your files on your smartphone, you can get the mobile app for a one-time fee of 9.99 Euros. The app is available for iOS and Android.
 
 ## Encrypt your Dropbox and reliably protect your data: This is how Cryptomator helps you {#features}
 
@@ -45,13 +43,13 @@ The app is available for iOS and Android.
     <h3><i class="fas fa-share fa-fw text-primary"></i> Share protected data conveniently with friends, family, and colleagues</h3>
   </div>
   <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>Make your data safe in the cloud and <strong>maintain privacy across multiple computers with Cryptomator.</strong> All you need is Cryptomator on each device and the security key to gain access to the data.</p>
+    <p>Make your data safe in the cloud and <strong>maintain privacy across multiple computers with Cryptomator.</strong> All you need is Cryptomator on each device and the password to gain access to the data.</p>
   </div>
 </div>
 
 <div class="rounded shadow bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fas fa-key fa-fw text-primary"></i> Only those have the key to your cloud who should have it</h3>
+    <h3><i class="fas fa-key fa-fw text-primary"></i> Only those have access to your cloud data who should have it</h3>
   </div>
   <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
     <p><strong>End-to-end encryption</strong> makes it even harder for potential attackers to harm you. That's because encrypted file names mean third parties can't draw conclusions about file types – which is one of the most common gateways for them to get in.</p>

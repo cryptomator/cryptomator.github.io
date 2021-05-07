@@ -6,7 +6,7 @@ aliases: ["/faq/usage/encrypt-dropbox"]
 
 navtitle: "Verschlüsselung deiner Dropbox"
 ctatitle: "Du willst deine Dropbox mit Cryptomator verschlüsseln?"
-ctatext: "Cryptomator ist kostenfrei und ohne Account nutzbar. Du kannst jederzeit loslegen. Einfach direkt herunterladen und starten."
+ctatext: "Cryptomator ist kostenlos und ohne Account nutzbar. Einfach herunterladen und loslegen."
 ctalink: /de/downloads/
 ctabutton: "Jetzt deine Dropbox verschlüsseln"
 ---
@@ -19,13 +19,11 @@ ctabutton: "Jetzt deine Dropbox verschlüsseln"
 
 Mit Cryptomator kannst du deinen **Cloud-Speicher verschlüsseln**, indem du in Dropbox einen Tresor erzeugst und dort deine Dateien hineinlegst. Mit dieser zusätzlichen Sicherheitsschicht errichtest du eine nahezu unüberwindbare Barriere vor Angreifern – ohne dass die Dateiablage und Synchronisation von Dropbox eingeschränkt wird.
 
-## Kostenfreie Dropbox Verschlüsselung {#free-dropbox-encryption}
+## Kostenlose Dropbox Verschlüsselung {#free-dropbox-encryption}
 
-Cryptomator für Windows, macOS und Linux ist kostenfrei. [Lade dir jetzt Cryptomator herunter.](/de/downloads/)
+Die Desktop-App von Cryptomator ist kostenfrei und für alle gängigen Betriebssysteme verfügbar. [Lade dir jetzt Cryptomator herunter und probiere es aus.](/de/downloads/)
 
-Willst du auch auf dem Smartphone deine Dateien schützen, zahlst du für die mobile App einmalig 9,99 Euro.
-
-Die App gibt es für iOS und Android.
+Willst du auch auf dem Smartphone deine Dateien schützen, zahlst du für die mobile App einmalig 9,99 Euro. Die App gibt es für iOS und Android.
 
 ## Deine Dropbox verschlüsseln und Daten zuverlässig schützen: So hilft dir Cryptomator dabei {#features}
 
@@ -45,13 +43,13 @@ Die App gibt es für iOS und Android.
     <h3><i class="fas fa-share fa-fw text-primary"></i> Geschützte Daten bequem für Freunde, Familie und Kollegen freigeben</h3>
   </div>
   <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>Macht mit Cryptomator eure Daten in der Cloud sicher und <strong>bewahrt die Privatsphäre über mehrere Computer hinweg.</strong> Alles, was ihr braucht, ist Cryptomator auf jedem Gerät und den Sicherheitsschlüssel, um Zugriff auf die Daten zu erhalten.</p>
+    <p>Macht mit Cryptomator eure Daten in der Cloud sicher und <strong>bewahrt die Privatsphäre über mehrere Computer hinweg.</strong> Alles, was ihr braucht, ist Cryptomator auf jedem Gerät und das Passwort, um Zugriff auf die Daten zu erhalten.</p>
   </div>
 </div>
 
 <div class="rounded shadow bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fas fa-key fa-fw text-primary"></i> Den Schlüssel zu deinen Cloud-Daten hat nur, wer ihn haben soll</h3>
+    <h3><i class="fas fa-key fa-fw text-primary"></i> Zugriff auf deine Cloud-Daten hat nur, wer ihn haben soll</h3>
   </div>
   <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
     <p>Die <strong>Ende-zu-Ende-Verschlüsselung</strong> macht es potenziellen Angreifer noch schwieriger, dir zu schaden. Denn dank der verschlüsselten Dateinamen können Dritte keine Rückschlüsse auf die Dateitypen ziehen – was eines der häufigsten Einfallstore für sie ist.</p>
