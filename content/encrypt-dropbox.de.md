@@ -2,7 +2,7 @@
 title: "Dropbox verschlüsseln: Deine Daten sicher schützen mit Cryptomator"
 type: article
 description: "Schutz für deine Cloud: Wie du mit Cryptomator deine sensiblen Dateien in Dropbox verschlüsseln kannst."
-aliases: ["/faq/usage/encrypt-dropbox"]
+aliases: ["/de/faq/usage/encrypt-dropbox"]
 
 navtitle: "Verschlüsselung deiner Dropbox"
 ctatitle: "Du willst deine Dropbox mit Cryptomator verschlüsseln?"
