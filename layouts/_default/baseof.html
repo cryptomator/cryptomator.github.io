@@ -23,6 +23,11 @@
       <meta property="og:url" content="{{ .Permalink }}">
       <meta property="og:site_name" content="{{ .Site.Title }}">
       <meta property="og:description" content="{{ .Params.Description }}">
+      {{ if .Params.Ogimage }}
+        <meta property="og:image" content="{{ .Params.Ogimage.Relsrc | absURL }}">
+        <meta property="og:image:width" content="{{ .Params.Ogimage.Width }}"/>
+        <meta property="og:image:height" content="{{ .Params.Ogimage.Height }}"/>
+      {{ end }}
       <meta property="og:image" content="{{ "/img/og-image.png" | absURL }}">
       <meta property="og:image:width" content="1200"/>
       <meta property="og:image:height" content="630"/>

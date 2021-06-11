@@ -9,6 +9,11 @@ ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator ist kostenlos und ohne Account nutzbar. Einfach herunterladen und loslegen."
 ctalink: /de/downloads/
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
+
+ogimage:
+  relsrc: /img/open-source/bartender-vs-stranger@2x.png
+  width: 1472
+  height: 664
 ---
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
@@ -65,6 +70,8 @@ Wahrscheinlich spürst du bereits eine Tendenz: Die fremde Person kann noch so n
 Doch du weißt nicht: Was, wenn da doch etwas in dem Drink ist, was da lieber nicht drin sein sollte?
 
 Und möglicherweise kommt dir hier das alte Sprichwort in den Sinn: Vertrauen ist gut – Kontrolle ist besser.
+
+<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Barkeeper vs. Unbekannter" />
 
 ## Vertrauen ist gut, Kontrolle ist besser – gerade, wenn du sensible Daten im Cloud-Speicher verschlüsseln willst {#trust-but-verify}
 

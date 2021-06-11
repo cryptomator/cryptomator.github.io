@@ -9,6 +9,11 @@ ctatitle: "You want to encrypt your cloud storage with Cryptomator?"
 ctatext: "Cryptomator is free and can be used without an account. Just download and get started."
 ctalink: /downloads/
 ctabutton: "Encrypt Your Cloud Storage Now"
+
+ogimage:
+  relsrc: /img/open-source/bartender-vs-stranger@2x.png
+  width: 1472
+  height: 664
 ---
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
@@ -65,6 +70,8 @@ You probably already sense a tendency: The stranger may look nice – and in mos
 But you don't know: What if there is something in the drink that shouldn't be there?
 
 And maybe the old saying comes to your mind: Trust, but verify.
+
+<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Bartender vs. Stranger" />
 
 ## Trust, but verify – especially if you want to encrypt sensitive data in the cloud {#trust-but-verify}
 
