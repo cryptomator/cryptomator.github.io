@@ -27,10 +27,11 @@
         <meta property="og:image" content="{{ .Params.Ogimage.Relsrc | absURL }}">
         <meta property="og:image:width" content="{{ .Params.Ogimage.Width }}"/>
         <meta property="og:image:height" content="{{ .Params.Ogimage.Height }}"/>
+      {{ else }}
+        <meta property="og:image" content="{{ "/img/og-image.png" | absURL }}">
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
       {{ end }}
-      <meta property="og:image" content="{{ "/img/og-image.png" | absURL }}">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
     {{ else }}
       <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ i18n "site_meta_description" }}{{ end }}"/>
       <meta property="og:title" content="{{ if not .IsHome }}Cryptomator - {{ end }}{{ .Title }}"/>
