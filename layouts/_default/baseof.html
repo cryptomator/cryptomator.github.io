@@ -16,6 +16,9 @@
       {{ range .Params.tags }}
         <meta property="article:tag" content="{{ . }}" />
       {{ end }}
+      <meta property="og:image" content="{{ "/img/logo.png" | absURL }}" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     {{ else if (eq .Type "article") }}
       <meta name="description" content="{{ .Params.Description }}">
       <meta property="og:title" content="{{ .Title }}">
@@ -43,9 +46,6 @@
       <meta property="og:image:width" content="1200"/>
       <meta property="og:image:height" content="630"/>
     {{ end }}
-    <meta property="og:image" content="{{ "/img/logo.png" | absURL }}" />
-    <meta property="og:image:width" content="256" />
-    <meta property="og:image:height" content="256" />
     <meta property="og:locale" content="{{ .Site.Language.Params.LanguageCode }}" />
     {{ range .Translations }}
       <meta property="og:locale:alternate" content="{{ .Language.Params.LanguageCode }}" />
