@@ -11,9 +11,9 @@ ctalink: /downloads/
 ctabutton: "Encrypt Your Cloud Storage Now"
 
 ogimage:
-  relsrc: /img/open-source/bartender-vs-stranger@2x.png
-  width: 1472
-  height: 664
+  relsrc: /img/open-source/og-image.png
+  width: 1200
+  height: 541
 ---
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
