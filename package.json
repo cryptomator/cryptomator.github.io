@@ -5,6 +5,7 @@
   "scripts": {
     "clean": "rm -r public",
     "build": "hugo",
+    "serve": "HUGO_ENV=development hugo server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian Stenzel",
