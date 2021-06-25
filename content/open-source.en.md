@@ -22,6 +22,8 @@ ogimage:
 
 <p class="lead">Maybe you've been looking into encrypting your cloud storage for a while now, and you've come across "open source" solutions. Maybe you're wondering why open source is so important if you want to encrypt your files? Here we explain it to you.</p>
 
+<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Bartender vs. Stranger" />
+
 To help you understand what open source actually means, let's start with an example.
 
 Imagine you are in a foreign city. In the evening, you visit a part of town that is considered a bit shady. There, you go to a bar and want to have a drink.
@@ -70,8 +72,6 @@ You probably already sense a tendency: The stranger may look nice – and in mos
 But you don't know: What if there is something in the drink that shouldn't be there?
 
 And maybe the old saying comes to your mind: Trust, but verify.
-
-<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Bartender vs. Stranger" />
 
 ## Trust, but verify – especially if you want to encrypt sensitive data in the cloud {#trust-but-verify}
 

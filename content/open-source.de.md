@@ -22,6 +22,8 @@ ogimage:
 
 <p class="lead">Vielleicht hast du dich jetzt schon eine Weile mit der Verschlüsselung deines Cloud-Speichers beschäftigt und bist dabei auf das Thema „Open Source“ gestoßen. Vielleicht fragst du dich, warum Open Source so wichtig ist, wenn du deinen Dateien verschlüsseln willst? Hier erklären wir es dir.</p>
 
+<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Barkeeper vs. Unbekannter" />
+
 Damit du noch besser nachvollziehen kannst, was Open Source eigentlich bedeutet, lass uns mit einem Beispiel starten.
 
 Stell dir vor, du bist in einer fremden Stadt und besuchst abends einen Stadtteil, der als etwas zwielichtig gilt. Dort gehst du in eine Bar und willst etwas trinken.
@@ -70,8 +72,6 @@ Wahrscheinlich spürst du bereits eine Tendenz: Die fremde Person kann noch so n
 Doch du weißt nicht: Was, wenn da doch etwas in dem Drink ist, was da lieber nicht drin sein sollte?
 
 Und möglicherweise kommt dir hier das alte Sprichwort in den Sinn: Vertrauen ist gut – Kontrolle ist besser.
-
-<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Barkeeper vs. Unbekannter" />
 
 ## Vertrauen ist gut, Kontrolle ist besser – gerade, wenn du sensible Daten im Cloud-Speicher verschlüsseln willst {#trust-but-verify}
 
