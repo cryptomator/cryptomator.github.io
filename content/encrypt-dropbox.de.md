@@ -9,6 +9,11 @@ ctatitle: "Du willst deine Dropbox mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator ist kostenlos und ohne Account nutzbar. Einfach herunterladen und loslegen."
 ctalink: /de/downloads/
 ctabutton: "Jetzt deine Dropbox verschlüsseln"
+
+ogimage:
+  relsrc: /img/encrypt-dropbox/og-image.png
+  width: 1200
+  height: 541
 ---
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
@@ -17,13 +22,17 @@ ctabutton: "Jetzt deine Dropbox verschlüsseln"
 
 <p class="lead">Du willst deine <strong>Dropbox verschlüsseln und Privatsphäre schützen</strong> – und weiterhin die gesamte Freiheit, wie du deine Daten organisierst? Hier kommt Cryptomator ins Spiel.</p>
 
+<img class="inline-block" src="/img/encrypt-dropbox/cryptobot-unlocking-vault.png" srcset="/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, /img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x" alt="Cryptobot entsperrt Tresor" />
+
 Mit Cryptomator kannst du deinen **Cloud-Speicher verschlüsseln**, indem du in Dropbox einen Tresor erzeugst und dort deine Dateien hineinlegst. Mit dieser zusätzlichen Sicherheitsschicht errichtest du eine nahezu unüberwindbare Barriere vor Angreifern – ohne dass die Dateiablage und Synchronisation von Dropbox eingeschränkt wird.
 
-## Kostenlose Dropbox Verschlüsselung {#free-dropbox-encryption}
+## Wie Cryptomator deine Dropbox Verschlüsselung sicherstellt {#how-the-vault-works}
 
-Die Desktop-App von Cryptomator ist kostenfrei und für alle gängigen Betriebssysteme verfügbar. [Lade dir jetzt Cryptomator herunter und probiere es aus.](/de/downloads/)
+Cryptomator legt die Daten in deiner Dropbox in einen „magischen“ Tresor. Magisch deshalb, weil der gesamte Tresor und sein Inhalt nur mit dem richtigen Passwort erscheinen – und nur für denjenigen mit dem richtigen Passwort.
 
-Willst du auch auf dem Smartphone deine Dateien schützen, zahlst du für die mobile App einmalig 9,99 Euro. Die App gibt es für iOS und Android.
+Wird die Tür zum Tresor wieder geschlossen, verschwindet der gesamte Tresor mitsamt dem wertvollen Inhalt wieder, bis du ihn das nächste Mal mit dem richtigen Passwort öffnest.
+
+Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand des Tresors zu bohren. Denn der Tresor ist leer, wenn das richtige Passwort fehlt. (Für die Marvel-Fans: Es funktioniert in etwa wie das Portal in Doctor Strange.)
 
 ## Deine Dropbox verschlüsseln und Daten zuverlässig schützen: So hilft dir Cryptomator dabei {#features}
 
@@ -75,14 +84,6 @@ Willst du auch auf dem Smartphone deine Dateien schützen, zahlst du für die mo
 </div>
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
-## Wie Cryptomator deine Dropbox Verschlüsselung sicherstellt {#how-the-vault-works}
-
-Cryptomator legt die Daten in deiner Dropbox in einen „magischen“ Tresor. Magisch deshalb, weil der gesamte Tresor und sein Inhalt nur mit dem richtigen Passwort erscheinen – und nur für denjenigen mit dem richtigen Passwort.
-
-Wird die Tür zum Tresor wieder geschlossen, verschwindet der gesamte Tresor mitsamt dem wertvollen Inhalt wieder, bis du ihn das nächste Mal mit dem richtigen Passwort öffnest.
-
-Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand des Tresors zu bohren. Denn der Tresor ist leer, wenn das richtige Passwort fehlt. (Für die Marvel-Fans: Es funktioniert in etwa wie das Portal in Doctor Strange.)
 
 ## Und so funktioniert Cryptomator in der Praxis {#how-cryptomator-works}
 

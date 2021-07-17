@@ -9,6 +9,11 @@ ctatitle: "You want to encrypt your Dropbox with Cryptomator?"
 ctatext: "Cryptomator is free and can be used without an account. Just download and get started."
 ctalink: /downloads/
 ctabutton: "Encrypt Your Dropbox Now"
+
+ogimage:
+  relsrc: /img/encrypt-dropbox/og-image.png
+  width: 1200
+  height: 541
 ---
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
@@ -17,13 +22,17 @@ ctabutton: "Encrypt Your Dropbox Now"
 
 <p class="lead">You want to <strong>encrypt your Dropbox and protect your privacy</strong> – and still have all the freedom in how you organize your data? That's where Cryptomator comes in.</p>
 
+<img class="inline-block" src="/img/encrypt-dropbox/cryptobot-unlocking-vault.png" srcset="/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, /img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x" alt="Cryptobot Unlocking Vault" />
+
 With Cryptomator, you can **encrypt your cloud storage** by creating a vault in Dropbox and putting your files into it. With this extra layer of security, you'll build an almost insurmountable barrier against attackers – without restricting Dropbox's file storage and synchronization.
 
-## Free Dropbox encryption {#free-dropbox-encryption}
+## How Cryptomator secures your Dropbox encryption {#how-the-vault-works}
 
-The desktop app of Cryptomator is free of charge and available for all major operating systems. [Download Cryptomator now and try it out.](/downloads/)
+Cryptomator puts the data in your Dropbox into a "magic" vault. Magical because the entire vault and its contents only appear with the right password – and only to the person with the right password.
 
-If you also want to protect your files on your smartphone, you can get the mobile app for a one-time fee of 9.99 Euros. The app is available for iOS and Android.
+When the door to the vault is closed again, the entire vault and its valuable contents disappear again until the next time you open it with the right password.
+
+This means that attackers would not even benefit from drilling through the wall of the vault. Because the vault is empty if the correct password is missing. (For Marvel fans: It works similarly to the portal in Doctor Strange).
 
 ## Encrypt your Dropbox and reliably protect your data: This is how Cryptomator helps you {#features}
 
@@ -75,14 +84,6 @@ If you also want to protect your files on your smartphone, you can get the mobil
 </div>
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
-## How Cryptomator secures your Dropbox encryption {#how-the-vault-works}
-
-Cryptomator puts the data in your Dropbox into a "magic" vault. Magical because the entire vault and its contents only appear with the right password – and only to the person with the right password.
-
-When the door to the vault is closed again, the entire vault and its valuable contents disappear again until the next time you open it with the right password.
-
-This means that attackers would not even benefit from drilling through the wall of the vault. Because the vault is empty if the correct password is missing. (For Marvel fans: It works similarly to the portal in Doctor Strange).
 
 ## And this is how Cryptomator works in practice {#how-cryptomator-works}
 
