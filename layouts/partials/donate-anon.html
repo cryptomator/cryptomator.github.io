@@ -27,19 +27,19 @@
         <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
         <input type="hidden" name="amount" value="15" />
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-        <button type="submit" class="btn btn-primary w-full md:w-64" x-bind:disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_paypal_calltoaction" }}</button>
+        <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_paypal_calltoaction" }}</button>
       </form>
     </div>
 
     <!-- Card -->
     <div x-show="tab === 'card'" x-cloak>
       <div x-data="{amount: 15, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment(), acceptTerms: false}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
-        <div class="flex flex-wrap md:flex-no-wrap">
+        <div class="flex flex-wrap md:flex-nowrap">
           <div class="w-full mb-4 md:w-1/2 md:pr-3">
             <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_amount" }}</label>
             <div class="flex items-center rounded bg-gray-300">
               <div class="flex-shrink-0 relative text-gray-700 w-16">
-                <select x-model="currency" class="appearance-none w-full rounded-r-none bg-gray-300 px-3">
+                <select x-model="currency" class="appearance-none w-full rounded-r-none border-gray-300 bg-gray-300 px-3">
                   <option value="EUR">€</option>
                   <option value="USD">$</option>
                 </select>
@@ -47,7 +47,7 @@
                   <i class="fas fa-chevron-down text-xs"></i>
                 </div>
               </div>
-              <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+              <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 rounded-none text-right placeholder-gray-500 border-gray-300 bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
               <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
             </div>
           </div>
@@ -71,7 +71,7 @@
           <div class="mb-4">
             <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
             <div> <!-- wrapper needed for stripe text field -->
-              <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none focus:outline-none" x-on:focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
+              <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none border-gray-300 focus:outline-none" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
             </div>
           </div>
 
@@ -81,10 +81,10 @@
             <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
 
             <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
-              <button x-bind:disabled="!oneTimePaymentStatus.validCardNum" x-on:click="oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn btn-primary w-full md:w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
+              <button :disabled="!oneTimePaymentStatus.validCardNum" @click="oneTimePayment.loadRecaptcha($refs.captchaWrapper)" class="btn btn-primary w-full md:w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
             </div>
 
-            <button x-show="oneTimePaymentStatus.captcha" x-bind:disabled="oneTimePaymentStatus.inProgress || !acceptTerms" x-on:click="oneTimePayment.charge(amount, currency)" class="btn btn-primary w-full md:w-64">
+            <button x-show="oneTimePaymentStatus.captcha" :disabled="oneTimePaymentStatus.inProgress || !acceptTerms" @click="oneTimePayment.charge(amount, currency)" class="btn btn-primary w-full md:w-64">
               <i class="fas fa-credit-card"></i>
               {{ i18n "donate_creditcard_once_paynow" }}
               <i class="fas fa-spinner fa-spin" x-show="oneTimePaymentStatus.inProgress" aria-hidden="true"></i>
@@ -99,7 +99,7 @@
         <div x-show="frequency === 'recurring'" class="text-center">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-          <button type="submit" class="btn btn-primary w-full md:w-64" x-on:click="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}')" x-bind:disabled="!acceptTerms">
+          <button type="submit" class="btn btn-primary w-full md:w-64" @click="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}')" :disabled="!acceptTerms">
             <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
           </button>
         </div>
@@ -144,7 +144,7 @@
         <input type="hidden" name="success_url" value="{{ "/donate/thanks" | absURL }}" />
         <input type="hidden" name="allow_extra" value="1" />
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-        <button type="submit" class="btn btn-primary w-full md:w-64" x-bind:disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
+        <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
       </form>
     </div>
 

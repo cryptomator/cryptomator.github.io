@@ -11,8 +11,8 @@
       </div>
     </div>
     <p class="grid grid-cols-2 gap-2 text-center text-xs w-full md:w-2/3 lg:w-1/2 mx-auto">
-      <a class="text-primary no-underline hover:underline" href="#" x-on:click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_sha256_signature" }}</a>
-      <a class="text-primary no-underline hover:underline" href="#" x-on:click.prevent="showPgpSignature = !showPgpSignature"><i :class="{ 'fa-eye': !showPgpSignature, 'fa-eye-slash': showPgpSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature" }}</a>
+      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_sha256_signature" }}</a>
+      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showPgpSignature = !showPgpSignature"><i :class="{ 'fa-eye': !showPgpSignature, 'fa-eye-slash': showPgpSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature" }}</a>
     </p>
     <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
       <h3>{{ i18n "downloads_thanks_sha256_signature" }}</h3>

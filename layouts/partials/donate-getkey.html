@@ -1,16 +1,16 @@
 <div x-data="{checkoutData: {quantity: 1, amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false}" class="px-4 pt-2 pb-8">
   <form x-show="!checkoutData.success" x-ref="form">
-    <div class="flex flex-wrap md:flex-no-wrap">
+    <div class="flex flex-wrap md:flex-nowrap">
       <div class="w-full mb-4 md:w-1/2 md:pr-3">
         <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_quantity" }}</label>
-        <input x-model="checkoutData.quantity" type="number" min="1" max="100" step="1" class="appearance-none w-full mb-2" placeholder="min. 1" required/>
+        <input x-model="checkoutData.quantity" type="number" min="1" max="100" step="1" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" placeholder="min. 1" required/>
         <p class="text-xs text-gray-600">{{ i18n "donate_getkey_quantity_help" }}</p>
       </div>
       <div class="w-full mb-4 md:w-1/2 md:pl-3">
         <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_price" }}</label>
         <div class="flex items-center rounded bg-gray-300 mb-2">
           <div class="flex-shrink-0 text-gray-700 px-3">€ / $</div>
-          <input x-model="checkoutData.amount" type="number" min="15" step="1" class="flex-grow min-w-0 rounded-none text-right bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_price_placeholder" }}" required/>
+          <input x-model="checkoutData.amount" type="number" min="15" step="1" class="flex-grow min-w-0 rounded-none text-right placeholder-gray-500 border-gray-300 bg-white md:pr-0" placeholder="{{ i18n "donate_getkey_price_placeholder" }}" required/>
           <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "donate_getkey_price_suffix" }}</div>
         </div>
         <p class="text-xs text-gray-600">{{ i18n "donate_getkey_price_help" }}</p>
@@ -18,12 +18,12 @@
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_email" }}</label>
-      <input x-model="checkoutData.email" type="email" class="appearance-none w-full" placeholder="{{ i18n "donate_getkey_email_placeholder" }}" required/>
+      <input x-model="checkoutData.email" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "donate_getkey_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "donate_getkey_instruction" }}</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-      <button x-bind:disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" x-on:click="$event.preventDefault(); new DesktopLicense($refs.form, checkoutData).checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+      <button :disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" @click.prevent="new DesktopLicense($refs.form, checkoutData).checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "donate_getkey_checkout" }}
       </button>
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
@@ -33,7 +33,7 @@
   <div x-show="checkoutData.success" x-cloak>
     <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">{{ ":+1:" | emojify }} {{ i18n "donate_getkey_success" }}</h3>
     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_getkey_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed break-all w-full mb-2" rows="6" placeholder="{{ i18n "donate_getkey_key_placeholder" }}" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full mb-2" rows="6" placeholder="{{ i18n "donate_getkey_key_placeholder" }}" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700">{{ i18n "donate_getkey_key_instruction" }}</p>
   </div>

@@ -21,12 +21,12 @@
       {{- end }}
       {{- end }}
       <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
-        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-no-wrap p-2">
+        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
           <span>{{ i18n "nav_learn_more" . }}</span>
           <i class="fas fa-chevron-down text-xs"></i>
         </button>
         <div class="relative">
-          <div x-show="isLearnMoreDropdownOpen" @click.away="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-84 bg-white rounded shadow-md">
+          <div x-show="isLearnMoreDropdownOpen" @click.away="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md">
             {{- range .Site.Data.nav.LearnMoreRelLinks }}
             {{- with $.Site.GetPage . }}
             <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
@@ -39,7 +39,7 @@
       <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}"></li>
       
       <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
-        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-no-wrap p-2">
+        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
           <span>{{ .Site.Language.Lang | upper }}</span>
           <i class="fas fa-chevron-down text-xs"></i>
         </button>

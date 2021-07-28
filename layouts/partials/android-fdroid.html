@@ -16,7 +16,7 @@
         <p>{{ i18n "android_fdroid_repo" | safeHTML }}</p>
       </div>
       <p class="text-xs">
-        <a class="text-primary no-underline hover:underline" href="#" x-on:click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
+        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
       </p>
       <div x-show="showQrCode" x-cloak class="mt-4">
         <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
