@@ -22,7 +22,7 @@ ogimage:
 
 <p class="lead">You want to <strong>encrypt your Dropbox and protect your privacy</strong> – and still have all the freedom in how you organize your data? That's where Cryptomator comes in.</p>
 
-<img class="inline-block" src="/img/encrypt-dropbox/cryptobot-unlocking-vault.png" srcset="/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, /img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x" alt="Cryptobot Unlocking Vault" />
+<img class="inline-block" src="/img/encrypt-dropbox/cryptobot-unlocking-vault.png" srcset="/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, /img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x" alt="Cryptomator allows you to access your cleartext data without the need to remove encryption protection." />
 
 With Cryptomator, you can **encrypt your cloud storage** by creating a vault in Dropbox and putting your files into it. With this extra layer of security, you'll build an almost insurmountable barrier against attackers – without restricting Dropbox's file storage and synchronization.
 

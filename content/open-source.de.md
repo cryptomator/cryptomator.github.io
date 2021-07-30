@@ -22,7 +22,7 @@ ogimage:
 
 <p class="lead">Vielleicht hast du dich jetzt schon eine Weile mit der Verschlüsselung deines Cloud-Speichers beschäftigt und bist dabei auf das Thema „Open Source“ gestoßen. Vielleicht fragst du dich, warum Open Source so wichtig ist, wenn du deinen Dateien verschlüsseln willst? Hier erklären wir es dir.</p>
 
-<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Barkeeper vs. Unbekannter" />
+<img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Der sicherheitsbewusste Kunde entscheidet sich für Produkte, deren Rezeptur und Qualität er prüfen kann. Nicht überprüfbare Alternativen wirken zwielichtig." />
 
 Damit du noch besser nachvollziehen kannst, was Open Source eigentlich bedeutet, lass uns mit einem Beispiel starten.
 

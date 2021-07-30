@@ -22,7 +22,7 @@ ogimage:
 
 <p class="lead">Du willst deine <strong>Dropbox verschlüsseln und Privatsphäre schützen</strong> – und weiterhin die gesamte Freiheit, wie du deine Daten organisierst? Hier kommt Cryptomator ins Spiel.</p>
 
-<img class="inline-block" src="/img/encrypt-dropbox/cryptobot-unlocking-vault.png" srcset="/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, /img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x" alt="Cryptobot entsperrt Tresor" />
+<img class="inline-block" src="/img/encrypt-dropbox/cryptobot-unlocking-vault.png" srcset="/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, /img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x" alt="Cryptomator ermöglicht dir den Zugang zu deinen Klartextdaten, ohne dass der Schutz der Verschlüsselung aufgehoben werden muss." />
 
 Mit Cryptomator kannst du deinen **Cloud-Speicher verschlüsseln**, indem du in Dropbox einen Tresor erzeugst und dort deine Dateien hineinlegst. Mit dieser zusätzlichen Sicherheitsschicht errichtest du eine nahezu unüberwindbare Barriere vor Angreifern – ohne dass die Dateiablage und Synchronisation von Dropbox eingeschränkt wird.
 
