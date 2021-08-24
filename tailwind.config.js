@@ -193,6 +193,9 @@ module.exports = {
             'blockquote p:last-of-type::after': {
               content: 'unset',
             },
+            'ul > li::before': {
+              backgroundColor: theme('colors.gray.500'),
+            },
           },
         },
         sm: {
