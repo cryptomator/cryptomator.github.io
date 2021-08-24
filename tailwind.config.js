@@ -146,6 +146,9 @@ module.exports = {
       animation: {
         hover: 'hover 10s ease-in-out infinite',
       },
+      height: {
+        '412px': '412px',
+      },
       keyframes: {
         hover: {
           '0%, 100%': { transform: 'rotate(0deg) translateY(0)' },

@@ -1,2 +1,3 @@
-RelLinks: ["/downloads", "/donate", "/sponsors"]
+RelLinks: ["/downloads"]
+SupportUsRelLinks: ["/supporter-cert", "/donate", "/sponsors"]
 LearnMoreRelLinks: ["/open-source", "/encrypt-dropbox", "/coop", "/enterprise", "/gdpr"]

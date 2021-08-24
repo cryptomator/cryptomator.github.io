@@ -1,0 +1,39 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <div x-data="{showTab: null}" class="flex flex-col space-y-4 w-full relative lg:h-412px">
+      {{ range .Pages }}
+        <div class="space-y-2 lg:space-y-0">
+          <div class="w-full lg:pr-3 lg:w-1/2">
+            <button @click.prevent="showTab = showTab != $refs.{{ .Params.TabRef }} ? $refs.{{ .Params.TabRef }} : null" :class="{'border-white': showTab != $refs.{{ .Params.TabRef }}, 'border-primary': showTab == $refs.{{ .Params.TabRef }}}" class="flex items-center justify-between bg-white border-l-4 rounded shadow text-left p-4 w-full">
+              <div class="flex items-center">
+                <i :class="{'text-gray-600': showTab != $refs.{{ .Params.TabRef }}, 'text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="{{ .Params.FaIcon }} fa-fw text-2xl mr-4" aria-hidden="true"></i>
+                <h2 :class="{'text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="font-headline font-medium text-xl lg:text-2xl leading-snug">{{ .Title }}</h2>
+              </div>
+              <div class="ml-3">
+                <i :class="{'text-gray-500': showTab != $refs.{{ .Params.TabRef }}, 'text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="fas fa-chevron-right hidden lg:block"></i>
+                <i :class="{'fa-chevron-right text-gray-500': showTab != $refs.{{ .Params.TabRef }}, 'fa-chevron-down text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="fas lg:hidden"></i>
+              </div>
+            </button>
+          </div>
+          <div x-show="showTab == $refs.{{ .Params.TabRef }}" x-ref="{{ .Params.TabRef }}" class="w-full lg:absolute lg:top-0 lg:right-0 lg:pl-3 lg:w-1/2" x-cloak>
+            <div class="rounded shadow bg-white p-4" x-cloak>
+              {{ partial .Params.Partial (dict "context" . "Params" $.Params) }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <section class="container text-center py-12">
+    <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "donate_become_sponsor_title" . }}</h3>
+    <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-primary px-8">
+      <i class="fas fa-heart"></i> {{ i18n "donate_become_sponsor_button" . }}
+    </a>
+  </section>
+{{ end }}
