@@ -1,7 +1,13 @@
 - id: site_meta_description
   translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
+- id: nav_support_us
+  translation: "Support Us"
 - id: nav_learn_more
   translation: "Learn More"
+- id: nav_twitter
+  translation: "Cryptomator on Twitter"
+- id: nav_facebook
+  translation: "Cryptomator on Facebook"
 - id: footer_contribute_title
   translation: "Contribute"
 - id: footer_contribute_translate
@@ -12,8 +18,10 @@
   translation: "RSS Feed"
 - id: footer_legal_title
   translation: "Legal"
-- id: accept_terms_and_privacy
+- id: accept_terms_and_privacy_and_coupon_policy
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal."
+- id: accept_terms_and_privacy
+  translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_privacy
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
@@ -84,26 +92,11 @@
   translation: "Interested in Cryptomator for your business? Explore various fields of application."
 
 # Donate
-- id: donate_anon_title
-  translation: "Just donate"
-- id: donate_anon_feature_1
-  translation: "Support Cryptomator's open-source development"
-- id: donate_anon_feature_2
-  translation: "Choose your preferred payment method"
-- id: donate_anon_feature_3
-  translation: "No supporter certificate"
-- id: donate_anon_show_form_button
-  translation: "Proceed"
-
-- id: donate_paypal_title
-  translation: "PayPal"
 - id: donate_paypal_instruction
   translation: "After pressing \"Proceed\", you will be redirected to our PayPal site."
 - id: donate_paypal_calltoaction
   translation: "Proceed to PayPal"
 
-- id: donate_creditcard_title
-  translation: "Credit Card"
 - id: donate_creditcard_amount
   translation: "Amount"
 - id: donate_creditcard_amount_placeholder
@@ -133,76 +126,18 @@
 - id: donate_creditcard_recurring_calltoaction
   translation: "Proceed to Stripe"
 
-- id: donate_banktransfer_title
-  translation: "Bank Transfer"
 - id: donate_banktransfer_recipient
   translation: "Recipient"
 
-- id: donate_crypto_title
-  translation: "Crypto"
 - id: donate_crypto_instruction
   translation: "Select the crypto currency in the next step. After pressing \"Proceed\", you will be redirected to our CoinPayments site."
 - id: donate_crypto_calltoaction
   translation: "Proceed to CoinPayments"
 
-- id: donate_getkey_title
-  translation: "Buy a supporter certificate"
-- id: donate_getkey_feature_1
-  translation: "Register your software and unlock dark mode"
-- id: donate_getkey_feature_2
-  translation: "Some might say it's an awesome people certificate"
-- id: donate_getkey_feature_3
-  translation: "Get an invoice"
-- id: donate_getkey_show_form_button
-  translation: "Proceed"
-
-- id: donate_getkey_quantity
-  translation: "Number of Licenses"
-- id: donate_getkey_quantity_help
-  translation: "License is valid for one user and can be used on multiple computers."
-- id: donate_getkey_price
-  translation: "Price per License"
-- id: donate_getkey_price_placeholder
-  translation: "min. 15"
-- id: donate_getkey_price_suffix
-  translation: ".00"
-- id: donate_getkey_price_help
-  translation: "Minimum amount is 15 per license. Currency is determined during checkout."
-- id: donate_getkey_email
-  translation: "Email"
-- id: donate_getkey_email_placeholder
-  translation: "Email address"
-- id: donate_getkey_instruction
-  translation: "Payments are securely handled by Paddle."
-- id: donate_getkey_checkout
-  translation: "Checkout"
-
-- id: donate_getkey_success
-  translation: "Your payment was successful!"
-- id: donate_getkey_key
-  translation: "Supporter Certificate"
-- id: donate_getkey_key_placeholder
-  translation: "Loading…"
-- id: donate_getkey_key_instruction
-  translation: "This is your supporter certificate. Enter it in the Cryptomator settings under \"Support Us\". It has also been sent to your email address."
-
 - id: donate_become_sponsor_title
   translation: "Want to become an official sponsor?"
 - id: donate_become_sponsor_button
   translation: "Become a Sponsor"
-
-- id: donate_keyrecovery_title
-  translation: "Did you lose your supporter certificate?"
-- id: donate_keyrecovery_instruction
-  translation: "To recover a lost certificate or receipt, enter your email address below."
-- id: donate_keyrecovery_email_placeholder
-  translation: "Email address"
-- id: donate_keyrecovery_retrieve
-  translation: "Retrieve"
-- id: donate_keyrecovery_success
-  translation: "We've sent details of your past transactions and licenses to you via email."
-- id: donate_keyrecovery_contact_us
-  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
 # Downloads
 - id: downloads_all_versions_title
@@ -285,3 +220,87 @@
   translation: "Awardee of the CeBIT Innovation Award 2016"
 - id: home_cebit_subtitle
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
+
+# Supporter Certificate
+- id: supporter_cert_common_email
+  translation: "Email"
+- id: supporter_cert_common_email_placeholder
+  translation: "Email address"
+- id: supporter_cert_common_loadcaptcha
+  translation: "Continue…"
+- id: supporter_cert_common_submit
+  translation: "Send Request"
+- id: supporter_cert_common_success_title
+  translation: "Your request has been sent!"
+- id: supporter_cert_common_success_description
+  translation: "We have received your request and will evaluate it as soon as possible. Depending on our work load, it may take several days."
+
+- id: supporter_cert_funder_quantity
+  translation: "Number of Licenses"
+- id: supporter_cert_funder_quantity_help
+  translation: "License is valid for one user and can be used on multiple computers."
+- id: supporter_cert_funder_price
+  translation: "Price per License"
+- id: supporter_cert_funder_price_placeholder
+  translation: "min. 15"
+- id: supporter_cert_funder_price_suffix
+  translation: ".00"
+- id: supporter_cert_funder_price_help
+  translation: "Minimum amount is 15 per license. Currency is determined during checkout."
+- id: supporter_cert_funder_instruction
+  translation: "Payments are securely handled by Paddle."
+- id: supporter_cert_funder_checkout
+  translation: "Checkout"
+- id: supporter_cert_funder_success
+  translation: "Your payment was successful!"
+- id: supporter_cert_funder_key
+  translation: "Supporter Certificate"
+- id: supporter_cert_funder_key_placeholder
+  translation: "Loading…"
+- id: supporter_cert_funder_key_instruction
+  translation: "This is your supporter certificate. Enter it in the Cryptomator settings under \"Support Us\". It has also been sent to your email address."
+
+- id: supporter_cert_contributor_github_username
+  translation: "GitHub Username"
+- id: supporter_cert_contributor_github_username_placeholder
+  translation: "Username on GitHub"
+- id: supporter_cert_contributor_github_contribution_link
+  translation: "GitHub Contribution Link"
+- id: supporter_cert_contributor_github_contribution_link_placeholder
+  translation: "Contribution link on GitHub (https://github.com/...)"
+- id: supporter_cert_contributor_instruction
+  translation: "Check out our <a class=\"text-primary no-underline hover:underline\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">contribution guide</a> to get started."
+
+- id: supporter_cert_translator_crowdin_username
+  translation: "Crowdin Username"
+- id: supporter_cert_translator_crowdin_username_placeholder
+  translation: "Username on Crowdin"
+- id: supporter_cert_translator_instruction
+  translation: "<a class=\"text-primary no-underline hover:underline\" href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Help translating</a> Cryptomator to your favorite language."
+
+- id: supporter_cert_influencer_reference
+  translation: "Reference"
+- id: supporter_cert_influencer_reference_placeholder
+  translation: "- Link to blog post, how-to video, wiki contribution, etc. (https://...)\n- Number of followers, estimated page views, etc.\n\nmax. 800 characters"
+- id: supporter_cert_influencer_instruction
+  translation: "Share anything about Cryptomator on social media, on your website, or on any other media to spread the word."
+
+- id: supporter_cert_other_reason
+  translation: "Reason"
+- id: supporter_cert_other_reason_placeholder
+  translation: "max. 800 characters"
+- id: supporter_cert_other_instruction
+  translation: "Let us know any other reason that doesn't fit in the other categories."
+
+- id: supporter_cert_recovery_title
+  translation: "Did you lose your supporter certificate?"
+- id: supporter_cert_recovery_instruction
+  translation: "To recover a lost certificate or receipt, enter your email address below."
+- id: supporter_cert_recovery_email_placeholder
+  translation: "Email address"
+- id: supporter_cert_recovery_retrieve
+  translation: "Retrieve"
+- id: supporter_cert_recovery_success
+  translation: "We've sent details of your past transactions and licenses to you via email."
+- id: supporter_cert_recovery_contact_us
+  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."

@@ -8,8 +8,6 @@ const STRIPE_PHP_URL = 'https://api.cryptomator.org/stripe/prepare_payment.php';
 //const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'}; // test
 //const STRIPE_PHP_URL = 'http://localhost/stripe/prepare_payment.php';
 
-const RECAPTCHA_SITEKEY = '6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';
-
 class OneTimePayment {
 
   /**
@@ -68,7 +66,7 @@ class OneTimePayment {
       return card;
     });
   }
-  
+
   /**
    * Called when the value of the credit card field changes
    * @param {*} event 
@@ -81,23 +79,7 @@ class OneTimePayment {
       this._status.errorMessage = '';
     }
   }
-  
-  /**
-   * Lazily load reCAPTCHA and initialize it in the given wrapper element
-   * @param {*} wrapper A <div> or other element in which the reCAPTCHA iframe will get injected.
-   */
-  loadRecaptcha(wrapper) {
-    window.grecaptchaCallback = () => {
-      $(wrapper).empty();
-      grecaptcha.render(wrapper, {
-        'sitekey': RECAPTCHA_SITEKEY,
-        'data-size': 'compact',
-        'callback': (captcha) => this._status.captcha = captcha
-      });
-    }
-    $.getScript("https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&render=explicit");
-  }
-  
+
   /**
    * Attempt charging the card
    * @param {number} amount How many units of the given currency to pay
@@ -135,7 +117,7 @@ class OneTimePayment {
       }.bind(this));
     });
   }
-  
+
   /**
    * @param {Object} error error object returned by stripe
    * @param {string} error.message error message
@@ -150,7 +132,7 @@ class OneTimePayment {
       grecaptcha.reset();
     }
   }
-  
+
   onPaymentSucceeded() {
     console.info('Stripe payment succeeded!');
     this._status.success = true;
@@ -161,11 +143,11 @@ class OneTimePayment {
       grecaptcha.reset();
     }
   }
-  
+
 }
 
 class RecurringPayment {
-  
+
   /**
    * Creates a new recurring payment object.
    * @param {number} amount integer $$$
@@ -195,5 +177,5 @@ class RecurringPayment {
       });
     });
   }
-  
+
 }
