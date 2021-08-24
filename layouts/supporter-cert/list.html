@@ -67,7 +67,7 @@
     <script type="text/javascript" src="{{ $desktopKeyJs.RelPermalink }}" integrity="{{ $desktopKeyJs.Data.Integrity }}" defer></script>
     {{ $recaptchaJs := resources.Get "js/recaptcha.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" integrity="{{ $recaptchaJs.Data.Integrity }}" defer></script>
-    {{ $supporterCertJs := resources.Get "js/suppotercert.js" | minify | fingerprint }}
+    {{ $supporterCertJs := resources.Get "js/supportercert.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $supporterCertJs.RelPermalink }}" integrity="{{ $supporterCertJs.Data.Integrity }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $keyRecoveryJs.RelPermalink }}" integrity="{{ $keyRecoveryJs.Data.Integrity }}" defer></script>
