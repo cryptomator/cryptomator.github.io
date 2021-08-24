@@ -35,13 +35,13 @@ Folgende Kriterien vergleichen wir in diesem Artikel:
 - „Sichtbare“ Features
 - „Unsichtbare“ Features bzw. sicherheitsrelevante Kriterien
 
-## Noch ein Wort vorab
+## Noch ein Wort vorab {#a-word-in-advance}
 
 Wie du wahrscheinlich bereits mitbekommen hast, schreiben hier die Entwickler von Cryptomator. Vielleicht fragst du dich gerade, wie neutral ein Vergleich mit Boxcryptor dann überhaupt sein kann. Eine berechtige Frage.
 
 Unser Ziel ist es nicht, dich davon zu überzeugen, dass Cryptomator die beste Alternative zu Boxcryptor ist, die die Welt je gesehen hat. Uns ist es wichtig, dass du dir selbst eine Meinung machen kannst, weswegen wir dir auch erklären werden, wann Boxcryptor die bessere Alternative für dich ist.
 
-## Über Cryptomator
+## Über Cryptomator {#about-cryptomator}
 
 Cryptomator haben wir entwickelt, weil uns bestehende Verschlüsselungssoftwares nicht überzeugt und wir uns eine Alternative zu Boxcryptor gewünscht haben.
 
@@ -53,7 +53,7 @@ Solltest du dich jetzt fragen, was es mit „Open Source“ und „Closed Source
 
 (Um es direkt vorweg zu sagen: Closed Source bedeutet nicht per se, dass es schlecht ist. Doch im Kontext von Daten-Verschlüsselung solltest du das Thema Transparenz nicht unterschätzen – und die bietet Closed-Source-Software eben nicht.)
 
-## Der große Unterschied: Cryptomator ist eine Open-Source-Software und damit transparenter
+## Der große Unterschied: Cryptomator ist eine Open-Source-Software und damit transparenter {#the-big-difference}
 
 <img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="Der sicherheitsbewusste Kunde entscheidet sich für Produkte, deren Rezeptur und Qualität er prüfen kann. Nicht überprüfbare Alternativen wirken zwielichtig." />
 
@@ -71,11 +71,11 @@ Die Stärken von quelloffener Verschlüsselungssoftware siehst du also auf den e
 
 [Deine Daten in der Cloud sicher verschlüsseln: Wie du durch Open Source deine Datensicherheit weiter stärkst.](/de/open-source/)
 
-## Vergleich der Features von Boxcryptor und Cryptomator
+## Vergleich der Features von Boxcryptor und Cryptomator {#comparison}
 
 Während Cryptomator sich auf seine Kernaufgabe konzentriert (Verschlüsselung von Cloud-Speichern), punktet Boxcryptor bei der Integration mit weiteren Diensten von Secomba.
 
-### Generelle Features
+### Generelle Features {#general-features}
 
 Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zeigt dir die Gemeinsamkeiten und Unterschiede der beiden Verschlüsselungssoftwares:
 
@@ -154,7 +154,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
-### Sicherheitsrelevante Features
+### Sicherheitsrelevante Features {#security-relevant-features}
 
 Wie bereits zu Anfang geschildert, ist der große Unterschied zwischen Boxcryptor und Cryptomator unsichtbar, denn die Quelloffenheit und sicherheitsrelevanten Merkmale siehst du im Alltag nicht.
 
@@ -372,7 +372,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
-## Fazit: Wann Boxcryptor bzw. Cryptomator für dich die passende Alternative für dich sind
+## Fazit: Wann Boxcryptor bzw. Cryptomator für dich die passende Alternative für dich sind {#conclusion}
 
 Du kennst jetzt die Unterschiede zwischen Boxcryptor und der Alternative Cryptomator. Nun kannst du dir selbst eine Meinung bilden:
 
