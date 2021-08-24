@@ -18,7 +18,7 @@ ogimage:
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
-# Encrypt Dropbox securely: How to protect your sensitive files in the cloud with Cryptomator
+# Encrypt Dropbox Securely: How to Protect Your Sensitive Files in the Cloud With Cryptomator
 
 <p class="lead">You want to <strong>encrypt your Dropbox and protect your privacy</strong> – and still have all the freedom in how you organize your data? That's where Cryptomator comes in.</p>
 
@@ -26,7 +26,7 @@ ogimage:
 
 With Cryptomator, you can **encrypt your cloud storage** by creating a vault in Dropbox and putting your files into it. With this extra layer of security, you'll build an almost insurmountable barrier against attackers – without restricting Dropbox's file storage and synchronization.
 
-## How Cryptomator secures your Dropbox encryption {#how-the-vault-works}
+## How Cryptomator Secures Your Dropbox Encryption {#how-the-vault-works}
 
 Cryptomator puts the data in your Dropbox into a "magic" vault. Magical because the entire vault and its contents only appear with the right password – and only to the person with the right password.
 
@@ -34,7 +34,7 @@ When the door to the vault is closed again, the entire vault and its valuable co
 
 This means that attackers would not even benefit from drilling through the wall of the vault. Because the vault is empty if the correct password is missing. (For Marvel fans: It works similarly to the portal in Doctor Strange).
 
-## Encrypt your Dropbox and reliably protect your data: This is how Cryptomator helps you {#features}
+## Encrypt Your Dropbox and Reliably Protect Your Data: This Is How Cryptomator Helps You {#features}
 
 {{< /markdownify >}}</div>
 
@@ -85,7 +85,7 @@ This means that attackers would not even benefit from drilling through the wall 
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
-## And this is how Cryptomator works in practice {#how-cryptomator-works}
+## And This Is How Cryptomator Works in Practice {#how-cryptomator-works}
 
 If you want the vault to appear with your files, you first open Cryptomator. Now you enter your password and the vault appears (in the form of a virtual drive in your file explorer).
 
@@ -95,7 +95,7 @@ We call this virtual drive "vault drive". You can open it as usual and edit the 
 
 By the way, you can create as many vaults as you like to organize your data individually.
 
-## How to easily use Cryptomator with your Dropbox {#setup-guide}
+## How to Easily Use Cryptomator With Your Dropbox {#setup-guide}
 
 1. Install Cryptomator.
 2. Once Cryptomator is installed, you can create a new vault.
