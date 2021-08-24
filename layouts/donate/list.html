@@ -5,22 +5,22 @@
       <p class="lead">{{ .Description }}</p>
     </header>
 
-    <div x-data="{showTab: null}" class="flex flex-col space-y-4 w-full relative lg:h-412px">
+    <div x-data="{showTab: location.hash}" @hashchange.window="showTab = location.hash" class="flex flex-col space-y-4 w-full relative lg:h-412px">
       {{ range .Pages }}
         <div class="space-y-2 lg:space-y-0">
           <div class="w-full lg:pr-3 lg:w-1/2">
-            <button @click.prevent="showTab = showTab != $refs.{{ .Params.TabRef }} ? $refs.{{ .Params.TabRef }} : null" :class="{'border-white': showTab != $refs.{{ .Params.TabRef }}, 'border-primary': showTab == $refs.{{ .Params.TabRef }}}" class="flex items-center justify-between bg-white border-l-4 rounded shadow text-left p-4 w-full">
+            <button @click.prevent="location.hash = '{{ .Params.TabHash }}'" :class="{'border-white': showTab != '{{ .Params.TabHash }}', 'border-primary': showTab == '{{ .Params.TabHash }}'}" class="flex items-center justify-between bg-white border-l-4 rounded shadow text-left p-4 w-full">
               <div class="flex items-center">
-                <i :class="{'text-gray-600': showTab != $refs.{{ .Params.TabRef }}, 'text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="{{ .Params.FaIcon }} fa-fw text-2xl mr-4" aria-hidden="true"></i>
-                <h2 :class="{'text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="font-headline font-medium text-xl lg:text-2xl leading-snug">{{ .Title }}</h2>
+                <i :class="{'text-gray-600': showTab != '{{ .Params.TabHash }}', 'text-primary': showTab == '{{ .Params.TabHash }}'}" class="flex-shrink-0 {{ .Params.FaIcon }} fa-fw text-2xl mr-4" aria-hidden="true"></i>
+                <h2 :class="{'text-primary': showTab == '{{ .Params.TabHash }}'}" class="font-headline font-medium text-xl lg:text-2xl leading-snug">{{ .Title }}</h2>
               </div>
               <div class="ml-3">
-                <i :class="{'text-gray-500': showTab != $refs.{{ .Params.TabRef }}, 'text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="fas fa-chevron-right hidden lg:block"></i>
-                <i :class="{'fa-chevron-right text-gray-500': showTab != $refs.{{ .Params.TabRef }}, 'fa-chevron-down text-primary': showTab == $refs.{{ .Params.TabRef }}}" class="fas lg:hidden"></i>
+                <i :class="{'text-gray-500': showTab != '{{ .Params.TabHash }}', 'text-primary': showTab == '{{ .Params.TabHash }}'}" class="fas fa-chevron-right hidden lg:block"></i>
+                <i :class="{'fa-chevron-right text-gray-500': showTab != '{{ .Params.TabHash }}', 'fa-chevron-down text-primary': showTab == '{{ .Params.TabHash }}'}" class="fas lg:hidden"></i>
               </div>
             </button>
           </div>
-          <div x-show="showTab == $refs.{{ .Params.TabRef }}" x-ref="{{ .Params.TabRef }}" class="w-full lg:absolute lg:top-0 lg:right-0 lg:pl-3 lg:w-1/2" x-cloak>
+          <div x-show="showTab == '{{ .Params.TabHash }}'" class="w-full lg:absolute lg:top-0 lg:right-0 lg:pl-3 lg:w-1/2" x-cloak>
             <div class="rounded shadow bg-white p-4" x-cloak>
               {{ partial .Params.Partial (dict "context" . "Params" $.Params) }}
             </div>

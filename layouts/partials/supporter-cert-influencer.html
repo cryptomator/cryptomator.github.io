@@ -1,8 +1,8 @@
-<div x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, type: 'influencer', email: '', media_link: ''}, acceptTerms: false}">
+<div x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, type: 'influencer', email: '', reference: ''}, acceptTerms: false}">
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_influencer_media_link" }}</label>
-      <input x-model="submitData.media_link" type="url" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "supporter_cert_influencer_media_link_placeholder" }}" required/>
+      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_influencer_reference" }}</label>
+      <textarea x-model="submitData.reference" type="url" class="appearance-none placeholder-gray-500 border-gray-300 w-full" rows="5" maxlength="800" placeholder="{{ i18n "supporter_cert_influencer_reference_placeholder" }}" required></textarea>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_common_email" }}</label>

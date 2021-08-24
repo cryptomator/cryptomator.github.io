@@ -278,10 +278,10 @@
 - id: supporter_cert_translator_instruction
   translation: "<a class=\"text-primary no-underline hover:underline\" href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Hierüber</a> kannst du Cryptomator in deine bevorzugte Sprache übersetzen."
 
-- id: supporter_cert_influencer_media_link
-  translation: "Media Link"
-- id: supporter_cert_influencer_media_link_placeholder
-  translation: "Link zum Medienbeitrag (https://...)"
+- id: supporter_cert_influencer_reference
+  translation: "Referenz"
+- id: supporter_cert_influencer_reference_placeholder
+  translation: "- Link zum Blogbeitrag, Anleitungsvideo, Wiki-Beitrag etc. (https://...)\n- Anzahl der Follower, geschätzte Seitenaufrufe etc.\n\nmax. 800 Zeichen"
 - id: supporter_cert_influencer_instruction
   translation: "Teile etwas über Cryptomator in den sozialen Medien, auf deiner Website oder über andere Medien."
 

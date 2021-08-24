@@ -1,7 +1,7 @@
 ---
 title: "Kreditkarte"
 faIcon: "fas fa-credit-card"
-tabRef: "creditcardTab"
+tabHash: "#creditcard"
 partial: "donate-creditcard.html"
 weight: 2
 ---

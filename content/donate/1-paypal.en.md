@@ -1,7 +1,7 @@
 ---
 title: "PayPal"
 faIcon: "fab fa-paypal"
-tabRef: "paypalTab"
+tabHash: "#paypal"
 partial: "donate-paypal.html"
 weight: 1
 ---

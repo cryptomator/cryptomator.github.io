@@ -1,7 +1,7 @@
 ---
 title: "Überweisung"
 faIcon: "fas fa-landmark"
-tabRef: "banktransferTab"
+tabHash: "#banktransfer"
 partial: "donate-banktransfer.html"
 weight: 3
 ---
