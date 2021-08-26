@@ -1,6 +1,6 @@
 ---
 title: "Förderer"
-description: "Unterstütze die Open-Source-Entwicklung"
+description: "Finanziere die laufende Open-Source-Entwicklung"
 faIcon: "fas fa-sack-dollar"
 tabHash: "#funder"
 partial: "supporter-cert-funder.html"
