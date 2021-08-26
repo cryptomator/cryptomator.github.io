@@ -386,10 +386,10 @@ Let's now take a look at these features. For this we compare the features again 
 
 ## Conclusion: When Boxcryptor or Cryptomator Are the Right Alternative for You {#conclusion}
 
-You now know the differences between Boxcryptor and the alternative Cryptomator. Now you can form your own opinion:
+Now you know the differences between Boxcryptor and its alternative Cryptomator. Draw your own conclusions:
 
 Check whether the advantages of open-source software and thus the security-relevant criteria are important to you. If you like the approach of Cryptomator, it could be the more suitable alternative for you.
 
-Perhaps the range of functions of Boxcryptor is sufficient for you? Then you can decide according to your personal preference.
+Perhaps the features provided by Boxcryptor are sufficient for you? Then you can decide according to your personal preference.
 
 {{< /markdownify >}}</div>
