@@ -28,7 +28,7 @@
 
 .btn-primary:hover,
 .btn-primary:focus {
-  @apply text-white transition duration-200 ease-in-out shadow-md -translate-y-px;
+  @apply text-white transition transform duration-200 ease-in-out shadow-md -translate-y-px;
 }
 
 .btn-primary:disabled {
@@ -41,7 +41,7 @@
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
-  @apply bg-primary text-white transition duration-200 ease-in-out;
+  @apply bg-primary text-white transition transform duration-200 ease-in-out;
 }
 
 .btn-outline-secondary {
@@ -50,7 +50,7 @@
 
 .btn-outline-secondary:hover,
 .btn-outline-secondary:focus {
-  @apply bg-secondary text-white transition duration-200 ease-in-out;
+  @apply bg-secondary text-white transition transform duration-200 ease-in-out;
 }
 
 .btn-outline-gray-500 {
@@ -141,7 +141,7 @@ nav a:hover {
 }
 
 .tooltip-center {
-  @apply -translate-x-1/2;
+  @apply transform -translate-x-1/2;
   left: 50%;
 }
 
