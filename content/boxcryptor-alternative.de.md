@@ -85,8 +85,14 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
   <thead>
     <tr class="py-2">
       <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">Cryptomator</th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">Boxcryptor</th>
+      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">Cryptomator</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/cryptomator-logo.png" srcset="/img/boxcryptor-alternative/cryptomator-logo.png 1x, /img/boxcryptor-alternative/cryptomator-logo@2x.png 2x">
+      </th>
+      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">Boxcryptor</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/boxcryptor-logo.png" srcset="/img/boxcryptor-alternative/boxcryptor-logo.png 1x, /img/boxcryptor-alternative/boxcryptor-logo@2x.png 2x">
+      </th>
     </tr>
   </thead>
   <tbody class="divide-y divide-gray-200">
@@ -166,8 +172,14 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
   <thead>
     <tr class="py-2">
       <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">Cryptomator</th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">Boxcryptor</th>
+      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">Cryptomator</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/cryptomator-logo.png" srcset="/img/boxcryptor-alternative/cryptomator-logo.png 1x, /img/boxcryptor-alternative/cryptomator-logo@2x.png 2x">
+      </th>
+      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">Boxcryptor</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/boxcryptor-logo.png" srcset="/img/boxcryptor-alternative/boxcryptor-logo.png 1x, /img/boxcryptor-alternative/boxcryptor-logo@2x.png 2x">
+      </th>
     </tr>
   </thead>
   <tbody x-data="{ isFileContentEncryptionOpen: false, isFileNameEncryptionOpen: false, isFileAttributeEncryptionOpen: false, isFOSSOpen: false, isDirectoryObfuscationOpen: false, isIntegrityProtectionOpen: false, isQuantumResistantOpen: false, isAuditedCryptographyOpen: false, isMemoryHardKDFOpen: false, isShareKeysOpen: false }" class="divide-y divide-gray-200">
