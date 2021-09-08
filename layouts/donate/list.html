@@ -22,7 +22,7 @@
           </div>
           <div x-show="showTab == '{{ .Params.TabHash }}'" class="w-full lg:absolute lg:top-0 lg:right-0 lg:pl-3 lg:w-1/2" x-cloak>
             <div class="rounded shadow bg-white p-4" x-cloak>
-              {{ partial .Params.Partial (dict "context" . "Params" $.Params) }}
+              {{ partial .Params.Partial (dict "context" . "Site" $.Site "Params" $.Params) }}
             </div>
           </div>
         </div>

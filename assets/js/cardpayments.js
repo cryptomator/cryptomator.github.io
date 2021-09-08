@@ -167,7 +167,7 @@ class RecurringPayment {
         items: [
           {plan: plan, quantity: parseInt(amount)}
         ],
-        successUrl: window.location.href + '/thanks',
+        successUrl: window.location.href.split('#')[0] + 'thanks',
         cancelUrl: window.location.href,
         locale: languageCode
       }).then(result => {
