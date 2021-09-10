@@ -1,5 +1,5 @@
 ---
-title: "Mehr als nur eine kostenlose Alternative zu Boxcryptor: Cryptomator"
+title: "Kostenlose Alternative zu Boxcryptor: Cryptomator"
 type: article
 description: "Du willst deine Daten in der Cloud verschlüsseln und suchst die beste Alternative? Wir vergleichen für dich Boxcryptor mit der Open-Source-Lösung Cryptomator."
 

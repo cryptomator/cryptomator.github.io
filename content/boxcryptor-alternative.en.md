@@ -1,5 +1,5 @@
 ---
-title: "More Than Just a Free Alternative to Boxcryptor: Cryptomator"
+title: "Free Alternative to Boxcryptor: Cryptomator"
 type: article
 description: "You want to encrypt your data in the cloud and are looking for the best alternative? We compare Boxcryptor with the open-source solution Cryptomator."
 
