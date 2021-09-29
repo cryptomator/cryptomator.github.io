@@ -10,7 +10,7 @@
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "android_getkey_email" }}</label>
-      <input x-model="checkoutData.email" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "android_getkey_email_placeholder" }}" required/>
+      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "android_getkey_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "android_getkey_instruction" }}</p>

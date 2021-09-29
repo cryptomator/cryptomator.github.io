@@ -3,14 +3,14 @@
     <div class="flex flex-wrap md:flex-nowrap">
       <div class="w-full mb-4 md:w-1/2 md:pr-3">
         <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_funder_quantity" }}</label>
-        <input x-model="checkoutData.quantity" type="number" min="1" max="100" step="1" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" placeholder="min. 1" required/>
+        <input x-model="checkoutData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="100" step="1" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" placeholder="min. 1" required/>
         <p class="text-xs text-gray-600">{{ i18n "supporter_cert_funder_quantity_help" }}</p>
       </div>
       <div class="w-full mb-4 md:w-1/2 md:pl-3">
         <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_funder_price" }}</label>
         <div class="flex items-center rounded bg-gray-300 mb-2">
           <div class="flex-shrink-0 text-gray-700 px-3">€ / $</div>
-          <input x-model="checkoutData.amount" type="number" min="15" step="1" class="flex-grow min-w-0 rounded-none text-right placeholder-gray-500 border-gray-300 bg-white md:pr-0" placeholder="{{ i18n "supporter_cert_funder_price_placeholder" }}" required/>
+          <input x-model="checkoutData.amount" x-ref="amount" @blur="$refs.amount.classList.add('show-invalid')" type="number" min="15" step="1" class="flex-grow min-w-0 rounded-none text-right placeholder-gray-500 border-gray-300 bg-white md:pr-0" placeholder="{{ i18n "supporter_cert_funder_price_placeholder" }}" required/>
           <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "supporter_cert_funder_price_suffix" }}</div>
         </div>
         <p class="text-xs text-gray-600">{{ i18n "supporter_cert_funder_price_help" }}</p>
@@ -18,7 +18,7 @@
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_common_email" }}</label>
-      <input x-model="checkoutData.email" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
+      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>

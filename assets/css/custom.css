@@ -77,7 +77,9 @@ textarea:focus,
 }
 
 input:focus:invalid,
-input.show-invalid:invalid {
+input.show-invalid:invalid,
+textarea:focus:invalid,
+textarea.show-invalid:invalid {
   @apply border-red-500;
 }
 

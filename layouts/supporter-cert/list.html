@@ -39,7 +39,7 @@
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_recovery_instruction" . }}</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="{{ i18n "supporter_cert_recovery_email_placeholder" }}" required/>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="{{ i18n "supporter_cert_recovery_email_placeholder" }}" required/>
         <button :disabled="!$refs.form.checkValidity() || data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "supporter_cert_recovery_retrieve" }}
         </button>
