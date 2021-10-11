@@ -8,6 +8,7 @@ summary: "im Zuge des anstehenden Releases von Cryptomator 1.6.0 möchten wir eu
 ---
 
 Hallo Community!
+
 im Zuge des anstehenden Releases von Cryptomator 1.6.0 möchten wir euch einen Einblick über die Motivation und Umsetzung eine der wichtigen Änderungen geben: Das neue Tresorformat in Version 8.
 
 Ja, ein neues Tresorformat.
@@ -18,6 +19,7 @@ Dieser Artikel wird die Motivation für die Gestaltung des neuen Formats dargele
 
 ## Die Motivation
 Der Speicherort des Masterkey eines Tresors ist ein Thema, das schon in den Anfangstagen von Cryptomator viele Fragen aufgeworfen und zu mehreren Feature Requests geführt hat. (vergleiche die Klickzahlen im Forumsartikel ["Why is the masterkey stored in the cloud"](https://community.cryptomator.org/t/why-is-the-masterkey-stored-in-the-cloud/))
+
 Woher kommt das?
 Der Masterkey eines Tresors wird innerhalb der Tresor-Ordnerstruktur in einer Datei namens `masterkey.cryptomator` gespeichert und mit nach heutigem Kenntnisstand modernen und sicheren Algorithmen verschlüsselt.
 Sein Speicherort stellt kein Sicherheitsrisiko dar und gewährleistet zudem, dass dieser integrale Bestandteil eines Tresors immer mit dem Tresor verschoben wird.
@@ -49,7 +51,6 @@ Durch die Angabe in der Tresorkonfiguration kann sie in Zukunft konfiguriert wer
 Das Verschlüsselungsschema, die Verzeichnisstruktur und die verschlüsselten Dateien bleiben unverändert.
 
 ## Die Migration
-
 Was bedeuten diese Änderungen für eine Migration von Tresorformat 7 auf 8?
 So gut wie nichts!
 
@@ -60,9 +61,9 @@ Im eigentlichen Migrationsprozess wird zuerst die Tresorkonfigurationsdatei `vau
 Zweitens wird die bereits vorhandene Masterkey-Datei aktualisiert.
 Und drittens... das war's auch schon :smile: Keine anderen Dateien müssen geändert werden!
 
-Wie Ihr seht, bringt das Tresorformat 8 nur eine kleine und leicht zu bewerkstelligende Änderung mit sich und macht gleichzeitig Platz für interessante und spannende neue Funktionen. 
+Wie Ihr seht, bringt das Tresorformat 8 nur eine kleine und leicht zu bewerkstelligende Änderung mit sich und macht gleichzeitig Platz für interessante und spannende neue Funktionen.
 Mit dem Update auf Cryptomator 1.6.0, werden neu erstelle Tresore das Format 8 direkt besitzten, Tresore einer früheren Version müssen migriert werden.
-Beachtet, dass die Masterkey-Datei weiterhin benötigt wird, da sie den eigentlichen Schlüssel zu eurem Tresor enthält. 
+Beachtet, dass die Masterkey-Datei weiterhin benötigt wird, da sie den eigentlichen Schlüssel zu eurem Tresor enthält.
 
 Wir hoffen, dass Ihr nach dem Lesen des Artikels ohne Sorge auf ein Tresor-Upgrade blickt!
 Wenn Ihr mehr über die kommende Version 1.6.0 von Cryptomator erfahren wollt, lest [Cryptomator 1.6.0: Was hat sich geändert?](https://cryptomator.org/blog/2021/10/09/1-6-0-what-you-need-to-know/).
