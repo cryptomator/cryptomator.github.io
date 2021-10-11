@@ -1,7 +1,7 @@
 ---
 title: "Vault Format 8"
 slug: vault-format-8
-date: 2021-10-09
+date: 2021-10-11
 tags: [cryptomator, vault-format]
 
 summary: "We’d like to give you some information about an important part of the upcoming 1.6.0 release (ETA end of this month): The new vault format in version 8."
@@ -64,4 +64,4 @@ Keep in mind that the masterkey file is still needed, since it securely contains
 
 
 We hope that your worries about a vault upgrade are reduced and you are eager to update!
-If you want to know more about the upcoming 1.6.0 version of Cryptomator, continue reading the [article](https://cryptomator.org/blog/2021/10/09/1-6-0-what-you-need-to-know/) about it.
+If you want to know more about the upcoming 1.6.0 version of Cryptomator, continue reading the [article](https://cryptomator.org/blog/2021/10/11/1-6-0-what-you-need-to-know/) about it.

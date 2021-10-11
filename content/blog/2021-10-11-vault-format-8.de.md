@@ -1,7 +1,7 @@
 ---
 title: "Vault Format 8"
 slug: vault-format-8
-date: 2021-10-09
+date: 2021-10-11
 tags: [cryptomator, vault-format]
 
 summary: "im Zuge des anstehenden Releases von Cryptomator 1.6.0 möchten wir euch einen Einblick über die Motivation und Umsetzung eine der wichtigen Änderungen geben: Das neue Tresorformat in Version 8."
@@ -66,4 +66,4 @@ Mit dem Update auf Cryptomator 1.6.0, werden neu erstelle Tresore das Format 8 d
 Beachtet, dass die Masterkey-Datei weiterhin benötigt wird, da sie den eigentlichen Schlüssel zu eurem Tresor enthält.
 
 Wir hoffen, dass Ihr nach dem Lesen des Artikels ohne Sorge auf ein Tresor-Upgrade blickt!
-Wenn Ihr mehr über die kommende Version 1.6.0 von Cryptomator erfahren wollt, lest [Cryptomator 1.6.0: Was hat sich geändert?](https://cryptomator.org/blog/2021/10/09/1-6-0-what-you-need-to-know/).
+Wenn Ihr mehr über die kommende Version 1.6.0 von Cryptomator erfahren wollt, lest [Cryptomator 1.6.0: Was hat sich geändert?](https://cryptomator.org/blog/2021/10/11/1-6-0-what-you-need-to-know/).
