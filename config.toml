@@ -54,24 +54,24 @@ unsafe = true
 
 [params]
   [params.releases]
-    [params.releases.exe]
-      version = "1.5.17"
-      filename = "Cryptomator-1.5.17-x64.exe"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.17/Cryptomator-1.5.17-x64.exe"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.17/Cryptomator-1.5.17-x64.exe.asc"
-      checksum = "1c9f9f67dbbc8567b9760f10a508b9fd2d0f457b227858b3d695764962e3dc41"
+    [params.releases.msi]
+      version = "1.6.0"
+      filename = "Cryptomator-1.6.0-x64.msi"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/Cryptomator-1.6.0-x64.msi"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/Cryptomator-1.6.0-x64.msi.asc"
+      checksum = "9391a273c5ceeed397ebc42fc617987d06a05779a88e5a636abc476edf1c4279"
     [params.releases.dmg]
-      version = "1.5.19"
-      filename = "Cryptomator-1.5.19.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.19/Cryptomator-1.5.19.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.19/Cryptomator-1.5.19.dmg.asc"
-      checksum = "6576c1425e1388d83be525f240a8140c8a73e10dfe2a3ecd65ff452f7c0d6c63"
+      version = "1.6.0"
+      filename = "Cryptomator-1.6.0.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/Cryptomator-1.6.0.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/Cryptomator-1.6.0.dmg.asc"
+      checksum = "75334656783bfcfe1c522d291b4671fd852615439523e5140aa3c48418d4c880"
     [params.releases.appimage]
-      version = "1.5.17"
-      filename = "cryptomator-1.5.17-x86_64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.17/cryptomator-1.5.17-x86_64.AppImage"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.5.17/cryptomator-1.5.17-x86_64.AppImage.asc"
-      checksum = "1b662a3746c266beb8444e529541d1712e6e3f5807229231083663535ac530f8"
+      version = "1.6.0"
+      filename = "cryptomator-1.6.0-x86_64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/cryptomator-1.6.0-x86_64.AppImage"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/cryptomator-1.6.0-x86_64.AppImage.asc"
+      checksum = "c1c860c3cc0dbaa993666137e4060e67e3981983ae82e3fc1d1f420e76182fa4"
     [params.releases.android]
       version = "1.5.16"
       filename = "Cryptomator-1.5.16.apk"
