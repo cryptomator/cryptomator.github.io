@@ -59,7 +59,7 @@ unsafe = true
       filename = "Cryptomator-1.6.0-x64.msi"
       downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/Cryptomator-1.6.0-x64.msi"
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/Cryptomator-1.6.0-x64.msi.asc"
-      checksum = "9391a273c5ceeed397ebc42fc617987d06a05779a88e5a636abc476edf1c4279"
+      checksum = "ded0e69d6a001138de8a807b078fe75e77c966bd801c2a31d21fef4d58984dc2"
     [params.releases.dmg]
       version = "1.6.0"
       filename = "Cryptomator-1.6.0.dmg"
