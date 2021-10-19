@@ -73,10 +73,10 @@ unsafe = true
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.0/cryptomator-1.6.0-x86_64.AppImage.asc"
       checksum = "c1c860c3cc0dbaa993666137e4060e67e3981983ae82e3fc1d1f420e76182fa4"
     [params.releases.android]
-      version = "1.5.16"
-      filename = "Cryptomator-1.5.16.apk"
-      downloadUrl = "https://static.cryptomator.org/android/1.5.16/Cryptomator-1.5.16.apk"
-      checksum = "5d48569d403963f219f1accb5bddad69ba55018eaba4f60df80bb0a7b7953f3f"
+      version = "1.6.0"
+      filename = "Cryptomator-1.6.0.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.6.0/Cryptomator-1.6.0.apk"
+      checksum = "22ff1239fa86beb1f59e532385613f28da0458e07bb2b26bba293c2380c7495d"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"
