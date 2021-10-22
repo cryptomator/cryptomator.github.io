@@ -6,7 +6,7 @@ navtitle: "GDPR Compliancy"
 ---
 
 ## Does Cryptomator allow GDPR-compliant file storage?
-Yes. This has been {{< extlink "https://gdprhub.eu/index.php?title=Council_of_State_-_251.378" "confirmed by the Belgian Council of State on August 19, 2021" >}}: When storing data in countries that don't have equivalent data protection laws as the GDPR, organizations must implement supplementary measures. According to the judgement, encryption of said data is considered as an adequate supplementary measure.
+Yes. This has been {{< extlink "https://gdprhub.eu/index.php?title=Council_of_State_-_251.378" "confirmed by the Belgian Council of State on August 19, 2021" >}}: When storing data in countries that don't have data protection laws equivalent to the GDPR, organizations must implement supplementary measures. According to the judgement, encryption of said data is considered as an adequate supplementary measure.
 
 In other words: If you use Cryptomator to encrypt personal data, the encrypted data can be stored GPDR-compliantly even outside the EU.
 
