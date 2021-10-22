@@ -5,6 +5,11 @@ aliases: ["/de/faq/gdpr", "/de/faq/gdpr/gdpr-compliant", "/de/faq/gdpr/dpa-crypt
 navtitle: "DSGVO-Konformität"
 ---
 
+## Ermöglicht Cryptomator DSGVO-konforme Datenspeicherung?
+Ja. Das hat {{< extlink "https://gdprhub.eu/index.php?title=Council_of_State_-_251.378" "der Belgische Staatsrat am 19. August 2021 entschieden" >}}: Wenn personenbezogene Daten in nicht-EU-Ländern gespeichert werden, welche keinen zur DSGVO äquivalenten Datenschutz sicherstellen, müssen Unternehmen zusätzliche Maßnahmen ergreifen. Laut dem Urteil gilt die Verschlüsselung der Daten als eine angemessene Maßnahme.
+
+In anderen Worten: Wenn personenbezogene Daten mit Cryptomator verschlüsselt werden, können diese DSGVO-konform auch außerhalb der EU gespeichert werden.
+
 ## Ist Cryptomator DSGVO-konform?
 Fall du vorhast, personenbezogene Daten (z.B. Mitarbeiter-, Kunden-, Patientendaten, etc) zu speichern, muss du diese Daten mit geeigneten Sicherungsmaßnahmen vor dem Zugriff durch Dritte schützen. So wird den Art. 6, 32 und 34 DSGVO ausdrücklich auf die Möglichkeit einer Verschlüsselung zum Schutz von Daten verwiesen.
 
