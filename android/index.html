@@ -21,7 +21,7 @@
     
     
       
-      <link rel="stylesheet" href="/css/main.min.a2737d8c44aefe04b8b74a0c8dbd75397b52437b6e0f65e6e17d0de683eefbfe.css" integrity="sha256-onN9jESu/gS4t0oMjb11OXtSQ3tuD2Xm4X0N5oPu&#43;/4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.498bbb18985e7626feb695d1c9d7448c1f04c938db4a0de03ccb10af9f7141df.css" integrity="sha256-SYu7GJhedib&#43;tpXRyddEjB8EyTjbSg3gPMsQr59xQd8=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -183,14 +183,13 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-689523417" x-model="acceptTerms" />
-<label for="id-689523417">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-364598721" x-model="acceptTerms" />
+<label for="id-364598721">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <button :disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
       </button>
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
-      <p class="text-sm w-full lg:w-4/5 mx-auto mt-4">🎉 Use coupon code <code class="text-xs">ENDOFSUMMER</code> during checkout to get 40% off!</p>
     </div>
   </form>
 
