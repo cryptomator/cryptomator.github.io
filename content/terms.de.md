@@ -2,13 +2,13 @@
 title: "AGB"
 ---
 
-_Stand: Mai 2020_
+_Stand: November 2021_
 
 <p class="text-lg leading-relaxed text-gray-700">Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.</p>
 
 ## §1 Geltungsbereich
 
-Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen für den Erwerb und die Nutzung von Codes zur Freischaltung von digitalen Inhalten und damit verbundener Lizenzen zwischen der Skymatic GmbH, Grantham-Allee 2-8, 53757 Sankt Augustin (i. F.: Skymatic) und dem Kunden. Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Kunden werden nicht Vertragsbestandteil.
+Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen für den Erwerb und die Nutzung von Codes zur Freischaltung von digitalen Inhalten und damit verbundener Lizenzen zwischen der Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn (i. F.: Skymatic) und dem Kunden. Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Kunden werden nicht Vertragsbestandteil.
 
 ## §2 Vertragsschluss
 
@@ -68,7 +68,7 @@ Handelt es sich bei dem Kunden um einen Verbraucher, steht ihm ein Widerrufsrech
 
 ### Widerrufsbelehrung
 
-Der Kunde hat das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses.  Um das Widerrufsrecht auszuüben, muss der Teilnehmer Skymatic (Skymatic GmbH, Grantham-Allee 2-8, 53757 Sankt Augustin, E-Mail: info@skymatic.de, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über seinen Entschluss, diesen Vertrag zu widerrufen, informieren. Der Kunde kann dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
+Der Kunde hat das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses.  Um das Widerrufsrecht auszuüben, muss der Teilnehmer Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, E-Mail: info@skymatic.de, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über seinen Entschluss, diesen Vertrag zu widerrufen, informieren. Der Kunde kann dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
 
 Zur Wahrung der Widerrufsfrist reicht es aus, dass der Kunde die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absendet.
 
@@ -84,8 +84,8 @@ Wenn der Kunde den Vertrag nach Maßgabe der vorstehenden Widerrufsbelehrung wid
 ```
 An:
 Skymatic GmbH
-Grantham-Allee 2-8
-53757 Sankt Augustin
+Am Hauptbahnhof 6
+53111 Bonn
 E-Mail: info@skymatic.de
 Fax: 02241 / 2667424
 

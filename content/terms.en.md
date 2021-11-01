@@ -2,13 +2,13 @@
 title: "Terms & Conditions"
 ---
 
-_Effective date: May 2020_
+_Effective date: November 2021_
 
 <p class="text-lg leading-relaxed text-gray-700">By purchasing licenses and using software licenses and other digital content offered on this website, you declare your agreement with the following Terms & Conditions (T&C) of Skymatic GmbH in the context of current and future business relations.</p>
 
 ## §1 Validity
 
-The following General Terms and Conditions apply exclusively within the scope of the contractual relationship for the acquisition and use of codes for the activation of digital content and associated licenses between Skymatic GmbH, Grantham-Allee 2-8, 53757 Sankt Augustin (Skymatic) and the customer. Any general terms and conditions of business of the customer that contradict or differ from these Terms and Conditions shall not form part of the contract.
+The following General Terms and Conditions apply exclusively within the scope of the contractual relationship for the acquisition and use of codes for the activation of digital content and associated licenses between Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn (Skymatic) and the customer. Any general terms and conditions of business of the customer that contradict or differ from these Terms and Conditions shall not form part of the contract.
 
 ## §2 Conclusion of Contract
 
@@ -68,7 +68,7 @@ If the customer is a consumer, he has a right of withdrawal.
 
 ### Withdrawal policy
 
-The customer has the right to revoke this contract within 14 days without giving reasons. The revocation period is 14 days from the date of conclusion of the contract.  In order to exercise the right of withdrawal, the participant must inform Skymatic (Skymatic GmbH, Grantham-Allee 2-8, 53757 Sankt Augustin, email: info@skymatic.de, fax: +49 2241 / 2667424) of his decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or email). The customer may use the attached sample revocation form for this purpose, which is not mandatory.
+The customer has the right to revoke this contract within 14 days without giving reasons. The revocation period is 14 days from the date of conclusion of the contract.  In order to exercise the right of withdrawal, the participant must inform Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: info@skymatic.de, fax: +49 2241 / 2667424) of his decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or email). The customer may use the attached sample revocation form for this purpose, which is not mandatory.
 
 In order to comply with the revocation period, it is sufficient for the customer to send the notification of the exercise of the right of revocation before the end of the revocation period.
 
@@ -83,8 +83,8 @@ If the customer wishes to revoke the contract in accordance with the aforementio
 ```
 To:
 Skymatic GmbH
-Grantham-Allee 2-8
-53757 Sankt Augustin
+Am Hauptbahnhof 6
+53111 Bonn
 Germany
 Email: info@skymatic.de
 Fax: 02241 / 2667424

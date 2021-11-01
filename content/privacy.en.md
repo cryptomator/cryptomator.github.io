@@ -3,7 +3,7 @@ title: "Privacy Policy"
 aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: January 2021_
+_Effective date: November 2021_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -25,8 +25,8 @@ This privacy policy consists of the following sections:
 The responsible company within the meaning of the General Data Protection Regulation (GDPR) and other nation data protection laws of the member states as well as other data protection regulations is:
 
 Skymatic GmbH<br/>
-Grantham-Allee 2-8<br/>
-53757 Sankt Augustin<br/>
+Am Hauptbahnhof 6<br/>
+53111 Bonn<br/>
 Germany
 
 Represented by:<br/>

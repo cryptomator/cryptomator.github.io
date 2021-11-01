@@ -3,8 +3,8 @@ title: "Impressum"
 ---
 
 Skymatic GmbH<br/>
-Grantham-Allee 2-8<br/>
-53757 Sankt Augustin
+Am Hauptbahnhof 6<br/>
+53111 Bonn
 
 <strong>Vertreten durch die Geschäftsführer:</strong><br/>
 Tobias Hagemann (verantwortlich gem. § 55 Abs. 2 RStV)<br/>

@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 aliases: ["/de/privacy-ios", "/de/privacy-android"]
 ---
 
-_Stand: Januar 2021_
+_Stand: November 2021_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
@@ -25,8 +25,8 @@ Diese Datenschutzerklärung strukturiert sich in folgende Abschnitte:
 Die Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze der Mitgliedstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist:
 
 Skymatic GmbH<br/>
-Grantham-Allee 2-8<br/>
-53757 Sankt Augustin
+Am Hauptbahnhof 6<br/>
+53111 Bonn
 
 Vertreten durch:<br/>
 Tobias Hagemann<br/>
