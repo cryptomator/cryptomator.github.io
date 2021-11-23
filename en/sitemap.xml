@@ -707,6 +707,18 @@
                 href="https://cryptomator.org/android/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/hub/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/hub/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/hub/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/coop/cyberduck/</loc>
     <xhtml:link
                 rel="alternate"
