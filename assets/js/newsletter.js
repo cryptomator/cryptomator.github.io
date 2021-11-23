@@ -27,7 +27,8 @@ class Newsletter {
         url: SUBSCRIBE_NEWSLETTER_URL,
         type: 'POST',
         data: {
-          email: this._data.email
+          email: this._data.email,
+          listid: this._data.listId
         },
         xhrFields: {
           withCredentials: true

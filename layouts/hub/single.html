@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <section class="flex items-center min-vh-66">
+    <header class="container flex items-center py-24 md:py-48 lg:py-64">
+      <div class="w-full lg:w-3/5">
+        <div class="flex flex-col-reverse items-start gap-4 mb-4 md:flex-row md:items-center">
+          <div class="flex items-center">
+            <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+            <span class="font-headline font-bold text-primary ml-2 pb-px">CRYPTOMATOR&nbsp;HUB</span>
+          </div>
+          <div class="flex items-center px-3 py-0.5 rounded-full text-sm bg-secondary text-white">{{ i18n "hub_title_badge" . }}</div>
+        </div>
+        <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "hub_title" . | safeHTML }}</h1>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">{{ i18n "hub_description" . | safeHTML }}</p>
+        <div x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}">
+          <form x-show="!data.success" x-ref="form" class="max-w-xl">
+            <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_newsletter_instruction" . | safeHTML }}</p>
+            <div class="flex justify-center items-center rounded bg-gray-300">
+              <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
+              <button :disabled="!$refs.form.checkValidity() || data.inProgress" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
+                <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
+              </button>
+            </div>
+            <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
+          </form>
+          <div x-show="data.success" x-cloak>
+            <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ ":love_letter:" | emojify }} {{ i18n "hub_newsletter_success" . }}</p>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  {{ if .Site.IsServer }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

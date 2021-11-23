@@ -221,6 +221,22 @@
 - id: home_cebit_subtitle
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
 
+# Hub
+- id: hub_title_badge
+  translation: "Coming in 2022"
+- id: hub_title
+  translation: "A&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
+- id: hub_description
+  translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
+- id: hub_newsletter_instruction
+  translation: "Subscribe to our mailing list to be the first to know more."
+- id: hub_newsletter_email_placeholder
+  translation: "Email address"
+- id: hub_newsletter_subscribe
+  translation: "Subscribe"
+- id: hub_newsletter_success
+  translation: "Thank you for subscribing! A confirmation link has been sent to your email address."
+
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "Email"
