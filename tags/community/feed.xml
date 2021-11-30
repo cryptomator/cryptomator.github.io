@@ -11,8 +11,38 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/community/</link>
     </image>
-    <lastBuildDate>Sat, 27 Nov 2021 10:39:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Nov 2021 10:15:48 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Computer Security Day</title>
+        <description>&lt;p&gt;Anti-virus software and ad blockers are common tools to increase your data security on your device. To mark today&amp;rsquo;s Computer Security Day, here are five more tips on how to improve your computer security.&lt;/p&gt;
+&lt;h2 id=&#34;1-check-before-click&#34;&gt;1. Check before click&lt;/h2&gt;
+&lt;p&gt;Most people get them every day; so-called phishing mails. Mostly disguised as sinfully cheap offers from well-known companies, they want to entice the user to click on a link given in the mail. Via this link, the scammers are able to grab sensitive data such as passwords or install malware.&lt;/p&gt;
+&lt;p&gt;In the meantime, some mail providers are already filtering out most of these messages. However, if you are not sure whether an email is legitimate, it is better not to click on it in the first place.&lt;/p&gt;
+&lt;h2 id=&#34;2-dont-recycle-your-passwords&#34;&gt;2. Don&amp;rsquo;t recycle your passwords&lt;/h2&gt;
+&lt;p&gt;Remembering one or two passwords is not a problem for most people. Having one for every account is far too many to remember.&lt;/p&gt;
+&lt;p&gt;In such cases, the &amp;ldquo;solution&amp;rdquo; seems quite obvious: simply use the same password several times so that you don&amp;rsquo;t have to click on &amp;ldquo;Forgot your password?&amp;rdquo;. However, this may become really dangerous if the universal password is stolen. Especially if sensitive data, such as the PayPal account, is protected with them.&lt;/p&gt;
+&lt;p&gt;A password manager can provide a remedy, as it generates and saves all passwords for you.&lt;/p&gt;
+&lt;h2 id=&#34;3-attention-with-wi-fi&#34;&gt;3. Attention with Wi-Fi&lt;/h2&gt;
+&lt;p&gt;They can be extremely practical. We&amp;rsquo;re talking about public Wi-Fi networks: quickly answer an email on the train or do your work from the café around the corner.&lt;/p&gt;
+&lt;p&gt;However, these public networks are usually not encrypted. This means that anyone could theoretically read the data stream between their own device and the network and, in the worst case, even damage the device.&lt;/p&gt;
+&lt;p&gt;It is therefore advisable to have a VPN set up when using public networks.&lt;/p&gt;
+&lt;h2 id=&#34;4-protect-your-browser&#34;&gt;4. Protect your browser&lt;/h2&gt;
+&lt;p&gt;Browsers are the gateway to the Internet, so it is all the more important to protect them properly. A first step towards more security while surfing is to always keep the application up to date. This way, security gaps can be constantly closed.&lt;/p&gt;
+&lt;p&gt;In addition, plug-ins to protect against phishing and malware can increase the security of your browser. These can be activated relatively easy with most providers.&lt;/p&gt;
+&lt;h2 id=&#34;5-secure-on-the-go-in-the-cloud&#34;&gt;5. Secure on the go in the cloud&lt;/h2&gt;
+&lt;p&gt;Uploading your own data to the cloud can be very handy, for example, if you want to quickly share pictures or expand your own storage space. But when the data is uploaded to the cloud &amp;ldquo;just like that&amp;rdquo;, it is not safe from strangers&#39; eyes. The reason is quite simple; the data is unprotected in the cloud; once someone has gained access, they can simply access all the data without any obstacles. This can be easily avoided; Cryptomator puts your data in the cloud in a secure safe and thus protects it from foreign eyes.&lt;/p&gt;
+&lt;p&gt;You can read how this works in our &lt;a href=&#34;https://cryptomator.org/encrypt-dropbox/&#34;&gt;article on encrypting Dropbox&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You want to encrypt your cloud with Cryptomator? &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Download here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2021/11/30/computer-security-day/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2021/11/30/computer-security-day/</guid>
+        
+        <category>event</category>
+        
+      </item>
     
       <item>
         <title>Vault Format 8</title>
@@ -363,28 +393,6 @@ A guide to migrate in this setting will be published soon.&lt;/p&gt;
         <category>android</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator for Android for Us Paranoids</title>
-        <description>&lt;p&gt;This blog post is aimed towards the paranoid Cryptomator power users among us and describes how to fully establish a relationship of trust with Cryptomator for Android.&lt;/p&gt;
-&lt;p&gt;When it comes to our desktop application, we claim that you should in fact &lt;em&gt;not&lt;/em&gt; trust us but you (or at least many developers) can instead &lt;em&gt;inspect&lt;/em&gt; what Cryptomator is doing. For our mobile apps, this is only half the truth, frankly. While the encryption code is fully open-source, the UI and cloud access code isn&amp;rsquo;t (yet 😉).&lt;br&gt;
-If you count yourself as one of the more paranoid users, who prefer to compile everything yourselves, you might ask the legitimate question: How can you check the current, open-core app for backdoors?&lt;/p&gt;
-&lt;p&gt;A backdoor usually requires communication with an external server. If vaults are only opened from the device&amp;rsquo;s file system, the Cryptomator app does not require an internet connection. Alternatively, the vault can be synchronized bidirectionally to the file system of the smartphone with a third-party application such as &lt;a href=&#34;https://syncthing.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Syncthing&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Using this setup, the Cryptomator app can have its internet access revoked using the Android operating system features, which prevents the app from sending or receiving any data to or from the internet.&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/android-for-paranoids-permission.png&#34; alt=&#34;Android revoke Cryptomator&#39;s internet permission&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;Thus, even if there ever was a backdoor in Cryptomator for Android, it would not be possible for the intercepted data to leave the smartphone. This is ensured by the operating system.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2020/05/07/cryptomator-for-android-for-paranoids/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2020/05/07/cryptomator-for-android-for-paranoids/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>android</category>
         
       </item>
     
