@@ -26,6 +26,8 @@
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
   translation: "By transferring, I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+- id: payment_service_disruption
+  translation: "Our payment service is currently experiencing issues. We apologize for any inconvenience this may cause during checkout. If it doesn't work yet, please try again later."
 
 # Android
 - id: android_getkey_title
