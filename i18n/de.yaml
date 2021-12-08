@@ -26,8 +26,6 @@
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
   translation: "Durch die Überweisung akzeptiere ich die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
-- id: payment_service_disruption
-  translation: "Bei unserem Zahlungsdienst gibt es derzeit Probleme. Wir entschuldigen uns für etwaige Unannehmlichkeiten, die beim Bezahlvorgang entstehen können. Wenn er noch nicht funktioniert, versuche es bitte später noch einmal."
 
 # Android
 - id: android_getkey_title
