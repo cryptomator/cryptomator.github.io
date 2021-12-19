@@ -12,20 +12,26 @@ weight: 1
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
-      <a href="/presskit/cryptomator-app-icon.png"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-app-icon.png" alt="Cryptomator Mobile App Icon"/></a>
-      <figcaption>Cryptomator Mobile App Icon • 1024x1024 • PNG</figcaption>
+      <a href="/presskit/cryptomator-android-icon.png"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-android-icon.png" alt="Cryptomator für Android App Icon"/></a>
+      <figcaption>Cryptomator für Android App Icon • 1024x1024 • PNG</figcaption>
     </figure>
   </div>
-  <div class="w-full px-3 lg:w-1/2">
+  <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
-      <a href="/presskit/cryptomator-logo-text.png"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-logo-text.png" alt="Cryptomator Logo mit Text"/></a>
-      <figcaption>Cryptomator Logo mit Text • 1944x384 • PNG</figcaption>
+      <a href="/presskit/cryptomator-ios-icon.png"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-ios-icon.png" alt="Cryptomator für iOS App Icon"/></a>
+      <figcaption>Cryptomator für iOS App Icon • 1024x1024 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/presskit/cryptomator-logo.svg"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-logo.svg" alt="Cryptomator Logo"/></a>
       <figcaption>Cryptomator Logo • SVG</figcaption>
+    </figure>
+  </div>
+  <div class="w-full px-3 lg:w-1/2">
+    <figure class="rounded shadow bg-white text-center p-2">
+      <a href="/presskit/cryptomator-logo-text.png"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-logo-text.png" alt="Cryptomator Logo mit Text"/></a>
+      <figcaption>Cryptomator Logo mit Text • 1944x384 • PNG</figcaption>
     </figure>
   </div>
 </div>
