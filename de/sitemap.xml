@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/</loc>
-    <lastmod>2021-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -73,6 +73,71 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://cryptomator.org/de/blog/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/cryptomator/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/cryptomator/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/cryptomator/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/blog/2021/12/21/ios-2.0/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/blog/2021/12/21/ios-2.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/blog/2021/12/21/ios-2.0/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/ios/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/ios/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/ios/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/2021/11/30/computer-security-day/</loc>
@@ -88,19 +153,6 @@
                 href="https://cryptomator.org/de/blog/2021/11/30/computer-security-day/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/de/</loc>
-    <lastmod>2021-11-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/de/tags/event/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -112,32 +164,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://cryptomator.org/de/tags/event/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/de/tags/</loc>
-    <lastmod>2021-11-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/de/tags/cryptomator/</loc>
-    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/cryptomator/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/cryptomator/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/2021/10/11/1-6-0-what-you-need-to-know/</loc>
@@ -255,19 +281,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://cryptomator.org/de/blog/2021/06/30/ios-2.0-beta/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/de/tags/ios/</loc>
-    <lastmod>2021-06-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/ios/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/ios/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/tags/data-protection/</loc>

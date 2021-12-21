@@ -11,8 +11,34 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/android/</link>
     </image>
-    <lastBuildDate>Tue, 21 Dec 2021 08:00:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Dec 2021 10:39:22 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 2.0 for iOS Release</title>
+        <description>&lt;p&gt;We are happy to announce that Cryptomator 2.0 for iOS is now available &lt;a href=&#34;https://apps.apple.com/us/app/cryptomator-2/id1560822163&#34;&gt;in the App Store&lt;/a&gt;! 🎉 We&amp;rsquo;d like to express our gratitude to our over 2,300 TestFlight users for testing the app over the last 6 months. ❤️&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;a href=&#34;https://apps.apple.com/us/app/cryptomator-2/id1560822163&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+    &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/ios-2.0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/ios-2.0.png 1x, https://cryptomator.org/img/blog/ios-2.0@2x.png 2x&#34; alt=&#34;Cryptomator 2.0 for iOS&#34; /&gt;
+  &lt;/a&gt;
+&lt;/figure&gt;
+&lt;p&gt;Last year in April, we started to rebuild our iOS app from scratch. That&amp;rsquo;s why we decided to develop Cryptomator 2.0 in Swift. This will make it easier for us to maintain the app in the future.&lt;/p&gt;
+&lt;p&gt;Of course, the new app also comes with some new features. With Cryptomator 2.0, you get an app that is completely integrated into Apple&amp;rsquo;s own Files app. This means that your vaults are directly accessible from there. For example, you can now save and edit a Word document directly in an encrypted vault via the Files app. In addition, features like thumbnails, grid view, swiping through images, and drag &amp;amp; drop are possible with the new app.&lt;/p&gt;
+&lt;p&gt;Transparency is also very important to us with Cryptomator 2.0. Therefore, the entire Cryptomator family, including the new app, remains fully open source. You can check out the repository on GitHub &lt;a href=&#34;https://github.com/cryptomator/ios&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But we didn&amp;rsquo;t stop there. For the first time, the new app is available as a &amp;ldquo;freemium&amp;rdquo; app. This means that in the free version, you can access your vaults in &amp;ldquo;read-only&amp;rdquo; mode. If you only need quick access to your vaults on the go, which were created with the Desktop application, then this is the perfect &amp;ldquo;companion&amp;rdquo; app. If you don&amp;rsquo;t want to miss out on write access to your vaults, you can unlock the full version via a one-time purchase for $11.99 after a 30-day trial.&lt;/p&gt;
+&lt;p&gt;As promised, users of our old Cryptomator app can switch to the new app for free. We have tried to make the upgrade as easy as possible for you. All you have to do is make sure that the previous app is up to date when you start the new app so that you can select the upgrade option. To make the transition easier for you, the previous app will be available in the App Store for a short transition period.&lt;/p&gt;
+&lt;p&gt;At this point, we would like to thank you once again for your support, without which the project would not have been possible. 😊&lt;/p&gt;
+&lt;p&gt;We are already looking forward to your feedback! 🤖&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2021/12/21/ios-2.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2021/12/21/ios-2.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>Computer Security Day</title>
@@ -352,47 +378,6 @@ A guide to migrate in this setting will be published soon.&lt;/p&gt;
         <category>cryptomator</category>
         
         <category>android</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator Roadmap Late 2020</title>
-        <description>&lt;p&gt;We recently released Cryptomator 1.5.10 for Windows, macOS, and Linux with many new features and bugfixes. Well, actually the changes were in 1.5.9 but we followed it up with a hotfix release. 😁 With the (crazy) year nearing its end, we&amp;rsquo;d like to give you some insight to our roadmap across all platforms for the upcoming months!&lt;/p&gt;
-&lt;h2 id=&#34;state-of-the-desktop-app&#34;&gt;State of the Desktop App&lt;/h2&gt;
-&lt;p&gt;With the redesign and full rewrite of the UI in 1.5.0, we established a good foundation for adding further features. There was one former feature that didn&amp;rsquo;t make the cut though, which is now back with the latest version: Vault Statistics. 🎉&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/vault-statistics.png&#34; srcset=&#34;https://cryptomator.org/img/blog/vault-statistics.png 1x, https://cryptomator.org/img/blog/vault-statistics@2x.png 2x&#34; alt=&#34;Vault Statistics in Cryptomator&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;We didn&amp;rsquo;t stop there! Vault passwords can now also be stored in &lt;a href=&#34;https://en.wikipedia.org/wiki/KWallet&#34;&gt;KWallet&lt;/a&gt; on Linux. Huge thanks to Ralph Plawetzki (purejava on GitHub) for his contribution! And last but not least, it is now possible to mount the vault via FUSE on Windows. This is still a beta feature! In order to try it, &lt;a href=&#34;http://www.secfs.net/winfsp/&#34;&gt;WinFSP&lt;/a&gt; needs to be installed. We&amp;rsquo;d love to hear your feedback on this!&lt;/p&gt;
-&lt;p&gt;On the distribution front, we didn&amp;rsquo;t quite meet our expectations. So far, we&amp;rsquo;ve been struggling with Flatpak as we just can&amp;rsquo;t convince its sandbox to properly support FUSE drives. But we&amp;rsquo;re not giving up on this!&lt;/p&gt;
-&lt;p&gt;Behind the UI, we introduced the &lt;a href=&#34;https://github.com/cryptomator/integrations-api&#34;&gt;integrations-api&lt;/a&gt; alongside implementations for each OS. It&amp;rsquo;s a new way for Cryptomator to include native (also OS-specific) functionalities. Now easier than ever, you can implement native functions. So grab your keyboard and start hacking! 😁 With this change, we archived the old &lt;a href=&#34;https://github.com/cryptomator/native-functions&#34;&gt;native-functions&lt;/a&gt; repository. 👋&lt;/p&gt;
-&lt;p&gt;What&amp;rsquo;s next? Our plan is to move on to 1.6.x. First of all, we want to integrate &lt;a href=&#34;https://github.com/cryptomator/sanitizer&#34;&gt;Sanitizer&lt;/a&gt;, so you can check your vault health and run cleanup and recovery tasks right within the Cryptomator UI. Furthermore, by decoupling the key derivation from the vault encryption, we plan to give you more options for authentication, including third-party password storage, 2FA, and multi-user access using individual passwords.&lt;/p&gt;
-&lt;h2 id=&#34;state-of-the-android-app&#34;&gt;State of the Android App&lt;/h2&gt;
-&lt;p&gt;In the last months, we added new features like &lt;a href=&#34;https://community.cryptomator.org/t/biometric-authentication-e-g-face-unlock-coming-soon/6089&#34;&gt;face unlock&lt;/a&gt;, &lt;a href=&#34;https://community.cryptomator.org/t/sort-directory-listings/5958&#34;&gt;sort directory listings&lt;/a&gt;, and &lt;a href=&#34;https://community.cryptomator.org/t/search-in-current-folder-using-glob-pattern-matching/5928&#34;&gt;search using glob pattern matching&lt;/a&gt;. Some community members also translated the app to &lt;a href=&#34;https://community.cryptomator.org/t/translated-into-french/5962&#34;&gt;French&lt;/a&gt; and &lt;a href=&#34;https://community.cryptomator.org/t/cryptomator-is-soon-available-in-turkish/6560&#34;&gt;Turkish&lt;/a&gt;. Many thanks for their contributions!&lt;/p&gt;
-&lt;p&gt;Looking forward, we have some exciting news about our Android app! The project is in the perfect situation to fulfill the two biggest wishes of the community:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Open Source: Publishing the source code of the app.&lt;/li&gt;
-&lt;li&gt;Document Provider: Accessing the content of the vault using third-party apps.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;You heard that right, we are going to open-source Cryptomator for Android! The fact that the app is open-core had its legitimate reasons but we are now fully confident that we can open-source the app without compromises. We are working hard to publish the complete source code within a few weeks.&lt;/p&gt;
-&lt;p&gt;After that, the highly anticipated Document Provider feature will be on our roadmap.&lt;/p&gt;
-&lt;h2 id=&#34;state-of-the-ios-app&#34;&gt;State of the iOS App&lt;/h2&gt;
-&lt;p&gt;What&amp;rsquo;s up with Cryptomator for iOS? For the last 6-7 months, we have been hard at work on a &lt;em&gt;completely&lt;/em&gt; new app written in Swift. Our first efforts can already be seen in our new open-source libraries for Swift: &lt;a href=&#34;https://github.com/cryptomator/cryptolib-swift&#34;&gt;cryptolib-swift&lt;/a&gt; and &lt;a href=&#34;https://github.com/cryptomator/cloud-access-swift&#34;&gt;cloud-access-swift&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;What will be so special about the rewrite? Cryptomator will be fully integrated into the Files app. This comes with many benefits like thumbnails, support for third-party apps that can edit files directly inside the vault, and many more! But that also means, there won&amp;rsquo;t be a &amp;ldquo;custom&amp;rdquo; file browser inside the app anymore. Integration into the Files app is one of the most requested features of the community.&lt;/p&gt;
-&lt;p&gt;What about open source? We won&amp;rsquo;t open-source the current app anymore because we&amp;rsquo;d like to look forward. The new app is written with open-sourcing it in mind but it will still take some time until we can release anything.&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ll definitely do extensive testing via TestFlight in the next year. Stay tuned for that!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2020/11/20/roadmap/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2020/11/20/roadmap/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>desktop</category>
-        
-        <category>android</category>
-        
-        <category>ios</category>
         
       </item>
     
