@@ -166,6 +166,37 @@
     
       
         <article>
+          <h2>Vulnerability in iOS Version 2.0.0–2.0.3 (Please update to 2.0.4)</h2>
+          <p>We always claimed that if there once were a security issue with Cryptomator, we&rsquo;d be unable to hide it. Now it happened: A user reported an issue in our iOS app that we consider severe.</p>
+<p>While such issues can happen in any type of project (as recently demonstrated by infamous bugs in log4j and Exchange), users of open-source software can at least rely on known vulnerabilities not being kept secret for marketing purposes.</p>
+<p>In this spirit, we want to share with you all the details of this vulnerability.</p>
+<h2 id="what-happened">What happened?</h2>
+<p>When decrypting files for the iOS Files app, the cleartext file needs to be physically stored on the file system and a path leading to this file is handed over to the Files app.</p>
+<p>If iCloud Backup is enabled on this device, the cleartext file is included in the backup, effectively leaking it to Apple.</p>
+<h2 id="what-files-are-affected">What files are affected?</h2>
+<p>Only files that you actually opened from within the Files app have been decrypted. All remaining vault contents are unaffected.</p>
+<p>Furthermore, the device needs to have made an iCloud Backup while a vulnerable version has been in use (2.0.0 released 2021-12-21, fixed in 2.0.4 released 2021-12-26).</p>
+<p>If iCloud Backup is disabled, no decrypted files left your device.</p>
+<h2 id="can-leaked-files-be-deleted-from-existing-backups">Can leaked files be deleted from existing backups?</h2>
+<p>While we don&rsquo;t know how reliably Apple erases data, you can in fact <a href="https://support.apple.com/en-us/HT204247">exclude individual apps from iCloud Backup and remove existing backups</a>.</p>
+<h2 id="when-was-the-vulnerability-reported">When was the vulnerability reported?</h2>
+<p>The issue was <a href="https://community.cryptomator.org/t/security-issue-with-ios-app-cache-mechanism-and-icloud-backup/9167">reported by a community member on 2021-12-25 at 13:15h UTC</a>.</p>
+<h2 id="when-was-the-vulnerability-fixed">When was the vulnerability fixed?</h2>
+<p>We <a href="https://github.com/cryptomator/ios/commit/37293a5408f48fe8e7df01b52cd436ed46af36d5">committed a fix two hours later at 15:28h UTC</a> and submitted the app to Apple immediately. Apple released the fixed version 2.0.4 on the next day.</p>
+<h2 id="are-vaults-located-on-icloud-still-encrypted">Are vaults located on iCloud still encrypted?</h2>
+<p>Yes, the vaults themselves are still fully protected, regardless of which cloud storage is being used.</p>
+<h2 id="why-is-there-decrypted-data-in-the-first-place">Why is there decrypted data in the first place?</h2>
+<p>At some point, you need to have cleartext data, otherwise you can’t work with them. Cryptomator is fully integrated into the Files app, which means that it is bound to and limited by the File Provider Extension API. It requires to have readable (cleartext) data readily available. Keep in mind that Cryptomator’s <a href="https://docs.cryptomator.org/en/latest/security/security-target/">target is to ensure privacy in the cloud</a> and not on the device itself.</p>
+<h2 id="are-there-any-other-plans-regarding-the-local-cache">Are there any other plans regarding the local cache?</h2>
+<p>We are currently investigating if we can shorten the lifetime of decrypted data. As mentioned before, mechanisms that affect the File Provider Extension are out of our hands. But for example, <a href="https://github.com/cryptomator/ios/issues/108">clearing the cache after the vault has been locked</a> in combination with <a href="https://github.com/cryptomator/ios/issues/64">auto-lock</a> can certainly be helpful if you’d like to tighten the longevity of decrypted data.</p>
+<h2 id="how-does-the-development-team-make-sure-to-avoid-issues">How does the development team make sure to avoid issues?</h2>
+<p>While claiming to write bug-free software would be a blatant lie, we can promise to do our best to avoid such vulnerabilities.</p>
+<p>But all the best practices, automated code analysis, highest test coverage and consulting external experts doesn&rsquo;t help to rule out all possibilities, especially when caused by interaction with a third-party tool.</p>
+<p>The rewritten iOS app has been tested by more than 2,300 beta testers over a period of half a year. After all, it was just very bad luck that this issue has not been discovered during this beta.</p>
+
+        </article>
+      
+        <article>
           <h2>Cryptomator 2.0 für iOS Release</h2>
           <p>Wir freuen uns, euch mitteilen zu können, dass Cryptomator 2.0 für iOS ab sofort <a href="https://apps.apple.com/de/app/cryptomator-2/id1560822163">im App Store</a> verfügbar ist! 🎉 Wir möchten uns bei unseren über 2.300 TestFlight-Nutzer:innen bedanken, die die App in den letzten 6 Monaten getestet haben. ❤️</p>
 <figure class="text-center">
