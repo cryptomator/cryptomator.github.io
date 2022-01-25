@@ -21,7 +21,7 @@
     
     
       
-      <link rel="stylesheet" href="/css/main.min.9d73682882ae63de820081a783db0ded68e7ad6bdca484e96309138150730e5b.css" integrity="sha256-nXNoKIKuY96CAIGng9sN7WjnrWvcpITpYwkTgVBzDls=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.873becab5867399639cfaae9461482c2dbffa08a65b6bf4596b6e7e2b4c472c7.css" integrity="sha256-hzvsq1hnOZY5z6rpRhSCwtv/oIpltr9Flrbn4rTEcsc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -183,8 +183,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-468571239" x-model="acceptTerms" />
-<label for="id-468571239">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-826345917" x-model="acceptTerms" />
+<label for="id-826345917">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <button :disabled="!$refs.form.checkValidity() || checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
