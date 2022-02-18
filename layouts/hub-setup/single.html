@@ -44,7 +44,7 @@
             <span class="mt-1 flex items-center text-sm text-gray-500">Recommended for production deployments</span>
           </div>
         </div>
-        <svg class="h-5 w-5 text-indigo-600" x-show="deyplomentType == 'kubernetes'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <svg class="h-5 w-5 text-indigo-600" :class="deyplomentType == 'kubernetes' ? '' : 'invisible'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
         <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deyplomentType == 'kubernetes' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
@@ -59,7 +59,7 @@
             <span class="mt-1 flex items-center text-sm text-gray-500">For easy testing with Docker Desktop</span>
           </div>
         </div>
-        <svg class="h-5 w-5 text-indigo-600" x-show="deyplomentType == 'docker-compose'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <svg class="h-5 w-5 text-indigo-600" :class="deyplomentType == 'docker-compose' ? '' : 'invisible'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
         <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deyplomentType == 'docker-compose' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
@@ -74,7 +74,7 @@
             <span class="mt-1 flex items-center text-sm text-gray-500">Generate configuration files for deploying manually.</span>
           </div>
         </div>
-        <svg class="h-5 w-5 text-indigo-600" x-show="deyplomentType == 'other'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <svg class="h-5 w-5 text-indigo-600" :class="deyplomentType == 'other' ? '' : 'invisible'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
         <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deyplomentType == 'other' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
