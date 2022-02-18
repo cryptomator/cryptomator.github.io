@@ -36,7 +36,7 @@
     </header>
     <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-1 gap-y-6 lg:grid-cols-3 lg:gap-x-4">
       <!-- KUBERNETES -->
-      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" x-bind:class="deyplomentType == 'kubernetes' ? 'border-transparent' : 'border-gray-300'">
+      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deyplomentType == 'kubernetes' ? 'border-transparent' : 'border-gray-300'">
         <input type="radio" name="project-type" value="kubernetes" class="sr-only" x-model="deyplomentType">
         <div class="flex-1 flex">
           <div class="flex flex-col">
@@ -47,11 +47,11 @@
         <svg class="h-5 w-5 text-indigo-600" x-show="deyplomentType == 'kubernetes'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
-        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" x-bind:class="deyplomentType == 'kubernetes' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
+        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deyplomentType == 'kubernetes' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
       </label>
   
       <!-- DOCKER COMPOSE -->
-      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" x-bind:class="deyplomentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
+      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deyplomentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
         <input type="radio" name="project-type" value="docker-compose" class="sr-only" x-model="deyplomentType">
         <div class="flex-1 flex">
           <div class="flex flex-col">
@@ -62,11 +62,11 @@
         <svg class="h-5 w-5 text-indigo-600" x-show="deyplomentType == 'docker-compose'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
-        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" x-bind:class="deyplomentType == 'docker-compose' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
+        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deyplomentType == 'docker-compose' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
       </label>
   
       <!-- OTHER -->
-      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" x-bind:class="deyplomentType == 'other' ? 'border-transparent' : 'border-gray-300'">
+      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deyplomentType == 'other' ? 'border-transparent' : 'border-gray-300'">
         <input type="radio" name="project-type" value="other" class="sr-only" x-model="deyplomentType">
         <div class="flex-1 flex">
           <div class="flex flex-col">
@@ -77,7 +77,7 @@
         <svg class="h-5 w-5 text-indigo-600" x-show="deyplomentType == 'other'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg>
-        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" x-bind:class="deyplomentType == 'other' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
+        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deyplomentType == 'other' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
       </label>
     </div>
   </section>
