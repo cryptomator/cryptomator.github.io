@@ -190,7 +190,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   #getHubService() {
     return {
       depends_on: {'keycloak': {condition: 'service_healthy'}},
-      image: 'cryptomator/hub:latest',
+      image: 'ghcr.io/cryptomator/hub:latest',
       deploy: {
         resources: {
           limits: {cpus: '1.0', memory: '150M'}
