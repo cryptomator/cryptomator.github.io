@@ -2,10 +2,14 @@
 
 class HubSetup {
 
+  /**
+   * The pre-filled config values before being customized by the user
+   * @returns default config
+   */
   static defaultConfig() {
     return {
       k8s: {
-        namespace: 'hub' // TODO show input field and change to "default"
+        namespace: 'default' // TODO show input field
       },
       host: {
         url: 'http://localhost:8080',
@@ -15,7 +19,36 @@ class HubSetup {
     }
   }
 
-  static #getRealmConfig(cfg) {
+  /**
+   * Create a Docker Dompose file
+   * @param {*} cfg The customized config
+   * @returns docker-compose.yaml content
+   */
+  static writeComposeConfig(cfg) {
+    return new DockerComposeConfigBuilder(cfg).build();
+  }
+
+  /**
+   * Create a Docker Dompose file
+   * @param {*} cfg The customized config
+   * @returns docker-compose.yaml content
+   */
+  static writeK8sConfig(cfg) {
+    return new KubernetesConfigBuilder(cfg).build();
+  }
+
+}
+
+/**
+ * Base class for config builders
+ */
+class ConfigBuilder {
+
+  constructor(cfg) {
+    this.cfg = cfg;
+  }
+
+  getRealmConfig() {
     return {
       id: 'cryptomator', // TODO generate UUID?
       realm: 'cryptomator', // TODO make configurable?
@@ -50,12 +83,12 @@ class HubSetup {
       },
       users: [
         {
-          username: cfg.host.adminUser,
+          username: this.cfg.host.adminUser,
           enabled: true,
           attributes: {
             picture: 'https://cryptomator.org/img/logo.svg' // TODO keep this?
           },
-          credentials: [{ type: 'password', value: cfg.host.adminPw }],
+          credentials: [{ type: 'password', value: this.cfg.host.adminPw }],
           realmRoles: ['admin']
         }
       ],
@@ -79,7 +112,7 @@ class HubSetup {
         enabled: true,
         redirectUris: [
           'http://127.0.0.1/*',
-          cfg.host.url + '/*'
+          this.cfg.host.url + '/*'
         ],
         webOrigins: ['+'],
         bearerOnly: false,
@@ -91,26 +124,168 @@ class HubSetup {
         contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' http://localhost:*; object-src 'none';`
       }
     };
-  };
+  }
 
-  static #getConfigMap(cfg) {
-    let realmCfg = this.#getRealmConfig(cfg);
+}
+
+/**
+ * A ConfigBuilder building a Docker Compose file.
+ */
+class DockerComposeConfigBuilder extends ConfigBuilder {
+
+  constructor(cfg) {
+    super(cfg);
+  }
+
+  /**
+   * Create a Docker Dompose file
+   * @returns docker-compose.yaml content
+   */
+  build() {
+    return jsyaml.dump({
+      services: {
+        'keycloak-init': this.#getKeycloakInitService(),
+        'keycloak': this.#getKeycloakService(),
+        'hub': this.#getHubService()
+      },
+      volumes: { 'kc-config': {} }
+    });
+  }
+
+  #getKeycloakInitService() {
+    let writeRealmCmd = 'cat >/config/realm.json << EOF\n'
+      + JSON.stringify(this.getRealmConfig(), null, 2)
+      + '\nEOF';
+    return {
+      image: 'bash:5',
+      volumes: ['kc-config:/config'],
+      command: ['bash', '-c', writeRealmCmd]
+    }
+  }
+
+  #getKeycloakService() {
+    return {
+      depends_on: {'keycloak-init': {condition: 'service_completed_successfully'}},
+      image: 'quay.io/keycloak/keycloak:15.1.1',
+      volumes: ['kc-config:/config'],
+      deploy: {
+        resources: {
+          limits: {cpus: '3.0', memory: '600M'}
+        }
+      },
+      ports: ["8180:8080"], // TODO configurable public port
+      healthcheck: {
+        test: ["CMD", "curl", "-f", "http://localhost:8080/auth/realms/master"],
+        interval: '10s',
+        timeout: '3s',
+      },
+      environment: {
+        KEYCLOAK_IMPORT: '/config/realm.json',
+        KEYCLOAK_USER: 'admin',
+        KEYCLOAK_PASSWORD: 'admin'
+      }
+    }
+  }
+
+  #getHubService() {
+    return {
+      depends_on: {'keycloak': {condition: 'service_healthy'}},
+      image: 'cryptomator/hub:latest',
+      deploy: {
+        resources: {
+          limits: {cpus: '1.0', memory: '150M'}
+        }
+      },
+      ports: ["8080:8080"], // TODO configurable public port
+      healthcheck: {
+        test: ["CMD", "curl", "-f", "http://localhost:8080/"],
+        interval: '10s',
+        timeout: '3s',
+      },
+      environment: {
+        HUB_KEYCLOAK_PUBLIC_URL: 'http://localhost:8180/auth',
+        HUB_KEYCLOAK_REALM: 'cryptomator',
+        QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/auth/realms/cryptomator', // network-internal URL
+        QUARKUS_OIDC_TOKEN_ISSUER: 'http://localhost:8180/auth/realms/cryptomator', // public URL
+        QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:h2:mem:default' // TODO persist to disk? or dedicated db server?
+      }
+    }
+  }
+
+}
+
+/**
+ * A ConfigBuilder building a Kubernetes deployment descriptor.
+ */
+class KubernetesConfigBuilder extends ConfigBuilder {
+
+  constructor(cfg) {
+    super(cfg);
+  }
+
+  /**
+   * Create a Kubernetes deployment descriptor
+   * @returns kubernetes deployment yaml content
+   */
+   build() {
+    var result = '';
+
+    // generate namespace:
+    if (this.cfg.k8s.namespace != 'default') {
+      result += jsyaml.dump({
+        apiVersion: 'v1',
+        kind: 'Namespace',
+        metadata: {name: this.cfg.k8s.namespace }
+      });
+      result += '\n---\n'
+    }
+
+    // Secrets
+    result += '# Configuration\n'
+    result += this.#getSecrets();
+    result += '\n---\n'
+
+    // Keycloak Deployment
+    result += '# Keycloak\n'
+    result += this.#getKeycloakDeployment();
+    result += '\n---\n'
+
+    // Hub Deployment
+    result += '# Cryptomator Hub\n'
+    result += this.#getHubDeployment();
+    result += '\n---\n'
+
+    // Services
+    result += '# Services \n'
+    result += this.#getHubService();
+    result += '\n---\n'
+    result += this.#getKeycloakService();
+    result += '\n---\n'
+
+    return result;
+  }
+
+  #getSecrets() {
+    let realmCfg = this.getRealmConfig();
     let configMap = {
       apiVersion: 'v1',
-      kind: 'ConfigMap',
-      metadata: {namespace: cfg.k8s.namespace, name: 'hub-config'},
-      data: {
+      kind: 'Secret',
+      metadata: {namespace: this.cfg.k8s.namespace, name: 'hub-secrets'},
+      type: 'Opaque',
+      stringData: {
+        'kc_admin_user': 'admin',
+        'kc_admin_pass': 'admin',
         'realm.json': JSON.stringify(realmCfg, null, 2)
       }
     }
     return jsyaml.dump(configMap);
   }
 
-  static #getHubDeployment(cfg) {
+  #getHubDeployment() {
     let deployment = {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
-      metadata: {name: 'cryptomator-hub', namespace: cfg.k8s.namespace, labels: {app: 'cryptomator-hub'}},
+      metadata: {name: 'cryptomator-hub', namespace: this.cfg.k8s.namespace, labels: {app: 'cryptomator-hub'}},
       spec: {
         replicas: 1,
         selector: {matchLabels: {app: 'cryptomator-hub'}},
@@ -133,7 +308,8 @@ class HubSetup {
                 httpGet: {path: '/q/health/live', port: 8080},
               },
               env: [
-                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'TODO'}
+                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://localhost:8180/auth/realms/cryptomator'}, // TODO
+                {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
               ],
               volumeMounts: [
                 {name: 'hub-data', mountPath: '/hub'}
@@ -149,11 +325,11 @@ class HubSetup {
     return jsyaml.dump(deployment);
   }
 
-  static #getKeycloakDeployment(cfg) {
+  #getKeycloakDeployment() {
     let deployment = {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
-      metadata: {name: 'keycloak', namespace: cfg.k8s.namespace, labels: {app: 'keycloak'}},
+      metadata: {name: 'keycloak', namespace: this.cfg.k8s.namespace, labels: {app: 'keycloak'}},
       spec: {
         replicas: 1,
         selector: {matchLabels: {app: 'keycloak'}},
@@ -163,27 +339,25 @@ class HubSetup {
             // TODO add init container that waits for keycloak to be reachable?
             containers: [{
               name: 'keycloak',
-              image: 'quay.io/keycloak/keycloak:17.0.0',
-              args: ['start', '--hostname-strict=false'], // TODO explicitly configure kc hostname
+              image: 'quay.io/keycloak/keycloak:15.1.1', // 17.0.0 doesn't support KEYCLOAK_IMPORT yet...
               ports: [{containerPort: 8080}],
               livenessProbe: {
                 httpGet: {path: '/realms/master', port: 8080},
               },
               env: [
-                {name: 'KEYCLOAK_IMPORT', value: '/config/realm.json'}
+                {name: 'KEYCLOAK_IMPORT', value: '/config/realm.json'},
+                {name: 'KEYCLOAK_USER', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
+                {name: 'KEYCLOAK_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}}
               ],
               volumeMounts: [
-                {name: 'config', mountPath: '/config', readOnly: true}
+                {name: 'secrets-vol', mountPath: '/config/realm.json', subPath: 'realm.json', readOnly: true}
               ]
             }],
             volumes: [
               {
-                name: 'config',
-                configMap: {
-                  name: 'hub-config',
-                  items: [
-                    {key: 'realm.json', path: 'realm.json'}
-                  ]
+                name: 'secrets-vol',
+                secret: {
+                  secretName: 'hub-secrets'
                 }
               }
             ]
@@ -194,11 +368,11 @@ class HubSetup {
     return jsyaml.dump(deployment);
   }
 
-  static #getHubService(cfg) {
+  #getHubService() {
     let service = {
       apiVersion: 'v1',
       kind: 'Service',
-      metadata: {namespace: cfg.k8s.namespace, name: 'cryptomator-hub-svc'},
+      metadata: {namespace: this.cfg.k8s.namespace, name: 'cryptomator-hub-svc'},
       spec: {
         selector: {app: 'cryptomator-hub'},
         ports: [
@@ -209,11 +383,11 @@ class HubSetup {
     return jsyaml.dump(service);
   }
 
-  static #getKeycloakService(cfg) {
+  #getKeycloakService() {
     let service = {
       apiVersion: 'v1',
       kind: 'Service',
-      metadata: {namespace: cfg.k8s.namespace, name: 'keycloak-svc'},
+      metadata: {namespace: this.cfg.k8s.namespace, name: 'keycloak-svc'},
       spec: {
         selector: {app: 'keycloak'},
         ports: [
@@ -222,44 +396,6 @@ class HubSetup {
       }
     }
     return jsyaml.dump(service);
-  }
-
-  static writeK8sConfig(cfg) {
-    var result = '';
-
-    // generate namespace:
-    if (cfg.k8s.namespace != 'default') {
-      result += jsyaml.dump({
-        apiVersion: 'v1',
-        kind: 'Namespace',
-        metadata: {name: cfg.k8s.namespace }
-      });
-      result += '\n---\n'
-    }
-
-    // ConfigMap
-    result += '# Configuration\n'
-    result += this.#getConfigMap(cfg);
-    result += '\n---\n'
-
-    // Keycloak Deployment
-    result += '# Keycloak\n'
-    result += this.#getKeycloakDeployment(cfg);
-    result += '\n---\n'
-
-    // Hub Deployment
-    result += '# Cryptomator Hub\n'
-    result += this.#getHubDeployment(cfg);
-    result += '\n---\n'
-
-    // Services
-    result += '# Services \n'
-    result += this.#getHubService(cfg);
-    result += '\n---\n'
-    result += this.#getKeycloakService(cfg);
-    result += '\n---\n'
-
-    return result;
   }
 
 }

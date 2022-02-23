@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container space-y-6 py-16" x-data="{cfg: HubSetup.defaultConfig(), deplomentType: 'kubernetes', output: ''}">
+<div class="container space-y-6 py-16" x-data="{cfg: HubSetup.defaultConfig(), deplomentType: '', output: ''}">
   <!-- SECTION 1 -->
   <section class="bg-white shadow px-4 py-5 md:rounded-lg md:p-6 md:grid md:grid-cols-3 md:gap-6">
     <header class="md:col-span-1">
@@ -52,7 +52,7 @@
   
       <!-- DOCKER COMPOSE -->
       <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deplomentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
-        <input type="radio" name="project-type" value="docker-compose" class="sr-only" x-model="deplomentType" @click="output = 'TODO'">
+        <input type="radio" name="project-type" value="docker-compose" class="sr-only" x-model="deplomentType"  @click="output = HubSetup.writeComposeConfig(cfg)">
         <div class="flex-1 flex">
           <div class="flex flex-col">
             <span class="block text-sm font-medium text-gray-900">Docker Compose</span>
