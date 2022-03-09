@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: '', token: null}, hubSubscription: null}" x-init="hubSubscription = new HubSubscription(subscriptionData, new URLSearchParams(location.search))">
+      <input x-model="subscriptionData.hubId" required/>
+      <button @click.prevent="hubSubscription.get()" type="button" class="btn btn-primary w-full md:w-64">
+        Get Subscription
+      </button>
+      <button @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full md:w-64">
+        Checkout
+      </button>
+      <textarea x-model="subscriptionData.token" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full mb-2" rows="6" readonly></textarea>
+    </form>
+  </div>
+
+  {{ if .Site.IsServer }}
+    {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
+    <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}
