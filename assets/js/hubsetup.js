@@ -11,6 +11,15 @@ class HubSetup {
       k8s: {
         namespace: 'default' // TODO show input field
       },
+      db: {
+        adminPw: 'postgres', // TODO random UUID?
+        keycloakPw: 'keycloak', // TODO show input field
+        hubPw: 'hub', // TODO show input field
+      },
+      keycloak: {
+        adminUser: 'admin', // TODO show input field
+        adminPw: 'admin' // TODO show input field
+      },
       host: {
         url: 'http://localhost:8080',
         adminUser: 'admin',
@@ -144,61 +153,109 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   build() {
     return jsyaml.dump({
       services: {
-        'keycloak-init': this.#getKeycloakInitService(),
+        'init-config': this.#getInitConfigService(),
+        'postgres': this.#getPostgresService(),
         'keycloak': this.#getKeycloakService(),
         'hub': this.#getHubService()
       },
-      volumes: { 'kc-config': {} }
+      volumes: {
+        'kc-config': {},
+        'db-init': {},
+        'db-data': {}
+      }
     });
   }
 
-  #getKeycloakInitService() {
-    let writeRealmCmd = 'cat >/config/realm.json << EOF\n'
+  #getInitConfigService() {
+    let writeInitDbCmd = 'cat >/db-init/initdb.sql << EOF\n'
+      + `CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';\n`
+      + `CREATE DATABASE keycloak WITH ENCODING 'UTF8';\n`
+      + `GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;\n`
+      + `CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';\n`
+      + `CREATE DATABASE hub WITH ENCODING 'UTF8';\n`
+      + `GRANT ALL PRIVILEGES ON DATABASE hub TO hub;\n`
+      + 'EOF\n'
+    let writeRealmCmd = 'cat >/kc-config/realm.json << EOF\n'
       + JSON.stringify(this.getRealmConfig(), null, 2)
-      + '\nEOF';
+      + '\nEOF\n';
     return {
       image: 'bash:5',
-      volumes: ['kc-config:/config'],
-      command: ['bash', '-c', writeRealmCmd]
+      volumes: ['kc-config:/kc-config', 'db-init:/db-init'],
+      command: ['bash', '-c', writeInitDbCmd + writeRealmCmd]
+    }
+  }
+
+  #getPostgresService() {
+    return {
+      depends_on: {'init-config': {condition: 'service_completed_successfully'}},
+      image: 'postgres:14-alpine',
+      volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
+      deploy: {
+        resources: {
+          limits: {cpus: '2.0', memory: '250M'}
+        }
+      },
+      ports: ['5432:5432'],
+      healthcheck: {
+        test: ['CMD', 'pg_isready', '-U', 'postgres'],
+        interval: '10s',
+        timeout: '3s',
+      },
+      environment: {
+        POSTGRES_PASSWORD: this.cfg.db.adminPw,
+        POSTGRES_INITDB_ARGS: '--encoding=UTF8',
+      }
     }
   }
 
   #getKeycloakService() {
     return {
-      depends_on: {'keycloak-init': {condition: 'service_completed_successfully'}},
-      image: 'quay.io/keycloak/keycloak:15.1.1',
+      depends_on: {
+        'init-config': {condition: 'service_completed_successfully'},
+        'postgres': {condition: 'service_healthy'}
+      },
+      image: 'quay.io/keycloak/keycloak:16.1.1',
       volumes: ['kc-config:/config'],
       deploy: {
         resources: {
           limits: {cpus: '3.0', memory: '600M'}
         }
       },
-      ports: ["8180:8080"], // TODO configurable public port
+      ports: ['8180:8080'], // TODO configurable public port
       healthcheck: {
-        test: ["CMD", "curl", "-f", "http://localhost:8080/auth/realms/master"],
+        test: ['CMD', 'curl', '-f', 'http://localhost:8080/auth/realms/master'],
         interval: '10s',
         timeout: '3s',
       },
       environment: {
         KEYCLOAK_IMPORT: '/config/realm.json',
-        KEYCLOAK_USER: 'admin',
-        KEYCLOAK_PASSWORD: 'admin'
+        KEYCLOAK_USER: this.cfg.keycloak.adminUser,
+        KEYCLOAK_PASSWORD: this.cfg.keycloak.adminPw,
+        DB_VENDOR: 'postgres',
+        DB_ADDR: 'postgres',
+        DB_PORT: 5432,
+        DB_DATABASE: 'keycloak',
+        DB_USER: 'keycloak',
+        DB_PASSWORD: this.cfg.db.keycloakPw
       }
     }
   }
 
   #getHubService() {
     return {
-      depends_on: {'keycloak': {condition: 'service_healthy'}},
+      depends_on: {
+        'keycloak': {condition: 'service_healthy'},
+        'postgres': {condition: 'service_healthy'}
+      },
       image: 'ghcr.io/cryptomator/hub:latest',
       deploy: {
         resources: {
           limits: {cpus: '1.0', memory: '150M'}
         }
       },
-      ports: ["8080:8080"], // TODO configurable public port
+      ports: ['8080:8080'], // TODO configurable public port
       healthcheck: {
-        test: ["CMD", "curl", "-f", "http://localhost:8080/"],
+        test: ['CMD', 'curl', '-f', 'http://localhost:8080/'],
         interval: '10s',
         timeout: '3s',
       },
@@ -207,7 +264,12 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
         HUB_KEYCLOAK_REALM: 'cryptomator',
         QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/auth/realms/cryptomator', // network-internal URL
         QUARKUS_OIDC_TOKEN_ISSUER: 'http://localhost:8180/auth/realms/cryptomator', // public URL
-        QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:h2:mem:default' // TODO persist to disk? or dedicated db server?
+        // QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:h2:mem:default',
+        QUARKUS_DATASOURCE_DB_KIND: 'postgresql',
+        QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
+        QUARKUS_DATASOURCE_USERNAME: 'hub',
+        QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
+        QUARKUS_DATASOURCE_JDBC_MAX_SIZE: 16
       }
     }
   }
