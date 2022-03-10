@@ -264,12 +264,9 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
         HUB_KEYCLOAK_REALM: 'cryptomator',
         QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/auth/realms/cryptomator', // network-internal URL
         QUARKUS_OIDC_TOKEN_ISSUER: 'http://localhost:8180/auth/realms/cryptomator', // public URL
-        // QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:h2:mem:default',
-        QUARKUS_DATASOURCE_DB_KIND: 'postgresql',
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
-        QUARKUS_DATASOURCE_JDBC_MAX_SIZE: 16
       }
     }
   }
@@ -414,9 +411,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak:8080/auth/realms/cryptomator'},
                 {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: 'http://localhost:8180/auth/realms/cryptomator'},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
-                {name: 'QUARKUS_DATASOURCE_DB_KIND', value: 'postgresql'},
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres:5432/hub'},
-                {name: 'QUARKUS_DATASOURCE_JDBC_MAX_SIZE', value: 16},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
               ],
