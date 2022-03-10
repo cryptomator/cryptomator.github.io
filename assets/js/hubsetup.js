@@ -167,14 +167,14 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   }
 
   #getInitConfigService() {
-    let writeInitDbCmd = 'cat >/db-init/initdb.sql << EOF\n'
-      + `CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';\n`
-      + `CREATE DATABASE keycloak WITH ENCODING 'UTF8';\n`
-      + `GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;\n`
-      + `CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';\n`
-      + `CREATE DATABASE hub WITH ENCODING 'UTF8';\n`
-      + `GRANT ALL PRIVILEGES ON DATABASE hub TO hub;\n`
-      + 'EOF\n'
+    let writeInitDbCmd = `cat >/db-init/initdb.sql << EOF
+      CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
+      CREATE DATABASE keycloak WITH ENCODING 'UTF8';
+      GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
+      CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
+      CREATE DATABASE hub WITH ENCODING 'UTF8';
+      GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`
+      + '\nEOF\n'
     let writeRealmCmd = 'cat >/kc-config/realm.json << EOF\n'
       + JSON.stringify(this.getRealmConfig(), null, 2)
       + '\nEOF\n';
@@ -192,7 +192,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
       deploy: {
         resources: {
-          limits: {cpus: '2.0', memory: '250M'}
+          limits: {cpus: '2.0', memory: '150M'}
         }
       },
       ports: ['5432:5432'],
@@ -307,6 +307,16 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     result += this.#getSecrets();
     result += '\n---\n'
 
+    // PVCs
+    result += '# PVCs\n'
+    result += this.#getPVCs();
+    result += '\n---\n'
+
+    // Postgres Deployment
+    result += '# Postgres\n'
+    result += this.#getPostgresDeployment();
+    result += '\n---\n'
+
     // Keycloak Deployment
     result += '# Keycloak\n'
     result += this.#getKeycloakDeployment();
@@ -335,12 +345,41 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'hub-secrets'},
       type: 'Opaque',
       stringData: {
-        'kc_admin_user': 'admin',
-        'kc_admin_pass': 'admin',
+        'kc_admin_user': this.cfg.keycloak.adminUser,
+        'kc_admin_pass': this.cfg.keycloak.adminPw,
+        'db_admin_pass': this.cfg.db.adminPw,
+        'db_hub_pass': this.cfg.db.hubPw,
+        'db_kc_pass': this.cfg.db.keycloakPw,
+        'initdb.sql': this.#getInitDbSQL(),
         'realm.json': JSON.stringify(realmCfg, null, 2)
       }
     }
     return jsyaml.dump(configMap);
+  }
+
+  #getPVCs() {
+    let pvcs = {
+      apiVersion: 'v1',
+      kind: 'PersistentVolumeClaim',
+      metadata: {namespace: this.cfg.k8s.namespace, name: 'dbdata-pvc'},
+      spec: {
+        accessModes: ['ReadWriteOnce'],
+        resources: {
+          requests: {storage: '1Gi'}
+        }
+      }
+    }
+    return jsyaml.dump(pvcs);
+  }
+
+  #getInitDbSQL() {
+    return `
+    CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
+    CREATE DATABASE keycloak WITH ENCODING 'UTF8';
+    GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
+    CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
+    CREATE DATABASE hub WITH ENCODING 'UTF8';
+    GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`;
   }
 
   #getHubDeployment() {
@@ -370,8 +409,16 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/q/health/live', port: 8080},
               },
               env: [
-                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://localhost:8180/auth/realms/cryptomator'}, // TODO
+                {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: 'http://localhost:8180/auth'},
+                {name: 'HUB_KEYCLOAK_REALM', value: 'cryptomator'},
+                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak:8080/auth/realms/cryptomator'},
+                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: 'http://localhost:8180/auth/realms/cryptomator'},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
+                {name: 'QUARKUS_DATASOURCE_DB_KIND', value: 'postgresql'},
+                {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres:5432/hub'},
+                {name: 'QUARKUS_DATASOURCE_JDBC_MAX_SIZE', value: 16},
+                {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
+                {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
               ],
               volumeMounts: [
                 {name: 'hub-data', mountPath: '/hub'}
@@ -379,6 +426,55 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             volumes: [
               {name: 'hub-data', emptyDir: {}}
+            ]
+          }
+        }
+      }
+    };
+    return jsyaml.dump(deployment);
+  }
+
+  #getPostgresDeployment() {
+    let deployment = {
+      apiVersion: 'apps/v1',
+      kind: 'Deployment',
+      metadata: {name: 'postgres', namespace: this.cfg.k8s.namespace, labels: {app: 'postgres'}},
+      spec: {
+        replicas: 1,
+        selector: {matchLabels: {app: 'postgres'}},
+        template: {
+          metadata: {labels: {app: 'postgres'}},
+          spec: {
+            containers: [{
+              name: 'postgres',
+              image: 'postgres:14-alpine',
+              ports: [{containerPort: 5432}],
+              resources: {
+                limits: {cpu: '1000m', memory: '150Mi'},
+              },
+              livenessProbe: {
+                exec: {command: ['pg_isready', '-U', 'postgres']},
+              },
+              env: [
+                {name: 'POSTGRES_INITDB_ARGS', value: '--encoding=UTF8'},
+                {name: 'POSTGRES_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_admin_pass'}}},
+              ],
+              volumeMounts: [
+                {name: 'secrets-vol', mountPath: '/docker-entrypoint-initdb.d/initdb.sql', subPath: 'initdb.sql', readOnly: true},
+                {name: 'dbdata-vol', mountPath: '/var/lib/postgresql/data'}
+              ]
+            }],
+            volumes: [
+              {
+                name: 'secrets-vol',
+                secret: {
+                  secretName: 'hub-secrets'
+                }
+              },
+              {
+                name: 'dbdata-vol',
+                persistentVolumeClaim: {claimName: 'dbdata-pvc'}
+              }
             ]
           }
         }
@@ -398,10 +494,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         template: {
           metadata: {labels: {app: 'keycloak'}},
           spec: {
-            // TODO add init container that waits for keycloak to be reachable?
+            // TODO add init container that waits for postgres to be reachable?
             containers: [{
               name: 'keycloak',
-              image: 'quay.io/keycloak/keycloak:15.1.1', // 17.0.0 doesn't support KEYCLOAK_IMPORT yet...
+              image: 'quay.io/keycloak/keycloak:16.1.1', // 17.0.0 doesn't support KEYCLOAK_IMPORT yet...
               ports: [{containerPort: 8080}],
               livenessProbe: {
                 httpGet: {path: '/realms/master', port: 8080},
@@ -409,7 +505,13 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               env: [
                 {name: 'KEYCLOAK_IMPORT', value: '/config/realm.json'},
                 {name: 'KEYCLOAK_USER', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
-                {name: 'KEYCLOAK_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}}
+                {name: 'KEYCLOAK_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
+                {name: 'DB_VENDOR', value: 'postgres'},
+                {name: 'DB_ADDR', value: 'postgres'},
+                {name: 'DB_PORT', value: '5432'},
+                {name: 'DB_DATABASE', value: 'keycloak'},
+                {name: 'DB_USER', value: 'keycloak'},
+                {name: 'DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
               ],
               volumeMounts: [
                 {name: 'secrets-vol', mountPath: '/config/realm.json', subPath: 'realm.json', readOnly: true}
