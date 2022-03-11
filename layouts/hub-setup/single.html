@@ -9,19 +9,25 @@
     <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
       <div class="col-span-4">
         <label for="url" class="block text-sm font-medium text-gray-700">Public Hub URL</label>
-        <input type="text" name="url" id="url" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.host.url">
+        <input type="text" name="url" id="url" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.hub.publicUrl">
         <p class="mt-2 text-sm text-gray-500">The full URL including protocol, port and path of your Hub installation.</p>
       </div>
 
       <div class="col-span-4">
+        <label for="url" class="block text-sm font-medium text-gray-700">Public Keycloak URL</label>
+        <input type="text" name="url" id="url" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.keycloak.publicUrl">
+        <p class="mt-2 text-sm text-gray-500">The full URL including protocol, port and path of your Keycloak installation.</p>
+      </div>
+
+      <div class="col-span-4">
         <label for="adminUser" class="block text-sm font-medium text-gray-700">Admin User</label>
-        <input type="text" name="adminUser" id="adminUser" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.host.adminUser">
+        <input type="text" name="adminUser" id="adminUser" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.hub.adminUser">
         <p class="mt-2 text-sm text-gray-500">User name of the initial user that will be created.</p>
       </div>
 
       <div class="col-span-4">
         <label for="adminPw" class="block text-sm font-medium text-gray-700">Initial Admin Password</label>
-        <input type="password" name="adminPw" id="adminPw" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.host.adminPw">
+        <input type="password" name="adminPw" id="adminPw" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.hub.adminPw">
         <p class="mt-2 text-sm text-gray-500">Temporary password used for generating your deployment. You should change this on your first login.</p>
       </div>
 

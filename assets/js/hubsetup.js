@@ -17,11 +17,12 @@ class HubSetup {
         hubPw: 'hub', // TODO show input field
       },
       keycloak: {
+        publicUrl: 'http://localhost:31000/auth',
         adminUser: 'admin', // TODO show input field
         adminPw: 'admin' // TODO show input field
       },
-      host: {
-        url: 'http://localhost:8080',
+      hub: {
+        publicUrl: 'http://localhost:30000',
         adminUser: 'admin',
         adminPw: 'admin'
       }
@@ -55,6 +56,13 @@ class ConfigBuilder {
 
   constructor(cfg) {
     this.cfg = cfg;
+  }
+
+  getPort(urlStr) {
+    var url = new URL(urlStr);
+    var port = Number.parseInt(url.port);
+    var defaultPort = (url.protocol == 'https:') ? 443 : 80;
+    return Number.isNaN(port) ? defaultPort : port;
   }
 
   getRealmConfig() {
@@ -92,12 +100,12 @@ class ConfigBuilder {
       },
       users: [
         {
-          username: this.cfg.host.adminUser,
+          username: this.cfg.hub.adminUser,
           enabled: true,
           attributes: {
             picture: 'https://cryptomator.org/img/logo.svg' // TODO keep this?
           },
-          credentials: [{ type: 'password', value: this.cfg.host.adminPw }],
+          credentials: [{ type: 'password', value: this.cfg.hub.adminPw }],
           realmRoles: ['admin']
         }
       ],
@@ -121,7 +129,7 @@ class ConfigBuilder {
         enabled: true,
         redirectUris: [
           'http://127.0.0.1/*',
-          this.cfg.host.url + '/*'
+          this.cfg.hub.publicUrl + '/*'
         ],
         webOrigins: ['+'],
         bearerOnly: false,
@@ -192,7 +200,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
       deploy: {
         resources: {
-          limits: {cpus: '2.0', memory: '150M'}
+          limits: {cpus: '1.0', memory: '150M'}
         }
       },
       ports: ['5432:5432'],
@@ -218,10 +226,10 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       volumes: ['kc-config:/config'],
       deploy: {
         resources: {
-          limits: {cpus: '3.0', memory: '600M'}
+          limits: {cpus: '2.0', memory: '768M'}
         }
       },
-      ports: ['8180:8080'], // TODO configurable public port
+      ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', 'http://localhost:8080/auth/realms/master'],
         interval: '10s',
@@ -250,20 +258,20 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       image: 'ghcr.io/cryptomator/hub:latest',
       deploy: {
         resources: {
-          limits: {cpus: '1.0', memory: '150M'}
+          limits: {cpus: '0.5', memory: '256Mi'}
         }
       },
-      ports: ['8080:8080'], // TODO configurable public port
+      ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', 'http://localhost:8080/'],
         interval: '10s',
         timeout: '3s',
       },
       environment: {
-        HUB_KEYCLOAK_PUBLIC_URL: 'http://localhost:8180/auth',
+        HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_REALM: 'cryptomator',
         QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/auth/realms/cryptomator', // network-internal URL
-        QUARKUS_OIDC_TOKEN_ISSUER: 'http://localhost:8180/auth/realms/cryptomator', // public URL
+        QUARKUS_OIDC_TOKEN_ISSUER: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`,
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
@@ -329,6 +337,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     result += this.#getHubService();
     result += '\n---\n'
     result += this.#getKeycloakService();
+    result += '\n---\n'
+    result += this.#getPostgresService();
     result += '\n---\n'
 
     return result;
@@ -397,7 +407,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               ports: [{containerPort: 8080}],
               resources: {
                 limits: {cpu: '500m', memory: '256Mi'},
-                requests: {memory: '64Mi'}
+                requests: {cpu: '100m', memory: '64Mi'},
               },
               startupProbe: {
                 httpGet: {path: '/q/health/started', port: 8080},
@@ -406,12 +416,12 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/q/health/live', port: 8080},
               },
               env: [
-                {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: 'http://localhost:8180/auth'},
+                {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_REALM', value: 'cryptomator'},
-                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak:8080/auth/realms/cryptomator'},
-                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: 'http://localhost:8180/auth/realms/cryptomator'},
+                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak-svc:8080/auth/realms/cryptomator'},
+                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
-                {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres:5432/hub'},
+                {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
               ],
@@ -429,6 +439,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(deployment);
   }
 
+  // TODO: change to statefulset
   #getPostgresDeployment() {
     let deployment = {
       apiVersion: 'apps/v1',
@@ -445,6 +456,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               image: 'postgres:14-alpine',
               ports: [{containerPort: 5432}],
               resources: {
+                requests: {cpu: '100m', memory: '20Mi'},
                 limits: {cpu: '1000m', memory: '150Mi'},
               },
               livenessProbe: {
@@ -494,15 +506,20 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               name: 'keycloak',
               image: 'quay.io/keycloak/keycloak:16.1.1', // 17.0.0 doesn't support KEYCLOAK_IMPORT yet...
               ports: [{containerPort: 8080}],
+              resources: {
+                requests: {cpu: '100m', memory: '128Mi'},
+                limits: {cpu: '2000m', memory: '768Mi'},
+              },
               livenessProbe: {
-                httpGet: {path: '/realms/master', port: 8080},
+                httpGet: {path: '/auth/realms/master', port: 8080},
+                initialDelaySeconds: 25
               },
               env: [
                 {name: 'KEYCLOAK_IMPORT', value: '/config/realm.json'},
                 {name: 'KEYCLOAK_USER', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
                 {name: 'KEYCLOAK_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
                 {name: 'DB_VENDOR', value: 'postgres'},
-                {name: 'DB_ADDR', value: 'postgres'},
+                {name: 'DB_ADDR', value: 'postgres-svc'},
                 {name: 'DB_PORT', value: '5432'},
                 {name: 'DB_DATABASE', value: 'keycloak'},
                 {name: 'DB_USER', value: 'keycloak'},
@@ -534,8 +551,24 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'cryptomator-hub-svc'},
       spec: {
         selector: {app: 'cryptomator-hub'},
+        type: 'NodePort', // TODO: only if requested
         ports: [
-          {protocol: 'TCP', port: 8080, targetPort: 8080}
+          {protocol: 'TCP', port: 8080, nodePort: this.getPort(this.cfg.hub.publicUrl)}
+        ]
+      }
+    }
+    return jsyaml.dump(service);
+  }
+
+  #getPostgresService() {
+    let service = {
+      apiVersion: 'v1',
+      kind: 'Service',
+      metadata: {namespace: this.cfg.k8s.namespace, name: 'postgres-svc'},
+      spec: {
+        selector: {app: 'postgres'},
+        ports: [
+          {protocol: 'TCP', port: 5432, targetPort: 5432}
         ]
       }
     }
@@ -549,8 +582,9 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'keycloak-svc'},
       spec: {
         selector: {app: 'keycloak'},
+        type: 'NodePort', // TODO: only if requested
         ports: [
-          {protocol: 'TCP', port: 8180, targetPort: 8080}
+          {protocol: 'TCP', port: 8080, nodePort: this.getPort(this.cfg.keycloak.publicUrl)}
         ]
       }
     }
