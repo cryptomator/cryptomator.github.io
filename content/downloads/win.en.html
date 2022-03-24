@@ -12,26 +12,29 @@ screenshot2x: /img/downloads/win-screenshot@2x.png
   <meta itemprop="name" content="Cryptomator"/>
   <meta itemprop="description" content="A free software to encrypt your cloud files."/>
   <meta itemprop="applicationCategory" content="Productivity"/>
-  <meta itemprop="softwareVersion" content="{{< siteparam releases.msi.version >}}"/>
+  <meta itemprop="softwareVersion" content="{{< siteparam releases.exe.version >}}"/>
   <meta itemprop="applicationSubCategory" content="Encryption"/>
   <meta itemprop="image" content="{{< absurl "/img/logo.png" >}}"/>
   <meta itemprop="operatingSystem" content="Windows"/>
   <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
     <h2>Cryptomator for Windows</h2>
-    <p>Version {{< siteparam releases.msi.version >}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{< siteparam releases.msi.version >}}" target="_blank" rel="noopener">Changelog</a></p>
+    <p>Version {{< siteparam releases.exe.version >}} • <a href="https://github.com/cryptomator/cryptomator/releases/tag/{{< siteparam releases.exe.version >}}" target="_blank" rel="noopener">Changelog</a></p>
   </header>
 
   <div class="rounded shadow bg-white my-4">
     <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>MSI Installer</h3>
+      <h3>EXE Installer</h3>
     </div>
     <div class="p-4">
       <div class="prose prose-sm max-w-none mb-4">
         <p>Minimum: Windows 10, Version 1803</p>
       </div>
-      <a itemprop="downloadUrl" href="/downloads/win/thanks/" rel="nofollow" class="btn btn-primary w-full md:w-48" role="button">
+      <a itemprop="downloadUrl" href="/downloads/win/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-48" role="button">
         <span class="fas fa-download" aria-hidden="true"></span> Download
       </a>
+      <div class="prose prose-sm max-w-none">
+        <p>This installer includes the third-party library <a href="https://winfsp.dev/" target="_blank" rel="noopener">WinFsp</a>. You can also download the <a href="/downloads/win-msi/thanks/" rel="nofollow">MSI installer</a> without dependencies.</p>
+      </div>
     </div>
   </div>
 
