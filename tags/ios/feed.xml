@@ -11,8 +11,43 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/ios/</link>
     </image>
-    <lastBuildDate>Fri, 25 Mar 2022 09:37:27 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Mar 2022 09:58:42 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 1.6.7 Release: Major Changes on Windows</title>
+        <description>&lt;p&gt;Hello Community!&lt;/p&gt;
+&lt;p&gt;The last blog post is already a while ago. We hope you&amp;rsquo;re all doing fine. Cryptomator 1.6.7 for Desktop is out now and let&amp;rsquo;s explore the changes together since it&amp;rsquo;s more than just a &amp;ldquo;patch&amp;rdquo;! The update contains some noteworthy changes, especially for Windows users.&lt;/p&gt;
+&lt;h2 id=&#34;new-installer&#34;&gt;New Installer&lt;/h2&gt;
+&lt;p&gt;With Cryptomator 1.6.0, instead of delivering a &amp;ldquo;regular&amp;rdquo; executable for installation, we provided a &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_Installer&#34;&gt;Windows Installer package&lt;/a&gt; to allow easier scripted deployment of Cryptomator. But this approach also had drawbacks: We couldn&amp;rsquo;t bundle third-party drivers (i.e., Dokany) leading to inferior user experience.&lt;/p&gt;
+&lt;p&gt;These dire times are over! When you head over to &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;downloads&lt;/a&gt; and select Windows, you&amp;rsquo;re getting an executable again that bundles the MSI installer as well as additional dependencies. Furthermore, it supports command-line parameters (e.g., &lt;code&gt;/quiet&lt;/code&gt;). For a complete list, run the installer with the &lt;code&gt;/?&lt;/code&gt; parameter.&lt;/p&gt;
+&lt;p&gt;If you want to download the &amp;ldquo;pure&amp;rdquo; MSI installer without dependencies, it&amp;rsquo;s also available on the downloads site or head over to the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.7&#34;&gt;release on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;new-default-vfs-driver-virtual-volume&#34;&gt;New Default VFS Driver (Virtual Volume)&lt;/h2&gt;
+&lt;p&gt;As already mentioned, the new EXE installer can include dependencies again, so we added one right from the start: &lt;a href=&#34;https://winfsp.dev/&#34;&gt;WinFsp&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This decision is mainly based on the long-term maintenance effort. The integration of a vault into the OS currently supports WebDAV (legacy), Dokany (Windows), and FUSE (all systems). FUSE support (provided by WinFSP) on Windows is now available for quite a while and feedback was very promising. The time has come to make this the default choice so we can focus on a common code base.&lt;/p&gt;
+&lt;p&gt;WebDAV and Dokany will remain part of Cryptomator, should you prefer it in your individual setup. Please note that Dokany 2.x is not yet supported and our existing Dokany 1.x glue code requires a migration.&lt;/p&gt;
+&lt;p&gt;There are some known issues with WinFsp though:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you are logged in to Windows via an AzureAD account, vaults can only be accessed read-only.&lt;/li&gt;
+&lt;li&gt;Access with the admin rights is only possible when the vault is mounted into a directory (as opposed to a drive letter).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you aren&amp;rsquo;t affected by any of these issues, we encourage you to use WinFsp/FUSE.&lt;/p&gt;
+&lt;p&gt;Those were the two major changes you should know about. For all changes, have a look at the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.7&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We hope you are enjoying this Cryptomator update.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2022/03/25/release-1.6.7/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2022/03/25/release-1.6.7/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>installer</category>
+        
+        <category>windows</category>
+        
+      </item>
     
       <item>
         <title>Vulnerability in iOS Version 2.0.0–2.0.3 (Please update to 2.0.4)</title>
@@ -373,28 +408,6 @@ A guide to migrate in this setting will be published soon.&lt;/p&gt;
         <category>android</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>World Backup Day: How to Be on the Safe Side</title>
-        <description>&lt;p&gt;Basically, there are two types of people: Those who back up regularly and those who have never lost data. On the occasion of &amp;ldquo;World Backup Day&amp;rdquo;, we want to explain to you why you should think about creating a backup regularly, even if you have been lucky so far.&lt;/p&gt;
-&lt;h2 id=&#34;what-does-a-backup-actually-do&#34;&gt;What does a backup actually do?&lt;/h2&gt;
-&lt;p&gt;In general, a backup is a copy of your data. This can be your smartphone, your laptop, your hard drive, family photos, etc. If your device stops working for any reason, your data is not lost if you have created a backup. Therefore, it is recommended to back up your data at regular intervals to prevent major losses.&lt;/p&gt;
-&lt;h2 id=&#34;how-do-i-create-a-backup&#34;&gt;How do I create a backup?&lt;/h2&gt;
-&lt;p&gt;It is important that your data is stored in an external location. Many still associate a backup with an external data carrier, such as a hard drive. However, this is inferior to the modern cloud variant in two elementary points.&lt;/p&gt;
-&lt;p&gt;In general, every device has a certain percentage probability of failure. In the case of a hard drive, for example, this &lt;a href=&#34;https://en.wikipedia.org/wiki/Hard_disk_drive_failure#Metrics_of_failures&#34;&gt;failure probability&lt;/a&gt; can be between 1.7% (in the first year) and 8.6% (in the third year), not including possible external circumstances such as fire or water damage. Of course, you can also create a backup on several hard drives, the more you use, the lower the probability of failure.&lt;/p&gt;
-&lt;p&gt;Another risk factor with external hard drives is the lack of geographic redundancy, in short, location independence. In other words, if your house catches fire, both your computer and the backup on the hard drive are gone. Of course, that&amp;rsquo;s a rather drastic way of putting it, but that is the basic concept. You can achieve geographical redundancy by storing the data on the servers of cloud providers; it is not uncommon for them to be geographically distributed all over the world.&lt;/p&gt;
-&lt;p&gt;The problem of the failure probability is minimized by arranging the hard drives &lt;a href=&#34;https://en.wikipedia.org/wiki/Mean_time_between_failures#MTBF_and_MDT_for_networks_of_components&#34;&gt;in parallel&lt;/a&gt;. In short, this means that several functionally identical, redundant copies of the backup exist at the same time, but only one of these needs to function in order to make the backup data available. You can think of this as mirroring data, with each mirroring the risk of data loss decreases.&lt;/p&gt;
-&lt;h2 id=&#34;how-do-i-protect-my-backup-in-the-cloud&#34;&gt;How do I protect my backup in the cloud?&lt;/h2&gt;
-&lt;p&gt;Generally, your data is protected in the cloud behind an account. However, they are of course still stored on servers and are therefore never 100% secure from unauthorized access. With the help of cloud encryption, you can take the security of your data into your own hands. With Cryptomator, you can create a kind of &amp;ldquo;magic&amp;rdquo; vault that can only be accessed by those who have the correct password to open the vault. This way, attackers can theoretically still access the cloud, but cannot do anything with the encrypted data.&lt;/p&gt;
-&lt;p&gt;You can download Cryptomator free of charge &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/03/31/world-backup-day/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/03/31/world-backup-day/</guid>
-        
-        <category>event</category>
         
       </item>
     

@@ -3,13 +3,13 @@
   <channel>
     <title>Cryptomator Blog</title>
     <description>Recent Blog Posts on cryptomator.org</description>
-    <link>https://cryptomator.org/de/tags/community/</link>
+    <link>https://cryptomator.org/de/tags/installer/</link>
     <language>de</language>
     <atom:link href="https://cryptomator.org/de/blog/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://cryptomator.org/img/logo.png</url>
       <title>Cryptomator Blog</title>
-      <link>https://cryptomator.org/de/tags/community/</link>
+      <link>https://cryptomator.org/de/tags/installer/</link>
     </image>
     <lastBuildDate>Fri, 25 Mar 2022 09:58:42 +0000</lastBuildDate>
     <generator>Hugo</generator>

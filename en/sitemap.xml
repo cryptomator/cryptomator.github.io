@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/blog/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -76,7 +76,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/cryptomator/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -89,7 +89,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -99,6 +99,71 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/blog/2022/03/25/release-1.6.7/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/blog/2022/03/25/release-1.6.7/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/blog/2022/03/25/release-1.6.7/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/desktop/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/desktop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/desktop/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/installer/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/installer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/installer/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/windows/</loc>
+    <lastmod>2022-03-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/windows/"
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/ios/</loc>
@@ -112,19 +177,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/tags/ios/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/tags/</loc>
-    <lastmod>2022-01-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/vulnerability/</loc>
@@ -257,19 +309,6 @@
                 href="https://cryptomator.org/tags/vault-format/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/tags/windows/</loc>
-    <lastmod>2021-10-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/windows/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/windows/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/tags/android/</loc>
     <lastmod>2021-07-22T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -359,19 +398,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/blog/2021/04/08/roadmap/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/tags/desktop/</loc>
-    <lastmod>2021-04-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/desktop/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/desktop/"
                 />
   </url><url>
     <loc>https://cryptomator.org/blog/2021/03/31/world-backup-day/</loc>

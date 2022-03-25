@@ -167,6 +167,29 @@
     
       
         <article>
+          <h2>Cryptomator 1.6.7 Release: Wichtige Änderungen unter Windows</h2>
+          <p>Hallo Community!</p>
+<p>Der letzte Blog-Post ist schon eine Weile her. Wir hoffen, es geht euch allen gut. Cryptomator 1.6.7 für Desktop ist nun verfügbar und wir wollen euch über die Änderungen informieren, denn es ist mehr als nur ein &ldquo;Patch&rdquo; geworden! Das Update enthält nämlich nennenswerte Änderungen, insbesondere für Windows-Nutzer.</p>
+<h2 id="neuer-installer">Neuer Installer</h2>
+<p>Mit Cryptomator 1.6.0 haben wir statt einer &ldquo;normalen&rdquo; ausführbaren EXE-Datei für die Installation ein <a href="https://de.wikipedia.org/wiki/Windows_Installer">Windows-Installer-Paket</a> zur Verfügung gestellt, um die skriptgesteuerte Installation von Cryptomator zu erleichtern. Dieser Ansatz hatte jedoch auch Nachteile: Wir konnten keine Treiber von Drittanbietern (z.B. Dokany) einbinden, was zu einer schlechteren Benutzererfahrung führte.</p>
+<p>Diese schlimmen Zeiten sind nun vorbei! Wenn ihr auf die <a href="/de/downloads/">Downloads-Seite</a> geht und Windows auswählt, erhaltet ihr wieder eine ausführbare EXE-Datei, die den MSI-Installer sowie zusätzliche Abhängigkeiten bündelt. Außerdem unterstützt er Kommandozeilenparameter (z.B. <code>/quiet</code>). Eine vollständige Liste erhaltet ihr, wenn ihr den Installer mit dem Parameter <code>/?</code> ausführt.</p>
+<p>Der &ldquo;reine&rdquo; MSI-Installer ohne Abhängigkeiten steht weiterhin auf der Downloads-Seite zur Verfügung oder auch im <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.6.7">Release auf GitHub</a>.</p>
+<h2 id="neuer-standard-vfs-treiber-virtuelles-volume">Neuer Standard-VFS-Treiber (virtuelles Volume)</h2>
+<p>Wie bereits erwähnt, kann der neue EXE-Installer wieder Abhängigkeiten enthalten, also haben wir von Anfang an eine hinzugefügt: <a href="https://winfsp.dev/">WinFsp</a>.</p>
+<p>Diese Entscheidung ist hauptsächlich auf den langfristigen Wartungsaufwand zurückzuführen. Die Integration eines Tresors in das Betriebssystem unterstützt derzeit WebDAV (Legacy), Dokany (Windows) und FUSE (alle Systeme). Die FUSE-Unterstützung (durch WinFSP) unter Windows ist nun schon seit einiger Zeit verfügbar, und das Feedback war sehr vielversprechend. Es ist nun an der Zeit, dies zur Standardlösung zu machen, damit wir uns auf eine gemeinsame Codebasis konzentrieren können.</p>
+<p>WebDAV und Dokany werden weiterhin Teil von Cryptomator sein, falls ihr dies in eurem individuellen Setup bevorzugt. Bitte beachtet dabei, dass Dokany 2.x noch nicht unterstützt wird und unser bestehender Dokany 1.x Glue-Code eine Migration erfordert.</p>
+<p>Es gibt jedoch einige bekannte Probleme mit WinFsp:</p>
+<ul>
+<li>Wenn ihr über einen AzureAD-Account in Windows eingeloggt seid, könnt ihr auf eure Tresore nur lesend zugreifen.</li>
+<li>Der Zugriff mit Admin-Rechten ist nur möglich, wenn der Tresor in ein Verzeichnis (und nicht in einen Laufwerksbuchstaben) eingebunden ist.</li>
+</ul>
+<p>Wenn ihr nicht von einem dieser Probleme betroffen seid, empfehlen wir, WinFsp/FUSE zu verwenden.</p>
+<p>Das waren dann auch schon die beiden wichtigsten Änderungen in diesem Update. Alle Änderungen findet ihr im <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.6.7">Changelog</a>.</p>
+<p>Wir hoffen, dass euch dieses Cryptomator-Update gefällt.</p>
+
+        </article>
+      
+        <article>
           <h2>Vulnerability in iOS Version 2.0.0–2.0.3 (Please update to 2.0.4)</h2>
           <p>We always claimed that if there once were a security issue with Cryptomator, we&rsquo;d be unable to hide it. Now it happened: A user reported an issue in our iOS app that we consider severe.</p>
 <p>While such issues can happen in any type of project (as recently demonstrated by infamous bugs in log4j and Exchange), users of open-source software can at least rely on known vulnerabilities not being kept secret for marketing purposes.</p>

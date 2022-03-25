@@ -11,8 +11,43 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/encryption/</link>
     </image>
-    <lastBuildDate>Fri, 25 Mar 2022 09:37:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Mar 2022 09:58:42 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 1.6.7 Release: Wichtige Änderungen unter Windows</title>
+        <description>&lt;p&gt;Hallo Community!&lt;/p&gt;
+&lt;p&gt;Der letzte Blog-Post ist schon eine Weile her. Wir hoffen, es geht euch allen gut. Cryptomator 1.6.7 für Desktop ist nun verfügbar und wir wollen euch über die Änderungen informieren, denn es ist mehr als nur ein &amp;ldquo;Patch&amp;rdquo; geworden! Das Update enthält nämlich nennenswerte Änderungen, insbesondere für Windows-Nutzer.&lt;/p&gt;
+&lt;h2 id=&#34;neuer-installer&#34;&gt;Neuer Installer&lt;/h2&gt;
+&lt;p&gt;Mit Cryptomator 1.6.0 haben wir statt einer &amp;ldquo;normalen&amp;rdquo; ausführbaren EXE-Datei für die Installation ein &lt;a href=&#34;https://de.wikipedia.org/wiki/Windows_Installer&#34;&gt;Windows-Installer-Paket&lt;/a&gt; zur Verfügung gestellt, um die skriptgesteuerte Installation von Cryptomator zu erleichtern. Dieser Ansatz hatte jedoch auch Nachteile: Wir konnten keine Treiber von Drittanbietern (z.B. Dokany) einbinden, was zu einer schlechteren Benutzererfahrung führte.&lt;/p&gt;
+&lt;p&gt;Diese schlimmen Zeiten sind nun vorbei! Wenn ihr auf die &lt;a href=&#34;https://cryptomator.org/de/downloads/&#34;&gt;Downloads-Seite&lt;/a&gt; geht und Windows auswählt, erhaltet ihr wieder eine ausführbare EXE-Datei, die den MSI-Installer sowie zusätzliche Abhängigkeiten bündelt. Außerdem unterstützt er Kommandozeilenparameter (z.B. &lt;code&gt;/quiet&lt;/code&gt;). Eine vollständige Liste erhaltet ihr, wenn ihr den Installer mit dem Parameter &lt;code&gt;/?&lt;/code&gt; ausführt.&lt;/p&gt;
+&lt;p&gt;Der &amp;ldquo;reine&amp;rdquo; MSI-Installer ohne Abhängigkeiten steht weiterhin auf der Downloads-Seite zur Verfügung oder auch im &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.7&#34;&gt;Release auf GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;neuer-standard-vfs-treiber-virtuelles-volume&#34;&gt;Neuer Standard-VFS-Treiber (virtuelles Volume)&lt;/h2&gt;
+&lt;p&gt;Wie bereits erwähnt, kann der neue EXE-Installer wieder Abhängigkeiten enthalten, also haben wir von Anfang an eine hinzugefügt: &lt;a href=&#34;https://winfsp.dev/&#34;&gt;WinFsp&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Diese Entscheidung ist hauptsächlich auf den langfristigen Wartungsaufwand zurückzuführen. Die Integration eines Tresors in das Betriebssystem unterstützt derzeit WebDAV (Legacy), Dokany (Windows) und FUSE (alle Systeme). Die FUSE-Unterstützung (durch WinFSP) unter Windows ist nun schon seit einiger Zeit verfügbar, und das Feedback war sehr vielversprechend. Es ist nun an der Zeit, dies zur Standardlösung zu machen, damit wir uns auf eine gemeinsame Codebasis konzentrieren können.&lt;/p&gt;
+&lt;p&gt;WebDAV und Dokany werden weiterhin Teil von Cryptomator sein, falls ihr dies in eurem individuellen Setup bevorzugt. Bitte beachtet dabei, dass Dokany 2.x noch nicht unterstützt wird und unser bestehender Dokany 1.x Glue-Code eine Migration erfordert.&lt;/p&gt;
+&lt;p&gt;Es gibt jedoch einige bekannte Probleme mit WinFsp:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wenn ihr über einen AzureAD-Account in Windows eingeloggt seid, könnt ihr auf eure Tresore nur lesend zugreifen.&lt;/li&gt;
+&lt;li&gt;Der Zugriff mit Admin-Rechten ist nur möglich, wenn der Tresor in ein Verzeichnis (und nicht in einen Laufwerksbuchstaben) eingebunden ist.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Wenn ihr nicht von einem dieser Probleme betroffen seid, empfehlen wir, WinFsp/FUSE zu verwenden.&lt;/p&gt;
+&lt;p&gt;Das waren dann auch schon die beiden wichtigsten Änderungen in diesem Update. Alle Änderungen findet ihr im &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.7&#34;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wir hoffen, dass euch dieses Cryptomator-Update gefällt.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2022/03/25/release-1.6.7/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/03/25/release-1.6.7/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>installer</category>
+        
+        <category>windows</category>
+        
+      </item>
     
       <item>
         <title>Vulnerability in iOS Version 2.0.0–2.0.3 (Please update to 2.0.4)</title>
@@ -370,28 +405,6 @@ Eine Anleitung zur Migration dieses Randfalls wird bald veröffentlicht.&lt;/p&g
         <category>android</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>World Backup Day: So geht ihr auf Nummer sicher</title>
-        <description>&lt;p&gt;Grundsätzlich gibt es zwei Arten von Menschen: Diejenigen, die regelmäßig Backups erstellen und die, die noch nie Daten verloren haben. Anlässlich des „World Backup Days“ wollen wir euch erklären, wieso ihr drüber nachdenken solltet, regelmäßig ein Backup zu erstellen, auch wenn ihr selbst bisher noch Glück gehabt habt.&lt;/p&gt;
-&lt;h2 id=&#34;was-macht-ein-backup-eigentlich&#34;&gt;Was macht ein Backup eigentlich?&lt;/h2&gt;
-&lt;p&gt;Ganz generell ist ein Backup eine Sicherheitskopie eurer Daten. Das können euer Handy, euer Laptop, eure Festplatte, Familienfotos etc. sein. Sollte euer Gerät aus etwaigen Gründen mal nicht mehr funktionieren, sind eure Daten also nicht verloren, sofern ihr ein Backup erstellt habt. Daher ist es empfehlenswert, die Daten im regelmäßigen Abstand zu sichern, um größere Verluste zu verhindern.&lt;/p&gt;
-&lt;h2 id=&#34;wie-erstelle-ich-ein-backup&#34;&gt;Wie erstelle ich ein Backup?&lt;/h2&gt;
-&lt;p&gt;Wichtig bei einem Backup ist, dass eure Daten an einem externen Ort gespeichert werden. Im klassischen Sinne verstehen viele noch das Backup auf einem externen Datenträger, wie einer Festplatte. Diese unterliegt der moderneren Cloud-Variante allerdings in zwei elementaren Punkten.&lt;/p&gt;
-&lt;p&gt;Generell hat jedes Gerät eine gewisse prozentuale Ausfallwahrscheinlichkeit. Bei einer Festplatte kann diese &lt;a href=&#34;https://en.wikipedia.org/wiki/Hard_disk_drive_failure#Metrics_of_failures&#34;&gt;Ausfallwahrscheinlichkeit&lt;/a&gt; auf ein Jahr gerechnet bspw. zwischen 1,7% (im ersten Jahr) und 8,6% (im dritten Jahr) liegen, mögliche äußerliche Umstände wie Feuer- oder Wasserschaden sind darauf noch nicht eingerechnet. Natürlich kann man auch ein Backup auf mehreren Festplatten erstellen, je mehr man verwendet, desto niedriger die Ausfallwahrscheinlichkeit.&lt;/p&gt;
-&lt;p&gt;Ein weiterer Risikofaktor bei externen Festplatten ist die fehlende geografische Redundanz, kurz die Ortsunabhängigkeit. Sprich, wenn dein Haus Feuer fängt, sind in diesem Fall sowohl dein Computer als auch das Backup auf der Festplatte hinüber. Das ist natürlich relativ drastisch ausgedrückt, aber das Prinzip wird klar. Die geografische Redundanz ist durch die Speicherungen der Daten auf den Servern der Cloud-Anbieter stets gegeben, sie befinden sich auf Servern, die nicht selten geografisch auf der ganzen Welt verteilt sind.&lt;/p&gt;
-&lt;p&gt;Das Problem der Ausfallwahrscheinlichkeit wird durch &lt;a href=&#34;https://de.wikipedia.org/wiki/Mean_Time_Between_Failures#Parallelschaltung&#34;&gt;Parallelschaltungen&lt;/a&gt; minimiert. Kurzum bedeutet das, dass mehrere funktionsgleiche, redundante Kopien des Backups gleichzeitig existieren, jedoch von diesen nur eine funktionieren muss, um die Backup-Daten verfügbar zu machen. Man kann sich das etwa wie eine Spiegelung der Daten vorstellen, mit jeder Spiegelung sinkt das Risiko des Datenverlusts.&lt;/p&gt;
-&lt;h2 id=&#34;wie-schütze-ich-mein-backup-in-der-cloud&#34;&gt;Wie schütze ich mein Backup in der Cloud?&lt;/h2&gt;
-&lt;p&gt;Generell sind eure Daten in der Cloud hinter einem Account geschützt. Jedoch werden sie natürlich immer noch auf Servern gespeichert und sind damit nie zu 100% sicher vor fremdem Zugriff. Mithilfe von Cloud-Verschlüsselung könnt ihr die Sicherheit der Daten jedoch selbst in die Hand nehmen. Mit Cryptomator erstellt ihr eine Art „magischen“ Tresor, auf den nur zugegriffen werden kann, wer auch das entsprechende Passwort zum Öffnen des Tresors hat. So können Angreifer theoretisch zwar immer noch auf die Cloud zugreifen, können mit den verschlüsselten Daten aber nichts anfangen.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://cryptomator.org/de/downloads/&#34;&gt;Hier&lt;/a&gt; könnt ihr Cryptomator kostenfrei herunterladen.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2021/03/31/world-backup-day/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2021/03/31/world-backup-day/</guid>
-        
-        <category>event</category>
         
       </item>
     
