@@ -196,14 +196,16 @@ Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragl
 ### 8.1 Beschreibung und Umfang der Datenweitergabe
 Bei Nutzung einer der Cryptomator-Anwendungen für Desktop, iOS oder Android können Daten durch uns verarbeitet werden. Dies kann durch die Nutzung einer der nachfolgendend genannten Funktionen erfolgen.
 
-**Update-Check (Desktop, Android):** Falls der Nutzer manuell oder per automatischem Intervall die Update-Prüfung nutzt, stellt die Anwendung eine Verbindung zu einem Server her, um die neueste Version abzufragen. Dabei werden folgende Daten übermittelt:
+#### 8.1.1 Update-Check (Desktop, Android)
+Falls der Nutzer manuell oder per automatischem Intervall die Update-Prüfung nutzt, stellt die Anwendung eine Verbindung zu einem Server her, um die neueste Version abzufragen. Dabei werden folgende Daten übermittelt:
 
 * Betriebssystem
 * Softwareversion
 * Uhrzeit der Anfrage
 * IP-Adresse
 
-**Übermittlung von Fehlerprotokollen:** Lokal auf dem Gerät des Nutzers erstellte Log-Dateien können bei der Fehlerbehebung behilflich sein. Sendet der Nutzer eine dieser Dateien per E-Mail, können folgende Daten übermittelt werden:
+#### 8.1.2 Übermittlung von Fehlerprotokollen
+Lokal auf dem Gerät des Nutzers erstellte Log-Dateien können bei der Fehlerbehebung behilflich sein. Sendet der Nutzer eine dieser Dateien per E-Mail, können folgende Daten übermittelt werden:
 
 * Betriebssystem
 * Softwareversion

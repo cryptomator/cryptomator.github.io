@@ -194,14 +194,16 @@ The transfer of data is mandatory for the fulfilment of contracts or for pre-con
 ### 8.1 Description and Scope of Data Processing
 When using one of the Cryptomator applications for desktop operating systems, iOS or Android, data can be processed by us. This is the case when using one of the following functions:
 
-**Update Check (Desktop, Android):** If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
+#### 8.1.1 Update Check (Desktop, Android)
+If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
 
 * Operating system version
 * Software version
 * Time of the request
 * IP address
 
-**Sending of Error Protocols:** Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
+#### 8.1.2 Sending of Error Protocols
+Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
 
 * Operating system version
 * Software version
