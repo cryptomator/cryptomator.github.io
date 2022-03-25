@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 aliases: ["/de/privacy-ios", "/de/privacy-android"]
 ---
 
-_Stand: November 2021_
+_Stand: März 2022_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
@@ -214,6 +214,19 @@ Lokal auf dem Gerät des Nutzers erstellte Log-Dateien können bei der Fehlerbeh
 * Ggf. Dateipfade (bei aktiviertem Debug-Modus)
 
 Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des Nutzers findet nicht statt.
+
+#### 8.1.3 Zugriff auf Cloud-Speicher-Dienste (Android, iOS)
+Falls der Nutzer die Cryptomator App für iOS oder Android autorisiert, auf einen oder mehrere Cloud-Speicher-Dienste zuzugreifen, erhält die Anwendung Zugriff auf dort gespeicherte Daten. Die Anwendung greift auf keine Daten zu, die außerhalb von durch den Nutzer wissentlich ausgewählten Ordnern liegen.
+
+Diese Daten werden ausschließlich lokal auf dem Gerät des Nutzers verarbeitet. Unter keinen Umständen erhalten wir Teile dieser Daten.
+
+Sollten solche Cloud-Speicher-Dienste genutzt werden, sind auch die Datenschutzerklärungen der jeweiligen Anbieter zu beachten:
+
+* [iCloud Drive](https://www.apple.com/legal/privacy/en-ww/)
+* [Dropbox](https://www.dropbox.com/privacy)
+* [Google Drive](https://developers.google.com/terms/api-services-user-data-policy)
+* [OneDrive](https://privacy.microsoft.com/en-us/privacystatement)
+* [pCloud](https://www.pcloud.com/privacy_policy.html)
 
 ### 8.2 Rechtsgrundlage für die Datenverarbeitung
 Rechtsgrundlage für die vorübergehende Speicherung der Daten ist bei Einwilligung Art. 6 Abs. 1 lit. a DSGVO, zudem Art. 6 Abs. 1 lit. f DSGVO.

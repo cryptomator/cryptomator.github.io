@@ -3,7 +3,7 @@ title: "Privacy Policy"
 aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: November 2021_
+_Effective date: March 2022_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -212,6 +212,19 @@ Locally created log file can help identifying problems. If the user decides to s
 * File paths (if running in debug mode)
 
 This data will not be stored together with other personal data of the user.
+
+#### 8.1.3 Accessing Cloud Storage Services (Android, iOS)
+If the user authorizes the Cryptomator application for iOS or Android to access one or many cloud storage services, the application is granted access to data stored by the respective service. The application will not access any data other than stored in folders knowingly selected by the user.
+
+Any such data is processed solely on the user's local device. Under no circumstances will we receive any of this data.
+
+When using such a third-party cloud storage services, please refer to the corresponding privacy policy of the provider:
+
+* [iCloud Drive](https://www.apple.com/legal/privacy/en-ww/)
+* [Dropbox](https://www.dropbox.com/privacy)
+* [Google Drive](https://developers.google.com/terms/api-services-user-data-policy)
+* [OneDrive](https://privacy.microsoft.com/en-us/privacystatement)
+* [pCloud](https://www.pcloud.com/privacy_policy.html)
 
 ### 8.2 Legal Basis for Data Processing
 The legal basis for the temporary storage of data is Art. 6 para. 1 lit. a GDPR as well as Art. 6 para. 1 lit. f GDPR.
