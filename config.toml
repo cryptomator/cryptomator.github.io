@@ -59,13 +59,13 @@ unsafe = true
       filename = "Cryptomator-1.6.7-x64.exe"
       downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.7/Cryptomator-1.6.7-x64.exe"
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.7/Cryptomator-1.6.7-x64.exe.asc"
-      checksum = "99aa3df161608744bb06aead92e891b9044e13f695b3e7e9aefa0d5e73353361"
+      checksum = "d1b9d2bd92704eca551c2c8dff6a2b79fc5198741fa5b15d63d2a86b2dd13e9c"
     [params.releases.msi]
       version = "1.6.7"
       filename = "Cryptomator-1.6.7-x64.msi"
       downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.7/Cryptomator-1.6.7-x64.msi"
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.7/Cryptomator-1.6.7-x64.msi.asc"
-      checksum = "263e866a19ffbb8573fc3709672b2ac0612a73b9681dc9222c14ade775e9bd74"
+      checksum = "e170c2fa1f47170efe853ff4f5b05763271ff335b6e0c50b976ca02d5bb67b79"
     [params.releases.dmg]
       version = "1.6.7"
       filename = "Cryptomator-1.6.7.dmg"
