@@ -186,8 +186,6 @@ Legal basis for the processing of the data is in the presence of the consent of 
 The passing on serves the fulfilment of our contractual and pre-contractual obligations. These purposes are also our legitimate interest in accordance with Art. 6 para. 1 lit. f GDPR.
 
 ### 7.4 Opposition and Removal Possibility
-Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragliche Maßnahmen zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
-
 The transfer of data is mandatory for the fulfilment of contracts or for pre-contractual measures. Consequently, there is no possibility of objection on the part of the user.
 
 
