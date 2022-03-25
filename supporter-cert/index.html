@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.873becab5867399639cfaae9461482c2dbffa08a65b6bf4596b6e7e2b4c472c7.css" integrity="sha256-hzvsq1hnOZY5z6rpRhSCwtv/oIpltr9Flrbn4rTEcsc=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.ab5f2e749680f0918779befa4d721f2ae9ca520b444c147f6c44045171eb6e3b.css" integrity="sha256-q18udJaA8JGHeb76TXIfKunKUgtETBR/bEQEUXHrbjs=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -210,8 +210,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-246539817" x-model="acceptTerms" />
-<label for="id-246539817">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal.</label>
+<input class="mr-1" type="checkbox" id="id-617243985" x-model="acceptTerms" />
+<label for="id-617243985">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal.</label>
 </p>
       <button :disabled="!$refs.funderForm.checkValidity() || checkoutData.inProgress || !acceptTerms" @click.prevent="new DesktopLicense($refs.funderForm, checkoutData).checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Checkout
@@ -268,8 +268,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Check out our <a class="text-primary no-underline hover:underline" href="https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md" target="_blank" rel="noopener">contribution guide</a> to get started.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-632798514" x-model="acceptTerms" />
-<label for="id-632798514">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-672951384" x-model="acceptTerms" />
+<label for="id-672951384">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!$refs.form.checkValidity() || !acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -322,8 +322,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4"><a class="text-primary no-underline hover:underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Help translating</a> Cryptomator to your favorite language.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-684357129" x-model="acceptTerms" />
-<label for="id-684357129">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-137425698" x-model="acceptTerms" />
+<label for="id-137425698">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!$refs.form.checkValidity() || !acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -379,8 +379,8 @@ max. 800 characters" required></textarea>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Share anything about Cryptomator on social media, on your website, or on any other media to spread the word.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-152978463" x-model="acceptTerms" />
-<label for="id-152978463">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-362975148" x-model="acceptTerms" />
+<label for="id-362975148">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!$refs.form.checkValidity() || !acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -433,8 +433,8 @@ max. 800 characters" required></textarea>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Let us know any other reason that doesn&#39;t fit in the other categories.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-928571463" x-model="acceptTerms" />
-<label for="id-928571463">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-714398526" x-model="acceptTerms" />
+<label for="id-714398526">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!$refs.form.checkValidity() || !acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
