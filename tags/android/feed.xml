@@ -11,8 +11,37 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/android/</link>
     </image>
-    <lastBuildDate>Thu, 31 Mar 2022 12:33:23 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Apr 2022 15:13:01 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Roadmap Early 2022</title>
+        <description>&lt;p&gt;There have been a lot of changes in the past year. With this roadmap, we want to give you an overview of what has changed in Cryptomator and what you can look forward to in the coming months.&lt;/p&gt;
+&lt;h2 id=&#34;ios-version&#34;&gt;iOS Version&lt;/h2&gt;
+&lt;p&gt;At the end of last year, we were finally able to introduce our new iOS app. One of the main features is the full integration with Apple&amp;rsquo;s own Files app. We also made it possible to offer you a &amp;ldquo;freemium&amp;rdquo; version of the app. If you want to know even more about the new features, check out this &lt;a href=&#34;https://cryptomator.org/blog/2021/12/21/ios-2.0/&#34;&gt;blog post&lt;/a&gt;. Since then, we&amp;rsquo;ve been working on bringing you more features through several updates, such as the auto-lock feature that came with version 2.1.0. With the just released version 2.2.0, we integrated pCloud and added support for shortcuts in Google Drive.&lt;/p&gt;
+&lt;p&gt;We have a lot more planned for the app in the coming months. We will integrate Cryptomator into &lt;a href=&#34;https://support.apple.com/guide/shortcuts/welcome/ios&#34;&gt;Shortcuts&lt;/a&gt; so that automation processes such as &amp;ldquo;auto photo upload&amp;rdquo; are possible. We also plan to integrate S3, as we did with our Android app.&lt;/p&gt;
+&lt;h2 id=&#34;android-version&#34;&gt;Android Version&lt;/h2&gt;
+&lt;p&gt;Over the past few months, we have been working on increasing the compatibility of Cryptomator. This includes the fact that we now support pCloud, S3, and Vault Format 8. Thanks again Manuel (mjenny on GitHub) for contributing support for pCloud and S3. Also, Cryptomator can now be installed and updated via F-Droid. Vaults in Google Drive can now be used via shortcuts in locations outside of &amp;ldquo;My Drive&amp;rdquo;. This works in &amp;ldquo;Shared with Me&amp;rdquo;, &amp;ldquo;My Computer&amp;rdquo;, and &amp;ldquo;My Drive&amp;rdquo; for example. With OneDrive, it is possible to use multiple accounts at the same time. We will make this feature available for Dropbox and Google Drive in the future. In addition, a &amp;ldquo;real&amp;rdquo; auto photo upload is available in the Android version, meaning new pictures and videos are now uploaded not only after unlocking the vault, but directly when it is unlocked.&lt;/p&gt;
+&lt;p&gt;In the coming months, we will switch the Android app to a freemium model, as we did with iOS, and continue to work on the long-awaited document provider.&lt;/p&gt;
+&lt;h2 id=&#34;desktop-version&#34;&gt;Desktop Version&lt;/h2&gt;
+&lt;p&gt;With version 1.6.0 announced in the last roadmap, we introduced Vault Format 8 for our Desktop version. You can read more about it &lt;a href=&#34;https://cryptomator.org/blog/2021/10/11/vault-format-8/&#34;&gt;here&lt;/a&gt;. For better usability, we have introduced error codes and a &lt;a href=&#34;https://github.com/cryptomator/cryptomator/discussions/categories/errors&#34;&gt;knowledge base&lt;/a&gt; of those, where you can look up solutions for the issue you’ve encountered. We also introduced an auto-lock feature that automatically locks the vaults after a self-defined inactivity time as well as a plugin API. The first plugin for Cryptomator is the &lt;a href=&#34;https://plugin.purejava.org/&#34;&gt;KeePassXC plugin&lt;/a&gt; via an open-source contribution by Ralph (purejava on GitHub). Furthermore, we improved our build systems so that applications/installers for all operating systems are automatically built and signed (instead of manually).&lt;/p&gt;
+&lt;p&gt;Two years ago, one might remember that we announced to focus our efforts on Flatpak distribution. However, that didn’t go as planned and progress on it came to a halt… until recently. Our regular open-source contributor Ralph (purejava on GitHub) once again came to our rescue. And we actually did it! Cryptomator is now &lt;a href=&#34;https://flathub.org/apps/details/org.cryptomator.Cryptomator&#34;&gt;available on Flathub as a Flatpak app&lt;/a&gt;. Again, huge thanks to Ralph for his amazing contribution!&lt;/p&gt;
+&lt;p&gt;For the Desktop version of Cryptomator, we have some major topics coming up in the near future. On the one hand, we are working on a major FUSE refactoring. Among other things, this is necessary to be able to offer ARM64 support on Windows and Linux as well. On Apple Silicon Macs, we have already supported this for a few releases. On the other hand, we want to address the open issues related to &lt;a href=&#34;https://github.com/cryptomator/cryptomator/projects/13&#34;&gt;extended attributes&lt;/a&gt;. More precisely, we are talking about additional file attributes that enable tagging and fix compatibility issues. Of course, these attributes will be encrypted just like the filename.&lt;/p&gt;
+&lt;p&gt;If you read this far, we’d like to share a secret with you. We are currently working on &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt;. That’s it for now but you’ll definitely hear more about it this year.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2022/04/04/roadmap/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2022/04/04/roadmap/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>android</category>
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.6.7 Release: Major Changes on Windows</title>
@@ -378,36 +407,6 @@ A guide to migrate in this setting will be published soon.&lt;/p&gt;
         <category>data protection</category>
         
         <category>encryption</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator Roadmap Early 2021</title>
-        <description>&lt;p&gt;Development on Cryptomator 1.5.x is coming to an end and we are now working on the next major version 1.6.x. Read more about it in this roadmap!&lt;/p&gt;
-&lt;h2 id=&#34;state-of-the-desktop-app&#34;&gt;State of the Desktop App&lt;/h2&gt;
-&lt;p&gt;The update to version 1.6.0 is just around the corner! The release will mainly contain some invisible changes that will allow us to add new features in a timely manner. One of the main points here is to implement a new vault format (Vault Format 8). It makes the integration of &lt;a href=&#34;https://github.com/cryptomator/cryptomator/projects/8&#34;&gt;other authentication methods&lt;/a&gt; in the future possible, for example to enable 2FA.&lt;/p&gt;
-&lt;p&gt;Another feature is the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/projects/7&#34;&gt;integration of a sanitizer&lt;/a&gt;. Until now, a separate program was needed to check the state of your vault and to execute cleanup and restore commands. In the future, this will be possible directly in the Cryptomator user interface.&lt;/p&gt;
-&lt;p&gt;In addition, there is now a prototype for the distribution of Cryptomator as a Microsoft Software Installation (.msi), but the implementation still has alpha character. Furthermore, we have updated Cryptomator to JDK 16 with the latest &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.5.14&#34;&gt;version 1.5.14&lt;/a&gt;, which brings some upstream fixes. Unfortunately, we could not make any progress with regard to Flatpak.&lt;/p&gt;
-&lt;h2 id=&#34;state-of-the-android-app&#34;&gt;State of the Android App&lt;/h2&gt;
-&lt;p&gt;As you might have noticed in our blog, we finally published the source code of the app! Apart from that, vault format 8 is also a big topic in our development here.&lt;/p&gt;
-&lt;p&gt;Since the update to version 1.5.14 (currently still in a beta version), pCloud is natively supported by Cryptomator. Many thanks to Manu for &lt;a href=&#34;https://github.com/cryptomator/android/pull/283&#34;&gt;his open source contribution&lt;/a&gt;! Another small change is that since the update 1.5.13, it is possible to sort the vault list and thus get a better overview of the vaults.&lt;/p&gt;
-&lt;p&gt;But that&amp;rsquo;s not all we have planned for the Android app! We are happy to release Cryptomator on F-Droid soon. Also, we hope to be able to include more clouds soon and enable access to content of the vault via third-party apps with a &amp;ldquo;document provider&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;state-of-the-ios-app&#34;&gt;State of the iOS App&lt;/h2&gt;
-&lt;p&gt;With the introduction of vault format 8, the &amp;ldquo;old&amp;rdquo; iOS app will probably get its last major update to version 1.6.0.&lt;/p&gt;
-&lt;p&gt;Meanwhile, work on the &amp;ldquo;new&amp;rdquo; iOS app continues. As announced in the last roadmap, the iOS app will be fully integrated into the Files app. We are already very far along. Nevertheless, we still have some work to do, as we want to offer some features like dark mode or support for multiple accounts from the same cloud provider right from the start.&lt;/p&gt;
-&lt;p&gt;We can&amp;rsquo;t promise you an exact release date yet, but we hope we will release a first beta version via TestFlight in the summer.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/04/08/roadmap/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/04/08/roadmap/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>desktop</category>
-        
-        <category>android</category>
-        
-        <category>ios</category>
         
       </item>
     
