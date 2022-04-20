@@ -2,9 +2,9 @@
   <link rel="dns-prefetch" href="https://github.com">
 {{ end }}
 {{ define "main" }}
-  <section class="container py-12 flex flex-wrap">
-    <figure class="w-1/2 mx-auto md:w-3/5">
-      <img class="lazyload" data-src="{{ .Params.Screenshot }}"/>
+  <section class="container flex flex-wrap items-center py-12 min-vh-66">
+    <figure class="w-full md:w-1/2 lg:w-auto mx-auto pr-0 md:pr-8">
+      <img class="lazyload" data-src="{{ .Params.Screenshot }}" data-srcset="{{ .Params.Screenshot }} 1x, {{ .Params.Screenshot2x }} 2x"/>
     </figure>
     {{ .Content }}
   </section>
