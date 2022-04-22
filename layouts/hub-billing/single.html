@@ -1,14 +1,140 @@
 {{ define "main" }}
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: '', token: null}, hubSubscription: null}" x-init="hubSubscription = new HubSubscription(subscriptionData, new URLSearchParams(location.search))">
-      <input x-model="subscriptionData.hubId" required/>
-      <button @click.prevent="hubSubscription.get()" type="button" class="btn btn-primary w-full md:w-64">
-        Get Subscription
-      </button>
-      <button @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full md:w-64">
-        Checkout
-      </button>
-      <textarea x-model="subscriptionData.token" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full mb-2" rows="6" readonly></textarea>
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, token: null, details: null}, hubSubscription: null}" x-init="hubSubscription = new HubSubscription(subscriptionData, new URLSearchParams(location.search))" x-ref="form">
+      <template x-if="!subscriptionData.getSuccess">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            Manage Hub Subscription
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            Please enter your Hub ID in order to continue. You will find this as an admin of your Hub instance under "Billing".
+          </p>
+          <div class="flex justify-center items-center rounded bg-gray-300">
+            <input x-model="subscriptionData.hubId" type="text" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="Hub ID" required/>
+            <button :disabled="!$refs.form.checkValidity() || subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
+              <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+              Continue
+            </button>
+          </div>
+          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.getSuccess && subscriptionData.token && subscriptionData.details">
+        <div>
+          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+            <h1>{{ .Title }}</h1>
+          </header>
+          <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            <div class="rounded shadow bg-white p-4">
+              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                Status
+              </dt>
+              <dd>
+                <p x-show="subscriptionData.details.state == 'active'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  Active
+                  <i class="fas fa-check fa-fw text-primary"></i>
+                </p>
+                <p x-show="subscriptionData.details.state == 'past_due'" class=" font-bold text-2xl md:text-3xl lg:text-4xl">
+                  Past Due
+                  <i class="fas fa-clock fa-fw text-red-600"></i>
+                </p>
+                <p x-show="subscriptionData.details.state == 'trialing'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  Trialing
+                  <i class="fas fa-check fa-fw text-primary"></i>
+                </p>
+                <p x-show="subscriptionData.details.state == 'paused'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  Paused
+                  <i class="fas fa-pause fa-fw text-yellow-500"></i>
+                </p>
+                <p x-show="subscriptionData.details.state == 'deleted'" class="text-red-600 font-bold text-2xl md:text-3xl lg:text-4xl">
+                  Deleted
+                  <i class="fas fa-times fa-fw text-red-600"></i>
+                </p>
+                <p class="text-xs text-gray-600 mt-1">
+                  Number of Seats: <span x-text="subscriptionData.details.quantity"></span>
+                </p>
+                <p class="mt-2">
+                  <a x-show="subscriptionData.details.update_url" class="text-xs text-primary no-underline hover:underline mt-4" href="#">
+                    <i class="fas fa-arrows-v fa-fw"></i>
+                    Upgrade or Downgrade
+                  </a>
+                </p>
+              </dd>
+            </div>
+            <div class="rounded shadow bg-white p-4">
+              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                Next Payment
+              </dt>
+              <dd>
+                <div x-show="subscriptionData.details.next_payment">
+                  <p x-text="subscriptionData.details.next_payment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.details.next_payment.currency })" class="font-bold text-2xl md:text-3xl lg:text-4xl"></p>
+                  <p class="text-xs text-gray-600 mt-1">
+                    Due Date: <span x-text="subscriptionData.details.next_payment.date"></span>
+                  </p>
+                </div>
+                <p x-show="!subscriptionData.details.next_payment" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  –
+                </p>
+                <p class="mt-2">
+                  <a x-show="subscriptionData.details.update_url" class="text-xs text-primary no-underline hover:underline mt-4" href="#">
+                    <i class="fas fa-pause fa-fw"></i>
+                    Pause Subscription
+                  </a>
+                </p>
+              </dd>
+            </div>
+            <div class="rounded shadow bg-white p-4">
+              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                Payment Information
+              </dt>
+              <dd>
+                <div x-show="subscriptionData.details.payment_information">
+                  <div x-show="subscriptionData.details.payment_information.payment_method == 'card'">
+                    <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                      Credit Card
+                    </p>
+                    <p class="text-xs text-gray-600 mt-1">
+                      Ending with: <span x-text="subscriptionData.details.payment_information.last_four_digits"></span>
+                    </p>
+                  </div>
+                  <p x-show="subscriptionData.details.payment_information.payment_method == 'paypal'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                    PayPal
+                  </p>
+                </div>
+                <p x-show="!subscriptionData.details.payment_information" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  –
+                </p>
+                <p class="mt-2">
+                  <a x-show="subscriptionData.details.update_url" class="text-xs text-primary no-underline hover:underline mt-4" :href="subscriptionData.details.update_url">
+                    <i class="fas fa-external-link fa-fw"></i>
+                    Update Payment Method
+                  </a>
+                </p>
+              </dd>
+            </div>
+          </dl>
+          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">
+            License Key
+          </h2>
+          <p x-show="subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically. Otherwise, enter it in your Hub instance under "Billing" manually if necessary.
+          </p>
+          <p x-show="!subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            This is your license key that is bound to your Hub ID. Enter it in your Hub instance under "Billing" manually if necessary.
+          </p>
+          <textarea x-model="subscriptionData.token" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full" rows="6" readonly></textarea>
+          <a x-show="subscriptionData.returnUrl" :href="subscriptionData.returnUrl" class="btn btn-primary text-center w-full md:w-64 mt-4" role="button">
+            Transfer to Hub
+          </a>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.getSuccess && (!subscriptionData.token || !subscriptionData.details)">
+        <button @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full md:w-64">
+          Checkout
+        </button>
+      </template>
     </form>
   </div>
 

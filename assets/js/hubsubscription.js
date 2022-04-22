@@ -15,7 +15,13 @@ class HubSubscription {
   constructor(subscriptionData, searchParams) {
     this._subscriptionData = subscriptionData;
     this._subscriptionData.hubId = searchParams.get('hub_id');
-    this._subscriptionData.returnUrl = decodeURIComponent(searchParams.get('return_url'));
+    if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0) {
+      this.get();
+    }
+    let encodedReturnUrl = searchParams.get('return_url');
+    if (encodedReturnUrl) {
+      this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);  
+    }
     this._paddle = $.ajax({
       url: 'https://cdn.paddle.com/paddle/paddle.js',
       cache: true,
@@ -30,9 +36,9 @@ class HubSubscription {
   }
 
   get() {
-    // this._subscriptionData.inProgress = true;
-    // this._subscriptionData.errorMessage = '';
-    // this._subscriptionData.success = false;
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.getSuccess = false;
     $.ajax({
       url: SUBSCRIPTION_URL,
       type: 'GET',
@@ -42,21 +48,32 @@ class HubSubscription {
     }).done(data => {
       this.onGetSucceeded(data);
     }).fail(xhr => {
-      this.onGetFailed(xhr.responseJSON?.message || 'Fetching subscription failed.');
+      if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
+        this.onGetNotFound();
+      } else {
+        this.onGetFailed(xhr.responseJSON?.message || 'Fetching subscription failed.');
+      }
     });
   }
 
   onGetSucceeded(data) {
     this._subscriptionData.token = data.token;
-    // this._subscriptionData.success = true;
-    // this._subscriptionData.errorMessage = '';
-    // this._subscriptionData.inProgress = false;
+    this._subscriptionData.details = data.subscription;
+    this._subscriptionData.getSuccess = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+  }
+
+  onGetNotFound() {
+    this._subscriptionData.getSuccess = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
   }
 
   onGetFailed(error) {
-    // this._subscriptionData.success = false;
-    // this._subscriptionData.errorMessage = error;
-    // this._subscriptionData.inProgress = false;
+    this._subscriptionData.getSuccess = false;
+    this._subscriptionData.errorMessage = error;
+    this._subscriptionData.inProgress = false;
   }
 
   checkout(locale) {
