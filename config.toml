@@ -77,7 +77,7 @@ unsafe = true
       filename = "Cryptomator-1.6.9-arm64.dmg"
       downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.9/Cryptomator-1.6.9-arm64.dmg"
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.9/Cryptomator-1.6.9-arm64.dmg.asc"
-      checksum = "95c2b50ee2fbcc7f0d9ec3561ac03d570d2d272c9e66096fbc4d488d20e4eb39"
+      checksum = "17e36423e2fd08a3aa82fc1ff51814e820bcfcde016260c8d0d5676e6680258c"
     [params.releases.appimage]
       version = "1.6.9"
       filename = "cryptomator-1.6.9-x86_64.AppImage"
