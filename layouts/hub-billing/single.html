@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, token: null, details: null}, hubSubscription: null}" x-init="hubSubscription = new HubSubscription(subscriptionData, new URLSearchParams(location.search))" x-ref="form">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, token: null, details: null, monthlyPrice: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); hubSubscription.loadPrice()" x-ref="form">
       <template x-if="!subscriptionData.getSuccess">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -106,10 +106,10 @@
                   –
                 </p>
                 <p class="mt-2">
-                  <a x-show="subscriptionData.details.update_url" class="text-xs text-primary no-underline hover:underline mt-4" :href="subscriptionData.details.update_url">
+                  <button x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-primary no-underline hover:underline">
                     <i class="fas fa-external-link fa-fw"></i>
                     Update Payment Method
-                  </a>
+                  </button>
                 </p>
               </dd>
             </div>
@@ -131,9 +131,95 @@
       </template>
 
       <template x-if="subscriptionData.getSuccess && (!subscriptionData.token || !subscriptionData.details)">
-        <button @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full md:w-64">
-          Checkout
-        </button>
+        <div>
+          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+            <h1>{{ .Title }}</h1>
+            <p class="lead">Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage.</p>
+          </header>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <div class="rounded shadow bg-white">
+              <div class="p-4 border-b border-primary">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                  Standard
+                </h2>
+                <p x-text="subscriptionData.monthlyPrice ? subscriptionData.monthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
+                <p class="text-lg text-gray-500 mb-4">
+                  per seat, per month, billed yearly
+                </p>
+              </div>
+              <div class="px-4 py-8">
+                <div class="flex flex-wrap md:flex-nowrap">
+                  <div class="w-full mb-4 md:w-1/2 md:pr-3">
+                    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                      Hub ID
+                    </label>
+                    <input x-model="subscriptionData.hubId" type="text" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" readonly/>
+                    <p class="text-xs text-gray-600">
+                      This is unique to your Hub instance. The subscription will be bound to it.
+                    </p>
+                  </div>
+                  <div class="w-full mb-4 md:w-1/2 md:pl-3">
+                    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                      Number of Seats
+                    </label>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="10000" step="1" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" placeholder="min. 1" required/>
+                    <p class="text-xs text-gray-600">
+                      Only users who are granted access to vaults count towards the seats limit.
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                    Email  
+                  </label>
+                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="Email address" required/>
+                </div>
+                <div class="text-center mt-8">
+                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                    Payments are securely handled by Paddle.
+                  </p>
+                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+                  <button :disabled="!$refs.form.checkValidity() || subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+                    <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col rounded shadow bg-white">
+              <div class="p-4 border-b border-primary">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                  Enterprise
+                </h2>
+                <p class="text-5xl font-bold">
+                  Custom
+                </p>
+                <p class="text-lg text-gray-500 mb-4">
+                  tailored pricing
+                </p>
+              </div>
+              <div class="flex-grow">
+                <div class="flex flex-col items-center text-center h-full px-4 py-8">
+                  <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4 md:mb-0">
+                    Get Ready for Your Enterprise
+                  </h3>
+                  <div class="mb-4 md:my-auto lg:max-w-sm">
+                    <div class="fa-stack text-5xl text-primary-l2 mb-4">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fas fa-building fa-stack-1x text-primary"></i>
+                    </div>
+                    <p class="text-sm md:text-base leading-relaxed text-gray-700">
+                      You have a large team? We're happy to offer customized pricing and an individual solution for your needs.
+                    </p>
+                  </div>
+                  <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-primary w-full md:w-64">
+                    <i class="fas fa-envelope"></i> Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </template>
     </form>
   </div>

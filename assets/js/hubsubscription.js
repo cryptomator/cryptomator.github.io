@@ -2,17 +2,20 @@
 
 // const PADDLE_ENABLE_SANDBOX = false;
 // const PADDLE_VENDOR_ID = 39223;
-// const HUB_SUBSCRIPTION_PLAN_ID = TODO;
+// const PADDLE_PRICES_URL = 'https://checkout.paddle.com/api/2.0/prices';
+// const HUB_SUBSCRIPTION_PLAN_ID = 770132;
 // const SUBSCRIPTION_URL = 'https://store.cryptomator.org/api/hub/subscription';
 
 const PADDLE_ENABLE_SANDBOX = true;
 const PADDLE_VENDOR_ID = 1385;
+const PADDLE_PRICES_URL = 'https://sandbox-checkout.paddle.com/api/2.0/prices';
 const HUB_SUBSCRIPTION_PLAN_ID = 23141;
 const SUBSCRIPTION_URL = 'http://localhost:8787/api/hub/subscription';
 
 class HubSubscription {
 
-  constructor(subscriptionData, searchParams) {
+  constructor(form, subscriptionData, searchParams) {
+    this._form = form;
     this._subscriptionData = subscriptionData;
     this._subscriptionData.hubId = searchParams.get('hub_id');
     if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0) {
@@ -76,24 +79,50 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  checkout(locale) {
-    // if (!$(this._form)[0].checkValidity()) {
-    //   $(this._form).find(':input').addClass('show-invalid');
-    //   return;
-    // }
+  updatePaymentMethod(locale) {
+    this._paddle.then(paddle => {
+      paddle.Checkout.open({
+        override: this._subscriptionData.details.update_url,
+        locale: locale,
+        successCallback: _ => this.get()
+      });
+    });
+  }
 
-    // this._subscriptionData.inProgress = true;
-    // this._subscriptionData.errorMessage = '';
-    // this._subscriptionData.success = false;
+  loadPrice() {
+    $.ajax({
+      url: PADDLE_PRICES_URL,
+      dataType: 'jsonp',
+      data: {
+        product_ids: HUB_SUBSCRIPTION_PLAN_ID
+      },
+    }).done(data => {
+      this._subscriptionData.monthlyPrice = {
+        amount: data.response.products[0].price.gross / 12,
+        currency: data.response.products[0].currency
+      };
+    });
+  }
+
+  checkout(locale) {
+    if (!$(this._form)[0].checkValidity()) {
+      $(this._form).find(':input').addClass('show-invalid');
+      return;
+    }
+
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.postSuccess = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
         product: HUB_SUBSCRIPTION_PLAN_ID,
-        // email: this._subscriptionData.email,
+        email: this._subscriptionData.email,
+        quantity: this._subscriptionData.quantity,
         locale: locale,
         passthrough: '{"hub_id": ' + this._subscriptionData.hubId + '}',
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
         closeCallback: () => {
-          // this._subscriptionData.inProgress = false;
+          this._subscriptionData.inProgress = false;
         }
       });
     });
@@ -106,7 +135,7 @@ class HubSubscription {
         if (subscriptionId) {
           this.post(subscriptionId);
         } else {
-          // this._subscriptionData.errorMessage = 'Retrieving subscription failed. Please check your emails instead.';
+          this._subscriptionData.errorMessage = 'Retrieving subscription failed. Please check your emails instead.';
         }
       });
     });
@@ -128,17 +157,20 @@ class HubSubscription {
   }
 
   onPostSucceeded(data) {
-    // this._subscriptionData.success = true;
-    // this._subscriptionData.errorMessage = '';
-    // this._subscriptionData.inProgress = false;
     this._subscriptionData.token = data.token;
-    window.open(this._subscriptionData.returnUrl + '?token=' + data.token, '_self');
+    this._subscriptionData.details = data.subscription;
+    this._subscriptionData.postSuccess = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+    if (this._subscriptionData.returnUrl) {
+      window.open(this._subscriptionData.returnUrl + '?token=' + data.token, '_self');
+    }
   }
 
   onPostFailed(error) {
-    // this._subscriptionData.success = false;
-    // this._subscriptionData.errorMessage = error;
-    // this._subscriptionData.inProgress = false;
+    this._subscriptionData.postSuccess = false;
+    this._subscriptionData.errorMessage = error;
+    this._subscriptionData.inProgress = false;
   }
 
 }
