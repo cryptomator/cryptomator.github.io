@@ -24,7 +24,9 @@ class HubSetup {
       hub: {
         publicUrl: 'http://localhost:30000',
         adminUser: 'admin',
-        adminPw: 'admin'
+        adminPw: 'admin',
+        syncerUser: 'syncer', // TODO: randomize?
+        syncerPw: 'syncer', // TODO: randomize?
       }
     }
   }
@@ -92,6 +94,16 @@ class ConfigBuilder {
                 cryptomatorhub: ['vault-owner']
               }
             }
+          },
+          {
+            name: 'syncer',
+            description: 'syncer',
+            composite: true,
+            composites: {
+              client: {
+                'realm-management': ['view-users']
+              }
+            }
           }
         ],
         client: {
@@ -107,6 +119,12 @@ class ConfigBuilder {
           },
           credentials: [{ type: 'password', value: this.cfg.hub.adminPw }],
           realmRoles: ['admin']
+        },
+        {
+          username: this.cfg.hub.syncerUser,
+          enabled: true,
+          credentials: [{ type: 'password', value: this.cfg.hub.syncerPw }],
+          realmRoles: ['syncer']
         }
       ],
       scopeMappings: [
