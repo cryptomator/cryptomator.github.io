@@ -79,16 +79,6 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  updatePaymentMethod(locale) {
-    this._paddle.then(paddle => {
-      paddle.Checkout.open({
-        override: this._subscriptionData.details.update_url,
-        locale: locale,
-        successCallback: _ => this.get()
-      });
-    });
-  }
-
   loadPrice() {
     $.ajax({
       url: PADDLE_PRICES_URL,
@@ -169,6 +159,65 @@ class HubSubscription {
 
   onPostFailed(error) {
     this._subscriptionData.postSuccess = false;
+    this._subscriptionData.errorMessage = error;
+    this._subscriptionData.inProgress = false;
+  }
+
+  updatePaymentMethod(locale) {
+    this._paddle.then(paddle => {
+      paddle.Checkout.open({
+        override: this._subscriptionData.details.update_url,
+        locale: locale,
+        successCallback: _ => this.get()
+      });
+    });
+  }
+
+  pause() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: SUBSCRIPTION_URL,
+      type: 'PUT',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        pause: true
+      }
+    }).done(data => {
+      this.onPutSucceeded(data, false);
+    }).fail(xhr => {
+      this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
+    });
+  }
+
+  restart() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: SUBSCRIPTION_URL,
+      type: 'PUT',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        pause: false
+      }
+    }).done(data => {
+      this.onPutSucceeded(data, false);
+    }).fail(xhr => {
+      this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
+    });
+  }
+
+  onPutSucceeded(data, shouldOpenReturnUrl) {
+    this._subscriptionData.token = data.token;
+    this._subscriptionData.details = data.subscription;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+    if (shouldOpenReturnUrl && this._subscriptionData.returnUrl) {
+      window.open(this._subscriptionData.returnUrl + '?token=' + data.token, '_self');
+    }
+  }
+
+  onPutFailed(error) {
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }

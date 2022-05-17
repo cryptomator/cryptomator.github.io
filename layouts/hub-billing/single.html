@@ -25,7 +25,7 @@
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
           </header>
-          <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+          <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div class="rounded shadow bg-white p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 Status
@@ -55,10 +55,10 @@
                   Number of Seats: <span x-text="subscriptionData.details.quantity"></span>
                 </p>
                 <p class="mt-2">
-                  <a class="text-xs text-primary no-underline hover:underline mt-4" href="#">
+                  <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" class="text-xs text-btn text-btn-primary">
                     <i class="fas fa-arrows-v fa-fw"></i>
-                    Upgrade or Downgrade
-                  </a>
+                    Change Seats
+                  </button>
                 </p>
               </dd>
             </div>
@@ -82,10 +82,14 @@
                   </div>
                 </template>
                 <p class="mt-2">
-                  <a class="text-xs text-primary no-underline hover:underline mt-4" href="#">
+                  <button x-show="subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-btn-primary">
                     <i class="fas fa-pause fa-fw"></i>
                     Pause Subscription
-                  </a>
+                  </button>
+                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" class="text-xs text-btn text-btn-primary">
+                    <i class="fas fa-play fa-fw"></i>
+                    Restart Subscription
+                  </button>
                 </p>
               </dd>
             </div>
@@ -111,7 +115,7 @@
                   –
                 </p>
                 <p class="mt-2">
-                  <button x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-primary no-underline hover:underline">
+                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-btn-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     Update Payment Method
                   </button>
@@ -119,7 +123,8 @@
               </dd>
             </div>
           </dl>
-          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">
+          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
+          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">
             License Key
           </h2>
           <p x-show="subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
