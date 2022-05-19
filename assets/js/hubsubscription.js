@@ -62,6 +62,9 @@ class HubSubscription {
   onGetSucceeded(data) {
     this._subscriptionData.token = data.token;
     this._subscriptionData.details = data.subscription;
+    if (data.subscription.quantity) {
+      this._subscriptionData.quantity = data.subscription.quantity;
+    }
     this._subscriptionData.getSuccess = true;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
@@ -164,11 +167,16 @@ class HubSubscription {
   }
 
   updatePaymentMethod(locale) {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
     this._paddle.then(paddle => {
       paddle.Checkout.open({
         override: this._subscriptionData.details.update_url,
         locale: locale,
-        successCallback: _ => this.get()
+        successCallback: _ => this.get(),
+        closeCallback: () => {
+          this._subscriptionData.inProgress = false;
+        }
       });
     });
   }
@@ -202,6 +210,24 @@ class HubSubscription {
       }
     }).done(data => {
       this.onPutSucceeded(data, false);
+    }).fail(xhr => {
+      this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
+    });
+  }
+
+  changeQuantity(successCallback) {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: SUBSCRIPTION_URL,
+      type: 'PUT',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        quantity: this._subscriptionData.quantity
+      }
+    }).done(data => {
+      this.onPutSucceeded(data, true);
+      successCallback();
     }).fail(xhr => {
       this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
     });

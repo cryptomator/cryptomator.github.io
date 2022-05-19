@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, token: null, details: null, monthlyPrice: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); hubSubscription.loadPrice()" x-ref="form">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, token: null, details: null, monthlyPrice: null, quantity: 5, email: ''}, acceptTerms: false, changeSeatsModalOpen: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); hubSubscription.loadPrice()" x-ref="form">
       <template x-if="!subscriptionData.getSuccess">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -55,7 +55,7 @@
                   Number of Seats: <span x-text="subscriptionData.details.quantity"></span>
                 </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" class="text-xs text-btn text-btn-primary">
+                  <button :disabled="subscriptionData.inProgress" @click.prevent="changeSeatsModalOpen = true" class="text-xs text-btn text-btn-primary">
                     <i class="fas fa-arrows-v fa-fw"></i>
                     Change Seats
                   </button>
@@ -88,7 +88,7 @@
                   </button>
                   <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" class="text-xs text-btn text-btn-primary">
                     <i class="fas fa-play fa-fw"></i>
-                    Restart Subscription
+                    Resume Subscription
                   </button>
                 </p>
               </dd>
@@ -137,6 +137,48 @@
           <a x-show="subscriptionData.returnUrl" :href="subscriptionData.returnUrl" class="btn btn-primary text-center w-full md:w-64 mt-4" role="button">
             Transfer to Hub
           </a>
+
+          <div x-show="changeSeatsModalOpen" class="relative z-10" aria-labelledby="change-seats-modal-title" role="dialog" aria-modal="true">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
+            <div class="fixed z-10 inset-0 overflow-y-auto">
+              <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
+                <div class="relative rounded shadow bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                  <div class="p-4">
+                    <div class="md:flex md:items-start">
+                      <div class="flex-shrink-0 text-center">
+                        <div class="fa-stack text-2xl text-primary-l2 md:text-xl">
+                          <i class="fas fa-circle fa-stack-2x"></i>
+                          <i class="fas fa-arrows-v fa-stack-1x text-primary"></i>
+                        </div>
+                      </div>
+                      <div class="mt-3 text-center md:mt-0 md:ml-4 md:text-left">
+                        <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4" id="change-seats-modal-title">
+                          Change Seats
+                        </h3>
+                        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                          You currently have a limit of <span x-text="subscriptionData.details.quantity"></span> seat(s). If you require more or less seats than the current limit, you can adjust the quantity here.
+                        </p>
+                        <input x-model="subscriptionData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="10000" step="1" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" placeholder="min. 1" required/>
+                        <p class="text-xs text-gray-600 mb-4">
+                          Only users who are granted access to vaults count towards the seats limit.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="border-t border-primary p-4 md:flex md:flex-row-reverse">
+                    <button :disabled="!$refs.form.checkValidity() || subscriptionData.quantity == subscriptionData.details.quantity || subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity(() => changeSeatsModalOpen = false)" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                      <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                      Confirm
+                    </button>
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="changeSeatsModalOpen = false" type="button" class="btn btn-outline-gray-500 flex-shrink-0 w-full md:w-auto">
+                      Cancel
+                    </button>
+                    <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-center text-sm text-red-600 mt-4 md:text-left md:mr-3 md:mt-0" x-text="subscriptionData.errorMessage"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </template>
 
