@@ -215,7 +215,13 @@ class HubSubscription {
     });
   }
 
-  changeQuantity(successCallback) {
+  openChangeSeatsModal() {
+    this._subscriptionData.quantity = this._subscriptionData.details.quantity;
+    this._subscriptionData.changeSeatsModalConfirmation = false;
+    this._subscriptionData.changeSeatsModalOpen = true;
+  }
+
+  changeQuantity() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
@@ -226,8 +232,8 @@ class HubSubscription {
         quantity: this._subscriptionData.quantity
       }
     }).done(data => {
+      this._subscriptionData.changeSeatsModalOpen = false;
       this.onPutSucceeded(data, true);
-      successCallback();
     }).fail(xhr => {
       this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
     });
