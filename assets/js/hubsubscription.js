@@ -217,8 +217,34 @@ class HubSubscription {
 
   openChangeSeatsModal() {
     this._subscriptionData.quantity = this._subscriptionData.details.quantity;
-    this._subscriptionData.changeSeatsModalConfirmation = false;
-    this._subscriptionData.changeSeatsModalOpen = true;
+    this._subscriptionData.changeSeatsModal.immediatePayment = null;
+    this._subscriptionData.changeSeatsModal.confirmation = false;
+    this._subscriptionData.changeSeatsModal.open = true;
+  }
+
+  askForChangeSeatsConfirmation() {
+    this._subscriptionData.changeSeatsModal.confirmation = true;
+    this.previewChangeQuantity();
+  }
+
+  previewChangeQuantity() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: SUBSCRIPTION_URL,
+      type: 'PUT',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        quantity: this._subscriptionData.quantity,
+        preview: true
+      }
+    }).done(data => {
+      this._subscriptionData.changeSeatsModal.immediatePayment = data.subscription.immediate_payment;
+      this._subscriptionData.errorMessage = '';
+      this._subscriptionData.inProgress = false;
+    }).fail(xhr => {
+      this.onPutFailed(xhr.responseJSON?.message || 'Calculating price failed.');
+    });
   }
 
   changeQuantity() {
@@ -232,7 +258,7 @@ class HubSubscription {
         quantity: this._subscriptionData.quantity
       }
     }).done(data => {
-      this._subscriptionData.changeSeatsModalOpen = false;
+      this._subscriptionData.changeSeatsModal.open = false;
       this.onPutSucceeded(data, true);
     }).fail(xhr => {
       this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
