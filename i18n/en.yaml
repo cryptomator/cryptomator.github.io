@@ -237,6 +237,136 @@
 - id: hub_newsletter_success
   translation: "Thank you for subscribing! A confirmation link has been sent to your email address."
 
+# Hub Billing
+- id: hub_billing_landing_title
+  translation: "Manage Hub Subscription"
+- id: hub_billing_landing_description
+  translation: "Please enter your Hub ID in order to continue. You will find this as an admin of your Hub instance under \"Billing\"."
+- id: hub_billing_landing_hubid_placeholder
+  translation: "Hub ID"
+- id: hub_billing_landing_submit
+  translation: "Continue"
+
+- id: hub_billing_manage_status_title
+  translation: "Status"
+- id: hub_billing_manage_status_active
+  translation: "Active"
+- id: hub_billing_manage_status_pastdue
+  translation: "Past Due"
+- id: hub_billing_manage_status_trialing
+  translation: "Trialing"
+- id: hub_billing_manage_status_paused
+  translation: "Paused"
+- id: hub_billing_manage_status_deleted
+  translation: "Deleted"
+- id: hub_billing_manage_status_quantity_description
+  translation: "Number of Seats"
+- id: hub_billing_manage_status_quantity_action
+  translation: "Change Seats"
+
+- id: hub_billing_manage_next_payment_title
+  translation: "Next Payment"
+- id: hub_billing_manage_next_payment_date_description
+  translation: "Due Date"
+- id: hub_billing_manage_next_payment_date_unavailable
+  translation: "N/A (Paused)"
+- id: hub_billing_manage_next_payment_pause_action
+  translation: "Pause Subscription"
+- id: hub_billing_manage_next_payment_restart_action
+  translation: "Resume Subscription"
+
+- id: hub_billing_manage_payment_info_title
+  translation: "Payment Information"
+- id: hub_billing_manage_payment_info_credit_card
+  translation: "Credit Card"
+- id: hub_billing_manage_payment_info_credit_card_last_four_digits_description
+  translation: "Ending with"
+- id: hub_billing_manage_payment_info_paypal
+  translation: "PayPal"
+- id: hub_billing_manage_payment_info_update_action
+  translation: "Update Payment Method"
+
+- id: hub_billing_manage_license_key_title
+  translation: "License Key"
+- id: hub_billing_manage_license_key_instruction_with_returnurl
+  translation: "This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically. Otherwise, enter it in your Hub instance under \"Billing\" manually if necessary."
+- id: hub_billing_manage_license_key_instruction_without_returnurl
+  translation: "This is your license key that is bound to your Hub ID. Enter it in your Hub instance under \"Billing\" manually if necessary."
+- id: hub_billing_manage_license_key_transfer_action
+  translation: "Transfer to Hub"
+
+- id: hub_billing_manage_modal_charge_amount_description
+  translation: "Charge Amount"
+- id: hub_billing_manage_modal_continue
+  translation: "Continue"
+- id: hub_billing_manage_modal_confirm
+  translation: "Confirm"
+- id: hub_billing_manage_modal_cancel
+  translation: "Cancel"
+
+- id: hub_billing_manage_restart_subscription_title
+  translation: "Resume Subscription"
+- id: hub_billing_manage_restart_subscription_warning
+  translation: "You are about to resume the subscription, which is currently inactive. By confirming, you will be immediately charged."
+
+- id: hub_billing_manage_change_quantity_title
+  translation: "Change Seats"
+- id: hub_billing_manage_change_quantity_description
+  translation: "If you require more or less seats than the current limit, you can adjust the quantity here."
+- id: hub_billing_manage_change_quantity_amount_placeholder
+  translation: "min. 1"
+- id: hub_billing_manage_change_quantity_amount_description
+  translation: "Only users who are granted access to vaults count towards the seats limit."
+- id: hub_billing_manage_change_quantity_confirmation_current_amount_description
+  translation: "Current Number of Seats"
+- id: hub_billing_manage_change_quantity_confirmation_new_amount_description
+  translation: "New Number of Seats"
+- id: hub_billing_manage_change_quantity_confirmation_increase_warning
+  translation: "You are about to increase the seats limit. By confirming, you will be immediately charged for the difference."
+- id: hub_billing_manage_change_quantity_confirmation_decrease_warning
+  translation: "You are about to decrease the seats limit. By confirming, your next payment will be reduced by the difference."
+
+- id: hub_billing_checkout_description
+  translation: "Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage."
+
+- id: hub_billing_checkout_standard_title
+  translation: "Standard"
+- id: hub_billing_checkout_standard_description
+  translation: "per seat, per month, billed yearly"
+
+- id: hub_billing_checkout_standard_hubid
+  translation: "Hub ID"
+- id: hub_billing_checkout_standard_hubid_description
+  translation: "This is unique to your Hub instance. The subscription will be bound to it."
+- id: hub_billing_checkout_standard_quantity
+  translation: "Number of Seats"
+- id: hub_billing_checkout_standard_quantity_placeholder
+  translation: "min. 1"
+- id: hub_billing_checkout_standard_quantity_description
+  translation: "Only users who are granted access to vaults count towards the seats limit."
+- id: hub_billing_checkout_standard_email
+  translation: "Email"
+- id: hub_billing_checkout_standard_email_placeholder
+  translation: "Email address"
+- id: hub_billing_checkout_standard_instruction
+  translation: "Payments are securely handled by Paddle."
+- id: hub_billing_checkout_standard_submit
+  translation: "Checkout"
+
+- id: hub_billing_checkout_enterprise_title
+  translation: "Enterprise"
+- id: hub_billing_checkout_enterprise_statement
+  translation: "Custom"
+- id: hub_billing_checkout_enterprise_description
+  translation: "tailored pricing"
+
+- id: hub_billing_checkout_enterprise_subtitle
+  translation: "Get Ready for Your Enterprise"
+- id: hub_billing_checkout_enterprise_cta
+  translation: "You have a large team? We're happy to offer customized pricing and an individual solution for your needs."
+- id: hub_billing_checkout_enterprise_action
+  translation: "Contact Us"
+
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "Email"

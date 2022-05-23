@@ -237,6 +237,136 @@
 - id: hub_newsletter_success
   translation: "Vielen Dank für deine Anmeldung! Ein Bestätigungslink wurde an deine E-Mail-Adresse zugeschickt."
 
+# Hub Billing
+- id: hub_billing_landing_title
+  translation: "Hub-Abonnement verwalten"
+- id: hub_billing_landing_description
+  translation: "Bitte gib deine Hub-ID ein, um fortzufahren. Diese findest du als Admin in deiner Hub-Instanz unter \"Abrechnung\"."
+- id: hub_billing_landing_hubid_placeholder
+  translation: "Hub-ID"
+- id: hub_billing_landing_submit
+  translation: "Weiter"
+
+- id: hub_billing_manage_status_title
+  translation: "Status"
+- id: hub_billing_manage_status_active
+  translation: "Aktiv"
+- id: hub_billing_manage_status_pastdue
+  translation: "Überfällig"
+- id: hub_billing_manage_status_trialing
+  translation: "Testphase"
+- id: hub_billing_manage_status_paused
+  translation: "Pausiert"
+- id: hub_billing_manage_status_deleted
+  translation: "Gelöscht"
+- id: hub_billing_manage_status_quantity_description
+  translation: "Anzahl der Sitze"
+- id: hub_billing_manage_status_quantity_action
+  translation: "Sitze ändern"
+
+- id: hub_billing_manage_next_payment_title
+  translation: "Nächste Zahlung"
+- id: hub_billing_manage_next_payment_date_description
+  translation: "Fälligkeitsdatum"
+- id: hub_billing_manage_next_payment_date_unavailable
+  translation: "N/A (pausiert)"
+- id: hub_billing_manage_next_payment_pause_action
+  translation: "Abonnement pausieren"
+- id: hub_billing_manage_next_payment_restart_action
+  translation: "Abonnement fortsetzen"
+
+- id: hub_billing_manage_payment_info_title
+  translation: "Zahlungsinformationen"
+- id: hub_billing_manage_payment_info_credit_card
+  translation: "Kreditkarte"
+- id: hub_billing_manage_payment_info_credit_card_last_four_digits_description
+  translation: "Endet mit"
+- id: hub_billing_manage_payment_info_paypal
+  translation: "PayPal"
+- id: hub_billing_manage_payment_info_update_action
+  translation: "Zahlungsmethode aktualisieren"
+
+- id: hub_billing_manage_license_key_title
+  translation: "Lizenzschlüssel"
+- id: hub_billing_manage_license_key_instruction_with_returnurl
+  translation: "Dies ist dein Lizenzschlüssel, der an deine Hub-ID gebunden ist. Drück auf den Button unten, um ihn automatisch auf deine Hub-Instanz zu übertragen. Andernfalls gib ihn gegebenenfalls manuell in deiner Hub-Instanz unter \"Abrechnung\" ein."
+- id: hub_billing_manage_license_key_instruction_without_returnurl
+  translation: "Dies ist dein Lizenzschlüssel, der an deine Hub-ID gebunden ist. Gib ihn in deiner Hub-Instanz unter \"Abrechnung\" gegebenenfalls manuell ein."
+- id: hub_billing_manage_license_key_transfer_action
+  translation: "Zum Hub übertragen"
+
+- id: hub_billing_manage_modal_charge_amount_description
+  translation: "Rechnungsbetrag"
+- id: hub_billing_manage_modal_continue
+  translation: "Weiter"
+- id: hub_billing_manage_modal_confirm
+  translation: "Bestätigen"
+- id: hub_billing_manage_modal_cancel
+  translation: "Abbrechen"
+
+- id: hub_billing_manage_restart_subscription_title
+  translation: "Abonnement fortsetzen"
+- id: hub_billing_manage_restart_subscription_warning
+  translation: "Du bist dabei, dein derzeit inaktives Abonnement wieder aufzunehmen. Wenn du dies bestätigst, wird der Betrag sofort in Rechnung gestellt."
+
+- id: hub_billing_manage_change_quantity_title
+  translation: "Sitze ändern"
+- id: hub_billing_manage_change_quantity_description
+  translation: "Benötigst du mehr oder weniger Sitze als das aktuelle Limit, kannst du die Anzahl hier anpassen."
+- id: hub_billing_manage_change_quantity_amount_placeholder
+  translation: "min. 1"
+- id: hub_billing_manage_change_quantity_amount_description
+  translation: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet."
+- id: hub_billing_manage_change_quantity_confirmation_current_amount_description
+  translation: "Aktuelle Anzahl der Sitze"
+- id: hub_billing_manage_change_quantity_confirmation_new_amount_description
+  translation: "Neue Anzahl der Sitze"
+- id: hub_billing_manage_change_quantity_confirmation_increase_warning
+  translation: "Du bist dabei, das Sitzplatzlimit zu erhöhen. Wenn du dies bestätigst, wird die die Differenz sofort in Rechnung gestellt."
+- id: hub_billing_manage_change_quantity_confirmation_decrease_warning
+  translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird deine nächste Zahlung um die Differenz reduziert."
+
+- id: hub_billing_checkout_description
+  translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+
+- id: hub_billing_checkout_standard_title
+  translation: "Standard"
+- id: hub_billing_checkout_standard_description
+  translation: "pro Sitz, pro Monat, jährlich abgerechnet"
+
+- id: hub_billing_checkout_standard_hubid
+  translation: "Hub-ID"
+- id: hub_billing_checkout_standard_hubid_description
+  translation: "Diese ist einzigartig für deine Hub-Instanz. Das Abonnement wird an sie gebunden sein."
+- id: hub_billing_checkout_standard_quantity
+  translation: "Anzahl der Sitze"
+- id: hub_billing_checkout_standard_quantity_placeholder
+  translation: "min. 1"
+- id: hub_billing_checkout_standard_quantity_description
+  translation: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet."
+- id: hub_billing_checkout_standard_email
+  translation: "E-Mail"
+- id: hub_billing_checkout_standard_email_placeholder
+  translation: "E-Mail-Adresse"
+- id: hub_billing_checkout_standard_instruction
+  translation: "Zahlungen werden über Paddle abgewickelt"
+- id: hub_billing_checkout_standard_submit
+  translation: "Zur Zahlung"
+
+- id: hub_billing_checkout_enterprise_title
+  translation: "Enterprise"
+- id: hub_billing_checkout_enterprise_statement
+  translation: "Individuell"
+- id: hub_billing_checkout_enterprise_description
+  translation: "maßgeschneiderte Preise"
+
+- id: hub_billing_checkout_enterprise_subtitle
+  translation: "Bereit für dein Unternehmen"
+- id: hub_billing_checkout_enterprise_cta
+  translation: "Du hast ein großes Team? Wir bieten dir gerne angepasste Preise und eine individuelle Lösung für deine Anforderungen."
+- id: hub_billing_checkout_enterprise_action
+  translation: "Kontaktiere uns"
+
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "E-Mail"
