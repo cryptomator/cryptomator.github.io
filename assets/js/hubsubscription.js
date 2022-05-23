@@ -198,6 +198,32 @@ class HubSubscription {
     });
   }
 
+  askForRestartConfirmation() {
+    this._subscriptionData.restartModal.immediatePayment = null;
+    this._subscriptionData.restartModal.open = true;
+    this.previewRestart();
+  }
+
+  previewRestart() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: SUBSCRIPTION_URL,
+      type: 'PUT',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        pause: false,
+        preview: true
+      }
+    }).done(data => {
+      this._subscriptionData.restartModal.immediatePayment = data.subscription.immediate_payment;
+      this._subscriptionData.errorMessage = '';
+      this._subscriptionData.inProgress = false;
+    }).fail(xhr => {
+      this.onPutFailed(xhr.responseJSON?.message || 'Calculating price failed.');
+    });
+  }
+
   restart() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
