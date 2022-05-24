@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, immediatePayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, monthlyPrice: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); hubSubscription.loadPrice()" x-ref="form">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, monthlyPrice: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); hubSubscription.loadPrice()" x-ref="form">
       <template x-if="!subscriptionData.getSuccess">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -161,7 +161,7 @@
                         </p>
                         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                           <i class="fas fa-credit-card fa-fw text-primary"></i>
-                          {{ i18n "hub_billing_manage_modal_charge_amount_description" . }}: <span x-text="subscriptionData.restartModal.immediatePayment ? subscriptionData.restartModal.immediatePayment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.restartModal.immediatePayment.currency }) : '…'"></span>
+                          {{ i18n "hub_billing_manage_modal_charge_amount_description" . }}: <span x-text="subscriptionData.restartModal.nextPayment ? subscriptionData.restartModal.nextPayment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.restartModal.nextPayment.currency }) : '…'"></span>
                         </p>
                       </div>
                     </div>

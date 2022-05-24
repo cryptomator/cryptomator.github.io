@@ -199,7 +199,7 @@ class HubSubscription {
   }
 
   askForRestartConfirmation() {
-    this._subscriptionData.restartModal.immediatePayment = null;
+    this._subscriptionData.restartModal.nextPayment = null;
     this._subscriptionData.restartModal.open = true;
     this.previewRestart();
   }
@@ -216,7 +216,7 @@ class HubSubscription {
         preview: true
       }
     }).done(data => {
-      this._subscriptionData.restartModal.immediatePayment = data.subscription.immediate_payment;
+      this._subscriptionData.restartModal.nextPayment = data.subscription.next_payment;
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {
@@ -235,7 +235,7 @@ class HubSubscription {
         pause: false
       }
     }).done(data => {
-      this.onPutSucceeded(data, false);
+      this.onPutSucceeded(data, true);
     }).fail(xhr => {
       this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
     });

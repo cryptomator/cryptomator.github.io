@@ -307,7 +307,7 @@
 - id: hub_billing_manage_restart_subscription_title
   translation: "Abonnement fortsetzen"
 - id: hub_billing_manage_restart_subscription_warning
-  translation: "Du bist dabei, dein derzeit inaktives Abonnement wieder aufzunehmen. Wenn du dies bestätigst, wird der Betrag sofort in Rechnung gestellt."
+  translation: "Du bist dabei, dein derzeit inaktives Abonnement wieder aufzunehmen. Wenn du dies bestätigst, wird der Betrag im Laufe des Tages in Rechnung gestellt."
 
 - id: hub_billing_manage_change_quantity_title
   translation: "Sitze ändern"

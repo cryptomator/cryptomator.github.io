@@ -307,7 +307,7 @@
 - id: hub_billing_manage_restart_subscription_title
   translation: "Resume Subscription"
 - id: hub_billing_manage_restart_subscription_warning
-  translation: "You are about to resume the subscription, which is currently inactive. By confirming, you will be immediately charged."
+  translation: "You are about to resume the subscription, which is currently inactive. By confirming, you will be charged within the day."
 
 - id: hub_billing_manage_change_quantity_title
   translation: "Change Seats"
