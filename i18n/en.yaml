@@ -134,6 +134,19 @@
 - id: donate_crypto_calltoaction
   translation: "Proceed to CoinPayments"
 
+- id: donate_customer_portal_title
+  translation: "Want to manage your recurring donation?"
+- id: donate_customer_portal_instruction
+  translation: "If you used the \"Credit Card\" option to set up a monthly donation and would like to manage or cancel it, enter your email address below."
+- id: donate_customer_portal_email_placeholder
+  translation: "Email address"
+- id: donate_customer_portal_retrieve
+  translation: "Retrieve"
+- id: donate_customer_portal_success
+  translation: "A customer portal has been created for you and sent to you via email."
+- id: donate_customer_portal_contact_us
+  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+
 - id: donate_become_sponsor_title
   translation: "Want to become an official sponsor?"
 - id: donate_become_sponsor_button

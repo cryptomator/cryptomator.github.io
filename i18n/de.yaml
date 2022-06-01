@@ -134,6 +134,19 @@
 - id: donate_crypto_calltoaction
   translation: "Weiter zu CoinPayments"
 
+- id: donate_customer_portal_title
+  translation: "Möchtest du deine wiederkehrende Spende verwalten?"
+- id: donate_customer_portal_instruction
+  translation: "Falls du die Option \"Kreditkarte\" verwendet hast, um eine monatliche Spende einzurichten, und diese verwalten oder kündigen möchtest, gib unten deine E-Mail-Adresse ein."
+- id: donate_customer_portal_email_placeholder
+  translation: "E-Mail-Adresse"
+- id: donate_customer_portal_retrieve
+  translation: "Abrufen"
+- id: donate_customer_portal_success
+  translation: "Ein Kundenportal wurde für dich erstellt und dir per E-Mail zugesandt."
+- id: donate_customer_portal_contact_us
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
+
 - id: donate_become_sponsor_title
   translation: "Möchtest du ein offizieller Sponsor werden?"
 - id: donate_become_sponsor_button
@@ -319,4 +332,4 @@
 - id: supporter_cert_recovery_success
   translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
 - id: supporter_cert_recovery_contact_us
-  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:sales@cryptomator.org\">kontaktiere uns</a>."
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
