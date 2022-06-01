@@ -546,6 +546,22 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     var startCmd = devMode
       ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
       : ['/opt/keycloak/bin/kc.sh', 'start', '--auto-build', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
+    var env = [
+      {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
+      {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
+      {name: 'KC_DB', value: 'postgres'},
+      {name: 'KC_DB_URL', value: 'jdbc:postgresql://postgres-svc:5432/keycloak'},
+      {name: 'KC_DB_USERNAME', value: 'keycloak'},
+      {name: 'KC_DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
+      {name: 'KC_HEALTH_ENABLED', value: 'true'},
+      {name: 'KC_HTTP_ENABLED', value: 'true'},
+      {name: 'KC_PROXY', value: 'edge'}
+    ];
+    if (!devMode) {
+      env.push({name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)});
+      env.push({name: 'KC_HOSTNAME_PORT', value: this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
+      // TODO KC_HOSTNAME_PATH ??
+    }
     let deployment = {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
@@ -570,20 +586,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/health/live', port: 8080},
                 initialDelaySeconds: 25
               },
-              env: [
-                {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
-                {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
-                {name: 'KC_DB', value: 'postgres'},
-                {name: 'KC_DB_URL', value: 'jdbc:postgresql://postgres-svc:5432/keycloak'},
-                {name: 'KC_DB_USERNAME', value: 'keycloak'},
-                {name: 'KC_DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
-                {name: 'KC_HEALTH_ENABLED', value: 'true'},
-                // TODO: add only for prod mode:
-                //{name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)},
-                //{name: 'KC_HOSTNAME_PORT', value: this.getPort(this.cfg.keycloak.publicUrl)},
-                {name: 'KC_HTTP_ENABLED', value: 'true'},
-                {name: 'KC_PROXY', value: 'edge'}
-              ],
+              env: env,
               volumeMounts: [
                 {name: 'secrets-vol', mountPath: '/opt/keycloak/data/import/realm.json', subPath: 'realm.json', readOnly: true}
               ]
