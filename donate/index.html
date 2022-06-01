@@ -189,8 +189,8 @@
     <input type="hidden" name="hosted_button_id" value="7HHT9KSN2WS3Y" />
     <input type="hidden" name="amount" value="15" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-497623815" x-model="acceptTerms" />
-<label for="id-497623815">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-924683517" x-model="acceptTerms" />
+<label for="id-924683517">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to PayPal</button>
   </form>
@@ -261,8 +261,8 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class="text-primary no-underline hover:underline" href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
 
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-793628145" x-model="acceptTerms" />
-<label for="id-793628145">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-892731546" x-model="acceptTerms" />
+<label for="id-892731546">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
 
       <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
@@ -284,8 +284,8 @@
   <div x-show="frequency === 'recurring'" class="text-center">
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Recurring credit card payments will be set up on our Stripe page.</p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-725396148" x-model="acceptTerms" />
-<label for="id-725396148">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-173925684" x-model="acceptTerms" />
+<label for="id-173925684">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" @click="recurringPayment.checkout(amount, currency, 'en')" :disabled="!acceptTerms">
       <i class="fas fa-external-link" aria-hidden="true"></i> Proceed to Stripe
@@ -364,8 +364,8 @@
     <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
     <input type="hidden" name="allow_extra" value="1" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-256814793" x-model="acceptTerms" />
-<label for="id-256814793">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1" type="checkbox" id="id-275138694" x-model="acceptTerms" />
+<label for="id-275138694">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to CoinPayments</button>
   </form>
@@ -378,12 +378,37 @@
     </div>
   </div>
 
-  <section class="container text-center py-12">
+  <section x-data="{feedbackData: {errorMessage: '', success: false, inProgress: false}, submitData: {email: ''}, customerPortal: null}" x-init="customerPortal = new CustomerPortal($refs.form, feedbackData, submitData)" class="container text-center py-12">
+    <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Want to manage your recurring donation?</h3>
+
+    <form x-show="!feedbackData.success" x-ref="form" class="max-w-xl mx-auto">
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">If you used the &#34;Credit Card&#34; option to set up a monthly donation and would like to manage or cancel it, enter your email address below.</p>
+      <div class="flex justify-center items-center rounded bg-gray-300">
+        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="Email address" required/>
+        <button :disabled="!$refs.form.checkValidity() || feedbackData.inProgress" @click.prevent="customerPortal.request()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
+          <i :class="{'fa-envelope': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Retrieve
+        </button>
+      </div>
+      <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
+    </form>
+
+    <div x-show="feedbackData.success" x-cloak>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">👍 A customer portal has been created for you and sent to you via email.</p>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700">❓ If you didn't get an email, <a class="text-primary no-underline hover:underline" href="mailto:support@cryptomator.org">contact us</a>.</p>
+    </div>
+  </section>
+
+  <section class="container text-center pt-12 pb-24">
     <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Want to become an official sponsor?</h3>
     <a href="/sponsors/" role="button" class="btn btn-outline-primary px-8">
       <i class="fas fa-heart"></i> Become a Sponsor
     </a>
   </section>
+
+  
+    
+    <script type="text/javascript" src="/js/customerportal.min.c4f4bc5aaed8d05305b31354e2082dbc01479d9b0d7df88dd9648f47e2752046.js" integrity="sha256-xPS8Wq7Y0FMFsxNU4ggtvAFHnZsNffiN2WSPR&#43;J1IEY=" defer></script>
+  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">

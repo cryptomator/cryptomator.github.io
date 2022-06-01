@@ -189,8 +189,8 @@
     <input type="hidden" name="hosted_button_id" value="NUQ7XQSWMQEGS" />
     <input type="hidden" name="amount" value="15" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-239476851" x-model="acceptTerms" />
-<label for="id-239476851">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1" type="checkbox" id="id-682179345" x-model="acceptTerms" />
+<label for="id-682179345">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Weiter zu PayPal</button>
   </form>
@@ -261,8 +261,8 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a class="text-primary no-underline hover:underline" href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">eine Buchung von Stripe</a> enthalten sein.</p>
 
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-249681735" x-model="acceptTerms" />
-<label for="id-249681735">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1" type="checkbox" id="id-248736159" x-model="acceptTerms" />
+<label for="id-248736159">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
 
       <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
@@ -284,8 +284,8 @@
   <div x-show="frequency === 'recurring'" class="text-center">
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Wiederkehrende Kreditkartenzahlungen werden über unsere Stripe-Seite erstellt.</p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-329617485" x-model="acceptTerms" />
-<label for="id-329617485">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1" type="checkbox" id="id-453987126" x-model="acceptTerms" />
+<label for="id-453987126">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" @click="recurringPayment.checkout(amount, currency, 'de')" :disabled="!acceptTerms">
       <i class="fas fa-external-link" aria-hidden="true"></i> Weiter zu Stripe
@@ -364,8 +364,8 @@
     <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
     <input type="hidden" name="allow_extra" value="1" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-142735698" x-model="acceptTerms" />
-<label for="id-142735698">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1" type="checkbox" id="id-831972564" x-model="acceptTerms" />
+<label for="id-831972564">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Weiter zu CoinPayments</button>
   </form>
@@ -378,12 +378,37 @@
     </div>
   </div>
 
-  <section class="container text-center py-12">
+  <section x-data="{feedbackData: {errorMessage: '', success: false, inProgress: false}, submitData: {email: ''}, customerPortal: null}" x-init="customerPortal = new CustomerPortal($refs.form, feedbackData, submitData)" class="container text-center py-12">
+    <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Möchtest du deine wiederkehrende Spende verwalten?</h3>
+
+    <form x-show="!feedbackData.success" x-ref="form" class="max-w-xl mx-auto">
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Falls du die Option &#34;Kreditkarte&#34; verwendet hast, um eine monatliche Spende einzurichten, und diese verwalten oder kündigen möchtest, gib unten deine E-Mail-Adresse ein.</p>
+      <div class="flex justify-center items-center rounded bg-gray-300">
+        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="E-Mail-Adresse" required/>
+        <button :disabled="!$refs.form.checkValidity() || feedbackData.inProgress" @click.prevent="customerPortal.request()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
+          <i :class="{'fa-envelope': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Abrufen
+        </button>
+      </div>
+      <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
+    </form>
+
+    <div x-show="feedbackData.success" x-cloak>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">👍 Ein Kundenportal wurde für dich erstellt und dir per E-Mail zugesandt.</p>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700">❓ Wenn du keine E-Mail bekommen hast, <a class="text-primary no-underline hover:underline" href="mailto:support@cryptomator.org">kontaktiere uns</a>.</p>
+    </div>
+  </section>
+
+  <section class="container text-center pt-12 pb-24">
     <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Möchtest du ein offizieller Sponsor werden?</h3>
     <a href="/de/sponsors/" role="button" class="btn btn-outline-primary px-8">
       <i class="fas fa-heart"></i> Werde Sponsor
     </a>
   </section>
+
+  
+    
+    <script type="text/javascript" src="/js/customerportal.min.c4f4bc5aaed8d05305b31354e2082dbc01479d9b0d7df88dd9648f47e2752046.js" integrity="sha256-xPS8Wq7Y0FMFsxNU4ggtvAFHnZsNffiN2WSPR&#43;J1IEY=" defer></script>
+  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">
