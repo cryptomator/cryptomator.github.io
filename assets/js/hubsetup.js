@@ -72,6 +72,11 @@ class ConfigBuilder {
     return url.hostname;
   }
 
+  getPathname(urlStr) {
+    var url = new URL(urlStr);
+    return url.pathname;
+  }
+
   getRealmConfig() {
     return {
       id: 'cryptomator', // TODO generate UUID?
@@ -469,7 +474,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               args: [
                 '/bin/sh',
                 '-c',
-                'set -x; while ! wget -q --spider "http://keycloak-svc:8080/health/live" 2>>/dev/null; do sleep 10; done'
+                `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live" 2>>/dev/null; do sleep 10; done`
               ]
             }],
             containers: [{
@@ -581,12 +586,12 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       {name: 'KC_DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
       {name: 'KC_HEALTH_ENABLED', value: 'true'},
       {name: 'KC_HTTP_ENABLED', value: 'true'},
-      {name: 'KC_PROXY', value: 'edge'}
+      {name: 'KC_PROXY', value: 'edge'},
+      {name: 'KC_HTTP_RELATIVE_PATH', value: this.getPathname(this.cfg.keycloak.publicUrl)}
     ];
     if (!devMode) {
       env.push({name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)});
       // env.push({name: 'KC_HOSTNAME_PORT', value: '' + this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
-      // TODO KC_HOSTNAME_PATH ??
     }
     let deployment = {
       apiVersion: 'apps/v1',
@@ -609,7 +614,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 limits: {cpu: '2000m', memory: '768Mi'},
               },
               livenessProbe: {
-                httpGet: {path: '/health/live', port: 8080},
+                httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
                 initialDelaySeconds: 25
               },
               env: env,
