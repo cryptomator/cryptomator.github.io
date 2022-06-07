@@ -639,9 +639,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'cryptomator-hub-svc'},
       spec: {
         selector: {app: 'cryptomator-hub'},
-        type: 'NodePort', // TODO: only if requested
         ports: [
-          {protocol: 'TCP', port: 8080, nodePort: this.getPort(this.cfg.hub.publicUrl)}
+          {protocol: 'TCP', port: 8080}
         ]
       }
     }
@@ -656,7 +655,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       spec: {
         selector: {app: 'postgres'},
         ports: [
-          {protocol: 'TCP', port: 5432, targetPort: 5432}
+          {protocol: 'TCP', port: 5432}
         ]
       }
     }
@@ -670,9 +669,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'keycloak-svc'},
       spec: {
         selector: {app: 'keycloak'},
-        type: 'NodePort', // TODO: only if requested
         ports: [
-          {protocol: 'TCP', port: 8080, nodePort: this.getPort(this.cfg.keycloak.publicUrl)}
+          {protocol: 'TCP', port: 8080}
         ]
       }
     }
