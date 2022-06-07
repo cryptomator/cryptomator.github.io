@@ -519,7 +519,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               ],
               volumeMounts: [
                 {name: 'secrets-vol', mountPath: '/docker-entrypoint-initdb.d/initdb.sql', subPath: 'initdb.sql', readOnly: true},
-                {name: 'dbdata-vol', mountPath: '/var/lib/postgresql/data'}
+                {name: 'dbdata-vol', mountPath: '/var/lib/postgresql/data', subPath: 'data'}
               ]
             }],
             volumes: [
