@@ -559,7 +559,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     ];
     if (!devMode) {
       env.push({name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)});
-      env.push({name: 'KC_HOSTNAME_PORT', value: this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
+      // env.push({name: 'KC_HOSTNAME_PORT', value: '' + this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
       // TODO KC_HOSTNAME_PATH ??
     }
     let deployment = {
