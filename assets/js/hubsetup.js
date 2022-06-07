@@ -161,7 +161,7 @@ class ConfigBuilder {
         attributes: { 'pkce.code.challenge.method': 'S256' }
       }],
       browserSecurityHeaders: {
-        contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' http://localhost:*; object-src 'none';`
+        contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' ${this.cfg.hub.publicUrl}; object-src 'none';`
       }
     };
   }
