@@ -158,7 +158,33 @@ class ConfigBuilder {
         bearerOnly: false,
         frontchannelLogout: false,
         protocol: 'openid-connect',
-        attributes: { 'pkce.code.challenge.method': 'S256' }
+        attributes: { 'pkce.code.challenge.method': 'S256' },
+        protocolMappers: [
+          {
+            name: 'realm roles',
+            protocol: 'openid-connect',
+            protocolMapper: 'oidc-usermodel-realm-role-mapper',
+            consentRequired: false,
+            config: {
+              'access.token.claim': 'true',
+              'claim.name': 'realm_access.roles',
+              'jsonType.label': 'String',
+              multivalued: 'true'
+            }
+          },
+          {
+            name: 'client roles',
+            protocol: 'openid-connect',
+            protocolMapper: 'oidc-usermodel-client-role-mapper',
+            consentRequired: false,
+            config: {
+              'access.token.claim': 'true',
+              'claim.name': 'resource_access.${client_id}.roles',
+              'jsonType.label': 'String',
+              multivalued: 'true'
+            }
+          }
+        ],
       }],
       browserSecurityHeaders: {
         contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' ${this.cfg.hub.publicUrl}; object-src 'none';`
