@@ -290,7 +290,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       },
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
-        test: ['CMD', 'curl', '-f', 'http://localhost:8080/health/'],
+        test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
         interval: '10s',
         timeout: '3s',
       },
@@ -301,11 +301,12 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
         KC_DB_URL: 'jdbc:postgresql://postgres:5432/keycloak',
         KC_DB_USERNAME: 'keycloak',
         KC_DB_PASSWORD: this.cfg.db.keycloakPw,
-        KC_HEALTH_ENABLED: true,
+        KC_HEALTH_ENABLED: 'true',
         KC_HOSTNAME: devMode ? null : this.getHostname(this.cfg.keycloak.publicUrl),
-        KC_HOSTNAME_PORT: devMode ? null : this.getPort(this.cfg.keycloak.publicUrl),
-        KC_HTTP_ENABLED: true,
+        // KC_HOSTNAME_PORT: devMode ? null : this.getPort(this.cfg.keycloak.publicUrl), // FIXME as string!! FIXME does not work at all!!
+        KC_HTTP_ENABLED: 'true',
         KC_PROXY: 'edge',
+        KC_HTTP_RELATIVE_PATH: this.getPathname(this.cfg.keycloak.publicUrl),
       }
     }
   }
@@ -319,12 +320,12 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       image: 'ghcr.io/cryptomator/hub:latest',
       deploy: {
         resources: {
-          limits: {cpus: '0.5', memory: '256Mi'}
+          limits: {cpus: '0.5', memory: '256M'}
         }
       },
       ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`],
       healthcheck: {
-        test: ['CMD', 'curl', '-f', 'http://localhost:8080/'],
+        test: ['CMD', 'curl', '-f', 'http://localhost:8080/q/health/live'],
         interval: '10s',
         timeout: '3s',
       },
@@ -338,6 +339,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
         HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
         QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/realms/cryptomator', // network-internal URL
         QUARKUS_OIDC_TOKEN_ISSUER: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`,
+        QUARKUS_OIDC_CLIENT_ID: 'cryptomatorhub',
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
