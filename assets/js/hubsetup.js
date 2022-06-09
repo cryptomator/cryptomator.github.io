@@ -17,7 +17,7 @@ class HubSetup {
         hubPw: 'hub', // TODO show input field
       },
       keycloak: {
-        publicUrl: 'http://localhost:31000/auth',
+        publicUrl: 'http://localhost:31000',
         adminUser: 'admin', // TODO show input field
         adminPw: 'admin' // TODO show input field
       },
@@ -65,6 +65,16 @@ class ConfigBuilder {
     var port = Number.parseInt(url.port);
     var defaultPort = (url.protocol == 'https:') ? 443 : 80;
     return Number.isNaN(port) ? defaultPort : port;
+  }
+
+  getHostname(urlStr) {
+    var url = new URL(urlStr);
+    return url.hostname;
+  }
+
+  getPathname(urlStr) {
+    var url = new URL(urlStr);
+    return url.pathname;
   }
 
   getRealmConfig() {
@@ -153,10 +163,36 @@ class ConfigBuilder {
         bearerOnly: false,
         frontchannelLogout: false,
         protocol: 'openid-connect',
-        attributes: { 'pkce.code.challenge.method': 'S256' }
+        attributes: { 'pkce.code.challenge.method': 'S256' },
+        protocolMappers: [
+          {
+            name: 'realm roles',
+            protocol: 'openid-connect',
+            protocolMapper: 'oidc-usermodel-realm-role-mapper',
+            consentRequired: false,
+            config: {
+              'access.token.claim': 'true',
+              'claim.name': 'realm_access.roles',
+              'jsonType.label': 'String',
+              multivalued: 'true'
+            }
+          },
+          {
+            name: 'client roles',
+            protocol: 'openid-connect',
+            protocolMapper: 'oidc-usermodel-client-role-mapper',
+            consentRequired: false,
+            config: {
+              'access.token.claim': 'true',
+              'claim.name': 'resource_access.${client_id}.roles',
+              'jsonType.label': 'String',
+              multivalued: 'true'
+            }
+          }
+        ],
       }],
       browserSecurityHeaders: {
-        contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' http://localhost:*; object-src 'none';`
+        contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' ${this.cfg.hub.publicUrl}; object-src 'none';`
       }
     };
   }
@@ -235,13 +271,18 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   }
 
   #getKeycloakService() {
+    var devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
+    var startCmd = devMode
+      ? 'start-dev --import-realm' // dev mode (no TLS required)
+      : 'start --auto-build --import-realm'; // prod mode (requires a proper TLS termination proxy)
     return {
       depends_on: {
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'quay.io/keycloak/keycloak:16.1.1',
-      volumes: ['kc-config:/config'],
+      image: 'quay.io/keycloak/keycloak:18.0.0',
+      command: startCmd,
+      volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
         resources: {
           limits: {cpus: '2.0', memory: '768M'}
@@ -249,20 +290,23 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       },
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
-        test: ['CMD', 'curl', '-f', 'http://localhost:8080/auth/realms/master'],
+        test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
         interval: '10s',
         timeout: '3s',
       },
       environment: {
-        KEYCLOAK_IMPORT: '/config/realm.json',
-        KEYCLOAK_USER: this.cfg.keycloak.adminUser,
-        KEYCLOAK_PASSWORD: this.cfg.keycloak.adminPw,
-        DB_VENDOR: 'postgres',
-        DB_ADDR: 'postgres',
-        DB_PORT: 5432,
-        DB_DATABASE: 'keycloak',
-        DB_USER: 'keycloak',
-        DB_PASSWORD: this.cfg.db.keycloakPw
+        KEYCLOAK_ADMIN: this.cfg.keycloak.adminUser,
+        KEYCLOAK_ADMIN_PASSWORD: this.cfg.keycloak.adminPw,
+        KC_DB: 'postgres',
+        KC_DB_URL: 'jdbc:postgresql://postgres:5432/keycloak',
+        KC_DB_USERNAME: 'keycloak',
+        KC_DB_PASSWORD: this.cfg.db.keycloakPw,
+        KC_HEALTH_ENABLED: 'true',
+        KC_HOSTNAME: devMode ? null : this.getHostname(this.cfg.keycloak.publicUrl),
+        // KC_HOSTNAME_PORT: devMode ? null : this.getPort(this.cfg.keycloak.publicUrl), // FIXME as string!! FIXME does not work at all!!
+        KC_HTTP_ENABLED: 'true',
+        KC_PROXY: 'edge',
+        KC_HTTP_RELATIVE_PATH: this.getPathname(this.cfg.keycloak.publicUrl),
       }
     }
   }
@@ -276,20 +320,26 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       image: 'ghcr.io/cryptomator/hub:latest',
       deploy: {
         resources: {
-          limits: {cpus: '0.5', memory: '256Mi'}
+          limits: {cpus: '0.5', memory: '256M'}
         }
       },
       ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`],
       healthcheck: {
-        test: ['CMD', 'curl', '-f', 'http://localhost:8080/'],
+        test: ['CMD', 'curl', '-f', 'http://localhost:8080/q/health/live'],
         interval: '10s',
         timeout: '3s',
       },
       environment: {
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
+        HUB_KEYCLOAK_LOCAL_URL: 'http://keycloak:8080/',
         HUB_KEYCLOAK_REALM: 'cryptomator',
-        QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/auth/realms/cryptomator', // network-internal URL
+        HUB_KEYCLOAK_SYNCER_USERNAME: this.cfg.hub.syncerUser,
+        HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
+        HUB_KEYCLOAK_SYNCER_CLIENT_ID: 'admin-cli',
+        HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
+        QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/realms/cryptomator', // network-internal URL
         QUARKUS_OIDC_TOKEN_ISSUER: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`,
+        QUARKUS_OIDC_CLIENT_ID: 'cryptomatorhub',
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
@@ -375,6 +425,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         'db_admin_pass': this.cfg.db.adminPw,
         'db_hub_pass': this.cfg.db.hubPw,
         'db_kc_pass': this.cfg.db.keycloakPw,
+        'hub_syncer_user': this.cfg.hub.syncerUser,
+        'hub_syncer_pass': this.cfg.hub.syncerPw,
         'initdb.sql': this.#getInitDbSQL(),
         'realm.json': JSON.stringify(realmCfg, null, 2)
       }
@@ -418,10 +470,19 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         template: {
           metadata: {labels: {app: 'cryptomator-hub'}},
           spec: {
-            // TODO add init container that waits for keycloak to be reachable?
+            initContainers: [{
+              name: 'wait-for-keycloak',
+              image: 'busybox',
+              args: [
+                '/bin/sh',
+                '-c',
+                `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live" 2>>/dev/null; do sleep 10; done`
+              ]
+            }],
             containers: [{
               name: 'cryptomator-hub',
               image: 'ghcr.io/cryptomator/hub:latest',
+              imagePullPolicy: 'IfNotPresent', // TODO: remove in production
               ports: [{containerPort: 8080}],
               resources: {
                 limits: {cpu: '500m', memory: '256Mi'},
@@ -435,8 +496,13 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               },
               env: [
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
+                {name: 'HUB_KEYCLOAK_LOCAL_URL', value: 'http://keycloak-svc:8080/'},
                 {name: 'HUB_KEYCLOAK_REALM', value: 'cryptomator'},
-                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak-svc:8080/auth/realms/cryptomator'},
+                {name: 'HUB_KEYCLOAK_SYNCER_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_user'}}},
+                {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
+                {name: 'HUB_KEYCLOAK_SYNCER_CLIENT_ID', value: 'admin-cli'},
+                {name: 'HUB_KEYCLOAK_SYNCER_PERIOD', value: '5m'}, // TODO make configurable?
+                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak-svc:8080/realms/cryptomator'},
                 {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
@@ -486,7 +552,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               ],
               volumeMounts: [
                 {name: 'secrets-vol', mountPath: '/docker-entrypoint-initdb.d/initdb.sql', subPath: 'initdb.sql', readOnly: true},
-                {name: 'dbdata-vol', mountPath: '/var/lib/postgresql/data'}
+                {name: 'dbdata-vol', mountPath: '/var/lib/postgresql/data', subPath: 'data'}
               ]
             }],
             volumes: [
@@ -509,6 +575,26 @@ class KubernetesConfigBuilder extends ConfigBuilder {
   }
 
   #getKeycloakDeployment() {
+    var devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
+    var startCmd = devMode
+      ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
+      : ['/opt/keycloak/bin/kc.sh', 'start', '--auto-build', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
+    var env = [
+      {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
+      {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
+      {name: 'KC_DB', value: 'postgres'},
+      {name: 'KC_DB_URL', value: 'jdbc:postgresql://postgres-svc:5432/keycloak'},
+      {name: 'KC_DB_USERNAME', value: 'keycloak'},
+      {name: 'KC_DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
+      {name: 'KC_HEALTH_ENABLED', value: 'true'},
+      {name: 'KC_HTTP_ENABLED', value: 'true'},
+      {name: 'KC_PROXY', value: 'edge'},
+      {name: 'KC_HTTP_RELATIVE_PATH', value: this.getPathname(this.cfg.keycloak.publicUrl)}
+    ];
+    if (!devMode) {
+      env.push({name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)});
+      // env.push({name: 'KC_HOSTNAME_PORT', value: '' + this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
+    }
     let deployment = {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
@@ -522,29 +608,20 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             // TODO add init container that waits for postgres to be reachable?
             containers: [{
               name: 'keycloak',
-              image: 'quay.io/keycloak/keycloak:16.1.1', // 17.0.0 doesn't support KEYCLOAK_IMPORT yet...
+              image: 'quay.io/keycloak/keycloak:18.0.0',
+              command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
                 requests: {cpu: '100m', memory: '128Mi'},
                 limits: {cpu: '2000m', memory: '768Mi'},
               },
               livenessProbe: {
-                httpGet: {path: '/auth/realms/master', port: 8080},
+                httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
                 initialDelaySeconds: 25
               },
-              env: [
-                {name: 'KEYCLOAK_IMPORT', value: '/config/realm.json'},
-                {name: 'KEYCLOAK_USER', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
-                {name: 'KEYCLOAK_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
-                {name: 'DB_VENDOR', value: 'postgres'},
-                {name: 'DB_ADDR', value: 'postgres-svc'},
-                {name: 'DB_PORT', value: '5432'},
-                {name: 'DB_DATABASE', value: 'keycloak'},
-                {name: 'DB_USER', value: 'keycloak'},
-                {name: 'DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
-              ],
+              env: env,
               volumeMounts: [
-                {name: 'secrets-vol', mountPath: '/config/realm.json', subPath: 'realm.json', readOnly: true}
+                {name: 'secrets-vol', mountPath: '/opt/keycloak/data/import/realm.json', subPath: 'realm.json', readOnly: true}
               ]
             }],
             volumes: [
@@ -569,9 +646,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'cryptomator-hub-svc'},
       spec: {
         selector: {app: 'cryptomator-hub'},
-        type: 'NodePort', // TODO: only if requested
         ports: [
-          {protocol: 'TCP', port: 8080, nodePort: this.getPort(this.cfg.hub.publicUrl)}
+          {protocol: 'TCP', port: 8080}
         ]
       }
     }
@@ -586,7 +662,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       spec: {
         selector: {app: 'postgres'},
         ports: [
-          {protocol: 'TCP', port: 5432, targetPort: 5432}
+          {protocol: 'TCP', port: 5432}
         ]
       }
     }
@@ -600,9 +676,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'keycloak-svc'},
       spec: {
         selector: {app: 'keycloak'},
-        type: 'NodePort', // TODO: only if requested
         ports: [
-          {protocol: 'TCP', port: 8080, nodePort: this.getPort(this.cfg.keycloak.publicUrl)}
+          {protocol: 'TCP', port: 8080}
         ]
       }
     }
