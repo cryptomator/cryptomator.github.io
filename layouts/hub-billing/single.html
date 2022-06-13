@@ -134,7 +134,7 @@
             {{ i18n "hub_billing_manage_license_key_instruction_without_returnurl" . }}
           </p>
           <textarea x-model="subscriptionData.token" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full" rows="6" readonly></textarea>
-          <a x-show="subscriptionData.returnUrl" :href="subscriptionData.returnUrl" class="btn btn-primary text-center w-full md:w-64 mt-4" role="button">
+          <a x-show="subscriptionData.returnUrl" :href="subscriptionData.returnUrl + '?token=' + subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" role="button">
             {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
           </a>
 
