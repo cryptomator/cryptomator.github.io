@@ -236,9 +236,9 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
       CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
       CREATE DATABASE hub WITH ENCODING 'UTF8';
       GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`
-      + '\nEOF\n'
+      + '\nEOF\n';
     let writeRealmCmd = 'cat >/kc-config/realm.json << EOF\n'
-      + JSON.stringify(this.getRealmConfig(), null, 2)
+      + JSON.stringify(this.getRealmConfig(), null, 2).replaceAll('$', '$$$$') // double-dollar sign is needed to be interpreted as literal dollar sign, see: https://docs.docker.com/compose/compose-file/#interpolation and replaceAll also requires double-dollar sign, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_a_parameter
       + '\nEOF\n';
     return {
       image: 'bash:5',
