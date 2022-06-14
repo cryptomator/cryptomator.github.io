@@ -337,7 +337,7 @@ EOF`;
       },
       environment: {
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
-        HUB_KEYCLOAK_LOCAL_URL: 'http://keycloak:8080/',
+        HUB_KEYCLOAK_LOCAL_URL: `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}`,
         HUB_KEYCLOAK_REALM: 'cryptomator',
         HUB_KEYCLOAK_SYNCER_USERNAME: this.cfg.hub.syncerUser,
         HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
@@ -492,7 +492,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               },
               env: [
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
-                {name: 'HUB_KEYCLOAK_LOCAL_URL', value: 'http://keycloak-svc:8080/'},
+                {name: 'HUB_KEYCLOAK_LOCAL_URL', value: `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}`},
                 {name: 'HUB_KEYCLOAK_REALM', value: 'cryptomator'},
                 {name: 'HUB_KEYCLOAK_SYNCER_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_user'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
