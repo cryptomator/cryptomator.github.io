@@ -178,6 +178,10 @@ module.exports = {
               fontFamily: theme('fontFamily.headline'),
               fontWeight: theme('fontWeight.normal'),
             },
+            h4: {
+              fontFamily: theme('fontFamily.headline'),
+              fontWeight: theme('fontWeight.normal'),
+            },
             'code::before': {
               content: 'unset',
             },

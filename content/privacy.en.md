@@ -3,7 +3,7 @@ title: "Privacy Policy"
 aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: November 2021_
+_Effective date: March 2022_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -186,8 +186,6 @@ Legal basis for the processing of the data is in the presence of the consent of 
 The passing on serves the fulfilment of our contractual and pre-contractual obligations. These purposes are also our legitimate interest in accordance with Art. 6 para. 1 lit. f GDPR.
 
 ### 7.4 Opposition and Removal Possibility
-Die Weitergabe der Daten ist zur Erfüllung von Verträgen oder für vorvertragliche Maßnahmen zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
-
 The transfer of data is mandatory for the fulfilment of contracts or for pre-contractual measures. Consequently, there is no possibility of objection on the part of the user.
 
 
@@ -196,14 +194,16 @@ The transfer of data is mandatory for the fulfilment of contracts or for pre-con
 ### 8.1 Description and Scope of Data Processing
 When using one of the Cryptomator applications for desktop operating systems, iOS or Android, data can be processed by us. This is the case when using one of the following functions:
 
-**Update Check (Desktop, Android):** If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
+#### 8.1.1 Update Check (Desktop, Android)
+If the user checks for updates, either manually or at a scheduled interval, the application will connect to a server to query the latest version. The following data is transmitted during this request:
 
 * Operating system version
 * Software version
 * Time of the request
 * IP address
 
-**Sending of Error Protocols:** Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
+#### 8.1.2 Sending of Error Protocols
+Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
 
 * Operating system version
 * Software version
@@ -212,6 +212,19 @@ When using one of the Cryptomator applications for desktop operating systems, iO
 * File paths (if running in debug mode)
 
 This data will not be stored together with other personal data of the user.
+
+#### 8.1.3 Accessing Cloud Storage Services (Android, iOS)
+If the user authorizes the Cryptomator application for iOS or Android to access one or many cloud storage services, the application is granted access to data stored by the respective service. The application will not access any data other than stored in folders knowingly selected by the user.
+
+Any such data is processed solely on the user's local device. Under no circumstances will we receive any of this data.
+
+When using such a third-party cloud storage services, please refer to the corresponding privacy policy of the provider:
+
+* [iCloud Drive](https://www.apple.com/legal/privacy/en-ww/)
+* [Dropbox](https://www.dropbox.com/privacy)
+* [Google Drive](https://developers.google.com/terms/api-services-user-data-policy)
+* [OneDrive](https://privacy.microsoft.com/en-us/privacystatement)
+* [pCloud](https://www.pcloud.com/privacy_policy.html)
 
 ### 8.2 Legal Basis for Data Processing
 The legal basis for the temporary storage of data is Art. 6 para. 1 lit. a GDPR as well as Art. 6 para. 1 lit. f GDPR.
