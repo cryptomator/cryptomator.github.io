@@ -1,0 +1,115 @@
+{{ define "main" }}
+<div class="container space-y-6 py-16" x-data="{cfg: HubSetup.defaultConfig(), deplomentType: '', output: ''}">
+  <!-- SECTION 1 -->
+  <section class="bg-white shadow px-4 py-5 md:rounded-lg md:p-6 md:grid md:grid-cols-3 md:gap-6">
+    <header class="md:col-span-1">
+      <h2 class="text-lg font-medium leading-6 text-gray-900">Host</h2>
+      <p class="mt-1 text-sm text-gray-500">General information about your host.</p>
+    </header>
+    <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+      <div class="col-span-4">
+        <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">Public Hub URL</label>
+        <input type="text" name="url" id="hubPublicUrl" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.hub.publicUrl">
+        <p class="mt-2 text-sm text-gray-500">The full URL including protocol, port and path of your Hub installation.</p>
+      </div>
+
+      <div class="col-span-4">
+        <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">Public Keycloak URL</label>
+        <input type="text" name="url" id="keycloakPublicUrl" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.keycloak.publicUrl">
+        <p class="mt-2 text-sm text-gray-500">The full URL including protocol, port and path of your Keycloak installation.</p>
+      </div>
+
+      <div class="col-span-4">
+        <label for="adminUser" class="block text-sm font-medium text-gray-700">Admin User</label>
+        <input type="text" name="adminUser" id="adminUser" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.hub.adminUser">
+        <p class="mt-2 text-sm text-gray-500">User name of the initial user that will be created.</p>
+      </div>
+
+      <div class="col-span-4">
+        <label for="adminPw" class="block text-sm font-medium text-gray-700">Initial Admin Password</label>
+        <input type="password" name="adminPw" id="adminPw" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" x-model="cfg.hub.adminPw">
+        <p class="mt-2 text-sm text-gray-500">Temporary password used for generating your deployment. You should change this on your first login.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="bg-white shadow px-4 py-5 md:rounded-lg md:p-6 md:grid md:grid-cols-3 md:gap-6">
+    <header class="md:col-span-1">
+      <h2 class="text-lg font-medium leading-6 text-gray-900">Deployment</h2>
+      <p class="mt-1 text-sm text-gray-500">On what type of infrastructure do you want to deploy Cryptomator Hub?</p>
+    </header>
+    <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-1 gap-y-6 lg:grid-cols-3 lg:gap-x-4">
+      <!-- KUBERNETES -->
+      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deplomentType == 'kubernetes' ? 'border-transparent' : 'border-gray-300'">
+        <input type="radio" name="project-type" value="kubernetes" class="sr-only" x-model="deplomentType" @click="output = HubSetup.writeK8sConfig(cfg)">
+        <div class="flex-1 flex">
+          <div class="flex flex-col">
+            <span class="block text-sm font-medium text-gray-900">Kubernetes</span>
+            <span class="mt-1 flex items-center text-sm text-gray-500">Recommended for production deployments</span>
+          </div>
+        </div>
+        <svg class="h-5 w-5 text-indigo-600" :class="deplomentType == 'kubernetes' ? '' : 'invisible'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deplomentType == 'kubernetes' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
+      </label>
+  
+      <!-- DOCKER COMPOSE -->
+      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deplomentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
+        <input type="radio" name="project-type" value="docker-compose" class="sr-only" x-model="deplomentType"  @click="output = HubSetup.writeComposeConfig(cfg)">
+        <div class="flex-1 flex">
+          <div class="flex flex-col">
+            <span class="block text-sm font-medium text-gray-900">Docker Compose</span>
+            <span class="mt-1 flex items-center text-sm text-gray-500">For easy testing with Docker Desktop</span>
+          </div>
+        </div>
+        <svg class="h-5 w-5 text-indigo-600" :class="deplomentType == 'docker-compose' ? '' : 'invisible'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deplomentType == 'docker-compose' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
+      </label>
+  
+      <!-- OTHER -->
+      <label class="relative bg-white border rounded-lg shadow-sm p-4 flex cursor-pointer focus:outline-none" :class="deplomentType == 'other' ? 'border-transparent' : 'border-gray-300'">
+        <input type="radio" name="project-type" value="other" class="sr-only" x-model="deplomentType" @click="output = 'TODO'">
+        <div class="flex-1 flex">
+          <div class="flex flex-col">
+            <span class="block text-sm font-medium text-gray-900">Setup Manually</span>
+            <span class="mt-1 flex items-center text-sm text-gray-500">Generate configuration files for deploying manually.</span>
+          </div>
+        </div>
+        <svg class="h-5 w-5 text-indigo-600" :class="deplomentType == 'other' ? '' : 'invisible'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <div class="absolute -inset-px rounded-lg border-2 pointer-events-none" :class="deplomentType == 'other' ? 'border-indigo-500' : 'border-transparent'" aria-hidden="true"></div>
+      </label>
+    </div>
+  </section>
+
+  <!-- OUTPUT -->
+  <section class="bg-white shadow px-4 py-5 md:rounded-lg md:p-6 md:grid md:grid-cols-3 md:gap-6">
+    <header class="md:col-span-1">
+      <h2 class="text-lg font-medium leading-6 text-gray-900">Config</h2>
+      <p class="mt-1 text-sm text-gray-500">Use this configuration to deploy Cryptomator Hub.</p>
+    </header>
+    <div class="mt-5 md:mt-0 md:col-span-2">
+      <textarea id="output" name="output" rows="10" class="shadow-sm block w-full focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md" x-model="output"></textarea>
+    </div>
+  </section>
+</div>
+
+{{ $jsYaml := resources.Get "js/js-yaml/js-yaml.min.js" | fingerprint }}
+<script type="text/javascript" src="{{ $jsYaml.RelPermalink }}" integrity="{{ $jsYaml.Data.Integrity }}"></script>
+
+{{ if .Site.IsServer }}
+  {{ $setupJs := resources.Get "js/hubsetup.js" }}
+  <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $setupJs := resources.Get "js/hubsetup.js" | minify | fingerprint }}
+  <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" integrity="{{ $setupJs.Data.Integrity }}" defer></script>
+{{ end }}
+
+
+{{ end }}
