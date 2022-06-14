@@ -29,6 +29,7 @@ class DesktopLicense {
   checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
+      this._checkoutData.errorMessage = 'Please fill in all required fields.';
       return;
     }
 

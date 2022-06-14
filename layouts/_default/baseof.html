@@ -79,10 +79,10 @@
     {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
 
-    {{ $alpine := resources.Get "js/alpinejs/alpine.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}"></script>
+    {{ $alpine := resources.Get "js/alpinejs/cdn.min.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}" defer></script>
 
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
-    <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}"></script>
+    <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}" async></script>
   </body>
 </html>
