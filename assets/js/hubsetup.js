@@ -77,6 +77,15 @@ class ConfigBuilder {
     return url.pathname;
   }
 
+  getInitDbSQL() {
+    return `CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
+CREATE DATABASE keycloak WITH ENCODING 'UTF8';
+GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
+CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
+CREATE DATABASE hub WITH ENCODING 'UTF8';
+GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`;
+  }
+
   getRealmConfig() {
     return {
       id: 'cryptomator', // TODO generate UUID?
@@ -229,21 +238,18 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   }
 
   #getInitConfigService() {
-    let writeInitDbCmd = `cat >/db-init/initdb.sql << EOF
-      CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
-      CREATE DATABASE keycloak WITH ENCODING 'UTF8';
-      GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
-      CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
-      CREATE DATABASE hub WITH ENCODING 'UTF8';
-      GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`
-      + '\nEOF\n';
-    let writeRealmCmd = 'cat >/kc-config/realm.json << EOF\n'
-      + JSON.stringify(this.getRealmConfig(), null, 2).replaceAll('$', '$$$$') // double-dollar sign is needed to be interpreted as literal dollar sign, see: https://docs.docker.com/compose/compose-file/#interpolation and replaceAll also requires double-dollar sign, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_a_parameter
-      + '\nEOF\n';
+    let writeInitDbCmd = `cat >/db-init/initdb.sql << 'EOF'
+${this.getInitDbSQL()}
+EOF`;
+    // double-dollar sign is needed to be interpreted as literal dollar sign, see: https://docs.docker.com/compose/compose-file/#interpolation
+    // replaceAll also requires double-dollar sign, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_a_parameter
+    let writeRealmCmd = `cat >/kc-config/realm.json << 'EOF'
+${JSON.stringify(this.getRealmConfig(), null, 2).replaceAll('$', '$$$$')}
+EOF`;
     return {
       image: 'bash:5',
       volumes: ['kc-config:/kc-config', 'db-init:/db-init'],
-      command: ['bash', '-c', writeInitDbCmd + writeRealmCmd]
+      command: ['bash', '-c', writeInitDbCmd + '\n' + writeRealmCmd]
     }
   }
 
@@ -427,7 +433,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         'db_kc_pass': this.cfg.db.keycloakPw,
         'hub_syncer_user': this.cfg.hub.syncerUser,
         'hub_syncer_pass': this.cfg.hub.syncerPw,
-        'initdb.sql': this.#getInitDbSQL(),
+        'initdb.sql': this.getInitDbSQL(),
         'realm.json': JSON.stringify(realmCfg, null, 2)
       }
     }
@@ -447,16 +453,6 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       }
     }
     return jsyaml.dump(pvcs);
-  }
-
-  #getInitDbSQL() {
-    return `
-    CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
-    CREATE DATABASE keycloak WITH ENCODING 'UTF8';
-    GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
-    CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
-    CREATE DATABASE hub WITH ENCODING 'UTF8';
-    GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`;
   }
 
   #getHubDeployment() {
