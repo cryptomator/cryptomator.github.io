@@ -15,6 +15,7 @@ class SupporterCertificate {
   request() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
+      this._feedbackData.errorMessage = 'Please fill in all required fields.';
       return;
     }
 

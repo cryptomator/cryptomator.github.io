@@ -26,7 +26,7 @@
           <i class="fas fa-chevron-down fa-fw text-xs"></i>
         </button>
         <div class="relative">
-          <div x-show="isSupportUsDropdownOpen" @click.away="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+          <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
             {{- range .Site.Data.nav.SupportUsRelLinks }}
             {{- with $.Site.GetPage . }}
             <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
@@ -41,7 +41,7 @@
           <i class="fas fa-chevron-down fa-fw text-xs"></i>
         </button>
         <div class="relative">
-          <div x-show="isLearnMoreDropdownOpen" @click.away="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+          <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
             {{- range .Site.Data.nav.LearnMoreRelLinks }}
             {{- with $.Site.GetPage . }}
             <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
@@ -59,7 +59,7 @@
           <i class="fas fa-chevron-down fa-fw text-xs"></i>
         </button>
         <div class="relative">
-          <div x-show="isLangDropdownOpen" @click.away="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+          <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
             {{- range .Translations }}
             <a href="{{ .RelPermalink }}" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
             {{- end }}
