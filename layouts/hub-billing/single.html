@@ -11,7 +11,7 @@
           </p>
           <div class="flex justify-center items-center rounded bg-gray-300">
             <input x-model="subscriptionData.hubId" type="text" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="{{ i18n "hub_billing_landing_hubid_placeholder" . }}" required/>
-            <button :disabled="!$refs.form.checkValidity() || subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
+            <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
               <i :class="{'fa-sign-in': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
               {{ i18n "hub_billing_landing_submit" . }}
             </button>
@@ -233,7 +233,7 @@
                     </div>
                   </div>
                   <div class="border-t border-primary p-4 md:flex md:flex-row-reverse">
-                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="!$refs.form.checkValidity() || subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_continue" . }}
                     </button>
@@ -302,7 +302,7 @@
                     {{ i18n "hub_billing_checkout_standard_instruction" . }}
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-                  <button :disabled="!$refs.form.checkValidity() || subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}
                   </button>
