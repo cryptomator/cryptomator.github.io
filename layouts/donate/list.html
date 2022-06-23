@@ -36,7 +36,7 @@
     <form x-show="!feedbackData.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "donate_customer_portal_instruction" . }}</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="{{ i18n "donate_customer_portal_email_placeholder" }}" required/>
+        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "donate_customer_portal_email_placeholder" }}" required/>
         <button :disabled="feedbackData.inProgress" @click.prevent="customerPortal.request()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "donate_customer_portal_retrieve" }}
         </button>

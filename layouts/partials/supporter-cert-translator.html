@@ -2,11 +2,11 @@
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_translator_crowdin_username" }}</label>
-      <input x-model="submitData.crowdin_username" x-ref="crowdin_username" @blur="$refs.crowdin_username.classList.add('show-invalid')" type="text" class="appearance-none placeholder-gray-500 border-gray-300 w-full" pattern="^[A-Za-z\d\-_.]{0,254}$" maxlength="255" placeholder="{{ i18n "supporter_cert_translator_crowdin_username_placeholder" }}" required/>
+      <input x-model="submitData.crowdin_username" x-ref="crowdin_username" @blur="$refs.crowdin_username.classList.add('show-invalid')" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" pattern="^[A-Za-z\d\-_.]{0,254}$" maxlength="255" placeholder="{{ i18n "supporter_cert_translator_crowdin_username_placeholder" }}" required/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_common_email" }}</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_translator_instruction" . | safeHTML }}</p>
