@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.a5b0aae50c6807dc0515371a49212cad48eea6a7f55f8a24479b8d8d5c01eefe.css" integrity="sha256-pbCq5QxoB9wFFTcaSSEsrUjupqf1X4okR5uNjVwB7v4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.33184580ac4615b87255fd936d0747a62264e77d1fdf02aba16966d50d94b4c7.css" integrity="sha256-MxhFgKxGFbhyVf2TbQdHpiJk530f3wKroWlm1Q2UtMc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -175,17 +175,17 @@
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
     <div class="w-full md:w-1/2 mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Price</label>
-      <input x-model="checkoutData.price" type="text" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="Loading…" readonly/>
+      <input x-model="checkoutData.price" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Loading…" readonly/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Email</label>
-      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="Email address" required/>
+      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Email address" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-473892156" x-model="acceptTerms" />
-<label for="id-473892156">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-257496183" x-model="acceptTerms" />
+<label for="id-257496183">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
@@ -197,7 +197,7 @@
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
     <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">👍 Your payment was successful!</h3>
     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">License Key</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full mb-2" rows="6" placeholder="Loading…" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="Loading…" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700">This is your license key. Enter it in the Cryptomator app. The license key has also been sent to your email address.</p>
   </div>
@@ -283,7 +283,7 @@
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">To recover a lost license key or receipt, enter your email address below.</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="Email address" required/>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Email address" required/>
         <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Retrieve
         </button>

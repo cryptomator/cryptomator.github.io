@@ -23,7 +23,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.a5b0aae50c6807dc0515371a49212cad48eea6a7f55f8a24479b8d8d5c01eefe.css" integrity="sha256-pbCq5QxoB9wFFTcaSSEsrUjupqf1X4okR5uNjVwB7v4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.33184580ac4615b87255fd936d0747a62264e77d1fdf02aba16966d50d94b4c7.css" integrity="sha256-MxhFgKxGFbhyVf2TbQdHpiJk530f3wKroWlm1Q2UtMc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -275,7 +275,7 @@
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Subscribe to our mailing list or follow <a class="text-primary no-underline hover:underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">@Cryptomator</a> on Twitter.</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="Email address" required/>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Email address" required/>
         <button :disabled="data.inProgress" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Subscribe
         </button>

@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.a5b0aae50c6807dc0515371a49212cad48eea6a7f55f8a24479b8d8d5c01eefe.css" integrity="sha256-pbCq5QxoB9wFFTcaSSEsrUjupqf1X4okR5uNjVwB7v4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.33184580ac4615b87255fd936d0747a62264e77d1fdf02aba16966d50d94b4c7.css" integrity="sha256-MxhFgKxGFbhyVf2TbQdHpiJk530f3wKroWlm1Q2UtMc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -189,8 +189,8 @@
     <input type="hidden" name="hosted_button_id" value="7HHT9KSN2WS3Y" />
     <input type="hidden" name="amount" value="15" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-625431978" x-model="acceptTerms" />
-<label for="id-625431978">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-761245839" x-model="acceptTerms" />
+<label for="id-761245839">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to PayPal</button>
   </form>
@@ -221,15 +221,12 @@
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Amount</label>
       <div class="flex items-center rounded bg-gray-300">
         <div class="flex-shrink-0 relative text-gray-700 w-16">
-          <select x-model="currency" class="appearance-none w-full rounded-r-none border-gray-300 bg-gray-300 px-3">
+          <select x-model="currency" class="w-full rounded-l border-gray-300 bg-gray-300 focus:ring-0 focus:border-secondary">
             <option value="EUR">€</option>
             <option value="USD">$</option>
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-            <i class="fas fa-chevron-down text-xs"></i>
-          </div>
         </div>
-        <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 rounded-none text-right placeholder-gray-500 border-gray-300 bg-white md:pr-0" placeholder="min. 1" required/>
+        <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 text-right border-gray-300 focus:ring-0 focus:border-secondary md:pr-0" placeholder="min. 1" required/>
         <div class="flex-shrink-0 text-gray-700 px-3">.00</div>
       </div>
     </div>
@@ -237,11 +234,11 @@
     <div class="w-full mb-4 md:w-1/2 md:pl-3">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Frequency</label>
       <div class="flex">
-        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'once'}" @click="frequency = 'once'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'once'}" @click="frequency = 'once'">
           <i class="fas fa-check" x-show="frequency === 'once'"></i>
           One-Time
         </button>
-        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
           <i class="fas fa-check" x-show="frequency === 'recurring'"></i>
           Monthly
         </button>
@@ -253,7 +250,7 @@
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Credit Card</label>
       <div> 
-        <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none border-gray-300 focus:outline-none" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, 'Loading…', 'en')"/>
+        <input type="text" x-ref="stripePlaceholder" class="w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, 'Loading…', 'en')"/>
       </div>
     </div>
 
@@ -261,8 +258,8 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class="text-primary no-underline hover:underline" href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
 
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-789213645" x-model="acceptTerms" />
-<label for="id-789213645">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-476128935" x-model="acceptTerms" />
+<label for="id-476128935">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
 
       <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
@@ -284,8 +281,8 @@
   <div x-show="frequency === 'recurring'" class="text-center">
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Recurring credit card payments will be set up on our Stripe page.</p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-892317456" x-model="acceptTerms" />
-<label for="id-892317456">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-139425768" x-model="acceptTerms" />
+<label for="id-139425768">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" @click="recurringPayment.checkout(amount, currency, 'en')" :disabled="!acceptTerms">
       <i class="fas fa-external-link" aria-hidden="true"></i> Proceed to Stripe
@@ -364,8 +361,8 @@
     <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
     <input type="hidden" name="allow_extra" value="1" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-574932861" x-model="acceptTerms" />
-<label for="id-574932861">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-239165784" x-model="acceptTerms" />
+<label for="id-239165784">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to CoinPayments</button>
   </form>
@@ -384,7 +381,7 @@
     <form x-show="!feedbackData.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">If you used the &#34;Credit Card&#34; option to set up a monthly donation and would like to manage or cancel it, enter your email address below.</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="Email address" required/>
+        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Email address" required/>
         <button :disabled="feedbackData.inProgress" @click.prevent="customerPortal.request()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Retrieve
         </button>

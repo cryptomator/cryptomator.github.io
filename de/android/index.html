@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.a5b0aae50c6807dc0515371a49212cad48eea6a7f55f8a24479b8d8d5c01eefe.css" integrity="sha256-pbCq5QxoB9wFFTcaSSEsrUjupqf1X4okR5uNjVwB7v4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.33184580ac4615b87255fd936d0747a62264e77d1fdf02aba16966d50d94b4c7.css" integrity="sha256-MxhFgKxGFbhyVf2TbQdHpiJk530f3wKroWlm1Q2UtMc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -175,17 +175,17 @@
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
     <div class="w-full md:w-1/2 mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Preis</label>
-      <input x-model="checkoutData.price" type="text" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="Lädt…" readonly/>
+      <input x-model="checkoutData.price" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Lädt…" readonly/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="E-Mail-Adresse" required/>
+      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-853427196" x-model="acceptTerms" />
-<label for="id-853427196">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-938746251" x-model="acceptTerms" />
+<label for="id-938746251">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
@@ -197,7 +197,7 @@
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
     <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">👍 Deine Zahlung war erfolgreich!</h3>
     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Lizenzschlüssel</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full mb-2" rows="6" placeholder="Lädt…" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="Lädt…" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700">Dies ist dein Lizenzschlüssel. Gib ihn in der Cryptomator-App ein. Der Lizenzschlüssel wurde auch an deine E-Mail-Adresse geschickt.</p>
   </div>
@@ -283,7 +283,7 @@
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Um einen verlorenen Lizenschlüssel oder Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein.</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="E-Mail-Adresse" required/>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="E-Mail-Adresse" required/>
         <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Abrufen
         </button>

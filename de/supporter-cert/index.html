@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.a5b0aae50c6807dc0515371a49212cad48eea6a7f55f8a24479b8d8d5c01eefe.css" integrity="sha256-pbCq5QxoB9wFFTcaSSEsrUjupqf1X4okR5uNjVwB7v4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.33184580ac4615b87255fd936d0747a62264e77d1fdf02aba16966d50d94b4c7.css" integrity="sha256-MxhFgKxGFbhyVf2TbQdHpiJk530f3wKroWlm1Q2UtMc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -190,7 +190,7 @@
     <div class="flex flex-wrap md:flex-nowrap">
       <div class="w-full mb-4 md:w-1/2 md:pr-3">
         <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Anzahl Lizenzen</label>
-        <input x-model="checkoutData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="100" step="1" class="appearance-none placeholder-gray-500 border-gray-300 w-full mb-2" placeholder="min. 1" required/>
+        <input x-model="checkoutData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="100" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" placeholder="min. 1" required/>
         <p class="text-xs text-gray-600">Lizenz gilt für einen Nutzer und kann auf mehreren Computern verwendet werden.</p>
       </div>
       <div class="w-full mb-4 md:w-1/2 md:pl-3">
@@ -205,13 +205,13 @@
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="E-Mail-Adresse" required/>
+      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-659781324" x-model="acceptTerms" />
-<label for="id-659781324">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-182749563" x-model="acceptTerms" />
+<label for="id-182749563">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="new DesktopLicense($refs.funderForm, checkoutData).checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Zur Zahlung
@@ -223,7 +223,7 @@
   <div x-show="checkoutData.success" x-cloak>
     <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">👍 Deine Zahlung war erfolgreich!</h3>
     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Supporter-Zertifikat</label>
-    <textarea x-model="checkoutData.licenseKey" class="appearance-none text-sm md:text-base leading-relaxed break-all placeholder-gray-500 border-gray-300 w-full mb-2" rows="6" placeholder="Lädt…" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="Lädt…" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700">Dies ist dein Supporter-Zertifikat. Gib es in den Cryptomator-Einstellungen unter &#34;Unterstütze uns&#34; ein. Es wurde auch an deine E-Mail-Adresse geschickt.</p>
   </div>
@@ -255,21 +255,21 @@
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">GitHub Username</label>
-      <input x-model="submitData.github_username" x-ref="github_username" @blur="$refs.github_username.classList.add('show-invalid')" type="text" class="appearance-none placeholder-gray-500 border-gray-300 w-full" pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$" maxlength="39" placeholder="Username auf GitHub" required/>
+      <input x-model="submitData.github_username" x-ref="github_username" @blur="$refs.github_username.classList.add('show-invalid')" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$" maxlength="39" placeholder="Username auf GitHub" required/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">GitHub Contribution Link</label>
-      <input x-model="submitData.github_contribution_link" x-ref="github_contribution_link" @blur="$refs.github_contribution_link.classList.add('show-invalid')" type="url" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="Link zur Contribution auf GitHub (https://github.com/...)" required/>
+      <input x-model="submitData.github_contribution_link" x-ref="github_contribution_link" @blur="$refs.github_contribution_link.classList.add('show-invalid')" type="url" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Link zur Contribution auf GitHub (https://github.com/...)" required/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="E-Mail-Adresse" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">In unserem <a class="text-primary no-underline hover:underline" href="https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md" target="_blank" rel="noopener">Contribution Guide</a> findest du die ersten Informationen.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-895617243" x-model="acceptTerms" />
-<label for="id-895617243">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-526389714" x-model="acceptTerms" />
+<label for="id-526389714">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -313,17 +313,17 @@
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Crowdin Username</label>
-      <input x-model="submitData.crowdin_username" x-ref="crowdin_username" @blur="$refs.crowdin_username.classList.add('show-invalid')" type="text" class="appearance-none placeholder-gray-500 border-gray-300 w-full" pattern="^[A-Za-z\d\-_.]{0,254}$" maxlength="255" placeholder="Username auf Crowdin" required/>
+      <input x-model="submitData.crowdin_username" x-ref="crowdin_username" @blur="$refs.crowdin_username.classList.add('show-invalid')" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" pattern="^[A-Za-z\d\-_.]{0,254}$" maxlength="255" placeholder="Username auf Crowdin" required/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="E-Mail-Adresse" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4"><a class="text-primary no-underline hover:underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Hierüber</a> kannst du Cryptomator in deine bevorzugte Sprache übersetzen.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-791586234" x-model="acceptTerms" />
-<label for="id-791586234">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-942175386" x-model="acceptTerms" />
+<label for="id-942175386">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -367,20 +367,20 @@
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Referenz</label>
-      <textarea x-model="submitData.reference" x-ref="reference" @blur="$refs.reference.classList.add('show-invalid')" type="url" class="appearance-none placeholder-gray-500 border-gray-300 w-full" rows="5" maxlength="800" placeholder="- Link zum Blogbeitrag, Anleitungsvideo, Wiki-Beitrag etc. (https://...)
+      <textarea x-model="submitData.reference" x-ref="reference" @blur="$refs.reference.classList.add('show-invalid')" type="url" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="5" maxlength="800" placeholder="- Link zum Blogbeitrag, Anleitungsvideo, Wiki-Beitrag etc. (https://...)
 - Anzahl der Follower, geschätzte Seitenaufrufe etc.
 
 max. 800 Zeichen" required></textarea>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="E-Mail-Adresse" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Teile etwas über Cryptomator in den sozialen Medien, auf deiner Website oder über andere Medien.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-738651492" x-model="acceptTerms" />
-<label for="id-738651492">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-726984351" x-model="acceptTerms" />
+<label for="id-726984351">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -424,17 +424,17 @@ max. 800 Zeichen" required></textarea>
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Grund</label>
-      <textarea x-model="submitData.reason" x-ref="reason" @blur="$refs.reason.classList.add('show-invalid')" type="url" class="appearance-none placeholder-gray-500 border-gray-300 w-full" rows="5" maxlength="800" placeholder="max. 800 Zeichen" required></textarea>
+      <textarea x-model="submitData.reason" x-ref="reason" @blur="$refs.reason.classList.add('show-invalid')" type="url" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="5" maxlength="800" placeholder="max. 800 Zeichen" required></textarea>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="appearance-none placeholder-gray-500 border-gray-300 w-full" placeholder="E-Mail-Adresse" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Teile uns einen anderen Grund mit, der nicht in die anderen Kategorien passt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1" type="checkbox" id="id-631842759" x-model="acceptTerms" />
-<label for="id-631842759">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-891642375" x-model="acceptTerms" />
+<label for="id-891642375">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -465,7 +465,7 @@ max. 800 Zeichen" required></textarea>
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Um ein verlorenes Zertifikat oder einen Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein.</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow min-w-0 rounded-r-none placeholder-gray-500 border-gray-300 bg-white" placeholder="E-Mail-Adresse" required/>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="E-Mail-Adresse" required/>
         <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Abrufen
         </button>
