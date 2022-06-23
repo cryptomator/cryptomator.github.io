@@ -4,15 +4,12 @@
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_amount" }}</label>
       <div class="flex items-center rounded bg-gray-300">
         <div class="flex-shrink-0 relative text-gray-700 w-16">
-          <select x-model="currency" class="appearance-none w-full rounded-r-none border-gray-300 bg-gray-300 px-3">
+          <select x-model="currency" class="w-full rounded-l border-gray-300 bg-gray-300 focus:ring-0 focus:border-secondary">
             <option value="EUR">€</option>
             <option value="USD">$</option>
           </select>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
-            <i class="fas fa-chevron-down text-xs"></i>
-          </div>
         </div>
-        <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 rounded-none text-right placeholder-gray-500 border-gray-300 bg-white md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+        <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 text-right border-gray-300 focus:ring-0 focus:border-secondary md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
         <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
       </div>
     </div>
@@ -20,11 +17,11 @@
     <div class="w-full mb-4 md:w-1/2 md:pl-3">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_frequency" }}</label>
       <div class="flex">
-        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'once'}" @click="frequency = 'once'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'once'}" @click="frequency = 'once'">
           <i class="fas fa-check" x-show="frequency === 'once'"></i>
           {{ i18n "donate_creditcard_frequency_once" }}
         </button>
-        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary focus:outline-none" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
           <i class="fas fa-check" x-show="frequency === 'recurring'"></i>
           {{ i18n "donate_creditcard_frequency_recurring" }}
         </button>
@@ -36,7 +33,7 @@
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
       <div> <!-- wrapper needed for stripe text field -->
-        <input type="text" x-ref="stripePlaceholder" class="w-full appearance-none border-gray-300 focus:outline-none" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
+        <input type="text" x-ref="stripePlaceholder" class="w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
       </div>
     </div>
 

@@ -62,47 +62,41 @@
 }
 
 .text-btn {
-  @apply no-underline;
+    @apply no-underline;
 }
 
 .text-btn:hover,
 .text-btn:focus {
-  @apply underline;
+    @apply underline;
 }
 
 .text-btn:disabled,
 .text-btn:hover:disabled,
 .text-btn:focus:disabled {
-  @apply cursor-not-allowed no-underline text-gray-300;
+    @apply cursor-not-allowed no-underline text-gray-300;
 }
 
 .text-btn-primary {
-  @apply text-primary;
+    @apply text-primary;
 }
 
-input,
-select,
-textarea,
 .StripeElement {
-  @apply border rounded p-2;
+  @apply rounded border border-gray-300 px-3 py-2;
 }
 
-input:focus,
-select:focus,
-textarea:focus,
 .StripeElement--focus {
-  @apply border-secondary outline-none;
+  @apply border-secondary;
 }
 
 input:focus:invalid,
 input.show-invalid:invalid,
 textarea:focus:invalid,
 textarea.show-invalid:invalid {
-  @apply border-red-500;
+  @apply border-red-500 ring-0;
 }
 
 input:disabled,
-input:read-only,
+input:not([type='checkbox']):not([type='radio']):read-only,
 select:disabled,
 textarea:disabled,
 textarea:read-only {
