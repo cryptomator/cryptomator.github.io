@@ -2,6 +2,8 @@
 
 class HubSetup {
 
+  static LATEST_VERSION = '0.1.0';
+
   /**
    * The pre-filled config values before being customized by the user
    * @returns default config
@@ -17,11 +19,13 @@ class HubSetup {
         hubPw: 'hub', // TODO show input field
       },
       keycloak: {
-        publicUrl: 'http://localhost:31000',
-        adminUser: 'admin', // TODO show input field
-        adminPw: 'admin' // TODO show input field
+        useExternal: false,
+        publicUrl: 'http://localhost:30000/kc',
+        adminUser: 'admin',
+        adminPw: 'admin'
       },
       hub: {
+        version: this.LATEST_VERSION,
         publicUrl: 'http://localhost:30000',
         adminUser: 'admin',
         adminPw: 'admin',
@@ -32,21 +36,94 @@ class HubSetup {
   }
 
   /**
-   * Create a Docker Dompose file
+   * Generate output with all config files
    * @param {*} cfg The customized config
-   * @returns docker-compose.yaml content
+   * @returns output
    */
-  static writeComposeConfig(cfg) {
-    return new DockerComposeConfigBuilder(cfg).build();
+  static generateOutput(cfg) {
+    return {
+      k8s: HubSetup.writeK8sConfig(cfg),
+      compose: HubSetup.writeComposeConfig(cfg),
+      realm: HubSetup.writeRealmConfig(cfg)
+    }
   }
 
   /**
-   * Create a Docker Dompose file
+   * Create a Docker Compose file
    * @param {*} cfg The customized config
-   * @returns docker-compose.yaml content
+   * @returns docker-compose.yml content
+   */
+  static writeComposeConfig(cfg) {
+    try {
+      return new DockerComposeConfigBuilder(cfg).build();
+    } catch (e) {
+      return `---
+GENERATING CONFIG FAILED
+---
+${e}`;
+    }
+  }
+
+  /**
+   * Create a Kubernetes file
+   * @param {*} cfg The customized config
+   * @returns k8s-hub.yml content
    */
   static writeK8sConfig(cfg) {
-    return new KubernetesConfigBuilder(cfg).build();
+    try {
+      return new KubernetesConfigBuilder(cfg).build();
+    } catch (e) {
+      return `---
+GENERATING CONFIG FAILED
+---
+${e}`;
+    }
+  }
+
+  /**
+   * Create a realm file for Keycloak
+   * @param {*} cfg The customized config
+   * @returns realm.json content
+   */
+  static writeRealmConfig(cfg) {
+    try {
+      var realmCfg = new ConfigBuilder(cfg).getRealmConfig();
+      return JSON.stringify(realmCfg, null, 2);
+    } catch (e) {
+      return `---
+GENERATING CONFIG FAILED
+---
+${e}`;
+    }
+  }
+
+  static urlWithTrailingSlash(urlStr) {
+    try {
+      var url = new URL(urlStr);
+      if (!url.pathname.endsWith('/')) {
+        url.pathname += '/';
+      }
+      return url.href;
+    } catch {
+      return '<invalid-url>';
+    }
+  }
+
+  static getInternalKeycloakUrl(urlStr) {
+    try {
+      return new URL('kc', HubSetup.urlWithTrailingSlash(urlStr)).href;
+    } catch {
+      return '<requires-valid-public-hub-url>';
+    }
+  }
+
+  static containsPathname(urlStr) {
+    try {
+      var url = new URL(urlStr);
+      return url.pathname && url.pathname.length > 1;
+    } catch {
+      return false;
+    }
   }
 
 }
@@ -78,12 +155,16 @@ class ConfigBuilder {
   }
 
   getInitDbSQL() {
-    return `CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
+    var sql = [];
+    if (!this.cfg.keycloak.useExternal) {
+      sql.push(`CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
 CREATE DATABASE keycloak WITH ENCODING 'UTF8';
-GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;
-CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
+GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;`)
+    }
+    sql.push(`CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
 CREATE DATABASE hub WITH ENCODING 'UTF8';
-GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`;
+GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
+    return sql.join('\n');
   }
 
   getRealmConfig() {
@@ -218,19 +299,19 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   }
 
   /**
-   * Create a Docker Dompose file
-   * @returns docker-compose.yaml content
+   * Create a Docker Compose file
+   * @returns docker-compose.yml content
    */
   build() {
     return jsyaml.dump({
       services: {
         'init-config': this.#getInitConfigService(),
         'postgres': this.#getPostgresService(),
-        'keycloak': this.#getKeycloakService(),
+        ...(!this.cfg.keycloak.useExternal) && { 'keycloak': this.#getKeycloakService() },
         'hub': this.#getHubService()
       },
       volumes: {
-        'kc-config': {},
+        ...(!this.cfg.keycloak.useExternal) && { 'kc-config': {} },
         'db-init': {},
         'db-data': {}
       }
@@ -241,15 +322,23 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
     let writeInitDbCmd = `cat >/db-init/initdb.sql << 'EOF'
 ${this.getInitDbSQL()}
 EOF`;
-    // double-dollar sign is needed to be interpreted as literal dollar sign, see: https://docs.docker.com/compose/compose-file/#interpolation
-    // replaceAll also requires double-dollar sign, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_a_parameter
-    let writeRealmCmd = `cat >/kc-config/realm.json << 'EOF'
+    if (!this.cfg.keycloak.useExternal) {
+        // double-dollar sign is needed to be interpreted as literal dollar sign, see: https://docs.docker.com/compose/compose-file/#interpolation
+        // replaceAll also requires double-dollar sign, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_a_parameter
+        let writeRealmCmd = `cat >/kc-config/realm.json << 'EOF'
 ${JSON.stringify(this.getRealmConfig(), null, 2).replaceAll('$', '$$$$')}
 EOF`;
-    return {
-      image: 'bash:5',
-      volumes: ['kc-config:/kc-config', 'db-init:/db-init'],
-      command: ['bash', '-c', writeInitDbCmd + '\n' + writeRealmCmd]
+        return {
+          image: 'bash:5',
+          volumes: ['kc-config:/kc-config', 'db-init:/db-init'],
+          command: ['bash', '-c', writeInitDbCmd + '\n' + writeRealmCmd]
+        }
+    } else {
+      return {
+        image: 'bash:5',
+        volumes: ['db-init:/db-init'],
+        command: ['bash', '-c', writeInitDbCmd]
+      }
     }
   }
 
@@ -320,10 +409,10 @@ EOF`;
   #getHubService() {
     return {
       depends_on: {
-        'keycloak': {condition: 'service_healthy'},
+        ...(!this.cfg.keycloak.useExternal) && { 'keycloak': {condition: 'service_healthy'} },
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/hub:latest',
+      image: `ghcr.io/cryptomator/hub:${this.cfg.hub.version}`,
       deploy: {
         resources: {
           limits: {cpus: '0.5', memory: '256M'}
@@ -337,14 +426,14 @@ EOF`;
       },
       environment: {
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
-        HUB_KEYCLOAK_LOCAL_URL: `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}`,
+        HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_REALM: 'cryptomator',
         HUB_KEYCLOAK_SYNCER_USERNAME: this.cfg.hub.syncerUser,
         HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
         HUB_KEYCLOAK_SYNCER_CLIENT_ID: 'admin-cli',
         HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
-        QUARKUS_OIDC_AUTH_SERVER_URL: 'http://keycloak:8080/realms/cryptomator', // network-internal URL
-        QUARKUS_OIDC_TOKEN_ISSUER: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`,
+        QUARKUS_OIDC_AUTH_SERVER_URL: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href, // network-internal URL
+        QUARKUS_OIDC_TOKEN_ISSUER: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href,
         QUARKUS_OIDC_CLIENT_ID: 'cryptomatorhub',
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
@@ -366,13 +455,14 @@ class KubernetesConfigBuilder extends ConfigBuilder {
 
   /**
    * Create a Kubernetes deployment descriptor
-   * @returns kubernetes deployment yaml content
+   * @returns k8s-hub.yml content
    */
    build() {
     var result = '';
 
-    // generate namespace:
+    // Namespace
     if (this.cfg.k8s.namespace != 'default') {
+      result += '# Namespace\n'
       result += jsyaml.dump({
         apiVersion: 'v1',
         kind: 'Namespace',
@@ -397,9 +487,11 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     result += '\n---\n'
 
     // Keycloak Deployment
-    result += '# Keycloak\n'
-    result += this.#getKeycloakDeployment();
-    result += '\n---\n'
+    if (!this.cfg.keycloak.useExternal) {
+      result += '# Keycloak\n'
+      result += this.#getKeycloakDeployment();
+      result += '\n---\n'
+    }
 
     // Hub Deployment
     result += '# Cryptomator Hub\n'
@@ -410,8 +502,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     result += '# Services \n'
     result += this.#getHubService();
     result += '\n---\n'
-    result += this.#getKeycloakService();
-    result += '\n---\n'
+    if (!this.cfg.keycloak.useExternal) {
+      result += this.#getKeycloakService();
+      result += '\n---\n'
+    }
     result += this.#getPostgresService();
     result += '\n---\n'
 
@@ -426,15 +520,15 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       metadata: {namespace: this.cfg.k8s.namespace, name: 'hub-secrets'},
       type: 'Opaque',
       stringData: {
-        'kc_admin_user': this.cfg.keycloak.adminUser,
-        'kc_admin_pass': this.cfg.keycloak.adminPw,
+        ...(!this.cfg.keycloak.useExternal) && { 'kc_admin_user': this.cfg.keycloak.adminUser },
+        ...(!this.cfg.keycloak.useExternal) && { 'kc_admin_pass': this.cfg.keycloak.adminPw },
         'db_admin_pass': this.cfg.db.adminPw,
         'db_hub_pass': this.cfg.db.hubPw,
-        'db_kc_pass': this.cfg.db.keycloakPw,
+        ...(!this.cfg.keycloak.useExternal) && { 'db_kc_pass': this.cfg.db.keycloakPw },
         'hub_syncer_user': this.cfg.hub.syncerUser,
         'hub_syncer_pass': this.cfg.hub.syncerPw,
         'initdb.sql': this.getInitDbSQL(),
-        'realm.json': JSON.stringify(realmCfg, null, 2)
+        ...(!this.cfg.keycloak.useExternal) && { 'realm.json': JSON.stringify(realmCfg, null, 2) }
       }
     }
     return jsyaml.dump(configMap);
@@ -466,7 +560,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         template: {
           metadata: {labels: {app: 'cryptomator-hub'}},
           spec: {
-            initContainers: [{
+            initContainers: [...(!this.cfg.keycloak.useExternal ? [{
               name: 'wait-for-keycloak',
               image: 'busybox',
               args: [
@@ -474,10 +568,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 '-c',
                 `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live" 2>>/dev/null; do sleep 10; done`
               ]
-            }],
+            }] : [])],
             containers: [{
               name: 'cryptomator-hub',
-              image: 'ghcr.io/cryptomator/hub:latest',
+              image: `ghcr.io/cryptomator/hub:${this.cfg.hub.version}`,
               imagePullPolicy: 'IfNotPresent', // TODO: remove in production
               ports: [{containerPort: 8080}],
               resources: {
@@ -492,14 +586,14 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               },
               env: [
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
-                {name: 'HUB_KEYCLOAK_LOCAL_URL', value: `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}`},
+                {name: 'HUB_KEYCLOAK_LOCAL_URL', value: !this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_REALM', value: 'cryptomator'},
                 {name: 'HUB_KEYCLOAK_SYNCER_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_user'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_CLIENT_ID', value: 'admin-cli'},
                 {name: 'HUB_KEYCLOAK_SYNCER_PERIOD', value: '5m'}, // TODO make configurable?
-                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: 'http://keycloak-svc:8080/realms/cryptomator'},
-                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: `${this.cfg.keycloak.publicUrl}/realms/cryptomator`},
+                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href},
+                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},

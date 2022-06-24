@@ -1,5 +1,5 @@
 ---
-title: "Cryptomator Hub - Setup Wizard"
-url: "hub/setup"
+title: "Cryptomator Hub: Setup Wizard"
+url: "/hub/setup"
 type: "hub-setup"
 ---
