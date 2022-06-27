@@ -11,7 +11,7 @@ class HubSetup {
   static defaultConfig() {
     return {
       k8s: {
-        namespace: 'default' // TODO show input field
+        namespace: 'default'
       },
       db: {
         adminPw: 'postgres', // TODO random UUID?
