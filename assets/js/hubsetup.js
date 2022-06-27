@@ -11,7 +11,8 @@ class HubSetup {
   static defaultConfig() {
     return {
       k8s: {
-        namespace: 'default'
+        namespace: 'default',
+        includeIngress: false
       },
       db: {
         adminPw: 'postgres', // TODO random UUID?
@@ -509,6 +510,13 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     result += this.#getPostgresService();
     result += '\n---\n'
 
+    // Ingress
+    if (this.cfg.k8s.includeIngress) {
+      result += '# Ingress\n'
+      result += this.#getIngress();
+      result += '\n---\n'
+    }
+
     return result;
   }
 
@@ -788,6 +796,37 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       }
     }
     return jsyaml.dump(service);
+  }
+
+  #getIngress() {
+    let ingress =  {
+      apiVersion: 'networking.k8s.io/v1',
+      kind: 'Ingress',
+      metadata: {namespace: this.cfg.k8s.namespace, name: 'ingress'},
+      spec: {
+        rules: [{
+          host: this.getHostname(this.cfg.hub.publicUrl),
+          http: {
+            paths: [{
+              path: this.getPathname(this.cfg.hub.publicUrl),
+              pathType: 'Prefix',
+              backend: {service: {
+                name: 'cryptomator-hub-svc',
+                port: {number: 8080} 
+              }}
+            }, ...(!this.cfg.keycloak.useExternal ? [{
+              path: this.getPathname(this.cfg.keycloak.publicUrl),
+              pathType: 'Prefix',
+              backend: {service: {
+                name: 'keycloak-svc',
+                port: {number: 8080} 
+              }}
+            }] : [])]
+          }
+        }]
+      }
+    }
+    return jsyaml.dump(ingress);
   }
 
 }

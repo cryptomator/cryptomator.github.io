@@ -45,6 +45,18 @@
           <input type="text" id="k8sNamespace" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.k8s.namespace">
           <p class="mt-2 text-sm text-gray-500">Namespace for the Kubernetes resources.</p>
         </div>
+
+        <div class="col-span-6" x-show="deploymentType == 'kubernetes'" x-cloak>
+          <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">Ingress</label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="k8sIncludeIngress" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.k8s.includeIngress">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="k8sIncludeIngress" class="font-medium text-gray-700">Include Ingress object in Kubernetes config.</label>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -94,13 +106,15 @@
           <p class="mt-1 text-sm text-gray-500">Cryptomator Hub depends on Keycloak for identity management.</p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-          <div class="col-span-6 flex items-start">
-            <div class="h-5 flex items-center">
-              <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal">
-            </div>
-            <div class="ml-3 text-sm">
-              <label for="externalKeycloak" class="font-medium text-gray-700">External Keycloak</label>
-              <p class="text-gray-500">Use an existing Keycloak installation.</p>
+          <div class="col-span-6">
+            <label for="externalKeycloak" class="block text-sm font-medium text-gray-700">External Keycloak</label>
+            <div class="mt-2 flex items-start">
+              <div class="h-5 flex items-center">
+                <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="externalKeycloak" class="font-medium text-gray-700">Use an existing Keycloak installation.</label>
+              </div>
             </div>
           </div>
 
