@@ -554,7 +554,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       spec: {
         accessModes: ['ReadWriteOnce'],
         resources: {
-          requests: {storage: '1Gi'}
+          requests: {storage: '1G'}
         }
       }
     }
@@ -618,14 +618,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
-              ],
-              volumeMounts: [
-                {name: 'hub-data', mountPath: '/hub'}
               ]
-            }],
-            volumes: [
-              {name: 'hub-data', emptyDir: {}}
-            ]
+            }]
           }
         }
       }
