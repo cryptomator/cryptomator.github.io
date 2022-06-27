@@ -14,6 +14,11 @@ class HubSetup {
         namespace: 'default',
         includeIngress: false
       },
+      compose: {
+        includeNginxProxy: false,
+        overrideNginxProxyPort: false,
+        nginxProxyPort: 30000,
+      },
       db: {
         adminPw: HubSetup.uuid(),
         keycloakPw: HubSetup.uuid(),
@@ -103,6 +108,17 @@ ${e}`;
       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
+  }
+
+  static getPort(urlStr) {
+    try {
+      var url = new URL(urlStr);
+      var port = Number.parseInt(url.port);
+      var defaultPort = (url.protocol == 'https:') ? 443 : 80;
+      return Number.isNaN(port) ? defaultPort : port;
+    } catch {
+      return -1;
+    }
   }
 
   static urlWithTrailingSlash(urlStr) {
@@ -313,7 +329,8 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
         'init-config': this.#getInitConfigService(),
         'postgres': this.#getPostgresService(),
         ...(!this.cfg.keycloak.useExternal) && { 'keycloak': this.#getKeycloakService() },
-        'hub': this.#getHubService()
+        'hub': this.#getHubService(),
+        ...(this.cfg.compose.includeNginxProxy) && { 'nginx-proxy': this.#getNginxProxyService() },
       },
       volumes: {
         ...(!this.cfg.keycloak.useExternal) && { 'kc-config': {} },
@@ -357,7 +374,6 @@ EOF`;
           limits: {cpus: '1.0', memory: '150M'}
         }
       },
-      ports: ['5432:5432'],
       healthcheck: {
         test: ['CMD', 'pg_isready', '-U', 'postgres'],
         interval: '10s',
@@ -388,7 +404,6 @@ EOF`;
           limits: {cpus: '2.0', memory: '768M'}
         }
       },
-      ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
         interval: '10s',
@@ -407,6 +422,7 @@ EOF`;
         KC_HTTP_ENABLED: 'true',
         KC_PROXY: 'edge',
         KC_HTTP_RELATIVE_PATH: this.getPathname(this.cfg.keycloak.publicUrl),
+        ...(this.cfg.compose.includeNginxProxy) && { VIRTUAL_HOST: this.getHostname(this.cfg.keycloak.publicUrl), VIRTUAL_PORT: 8080, VIRTUAL_PATH: this.getPathname(this.cfg.keycloak.publicUrl) },
       }
     }
   }
@@ -423,7 +439,6 @@ EOF`;
           limits: {cpus: '0.5', memory: '256M'}
         }
       },
-      ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', 'http://localhost:8080/q/health/live'],
         interval: '10s',
@@ -443,7 +458,16 @@ EOF`;
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
+        ...(this.cfg.compose.includeNginxProxy) && { VIRTUAL_HOST: this.getHostname(this.cfg.hub.publicUrl), VIRTUAL_PORT: 8080, VIRTUAL_PATH: this.getPathname(this.cfg.hub.publicUrl) },
       }
+    }
+  }
+
+  #getNginxProxyService() {
+    return {
+      image: 'nginxproxy/nginx-proxy',
+      ports: [`${this.cfg.compose.nginxProxyPort}:80`],
+      volumes: ['/var/run/docker.sock:/tmp/docker.sock:ro']
     }
   }
 
