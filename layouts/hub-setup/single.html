@@ -138,6 +138,33 @@
         </div>
       </section>
 
+      <!-- DATABASE SECTION -->
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">Database</h2>
+          <p class="mt-1 text-sm text-gray-500">Cryptomator Hub depends on PostgreSQL for persisting data.</p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6 lg:col-span-4">
+            <label for="dbAdminPw" class="block text-sm font-medium text-gray-700">Admin Password</label>
+            <input type="password" id="dbAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.adminPw">
+            <p class="mt-2 text-sm text-gray-500">Superuser password for default <code>postgres</code> user.</p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="dbHubPw" class="block text-sm font-medium text-gray-700">Hub Password</label>
+            <input type="password" id="dbHubPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.hubPw">
+            <p class="mt-2 text-sm text-gray-500">Password for <code>hub</code> user with access to `hub` database.</p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="dbKeycloakPw" class="block text-sm font-medium text-gray-700">Keycloak Password</label>
+            <input type="password" id="dbKeycloakPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.keycloakPw">
+            <p class="mt-2 text-sm text-gray-500">Password for <code>keycloak</code> user with access to `keycloak` database.</p>
+          </div>
+        </div>
+      </section>
+
       <div class="text-center">
         <div class="fa-stack text-2xl text-primary">
           <i class="far fa-circle fa-stack-2x"></i>

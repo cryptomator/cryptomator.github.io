@@ -15,9 +15,9 @@ class HubSetup {
         includeIngress: false
       },
       db: {
-        adminPw: 'postgres', // TODO random UUID?
-        keycloakPw: 'keycloak', // TODO show input field
-        hubPw: 'hub', // TODO show input field
+        adminPw: HubSetup.uuid(),
+        keycloakPw: HubSetup.uuid(),
+        hubPw: HubSetup.uuid(),
       },
       keycloak: {
         useExternal: false,
@@ -31,7 +31,7 @@ class HubSetup {
         adminUser: 'admin',
         adminPw: 'admin',
         syncerUser: 'syncer', // TODO: randomize?
-        syncerPw: 'syncer', // TODO: randomize?
+        syncerPw: HubSetup.uuid(),
       }
     }
   }
@@ -96,6 +96,13 @@ GENERATING CONFIG FAILED
 ---
 ${e}`;
     }
+  }
+
+  static uuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
   }
 
   static urlWithTrailingSlash(urlStr) {
