@@ -560,7 +560,15 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         template: {
           metadata: {labels: {app: 'cryptomator-hub'}},
           spec: {
-            initContainers: [...(!this.cfg.keycloak.useExternal ? [{
+            initContainers: [{
+              name: 'wait-for-postgres',
+              image: 'busybox',
+              args: [
+                '/bin/sh',
+                '-c',
+                'set -x; while ! nc -zw 10 postgres-svc:5432; do echo "waiting for postgres..."; done'
+              ]
+            }, ...(!this.cfg.keycloak.useExternal ? [{
               name: 'wait-for-keycloak',
               image: 'busybox',
               args: [
@@ -695,7 +703,15 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         template: {
           metadata: {labels: {app: 'keycloak'}},
           spec: {
-            // TODO add init container that waits for postgres to be reachable?
+            initContainers: [{
+              name: 'wait-for-postgres',
+              image: 'busybox',
+              args: [
+                '/bin/sh',
+                '-c',
+                'set -x; while ! nc -zw 10 postgres-svc:5432; do echo "waiting for postgres..."; done'
+              ]
+            }],
             containers: [{
               name: 'keycloak',
               image: 'quay.io/keycloak/keycloak:18.0.0',
