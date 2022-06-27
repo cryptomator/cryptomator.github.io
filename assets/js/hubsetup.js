@@ -222,9 +222,6 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         {
           username: this.cfg.hub.adminUser,
           enabled: true,
-          attributes: {
-            picture: 'https://cryptomator.org/img/logo.svg' // TODO keep this?
-          },
           credentials: [{ type: 'password', value: this.cfg.hub.adminPw }],
           realmRoles: ['admin']
         },
