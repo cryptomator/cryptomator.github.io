@@ -323,7 +323,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
         'db-init': {},
         'db-data': {}
       }
-    });
+    }, {lineWidth: -1});
   }
 
   #getInitConfigService() {
@@ -475,7 +475,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         apiVersion: 'v1',
         kind: 'Namespace',
         metadata: {name: this.cfg.k8s.namespace }
-      });
+      }, {lineWidth: -1});
       result += '\n---\n'
     }
 
@@ -546,7 +546,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         ...(!this.cfg.keycloak.useExternal) && { 'realm.json': JSON.stringify(realmCfg, null, 2) }
       }
     }
-    return jsyaml.dump(configMap);
+    return jsyaml.dump(configMap, {lineWidth: -1});
   }
 
   #getPVCs() {
@@ -561,7 +561,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         }
       }
     }
-    return jsyaml.dump(pvcs);
+    return jsyaml.dump(pvcs, {lineWidth: -1});
   }
 
   #getHubDeployment() {
@@ -633,7 +633,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         }
       }
     };
-    return jsyaml.dump(deployment);
+    return jsyaml.dump(deployment, {lineWidth: -1});
   }
 
   // TODO: change to statefulset
@@ -684,7 +684,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         }
       }
     };
-    return jsyaml.dump(deployment);
+    return jsyaml.dump(deployment, {lineWidth: -1});
   }
 
   #getKeycloakDeployment() {
@@ -757,7 +757,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         }
       }
     };
-    return jsyaml.dump(deployment);
+    return jsyaml.dump(deployment, {lineWidth: -1});
   }
 
   #getHubService() {
@@ -772,7 +772,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         ]
       }
     }
-    return jsyaml.dump(service);
+    return jsyaml.dump(service, {lineWidth: -1});
   }
 
   #getPostgresService() {
@@ -787,7 +787,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         ]
       }
     }
-    return jsyaml.dump(service);
+    return jsyaml.dump(service, {lineWidth: -1});
   }
 
   #getKeycloakService() {
@@ -802,7 +802,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         ]
       }
     }
-    return jsyaml.dump(service);
+    return jsyaml.dump(service, {lineWidth: -1});
   }
 
   #getIngress() {
@@ -833,7 +833,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         }]
       }
     }
-    return jsyaml.dump(ingress);
+    return jsyaml.dump(ingress, {lineWidth: -1});
   }
 
 }
