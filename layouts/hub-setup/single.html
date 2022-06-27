@@ -121,7 +121,8 @@
           <div class="col-span-6 lg:col-span-4">
             <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">Public Keycloak URL</label>
             <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl" :readonly="!cfg.keycloak.useExternal">
-            <p class="mt-2 text-sm text-gray-500">The full URL including protocol, port, and path of your Keycloak installation.</p>
+            <p class="mt-2 text-sm text-gray-500" x-show="cfg.keycloak.useExternal">The full URL including protocol, port, and path of your Keycloak installation.</p>
+            <p class="mt-2 text-sm text-gray-500" x-show="!cfg.keycloak.useExternal">Internal Keycloak container will be deployed to this URL.</p>
           </div>
 
           <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
