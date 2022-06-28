@@ -93,7 +93,7 @@ ${e}`;
    */
   static writeRealmConfig(cfg) {
     try {
-      var realmCfg = new ConfigBuilder(cfg).getRealmConfig();
+      let realmCfg = new ConfigBuilder(cfg).getRealmConfig();
       return JSON.stringify(realmCfg, null, 2);
     } catch (e) {
       return `---
@@ -105,16 +105,16 @@ ${e}`;
 
   static uuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
   }
 
   static getPort(urlStr) {
     try {
-      var url = new URL(urlStr);
-      var port = Number.parseInt(url.port);
-      var defaultPort = (url.protocol == 'https:') ? 443 : 80;
+      let url = new URL(urlStr);
+      let port = Number.parseInt(url.port);
+      let defaultPort = (url.protocol == 'https:') ? 443 : 80;
       return Number.isNaN(port) ? defaultPort : port;
     } catch {
       return -1;
@@ -123,7 +123,7 @@ ${e}`;
 
   static urlWithTrailingSlash(urlStr) {
     try {
-      var url = new URL(urlStr);
+      let url = new URL(urlStr);
       if (!url.pathname.endsWith('/')) {
         url.pathname += '/';
       }
@@ -143,7 +143,7 @@ ${e}`;
 
   static containsPathname(urlStr) {
     try {
-      var url = new URL(urlStr);
+      let url = new URL(urlStr);
       return url.pathname && url.pathname.length > 1;
     } catch {
       return false;
@@ -162,24 +162,24 @@ class ConfigBuilder {
   }
 
   getPort(urlStr) {
-    var url = new URL(urlStr);
-    var port = Number.parseInt(url.port);
-    var defaultPort = (url.protocol == 'https:') ? 443 : 80;
+    let url = new URL(urlStr);
+    let port = Number.parseInt(url.port);
+    let defaultPort = (url.protocol == 'https:') ? 443 : 80;
     return Number.isNaN(port) ? defaultPort : port;
   }
 
   getHostname(urlStr) {
-    var url = new URL(urlStr);
+    let url = new URL(urlStr);
     return url.hostname;
   }
 
   getPathname(urlStr) {
-    var url = new URL(urlStr);
+    let url = new URL(urlStr);
     return url.pathname;
   }
 
   getInitDbSQL() {
-    var sql = [];
+    let sql = [];
     if (!this.cfg.keycloak.useExternal) {
       sql.push(`CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
 CREATE DATABASE keycloak WITH ENCODING 'UTF8';
@@ -387,8 +387,8 @@ EOF`;
   }
 
   #getKeycloakService() {
-    var devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
-    var startCmd = devMode
+    let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
+    let startCmd = devMode
       ? 'start-dev --import-realm' // dev mode (no TLS required)
       : 'start --auto-build --import-realm'; // prod mode (requires a proper TLS termination proxy)
     return {
@@ -487,7 +487,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
    * @returns k8s-hub.yml content
    */
    build() {
-    var result = '';
+    let result = '';
 
     // Namespace
     if (this.cfg.k8s.namespace != 'default') {
@@ -703,11 +703,11 @@ class KubernetesConfigBuilder extends ConfigBuilder {
   }
 
   #getKeycloakDeployment() {
-    var devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
-    var startCmd = devMode
+    let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
+    let startCmd = devMode
       ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
       : ['/opt/keycloak/bin/kc.sh', 'start', '--auto-build', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
-    var env = [
+    let env = [
       {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
       {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
       {name: 'KC_DB', value: 'postgres'},
