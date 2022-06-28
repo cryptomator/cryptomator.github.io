@@ -16,6 +16,7 @@ class HubSetup {
       },
       compose: {
         includeNginxProxy: false,
+        enforceSsl: false,
         overrideNginxProxyPort: false,
         nginxProxyPort: 30000,
       },
@@ -465,9 +466,10 @@ EOF`;
 
   #getNginxProxyService() {
     return {
-      image: 'nginxproxy/nginx-proxy',
-      ports: [`${this.cfg.compose.nginxProxyPort}:80`],
-      volumes: ['/var/run/docker.sock:/tmp/docker.sock:ro']
+      image: 'nginxproxy/nginx-proxy:alpine',
+      ports: [`${this.cfg.compose.nginxProxyPort}:${!this.cfg.compose.enforceSsl ? 80 : 443}`],
+      volumes: ['/var/run/docker.sock:/tmp/docker.sock:ro'],
+      ...(this.cfg.compose.enforceSsl) && { environment: { HTTP_PORT: 443 } }
     }
   }
 
