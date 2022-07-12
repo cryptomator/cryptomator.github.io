@@ -239,13 +239,14 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         {
           username: this.cfg.hub.adminUser,
           enabled: true,
-          credentials: [{ type: 'password', value: this.cfg.hub.adminPw }],
+          credentials: [{ type: 'password', value: this.cfg.hub.adminPw, temporary: true }],
+          requiredActions: ['UPDATE_PASSWORD'],
           realmRoles: ['admin']
         },
         {
           username: this.cfg.hub.syncerUser,
           enabled: true,
-          credentials: [{ type: 'password', value: this.cfg.hub.syncerPw }],
+          credentials: [{ type: 'password', value: this.cfg.hub.syncerPw, temporary: false }],
           realmRoles: ['syncer']
         }
       ],
