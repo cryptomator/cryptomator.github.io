@@ -380,6 +380,7 @@ EOF`;
         interval: '10s',
         timeout: '3s',
       },
+      restart: 'unless-stopped',
       environment: {
         POSTGRES_PASSWORD: this.cfg.db.adminPw,
         POSTGRES_INITDB_ARGS: '--encoding=UTF8',
@@ -410,6 +411,7 @@ EOF`;
         interval: '10s',
         timeout: '3s',
       },
+      restart: 'unless-stopped',
       environment: {
         KEYCLOAK_ADMIN: this.cfg.keycloak.adminUser,
         KEYCLOAK_ADMIN_PASSWORD: this.cfg.keycloak.adminPw,
@@ -445,6 +447,7 @@ EOF`;
         interval: '10s',
         timeout: '3s',
       },
+      restart: 'unless-stopped',
       environment: {
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
@@ -469,7 +472,8 @@ EOF`;
       image: 'nginxproxy/nginx-proxy:alpine',
       ports: [`${this.cfg.compose.nginxProxyPort}:${!this.cfg.compose.enforceSsl ? 80 : 443}`],
       volumes: ['/var/run/docker.sock:/tmp/docker.sock:ro'],
-      ...(this.cfg.compose.enforceSsl) && { environment: { HTTP_PORT: 443 } }
+      ...(this.cfg.compose.enforceSsl) && { environment: { HTTP_PORT: 443 } },
+      restart: 'unless-stopped'
     }
   }
 
