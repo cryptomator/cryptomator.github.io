@@ -199,16 +199,12 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
       displayName: 'Cryptomator Hub', // TODO make configurable?
       enabled: true,
       sslRequired: 'external',
+      defaultRole: {
+        name: "user",
+        description: "User"
+      },
       roles: {
         realm: [
-          {
-            name: 'user',
-            description: 'User',
-            composite: true,
-            composites: {
-              realm: ['default-roles-cryptomator']
-            }
-          },
           {
             name: 'admin',
             description: 'Administrator',
