@@ -5,7 +5,7 @@
     <description>Recent Blog Posts on cryptomator.org</description>
     <link>{{ .Permalink }}</link>
     <language>{{ .Language }}</language>
-    <atom:link href="{{ "blog/feed.xml" | absLangURL }}" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ "feed.xml" | absLangURL }}" rel="self" type="application/rss+xml" />
     <image>
       <url>{{ "/img/logo.png" | absURL }}</url>
       <title>Cryptomator Blog</title>
