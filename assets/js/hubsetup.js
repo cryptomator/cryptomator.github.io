@@ -227,9 +227,6 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
             }
           }
         ],
-        client: {
-          cryptomatorhub: [{ name: 'vault-owner', description: 'Vault Owner' }]
-        }
       },
       users: [
         {
