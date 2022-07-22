@@ -210,10 +210,7 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
             description: 'Administrator',
             composite: true,
             composites: {
-              realm: ['user'],
-              client: {
-                cryptomatorhub: ['vault-owner']
-              }
+              realm: ['user']
             }
           },
           {
@@ -249,12 +246,6 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
           roles: ['user', 'admin']
         }
       ],
-      clientScopeMappings: {
-        account: [{
-          client: 'cryptomatorhub',
-          roles: ['vault-owner']
-        }]
-      },
       clients: [{
         clientId: 'cryptomatorhub',
         serviceAccountsEnabled: false,
