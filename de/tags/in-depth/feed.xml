@@ -5,13 +5,13 @@
     <description>Recent Blog Posts on cryptomator.org</description>
     <link>https://cryptomator.org/de/tags/in-depth/</link>
     <language>de</language>
-    <atom:link href="https://cryptomator.org/de/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cryptomator.org/de/feed.xml" rel="self" type="application/rss+xml" />
     <image>
       <url>https://cryptomator.org/img/logo.png</url>
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/in-depth/</link>
     </image>
-    <lastBuildDate>Tue, 19 Jul 2022 06:55:47 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jul 2022 22:39:36 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
