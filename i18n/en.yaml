@@ -380,6 +380,86 @@
 - id: hub_billing_checkout_enterprise_action
   translation: "Contact Us"
 
+# Hub Setup
+- id: hub_setup_deployment_header_title
+  translation: "Deployment"
+- id: hub_setup_deployment_header_description
+  translation: "On what type of infrastructure do you want to deploy Cryptomator Hub?"
+- id: hub_setup_deployment_kubernetes_description
+  translation: "Recommended for production deployments"
+- id: hub_setup_deployment_kubernetes_namespace_description
+  translation: "Namespace for the Kubernetes resources."
+- id: hub_setup_deployment_kubernetes_ingress_include
+  translation: "Include Ingress object in Kubernetes config."
+- id: hub_setup_deployment_compose_description
+  translation: "For easy testing with Docker Desktop"
+
+- id: hub_setup_hub_header_title
+  translation: "Cryptomator Hub"
+- id: hub_setup_hub_header_description
+  translation: "General information about your Hub installation."
+- id: hub_setup_hub_version_description
+  translation: "For production deployments, set the version explicitly."
+- id: hub_setup_hub_public_url
+  translation: "Public Hub URL"
+- id: hub_setup_hub_public_url_description
+  translation: "The full URL including protocol, port, and path of your Hub installation."
+- id: hub_setup_hub_public_url_unsupported_paths
+  translation: "Paths are currently not supported."
+- id: hub_setup_hub_admin_user
+  translation: "Admin User"
+- id: hub_setup_hub_admin_user_description
+  translation: "User name of the initial user that will be created."
+- id: hub_setup_hub_admin_pw
+  translation: "Admin Password"
+- id: hub_setup_hub_admin_pw_description
+  translation: "Password for the initial user. You should change this on your first login."
+
+- id: hub_setup_keycloak_header_title
+  translation: "Keycloak"
+- id: hub_setup_keycloak_header_description
+  translation: "Cryptomator Hub depends on Keycloak for identity management."
+- id: hub_setup_keycloak_external
+  translation: "External Keycloak"
+- id: hub_setup_keycloak_external_use
+  translation: "Use an existing Keycloak installation."
+- id: hub_setup_keycloak_public_url
+  translation: "Public Keycloak URL"
+- id: hub_setup_keycloak_public_url_external_description
+  translation: "The full URL including protocol, port, and path of your Keycloak installation."
+- id: hub_setup_keycloak_public_url_internal_description
+  translation: "Internal Keycloak container will be deployed to this URL."
+- id: hub_setup_keycloak_admin_user
+  translation: "Admin User"
+- id: hub_setup_keycloak_admin_user_description
+  translation: "User name of the admin user that will be created."
+- id: hub_setup_keycloak_admin_pw
+  translation: "Initial Admin Password"
+- id: hub_setup_keycloak_admin_pw_description
+  translation: "Temporary password for the admin user. You will be asked to change this on your first login."
+
+- id: hub_setup_database_header_title
+  translation: "Database"
+- id: hub_setup_database_header_description
+  translation: "Cryptomator Hub depends on PostgreSQL for persisting data."
+- id: hub_setup_database_admin_pw
+  translation: "Admin Password"
+- id: hub_setup_database_admin_pw_description
+  translation: "Superuser password for default `postgres` user."
+- id: hub_setup_database_hub_pw
+  translation: "Hub Password"
+- id: hub_setup_database_hub_pw_description
+  translation: "Password for `hub` user with access to `hub` database."
+- id: hub_setup_database_keycloak_pw
+  translation: "Keycloak Password"
+- id: hub_setup_database_keycloak_pw_description
+  translation: "Password for `keycloak` user with access to `keycloak` database."
+
+- id: hub_setup_output_header_title
+  translation: "Config"
+- id: hub_setup_output_header_description
+  translation: "Use this configuration to deploy Cryptomator Hub."
+
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "Email"

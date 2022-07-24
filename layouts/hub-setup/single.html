@@ -7,8 +7,12 @@
     <!-- DEPLOYMENT SECTION -->
     <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
       <header class="md:col-span-1">
-        <h2 class="text-lg font-medium leading-6 text-gray-900">Deployment</h2>
-        <p class="mt-1 text-sm text-gray-500">On what type of infrastructure do you want to deploy Cryptomator Hub?</p>
+        <h2 class="text-lg font-medium leading-6 text-gray-900">
+          {{ i18n "hub_setup_deployment_header_title" . }}
+        </h2>
+        <p class="mt-1 text-sm text-gray-500">
+          {{ i18n "hub_setup_deployment_header_description" . }}
+        </p>
       </header>
       <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
         <div class="col-span-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -17,8 +21,12 @@
             <input type="radio" value="kubernetes" class="sr-only" x-model="deploymentType">
             <div class="flex-1 flex">
               <div class="flex flex-col">
-                <span class="block text-sm font-medium text-gray-900">Kubernetes</span>
-                <span class="mt-1 flex items-center text-sm text-gray-500">Recommended for production deployments</span>
+                <span class="block text-sm font-medium text-gray-900">
+                  Kubernetes
+                </span>
+                <span class="mt-1 flex items-center text-sm text-gray-500">
+                  {{ i18n "hub_setup_deployment_kubernetes_description" . }}
+                </span>
               </div>
             </div>
             <i class="fas fa-check-circle text-primary" :class="deploymentType == 'kubernetes' || 'invisible'" aria-hidden="true"></i>
@@ -30,8 +38,12 @@
             <input type="radio" value="docker-compose" class="sr-only" x-model="deploymentType">
             <div class="flex-1 flex">
               <div class="flex flex-col">
-                <span class="block text-sm font-medium text-gray-900">Docker Compose</span>
-                <span class="mt-1 flex items-center text-sm text-gray-500">For easy testing with Docker Desktop</span>
+                <span class="block text-sm font-medium text-gray-900">
+                  Docker Compose
+                </span>
+                <span class="mt-1 flex items-center text-sm text-gray-500">
+                  {{ i18n "hub_setup_deployment_compose_description" . }}
+                </span>
               </div>
             </div>
             <i class="fas fa-check-circle text-primary" :class="deploymentType == 'docker-compose' || 'invisible'" aria-hidden="true"></i>
@@ -41,32 +53,44 @@
 
         <!-- KUBERNETES-SPECIFIC OPTIONS -->
         <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'kubernetes'" x-cloak>
-          <label for="k8sNamespace" class="block text-sm font-medium text-gray-700">Namespace</label>
+          <label for="k8sNamespace" class="block text-sm font-medium text-gray-700">
+            Namespace
+          </label>
           <input type="text" id="k8sNamespace" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.k8s.namespace">
-          <p class="mt-2 text-sm text-gray-500">Namespace for the Kubernetes resources.</p>
+          <p class="mt-2 text-sm text-gray-500">
+            {{ i18n "hub_setup_deployment_kubernetes_namespace_description" . }}
+          </p>
         </div>
 
         <div class="col-span-6" x-show="deploymentType == 'kubernetes'" x-cloak>
-          <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">Ingress</label>
+          <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">
+            Ingress
+          </label>
           <div class="mt-2 flex items-start">
             <div class="h-5 flex items-center">
               <input id="k8sIncludeIngress" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.k8s.includeIngress">
             </div>
             <div class="ml-3 text-sm">
-              <label for="k8sIncludeIngress" class="font-medium text-gray-700">Include Ingress object in Kubernetes config.</label>
+              <label for="k8sIncludeIngress" class="font-medium text-gray-700">
+                {{ i18n "hub_setup_deployment_kubernetes_ingress_include" . }}
+              </label>
             </div>
           </div>
         </div>
 
         <!-- DOCKER-COMPOSE-SPECIFIC OPTIONS -->
         <div class="col-span-6" x-show="deploymentType == 'docker-compose'" x-cloak>
-          <label class="block text-sm font-medium text-gray-700">nginx-proxy</label>
+          <label class="block text-sm font-medium text-gray-700">
+            nginx-proxy
+          </label>
           <div class="mt-2 flex items-start">
             <div class="h-5 flex items-center">
               <input id="composeIncludeNginxProxy" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeNginxProxy">
             </div>
             <div class="ml-3 text-sm">
-              <label for="composeIncludeNginxProxy" class="font-medium text-gray-700">Include nginx-proxy service in Docker Compose config.</label>
+              <label for="composeIncludeNginxProxy" class="font-medium text-gray-700">
+                Include nginx-proxy service in Docker Compose config.
+              </label>
             </div>
           </div>
           <div class="mt-2 flex items-start" x-show="cfg.compose.includeNginxProxy">
@@ -74,7 +98,9 @@
               <input id="composeEnforceSsl" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.enforceSsl">
             </div>
             <div class="ml-3 text-sm">
-              <label for="composeEnforceSsl" class="font-medium text-gray-700">Enforce SSL by defaulting to port 443 for HTTP traffic.</label>
+              <label for="composeEnforceSsl" class="font-medium text-gray-700">
+                Enforce SSL by defaulting to port 443 for HTTP traffic.
+              </label>
             </div>
           </div>
           <div class="mt-2 flex items-start" x-show="cfg.compose.includeNginxProxy" x-effect="cfg.compose.nginxProxyPort = cfg.compose.overrideNginxProxyPort ? cfg.compose.nginxProxyPort : HubSetup.getPort(cfg.hub.publicUrl)">
@@ -82,9 +108,14 @@
               <input id="composeOverrideNginxProxyPort" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.overrideNginxProxyPort">
             </div>
             <div class="ml-3 text-sm">
-              <label for="composeOverrideNginxProxyPort" class="font-medium text-gray-700">Override exposed port for reverse proxy.</label>
+              <label for="composeOverrideNginxProxyPort" class="font-medium text-gray-700">
+                Override exposed port for reverse proxy.
+              </label>
               <input type="number" class="mt-2 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.nginxProxyPort" :readonly="!cfg.compose.overrideNginxProxyPort">
-              <p x-show="cfg.compose.enforceSsl && cfg.compose.nginxProxyPort == 443" class="mt-2 text-sm text-red-600"><i class="fas fa-exclamation-circle fa-fw"></i> Use a different port.</p>
+              <p x-show="cfg.compose.enforceSsl && cfg.compose.nginxProxyPort == 443" class="mt-2 text-sm text-red-600">
+                <i class="fas fa-exclamation-circle fa-fw"></i>
+                Use a different port.
+              </p>
             </div>
           </div>
         </div>
@@ -95,8 +126,12 @@
       <!-- CRYPTOMATOR HUB SECTION -->
       <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
         <header class="md:col-span-1">
-          <h2 class="text-lg font-medium leading-6 text-gray-900">Cryptomator Hub</h2>
-          <p class="mt-1 text-sm text-gray-500">General information about your Hub installation.</p>
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_hub_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_hub_header_description" . }}
+          </p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
           <div class="col-span-6 lg:col-span-3">
@@ -106,26 +141,43 @@
               <option>latest</option>
               <option>develop</option>
             </select>
-            <p class="mt-2 text-sm text-gray-500">For production deployments, set the version explicitly.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_version_description" . }}
+            </p>
           </div>
           
           <div class="col-span-6 lg:col-span-4">
-            <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">Public Hub URL</label>
+            <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_hub_public_url" . }}
+            </label>
             <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl">
-            <p class="mt-2 text-sm text-gray-500">The full URL including protocol, port, and path of your Hub installation.</p>
-            <p x-show="HubSetup.containsPathname(cfg.hub.publicUrl)" class="mt-2 text-sm text-red-600"><i class="fas fa-exclamation-circle fa-fw"></i> Paths are currently not supported.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_public_url_description" . }}
+            </p>
+            <p x-show="HubSetup.containsPathname(cfg.hub.publicUrl)" class="mt-2 text-sm text-red-600">
+              <i class="fas fa-exclamation-circle fa-fw"></i>
+              {{ i18n "hub_setup_hub_public_url_unsupported_paths" . }}
+            </p>
           </div>
 
           <div class="col-span-6 lg:col-span-4">
-            <label for="hubAdminUser" class="block text-sm font-medium text-gray-700">Admin User</label>
+            <label for="hubAdminUser" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_hub_admin_user" . }}
+            </label>
             <input type="text" id="hubAdminUser" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.adminUser">
-            <p class="mt-2 text-sm text-gray-500">User name of the initial user that will be created.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_admin_user_description" . }}
+            </p>
           </div>
 
           <div class="col-span-6 lg:col-span-4">
-            <label for="hubAdminPw" class="block text-sm font-medium text-gray-700">Initial Admin Password</label>
+            <label for="hubAdminPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_hub_admin_pw" . }}
+            </label>
             <input type="password" id="hubAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.adminPw">
-            <p class="mt-2 text-sm text-gray-500">Temporary password used for generating your deployment. You should change this on your first login.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_admin_pw_description" . }}
+            </p>
           </div>
         </div>
       </section>
@@ -133,39 +185,61 @@
       <!-- KEYCLOAK SECTION -->
       <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
         <header class="md:col-span-1">
-          <h2 class="text-lg font-medium leading-6 text-gray-900">Keycloak</h2>
-          <p class="mt-1 text-sm text-gray-500">Cryptomator Hub depends on Keycloak for identity management.</p>
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_keycloak_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_keycloak_header_description" . }}
+          </p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
           <div class="col-span-6">
-            <label class="block text-sm font-medium text-gray-700">External Keycloak</label>
+            <label class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_external" . }}
+            </label>
             <div class="mt-2 flex items-start">
               <div class="h-5 flex items-center">
                 <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal">
               </div>
               <div class="ml-3 text-sm">
-                <label for="externalKeycloak" class="font-medium text-gray-700">Use an existing Keycloak installation.</label>
+                <label for="externalKeycloak" class="font-medium text-gray-700">
+                  {{ i18n "hub_setup_keycloak_external_use" . }}
+                </label>
               </div>
             </div>
           </div>
 
           <div class="col-span-6 lg:col-span-4" x-effect="cfg.keycloak.publicUrl = cfg.keycloak.useExternal ? cfg.keycloak.publicUrl : HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl)">
-            <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">Public Keycloak URL</label>
+            <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_public_url" . }}
+            </label>
             <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl" :readonly="!cfg.keycloak.useExternal">
-            <p class="mt-2 text-sm text-gray-500" x-show="cfg.keycloak.useExternal">The full URL including protocol, port, and path of your Keycloak installation.</p>
-            <p class="mt-2 text-sm text-gray-500" x-show="!cfg.keycloak.useExternal">Internal Keycloak container will be deployed to this URL.</p>
+            <p class="mt-2 text-sm text-gray-500" x-show="cfg.keycloak.useExternal">
+              {{ i18n "hub_setup_keycloak_public_url_external_description" . }}
+            </p>
+            <p class="mt-2 text-sm text-gray-500" x-show="!cfg.keycloak.useExternal">
+              {{ i18n "hub_setup_keycloak_public_url_internal_description" . }}
+            </p>
           </div>
 
           <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
-            <label for="keycloakAdminUser" class="block text-sm font-medium text-gray-700">Admin User</label>
+            <label for="keycloakAdminUser" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_admin_user" . }}
+            </label>
             <input type="text" id="keycloakAdminUser" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.adminUser">
-            <p class="mt-2 text-sm text-gray-500">User name of the initial user that will be created.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_keycloak_admin_user_description" . }}
+            </p>
           </div>
 
           <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
-            <label for="keycloakAdminPw" class="block text-sm font-medium text-gray-700">Initial Admin Password</label>
+            <label for="keycloakAdminPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_admin_pw" . }}
+            </label>
             <input type="password" id="keycloakAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.adminPw">
-            <p class="mt-2 text-sm text-gray-500">Temporary password used for generating your deployment. You should change this on your first login.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_keycloak_admin_pw_description" . }}
+            </p>
           </div>
         </div>
       </section>
@@ -173,26 +247,42 @@
       <!-- DATABASE SECTION -->
       <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
         <header class="md:col-span-1">
-          <h2 class="text-lg font-medium leading-6 text-gray-900">Database</h2>
-          <p class="mt-1 text-sm text-gray-500">Cryptomator Hub depends on PostgreSQL for persisting data.</p>
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_database_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_database_header_description" . }}
+          </p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
           <div class="col-span-6 lg:col-span-4">
-            <label for="dbAdminPw" class="block text-sm font-medium text-gray-700">Admin Password</label>
+            <label for="dbAdminPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_database_admin_pw" . }}
+            </label>
             <input type="password" id="dbAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.adminPw">
-            <p class="mt-2 text-sm text-gray-500">Superuser password for default <code>postgres</code> user.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_database_admin_pw_description" . }}
+            </p>
           </div>
 
           <div class="col-span-6 lg:col-span-4">
-            <label for="dbHubPw" class="block text-sm font-medium text-gray-700">Hub Password</label>
+            <label for="dbHubPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_database_hub_pw" . }}
+            </label>
             <input type="password" id="dbHubPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.hubPw">
-            <p class="mt-2 text-sm text-gray-500">Password for <code>hub</code> user with access to `hub` database.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_database_hub_pw_description" . }}
+            </p>
           </div>
 
           <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
-            <label for="dbKeycloakPw" class="block text-sm font-medium text-gray-700">Keycloak Password</label>
+            <label for="dbKeycloakPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_database_keycloak_pw" . }}
+            </label>
             <input type="password" id="dbKeycloakPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.keycloakPw">
-            <p class="mt-2 text-sm text-gray-500">Password for <code>keycloak</code> user with access to `keycloak` database.</p>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_database_keycloak_pw_description" . }}
+            </p>
           </div>
         </div>
       </section>
@@ -207,8 +297,12 @@
       <!-- OUTPUT -->
       <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
         <header class="md:col-span-1">
-          <h2 class="text-lg font-medium leading-6 text-gray-900">Config</h2>
-          <p class="mt-1 text-sm text-gray-500">Use this configuration to deploy Cryptomator Hub.</p>
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_output_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_output_header_description" . }}
+          </p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
           <div class="col-span-6" x-show="deploymentType == 'kubernetes'">
