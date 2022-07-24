@@ -350,7 +350,7 @@ EOF`;
       volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
       deploy: {
         resources: {
-          limits: {cpus: '1.0', memory: '150M'}
+          limits: {cpus: '1.0', memory: '256M'}
         }
       },
       healthcheck: {
@@ -381,7 +381,7 @@ EOF`;
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
         resources: {
-          limits: {cpus: '2.0', memory: '768M'}
+          limits: {cpus: '2.0', memory: '1024M'}
         }
       },
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
@@ -417,7 +417,7 @@ EOF`;
       image: `ghcr.io/cryptomator/hub:${this.cfg.hub.version}`,
       deploy: {
         resources: {
-          limits: {cpus: '0.5', memory: '256M'}
+          limits: {cpus: '1.0', memory: '512M'}
         }
       },
       ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`],
@@ -593,8 +593,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               imagePullPolicy: 'IfNotPresent', // TODO: remove in production
               ports: [{containerPort: 8080}],
               resources: {
-                limits: {cpu: '500m', memory: '256Mi'},
-                requests: {cpu: '100m', memory: '64Mi'},
+                requests: {cpu: '500m', memory: '256Mi'},
+                limits: {cpu: '1000m', memory: '512Mi'},
               },
               startupProbe: {
                 httpGet: {path: '/q/health/started', port: 8080},
@@ -642,8 +642,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               image: 'postgres:14-alpine',
               ports: [{containerPort: 5432}],
               resources: {
-                requests: {cpu: '100m', memory: '20Mi'},
-                limits: {cpu: '1000m', memory: '150Mi'},
+                requests: {cpu: '125m', memory: '32Mi'},
+                limits: {cpu: '1000m', memory: '256Mi'},
               },
               livenessProbe: {
                 exec: {command: ['pg_isready', '-U', 'postgres']},
@@ -722,12 +722,12 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
-                requests: {cpu: '100m', memory: '128Mi'},
-                limits: {cpu: '2000m', memory: '768Mi'},
+                requests: {cpu: '1000m', memory: '512Mi'},
+                limits: {cpu: '2000m', memory: '1024Mi'},
               },
               livenessProbe: {
                 httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
-                initialDelaySeconds: 25
+                initialDelaySeconds: 60
               },
               env: env,
               volumeMounts: [
