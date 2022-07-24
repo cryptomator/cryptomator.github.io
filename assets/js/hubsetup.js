@@ -248,7 +248,7 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         enabled: true,
         redirectUris: [
           'http://127.0.0.1/*',
-          this.cfg.hub.publicUrl + '/*'
+          new URL('*', HubSetup.urlWithTrailingSlash(this.cfg.hub.publicUrl)).href
         ],
         webOrigins: ['+'],
         bearerOnly: false,
