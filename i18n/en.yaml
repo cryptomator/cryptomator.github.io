@@ -42,8 +42,6 @@
   translation: "Payments are securely handled by Paddle."
 - id: android_getkey_checkout
   translation: "Checkout"
-- id: android_getkey_coupon
-  translation: "Use coupon code <code class=\"text-xs\">HOTSUMMER</code> during checkout to get 40% off!"
 
 - id: android_getkey_success
   translation: "Your payment was successful!"
