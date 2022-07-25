@@ -306,10 +306,10 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
   build() {
     return jsyaml.dump({
       services: {
-        'init-config': this.#getInitConfigService(),
-        'postgres': this.#getPostgresService(),
-        ...(!this.cfg.keycloak.useExternal) && { 'keycloak': this.#getKeycloakService() },
-        'hub': this.#getHubService()
+        'init-config': this.getInitConfigService(),
+        'postgres': this.getPostgresService(),
+        ...(!this.cfg.keycloak.useExternal) && { 'keycloak': this.getKeycloakService() },
+        'hub': this.getHubService()
       },
       volumes: {
         ...(!this.cfg.keycloak.useExternal) && { 'kc-config': {} },
@@ -319,7 +319,7 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
     }, {lineWidth: -1});
   }
 
-  #getInitConfigService() {
+  getInitConfigService() {
     let writeInitDbCmd = `cat >/db-init/initdb.sql << 'EOF'
 ${this.getInitDbSQL()}
 EOF`;
@@ -343,7 +343,7 @@ EOF`;
     }
   }
 
-  #getPostgresService() {
+  getPostgresService() {
     return {
       depends_on: {'init-config': {condition: 'service_completed_successfully'}},
       image: 'postgres:14-alpine',
@@ -366,7 +366,7 @@ EOF`;
     }
   }
 
-  #getKeycloakService() {
+  getKeycloakService() {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? 'start-dev --import-realm' // dev mode (no TLS required)
@@ -408,7 +408,7 @@ EOF`;
     }
   }
 
-  #getHubService() {
+  getHubService() {
     return {
       depends_on: {
         ...(!this.cfg.keycloak.useExternal) && { 'keycloak': {condition: 'service_healthy'} },
@@ -476,53 +476,53 @@ class KubernetesConfigBuilder extends ConfigBuilder {
 
     // Secrets
     result += '# Configuration\n'
-    result += this.#getSecrets();
+    result += this.getSecrets();
     result += '\n---\n'
 
     // PVCs
     result += '# PVCs\n'
-    result += this.#getPVCs();
+    result += this.getPVCs();
     result += '\n---\n'
 
     // Postgres Deployment
     result += '# Postgres\n'
-    result += this.#getPostgresDeployment();
+    result += this.getPostgresDeployment();
     result += '\n---\n'
 
     // Keycloak Deployment
     if (!this.cfg.keycloak.useExternal) {
       result += '# Keycloak\n'
-      result += this.#getKeycloakDeployment();
+      result += this.getKeycloakDeployment();
       result += '\n---\n'
     }
 
     // Hub Deployment
     result += '# Cryptomator Hub\n'
-    result += this.#getHubDeployment();
+    result += this.getHubDeployment();
     result += '\n---\n'
 
     // Services
     result += '# Services \n'
-    result += this.#getHubService();
+    result += this.getHubService();
     result += '\n---\n'
     if (!this.cfg.keycloak.useExternal) {
-      result += this.#getKeycloakService();
+      result += this.getKeycloakService();
       result += '\n---\n'
     }
-    result += this.#getPostgresService();
+    result += this.getPostgresService();
     result += '\n---\n'
 
     // Ingress
     if (this.cfg.k8s.includeIngress) {
       result += '# Ingress\n'
-      result += this.#getIngress();
+      result += this.getIngress();
       result += '\n---\n'
     }
 
     return result;
   }
 
-  #getSecrets() {
+  getSecrets() {
     let realmCfg = this.getRealmConfig();
     let configMap = {
       apiVersion: 'v1',
@@ -544,7 +544,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(configMap, {lineWidth: -1});
   }
 
-  #getPVCs() {
+  getPVCs() {
     let pvcs = {
       apiVersion: 'v1',
       kind: 'PersistentVolumeClaim',
@@ -559,7 +559,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(pvcs, {lineWidth: -1});
   }
 
-  #getHubDeployment() {
+  getHubDeployment() {
     let deployment = {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
@@ -626,7 +626,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
   }
 
   // TODO: change to statefulset
-  #getPostgresDeployment() {
+  getPostgresDeployment() {
     let deployment = {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
@@ -676,7 +676,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(deployment, {lineWidth: -1});
   }
 
-  #getKeycloakDeployment() {
+  getKeycloakDeployment() {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
@@ -749,7 +749,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(deployment, {lineWidth: -1});
   }
 
-  #getHubService() {
+  getHubService() {
     let service = {
       apiVersion: 'v1',
       kind: 'Service',
@@ -764,7 +764,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(service, {lineWidth: -1});
   }
 
-  #getPostgresService() {
+  getPostgresService() {
     let service = {
       apiVersion: 'v1',
       kind: 'Service',
@@ -779,7 +779,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(service, {lineWidth: -1});
   }
 
-  #getKeycloakService() {
+  getKeycloakService() {
     let service = {
       apiVersion: 'v1',
       kind: 'Service',
@@ -794,7 +794,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     return jsyaml.dump(service, {lineWidth: -1});
   }
 
-  #getIngress() {
+  getIngress() {
     let ingress =  {
       apiVersion: 'networking.k8s.io/v1',
       kind: 'Ingress',
