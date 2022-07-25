@@ -1,0 +1,293 @@
+{{ define "main" }}
+  <div class="container space-y-6 py-16" x-data="{cfg: HubSetup.defaultConfig(), deploymentType: '', output: ''}" x-init="output = HubSetup.generateOutput(cfg); $watch('cfg', _ => output = HubSetup.generateOutput(cfg))">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none">
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    <!-- DEPLOYMENT SECTION -->
+    <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+      <header class="md:col-span-1">
+        <h2 class="text-lg font-medium leading-6 text-gray-900">
+          {{ i18n "hub_setup_deployment_header_title" . }}
+        </h2>
+        <p class="mt-1 text-sm text-gray-500">
+          {{ i18n "hub_setup_deployment_header_description" . }}
+        </p>
+      </header>
+      <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+        <div class="col-span-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <!-- KUBERNETES -->
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer" :class="deploymentType == 'kubernetes' ? 'border-transparent' : 'border-gray-300'">
+            <input type="radio" value="kubernetes" class="sr-only" x-model="deploymentType" @click="cfg.hub.publicUrl = 'https://domain.tld'">
+            <div class="flex-1 flex">
+              <div class="flex flex-col">
+                <span class="block text-sm font-medium text-gray-900">
+                  Kubernetes
+                </span>
+                <span class="mt-1 flex items-center text-sm text-gray-500">
+                  {{ i18n "hub_setup_deployment_kubernetes_description" . }}
+                </span>
+              </div>
+            </div>
+            <i class="fas fa-check-circle text-primary" :class="deploymentType == 'kubernetes' || 'invisible'" aria-hidden="true"></i>
+            <div class="absolute -inset-px rounded border pointer-events-none" :class="deploymentType == 'kubernetes' ? 'border-primary' : 'border-transparent'" aria-hidden="true"></div>
+          </label>
+
+          <!-- DOCKER COMPOSE -->
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer" :class="deploymentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
+            <input type="radio" value="docker-compose" class="sr-only" x-model="deploymentType" @click="cfg.keycloak.publicUrl = 'http://localhost:31000'; cfg.hub.publicUrl = 'http://localhost:30000'">
+            <div class="flex-1 flex">
+              <div class="flex flex-col">
+                <span class="block text-sm font-medium text-gray-900">
+                  Docker Compose
+                </span>
+                <span class="mt-1 flex items-center text-sm text-gray-500">
+                  {{ i18n "hub_setup_deployment_compose_description" . }}
+                </span>
+              </div>
+            </div>
+            <i class="fas fa-check-circle text-primary" :class="deploymentType == 'docker-compose' || 'invisible'" aria-hidden="true"></i>
+            <div class="absolute -inset-px rounded border pointer-events-none" :class="deploymentType == 'docker-compose' ? 'border-primary' : 'border-transparent'" aria-hidden="true"></div>
+          </label>
+        </div>
+
+        <!-- KUBERNETES-SPECIFIC OPTIONS -->
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'kubernetes'" x-cloak>
+          <label for="k8sNamespace" class="block text-sm font-medium text-gray-700">
+            Namespace
+          </label>
+          <input type="text" id="k8sNamespace" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.k8s.namespace">
+          <p class="mt-2 text-sm text-gray-500">
+            {{ i18n "hub_setup_deployment_kubernetes_namespace_description" . }}
+          </p>
+        </div>
+
+        <div class="col-span-6" x-show="deploymentType == 'kubernetes'" x-cloak>
+          <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">
+            Ingress
+          </label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="k8sIncludeIngress" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.k8s.includeIngress">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="k8sIncludeIngress" class="font-medium text-gray-700">
+                {{ i18n "hub_setup_deployment_kubernetes_ingress_include" . }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div x-show="deploymentType != ''" class="space-y-6" x-cloak>
+      <!-- CRYPTOMATOR HUB SECTION -->
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_hub_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_hub_header_description" . }}
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6 lg:col-span-3">
+            <label for="hubVersion" class="block text-sm font-medium text-gray-700">Version</label>
+            <select id="hubVersion" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.version">
+              <option x-text="HubSetup.LATEST_VERSION"></option>
+              <option>latest</option>
+              <option>develop</option>
+            </select>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_version_description" . }}
+            </p>
+          </div>
+          
+          <div class="col-span-6 lg:col-span-4">
+            <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_hub_public_url" . }}
+            </label>
+            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_public_url_description" . }}
+            </p>
+            <p x-show="HubSetup.containsPathname(cfg.hub.publicUrl)" class="mt-2 text-sm text-red-600">
+              <i class="fas fa-exclamation-circle fa-fw"></i>
+              {{ i18n "hub_setup_hub_public_url_unsupported_paths" . }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="hubAdminUser" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_hub_admin_user" . }}
+            </label>
+            <input type="text" id="hubAdminUser" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.adminUser">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_admin_user_description" . }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="hubAdminPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_hub_admin_pw" . }}
+            </label>
+            <input type="password" id="hubAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.adminPw">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_hub_admin_pw_description" . }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEYCLOAK SECTION -->
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_keycloak_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_keycloak_header_description" . }}
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6">
+            <label class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_external" . }}
+            </label>
+            <div class="mt-2 flex items-start">
+              <div class="h-5 flex items-center">
+                <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="externalKeycloak" class="font-medium text-gray-700">
+                  {{ i18n "hub_setup_keycloak_external_use" . }}
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-effect="cfg.keycloak.publicUrl = deploymentType == 'kubernetes' && !cfg.keycloak.useExternal ? HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl) : cfg.keycloak.publicUrl">
+            <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_public_url" . }}
+            </label>
+            <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl" :readonly="deploymentType == 'kubernetes' && !cfg.keycloak.useExternal">
+            <p class="mt-2 text-sm text-gray-500" x-show="deploymentType != 'kubernetes' || cfg.keycloak.useExternal">
+              {{ i18n "hub_setup_keycloak_public_url_external_description" . }}
+            </p>
+            <p class="mt-2 text-sm text-gray-500" x-show="deploymentType == 'kubernetes' && !cfg.keycloak.useExternal">
+              {{ i18n "hub_setup_keycloak_public_url_internal_description" . }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="keycloakAdminUser" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_admin_user" . }}
+            </label>
+            <input type="text" id="keycloakAdminUser" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.adminUser">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_keycloak_admin_user_description" . }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="keycloakAdminPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_admin_pw" . }}
+            </label>
+            <input type="password" id="keycloakAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.adminPw">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_keycloak_admin_pw_description" . }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DATABASE SECTION -->
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_database_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_database_header_description" . }}
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6 lg:col-span-4">
+            <label for="dbAdminPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_database_admin_pw" . }}
+            </label>
+            <input type="password" id="dbAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.adminPw">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_database_admin_pw_description" . }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="dbHubPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_database_hub_pw" . }}
+            </label>
+            <input type="password" id="dbHubPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.hubPw">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_database_hub_pw_description" . }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="dbKeycloakPw" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_database_keycloak_pw" . }}
+            </label>
+            <input type="password" id="dbKeycloakPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.keycloakPw">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_database_keycloak_pw_description" . }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center">
+        <div class="fa-stack text-2xl text-primary">
+          <i class="far fa-circle fa-stack-2x"></i>
+          <i class="fas fa-chevron-double-down fa-stack-1x"></i>
+        </div>
+      </div>
+
+      <!-- OUTPUT -->
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_setup_output_header_title" . }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_setup_output_header_description" . }}
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6" x-show="deploymentType == 'kubernetes'">
+            <label for="k8sOutput" class="block text-sm font-medium text-gray-700">k8s-hub.yml</label>
+            <textarea id="k8sOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.k8s" readonly></textarea>
+          </div>
+          <div class="col-span-6" x-show="deploymentType == 'docker-compose'">
+            <label for="composeOutput" class="block text-sm font-medium text-gray-700">docker-compose.yml</label>
+            <textarea id="composeOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.compose" readonly></textarea>
+          </div>
+          <div class="col-span-6" x-show="cfg.keycloak.useExternal">
+            <label for="realmOutput" class="block text-sm font-medium text-gray-700">realm.json</label>
+            <textarea id="realmOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.realm" readonly></textarea>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  {{ $jsYaml := resources.Get "js/js-yaml/js-yaml.min.js" | fingerprint }}
+  <script type="text/javascript" src="{{ $jsYaml.RelPermalink }}" integrity="{{ $jsYaml.Data.Integrity }}"></script>
+
+  {{ if .Site.IsServer }}
+    {{ $setupJs := resources.Get "js/hubsetup.js" }}
+    <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $setupJs := resources.Get "js/hubsetup.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" integrity="{{ $setupJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

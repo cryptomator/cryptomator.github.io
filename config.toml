@@ -49,6 +49,10 @@ enableemoji = true
     source = "node_modules/lazysizes"
     target = "assets/js/lazysizes"
 
+  [[module.mounts]]
+    source = "node_modules/js-yaml/dist"
+    target = "assets/js/js-yaml"
+
 [markup.goldmark.renderer]
 unsafe = true
 

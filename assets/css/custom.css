@@ -13,7 +13,6 @@
 .btn:hover,
 .btn:focus {
   @apply no-underline outline-none;
-  
 }
 
 .btn:disabled,
@@ -60,6 +59,25 @@
 .btn-outline-gray-500:hover,
 .btn-outline-gray-500:focus {
   @apply border-gray-500 text-gray-500;
+}
+
+.text-btn {
+    @apply no-underline;
+}
+
+.text-btn:hover,
+.text-btn:focus {
+    @apply underline;
+}
+
+.text-btn:disabled,
+.text-btn:hover:disabled,
+.text-btn:focus:disabled {
+    @apply cursor-not-allowed no-underline text-gray-300;
+}
+
+.text-btn-primary {
+    @apply text-primary;
 }
 
 .StripeElement {
