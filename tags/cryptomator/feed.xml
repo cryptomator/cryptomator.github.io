@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/cryptomator/</link>
     </image>
-    <lastBuildDate>Mon, 25 Jul 2022 12:21:25 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jul 2022 12:29:02 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -163,7 +163,7 @@
 &lt;p&gt;Browsers are the gateway to the Internet, so it is all the more important to protect them properly. A first step towards more security while surfing is to always keep the application up to date. This way, security gaps can be constantly closed.&lt;/p&gt;
 &lt;p&gt;In addition, plug-ins to protect against phishing and malware can increase the security of your browser. These can be activated relatively easy with most providers.&lt;/p&gt;
 &lt;h2 id=&#34;5-secure-on-the-go-in-the-cloud&#34;&gt;5. Secure on the go in the cloud&lt;/h2&gt;
-&lt;p&gt;Uploading your own data to the cloud can be very handy, for example, if you want to quickly share pictures or expand your own storage space. But when the data is uploaded to the cloud &amp;ldquo;just like that&amp;rdquo;, it is not safe from strangers&#39; eyes. The reason is quite simple; the data is unprotected in the cloud; once someone has gained access, they can simply access all the data without any obstacles. This can be easily avoided; Cryptomator puts your data in the cloud in a secure safe and thus protects it from foreign eyes.&lt;/p&gt;
+&lt;p&gt;Uploading your own data to the cloud can be very handy, for example, if you want to quickly share pictures or expand your own storage space. But when the data is uploaded to the cloud &amp;ldquo;just like that&amp;rdquo;, it is not safe from strangers&amp;rsquo; eyes. The reason is quite simple; the data is unprotected in the cloud; once someone has gained access, they can simply access all the data without any obstacles. This can be easily avoided; Cryptomator puts your data in the cloud in a secure safe and thus protects it from foreign eyes.&lt;/p&gt;
 &lt;p&gt;You can read how this works in our &lt;a href=&#34;https://cryptomator.org/encrypt-dropbox/&#34;&gt;article on encrypting Dropbox&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You want to encrypt your cloud with Cryptomator? &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Download here&lt;/a&gt;.&lt;/p&gt;
 </description>

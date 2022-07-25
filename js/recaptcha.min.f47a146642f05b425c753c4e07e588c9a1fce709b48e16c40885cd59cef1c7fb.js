@@ -1,1 +1,0 @@
-"use strict";const RECAPTCHA_SITEKEY='6LfbD3sUAAAAAMEH2DZWFtyDOS5TXB38fj85coqv';function loadRecaptcha(a,b){window.grecaptchaCallback=()=>{$(a).empty(),grecaptcha.render(a,{sitekey:RECAPTCHA_SITEKEY,'data-size':'compact',callback:b})},$.getScript('https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&render=explicit')}

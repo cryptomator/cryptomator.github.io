@@ -1,0 +1,1 @@
+function guessDownloadTab(){return navigator.appVersion.indexOf("iPhone")!==-1||navigator.appVersion.indexOf("iPad")!==-1||navigator.appVersion.indexOf("iPod")!==-1?"ios":navigator.appVersion.indexOf("Android")!==-1?"android":navigator.appVersion.indexOf("Linux")!==-1||navigator.appVersion.indexOf("X11")!==-1?"linux":navigator.appVersion.indexOf("Mac")!==-1?"mac":"win"}
