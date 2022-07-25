@@ -810,6 +810,30 @@
                 href="https://cryptomator.org/de/hub/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/hub/billing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/hub/billing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/hub/billing/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/hub/setup/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/hub/setup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/hub/setup/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/coop/cyberduck/</loc>
     <xhtml:link
                 rel="alternate"
