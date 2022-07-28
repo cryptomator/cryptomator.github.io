@@ -370,13 +370,13 @@ EOF`;
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? 'start-dev --import-realm' // dev mode (no TLS required)
-      : 'start --auto-build --import-realm'; // prod mode (requires a proper TLS termination proxy)
+      : 'start --import-realm'; // prod mode (requires a proper TLS termination proxy)
     return {
       depends_on: {
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'quay.io/keycloak/keycloak:18.0.0',
+      image: 'quay.io/keycloak/keycloak:19.0',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -680,7 +680,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
-      : ['/opt/keycloak/bin/kc.sh', 'start', '--auto-build', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
+      : ['/opt/keycloak/bin/kc.sh', 'start', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
     let env = [
       {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
       {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
@@ -718,7 +718,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'quay.io/keycloak/keycloak:18.0.0',
+              image: 'quay.io/keycloak/keycloak:19.0',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
