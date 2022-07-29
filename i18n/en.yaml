@@ -363,6 +363,8 @@
   translation: "Email address"
 - id: hub_billing_checkout_standard_instruction
   translation: "Payments are securely handled by Paddle."
+- id: hub_billing_checkout_coupon
+  translation: "Use coupon code <code>HUB25</code> during checkout to get 25% off!"
 - id: hub_billing_checkout_standard_submit
   translation: "Checkout"
 
