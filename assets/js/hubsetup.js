@@ -2,7 +2,7 @@
 
 class HubSetup {
 
-  static LATEST_VERSION = '0.1.0';
+  static LATEST_VERSION = '1.0.0-beta1';
 
   /**
    * The pre-filled config values before being customized by the user
