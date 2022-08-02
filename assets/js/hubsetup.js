@@ -441,6 +441,7 @@ EOF`;
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
+        ...(this.cfg.keycloak.useExternal) && { QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE: `default-src 'self' ${this.cfg.keycloak.publicUrl}; object-src 'none'; child-src 'self'; frame-ancestors 'none'` }
       }
     }
   }
@@ -616,6 +617,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
+                ...(this.cfg.keycloak.useExternal ? [{name: 'QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE', value: `default-src 'self' ${this.cfg.keycloak.publicUrl}; object-src 'none'; child-src 'self'; frame-ancestors 'none'`}] : [])
               ]
             }]
           }
