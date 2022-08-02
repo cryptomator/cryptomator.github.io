@@ -381,7 +381,7 @@ EOF`;
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
         resources: {
-          limits: {cpus: '2.0', memory: '1024M'}
+          limits: {cpus: '1.0', memory: '1024M'}
         }
       },
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
@@ -594,7 +594,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               imagePullPolicy: 'IfNotPresent', // TODO: remove in production
               ports: [{containerPort: 8080}],
               resources: {
-                requests: {cpu: '500m', memory: '256Mi'},
+                requests: {cpu: '25m', memory: '256Mi'},
                 limits: {cpu: '1000m', memory: '512Mi'},
               },
               startupProbe: {
@@ -644,7 +644,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               image: 'postgres:14-alpine',
               ports: [{containerPort: 5432}],
               resources: {
-                requests: {cpu: '125m', memory: '32Mi'},
+                requests: {cpu: '25m', memory: '64Mi'},
                 limits: {cpu: '1000m', memory: '256Mi'},
               },
               livenessProbe: {
@@ -724,8 +724,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
-                requests: {cpu: '1000m', memory: '512Mi'},
-                limits: {cpu: '2000m', memory: '1024Mi'},
+                requests: {cpu: '25m', memory: '512Mi'},
+                limits: {cpu: '1000m', memory: '1024Mi'},
               },
               livenessProbe: {
                 httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
