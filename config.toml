@@ -83,11 +83,11 @@ unsafe = true
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.13/Cryptomator-1.6.13-arm64.dmg.asc"
       checksum = "00464909e421d08a33b333b21336931acbadf6fbd563575633d4c10b058aef12"
     [params.releases.appimage]
-      version = "1.6.11"
-      filename = "cryptomator-1.6.11-x86_64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.11/cryptomator-1.6.11-x86_64.AppImage"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.11/cryptomator-1.6.11-x86_64.AppImage.asc"
-      checksum = "9d754f1313d2af96d0b7419d3914c2a030326d258987213bbf519050c64e406b"
+      version = "1.6.12"
+      filename = "cryptomator-1.6.12-x86_64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.12/cryptomator-1.6.12-x86_64.AppImage"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.6.12/cryptomator-1.6.12-x86_64.AppImage.asc"
+      checksum = "940efdad4464dcc169bd84d6d99bee5451961a66aac5bd17ad1843c3db22b01f"
     [params.releases.android]
       version = "1.7.5"
       filename = "Cryptomator-1.7.5.apk"
