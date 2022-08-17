@@ -386,7 +386,7 @@ EOF`;
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
-        interval: '30s',
+        interval: '60s',
         timeout: '3s',
       },
       restart: 'unless-stopped',
@@ -728,7 +728,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               },
               livenessProbe: {
                 httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
-                initialDelaySeconds: 60
+                initialDelaySeconds: 120,
+                periodSeconds: 60
               },
               env: env,
               volumeMounts: [
