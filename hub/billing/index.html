@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.2299d4422a8efac36ab116561e933416c9e12bbeb8846d803833e77f88647cce.css" integrity="sha256-IpnUQiqO&#43;sNqsRZWHpM0FsnhK764hG2AODPnf4hkfM4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.a0917bb380d2f928212339c1babbabadcfd1258d5ed099b92a550a1fa76f2f43.css" integrity="sha256-oJF7s4DS&#43;SghIznBururrc/RJY1e0Jm5KlUKH6dvL0M=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -215,7 +215,7 @@
                   Number of Seats: <span x-text="subscriptionData.details.quantity"></span>
                 </p>
                 <p class="mt-2">
-                  <button :disabled="!subscriptionData.details.next_payment || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-btn-primary">
+                  <button :disabled="!subscriptionData.details.next_payment || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-primary">
                     <i class="fas fa-arrows-v fa-fw"></i>
                     Change Seats
                   </button>
@@ -242,11 +242,11 @@
                   </div>
                 </template>
                 <p class="mt-2">
-                  <button x-show="subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-btn-primary">
+                  <button x-show="subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-primary">
                     <i class="fas fa-pause fa-fw"></i>
                     Pause Subscription
                   </button>
-                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-btn-primary">
+                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
                     <i class="fas fa-play fa-fw"></i>
                     Resume Subscription
                   </button>
@@ -275,7 +275,7 @@
                   –
                 </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('en')" class="text-xs text-btn text-btn-primary">
+                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('en')" class="text-xs text-btn text-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     Update Payment Method
                   </button>
@@ -462,8 +462,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-517324698" x-model="acceptTerms" />
-<label for="id-517324698">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-214658397" x-model="acceptTerms" />
+<label for="id-214658397">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
