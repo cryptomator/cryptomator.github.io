@@ -62,22 +62,18 @@
 }
 
 .text-btn {
-    @apply no-underline;
+  @apply no-underline;
 }
 
 .text-btn:hover,
 .text-btn:focus {
-    @apply underline;
+  @apply underline;
 }
 
 .text-btn:disabled,
 .text-btn:hover:disabled,
 .text-btn:focus:disabled {
-    @apply cursor-not-allowed no-underline text-gray-300;
-}
-
-.text-btn-primary {
-    @apply text-primary;
+  @apply cursor-not-allowed no-underline text-gray-300;
 }
 
 .StripeElement {

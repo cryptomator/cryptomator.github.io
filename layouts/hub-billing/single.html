@@ -55,7 +55,7 @@
                   {{ i18n "hub_billing_manage_status_quantity_description" . }}: <span x-text="subscriptionData.details.quantity"></span>
                 </p>
                 <p class="mt-2">
-                  <button :disabled="!subscriptionData.details.next_payment || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-btn-primary">
+                  <button :disabled="!subscriptionData.details.next_payment || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-primary">
                     <i class="fas fa-arrows-v fa-fw"></i>
                     {{ i18n "hub_billing_manage_status_quantity_action" . }}
                   </button>
@@ -82,11 +82,11 @@
                   </div>
                 </template>
                 <p class="mt-2">
-                  <button x-show="subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-btn-primary">
+                  <button x-show="subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-primary">
                     <i class="fas fa-pause fa-fw"></i>
                     {{ i18n "hub_billing_manage_next_payment_pause_action" . }}
                   </button>
-                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-btn-primary">
+                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
                     <i class="fas fa-play fa-fw"></i>
                     {{ i18n "hub_billing_manage_next_payment_restart_action" . }}
                   </button>
@@ -115,7 +115,7 @@
                   –
                 </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-btn-primary">
+                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     {{ i18n "hub_billing_manage_payment_info_update_action" . }}
                   </button>
