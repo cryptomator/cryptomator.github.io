@@ -589,7 +589,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             containers: [{
               name: 'cryptomator-hub',
               image: `ghcr.io/cryptomator/hub:${this.cfg.hub.version}`,
-              imagePullPolicy: 'IfNotPresent', // TODO: remove in production
+              imagePullPolicy: 'Always',
               ports: [{containerPort: 8080}],
               resources: {
                 requests: {cpu: '25m', memory: '256Mi'},
