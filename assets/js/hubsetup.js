@@ -189,6 +189,7 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
       id: 'cryptomator', // TODO generate UUID?
       realm: 'cryptomator', // TODO make configurable?
       displayName: 'Cryptomator Hub', // TODO make configurable?
+      loginTheme: 'cryptomator',
       enabled: true,
       sslRequired: 'external',
       defaultRole: {
@@ -368,13 +369,13 @@ EOF`;
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? 'start-dev --import-realm' // dev mode (no TLS required)
-      : 'start --import-realm'; // prod mode (requires a proper TLS termination proxy)
+      : 'start --optimized --import-realm'; // prod mode (requires a proper TLS termination proxy)
     return {
       depends_on: {
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'quay.io/keycloak/keycloak:19.0',
+      image: 'ghcr.io/cryptomator/keycloak:19.0.1',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -385,7 +386,7 @@ EOF`;
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
-        interval: '10s',
+        interval: '60s',
         timeout: '3s',
       },
       restart: 'unless-stopped',
@@ -680,7 +681,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
-      : ['/opt/keycloak/bin/kc.sh', 'start', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
+      : ['/opt/keycloak/bin/kc.sh', 'start', '--optimized', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
     let env = [
       {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
       {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
@@ -718,7 +719,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'quay.io/keycloak/keycloak:19.0',
+              image: 'ghcr.io/cryptomator/keycloak:19.0.1',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
@@ -727,7 +728,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               },
               livenessProbe: {
                 httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
-                initialDelaySeconds: 60
+                initialDelaySeconds: 120,
+                periodSeconds: 60
               },
               env: env,
               volumeMounts: [
