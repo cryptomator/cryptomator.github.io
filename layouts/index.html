@@ -114,26 +114,15 @@
     <section class="container text-center py-12 md:py-16 lg:py-20">
       <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-8 md:mb-12 lg:mb-16">{{ i18n "home_reception_title" . }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {{ $data := index $.Site.Data $.Site.Language.Lang }}
+        {{ range $data.reception }}
         <div>
-          <a href="https://www.hostingadvice.com/blog/cryptomator-brings-open-source-encryption-to-the-cloud-storage-realm/" target="_blank" rel="noopener">
-            <img data-src="/img/home/3rdparty/hostingadvice-logo.png" class="lazyload object-contain h-10 w-full mb-6" alt="HostingAdvice Logo"/>
+          <a href="{{ .URL }}" target="_blank" rel="noopener">
+            <img data-src="{{ .LogoURL }}" class="lazyload object-contain h-10 w-full mb-6" alt="{{ .LogoAlt }}"/>
           </a>
-          <p>Skymatic's Cryptomator empowers cloud storage users to protect themselves against unauthorized access through free, transparent, client-side encryption.</p>
+          <p>{{ replace .Quote "\n" "<br/>" | safeHTML }}</p>
         </div>
-        
-        <div>
-          <a href="https://thenextweb.com/apple/2016/03/09/new-ios-desktop-app-cryptomator-encrypts-cloud-files-locally-upload/" target="_blank" rel="noopener">
-            <img data-src="/img/home/3rdparty/tnw-logo.png" class="lazyload object-contain h-10 w-full mb-6" alt="TNW Logo"/>
-          </a>
-          <p>Cryptomator is a 'pay what you want' proposition. I've been using it for quite some time, and while it creates another layer between your files and cloud storage, it's a handy tool if you're serious about keeping your files safe from prying eyes.</p>
-        </div>
-        
-        <div>
-          <a href="https://www.cardrates.com/news/cryptomator-secures-sensitive-financial-data/" target="_blank" rel="noopener">
-            <img data-src="/img/home/3rdparty/cardrates-logo.png" class="lazyload object-contain h-10 w-full mb-6" alt="CardRates Logo"/>
-          </a>
-          <p>Cryptomator is more accessible than other solutions because its desktop version is free, and it only charges a small fee for using its mobile app. And even if a hacker accesses a user's vault, Cryptomator's encrypted files are useless without the proper key to decode them.</p>
-        </div>
+        {{ end }}
       </div>
     </section>
 
