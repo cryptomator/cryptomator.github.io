@@ -369,7 +369,7 @@ EOF`;
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? 'start-dev --import-realm' // dev mode (no TLS required)
-      : 'start --import-realm'; // prod mode (requires a proper TLS termination proxy)
+      : 'start --optimized --import-realm'; // prod mode (requires a proper TLS termination proxy)
     return {
       depends_on: {
         'init-config': {condition: 'service_completed_successfully'},
@@ -681,7 +681,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
     let startCmd = devMode
       ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
-      : ['/opt/keycloak/bin/kc.sh', 'start', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
+      : ['/opt/keycloak/bin/kc.sh', 'start', '--optimized', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
     let env = [
       {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
       {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
