@@ -189,7 +189,7 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
       id: 'cryptomator', // TODO generate UUID?
       realm: 'cryptomator', // TODO make configurable?
       displayName: 'Cryptomator Hub', // TODO make configurable?
-      loginTheme: 'cryptomator', // TODO: requires image from ghcr.io/cryptomator/keycloak - what if we use this realm config with a different image?
+      loginTheme: 'cryptomator',
       enabled: true,
       sslRequired: 'external',
       defaultRole: {
