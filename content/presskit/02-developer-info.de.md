@@ -3,11 +3,11 @@ title: Über Skymatic
 anchor: developer-info
 weight: 2
 ---
-Das Bonner Startup Skymatic befasst sich mit dem Thema „Digitale Selbstverteidigung für alle“. Mit der Software Cryptomator hilft Skymatic allen Nutzern von Cloud-Speichern dabei, die Sicherheit der eigenen Daten selbst in die Hand zu nehmen.
+Skymatic GmbH, ein Startup aus Bonn, befasst sich mit dem Thema „Digitale Selbstverteidigung für alle“. Mit der Software Cryptomator hilft Skymatic allen Nutzern von Cloud-Speichern dabei, die Sicherheit der eigenen Daten selbst in die Hand zu nehmen.
 
 Skymatic ist Unterzeichner der _Charta zur Stärkung der vertrauenswürdigen Kommunikation_ sowie Mitglied der _Allianz für Cyber-Sicherheit_ des BSI.
 
-Weitere Informationen zum Team gibt es {{< extlink "https://skymatic.de/team/" "auf der Website von Skymatic" >}}.
+Weitere Informationen gibt es {{< extlink "https://skymatic.de/" "auf der Website von Skymatic" >}}.
 
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 lg:w-1/2">
