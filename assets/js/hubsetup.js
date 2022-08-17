@@ -189,6 +189,7 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
       id: 'cryptomator', // TODO generate UUID?
       realm: 'cryptomator', // TODO make configurable?
       displayName: 'Cryptomator Hub', // TODO make configurable?
+      loginTheme: 'cryptomator', // TODO: requires image from ghcr.io/cryptomator/keycloak - what if we use this realm config with a different image?
       enabled: true,
       sslRequired: 'external',
       defaultRole: {
@@ -374,7 +375,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'quay.io/keycloak/keycloak:19.0',
+      image: 'ghcr.io/cryptomator/keycloak:19.0.1',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -385,7 +386,7 @@ EOF`;
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
-        interval: '10s',
+        interval: '30s',
         timeout: '3s',
       },
       restart: 'unless-stopped',
@@ -718,7 +719,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'quay.io/keycloak/keycloak:19.0',
+              image: 'ghcr.io/cryptomator/keycloak:19.0.1',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
