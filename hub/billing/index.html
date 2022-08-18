@@ -45,6 +45,9 @@
       <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
         <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
       </li>
+      <li class="flex items-center lg:mx-2 border-b-2 border-primary hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+      </li>
       <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
         <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
           <span>Support Us</span>
@@ -106,6 +109,7 @@
   
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="md:hidden">
     <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
     
     <hr class="border-primary my-2"/>
 
@@ -462,8 +466,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-714623859" x-model="acceptTerms" />
-<label for="id-714623859">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-748653192" x-model="acceptTerms" />
+<label for="id-748653192">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">

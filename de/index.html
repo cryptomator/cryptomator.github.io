@@ -46,6 +46,9 @@
       <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-white">
         <a class="p-2 hover:no-underline" href="/de/downloads/">Downloads</a>
       </li>
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-white">
+        <a class="p-2 hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+      </li>
       <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
         <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
           <span>Unterstütze uns</span>
@@ -107,6 +110,7 @@
   
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="md:hidden">
     <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
     
     <hr class="border-primary my-2"/>
 
@@ -168,7 +172,8 @@
       <div class="w-full md:w-2/3 lg:w-3/5">
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch.</p>
-        <a href="/de/downloads/" role="button" class="btn btn-primary text-lg px-8">Jetzt herunterladen</a>
+        <a href="/de/downloads/" role="button" class="btn btn-primary text-lg px-8 mb-4">Jetzt herunterladen</a>
+        <p><a href="/de/hub/" role="button" class="text-btn text-white">Arbeitest du in einem Team? Hier geht&#39;s zu Cryptomator Hub!</a></p>
       </div>
     </header>
   </section>
