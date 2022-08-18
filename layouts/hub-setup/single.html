@@ -18,7 +18,7 @@
         <div class="col-span-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <!-- KUBERNETES -->
           <label class="relative bg-white border rounded p-4 flex cursor-pointer" :class="deploymentType == 'kubernetes' ? 'border-transparent' : 'border-gray-300'">
-            <input type="radio" value="kubernetes" class="sr-only" x-model="deploymentType" @click="cfg.hub.publicUrl = 'https://domain.tld'">
+            <input type="radio" value="kubernetes" class="sr-only" x-model="deploymentType" @click="cfg.hub.publicUrl = 'https://domain.tld'; cfg.keycloak.publicUrl = HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl)">
             <div class="flex-1 flex">
               <div class="flex flex-col">
                 <span class="block text-sm font-medium text-gray-900">
@@ -35,7 +35,7 @@
 
           <!-- DOCKER COMPOSE -->
           <label class="relative bg-white border rounded p-4 flex cursor-pointer" :class="deploymentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
-            <input type="radio" value="docker-compose" class="sr-only" x-model="deploymentType" @click="cfg.keycloak.publicUrl = 'http://localhost:31000'; cfg.hub.publicUrl = 'http://localhost:30000'">
+            <input type="radio" value="docker-compose" class="sr-only" x-model="deploymentType" @click="cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'">
             <div class="flex-1 flex">
               <div class="flex flex-col">
                 <span class="block text-sm font-medium text-gray-900">
@@ -156,7 +156,7 @@
             </label>
             <div class="mt-2 flex items-start">
               <div class="h-5 flex items-center">
-                <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal">
+                <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal" @change="cfg.keycloak.publicUrl = deploymentType == 'kubernetes' && !cfg.keycloak.useExternal ? HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl) : cfg.keycloak.publicUrl">
               </div>
               <div class="ml-3 text-sm">
                 <label for="externalKeycloak" class="font-medium text-gray-700">
@@ -166,7 +166,7 @@
             </div>
           </div>
 
-          <div class="col-span-6 lg:col-span-4" x-effect="cfg.keycloak.publicUrl = deploymentType == 'kubernetes' && !cfg.keycloak.useExternal ? HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl) : cfg.keycloak.publicUrl">
+          <div class="col-span-6 lg:col-span-4">
             <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_keycloak_public_url" . }}
             </label>
