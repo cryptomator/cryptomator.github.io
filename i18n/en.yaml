@@ -383,6 +383,9 @@
   translation: "Contact Us"
 
 # Hub Setup
+- id: hub_setup_description
+  translation: "Generate the necessary configuration files for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
+
 - id: hub_setup_deployment_header_title
   translation: "Deployment"
 - id: hub_setup_deployment_header_description
