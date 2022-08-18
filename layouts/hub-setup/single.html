@@ -3,6 +3,7 @@
     <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
       <h1>{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_setup_description" . }}</p>
+      <p>{{ i18n "hub_setup_more_info" . | safeHTML }}</p>
     </header>
 
     <!-- DEPLOYMENT SECTION -->

@@ -205,6 +205,8 @@
   translation: "With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service."
 - id: home_header_button
   translation: "Download Now"
+- id: home_header_hub
+  translation: "Working in teams? Check out Cryptomator Hub!"
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
 - id: home_newsletter_title
@@ -235,14 +237,22 @@
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
 
 # Hub
-- id: hub_title_badge
-  translation: "Coming in 2022"
-- id: hub_title
+- id: hub_header_title_badge
+  translation: "Open Beta"
+- id: hub_header_title
   translation: "A&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
-- id: hub_description
+- id: hub_header_description
   translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
+- id: hub_header_cta
+  translation: "Get Started Now"
+- id: hub_header_setup_cta
+  translation: "Or go straight to the Setup Wizard."
+- id: hub_header_man_vault_alt
+  translation: "Person holding the key to a very secure vault"
+- id: hub_newsletter_title
+  translation: "Let's stay in touch"
 - id: hub_newsletter_instruction
-  translation: "Subscribe to our mailing list to be the first to know more."
+  translation: "Subscribe to our Hub mailing list to be the first to know more."
 - id: hub_newsletter_email_placeholder
   translation: "Email address"
 - id: hub_newsletter_subscribe
@@ -385,6 +395,8 @@
 # Hub Setup
 - id: hub_setup_description
   translation: "Generate the necessary configuration files for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
+- id: hub_setup_more_info
+  translation: "You can find more documentation at <a href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
 
 - id: hub_setup_deployment_header_title
   translation: "Deployment"

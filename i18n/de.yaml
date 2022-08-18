@@ -205,6 +205,8 @@
   translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch."
 - id: home_header_button
   translation: "Jetzt herunterladen"
+- id: home_header_hub
+  translation: "Arbeitest du in einem Team? Hier geht's zu Cryptomator Hub!"
 - id: home_header_woman_cloud_alt
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
 - id: home_newsletter_title
@@ -235,14 +237,22 @@
   translation: "Cryptomator ist Gewinner des Sonderpreises für Usable Security and Privacy."
 
 # Hub
-- id: hub_title_badge
-  translation: "Erscheint 2022"
-- id: hub_title
+- id: hub_header_title_badge
+  translation: "Open Beta"
+- id: hub_header_title
   translation: "Ein&nbsp;sicheres Arbeiten&nbsp;im&nbsp;Team"
-- id: hub_description
+- id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
+- id: hub_header_cta
+  translation: "Jetzt loslegen"
+- id: hub_header_setup_cta
+  translation: "Oder hier geht's direkt zum Setup Wizard."
+- id: hub_header_man_vault_alt
+  translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
+- id: hub_newsletter_title
+  translation: "Bleibe mit uns in Verbindung"
 - id: hub_newsletter_instruction
-  translation: "Abonniere unseren Newsletter, um als Erste:r mehr zu erfahren."
+  translation: "Abonniere unseren Hub-Newsletter, um als Erste:r mehr zu erfahren."
 - id: hub_newsletter_email_placeholder
   translation: "E-Mail-Adresse"
 - id: hub_newsletter_subscribe
@@ -385,6 +395,8 @@
 # Hub Setup
 - id: hub_setup_description
   translation: "Generiere die erforderlichen Konfigurationsdateien für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+- id: hub_setup_more_info
+  translation: "Weitere Dokumentation findest du unter <a href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
 
 - id: hub_setup_deployment_header_title
   translation: "Deployment"
