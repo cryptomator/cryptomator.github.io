@@ -21,7 +21,8 @@ class HubSetup {
         useExternal: false,
         publicUrl: '',
         adminUser: 'admin',
-        adminPw: 'admin'
+        adminPw: 'admin',
+        realmId: 'cryptomator',
       },
       hub: {
         version: 'beta',
@@ -186,8 +187,8 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
 
   getRealmConfig() {
     return {
-      id: 'cryptomator', // TODO generate UUID?
-      realm: 'cryptomator', // TODO make configurable?
+      id: crypto.randomUUID(),
+      realm: this.cfg.keycloak.realmId,
       displayName: 'Cryptomator Hub', // TODO make configurable?
       loginTheme: 'cryptomator',
       enabled: true,
@@ -429,13 +430,13 @@ EOF`;
       environment: {
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
-        HUB_KEYCLOAK_REALM: 'cryptomator',
+        HUB_KEYCLOAK_REALM: this.cfg.keycloak.realmId,
         HUB_KEYCLOAK_SYNCER_USERNAME: this.cfg.hub.syncerUser,
         HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
         HUB_KEYCLOAK_SYNCER_CLIENT_ID: 'admin-cli',
         HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
-        QUARKUS_OIDC_AUTH_SERVER_URL: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href, // network-internal URL
-        QUARKUS_OIDC_TOKEN_ISSUER: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href,
+        QUARKUS_OIDC_AUTH_SERVER_URL: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href, // network-internal URL
+        QUARKUS_OIDC_TOKEN_ISSUER: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href,
         QUARKUS_OIDC_CLIENT_ID: 'cryptomatorhub',
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
@@ -605,13 +606,13 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               env: [
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_LOCAL_URL', value: !this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl},
-                {name: 'HUB_KEYCLOAK_REALM', value: 'cryptomator'},
+                {name: 'HUB_KEYCLOAK_REALM', value: this.cfg.keycloak.realmId},
                 {name: 'HUB_KEYCLOAK_SYNCER_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_user'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_CLIENT_ID', value: 'admin-cli'},
                 {name: 'HUB_KEYCLOAK_SYNCER_PERIOD', value: '5m'}, // TODO make configurable?
-                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href},
-                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: new URL('realms/cryptomator', HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href},
+                {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href},
+                {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},

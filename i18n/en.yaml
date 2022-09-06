@@ -446,6 +446,10 @@
   translation: "The full URL including protocol, port, and path of your Keycloak installation."
 - id: hub_setup_keycloak_public_url_internal_description
   translation: "Internal Keycloak container will be deployed to this URL."
+- id: hub_setup_keycloak_realm_id
+  translation: "Realm ID"
+- id: hub_setup_keycloak_realm_id_description
+  translation: "Part of the URL used to login to the correct realm. Therefore it must be an URL-safe string, unique per Keycloak instance."
 - id: hub_setup_keycloak_admin_user
   translation: "Admin User"
 - id: hub_setup_keycloak_admin_user_description

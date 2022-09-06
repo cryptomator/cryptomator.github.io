@@ -181,6 +181,16 @@
             </p>
           </div>
 
+          <div class="col-span-6 lg:col-span-4">
+            <label for="keycloakRealmId" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_setup_keycloak_realm_id" . }}
+            </label>
+            <input type="text" id="keycloakRealmId" pattern="[A-Za-z0-9_-]+" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.realmId">
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_setup_keycloak_realm_id_description" . }}
+            </p>
+          </div>
+
           <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
             <label for="keycloakAdminUser" class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_keycloak_admin_user" . }}
