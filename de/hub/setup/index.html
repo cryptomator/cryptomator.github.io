@@ -345,6 +345,16 @@
             </p>
           </div>
 
+          <div class="col-span-6 lg:col-span-4">
+            <label for="keycloakRealmId" class="block text-sm font-medium text-gray-700">
+              Realm ID
+            </label>
+            <input type="text" id="keycloakRealmId" pattern="[A-Za-z0-9_-]+" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.realmId">
+            <p class="mt-2 text-sm text-gray-500">
+              Eine Zeichenkette, welche als Teil der URL während des Logins dazu dient, sich beim richtigen Realm einzuloggen. Sie muss daher pro Keycloak-Instanz einzigartig sein.
+            </p>
+          </div>
+
           <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
             <label for="keycloakAdminUser" class="block text-sm font-medium text-gray-700">
               Admin-Benutzer
@@ -450,7 +460,7 @@
 
   
     
-    <script type="text/javascript" src="/js/hubsetup.min.b3011daf5cc0243a3f2a2ee23711a36eb40df3121484835f5621c4f8b1605409.js" integrity="sha256-swEdr1zAJDo/Ki7iNxGjbrQN8xIUhINfViHE&#43;LFgVAk=" defer></script>
+    <script type="text/javascript" src="/js/hubsetup.min.fcda7b69028beffbc352a546cc90b22fe9164fbbaf23d73c91174eb7c7c481fc.js" integrity="sha256-/Np7aQKL7/vDUqVGzJCyL&#43;kWT7uvI9c8kRdOt8fEgfw=" defer></script>
   
 
     </div>
