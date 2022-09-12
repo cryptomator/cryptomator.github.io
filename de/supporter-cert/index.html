@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.30d0a98b8bab5beb6c24b580af7ac934e55653aea6414698c8a96b1dcd3fd502.css" integrity="sha256-MNCpi4urW&#43;tsJLWAr3rJNOVWU66mQUaYyKlrHc0/1QI=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.5999174fc5ebd905f3ed0952b8061fc15b635143ff82640ed7dfda388c9a035e.css" integrity="sha256-WZkXT8Xr2QXz7QlSuAYfwVtjUUP/gmQO19/aOIyaA14=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -214,8 +214,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-471265389" x-model="acceptTerms" />
-<label for="id-471265389">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-926753148" x-model="acceptTerms" />
+<label for="id-926753148">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="new DesktopLicense($refs.funderForm, checkoutData).checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Zur Zahlung
@@ -272,8 +272,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">In unserem <a class="text-primary no-underline hover:underline" href="https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md" target="_blank" rel="noopener">Contribution Guide</a> findest du die ersten Informationen.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-386175294" x-model="acceptTerms" />
-<label for="id-386175294">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-197384256" x-model="acceptTerms" />
+<label for="id-197384256">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -326,8 +326,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4"><a class="text-primary no-underline hover:underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Hierüber</a> kannst du Cryptomator in deine bevorzugte Sprache übersetzen.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-291674538" x-model="acceptTerms" />
-<label for="id-291674538">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-946278153" x-model="acceptTerms" />
+<label for="id-946278153">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -383,8 +383,8 @@ max. 800 Zeichen" required></textarea>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Teile etwas über Cryptomator in den sozialen Medien, auf deiner Website oder über andere Medien.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-327419586" x-model="acceptTerms" />
-<label for="id-327419586">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-457132896" x-model="acceptTerms" />
+<label for="id-457132896">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
@@ -437,8 +437,8 @@ max. 800 Zeichen" required></textarea>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Teile uns einen anderen Grund mit, der nicht in die anderen Kategorien passt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-548296173" x-model="acceptTerms" />
-<label for="id-548296173">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-194537286" x-model="acceptTerms" />
+<label for="id-194537286">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
