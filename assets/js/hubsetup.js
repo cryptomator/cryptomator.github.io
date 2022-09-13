@@ -200,6 +200,11 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
       roles: {
         realm: [
           {
+            name: 'user',
+            description: 'User',
+            composite: false
+          },
+          {
             name: 'admin',
             description: 'Administrator',
             composite: true,
