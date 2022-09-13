@@ -376,7 +376,7 @@
 - id: hub_billing_checkout_standard_instruction
   translation: "Zahlungen werden über Paddle abgewickelt"
 - id: hub_billing_checkout_coupon
-  translation: "Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt!"
+  translation: "Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt im ersten Jahr!"
 - id: hub_billing_checkout_standard_submit
   translation: "Zur Zahlung"
 
