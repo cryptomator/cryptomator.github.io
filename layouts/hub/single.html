@@ -14,7 +14,10 @@
         </div>
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
-        <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "hub_header_cta" . }}</a>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_docs_cta" . }}</a>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary text-lg px-8">{{ i18n "hub_header_demo_cta" . }}</a>
+        </div>
         <p><a href="{{ .Site.LanguagePrefix }}/hub/setup/" role="button" class="text-btn text-primary">{{ i18n "hub_header_setup_cta" . }}</a></p>
       </div>
     </header>
