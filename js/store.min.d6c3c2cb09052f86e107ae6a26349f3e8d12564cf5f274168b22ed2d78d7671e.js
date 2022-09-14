@@ -1,0 +1,1 @@
+"use strict";const PADDLE_ENABLE_SANDBOX=!1,PADDLE_VENDOR_ID=39223,PADDLE_ANDROID_PRODUCT_ID=578277,PADDLE_HUB_SUBSCRIPTION_PLAN_ID=770132,PADDLE_PRICES_URL="https://checkout.paddle.com/api/2.0/prices",STORE_API_URL="https://store.cryptomator.org/api"

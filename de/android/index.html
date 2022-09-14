@@ -188,8 +188,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-286537491" x-model="acceptTerms" />
-<label for="id-286537491">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-172896345" x-model="acceptTerms" />
+<label for="id-172896345">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
@@ -209,7 +209,9 @@
 
 
   
-  <script type="text/javascript" src="/js/androidkey.min.0f714b4b728d6df29dbb35f080aa5a9cfecf5f4c35a085810ac5b7dd4b04f2e1.js" integrity="sha256-D3FLS3KNbfKduzXwgKpanP7PX0w1oIWBCsW33UsE8uE=" defer></script>
+  <script type="text/javascript" src="/js/store.min.d6c3c2cb09052f86e107ae6a26349f3e8d12564cf5f274168b22ed2d78d7671e.js" integrity="sha256-1sPCywkFL4bhB65qJjSfPo0SVkz18nQWiyLtLXjXZx4=" defer></script>
+  
+  <script type="text/javascript" src="/js/androidkey.min.050b610ad29ca710a361712762f49a6fc586cfd1e8c5dfe07849ca29d08e7f91.js" integrity="sha256-BQthCtKcpxCjYXEnYvSab8WGz9Hoxd/geEnKKdCOf5E=" defer></script>
 
 
       </section>
@@ -302,6 +304,8 @@
   </section>
 
   
+    
+    <script type="text/javascript" src="/js/store.min.d6c3c2cb09052f86e107ae6a26349f3e8d12564cf5f274168b22ed2d78d7671e.js" integrity="sha256-1sPCywkFL4bhB65qJjSfPo0SVkz18nQWiyLtLXjXZx4=" defer></script>
     
     <script type="text/javascript" src="/js/keyrecovery.min.6c429a8195dcfd77702bbb390e96bedb6b5cf31e960056780ba701042d4cf288.js" integrity="sha256-bEKagZXc/XdwK7s5Dpa&#43;22tc8x6WAFZ4C6cBBC1M8og=" defer></script>
   

@@ -1,0 +1,1 @@
+"use strict";class HubPricing{constructor(e){this._data=e}loadPrice(){$.ajax({url:PADDLE_PRICES_URL,dataType:"jsonp",data:{product_ids:PADDLE_HUB_SUBSCRIPTION_PLAN_ID}}).done(e=>{this._data.monthlyPrice={amount:e.response.products[0].price.gross/12,currency:e.response.products[0].currency}})}}

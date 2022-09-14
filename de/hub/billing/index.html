@@ -164,7 +164,7 @@
     
     
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, monthlyPrice: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); hubSubscription.loadPrice()" x-ref="form">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, pricingData: {monthlyPrice: null}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); new HubPricing(pricingData).loadPrice()" x-ref="form">
       <template x-if="!subscriptionData.getSuccess">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -429,7 +429,7 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   Standard
                 </h2>
-                <p x-text="subscriptionData.monthlyPrice ? subscriptionData.monthlyPrice.amount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
+                <p x-text="pricingData.monthlyPrice ? pricingData.monthlyPrice.amount.toLocaleString('de', { style: 'currency', currency: pricingData.monthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
                 <p class="text-lg text-gray-500 mb-4">
                   pro Sitz, pro Monat, jährlich abgerechnet
                 </p>
@@ -466,8 +466,8 @@
                     Zahlungen werden über Paddle abgewickelt
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-486351972" x-model="acceptTerms" />
-<label for="id-486351972">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-719264853" x-model="acceptTerms" />
+<label for="id-719264853">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt im ersten Jahr!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -519,7 +519,11 @@
 
   
     
-    <script type="text/javascript" src="/js/hubsubscription.min.402e5a49467d8a1b14f0297c0fd9837b6928cd3209fdbe07bcdf8c5350f3f902.js" integrity="sha256-QC5aSUZ9ihsU8Cl8D9mDe2kozTIJ/b4HvN&#43;MU1Dz&#43;QI=" defer></script>
+    <script type="text/javascript" src="/js/store.min.d6c3c2cb09052f86e107ae6a26349f3e8d12564cf5f274168b22ed2d78d7671e.js" integrity="sha256-1sPCywkFL4bhB65qJjSfPo0SVkz18nQWiyLtLXjXZx4=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubsubscription.min.5a91306de2e8f91f75cffe9624ecc94258121c77ac79ee5af406decc3fcde431.js" integrity="sha256-WpEwbeLo&#43;R91z/6WJOzJQlgSHHesee5a9AbezD/N5DE=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubpricing.min.d1f6bda41dae822de8fdaaa06ebdeddea2029f2878f416adf4e47f95f83f3d85.js" integrity="sha256-0fa9pB2ugi3o/aqgbr3t3qICnyh49Bat9OR/lfg/PYU=" defer></script>
   
 
     </div>
