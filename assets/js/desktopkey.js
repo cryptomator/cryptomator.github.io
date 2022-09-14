@@ -1,12 +1,7 @@
 "use strict";
 
-const PADDLE_ENABLE_SANDBOX = false;
-const PADDLE_VENDOR_ID = 39223;
-const GENERATE_PAY_LINK_URL = 'https://store.cryptomator.org/api/desktop/generate-pay-link';
-
-// const PADDLE_ENABLE_SANDBOX = true;
-// const PADDLE_VENDOR_ID = 1385;
-// const GENERATE_PAY_LINK_URL = 'http://localhost:8787/api/desktop/generate-pay-link';
+// requires store.js
+const GENERATE_PAY_LINK_URL = STORE_API_URL + '/desktop/generate-pay-link';
 
 class DesktopLicense {
 

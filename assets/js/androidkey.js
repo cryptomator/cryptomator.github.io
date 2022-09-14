@@ -1,12 +1,6 @@
 "use strict";
 
-const PADDLE_ENABLE_SANDBOX = false;
-const PADDLE_VENDOR_ID = 39223;
-const ANDROID_PRODUCT_ID = 578277;
-
-// const PADDLE_ENABLE_SANDBOX = true;
-// const PADDLE_VENDOR_ID = 1385;
-// const ANDROID_PRODUCT_ID = 9642;
+// requires store.js
 
 class AndroidLicense {
 
@@ -28,7 +22,7 @@ class AndroidLicense {
 
   loadPrice() {
     this._paddle.then(paddle => {
-      paddle.Product.Prices(ANDROID_PRODUCT_ID, prices => {
+      paddle.Product.Prices(PADDLE_ANDROID_PRODUCT_ID, prices => {
         this._checkoutData.price = prices.price.gross;
       });
     });
@@ -46,7 +40,7 @@ class AndroidLicense {
     this._checkoutData.success = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        product: ANDROID_PRODUCT_ID,
+        product: PADDLE_ANDROID_PRODUCT_ID,
         email: this._checkoutData.email,
         allowQuantity: false,
         locale: locale,

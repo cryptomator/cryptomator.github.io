@@ -1,6 +1,6 @@
 "use strict";
 
-// requires desktopkey.js or androidkey.js
+// requires store.js
 
 class KeyRecovery {
 

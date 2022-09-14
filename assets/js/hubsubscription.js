@@ -1,16 +1,7 @@
 "use strict";
 
-const PADDLE_ENABLE_SANDBOX = false;
-const PADDLE_VENDOR_ID = 39223;
-const PADDLE_PRICES_URL = 'https://checkout.paddle.com/api/2.0/prices';
-const HUB_SUBSCRIPTION_PLAN_ID = 770132;
-const SUBSCRIPTION_URL = 'https://store.cryptomator.org/api/hub/subscription';
-
-// const PADDLE_ENABLE_SANDBOX = true;
-// const PADDLE_VENDOR_ID = 1385;
-// const PADDLE_PRICES_URL = 'https://sandbox-checkout.paddle.com/api/2.0/prices';
-// const HUB_SUBSCRIPTION_PLAN_ID = 23141;
-// const SUBSCRIPTION_URL = 'http://localhost:8787/api/hub/subscription';
+// requires store.js
+const SUBSCRIPTION_URL = STORE_API_URL + '/hub/subscription';
 
 class HubSubscription {
 
@@ -82,21 +73,6 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  loadPrice() {
-    $.ajax({
-      url: PADDLE_PRICES_URL,
-      dataType: 'jsonp',
-      data: {
-        product_ids: HUB_SUBSCRIPTION_PLAN_ID
-      },
-    }).done(data => {
-      this._subscriptionData.monthlyPrice = {
-        amount: data.response.products[0].price.gross / 12,
-        currency: data.response.products[0].currency
-      };
-    });
-  }
-
   checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
@@ -109,7 +85,7 @@ class HubSubscription {
     this._subscriptionData.postSuccess = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        product: HUB_SUBSCRIPTION_PLAN_ID,
+        product: PADDLE_HUB_SUBSCRIPTION_PLAN_ID,
         email: this._subscriptionData.email,
         quantity: this._subscriptionData.quantity,
         locale: locale,

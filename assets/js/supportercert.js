@@ -1,8 +1,7 @@
 "use strict";
 
-const REQUEST_SUPPORTER_CERT_URL = 'https://store.cryptomator.org/api/desktop/request-supporter-cert';
-
-// const REQUEST_SUPPORTER_CERT_URL = 'http://localhost:8787/api/desktop/request-supporter-cert';
+// requires store.js
+const REQUEST_SUPPORTER_CERT_URL = STORE_API_URL + '/desktop/request-supporter-cert';
 
 class SupporterCertificate {
 
