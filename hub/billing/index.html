@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.30d0a98b8bab5beb6c24b580af7ac934e55653aea6414698c8a96b1dcd3fd502.css" integrity="sha256-MNCpi4urW&#43;tsJLWAr3rJNOVWU66mQUaYyKlrHc0/1QI=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.052e5305927e1aca584a85fa092757617f4645ef482b887ace3ae65edd82f246.css" integrity="sha256-BS5TBZJ&#43;GspYSoX6CSdXYX9GRe9IK4h6zjrmXt2C8kY=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -175,7 +175,7 @@
           </p>
           <div class="flex justify-center items-center rounded bg-gray-300">
             <input x-model="subscriptionData.hubId" type="text" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Hub ID" required/>
-            <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 btn btn-primary rounded-l-none px-4">
+            <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
               <i :class="{'fa-sign-in': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
               Continue
             </button>
@@ -466,8 +466,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-521438697" x-model="acceptTerms" />
-<label for="id-521438697">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-472836195" x-model="acceptTerms" />
+<label for="id-472836195">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
