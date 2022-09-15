@@ -251,6 +251,58 @@
   translation: "Oder hier geht's direkt zum Setup Wizard."
 - id: hub_header_man_vault_alt
   translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
+- id: hub_pricing_title
+  translation: "Preisgestaltung"
+- id: hub_pricing_description
+  translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+- id: hub_pricing_community_title
+  translation: "Community"
+- id: hub_pricing_community_statement
+  translation: "Kostenlos"
+- id: hub_pricing_community_description
+  translation: "für bis zu 5 Sitze"
+- id: hub_pricing_community_benefit_1
+  translation: "Unbegrenzte Tresore"
+- id: hub_pricing_community_benefit_2
+  translation: "Voller Zugriff über Desktop-App"
+- id: hub_pricing_community_benefit_3
+  translation: "Lesender Zugriff über Mobile-Apps"
+- id: hub_pricing_community_benefit_3_tooltip
+  translation: "Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff."
+- id: hub_pricing_community_benefit_4
+  translation: "Community-Support"
+- id: hub_pricing_standard_title
+  translation: "Standard"
+- id: hub_pricing_standard_description
+  translation: "pro Sitz, pro Monat"
+- id: hub_pricing_standard_benefit_1
+  translation: "Alles in Community"
+- id: hub_pricing_standard_benefit_2
+  translation: "Voller Zugriff über Mobile-Apps"
+- id: hub_pricing_standard_benefit_2_tooltip
+  translation: "Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen."
+- id: hub_pricing_standard_benefit_3
+  translation: "Audit-Logs"
+- id: hub_pricing_standard_benefit_4
+  translation: "E-Mail-Support"
+- id: hub_pricing_enterprise_title
+  translation: "Enterprise"
+- id: hub_pricing_enterprise_statement
+  translation: "Individuell"
+- id: hub_pricing_enterprise_description
+  translation: "maßgeschneiderte Preise"
+- id: hub_pricing_enterprise_benefit_1
+  translation: "Alles in Standard"
+- id: hub_pricing_enterprise_benefit_2
+  translation: "Vorrangiger E-Mail-Support"
+- id: hub_pricing_enterprise_benefit_3
+  translation: "Beratung und Unterstützung durch Experten"
+- id: hub_pricing_enterprise_benefit_4
+  translation: "Mengenrabatt für große Teams"
+- id: hub_contact_us_title
+  translation: "Weitere Fragen zu Cryptomator Hub?"
+- id: hub_contact_us_button
+  translation: "Kontaktiere unser Sales-Team"
 - id: hub_newsletter_title
   translation: "Bleibe mit uns in Verbindung"
 - id: hub_newsletter_instruction

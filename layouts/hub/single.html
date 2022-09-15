@@ -23,7 +23,129 @@
     </header>
   </section>
 
-  <section x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}" class="container text-center py-12 pb-24">
+  <section x-data="{data: {monthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+    <header class="text-center">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_pricing_title" . }}</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_pricing_description" . }}</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_pricing_community_title" . }}
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            {{ i18n "hub_pricing_community_statement" . }}
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_pricing_community_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_3" . }}</span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "hub_pricing_community_benefit_3_tooltip" . }}</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_pricing_standard_title" . }}
+          </h3>
+          <p x-text="data.monthlyPrice ? data.monthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.monthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_pricing_standard_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_2" . }}</span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "hub_pricing_standard_benefit_2_tooltip" . }}</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_3" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_pricing_enterprise_title" . }}
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            {{ i18n "hub_pricing_enterprise_statement" . }}
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_pricing_enterprise_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_3" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container text-center py-12">
+    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_contact_us_title" . }}</h2>
+    <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+      <i class="fas fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
+    </a>
+  </section>
+
+  <section x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
     <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_newsletter_title" . }}</h2>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
@@ -43,9 +165,17 @@
   </section>
 
   {{ if .Site.IsServer }}
+    {{ $storeJs := resources.Get "js/store.js" }}
+    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
+    {{ $hubPricingJs := resources.Get "js/hubpricing.js" }}
+    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
   {{ else }}
+    {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
+    {{ $hubPricingJs := resources.Get "js/hubpricing.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" integrity="{{ $hubPricingJs.Data.Integrity }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
   {{ end }}
