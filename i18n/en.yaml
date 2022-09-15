@@ -448,6 +448,9 @@
 - id: hub_billing_checkout_enterprise_action
   translation: "Contact Us"
 
+- id: hub_billing_checkout_faq_title
+  translation: "Frequently Asked Questions"
+
 # Hub Setup
 - id: hub_setup_description
   translation: "Generate the necessary configuration files for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
