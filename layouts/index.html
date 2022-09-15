@@ -11,7 +11,7 @@
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
         <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "home_header_button" . }}</a>
-        <p><a href="{{ .Site.LanguagePrefix }}/hub/" role="button" class="text-btn text-white">{{ i18n "home_header_hub" . }}</a></p>
+        <p><a href="{{ .Site.LanguagePrefix }}/hub/" role="button" class="text-btn text-white">{{ i18n "home_header_hub" . | safeHTML }}</a></p>
       </div>
     </header>
   </section>

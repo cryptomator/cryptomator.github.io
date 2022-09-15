@@ -206,7 +206,7 @@
 - id: home_header_button
   translation: "Download Now"
 - id: home_header_hub
-  translation: "Working in teams? Check out Cryptomator Hub!"
+  translation: "Working in teams? Check out <span class=\"underline\">Cryptomator Hub</span>!"
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
 - id: home_newsletter_title
