@@ -299,6 +299,8 @@
   translation: "Expert training and assistance"
 - id: hub_pricing_enterprise_benefit_4
   translation: "Volume discount for large teams"
+- id: hub_faq_title
+  translation: "Frequently Asked Questions"
 - id: hub_contact_us_title
   translation: "More questions about Cryptomator Hub?"
 - id: hub_contact_us_button
