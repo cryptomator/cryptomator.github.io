@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.052e5305927e1aca584a85fa092757617f4645ef482b887ace3ae65edd82f246.css" integrity="sha256-BS5TBZJ&#43;GspYSoX6CSdXYX9GRe9IK4h6zjrmXt2C8kY=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.da913fb9ae8d8c135cae31a39e862d90cd0b81db114d398069d3f786acd0af88.css" integrity="sha256-2pE/ua6NjBNcrjGjnoYtkM0LgdsRTTmAadP3hqzQr4g=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -187,7 +187,129 @@
     </header>
   </section>
 
-  <section x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}" class="container text-center py-12 pb-24">
+  <section x-data="{data: {monthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+    <header class="text-center">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Preisgestaltung</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord.</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Community
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Kostenlos
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            für bis zu 5 Sitze
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Unbegrenzte Tresore</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Voller Zugriff über Desktop-App</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Lesender Zugriff über Mobile-Apps</span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Community-Support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Standard
+          </h3>
+          <p x-text="data.monthlyPrice ? data.monthlyPrice.amount.toLocaleString('de', { style: 'currency', currency: data.monthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            pro Sitz, pro Monat
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Alles in Community</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Voller Zugriff über Mobile-Apps</span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Audit-Logs</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>E-Mail-Support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Enterprise
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Individuell
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            maßgeschneiderte Preise
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Alles in Standard</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Vorrangiger E-Mail-Support</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Beratung und Unterstützung durch Experten</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Mengenrabatt für große Teams</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container text-center py-12">
+    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Weitere Fragen zu Cryptomator Hub?</h2>
+    <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+      <i class="fas fa-envelope"></i> Kontaktiere unser Sales-Team
+    </a>
+  </section>
+
+  <section x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
     <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Bleibe mit uns in Verbindung</h2>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
@@ -207,6 +329,10 @@
   </section>
 
   
+    
+    <script type="text/javascript" src="/js/store.min.d6c3c2cb09052f86e107ae6a26349f3e8d12564cf5f274168b22ed2d78d7671e.js" integrity="sha256-1sPCywkFL4bhB65qJjSfPo0SVkz18nQWiyLtLXjXZx4=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubpricing.min.d1f6bda41dae822de8fdaaa06ebdeddea2029f2878f416adf4e47f95f83f3d85.js" integrity="sha256-0fa9pB2ugi3o/aqgbr3t3qICnyh49Bat9OR/lfg/PYU=" defer></script>
     
     <script type="text/javascript" src="/js/newsletter.min.4d1feb97823b39b0c2842215a514fd6eaf1b79a087cd9fa27f33f9c221bca044.js" integrity="sha256-TR/rl4I7ObDChCIVpRT9bq8beaCHzZ&#43;ifzP5wiG8oEQ=" defer></script>
   

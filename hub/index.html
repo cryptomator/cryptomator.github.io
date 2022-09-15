@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.052e5305927e1aca584a85fa092757617f4645ef482b887ace3ae65edd82f246.css" integrity="sha256-BS5TBZJ&#43;GspYSoX6CSdXYX9GRe9IK4h6zjrmXt2C8kY=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.da913fb9ae8d8c135cae31a39e862d90cd0b81db114d398069d3f786acd0af88.css" integrity="sha256-2pE/ua6NjBNcrjGjnoYtkM0LgdsRTTmAadP3hqzQr4g=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -187,7 +187,129 @@
     </header>
   </section>
 
-  <section x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}" class="container text-center py-12 pb-24">
+  <section x-data="{data: {monthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+    <header class="text-center">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Pricing Plans</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage.</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Community
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Free
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            for up to 5 seats
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Unlimited vaults</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Full access via Desktop app</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Read-only access via Mobile apps</span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">If you unlocked the full version of the mobile app, you will be granted full access.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Community support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Standard
+          </h3>
+          <p x-text="data.monthlyPrice ? data.monthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.monthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            per seat, per month
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Everything in Community</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Full access via Mobile apps</span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">You will be granted full access without having to unlock the full version of the mobile app.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Audit logs</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Email support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Enterprise
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Custom
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            tailored pricing
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Everything in Standard</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Priority email support</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Expert training and assistance</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Volume discount for large teams</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container text-center py-12">
+    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">More questions about Cryptomator Hub?</h2>
+    <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+      <i class="fas fa-envelope"></i> Contact Our Sales Team
+    </a>
+  </section>
+
+  <section x-data="{data: {email: '', listId: 'Hkrk3qn37', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
     <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Let&#39;s stay in touch</h2>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
@@ -207,6 +329,10 @@
   </section>
 
   
+    
+    <script type="text/javascript" src="/js/store.min.d6c3c2cb09052f86e107ae6a26349f3e8d12564cf5f274168b22ed2d78d7671e.js" integrity="sha256-1sPCywkFL4bhB65qJjSfPo0SVkz18nQWiyLtLXjXZx4=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubpricing.min.d1f6bda41dae822de8fdaaa06ebdeddea2029f2878f416adf4e47f95f83f3d85.js" integrity="sha256-0fa9pB2ugi3o/aqgbr3t3qICnyh49Bat9OR/lfg/PYU=" defer></script>
     
     <script type="text/javascript" src="/js/newsletter.min.4d1feb97823b39b0c2842215a514fd6eaf1b79a087cd9fa27f33f9c221bca044.js" integrity="sha256-TR/rl4I7ObDChCIVpRT9bq8beaCHzZ&#43;ifzP5wiG8oEQ=" defer></script>
   
