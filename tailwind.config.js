@@ -11,6 +11,7 @@ module.exports = {
         'hover:border-white',
         'StripeElement',
         'StripeElement--focus',
+        'underline'
       ],
     },
   },
