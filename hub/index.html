@@ -302,6 +302,59 @@
     </div>
   </section>
 
+  <section class="container py-12">
+    <header class="text-center">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
+    </header>
+    <dl x-data="{isOpen: [false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-xl mx-auto">
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>How are seats calculated?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[0]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>How is the subscription fee calculated for paid plans?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[1]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Do the paid plans include 5 free seats?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[2]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Do you offer discounts?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[3]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        Yes, we offer discounts for nonprofits, students, and educational institutions. Please contact our sales team to check if you qualify. For those who do not qualify, we offer a volume discount for large teams. (Special: Until the end of 2022, we offer 25% off for the first year!)
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>How do I access the contents of a vault?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[4]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)
+      </dd>
+    </dl>
+  </section>
+
   <section class="container text-center py-12">
     <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">More questions about Cryptomator Hub?</h2>
     <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
