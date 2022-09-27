@@ -209,7 +209,10 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
             description: 'Administrator',
             composite: true,
             composites: {
-              realm: ['user']
+              realm: ['user'],
+              client: {
+                'realm-management': ['realm-admin']
+              }
             }
           },
           {
