@@ -314,7 +314,7 @@
         </a>
       </dt>
       <dd x-show="isOpen[0]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users.
+        Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
