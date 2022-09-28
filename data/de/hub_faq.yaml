@@ -1,5 +1,5 @@
 - Question: "Wie werden die Sitze berechnet?"
-  Answer: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden."
+  Answer: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten."
 - Question: "Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?"
   Answer: "Du zahlst eine jährliche Gebühr für jeden Sitz. Diese Gebühr gilt auch, wenn du ungenutzte Sitze hast."
 - Question: "Sind in den kostenpflichtigen Plänen 5 freie Sitze enthalten?"
