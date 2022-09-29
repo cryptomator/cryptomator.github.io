@@ -480,8 +480,6 @@
   translation: "Public Hub URL"
 - id: hub_setup_hub_public_url_description
   translation: "The full URL including protocol, port, and path of your Hub installation."
-- id: hub_setup_hub_public_url_unsupported_paths
-  translation: "Paths are currently not supported."
 - id: hub_setup_hub_admin_user
   translation: "Admin User"
 - id: hub_setup_hub_admin_user_description

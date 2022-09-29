@@ -135,15 +135,6 @@ ${e}`;
     }
   }
 
-  static containsPathname(urlStr) {
-    try {
-      let url = new URL(urlStr);
-      return url.pathname && url.pathname.length > 1;
-    } catch {
-      return false;
-    }
-  }
-
 }
 
 /**
@@ -169,6 +160,14 @@ class ConfigBuilder {
 
   getPathname(urlStr) {
     let url = new URL(urlStr);
+    return url.pathname;
+  }
+
+  getPathnameWithTrailingSlash(urlStr) {
+    let url = new URL(urlStr);
+    if (!url.pathname.endsWith('/')) {
+      url.pathname += '/';
+    }
     return url.pathname;
   }
 
@@ -436,6 +435,7 @@ EOF`;
       },
       restart: 'unless-stopped',
       environment: {
+        HUB_PUBLIC_ROOT_PATH: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl),
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_REALM: this.cfg.keycloak.realmId,
@@ -612,6 +612,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/q/health/live', port: 8080},
               },
               env: [
+                {name: 'HUB_PUBLIC_ROOT_PATH', value: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl)},
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_LOCAL_URL', value: !this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_REALM', value: this.cfg.keycloak.realmId},
