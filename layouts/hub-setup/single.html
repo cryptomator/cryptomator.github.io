@@ -109,7 +109,7 @@
             <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_hub_public_url" . }}
             </label>
-            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl">
+            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl" @input="cfg.keycloak.publicUrl = deploymentType == 'kubernetes' && !cfg.keycloak.useExternal ? HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl) : cfg.keycloak.publicUrl">
             <p class="mt-2 text-sm text-gray-500">
               {{ i18n "hub_setup_hub_public_url_description" . }}
             </p>
