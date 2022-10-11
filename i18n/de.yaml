@@ -299,6 +299,8 @@
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4
   translation: "Mengenrabatt für große Teams"
+- id: hub_pricing_coming_later
+  translation: "Derzeit in Entwicklung, erscheint noch in diesem Jahr."
 - id: hub_faq_title
   translation: "Häufig gestellte Fragen"
 - id: hub_contact_us_title
