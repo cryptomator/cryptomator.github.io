@@ -254,7 +254,6 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         name: 'Cryptomator Hub',
         enabled: true,
         redirectUris: [
-          'http://127.0.0.1/*',
           new URL('*', HubSetup.urlWithTrailingSlash(this.cfg.hub.publicUrl)).href
         ],
         webOrigins: ['+'],
@@ -288,6 +287,21 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
             }
           }
         ],
+      },
+      {
+        clientId: 'cryptomator',
+        serviceAccountsEnabled: false,
+        publicClient: true,
+        name: 'Cryptomator App',
+        enabled: true,
+        redirectUris: [
+          'http://127.0.0.1/*'
+        ],
+        webOrigins: ['+'],
+        bearerOnly: false,
+        frontchannelLogout: false,
+        protocol: 'openid-connect',
+        attributes: { 'pkce.code.challenge.method': 'S256' },
       }],
       browserSecurityHeaders: {
         contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' ${HubSetup.urlWithTrailingSlash(this.cfg.hub.publicUrl)}; object-src 'none';`
@@ -443,6 +457,7 @@ EOF`;
         HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
         HUB_KEYCLOAK_SYNCER_CLIENT_ID: 'admin-cli',
         HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
+        HUB_KEYCLOAK_OIDC_CRYPTOMATOR_CLIENT_ID: 'cryptomator',
         QUARKUS_OIDC_AUTH_SERVER_URL: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href, // network-internal URL
         QUARKUS_OIDC_TOKEN_ISSUER: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href,
         QUARKUS_OIDC_CLIENT_ID: 'cryptomatorhub',
@@ -620,6 +635,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_CLIENT_ID', value: 'admin-cli'},
                 {name: 'HUB_KEYCLOAK_SYNCER_PERIOD', value: '5m'}, // TODO make configurable?
+                {name: 'HUB_KEYCLOAK_OIDC_CRYPTOMATOR_CLIENT_ID', value: 'cryptomator'},
                 {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href},
                 {name: 'QUARKUS_OIDC_TOKEN_ISSUER', value: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)).href},
                 {name: 'QUARKUS_OIDC_CLIENT_ID', value: 'cryptomatorhub'},
