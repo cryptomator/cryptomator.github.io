@@ -240,7 +240,7 @@
 - id: hub_header_title_badge
   translation: "Open Beta"
 - id: hub_header_title
-  translation: "A&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
+  translation: "The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
 - id: hub_header_description
   translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
 - id: hub_header_docs_cta
@@ -251,6 +251,24 @@
   translation: "Or go straight to the Setup Wizard."
 - id: hub_header_man_vault_alt
   translation: "Person holding the key to a very secure vault"
+
+- id: hub_features_title
+  translation: "Features"
+- id: hub_features_description
+  translation: "Cryptomator Hub adds access management to your Cryptomator vaults."
+- id: hub_features_feature_1_title
+  translation: "Strong Authentication"
+- id: hub_features_feature_1_description
+  translation: "Hook up Cryptomator Hub to your existing identity infrastructure and set up any industry-standard authentication method for your team. <a href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+- id: hub_features_feature_2_title
+  translation: "End-to-End Encryption"
+- id: hub_features_feature_2_description
+  translation: "Vaults created with Cryptomator Hub will be stored the same way as you're used to with Cryptomator – securely using end-to-end encryption. <a href=\"https://docs.cryptomator.org/en/latest/security/architecture/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+- id: hub_features_feature_3_title
+  translation: "Zero Knowledge"
+- id: hub_features_feature_3_description
+  translation: "Cryptomator Hub manages key material without getting in touch with unencrypted keys. It is a true zero-knowledge solution. <a href=\"https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+
 - id: hub_pricing_title
   translation: "Pricing Plans"
 - id: hub_pricing_description
@@ -301,12 +319,15 @@
   translation: "Volume discount for large teams"
 - id: hub_pricing_coming_later
   translation: "Currently in development, coming later this year."
+
 - id: hub_faq_title
   translation: "Frequently Asked Questions"
+
 - id: hub_contact_us_title
   translation: "More questions about Cryptomator Hub?"
 - id: hub_contact_us_button
   translation: "Contact Our Sales Team"
+
 - id: hub_newsletter_title
   translation: "Let's stay in touch"
 - id: hub_newsletter_instruction

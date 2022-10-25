@@ -240,7 +240,7 @@
 - id: hub_header_title_badge
   translation: "Open Beta"
 - id: hub_header_title
-  translation: "Ein&nbsp;sicheres Arbeiten&nbsp;im&nbsp;Team"
+  translation: "Das&nbsp;sichere Arbeiten&nbsp;im&nbsp;Team"
 - id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
 - id: hub_header_docs_cta
@@ -251,6 +251,24 @@
   translation: "Oder hier geht's direkt zum Setup Wizard."
 - id: hub_header_man_vault_alt
   translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
+
+- id: hub_features_title
+  translation: "Features"
+- id: hub_features_description
+  translation: "Cryptomator Hub ermöglicht die Zugriffsverwaltung für deine Cryptomator-Tresore."
+- id: hub_features_feature_1_title
+  translation: "Starke Authentifizierung"
+- id: hub_features_feature_1_description
+  translation: "Binde Cryptomator Hub in deine bestehende Identitätsinfrastruktur und richte branchenübliche Authentifizierungsmethoden ein. <a href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+- id: hub_features_feature_2_title
+  translation: "Ende-zu-Ende-Verschlüsselung"
+- id: hub_features_feature_2_description
+  translation: "Mit Cryptomator Hub erstellte Tresore werden auf die gleiche Weise gespeichert, wie du es von Cryptomator gewohnt bist – sicher mit Ende-zu-Ende-Verschlüsselung. <a href=\"https://docs.cryptomator.org/en/latest/security/architecture/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+- id: hub_features_feature_3_title
+  translation: "Zero Knowledge"
+- id: hub_features_feature_3_description
+  translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a href=\"https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+
 - id: hub_pricing_title
   translation: "Preisgestaltung"
 - id: hub_pricing_description
@@ -301,12 +319,15 @@
   translation: "Mengenrabatt für große Teams"
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, erscheint noch in diesem Jahr."
+
 - id: hub_faq_title
   translation: "Häufig gestellte Fragen"
+
 - id: hub_contact_us_title
   translation: "Weitere Fragen zu Cryptomator Hub?"
 - id: hub_contact_us_button
   translation: "Kontaktiere unser Sales-Team"
+
 - id: hub_newsletter_title
   translation: "Bleibe mit uns in Verbindung"
 - id: hub_newsletter_instruction
