@@ -34,6 +34,12 @@ weight: 1
       <figcaption>Cryptomator Logo mit Text • 1944x384 • PNG</figcaption>
     </figure>
   </div>
+  <div class="w-full px-3 lg:w-1/2">
+    <figure class="rounded shadow bg-white text-center p-2">
+      <a href="/presskit/cryptomator-hub-logo-text.png"><img class="inline-block m-remover lazyload" data-src="/presskit/cryptomator-hub-logo-text.png" alt="Cryptomator Hub Logo mit Text"/></a>
+      <figcaption>Cryptomator Hub Logo mit Text • 2394x384 • PNG</figcaption>
+    </figure>
+  </div>
 </div>
 
 Das Cryptomator-Logo ist unter der CC BY-SA 4.0 lizenziert und die Urheberin ist {{< extlink "https://ktoons.org" "Katharina Hagemann">}}. Die verwendete Schriftart ist {{<extlink "https://fonts.google.com/specimen/Quicksand" "Quicksand" >}} (Bold) unter der Open Font License.

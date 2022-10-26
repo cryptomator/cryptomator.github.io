@@ -1,7 +1,7 @@
 ---
 title: Pressemitteilungen
 anchor: press-releases
-weight: 11
+weight: 7
 ---
 - [2021-12-21 • Cryptomator 2.0 iOS • PDF](/de/presskit/2021-12-21%20Cryptomator%202.0%20iOS.pdf)
 - [2021-06-30 • Cryptomator 2.0 iOS Beta • PDF](/de/presskit/2021-06-30%20Cryptomator%202.0%20iOS%20Beta.pdf)
