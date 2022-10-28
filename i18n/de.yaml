@@ -1,5 +1,7 @@
 - id: site_meta_description
   translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
+- id: nav_promotion
+  translation: "Cryptomator für iOS und Android sind 33% reduziert! Happy&nbsp;Halloween!&nbsp;:jack_o_lantern:"
 - id: nav_support_us
   translation: "Unterstütze uns"
 - id: nav_learn_more
