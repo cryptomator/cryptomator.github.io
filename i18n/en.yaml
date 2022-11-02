@@ -253,7 +253,7 @@
 - id: hub_video_title
   translation: "Quick Introduction"
 - id: hub_video_description
-  translation: "Let us show you how Cryptomator Hub adds access management to your Cryptomator vaults."
+  translation: "Let us show you how Cryptomator Hub adds access management for your Cryptomator vaults."
 
 - id: hub_features_feature_1_title
   translation: "Strong Authentication"
