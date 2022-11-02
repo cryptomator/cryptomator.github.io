@@ -237,8 +237,6 @@
   translation: "Cryptomator ist Gewinner des Sonderpreises für Usable Security and Privacy."
 
 # Hub
-- id: hub_header_title_badge
-  translation: "Open Beta"
 - id: hub_header_title
   translation: "Das&nbsp;sichere Arbeiten&nbsp;im&nbsp;Team"
 - id: hub_header_description
@@ -499,7 +497,7 @@
 - id: hub_setup_hub_header_description
   translation: "Allgemeine Informationen über deine Hub-Installation."
 - id: hub_setup_hub_version_description
-  translation: "Für den Produktiveinsatz lege die Version explizit fest."
+  translation: "Für den Produktiveinsatz verwende die stabile Version."
 - id: hub_setup_hub_public_url
   translation: "Öffentliche Hub-URL"
 - id: hub_setup_hub_public_url_description
