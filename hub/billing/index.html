@@ -466,8 +466,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-928657341" x-model="acceptTerms" />
-<label for="id-928657341">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-193426587" x-model="acceptTerms" />
+<label for="id-193426587">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -504,7 +504,7 @@
                       You have a large team? We&#39;re happy to offer customized pricing and an individual solution for your needs.
                     </p>
                   </div>
-                  <a href="mailto:sales@cryptomator.org" role="button" class="btn btn-primary w-full md:w-64">
+                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full md:w-64">
                     <i class="fas fa-envelope"></i>
                     Contact Us
                   </a>
@@ -548,7 +548,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[3]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              Yes, we offer discounts for nonprofits and educational institutions. Please contact our sales team to check if you qualify. For those who do not qualify, we offer a volume discount for large teams. (Special: Until the end of 2022, we offer 25% off for the first year!)
+              Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams. (Special: Until the end of 2022, we offer 25% off for the first year!)
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
