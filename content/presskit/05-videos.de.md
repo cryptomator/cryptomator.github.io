@@ -17,7 +17,15 @@ weight: 5
       <div class="relative aspect-16x9 mb-2">
         <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/AIS5vbUAFc0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <figcaption>Cryptomator Tutorial • 1080p • YouTube</figcaption>
+      <figcaption>Cryptomator Tutorial: Erste Schritte • 1080p • YouTube</figcaption>
+    </figure>
+  </div>
+    <div class="w-full px-3 lg:w-1/2">
+    <figure class="rounded shadow bg-white text-center p-2">
+      <div class="relative aspect-16x9 mb-2">
+        <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/D14fzrsPCxY" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <figcaption>Cryptomator Hub: Quick Introduction • 2160p • YouTube</figcaption>
     </figure>
   </div>
 </div>

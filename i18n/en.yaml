@@ -252,10 +252,11 @@
 - id: hub_header_man_vault_alt
   translation: "Person holding the key to a very secure vault"
 
-- id: hub_features_title
-  translation: "Features"
-- id: hub_features_description
-  translation: "Cryptomator Hub adds access management to your Cryptomator vaults."
+- id: hub_video_title
+  translation: "Quick Introduction"
+- id: hub_video_description
+  translation: "Let us show you how Cryptomator Hub adds access management to your Cryptomator vaults."
+
 - id: hub_features_feature_1_title
   translation: "Strong Authentication"
 - id: hub_features_feature_1_description

@@ -252,10 +252,11 @@
 - id: hub_header_man_vault_alt
   translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
 
-- id: hub_features_title
-  translation: "Features"
-- id: hub_features_description
-  translation: "Cryptomator Hub ermöglicht die Zugriffsverwaltung für deine Cryptomator-Tresore."
+- id: hub_video_title
+  translation: "Kurze Einführung"
+- id: hub_video_description
+  translation: "Wir zeigen dir hier wie Cryptomator Hub die Zugriffsverwaltung für deine Cryptomator-Tresore ermöglicht."
+
 - id: hub_features_feature_1_title
   translation: "Starke Authentifizierung"
 - id: hub_features_feature_1_description
