@@ -325,7 +325,7 @@
 - id: hub_contact_us_title
   translation: "More questions about Cryptomator Hub?"
 - id: hub_contact_us_button
-  translation: "Contact Our Sales Team"
+  translation: "Contact Us"
 
 - id: hub_newsletter_title
   translation: "Let's stay in touch"
