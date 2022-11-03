@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tags</title>
+    <title>hub</title>
     
-      <meta name="description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
-      <meta property="og:title" content="Cryptomator - Tags"/>
+      <meta name="description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
+      <meta property="og:title" content="Cryptomator - hub"/>
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/de/tags/"/>
+      <meta property="og:url" content="https://cryptomator.org/tags/hub/"/>
       <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
+      <meta property="og:description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
       <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
       <meta property="og:image:width" content="1200"/>
       <meta property="og:image:height" content="630"/>
     
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content="en_US" />
     
-      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale:alternate" content="de_DE" />
     
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
       <link rel="stylesheet" href="/css/main.min.29725bebc2d6abf78fa5b13e23c476bfae25cfed6ed2523afb3078b923525e08.css" integrity="sha256-KXJb68LWq/ePpbE&#43;I8R2v64lz&#43;1u0lI6&#43;zB4uSNSXgg=" media="screen" />
     
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
-      <link rel="alternate" hreflang="en" href="/tags/" />
+      <link rel="alternate" hreflang="de" href="/de/tags/hub/" />
     
     
       
@@ -35,7 +35,7 @@
   <body class="bg-dark font-body text-gray-900">
     <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
-    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/de/">
+    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
       <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
     </a>
@@ -43,37 +43,37 @@
     
     <ul class="hidden lg:flex items-stretch list-none m-0">
       <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
-        <a class="p-2 hover:no-underline" href="/de/downloads/">Downloads</a>
+        <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
       </li>
       <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
-        <a class="p-2 hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+        <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
       </li>
       <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
         <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
-          <span>Unterstütze uns</span>
+          <span>Support Us</span>
           <i class="fas fa-chevron-down fa-fw text-xs"></i>
         </button>
         <div class="relative">
           <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
-            <a href="/de/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter-Zertifikat</a>
-            <a href="/de/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Spenden</a>
-            <a href="/de/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsoren</a>
+            <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+            <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+            <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
           </div>
         </div>
       </li>
       <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
         <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
-          <span>Mehr erfahren</span>
+          <span>Learn More</span>
           <i class="fas fa-chevron-down fa-fw text-xs"></i>
         </button>
         <div class="relative">
           <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
-            <a href="/de/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Wie Open Source die Sicherheit stärkt</a>
-            <a href="/de/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Verschlüsselung deiner Dropbox</a>
-            <a href="/de/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative zu Boxcryptor</a>
-            <a href="/de/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Unsere Kooperationspartner</a>
-            <a href="/de/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Einsatz im Enterprise</a>
-            <a href="/de/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">DSGVO-Konformität</a>
+            <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+            <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+            <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+            <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+            <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+            <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
           </div>
         </div>
       </li>
@@ -82,12 +82,12 @@
       
       <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
         <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
-          <span>DE</span>
+          <span>EN</span>
           <i class="fas fa-chevron-down fa-fw text-xs"></i>
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            <a href="/tags/" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+            <a href="/de/tags/hub/" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
           </div>
         </div>
       </li>
@@ -108,42 +108,42 @@
   
   
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden">
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
     
     <hr class="border-primary my-2"/>
 
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      Unterstütze uns
+      Support Us
     </div>
     <div class="mt-1">
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/supporter-cert/">Supporter-Zertifikat</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/donate/">Spenden</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/sponsors/">Sponsoren</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
     </div>
     
     <hr class="border-primary my-2"/>
 
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      Mehr erfahren
+      Learn More
     </div>
     <div class="mt-1">
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/open-source/">Wie Open Source die Sicherheit stärkt</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/encrypt-dropbox/">Verschlüsselung deiner Dropbox</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/boxcryptor-alternative/">Alternative zu Boxcryptor</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/coop/">Unsere Kooperationspartner</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/enterprise/">Einsatz im Enterprise</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/gdpr/">DSGVO-Konformität</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
     </div>
 
     <hr class="border-primary my-2"/>
     
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      <i class="fas fa-globe fa-fw"></i> DE
+      <i class="fas fa-globe fa-fw"></i> EN
     </div>
     <div class="mt-1">
       
-      <a href="/tags/" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a href="/de/tags/hub/" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
     
@@ -151,11 +151,11 @@
     
     <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">
       <i class="fab fa-twitter fa-fw"></i>
-      <span>Cryptomator auf Twitter</span>
+      <span>Cryptomator on Twitter</span>
     </a>
     <a class="block p-2 hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener">
       <i class="fab fa-facebook-f fa-fw"></i>
-      <span>Cryptomator auf Facebook</span>
+      <span>Cryptomator on Facebook</span>
     </a>
   </div>
 </nav>
@@ -171,93 +171,22 @@
     
       
         <article>
-          <h2>cryptomator</h2>
-          
-        </article>
-      
-        <article>
-          <h2>hub</h2>
-          
-        </article>
-      
-        <article>
-          <h2>android</h2>
-          
-        </article>
-      
-        <article>
-          <h2>desktop</h2>
-          
-        </article>
-      
-        <article>
-          <h2>ios</h2>
-          
-        </article>
-      
-        <article>
-          <h2>installer</h2>
-          
-        </article>
-      
-        <article>
-          <h2>windows</h2>
-          
-        </article>
-      
-        <article>
-          <h2>vulnerability</h2>
-          
-        </article>
-      
-        <article>
-          <h2>event</h2>
-          
-        </article>
-      
-        <article>
-          <h2>linux</h2>
-          
-        </article>
-      
-        <article>
-          <h2>mac</h2>
-          
-        </article>
-      
-        <article>
-          <h2>vault-format</h2>
-          
-        </article>
-      
-        <article>
-          <h2>data protection</h2>
-          
-        </article>
-      
-        <article>
-          <h2>encryption</h2>
-          
-        </article>
-      
-        <article>
-          <h2>sponsors</h2>
-          
-        </article>
-      
-        <article>
-          <h2>community</h2>
-          
-        </article>
-      
-        <article>
-          <h2>cyberduck</h2>
-          
-        </article>
-      
-        <article>
-          <h2>in-depth</h2>
-          
+          <h2>Cryptomator Hub 1.0 Release</h2>
+          <p>We are happy to announce that Cryptomator Hub, the team and enterprise solution for Cryptomator, is now ready for production use! 🎉 Huge thanks to our testers that participated in our open beta over the last 3 months for their feedback. ❤️</p>
+<h2 id="what-is-cryptomator-hub">What is Cryptomator Hub?</h2>
+<p>In short: Cryptomator Hub adds access management for your Cryptomator vaults. It enables a secure way for you to work in teams with confidential and sensitive files for any cloud storage.</p>
+<p>Check out our quick introduction video to learn more about the basics.</p>
+<div class="relative aspect-16x9">
+  <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/D14fzrsPCxY" frameborder="0" allowfullscreen></iframe>
+</div>
+<h2 id="how-does-cryptomator-hub-work">How does Cryptomator Hub work?</h2>
+<p>Cryptomator Hub is based on the same concept of a vault, a secure file storage for syncing to the cloud with end-to-end encryption. New is that Hub replaces the vault password with a central access management.</p>
+<p>Individual access to Cryptomator vaults is secured through server-side authentication and key management. Hub manages key material based on a zero-knowledge solution without getting in touch with unencrypted keys. <a href="https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management">Learn more.</a></p>
+<h2 id="how-can-i-get-started">How can I get started?</h2>
+<p>The self-hosted solution is delivered as a software container and can be deployed using Kubernetes or Docker. Vist the <a href="/hub/">landing page</a> of Cryptomator Hub to get started.</p>
+<p>Hub can be used for free for up to 5 team members. For larger teams and companies, an annual license can be purchased through the website at $6.00 per seat per month. Until the end of the year, there is a promotional discount that gives 25% off for the first year. 🎊</p>
+<p>And as always, Cryptomator Hub is fully <a href="https://github.com/cryptomator/hub">open source</a>. If you have more questions, let us know in the discussion below or <a href="mailto:hub@cryptomator.org">contact us</a>. We are looking forward to your feedback! 🤖</p>
+
         </article>
       
     </div>
@@ -269,18 +198,18 @@
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/presskit/">Pressemappe</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
       </ul>
     </div>
     
     <div>
-      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Etwas beitragen</h4>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
       <ul class="list-none m-0">
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/donate/">Spenden</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Übersetzen</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
       </ul>
     </div>
     
@@ -289,25 +218,25 @@
       <ul class="list-none m-0">
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/contact/">Kontakt</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
       </ul>
     </div>
     
     <div>
-      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Uns folgen</h4>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
       <ul class="list-none m-0">
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">Twitter</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://facebook.com/Cryptomator" target="_blank" rel="noopener">Facebook</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/feed.xml" rel="alternate" type="application/rss+xml">RSS-Feed</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
       </ul>
     </div>
     
     <div>
-      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Rechtliches</h4>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/impressum/">Impressum</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/privacy/">Datenschutzerklärung</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/terms/">AGB</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
       </ul>
     </div>
   </section>

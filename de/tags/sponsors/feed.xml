@@ -11,8 +11,35 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/sponsors/</link>
     </image>
-    <lastBuildDate>Wed, 02 Nov 2022 20:42:44 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Nov 2022 07:33:19 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub 1.0 Release</title>
+        <description>&lt;p&gt;Wir freuen uns, euch mitteilen zu können, dass Cryptomator Hub, die Team- und Unternehmenslösung für Cryptomator, für den Produktionseinsatz bereit ist! 🎉 Vielen Dank an unsere Tester, die in den letzten 3 Monaten an unserer offenen Beta teilgenommen haben, für ihr Feedback.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-cryptomator-hub&#34;&gt;Was ist Cryptomator Hub?&lt;/h2&gt;
+&lt;p&gt;Kurz gesagt: Cryptomator Hub ermöglicht die Zugriffsverwaltung für Cryptomator-Tresore und somit die sichere Zusammenarbeit von Teams mit vertraulichen und sensiblen Dateien für beliebige Cloud-Speicher.&lt;/p&gt;
+&lt;p&gt;Unser kurzes Einführungsvideo zeigt euch mehr über die Grundlagen von Cryptomator Hub.&lt;/p&gt;
+&lt;div class=&#34;relative aspect-16x9&#34;&gt;
+  &lt;iframe class=&#34;absolute w-full h-full&#34; src=&#34;https://www.youtube-nocookie.com/embed/D14fzrsPCxY&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;wie-funktioniert-cryptomator-hub&#34;&gt;Wie funktioniert Cryptomator Hub?&lt;/h2&gt;
+&lt;p&gt;Cryptomator Hub basiert auf dem gleichen Konzept des Tresors, einer gesicherten Dateiablage zum Synchronisieren in die Cloud mit Ende-zu-Ende-Verschlüsselung. Neu ist, dass Hub das Tresor-Passwort durch eine zentrale Zugriffsverwaltung ersetzt.&lt;/p&gt;
+&lt;p&gt;Der individuelle Zugriff auf Cryptomator-Tresore wird durch eine serverseitige Authentifizierung und eine Schlüsselverwaltung gesichert. Hub verwaltet das Schlüsselmaterial basierend auf einer Zero-Knowledge-Lösung, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;Mehr erfahren.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wie-kann-ich-losegen&#34;&gt;Wie kann ich losegen?&lt;/h2&gt;
+&lt;p&gt;Die Self-Hosted-Lösung wird als Softwarecontainer ausgeliefert und kann mittels Kubernetes oder Docker installiert werden. Mehr Infos zum Loslegen gibt es auf &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Landing Page&lt;/a&gt; von Cryptomator Hub.&lt;/p&gt;
+&lt;p&gt;Hub kann bis zu einer Teamgröße von 5 Personen kostenlos genutzt werden. Für größere Teams und Unternehmen kann über die Webseite eine jährliche Lizenz mit 6,00€ pro Sitz und Monat erworben werden. Bis zum Ende des Jahres gibt es eine Rabattaktion, die 25% Nachlass auf das erste Jahr gewährt. 🎊&lt;/p&gt;
+&lt;p&gt;Und wie immer, Cryptomator Hub ist vollständig &lt;a href=&#34;https://github.com/cryptomator/hub&#34;&gt;Open-Source&lt;/a&gt;. Bei weiteren Fragen teilt sie uns gerne in der untenstehenden Diskussion mit oder &lt;a href=&#34;mailto:hub@cryptomator.org&#34;&gt;kontaktiert uns&lt;/a&gt;. Wir freuen uns auf euer Feedback! 🤖&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2022/11/03/hub-1.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/11/03/hub-1.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator Roadmap Early 2022</title>
@@ -351,59 +378,6 @@ Eine Anleitung zur Migration dieses Randfalls wird bald veröffentlicht.&lt;/p&g
         <category>cryptomator</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>Strategische Autonomie in Gefahr: Europäische Tech-Unternehmen warnen vor sinkendem Datenschutzniveau in der EU</title>
-        <description>&lt;p class=&#34;lead&#34;&gt;Eine gemeinsame Stellungnahme der IT-Unternehmen Boxcryptor, Cryptomator, Mailbox.org, Mail.de, Mailfence, Praxonomy, Tresorit und Tutanota.&lt;/p&gt;
-&lt;p&gt;Im Zuge der Initiative „Fighting child sexual abuse: detection, removal, and reporting of illegal content“ plant die EU die Abschaffung des digitalen Briefgeheimnisses durch die Hintertür. Um illegale Inhalte automatisiert zu erkennen, sollen künftig alle privaten Chat-Nachrichten durchleuchtet werden. Dies soll auch für Inhalte gelten, die bislang mittels Ende-zu-Ende-Verschlüsselung geschützt werden. Das würde einen enormen Schaden für die europäischen Ideale und die indiskutablen Grundfesten unserer Demokratie, nämlich die freie Meinungsäußerung und den Schutz der Privatsphäre bedeuten. Außerdem würde das Absenken des Datenschutzniveaus die strategische Autonomie und damit auch in der EU ansässige Unternehmen schädigen. Der Grund ist, dass der Standort Europa auch wegen der Vorbildwirkung der DSGVO international für das hohe Datenschutzniveau geachtet wird. In einem international hoch kompetitiven Markt stehen europäische Unternehmen in Sachen Datenschutz an vorderster Position. Die EU-Initiative könnte nun dieses Alleinstellungsmerkmal europäischer IT-Unternehmen gefährden.&lt;/p&gt;
-&lt;p&gt;Deshalb fordern wir:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Das hohe Datenschutzniveau der Europäischen Union muss beibehalten werden.&lt;/li&gt;
-&lt;li&gt;Grundrechte müssen gewahrt werden, insbesondere das Recht auf Privatsphäre und das digitale Briefgeheimnis.&lt;/li&gt;
-&lt;li&gt;Ruf nach Massenüberwachung ist zu einfach und zu kurz gedacht.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;hohes-datenschutzniveau-der-eu-muss-beibehalten-werden&#34;&gt;Hohes Datenschutzniveau der EU muss beibehalten werden&lt;/h2&gt;
-&lt;p&gt;Die Datenschutz-Grundverordnung hat weltweite Vorbildfunktion für den Schutz personenbezogener Daten. Einige Länder haben bereits eigene Versionen der DSGVO auf den Weg gebracht oder in Kraft gesetzt. Dass die Europäische Union nun genau gegenteilige Schritte plant, ist ein falsches Signal mit fataler Wirkung für den IT-Standort EU. Die hohen Datenschutzstandards führen zu einem großen Vertrauen in europäische und auch deutsche IT-Produkte. Das Siegel „Made in Europe“ wiegt schwer bei den Kaufentscheidungen unserer Kunden - und das weltweit. Der Zwang, den hohen Schutz aufzubrechen und Hintertüren in Ende-zu-Ende-verschlüsselte Kommunikation einzubauen, gefährdet das Geschäft zahlreicher IT-Unternehmen in der gesamten EU sowie ein wichtiges Alleinstellungsmerkmal für europäische IT-Unternehmen auf dem globalen Markt.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Wir betonen ausdrücklich, dass Zugriffsmöglichkeiten auf verschlüsselte Kommunikation durch private Organisationen und Behörden mit einem starken Technologie-Standort EU unvereinbar sind.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;recht-auf-privatsphäre-und-das-digitale-briefgeheimnis&#34;&gt;Recht auf Privatsphäre und das digitale Briefgeheimnis&lt;/h2&gt;
-&lt;p&gt;Eine geschützte Kommunikation ist für das Zusammenleben innerhalb unserer Gesellschaft sehr wichtig. Ganz natürlich kommen uns die Schweigepflicht des Arztes und das Anwaltsgeheimnis vor. Doch wie sollen diese Berufsgruppen ihre Berufsgeheimnisse wahren, wenn eine geschützte Kommunikation mit Patienten und Klienten nicht möglich ist? Die Überwachung jeglicher Kommunikation innerhalb von Nummern-unabhängigen Diensten versetzt diese Berufsgruppen technologisch zurück ins 20. Jahrhundert. Es kann dann nur noch postalisch oder persönlich kommuniziert werden kann.&lt;/p&gt;
-&lt;p&gt;Dennoch verhindert die EU-Initiative keine Verbrechen. Personen mit kriminellen Energien können mit geringem Aufwand zweckbezogen einen privaten, Ende-zu-Ende-verschlüsselten Chat-Dienst aufsetzen und sich dadurch den Strafverfolgungsbehörden weiterhin entziehen. Privatpersonen, die auf möglichst große Netzwerke mit vielen Teilnehmern angewiesen sind, haben diese Möglichkeit nicht.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Der Schutz des digitalen Briefgeheimnisses darf nicht abgeschwächt werden. Im Gegenteil, mit der stetigen Verlagerung der sensiblen Kommunikation in allen Bereichen unserer Gesellschaft ins Digitale ist eine starke Ende-zu-Ende-Verschlüsselung zwingend notwendig.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ruf-nach-massenüberwachung-ist-zu-einfach-und-zu-kurz-gedacht&#34;&gt;Ruf nach Massenüberwachung ist zu einfach und zu kurz gedacht&lt;/h2&gt;
-&lt;p&gt;Zuletzt möchten wir die Europäische Kommission dazu aufrufen, auf populistische, aktionistische Politik zu verzichten und Probleme auf der Sachebene zu lösen. Sichere Kommunikation für alle EU-Bürgerinnen und Bürger faktisch zu verbieten, macht das Leben für alle unsicher.&lt;/p&gt;
-&lt;p&gt;Besonders problematisch ist die Abschaffung der Privatsphäre in Bezug auf die private Kommunikation: So können beispielsweise Strandfotos der eigenen Kinder oder private Nacktbilder beim Verschicken durch die automatisierte Prüfung durch künstliche Intelligenz einen Alarm auslösen. So ein Alarm hat zur Folge, dass Mitarbeiter internationaler Konzerne, sowie Polizeibehörden diese intimen Bilder sichten. Sprich unbekannte Menschen bekommen Zugang zu sehr persönlichen Bildern und könnten diese wiederum weiterverbreiten. Hier entsteht ein neues Risiko.&lt;/p&gt;
-&lt;p&gt;Der Ruf nach Massenüberwachung ist zu einfach und kommt vor allem mit dem Argument des Kinderschutzes bei Vielen gut an. Wie auch beim Kinderschutz wird auch beim Schutz vor Terroranschlägen häufig der Ruf nach mehr Überwachung laut. Sascha Lobo hat im Spiegel dargelegt, warum mehr Überwachung nicht zwangsläufig zu mehr Sicherheit führt: „Seit 2014 verübten insgesamt 24 identifizierte Täter 13 islamistische Mordanschläge in der EU - und alle, ja wirklich: 100 Prozent der Attentäter waren zuvor den Behörden bekannt und gewaltaffin.“&lt;/p&gt;
-&lt;p&gt;Ob das Einführen von Massenüberwachung für die Aufklärung von Straftaten zielführend ist, ist nicht bewiesen. Fest steht jedoch, dass drei Dinge dabei helfen, Kinder effektiv vor sexualisierter Gewalt zu schützen:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Gezielte Strafverfolgung statt Überhäufung der Behörden durch harmloses Bildmaterial.&lt;/li&gt;
-&lt;li&gt;Präventions- und Interventionsarbeit in Familien und Institutionen, regelmäßige öffentliche Diskussionen mit Fachleuten in den Medien sowie verpflichtende Fortbildungen für alle, die mit Menschen arbeiten.&lt;/li&gt;
-&lt;li&gt;Anerkennung der Tatsache, dass Missbrauch meist innerhalb der Familie passiert.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Zusammenfassend stellen wir fest: Wir können die Maßstäbe unserer Gesellschaft nicht am Verhalten Krimineller ausrichten. Straftaten verhindert man nicht, indem man jeden Bürger zum potenziellen Verdächtigen macht.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Wir sehen bei der EU-Initiative „Fighting child sexual abuse: detection, removal, and reporting of illegal content“ die eindeutige Gefahr, dass sichere Kommunikation für Bürger und Unternehmen mit der Begründung des Kinderschutzes aufgegeben werden soll. Dies darf in einer offenen, demokratischen Gesellschaft nicht geschehen.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Als Expertinnen und Experten im Bereich der sicheren Kommunikation stehen wir der EU-Kommission sehr gern als Ansprechpartner zum technisch Machbaren bereit.&lt;/p&gt;
-&lt;p&gt;Erstellt unter der Mitwirkung von Tanja Bullert, Sozialarbeiterin mit dem Schwerpunkt Prävention von und Intervention bei sexualisierter Gewalt.&lt;/p&gt;
-&lt;p&gt;Unterzeichner:&lt;/p&gt;
-&lt;div class=&#34;flex flex-wrap justify-center&#34;&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/boxcryptor-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/boxcryptor-logo.png 1x, https://cryptomator.org/img/blog/boxcryptor-logo@2x.png 2x&#34; alt=&#34;Boxcryptor Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/cryptomator-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/cryptomator-logo.png 1x, https://cryptomator.org/img/blog/cryptomator-logo@2x.png 2x&#34; alt=&#34;Cryptomator Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/mailboxorg-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/mailboxorg-logo.png 1x, https://cryptomator.org/img/blog/mailboxorg-logo@2x.png 2x&#34; alt=&#34;Mailbox.org Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/mailde-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/mailde-logo.png 1x, https://cryptomator.org/img/blog/mailde-logo@2x.png 2x&#34; alt=&#34;Mail.de Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/mailfence-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/mailfence-logo.png 1x, https://cryptomator.org/img/blog/mailfence-logo@2x.png 2x&#34; alt=&#34;Mailfence Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/praxonomy-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/praxonomy-logo.png 1x, https://cryptomator.org/img/blog/praxonomy-logo@2x.png 2x&#34; alt=&#34;Praxonomy Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/tresorit-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/tresorit-logo.png 1x, https://cryptomator.org/img/blog/tresorit-logo@2x.png 2x&#34; alt=&#34;Tresorit Logo&#34;/&gt;
-  &lt;img class=&#34;px-8 py-4&#34; src=&#34;https://cryptomator.org/img/blog/tutanota-logo.png&#34; srcset=&#34;https://cryptomator.org/img/blog/tutanota-logo.png 1x, https://cryptomator.org/img/blog/tutanota-logo@2x.png 2x&#34; alt=&#34;Tutanota Logo&#34;/&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2021/04/15/eu-e2ee-strategic-autonomy-in-danger/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2021/04/15/eu-e2ee-strategic-autonomy-in-danger/</guid>
-        
-        <category>data protection</category>
-        
-        <category>encryption</category>
         
       </item>
     
