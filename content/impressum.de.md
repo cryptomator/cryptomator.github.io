@@ -39,4 +39,5 @@ Skymatic nimmt jedoch nicht an einem Streitbeilegungsverfahren vor einer Verbrau
 Dieses Impressum gilt auch für die folgenden Auftritte in den sozialen Medien:
 
 Facebook: {{< extlink "https://facebook.com/Cryptomator" "https://facebook.com/Cryptomator" >}}<br/>
+Fediverse: {{< extlink "https://mastodon.online/@cryptomator" "https://mastodon.online/@cryptomator" >}}<br/>
 Twitter: {{< extlink "https://twitter.com/Cryptomator" "https://twitter.com/Cryptomator" >}}
