@@ -17,39 +17,17 @@
         </p>
       </header>
       <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-        <div class="col-span-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-2">
           <!-- KUBERNETES -->
-          <label class="relative bg-white border rounded p-4 flex cursor-pointer" :class="deploymentType == 'kubernetes' ? 'border-transparent' : 'border-gray-300'">
-            <input type="radio" value="kubernetes" class="sr-only" x-model="deploymentType" @click="cfg.hub.publicUrl = 'https://domain.tld'; cfg.keycloak.publicUrl = HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl)">
-            <div class="flex-1 flex">
-              <div class="flex flex-col">
-                <span class="block text-sm font-medium text-gray-900">
-                  Kubernetes
-                </span>
-                <span class="mt-1 flex items-center text-sm text-gray-500">
-                  {{ i18n "hub_setup_deployment_kubernetes_description" . }}
-                </span>
-              </div>
-            </div>
-            <i class="fas fa-check-circle text-primary" :class="deploymentType == 'kubernetes' || 'invisible'" aria-hidden="true"></i>
-            <div class="absolute -inset-px rounded border pointer-events-none" :class="deploymentType == 'kubernetes' ? 'border-primary' : 'border-transparent'" aria-hidden="true"></div>
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'kubernetes' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg.hub.publicUrl = 'https://domain.tld'; cfg.keycloak.publicUrl = HubSetup.getInternalKeycloakUrl(cfg.hub.publicUrl)" aria-describedby="deployment-type-kubernetes-label">
+            <span id="deployment-type-kubernetes-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'kubernetes' ? 'text-indigo-900' : 'text-gray-900'">Kubernetes</span>
           </label>
 
           <!-- DOCKER COMPOSE -->
-          <label class="relative bg-white border rounded p-4 flex cursor-pointer" :class="deploymentType == 'docker-compose' ? 'border-transparent' : 'border-gray-300'">
-            <input type="radio" value="docker-compose" class="sr-only" x-model="deploymentType" @click="cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'">
-            <div class="flex-1 flex">
-              <div class="flex flex-col">
-                <span class="block text-sm font-medium text-gray-900">
-                  Docker Compose
-                </span>
-                <span class="mt-1 flex items-center text-sm text-gray-500">
-                  {{ i18n "hub_setup_deployment_compose_description" . }}
-                </span>
-              </div>
-            </div>
-            <i class="fas fa-check-circle text-primary" :class="deploymentType == 'docker-compose' || 'invisible'" aria-hidden="true"></i>
-            <div class="absolute -inset-px rounded border pointer-events-none" :class="deploymentType == 'docker-compose' ? 'border-primary' : 'border-transparent'" aria-hidden="true"></div>
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'docker-compose' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="docker-compose" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'" aria-describedby="deployment-type-compose-label">
+            <span id="deployment-type-compose-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'docker-compose' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose</span>
           </label>
         </div>
 

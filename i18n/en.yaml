@@ -483,14 +483,10 @@
   translation: "Deployment"
 - id: hub_setup_deployment_header_description
   translation: "On what type of infrastructure do you want to deploy Cryptomator Hub?"
-- id: hub_setup_deployment_kubernetes_description
-  translation: "Recommended for production deployments"
 - id: hub_setup_deployment_kubernetes_namespace_description
   translation: "Namespace for the Kubernetes resources."
 - id: hub_setup_deployment_kubernetes_ingress_include
   translation: "Include Ingress object in Kubernetes config."
-- id: hub_setup_deployment_compose_description
-  translation: "For easy testing with Docker Desktop"
 
 - id: hub_setup_hub_header_title
   translation: "Cryptomator Hub"
