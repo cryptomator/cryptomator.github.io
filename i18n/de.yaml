@@ -6,8 +6,8 @@
   translation: "Mehr erfahren"
 - id: nav_twitter
   translation: "Cryptomator auf Twitter"
-- id: nav_fediverse
-  translation: "Cryptomator im Fediverse"
+- id: nav_github
+  translation: "Cryptomator auf GitHub"
 - id: footer_contribute_title
   translation: "Etwas beitragen"
 - id: footer_contribute_translate
