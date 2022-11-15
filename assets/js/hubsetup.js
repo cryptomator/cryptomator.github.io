@@ -399,7 +399,7 @@ EOF`;
       },
       ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
       healthcheck: {
-        test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`],
+        test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
         interval: '60s',
         timeout: '3s',
       },
@@ -600,7 +600,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               args: [
                 '/bin/sh',
                 '-c',
-                `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live" 2>>/dev/null; do sleep 10; done`
+                `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live" 2>>/dev/null; do sleep 10; done`
               ]
             }] : [])],
             containers: [{
@@ -745,7 +745,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 limits: {cpu: '1000m', memory: '1024Mi'},
               },
               livenessProbe: {
-                httpGet: {path: `${this.getPathname(this.cfg.keycloak.publicUrl)}/health/live`, port: 8080},
+                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`, port: 8080},
                 initialDelaySeconds: 120,
                 periodSeconds: 60
               },
