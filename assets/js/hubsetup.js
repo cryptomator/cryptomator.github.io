@@ -19,14 +19,14 @@ class HubSetup {
       },
       keycloak: {
         useExternal: false,
-        publicUrl: '',
+        publicUrl: 'https://domain.tld/kc',
         adminUser: 'admin',
         adminPw: 'admin',
         realmId: 'cryptomator',
       },
       hub: {
         version: 'stable',
-        publicUrl: '',
+        publicUrl: 'https://domain.tld',
         adminUser: 'admin',
         adminPw: 'admin',
         syncerUser: 'syncer', // TODO: randomize?
@@ -124,14 +124,6 @@ ${e}`;
       return url.href;
     } catch {
       return '<invalid-url>';
-    }
-  }
-
-  static getInternalKeycloakUrl(urlStr) {
-    try {
-      return new URL('kc', HubSetup.urlWithTrailingSlash(urlStr)).href;
-    } catch {
-      return '<requires-valid-public-hub-url>';
     }
   }
 
