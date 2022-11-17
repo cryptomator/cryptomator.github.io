@@ -505,7 +505,7 @@
 - id: hub_setup_hub_admin_pw
   translation: "Admin-Passwort"
 - id: hub_setup_hub_admin_pw_description
-  translation: "Passwort für den Erstbenutzer. Du solltest es bei deiner ersten Anmeldung ändern."
+  translation: "Passwort für den Erstbenutzer. Bei der ersten Anmeldung wirst du aufgefordert, dieses zu ändern."
 
 - id: hub_setup_keycloak_header_title
   translation: "Keycloak"
@@ -532,7 +532,7 @@
 - id: hub_setup_keycloak_admin_pw
   translation: "Anfängliches Admin-Passwort"
 - id: hub_setup_keycloak_admin_pw_description
-  translation: "Temporäres Passwort für den Admin-Benutzer. Bei der ersten Anmeldung wirst du aufgefordert, dieses zu ändern."
+  translation: "Temporäres Passwort für den Admin-Benutzer. Du solltest es bei deiner ersten Anmeldung ändern."
 
 - id: hub_setup_database_header_title
   translation: "Datenbank"

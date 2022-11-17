@@ -505,7 +505,7 @@
 - id: hub_setup_hub_admin_pw
   translation: "Admin Password"
 - id: hub_setup_hub_admin_pw_description
-  translation: "Password for the initial user. You should change this on your first login."
+  translation: "Password for the initial user. You will be asked to change this on your first login."
 
 - id: hub_setup_keycloak_header_title
   translation: "Keycloak"
@@ -532,7 +532,7 @@
 - id: hub_setup_keycloak_admin_pw
   translation: "Initial Admin Password"
 - id: hub_setup_keycloak_admin_pw_description
-  translation: "Temporary password for the admin user. You will be asked to change this on your first login."
+  translation: "Temporary password for the admin user. You should change this on your first login."
 
 - id: hub_setup_database_header_title
   translation: "Database"
