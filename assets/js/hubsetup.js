@@ -634,7 +634,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
-                ...(this.cfg.keycloak.useExternal ? [{name: 'QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE', value: `default-src 'self'; connect-src 'self' api.cryptomator.org ${this.cfg.keycloak.publicUrl}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`}] : [])
+                ...(this.cfg.keycloak.useExternal || this.getHostname(this.cfg.hub.publicUrl) != this.getHostname(this.cfg.keycloak.publicUrl) ? [{name: 'QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE', value: `default-src 'self'; connect-src 'self' api.cryptomator.org ${this.cfg.keycloak.publicUrl}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`}] : [])
               ]
             }]
           }
@@ -815,6 +815,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
   }
 
   getIngress() {
+    let hubAndKeycloakSharingHost = this.getHostname(this.cfg.hub.publicUrl) == this.getHostname(this.cfg.keycloak.publicUrl);
     let ingress =  {
       apiVersion: 'networking.k8s.io/v1',
       kind: 'Ingress',
@@ -830,7 +831,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 name: 'cryptomator-hub-svc',
                 port: {number: 8080} 
               }}
-            }, ...(!this.cfg.keycloak.useExternal ? [{
+            }, ...(!this.cfg.keycloak.useExternal && hubAndKeycloakSharingHost ? [{
               path: this.getPathname(this.cfg.keycloak.publicUrl),
               pathType: 'Prefix',
               backend: {service: {
@@ -839,8 +840,20 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               }}
             }] : [])]
           }
-        }]
-      }
+        }, ...(!this.cfg.keycloak.useExternal && !hubAndKeycloakSharingHost ? [{
+          host: this.getHostname(this.cfg.keycloak.publicUrl),
+          http: {
+            paths: [{
+              path: this.getPathname(this.cfg.keycloak.publicUrl),
+              pathType: 'Prefix',
+              backend: {service: {
+                name: 'keycloak-svc',
+                port: {number: 8080} 
+              }}
+            }]
+          }
+        }] : [])
+      ]}
     }
     return jsyaml.dump(ingress, {lineWidth: -1});
   }
