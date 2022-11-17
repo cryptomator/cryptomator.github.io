@@ -556,6 +556,13 @@
 - id: hub_setup_output_header_description
   translation: "Use this configuration to deploy Cryptomator Hub."
 
+- id: hub_setup_contact_us_title
+  translation: "Need some help with your configuration?"
+- id: hub_setup_contact_us_description
+  translation: "This wizard creates a sensible default for common configurations. Feel free to contact us if you want us to tailor the setup to your specific needs."
+- id: hub_setup_contact_us_button
+  translation: "Contact Us"
+
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "Email"
