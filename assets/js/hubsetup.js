@@ -42,8 +42,8 @@ class HubSetup {
    */
   static generateOutput(cfg) {
     return {
-      k8s: HubSetup.writeK8sConfig(cfg),
-      compose: HubSetup.writeComposeConfig(cfg),
+      k8s: HubSetup.writeHeader(cfg) + HubSetup.writeK8sConfig(cfg),
+      compose: HubSetup.writeHeader(cfg) + HubSetup.writeComposeConfig(cfg),
       realm: HubSetup.writeRealmConfig(cfg)
     }
   }
@@ -95,6 +95,23 @@ GENERATING CONFIG FAILED
 ---
 ${e}`;
     }
+  }
+
+  static writeHeader(cfg) {
+    let cfgBuilder = new ConfigBuilder(cfg);
+    let devMode = cfgBuilder.getHostname(cfg.keycloak.publicUrl) == 'localhost';
+    let defaultKeycloakPath = cfgBuilder.getPathname(cfg.keycloak.publicUrl) == '/kc';
+
+    let result = '# Template for Cryptomator Hub deployment according to your specifications.\n\n';
+
+    if (!devMode && defaultKeycloakPath) {
+      result += '# If for some reason you later change any of the following environment variables, make sure to remove `--optimized` from the keycloak command, otherwise it will not start:\n';
+      result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
+    }
+
+    result += '# Generated using script version 1\n\n';
+
+    return result;
   }
 
   static uuid() {
@@ -381,9 +398,15 @@ EOF`;
 
   getKeycloakService() {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
-    let startCmd = devMode
-      ? 'start-dev --import-realm' // dev mode (no TLS required)
-      : 'start --optimized --import-realm'; // prod mode (requires a proper TLS termination proxy)
+    let defaultKeycloakPath = this.getPathname(this.cfg.keycloak.publicUrl) == '/kc';
+    let startCmd;
+    if (devMode) {
+      startCmd = 'start-dev --import-realm'; // dev mode (no TLS required)
+    } else if (defaultKeycloakPath) {
+      startCmd = 'start --optimized --import-realm'; // prod mode using build time optimizations (requires a proper TLS termination proxy)
+    } else {
+      startCmd = 'start --import-realm';  // prod mode without build time optimizations (requires a proper TLS termination proxy)
+    }
     return {
       depends_on: {
         'init-config': {condition: 'service_completed_successfully'},
@@ -697,9 +720,15 @@ class KubernetesConfigBuilder extends ConfigBuilder {
 
   getKeycloakDeployment() {
     let devMode = this.getHostname(this.cfg.keycloak.publicUrl) == 'localhost';
-    let startCmd = devMode
-      ? ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm'] // dev mode (no TLS required)
-      : ['/opt/keycloak/bin/kc.sh', 'start', '--optimized', '--import-realm']; // prod mode (requires a proper TLS termination proxy)
+    let defaultKeycloakPath = this.getPathname(this.cfg.keycloak.publicUrl) == '/kc';
+    let startCmd;
+    if (devMode) {
+      startCmd = ['/opt/keycloak/bin/kc.sh', 'start-dev', '--import-realm']; // dev mode (no TLS required)
+    } else if (defaultKeycloakPath) {
+      startCmd = ['/opt/keycloak/bin/kc.sh', 'start', '--optimized', '--import-realm']; // prod mode using build time optimizations (requires a proper TLS termination proxy)
+    } else {
+      startCmd = ['/opt/keycloak/bin/kc.sh', 'start', '--import-realm'];  // prod mode without build time optimizations (requires a proper TLS termination proxy)
+    }
     let env = [
       {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
       {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
