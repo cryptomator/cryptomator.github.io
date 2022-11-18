@@ -31,6 +31,32 @@
           </label>
         </div>
 
+        <!-- DOCKER-COMPOSE-SPECIFIC OPTIONS -->
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'docker-compose'" x-cloak>
+          <label for="composeIncludeTraefik" class="block text-sm font-medium text-gray-700">
+            Traefik
+          </label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="composeIncludeTraefik" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeTraefik">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="composeIncludeTraefik" class="font-medium text-gray-700">
+                {{ i18n "hub_setup_deployment_compose_traefik_include" . }}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6" x-show="deploymentType == 'docker-compose' && cfg.compose.includeTraefik" x-cloak>
+          <label for="composePublicNetwork" class="block text-sm font-medium text-gray-700">
+            Public Network
+          </label>
+          <input type="text" id="composePublicNetwork" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.publicNetwork">
+          <p class="mt-2 text-sm text-gray-500">
+            {{ i18n "hub_setup_deployment_compose_traefik_public_network_description" . }}
+          </p>
+        </div>
+
         <!-- KUBERNETES-SPECIFIC OPTIONS -->
         <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'kubernetes'" x-cloak>
           <label for="k8sNamespace" class="block text-sm font-medium text-gray-700">

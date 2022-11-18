@@ -487,6 +487,10 @@
   translation: "Namespace für die Kubernetes-Ressourcen."
 - id: hub_setup_deployment_kubernetes_ingress_include
   translation: "Ingress-Objekt in die Kubernetes-Konfiguration aufnehmen."
+- id: hub_setup_deployment_compose_traefik_include
+  translation: "Traefik in die Docker-Compose-Konfiguration aufnehmen."
+- id: hub_setup_deployment_compose_traefik_public_network_description
+  translation: "Name des öffentlich zugänglichen Netzwerks von Traefik."
 
 - id: hub_setup_hub_header_title
   translation: "Cryptomator Hub"

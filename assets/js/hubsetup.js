@@ -8,6 +8,10 @@ class HubSetup {
    */
   static defaultConfig() {
     return {
+      compose: {
+        includeTraefik: false,
+        publicNetwork: 'srv'
+      },
       k8s: {
         namespace: 'default',
         includeIngress: false
@@ -334,12 +338,43 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
    * @returns docker-compose.yml content
    */
   build() {
+    let initialNetwork;
+    let postgresService = this.getPostgresService();
+    let keycloakService = !this.cfg.keycloak.useExternal ? this.getKeycloakService(): null;
+    let hubService = this.getHubService()
+
+    if (this.cfg.compose.includeTraefik) {
+      initialNetwork = { networks: {'hub-internal': {}}};
+
+      postgresService = {
+        ...postgresService, 
+        networks: ['hub-internal'],
+        labels: ['traefik.enable=false']
+      };
+
+      // TODO doesn't support sub path yet
+      if (keycloakService) {
+        keycloakService = {
+          ...keycloakService,
+          networks: ['srv', 'hub-internal'],
+          labels: ['traefik.enable=true', `traefik.http.routers.kc.rule=Host(\`${this.getHostname(this.cfg.keycloak.publicUrl)}\`)`, 'traefik.http.services.kc.loadbalancer.server.port=8080']
+        }
+      }
+
+      hubService = {
+        ...hubService,
+        networks: ['srv', 'hub-internal'],
+        labels: ['traefik.enable=true', `traefik.http.routers.hub.rule=Host(\`${this.getHostname(this.cfg.hub.publicUrl)}\`)`, 'traefik.http.services.hub.loadbalancer.server.port=8080']
+      };
+    }
+
     return jsyaml.dump({
+      ...(initialNetwork) && initialNetwork,
       services: {
         'init-config': this.getInitConfigService(),
-        'postgres': this.getPostgresService(),
-        ...(!this.cfg.keycloak.useExternal) && { 'keycloak': this.getKeycloakService() },
-        'hub': this.getHubService()
+        'postgres': postgresService,
+        ...(keycloakService) && {'keycloak': keycloakService},
+        'hub': hubService
       },
       volumes: {
         ...(!this.cfg.keycloak.useExternal) && { 'kc-config': {} },
@@ -420,7 +455,7 @@ EOF`;
           limits: {cpus: '1.0', memory: '1024M'}
         }
       },
-      ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`],
+      ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`]}),
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
         interval: '60s',
@@ -456,7 +491,7 @@ EOF`;
           limits: {cpus: '1.0', memory: '512M'}
         }
       },
-      ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`],
+      ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`]}),
       healthcheck: {
         test: ['CMD', 'curl', '-f', 'http://localhost:8080/q/health/live'],
         interval: '10s',
