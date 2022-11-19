@@ -338,43 +338,13 @@ class DockerComposeConfigBuilder extends ConfigBuilder {
    * @returns docker-compose.yml content
    */
   build() {
-    let initialNetwork;
-    let postgresService = this.getPostgresService();
-    let keycloakService = !this.cfg.keycloak.useExternal ? this.getKeycloakService(): null;
-    let hubService = this.getHubService()
-
-    if (this.cfg.compose.includeTraefik) {
-      initialNetwork = { networks: {'hub-internal': {}}};
-
-      postgresService = {
-        ...postgresService, 
-        networks: ['hub-internal'],
-        labels: ['traefik.enable=false']
-      };
-
-      // TODO doesn't support sub path yet
-      if (keycloakService) {
-        keycloakService = {
-          ...keycloakService,
-          networks: ['srv', 'hub-internal'],
-          labels: ['traefik.enable=true', `traefik.http.routers.kc.rule=Host(\`${this.getHostname(this.cfg.keycloak.publicUrl)}\`)`, 'traefik.http.services.kc.loadbalancer.server.port=8080']
-        }
-      }
-
-      hubService = {
-        ...hubService,
-        networks: ['srv', 'hub-internal'],
-        labels: ['traefik.enable=true', `traefik.http.routers.hub.rule=Host(\`${this.getHostname(this.cfg.hub.publicUrl)}\`)`, 'traefik.http.services.hub.loadbalancer.server.port=8080']
-      };
-    }
-
     return jsyaml.dump({
-      ...(initialNetwork) && initialNetwork,
+      ...(this.cfg.compose.includeTraefik) && { networks: {'hub-internal': {}}},
       services: {
         'init-config': this.getInitConfigService(),
-        'postgres': postgresService,
-        ...(keycloakService) && {'keycloak': keycloakService},
-        'hub': hubService
+        'postgres': this.getPostgresService(),
+        ...(!this.cfg.keycloak.useExternal) && {'keycloak': this.getKeycloakService()},
+        'hub': this.getHubService()
       },
       volumes: {
         ...(!this.cfg.keycloak.useExternal) && { 'kc-config': {} },
@@ -427,7 +397,11 @@ EOF`;
       environment: {
         POSTGRES_PASSWORD: this.cfg.db.adminPw,
         POSTGRES_INITDB_ARGS: '--encoding=UTF8',
-      }
+      },
+      ...(this.cfg.compose.includeTraefik && {
+        networks: ['hub-internal'],
+        labels: ['traefik.enable=false']
+      })
     }
   }
 
@@ -475,7 +449,8 @@ EOF`;
         KC_HTTP_ENABLED: 'true',
         KC_PROXY: 'edge',
         KC_HTTP_RELATIVE_PATH: this.getPathname(this.cfg.keycloak.publicUrl),
-      }
+      },
+      ...(this.cfg.compose.includeTraefik && this.getTraefikConfig(this.cfg.keycloak.publicUrl, 'kc'))
     }
   }
 
@@ -515,8 +490,22 @@ EOF`;
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
         QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE: `default-src 'self'; connect-src 'self' api.cryptomator.org ${this.cfg.keycloak.publicUrl}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`
-      }
+      },
+      ...(this.cfg.compose.includeTraefik && this.getTraefikConfig(this.cfg.hub.publicUrl, 'hub')),
     }
+  }
+
+  getTraefikConfig(publicUrl, service) {
+    let hostname = this.getHostname(publicUrl);
+    let path = this.getPathname(publicUrl)
+    let traefikRule = `traefik.http.routers.${service}.rule=Host(\`${hostname}\`)`;
+    if (path != '/') {
+      traefikRule += ` && PathPrefix(\`${path}\`)`;
+    }
+    return {
+      networks: ['srv', 'hub-internal'],
+      labels: ['traefik.enable=true', traefikRule, `traefik.http.services.${service}.loadbalancer.server.port=8080`]
+    };
   }
 
 }
