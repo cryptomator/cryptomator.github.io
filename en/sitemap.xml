@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/blog/</loc>
-    <lastmod>2022-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -75,8 +75,21 @@
                 href="https://cryptomator.org/blog/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/blog/2022/11/30/congratulations-boxcryptor-dropbox/</loc>
+    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/blog/2022/11/30/congratulations-boxcryptor-dropbox/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/tags/cryptomator/</loc>
-    <lastmod>2022-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -89,7 +102,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/</loc>
-    <lastmod>2022-11-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -99,6 +112,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/</loc>
+    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/blog/2022/11/03/hub-1.0/</loc>
@@ -125,19 +151,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/tags/hub/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/tags/</loc>
-    <lastmod>2022-11-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/android/</loc>
