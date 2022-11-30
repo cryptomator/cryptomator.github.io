@@ -24,7 +24,7 @@ With open-source tools, it has been shown in the past that a fork of the applica
 
 ## What does this mean for Dropbox users?
 
-It's probably too early to tell but Dropbox plans to offer end-to-end encryption to its to business users only. We are happy to see that Dropbox is taking end-to-end encryption seriously.
+It's probably too early to tell but Dropbox plans to offer end-to-end encryption to its business users only. We are happy to see that Dropbox is taking end-to-end encryption seriously.
 
 Cryptomator works very well with Dropbox and for now, [encrypting your Dropbox](/encrypt-dropbox/) with Cryptomator is the best option.
 
