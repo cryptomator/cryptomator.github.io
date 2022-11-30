@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/android/</link>
     </image>
-    <lastBuildDate>Wed, 30 Nov 2022 12:04:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Nov 2022 13:52:13 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -25,7 +25,7 @@
 &lt;p&gt;Again and again, we have observed many times how proprietary services can be influenced by acquisitions in a very sensitive manner. Our belief is that the right to digital self-defense cannot simply be sold. This is not the only reason why Cryptomator relies on open-source licenses. GPLv3 (a copyleft license) guarantees that even in the event of an acquisition, the technology cannot be taken off the market.&lt;/p&gt;
 &lt;p&gt;With open-source tools, it has been shown in the past that a fork of the application can coexist or replace the actual app if it no longer exists. This means that even if Skymatic GmbH, together with the community, stops developing Cryptomator or sells Cryptomator to a third party, it is very likely that one of the many forks of Cryptomator will continue to be actively maintained and developed by the community.&lt;/p&gt;
 &lt;h2 id=&#34;what-does-this-mean-for-dropbox-users&#34;&gt;What does this mean for Dropbox users?&lt;/h2&gt;
-&lt;p&gt;It&amp;rsquo;s probably too early to tell but Dropbox plans to offer end-to-end encryption to its to business users only. We are happy to see that Dropbox is taking end-to-end encryption seriously.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s probably too early to tell but Dropbox plans to offer end-to-end encryption to its business users only. We are happy to see that Dropbox is taking end-to-end encryption seriously.&lt;/p&gt;
 &lt;p&gt;Cryptomator works very well with Dropbox and for now, &lt;a href=&#34;https://cryptomator.org/encrypt-dropbox/&#34;&gt;encrypting your Dropbox&lt;/a&gt; with Cryptomator is the best option.&lt;/p&gt;
 &lt;h2 id=&#34;what-does-this-mean-for-boxcryptor-users&#34;&gt;What does this mean for Boxcryptor users?&lt;/h2&gt;
 &lt;p&gt;We are very sorry to hear that Boxcryptor is going to end its existing service. It is no longer available for new users and existing users will likely have to migrate when their contracts expire. If you are affected by this, we welcome you to give Cryptomator a try. 😉 Feel free to check out our &lt;a href=&#34;https://community.cryptomator.org/&#34;&gt;community&lt;/a&gt; for help and support.&lt;/p&gt;
