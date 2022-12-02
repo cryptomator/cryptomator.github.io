@@ -1,5 +1,7 @@
 - id: site_meta_description
   translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
+- id: nav_promotion
+  translation: "Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class=\"underline\" href=\"/blog/2022/11/30/congratulations-boxcryptor-dropbox/\">Learn more.</a>"
 - id: nav_support_us
   translation: "Support Us"
 - id: nav_learn_more
