@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.f1f10ece76b863d9fbbfdc6f20765a718cf3310bc403ec9a51239da7709fc2f5.css" integrity="sha256-8fEOzna4Y9n7v9xvIHZacYzzMQvEA&#43;yaUSOdp3CfwvU=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.e82a2a114aba59b8679d47b7c5b665a22cd809cce12c5d7acff5f1505edd65c4.css" integrity="sha256-6CoqEUq6WbhnnUe3xbZloizYCczhLF16z/XxUF7dZcQ=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -33,7 +33,10 @@
     
   </head>
   <body class="bg-dark font-body text-gray-900">
-    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+    <div class="w-full bg-primary text-center text-sm text-white p-0.5">
+  <p>Suchst du nach einer Alternative zu Boxcryptor nach deren Übernahme? Cryptomator ist hier, um zu bleiben! <a class="underline" href="/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/">Mehr erfahren.</a></p>
+</div>
+<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/de/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
@@ -188,8 +191,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-689735241" x-model="acceptTerms" />
-<label for="id-689735241">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-765983124" x-model="acceptTerms" />
+<label for="id-765983124">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
