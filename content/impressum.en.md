@@ -11,7 +11,7 @@ Tobias Hagemann (verantwortlich gem. § 55 Abs. 2 RStV)<br/>
 Sebastian Stenzel
 
 ## Kontakt
-E-Mail: webmaster [at] cryptomator [dot] org<br/>
+E-Mail: support [at] cryptomator [dot] org<br/>
 Fax: 02241 / 2667424<br/>
 [Zur Kontaktseite](/contact/)
 
