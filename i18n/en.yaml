@@ -319,7 +319,7 @@
 - id: hub_pricing_enterprise_benefit_4
   translation: "Volume discount for large teams"
 - id: hub_pricing_coming_later
-  translation: "Currently in development, coming later this year."
+  translation: "Currently in development, ETA early 2023."
 
 - id: hub_faq_title
   translation: "Frequently Asked Questions"
