@@ -34,7 +34,7 @@
   </head>
   <body class="bg-dark font-body text-gray-900">
     <div class="w-full bg-primary text-center text-sm text-white p-0.5">
-  <p>Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class="underline" href="/blog/2022/11/30/congratulations-boxcryptor-dropbox/">Learn more.</a></p>
+  <p>Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class="underline" href="/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/">Learn more.</a></p>
 </div>
 <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
@@ -191,8 +191,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-194673258" x-model="acceptTerms" />
-<label for="id-194673258">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-745829361" x-model="acceptTerms" />
+<label for="id-745829361">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout

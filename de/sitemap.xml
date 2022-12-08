@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/</loc>
-    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -75,8 +75,21 @@
                 href="https://cryptomator.org/de/blog/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</loc>
+    <lastmod>2022-12-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/tags/cryptomator/</loc>
-    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -89,7 +102,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/</loc>
-    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -99,6 +112,19 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://cryptomator.org/de/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/</loc>
+    <lastmod>2022-12-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/</loc>
@@ -112,19 +138,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/de/tags/</loc>
-    <lastmod>2022-11-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/2022/11/03/hub-1.0/</loc>

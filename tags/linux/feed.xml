@@ -11,8 +11,58 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/linux/</link>
     </image>
-    <lastBuildDate>Wed, 07 Dec 2022 09:26:12 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Dec 2022 12:23:44 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Boxcryptor Shuts Down – Here is Your Cloud Encryption Alternative</title>
+        <description>&lt;p&gt;As mentioned in the &lt;a href=&#34;https://cryptomator.org/blog/2022/11/30/congratulations-boxcryptor-dropbox/&#34;&gt;last blog post&lt;/a&gt;, Dropbox has acquired Boxcryptor&amp;rsquo;s key technology. This means that Boxcryptor&amp;rsquo;s services will no longer be available to new users and existing users will likely have to migrate when their contracts expire.&lt;/p&gt;
+&lt;p&gt;We are here to stay and offer you the chance to try our open-source software. Cryptomator is free and can be used without an account. &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Just download&lt;/a&gt; and get started.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re looking for a replacement, you&amp;rsquo;ve come to the right place. We compare the features of Boxcryptor with those of Cryptomator. See for yourself!&lt;/p&gt;
+&lt;img class=&#34;inline-block&#34; src=&#34;https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis.png&#34; srcset=&#34;https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis.png 1x, https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x&#34; alt=&#34;Cryptomator is constantly analysed by experts using modern tools.&#34; /&gt;
+&lt;h2 id=&#34;features-of-boxcryptor&#34;&gt;Features of Boxcryptor&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption of all major cloud providers&lt;/li&gt;
+&lt;li&gt;Was available on Windows, macOS, Linux (portable only), iOS, and Android&lt;/li&gt;
+&lt;li&gt;End-to-end and zero-knowledge encryption&lt;/li&gt;
+&lt;li&gt;Filename encryption was only available in a paid plan&lt;/li&gt;
+&lt;li&gt;Plans start with €36 per year, business plan for €72 a year&lt;/li&gt;
+&lt;li&gt;Closed-source software&lt;/li&gt;
+&lt;li&gt;Software &amp;ldquo;Made in Germany&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;features-of-cryptomator&#34;&gt;Features of Cryptomator&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption of all major cloud providers (no restriction on Desktop app; mobile apps compatible with Dropbox, Google Drive, OneDrive, pCloud, iCloud Drive on iOS, and any cloud via WebDAV and S3)&lt;/li&gt;
+&lt;li&gt;Available on Windows, macOS, Linux, iOS, and Android&lt;/li&gt;
+&lt;li&gt;Both for personal use and for businesses: &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;End-to-end and zero-knowledge encryption&lt;/li&gt;
+&lt;li&gt;Free Desktop app, one-time purchase (€15) for the mobile app, no subscription&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cryptomator.org/open-source/&#34;&gt;Maximum transparency through open-source software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unlimited number of devices&lt;/li&gt;
+&lt;li&gt;Password recovery through offline key recovery&lt;/li&gt;
+&lt;li&gt;Software &amp;ldquo;Made in Germany&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img class=&#34;inline-block&#34; src=&#34;https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault.png&#34; srcset=&#34;https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x&#34; alt=&#34;Cryptomator allows you to access your cleartext data without the need to remove encryption protection.&#34; /&gt;
+&lt;h2 id=&#34;how-to-migrate-from-boxcryptor-to-cryptomator&#34;&gt;How to Migrate From Boxcryptor to Cryptomator&lt;/h2&gt;
+&lt;p&gt;Switching from Boxcryptor to Cryptomator is simple. Boxcryptor provides an &lt;a href=&#34;https://support.boxcryptor.com/en/help/faq-and-troubleshooting/#migration-guide&#34;&gt;off-migration guide&lt;/a&gt; on their website to decrypt all Boxcryptor encrypted files. Make sure that your sensitive data is at no point unencrypted in the cloud. Then, you set up Cryptomator so you can encrypt and securely sync those files back to the cloud.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-easily-set-up-cryptomator&#34;&gt;How to Easily Set Up Cryptomator&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Download&lt;/a&gt; and install Cryptomator.&lt;/li&gt;
+&lt;li&gt;Once Cryptomator is installed, you can create a new vault.&lt;/li&gt;
+&lt;li&gt;Give your vault a name.&lt;/li&gt;
+&lt;li&gt;Now select a cloud storage of your choice as the storage location of your vault.&lt;/li&gt;
+&lt;li&gt;Enter a password.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And you have successfully created your first vault.&lt;/p&gt;
+&lt;p&gt;If you want, you can unlock it immediately and reveal the virtual drive. From now on, you can store your sensitive files here, e.g., the data that you previously encrypted with Boxcryptor, in order to encrypt them in the cloud with Cryptomator from now on. &lt;a href=&#34;https://docs.cryptomator.org/en/latest/desktop/adding-vaults/&#34;&gt;Detailed instructions are available here.&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</guid>
+        
+        <category>cryptomator</category>
+        
+      </item>
     
       <item>
         <title>Congratulations Boxcryptor &amp; Dropbox! – We Are Here to Stay</title>
@@ -357,34 +407,6 @@ A guide to migrate in this setting will be published soon.&lt;/p&gt;
         <category>mac</category>
         
         <category>linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Update on the Document Provider Development</title>
-        <description>&lt;p&gt;Hey Community,&lt;/p&gt;
-&lt;p&gt;From time to time, we need to adjust our schedule for certain features. We are well aware that the Document Provider is the most-requested feature of the Android app, but despite this fact, we need to temporarily shift our attention to other tasks within this project. This blog post you&amp;rsquo;re reading right now is to keep you, our community, updated and inform you that we are unable to stick to our original plan. Unfortunately, this means that any further development of the Document Provider feature needs to be postponed to the end of this year.&lt;/p&gt;
-&lt;h2 id=&#34;the-document-provider-feature&#34;&gt;The Document Provider Feature&lt;/h2&gt;
-&lt;p&gt;As users of our Android app, you know how cumbersome sometimes the work with it is: You open your favourite notes app to quickly jot something down, then notice that you cannot open your to-do list from the app because you store it encrypted with Cryptomator. So you sigh, open the Cryptomator app, unlock your vault, navigate to the to-do list file and open it with the aforementioned notes app. Definitely not the optimal workflow.&lt;/p&gt;
-&lt;p&gt;We always strive to provide the same features across all our supported platforms. One of these is a user-friendly integration of the vault into the running OS to easily access content of unlocked vaults. For the desktop systems, this feature was always present and recently we added it in our new iOS app. The last OS, where it is missing is Android. And the way to resolve this, is implementing a Document Provider for our Android app.&lt;/p&gt;
-&lt;p&gt;The Document Provider feature creates a virtual access point to an unlocked vault, with the consequence that you can conveniently browse and access a vault’s content via the standard file browser. Also, any app which supports browsing through Document Providers can directly load files from your unlocked vault without the need to go via Cryptomator’s app GUI.&lt;/p&gt;
-&lt;h2 id=&#34;development-status&#34;&gt;Development Status&lt;/h2&gt;
-&lt;p&gt;The development is tracked in the following ticket of our issue tracker: &lt;a href=&#34;https://github.com/cryptomator/android/issues/35&#34;&gt;https://github.com/cryptomator/android/issues/35&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As you can see, the issue is already quite old and got over the time a countable amount of comments. After &lt;a href=&#34;https://cryptomator.org/blog/2020/12/23/android-open-source/&#34;&gt;publishing the source code&lt;/a&gt; of the app at the end of 2020, our plan was to work on this important feature.&lt;/p&gt;
-&lt;p&gt;From the technical side, we already determined the parts of code needed to be edited, developed a concept and built a proof of concept (see the linked ticket). The next step would be to actually implement it including rigorous testing.&lt;/p&gt;
-&lt;p&gt;Unfortunately, we determined that integrating Document Provider into the existing app would require major architectural changes, therefore requiring a lot of time and resources. We have exciting plans with Cryptomator after our next major release with version 1.6.0 so that we have to delay the development of the Document Provider integration to the end of 2021.&lt;/p&gt;
-&lt;p&gt;Meanwhile, maybe you, our community can help us out.&lt;/p&gt;
-&lt;h2 id=&#34;call-for-contributions&#34;&gt;Call for Contributions&lt;/h2&gt;
-&lt;p&gt;Cryptomator for Desktop was always open source. Cryptomator for iOS and Android are now open source as well. And as such, we also rely on our community to receive feedback, distribute the app and improve its functionality.&lt;/p&gt;
-&lt;p&gt;So, we are always very excited about contributions and are happy to assist, especially when it comes to the Document Provider. 😉&lt;/p&gt;
-</description>
-        <pubDate>Thu, 22 Jul 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/07/22/android-document-provider/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/07/22/android-document-provider/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>android</category>
         
       </item>
     
