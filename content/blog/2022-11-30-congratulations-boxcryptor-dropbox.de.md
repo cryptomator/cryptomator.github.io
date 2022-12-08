@@ -1,5 +1,5 @@
 ---
-title: "Herzlichen Glückwunsch Boxcryptor & Dropbox! - Wir sind hier um zu bleiben"
+title: "Herzlichen Glückwunsch Boxcryptor & Dropbox! – Wir sind hier um zu bleiben"
 slug: congratulations-boxcryptor-dropbox
 date: 2022-11-30
 tags: [cryptomator]
