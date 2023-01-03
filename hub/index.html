@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.e82a2a114aba59b8679d47b7c5b665a22cd809cce12c5d7acff5f1505edd65c4.css" integrity="sha256-6CoqEUq6WbhnnUe3xbZloizYCczhLF16z/XxUF7dZcQ=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.f8604a6fb156e29fd743e2a745b84c1c8c0428f3d044ab7635ac01fb5aed2c34.css" integrity="sha256-&#43;GBKb7FW4p/XQ&#43;KnRbhMHIwEKPPQRKt2NawB&#43;1rtLDQ=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -180,11 +180,20 @@
         </div>
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice.</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">Get Started Now</a>
-          <a href="mailto:hub-demo@cryptomator.org" role="button" class="btn btn-outline-primary text-lg px-8">Request Demo</a>
+        <div class="mb-4">
+          <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Self-Hosted</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">Get Started Now</a>
+            <a href="/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">Setup Wizard</a>
+          </div>
         </div>
-        <p><a href="/hub/setup/" role="button" class="text-btn text-primary">Or go straight to the Setup Wizard.</a></p>
+        <div>
+          <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Managed</p>
+          <div class="has-tooltip">
+            <button class="btn btn-primary text-lg px-8">Coming Soon</button>
+            <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-48 p-2 mt-2">If you&#39;re interested, please subscribe to our Hub mailing list at the bottom and we&#39;ll inform you when we&#39;re ready.</div>
+          </div>
+        </div>
       </div>
     </header>
   </section>
@@ -231,13 +240,27 @@
     </div>
   </section>
 
-  <section x-data="{data: {monthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+  <section x-data="{infrastructure: 'self-hosted', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
     <header class="text-center">
       <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Pricing Plans</h2>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage.</p>
+      <div class="flex justify-center mb-4">
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
+          <i class="fas fa-check" x-show="infrastructure === 'self-hosted'"></i>
+          Self-Hosted
+        </button>
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
+          <i class="fas fa-check" x-show="infrastructure === 'managed'"></i>
+          Managed
+        </button>
+      </div>
+      <p x-show="infrastructure === 'managed'" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4" x-cloak>
+        <i class="fas fa-exclamation-triangle fa-fw text-yellow-500"></i>
+        Managed instances will be available soon. Subscribe to our Hub mailing list at the bottom to be informed.
+      </p>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+    <div x-show="infrastructure === 'self-hosted'" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
           <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
@@ -281,7 +304,7 @@
           <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             Standard
           </h3>
-          <p x-text="data.monthlyPrice ? data.monthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.monthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             per seat, per month
           </p>
@@ -346,11 +369,97 @@
           </ul>
         </div>
       </div>
-      <p class="text-sm text-gray-700">
-        <sup>1</sup>
-        <span>Currently in development, ETA early 2023.</span>
-      </p>
     </div>
+
+    <div x-show="infrastructure === 'managed'" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4" x-cloak>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Standard
+          </h3>
+          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            per seat, per month
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Unlimited vaults</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Full access via Desktop app</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Full access via Mobile apps</span>
+              <span><sup>1</sup></span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">You will be granted full access without having to unlock the full version of the mobile app.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Audit logs</span>
+              <span><sup>1</sup></span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Custom domain</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Hosting in Europe</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Email support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Enterprise
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Custom
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            tailored pricing
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Everything in Standard</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Priority email support</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Expert training and assistance</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Volume discount for large teams</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-sm text-gray-700">
+      <sup>1</sup>
+      <span>Currently in development, ETA early 2023.</span>
+    </p>
   </section>
 
   <section class="container py-12">
@@ -407,7 +516,8 @@
   </section>
 
   <section class="container text-center py-12">
-    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">More questions about Cryptomator Hub?</h2>
+    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">More questions?</h2>
+    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Are you interested in a demo? Would you like to know more about Cryptomator Hub?</p>
     <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
       <i class="fas fa-envelope"></i> Contact Us
     </a>
@@ -434,9 +544,9 @@
 
   
     
-    <script type="text/javascript" src="/js/store.min.d6c3c2cb09052f86e107ae6a26349f3e8d12564cf5f274168b22ed2d78d7671e.js" integrity="sha256-1sPCywkFL4bhB65qJjSfPo0SVkz18nQWiyLtLXjXZx4=" defer></script>
+    <script type="text/javascript" src="/js/store.min.b419be6ea241138a0fb834d06ebfac080d11063cd28c67f47a585edbc0ec2f27.js" integrity="sha256-tBm&#43;bqJBE4oPuDTQbr&#43;sCA0RBjzSjGf0elhe28DsLyc=" defer></script>
     
-    <script type="text/javascript" src="/js/hubpricing.min.d1f6bda41dae822de8fdaaa06ebdeddea2029f2878f416adf4e47f95f83f3d85.js" integrity="sha256-0fa9pB2ugi3o/aqgbr3t3qICnyh49Bat9OR/lfg/PYU=" defer></script>
+    <script type="text/javascript" src="/js/hubpricing.min.70c8d04d3f54179360b5db2225f6a68097413e6cd8a10d741642129936230646.js" integrity="sha256-cMjQTT9UF5NgtdsiJfamgJdBPmzYoQ10FkISmTYjBkY=" defer></script>
     
     <script type="text/javascript" src="/js/newsletter.min.4d1feb97823b39b0c2842215a514fd6eaf1b79a087cd9fa27f33f9c221bca044.js" integrity="sha256-TR/rl4I7ObDChCIVpRT9bq8beaCHzZ&#43;ifzP5wiG8oEQ=" defer></script>
   
