@@ -243,12 +243,18 @@
   translation: "The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
 - id: hub_header_description
   translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
-- id: hub_header_docs_cta
+- id: hub_header_self_hosted
+  translation: "Self-Hosted"
+- id: hub_header_self_hosted_docs_cta
   translation: "Get Started Now"
-- id: hub_header_demo_cta
-  translation: "Request Demo"
-- id: hub_header_setup_cta
-  translation: "Or go straight to the Setup Wizard."
+- id: hub_header_self_hosted_setup_cta
+  translation: "Setup Wizard"
+- id: hub_header_managed
+  translation: "Managed"
+- id: hub_header_managed_cta
+  translation: "Coming Soon"
+- id: hub_header_managed_cta_tooltip
+  translation: "If you're interested, please subscribe to our Hub mailing list at the bottom and we'll inform you when we're ready."
 - id: hub_header_man_vault_alt
   translation: "Person holding the key to a very secure vault"
 
@@ -274,6 +280,12 @@
   translation: "Pricing Plans"
 - id: hub_pricing_description
   translation: "Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage."
+- id: hub_pricing_infrastructure_self_hosted
+  translation: "Self-Hosted"
+- id: hub_pricing_infrastructure_managed
+  translation: "Managed"
+- id: hub_pricing_infrastructure_managed_coming_later
+  translation: "Managed instances will be available soon. Subscribe to our Hub mailing list at the bottom to be informed."
 - id: hub_pricing_community_title
   translation: "Community"
 - id: hub_pricing_community_statement
@@ -304,6 +316,10 @@
   translation: "Audit logs"
 - id: hub_pricing_standard_benefit_4
   translation: "Email support"
+- id: hub_pricing_managed_standard_benefit_1
+  translation: "Custom domain"
+- id: hub_pricing_managed_standard_benefit_2
+  translation: "Hosting in Europe"
 - id: hub_pricing_enterprise_title
   translation: "Enterprise"
 - id: hub_pricing_enterprise_statement
@@ -325,7 +341,9 @@
   translation: "Frequently Asked Questions"
 
 - id: hub_contact_us_title
-  translation: "More questions about Cryptomator Hub?"
+  translation: "More questions?"
+- id: hub_contact_us_description
+  translation: "Are you interested in a demo? Would you like to know more about Cryptomator Hub?"
 - id: hub_contact_us_button
   translation: "Contact Us"
 

@@ -85,7 +85,7 @@ class HubSubscription {
     this._subscriptionData.postSuccess = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        product: PADDLE_HUB_SUBSCRIPTION_PLAN_ID,
+        product: PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID,
         email: this._subscriptionData.email,
         quantity: this._subscriptionData.quantity,
         locale: locale,
