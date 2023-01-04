@@ -79,11 +79,11 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_pricing_description" . }}</p>
       <div class="flex justify-center mb-4">
         <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
-          <i class="fas fa-check" x-show="infrastructure === 'self-hosted'"></i>
+          <i class="fa-server fa-fw" :class="{'fas': infrastructure === 'self-hosted', 'far': infrastructure !== 'self-hosted'}"></i>
           {{ i18n "hub_pricing_infrastructure_self_hosted" . }}
         </button>
         <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
-          <i class="fas fa-check" x-show="infrastructure === 'managed'"></i>
+          <i class="fa-cloud fa-fw" :class="{'fas': infrastructure === 'managed', 'far': infrastructure !== 'managed'}"></i>
           {{ i18n "hub_pricing_infrastructure_managed" . }}
         </button>
       </div>
