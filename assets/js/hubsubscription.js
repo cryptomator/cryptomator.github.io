@@ -2,6 +2,7 @@
 
 // requires store.js
 const SUBSCRIPTION_URL = STORE_API_URL + '/hub/subscription';
+const MANAGED_URL = STORE_API_URL + '/hub/managed';
 
 class HubSubscription {
 
@@ -33,20 +34,22 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.getSuccess = false;
-    $.ajax({
-      url: SUBSCRIPTION_URL,
-      type: 'GET',
-      data: {
-        hub_id: this._subscriptionData.hubId
-      }
-    }).done(data => {
-      this.onGetSucceeded(data);
-    }).fail(xhr => {
-      if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
-        this.onGetNotFound();
-      } else {
-        this.onGetFailed(xhr.responseJSON?.message || 'Fetching subscription failed.');
-      }
+    this.determineIsManaged(() => {
+      $.ajax({
+        url: SUBSCRIPTION_URL,
+        type: 'GET',
+        data: {
+          hub_id: this._subscriptionData.hubId
+        }
+      }).done(data => {
+        this.onGetSucceeded(data);
+      }).fail(xhr => {
+        if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
+          this.onGetNotFound();
+        } else {
+          this.onGetFailed(xhr.responseJSON?.message || 'Fetching subscription failed.');
+        }
+      });
     });
   }
 
@@ -73,7 +76,54 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  checkout(locale) {
+  determineIsManaged(continueHandler) {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: MANAGED_URL,
+      type: 'GET',
+      data: {
+        hub_id: this._subscriptionData.hubId
+      }
+    }).done(data => {
+      this.onDetermineIsManagedSucceeded(data);
+      continueHandler();
+    }).fail(xhr => {
+      if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
+        this.onDetermineIsManagedManagedNotFound();
+        continueHandler();
+      } else {
+        this.onDetermineIsManagedManagedFailed(xhr.responseJSON?.message || 'Fetching managed status failed.');
+      }
+    });
+  }
+
+  onDetermineIsManagedSucceeded(_data) {
+    this._subscriptionData.isManaged = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+  }
+
+  onDetermineIsManagedManagedNotFound() {
+    this._subscriptionData.isManaged = false;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+  }
+
+  onDetermineIsManagedManagedFailed() {
+    this._subscriptionData.errorMessage = error;
+    this._subscriptionData.inProgress = false;
+  }
+
+  checkoutManaged(locale) {
+    this.checkout(PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID, locale);
+  }
+
+  checkoutSelfHosted(locale) {
+    this.checkout(PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID, locale);
+  }
+
+  checkout(productId, locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       this._subscriptionData.errorMessage = 'Please fill in all required fields.';
@@ -85,7 +135,7 @@ class HubSubscription {
     this._subscriptionData.postSuccess = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        product: PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID,
+        product: productId,
         email: this._subscriptionData.email,
         quantity: this._subscriptionData.quantity,
         locale: locale,
