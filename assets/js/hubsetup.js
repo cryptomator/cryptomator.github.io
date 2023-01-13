@@ -503,7 +503,7 @@ EOF`;
       traefikRule += ` && PathPrefix(\`${path}\`)`;
     }
     return {
-      networks: ['srv', 'hub-internal'],
+      networks: [this.cfg.compose.publicNetwork, 'hub-internal'],
       labels: ['traefik.enable=true', traefikRule, `traefik.http.services.${service}.loadbalancer.server.port=8080`]
     };
   }
