@@ -579,6 +579,8 @@
   translation: "Config"
 - id: hub_setup_output_header_description
   translation: "Use this configuration to deploy Cryptomator Hub."
+- id: hub_setup_output_hint
+  translation: "Hint: Hub requires proper TLS termination in production. Only for tests with localhost or 127.0.0.1 this is not necessary. In the setup wizard you can add the config for the reverse proxies Ingress or Traefik. The deployment for the respective proxy is not included."
 
 - id: hub_setup_contact_us_title
   translation: "Need some help with your configuration?"
