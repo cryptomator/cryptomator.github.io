@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.f8604a6fb156e29fd743e2a745b84c1c8c0428f3d044ab7635ac01fb5aed2c34.css" integrity="sha256-&#43;GBKb7FW4p/XQ&#43;KnRbhMHIwEKPPQRKt2NawB&#43;1rtLDQ=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.0768fc2e50c20d0f0f617b2ff7e661afefac5a64c173728de1addb03fbf10145.css" integrity="sha256-B2j8LlDCDQ8PYXsv9&#43;Zhr&#43;&#43;sWmTBc3KN4a3bA/vxAUU=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -184,44 +184,24 @@
         </p>
       </header>
       <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-        <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-2">
+        <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-3">
           
           <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'kubernetes' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" aria-describedby="deployment-type-kubernetes-label">
+            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-kubernetes-label">
             <span id="deployment-type-kubernetes-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'kubernetes' ? 'text-indigo-900' : 'text-gray-900'">Kubernetes</span>
           </label>
 
           
-          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'docker-compose' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="docker-compose" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" aria-describedby="deployment-type-compose-label">
-            <span id="deployment-type-compose-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'docker-compose' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose</span>
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-prod' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="compose-prod" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-compose-prod-label">
+            <span id="deployment-type-compose-prod-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-prod' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Prod)</span>
           </label>
-        </div>
 
-        
-        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'docker-compose'" x-cloak>
-          <label for="composeIncludeTraefik" class="block text-sm font-medium text-gray-700">
-            Traefik
+          
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-test' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="compose-test" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig(); cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'" aria-describedby="deployment-type-compose-test-label">
+            <span id="deployment-type-compose-test-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-test' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Test)</span>
           </label>
-          <div class="mt-2 flex items-start">
-            <div class="h-5 flex items-center">
-              <input id="composeIncludeTraefik" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeTraefik">
-            </div>
-            <div class="ml-3 text-sm">
-              <label for="composeIncludeTraefik" class="font-medium text-gray-700">
-                Traefik in die Docker-Compose-Konfiguration aufnehmen.
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'docker-compose' && cfg.compose.includeTraefik" x-cloak>
-          <label for="composePublicNetwork" class="block text-sm font-medium text-gray-700">
-            Public Network
-          </label>
-          <input type="text" id="composePublicNetwork" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.publicNetwork">
-          <p class="mt-2 text-sm text-gray-500">
-            Name des öffentlich zugänglichen Netzwerks von Traefik.
-          </p>
         </div>
 
         
@@ -234,7 +214,6 @@
             Namespace für die Kubernetes-Ressourcen.
           </p>
         </div>
-
         <div class="col-span-6" x-show="deploymentType == 'kubernetes'" x-cloak>
           <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">
             Ingress
@@ -249,6 +228,39 @@
               </label>
             </div>
           </div>
+        </div>
+
+        
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-prod'" x-cloak>
+          <label for="composeIncludeTraefik" class="block text-sm font-medium text-gray-700">
+            Traefik
+          </label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="composeIncludeTraefik" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeTraefik">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="composeIncludeTraefik" class="font-medium text-gray-700">
+                Traefik in die Docker-Compose-Konfiguration aufnehmen.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-prod' && cfg.compose.includeTraefik" x-cloak>
+          <label for="composePublicNetwork" class="block text-sm font-medium text-gray-700">
+            Public Network
+          </label>
+          <input type="text" id="composePublicNetwork" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.publicNetwork">
+          <p class="mt-2 text-sm text-gray-500">
+            Name des öffentlich zugänglichen Netzwerks von Traefik.
+          </p>
+        </div>
+
+        
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-test'" x-cloak>
+          <p class="text-sm text-gray-500">
+            Diese Deployment-Art ist nur für Testzwecke auf `localhost` gedacht. Sie kann ohne weitere Konfiguration verwendet werden.
+          </p>
         </div>
       </div>
     </section>
@@ -280,7 +292,7 @@
             <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">
               Öffentliche Hub-URL
             </label>
-            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl" @input="cfg.hub.publicUrl">
+            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl" :readonly="deploymentType == 'compose-test'">
             <p class="mt-2 text-sm text-gray-500">
               Die vollständige URL einschließlich Protokoll, Port und Pfad deiner Hub-Installation.
             </p>
@@ -319,7 +331,7 @@
           </p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-          <div class="col-span-6">
+          <div class="col-span-6" x-show="deploymentType != 'compose-test'">
             <label class="block text-sm font-medium text-gray-700">
               Externes Keycloak
             </label>
@@ -339,7 +351,7 @@
             <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">
               Öffentliche Keycloak-URL
             </label>
-            <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl">
+            <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl" :readonly="deploymentType == 'compose-test'">
             <p class="mt-2 text-sm text-gray-500" x-show="cfg.keycloak.useExternal">
               Die vollständige URL einschließlich Protokoll, Port und Pfad deiner Keycloak-Installation.
             </p>
@@ -348,7 +360,7 @@
             </p>
           </div>
 
-          <div class="col-span-6 lg:col-span-4">
+          <div class="col-span-6 lg:col-span-4" x-show="deploymentType != 'compose-test'">
             <label for="keycloakRealmId" class="block text-sm font-medium text-gray-700">
               Realm ID
             </label>
@@ -445,7 +457,7 @@
             <label for="k8sOutput" class="block text-sm font-medium text-gray-700">k8s-hub.yml</label>
             <textarea id="k8sOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.k8s" readonly></textarea>
           </div>
-          <div class="col-span-6" x-show="deploymentType == 'docker-compose'">
+          <div class="col-span-6" x-show="deploymentType == 'compose-prod' || deploymentType == 'compose-test'">
             <label for="composeOutput" class="block text-sm font-medium text-gray-700">docker-compose.yml</label>
             <textarea id="composeOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.compose" readonly></textarea>
           </div>
@@ -453,7 +465,7 @@
             <label for="realmOutput" class="block text-sm font-medium text-gray-700">realm.json</label>
             <textarea id="realmOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.realm" readonly></textarea>
           </div>
-          <div class="col-span-6">
+          <div class="col-span-6" x-show="deploymentType == 'kubernetes' || deploymentType == 'compose-prod'">
             <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten.</p>
           </div>
         </div>
