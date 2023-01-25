@@ -1,3 +1,5 @@
+- Question: "Wann ist der voraussichtliche Termin für die Einführung der Managed-Lösung?"
+  Answer: "Wie du dir vorstellen kannst, arbeiten wir mit Hochdruck daran. Die Managed-Lösung wird vsl. im Februar verfügbar sein. Wenn du benachrichtigt werden möchtest, abonniere unseren [Hub-Newsletter](#newsletter)."
 - Question: "Wie werden die Sitze berechnet?"
   Answer: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten."
 - Question: "Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?"

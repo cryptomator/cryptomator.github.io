@@ -254,7 +254,7 @@
 - id: hub_header_managed_cta
   translation: "Coming Soon"
 - id: hub_header_managed_cta_tooltip
-  translation: "If you're interested, please subscribe to our Hub mailing list at the bottom and we'll inform you when we're ready."
+  translation: "Expected to launch in February. If you're interested, please subscribe to our Hub mailing list at the bottom."
 - id: hub_header_man_vault_alt
   translation: "Person holding the key to a very secure vault"
 
