@@ -470,8 +470,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-342689571" x-model="acceptTerms" />
-<label for="id-342689571">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-954613827" x-model="acceptTerms" />
+<label for="id-954613827">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="subscriptionData.isManaged ? hubSubscription.checkoutManaged('en') : hubSubscription.checkoutSelfHosted('en')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -517,50 +517,59 @@
             </div>
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">Frequently Asked Questions</h2>
-          <dl x-data="{isOpen: [false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
+          <dl x-data="{isOpen: [false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>How are seats calculated?</span>
+                <span>When is the expected launch date for the managed solution?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[0]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
+            <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              As you can imagine, we&rsquo;re working hard on it. The managed solution is expected to be available in February. If you want be notified, subscribe to our <a href="#newsletter">Hub mailing list</a>.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>How is the subscription fee calculated for paid plans?</span>
+                <span>How are seats calculated?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[1]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
+            <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Do the paid plans include 5 free seats?</span>
+                <span>How is the subscription fee calculated for paid plans?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[2]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
+            <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Do you offer discounts?</span>
+                <span>Do the paid plans include 5 free seats?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[3]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
+            <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Do you offer discounts?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>How do I access the contents of a vault?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[4]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+            <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
               For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)
             </dd>
           </dl>

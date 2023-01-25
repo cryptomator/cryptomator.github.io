@@ -191,7 +191,7 @@
           <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Managed</p>
           <div class="has-tooltip">
             <button class="btn btn-primary text-lg px-8">Bald verfügbar</button>
-            <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-48 p-2 mt-2">Bei Interesse, abonniere unten unseren Hub-Newsletter und wir informieren dich bei Neuigkeiten.</div>
+            <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-48 p-2 mt-2">Die Einführung erfolgt vsl. im Februar. Bei Interesse, abonniere unten unseren Hub-Newsletter.</div>
           </div>
         </div>
       </div>
@@ -466,50 +466,59 @@
     <header class="text-center">
       <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Häufig gestellte Fragen</h2>
     </header>
-    <dl x-data="{isOpen: [false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+    <dl x-data="{isOpen: [false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Wie werden die Sitze berechnet?</span>
+          <span>Wann ist der voraussichtliche Termin für die Einführung der Managed-Lösung?</span>
         </a>
       </dt>
-      <dd x-show="isOpen[0]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten.
+      <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Wie du dir vorstellen kannst, arbeiten wir mit Hochdruck daran. Die Managed-Lösung wird vsl. im Februar verfügbar sein. Wenn du benachrichtigt werden möchtest, abonniere unseren <a href="#newsletter">Hub-Newsletter</a>.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?</span>
+          <span>Wie werden die Sitze berechnet?</span>
         </a>
       </dt>
-      <dd x-show="isOpen[1]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        Du zahlst eine jährliche Gebühr für jeden Sitz. Diese Gebühr gilt auch, wenn du ungenutzte Sitze hast.
+      <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Sind in den kostenpflichtigen Plänen 5 freie Sitze enthalten?</span>
+          <span>Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?</span>
         </a>
       </dt>
-      <dd x-show="isOpen[2]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        Nein, du musst für alle Sitze in deinem Plan bezahlen. Wir berechnen jeden Sitz, weil alle Nutzer von den zusätzlichen Funktionen profitieren, die in den kostenpflichtigen Plänen enthalten sind. Zum Beispiel haben alle Nutzer vollen Zugriff auf die Tresore über die mobilen Apps, ohne die Vollversion freischalten zu müssen.
+      <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Du zahlst eine jährliche Gebühr für jeden Sitz. Diese Gebühr gilt auch, wenn du ungenutzte Sitze hast.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Bietet ihr Rabatte an?</span>
+          <span>Sind in den kostenpflichtigen Plänen 5 freie Sitze enthalten?</span>
         </a>
       </dt>
-      <dd x-show="isOpen[3]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        Ja, wir bieten Rabatte für gemeinnützige Organisationen und Bildungseinrichtungen an. Bitte kontaktiere uns, um zu prüfen, ob ihr euch qualifiziert. Für diejenigen, die nicht infrage kommen, bieten wir einen Mengenrabatt für große Teams an.
+      <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Nein, du musst für alle Sitze in deinem Plan bezahlen. Wir berechnen jeden Sitz, weil alle Nutzer von den zusätzlichen Funktionen profitieren, die in den kostenpflichtigen Plänen enthalten sind. Zum Beispiel haben alle Nutzer vollen Zugriff auf die Tresore über die mobilen Apps, ohne die Vollversion freischalten zu müssen.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Bietet ihr Rabatte an?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Ja, wir bieten Rabatte für gemeinnützige Organisationen und Bildungseinrichtungen an. Bitte kontaktiere uns, um zu prüfen, ob ihr euch qualifiziert. Für diejenigen, die nicht infrage kommen, bieten wir einen Mengenrabatt für große Teams an.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Wie kann ich auf den Inhalt eines Tresors zugreifen?</span>
         </a>
       </dt>
-      <dd x-show="isOpen[4]" class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS). (Hinweis: Die Kompatibilität mit Android und iOS befindet sich derzeit in der Entwicklung.)
       </dd>
     </dl>
