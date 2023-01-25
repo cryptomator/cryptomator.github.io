@@ -495,7 +495,7 @@
 
 # Hub Setup
 - id: hub_setup_description
-  translation: "Generiere die erforderlichen Konfigurationsdateien für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+  translation: "Verwende diese Konfiguration als Vorlage für das Deployment von Cryptomator Hub."
 - id: hub_setup_more_info
   translation: "Weitere Dokumentation findest du unter <a href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
 
