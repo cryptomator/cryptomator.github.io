@@ -511,6 +511,8 @@
   translation: "Include Traefik in Docker Compose config."
 - id: hub_setup_deployment_compose_traefik_public_network_description
   translation: "Name of the publicly exposed network of Traefik."
+- id: hub_setup_deployment_compose_test_description
+  translation: "This deployment type is only intended for testing purposes on `localhost`. This can be used as-is without any further configuration."
 
 - id: hub_setup_hub_header_title
   translation: "Cryptomator Hub"

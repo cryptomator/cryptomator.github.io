@@ -17,47 +17,27 @@
         </p>
       </header>
       <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-        <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-2">
+        <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-3">
           <!-- KUBERNETES -->
           <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'kubernetes' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" aria-describedby="deployment-type-kubernetes-label">
+            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-kubernetes-label">
             <span id="deployment-type-kubernetes-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'kubernetes' ? 'text-indigo-900' : 'text-gray-900'">Kubernetes</span>
           </label>
 
-          <!-- DOCKER COMPOSE -->
-          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'docker-compose' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="docker-compose" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" aria-describedby="deployment-type-compose-label">
-            <span id="deployment-type-compose-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'docker-compose' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose</span>
+          <!-- DOCKER COMPOSE (PROD) -->
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-prod' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="compose-prod" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-compose-prod-label">
+            <span id="deployment-type-compose-prod-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-prod' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Prod)</span>
+          </label>
+
+          <!-- DOCKER COMPOSE (TEST) -->
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-test' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="compose-test" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig(); cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'" aria-describedby="deployment-type-compose-test-label">
+            <span id="deployment-type-compose-test-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-test' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Test)</span>
           </label>
         </div>
 
-        <!-- DOCKER-COMPOSE-SPECIFIC OPTIONS -->
-        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'docker-compose'" x-cloak>
-          <label for="composeIncludeTraefik" class="block text-sm font-medium text-gray-700">
-            Traefik
-          </label>
-          <div class="mt-2 flex items-start">
-            <div class="h-5 flex items-center">
-              <input id="composeIncludeTraefik" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeTraefik">
-            </div>
-            <div class="ml-3 text-sm">
-              <label for="composeIncludeTraefik" class="font-medium text-gray-700">
-                {{ i18n "hub_setup_deployment_compose_traefik_include" . }}
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'docker-compose' && cfg.compose.includeTraefik" x-cloak>
-          <label for="composePublicNetwork" class="block text-sm font-medium text-gray-700">
-            Public Network
-          </label>
-          <input type="text" id="composePublicNetwork" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.publicNetwork">
-          <p class="mt-2 text-sm text-gray-500">
-            {{ i18n "hub_setup_deployment_compose_traefik_public_network_description" . }}
-          </p>
-        </div>
-
-        <!-- KUBERNETES-SPECIFIC OPTIONS -->
+        <!-- KUBERNETES OPTIONS -->
         <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'kubernetes'" x-cloak>
           <label for="k8sNamespace" class="block text-sm font-medium text-gray-700">
             Namespace
@@ -67,7 +47,6 @@
             {{ i18n "hub_setup_deployment_kubernetes_namespace_description" . }}
           </p>
         </div>
-
         <div class="col-span-6" x-show="deploymentType == 'kubernetes'" x-cloak>
           <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">
             Ingress
@@ -82,6 +61,39 @@
               </label>
             </div>
           </div>
+        </div>
+
+        <!-- DOCKER COMPOSE (PROD) OPTIONS -->
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-prod'" x-cloak>
+          <label for="composeIncludeTraefik" class="block text-sm font-medium text-gray-700">
+            Traefik
+          </label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="composeIncludeTraefik" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeTraefik">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="composeIncludeTraefik" class="font-medium text-gray-700">
+                {{ i18n "hub_setup_deployment_compose_traefik_include" . }}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-prod' && cfg.compose.includeTraefik" x-cloak>
+          <label for="composePublicNetwork" class="block text-sm font-medium text-gray-700">
+            Public Network
+          </label>
+          <input type="text" id="composePublicNetwork" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.publicNetwork">
+          <p class="mt-2 text-sm text-gray-500">
+            {{ i18n "hub_setup_deployment_compose_traefik_public_network_description" . }}
+          </p>
+        </div>
+
+        <!-- DOCKER COMPOSE (TEST) OPTIONS -->
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-test'" x-cloak>
+          <p class="text-sm text-gray-500">
+            {{ i18n "hub_setup_deployment_compose_test_description" . }}
+          </p>
         </div>
       </div>
     </section>
@@ -113,7 +125,7 @@
             <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_hub_public_url" . }}
             </label>
-            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl" @input="cfg.hub.publicUrl">
+            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl" :readonly="deploymentType == 'compose-test'">
             <p class="mt-2 text-sm text-gray-500">
               {{ i18n "hub_setup_hub_public_url_description" . }}
             </p>
@@ -152,7 +164,7 @@
           </p>
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-          <div class="col-span-6">
+          <div class="col-span-6" x-show="deploymentType != 'compose-test'">
             <label class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_keycloak_external" . }}
             </label>
@@ -172,7 +184,7 @@
             <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_keycloak_public_url" . }}
             </label>
-            <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl">
+            <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl" :readonly="deploymentType == 'compose-test'">
             <p class="mt-2 text-sm text-gray-500" x-show="cfg.keycloak.useExternal">
               {{ i18n "hub_setup_keycloak_public_url_external_description" . }}
             </p>
@@ -181,7 +193,7 @@
             </p>
           </div>
 
-          <div class="col-span-6 lg:col-span-4">
+          <div class="col-span-6 lg:col-span-4" x-show="deploymentType != 'compose-test'">
             <label for="keycloakRealmId" class="block text-sm font-medium text-gray-700">
               {{ i18n "hub_setup_keycloak_realm_id" . }}
             </label>
@@ -278,7 +290,7 @@
             <label for="k8sOutput" class="block text-sm font-medium text-gray-700">k8s-hub.yml</label>
             <textarea id="k8sOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.k8s" readonly></textarea>
           </div>
-          <div class="col-span-6" x-show="deploymentType == 'docker-compose'">
+          <div class="col-span-6" x-show="deploymentType == 'compose-prod' || deploymentType == 'compose-test'">
             <label for="composeOutput" class="block text-sm font-medium text-gray-700">docker-compose.yml</label>
             <textarea id="composeOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.compose" readonly></textarea>
           </div>
@@ -286,7 +298,7 @@
             <label for="realmOutput" class="block text-sm font-medium text-gray-700">realm.json</label>
             <textarea id="realmOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.realm" readonly></textarea>
           </div>
-          <div class="col-span-6">
+          <div class="col-span-6" x-show="deploymentType == 'kubernetes' || deploymentType == 'compose-prod'">
             <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_setup_output_hint" . | safeHTML }}</p>
           </div>
         </div>
