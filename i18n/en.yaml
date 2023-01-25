@@ -495,7 +495,7 @@
 
 # Hub Setup
 - id: hub_setup_description
-  translation: "Use this configuration as a template to deploy Cryptomator Hub."
+  translation: "Generate the necessary configuration templates for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
 - id: hub_setup_more_info
   translation: "You can find more documentation at <a href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
 
@@ -580,7 +580,7 @@
 - id: hub_setup_output_header_title
   translation: "Config"
 - id: hub_setup_output_header_description
-  translation: "Use this configuration to deploy Cryptomator Hub."
+  translation: "Use this configuration template to deploy Cryptomator Hub."
 - id: hub_setup_output_hint
   translation: "Hint: Hub and Keycloak requires proper TLS termination in production. Only for tests with localhost or 127.0.0.1 this is not necessary. In the setup wizard you can add the config for the reverse proxies Ingress or Traefik. The deployment for the respective proxy is not included."
 
