@@ -70,7 +70,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
     <h3><i class="fas fa-sync fa-fw text-primary"></i> Keine Dateien versehentlich überschreiben</h3>
   </div>
   <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>Wenn gleichzeitig mehrere Geräte auf ein Dokument zugreifen, und dadurch <strong>Synchronisationskonflikte</strong> entstehen, erkennt Cryptomator diese trotz Dateinamensverschlüsselung. Zusätzlich bleibt, so wie du es kennst, die Versionshistorie von deinem Cloud-Speicher-Anbieter erhalten.</p>
+    <p>Wenn gleichzeitig mehrere Geräte auf ein Dokument zugreifen, und dadurch <strong>Synchronisationskonflikte</strong> entstehen, erkennt Cryptomator diese trotz Dateinamensverschlüsselung. Zusätzlich bleibt die Versionshistorie von deinem Cloud-Speicher-Anbieter erhalten, so dass du alte Versionen einzelner Dateien wiederherstellen kannst. Hinweis: Das Auffinden der richtigen Datei zum Wiederherstellen ist derzeit praktisch nicht machbar, aber wird bald ab Cryptomator 1.7.0 ermöglicht.</p>
   </div>
 </div>
 

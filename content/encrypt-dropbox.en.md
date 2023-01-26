@@ -70,7 +70,7 @@ This means that attackers would not even benefit from drilling through the wall 
     <h3><i class="fas fa-sync fa-fw text-primary"></i> Files don't accidentally get overwritten</h3>
   </div>
   <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>If several devices access a document at the same time, and <strong>synchronization conflicts</strong> arise as a result, Cryptomator detects them despite file name encryption. Additionally, the version history from your cloud storage provider is preserved as you know it.</p>
+    <p>If several devices access a document at the same time, and <strong>synchronization conflicts</strong> arise as a result, Cryptomator detects them despite file name encryption. Additionally, the version history from your cloud storage provider is preserved so that you can restore old versions of individual files. Note: Finding the correct file to restore is currently practically unfeasible, but will soon be possible in Cryptomator 1.7.0.</p>
   </div>
 </div>
 
