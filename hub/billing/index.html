@@ -470,8 +470,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-645128397" x-model="acceptTerms" />
-<label for="id-645128397">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-728915634" x-model="acceptTerms" />
+<label for="id-728915634">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="subscriptionData.isManaged ? hubSubscription.checkoutManaged('en') : hubSubscription.checkoutSelfHosted('en')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -525,7 +525,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              As you can imagine, we&rsquo;re working hard on it. The managed solution is expected to be available in February. If you want be notified, subscribe to our <a href="#newsletter">Hub mailing list</a>.
+              As you can imagine, we&rsquo;re working hard on it. The managed solution is expected to be available in February. If you want be notified, subscribe to our <a href="/hub/#newsletter">Hub mailing list</a>.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">

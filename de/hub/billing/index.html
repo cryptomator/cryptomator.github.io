@@ -470,8 +470,8 @@
                     Zahlungen werden über Paddle abgewickelt
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-795264831" x-model="acceptTerms" />
-<label for="id-795264831">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-742931586" x-model="acceptTerms" />
+<label for="id-742931586">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt im ersten Jahr!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="subscriptionData.isManaged ? hubSubscription.checkoutManaged('de') : hubSubscription.checkoutSelfHosted('de')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -525,7 +525,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Wie du dir vorstellen kannst, arbeiten wir mit Hochdruck daran. Die Managed-Lösung wird vsl. im Februar verfügbar sein. Wenn du benachrichtigt werden möchtest, abonniere unseren <a href="#newsletter">Hub-Newsletter</a>.
+              Wie du dir vorstellen kannst, arbeiten wir mit Hochdruck daran. Die Managed-Lösung wird vsl. im Februar verfügbar sein. Wenn du benachrichtigt werden möchtest, abonniere unseren <a href="/de/hub/#newsletter">Hub-Newsletter</a>.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
