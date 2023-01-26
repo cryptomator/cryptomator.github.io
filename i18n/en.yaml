@@ -471,6 +471,8 @@
   translation: "Email address"
 - id: hub_billing_checkout_standard_instruction
   translation: "Payments are securely handled by Paddle."
+- id: hub_billing_checkout_managed_instruction
+  translation: "Start today with a 14-day free trial. Payments are securely handled by Paddle."
 - id: hub_billing_checkout_coupon
   translation: "Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!"
 - id: hub_billing_checkout_standard_submit

@@ -470,7 +470,9 @@
 - id: hub_billing_checkout_standard_email_placeholder
   translation: "E-Mail-Adresse"
 - id: hub_billing_checkout_standard_instruction
-  translation: "Zahlungen werden über Paddle abgewickelt"
+  translation: "Zahlungen werden über Paddle abgewickelt."
+- id: hub_billing_checkout_managed_instruction
+  translation: "Beginne noch heute mit einer 14-tägigen kostenlosen Testversion. Zahlungen werden über Paddle abgewickelt."
 - id: hub_billing_checkout_coupon
   translation: "Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt im ersten Jahr!"
 - id: hub_billing_checkout_standard_submit

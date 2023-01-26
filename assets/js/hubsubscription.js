@@ -2,7 +2,7 @@
 
 // requires store.js
 const SUBSCRIPTION_URL = STORE_API_URL + '/hub/subscription';
-const MANAGED_URL = STORE_API_URL + '/hub/managed';
+const CUSTOM_BILLING_URL = STORE_API_URL + '/hub/custom-billing';
 
 class HubSubscription {
 
@@ -34,7 +34,7 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.getSuccess = false;
-    this.determineIsManaged(() => {
+    this.determineCustomBilling(() => {
       $.ajax({
         url: SUBSCRIPTION_URL,
         type: 'GET',
@@ -76,41 +76,41 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  determineIsManaged(continueHandler) {
+  determineCustomBilling(continueHandler) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGED_URL,
+      url: CUSTOM_BILLING_URL,
       type: 'GET',
       data: {
         hub_id: this._subscriptionData.hubId
       }
     }).done(data => {
-      this.onDetermineIsManagedSucceeded(data);
+      this.onDetermineCustomBillingSucceeded(data);
       continueHandler();
     }).fail(xhr => {
       if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
-        this.onDetermineIsManagedManagedNotFound();
+        this.onDetermineCustomBillingManagedNotFound();
         continueHandler();
       } else {
-        this.onDetermineIsManagedManagedFailed(xhr.responseJSON?.message || 'Fetching managed status failed.');
+        this.onDetermineCustomBillingManagedFailed(xhr.responseJSON?.message || 'Fetching custom billing options failed.');
       }
     });
   }
 
-  onDetermineIsManagedSucceeded(_data) {
-    this._subscriptionData.isManaged = true;
+  onDetermineCustomBillingSucceeded(data) {
+    this._subscriptionData.customBilling = data.custom_billing;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
   }
 
-  onDetermineIsManagedManagedNotFound() {
-    this._subscriptionData.isManaged = false;
+  onDetermineCustomBillingManagedNotFound() {
+    this._subscriptionData.customBilling = null;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
   }
 
-  onDetermineIsManagedManagedFailed() {
+  onDetermineCustomBillingManagedFailed() {
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }
