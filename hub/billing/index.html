@@ -167,7 +167,7 @@
     
     
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, isManaged: false, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, pricingData: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); new HubPricing(pricingData).loadPrice()" x-ref="form">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, customBilling: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, pricingData: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); new HubPricing(pricingData).loadPrice()" x-ref="form">
       <template x-if="!subscriptionData.getSuccess">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -432,8 +432,8 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   Standard
                 </h2>
-                <p x-show="subscriptionData.isManaged" x-text="pricingData.managedMonthlyPrice ? pricingData.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: pricingData.managedMonthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
-                <p x-show="!subscriptionData.isManaged" x-text="pricingData.selfHostedMonthlyPrice ? pricingData.selfHostedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: pricingData.selfHostedMonthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
+                <p x-show="subscriptionData.customBilling && subscriptionData.customBilling.managed" x-text="pricingData.managedMonthlyPrice ? pricingData.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: pricingData.managedMonthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
+                <p x-show="!subscriptionData.customBilling || (subscriptionData.customBilling && !subscriptionData.customBilling.managed)" x-text="pricingData.selfHostedMonthlyPrice ? pricingData.selfHostedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: pricingData.selfHostedMonthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
                 <p class="text-lg text-gray-500 mb-4">
                   per seat, per month, billed yearly
                 </p>
@@ -466,15 +466,18 @@
                   <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Email address" required/>
                 </div>
                 <div class="text-center mt-8">
-                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  <p x-show="subscriptionData.customBilling && subscriptionData.customBilling.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                    Start today with a 14-day free trial. Payments are securely handled by Paddle.
+                  </p>
+                  <p x-show="!subscriptionData.customBilling || (subscriptionData.customBilling && !subscriptionData.customBilling.managed)" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-728915634" x-model="acceptTerms" />
-<label for="id-728915634">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-236591874" x-model="acceptTerms" />
+<label for="id-236591874">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
-                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="subscriptionData.isManaged ? hubSubscription.checkoutManaged('en') : hubSubscription.checkoutSelfHosted('en')" type="submit" class="btn btn-primary w-full md:w-64">
+                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="(subscriptionData.customBilling && subscriptionData.customBilling.managed) ? hubSubscription.checkoutManaged('en') : hubSubscription.checkoutSelfHosted('en')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     Checkout
                   </button>
@@ -582,7 +585,7 @@
     
     <script type="text/javascript" src="/js/store.min.b419be6ea241138a0fb834d06ebfac080d11063cd28c67f47a585edbc0ec2f27.js" integrity="sha256-tBm&#43;bqJBE4oPuDTQbr&#43;sCA0RBjzSjGf0elhe28DsLyc=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.ddcb53f12b8a8ab53bf08686ca28d2e8d10fb19f3ce9a9260dfa0b655830b3f3.js" integrity="sha256-3ctT8SuKirU78IaGyijS6NEPsZ886akmDfoLZVgws/M=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.457cf7758c25479d7cc1a6e4d79ae0e20644582a2c38ebe7c4cab18ed3a3e340.js" integrity="sha256-RXz3dYwlR518wabk15rg4gZEWCosOOvnxMqxjtOj40A=" defer></script>
     
     <script type="text/javascript" src="/js/hubpricing.min.70c8d04d3f54179360b5db2225f6a68097413e6cd8a10d741642129936230646.js" integrity="sha256-cMjQTT9UF5NgtdsiJfamgJdBPmzYoQ10FkISmTYjBkY=" defer></script>
   
