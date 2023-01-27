@@ -35,7 +35,6 @@ class DesktopLicense {
       url: GENERATE_PAY_LINK_URL,
       type: 'POST',
       data: {
-        currency: this._checkoutData.currency,
         amount: this._checkoutData.amount,
         quantity: this._checkoutData.quantity
       }

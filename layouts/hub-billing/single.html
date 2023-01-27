@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, customBilling: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, pricingData: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search)); new HubPricing(pricingData).loadPrice()" x-ref="form">
+    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, customBilling: null, monthlyPrice: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form">
       <template x-if="!subscriptionData.getSuccess">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -265,8 +265,7 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
                 </h2>
-                <p x-show="subscriptionData.customBilling && subscriptionData.customBilling.managed" x-text="pricingData.managedMonthlyPrice ? pricingData.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: pricingData.managedMonthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
-                <p x-show="!subscriptionData.customBilling || (subscriptionData.customBilling && !subscriptionData.customBilling.managed)" x-text="pricingData.selfHostedMonthlyPrice ? pricingData.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: pricingData.selfHostedMonthlyPrice.currency }) : '…'" class="text-5xl font-bold"></p>
+                <p x-text="subscriptionData.monthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></p>
                 <p class="text-lg text-gray-500 mb-4">
                   {{ i18n "hub_billing_checkout_standard_description" . }}
                 </p>
@@ -299,15 +298,12 @@
                   <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
                 </div>
                 <div class="text-center mt-8">
-                  <p x-show="subscriptionData.customBilling && subscriptionData.customBilling.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-                    {{ i18n "hub_billing_checkout_managed_instruction" . }}
-                  </p>
-                  <p x-show="!subscriptionData.customBilling || (subscriptionData.customBilling && !subscriptionData.customBilling.managed)" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                     {{ i18n "hub_billing_checkout_standard_instruction" . }}
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">{{ ":tada:" | emojify }} {{ i18n "hub_billing_checkout_coupon" | safeHTML }}</p>    
-                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="(subscriptionData.customBilling && subscriptionData.customBilling.managed) ? hubSubscription.checkoutManaged('{{ .Site.Language.Lang }}') : hubSubscription.checkoutSelfHosted('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}
                   </button>
@@ -374,14 +370,10 @@
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
-    {{ $hubPricingJs := resources.Get "js/hubpricing.js" }}
-    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
-    {{ $hubPricingJs := resources.Get "js/hubpricing.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" integrity="{{ $hubPricingJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}
