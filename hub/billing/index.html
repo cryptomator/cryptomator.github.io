@@ -333,7 +333,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="border-t border-primary p-4 md:flex md:flex-row-reverse">
+                  <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
                     <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                       Confirm
@@ -399,7 +399,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="border-t border-primary p-4 md:flex md:flex-row-reverse">
+                  <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
                     <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
                       Continue
@@ -469,8 +469,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-568139274" x-model="acceptTerms" />
-<label for="id-568139274">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-756831294" x-model="acceptTerms" />
+<label for="id-756831294">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
