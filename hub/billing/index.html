@@ -369,7 +369,7 @@
                           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                             If you require more or less seats than the current limit, you can adjust the quantity here.
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" placeholder="min. 1" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             Only users who are granted access to vaults count towards the seats limit.
                           </p>
@@ -452,7 +452,7 @@
                     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                       Number of Seats
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" placeholder="min. 1" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       Only users who are granted access to vaults count towards the seats limit.
                     </p>
@@ -469,8 +469,8 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-285174936" x-model="acceptTerms" />
-<label for="id-285174936">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-568139274" x-model="acceptTerms" />
+<label for="id-568139274">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -581,7 +581,7 @@
     
     <script type="text/javascript" src="/js/store.min.b419be6ea241138a0fb834d06ebfac080d11063cd28c67f47a585edbc0ec2f27.js" integrity="sha256-tBm&#43;bqJBE4oPuDTQbr&#43;sCA0RBjzSjGf0elhe28DsLyc=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.f5af7b3a527125c734fe7df0d2b0bafc8773eef42cee1ca854a2c6d327774c14.js" integrity="sha256-9a97OlJxJcc0/n3w0rC6/Idz7vQs7hyoVKLG0yd3TBQ=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.7b271284940802d9c0fd434b63d42d4e191ba286079987f4bf7658516796fadf.js" integrity="sha256-eycShJQIAtnA/UNLY9QtThkbooYHmYf0v3ZYUWeW&#43;t8=" defer></script>
   
 
     </div>
