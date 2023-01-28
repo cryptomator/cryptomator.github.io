@@ -13,18 +13,17 @@
         </div>
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
-        <div class="mb-4">
-          <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "hub_header_self_hosted" . }}</p>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_self_hosted_docs_cta" . }}</a>
-            <a href="{{ .Site.LanguagePrefix }}/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">{{ i18n "hub_header_self_hosted_setup_cta" . }}</a>
+        <div class="flex flex-col md:flex-row md:divide-x md:divide-gray-300">
+          <div class="mb-4 md:mb-0 md:pr-4">
+            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "hub_header_managed" . }}</p>
+            <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_managed_cta" . }}</a>
           </div>
-        </div>
-        <div>
-          <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "hub_header_managed" . }}</p>
-          <div class="has-tooltip">
-            <button class="btn btn-primary text-lg px-8">{{ i18n "hub_header_managed_cta" . }}</button>
-            <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-48 p-2 mt-2">{{ i18n "hub_header_managed_cta_tooltip" . }}</div>
+          <div class="md:pl-4">
+            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "hub_header_self_hosted" . }}</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_self_hosted_docs_cta" . }}</a>
+              <a href="{{ .Site.LanguagePrefix }}/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">{{ i18n "hub_header_self_hosted_setup_cta" . }}</a>
+            </div>
           </div>
         </div>
       </div>
@@ -73,27 +72,108 @@
     </div>
   </section>
 
-  <section x-data="{infrastructure: 'self-hosted', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+  <section x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
     <header class="text-center">
       <h2 id="pricing-plans" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_pricing_title" . }}</h2>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_pricing_description" . }}</p>
       <div class="flex justify-center mb-4">
-        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
-          <i class="fa-server fa-fw" :class="{'fas': infrastructure === 'self-hosted', 'far': infrastructure !== 'self-hosted'}"></i>
-          {{ i18n "hub_pricing_infrastructure_self_hosted" . }}
-        </button>
-        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
           <i class="fa-cloud fa-fw" :class="{'fas': infrastructure === 'managed', 'far': infrastructure !== 'managed'}"></i>
           {{ i18n "hub_pricing_infrastructure_managed" . }}
         </button>
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
+          <i class="fa-server fa-fw" :class="{'fas': infrastructure === 'self-hosted', 'far': infrastructure !== 'self-hosted'}"></i>
+          {{ i18n "hub_pricing_infrastructure_self_hosted" . }}
+        </button>
       </div>
-      <p x-show="infrastructure === 'managed'" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4" x-cloak>
-        <i class="fas fa-exclamation-triangle fa-fw text-yellow-500"></i>
-        {{ i18n "hub_pricing_infrastructure_managed_coming_later" . }}
-      </p>
     </header>
 
-    <div x-show="infrastructure === 'self-hosted'" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+    <div x-show="infrastructure === 'managed'" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_pricing_standard_title" . }}
+          </h3>
+          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_pricing_standard_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_2" . }}</span>
+              <span><sup>1</sup></span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "hub_pricing_standard_benefit_2_tooltip" . }}</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_3" . }}</span>
+              <span><sup>1</sup></span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_managed_standard_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_managed_standard_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_pricing_enterprise_title" . }}
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            {{ i18n "hub_pricing_enterprise_statement" . }}
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_pricing_enterprise_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_3" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div x-show="infrastructure === 'self-hosted'" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4" x-cloak>
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
           <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
@@ -161,91 +241,6 @@
               <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
               <span>{{ i18n "hub_pricing_standard_benefit_3" . }}</span>
               <span><sup>1</sup></span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_standard_benefit_4" . }}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="rounded shadow bg-white">
-        <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
-            {{ i18n "hub_pricing_enterprise_title" . }}
-          </h3>
-          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
-            {{ i18n "hub_pricing_enterprise_statement" . }}
-          </p>
-          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-            {{ i18n "hub_pricing_enterprise_description" . }}
-          </p>
-        </div>
-        <div class="px-4 py-8">
-          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-            <li>
-              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_enterprise_benefit_1" . }}</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_enterprise_benefit_2" . }}</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_enterprise_benefit_3" . }}</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_enterprise_benefit_4" . }}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div x-show="infrastructure === 'managed'" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4" x-cloak>
-      <div class="rounded shadow bg-white">
-        <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
-            {{ i18n "hub_pricing_standard_title" . }}
-          </h3>
-          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
-          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-            {{ i18n "hub_pricing_standard_description" . }}
-          </p>
-        </div>
-        <div class="px-4 py-8">
-          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_community_benefit_1" . }}</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_community_benefit_2" . }}</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_standard_benefit_2" . }}</span>
-              <span><sup>1</sup></span>
-              <div class="has-tooltip">
-                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "hub_pricing_standard_benefit_2_tooltip" . }}</div>
-              </div>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_standard_benefit_3" . }}</span>
-              <span><sup>1</sup></span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_managed_standard_benefit_1" . }}</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>{{ i18n "hub_pricing_managed_standard_benefit_2" . }}</span>
             </li>
             <li>
               <span class="fa-li"><i class="fas fa-check text-primary"></i></span>

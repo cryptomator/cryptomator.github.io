@@ -1,5 +1,3 @@
-- Question: "When is the expected launch date for the managed solution?"
-  Answer: "As you can imagine, we're working hard on it. The managed solution is expected to be available in February. If you want be notified, subscribe to our [Hub mailing list](/hub/#newsletter)."
 - Question: "How are seats calculated?"
   Answer: "Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices."
 - Question: "How is the subscription fee calculated for paid plans?"

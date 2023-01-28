@@ -243,18 +243,16 @@
   translation: "Das&nbsp;sichere Arbeiten&nbsp;im&nbsp;Team"
 - id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
-- id: hub_header_self_hosted
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_docs_cta
-  translation: "Jetzt loslegen"
-- id: hub_header_self_hosted_setup_cta
-  translation: "Setup Wizard"
 - id: hub_header_managed
   translation: "Managed"
 - id: hub_header_managed_cta
-  translation: "Bald verfügbar"
-- id: hub_header_managed_cta_tooltip
-  translation: "Die Einführung erfolgt vsl. im Februar. Bei Interesse, abonniere unten unseren Hub-Newsletter."
+  translation: "Zugang anfordern"
+- id: hub_header_self_hosted
+  translation: "Self-Hosted"
+- id: hub_header_self_hosted_docs_cta
+  translation: "Docs"
+- id: hub_header_self_hosted_setup_cta
+  translation: "Setup Wizard"
 - id: hub_header_man_vault_alt
   translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
 
@@ -280,12 +278,10 @@
   translation: "Preisgestaltung"
 - id: hub_pricing_description
   translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
-- id: hub_pricing_infrastructure_self_hosted
-  translation: "Self-Hosted"
 - id: hub_pricing_infrastructure_managed
   translation: "Managed"
-- id: hub_pricing_infrastructure_managed_coming_later
-  translation: "Managed-Instanzen werden bald verfügbar sein. Abonniere unten unseren Hub-Newsletter, um informiert zu werden."
+- id: hub_pricing_infrastructure_self_hosted
+  translation: "Self-Hosted"
 - id: hub_pricing_community_title
   translation: "Community"
 - id: hub_pricing_community_statement
