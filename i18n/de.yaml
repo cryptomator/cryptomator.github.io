@@ -434,8 +434,6 @@
   translation: "Sitze ändern"
 - id: hub_billing_manage_change_quantity_description
   translation: "Benötigst du mehr oder weniger Sitze als das aktuelle Limit, kannst du die Anzahl hier anpassen."
-- id: hub_billing_manage_change_quantity_amount_placeholder
-  translation: "min. 1"
 - id: hub_billing_manage_change_quantity_amount_description
   translation: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet."
 - id: hub_billing_manage_change_quantity_confirmation_current_amount_description
@@ -461,8 +459,6 @@
   translation: "Diese ist einzigartig für deine Hub-Instanz. Das Abonnement wird an sie gebunden sein."
 - id: hub_billing_checkout_standard_quantity
   translation: "Anzahl der Sitze"
-- id: hub_billing_checkout_standard_quantity_placeholder
-  translation: "min. 1"
 - id: hub_billing_checkout_standard_quantity_description
   translation: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet."
 - id: hub_billing_checkout_standard_email

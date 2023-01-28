@@ -434,8 +434,6 @@
   translation: "Change Seats"
 - id: hub_billing_manage_change_quantity_description
   translation: "If you require more or less seats than the current limit, you can adjust the quantity here."
-- id: hub_billing_manage_change_quantity_amount_placeholder
-  translation: "min. 1"
 - id: hub_billing_manage_change_quantity_amount_description
   translation: "Only users who are granted access to vaults count towards the seats limit."
 - id: hub_billing_manage_change_quantity_confirmation_current_amount_description
@@ -461,8 +459,6 @@
   translation: "This is unique to your Hub instance. The subscription will be bound to it."
 - id: hub_billing_checkout_standard_quantity
   translation: "Number of Seats"
-- id: hub_billing_checkout_standard_quantity_placeholder
-  translation: "min. 1"
 - id: hub_billing_checkout_standard_quantity_description
   translation: "Only users who are granted access to vaults count towards the seats limit."
 - id: hub_billing_checkout_standard_email

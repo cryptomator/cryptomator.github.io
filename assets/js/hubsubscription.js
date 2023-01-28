@@ -103,6 +103,10 @@ class HubSubscription {
 
   onDetermineCustomBillingSucceeded(data) {
     this._subscriptionData.customBilling = data.custom_billing;
+    let quantityMin = this._subscriptionData.customBilling.quantity_min;
+    if (quantityMin) {
+      this._subscriptionData.quantity = quantityMin;
+    }
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
   }
