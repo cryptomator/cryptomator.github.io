@@ -167,7 +167,7 @@
                     </div>
                   </div>
                   <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
@@ -233,11 +233,11 @@
                     </div>
                   </div>
                   <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_continue" . }}
                     </button>
-                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>

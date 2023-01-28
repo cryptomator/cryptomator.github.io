@@ -372,6 +372,12 @@ class HubSubscription {
   }
 
   askForChangeSeatsConfirmation() {
+    if (!$(this._form)[0].checkValidity()) {
+      $(this._form).find(':input').addClass('show-invalid');
+      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      return;
+    }
+
     this._subscriptionData.changeSeatsModal.confirmation = true;
     this.previewChangeQuantity();
   }
