@@ -174,6 +174,51 @@
     
       
         <article>
+          <h2>Cryptomator 1.7.0: What You Need to Know</h2>
+          <p>If you&rsquo;re subscribed to our <a href="https://github.com/cryptomator/cryptomator/releases">releases on GitHub</a>, this is already old news for you: We have released the <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.7.0-beta1">first beta</a> of the upcoming Cryptomator 1.7.0! It contains a lot of internal changes and a bunch of new features, some of which are almost as old as Cryptomator itself.</p>
+<p>We are very proud of this release, as it eliminates technical debt, delivers long-awaited features, and prepares Cryptomator Desktop for the future. But putting aside about 3,000 lines of code changes and a 4-month development iteration (not counting work in our libraries), let&rsquo;s dive into this release to see what you, the user, will get out of it.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/cryptomator-1-7-0.png" srcset="/img/blog/cryptomator-1-7-0.png 1x, /img/blog/cryptomator-1-7-0@2x.png 2x" alt="Cryptomator 1.7.0 Release" />
+</figure>
+<h2 id="locate-encrypted-file">Locate Encrypted File</h2>
+<p>As already mentioned, Cryptomator 1.7.0 includes a feature that has been requested for a very long time: Locating the encrypted counterpart of a file. Sounds complex, but once you remember that Cryptomator encrypts filenames and obfuscates the directory structure (<a href="https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption">see our docs</a>), it is easy to understand.</p>
+<p>Prior to 1.7.0, you had to guess which encrypted file corresponds to which cleartext file based on the exact timestamps. Now, once the vault is unlocked, the encrypted counterpart of any file in the vault can be revealed by clicking on the &ldquo;Locate Encrypted File&rdquo; button and selecting a file in the vault. Or you can simply drag and drop the files from your vault onto this button. See for yourself in this short video:</p>
+<video class="rounded" autoplay loop muted>
+  <source src="https://static.cryptomator.org/blog/locate-encrypted-file.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="experimental-support-for-fuse-t">Experimental Support for FUSE-T</h2>
+<p>On macOS, Cryptomator can use two different technologies to integrate your vault into the system: macFUSE and WebDAV. Unfortunately, the WebDAV implementation on macOS is not the most reliable one. Starting with Apple Silicon Macs, it became unusable for some users who reported system freezes. To make matters worse, macFUSE, which has been the preferred option for at least 3 years, is also on its last legs. Apple has deprecated the OS APIs used by macFUSE since macOS 12.3.</p>
+<p>For the past year, we have been desperately searching for an alternative. Our proof of concept using Apple&rsquo;s File Provider framework was not very convincing and would basically require a whole new architecture. Fortunately, you, our community, informed us about an alternative: <a href="https://www.fuse-t.org/">FUSE-T</a>.</p>
+<p>FUSE-T is a young project that does not rely on deprecated macOS APIs and can be used as a drop-in-replacement for macFUSE. It requires a much less deep system integration than macFUSE while offering a similar performance. This makes Cryptomator ready for the medium-term future on macOS. But since FUSE-T is quite young, support for it is experimental for now. We encourage you to try it though!</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/preferences-fuse-t.png" srcset="/img/blog/preferences-fuse-t.png 1x, /img/blog/preferences-fuse-t@2x.png 2x" alt="Experimental Support for FUSE-T" />
+</figure>
+<p>So, while the File Provider extension is not out of our sight, we are relieved to be able to offer you a stable system integration of your Cryptomator vaults.</p>
+<h2 id="volume-types-overhaul">Volume Types Overhaul</h2>
+<p>Looking at the screenshot above, you might have noticed: The volume types have changed, too. That&rsquo;s right, and that&rsquo;s because we rewrote the entire volume type selection and internal wiring logic. It was a huge development effort, but it resulted in a less complex and easier to maintain architecture under the hood. It also resulted in more options for you.</p>
+<h3 id="more-options">More Options</h3>
+<p>The old implementation basically offered 3 (or 2) options: WebDAV, Dokany, and FUSE. Now, specialized implementations are offered for each OS. For example, on Windows you can select between WinFsp, WinFsp (Local Drive), Dokany, WebDAV (Windows Explorer) and WebDAV (Fallback).</p>
+<p>But don&rsquo;t worry, this selection is only important if you have special requirements for the virtual drive. Otherwise, Cryptomator has a new &ldquo;Automatic&rdquo; option and is set up to choose the best suited option for you, and you don&rsquo;t need to worry about it.</p>
+<p>We have even added an emergency option: The aforementioned &ldquo;WebDAV (Fallback)&rdquo;. If you can&rsquo;t mount your vault at all, it makes your vault accessible via a local-only server using the web standard WebDAV. We&rsquo;ll have a guide describing this in more detail soon.</p>
+<h3 id="winfsp-change-local-vs-network-drive">WinFsp Change: Local vs. Network Drive</h3>
+<p>Windows users may notice that their vault is now mounted as a network drive by default. This has the advantage of better performance when listing large directories. The disadvantage is that it cannot be mounted into a directory. Accessing the vault as a privileged user is still possible by using the UNC path.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/winfsp-change.png" srcset="/img/blog/winfsp-change.png 1x, /img/blog/winfsp-change@2x.png 2x" alt="WinFsp Change: Local vs. Network Drive" />
+</figure>
+<p>If you really need a local drive, you can always change the volume type in the preferences.</p>
+<h3 id="dokany-deprecation">Dokany Deprecation</h3>
+<p>With the release of Cryptomator 1.7.0, we will officially deprecate Dokany support.</p>
+<p><a href="https://dokan-dev.github.io/">Dokany</a>, like FUSE, provides a file system interface to mount virtual drives without requiring elevated privileges. We started supporting Dokany 3 years ago with version 1.4.0. But things didn&rsquo;t go as smoothly with the Dokany volume as we had hoped, so we decided to focus our development efforts on a single file system interface. All Dokany-related issues on GitHub will be closed, and our general recommendation is to use WinFSP which comes with the EXE installer of Cryptomator. You will still be able to use Dokany, but it won&rsquo;t get any updates and support will eventually be removed.</p>
+<p>It was a great time, and we wish the Dokany project all the best!</p>
+<h2 id="linux-aarch64-builds">Linux AArch64 Builds</h2>
+<p>With Cryptomator 1.7.0, we&rsquo;ll finally ship AArch64 builds of Cryptomator via Flatpak and PPA.</p>
+<p>One big obstacle was the aforementioned FUSE file system API on Linux. We were using a rather old project to build the bridge between Cryptomator and FUSE. Thanks to a fantastic development effort started by our lead architect, we now use state-of-the-art technology to implement this bridge. The result is bundled in the library called <a href="https://github.com/cryptomator/jfuse">jFUSE</a>. Not only were we able to change the bridge, we were also able to update to a new major version of FUSE and pave the way to support features like extended attributes.</p>
+<p>The AppImage is still x86_x64 only, but we plan to deliver it also in AArch64 architecture eventually.</p>
+
+        </article>
+      
+        <article>
           <h2>Boxcryptor Shuts Down – Here is Your Cloud Encryption Alternative</h2>
           <p>As mentioned in the <a href="/blog/2022/11/30/congratulations-boxcryptor-dropbox/">last blog post</a>, Dropbox has acquired Boxcryptor&rsquo;s key technology. This means that Boxcryptor&rsquo;s services will no longer be available to new users and existing users will likely have to migrate when their contracts expire.</p>
 <p>We are here to stay and offer you the chance to try our open-source software. Cryptomator is free and can be used without an account. <a href="/downloads/">Just download</a> and get started.</p>

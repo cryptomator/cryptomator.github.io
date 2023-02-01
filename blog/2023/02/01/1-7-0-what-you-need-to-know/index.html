@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptomator 1.7.0: What You Need to Know</title>
+    
+      <meta name="description" content="The release of Cryptomator 1.7.0 for Desktop is near, and you should know what changes it brings to you.">
+      <meta property="og:title" content="Cryptomator 1.7.0: What You Need to Know">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="The release of Cryptomator 1.7.0 for Desktop is near, and you should know what changes it brings to you.">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2023-02-01" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="desktop" />
+      
+        <meta property="article:tag" content="windows" />
+      
+        <meta property="article:tag" content="mac" />
+      
+        <meta property="article:tag" content="linux" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
+    
+    <meta property="og:locale" content="en_US" />
+    
+      <meta property="og:locale:alternate" content="de_DE" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.0768fc2e50c20d0f0f617b2ff7e661afefac5a64c173728de1addb03fbf10145.css" integrity="sha256-B2j8LlDCDQ8PYXsv9&#43;Zhr&#43;&#43;sWmTBc3KN4a3bA/vxAUU=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/blog/2023/02/01/1-7-0-what-you-need-to-know/" />
+    
+    
+      
+    
+  </head>
+  <body class="bg-dark font-body text-gray-900">
+    <div class="w-full bg-primary text-center text-sm text-white p-0.5">
+  <p>Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class="underline" href="/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/">Learn more.</a></p>
+</div>
+<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+  <div class="flex justify-between items-stretch w-full">
+    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
+      <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+      <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+    </a>
+
+    
+    <ul class="hidden lg:flex items-stretch list-none m-0">
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
+      </li>
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+      </li>
+      <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Support Us</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+            <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+            <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+            <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
+          </div>
+        </div>
+      </li>
+      <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Learn More</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+            <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+            <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+            <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+            <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+            <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+            <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
+          </div>
+        </div>
+      </li>
+      
+      <li class="flex items-center mx-5 my-3 border-l border-primary"></li>
+      
+      <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+          <span>EN</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+            <a href="/de/blog/2023/02/01/1-7-0-what-you-need-to-know/" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+          </div>
+        </div>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw" aria-label="Twitter"></i></a>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener"><i class="fab fa-github fa-fw" aria-label="GitHub"></i></a>
+      </li>
+    </ul>
+    
+    
+    <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+      <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+      <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+    </button>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden">
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Support Us
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Learn More
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> EN
+    </div>
+    <div class="mt-1">
+      
+      <a href="/de/blog/2023/02/01/1-7-0-what-you-need-to-know/" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-fw"></i>
+      <span>Cryptomator on Twitter</span>
+    </a>
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator on GitHub</span>
+    </a>
+  </div>
+</nav>
+
+    <div class="bg-gray-100 min-vh-80">
+    
+    
+  <div class="container-prose py-12">
+    <article class="mb-12">
+      <header class="mb-6">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/blog/">Blog</a> / Cryptomator 1.7.0: What You Need to Know</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/blog/2023/02/01/1-7-0-what-you-need-to-know/">2023-02-01</a></span>
+        </div>
+        
+      </header>
+
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>If you&rsquo;re subscribed to our <a href="https://github.com/cryptomator/cryptomator/releases">releases on GitHub</a>, this is already old news for you: We have released the <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.7.0-beta1">first beta</a> of the upcoming Cryptomator 1.7.0! It contains a lot of internal changes and a bunch of new features, some of which are almost as old as Cryptomator itself.</p>
+<p>We are very proud of this release, as it eliminates technical debt, delivers long-awaited features, and prepares Cryptomator Desktop for the future. But putting aside about 3,000 lines of code changes and a 4-month development iteration (not counting work in our libraries), let&rsquo;s dive into this release to see what you, the user, will get out of it.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/cryptomator-1-7-0.png" srcset="/img/blog/cryptomator-1-7-0.png 1x, /img/blog/cryptomator-1-7-0@2x.png 2x" alt="Cryptomator 1.7.0 Release" />
+</figure>
+<h2 id="locate-encrypted-file">Locate Encrypted File</h2>
+<p>As already mentioned, Cryptomator 1.7.0 includes a feature that has been requested for a very long time: Locating the encrypted counterpart of a file. Sounds complex, but once you remember that Cryptomator encrypts filenames and obfuscates the directory structure (<a href="https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption">see our docs</a>), it is easy to understand.</p>
+<p>Prior to 1.7.0, you had to guess which encrypted file corresponds to which cleartext file based on the exact timestamps. Now, once the vault is unlocked, the encrypted counterpart of any file in the vault can be revealed by clicking on the &ldquo;Locate Encrypted File&rdquo; button and selecting a file in the vault. Or you can simply drag and drop the files from your vault onto this button. See for yourself in this short video:</p>
+<video class="rounded" autoplay loop muted>
+  <source src="https://static.cryptomator.org/blog/locate-encrypted-file.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="experimental-support-for-fuse-t">Experimental Support for FUSE-T</h2>
+<p>On macOS, Cryptomator can use two different technologies to integrate your vault into the system: macFUSE and WebDAV. Unfortunately, the WebDAV implementation on macOS is not the most reliable one. Starting with Apple Silicon Macs, it became unusable for some users who reported system freezes. To make matters worse, macFUSE, which has been the preferred option for at least 3 years, is also on its last legs. Apple has deprecated the OS APIs used by macFUSE since macOS 12.3.</p>
+<p>For the past year, we have been desperately searching for an alternative. Our proof of concept using Apple&rsquo;s File Provider framework was not very convincing and would basically require a whole new architecture. Fortunately, you, our community, informed us about an alternative: <a href="https://www.fuse-t.org/">FUSE-T</a>.</p>
+<p>FUSE-T is a young project that does not rely on deprecated macOS APIs and can be used as a drop-in-replacement for macFUSE. It requires a much less deep system integration than macFUSE while offering a similar performance. This makes Cryptomator ready for the medium-term future on macOS. But since FUSE-T is quite young, support for it is experimental for now. We encourage you to try it though!</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/preferences-fuse-t.png" srcset="/img/blog/preferences-fuse-t.png 1x, /img/blog/preferences-fuse-t@2x.png 2x" alt="Experimental Support for FUSE-T" />
+</figure>
+<p>So, while the File Provider extension is not out of our sight, we are relieved to be able to offer you a stable system integration of your Cryptomator vaults.</p>
+<h2 id="volume-types-overhaul">Volume Types Overhaul</h2>
+<p>Looking at the screenshot above, you might have noticed: The volume types have changed, too. That&rsquo;s right, and that&rsquo;s because we rewrote the entire volume type selection and internal wiring logic. It was a huge development effort, but it resulted in a less complex and easier to maintain architecture under the hood. It also resulted in more options for you.</p>
+<h3 id="more-options">More Options</h3>
+<p>The old implementation basically offered 3 (or 2) options: WebDAV, Dokany, and FUSE. Now, specialized implementations are offered for each OS. For example, on Windows you can select between WinFsp, WinFsp (Local Drive), Dokany, WebDAV (Windows Explorer) and WebDAV (Fallback).</p>
+<p>But don&rsquo;t worry, this selection is only important if you have special requirements for the virtual drive. Otherwise, Cryptomator has a new &ldquo;Automatic&rdquo; option and is set up to choose the best suited option for you, and you don&rsquo;t need to worry about it.</p>
+<p>We have even added an emergency option: The aforementioned &ldquo;WebDAV (Fallback)&rdquo;. If you can&rsquo;t mount your vault at all, it makes your vault accessible via a local-only server using the web standard WebDAV. We&rsquo;ll have a guide describing this in more detail soon.</p>
+<h3 id="winfsp-change-local-vs-network-drive">WinFsp Change: Local vs. Network Drive</h3>
+<p>Windows users may notice that their vault is now mounted as a network drive by default. This has the advantage of better performance when listing large directories. The disadvantage is that it cannot be mounted into a directory. Accessing the vault as a privileged user is still possible by using the UNC path.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/winfsp-change.png" srcset="/img/blog/winfsp-change.png 1x, /img/blog/winfsp-change@2x.png 2x" alt="WinFsp Change: Local vs. Network Drive" />
+</figure>
+<p>If you really need a local drive, you can always change the volume type in the preferences.</p>
+<h3 id="dokany-deprecation">Dokany Deprecation</h3>
+<p>With the release of Cryptomator 1.7.0, we will officially deprecate Dokany support.</p>
+<p><a href="https://dokan-dev.github.io/">Dokany</a>, like FUSE, provides a file system interface to mount virtual drives without requiring elevated privileges. We started supporting Dokany 3 years ago with version 1.4.0. But things didn&rsquo;t go as smoothly with the Dokany volume as we had hoped, so we decided to focus our development efforts on a single file system interface. All Dokany-related issues on GitHub will be closed, and our general recommendation is to use WinFSP which comes with the EXE installer of Cryptomator. You will still be able to use Dokany, but it won&rsquo;t get any updates and support will eventually be removed.</p>
+<p>It was a great time, and we wish the Dokany project all the best!</p>
+<h2 id="linux-aarch64-builds">Linux AArch64 Builds</h2>
+<p>With Cryptomator 1.7.0, we&rsquo;ll finally ship AArch64 builds of Cryptomator via Flatpak and PPA.</p>
+<p>One big obstacle was the aforementioned FUSE file system API on Linux. We were using a rather old project to build the bridge between Cryptomator and FUSE. Thanks to a fantastic development effort started by our lead architect, we now use state-of-the-art technology to implement this bridge. The result is bundled in the library called <a href="https://github.com/cryptomator/jfuse">jFUSE</a>. Not only were we able to change the bridge, we were also able to update to a new major version of FUSE and pave the way to support features like extended attributes.</p>
+<p>The AppImage is still x86_x64 only, but we plan to deliver it also in AArch64 architecture eventually.</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  <script type="text/javascript" x-url="https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/">
+    var url = document.currentScript.getAttribute('x-url');
+    DiscourseEmbed = { discourseUrl: 'https://community.cryptomator.org/', discourseEmbedUrl: url };
+    (function() {
+      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+    })();
+  </script>
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Fediverse</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e.js" integrity="sha256-/xUj&#43;3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.d1573a45c19419ee881d3f7e6d6810bb955ea0d64470da1f1875537de18c603e.js" integrity="sha256-0Vc6RcGUGe6IHT9&#43;bWgQu5VeoNZEcNofGHVTfeGMYD4=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+  </body>
+</html>

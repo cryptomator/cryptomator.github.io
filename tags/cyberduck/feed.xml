@@ -11,8 +11,67 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/cyberduck/</link>
     </image>
-    <lastBuildDate>Sat, 28 Jan 2023 14:38:37 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Feb 2023 14:27:17 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 1.7.0: What You Need to Know</title>
+        <description>&lt;p&gt;If you&amp;rsquo;re subscribed to our &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases&#34;&gt;releases on GitHub&lt;/a&gt;, this is already old news for you: We have released the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.7.0-beta1&#34;&gt;first beta&lt;/a&gt; of the upcoming Cryptomator 1.7.0! It contains a lot of internal changes and a bunch of new features, some of which are almost as old as Cryptomator itself.&lt;/p&gt;
+&lt;p&gt;We are very proud of this release, as it eliminates technical debt, delivers long-awaited features, and prepares Cryptomator Desktop for the future. But putting aside about 3,000 lines of code changes and a 4-month development iteration (not counting work in our libraries), let&amp;rsquo;s dive into this release to see what you, the user, will get out of it.&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/cryptomator-1-7-0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/cryptomator-1-7-0.png 1x, https://cryptomator.org/img/blog/cryptomator-1-7-0@2x.png 2x&#34; alt=&#34;Cryptomator 1.7.0 Release&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;locate-encrypted-file&#34;&gt;Locate Encrypted File&lt;/h2&gt;
+&lt;p&gt;As already mentioned, Cryptomator 1.7.0 includes a feature that has been requested for a very long time: Locating the encrypted counterpart of a file. Sounds complex, but once you remember that Cryptomator encrypts filenames and obfuscates the directory structure (&lt;a href=&#34;https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption&#34;&gt;see our docs&lt;/a&gt;), it is easy to understand.&lt;/p&gt;
+&lt;p&gt;Prior to 1.7.0, you had to guess which encrypted file corresponds to which cleartext file based on the exact timestamps. Now, once the vault is unlocked, the encrypted counterpart of any file in the vault can be revealed by clicking on the &amp;ldquo;Locate Encrypted File&amp;rdquo; button and selecting a file in the vault. Or you can simply drag and drop the files from your vault onto this button. See for yourself in this short video:&lt;/p&gt;
+&lt;video class=&#34;rounded&#34; autoplay loop muted&gt;
+  &lt;source src=&#34;https://static.cryptomator.org/blog/locate-encrypted-file.mov&#34; type=&#34;video/mp4&#34;&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+&lt;h2 id=&#34;experimental-support-for-fuse-t&#34;&gt;Experimental Support for FUSE-T&lt;/h2&gt;
+&lt;p&gt;On macOS, Cryptomator can use two different technologies to integrate your vault into the system: macFUSE and WebDAV. Unfortunately, the WebDAV implementation on macOS is not the most reliable one. Starting with Apple Silicon Macs, it became unusable for some users who reported system freezes. To make matters worse, macFUSE, which has been the preferred option for at least 3 years, is also on its last legs. Apple has deprecated the OS APIs used by macFUSE since macOS 12.3.&lt;/p&gt;
+&lt;p&gt;For the past year, we have been desperately searching for an alternative. Our proof of concept using Apple&amp;rsquo;s File Provider framework was not very convincing and would basically require a whole new architecture. Fortunately, you, our community, informed us about an alternative: &lt;a href=&#34;https://www.fuse-t.org/&#34;&gt;FUSE-T&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;FUSE-T is a young project that does not rely on deprecated macOS APIs and can be used as a drop-in-replacement for macFUSE. It requires a much less deep system integration than macFUSE while offering a similar performance. This makes Cryptomator ready for the medium-term future on macOS. But since FUSE-T is quite young, support for it is experimental for now. We encourage you to try it though!&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/preferences-fuse-t.png&#34; srcset=&#34;https://cryptomator.org/img/blog/preferences-fuse-t.png 1x, https://cryptomator.org/img/blog/preferences-fuse-t@2x.png 2x&#34; alt=&#34;Experimental Support for FUSE-T&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;So, while the File Provider extension is not out of our sight, we are relieved to be able to offer you a stable system integration of your Cryptomator vaults.&lt;/p&gt;
+&lt;h2 id=&#34;volume-types-overhaul&#34;&gt;Volume Types Overhaul&lt;/h2&gt;
+&lt;p&gt;Looking at the screenshot above, you might have noticed: The volume types have changed, too. That&amp;rsquo;s right, and that&amp;rsquo;s because we rewrote the entire volume type selection and internal wiring logic. It was a huge development effort, but it resulted in a less complex and easier to maintain architecture under the hood. It also resulted in more options for you.&lt;/p&gt;
+&lt;h3 id=&#34;more-options&#34;&gt;More Options&lt;/h3&gt;
+&lt;p&gt;The old implementation basically offered 3 (or 2) options: WebDAV, Dokany, and FUSE. Now, specialized implementations are offered for each OS. For example, on Windows you can select between WinFsp, WinFsp (Local Drive), Dokany, WebDAV (Windows Explorer) and WebDAV (Fallback).&lt;/p&gt;
+&lt;p&gt;But don&amp;rsquo;t worry, this selection is only important if you have special requirements for the virtual drive. Otherwise, Cryptomator has a new &amp;ldquo;Automatic&amp;rdquo; option and is set up to choose the best suited option for you, and you don&amp;rsquo;t need to worry about it.&lt;/p&gt;
+&lt;p&gt;We have even added an emergency option: The aforementioned &amp;ldquo;WebDAV (Fallback)&amp;rdquo;. If you can&amp;rsquo;t mount your vault at all, it makes your vault accessible via a local-only server using the web standard WebDAV. We&amp;rsquo;ll have a guide describing this in more detail soon.&lt;/p&gt;
+&lt;h3 id=&#34;winfsp-change-local-vs-network-drive&#34;&gt;WinFsp Change: Local vs. Network Drive&lt;/h3&gt;
+&lt;p&gt;Windows users may notice that their vault is now mounted as a network drive by default. This has the advantage of better performance when listing large directories. The disadvantage is that it cannot be mounted into a directory. Accessing the vault as a privileged user is still possible by using the UNC path.&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/winfsp-change.png&#34; srcset=&#34;https://cryptomator.org/img/blog/winfsp-change.png 1x, https://cryptomator.org/img/blog/winfsp-change@2x.png 2x&#34; alt=&#34;WinFsp Change: Local vs. Network Drive&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;If you really need a local drive, you can always change the volume type in the preferences.&lt;/p&gt;
+&lt;h3 id=&#34;dokany-deprecation&#34;&gt;Dokany Deprecation&lt;/h3&gt;
+&lt;p&gt;With the release of Cryptomator 1.7.0, we will officially deprecate Dokany support.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dokan-dev.github.io/&#34;&gt;Dokany&lt;/a&gt;, like FUSE, provides a file system interface to mount virtual drives without requiring elevated privileges. We started supporting Dokany 3 years ago with version 1.4.0. But things didn&amp;rsquo;t go as smoothly with the Dokany volume as we had hoped, so we decided to focus our development efforts on a single file system interface. All Dokany-related issues on GitHub will be closed, and our general recommendation is to use WinFSP which comes with the EXE installer of Cryptomator. You will still be able to use Dokany, but it won&amp;rsquo;t get any updates and support will eventually be removed.&lt;/p&gt;
+&lt;p&gt;It was a great time, and we wish the Dokany project all the best!&lt;/p&gt;
+&lt;h2 id=&#34;linux-aarch64-builds&#34;&gt;Linux AArch64 Builds&lt;/h2&gt;
+&lt;p&gt;With Cryptomator 1.7.0, we&amp;rsquo;ll finally ship AArch64 builds of Cryptomator via Flatpak and PPA.&lt;/p&gt;
+&lt;p&gt;One big obstacle was the aforementioned FUSE file system API on Linux. We were using a rather old project to build the bridge between Cryptomator and FUSE. Thanks to a fantastic development effort started by our lead architect, we now use state-of-the-art technology to implement this bridge. The result is bundled in the library called &lt;a href=&#34;https://github.com/cryptomator/jfuse&#34;&gt;jFUSE&lt;/a&gt;. Not only were we able to change the bridge, we were also able to update to a new major version of FUSE and pave the way to support features like extended attributes.&lt;/p&gt;
+&lt;p&gt;The AppImage is still x86_x64 only, but we plan to deliver it also in AArch64 architecture eventually.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>windows</category>
+        
+        <category>mac</category>
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>Boxcryptor Shuts Down – Here is Your Cloud Encryption Alternative</title>
@@ -337,76 +396,6 @@ If you want to know more about the upcoming 1.6.0 version of Cryptomator, contin
         <category>cryptomator</category>
         
         <category>vault-format</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator 1.6.0: What You Need to Know</title>
-        <description>&lt;p&gt;Hello Community!&lt;/p&gt;
-&lt;p&gt;In this blog post, we&amp;rsquo;d like to give you some news about the upcoming major update of Cryptomator to version 1.6.0.
-We&amp;rsquo;ll be highlighting the most significant changes and new features and make sure that you are ready for the update.&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/cryptomator-1-6-0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/cryptomator-1-6-0.png 1x, https://cryptomator.org/img/blog/cryptomator-1-6-0@2x.png 2x&#34; alt=&#34;Cryptomator 1.6.0 Release&#34; /&gt;
-&lt;/figure&gt;
-&lt;h2 id=&#34;changes-and-features&#34;&gt;Changes and Features&lt;/h2&gt;
-&lt;p&gt;The two most important changes are the usage of a new vault format (version 8) and a long promised integration of the &lt;a href=&#34;https://community.cryptomator.org/t/sanitizer-how-to-use/43&#34;&gt;Sanitizer&lt;/a&gt; (now called Vault Health Check).
-For a more complete list, read the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.0&#34;&gt;release page&lt;/a&gt; of Cryptomator.&lt;/p&gt;
-&lt;h3 id=&#34;auto-lock&#34;&gt;Auto Lock&lt;/h3&gt;
-&lt;p&gt;A feature already wished in its earliest days will be present: Auto Lock – the automatic locking of a vault.
-For every vault you can set up an idle timer after which the vault is automatically locked.
-If any write or read happens during the time span, the timer is reset.&lt;/p&gt;
-&lt;h3 id=&#34;redesigned-error-dialog&#34;&gt;Redesigned Error Dialog&lt;/h3&gt;
-&lt;p&gt;After a lot of indirect feedback from you about the error dialog, we decided to change its design to fit more of your needs.
-The most obvious and important change is the new error code.
-It might be as cryptic as the already existing stack trace, but it speeds up the search for solutions or workarounds for your specific problem in our error code database.
-Along with the error code the dialog also provides links to quickly query the database.
-And if the error is not yet known, it&amp;rsquo;ll make it easier for you to report it in a format that helps us understand the problem.&lt;/p&gt;
-&lt;h3 id=&#34;vault-format-8&#34;&gt;Vault Format 8&lt;/h3&gt;
-&lt;p&gt;The big change behind the scenes is a new vault format.
-Starting with 1.6.0, it will be used by default and &lt;em&gt;enforced&lt;/em&gt;.
-The new format prepares Cryptomator for future features and corrects inconsistencies in former versions.
-For more details, check out the more-in-depth &lt;a href=&#34;https://cryptomator.org/blog/2021/10/11/vault-format-8/&#34;&gt;article&lt;/a&gt; about it.&lt;/p&gt;
-&lt;h3 id=&#34;vault-health-check&#34;&gt;Vault Health Check&lt;/h3&gt;
-&lt;p&gt;We added an integrated tool to detect and fix structural problems of a vault (e.g., missing directories).
-Until Cryptomator 1.5.0, this task was done by the so-called &lt;a href=&#34;https://github.com/cryptomator/sanitizer&#34;&gt;Sanitizer&lt;/a&gt;. But the tool was hard to maintain and hard to use so that it was abandoned with the goal to integrate similar functionality directly within Cryptomator.&lt;/p&gt;
-&lt;p&gt;This plan finally bore fruit into a workflow to perform different checks on a vault to detect common problems.
-The results are shown on the fly and once the check is finished, you can export the results.
-For 1.6.0, there will be only three checks to execute, but we plan to add more.
-But keep in mind that the Health Check is not designed as a magical fix-all-tool.
-If you are encountering problems with a vault, make sure that the vault files are properly synchronized before running this tool.
-That said, of course, we appreciate feedback about it regarding usability and functionality.&lt;/p&gt;
-&lt;h3 id=&#34;plugin-api&#34;&gt;Plugin API&lt;/h3&gt;
-&lt;p&gt;Cryptomator is now able to load plugins from a dedicated plugin directory.
-In the long run, this allows integrating third party services, e.g. enter password via password manager.
-The feature is still experimental and might change over time.
-A first plugin is already available: A KeePassXC integration developed by PureJava. You can download it &lt;a href=&#34;https://plugin.purejava.org&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;update-guide&#34;&gt;Update Guide&lt;/h2&gt;
-&lt;p&gt;In general, you should update, because you not only benefit from new features, but also from bug fixes.
-Still, you might consider to delay the update, because Cryptomator 1.6.0 enforces the new format, i.e. old vaults need to be migrated in order to unlock them, and once a vault is migrated, older desktop versions won’t be able to open it.&lt;/p&gt;
-&lt;p&gt;Of course, and as always, Cryptomator provides a migration from older formats to version 8.
-But to perform it, the app needs write access to the vault files (configuration files and encrypted data).
-Details about the migration can be found in the vault format 8 article.
-​
-You should wait with the update, if&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;you cannot update all Cryptomator apps (desktop and mobile)&lt;/li&gt;
-&lt;li&gt;you don&amp;rsquo;t have write access to all the vaults you use.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When you decide to update, there is one last issue you need to check beforehand:
-If you ever manually altered the setting file &lt;code&gt;filenameLengthLimit&lt;/code&gt; for a vault in the &lt;code&gt;settings.json&lt;/code&gt; file, these modifications will be lost after the update and will be ignored if simply copied back.
-A guide to migrate in this setting will be published soon.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/10/11/1-6-0-what-you-need-to-know/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/10/11/1-6-0-what-you-need-to-know/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>windows</category>
-        
-        <category>mac</category>
-        
-        <category>linux</category>
         
       </item>
     
