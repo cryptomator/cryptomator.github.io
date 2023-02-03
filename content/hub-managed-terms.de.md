@@ -7,8 +7,7 @@ _Stand: Februar 2023_
 
 <p class="text-lg leading-relaxed text-gray-700">Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“.</p>
 
-<p class="text-lg leading-relaxed text-gray-700">Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Nutzer werden nicht Vertragsbestandteil. Dies gilt auch, wenn der Provider diesen nicht ausdrücklich widerspricht. 
-</p>
+<p class="text-lg leading-relaxed text-gray-700">Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Nutzer werden nicht Vertragsbestandteil. Dies gilt auch, wenn der Provider diesen nicht ausdrücklich widerspricht.</p>
 
 ## §1 Definitionen
 
@@ -24,7 +23,6 @@ Soweit nicht anders gekennzeichnet, sind die im Text genannten Ausdrücke wie fo
 Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vertrags begrenzte Gewährung der Nutzung der Software „Cryptomator Hub“ (nachfolgend „Software“) über das Internet sowie die Bereitstellung der zum Betrieb notwendigen Ressourcen auf den Servern des Providers.
 
 ## §3 Leistungen des Providers; Software
-
 3.1 Die Software ist eine SaaS-Leistung, d.h. der Provider gewährt dem Kunden die Nutzung der jeweils aktuellsten Version der Software über das Internet mittels Zugriff durch einen Browser. Die Software ist für den Einsatz gemeinsam mit der ebenfalls vom Provider bereitgestellten Anwendung Cryptomator konzipiert, welche zur Verschlüsselung von Daten auf vom Kunden selbst gewählten lokalen oder durch Dritte bereitstellten Speicherplatz dient.
 
 3.2 Der Provider gewährleistet die Funktionsfähigkeit und Verfügbarkeit der Software während der Dauer des Vertragsverhältnisses und wird diese in einem zum vertragsgemäßen Gebrauch geeigneten Zustand erhalten.
@@ -46,7 +44,6 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 3.10 Der Provider kann seine Leistungen und den Support durch Dritte als Subunternehmer erbringen. Er haftet für die Leistungserbringung von Subunternehmern wie für eigenes Handeln.
 
 ## §4 Nutzungsumfang und -rechte
-
 4.1 Eine physische Überlassung der Software an den Kunden erfolgt nicht.
 
 4.2 Der Kunde erhält an der jeweils aktuellsten Version der Software einfache, d. h. nicht unterlizenzierbare und nicht übertragbare, zeitlich auf die Dauer des Vertrags beschränkte Rechte die Software mittels Zugriff über einen Browser nach Maßgabe der vertraglichen Regelungen bestimmungsgemäß zu nutzen. Der Kunde erhält kein Recht am Quellcode der Software. Er darf die Software nur für eigene Zwecke nutzen. Nicht umfasst ist die Nutzung der Produkte für Dritte, beispielsweise als Dienstleister oder eine sonstige Überlassung oder Nutzungsvermittlung an Dritte.
@@ -80,6 +77,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 5. Produkte von Drittanbietern; und/oder
 6. höhere Gewalt.
 {type=i}
+
 
 ## §6 Service Levels; Störungsbehebung {#sla}
 6.1 Der Provider gewährt eine Gesamtverfügbarkeit der Leistungen von mindestens 99,5% im Monat am Übergabepunkt. Der Übergabepunkt ist der Routerausgang des Rechenzentrums des Providers.
@@ -131,6 +129,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 9.5 Die vorstehenden Haftungsbeschränkungen gelten nicht für die Haftung nach dem Produkthaftungsgesetz sowie im Rahmen schriftlich von einer Partei übernommene Garantien.
 
 9.6 §9 gilt auch zu Gunsten von Mitarbeitern, Vertretern und Organen der Parteien.
+
 
 ## §10 Rechtsmängel; Freistellung
 10.1 Der Provider gewährleistet, dass die Software keine Rechte Dritter verletzt. Der Provider wird dem Kunden von allen Ansprüchen Dritter wegen von ihm zu vertretender Schutzrechtsverletzungen im Zusammenhang mit der vertragsgemäßen Nutzung der Software auf erstes Anfordern hin freistellen sowie die Kosten einer angemessenen Rechtsverfolgung ersetzen. Der Kunde wird den Provider unverzüglich über Ansprüche von Dritten, die diese aufgrund der vertragsgemäßen Nutzung der Software gegen ihn geltend machen, informieren und ihm sämtliche erforderlichen Vollmachten erteilen und Befugnisse einräumen, um die Ansprüche zu verteidigen.
