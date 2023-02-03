@@ -20,14 +20,16 @@
   translation: "RSS-Feed"
 - id: footer_legal_title
   translation: "Rechtliches"
-- id: accept_terms_and_privacy_and_coupon_policy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen."
-- id: accept_terms_and_privacy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
   translation: "Durch die Überweisung akzeptiere ich die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: accept_terms_and_privacy
+  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: accept_terms_and_privacy_and_coupon_policy
+  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen."
+- id: accept_hub_managed_terms_and_privacy
+  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/hub/managed/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 
 # Android
 - id: android_getkey_title
