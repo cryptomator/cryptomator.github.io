@@ -1,6 +1,6 @@
 ---
-title: "Cryptomator Hub SaaS AGB"
-url: "/de/hub/terms"
+title: "AGB für Cryptomator Hub: Managed"
+url: "/de/hub/managed/terms"
 ---
 
 _Stand: Februar 2023_
@@ -145,11 +145,11 @@ Unabhängig des Widerrufsrechts ([§ 14](#withdrawal)) steht dem Kunden, d.h. so
 
 
 ## §12 Vergütungs- und Zahlungsbedingungen {#fees}
-12.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Mengenrabatt, Rabatt-Aktion o.ä.) hat der Kunde– nach Ablauf der Testphase ([§ 11](#trial)) – monatlich ein Entgelt in Höhe von 10 EUR pro aktiven Nutzer an den Provider zu zahlen.
+12.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Mengenrabatt, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 11](#trial)) – monatlich ein Entgelt in Höhe von 10 EUR pro aktiven Nutzer an den Provider zu zahlen.
 
 12.2 Vom Provider nach § 5 (7) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
 
-12.3 Die Rechnungsstellung erfolgt monatlich. Die Rechnung ist innerhalb von 14 Werktagen zur Zahlung fällig.
+12.3 Die Rechnungsstellung erfolgt jährlich. Die Rechnung ist sofort zur Zahlung fällig.
 
 12.4 Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe fällig. Der Provider ist berechtigt, den Zugang des Kunden zur Software bei einem Zahlungsverzug von mehr als 30 Tagen vorübergehend zu deaktivieren, bis die überfällige Rechnung bezahlt wurde.
 
