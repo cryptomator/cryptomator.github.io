@@ -384,7 +384,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
-## Fazit: Wann Boxcryptor bzw. Cryptomator für dich die passende Alternative für dich sind {#conclusion}
+## Fazit: Wann Boxcryptor bzw. Cryptomator für dich die passende Alternative für dich ist {#conclusion}
 
 Du kennst jetzt die Unterschiede zwischen Boxcryptor und der Alternative Cryptomator. Nun kannst du dir selbst eine Meinung bilden:
 

@@ -384,7 +384,7 @@ Let's now take a look at these features. For this we compare the features again 
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
-## Conclusion: When Boxcryptor or Cryptomator Are the Right Alternative for You {#conclusion}
+## Conclusion: When Boxcryptor or Cryptomator Is the Right Alternative for You {#conclusion}
 
 Now you know the differences between Boxcryptor and its alternative Cryptomator. Draw your own conclusions:
 
