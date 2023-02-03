@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/installer/</link>
     </image>
-    <lastBuildDate>Fri, 03 Feb 2023 13:39:22 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Feb 2023 14:09:24 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -24,7 +24,7 @@
 &lt;h2 id=&#34;locate-encrypted-file&#34;&gt;Locate Encrypted File&lt;/h2&gt;
 &lt;p&gt;As already mentioned, Cryptomator 1.7.0 includes a feature that has been requested for a very long time: Locating the encrypted counterpart of a file. Sounds complex, but once you remember that Cryptomator encrypts filenames and obfuscates the directory structure (&lt;a href=&#34;https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption&#34;&gt;see our docs&lt;/a&gt;), it is easy to understand.&lt;/p&gt;
 &lt;p&gt;Prior to 1.7.0, you had to guess which encrypted file corresponds to which cleartext file based on the exact timestamps. Now, once the vault is unlocked, the encrypted counterpart of any file in the vault can be revealed by clicking on the &amp;ldquo;Locate Encrypted File&amp;rdquo; button and selecting a file in the vault. Or you can simply drag and drop the files from your vault onto this button. See for yourself in this short video:&lt;/p&gt;
-&lt;video class=&#34;rounded&#34; autoplay loop muted&gt;
+&lt;video class=&#34;rounded&#34; autoplay loop muted playsinline&gt;
   &lt;source src=&#34;https://static.cryptomator.org/blog/locate-encrypted-file.mov&#34; type=&#34;video/mp4&#34;&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;
@@ -56,6 +56,11 @@
 &lt;p&gt;With Cryptomator 1.7.0, we&amp;rsquo;ll finally ship AArch64 builds of Cryptomator via Flatpak and PPA.&lt;/p&gt;
 &lt;p&gt;One big obstacle was the aforementioned FUSE file system API on Linux. We were using a rather old project to build the bridge between Cryptomator and FUSE. Thanks to a fantastic development effort started by our lead architect, we now use state-of-the-art technology to implement this bridge. The result is bundled in the library called &lt;a href=&#34;https://github.com/cryptomator/jfuse&#34;&gt;jFUSE&lt;/a&gt;. Not only were we able to change the bridge, we were also able to update to a new major version of FUSE and pave the way to support features like extended attributes.&lt;/p&gt;
 &lt;p&gt;The AppImage is still x86_x64 only, but we plan to deliver it also in AArch64 architecture eventually.&lt;/p&gt;
+&lt;h2 id=&#34;aes-gcm-new-default-for-content-encryption&#34;&gt;AES-GCM: New Default for Content Encryption&lt;/h2&gt;
+&lt;p&gt;Starting with Cryptomator 1.7.0, newly created vaults will use &lt;a href=&#34;https://en.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; instead of AES-CTR+HMAC for file content encryption.&lt;/p&gt;
+&lt;p&gt;Nowadays, almost all non-embedded devices offer hardware acceleration of the Galois/Counter Mode of operation, so encryption and decryption should be significantly faster than in the old mode of operation. The support in our underlying cryptographic library &lt;a href=&#34;https://github.com/cryptomator/cryptolib&#34;&gt;cryptolib&lt;/a&gt; was already added in June 2021 with version 2.0.0. But instead of jumping the gun, we gave it a proper testing period and are now confident to ship this improvement to you.&lt;/p&gt;
+&lt;p&gt;Of course, our mobile apps also support AES-GCM, although vaults created in iOS or Android will continue to use AES-CTR+HMAC for the time being. The mobile apps are scheduled to switch in their next minor release.&lt;/p&gt;
+&lt;p&gt;You can continue to use your existing vaults as before. There are no vault upgrades and there is no action required on your part. Cryptomator will support both modes of operation.&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
         <link>https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/</link>

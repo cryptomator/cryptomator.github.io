@@ -183,7 +183,7 @@
 <h2 id="verschlüsselte-datei-finden">Verschlüsselte Datei finden</h2>
 <p>Wie bereits erwähnt, enthält Cryptomator 1.7.0 eine Funktion, die schon lange gewünscht wurde: Die Suche nach dem verschlüsselten Gegenstück einer Datei. Das klingt kompliziert, ist aber leicht zu verstehen, wenn man sich vor Augen hält, dass Cryptomator Dateinamen verschlüsselt und die Verzeichnisstruktur verschleiert (<a href="https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption">siehe unsere Dokumentation</a>).</p>
 <p>Vor Version 1.7.0 musste man anhand der genauen Zeitstempel erraten, welche verschlüsselte Datei zu welcher Klartextdatei gehört. Jetzt kannst du, sobald der Tresor entsperrt ist, das verschlüsselte Gegenstück zu jeder Datei im Tresor herausfinden, indem du auf „Verschlüsselte Datei finden“ klickst und eine Datei im Tresor auswählst. Du kannst auch einfach Dateien aus deinem Tresor auf diese Schaltfläche ziehen. Überzeuge dich selbst in diesem kurzen Video:</p>
-<video class="rounded" autoplay loop muted>
+<video class="rounded" autoplay loop muted playsinline>
   <source src="https://static.cryptomator.org/blog/locate-encrypted-file.mov" type="video/mp4">
   Dein Browser unterstützt kein Video-Tag.
 </video>
@@ -215,6 +215,11 @@
 <p>Mit Cryptomator 1.7.0 werden wir endlich AArch64-Builds von Cryptomator via Flatpak und PPA ausliefern.</p>
 <p>Eine große Hürde war das bereits erwähnte FUSE-Filesystem-API unter Linux. Wir haben ein ziemlich altes Projekt verwendet, um die Brücke zwischen Cryptomator und FUSE zu schlagen. Dank der fantastischen Entwicklungsarbeit, die unser Chefarchitekt geleistet hat, verwenden wir nun die neueste Technologie, um diese Brücke zu implementieren. Das Ergebnis ist in der Bibliothek <a href="https://github.com/cryptomator/jfuse">jFUSE</a> zusammengefasst. Wir haben nicht nur die Brücke geändert, sondern auch auf eine neue Hauptversion von FUSE aktualisiert und den Weg für die Unterstützung von Features wie Extended Attributes geebnet.</p>
 <p>Noch ist das AppImage nur für x86_x64 verfügbar, aber wir planen, es in Zukunft auch für die AArch64-Architektur anzubieten.</p>
+<h2 id="aes-gcm-neuer-standard-für-inhaltsverschlüsselung">AES-GCM: Neuer Standard für Inhaltsverschlüsselung</h2>
+<p>Ab Cryptomator 1.7.0 verwenden neu erstellte Tresore <a href="https://de.wikipedia.org/wiki/Galois/Counter_Mode">AES-GCM</a> anstelle von AES-CTR+HMAC für die Verschlüsselung von Dateiinhalten.</p>
+<p>Heutzutage bieten fast alle nicht eingebetteten Geräte Hardwarebeschleunigung im Galois/Counter-Modus, so dass die Ver- und Entschlüsselung deutlich schneller sein sollte als im alten Modus. Die Unterstützung in unserer zugrundeliegenden kryptographischen Bibliothek <a href="https://github.com/cryptomator/cryptolib">cryptolib</a> wurde bereits im Juni 2021 mit der Version 2.0.0 hinzugefügt. Wir haben jedoch nicht überstürzt gehandelt, sondern eine angemessene Testphase eingeräumt und sind nun zuversichtlich, dir diese Verbesserung anbieten zu können.</p>
+<p>Selbstverständlich unterstützen auch unsere mobilen Apps AES-GCM, auch wenn Tresore, die mit iOS oder Android erstellt wurden, vorerst weiterhin AES-CTR+HMAC verwenden. Die mobilen Apps werden mit der nächsten Minor-Version umgestellt.</p>
+<p>Du kannst deine bestehenden Tresore wie bisher verwenden. Es gibt keine Tresor-Upgrades und es sind keine Maßnahmen von deiner Seite erforderlich. Cryptomator unterstützt beide Modi.</p>
 
         </article>
       
