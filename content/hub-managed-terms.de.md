@@ -80,9 +80,9 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 
 
 ## §6 Service Levels; Störungsbehebung {#sla}
-6.1 Der Provider gewährt eine Gesamtverfügbarkeit der Leistungen von mindestens 99,5% im Monat am Übergabepunkt. Der Übergabepunkt ist der Routerausgang des Rechenzentrums des Providers.
+6.1 Der Provider gewährt eine Gesamtverfügbarkeit der Leistungen von mindestens 99,5% im Monat am Übergabepunkt. Der Übergabepunkt ist der Routerausgang des vom Provider gewählten Rechenzentrums.
 
-6.2 Als Verfügbarkeit gilt die Möglichkeit des Kunden sämtliche Hauptfunktionen der Software zu nutzen. Wartungszeiten sowie Zeiten der Störung unter Einhaltung der Behebungszeit gelten als Zeiten der Verfügbarkeit der Software. Zeiten unerheblicher Störungen bleiben bei der Berechnung der Verfügbarkeit außer Betracht. Für den Nachweis der Verfügbarkeit sind die Messinstrumente des Providers im Rechenzentrum maßgeblich.
+6.2 Als Verfügbarkeit gilt die Möglichkeit des Kunden sämtliche Hauptfunktionen der Software zu nutzen. Wartungszeiten sowie Zeiten der Störung unter Einhaltung der Behebungszeit gelten als Zeiten der Verfügbarkeit der Software. Zeiten unerheblicher Störungen bleiben bei der Berechnung der Verfügbarkeit außer Betracht. Für den Nachweis der Verfügbarkeit sind die Messinstrumente im Rechenzentrum maßgeblich.
 
 6.3 Der Kunde hat Störungen unverzüglich an den Provider (E-Mail: support@cryptomator.org, Fax: 02241 / 2667424) auf Deutsch oder Englisch zu melden. Eine Störungsmeldung und -behebung ist Montag bis Freitag (ausgenommen bundesweite Feiertage) zwischen 9:00 Uhr bis 18:00 Uhr gewährleistet (Servicezeiten).
 

@@ -80,9 +80,9 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 
 ## §6 Service Levels; Troubleshooting {#sla}
-6.1 The Provider guarantees an overall availability of the Services of at least 99.5% per month at the Delivery Point. The handover point is the router exit of the Provider's data center.
+6.1 The Provider guarantees an overall availability of the Services of at least 99.5% per month at the Delivery Point. The handover point is the router exit of the data center chosen by the Provider.
 
-6.2 Availability shall be deemed to be the Customer's ability to use all main functions of the Software. Maintenance times as well as times of malfunction in compliance with the remedial time shall be deemed times of availability of the software. Times of insignificant malfunctions shall not be taken into account in the calculation of availability. The Provider's measuring instruments in the data center shall be decisive for the proof of availability.
+6.2 Availability shall be deemed to be the Customer's ability to use all main functions of the Software. Maintenance times as well as times of malfunction in compliance with the remedial time shall be deemed times of availability of the software. Times of insignificant malfunctions shall not be taken into account in the calculation of availability. The measuring instruments in the data center shall be decisive for the proof of availability.
 
 6.3 The Customer shall immediately report malfunctions to the Provider (e-mail: support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 6:00 pm (service hours).
 
