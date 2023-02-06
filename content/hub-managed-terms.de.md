@@ -148,7 +148,7 @@ Unabhängig des Widerrufsrechts ([§ 14](#withdrawal)) steht dem Kunden, d.h. so
 
 12.2 Vom Provider nach [§ 6 (7)](#sla) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
 
-12.3 Die Rechnungsstellung erfolgt jährlich. Die Rechnung ist sofort zur Zahlung fällig.
+12.3 Die Rechnungsstellung erfolgt jeweils für 12 Monate im Voraus. Die Rechnung ist sofort zur Zahlung fällig.
 
 12.4 Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe fällig. Der Provider ist berechtigt, den Zugang des Kunden zur Software bei einem Zahlungsverzug von mehr als 30 Tagen vorübergehend zu deaktivieren, bis die überfällige Rechnung bezahlt wurde.
 
