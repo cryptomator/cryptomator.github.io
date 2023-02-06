@@ -143,93 +143,94 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 Irrespective of the right of withdrawal ([§ 14](#withdrawal)), the customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 14 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 
-## §12 Vergütungs- und Zahlungsbedingungen {#fees}
-12.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Mengenrabatt, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 11](#trial)) – monatlich ein Entgelt in Höhe von 10 EUR pro aktiven Nutzer an den Provider zu zahlen.
+## §12 Remuneration and Payment Conditions {#fees}
+12.1 The customer can view the prices for the software and services on the website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)). Unless otherwise agreed (individual agreement, volume discount, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 11](#trial)) - pay a monthly fee of EUR 10 per active user to the Provider.
 
-12.2 Vom Provider nach § 5 (7) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
+12.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 
-12.3 Die Rechnungsstellung erfolgt jährlich. Die Rechnung ist sofort zur Zahlung fällig.
+12.3 Invoices shall be issued issued for 12 months in advance. The invoice shall be due for payment immediately.
 
-12.4 Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe fällig. Der Provider ist berechtigt, den Zugang des Kunden zur Software bei einem Zahlungsverzug von mehr als 30 Tagen vorübergehend zu deaktivieren, bis die überfällige Rechnung bezahlt wurde.
+12.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
 
-12.5 Der Provider behält sich vor, eine Anpassung des Preises auch während einer laufenden Vertragszeit vorzunehmen. Eine Anpassung kann sowohl in einer Preiserhöhung als auch einer Preissenkung vorgenommen werden Eine Preiserhöhung ist nur dann vorgesehen, sofern kostensteigernde Umstände eintreten, die eine ordnungsgemäße Aufrechterhaltung wesentlich erschweren, ohne dass dies durch eine Erhöhung des Preises ausgeglichen wird. Umstände, bei denen eine Preiserhöhung in Betracht gezogen wird, sind: kostenaufwändige Anpassungen in der Software (Entwicklungskosten) begründet durch gesetzliche Änderungen (bspw. den Datenschutz betreffend); erhöhte Serverkosten, durch stark steigende Energiekosten; erhöhte Kosten für Copyright-geschützte Inhalte oder Kosten für die rechtliche Prüfung von den Kooperationspartnern von dem Provider. Auf eine Preisanpassung wird der Nutzer durch den Provider so rechtzeitig wie möglich, spätestens jedoch drei Monate vor Geltung, hingewiesen und der kostensteigernde oder kostensenkende Faktor näher erläutert. Eine Preisanpassung wirkt sich erst auf ein Vertragsverhältnis aus, wenn die Mindestvertragslaufzeit von einem Monat abgelaufen ist. Der Nutzer kann das mit dem Provider bestehende Vertragsverhältnis im Falle einer Preisanpassung nach den geltenden Vorschriften ([§ 13](#termination)) kündigen. Gesetz dem Fall, dass eine Mitteilung seitens des Providers ohne sein Verschulden erst zu einem Zeitpunkt erfolgt, zu welchem der Nutzer die ordentliche Kündigungsfrist bis zum Geltungszeitpunkt der Preisanpassung nicht mehr einhalten kann, kann der Nutzer das Vertragsverhältnis auf den Zeitpunkt des Wirksamwerdens der Preisanpassung kündigen.
+12.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the software (development costs) justified by legal changes (e.g. concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the User of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The User may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 13](#termination)). In the event that the Provider, through no fault of the User, notifies the User at a time when the User is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the User may terminate the contractual relationship as of the effective date of the price adjustment.
 
-## §13 Vertragslaufzeit und Beendigung {#termination}
-13.1 Der Vertrag tritt nach Anfrage des Kunden und Bereitstellung des Zugangs zu der Software durch den Provider in Kraft und wird auf unbestimmte Zeit geschlossen.
+## §13 Contract Duration and Termination {#termination}
+13.1 The Agreement shall enter into force after the Customer's request and provision of access to the Software by the Provider and shall be concluded for an indefinite period of time.
 
-13.2 Der Vertrag kann von beiden Parteien mit einer Kündigungsfrist von einem Monat zum Monatsende gekündigt werden.
+13.2 The contract may be terminated by either party with a notice period of one month to the end of the month.
 
-13.3 Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt. Die Kündigung bedarf in jedem Fall der Schriftform.
+13.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be in writing.
 
-13.4 Der Provider wird dem Kunden auf eigene Kosten nach Beendigung des Vertrags angemessen bei der Rückübertragung oder Sicherung der Daten unterstützen.
+13.4 The Provider shall provide the Customer with reasonable support for the retransfer or backup of the data at its own expense after termination of the Agreement.
 
-13.5 Der Provider wird sämtliche auf seinen Servern verbleibende Daten des Kunden 30 Tage nach Beendigung des Vertragsverhältnisses unwiederherstellbar löschen. Ein Zurückbehaltungsrecht oder Pfandrechte an den Daten zugunsten des Providers bestehen nicht.
+13.5 The Provider shall delete all Customer data remaining on its servers in an unrecoverable manner 30 days after termination of the contractual relationship. There shall be no right of retention or lien on the data in favor of the Provider.
 
 
 ## §14 Widerrufsrecht und Widerrufsbelehrung {#withdrawal}
-Ist der Kunde Verbraucher, steht ihm ein gesetzliches Widerrufsrecht zu:
+If the customer is a consumer, he has a right of withdrawal.
 
-### Widerrufsrecht
-Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.  
+### Withdrawal policy
 
-Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, E-Mail: support@cryptomator.org, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.   
+The customer has the right to revoke this contract within 14 days without giving reasons. The revocation period is 14 days from the date of conclusion of the contract.  In order to exercise the right of withdrawal, the participant must inform Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: info@skymatic.de, fax: +49 2241 / 2667424) of his decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or email). The customer may use the attached sample revocation form for this purpose, which is not mandatory.
 
-Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
+In order to comply with the revocation period, it is sufficient for the customer to send the notification of the exercise of the right of revocation before the end of the revocation period.
 
-### Folgen des Widerrufs
-Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. 
+### Consequences of Withdrawal
 
-### Muster-Widerrufsformular
+If the customer revokes this contract, Skymatic shall refund all payments received from the customer, including delivery costs (with the exception of additional costs resulting from the fact that the participant has chosen a different type of delivery than the cheapest standard delivery offered by Skymatic), immediately and at the latest within 14 days from the day on which Skymatic received notification of the revocation of this contract. For this repayment, Skymatic shall use the same means of payment that the customer used for the original transaction, unless expressly agreed otherwise with the customer; under no circumstances shall the customer be charged for this repayment.
 
-Der Gesetzgeber stellt in Anlage 2 zu Artikel 246a § 1 Absatz 2 Satz 1 Nummer 1 und § 2 Absatz 2 Nummer 2 EGBGB das folgende Muster-Widerrufsformular zur Verfügung:
+### Sample Revocation Form
+
+If the customer wishes to revoke the contract in accordance with the aforementioned revocation instructions, he/she can fill out this form and return it to Skymatic. However, the use of the form is not mandatory.
 
 ```
-An:
+To:
 Skymatic GmbH
 Am Hauptbahnhof 6
 53111 Bonn
+Germany
 E-Mail: info@skymatic.de
 Fax: 02241 / 2667424
 
-Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
+I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
 
-Bestellt am (*): __________________
-Name des/der Verbraucher(s): __________________
-Anschrift des/der Verbraucher(s): __________________
-Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): __________________
-Datum: __________________
+Ordered on (*): __________________
+Name of the customer: __________________
+Address of the customer: __________________
+Signature (only in the case of paper-based notice): __________________
+Date: __________________
 ```
 
-_(*) Unzutreffendes streichen._
+_(*) Delete as applicable._
 
-### Besondere Hinweise: Ausschluss bzw. vorzeitiges Erlöschen des Widerrufsrechts
-Das Widerrufsrecht besteht nicht bei Verträgen zur Lieferung von digitalen Inhalten, die nicht vorgefertigt sind und für deren Herstellung eine individuelle Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind.
+### Special Notes: Exclusion or Premature Expiration of the Right of Withdrawal
+The right of withdrawal does not apply to contracts for the delivery of digital content that is not prefabricated and for the production of which an individual selection or determination by the consumer is decisive or which is clearly tailored to the personal needs of the consumer.
 
-Das Widerrufsrecht erlischt vorzeitig, wenn
+The right of withdrawal expires prematurely if
 
-* der Provider mit der Vertragsausführung beginnt (§ 356 Abs. 5 BGB),
-* nachdem der Kunde als Verbraucher dem Beginn der Vertragsausführung vor Ablauf der Widerrufsfrist ausdrücklich zugestimmt hat (§ 356 Abs. 5 Nr. 1 BGB) und
-* der der Kunde als Verbraucher seine Kenntnis vom Verlust des Widerrufsrechts bestätigt (§ 356 Abs. 5 Nr. 2 BGB).
+* the Provider begins with the execution of the contract (§ 356 para. 5 BGB),
+* after the Customer, as a consumer, has expressly consented to the commencement of the execution of the contract before the expiry of the revocation period (§ 356 para. 5 no. 1 BGB), and
+* the customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
 
-## §15 Datenschutz; Geheimhaltung
-15.1 Die Parteien werden die für sie jeweils geltenden anwendbaren datenschutzrechtlichen Bestimmungen einhalten.
+## §15 Data Protection; Confidentiality
+15.1 The Parties shall comply with the applicable data protection provisions applicable to them in each case.
  
-15.2 Sofern und soweit der Provider im Rahmen der Leistungserbringung Zugriff auf personenbezogene Daten des Kunden hat, werden die Parteien vor Beginn der Verarbeitung einen entsprechenden Auftragsverarbeitungsvertrag abschließen und diese AGB als Anlage beifügen. Der Kunde ist dabei Verantwortlicher und der Provider ist ein Auftragsverarbeiter. In diesem Fall wird der Provider die entsprechenden personenbezogenen Daten allein nach den dort festgehaltenen Bestimmungen und nach den Weisungen des Kunden verarbeiten.
+15.2 If and to the extent that the Provider has access to personal data of the Customer in the context of the provision of services, the Parties shall conclude a corresponding order processing agreement prior to the start of the processing and attach these GTC as an annex. In this case, the Customer is a controller and the Provider is a processor. In this case, the Provider shall process the relevant personal data solely in accordance with the provisions set forth therein and in accordance with the Customer's instructions.
  
-15.3 Der Provider verpflichtet sich, über alle vertraulichen Informationen (einschließlich Geschäftsgeheimnissen), die er im Zusammenhang mit diesem Vertrag und dessen Durchführung erfährt, Stilschweigen zu bewahren und diese nicht gegenüber Dritten offenzulegen, weiterzugeben noch auf sonstige Art zu verwenden. Vertrauliche Informationen sind dabei solche, die als vertraulich gekennzeichnet sind oder deren Vertraulichkeit sich aus den Umständen ergibt, unabhängig davon, ob sie in schriftlicher, elektronischer, verkörperter oder mündlicher Form mitgeteilt worden sind. Die Geheimhaltungsverpflichtung gilt nicht, soweit der Provider gesetzlich oder aufgrund bestands- bzw. rechtskräftiger Behörden- oder Gerichtsentscheidung zur Offenlegung der vertraulichen Information verpflichtet ist. Der Provider verpflichtet sich, mit allen Mitarbeitern und Subunternehmern eine den vorstehenden Absatz inhaltgleiche Regelung zu vereinbaren.
+15.3 The Provider undertakes to maintain confidentiality about all confidential information (including business secrets) that it learns in connection with this Agreement and its performance and not to disclose, pass on or otherwise use such information to third parties. Confidential information is information which is marked as confidential or the confidentiality of which is evident from the circumstances, irrespective of whether it has been communicated in written, electronic, embodied or oral form. The confidentiality obligation does not apply if the Provider is obligated to disclose the confidential information by law or by virtue of a final or legally binding decision of an authority or court. The Provider undertakes to agree with all employees and subcontractors on a provision similar in content to the preceding paragraph.
 
 
-## §16 Außergerichtliche Streitschlichtung
-16.1 Die EU-Kommission hat unter [http://ec.europa.eu/consumers/odr/](http://ec.europa.eu/consumers/odr) eine Plattform für außergerichtliche Streitschlichtung bereitgestellt.
+## §16 Online Dispute Resolution as well as Information According to § 36 VSBG
+16.1 The EU Commission has provided a platform for out-of-court dispute resolution at [http://ec.europa.eu/consumers/odr/](http://ec.europa.eu/consumers/odr).
 
-16.2 Der Provider ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
+16.2 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
 
-## §17 Schlussbestimmungen
-17.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
+## §17 Final Clauses
+17.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
  
-17.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Schriftform.
+17.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing.
  
-17.3 Es gilt deutsches Recht unter Ausschluss der kollisionsrechtlichen Bestimmungen und des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenverkauf vom 11.4.1980 (UN-Kaufrecht).
+17.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
  
-17.4 Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Bonn, soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder ein öffentlich-rechtliches Sondervermögen ist. Ein etwaiger ausschließlicher Gerichtsstand ist vorrangig.
+17.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, insofar as the customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
