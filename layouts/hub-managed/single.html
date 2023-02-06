@@ -22,7 +22,7 @@
             </label>
             <div class="mt-1 flex items-center rounded bg-gray-300">
               <div class="text-gray-700 px-3">https://</div>
-              <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d\-]{0,61}[a-z\d])?" class="block w-full rounded-none border-gray-300 focus:ring-0 focus:border-secondary" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
+              <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?" class="block w-full rounded-none border-gray-300 focus:ring-0 focus:border-secondary" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
               <div class="text-gray-700 px-3">.cryptomator.cloud</div>
             </div>
             <p class="mt-2 text-sm text-gray-500">
