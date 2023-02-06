@@ -146,7 +146,7 @@ Unabhängig des Widerrufsrechts ([§ 14](#withdrawal)) steht dem Kunden, d.h. so
 ## §12 Vergütungs- und Zahlungsbedingungen {#fees}
 12.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Mengenrabatt, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 11](#trial)) – monatlich ein Entgelt in Höhe von 10 EUR pro aktiven Nutzer an den Provider zu zahlen.
 
-12.2 Vom Provider nach § 5 (7) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
+12.2 Vom Provider nach [§ 6 (7)](#sla) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
 
 12.3 Die Rechnungsstellung erfolgt jährlich. Die Rechnung ist sofort zur Zahlung fällig.
 
