@@ -466,7 +466,7 @@
     <header class="text-center">
       <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
     </header>
-    <dl x-data="{isOpen: [false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+    <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
@@ -497,28 +497,46 @@
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Do the paid plans include 5 free seats?</span>
+          <span>Can I add more seats during the current billing cycle?</span>
         </a>
       </dt>
       <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
+        Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Do you offer discounts?</span>
+          <span>Do the paid plans include 5 free seats?</span>
         </a>
       </dt>
       <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
+        No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>How do I access the contents of a vault?</span>
+          <span>Do you offer discounts?</span>
         </a>
       </dt>
       <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Do you offer cloud storage?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>How do I access the contents of a vault?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)
       </dd>
     </dl>
