@@ -22,7 +22,7 @@ Unless otherwise indicated, the expressions mentioned in the text are defined as
 ## §2 Subject of Contract
 The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter referred to as the "Software") and the required computing resources to it as a service hosted on the Provider's servers. The provision is against payment and limited in time to the duration of the contract.
 
-## §3 Leistungen des Providers; Software
+## §3 Services of the Providers; Software
 3.1 The Software is a SaaS service, i.e. the Provider grants the Customer the use of the most current version of the Software via the internet by means of access through a browser. The Software is designed to be used together with the Cryptomator application, also provided by the Provider, which is used to encrypt data on local storage space selected by the Customer or provided by third parties.
 
 3.2 The Provider warrants the functionality and availability of the software for the duration of the contractual relationship and shall maintain it in a condition suitable for use in accordance with the contract.
@@ -166,21 +166,18 @@ Irrespective of the right of withdrawal ([§ 14](#withdrawal)), the customer, i.
 13.5 The Provider shall delete all Customer data remaining on its servers in an unrecoverable manner 30 days after termination of the contractual relationship. There shall be no right of retention or lien on the data in favor of the Provider.
 
 
-## §14 Widerrufsrecht und Widerrufsbelehrung {#withdrawal}
+## §14 Withdrawal {#withdrawal}
 If the customer is a consumer, he has a right of withdrawal.
 
 ### Withdrawal policy
-
 The customer has the right to revoke this contract within 14 days without giving reasons. The revocation period is 14 days from the date of conclusion of the contract.  In order to exercise the right of withdrawal, the participant must inform Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: info@skymatic.de, fax: +49 2241 / 2667424) of his decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or email). The customer may use the attached sample revocation form for this purpose, which is not mandatory.
 
 In order to comply with the revocation period, it is sufficient for the customer to send the notification of the exercise of the right of revocation before the end of the revocation period.
 
 ### Consequences of Withdrawal
-
 If the customer revokes this contract, Skymatic shall refund all payments received from the customer, including delivery costs (with the exception of additional costs resulting from the fact that the participant has chosen a different type of delivery than the cheapest standard delivery offered by Skymatic), immediately and at the latest within 14 days from the day on which Skymatic received notification of the revocation of this contract. For this repayment, Skymatic shall use the same means of payment that the customer used for the original transaction, unless expressly agreed otherwise with the customer; under no circumstances shall the customer be charged for this repayment.
 
 ### Sample Revocation Form
-
 If the customer wishes to revoke the contract in accordance with the aforementioned revocation instructions, he/she can fill out this form and return it to Skymatic. However, the use of the form is not mandatory.
 
 ```
