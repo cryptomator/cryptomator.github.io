@@ -1,0 +1,217 @@
+{{ define "main" }}
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false}" class="container py-12">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ i18n "hub_managed_description" }}</p>
+    </header>
+
+    <form x-show="!feedbackData.success" x-ref="form">
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            {{ i18n "hub_managed_info_header_title" }}
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            {{ i18n "hub_managed_info_header_description" }}
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6 lg:col-span-4">
+            <label for="subdomain" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_managed_info_subdomain" }}
+            </label>
+            <div class="mt-1 flex items-center rounded bg-gray-300">
+              <div class="text-gray-700 px-3">https://</div>
+              <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d\-]{0,61}[a-z\d])?" class="block w-full rounded-none border-gray-300 focus:ring-0 focus:border-secondary" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
+              <div class="text-gray-700 px-3">.cryptomator.cloud</div>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_managed_info_subdomain_description" | safeHTML }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_managed_info_email" }}
+            </label>
+            <input type="email" id="email" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_managed_info_email_description" }}
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="quantity" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_managed_info_quantity" }}
+            </label>
+            <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_managed_info_quantity_description" }}
+            </p>
+          </div>
+
+          <div class="col-span-6">
+            <label for="message" class="block text-sm font-medium text-gray-700">
+              {{ i18n "hub_managed_info_message" }}
+            </label>
+            <div class="mt-1">
+              <textarea id="message" rows="3" maxlength="400" class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-0 focus:border-secondary" x-model="submitData.message"></textarea>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+              {{ i18n "hub_managed_info_message_description" }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center mt-8">
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_managed_trial_info" }}</p>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_managed_instruction" }}</p>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+        <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
+          <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "hub_managed_loadcaptcha" }}</button>
+        </div>
+        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="new HubManaged($refs.form, feedbackData, submitData).request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
+          <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_managed_submit" }}
+        </button>
+        <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
+      </div>
+    </form>
+
+    <div x-show="feedbackData.success" x-cloak>
+      <section class="text-center rounded shadow bg-white px-4 py-64 md:px-6">
+        <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">
+          {{ ":+1:" | emojify }} {{ i18n "hub_managed_success_title" }}
+        </h3>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700">
+          {{ i18n "hub_managed_success_description" }}
+        </p>
+      </section>
+    </div>
+  </section>
+
+  <section x-data="{data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+    <header class="text-center">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_managed_pricing_title" . }}</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_managed_pricing_description" . }}</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_billing_checkout_standard_title" . }}
+          </h3>
+          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_billing_checkout_standard_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_community_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_2" . }}</span>
+              <span><sup>1</sup></span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "hub_pricing_standard_benefit_2_tooltip" . }}</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_3" . }}</span>
+              <span><sup>1</sup></span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_managed_standard_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_managed_standard_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_standard_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            {{ i18n "hub_pricing_enterprise_title" . }}
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            {{ i18n "hub_pricing_enterprise_statement" . }}
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            {{ i18n "hub_pricing_enterprise_description" . }}
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_1" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_2" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_3" . }}</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>{{ i18n "hub_pricing_enterprise_benefit_4" . }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-sm text-gray-700">
+      <sup>1</sup>
+      <span>{{ i18n "hub_pricing_coming_later" . }}</span>
+    </p>
+  </section>
+
+  <section class="container text-center py-12">
+    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_managed_contact_us_title" . }}</h2>
+    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_managed_contact_us_description" . | safeHTML }}</p>
+    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+      <i class="fas fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
+    </a>
+  </section>
+
+  {{ if .Site.IsServer }}
+    {{ $storeJs := resources.Get "js/store.js" }}
+    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
+    {{ $hubManagedJs := resources.Get "js/hubmanaged.js" }}
+    <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" defer></script>
+    {{ $hubPricingJs := resources.Get "js/hubpricing.js" }}
+    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" defer></script>
+    {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
+    <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
+    {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" integrity="{{ $hubManagedJs.Data.Integrity }}" defer></script>
+    {{ $hubPricingJs := resources.Get "js/hubpricing.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" integrity="{{ $hubPricingJs.Data.Integrity }}" defer></script>
+    {{ $recaptchaJs := resources.Get "js/recaptcha.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" integrity="{{ $recaptchaJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

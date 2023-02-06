@@ -487,6 +487,56 @@
 - id: hub_billing_checkout_faq_title
   translation: "Häufig gestellte Fragen"
 
+# Hub Managed
+- id: hub_managed_description
+  translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+
+- id: hub_managed_info_header_title
+  translation: "Information"
+- id: hub_managed_info_header_description
+  translation: "Auf der Grundlage deiner Eingaben werden wir eine neue Hub-Instanz für dich erstellen. Du wirst der erste Administrator dieser Instanz sein."
+- id: hub_managed_info_subdomain
+  translation: "Subdomain"
+- id: hub_managed_info_subdomain_description
+  translation: "Die URL deiner Hub-Instanz. Wenn du eine eigene Domain verwenden möchtest, teile uns dies bitte unten mit."
+- id: hub_managed_info_email
+  translation: "E-Mail"
+- id: hub_managed_info_email_description
+  translation: "Die E-Mail-Adresse der Person, die der erste Administrator deiner Hub-Instanz sein wird."
+- id: hub_managed_info_quantity
+  translation: "Anzahl der erwarteten Nutzer"
+- id: hub_managed_info_quantity_description
+  translation: "Die Anzahl der Nutzer, die du voraussichtlich haben wirst. Diese kann später geändert werden."
+- id: hub_managed_info_message
+  translation: "Nachricht (optional)"
+- id: hub_managed_info_message_description
+  translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
+
+- id: hub_managed_trial_info
+  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
+- id: hub_managed_instruction
+  translation: "Hub-Instanzen werden manuell erstellt. Wir werden uns so schnell wie möglich bei dir melden. Du erhältst dann eine E-Mail mit weiteren Anweisungen."
+- id: hub_managed_loadcaptcha
+  translation: "Weiter…"
+- id: hub_managed_submit
+  translation: "Zugang anfordern"
+- id: hub_managed_success_title
+  translation: "Deine Anfrage wurde versendet!"
+- id: hub_managed_success_description
+  translation: "Wir haben deine Anfrage erhalten und werden sie so schnell wie möglich prüfen. Je nach Auslastung kann dies einige Tage dauern."
+
+- id: hub_managed_pricing_title
+  translation: "Preise"
+- id: hub_managed_pricing_description
+  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
+
+- id: hub_managed_contact_us_title
+  translation: "Weitere Informationen benötigt?"
+- id: hub_managed_contact_us_description
+  translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
+- id: hub_managed_contact_us_button
+  translation: "Kontaktiere uns"
+
 # Hub Setup
 - id: hub_setup_description
   translation: "Generiere die erforderlichen Konfigurationsvorlagen für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
