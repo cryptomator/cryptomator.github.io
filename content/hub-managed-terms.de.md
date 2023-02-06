@@ -1,5 +1,5 @@
 ---
-title: "AGB für Cryptomator Hub: Managed"
+title: "AGB für Cryptomator Hub (SaaS)"
 url: "/de/hub/managed/terms"
 ---
 

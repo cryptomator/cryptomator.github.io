@@ -1,5 +1,5 @@
 ---
-title: "Terms & Conditions for Cryptomator Hub: Managed"
+title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
