@@ -169,16 +169,20 @@ Irrespective of the right of withdrawal ([§ 14](#withdrawal)), the customer, i.
 ## §14 Withdrawal {#withdrawal}
 If the customer is a consumer, he has a right of withdrawal.
 
-### Withdrawal policy
-The customer has the right to revoke this contract within 14 days without giving reasons. The revocation period is 14 days from the date of conclusion of the contract.  In order to exercise the right of withdrawal, the participant must inform Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: info@skymatic.de, fax: +49 2241 / 2667424) of his decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or email). The customer may use the attached sample revocation form for this purpose, which is not mandatory.
+### Right of Withdrawal
+You have the right to revoke this contract within fourteen days without giving any reason. The revocation period is fourteen days from the day of the conclusion of the contract.  
 
-In order to comply with the revocation period, it is sufficient for the customer to send the notification of the exercise of the right of revocation before the end of the revocation period.
+To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, e-mail: support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an e-mail). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.   
+
+To comply with the withdrawal period, it is sufficient that you send the notice of exercise of the right of withdrawal before the expiry of the withdrawal period.
+
+Translated with www.DeepL.com/Translator (free version)
 
 ### Consequences of Withdrawal
-If the customer revokes this contract, Skymatic shall refund all payments received from the customer, including delivery costs (with the exception of additional costs resulting from the fact that the participant has chosen a different type of delivery than the cheapest standard delivery offered by Skymatic), immediately and at the latest within 14 days from the day on which Skymatic received notification of the revocation of this contract. For this repayment, Skymatic shall use the same means of payment that the customer used for the original transaction, unless expressly agreed otherwise with the customer; under no circumstances shall the customer be charged for this repayment.
+If you revoke this contract, we shall reimburse you all payments we have received from you, including delivery costs (with the exception of additional costs resulting from the fact that you have chosen a type of delivery other than the most favorable standard delivery offered by us), without undue delay and no later than within fourteen days from the day on which we received the notification of your revocation of this contract. For this repayment, we will use the same means of payment that you used for the original transaction, unless expressly agreed otherwise with you; in no case will you be charged for this repayment.
 
 ### Sample Revocation Form
-If the customer wishes to revoke the contract in accordance with the aforementioned revocation instructions, he/she can fill out this form and return it to Skymatic. However, the use of the form is not mandatory.
+The legislator provides the following model withdrawal form in Annex 2 to Article 246a § 1 (2) sentence 1 number 1 and § 2 (2) number 2 EGBGB:
 
 ```
 To:
@@ -191,7 +195,7 @@ Fax: 02241 / 2667424
 
 I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
 
-Ordered on (*): __________________
+Ordered on (*) / received on (*): __________________
 Name of the customer: __________________
 Address of the customer: __________________
 Signature (only in the case of paper-based notice): __________________

@@ -192,7 +192,7 @@ Fax: 02241 / 2667424
 
 Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
 
-Bestellt am (*): __________________
+Bestellt am (*) / erhalten am (*): __________________
 Name des/der Verbraucher(s): __________________
 Anschrift des/der Verbraucher(s): __________________
 Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): __________________
