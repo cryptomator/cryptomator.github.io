@@ -227,7 +227,7 @@ The right of withdrawal expires prematurely if
 
 
 ## §16 Online Dispute Resolution as well as Information According to § 36 VSBG
-16.1 The EU Commission has provided a platform for out-of-court dispute resolution at [http://ec.europa.eu/consumers/odr/](http://ec.europa.eu/consumers/odr).
+16.1 The EU Commission has provided a platform for out-of-court dispute resolution at {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
 
 16.2 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
