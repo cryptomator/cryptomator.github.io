@@ -5,9 +5,14 @@ url: "/hub/managed/terms"
 
 _Effective date: February 2023_
 
-<p class="text-lg leading-relaxed text-gray-700">The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub".</p>
+The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
+{.text-lg .leading-relaxed .text-gray-700}
 
-<p class="text-lg leading-relaxed text-gray-700">Conflicting or different general terms and conditions of the users do not become part of the contract. This also applies if the Provider does not expressly object to them.</p>
+Conflicting or different general terms and conditions of the users do not become part of the contract. This also applies if the Provider does not expressly object to them.
+{.text-lg .leading-relaxed .text-gray-700}
+
+Contract language is German. This is a translation from our [German AGB](/de/hub/managed/terms). German Version shall prevail.
+{.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Definitions
 

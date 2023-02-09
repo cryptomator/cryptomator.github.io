@@ -5,9 +5,11 @@ url: "/de/hub/managed/terms"
 
 _Stand: Februar 2023_
 
-<p class="text-lg leading-relaxed text-gray-700">Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“.</p>
+Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ als Software as a Service (SaaS) Dienstleistung.
+{.text-lg .leading-relaxed .text-gray-700}
 
-<p class="text-lg leading-relaxed text-gray-700">Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Nutzer werden nicht Vertragsbestandteil. Dies gilt auch, wenn der Provider diesen nicht ausdrücklich widerspricht.</p>
+Entgegenstehende oder anderslautende allgemeine Geschäftsbedingungen der Nutzer werden nicht Vertragsbestandteil. Dies gilt auch, wenn der Provider diesen nicht ausdrücklich widerspricht.
+{.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Definitionen
 
