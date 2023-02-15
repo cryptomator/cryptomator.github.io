@@ -32,13 +32,9 @@
 </div>
 
 {{ if .Site.IsServer }}
-  {{ $storeJs := resources.Get "js/store.js" }}
-  <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
   {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
   <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" defer></script>
 {{ else }}
-  {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
   {{ $androidKeyJs := resources.Get "js/androidkey.js" | minify | fingerprint }}
   <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" integrity="{{ $androidKeyJs.Data.Integrity }}" defer></script>
 {{ end }}
