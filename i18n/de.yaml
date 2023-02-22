@@ -626,7 +626,7 @@
 - id: hub_setup_output_header_description
   translation: "Verwende diese Konfigurationsvorlage, um Cryptomator Hub zu deployen."
 - id: hub_setup_output_hint
-  translation: "Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten."
+  translation: "Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten. In der <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">Dokumentation</a> gibt es einige Beispiele für die Einrichtung eines Proxy."
 
 - id: hub_setup_contact_us_title
   translation: "Brauchst du Hilfe bei deiner Konfiguration?"
