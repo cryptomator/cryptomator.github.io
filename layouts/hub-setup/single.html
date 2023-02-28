@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="container space-y-6 py-16" x-data="{cfg: HubSetup.defaultConfig(), deploymentType: '', output: ''}" x-init="output = HubSetup.generateOutput(cfg); $watch('cfg', _ => output = HubSetup.generateOutput(cfg))">
+  <div class="container space-y-6 py-12" x-data="{cfg: HubSetup.defaultConfig(), deploymentType: '', output: ''}" x-init="output = HubSetup.generateOutput(cfg); $watch('cfg', _ => output = HubSetup.generateOutput(cfg))">
     <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
       <h1>{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_setup_description" . }}</p>

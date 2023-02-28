@@ -1,7 +1,5 @@
 - id: site_meta_description
   translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
-- id: nav_promotion
-  translation: "Suchst du nach einer Alternative zu Boxcryptor nach deren Übernahme? Cryptomator ist hier, um zu bleiben! <a class=\"underline\" href=\"/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/\">Mehr erfahren.</a>"
 - id: nav_support_us
   translation: "Unterstütze uns"
 - id: nav_learn_more
@@ -20,14 +18,16 @@
   translation: "RSS-Feed"
 - id: footer_legal_title
   translation: "Rechtliches"
-- id: accept_terms_and_privacy_and_coupon_policy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen."
-- id: accept_terms_and_privacy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
   translation: "Durch die Überweisung akzeptiere ich die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: accept_terms_and_privacy
+  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: accept_terms_and_privacy_and_coupon_policy
+  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen."
+- id: accept_hub_managed_terms_and_privacy
+  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/hub/managed/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 
 # Android
 - id: android_getkey_title
@@ -243,18 +243,16 @@
   translation: "Das&nbsp;sichere Arbeiten&nbsp;im&nbsp;Team"
 - id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
-- id: hub_header_self_hosted
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_docs_cta
-  translation: "Jetzt loslegen"
-- id: hub_header_self_hosted_setup_cta
-  translation: "Setup Wizard"
 - id: hub_header_managed
   translation: "Managed"
 - id: hub_header_managed_cta
-  translation: "Bald verfügbar"
-- id: hub_header_managed_cta_tooltip
-  translation: "Die Einführung erfolgt vsl. im Februar. Bei Interesse, abonniere unten unseren Hub-Newsletter."
+  translation: "Zugang anfordern"
+- id: hub_header_self_hosted
+  translation: "Self-Hosted"
+- id: hub_header_self_hosted_docs_cta
+  translation: "Docs"
+- id: hub_header_self_hosted_setup_cta
+  translation: "Setup Wizard"
 - id: hub_header_man_vault_alt
   translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
 
@@ -280,12 +278,10 @@
   translation: "Preisgestaltung"
 - id: hub_pricing_description
   translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
-- id: hub_pricing_infrastructure_self_hosted
-  translation: "Self-Hosted"
 - id: hub_pricing_infrastructure_managed
   translation: "Managed"
-- id: hub_pricing_infrastructure_managed_coming_later
-  translation: "Managed-Instanzen werden bald verfügbar sein. Abonniere unten unseren Hub-Newsletter, um informiert zu werden."
+- id: hub_pricing_infrastructure_self_hosted
+  translation: "Self-Hosted"
 - id: hub_pricing_community_title
   translation: "Community"
 - id: hub_pricing_community_statement
@@ -317,8 +313,6 @@
 - id: hub_pricing_standard_benefit_4
   translation: "E-Mail-Support"
 - id: hub_pricing_managed_standard_benefit_1
-  translation: "Eigene Domain"
-- id: hub_pricing_managed_standard_benefit_2
   translation: "Hosting in Europa"
 - id: hub_pricing_enterprise_title
   translation: "Enterprise"
@@ -334,6 +328,8 @@
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4
   translation: "Mengenrabatt für große Teams"
+- id: hub_pricing_enterprise_standard_benefit_1
+  translation: "Eigene Domain"
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung Anfang 2023."
 
@@ -488,6 +484,56 @@
 
 - id: hub_billing_checkout_faq_title
   translation: "Häufig gestellte Fragen"
+
+# Hub Managed
+- id: hub_managed_description
+  translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+
+- id: hub_managed_info_header_title
+  translation: "Information"
+- id: hub_managed_info_header_description
+  translation: "Auf der Grundlage deiner Eingaben werden wir eine neue Hub-Instanz für dich erstellen. Du wirst der erste Administrator dieser Instanz sein."
+- id: hub_managed_info_subdomain
+  translation: "Subdomain"
+- id: hub_managed_info_subdomain_description
+  translation: "Die URL deiner Hub-Instanz. Wenn du eine eigene Domain verwenden möchtest, teile uns dies bitte unten mit."
+- id: hub_managed_info_email
+  translation: "E-Mail"
+- id: hub_managed_info_email_description
+  translation: "Die E-Mail-Adresse der Person, die der erste Administrator deiner Hub-Instanz sein wird."
+- id: hub_managed_info_quantity
+  translation: "Anzahl der erwarteten Nutzer"
+- id: hub_managed_info_quantity_description
+  translation: "Die Anzahl der Nutzer, die du voraussichtlich haben wirst. Diese kann später geändert werden."
+- id: hub_managed_info_message
+  translation: "Nachricht (optional)"
+- id: hub_managed_info_message_description
+  translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
+
+- id: hub_managed_trial_info
+  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
+- id: hub_managed_instruction
+  translation: "Hub-Instanzen werden manuell erstellt. Wir werden uns so schnell wie möglich bei dir melden. Du erhältst dann eine E-Mail mit weiteren Anweisungen."
+- id: hub_managed_loadcaptcha
+  translation: "Weiter…"
+- id: hub_managed_submit
+  translation: "Zugang anfordern"
+- id: hub_managed_success_title
+  translation: "Deine Anfrage wurde versendet!"
+- id: hub_managed_success_description
+  translation: "Wir haben deine Anfrage erhalten und werden sie so schnell wie möglich prüfen. Je nach Auslastung kann dies einige Tage dauern."
+
+- id: hub_managed_pricing_title
+  translation: "Preise"
+- id: hub_managed_pricing_description
+  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
+
+- id: hub_managed_contact_us_title
+  translation: "Weitere Informationen benötigt?"
+- id: hub_managed_contact_us_description
+  translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
+- id: hub_managed_contact_us_button
+  translation: "Kontaktiere uns"
 
 # Hub Setup
 - id: hub_setup_description

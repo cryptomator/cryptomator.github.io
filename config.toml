@@ -55,6 +55,9 @@ enableemoji = true
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.goldmark.parser.attribute]
+block = true
+
 [params]
   [params.releases]
     [params.releases.exe]
