@@ -313,8 +313,6 @@
 - id: hub_pricing_standard_benefit_4
   translation: "Email support"
 - id: hub_pricing_managed_standard_benefit_1
-  translation: "Custom domain"
-- id: hub_pricing_managed_standard_benefit_2
   translation: "Hosting in Europe"
 - id: hub_pricing_enterprise_title
   translation: "Enterprise"
@@ -330,6 +328,8 @@
   translation: "Expert training and assistance"
 - id: hub_pricing_enterprise_benefit_4
   translation: "Volume discount for large teams"
+- id: hub_pricing_managed_enterprise_benefit_1
+  translation: "Custom domain"
 - id: hub_pricing_coming_later
   translation: "Currently in development, ETA early 2023."
 

@@ -313,8 +313,6 @@
 - id: hub_pricing_standard_benefit_4
   translation: "E-Mail-Support"
 - id: hub_pricing_managed_standard_benefit_1
-  translation: "Eigene Domain"
-- id: hub_pricing_managed_standard_benefit_2
   translation: "Hosting in Europa"
 - id: hub_pricing_enterprise_title
   translation: "Enterprise"
@@ -330,6 +328,8 @@
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4
   translation: "Mengenrabatt für große Teams"
+- id: hub_pricing_enterprise_standard_benefit_1
+  translation: "Eigene Domain"
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung Anfang 2023."
 
