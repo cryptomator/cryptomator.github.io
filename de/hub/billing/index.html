@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.4243fc0e8f46af3c13c766ca72ad5590b4d6e98f3bb96783670718484d4680b8.css" integrity="sha256-QkP8Do9GrzwTx2bKcq1VkLTW6Y87uWeDZwcYSE1GgLg=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.b6798bbc21f1578f6c6ab525ea3b687534da3382f6c403d0c40b685aa5f09110.css" integrity="sha256-tnmLvCHxV49sarUl6jtodTTaM4L2xAPQxAtoWqXwkRA=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -33,10 +33,7 @@
     
   </head>
   <body class="bg-dark font-body text-gray-900">
-    <div class="w-full bg-primary text-center text-sm text-white p-0.5">
-  <p>Suchst du nach einer Alternative zu Boxcryptor nach deren Übernahme? Cryptomator ist hier, um zu bleiben! <a class="underline" href="/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/">Mehr erfahren.</a></p>
-</div>
-<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/de/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
@@ -468,9 +465,13 @@
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
-                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-286415397" x-model="acceptTerms" />
-<label for="id-286415397">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+                  <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-745392816" x-model="acceptTerms" />
+<label for="id-745392816">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+</p>
+                  <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-937462851" x-model="acceptTerms" />
+<label for="id-937462851">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt im ersten Jahr!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -516,77 +517,68 @@
             </div>
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">Häufig gestellte Fragen</h2>
-          <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
+          <dl x-data="{isOpen: [false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Wann ist der voraussichtliche Termin für die Einführung der Managed-Lösung?</span>
+                <span>Wie werden die Sitze berechnet?</span>
               </a>
             </dt>
             <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Wie du dir vorstellen kannst, arbeiten wir mit Hochdruck daran. Die Managed-Lösung wird vsl. im Februar verfügbar sein. Wenn du benachrichtigt werden möchtest, abonniere unseren <a href="/de/hub/#newsletter">Hub-Newsletter</a>.
+              Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Wie werden die Sitze berechnet?</span>
+                <span>Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?</span>
               </a>
             </dt>
             <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten.
+              Du zahlst eine jährliche Gebühr für jeden Sitz. Diese Gebühr gilt auch, wenn du ungenutzte Sitze hast.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?</span>
+                <span>Kann ich während der Laufzeit weitere Sitze hinzufügen?</span>
               </a>
             </dt>
             <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Du zahlst eine jährliche Gebühr für jeden Sitz. Diese Gebühr gilt auch, wenn du ungenutzte Sitze hast.
+              Ja, du kannst jederzeit weitere Sitze hinzufügen. Du kannst auch Sitze reduzieren, wenn du sie nicht mehr benötigst. Änderungen werden entweder sofort anteilig verrechnet oder im Folgejahr abgezogen.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Kann ich während der Laufzeit weitere Sitze hinzufügen?</span>
+                <span>Sind in den kostenpflichtigen Plänen 5 freie Sitze enthalten?</span>
               </a>
             </dt>
             <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Ja, du kannst jederzeit weitere Sitze hinzufügen. Du kannst auch Sitze reduzieren, wenn du sie nicht mehr benötigst. Änderungen werden entweder sofort anteilig verrechnet oder im Folgejahr abgezogen.
+              Nein, du musst für alle Sitze in deinem Plan bezahlen. Wir berechnen jeden Sitz, weil alle Nutzer von den zusätzlichen Funktionen profitieren, die in den kostenpflichtigen Plänen enthalten sind. Zum Beispiel haben alle Nutzer vollen Zugriff auf die Tresore über die mobilen Apps, ohne die Vollversion freischalten zu müssen.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Sind in den kostenpflichtigen Plänen 5 freie Sitze enthalten?</span>
+                <span>Bietet ihr Rabatte an?</span>
               </a>
             </dt>
             <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Nein, du musst für alle Sitze in deinem Plan bezahlen. Wir berechnen jeden Sitz, weil alle Nutzer von den zusätzlichen Funktionen profitieren, die in den kostenpflichtigen Plänen enthalten sind. Zum Beispiel haben alle Nutzer vollen Zugriff auf die Tresore über die mobilen Apps, ohne die Vollversion freischalten zu müssen.
+              Ja, wir bieten Rabatte für gemeinnützige Organisationen und Bildungseinrichtungen an. Bitte kontaktiere uns, um zu prüfen, ob ihr euch qualifiziert. Für diejenigen, die nicht infrage kommen, bieten wir einen Mengenrabatt für große Teams an.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Bietet ihr Rabatte an?</span>
+                <span>Bietet ihr Cloud-Speicher an?</span>
               </a>
             </dt>
             <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Ja, wir bieten Rabatte für gemeinnützige Organisationen und Bildungseinrichtungen an. Bitte kontaktiere uns, um zu prüfen, ob ihr euch qualifiziert. Für diejenigen, die nicht infrage kommen, bieten wir einen Mengenrabatt für große Teams an.
+              Nein, Cryptomator Hub erweitert Cryptomator ausschließlich um ein Zero-Knowledge Schlüsselmanagement. Und Cryptomator kümmert sich um die Verschlüsselung deiner Dateien auf deinem Endgerät. Wir empfehlen dir, deine Tresore auf einem Cloud-Speicher deiner Wahl zu speichern.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Bietet ihr Cloud-Speicher an?</span>
-              </a>
-            </dt>
-            <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Nein, Cryptomator Hub erweitert Cryptomator ausschließlich um ein Zero-Knowledge Schlüsselmanagement. Und Cryptomator kümmert sich um die Verschlüsselung deiner Dateien auf deinem Endgerät. Wir empfehlen dir, deine Tresore auf einem Cloud-Speicher deiner Wahl zu speichern.
-            </dd>
-            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>Wie kann ich auf den Inhalt eines Tresors zugreifen?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+            <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
               Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS). (Hinweis: Die Kompatibilität mit Android und iOS befindet sich derzeit in der Entwicklung.)
             </dd>
           </dl>
@@ -599,7 +591,7 @@
     
     <script type="text/javascript" src="/js/store.min.b419be6ea241138a0fb834d06ebfac080d11063cd28c67f47a585edbc0ec2f27.js" integrity="sha256-tBm&#43;bqJBE4oPuDTQbr&#43;sCA0RBjzSjGf0elhe28DsLyc=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.6304259a2f233af66be4cbf570087af36a59d74889b2e9f86b45541d03a8024a.js" integrity="sha256-YwQlmi8jOvZr5Mv1cAh682pZ10iJsun4a0VUHQOoAko=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.cbfae7ca02c8fba1d7ab3ac09d6fd4e220adb50c066e1da2f16aeac90ede81c3.js" integrity="sha256-y/rnygLI&#43;6HXqzrAnW/U4iCttQwGbh2i8WrqyQ7egcM=" defer></script>
   
 
     </div>

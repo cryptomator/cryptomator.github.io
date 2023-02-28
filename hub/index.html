@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.4243fc0e8f46af3c13c766ca72ad5590b4d6e98f3bb96783670718484d4680b8.css" integrity="sha256-QkP8Do9GrzwTx2bKcq1VkLTW6Y87uWeDZwcYSE1GgLg=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.b6798bbc21f1578f6c6ab525ea3b687534da3382f6c403d0c40b685aa5f09110.css" integrity="sha256-tnmLvCHxV49sarUl6jtodTTaM4L2xAPQxAtoWqXwkRA=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -33,10 +33,7 @@
     
   </head>
   <body class="bg-dark font-body text-gray-900">
-    <div class="w-full bg-primary text-center text-sm text-white p-0.5">
-  <p>Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class="underline" href="/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/">Learn more.</a></p>
-</div>
-<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
@@ -180,18 +177,17 @@
         </div>
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice.</p>
-        <div class="mb-4">
-          <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Self-Hosted</p>
-          <div class="flex flex-wrap gap-2">
-            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">Get Started Now</a>
-            <a href="/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">Setup Wizard</a>
+        <div class="flex flex-col md:flex-row md:divide-x md:divide-gray-300">
+          <div class="mb-4 md:mb-0 md:pr-4">
+            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Managed</p>
+            <a href="/hub/managed/" role="button" class="btn btn-primary text-lg px-8">Request Access</a>
           </div>
-        </div>
-        <div>
-          <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Managed</p>
-          <div class="has-tooltip">
-            <button class="btn btn-primary text-lg px-8">Coming Soon</button>
-            <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-48 p-2 mt-2">Expected to launch in February. If you&#39;re interested, please subscribe to our Hub mailing list at the bottom.</div>
+          <div class="md:pl-4">
+            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Self-Hosted</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">Docs</a>
+              <a href="/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">Setup Wizard</a>
+            </div>
           </div>
         </div>
       </div>
@@ -240,27 +236,108 @@
     </div>
   </section>
 
-  <section x-data="{infrastructure: 'self-hosted', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+  <section x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
     <header class="text-center">
       <h2 id="pricing-plans" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Pricing Plans</h2>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage.</p>
       <div class="flex justify-center mb-4">
-        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
-          <i class="fa-server fa-fw" :class="{'fas': infrastructure === 'self-hosted', 'far': infrastructure !== 'self-hosted'}"></i>
-          Self-Hosted
-        </button>
-        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
           <i class="fa-cloud fa-fw" :class="{'fas': infrastructure === 'managed', 'far': infrastructure !== 'managed'}"></i>
           Managed
         </button>
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
+          <i class="fa-server fa-fw" :class="{'fas': infrastructure === 'self-hosted', 'far': infrastructure !== 'self-hosted'}"></i>
+          Self-Hosted
+        </button>
       </div>
-      <p x-show="infrastructure === 'managed'" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4" x-cloak>
-        <i class="fas fa-exclamation-triangle fa-fw text-yellow-500"></i>
-        Managed instances will be available soon. Subscribe to our Hub mailing list at the bottom to be informed.
-      </p>
     </header>
 
-    <div x-show="infrastructure === 'self-hosted'" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+    <div x-show="infrastructure === 'managed'" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Standard
+          </h3>
+          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            per seat, per month
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Unlimited vaults</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Full access via Desktop app</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Full access via Mobile apps</span>
+              <span><sup>1</sup></span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">You will be granted full access without having to unlock the full version of the mobile app.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Audit logs</span>
+              <span><sup>1</sup></span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Hosting in Europe</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Email support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Enterprise
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Custom
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            tailored pricing
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Everything in Standard</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Priority email support</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Expert training and assistance</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Custom domain</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Volume discount for large teams</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div x-show="infrastructure === 'self-hosted'" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4" x-cloak>
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
           <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
@@ -371,91 +448,6 @@
       </div>
     </div>
 
-    <div x-show="infrastructure === 'managed'" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4" x-cloak>
-      <div class="rounded shadow bg-white">
-        <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
-            Standard
-          </h3>
-          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
-          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-            per seat, per month
-          </p>
-        </div>
-        <div class="px-4 py-8">
-          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Unlimited vaults</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Full access via Desktop app</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Full access via Mobile apps</span>
-              <span><sup>1</sup></span>
-              <div class="has-tooltip">
-                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">You will be granted full access without having to unlock the full version of the mobile app.</div>
-              </div>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Audit logs</span>
-              <span><sup>1</sup></span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Custom domain</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Hosting in Europe</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Email support</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="rounded shadow bg-white">
-        <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
-            Enterprise
-          </h3>
-          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
-            Custom
-          </p>
-          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-            tailored pricing
-          </p>
-        </div>
-        <div class="px-4 py-8">
-          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-            <li>
-              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
-              <span>Everything in Standard</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Priority email support</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Expert training and assistance</span>
-            </li>
-            <li>
-              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
-              <span>Volume discount for large teams</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <p class="text-sm text-gray-700">
       <sup>1</sup>
       <span>Currently in development, ETA early 2023.</span>
@@ -466,77 +458,68 @@
     <header class="text-center">
       <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
     </header>
-    <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+    <dl x-data="{isOpen: [false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>When is the expected launch date for the managed solution?</span>
+          <span>How are seats calculated?</span>
         </a>
       </dt>
       <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        As you can imagine, we&rsquo;re working hard on it. The managed solution is expected to be available in February. If you want be notified, subscribe to our <a href="/hub/#newsletter">Hub mailing list</a>.
+        Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>How are seats calculated?</span>
+          <span>How is the subscription fee calculated for paid plans?</span>
         </a>
       </dt>
       <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
+        You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>How is the subscription fee calculated for paid plans?</span>
+          <span>Can I add more seats during the current billing cycle?</span>
         </a>
       </dt>
       <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
+        Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Can I add more seats during the current billing cycle?</span>
+          <span>Do the paid plans include 5 free seats?</span>
         </a>
       </dt>
       <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year.
+        No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Do the paid plans include 5 free seats?</span>
+          <span>Do you offer discounts?</span>
         </a>
       </dt>
       <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
+        Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Do you offer discounts?</span>
+          <span>Do you offer cloud storage?</span>
         </a>
       </dt>
       <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
+        No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice.
       </dd>
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>Do you offer cloud storage?</span>
-        </a>
-      </dt>
-      <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice.
-      </dd>
-      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
-          <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>How do I access the contents of a vault?</span>
         </a>
       </dt>
-      <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+      <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)
       </dd>
     </dl>

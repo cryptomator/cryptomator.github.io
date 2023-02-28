@@ -11,8 +11,32 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/event/</link>
     </image>
-    <lastBuildDate>Thu, 16 Feb 2023 13:02:16 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Feb 2023 13:09:45 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub: Managed – Jetzt Zugang anfordern</title>
+        <description>&lt;p&gt;Wir freuen uns, euch mitteilen zu können, dass Managed-Instanzen von &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt; ab sofort verfügbar sind! 🎉 Außerdem haben wir Hub 1.1.0 mit Unterstützung für Wiederherstellungsschlüssel veröffentlicht.&lt;/p&gt;
+&lt;h2 id=&#34;zugang-anfordern&#34;&gt;Zugang anfordern&lt;/h2&gt;
+&lt;p&gt;Das Wichtigste zuerst. 🚀 Um loszulegen, könnt ihr jetzt &lt;a href=&#34;https://cryptomator.org/de/hub/managed/&#34;&gt;Zugang zu einer Managed-Instanz von Cryptomator Hub anfordern&lt;/a&gt;. Nach Beantragung werden wir uns so schnell wie möglich zurückmelden. Derzeit werden einige der Schritte, die wir intern durchführen, um eine Managed-Hub-Instanz zu erstellen, noch „manuell“ ausgeführt. Wir arbeiten daran, diesen Prozess zu automatisieren, aber wir wollten die Veröffentlichung nicht länger verzögern.&lt;/p&gt;
+&lt;h2 id=&#34;managed-vs-self-hosted&#34;&gt;Managed vs. Self-Hosted&lt;/h2&gt;
+&lt;p&gt;Managed-Instanzen von Cryptomator Hub ermöglichen die sofortige Nutzung von Cryptomator Hub, ohne eine Self-Hosted-Instanz installieren und warten zu müssen.&lt;/p&gt;
+&lt;p&gt;Bisher konnte man &lt;em&gt;nur&lt;/em&gt; die Self-Hosted-Version von Cryptomator Hub verwenden. Dies erfordert eine Menge Wissen darüber, wie man einen Software-Container mittels Kubernetes oder Docker Compose installiert. Und wenn man dieses Wissen hat, muss man die Instanz immer noch selbst warten. Dazu gehört, die Software zu aktualisieren, die Instanz zu überwachen und ihre Sicherheit zu gewährleisten.&lt;/p&gt;
+&lt;p&gt;Bei Managed-Instanzen kümmern wir uns um die Installation und Wartung eurer Hub-Instanz und stellen gleichzeitig sicher, dass eure Instanz hochverfügbar ist. Ihr könnt euch auf eure Arbeit und euer Team konzentrieren.&lt;/p&gt;
+&lt;p&gt;All dies wird durch das zugrundeliegende &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;Zero-Knowledge Key Management&lt;/a&gt; ermöglicht. Cryptomator Hub speichert keine unverschlüsselten Schlüssel. Das gesamte Schlüsselmaterial bleibt lokal auf dem Client und wir können eure Daten nicht entschlüsseln. Zudem ist Hub unabhängig von eurem Cloudspeicher-Anbieter ist. Zusammengefasst: Wir haben keinen Zugriff auf das Schlüsselmaterial oder die Cloud-Dateien.&lt;/p&gt;
+&lt;h2 id=&#34;release-110-wiederherstellungsschlüssel&#34;&gt;Release 1.1.0: Wiederherstellungsschlüssel&lt;/h2&gt;
+&lt;p&gt;Und es geht weiter: Wir haben Cryptomator Hub 1.1.0 mit Unterstützung für Wiederherstellungsschlüssel veröffentlicht. Damit kann man im Katastrophenfall auf seine Daten zugreifen. Und nicht nur das: Der Wiederherstellungsschlüssel ist mit dem von Cryptomator kompatibel. Das bedeutet, dass ihr eure bestehenden Tresore in Hub-Tresore umwandeln könnt und umgekehrt.&lt;/p&gt;
+&lt;p&gt;Was heißt das für eure Managed-Instanz? Wenn wir aufhören zu existieren (wir werden oft gefragt, dank Boxcryptor 😉), könnt ihr eure Hub-Tresore in „normale“ passwortbasierte Tresore umwandeln, komplett offline, so dass ihr &lt;em&gt;immer&lt;/em&gt; und unter allen Umständen Zugriff auf eure Daten habt. Dies ist auch für eure Self-Hosted-Instanzen von Vorteil, falls eurem Server etwas zustoßen sollte.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2023/02/28/hub-managed/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/02/28/hub-managed/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.7.0: Was hat sich geändert?</title>
@@ -342,63 +366,6 @@
         <guid isPermaLink="true">https://cryptomator.org/de/blog/2021/11/30/computer-security-day/</guid>
         
         <category>event</category>
-        
-      </item>
-    
-      <item>
-        <title>Vault Format 8</title>
-        <description>&lt;p&gt;Hallo Community!&lt;/p&gt;
-&lt;p&gt;im Zuge des anstehenden Releases von Cryptomator 1.6.0 möchten wir euch einen Einblick über die Motivation und Umsetzung eine der wichtigen Änderungen geben: Das neue Tresorformat in Version 8.&lt;/p&gt;
-&lt;p&gt;Ja, ein neues Tresorformat.
-Diejenigen, die sich an das letzte Upgrade erinnern, werden vielleicht etwas schlucken, denn beim letzten Mal war der Migrationsprozess von Tresorformat 6 zu 7 in einigen Fällen nicht ohne Hindernisse und Probleme zu bewältigen.
-Aber keine Sorge, dieses Mal sind die Änderungen minimal invasiv!&lt;/p&gt;
-&lt;p&gt;Dieser Artikel wird die Motivation für die Gestaltung des neuen Formats dargelegen, die Änderungen erläutern und skizziert, wie der Migrationsprozess abläuft.&lt;/p&gt;
-&lt;h2 id=&#34;die-motivation&#34;&gt;Die Motivation&lt;/h2&gt;
-&lt;p&gt;Der Speicherort des Masterkey eines Tresors ist ein Thema, das schon in den Anfangstagen von Cryptomator viele Fragen aufgeworfen und zu mehreren Feature Requests geführt hat. (vergleiche die Klickzahlen im Forumsartikel &lt;a href=&#34;https://community.cryptomator.org/t/why-is-the-masterkey-stored-in-the-cloud/&#34;&gt;&amp;ldquo;Why is the masterkey stored in the cloud&amp;rdquo;&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Woher kommt das?
-Der Masterkey eines Tresors wird innerhalb der Tresor-Ordnerstruktur in einer Datei namens &lt;code&gt;masterkey.cryptomator&lt;/code&gt; gespeichert und mit nach heutigem Kenntnisstand modernen und sicheren Algorithmen verschlüsselt.
-Sein Speicherort stellt kein Sicherheitsrisiko dar und gewährleistet zudem, dass dieser integrale Bestandteil eines Tresors immer mit dem Tresor verschoben wird.
-Zugegeben, über den Namen der Datei lässt sich streiten, aber es ist eindeutig, dass die Datei wichtig ist.&lt;/p&gt;
-&lt;p&gt;Doch hier geht es nicht um den Namen.
-Wenn man festlegt, wo der Hauptschlüssel gespeichert wird, verliert man die Flexibilität, ihn von einem anderen Ort zu laden. (Ein entsprechender &lt;a href=&#34;https://github.com/cryptomator/cryptomator/issues/96&#34;&gt;Feature Request&lt;/a&gt; ist unter den ersten 100 Tickets von Cryptomator!)
-Was ist, wenn ein Benutzer einen Hardware-Token hat, der ihn speichern könnte?
-Oder was ist, wenn ein Unternehmen eine zentralisierte Schlüsselverwaltung mit [Single Sign-On] (&lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;https://en.wikipedia.org/wiki/Single_sign-on&lt;/a&gt;) hat und diese mit Cryptomator nutzen möchte?
-Und selbst wenn Lösungen für die oben genannten Fragen gefunden werden, wie passt man diese an, wenn sich die Struktur/das Format des Tresors ändert?&lt;/p&gt;
-&lt;p&gt;Diese Fragen führten zu der Idee, das Laden des Masterkeys von der Tresorstruktur zu entkoppeln, und schließlich zum Entwurf des Tresorformats 8.&lt;/p&gt;
-&lt;h2 id=&#34;die-änderungen&#34;&gt;Die Änderungen&lt;/h2&gt;
-&lt;p&gt;Mit Tresorformat 8 führen wir eine neue Datei namens &lt;code&gt;vault.cryptomator&lt;/code&gt; für jeden Tresor ein, die sich im Stammverzeichnis des Tresors befindet.
-Dies ist die neue, zentrale Konfigurationsdatei des Tresors.
-Zusammen mit dem Datenverzeichnis namens &amp;ldquo;d&amp;rdquo; bilden sie das erforderliche Minimum für einen gültigen Tresor.&lt;/p&gt;
-&lt;p&gt;Die Tresorkonfigurationsdatei ist ein &lt;a href=&#34;https://en.wikipedia.org/wiki/JSON_Web_Token&#34;&gt;JWT&lt;/a&gt;, welche die grundlegenden Informationen über den Tresor (wie einen eindeutige Id) und insbesondere den Ort enthält, woher der Hauptschlüssel geladen werden soll.
-Alle anderen Parameter, die für das Laden des Masterkeys erforderlich sind, werden nicht mehr in der Tresorkonfiguration gespeichert, was zur gewünschten Entkopplung des Masterkeys von Tresorformat zur Folge hat und die Möglichkeit eröffnet, den Masterkey aus anderen Quellen als nur der Datei &amp;ldquo;masterkey.cryptomator&amp;rdquo; im Tresor zu beziehen.
-In zukünftigen Versionen kann beispielsweise der Masterkey aus einem &lt;a href=&#34;https://www.yubico.com&#34;&gt;Yubikey&lt;/a&gt; oder dem Microsoft Certification Store geladen werden.
-Da es sich bei der Tresorkonfiguration um ein JWT handelt, kann durch Signieren der Datei mit dem Masterkey sichergestellt werden, dass diese nicht manipuliert wurde.&lt;/p&gt;
-&lt;p&gt;Wie bereits erwähnt, kann die Tresorkonfigurationsdatei auch zusätzliche Informationen speichern.
-Eine davon ist die tresorspezifische Schwelle für die Verkürzung von &lt;em&gt;verschlüsselten&lt;/em&gt; Dateinamen.
-Vor Format 8 war dieser Wert im Verschlüsselungsschema von Cryptomator fest verankert.
-Durch die Angabe in der Tresorkonfiguration kann sie in Zukunft konfiguriert werden, so dass die vollen Funktionen eines Tresors auch an restriktiveren Speicherorten verfügbar sind.&lt;/p&gt;
-&lt;p&gt;Das Verschlüsselungsschema, die Verzeichnisstruktur und die verschlüsselten Dateien bleiben unverändert.&lt;/p&gt;
-&lt;h2 id=&#34;die-migration&#34;&gt;Die Migration&lt;/h2&gt;
-&lt;p&gt;Was bedeuten diese Änderungen für eine Migration von Tresorformat 7 auf 8?
-So gut wie nichts!&lt;/p&gt;
-&lt;p&gt;Die einzige Datei, die bearbeitet wird, ist &lt;code&gt;masterkey.cryptomator&lt;/code&gt;.
-Für alle &amp;ldquo;Nur-Online&amp;rdquo;-Nutzer wäre es daher ausreichend, nur diese Datei herunterzuladen.&lt;/p&gt;
-&lt;p&gt;Im eigentlichen Migrationsprozess wird zuerst die Tresorkonfigurationsdatei &lt;code&gt;vault.cryptomator&lt;/code&gt; erstellt und mit den korrekten Werten wie dem bereits erwähnten eindeutigen Tresorkennzeichen gefüllt.
-Zweitens wird die bereits vorhandene Masterkey-Datei aktualisiert.
-Und drittens&amp;hellip; das war&amp;rsquo;s auch schon 😄 Keine anderen Dateien müssen geändert werden!&lt;/p&gt;
-&lt;p&gt;Wie Ihr seht, bringt das Tresorformat 8 nur eine kleine und leicht zu bewerkstelligende Änderung mit sich und macht gleichzeitig Platz für interessante und spannende neue Funktionen.
-Mit dem Update auf Cryptomator 1.6.0, werden neu erstelle Tresore das Format 8 direkt besitzten, Tresore einer früheren Version müssen migriert werden.
-Beachtet, dass die Masterkey-Datei weiterhin benötigt wird, da sie den eigentlichen Schlüssel zu eurem Tresor enthält.&lt;/p&gt;
-&lt;p&gt;Wir hoffen, dass Ihr nach dem Lesen des Artikels ohne Sorge auf ein Tresor-Upgrade blickt!
-Wenn Ihr mehr über die kommende Version 1.6.0 von Cryptomator erfahren wollt, lest &lt;a href=&#34;https://cryptomator.org/blog/2021/10/11/1-6-0-what-you-need-to-know/&#34;&gt;Cryptomator 1.6.0: Was hat sich geändert?&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2021/10/11/vault-format-8/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2021/10/11/vault-format-8/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>vault-format</category>
         
       </item>
     

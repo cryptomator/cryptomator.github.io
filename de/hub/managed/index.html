@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptomator Hub: Managed</title>
+    
+      <meta name="description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
+      <meta property="og:title" content="Cryptomator - Cryptomator Hub: Managed"/>
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://cryptomator.org/de/hub/managed/"/>
+      <meta property="og:site_name" content="Cryptomator"/>
+      <meta property="og:description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
+      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
+    
+    <meta property="og:locale" content="de_DE" />
+    
+      <meta property="og:locale:alternate" content="en_US" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.b6798bbc21f1578f6c6ab525ea3b687534da3382f6c403d0c40b685aa5f09110.css" integrity="sha256-tnmLvCHxV49sarUl6jtodTTaM4L2xAPQxAtoWqXwkRA=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
+    
+      <link rel="alternate" hreflang="en" href="/hub/managed/" />
+    
+    
+      
+    
+  </head>
+  <body class="bg-dark font-body text-gray-900">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+  <div class="flex justify-between items-stretch w-full">
+    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/de/">
+      <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+      <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+    </a>
+
+    
+    <ul class="hidden lg:flex items-stretch list-none m-0">
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/de/downloads/">Downloads</a>
+      </li>
+      <li class="flex items-center lg:mx-2 border-b-2 border-primary hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+      </li>
+      <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Unterstütze uns</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+            <a href="/de/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter-Zertifikat</a>
+            <a href="/de/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Spenden</a>
+            <a href="/de/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsoren</a>
+          </div>
+        </div>
+      </li>
+      <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Mehr erfahren</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+            <a href="/de/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Wie Open Source die Sicherheit stärkt</a>
+            <a href="/de/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Verschlüsselung deiner Dropbox</a>
+            <a href="/de/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative zu Boxcryptor</a>
+            <a href="/de/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Unsere Kooperationspartner</a>
+            <a href="/de/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Einsatz im Enterprise</a>
+            <a href="/de/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">DSGVO-Konformität</a>
+          </div>
+        </div>
+      </li>
+      
+      <li class="flex items-center mx-5 my-3 border-l border-primary"></li>
+      
+      <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+          <span>DE</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+            <a href="/hub/managed/" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+          </div>
+        </div>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener"><i class="fab fa-twitter fa-fw" aria-label="Twitter"></i></a>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener"><i class="fab fa-github fa-fw" aria-label="GitHub"></i></a>
+      </li>
+    </ul>
+    
+    
+    <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+      <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+      <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+    </button>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden">
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Unterstütze uns
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/supporter-cert/">Supporter-Zertifikat</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/donate/">Spenden</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/sponsors/">Sponsoren</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Mehr erfahren
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/open-source/">Wie Open Source die Sicherheit stärkt</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/encrypt-dropbox/">Verschlüsselung deiner Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/boxcryptor-alternative/">Alternative zu Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/coop/">Unsere Kooperationspartner</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/enterprise/">Einsatz im Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/gdpr/">DSGVO-Konformität</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> DE
+    </div>
+    <div class="mt-1">
+      
+      <a href="/hub/managed/" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-fw"></i>
+      <span>Cryptomator auf Twitter</span>
+    </a>
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator auf GitHub</span>
+    </a>
+  </div>
+</nav>
+
+    <div class="bg-gray-100 min-vh-80">
+    
+    
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false}" class="container py-12">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+      <h1>Cryptomator Hub: Managed</h1>
+      <p class="lead">Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord.</p>
+    </header>
+
+    <form x-ref="form">
+      <section class="relative rounded shadow bg-white">
+        <div class="px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6" :class="!feedbackData.success || 'invisible'">
+          <header class="md:col-span-1">
+            <h2 class="text-lg font-medium leading-6 text-gray-900">
+              Information
+            </h2>
+            <p class="mt-1 text-sm text-gray-500">
+              Auf der Grundlage deiner Eingaben werden wir eine neue Hub-Instanz für dich erstellen. Du wirst der erste Administrator dieser Instanz sein.
+            </p>
+          </header>
+
+          <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+            <div class="col-span-6 lg:col-span-4">
+              <label for="subdomain" class="block text-sm font-medium text-gray-700">
+                Subdomain
+              </label>
+              <div class="mt-1 flex items-center rounded bg-gray-300">
+                <div class="text-gray-700 px-3">https://</div>
+                <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?" class="block w-full rounded-none border-gray-300 focus:ring-0 focus:border-secondary" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
+                <div class="text-gray-700 px-3">.cryptomator.cloud</div>
+              </div>
+              <p class="mt-2 text-sm text-gray-500">
+                Die URL deiner Hub-Instanz. Wenn du eine eigene Domain verwenden möchtest, teile uns dies bitte unten mit.
+              </p>
+            </div>
+
+            <div class="col-span-6 lg:col-span-4">
+              <label for="email" class="block text-sm font-medium text-gray-700">
+                E-Mail
+              </label>
+              <input type="email" id="email" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
+              <p class="mt-2 text-sm text-gray-500">
+                Die E-Mail-Adresse der Person, die der erste Administrator deiner Hub-Instanz sein wird.
+              </p>
+            </div>
+
+            <div class="col-span-6 lg:col-span-4">
+              <label for="quantity" class="block text-sm font-medium text-gray-700">
+                Anzahl der erwarteten Nutzer
+              </label>
+              <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
+              <p class="mt-2 text-sm text-gray-500">
+                Die Anzahl der Nutzer, die du voraussichtlich haben wirst. Diese kann später geändert werden.
+              </p>
+            </div>
+
+            <div class="col-span-6">
+              <label for="message" class="block text-sm font-medium text-gray-700">
+                Nachricht (optional)
+              </label>
+              <div class="mt-1">
+                <textarea id="message" rows="3" maxlength="400" class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-0 focus:border-secondary" x-model="submitData.message"></textarea>
+              </div>
+              <p class="mt-2 text-sm text-gray-500">
+                Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div x-show="feedbackData.success" class="absolute inset-0 w-full h-full flex flex-col justify-center items-center text-center px-4 py-5 md:p-6" x-cloak>
+          <i class="fas fa-check-circle text-7xl text-secondary"></i>
+        </div>
+      </section>
+
+      <div x-show="!feedbackData.success" class="text-center mt-8">
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion.
+        </p>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          Hub-Instanzen werden manuell erstellt. Wir werden uns so schnell wie möglich bei dir melden. Du erhältst dann eine E-Mail mit weiteren Anweisungen.
+        </p>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-179324856" x-model="acceptTerms" />
+<label for="id-179324856">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+
+        </p>
+        <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
+          <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
+        </div>
+        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="new HubManaged($refs.form, feedbackData, submitData).request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
+          <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Zugang anfordern
+        </button>
+        <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
+      </div>
+
+      <div x-show="feedbackData.success" class="text-center mt-8" x-cloak>
+        <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">
+          👍 Deine Anfrage wurde versendet!
+        </h3>
+        <p class="text-sm md:text-base leading-relaxed text-gray-700">
+          Wir haben deine Anfrage erhalten und werden sie so schnell wie möglich prüfen. Je nach Auslastung kann dies einige Tage dauern.
+        </p>
+      </div>
+    </form>
+  </section>
+
+  <section x-data="{data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
+    <header class="text-center">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Preise</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion.</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Standard
+          </h3>
+          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('de', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            pro Sitz, pro Monat, jährlich abgerechnet
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Unbegrenzte Tresore</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Voller Zugriff über Desktop-App</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Voller Zugriff über Mobile-Apps</span>
+              <span><sup>1</sup></span>
+              <div class="has-tooltip">
+                <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen.</div>
+              </div>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Audit-Logs</span>
+              <span><sup>1</sup></span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Hosting in Europa</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>E-Mail-Support</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded shadow bg-white">
+        <div class="p-4 border-b border-primary">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+            Enterprise
+          </h3>
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+            Individuell
+          </p>
+          <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+            maßgeschneiderte Preise
+          </p>
+        </div>
+        <div class="px-4 py-8">
+          <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+            <li>
+              <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+              <span>Alles in Standard</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Vorrangiger E-Mail-Support</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Beratung und Unterstützung durch Experten</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Custom domain</span>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+              <span>Mengenrabatt für große Teams</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-sm text-gray-700">
+      <sup>1</sup>
+      <span>Derzeit in Entwicklung, voraussichtliche Fertigstellung Anfang 2023.</span>
+    </p>
+  </section>
+
+  <section class="container py-12">
+    <header class="text-center">
+      <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Häufig gestellte Fragen</h2>
+    </header>
+    <dl x-data="{isOpen: [false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Wie werden die Sitze berechnet?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet. Du kannst zum Beispiel 10 Sitze kaufen und trotzdem deine Keycloak-Instanz mit einem Active Directory mit Tausenden von Nutzern verbinden. Jeder Nutzer mit Tresorzugang belegt einen Sitz, unabhängig von seiner Anzahl von Geräten.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Wie wird die Abonnementgebühr für kostenpflichtige Pläne berechnet?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Du zahlst eine jährliche Gebühr für jeden Sitz. Diese Gebühr gilt auch, wenn du ungenutzte Sitze hast.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Kann ich während der Laufzeit weitere Sitze hinzufügen?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Ja, du kannst jederzeit weitere Sitze hinzufügen. Du kannst auch Sitze reduzieren, wenn du sie nicht mehr benötigst. Änderungen werden entweder sofort anteilig verrechnet oder im Folgejahr abgezogen.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Sind in den kostenpflichtigen Plänen 5 freie Sitze enthalten?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Nein, du musst für alle Sitze in deinem Plan bezahlen. Wir berechnen jeden Sitz, weil alle Nutzer von den zusätzlichen Funktionen profitieren, die in den kostenpflichtigen Plänen enthalten sind. Zum Beispiel haben alle Nutzer vollen Zugriff auf die Tresore über die mobilen Apps, ohne die Vollversion freischalten zu müssen.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Bietet ihr Rabatte an?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Ja, wir bieten Rabatte für gemeinnützige Organisationen und Bildungseinrichtungen an. Bitte kontaktiere uns, um zu prüfen, ob ihr euch qualifiziert. Für diejenigen, die nicht infrage kommen, bieten wir einen Mengenrabatt für große Teams an.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Bietet ihr Cloud-Speicher an?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Nein, Cryptomator Hub erweitert Cryptomator ausschließlich um ein Zero-Knowledge Schlüsselmanagement. Und Cryptomator kümmert sich um die Verschlüsselung deiner Dateien auf deinem Endgerät. Wir empfehlen dir, deine Tresore auf einem Cloud-Speicher deiner Wahl zu speichern.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Wie kann ich auf den Inhalt eines Tresors zugreifen?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS). (Hinweis: Die Kompatibilität mit Android und iOS befindet sich derzeit in der Entwicklung.)
+      </dd>
+    </dl>
+  </section>
+
+  <section class="container text-center py-12">
+    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Weitere Informationen benötigt?</h2>
+    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen.</p>
+    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+      <i class="fas fa-envelope"></i> Kontaktiere uns
+    </a>
+  </section>
+
+  
+    
+    <script type="text/javascript" src="/js/store.min.b419be6ea241138a0fb834d06ebfac080d11063cd28c67f47a585edbc0ec2f27.js" integrity="sha256-tBm&#43;bqJBE4oPuDTQbr&#43;sCA0RBjzSjGf0elhe28DsLyc=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubmanaged.min.f54b06634aba1314ab05f6010f7109db912b5326c5772c9349d266d911b3f823.js" integrity="sha256-9UsGY0q6ExSrBfYBD3EJ25ErUybFdyyTSdJm2RGz&#43;CM=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubpricing.min.70c8d04d3f54179360b5db2225f6a68097413e6cd8a10d741642129936230646.js" integrity="sha256-cMjQTT9UF5NgtdsiJfamgJdBPmzYoQ10FkISmTYjBkY=" defer></script>
+    
+    <script type="text/javascript" src="/js/recaptcha.min.ad20aa2f7e72be34befe0936317c4345651e97f81208a8cc3baba80765077a5e.js" integrity="sha256-rSCqL35yvjS&#43;/gk2MXxDRWUel/gSCKjMO6uoB2UHel4=" defer></script>
+  
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/presskit/">Pressemappe</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Etwas beitragen</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/donate/">Spenden</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Übersetzen</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/contact/">Kontakt</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Uns folgen</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Fediverse</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/feed.xml" rel="alternate" type="application/rss+xml">RSS-Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Rechtliches</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/privacy/">Datenschutzerklärung</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/terms/">AGB</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e.js" integrity="sha256-/xUj&#43;3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.d1573a45c19419ee881d3f7e6d6810bb955ea0d64470da1f1875537de18c603e.js" integrity="sha256-0Vc6RcGUGe6IHT9&#43;bWgQu5VeoNZEcNofGHVTfeGMYD4=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+  </body>
+</html>

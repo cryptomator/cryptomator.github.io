@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/blog/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -76,7 +76,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/cryptomator/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -89,7 +89,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -99,6 +99,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/blog/2023/02/28/hub-managed/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/blog/2023/02/28/hub-managed/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/blog/2023/02/28/hub-managed/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/hub/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/hub/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/hub/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/tags/</loc>
+    <lastmod>2023-02-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/</loc>
@@ -153,19 +192,6 @@
                 href="https://cryptomator.org/tags/mac/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/tags/</loc>
-    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/tags/windows/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -216,19 +242,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/blog/2022/11/03/hub-1.0/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/tags/hub/</loc>
-    <lastmod>2022-11-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://cryptomator.org/de/tags/hub/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://cryptomator.org/tags/hub/"
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/android/</loc>
@@ -887,6 +900,18 @@
                 href="https://cryptomator.org/hub/billing/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/hub/managed/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/hub/managed/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/hub/managed/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/hub/setup/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1113,6 +1138,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://cryptomator.org/terms/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/hub/managed/terms/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/hub/managed/terms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/hub/managed/terms/"
                 />
   </url><url>
     <loc>https://cryptomator.org/donate/thanks/</loc>

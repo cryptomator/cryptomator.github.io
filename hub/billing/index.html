@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.4243fc0e8f46af3c13c766ca72ad5590b4d6e98f3bb96783670718484d4680b8.css" integrity="sha256-QkP8Do9GrzwTx2bKcq1VkLTW6Y87uWeDZwcYSE1GgLg=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.b6798bbc21f1578f6c6ab525ea3b687534da3382f6c403d0c40b685aa5f09110.css" integrity="sha256-tnmLvCHxV49sarUl6jtodTTaM4L2xAPQxAtoWqXwkRA=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -33,10 +33,7 @@
     
   </head>
   <body class="bg-dark font-body text-gray-900">
-    <div class="w-full bg-primary text-center text-sm text-white p-0.5">
-  <p>Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class="underline" href="/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/">Learn more.</a></p>
-</div>
-<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
@@ -468,9 +465,13 @@
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                     Payments are securely handled by Paddle.
                   </p>
-                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-519627843" x-model="acceptTerms" />
-<label for="id-519627843">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+                  <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-781435692" x-model="acceptTerms" />
+<label for="id-781435692">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+</p>
+                  <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-938465712" x-model="acceptTerms" />
+<label for="id-938465712">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!</p>    
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
@@ -516,77 +517,68 @@
             </div>
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">Frequently Asked Questions</h2>
-          <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
+          <dl x-data="{isOpen: [false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>When is the expected launch date for the managed solution?</span>
+                <span>How are seats calculated?</span>
               </a>
             </dt>
             <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              As you can imagine, we&rsquo;re working hard on it. The managed solution is expected to be available in February. If you want be notified, subscribe to our <a href="/hub/#newsletter">Hub mailing list</a>.
+              Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>How are seats calculated?</span>
+                <span>How is the subscription fee calculated for paid plans?</span>
               </a>
             </dt>
             <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
+              You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>How is the subscription fee calculated for paid plans?</span>
+                <span>Can I add more seats during the current billing cycle?</span>
               </a>
             </dt>
             <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
+              Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Can I add more seats during the current billing cycle?</span>
+                <span>Do the paid plans include 5 free seats?</span>
               </a>
             </dt>
             <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year.
+              No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Do the paid plans include 5 free seats?</span>
+                <span>Do you offer discounts?</span>
               </a>
             </dt>
             <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
+              Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Do you offer discounts?</span>
+                <span>Do you offer cloud storage?</span>
               </a>
             </dt>
             <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify. For those who do not qualify, we offer a volume discount for large teams.
+              No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice.
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-                <span>Do you offer cloud storage?</span>
-              </a>
-            </dt>
-            <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice.
-            </dd>
-            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-              <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>How do I access the contents of a vault?</span>
               </a>
             </dt>
-            <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+            <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
               For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)
             </dd>
           </dl>
@@ -599,7 +591,7 @@
     
     <script type="text/javascript" src="/js/store.min.b419be6ea241138a0fb834d06ebfac080d11063cd28c67f47a585edbc0ec2f27.js" integrity="sha256-tBm&#43;bqJBE4oPuDTQbr&#43;sCA0RBjzSjGf0elhe28DsLyc=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.6304259a2f233af66be4cbf570087af36a59d74889b2e9f86b45541d03a8024a.js" integrity="sha256-YwQlmi8jOvZr5Mv1cAh682pZ10iJsun4a0VUHQOoAko=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.cbfae7ca02c8fba1d7ab3ac09d6fd4e220adb50c066e1da2f16aeac90ede81c3.js" integrity="sha256-y/rnygLI&#43;6HXqzrAnW/U4iCttQwGbh2i8WrqyQ7egcM=" defer></script>
   
 
     </div>

@@ -11,8 +11,32 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/sponsors/</link>
     </image>
-    <lastBuildDate>Thu, 16 Feb 2023 13:02:16 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Feb 2023 13:09:44 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub: Managed – Request Access Now</title>
+        <description>&lt;p&gt;We are happy to announce that managed instances of &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt; are now available! 🎉 And we have released Hub 1.1.0 with recovery key support.&lt;/p&gt;
+&lt;h2 id=&#34;request-access&#34;&gt;Request Access&lt;/h2&gt;
+&lt;p&gt;First things first. 🚀 To get started, you can now &lt;a href=&#34;https://cryptomator.org/hub/managed/&#34;&gt;request access to a managed instance of Cryptomator Hub&lt;/a&gt;. After your request, we will get back to you as soon as possible. Currently, some of the steps we take internally to create a managed Hub instance are still done &amp;ldquo;manually&amp;rdquo;. We are working on automating this process, but we didn&amp;rsquo;t want to delay the release any longer.&lt;/p&gt;
+&lt;h2 id=&#34;managed-vs-self-hosted&#34;&gt;Managed vs. Self-Hosted&lt;/h2&gt;
+&lt;p&gt;Managed instances of Cryptomator Hub are a great way to start using Cryptomator Hub right away without having to deploy and maintain your self-hosted instance.&lt;/p&gt;
+&lt;p&gt;Until now, you could &lt;em&gt;only&lt;/em&gt; use the self-hosted version of Hub. This requires a lot of knowledge about how to deploy a software container using Kubernetes or Docker Compose. And if you have the knowledge, you still have to maintain the instance yourself. This includes updating the software, monitoring the instance, and keeping it secure.&lt;/p&gt;
+&lt;p&gt;With managed instances, we will take care of deploying and maintaining your Hub instance, while ensuring that your instance is highly available. You can focus on your work and your team.&lt;/p&gt;
+&lt;p&gt;This is all possible because of the underlying &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;zero-knowledge key management&lt;/a&gt;. Cryptomator Hub doesn&amp;rsquo;t store unencrypted keys. All key material remains locally on the client. We can&amp;rsquo;t decrypt your data. It also helps that Hub is independent of your cloud storage provider, which means we have no access to either the key material or the cloud files.&lt;/p&gt;
+&lt;h2 id=&#34;release-110-recovery-key&#34;&gt;Release 1.1.0: Recovery Key&lt;/h2&gt;
+&lt;p&gt;We didn&amp;rsquo;t stop there and released Cryptomator Hub 1.1.0 with recovery key support. This allows you to access your data in case of disaster. Not only that, the recovery key is compatible with Cryptomator&amp;rsquo;s recovery key. This means you can convert your existing vaults to Hub vaults and vice versa.&lt;/p&gt;
+&lt;p&gt;What does that mean for your managed instance? If we cease to exist (we get asked this a lot, thanks to Boxcryptor 😉), you can convert your Hub vaults to &amp;ldquo;regular&amp;rdquo; password-based vaults, completely offline, so that you &lt;em&gt;always&lt;/em&gt; have access to your data under any circumstances. This is also great for your self-hosted instance if something happens to your server.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/02/28/hub-managed/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/02/28/hub-managed/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.7.0: What You Need to Know</title>
@@ -342,65 +366,6 @@
         <guid isPermaLink="true">https://cryptomator.org/blog/2021/11/30/computer-security-day/</guid>
         
         <category>event</category>
-        
-      </item>
-    
-      <item>
-        <title>Vault Format 8</title>
-        <description>&lt;p&gt;Hello Community!&lt;/p&gt;
-&lt;p&gt;We’d like to give you some information about an important part of the upcoming 1.6.0 release: The new vault format in version 8.&lt;/p&gt;
-&lt;p&gt;Yes, a new vault format. The ones who remember the last upgrade might start to groan, because last time the migration process from vault format 6 to 7 was in some cases not without hiccups.
-But don&amp;rsquo;t worry, this time the changes are significantly less invasive!&lt;/p&gt;
-&lt;p&gt;This article will give motivation for designing the new format, what the changes are in detail, and sketches how the migration process looks like, such that you know what you are up to.
-​&lt;/p&gt;
-&lt;h2 id=&#34;the-motivation&#34;&gt;The Motivation&lt;/h2&gt;
-&lt;p&gt;The storage location of the masterkey is a topic, which in the early days of Cryptomator already raised a lot of questions and led to several feature requests. (e.g., look at the number of clicks in &lt;a href=&#34;https://community.cryptomator.org/t/why-is-the-masterkey-stored-in-the-cloud/&#34;&gt;https://community.cryptomator.org/t/why-is-the-masterkey-stored-in-the-cloud/&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;So, what is all the fuss about?
-The masterkey of a vault is stored within the vault structure in a file called &lt;code&gt;masterkey.cryptomator&lt;/code&gt; and encrypted with state-of-the-art algorithms.
-Its location is not a security risk and, additionally, the location ensures that this integral part of a vault is always moved with the vault.
-Admittedly, calling the file &amp;ldquo;masterkey&amp;rdquo; is an arguable decision, but it’s definitely obvious that the file is important.&lt;/p&gt;
-&lt;p&gt;But this isn&amp;rsquo;t about the name.
-By hardwiring where the masterkey is stored, we lose flexibility to load it from somewhere else. (A relating &lt;a href=&#34;https://github.com/cryptomator/cryptomator/issues/96&#34;&gt;feature request&lt;/a&gt; is under the first 100 tickets of Cryptomator!)
-What if a user has a hardware token which could store it?
-Or what if a company has a centralized key management with &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;single sign-on&lt;/a&gt; and wants to use it with Cryptomator?
-And even if workarounds for the above questions are found, how to deal with them when the vault structure/format changes?
-​
-These questions led to the idea of decoupling the masterkey retrieval from the vault structure and eventually into the design of vault format 8.
-​&lt;/p&gt;
-&lt;h2 id=&#34;the-changes&#34;&gt;The Changes&lt;/h2&gt;
-&lt;p&gt;With vault format 8, we introduce a new file named &lt;code&gt;vault.cryptomator&lt;/code&gt; for every vault located in the vault root.
-This is the vault configuration file. Together with the data directory named &lt;code&gt;d&lt;/code&gt;, they form the required minimum for a valid vault.&lt;/p&gt;
-&lt;p&gt;The vault config file is a &lt;a href=&#34;https://en.wikipedia.org/wiki/JSON_Web_Token&#34;&gt;JWT&lt;/a&gt; containing the basic information about the vault (like a unique identifier) and especially where to load the masterkey from.
-All other parameters that are required to derive the masterkey are not stored in the vault config anymore, which decouples the key derivation from the vault format itself and opens the door to get the masterkey from other sources than just the &lt;code&gt;masterkey.cryptomator&lt;/code&gt; file inside the vault.
-For example, in future releases, you might be able to store the vault masterkey inside a &lt;a href=&#34;https://www.yubico.com&#34;&gt;Yubikey&lt;/a&gt; or the Microsoft Certification Store.
-Additionally, with the vault config being a JWT, it is signed by the masterkey itself and ensures that nobody tampered with it.&lt;/p&gt;
-&lt;p&gt;As noted above, the vault config file can also store additional information.
-One is the vault-specific threshold of shortening &lt;em&gt;encrypted&lt;/em&gt; filenames.
-Before format 8, this value was set in stone in Cryptomator’s encryption scheme.
-By specifying it in the vault config, it can be configurable in the future, such that the full capabilities of a vault are also available on more restrictive storage locations.&lt;/p&gt;
-&lt;p&gt;The encryption scheme, the directory structure, and encrypted files stay the same.
-​&lt;/p&gt;
-&lt;h2 id=&#34;the-migration&#34;&gt;The Migration&lt;/h2&gt;
-&lt;p&gt;What do these changes mean for a migration from vault format 7 to 8? Nearly nothing!&lt;/p&gt;
-&lt;p&gt;The only file edited is &lt;code&gt;masterkey.cryptomator&lt;/code&gt;.
-Hence, for all &amp;ldquo;online only&amp;rdquo; users, it would be sufficient to only download this file.
-For the migration process itself, first, the vault config file &lt;code&gt;vault.cryptomator&lt;/code&gt; will be created and filled with the correct values like the aforementioned unique vault identifier and the filename shortening threshold.
-Second, the already present masterkey file is updated.
-And third… that&amp;rsquo;s already it. 😄 No other files need to be altered.
-​&lt;/p&gt;
-&lt;p&gt;As you can see, vault format 8 only imposes a small and easy to migrate change, while making way for interesting and exciting new features.
-With updating to Cryptomator 1.6.0, vaults of a former version need to be migrated and newly created ones will already be in format 8.
-Keep in mind that the masterkey file is still needed, since it securely contains the actual key to your vault.​&lt;/p&gt;
-&lt;p&gt;We hope that your worries about a vault upgrade are reduced and you are eager to update!
-If you want to know more about the upcoming 1.6.0 version of Cryptomator, continue reading the &lt;a href=&#34;https://cryptomator.org/blog/2021/10/11/1-6-0-what-you-need-to-know/&#34;&gt;article&lt;/a&gt; about it.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/10/11/vault-format-8/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/10/11/vault-format-8/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>vault-format</category>
         
       </item>
     

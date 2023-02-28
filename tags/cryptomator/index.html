@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.4243fc0e8f46af3c13c766ca72ad5590b4d6e98f3bb96783670718484d4680b8.css" integrity="sha256-QkP8Do9GrzwTx2bKcq1VkLTW6Y87uWeDZwcYSE1GgLg=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.b6798bbc21f1578f6c6ab525ea3b687534da3382f6c403d0c40b685aa5f09110.css" integrity="sha256-tnmLvCHxV49sarUl6jtodTTaM4L2xAPQxAtoWqXwkRA=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -33,10 +33,7 @@
     
   </head>
   <body class="bg-dark font-body text-gray-900">
-    <div class="w-full bg-primary text-center text-sm text-white p-0.5">
-  <p>Looking for an alternative to Boxcryptor after their acquisition? Cryptomator is here to stay! <a class="underline" href="/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/">Learn more.</a></p>
-</div>
-<nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
@@ -172,6 +169,22 @@
         <h1>Posts</h1>
       </header>
     
+      
+        <article>
+          <h2>Cryptomator Hub: Managed – Request Access Now</h2>
+          <p>We are happy to announce that managed instances of <a href="/hub/">Cryptomator Hub</a> are now available! 🎉 And we have released Hub 1.1.0 with recovery key support.</p>
+<h2 id="request-access">Request Access</h2>
+<p>First things first. 🚀 To get started, you can now <a href="/hub/managed/">request access to a managed instance of Cryptomator Hub</a>. After your request, we will get back to you as soon as possible. Currently, some of the steps we take internally to create a managed Hub instance are still done &ldquo;manually&rdquo;. We are working on automating this process, but we didn&rsquo;t want to delay the release any longer.</p>
+<h2 id="managed-vs-self-hosted">Managed vs. Self-Hosted</h2>
+<p>Managed instances of Cryptomator Hub are a great way to start using Cryptomator Hub right away without having to deploy and maintain your self-hosted instance.</p>
+<p>Until now, you could <em>only</em> use the self-hosted version of Hub. This requires a lot of knowledge about how to deploy a software container using Kubernetes or Docker Compose. And if you have the knowledge, you still have to maintain the instance yourself. This includes updating the software, monitoring the instance, and keeping it secure.</p>
+<p>With managed instances, we will take care of deploying and maintaining your Hub instance, while ensuring that your instance is highly available. You can focus on your work and your team.</p>
+<p>This is all possible because of the underlying <a href="https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management">zero-knowledge key management</a>. Cryptomator Hub doesn&rsquo;t store unencrypted keys. All key material remains locally on the client. We can&rsquo;t decrypt your data. It also helps that Hub is independent of your cloud storage provider, which means we have no access to either the key material or the cloud files.</p>
+<h2 id="release-110-recovery-key">Release 1.1.0: Recovery Key</h2>
+<p>We didn&rsquo;t stop there and released Cryptomator Hub 1.1.0 with recovery key support. This allows you to access your data in case of disaster. Not only that, the recovery key is compatible with Cryptomator&rsquo;s recovery key. This means you can convert your existing vaults to Hub vaults and vice versa.</p>
+<p>What does that mean for your managed instance? If we cease to exist (we get asked this a lot, thanks to Boxcryptor 😉), you can convert your Hub vaults to &ldquo;regular&rdquo; password-based vaults, completely offline, so that you <em>always</em> have access to your data under any circumstances. This is also great for your self-hosted instance if something happens to your server.</p>
+
+        </article>
       
         <article>
           <h2>Cryptomator 1.7.0: What You Need to Know</h2>
