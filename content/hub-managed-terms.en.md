@@ -181,8 +181,6 @@ To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Haup
 
 To comply with the withdrawal period, it is sufficient that you send the notice of exercise of the right of withdrawal before the expiry of the withdrawal period.
 
-Translated with www.DeepL.com/Translator (free version)
-
 ### Consequences of Withdrawal
 If you revoke this contract, we shall reimburse you all payments we have received from you, including delivery costs (with the exception of additional costs resulting from the fact that you have chosen a type of delivery other than the most favorable standard delivery offered by us), without undue delay and no later than within fourteen days from the day on which we received the notification of your revocation of this contract. For this repayment, we will use the same means of payment that you used for the original transaction, unless expressly agreed otherwise with you; in no case will you be charged for this repayment.
 
