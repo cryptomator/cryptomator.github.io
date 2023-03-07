@@ -77,7 +77,7 @@ block = true
       filename = "Cryptomator-1.7.2.dmg"
       downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.7.2/Cryptomator-1.7.2-x64.dmg"
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.7.2/Cryptomator-1.7.2-x64.dmg.asc"
-      checksum = "30ed22e34ad67de0d136b3904b63e5c121bda52ed7af7aed6dafaf314fe19d61"
+      checksum = "b502aba8a1f91464e38257234435e6f6f52dc8896bd9b11cfafb3b7ea53ec3f4"
     [params.releases.dmg-arm64]
       version = "1.7.2"
       filename = "Cryptomator-1.7.2-arm64.dmg"
