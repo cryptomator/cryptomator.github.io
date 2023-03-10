@@ -253,8 +253,8 @@
   translation: "Docs"
 - id: hub_header_self_hosted_setup_cta
   translation: "Setup Wizard"
-- id: hub_header_man_vault_alt
-  translation: "Person mit dem Schlüssel zu einem sehr sicheren Tresor"
+- id: hub_header_hub_group_alt
+  translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
 - id: hub_video_title
   translation: "Kurze Einführung"
