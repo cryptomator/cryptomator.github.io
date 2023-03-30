@@ -12,6 +12,9 @@
 
 - Question: How can I purchase Cryptomator on iOS?
   Answer: We use a freemium model on iOS. You can download the Cryptomator app from the App Store for free and use it in read-only mode indefinitely. A one-time in-app purchase through the Apple App Store will grant you write access.
+  
+- Question: Is there a freemium version of Cryptomator for Android?
+  Answer: Not yet, but we have plans to introduce a freemium model on Android like we have on iOS. You can keep up with our progress by following [this GitHub issue](https://github.com/cryptomator/android/issues/428). Stay tuned!
 
 - Question: Can I avoid big-tech/gatekeepers for my purchase?
   Answer: This is possible on Android only, as you can download the Cryptomator app as an APK file or through F-Droid and buy the license using our website. The supporter certificate can only be purchased using our website.
