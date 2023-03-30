@@ -159,6 +159,8 @@
   translation: "Looking for older versions?"
 - id: downloads_all_versions_button
   translation: "Releases Archive on GitHub"
+- id: license_faq_title
+  translation: "Frequently Asked Questions"
 
 # Downloads Thanks
 - id: downloads_thanks_notification_title
