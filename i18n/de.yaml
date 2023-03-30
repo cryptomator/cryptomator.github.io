@@ -253,6 +253,8 @@
   translation: "Docs"
 - id: hub_header_self_hosted_setup_cta
   translation: "Setup Wizard"
+- id: hub_header_early_adopter_sale
+  translation: "Early Adopter Sale: Bis zum 14. April 25% Rabatt auf das erste Jahr!"
 - id: hub_header_hub_group_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -464,7 +466,7 @@
 - id: hub_billing_checkout_standard_instruction
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: hub_billing_checkout_coupon
-  translation: "Gutscheincode <code>HUB25</code> beim Bezahlvorgang verwenden für 25% Rabatt im ersten Jahr!"
+  translation: "Gutscheincode <code>HUB25</code> beim Bezahlvorgang eingeben für 25% Rabatt im ersten Jahr!"
 - id: hub_billing_checkout_standard_submit
   translation: "Zur Zahlung"
 
