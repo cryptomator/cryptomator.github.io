@@ -346,7 +346,7 @@
               </div>
             </div>
           </div>
-          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">{{ i18n "hub_billing_checkout_faq_title" . }}</h2>
+          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
           <dl x-data="{isOpen: [{{ range $i, $e := $data.hub_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200">
             {{- range $index, $element := $data.hub_faq }}
