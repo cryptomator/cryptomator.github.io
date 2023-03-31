@@ -214,8 +214,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-935248716" x-model="acceptTerms" />
-<label for="id-935248716">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-572169834" x-model="acceptTerms" />
+<label for="id-572169834">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="new DesktopLicense($refs.funderForm, checkoutData).checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Checkout
@@ -272,8 +272,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Check out our <a class="text-primary no-underline hover:underline" href="https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md" target="_blank" rel="noopener">contribution guide</a> to get started.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-783546291" x-model="acceptTerms" />
-<label for="id-783546291">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-641385297" x-model="acceptTerms" />
+<label for="id-641385297">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -326,8 +326,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4"><a class="text-primary no-underline hover:underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Help translating</a> Cryptomator to your favorite language.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-487512396" x-model="acceptTerms" />
-<label for="id-487512396">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-649158732" x-model="acceptTerms" />
+<label for="id-649158732">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -383,8 +383,8 @@ max. 800 characters" required></textarea>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Share anything about Cryptomator on social media, on your website, or on any other media to spread the word.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-574623918" x-model="acceptTerms" />
-<label for="id-574623918">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-247639158" x-model="acceptTerms" />
+<label for="id-247639158">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -437,8 +437,8 @@ max. 800 characters" required></textarea>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Let us know any other reason that doesn&#39;t fit in the other categories.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-417836529" x-model="acceptTerms" />
-<label for="id-417836529">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-748561293" x-model="acceptTerms" />
+<label for="id-748561293">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
@@ -463,7 +463,7 @@ max. 800 characters" required></textarea>
     </div>
   </div>
 
-  <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
+  <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center py-12">
     <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Did you lose your supporter certificate?</h3>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
@@ -481,6 +481,86 @@ max. 800 characters" required></textarea>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">👍 We&#39;ve sent details of your past transactions and licenses to you via email.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700">❓ If you didn't get an email, <a class="text-primary no-underline hover:underline" href="mailto:support@cryptomator.org">contact us</a>.</p>
     </div>
+  </section>
+
+  <section class="container pt-12 pb-24">
+    <header class="text-center">
+      <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
+    </header>
+    <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Is Cryptomator free to use?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Cryptomator is free to use on Windows, macOS, and Linux, but not on iOS and Android. If you purchase a license key for one platform, it is not valid for another. A bundle license does not exist.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Why is Cryptomator free to use on some platforms, but not on others?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Our licensing strategy differs across platforms because of constraints imposed by App Store / Google Play policies, and technical differences across operating systems.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Do I need a supporter certificate to use Cryptomator on Desktop?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        All functional and encryption features are absolutely free to use on the desktop. By obtaining a supporter certificate, you can unlock the dark mode on desktop apps and also help accelerate Cryptomator&rsquo;s development. Please note, a supporter certificate is not a license key that can be used to unlock mobile apps.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>How can I purchase Cryptomator on Android?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        It is a one-time purchase through Google Play or as an APK download from our website or through F-Droid. If you buy the app without going through Google Play, you will receive an Android-only license key. You cannot test the app before purchasing it, but you have a right of withdrawal within 14 days.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>How can I purchase Cryptomator on iOS?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        We use a freemium model on iOS. You can download the Cryptomator app from the App Store for free and use it in read-only mode indefinitely. A one-time in-app purchase through the App Store will grant you write access.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Is there a freemium version of Cryptomator for Android?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Not yet, but we have plans to introduce a freemium model on Android like we have on iOS. You can keep up with our progress by following <a href="https://github.com/cryptomator/android/issues/428">this GitHub issue</a>. Stay tuned!
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Can I avoid big-tech/gatekeepers for my purchase?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        This is possible on Android only, as you can download the Cryptomator app as an APK file or through F-Droid and buy the license using our website. The supporter certificate can only be purchased using our website.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Can I purchase Cryptomator anonymously?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Yes, you can buy a Cryptomator for Android license key or a supporter certificate through <a href="https://digitalgoods.proxysto.re/en">ProxyStore</a>. They accept Monero, Bitcoin, and cash. You can read more about our cooperation <a href="/coop/proxystore/">here</a>.
+      </dd>
+    </dl>
   </section>
 
   

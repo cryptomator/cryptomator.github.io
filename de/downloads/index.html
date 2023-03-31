@@ -412,11 +412,91 @@
     </section>
   </div>
 
-  <section class="container text-center pt-12 pb-24">
+  <section class="container text-center py-12">
     <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Suchst du alte Versionen?</h3>
     <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" rel="noopener" role="button" class="btn btn-outline-primary px-8">
       <i class="fab fa-github"></i> Release-Archiv auf GitHub
     </a>
+  </section>
+
+  <section class="container pt-12 pb-24">
+    <header class="text-center">
+      <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Häufig gestellte Fragen</h2>
+    </header>
+    <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Ist die Benutzung von Cryptomator kostenlos?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Cryptomator kann unter Windows, macOS und Linux kostenlos genutzt werden, nicht aber unter iOS und Android. Wenn du einen Lizenzschlüssel für eine Plattform erwirbst, ist dieser nicht für eine andere Plattform gültig. Es gibt keine Bundle-Lizenzen.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Warum ist Cryptomator auf manchen Plattformen kostenlos und auf anderen nicht?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Unsere Lizenzierungsstrategie unterscheidet sich von Plattform zu Plattform aufgrund von Einschränkungen durch die Richtlinien von App Store / Google Play und technischen Unterschieden zwischen den Betriebssystemen.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Benötige ich ein Support-Zertifikat, um Cryptomator für Desktop zu verwenden?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Alle Funktionen und Verschlüsselungsfunktionen sind für die Nutzung auf dem Desktop absolut kostenlos. Durch den Erwerb eines Supporter-Zertifikats kannst du den Dunkel-Modus für Desktop-Anwendungen freischalten und die Entwicklung von Cryptomator beschleunigen. Bitte beachte, dass ein Supporter-Zertifikat kein Lizenzschlüssel ist, mit dem die mobilen Apps freigeschaltet werden können.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Wie kann ich Cryptomator für Android kaufen?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Es handelt sich um einen einmaligen Kauf über Google Play oder als APK-Download von unserer Website oder über F-Droid. Wenn du die App nicht über Google Play kaufst, erhältst du nur einen Lizenzschlüssel für Android. Du kannst die Anwendung vor dem Kauf nicht kostenlos testen, hast aber ein 14-tägiges Wiederrufsrecht.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Wie kann ich Cryptomator für iOS kaufen?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Für iOS verwenden wir ein Freemium-Modell. Du kannst die Cryptomator-App kostenlos aus dem App Store herunterladen und zeitlich unbegrenzt im schreibgeschützten Modus nutzen. Mit einem einmaligen In-App-Kauf über den App Store erhältst du Schreibzugriff.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Gibt es eine Freemium-Version von Cryptomator für Android?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Nein, noch nicht. Aber wir haben Pläne für ein Freemium-Modell für Android, wie wir es für iOS haben. Du kannst dich über unsere Fortschritte auf dem Laufenden halten, indem du <a href="https://github.com/cryptomator/android/issues/428">dieses GitHub-Issue</a> verfolgst.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Kann ich Big-Tech/Gatekeeper für meinen Kauf vermeiden?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Dies ist nur für Android möglich, da du die Cryptomator-App als APK-Datei oder über F-Droid herunterladen und die Lizenz über unsere Website kaufen kannst. Das Supporter-Zertifikat kann nur über unsere Website erworben werden.
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>Kann ich Cryptomator auch anonym erwerben?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Ja, du kannst einen Lizenzschlüssel für Cryptomator für Android oder ein Supporter-Zertifikat über <a href="https://digitalgoods.proxysto.re/de">ProxyStore</a> kaufen. Sie akzeptieren Monero, Bitcoin und Bargeld. Mehr über unsere Zusammenarbeit erfährst du <a href="/de/coop/proxystore/">hier</a>.
+      </dd>
+    </dl>
   </section>
 
   
