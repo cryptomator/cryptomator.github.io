@@ -28,6 +28,8 @@
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>. Im Zahlungsvorgang eingelöste Gutscheine sind vom Widerrufsrecht ausgeschlossen."
 - id: accept_hub_managed_terms_and_privacy
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/hub/managed/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: faq_title
+  translation: "Häufig gestellte Fragen"
 
 # Android
 - id: android_getkey_title
@@ -335,9 +337,6 @@
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung Anfang 2023."
 
-- id: hub_faq_title
-  translation: "Häufig gestellte Fragen"
-
 - id: hub_contact_us_title
   translation: "Weitere Fragen?"
 - id: hub_contact_us_description
@@ -483,9 +482,6 @@
   translation: "Du hast ein großes Team? Wir bieten dir gerne angepasste Preise und eine individuelle Lösung für deine Anforderungen."
 - id: hub_billing_checkout_enterprise_action
   translation: "Kontaktiere uns"
-
-- id: hub_billing_checkout_faq_title
-  translation: "Häufig gestellte Fragen"
 
 # Hub Managed
 - id: hub_managed_description

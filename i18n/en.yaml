@@ -28,6 +28,8 @@
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal."
 - id: accept_hub_managed_terms_and_privacy
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+- id: faq_title
+  translation: "Frequently Asked Questions"
 
 # Android
 - id: android_getkey_title
@@ -335,9 +337,6 @@
 - id: hub_pricing_coming_later
   translation: "Currently in development, ETA early 2023."
 
-- id: hub_faq_title
-  translation: "Frequently Asked Questions"
-
 - id: hub_contact_us_title
   translation: "More questions?"
 - id: hub_contact_us_description
@@ -483,9 +482,6 @@
   translation: "You have a large team? We're happy to offer customized pricing and an individual solution for your needs."
 - id: hub_billing_checkout_enterprise_action
   translation: "Contact Us"
-
-- id: hub_billing_checkout_faq_title
-  translation: "Frequently Asked Questions"
 
 # Hub Managed
 - id: hub_managed_description
