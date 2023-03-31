@@ -255,6 +255,8 @@
   translation: "Docs"
 - id: hub_header_self_hosted_setup_cta
   translation: "Setup Wizard"
+- id: hub_header_early_adopter_sale
+  translation: "Early Adopter Sale: Get 25% off your first year before the end of April 14th!"
 - id: hub_header_hub_group_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -466,7 +468,7 @@
 - id: hub_billing_checkout_standard_instruction
   translation: "Payments are securely handled by Paddle."
 - id: hub_billing_checkout_coupon
-  translation: "Use coupon code <code>HUB25</code> during checkout to get 25% off for the first year!"
+  translation: "Use coupon code <code>HUB25</code> at checkout to get 25% off your first year!"
 - id: hub_billing_checkout_standard_submit
   translation: "Checkout"
 

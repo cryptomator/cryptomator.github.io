@@ -303,7 +303,7 @@
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-                  <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">{{ ":tada:" | emojify }} {{ i18n "hub_billing_checkout_coupon" | safeHTML }}</p>    
+                  <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">{{ ":tada:" | emojify }} {{ i18n "hub_billing_checkout_coupon" | safeHTML }}</p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}

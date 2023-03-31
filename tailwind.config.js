@@ -228,6 +228,9 @@ module.exports = {
           },
         },
       }),
+      width: {
+        'fit': 'fit-content',
+      },
     },
     fontFamily: {
       'headline': 'Quicksand, sans-serif',
