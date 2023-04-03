@@ -113,7 +113,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 2\n\n';
+    result += '# Generated using script version 3\n\n';
 
     return result;
   }
@@ -468,7 +468,7 @@ EOF`;
       },
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`]}),
       healthcheck: {
-        test: ['CMD', 'curl', '-f', 'http://localhost:8080/q/health/live'],
+        test: ['CMD-SHELL', '(curl -f http://localhost:8080/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
         interval: '10s',
         timeout: '3s',
       },
@@ -663,7 +663,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/q/health/started', port: 8080},
               },
               livenessProbe: {
-                httpGet: {path: '/q/health/live', port: 8080},
+                httpGet: {path: '/api/config', port: 8080}, httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
+              },
+              readinessProbe: {
+                httpGet: {path: '/q/health/ready', port: 8080}, httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
               },
               env: [
                 {name: 'HUB_PUBLIC_ROOT_PATH', value: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl)},
@@ -801,6 +804,11 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`, port: 8080},
                 initialDelaySeconds: 120,
                 periodSeconds: 60
+              },
+              readinessProbe: {
+                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/ready`, port: 8080},
+                initialDelaySeconds: 10,
+                periodSeconds: 3
               },
               env: env,
               volumeMounts: [
