@@ -15,7 +15,6 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "android_getkey_instruction" }}</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">{{ ":tada:" | emojify }} {{ i18n "android_getkey_coupon" | safeHTML }}</p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "android_getkey_checkout" }}
       </button>
