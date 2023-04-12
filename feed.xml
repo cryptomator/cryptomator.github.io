@@ -11,8 +11,34 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/</link>
     </image>
-    <lastBuildDate>Tue, 11 Apr 2023 21:02:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Apr 2023 15:54:03 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 1.8.0 for Android</title>
+        <description>&lt;p&gt;As you may have already noticed, we released Cryptomator 1.8.0 for Android last month! It contains a lot of internal changes, a bunch of new features, and some bug fixes.&lt;/p&gt;
+&lt;p&gt;This release took quite some time, but we finally made it. 🎉 In addition to the &lt;a href=&#34;https://github.com/cryptomator/android/releases/tag/1.8.0&#34;&gt;release notes&lt;/a&gt;, we&amp;rsquo;d like to give you more details about some changes.&lt;/p&gt;
+&lt;h2 id=&#34;material-3-design&#34;&gt;Material 3 Design&lt;/h2&gt;
+&lt;p&gt;The most obvious change in this release is the migration to Material 3, which modernizes the user interface.&lt;/p&gt;
+&lt;h2 id=&#34;cryptomator-lite-reproducible-build-and-f-droid&#34;&gt;Cryptomator Lite: Reproducible Build and F-Droid&lt;/h2&gt;
+&lt;p&gt;A less obvious change is that we now offer a new flavor: Cryptomator Lite.&lt;/p&gt;
+&lt;p&gt;This version is built using a reproducible build technique, which has two advantages: You as a user can verify that the published source code matches the published binary, which in turn means that we didn&amp;rsquo;t and couldn&amp;rsquo;t add anything during build time.&lt;/p&gt;
+&lt;p&gt;The other advantage is that this technique allows us to publish our app to stores like the main F-Droid repository, but sign it with our keys, which means we still have control over the signing keys.&lt;/p&gt;
+&lt;p&gt;Cryptomator Lite can be built using the following Docker image and then compared to the corresponding releases: &lt;a href=&#34;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&#34;&gt;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aes-gcm-new-default-for-content-encryption&#34;&gt;AES-GCM: New Default for Content Encryption&lt;/h2&gt;
+&lt;p&gt;Starting with Cryptomator 1.8.0 for Android, we will follow our Desktop application: All newly created vaults will use &lt;a href=&#34;https://en.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; instead of AES-CTR+HMAC for file content encryption.&lt;/p&gt;
+&lt;p&gt;You can continue to use your existing vaults as before, no action is required on your part. Cryptomator for Android will support both modes of operation.&lt;/p&gt;
+&lt;p&gt;Read more about this in the &lt;a href=&#34;https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/&#34;&gt;Cryptomator 1.7.0 blog post&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/04/12/android-1.8.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/04/12/android-1.8.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>android</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator Hub: Managed – Request Access Now</title>
@@ -336,36 +362,6 @@
         <category>cryptomator</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>Computer Security Day</title>
-        <description>&lt;p&gt;Anti-virus software and ad blockers are common tools to increase your data security on your device. To mark today&amp;rsquo;s Computer Security Day, here are five more tips on how to improve your computer security.&lt;/p&gt;
-&lt;h2 id=&#34;1-check-before-click&#34;&gt;1. Check before click&lt;/h2&gt;
-&lt;p&gt;Most people get them every day; so-called phishing mails. Mostly disguised as sinfully cheap offers from well-known companies, they want to entice the user to click on a link given in the mail. Via this link, the scammers are able to grab sensitive data such as passwords or install malware.&lt;/p&gt;
-&lt;p&gt;In the meantime, some mail providers are already filtering out most of these messages. However, if you are not sure whether an email is legitimate, it is better not to click on it in the first place.&lt;/p&gt;
-&lt;h2 id=&#34;2-dont-recycle-your-passwords&#34;&gt;2. Don&amp;rsquo;t recycle your passwords&lt;/h2&gt;
-&lt;p&gt;Remembering one or two passwords is not a problem for most people. Having one for every account is far too many to remember.&lt;/p&gt;
-&lt;p&gt;In such cases, the &amp;ldquo;solution&amp;rdquo; seems quite obvious: simply use the same password several times so that you don&amp;rsquo;t have to click on &amp;ldquo;Forgot your password?&amp;rdquo;. However, this may become really dangerous if the universal password is stolen. Especially if sensitive data, such as the PayPal account, is protected with them.&lt;/p&gt;
-&lt;p&gt;A password manager can provide a remedy, as it generates and saves all passwords for you.&lt;/p&gt;
-&lt;h2 id=&#34;3-attention-with-wi-fi&#34;&gt;3. Attention with Wi-Fi&lt;/h2&gt;
-&lt;p&gt;They can be extremely practical. We&amp;rsquo;re talking about public Wi-Fi networks: quickly answer an email on the train or do your work from the café around the corner.&lt;/p&gt;
-&lt;p&gt;However, these public networks are usually not encrypted. This means that anyone could theoretically read the data stream between their own device and the network and, in the worst case, even damage the device.&lt;/p&gt;
-&lt;p&gt;It is therefore advisable to have a VPN set up when using public networks.&lt;/p&gt;
-&lt;h2 id=&#34;4-protect-your-browser&#34;&gt;4. Protect your browser&lt;/h2&gt;
-&lt;p&gt;Browsers are the gateway to the Internet, so it is all the more important to protect them properly. A first step towards more security while surfing is to always keep the application up to date. This way, security gaps can be constantly closed.&lt;/p&gt;
-&lt;p&gt;In addition, plug-ins to protect against phishing and malware can increase the security of your browser. These can be activated relatively easy with most providers.&lt;/p&gt;
-&lt;h2 id=&#34;5-secure-on-the-go-in-the-cloud&#34;&gt;5. Secure on the go in the cloud&lt;/h2&gt;
-&lt;p&gt;Uploading your own data to the cloud can be very handy, for example, if you want to quickly share pictures or expand your own storage space. But when the data is uploaded to the cloud &amp;ldquo;just like that&amp;rdquo;, it is not safe from strangers&amp;rsquo; eyes. The reason is quite simple; the data is unprotected in the cloud; once someone has gained access, they can simply access all the data without any obstacles. This can be easily avoided; Cryptomator puts your data in the cloud in a secure safe and thus protects it from foreign eyes.&lt;/p&gt;
-&lt;p&gt;You can read how this works in our &lt;a href=&#34;https://cryptomator.org/encrypt-dropbox/&#34;&gt;article on encrypting Dropbox&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You want to encrypt your cloud with Cryptomator? &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Download here&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/11/30/computer-security-day/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/11/30/computer-security-day/</guid>
-        
-        <category>event</category>
         
       </item>
     

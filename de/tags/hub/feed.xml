@@ -11,8 +11,34 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/hub/</link>
     </image>
-    <lastBuildDate>Tue, 11 Apr 2023 21:02:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Apr 2023 15:54:03 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 1.8.0 for Android</title>
+        <description>&lt;p&gt;Wie du vielleicht schon bemerkt hast, haben wir letzten Monat Cryptomator 1.8.0 für Android veröffentlicht! Diese Version enthält viele interne Änderungen, einige neue Funktionen und einige Bugfixes.&lt;/p&gt;
+&lt;p&gt;Diese Version hat eine ganze Weile gedauert, aber wir haben es endlich geschafft! 🎉 Zusätzlich zu den &lt;a href=&#34;https://github.com/cryptomator/android/releases/tag/1.8.0&#34;&gt;Release Notes&lt;/a&gt; möchten wir dir hier noch mehr Details zu einigen Änderungen geben.&lt;/p&gt;
+&lt;h2 id=&#34;material-3-design&#34;&gt;Material 3 Design&lt;/h2&gt;
+&lt;p&gt;Die auffälligste Änderung in dieser Version ist der Wechsel zu Material 3, das die Benutzeroberfläche modernisiert.&lt;/p&gt;
+&lt;h2 id=&#34;cryptomator-lite-reproduzierbarer-build-und-f-droid&#34;&gt;Cryptomator Lite: Reproduzierbarer Build und F-Droid&lt;/h2&gt;
+&lt;p&gt;Eine weniger offensichtliche Änderung ist die Einführung einer neuen Version: Cryptomator Lite.&lt;/p&gt;
+&lt;p&gt;Diese Version wird mit einer reproduzierbaren Build-Technik erstellt, die zwei Vorteile hat: Du als Benutzer kannst überprüfen, ob der veröffentlichte Quellcode mit der veröffentlichten Binärdatei übereinstimmt, was wiederum bedeutet, dass wir während der Build-Phase nichts hinzugefügt haben und auch nichts hinzufügen konnten.&lt;/p&gt;
+&lt;p&gt;Der andere Vorteil ist, dass diese Technik es uns erlaubt, unsere App in Stores wie dem F-Droid Haupt-Repository zu veröffentlichen, sie aber mit unseren Schlüsseln zu signieren, was bedeutet, dass wir immer noch die Kontrolle über die Signierschlüssel haben.&lt;/p&gt;
+&lt;p&gt;Cryptomator Lite kann mit dem folgenden Docker-Image gebaut und dann mit den entsprechenden Versionen verglichen werden: &lt;a href=&#34;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&#34;&gt;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aes-gcm-neuer-standard-für-die-verschlüsselung-von-inhalten&#34;&gt;AES-GCM: Neuer Standard für die Verschlüsselung von Inhalten&lt;/h2&gt;
+&lt;p&gt;Beginnend mit Cryptomator 1.8.0 für Android werden wir unserer Desktop-Anwendung folgen: Alle neu erstellten Tresore werden &lt;a href=&#34;https://de.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; anstelle von AES-CTR+HMAC für die Verschlüsselung von Dateiinhalten verwenden.&lt;/p&gt;
+&lt;p&gt;Du kannst deine bestehenden Tresore wie gewohnt verwenden, es sind keine Maßnahmen von deiner Seite erforderlich. Cryptomator für Android unterstützt beide Modi.&lt;/p&gt;
+&lt;p&gt;Lies mehr darüber im &lt;a href=&#34;https://cryptomator.org/blog/2023/02/01/1-7-0-was-man-wissen-muss/&#34;&gt;Cryptomator 1.7.0 Blog-Post&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2023/04/12/android-1.8.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/04/12/android-1.8.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>android</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator Hub: Managed – Jetzt Zugang anfordern</title>
@@ -336,36 +362,6 @@
         <category>cryptomator</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>Computer Security Day</title>
-        <description>&lt;p&gt;Antiviren-Software und Werbeblocker sind wohl die häufigsten Mittel, um die Datensicherheit auf dem eigenen Gerät zu erhöhen. Anlässlich des heutigen Computer Security Days haben wir hier fünf weitere Tipps, wie du die Sicherheit deines Computers verbessern kannst.&lt;/p&gt;
-&lt;h2 id=&#34;1-prüfe-vor-dem-klicken&#34;&gt;1. Prüfe vor dem Klicken&lt;/h2&gt;
-&lt;p&gt;Die meisten von uns bekommen sie jeden Tag: sogenannte Phishing-Mails. Meist getarnt als sündhaft günstige Angebote von bekannten Unternehmen, wollen sie den Nutzer dazu verleiten, auf einen in der Mail angegebenen Link zu klicken. Über diesen Link können die Betrüger dann sensible Daten wie Passwörter abgreifen oder Schadsoftware installieren.&lt;/p&gt;
-&lt;p&gt;Inzwischen filtern einige Mailprovider den Großteil dieser Nachrichten bereits heraus. Wenn du dir jedoch nicht sicher bist, ob eine E-Mail seriös ist, solltest du sie besser gar nicht erst anklicken.&lt;/p&gt;
-&lt;h2 id=&#34;2-verwende-passwörter-nicht-mehrfach&#34;&gt;2. Verwende Passwörter nicht mehrfach&lt;/h2&gt;
-&lt;p&gt;Sich ein oder zwei Passwörter zu merken, ist für die meisten Menschen kein Problem. Für jedes Konto ein anderes zu haben, ist viel zu viel, um sich alle merken zu können.&lt;/p&gt;
-&lt;p&gt;In solchen Fällen scheint die „Lösung“ auf der Hand zu liegen: Einfach dasselbe Passwort mehrmals verwenden, damit man nicht auf „Passwort vergessen?“ klicken muss. Dies kann aber richtig gefährlich werden, wenn das Universalpasswort gestohlen wird. Vor allem, wenn sensible Daten, wie das PayPal-Konto, damit geschützt sind.&lt;/p&gt;
-&lt;p&gt;Abhilfe kann ein Passwort-Manager schaffen, der alle Passwörter für euch generiert und speichert.&lt;/p&gt;
-&lt;h2 id=&#34;3-achtung-bei-wlan&#34;&gt;3. Achtung bei WLAN&lt;/h2&gt;
-&lt;p&gt;Sie können äußerst praktisch sein. Die Rede ist von öffentlichen WLAN-Netzen: Schnell im Zug eine E-Mail beantworten oder vom Café um die Ecke aus die Arbeit erledigen.&lt;/p&gt;
-&lt;p&gt;Allerdings sind diese öffentlichen Netze in der Regel nicht verschlüsselt. Das bedeutet, dass theoretisch jeder den Datenstrom zwischen dem eigenen Gerät und dem Netzwerk mitlesen und im schlimmsten Fall sogar das Gerät beschädigen könnte.&lt;/p&gt;
-&lt;p&gt;Es ist daher ratsam, bei der Nutzung öffentlicher Netze ein VPN einzurichten.&lt;/p&gt;
-&lt;h2 id=&#34;4-schütze-deinen-browser&#34;&gt;4. Schütze deinen Browser&lt;/h2&gt;
-&lt;p&gt;Der Browser ist das Tor zum Internet. Umso wichtiger ist es, ihn richtig zu schützen. Ein erster Schritt zu mehr Sicherheit beim Surfen ist, die Anwendung immer auf dem neuesten Stand zu halten. Auf diese Weise können Sicherheitslücken ständig geschlossen werden.&lt;/p&gt;
-&lt;p&gt;Darüber hinaus können Plug-ins zum Schutz vor Phishing und Malware die Sicherheit des Browsers erhöhen. Diese können bei den meisten Anbietern relativ einfach aktiviert werden.&lt;/p&gt;
-&lt;h2 id=&#34;5-unterwegs-sicher-in-der-cloud&#34;&gt;5. Unterwegs sicher in der Cloud&lt;/h2&gt;
-&lt;p&gt;Das Hochladen der eigenen Daten in die Cloud kann sehr praktisch sein, wenn man zum Beispiel schnell Bilder teilen oder den eigenen Speicherplatz erweitern möchte. Aber wenn die Daten „einfach so“ in die Cloud hochgeladen werden, sind sie vor fremden Augen nicht sicher. Der Grund dafür ist ganz einfach: Die Daten liegen ungeschützt in der Cloud, und wenn sich jemand Zugang verschafft hat, kann er einfach und ungehindert auf alle Daten zugreifen. Das lässt sich leicht vermeiden: Cryptomator legt deine Daten in der Cloud in einem sicheren Tresor ab und schützt sie so vor fremden Blicken.&lt;/p&gt;
-&lt;p&gt;Wie das funktioniert, kannst du in unserem &lt;a href=&#34;https://cryptomator.org/de/encrypt-dropbox/&#34;&gt;Artikel zur Verschlüsselung von Dropbox&lt;/a&gt; nachlesen.&lt;/p&gt;
-&lt;p&gt;Du willst deine Cloud mit Cryptomator verschlüsseln? &lt;a href=&#34;https://cryptomator.org/de/downloads/&#34;&gt;Hier geht es zum Download&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2021/11/30/computer-security-day/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2021/11/30/computer-security-day/</guid>
-        
-        <category>event</category>
         
       </item>
     

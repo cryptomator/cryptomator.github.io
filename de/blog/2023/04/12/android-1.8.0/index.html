@@ -3,17 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tags</title>
+    <title>Cryptomator 1.8.0 for Android</title>
     
-      <meta name="description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
-      <meta property="og:title" content="Cryptomator - Tags"/>
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/de/tags/"/>
-      <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
-      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta name="description" content="Letzten Monat haben wir Cryptomator 1.8.0 für Android veröffentlicht, aber wir wollten dich wissen lassen, was sich für dich geändert hat.">
+      <meta property="og:title" content="Cryptomator 1.8.0 for Android">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/de/blog/2023/04/12/android-1.8.0/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="Letzten Monat haben wir Cryptomator 1.8.0 für Android veröffentlicht, aber wir wollten dich wissen lassen, was sich für dich geändert hat.">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2023-04-12" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="android" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     
     <meta property="og:locale" content="de_DE" />
     
@@ -26,7 +33,7 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
-      <link rel="alternate" hreflang="en" href="/tags/" />
+      <link rel="alternate" hreflang="en" href="/blog/2023/04/12/android-1.8.0/" />
     
     
       
@@ -87,7 +94,7 @@
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            <a href="/tags/" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+            <a href="/blog/2023/04/12/android-1.8.0/" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
           </div>
         </div>
       </li>
@@ -143,7 +150,7 @@
     </div>
     <div class="mt-1">
       
-      <a href="/tags/" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a href="/blog/2023/04/12/android-1.8.0/" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
       
     </div>
     
@@ -164,104 +171,55 @@
     
     
   <div class="container-prose py-12">
-    <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+    <article class="mb-12">
       <header class="mb-6">
-        <h1>Posts</h1>
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/de/blog/">Blog</a> / Cryptomator 1.8.0 for Android</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/de/blog/2023/04/12/android-1.8.0/">2023-04-12</a></span>
+        </div>
+        
       </header>
+
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>Wie du vielleicht schon bemerkt hast, haben wir letzten Monat Cryptomator 1.8.0 für Android veröffentlicht! Diese Version enthält viele interne Änderungen, einige neue Funktionen und einige Bugfixes.</p>
+<p>Diese Version hat eine ganze Weile gedauert, aber wir haben es endlich geschafft! 🎉 Zusätzlich zu den <a href="https://github.com/cryptomator/android/releases/tag/1.8.0">Release Notes</a> möchten wir dir hier noch mehr Details zu einigen Änderungen geben.</p>
+<h2 id="material-3-design">Material 3 Design</h2>
+<p>Die auffälligste Änderung in dieser Version ist der Wechsel zu Material 3, das die Benutzeroberfläche modernisiert.</p>
+<h2 id="cryptomator-lite-reproduzierbarer-build-und-f-droid">Cryptomator Lite: Reproduzierbarer Build und F-Droid</h2>
+<p>Eine weniger offensichtliche Änderung ist die Einführung einer neuen Version: Cryptomator Lite.</p>
+<p>Diese Version wird mit einer reproduzierbaren Build-Technik erstellt, die zwei Vorteile hat: Du als Benutzer kannst überprüfen, ob der veröffentlichte Quellcode mit der veröffentlichten Binärdatei übereinstimmt, was wiederum bedeutet, dass wir während der Build-Phase nichts hinzugefügt haben und auch nichts hinzufügen konnten.</p>
+<p>Der andere Vorteil ist, dass diese Technik es uns erlaubt, unsere App in Stores wie dem F-Droid Haupt-Repository zu veröffentlichen, sie aber mit unseren Schlüsseln zu signieren, was bedeutet, dass wir immer noch die Kontrolle über die Signierschlüssel haben.</p>
+<p>Cryptomator Lite kann mit dem folgenden Docker-Image gebaut und dann mit den entsprechenden Versionen verglichen werden: <a href="https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile">https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile</a></p>
+<h2 id="aes-gcm-neuer-standard-für-die-verschlüsselung-von-inhalten">AES-GCM: Neuer Standard für die Verschlüsselung von Inhalten</h2>
+<p>Beginnend mit Cryptomator 1.8.0 für Android werden wir unserer Desktop-Anwendung folgen: Alle neu erstellten Tresore werden <a href="https://de.wikipedia.org/wiki/Galois/Counter_Mode">AES-GCM</a> anstelle von AES-CTR+HMAC für die Verschlüsselung von Dateiinhalten verwenden.</p>
+<p>Du kannst deine bestehenden Tresore wie gewohnt verwenden, es sind keine Maßnahmen von deiner Seite erforderlich. Cryptomator für Android unterstützt beide Modi.</p>
+<p>Lies mehr darüber im <a href="/blog/2023/02/01/1-7-0-was-man-wissen-muss/">Cryptomator 1.7.0 Blog-Post</a>.</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  
+  
     
       
-        <article>
-          <h2>android</h2>
-          
-        </article>
+        
       
-        <article>
-          <h2>cryptomator</h2>
-          
-        </article>
+    
+  
+  
+    
       
-        <article>
-          <h2>hub</h2>
-          
-        </article>
-      
-        <article>
-          <h2>desktop</h2>
-          
-        </article>
-      
-        <article>
-          <h2>linux</h2>
-          
-        </article>
-      
-        <article>
-          <h2>mac</h2>
-          
-        </article>
-      
-        <article>
-          <h2>windows</h2>
-          
-        </article>
-      
-        <article>
-          <h2>ios</h2>
-          
-        </article>
-      
-        <article>
-          <h2>installer</h2>
-          
-        </article>
-      
-        <article>
-          <h2>vulnerability</h2>
-          
-        </article>
-      
-        <article>
-          <h2>event</h2>
-          
-        </article>
-      
-        <article>
-          <h2>vault-format</h2>
-          
-        </article>
-      
-        <article>
-          <h2>data protection</h2>
-          
-        </article>
-      
-        <article>
-          <h2>encryption</h2>
-          
-        </article>
-      
-        <article>
-          <h2>sponsors</h2>
-          
-        </article>
-      
-        <article>
-          <h2>community</h2>
-          
-        </article>
-      
-        <article>
-          <h2>cyberduck</h2>
-          
-        </article>
-      
-        <article>
-          <h2>in-depth</h2>
-          
-        </article>
-      
-    </div>
-  </div>
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2023/04/12/android-1.8.0/" defer></script>
+    
+  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">

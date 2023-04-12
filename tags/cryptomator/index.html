@@ -171,6 +171,24 @@
     
       
         <article>
+          <h2>Cryptomator 1.8.0 for Android</h2>
+          <p>As you may have already noticed, we released Cryptomator 1.8.0 for Android last month! It contains a lot of internal changes, a bunch of new features, and some bug fixes.</p>
+<p>This release took quite some time, but we finally made it. 🎉 In addition to the <a href="https://github.com/cryptomator/android/releases/tag/1.8.0">release notes</a>, we&rsquo;d like to give you more details about some changes.</p>
+<h2 id="material-3-design">Material 3 Design</h2>
+<p>The most obvious change in this release is the migration to Material 3, which modernizes the user interface.</p>
+<h2 id="cryptomator-lite-reproducible-build-and-f-droid">Cryptomator Lite: Reproducible Build and F-Droid</h2>
+<p>A less obvious change is that we now offer a new flavor: Cryptomator Lite.</p>
+<p>This version is built using a reproducible build technique, which has two advantages: You as a user can verify that the published source code matches the published binary, which in turn means that we didn&rsquo;t and couldn&rsquo;t add anything during build time.</p>
+<p>The other advantage is that this technique allows us to publish our app to stores like the main F-Droid repository, but sign it with our keys, which means we still have control over the signing keys.</p>
+<p>Cryptomator Lite can be built using the following Docker image and then compared to the corresponding releases: <a href="https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile">https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile</a></p>
+<h2 id="aes-gcm-new-default-for-content-encryption">AES-GCM: New Default for Content Encryption</h2>
+<p>Starting with Cryptomator 1.8.0 for Android, we will follow our Desktop application: All newly created vaults will use <a href="https://en.wikipedia.org/wiki/Galois/Counter_Mode">AES-GCM</a> instead of AES-CTR+HMAC for file content encryption.</p>
+<p>You can continue to use your existing vaults as before, no action is required on your part. Cryptomator for Android will support both modes of operation.</p>
+<p>Read more about this in the <a href="/blog/2023/02/01/1-7-0-what-you-need-to-know/">Cryptomator 1.7.0 blog post</a>.</p>
+
+        </article>
+      
+        <article>
           <h2>Cryptomator Hub: Managed – Request Access Now</h2>
           <p>We are happy to announce that managed instances of <a href="/hub/">Cryptomator Hub</a> are now available! 🎉 And we have released Hub 1.1.0 with recovery key support.</p>
 <h2 id="request-access">Request Access</h2>
