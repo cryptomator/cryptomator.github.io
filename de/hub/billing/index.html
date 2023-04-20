@@ -466,12 +466,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-254791863" x-model="acceptTerms" />
-<label for="id-254791863">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-928413567" x-model="acceptTerms" />
+<label for="id-928413567">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-875329641" x-model="acceptTerms" />
-<label for="id-875329641">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-136475298" x-model="acceptTerms" />
+<label for="id-136475298">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
