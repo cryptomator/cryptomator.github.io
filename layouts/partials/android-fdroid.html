@@ -1,4 +1,4 @@
-<div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication" x-data="{cryptomatorVariant: 'cryptomator-repo'}">
+<div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication" x-data="{fdroidVariant: 'cryptomator-repo'}">
   <meta itemprop="name" content="Cryptomator"/>
   <meta itemprop="description" content="A free software to encrypt your cloud files."/>
   <meta itemprop="applicationCategory" content="Productivity"/>
@@ -12,42 +12,43 @@
       <h3>{{ i18n "android_fdroid_title" }}</h3>
     </div>
 
-    <div class="flex justify-center mt-2">
-      <button class="w-1/2 ms:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': cryptomatorVariant === 'cryptomator-repo'}" @click="cryptomatorVariant = 'cryptomator-repo'">
+    <div class="flex justify-center p-4">
+      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
         Cryptomator Repository
       </button>
-      <button class="w-1/2 ms:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': cryptomatorVariant === 'main-repo'}" @click="cryptomatorVariant = 'main-repo'">
+      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
         Main Repository
       </button>
     </div>
 
-    <div x-show="cryptomatorVariant === 'cryptomator-repo'" class="px-4 py-8" x-data="{showQrCode: false}">
+    <div x-show="fdroidVariant === 'cryptomator-repo'" class="px-4 pt-4 pb-8" x-data="{showQrCode: false}">
       <div class="prose prose-sm max-w-none md:max-w-none mb-4">
         <p>{{ i18n "android_fdroid_repo" | safeHTML }}</p>
       </div>
       <p class="text-xs mb-4">
         <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
       </p>
-      <div x-show="showQrCode" x-cloak class="mt-4">
+      <div x-show="showQrCode" x-cloak class="mb-4">
         <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
       </div>
-      <div class="prose prose-sm max-w-none md:max-w-none">
-        <p>{{ i18n "android_fdroid_cryptomator_cloud_exclusion" | safeHTML }}</p>
+      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
+        <p>{{ ":cross_mark:" | emojify }} {{ i18n "android_fdroid_cryptomator_cloud_exclusion" | safeHTML }}</p>
       </div>
       <div class="prose prose-sm max-w-none md:max-w-none">
         <p>{{ i18n "android_fdroid_cloud_exclusion_hint" | safeHTML }}</p>
       </div>
     </div>
 
-    <div x-show="cryptomatorVariant === 'main-repo'" class="px-4 py-8">
+    <div x-show="fdroidVariant === 'main-repo'" class="px-4 pt-4 pb-8">
       <a href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
-        <img class="h-20 mx-auto lazyload" data-src="{{ .Params.FdroidMainRepoImageUrl }}">
+        <img class="h-20 mx-auto lazyload mb-4" data-src="{{ .Params.FdroidMainRepoImageUrl }}">
       </a>
-      <div class="prose prose-sm max-w-none md:max-w-none">
-        <p>{{ i18n "android_fdroid_main_cloud_exclusion" | safeHTML }}</p>
+      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
+        <p>{{ ":cross_mark:" | emojify }} {{ i18n "android_fdroid_main_cloud_exclusion" | safeHTML }}</p>
       </div>
       <div class="prose prose-sm max-w-none md:max-w-none">
         <p>{{ i18n "android_fdroid_cloud_exclusion_hint" | safeHTML }}</p>
       </div>
     </div>
+  </div>
 </div>

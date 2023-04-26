@@ -83,7 +83,7 @@
 - id: android_fdroid_qr_code
   translation: "QR Code"
 - id: android_fdroid_main_cloud_exclusion
-  translation: "Dropbox, Google Drive, OneDrive und pCloud ist aufgrund erforderlicher API-Schlüssel ausgeschlossen."
+  translation: "Dropbox, Google Drive, OneDrive und pCloud sind aufgrund erforderlicher API-Schlüssel ausgeschlossen."
 - id: android_fdroid_cryptomator_cloud_exclusion
   translation: "Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen."
 - id: android_fdroid_cloud_exclusion_hint
