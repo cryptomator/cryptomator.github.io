@@ -79,9 +79,15 @@
 - id: android_fdroid_title
   translation: "Auf F-Droid herunterladen"
 - id: android_fdroid_repo
-  translation: "Folgenden <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\">Link</a> öffnen oder den QR-Code scannen, um unser Repository hinzuzufügen."
+  translation: "Folgenden <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\" target=\"_blank\">Link</a> öffnen oder den QR-Code scannen, um unser Repository hinzuzufügen."
 - id: android_fdroid_qr_code
   translation: "QR Code"
+- id: android_fdroid_main_cloud_exclusion
+  translation: "Dropbox, Google Drive, OneDrive und pCloud ist aufgrund erforderlicher API-Schlüssel ausgeschlossen."
+- id: android_fdroid_cryptomator_cloud_exclusion
+  translation: "Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen."
+- id: android_fdroid_cloud_exclusion_hint
+  translation: "Einen detaillierten Vergleich aller Varianten findest du in unserer <a class=\"text-sm no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/android/setup\" target=\"_blank\">Dokumentation</a>."
 
 # Blog
 - id: blob_post_author_prefix
