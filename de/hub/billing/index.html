@@ -184,7 +184,7 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && subscriptionData.token && subscriptionData.details">
+      <template x-if="subscriptionData.getSuccess && subscriptionData.details">
         <div>
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>Cryptomator Hub: Abrechnung</h1>
@@ -250,7 +250,7 @@
                     <i class="fas fa-pause fa-fw"></i>
                     Abonnement pausieren
                   </button>
-                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
+                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
                     <i class="fas fa-play fa-fw"></i>
                     Abonnement fortsetzen
                   </button>
@@ -262,7 +262,7 @@
                 Zahlungsinformationen
               </dt>
               <dd>
-                <div x-show="subscriptionData.details.payment_information">
+                <template x-if="subscriptionData.details.payment_information">
                   <div x-show="subscriptionData.details.payment_information.payment_method == 'card'">
                     <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
                       Kreditkarte
@@ -274,12 +274,12 @@
                   <p x-show="subscriptionData.details.payment_information.payment_method == 'paypal'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                     PayPal
                   </p>
-                </div>
+                </template>
                 <p x-show="!subscriptionData.details.payment_information" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                   –
                 </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('de')" class="text-xs text-btn text-primary">
+                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('de')" class="text-xs text-btn text-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     Zahlungsmethode aktualisieren
                   </button>
@@ -417,7 +417,7 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && (!subscriptionData.token || !subscriptionData.details)">
+      <template x-if="subscriptionData.getSuccess && !subscriptionData.details">
         <div>
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>Cryptomator Hub: Abrechnung</h1>
@@ -466,12 +466,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-163547982" x-model="acceptTerms" />
-<label for="id-163547982">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-351289476" x-model="acceptTerms" />
+<label for="id-351289476">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-723946158" x-model="acceptTerms" />
-<label for="id-723946158">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-179324658" x-model="acceptTerms" />
+<label for="id-179324658">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
