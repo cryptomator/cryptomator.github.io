@@ -20,7 +20,7 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && subscriptionData.token && subscriptionData.details">
+      <template x-if="subscriptionData.getSuccess && subscriptionData.details">
         <div>
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
@@ -86,7 +86,7 @@
                     <i class="fas fa-pause fa-fw"></i>
                     {{ i18n "hub_billing_manage_next_payment_pause_action" . }}
                   </button>
-                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
+                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
                     <i class="fas fa-play fa-fw"></i>
                     {{ i18n "hub_billing_manage_next_payment_restart_action" . }}
                   </button>
@@ -98,7 +98,7 @@
                 {{ i18n "hub_billing_manage_payment_info_title" . }}
               </dt>
               <dd>
-                <div x-show="subscriptionData.details.payment_information">
+                <template x-if="subscriptionData.details.payment_information">
                   <div x-show="subscriptionData.details.payment_information.payment_method == 'card'">
                     <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
                       {{ i18n "hub_billing_manage_payment_info_credit_card" . }}
@@ -110,12 +110,12 @@
                   <p x-show="subscriptionData.details.payment_information.payment_method == 'paypal'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                     {{ i18n "hub_billing_manage_payment_info_paypal" . }}
                   </p>
-                </div>
+                </template>
                 <p x-show="!subscriptionData.details.payment_information" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                   –
                 </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
+                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     {{ i18n "hub_billing_manage_payment_info_update_action" . }}
                   </button>
@@ -253,7 +253,7 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && (!subscriptionData.token || !subscriptionData.details)">
+      <template x-if="subscriptionData.getSuccess && !subscriptionData.details">
         <div>
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
