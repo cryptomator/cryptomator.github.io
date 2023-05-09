@@ -244,8 +244,8 @@
         </p>
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
           
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-147639582" x-model="acceptTerms" />
-<label for="id-147639582">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-469287135" x-model="acceptTerms" />
+<label for="id-469287135">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 
         </p>
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
@@ -369,7 +369,7 @@
     <header class="text-center">
       <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
     </header>
-    <dl x-data="{isOpen: [false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+    <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
@@ -432,6 +432,15 @@
       </dt>
       <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)
+      </dd>
+      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+        <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <span>What is the difference between Managed and Self-Hosted?</span>
+        </a>
+      </dt>
+      <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        Cryptomator Hub is available in a managed and a self-hosted version. In the managed version, Skymatic GmbH maintains the infrastructure required for Cryptomator Hub and Keycloak and is responsible for security, availability, backups and up-to-dateness. With the self-hosted version this is your responsibility.
       </dd>
     </dl>
   </section>
