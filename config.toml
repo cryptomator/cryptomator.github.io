@@ -91,10 +91,10 @@ block = true
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.9.0/cryptomator-1.9.0-x86_64.AppImage.asc"
       checksum = "614181d32e9c15be1ccb7f4976795442e7107c2fcc52d1eddb1767fb8a083e3a"
     [params.releases.android]
-      version = "1.9.1"
-      filename = "Cryptomator-1.9.1.apk"
-      downloadUrl = "https://static.cryptomator.org/android/1.9.1/Cryptomator-1.9.1.apk"
-      checksum = "e4b52784c59c92cdf837fb88464b08d94be83577364ece45cac2cd8ea7d0cc9d"
+      version = "1.10.0"
+      filename = "Cryptomator-1.10.0.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.10.0/Cryptomator-1.10.0.apk"
+      checksum = "ce37e32c7951de906413876563c30f1ec929e1a26aa1ca701a9f3e79903d822f"
 
 [permalinks]
   blog = "/blog/:year/:month/:day/:slug/"
