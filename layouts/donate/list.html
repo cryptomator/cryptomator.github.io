@@ -5,6 +5,17 @@
       <p class="lead">{{ .Description }}</p>
     </header>
 
+    <div class="rounded-md bg-blue-100 p-4 mb-6">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <i class="fas fa-info-circle fa-fw text-blue-500"></i>
+        </div>
+        <div class="ml-3 text-sm text-dark">
+          <p>{{ .Params.Hint | safeHTML }}</p>
+        </div>
+      </div>
+    </div>
+
     <div x-data="{showTab: location.hash}" @hashchange.window="showTab = location.hash" class="flex flex-col space-y-4 w-full relative lg:h-412px">
       {{ range .Pages }}
         <div class="space-y-2 lg:space-y-0">
