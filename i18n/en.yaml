@@ -338,8 +338,10 @@
   translation: "Volume discount for large teams"
 - id: hub_pricing_managed_enterprise_benefit_1
   translation: "Custom domain"
+- id: hub_pricing_vat_excluded
+  translation: "Prices shown exclude sales tax where applicable."
 - id: hub_pricing_coming_later
-  translation: "Currently in development, ETA early 2023."
+  translation: "Currently in development, ETA 2023."
 
 - id: hub_contact_us_title
   translation: "More questions?"
@@ -407,6 +409,9 @@
   translation: "PayPal"
 - id: hub_billing_manage_payment_info_update_action
   translation: "Update Payment Method"
+
+- id: hub_billing_pricing_vat_included
+  translation: "Prices shown include sales tax where applicable."
 
 - id: hub_billing_manage_license_key_title
   translation: "License Key"

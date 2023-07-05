@@ -338,8 +338,10 @@
   translation: "Mengenrabatt für große Teams"
 - id: hub_pricing_enterprise_standard_benefit_1
   translation: "Eigene Domain"
+- id: hub_pricing_vat_excluded
+  translation: "Die angezeigten Preise verstehen sich gegebenenfalls zuzüglich Umsatzsteuer."
 - id: hub_pricing_coming_later
-  translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung Anfang 2023."
+  translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung 2023."
 
 - id: hub_contact_us_title
   translation: "Weitere Fragen?"
@@ -407,6 +409,9 @@
   translation: "PayPal"
 - id: hub_billing_manage_payment_info_update_action
   translation: "Zahlungsmethode aktualisieren"
+
+- id: hub_billing_pricing_vat_included
+  translation: "Die angezeigten Preise enthalten gegebenenfalls die Umsatzsteuer."
 
 - id: hub_billing_manage_license_key_title
   translation: "Lizenzschlüssel"
