@@ -149,7 +149,7 @@ class HubSubscription {
     if (this._subscriptionData.customBilling?.override?.prices) {
       amount = this.getAmount(this._subscriptionData.customBilling.override.prices, currency) / 12;
     } else {
-      amount = data.response.products[0].subscription.price.gross / 12;
+      amount = data.response.products[0].subscription.price.net / 12;
     }
     this._subscriptionData.monthlyPrice = {
       amount: amount,

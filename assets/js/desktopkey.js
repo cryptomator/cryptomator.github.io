@@ -1,7 +1,6 @@
 "use strict";
 
 // requires store.js
-const GENERATE_PAY_LINK_URL = STORE_API_URL + '/desktop/generate-pay-link';
 
 class DesktopLicense {
 
@@ -9,9 +8,9 @@ class DesktopLicense {
     this._form = form;
     this._checkoutData = checkoutData;
     this._paddle = $.ajax({
-        url: 'https://cdn.paddle.com/paddle/paddle.js',
-        cache: true,
-        dataType: 'script'
+      url: 'https://cdn.paddle.com/paddle/paddle.js',
+      cache: true,
+      dataType: 'script'
     }).then(() => {
       if (PADDLE_ENABLE_SANDBOX) {
         window.Paddle.Environment.set('sandbox');
@@ -21,7 +20,25 @@ class DesktopLicense {
     });
   }
 
-  checkout(locale) {
+  loadPrice() {
+    $.ajax({
+      url: PADDLE_PRICES_URL,
+      dataType: 'jsonp',
+      data: {
+        product_ids: PADDLE_DESKTOP_PRODUCT_IDS.join(',')
+      },
+    }).done(data => {
+      this._checkoutData.prices = data.response.products.map(product => {
+        return {
+          productId: product.product_id,
+          amount: product.price.gross,
+          currency: product.currency
+        }
+      });
+    });
+  }
+
+  checkout(productId, locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       this._checkoutData.errorMessage = 'Please fill in all required fields.';
@@ -31,25 +48,11 @@ class DesktopLicense {
     this._checkoutData.inProgress = true;
     this._checkoutData.errorMessage = '';
     this._checkoutData.success = false;
-    $.ajax({
-      url: GENERATE_PAY_LINK_URL,
-      type: 'POST',
-      data: {
-        amount: this._checkoutData.amount,
-        quantity: this._checkoutData.quantity
-      }
-    }).done(data => {
-      this.openPaddleCheckout(data.pay_link, locale);
-    }).fail(xhr => {
-      this.onCheckoutFailed(xhr.responseJSON?.message || 'Generating pay link failed.');
-    });
-  }
-
-  openPaddleCheckout(payLink, locale) {
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        override: payLink,
+        product: productId,
         email: this._checkoutData.email,
+        quantity: this._checkoutData.quantity,
         locale: locale,
         successCallback: data => {
           this.onCheckoutSucceeded();
@@ -73,12 +76,6 @@ class DesktopLicense {
         }
       });
     });
-  }
-
-  onCheckoutFailed(error) {
-    this._checkoutData.success = false;
-    this._checkoutData.errorMessage = error;
-    this._checkoutData.inProgress = false;
   }
 
   onCheckoutSucceeded() {

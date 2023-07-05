@@ -650,15 +650,11 @@
 - id: supporter_cert_funder_quantity
   translation: "Anzahl Lizenzen"
 - id: supporter_cert_funder_quantity_help
-  translation: "Lizenz gilt für einen Nutzer und kann auf mehreren Computern verwendet werden."
+  translation: "Eine Lizenz gilt für einen Nutzer und kann auf mehreren Computern verwendet werden."
 - id: supporter_cert_funder_price
   translation: "Preis pro Lizenz"
-- id: supporter_cert_funder_price_placeholder
-  translation: "min. 15"
-- id: supporter_cert_funder_price_suffix
-  translation: ",00"
 - id: supporter_cert_funder_price_help
-  translation: "Mindestbetrag ist 15 pro Lizenz. Währung wird im Zahlungsvorgang ermittelt."
+  translation: "Wähle einen Preis, den du für angemessen hältst. Vielen Dank für deine Unterstützung!"
 - id: supporter_cert_funder_instruction
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: supporter_cert_funder_checkout

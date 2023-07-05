@@ -8,9 +8,9 @@ class KeyRecovery {
     this._form = form;
     this._data = data;
     this._paddle = $.ajax({
-        url: 'https://cdn.paddle.com/paddle/paddle.js',
-        cache: true,
-        dataType: 'script'
+      url: 'https://cdn.paddle.com/paddle/paddle.js',
+      cache: true,
+      dataType: 'script'
     }).then(() => {
       if (PADDLE_ENABLE_SANDBOX) {
         window.Paddle.Environment.set('sandbox');

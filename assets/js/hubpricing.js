@@ -17,11 +17,11 @@ class HubPricing {
       },
     }).done(data => {
       this._data.selfHostedMonthlyPrice = {
-        amount: data.response.products[0].subscription.price.gross / 12,
+        amount: data.response.products[0].subscription.price.net / 12,
         currency: data.response.products[0].currency
       };
       this._data.managedMonthlyPrice = {
-        amount: data.response.products[1].subscription.price.gross / 12,
+        amount: data.response.products[1].subscription.price.net / 12,
         currency: data.response.products[1].currency
       };
     });
