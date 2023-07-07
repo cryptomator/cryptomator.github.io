@@ -287,7 +287,7 @@
               </dd>
             </div>
           </dl>
-          <p class="text-sm text-gray-700">Die angezeigten Preise enthalten gegebenenfalls die Umsatzsteuer.</p>
+          <p class="text-sm text-gray-700"></p>
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">
             Lizenzschlüssel
@@ -419,18 +419,36 @@
       </template>
 
       <template x-if="subscriptionData.getSuccess && !subscriptionData.details">
-        <div>
+        <div x-data="{audience: 'business'}">
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>Cryptomator Hub: Abrechnung</h1>
             <p class="lead">Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord.</p>
           </header>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <div class="flex justify-center">
+              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'business'}" @click.prevent="audience = 'business'">
+                <i class="fa-building fa-fw" :class="{'fas': audience === 'business', 'far': audience !== 'business'}"></i>
+                Für Unternehmen
+              </button>
+              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
+                <i class="fa-house fa-fw" :class="{'fas': audience === 'consumer', 'far': audience !== 'consumer'}"></i>
+                Für zu Hause
+              </button>
+            </div>
+            <div class="hidden md:block"></div>
             <div class="rounded shadow bg-white">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   Standard
                 </h2>
-                <p x-text="subscriptionData.monthlyPrice.amount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></p>
+                <p x-show="audience === 'business'" class="flex items-baseline gap-2">
+                  <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                  <span class="text-gray-700">zzgl. USt.</span>
+                </p>
+                <p x-show="audience === 'consumer'" class="flex items-baseline gap-2">
+                  <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                  <span class="text-gray-700">inkl. USt.</span>
+                </p>
                 <p class="text-lg text-gray-500 mb-4">
                   pro Sitz, pro Monat, jährlich abgerechnet
                 </p>
@@ -467,12 +485,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-741832569" x-model="acceptTerms" />
-<label for="id-741832569">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-716358942" x-model="acceptTerms" />
+<label for="id-716358942">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-135469287" x-model="acceptTerms" />
-<label for="id-135469287">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-578342961" x-model="acceptTerms" />
+<label for="id-578342961">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -515,7 +533,6 @@
                 </div>
               </div>
             </div>
-            <p class="text-sm text-gray-700">Die angezeigten Preise verstehen sich gegebenenfalls zuzüglich Umsatzsteuer.</p>
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">Häufig gestellte Fragen</h2>
           <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200">
@@ -601,7 +618,7 @@
     
     <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.9ca63176b519ce1bdf5f3faae528e2fef4c1dfc856cd67edcd39f41596452db5.js" integrity="sha256-nKYxdrUZzhvfXz&#43;q5Sji/vTB38hWzWftzTn0FZZFLbU=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.b66cc607e2b3e2708597d8f24e5cb6881ebd29c09351bcd6797f6f0bc53a107f.js" integrity="sha256-tmzGB&#43;Kz4nCFl9jyTly2iB69KcCTUbzWeX9vC8U6EH8=" defer></script>
   
 
     </div>

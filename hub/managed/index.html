@@ -244,8 +244,8 @@
         </p>
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
           
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-674521938" x-model="acceptTerms" />
-<label for="id-674521938">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-952471386" x-model="acceptTerms" />
+<label for="id-952471386">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 
         </p>
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
@@ -280,7 +280,10 @@
           <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             Standard
           </h3>
-          <p x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></p>
+          <p class="flex items-baseline gap-2">
+            <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+            <span class="text-xs md:text-sm lg:text-base text-gray-700">excl. VAT</span>
+          </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             per seat, per month, billed yearly
           </p>
@@ -359,7 +362,6 @@
       </div>
     </div>
 
-    <p class="text-sm text-gray-700 mb-2">Prices shown exclude sales tax where applicable.</p>
     <p class="text-sm text-gray-700">
       <sup>1</sup>
       <span>Currently in development, ETA 2023.</span>
