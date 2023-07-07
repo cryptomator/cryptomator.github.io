@@ -144,15 +144,21 @@ class HubSubscription {
   }
 
   onLoadPriceSucceeded(data) {
-    let currency = data.response.products[0].currency;
-    let amount;
+    let product = data.response.products[0]
+    let currency = product.currency;
+    let netAmount;
+    let grossAmount;
     if (this._subscriptionData.customBilling?.override?.prices) {
-      amount = this.getAmount(this._subscriptionData.customBilling.override.prices, currency) / 12;
+      netAmount = this.getAmount(this._subscriptionData.customBilling.override.prices, currency) / 12;
+      let taxRate = product.subscription.price.gross / product.subscription.price.net;
+      grossAmount = netAmount * taxRate;
     } else {
-      amount = data.response.products[0].subscription.price.net / 12;
+      netAmount = product.subscription.price.net / 12;
+      grossAmount = product.subscription.price.gross / 12;
     }
     this._subscriptionData.monthlyPrice = {
-      amount: amount,
+      netAmount: netAmount,
+      grossAmount: grossAmount,
       currency: currency
     };
     this._subscriptionData.errorMessage = '';
@@ -160,8 +166,8 @@ class HubSubscription {
   }
 
   getAmount(prices, currency) {
-    const regex = new RegExp(`^${currency}:`);
-    const price = prices.find(price => regex.test(price));
+    let regex = new RegExp(`^${currency}:`);
+    let price = prices.find(price => regex.test(price));
     return price ? parseFloat(price.split(':')[1]) : null;
   }
 

@@ -255,18 +255,36 @@
       </template>
 
       <template x-if="subscriptionData.getSuccess && !subscriptionData.details">
-        <div>
+        <div x-data="{audience: 'business'}">
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
             <p class="lead">{{ i18n "hub_billing_checkout_description" . }}</p>
           </header>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+            <div class="flex justify-center">
+              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'business'}" @click.prevent="audience = 'business'">
+                <i class="fa-building fa-fw" :class="{'fas': audience === 'business', 'far': audience !== 'business'}"></i>
+                {{ i18n "hub_billing_checkout_audience_business" . }}
+              </button>
+              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
+                <i class="fa-house fa-fw" :class="{'fas': audience === 'consumer', 'far': audience !== 'consumer'}"></i>
+                {{ i18n "hub_billing_checkout_audience_consumer" . }}
+              </button>
+            </div>
+            <div class="hidden md:block"></div>
             <div class="rounded shadow bg-white">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
                 </h2>
-                <p x-text="subscriptionData.monthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></p>
+                <p x-show="audience === 'business'" class="flex items-baseline gap-2">
+                  <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                  <span class="text-gray-700">{{ i18n "hub_pricing_vat_excluded" . }}</span>
+                </p>
+                <p x-show="audience === 'consumer'" class="flex items-baseline gap-2">
+                  <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                  <span class="text-gray-700">{{ i18n "hub_pricing_vat_included" . }}</span>
+                </p>
                 <p class="text-lg text-gray-500 mb-4">
                   {{ i18n "hub_billing_checkout_standard_description" . }}
                 </p>
@@ -345,7 +363,6 @@
                 </div>
               </div>
             </div>
-            <p class="text-sm text-gray-700">{{ i18n "hub_pricing_vat_excluded" . }}</p>
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}

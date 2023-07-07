@@ -290,6 +290,10 @@
   translation: "Managed"
 - id: hub_pricing_infrastructure_self_hosted
   translation: "Self-Hosted"
+- id: hub_pricing_vat_excluded
+  translation: "excl. VAT"
+- id: hub_pricing_vat_included
+  translation: "incl. VAT"
 - id: hub_pricing_community_title
   translation: "Community"
 - id: hub_pricing_community_statement
@@ -338,8 +342,6 @@
   translation: "Volume discount for large teams"
 - id: hub_pricing_managed_enterprise_benefit_1
   translation: "Custom domain"
-- id: hub_pricing_vat_excluded
-  translation: "Prices shown exclude sales tax where applicable."
 - id: hub_pricing_coming_later
   translation: "Currently in development, ETA 2023."
 
@@ -410,9 +412,6 @@
 - id: hub_billing_manage_payment_info_update_action
   translation: "Update Payment Method"
 
-- id: hub_billing_pricing_vat_included
-  translation: "Prices shown include sales tax where applicable."
-
 - id: hub_billing_manage_license_key_title
   translation: "License Key"
 - id: hub_billing_manage_license_key_instruction_with_returnurl
@@ -453,6 +452,10 @@
 
 - id: hub_billing_checkout_description
   translation: "Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage."
+- id: hub_billing_checkout_audience_business
+  translation: "For Business"
+- id: hub_billing_checkout_audience_consumer
+  translation: "For Home"
 
 - id: hub_billing_checkout_standard_title
   translation: "Standard"

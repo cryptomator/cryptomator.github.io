@@ -290,6 +290,10 @@
   translation: "Managed"
 - id: hub_pricing_infrastructure_self_hosted
   translation: "Self-Hosted"
+- id: hub_pricing_vat_excluded
+  translation: "zzgl. USt."
+- id: hub_pricing_vat_included
+  translation: "inkl. USt."
 - id: hub_pricing_community_title
   translation: "Community"
 - id: hub_pricing_community_statement
@@ -338,8 +342,6 @@
   translation: "Mengenrabatt für große Teams"
 - id: hub_pricing_enterprise_standard_benefit_1
   translation: "Eigene Domain"
-- id: hub_pricing_vat_excluded
-  translation: "Die angezeigten Preise verstehen sich gegebenenfalls zuzüglich Umsatzsteuer."
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung 2023."
 
@@ -410,9 +412,6 @@
 - id: hub_billing_manage_payment_info_update_action
   translation: "Zahlungsmethode aktualisieren"
 
-- id: hub_billing_pricing_vat_included
-  translation: "Die angezeigten Preise enthalten gegebenenfalls die Umsatzsteuer."
-
 - id: hub_billing_manage_license_key_title
   translation: "Lizenzschlüssel"
 - id: hub_billing_manage_license_key_instruction_with_returnurl
@@ -453,6 +452,10 @@
 
 - id: hub_billing_checkout_description
   translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
+- id: hub_billing_checkout_audience_business
+  translation: "Für Unternehmen"
+- id: hub_billing_checkout_audience_consumer
+  translation: "Für zu Hause"
 
 - id: hub_billing_checkout_standard_title
   translation: "Standard"
