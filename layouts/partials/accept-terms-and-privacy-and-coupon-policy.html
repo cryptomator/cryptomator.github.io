@@ -1,3 +1,0 @@
-{{ $unique_id := printf "id-%s" (delimit (shuffle (seq 1 9)) "") }}
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="{{ $unique_id }}" x-model="{{ .alpineVariable }}" />
-<label for="{{ $unique_id }}">{{ i18n "accept_terms_and_privacy_and_coupon_policy" . | safeHTML }}</label>

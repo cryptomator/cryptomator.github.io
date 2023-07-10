@@ -24,8 +24,6 @@
   translation: "By transferring, I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_terms_and_privacy
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
-- id: accept_terms_and_privacy_and_coupon_policy
-  translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>. Coupons redeemed during checkout are excluded from the right of withdrawal."
 - id: accept_hub_managed_terms_and_privacy
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
 - id: faq_title
