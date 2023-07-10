@@ -485,12 +485,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-543972618" x-model="acceptTerms" />
-<label for="id-543972618">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-148362975" x-model="acceptTerms" />
+<label for="id-148362975">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-145976238" x-model="acceptTerms" />
-<label for="id-145976238">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-517294638" x-model="acceptTerms" />
+<label for="id-517294638">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -606,7 +606,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Cryptomator Hub ist in einer managed und einer self-hosted Version verfügbar. In der managed Version verwaltet die Skymatic GmbH die für Cryptomator Hub und Keycloak notwendige Infrastruktur und ist für Sicherheit, Verfügbarkeit, Backups und Aktualität verantwortlich. Bei der self-hosted Version liegt dies in deiner Verantwortung.
+              Cryptomator Hub ist in einer Managed- und einer Self-Hosted-Version verfügbar. Bei der Managed-Version betreibt die Skymatic GmbH die Infrastruktur für Cryptomator Hub und Keycloak und ist verantwortlich für Sicherheit, Verfügbarkeit, Backups und Aktualität. Bei der Self-Hosted-Version liegt diese Verantwortung bei dir.
             </dd>
           </dl>
         </div>
