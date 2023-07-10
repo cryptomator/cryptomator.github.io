@@ -13,4 +13,4 @@
 - Question: "How do I access the contents of a vault?"
   Answer: "For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android and iOS are currently in development.)"
 - Question: "What is the difference between Managed and Self-Hosted?"
-  Answer: "Cryptomator Hub is available in a managed and a self-hosted version. In the managed version, Skymatic GmbH maintains the infrastructure required for Cryptomator Hub and Keycloak and is responsible for security, availability, backups and up-to-dateness. With the self-hosted version this is your responsibility."
+  Answer: "Cryptomator Hub is available in a managed and a self-hosted version. In the managed version, Skymatic GmbH maintains the infrastructure required for Cryptomator Hub and Keycloak and is responsible for security, availability, backups, and up-to-dateness. With the self-hosted version, this is your responsibility."
