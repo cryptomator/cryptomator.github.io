@@ -1,5 +1,7 @@
 - id: site_meta_description
   translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
+- id: nav_promotion
+  translation: ":tada: Cryptomator for iOS and Android as well as the Supporter Certificate are 33% off! Valid&nbsp;July&nbsp;11&#8209;12."
 - id: nav_support_us
   translation: "Support Us"
 - id: nav_learn_more
@@ -44,6 +46,8 @@
   translation: "Payments are securely handled by Paddle."
 - id: android_getkey_checkout
   translation: "Checkout"
+- id: android_getkey_coupon
+  translation: "Use coupon code <code>PRIMEDAY2023</code> at checkout to get 33% off!"
 
 - id: android_getkey_success
   translation: "Your payment was successful!"
@@ -665,6 +669,8 @@
   translation: "Payments are securely handled by Paddle."
 - id: supporter_cert_funder_checkout
   translation: "Checkout"
+- id: supporter_cert_funder_coupon
+  translation: "Use coupon code <code>PRIMEDAY2023</code> at checkout to get 33% off! Only valid for the first option."
 - id: supporter_cert_funder_success
   translation: "Your payment was successful!"
 - id: supporter_cert_funder_key
