@@ -1,26 +1,64 @@
 {{ define "main" }}
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, customBilling: null, monthlyPrice: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form">
-      <template x-if="!subscriptionData.getSuccess">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, monthlyPrice: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form">
+      <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
-            {{ i18n "hub_billing_landing_title" . }}
+            {{ i18n "hub_billing_generic_title" . }}
           </h3>
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-            {{ i18n "hub_billing_landing_description" . }}
+            <i class="fas fa-info-circle fa-fw"></i>
+            {{ i18n "hub_billing_missingparams_description" . }}
           </p>
-          <div class="flex justify-center items-center rounded bg-gray-300">
-            <input x-model="subscriptionData.hubId" type="text" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "hub_billing_landing_hubid_placeholder" . }}" required/>
-            <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
-              <i :class="{'fa-sign-in': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
-              {{ i18n "hub_billing_landing_submit" . }}
-            </button>
-          </div>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'LOADING'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+            {{ i18n "hub_billing_loading_description" . }}
+          </p>
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && subscriptionData.details">
+      <template x-if="subscriptionData.state == 'CREATE_SESSION'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-sign-in fa-fw"></i>
+            {{ i18n "hub_billing_createsession_description" . }}
+          </p>
+          <div x-show="!subscriptionData.captcha" x-ref="captchaWrapper" class="flex justify-center">
+            <button @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => subscriptionData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "hub_billing_createsession_loadcaptcha" }}</button>
+          </div>
+          <button x-show="subscriptionData.captcha" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.createSession()" type="submit" class="btn btn-primary w-full md:w-64">
+            <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+            {{ i18n "hub_billing_createsession_submit" . }}
+          </button>
+          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'CREATE_SESSION_SUCCESS'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-envelope fa-fw"></i>
+            {{ i18n "hub_billing_createsession_success_description" . }}
+          </p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'EXISTING_CUSTOMER'">
         <div>
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
@@ -78,7 +116,7 @@
                 <template x-if="!subscriptionData.details.next_payment">
                   <div>
                     <p class="font-bold text-2xl md:text-3xl lg:text-4xl">–</p>
-                    <p class="text-xs text-gray-600 mt-1">{{ i18n "hub_billing_manage_next_payment_date_description" . }}: {{ i18n "hub_billing_manage_next_payment_date_unavailable" . }}</p>
+                    <p class="text-xs text-gray-600 mt-1">{{ i18n "hub_billing_manage_next_payment_date_description" . }}: N/A</p>
                   </div>
                 </template>
                 <p class="mt-2">
@@ -128,16 +166,13 @@
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">
             {{ i18n "hub_billing_manage_license_key_title" . }}
           </h2>
-          <p x-show="subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-            {{ i18n "hub_billing_manage_license_key_instruction_with_returnurl" . }}
-          </p>
-          <p x-show="!subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-            {{ i18n "hub_billing_manage_license_key_instruction_without_returnurl" . }}
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            {{ i18n "hub_billing_manage_license_key_instruction" . }}
           </p>
           <textarea x-model="subscriptionData.token" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="6" readonly></textarea>
-          <a x-show="subscriptionData.returnUrl" :href="subscriptionData.returnUrl + '?token=' + subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" role="button">
+          <button :disabled="subscriptionData.inProgress || !subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
             {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
-          </a>
+          </button>
 
           <div x-show="subscriptionData.restartModal.open" class="relative z-10" aria-labelledby="restart-modal-title" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
@@ -254,7 +289,7 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && !subscriptionData.details">
+      <template x-if="subscriptionData.state == 'NEW_CUSTOMER'">
         <div x-data="{audience: 'business'}">
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
@@ -389,10 +424,14 @@
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
+    {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
+    <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
+    {{ $recaptchaJs := resources.Get "js/recaptcha.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" integrity="{{ $recaptchaJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}

@@ -1,9 +1,11 @@
 "use strict";
 
 // requires store.js
+const BILLING_PORTAL_SESSION_URL = STORE_API_URL + '/hub/billing-portal-session';
 const CUSTOM_BILLING_URL = STORE_API_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = STORE_API_URL + '/hub/generate-pay-link';
-const SUBSCRIPTION_URL = STORE_API_URL + '/hub/subscription';
+const MANAGE_SUBSCRIPTION_URL = STORE_API_URL + '/hub/manage-subscription';
+const UPDATE_PAYMENT_METHOD_URL = STORE_API_URL + '/hub/update-payment-method';
 
 class HubSubscription {
 
@@ -11,12 +13,14 @@ class HubSubscription {
     this._form = form;
     this._subscriptionData = subscriptionData;
     this._subscriptionData.hubId = searchParams.get('hub_id');
-    if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0) {
-      this.get();
-    }
     let encodedReturnUrl = searchParams.get('return_url');
     if (encodedReturnUrl) {
       this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);  
+    }
+    this._subscriptionData.session = searchParams.get('session');
+    if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
+      this._subscriptionData.state = 'LOADING';
+      this.loadSubscription();
     }
     this._paddle = $.ajax({
       url: 'https://cdn.paddle.com/paddle/paddle.js',
@@ -31,55 +35,89 @@ class HubSubscription {
     });
   }
 
-  get() {
-    this._subscriptionData.getSuccess = false;
-    this.determineCustomBilling(() => {
+  loadSubscription() {
+    this.loadCustomBilling(() => {
       this.loadPrice(() => {
         this._subscriptionData.inProgress = true;
         this._subscriptionData.errorMessage = '';
         $.ajax({
-          url: SUBSCRIPTION_URL,
+          url: MANAGE_SUBSCRIPTION_URL,
           type: 'GET',
           data: {
-            hub_id: this._subscriptionData.hubId
+            hub_id: this._subscriptionData.hubId,
+            session: this._subscriptionData.session
           }
         }).done(data => {
-          this.onGetSucceeded(data);
+          this.onLoadSubscriptionSucceeded(data);
         }).fail(xhr => {
-          if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
-            this.onGetNotFound();
-          } else {
-            this.onGetFailed(xhr.responseJSON?.message || 'Fetching subscription failed.');
-          }
+          this.onLoadSubscriptionFailed(xhr.status, xhr.responseJSON?.message || 'Loading subscription failed.');
         });
       });
     });
   }
 
-  onGetSucceeded(data) {
+  onLoadSubscriptionSucceeded(data) {
     this._subscriptionData.token = data.token;
     this._subscriptionData.details = data.subscription;
     if (data.subscription.quantity) {
       this._subscriptionData.quantity = data.subscription.quantity;
     }
-    this._subscriptionData.getSuccess = true;
+    this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
   }
 
-  onGetNotFound() {
-    this._subscriptionData.getSuccess = true;
-    this._subscriptionData.errorMessage = '';
+  onLoadSubscriptionFailed(status, error) {
+    if (status == 404) {
+      this._subscriptionData.state = 'NEW_CUSTOMER';
+      this._subscriptionData.errorMessage = '';
+    } else if (status == 400) {
+      // Assuming that the error is due to the session being missing.
+      this._subscriptionData.state = 'CREATE_SESSION';
+      this._subscriptionData.errorMessage = '';
+    } else {
+      this._subscriptionData.state = 'CREATE_SESSION';
+      this._subscriptionData.errorMessage = error;
+    }
     this._subscriptionData.inProgress = false;
   }
 
-  onGetFailed(error) {
-    this._subscriptionData.getSuccess = false;
+  createSession() {
+    if (!$(this._form)[0].checkValidity()) {
+      $(this._form).find(':input').addClass('show-invalid');
+      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      return;
+    }
+
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: BILLING_PORTAL_SESSION_URL,
+      type: 'POST',
+      data: {
+        captcha: this._subscriptionData.captcha,
+        hub_id: this._subscriptionData.hubId,
+        return_url: this._subscriptionData.returnUrl
+      }
+    }).done(_ => {
+      this.onCreateSessionSucceeded();
+    }).fail(xhr => {
+      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Creating billing portal session failed.');
+    });
+  }
+
+  onCreateSessionSucceeded() {
+    this._subscriptionData.state = 'CREATE_SESSION_SUCCESS';
+    this._subscriptionData.inProgress = false;
+    this._subscriptionData.errorMessage = '';
+  }
+
+  onCreateSessionFailed(error) {
+    this._subscriptionData.inProgress = false;
     this._subscriptionData.errorMessage = error;
-    this._subscriptionData.inProgress = false;
   }
 
-  determineCustomBilling(continueHandler) {
+  loadCustomBilling(continueHandler) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
@@ -89,19 +127,17 @@ class HubSubscription {
         hub_id: this._subscriptionData.hubId
       }
     }).done(data => {
-      this.onDetermineCustomBillingSucceeded(data);
+      this.onLoadCustomBillingSucceeded(data);
       continueHandler();
     }).fail(xhr => {
+      this.onLoadCustomBillingFailed(xhr.status, xhr.responseJSON?.message || 'Loading custom billing options failed.');
       if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
-        this.onDetermineCustomBillingManagedNotFound();
         continueHandler();
-      } else {
-        this.onDetermineCustomBillingManagedFailed(xhr.responseJSON?.message || 'Fetching custom billing options failed.');
       }
     });
   }
 
-  onDetermineCustomBillingSucceeded(data) {
+  onLoadCustomBillingSucceeded(data) {
     this._subscriptionData.customBilling = data.custom_billing;
     this._subscriptionData.quantity = this._subscriptionData.customBilling.quantity || this._subscriptionData.quantity;
     this._subscriptionData.email = this._subscriptionData.customBilling.email || this._subscriptionData.email;
@@ -109,14 +145,13 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  onDetermineCustomBillingManagedNotFound() {
-    this._subscriptionData.customBilling = null;
-    this._subscriptionData.errorMessage = '';
-    this._subscriptionData.inProgress = false;
-  }
-
-  onDetermineCustomBillingManagedFailed(error) {
-    this._subscriptionData.errorMessage = error;
+  onLoadCustomBillingFailed(status, error) {
+    if (status == 404) {
+      this._subscriptionData.customBilling = null;
+      this._subscriptionData.errorMessage = '';
+    } else {
+      this._subscriptionData.errorMessage = error;
+    }
     this._subscriptionData.inProgress = false;
   }
 
@@ -185,7 +220,6 @@ class HubSubscription {
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    this._subscriptionData.postSuccess = false;
     if (this._subscriptionData.customBilling?.managed && this._subscriptionData.customBilling?.override) {
       // managed && override
       this.customCheckout(PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID, locale);
@@ -263,10 +297,11 @@ class HubSubscription {
 
   post(subscriptionId) {
     $.ajax({
-      url: SUBSCRIPTION_URL,
+      url: MANAGE_SUBSCRIPTION_URL,
       type: 'POST',
       data: {
         hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
         subscription_id: subscriptionId
       }
     }).done(data => {
@@ -277,18 +312,20 @@ class HubSubscription {
   }
 
   onPostSucceeded(data) {
+    this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.token = data.token;
     this._subscriptionData.details = data.subscription;
-    this._subscriptionData.postSuccess = true;
+    this._subscriptionData.session = data.session;
+    var searchParams = new URLSearchParams(window.location.search)
+    searchParams.set('session', data.session);
+    var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+    history.pushState(null, '', newRelativePathQuery);
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    if (this._subscriptionData.returnUrl) {
-      window.open(this._subscriptionData.returnUrl + '?token=' + data.token, '_self');
-    }
+    this.transferTokenToHub();
   }
 
   onPostFailed(error) {
-    this._subscriptionData.postSuccess = false;
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }
@@ -296,15 +333,27 @@ class HubSubscription {
   updatePaymentMethod(locale) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    this._paddle.then(paddle => {
-      paddle.Checkout.open({
-        override: this._subscriptionData.details.update_url,
-        locale: locale,
-        successCallback: _ => this.get(),
-        closeCallback: () => {
-          this._subscriptionData.inProgress = false;
-        }
+    $.ajax({
+      url: UPDATE_PAYMENT_METHOD_URL,
+      type: 'GET',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
+        subscription_id: this._subscriptionData.details.subscription_id
+      }
+    }).done(data => {
+      this._paddle.then(paddle => {
+        paddle.Checkout.open({
+          override: data.url,
+          locale: locale,
+          successCallback: _ => this.loadSubscription(),
+          closeCallback: () => {
+            this._subscriptionData.inProgress = false;
+          }
+        });
       });
+    }).fail(xhr => {
+      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating payment method failed.');
     });
   }
 
@@ -312,16 +361,17 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: SUBSCRIPTION_URL,
+      url: MANAGE_SUBSCRIPTION_URL,
       type: 'PUT',
       data: {
         hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
         pause: true
       }
     }).done(data => {
       this.onPutSucceeded(data, false);
     }).fail(xhr => {
-      this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
     });
   }
 
@@ -335,10 +385,11 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: SUBSCRIPTION_URL,
+      url: MANAGE_SUBSCRIPTION_URL,
       type: 'PUT',
       data: {
         hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
         pause: false,
         preview: true
       }
@@ -347,7 +398,7 @@ class HubSubscription {
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {
-      this.onPutFailed(xhr.responseJSON?.message || 'Calculating price failed.');
+      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Calculating price failed.');
     });
   }
 
@@ -355,16 +406,17 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: SUBSCRIPTION_URL,
+      url: MANAGE_SUBSCRIPTION_URL,
       type: 'PUT',
       data: {
         hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
         pause: false
       }
     }).done(data => {
-      this.onPutSucceeded(data, true);
+      this.onPutSucceeded(data, this._subscriptionData.details.state == 'paused');
     }).fail(xhr => {
-      this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
     });
   }
 
@@ -390,10 +442,11 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: SUBSCRIPTION_URL,
+      url: MANAGE_SUBSCRIPTION_URL,
       type: 'PUT',
       data: {
         hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
         quantity: this._subscriptionData.quantity,
         preview: true
       }
@@ -402,7 +455,7 @@ class HubSubscription {
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {
-      this.onPutFailed(xhr.responseJSON?.message || 'Calculating price failed.');
+      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Calculating price failed.');
     });
   }
 
@@ -410,17 +463,18 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: SUBSCRIPTION_URL,
+      url: MANAGE_SUBSCRIPTION_URL,
       type: 'PUT',
       data: {
         hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session,
         quantity: this._subscriptionData.quantity
       }
     }).done(data => {
       this._subscriptionData.changeSeatsModal.open = false;
       this.onPutSucceeded(data, true);
     }).fail(xhr => {
-      this.onPutFailed(xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
     });
   }
 
@@ -429,14 +483,21 @@ class HubSubscription {
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    if (shouldOpenReturnUrl && this._subscriptionData.returnUrl) {
-      window.open(this._subscriptionData.returnUrl + '?token=' + data.token, '_self');
+    if (shouldOpenReturnUrl) {
+      this.transferTokenToHub();
     }
   }
 
-  onPutFailed(error) {
+  onPutFailed(status, error) {
+    if (status == 401) {
+      this._subscriptionData.state = 'CREATE_SESSION';
+    }
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
+  }
+
+  transferTokenToHub() {
+    window.open(this._subscriptionData.returnUrl + '?token=' + this._subscriptionData.token, '_self');
   }
 
 }

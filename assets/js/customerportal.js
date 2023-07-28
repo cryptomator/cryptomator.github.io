@@ -29,7 +29,7 @@ class CustomerPortal {
     }).done(_ => {
       this.onRequestSucceeded();
     }).fail(xhr => {
-      this.onRequestFailed(xhr.responseJSON?.message || 'Requesting supporter certificate failed.');
+      this.onRequestFailed(xhr.responseJSON?.message || 'Requesting customer portal failed.');
     });
   }
 

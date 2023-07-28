@@ -362,14 +362,23 @@
   translation: "Vielen Dank für deine Anmeldung! Ein Bestätigungslink wurde an deine E-Mail-Adresse zugeschickt."
 
 # Hub Billing
-- id: hub_billing_landing_title
+- id: hub_billing_generic_title
   translation: "Hub-Abonnement verwalten"
-- id: hub_billing_landing_description
-  translation: "Bitte gib deine Hub-ID ein, um fortzufahren. Diese findest du als Admin in deiner Hub-Instanz unter \"Abrechnung\"."
-- id: hub_billing_landing_hubid_placeholder
-  translation: "Hub-ID"
-- id: hub_billing_landing_submit
-  translation: "Weiter"
+
+- id: hub_billing_missingparams_description
+  translation: "Um dein Abonnement zu verwalten, verwende bitte den \"Abonnement verwalten\"-Button in deiner Hub-Instanz unter \"Admin\"."
+
+- id: hub_billing_loading_description
+  translation: "Bitte warten, während wir deine Abonnement-Informationen laden."
+
+- id: hub_billing_createsession_description
+  translation: "Um auf deine Abonnement-Informationen zuzugreifen, wird ein Bestätigungslink an die E-Mail-Adresse gesendet, die du für den Kauf verwendet hast."
+- id: hub_billing_createsession_success_description
+  translation: "Bitte überprüfe deine E-Mails auf den Link zur Verwaltung deines Hub-Abonnements."
+- id: hub_billing_createsession_loadcaptcha
+  translation: "Weiter…"
+- id: hub_billing_createsession_submit
+  translation: "Zugang anfordern"
 
 - id: hub_billing_manage_status_title
   translation: "Status"
@@ -392,8 +401,6 @@
   translation: "Nächste Zahlung"
 - id: hub_billing_manage_next_payment_date_description
   translation: "Fälligkeitsdatum"
-- id: hub_billing_manage_next_payment_date_unavailable
-  translation: "N/A (pausiert)"
 - id: hub_billing_manage_next_payment_pause_action
   translation: "Abonnement pausieren"
 - id: hub_billing_manage_next_payment_restart_action
@@ -412,10 +419,8 @@
 
 - id: hub_billing_manage_license_key_title
   translation: "Lizenzschlüssel"
-- id: hub_billing_manage_license_key_instruction_with_returnurl
-  translation: "Dies ist dein Lizenzschlüssel, der an deine Hub-ID gebunden ist. Drück auf den Button unten, um ihn automatisch auf deine Hub-Instanz zu übertragen. Andernfalls gib ihn gegebenenfalls manuell in deiner Hub-Instanz unter \"Abrechnung\" ein."
-- id: hub_billing_manage_license_key_instruction_without_returnurl
-  translation: "Dies ist dein Lizenzschlüssel, der an deine Hub-ID gebunden ist. Gib ihn in deiner Hub-Instanz unter \"Abrechnung\" gegebenenfalls manuell ein."
+- id: hub_billing_manage_license_key_instruction
+  translation: "Dies ist dein Lizenzschlüssel, der an deine Hub-ID gebunden ist. Drück auf den Button unten, um ihn automatisch auf deine Hub-Instanz zu übertragen."
 - id: hub_billing_manage_license_key_transfer_action
   translation: "Zum Hub übertragen"
 

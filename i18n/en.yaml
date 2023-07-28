@@ -362,14 +362,23 @@
   translation: "Thank you for subscribing! A confirmation link has been sent to your email address."
 
 # Hub Billing
-- id: hub_billing_landing_title
+- id: hub_billing_generic_title
   translation: "Manage Hub Subscription"
-- id: hub_billing_landing_description
-  translation: "Please enter your Hub ID in order to continue. You will find this as an admin of your Hub instance under \"Billing\"."
-- id: hub_billing_landing_hubid_placeholder
-  translation: "Hub ID"
-- id: hub_billing_landing_submit
-  translation: "Continue"
+
+- id: hub_billing_missingparams_description
+  translation: "To manage your subscription, please use the \"Manage Subscription\" button in your Hub instance under \"Admin\"."
+
+- id: hub_billing_loading_description
+  translation: "Please wait while we're loading your subscription information."
+
+- id: hub_billing_createsession_description
+  translation: "To access your subscription information, a confirmation link will be sent to the email you used to make your purchase."
+- id: hub_billing_createsession_success_description
+  translation: "Please check your email for the link to manage your Hub subscription."
+- id: hub_billing_createsession_loadcaptcha
+  translation: "Continue…"
+- id: hub_billing_createsession_submit
+  translation: "Request Access"
 
 - id: hub_billing_manage_status_title
   translation: "Status"
@@ -392,8 +401,6 @@
   translation: "Next Payment"
 - id: hub_billing_manage_next_payment_date_description
   translation: "Due Date"
-- id: hub_billing_manage_next_payment_date_unavailable
-  translation: "N/A (Paused)"
 - id: hub_billing_manage_next_payment_pause_action
   translation: "Pause Subscription"
 - id: hub_billing_manage_next_payment_restart_action
@@ -412,10 +419,8 @@
 
 - id: hub_billing_manage_license_key_title
   translation: "License Key"
-- id: hub_billing_manage_license_key_instruction_with_returnurl
-  translation: "This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically. Otherwise, enter it in your Hub instance under \"Billing\" manually if necessary."
-- id: hub_billing_manage_license_key_instruction_without_returnurl
-  translation: "This is your license key that is bound to your Hub ID. Enter it in your Hub instance under \"Billing\" manually if necessary."
+- id: hub_billing_manage_license_key_instruction
+  translation: "This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically."
 - id: hub_billing_manage_license_key_transfer_action
   translation: "Transfer to Hub"
 
