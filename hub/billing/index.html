@@ -164,27 +164,65 @@
     
     
   <div class="container py-12">
-    <form x-data="{subscriptionData: {hubId: '', returnUrl: null, customBilling: null, monthlyPrice: null, errorMessage: '', getSuccess: false, postSuccess: false, inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form">
-      <template x-if="!subscriptionData.getSuccess">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, monthlyPrice: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form">
+      <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             Manage Hub Subscription
           </h3>
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-            Please enter your Hub ID in order to continue. You will find this as an admin of your Hub instance under &#34;Billing&#34;.
+            <i class="fas fa-info-circle fa-fw"></i>
+            To manage your subscription, please use the &#34;Manage Subscription&#34; button in your Hub instance under &#34;Admin&#34;.
           </p>
-          <div class="flex justify-center items-center rounded bg-gray-300">
-            <input x-model="subscriptionData.hubId" type="text" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Hub ID" required/>
-            <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.get()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
-              <i :class="{'fa-sign-in': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
-              Continue
-            </button>
-          </div>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'LOADING'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            Manage Hub Subscription
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+            Please wait while we&#39;re loading your subscription information.
+          </p>
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && subscriptionData.details">
+      <template x-if="subscriptionData.state == 'CREATE_SESSION'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            Manage Hub Subscription
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-sign-in fa-fw"></i>
+            To access your subscription information, a confirmation link will be sent to the email you used to make your purchase.
+          </p>
+          <div x-show="!subscriptionData.captcha" x-ref="captchaWrapper" class="flex justify-center">
+            <button @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => subscriptionData.captcha = token)" class="btn btn-primary w-full md:w-64">Continue…</button>
+          </div>
+          <button x-show="subscriptionData.captcha" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.createSession()" type="submit" class="btn btn-primary w-full md:w-64">
+            <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+            Request Access
+          </button>
+          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'CREATE_SESSION_SUCCESS'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            Manage Hub Subscription
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-envelope fa-fw"></i>
+            Please check your email for the link to manage your Hub subscription.
+          </p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'EXISTING_CUSTOMER'">
         <div>
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>Cryptomator Hub: Billing</h1>
@@ -242,7 +280,7 @@
                 <template x-if="!subscriptionData.details.next_payment">
                   <div>
                     <p class="font-bold text-2xl md:text-3xl lg:text-4xl">–</p>
-                    <p class="text-xs text-gray-600 mt-1">Due Date: N/A (Paused)</p>
+                    <p class="text-xs text-gray-600 mt-1">Due Date: N/A</p>
                   </div>
                 </template>
                 <p class="mt-2">
@@ -292,16 +330,13 @@
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">
             License Key
           </h2>
-          <p x-show="subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-            This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically. Otherwise, enter it in your Hub instance under &#34;Billing&#34; manually if necessary.
-          </p>
-          <p x-show="!subscriptionData.returnUrl" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-            This is your license key that is bound to your Hub ID. Enter it in your Hub instance under &#34;Billing&#34; manually if necessary.
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically.
           </p>
           <textarea x-model="subscriptionData.token" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="6" readonly></textarea>
-          <a x-show="subscriptionData.returnUrl" :href="subscriptionData.returnUrl + '?token=' + subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" role="button">
+          <button :disabled="subscriptionData.inProgress || !subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
             Transfer to Hub
-          </a>
+          </button>
 
           <div x-show="subscriptionData.restartModal.open" class="relative z-10" aria-labelledby="restart-modal-title" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
@@ -418,7 +453,7 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.getSuccess && !subscriptionData.details">
+      <template x-if="subscriptionData.state == 'NEW_CUSTOMER'">
         <div x-data="{audience: 'business'}">
           <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>Cryptomator Hub: Billing</h1>
@@ -485,12 +520,12 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-698357142" x-model="acceptTerms" />
-<label for="id-698357142">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-678342915" x-model="acceptTerms" />
+<label for="id-678342915">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-582697134" x-model="acceptTerms" />
-<label for="id-582697134">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-924175863" x-model="acceptTerms" />
+<label for="id-924175863">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -618,7 +653,9 @@
     
     <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.b66cc607e2b3e2708597d8f24e5cb6881ebd29c09351bcd6797f6f0bc53a107f.js" integrity="sha256-tmzGB&#43;Kz4nCFl9jyTly2iB69KcCTUbzWeX9vC8U6EH8=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.edb99092bbe2060d9aafaaf1be68e5960a47c480e29e28f15764a3edcfa774e6.js" integrity="sha256-7bmQkrviBg2ar6rxvmjllgpHxIDinijxV2Sj7c&#43;ndOY=" defer></script>
+    
+    <script type="text/javascript" src="/js/recaptcha.min.ad20aa2f7e72be34befe0936317c4345651e97f81208a8cc3baba80765077a5e.js" integrity="sha256-rSCqL35yvjS&#43;/gk2MXxDRWUel/gSCKjMO6uoB2UHel4=" defer></script>
   
 
     </div>
