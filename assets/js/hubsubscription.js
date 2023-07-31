@@ -179,21 +179,29 @@ class HubSubscription {
   }
 
   onLoadPriceSucceeded(data) {
-    let product = data.response.products[0]
+    let product = data.response.products[0];
     let currency = product.currency;
     let netAmount;
+    let recurringNetAmount;
     let grossAmount;
+    let recurringGrossAmount;
     if (this._subscriptionData.customBilling?.override?.prices) {
       netAmount = this.getAmount(this._subscriptionData.customBilling.override.prices, currency) / 12;
+      recurringNetAmount = this.getAmount(this._subscriptionData.customBilling.override.recurring_prices, currency) / 12;
       let taxRate = product.subscription.price.gross / product.subscription.price.net;
       grossAmount = netAmount * taxRate;
+      recurringGrossAmount = recurringNetAmount * taxRate;
     } else {
       netAmount = product.subscription.price.net / 12;
+      recurringNetAmount = netAmount;
       grossAmount = product.subscription.price.gross / 12;
+      recurringGrossAmount = grossAmount;
     }
     this._subscriptionData.monthlyPrice = {
       netAmount: netAmount,
+      recurringNetAmount: recurringNetAmount,
       grossAmount: grossAmount,
+      recurringGrossAmount: recurringGrossAmount,
       currency: currency
     };
     this._subscriptionData.errorMessage = '';

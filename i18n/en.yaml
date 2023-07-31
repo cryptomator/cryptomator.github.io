@@ -292,6 +292,8 @@
   translation: "excl. VAT"
 - id: hub_pricing_vat_included
   translation: "incl. VAT"
+- id: hub_pricing_different_recurring_description
+  translation: "after the first year"
 - id: hub_pricing_community_title
   translation: "Community"
 - id: hub_pricing_community_statement
