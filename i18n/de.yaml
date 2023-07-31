@@ -4,8 +4,8 @@
   translation: "Unterstütze uns"
 - id: nav_learn_more
   translation: "Mehr erfahren"
-- id: nav_twitter
-  translation: "Cryptomator auf Twitter"
+- id: nav_fediverse
+  translation: "Cryptomator auf Fediverse"
 - id: nav_github
   translation: "Cryptomator auf GitHub"
 - id: footer_contribute_title
@@ -220,7 +220,7 @@
 - id: home_newsletter_title
   translation: "Bleibe mit uns in Verbindung"
 - id: home_newsletter_instruction
-  translation: "Abonniere unseren Newsletter oder folge uns <a class=\"text-primary no-underline hover:underline\" href=\"https://twitter.com/Cryptomator\" target=\"_blank\" rel=\"noopener\">@Cryptomator</a> auf Twitter."
+  translation: "Abonniere unseren Newsletter oder folge uns auf <a class=\"text-primary no-underline hover:underline\" href=\"https://mastodon.online/@cryptomator\" target=\"_blank\" rel=\"noopener\">@cryptomator@mastodon.online</a>."
 - id: home_newsletter_email_placeholder
   translation: "E-Mail-Adresse"
 - id: home_newsletter_subscribe
