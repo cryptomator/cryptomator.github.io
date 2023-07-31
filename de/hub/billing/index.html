@@ -476,14 +476,28 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   Standard
                 </h2>
-                <p x-show="audience === 'business'" class="flex items-baseline gap-2">
-                  <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
-                  <span class="text-gray-700">zzgl. USt.</span>
-                </p>
-                <p x-show="audience === 'consumer'" class="flex items-baseline gap-2">
-                  <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
-                  <span class="text-gray-700">inkl. USt.</span>
-                </p>
+                <div x-show="audience === 'business'">
+                  <p class="flex items-baseline gap-2">
+                    <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                    <span class="text-gray-700">zzgl. USt.</span>
+                  </p>
+                  <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
+                    <span x-text="subscriptionData.monthlyPrice.recurringNetAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
+                    <span>zzgl. USt.</span>
+                    <span>nach dem ersten Jahr</span>
+                  </p>
+                </div>
+                <div x-show="audience === 'consumer'">
+                  <p class="flex items-baseline gap-2">
+                    <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                    <span class="text-gray-700">inkl. USt.</span>
+                  </p>
+                  <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
+                    <span x-text="subscriptionData.monthlyPrice.recurringGrossAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
+                    <span>inkl. USt.</span>
+                    <span>nach dem ersten Jahr</span>
+                  </p>
+                </div>
                 <p class="text-lg text-gray-500 mb-4">
                   pro Sitz, pro Monat, jährlich abgerechnet
                 </p>
@@ -520,12 +534,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-625394817" x-model="acceptTerms" />
-<label for="id-625394817">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-168795324" x-model="acceptTerms" />
+<label for="id-168795324">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-673481529" x-model="acceptTerms" />
-<label for="id-673481529">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-752643981" x-model="acceptTerms" />
+<label for="id-752643981">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -653,7 +667,7 @@
     
     <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.edb99092bbe2060d9aafaaf1be68e5960a47c480e29e28f15764a3edcfa774e6.js" integrity="sha256-7bmQkrviBg2ar6rxvmjllgpHxIDinijxV2Sj7c&#43;ndOY=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.113912e787c414cd430e3ccd116cd00256981779c298926b9059e948c5c605ba.js" integrity="sha256-ETkS54fEFM1DDjzNEWzQAlaYF3nCmJJrkFnpSMXGBbo=" defer></script>
     
     <script type="text/javascript" src="/js/recaptcha.min.ad20aa2f7e72be34befe0936317c4345651e97f81208a8cc3baba80765077a5e.js" integrity="sha256-rSCqL35yvjS&#43;/gk2MXxDRWUel/gSCKjMO6uoB2UHel4=" defer></script>
   
