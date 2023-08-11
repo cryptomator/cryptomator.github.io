@@ -11,8 +11,35 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/desktop/</link>
     </image>
-    <lastBuildDate>Thu, 10 Aug 2023 10:50:01 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2023 09:21:22 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub 1.2.0: More Control and Flexibility</title>
+        <description>&lt;p&gt;We&amp;rsquo;re excited to release Cryptomator Hub 1.2.0, featuring essential updates for both administrators and users. 🎉 Let&amp;rsquo;s dive into what&amp;rsquo;s new.&lt;/p&gt;
+&lt;h2 id=&#34;-audit-logs-premium-feature&#34;&gt;🗒 Audit Logs (Premium Feature)&lt;/h2&gt;
+&lt;p&gt;Our new Audit Logs feature, available with a paid license, empowers administrators with insights into user activities. Monitor vault changes, key retrievals, and other essential activities, providing an extra layer of transparency and accountability within your organization.&lt;/p&gt;
+&lt;h2 id=&#34;-improved-vault-management&#34;&gt;⚙️ Improved Vault Management&lt;/h2&gt;
+&lt;p&gt;With the &amp;ldquo;Edit Vault Metadata&amp;rdquo; action, customizing vault details is now possible. You can now change the name and description of your vaults, helping you keep your vaults organized and easily identifiable. Plus, vault names no longer need to be unique, offering more flexibility.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve also added the &amp;ldquo;Archive Vault&amp;rdquo; action, allowing you to remove vaults from your list. Easily reactivate archived vaults whenever needed.&lt;/p&gt;
+&lt;h2 id=&#34;-streamlined-user-profile-page&#34;&gt;👤 Streamlined User Profile Page&lt;/h2&gt;
+&lt;p&gt;Our new &amp;ldquo;User Profile&amp;rdquo; page centralizes device management and user settings in one convenient location. Additionally, we&amp;rsquo;ve integrated a &amp;ldquo;Manage Account&amp;rdquo; link for users to be able to change their password and configure 2FA via Keycloak.&lt;/p&gt;
+&lt;h2 id=&#34;-upgrade-info&#34;&gt;⬆ Upgrade Info&lt;/h2&gt;
+&lt;p&gt;Upgrading to 1.2.0 is simple. Just update the version number in your Docker Compose or Kubernetes spec file and restart the service. Remember to always &lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;back up your data&lt;/a&gt;, especially before upgrading. For managed instances, rest assured, you&amp;rsquo;re already on the latest version.&lt;/p&gt;
+&lt;h2 id=&#34;-whats-next&#34;&gt;⏭ What&amp;rsquo;s Next&lt;/h2&gt;
+&lt;p&gt;We&amp;rsquo;re embarking on a significant refactoring journey for our key management system in the next feature update. This update will introduce &amp;ldquo;user keys&amp;rdquo; as intermediary key pairs between vault keys and device keys. Vault owners will then grant access to users and not individual devices, which allows users to manage their devices independently.&lt;/p&gt;
+&lt;p&gt;This refactoring will deprecate vault admin passwords and introduce the vault owner role, providing a more secure and efficient way to manage your vaults.&lt;/p&gt;
+&lt;p&gt;Stay tuned for more exciting updates!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/08/11/hub-1.2.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/08/11/hub-1.2.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.8.0 for Android</title>
@@ -336,32 +363,6 @@
         <category>ios</category>
         
         <category>vulnerability</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator 2.0 for iOS Release</title>
-        <description>&lt;p&gt;We are happy to announce that Cryptomator 2.0 for iOS is now available &lt;a href=&#34;https://apps.apple.com/us/app/cryptomator-2/id1560822163&#34;&gt;in the App Store&lt;/a&gt;! 🎉 We&amp;rsquo;d like to express our gratitude to our over 2,300 TestFlight users for testing the app over the last 6 months. ❤️&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;a href=&#34;https://apps.apple.com/us/app/cryptomator-2/id1560822163&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
-    &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/ios-2.0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/ios-2.0.png 1x, https://cryptomator.org/img/blog/ios-2.0@2x.png 2x&#34; alt=&#34;Cryptomator 2.0 for iOS&#34; /&gt;
-  &lt;/a&gt;
-&lt;/figure&gt;
-&lt;p&gt;Last year in April, we started to rebuild our iOS app from scratch. That&amp;rsquo;s why we decided to develop Cryptomator 2.0 in Swift. This will make it easier for us to maintain the app in the future.&lt;/p&gt;
-&lt;p&gt;Of course, the new app also comes with some new features. With Cryptomator 2.0, you get an app that is completely integrated into Apple&amp;rsquo;s own Files app. This means that your vaults are directly accessible from there. For example, you can now save and edit a Word document directly in an encrypted vault via the Files app. In addition, features like thumbnails, grid view, swiping through images, and drag &amp;amp; drop are possible with the new app.&lt;/p&gt;
-&lt;p&gt;Transparency is also very important to us with Cryptomator 2.0. Therefore, the entire Cryptomator family, including the new app, remains fully open source. You can check out the repository on GitHub &lt;a href=&#34;https://github.com/cryptomator/ios&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;But we didn&amp;rsquo;t stop there. For the first time, the new app is available as a &amp;ldquo;freemium&amp;rdquo; app. This means that in the free version, you can access your vaults in &amp;ldquo;read-only&amp;rdquo; mode. If you only need quick access to your vaults on the go, which were created with the Desktop application, then this is the perfect &amp;ldquo;companion&amp;rdquo; app. If you don&amp;rsquo;t want to miss out on write access to your vaults, you can unlock the full version via a one-time purchase for $11.99 after a 30-day trial.&lt;/p&gt;
-&lt;p&gt;As promised, users of our old Cryptomator app can switch to the new app for free. We have tried to make the upgrade as easy as possible for you. All you have to do is make sure that the previous app is up to date when you start the new app so that you can select the upgrade option. To make the transition easier for you, the previous app will be available in the App Store for a short transition period.&lt;/p&gt;
-&lt;p&gt;At this point, we would like to thank you once again for your support, without which the project would not have been possible. 😊&lt;/p&gt;
-&lt;p&gt;We are already looking forward to your feedback! 🤖&lt;/p&gt;
-</description>
-        <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2021/12/21/ios-2.0/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2021/12/21/ios-2.0/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>ios</category>
         
       </item>
     

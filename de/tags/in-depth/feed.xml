@@ -11,8 +11,35 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/in-depth/</link>
     </image>
-    <lastBuildDate>Thu, 10 Aug 2023 10:50:01 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2023 09:21:22 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub 1.2.0: Mehr Kontrolle und Flexibilität</title>
+        <description>&lt;p&gt;Wir freuen uns, Cryptomator Hub 1.2.0 zu veröffentlichen, mit wichtigen Updates für Administratoren und Benutzer. 🎉 Schauen wir uns an, was neu ist.&lt;/p&gt;
+&lt;h2 id=&#34;-audit-logs-premium-feature&#34;&gt;🗒 Audit Logs (Premium Feature)&lt;/h2&gt;
+&lt;p&gt;Unser neues Feature „Audit Logs“, die mit einer kostenpflichtigen Lizenz verfügbar ist, ermöglicht Administratoren Einblicke in die Benutzeraktivitäten. Überwache Tresoränderungen, Schlüsselabrufe sowie andere wichtige Aktivitäten und schaffe so eine zusätzliche Ebene der Transparenz und Verantwortlichkeit in deinem Unternehmen.&lt;/p&gt;
+&lt;h2 id=&#34;-verbesserte-tresorverwaltung&#34;&gt;⚙️ Verbesserte Tresorverwaltung&lt;/h2&gt;
+&lt;p&gt;Mit der Aktion „Tresor-Metadaten bearbeiten“ ist es jetzt möglich, Tresor-Details individuell anzupassen. Du kannst jetzt den Namen und die Beschreibung deiner Tresore ändern, damit du deine Tresore übersichtlich und leicht identifizierbar halten kannst. Außerdem müssen die Namen der Tresore nicht mehr eindeutig sein, was mehr Flexibilität bietet.&lt;/p&gt;
+&lt;p&gt;Wir haben außerdem die Aktion „Tresor archivieren“ hinzugefügt, mit der du Tresore aus deiner Liste entfernen kannst. Reaktiviere archivierte Tresore bei Bedarf ganz einfach wieder.&lt;/p&gt;
+&lt;h2 id=&#34;-optimierte-benutzerprofilseite&#34;&gt;👤 Optimierte Benutzerprofilseite&lt;/h2&gt;
+&lt;p&gt;Unsere neue „Benutzerprofil“-Seite zentralisiert das Gerätemanagement und die Benutzereinstellungen an einem Ort. Zusätzlich haben wir einen „Konto verwalten“-Link integriert, über den Benutzer bei Keycloak ihr Passwort ändern und 2FA konfigurieren können.&lt;/p&gt;
+&lt;h2 id=&#34;-upgrade-informationen&#34;&gt;⬆ Upgrade-Informationen&lt;/h2&gt;
+&lt;p&gt;Ein Upgrade auf 1.2.0 ist einfach. Aktualisiere die Versionsnummer in deiner Docker Compose- oder Kubernetes-Spec-Datei und starte den Dienst neu. Denke daran, immer ein &lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;Backup deiner Daten&lt;/a&gt; zu erstellen, insbesondere vor dem Upgrade. Bei Managed-Instanzen kannst du sicher sein, dass du bereits die neueste Version verwendest.&lt;/p&gt;
+&lt;h2 id=&#34;-was-kommt-als-nächstes&#34;&gt;⏭ Was kommt als Nächstes?&lt;/h2&gt;
+&lt;p&gt;Mit dem nächsten Feature-Update werden wir unser Schlüsselverwaltungssystem grundlegend überarbeiten. Mit diesem Update werden „Benutzerschlüssel“ als zwischengeschaltete Schlüsselpaare zwischen Tresorschlüsseln und Geräteschlüsseln eingeführt. Tresor-Eigentühmer gewähren dann den Benutzern und nicht den einzelnen Geräten Zugriff, so dass die Benutzer ihre Geräte unabhängig verwalten können.&lt;/p&gt;
+&lt;p&gt;Mit dieser Überarbeitung werden die Tresor-Admin-Passwörter abgeschafft und die Rolle des Tresor-Eigentümers eingeführt, die eine sicherere und effizientere Verwaltung deiner Tresore ermöglicht.&lt;/p&gt;
+&lt;p&gt;Weitere spannende Updates werden folgen!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2023/08/11/hub-1.2.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/08/11/hub-1.2.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.8.0 for Android</title>
@@ -336,32 +363,6 @@
         <category>ios</category>
         
         <category>vulnerability</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator 2.0 für iOS Release</title>
-        <description>&lt;p&gt;Wir freuen uns, euch mitteilen zu können, dass Cryptomator 2.0 für iOS ab sofort &lt;a href=&#34;https://apps.apple.com/de/app/cryptomator-2/id1560822163&#34;&gt;im App Store&lt;/a&gt; verfügbar ist! 🎉 Wir möchten uns bei unseren über 2.300 TestFlight-Nutzer:innen bedanken, die die App in den letzten 6 Monaten getestet haben. ❤️&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;a href=&#34;https://apps.apple.com/de/app/cryptomator-2/id1560822163&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
-    &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/ios-2.0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/ios-2.0.png 1x, https://cryptomator.org/img/blog/ios-2.0@2x.png 2x&#34; alt=&#34;Cryptomator 2.0 for iOS&#34; /&gt;
-  &lt;/a&gt;
-&lt;/figure&gt;
-&lt;p&gt;Letztes Jahr im April haben wir damit angefangen, unsere iOS-App von Grund auf neu zu entwickeln. Darum haben wir uns entschieden, Cryptomator 2.0 in Swift zu entwickeln, womit das Projekt zukunftssicher ist und leichter zu warten.&lt;/p&gt;
-&lt;p&gt;Natürlich kommen mit der neuen App auch einige neue Funktionen hinzu. Mit Cryptomator 2.0 erhaltet ihr eine App, die vollständig in die App „Dateien“ von Apple integriert ist. Das bedeutet, dass eure Tresore von dort aus direkt zugänglich sind. Zum Beispiel könnt ihr jetzt ein Word-Dokument direkt in einem verschlüsselten Tresor über die App „Dateien“ speichern und bearbeiten. Darüber hinaus sind mit der neuen App Funktionen wie Thumbnails, Gitteransicht, das Durchblättern von Bildern sowie Drag &amp;amp; Drop möglich.&lt;/p&gt;
-&lt;p&gt;Transparenz ist uns auch bei Cryptomator 2.0 sehr wichtig. Daher bleibt die gesamte Cryptomator-Familie, einschließlich der neuen App, vollständig quelloffen. Ihr könnt euch das Repository auf GitHub &lt;a href=&#34;https://github.com/cryptomator/ios&#34;&gt;hier&lt;/a&gt; ansehen.&lt;/p&gt;
-&lt;p&gt;Aber das war noch nicht alles. Die neue iOS-App ist zum ersten Mal als „Freemium“-App verfügbar. Das bedeutet, dass ihr in der kostenlosen Version auf eure Tresore im „Nur-Lesen-Modus“ zugreifen könnt. Wenn ihr unterwegs nur schnellen Zugriff auf eure Tresore benötigt, die mit der Desktop-Version erstellt wurden, dann ist dies die perfekte „Begleit-App“. Wenn ihr auf den Schreibzugriff auf eure Tresore nicht verzichten möchtet, könnt ihr die Vollversion nach einer 30-tägigen Testphase durch einen einmaligen Kauf für 11,99€ freischalten.&lt;/p&gt;
-&lt;p&gt;Nutzer:innen unserer alten Cryptomator-App können, wie versprochen, kostenlos auf die neue App umsteigen. Wir haben versucht, das Upgrade für euch so einfach wie möglich zu gestalten. Ihr müsst lediglich sicherstellen, dass die vorherige App auf dem neuesten Stand ist, um in der neuen App die Upgrade-Option auswählen können. Um euch den Übergang zu erleichtern, wird die bisherige App für eine kurze Übergangszeit im App Store verfügbar sein.&lt;/p&gt;
-&lt;p&gt;An dieser Stelle möchten wir uns noch einmal für eure Unterstützung bedanken, ohne die das Projekt nicht möglich gewesen wäre. 😊&lt;/p&gt;
-&lt;p&gt;Wir freuen uns auf euer Feedback! 🤖&lt;/p&gt;
-</description>
-        <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2021/12/21/ios-2.0/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2021/12/21/ios-2.0/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>ios</category>
         
       </item>
     
