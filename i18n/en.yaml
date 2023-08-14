@@ -511,7 +511,7 @@
 - id: hub_managed_info_subdomain_description
   translation: "The URL of your Hub instance. If you'd like to use a custom domain, please let us know below."
 - id: hub_managed_info_email
-  translation: "Email"
+  translation: "Work Email"
 - id: hub_managed_info_email_description
   translation: "The email address of the person who will be the first admin of your Hub instance."
 - id: hub_managed_info_quantity

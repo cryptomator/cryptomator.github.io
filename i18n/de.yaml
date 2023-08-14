@@ -511,7 +511,7 @@
 - id: hub_managed_info_subdomain_description
   translation: "Die URL deiner Hub-Instanz. Wenn du eine eigene Domain verwenden möchtest, teile uns dies bitte unten mit."
 - id: hub_managed_info_email
-  translation: "E-Mail"
+  translation: "Arbeits-E-Mail"
 - id: hub_managed_info_email_description
   translation: "Die E-Mail-Adresse der Person, die der erste Administrator deiner Hub-Instanz sein wird."
 - id: hub_managed_info_quantity
