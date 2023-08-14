@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/sponsors/</link>
     </image>
-    <lastBuildDate>Fri, 11 Aug 2023 14:42:51 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Aug 2023 12:48:06 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -25,7 +25,7 @@
 &lt;h2 id=&#34;-streamlined-user-profile-page&#34;&gt;👤 Streamlined User Profile Page&lt;/h2&gt;
 &lt;p&gt;Our new &amp;ldquo;User Profile&amp;rdquo; page centralizes device management and user settings in one convenient location. Additionally, we&amp;rsquo;ve integrated a &amp;ldquo;Manage Account&amp;rdquo; link for users to be able to change their password and configure 2FA via Keycloak.&lt;/p&gt;
 &lt;h2 id=&#34;-upgrade-info&#34;&gt;⬆ Upgrade Info&lt;/h2&gt;
-&lt;p&gt;Upgrading to 1.2.0 is simple. Just update the version number in your Docker Compose or Kubernetes spec file and restart the service. Remember to always &lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;back up your data&lt;/a&gt;, especially before upgrading. For managed instances, rest assured, you&amp;rsquo;re already on the latest version.&lt;/p&gt;
+&lt;p&gt;Upgrading to 1.2.0 is simple. If you are on the &lt;code&gt;stable&lt;/code&gt; lane, you just have to pull the image and restart the service. Otherwise, update the version number in your Docker Compose or Kubernetes spec file before you restart the service. Remember to always &lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;back up your data&lt;/a&gt;, especially before upgrading. For managed instances, rest assured, you&amp;rsquo;re already on the latest version.&lt;/p&gt;
 &lt;h2 id=&#34;-whats-next&#34;&gt;⏭ What&amp;rsquo;s Next&lt;/h2&gt;
 &lt;p&gt;We&amp;rsquo;re embarking on a significant refactoring journey for our key management system in the next feature update. This update will introduce &amp;ldquo;user keys&amp;rdquo; as intermediary key pairs between vault keys and device keys. Vault owners will then grant access to users and not individual devices, which allows users to manage their devices independently.&lt;/p&gt;
 &lt;p&gt;This refactoring will deprecate vault admin passwords and introduce the vault owner role, providing a more secure and efficient way to manage your vaults.&lt;/p&gt;
