@@ -340,7 +340,7 @@
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4
   translation: "Mengenrabatt für große Teams"
-- id: hub_pricing_enterprise_standard_benefit_1
+- id: hub_pricing_managed_enterprise_benefit_1
   translation: "Eigene Domain"
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung 2023."
