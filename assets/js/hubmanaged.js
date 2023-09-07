@@ -42,6 +42,7 @@ class HubManaged {
     this._feedbackData.success = true;
     this._feedbackData.inProgress = false;
     this._feedbackData.errorMessage = '';
+    window.scrollTo(0, 0);
   }
 
 }

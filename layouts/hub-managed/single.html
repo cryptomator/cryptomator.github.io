@@ -7,7 +7,7 @@
 
     <form x-ref="form">
       <section class="relative rounded shadow bg-white">
-        <div class="px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6" :class="!feedbackData.success || 'invisible'">
+        <div x-show="!feedbackData.success" class="px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
           <header class="md:col-span-1">
             <h2 class="text-lg font-medium leading-6 text-gray-900">
               {{ i18n "hub_managed_info_header_title" }}
@@ -66,8 +66,14 @@
           </div>
         </div>
 
-        <div x-show="feedbackData.success" class="absolute inset-0 w-full h-full flex flex-col justify-center items-center text-center px-4 py-5 md:p-6" x-cloak>
+        <div x-show="feedbackData.success" class="flex flex-col gap-4 text-center px-4 py-5 md:p-6" x-cloak>
           <i class="fas fa-check-circle text-7xl text-secondary"></i>
+          <h3 class="font-headline text-lg md:text-xl leading-relaxed">
+            {{ i18n "hub_managed_success_title" }}
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700">
+            {{ i18n "hub_managed_success_description" }}
+          </p>
         </div>
       </section>
 
@@ -88,15 +94,6 @@
           <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_managed_submit" }}
         </button>
         <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
-      </div>
-
-      <div x-show="feedbackData.success" class="text-center mt-8" x-cloak>
-        <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">
-          {{ ":+1:" | emojify }} {{ i18n "hub_managed_success_title" }}
-        </h3>
-        <p class="text-sm md:text-base leading-relaxed text-gray-700">
-          {{ i18n "hub_managed_success_description" }}
-        </p>
       </div>
     </form>
 
