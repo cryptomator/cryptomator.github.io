@@ -160,7 +160,7 @@ nav a:hover {
   left: 50%;
 }
 
-/* see https://github.com/alpinejs/alpine#x-cloak */
+/* see https://alpinejs.dev/directives/cloak */
 [x-cloak] {
-  display: none;
+  display: none !important;
 }
