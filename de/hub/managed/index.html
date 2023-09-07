@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.c6b51d0e4c702feb0eec002ae235e1bcf37e2620dc6e430f69e72b01de11a62c.css" integrity="sha256-xrUdDkxwL&#43;sO7AAq4jXhvPN&#43;JiDcbkMPaecrAd4Rpiw=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.28d30f5e881699c5f549353c5cb80623a5fef418fc02c71bc37f82a65876efcb.css" integrity="sha256-KNMPXogWmcX1STU8XLgGI6X&#43;9Bj8Ascbw3&#43;Cplh278s=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -163,7 +163,7 @@
     <div class="bg-gray-100 min-vh-80">
     
     
-  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false}" class="container py-12">
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
       <h1>Cryptomator Hub: Managed</h1>
       <p class="lead">Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord.</p>
@@ -210,7 +210,7 @@
               <label for="quantity" class="block text-sm font-medium text-gray-700">
                 Anzahl der erwarteten Nutzer
               </label>
-              <input type="number" id="quantity" min="5" max="10000" step="1" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" placeholder="min. 5" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
+              <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
               <p class="mt-2 text-sm text-gray-500">
                 Die Anzahl der Nutzer, die du voraussichtlich haben wirst. Diese kann später geändert werden.
               </p>
@@ -244,14 +244,14 @@
         </p>
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
           
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-586713924" x-model="acceptTerms" />
-<label for="id-586713924">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-852394167" x-model="acceptTerms" />
+<label for="id-852394167">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 
         </p>
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
           <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
         </div>
-        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="new HubManaged($refs.form, feedbackData, submitData).request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
+        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
           <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Zugang anfordern
         </button>
         <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
@@ -266,6 +266,76 @@
         </p>
       </div>
     </form>
+
+    <div x-show="lowQuantityModalIsOpen" class="relative z-10" aria-labelledby="quantity-one-modal-title" role="dialog" aria-modal="true" x-cloak>
+  <div x-show="lowQuantityModalIsOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+  <div class="fixed z-10 inset-0 overflow-y-auto">
+    <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
+      <div x-show="lowQuantityModalIsOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" x-transition:enter-end="opacity-100 translate-y-0 md:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 md:scale-100" x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" class="relative transform rounded shadow bg-white text-left overflow-hidden transition-all md:my-8 md:max-w-xl md:w-full">
+        <div class="p-4">
+          <div class="md:flex md:items-start">
+            <div class="flex-shrink-0 text-center">
+              <div class="fa-stack text-2xl text-primary-l2 md:text-xl">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-lightbulb-on fa-stack-1x text-primary"></i>
+              </div>
+            </div>
+            <div class="mt-3 text-center md:ml-4 md:mt-0 md:text-left">
+              <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4" id="quantity-one-modal-title">
+                Empfehlung
+              </h3>
+              <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                Cryptomator Hub wurde für Teams und Organisationen entwickelt, die Tresore mit ihren eigenen Accounts entsperren möchten, anstatt mit einem gemeinsamen Passwort.
+              </p>
+              <template x-if="submitData.quantity == 1">
+                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  Lade Cryptomator ohne Hub herunter, wenn du Tresore alleine nutzen möchtest.
+                </p>
+              </template>
+              <template x-if="submitData.quantity == 2">
+                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  Lade Cryptomator ohne Hub herunter, wenn du Tresore mit jemandem teilen möchtest. Lies die <a class="text-primary no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults" target="_blank" rel="noopener">Best Practices zum Teilen von Tresoren</a>.
+                </p>
+              </template>
+              <template x-if="submitData.quantity >= 3">
+                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  Lade Cryptomator ohne Hub herunter, wenn du Tresore mit einem kleinen Team teilen möchtest. Lies die <a class="text-primary no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults" target="_blank" rel="noopener">Best Practices zum Teilen von Tresoren</a>.
+                </p>
+              </template>
+              <template x-if="submitData.quantity >= 3">
+                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  Ansonsten kannst du gerne Zugang zu einer Managed-Instanz von Cryptomator Hub anfordern.
+                </p>
+              </template>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
+          <template x-if="submitData.quantity < 3">
+            <a href="/de/downloads/" role="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+              Zu Downloads
+            </a>
+          </template>
+          <template x-if="submitData.quantity >= 3">
+            <button type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0" @click.prevent="hubManaged.request(); lowQuantityModalIsOpen = false">
+              Anfrage bestätigen
+            </button>
+          </template>
+          <template x-if="submitData.quantity >= 3">
+            <a href="/de/downloads/" role="button" class="btn btn-outline-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+              Zu Downloads
+            </a>
+          </template>
+          <button type="button" class="btn btn-outline-gray-500 flex-shrink-0 w-full md:w-auto" @click.prevent="lowQuantityModalIsOpen = false">
+            Abbrechen
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   </section>
 
   <section x-data="{data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">
