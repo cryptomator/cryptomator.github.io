@@ -28,6 +28,8 @@
   translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
 - id: faq_title
   translation: "Frequently Asked Questions"
+- id: modal_cancel
+  translation: "Cancel"
 
 # Android
 - id: android_getkey_title
@@ -432,8 +434,6 @@
   translation: "Continue"
 - id: hub_billing_manage_modal_confirm
   translation: "Confirm"
-- id: hub_billing_manage_modal_cancel
-  translation: "Cancel"
 
 - id: hub_billing_manage_restart_subscription_title
   translation: "Resume Subscription"
@@ -547,6 +547,23 @@
   translation: "If you have any questions or special requirements, please let us know."
 - id: hub_managed_contact_us_button
   translation: "Contact Us"
+
+- id: hub_managed_low_quantity_title
+  translation: "Recommendation"
+- id: hub_managed_low_quantity_description
+  translation: "Cryptomator Hub is designed for teams and organizations that want to unlock vaults using their own accounts instead of a shared password."
+- id: hub_managed_low_quantity_description_1
+  translation: "Download Cryptomator without Hub if you intend to use vaults on your own."
+- id: hub_managed_low_quantity_description_2
+  translation: "Download Cryptomator without Hub if you intend to share vaults with another person. Check out the <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
+- id: hub_managed_low_quantity_description_3
+  translation: "Download Cryptomator without Hub if you intend to share vaults with a small team. Check out the <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
+- id: hub_managed_low_quantity_description_4
+  translation: "Otherwise, feel free to request access to a managed instance of Cryptomator Hub."
+- id: hub_managed_low_quantity_submit_1
+  translation: "Go to Downloads"
+- id: hub_managed_low_quantity_submit_2
+  translation: "Confirm Request"
 
 # Hub Setup
 - id: hub_setup_description

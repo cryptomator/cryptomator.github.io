@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false}" class="container py-12">
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
       <h1>{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_managed_description" }}</p>
@@ -46,7 +46,7 @@
               <label for="quantity" class="block text-sm font-medium text-gray-700">
                 {{ i18n "hub_managed_info_quantity" }}
               </label>
-              <input type="number" id="quantity" min="5" max="10000" step="1" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" placeholder="min. 5" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
+              <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
               <p class="mt-2 text-sm text-gray-500">
                 {{ i18n "hub_managed_info_quantity_description" }}
               </p>
@@ -84,7 +84,7 @@
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
           <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "hub_managed_loadcaptcha" }}</button>
         </div>
-        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="new HubManaged($refs.form, feedbackData, submitData).request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
+        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
           <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_managed_submit" }}
         </button>
         <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
@@ -99,6 +99,8 @@
         </p>
       </div>
     </form>
+
+    {{ partial "hub-managed-low-quantity.html" (dict "context" . "Site" $.Site "isOpen" "lowQuantityModalIsOpen" "quantity" "submitData.quantity" "hubManaged" "hubManaged") }}
   </section>
 
   <section x-data="{data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="container py-12">

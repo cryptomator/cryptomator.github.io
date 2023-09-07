@@ -28,6 +28,8 @@
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/hub/managed/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: faq_title
   translation: "Häufig gestellte Fragen"
+- id: modal_cancel
+  translation: "Abbrechen"
 
 # Android
 - id: android_getkey_title
@@ -432,8 +434,6 @@
   translation: "Weiter"
 - id: hub_billing_manage_modal_confirm
   translation: "Bestätigen"
-- id: hub_billing_manage_modal_cancel
-  translation: "Abbrechen"
 
 - id: hub_billing_manage_restart_subscription_title
   translation: "Abonnement fortsetzen"
@@ -547,6 +547,23 @@
   translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
 - id: hub_managed_contact_us_button
   translation: "Kontaktiere uns"
+
+- id: hub_managed_low_quantity_title
+  translation: "Empfehlung"
+- id: hub_managed_low_quantity_description
+  translation: "Cryptomator Hub wurde für Teams und Organisationen entwickelt, die Tresore mit ihren eigenen Accounts entsperren möchten, anstatt mit einem gemeinsamen Passwort."
+- id: hub_managed_low_quantity_description_1
+  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore alleine nutzen möchtest."
+- id: hub_managed_low_quantity_description_2
+  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit jemandem teilen möchtest. Lies die <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
+- id: hub_managed_low_quantity_description_3
+  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit einem kleinen Team teilen möchtest. Lies die <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
+- id: hub_managed_low_quantity_description_4
+  translation: "Ansonsten kannst du gerne Zugang zu einer Managed-Instanz von Cryptomator Hub anfordern."
+- id: hub_managed_low_quantity_submit_1
+  translation: "Zu Downloads"
+- id: hub_managed_low_quantity_submit_2
+  translation: "Anfrage bestätigen"
 
 # Hub Setup
 - id: hub_setup_description
