@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Windows</title>
+    <title>Thank you for downloading Cryptomator!</title>
     
       <meta name="description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
-      <meta property="og:title" content="Cryptomator - Windows"/>
+      <meta property="og:title" content="Cryptomator - Thank you for downloading Cryptomator!"/>
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/downloads/win/"/>
+      <meta property="og:url" content="https://cryptomator.org/downloads/linux-aarch64/thanks/"/>
       <meta property="og:site_name" content="Cryptomator"/>
       <meta property="og:description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
       <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
@@ -26,11 +26,11 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
-      <link rel="alternate" hreflang="de" href="/de/downloads/win/" />
+      <link rel="alternate" hreflang="de" href="/de/downloads/linux-aarch64/thanks/" />
     
     
-  <link rel="dns-prefetch" href="https://github.com">
-
+      
+    
   </head>
   <body class="bg-dark font-body text-gray-900">
     <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
@@ -87,7 +87,7 @@
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            <a href="/de/downloads/win/" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+            <a href="/de/downloads/linux-aarch64/thanks/" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
           </div>
         </div>
       </li>
@@ -143,7 +143,7 @@
     </div>
     <div class="mt-1">
       
-      <a href="/de/downloads/win/" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      <a href="/de/downloads/linux-aarch64/thanks/" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
     
@@ -163,56 +163,120 @@
     <div class="bg-gray-100 min-vh-80">
     
     
-  <section class="container flex flex-wrap items-center py-12 min-vh-66">
-    <figure class="w-full md:w-1/2 lg:w-auto mx-auto pr-0 md:pr-8">
-      <img class="lazyload" data-src="/img/downloads/win-screenshot.png" data-srcset="/img/downloads/win-screenshot.png 1x, /img/downloads/win-screenshot@2x.png 2x"/>
-    </figure>
-    
-<div class="w-full md:w-1/2 lg:w-1/3 py-4 text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-  <meta itemprop="name" content="Cryptomator"/>
-  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
-  <meta itemprop="applicationCategory" content="Productivity"/>
-  <meta itemprop="softwareVersion" content="1.10.0"/>
-  <meta itemprop="applicationSubCategory" content="Encryption"/>
-  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-  <meta itemprop="operatingSystem" content="Windows"/>
-  <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-    <h2>Cryptomator for Windows</h2>
-    <p>Version 1.10.0 • <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.10.0" target="_blank" rel="noopener">Changelog</a></p>
-  </header>
-
-  <div class="rounded shadow bg-white my-4">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>EXE Installer</h3>
+  
+  <div class="container py-12" x-data="{showShaSignature: false, showPgpSignature: false}">
+    <div class="flex mx-auto w-full md:w-4/5 lg:w-1/2 bg-primary-l2 border-t-4 border-primary rounded text-dark p-3 shadow mb-2" role="alert">
+      <div class="pr-2">
+        <i class="fas fa-download text-primary" aria-hidden="true"></i>
+      </div>
+      <div>
+        <p class="font-bold mb-1">Your download starts automatically.</p>
+        <p class="text-sm">Didn&#39;t work? Click here to restart: <a class="text-primary no-underline hover:underline" href="https://github.com/cryptomator/cryptomator/releases/download/1.10.0/cryptomator-1.10.0-aarch64.AppImage" download="cryptomator-1.10.0-aarch64.AppImage" target="_self" x-init="$el.click()">cryptomator-1.10.0-aarch64.AppImage</a></p>
+      </div>
     </div>
-    <div class="p-4">
-      <div class="prose prose-sm max-w-none mb-4">
-        <p>Minimum: Windows 10, Version 1803</p>
-      </div>
-      <a itemprop="downloadUrl" href="/downloads/win/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-48" role="button">
-        <span class="fas fa-download" aria-hidden="true"></span> Download
-      </a>
-      <div class="prose prose-sm max-w-none">
-        <p>This installer includes the third-party driver <a href="https://winfsp.dev/" target="_blank" rel="noopener">WinFsp</a>. You can also download the <a href="/downloads/win-msi/thanks/" rel="nofollow">MSI installer</a> without dependencies.</p>
-      </div>
+    <p class="grid grid-cols-2 gap-2 text-center text-xs w-full md:w-2/3 lg:w-1/2 mx-auto">
+      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> SHA256 Signature</a>
+      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showPgpSignature = !showPgpSignature"><i :class="{ 'fa-eye': !showPgpSignature, 'fa-eye-slash': showPgpSignature }" class="fas fa-fw"></i> PGP Signature</a>
+    </p>
+    <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
+      <h3>SHA256 Signature</h3>
+      <p><code class="break-all">19e7d3a3b7f370ace01f339253545152a29526fab5297eb9c25957fd5cc9d670</code></p>
+    </div>
+    <div x-show="showPgpSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
+      <h3>PGP Signature</h3>
+      <p><i class="fas fa-download fa-fw"></i> Download PGP Signature: <a href="https://github.com/cryptomator/cryptomator/releases/download/1.10.0/cryptomator-1.10.0-aarch64.AppImage.asc" target="_blank" rel="noopener">cryptomator-1.10.0-aarch64.AppImage.asc</a></p>
+      <p><pre class="text-left h-64">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=/rFy
+-----END PGP PUBLIC KEY BLOCK-----
+</pre></p>
+      <p>Fingerprint: <code class="break-all">58117AFA1F85B3EEC154677D615D449FE6E6A235</code></p>
     </div>
   </div>
 
-  <div class="rounded shadow bg-white my-4">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>Portable</h3>
-    </div>
-    <div class="p-4">
-      <div class="prose prose-sm max-w-none mb-4">
-        <p>The portable app is a community effort and not officially provided and maintained by Skymatic.</p>
-      </div>
-      <a href="https://portapps.io/app/cryptomator-portable/" target="_blank" rel="noopener" class="btn btn-outline-primary w-full md:w-48" role="button">
-        <span class="fas fa-link" aria-hidden="true"></span> Visit Portapps
-      </a>
-    </div>
-  </div>
-</div>
+  <div class="container text-center py-12">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none">
+      <h1>Thanks for choosing Cryptomator!</h1>
+      <p>After downloading, make <a href="https://docs.appimage.org/introduction/quickstart.html#ref-how-to-run-appimage" target="_blank" rel="noopener">the AppImage executable</a>, e.g. by running <code>chmod +x cryptomator-1.10.0-aarch64.AppImage</code>.</p>
 
+    </header>
+  </div>
+
+  <section class="container grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 pb-24">
+    <div class="rounded shadow bg-white">
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
+        <h3><i class="fas fa-question-circle fa-fw text-primary"></i> Getting Started</h3>
+      </div>
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        <p class="mb-4">If you are a first-time user, you might be interested to:</p>
+        <ul>
+          <li>Read our <a href="https://docs.cryptomator.org/" target="_blank" rel="noopener">documentation</a>, which should guide you in case you would like some instructions.</li>
+          <li>Join our <a href="https://community.cryptomator.org/" target="_blank" rel="noopener">community forum</a>, which is a great place to ask for support or share your thoughts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rounded shadow bg-white">
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
+        <h3><i class="fas fa-donate fa-fw text-primary"></i> Support Cryptomator</h3>
+      </div>
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+        <p class="mb-4">Development of the desktop application would not be possible without the support of our users.</p>
+        <ul>
+          <li>Would you like to <a href="/donate/">donate</a> or <a href="/sponsors/">become a sponsor</a>?</li>
+          <li>Would you like to <a href="https://translate.cryptomator.org/" target="_blank" rel="noopener">help translating Cryptomator</a>?</li>
+          <li>Would you like to <a href="https://github.com/cryptomator/cryptomator" target="_blank" rel="noopener">contribute code</a> or <a href="https://github.com/cryptomator/cryptomator/issues/new/choose" target="_blank" rel="noopener">report bugs</a>?</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
     </div>
