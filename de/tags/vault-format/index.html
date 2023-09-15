@@ -87,7 +87,7 @@
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            <a href="/tags/vault-format/" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+            <a :href="'/tags/vault-format/' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
           </div>
         </div>
       </li>
@@ -143,7 +143,7 @@
     </div>
     <div class="mt-1">
       
-      <a href="/tags/vault-format/" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a :href="'/tags/vault-format/' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
       
     </div>
     

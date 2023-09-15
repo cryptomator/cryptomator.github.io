@@ -98,7 +98,7 @@ Neue Features Unter Windows und Mac können Sie jetzt Ihr Passwort speichern –
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            <a href="/blog/2016/09/21/release-1.2.0/" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+            <a :href="'/blog/2016/09/21/release-1.2.0/' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
           </div>
         </div>
       </li>
@@ -154,7 +154,7 @@ Neue Features Unter Windows und Mac können Sie jetzt Ihr Passwort speichern –
     </div>
     <div class="mt-1">
       
-      <a href="/blog/2016/09/21/release-1.2.0/" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a :href="'/blog/2016/09/21/release-1.2.0/' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
       
     </div>
     

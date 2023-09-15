@@ -94,7 +94,7 @@
         </button>
         <div class="relative">
           <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            <a href="/de/blog/2021/04/15/eu-e2ee-strategic-autonomy-in-danger/" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+            <a :href="'/de/blog/2021/04/15/eu-e2ee-strategic-autonomy-in-danger/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
           </div>
         </div>
       </li>
@@ -150,7 +150,7 @@
     </div>
     <div class="mt-1">
       
-      <a href="/de/blog/2021/04/15/eu-e2ee-strategic-autonomy-in-danger/" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      <a :href="'/de/blog/2021/04/15/eu-e2ee-strategic-autonomy-in-danger/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
     
