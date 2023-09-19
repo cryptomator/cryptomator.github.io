@@ -213,7 +213,7 @@
   translation: "Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud"
 - id: home_header_description
   translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch."
-- id: home_header_button
+- id: home_header_cta
   translation: "Jetzt herunterladen"
 - id: home_header_hub
   translation: "Arbeitest du in einem Team? Hier geht's zu <span class=\"underline\">Cryptomator Hub</span>!"
@@ -251,16 +251,12 @@
   translation: "Das&nbsp;sichere Arbeiten&nbsp;im&nbsp;Team"
 - id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
-- id: hub_header_managed
-  translation: "Managed"
-- id: hub_header_managed_cta
-  translation: "Zugang anfordern"
-- id: hub_header_self_hosted
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_docs_cta
-  translation: "Docs"
-- id: hub_header_self_hosted_setup_cta
-  translation: "Setup Wizard"
+- id: hub_header_cta_1
+  translation: "Demo ausprobieren"
+- id: hub_header_cta_2
+  translation: "Managed anfragen"
+- id: hub_header_pricing
+  translation: "Bereit loszulegen? Schau dir unsere <span class=\"underline\">Preisgestaltung</span> an!"
 - id: hub_header_hub_group_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -316,6 +312,12 @@
   translation: "Standard"
 - id: hub_pricing_standard_description
   translation: "pro Sitz, pro Monat"
+- id: hub_pricing_managed_cta
+  translation: "Zugang anfragen"
+- id: hub_pricing_self_hosted_cta_1
+  translation: "Docs"
+- id: hub_pricing_self_hosted_cta_2
+  translation: "Setup Wizard"
 - id: hub_pricing_standard_benefit_1
   translation: "Alles in Community"
 - id: hub_pricing_standard_benefit_2
@@ -334,6 +336,8 @@
   translation: "Individuell"
 - id: hub_pricing_enterprise_description
   translation: "maßgeschneiderte Preise"
+- id: hub_pricing_enterprise_cta
+  translation: "Kontaktiere uns"
 - id: hub_pricing_enterprise_benefit_1
   translation: "Alles in Standard"
 - id: hub_pricing_enterprise_benefit_2
@@ -350,7 +354,7 @@
 - id: hub_contact_us_title
   translation: "Weitere Fragen?"
 - id: hub_contact_us_description
-  translation: "Bist du an einer Demo interessiert? Möchtest du mehr über Cryptomator Hub erfahren?"
+  translation: "Möchtest du mehr über Cryptomator Hub erfahren?"
 - id: hub_contact_us_button
   translation: "Kontaktiere uns"
 
@@ -498,6 +502,45 @@
 - id: hub_billing_checkout_enterprise_action
   translation: "Kontaktiere uns"
 
+# Hub Demo
+- id: hub_demo_description
+  translation: "Probiere Cryptomator Hub mit einer Demo-Instanz aus. Du kannst Tresore erstellen und andere Nutzer einladen, auf sie zuzugreifen."
+
+- id: hub_demo_info_header_title
+  translation: "Information"
+- id: hub_demo_info_header_description
+  translation: "Die E-Mail-Adresse wird nur verwendet, um dir weitere Anweisungen zu senden. Sie wird nicht für andere Zwecke verwendet."
+- id: hub_demo_info_email
+  translation: "E-Mail"
+- id: hub_demo_info_email_description
+  translation: "Die E-Mail-Adresse der Person, die der erste Administrator deiner Hub-Instanz sein wird."
+
+- id: hub_demo_instruction
+  translation: "Demo-Instanzen werden automatisch erstellt. Es gibt eine begrenzte Anzahl von Demo-Instanzen. Alle Demo-Instanzen werden um 00:00 UTC zurückgesetzt."
+- id: hub_demo_loadcaptcha
+  translation: "Weiter…"
+- id: hub_demo_submit
+  translation: "Demo ausprobieren"
+- id: hub_demo_success_title
+  translation: "Deine Demo-Instanz wurde erstellt!"
+- id: hub_demo_success_url
+  translation: "URL"
+- id: hub_demo_success_username
+  translation: "Username"
+- id: hub_demo_success_password
+  translation: "Passwort"
+- id: hub_demo_success_reset_notice
+  translation: "Demo-Instanzen werden täglich um 00:00 UTC zurückgesetzt."
+- id: hub_demo_success_further_instructions
+  translation: "Du erhältst eine E-Mail mit weiteren Anweisungen."
+
+- id: hub_demo_contact_us_title
+  translation: "Weitere Informationen benötigt?"
+- id: hub_demo_contact_us_description
+  translation: "Wenn du Fragen hast, lass sie uns bitte wissen."
+- id: hub_demo_contact_us_button
+  translation: "Kontaktiere uns"
+
 # Hub Managed
 - id: hub_managed_description
   translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
@@ -530,7 +573,7 @@
 - id: hub_managed_loadcaptcha
   translation: "Weiter…"
 - id: hub_managed_submit
-  translation: "Zugang anfordern"
+  translation: "Zugang anfragen"
 - id: hub_managed_success_title
   translation: "Deine Anfrage wurde versendet!"
 - id: hub_managed_success_description
@@ -559,7 +602,7 @@
 - id: hub_managed_low_quantity_description_3
   translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit einem kleinen Team teilen möchtest. Lies die <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
 - id: hub_managed_low_quantity_description_4
-  translation: "Ansonsten kannst du gerne Zugang zu einer Managed-Instanz von Cryptomator Hub anfordern."
+  translation: "Ansonsten kannst du gerne Zugang zu einer Managed-Instanz von Cryptomator Hub anfragen."
 - id: hub_managed_low_quantity_submit_1
   translation: "Zu Downloads"
 - id: hub_managed_low_quantity_submit_2
