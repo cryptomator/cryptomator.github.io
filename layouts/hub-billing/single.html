@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="container py-12">
+  <div class="container pt-12 pb-24">
     <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, monthlyPrice: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
@@ -371,7 +371,7 @@
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}
                   </button>
@@ -405,7 +405,7 @@
                       {{ i18n "hub_billing_checkout_enterprise_cta" . }}
                     </p>
                   </div>
-                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full md:w-64">
+                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2">
                     <i class="fas fa-envelope"></i>
                     {{ i18n "hub_billing_checkout_enterprise_action" . }}
                   </a>
@@ -413,7 +413,7 @@
               </div>
             </div>
           </div>
-          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">{{ i18n "faq_title" . }}</h2>
+          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-24">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
           <dl x-data="{isOpen: [{{ range $i, $e := $data.hub_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200">
             {{- range $index, $element := $data.hub_faq }}

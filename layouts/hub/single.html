@@ -13,19 +13,11 @@
         </div>
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
-        <div class="flex flex-col md:flex-row md:divide-x md:divide-gray-300">
-          <div class="mb-4 md:mb-0 md:pr-4">
-            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "hub_header_managed" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_managed_cta" . }}</a>
-          </div>
-          <div class="md:pl-4">
-            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "hub_header_self_hosted" . }}</p>
-            <div class="flex flex-wrap gap-2">
-              <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_self_hosted_docs_cta" . }}</a>
-              <a href="{{ .Site.LanguagePrefix }}/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">{{ i18n "hub_header_self_hosted_setup_cta" . }}</a>
-            </div>
-          </div>
+        <div class="flex gap-2 mb-4">
+          <a href="{{ .Site.LanguagePrefix }}/hub/demo/" role="button" class="btn btn-primary text-lg px-8">{{ i18n "hub_header_cta_1" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-outline-primary text-lg px-8">{{ i18n "hub_header_cta_2" . }}</a>
         </div>
+        <p><a href="{{ .Site.LanguagePrefix }}/hub/#pricing-plans" role="button" class="text-btn">{{ i18n "hub_header_pricing" . | safeHTML }}</a></p>
       </div>
     </header>
   </section>
@@ -101,6 +93,9 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             {{ i18n "hub_pricing_standard_description" . }}
           </p>
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary w-full lg:w-1/2 mb-4">
+            {{ i18n "hub_pricing_managed_cta" . }}
+          </a>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -147,6 +142,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             {{ i18n "hub_pricing_enterprise_description" . }}
           </p>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2 mb-4">
+            <i class="fas fa-envelope"></i>
+            {{ i18n "hub_pricing_enterprise_cta" . }}
+          </a>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -187,6 +186,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             {{ i18n "hub_pricing_community_description" . }}
           </p>
+          <div class="flex gap-2 mb-4">
+            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-primary text-sm lg:text-base">{{ i18n "hub_pricing_self_hosted_cta_1" . }}</a>
+            <a href="{{ .Site.LanguagePrefix }}/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-outline-primary text-sm lg:text-base">{{ i18n "hub_pricing_self_hosted_cta_2" . }}</a>
+          </div>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -226,6 +229,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             {{ i18n "hub_pricing_standard_description" . }}
           </p>
+          <div class="flex gap-2 mb-4">
+            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-primary text-sm lg:text-base">{{ i18n "hub_pricing_self_hosted_cta_1" . }}</a>
+            <a href="{{ .Site.LanguagePrefix }}/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-outline-primary text-sm lg:text-base">{{ i18n "hub_pricing_self_hosted_cta_2" . }}</a>
+          </div>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -264,6 +271,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             {{ i18n "hub_pricing_enterprise_description" . }}
           </p>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full text-sm lg:text-base mb-4">
+            <i class="fas fa-envelope"></i>
+            {{ i18n "hub_pricing_enterprise_cta" . }}
+          </a>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">

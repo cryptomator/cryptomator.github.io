@@ -213,7 +213,7 @@
   translation: "Put&nbsp;a&nbsp;lock on&nbsp;your&nbsp;cloud"
 - id: home_header_description
   translation: "With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service."
-- id: home_header_button
+- id: home_header_cta
   translation: "Download Now"
 - id: home_header_hub
   translation: "Working in teams? Check out <span class=\"underline\">Cryptomator Hub</span>!"
@@ -251,16 +251,12 @@
   translation: "The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
 - id: hub_header_description
   translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
-- id: hub_header_managed
-  translation: "Managed"
-- id: hub_header_managed_cta
-  translation: "Request Access"
-- id: hub_header_self_hosted
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_docs_cta
-  translation: "Docs"
-- id: hub_header_self_hosted_setup_cta
-  translation: "Setup Wizard"
+- id: hub_header_cta_1
+  translation: "Try Demo"
+- id: hub_header_cta_2
+  translation: "Request Managed"
+- id: hub_header_pricing
+  translation: "Ready to get started? Check out our <span class=\"underline\">pricing plans</span>!"
 - id: hub_header_hub_group_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -316,6 +312,12 @@
   translation: "Standard"
 - id: hub_pricing_standard_description
   translation: "per seat, per month"
+- id: hub_pricing_managed_cta
+  translation: "Request Access"
+- id: hub_pricing_self_hosted_cta_1
+  translation: "Docs"
+- id: hub_pricing_self_hosted_cta_2
+  translation: "Setup Wizard"
 - id: hub_pricing_standard_benefit_1
   translation: "Everything in Community"
 - id: hub_pricing_standard_benefit_2
@@ -334,6 +336,8 @@
   translation: "Custom"
 - id: hub_pricing_enterprise_description
   translation: "tailored pricing"
+- id: hub_pricing_enterprise_cta
+  translation: "Contact Us"
 - id: hub_pricing_enterprise_benefit_1
   translation: "Everything in Standard"
 - id: hub_pricing_enterprise_benefit_2
@@ -350,7 +354,7 @@
 - id: hub_contact_us_title
   translation: "More questions?"
 - id: hub_contact_us_description
-  translation: "Are you interested in a demo? Would you like to know more about Cryptomator Hub?"
+  translation: "Would you like to know more about Cryptomator Hub?"
 - id: hub_contact_us_button
   translation: "Contact Us"
 
@@ -496,6 +500,45 @@
 - id: hub_billing_checkout_enterprise_cta
   translation: "You have a large team? We're happy to offer customized pricing and an individual solution for your needs."
 - id: hub_billing_checkout_enterprise_action
+  translation: "Contact Us"
+
+# Hub Demo
+- id: hub_demo_description
+  translation: "Try out Cryptomator Hub with a demo instance. You will be able to create vaults and invite other users to access them."
+
+- id: hub_demo_info_header_title
+  translation: "Information"
+- id: hub_demo_info_header_description
+  translation: "The email address is only used to send you further instructions. It will not be used for any other purpose."
+- id: hub_demo_info_email
+  translation: "Email"
+- id: hub_demo_info_email_description
+  translation: "The email address of the person who will be the first admin of your Hub instance."
+
+- id: hub_demo_instruction
+  translation: "Demo instances are created automatically. There are a limited number of demo instances available. All demo instances are reset at 00:00 UTC."
+- id: hub_demo_loadcaptcha
+  translation: "Continue…"
+- id: hub_demo_submit
+  translation: "Try Demo"
+- id: hub_demo_success_title
+  translation: "Your demo instance is now ready to use!"
+- id: hub_demo_success_url
+  translation: "URL"
+- id: hub_demo_success_username
+  translation: "Username"
+- id: hub_demo_success_password
+  translation: "Password"
+- id: hub_demo_success_reset_notice
+  translation: "Demo instances reset every 24 hours at 00:00 UTC."
+- id: hub_demo_success_further_instructions
+  translation: "You will receive an email with this information and further instructions."
+
+- id: hub_demo_contact_us_title
+  translation: "Need more information?"
+- id: hub_demo_contact_us_description
+  translation: "If you have any questions, please let us know."
+- id: hub_demo_contact_us_button
   translation: "Contact Us"
 
 # Hub Managed
