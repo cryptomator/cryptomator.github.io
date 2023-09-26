@@ -951,6 +951,18 @@
                 href="https://cryptomator.org/de/hub/billing/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/hub/demo/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://cryptomator.org/hub/demo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://cryptomator.org/de/hub/demo/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/hub/managed/</loc>
     <xhtml:link
                 rel="alternate"

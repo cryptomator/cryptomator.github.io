@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.650d4622ebbe6fe756005960f0dffed371d07991734ae37d70132bd2e9e82d4b.css" integrity="sha256-ZQ1GIuu&#43;b&#43;dWAFlg8N/&#43;03HQeZFzSuN9cBMr0unoLUs=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.92beabce542123eeb8fccebc271403382664a8dfa6100e5ccd3efff79f10463a.css" integrity="sha256-kr6rzlQhI&#43;64/M68JxQDOCZkqN&#43;mEA5czT7/958QRjo=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -177,19 +177,11 @@
         </div>
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-6">Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice.</p>
-        <div class="flex flex-col md:flex-row md:divide-x md:divide-gray-300">
-          <div class="mb-4 md:mb-0 md:pr-4">
-            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Managed</p>
-            <a href="/hub/managed/" role="button" class="btn btn-primary text-lg px-8">Request Access</a>
-          </div>
-          <div class="md:pl-4">
-            <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Self-Hosted</p>
-            <div class="flex flex-wrap gap-2">
-              <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="btn btn-primary text-lg px-8">Docs</a>
-              <a href="/hub/setup/" role="button" class="btn btn-outline-primary text-lg px-8">Setup Wizard</a>
-            </div>
-          </div>
+        <div class="flex gap-2 mb-4">
+          <a href="/hub/demo/" role="button" class="btn btn-primary text-lg px-8">Try Demo</a>
+          <a href="/hub/managed/" role="button" class="btn btn-outline-primary text-lg px-8">Request Managed</a>
         </div>
+        <p><a href="/hub/#pricing-plans" role="button" class="text-btn">Ready to get started? Check out our <span class="underline">pricing plans</span>!</a></p>
       </div>
     </header>
   </section>
@@ -265,6 +257,9 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             per seat, per month
           </p>
+          <a href="/hub/managed/" role="button" class="btn btn-primary w-full lg:w-1/2 mb-4">
+            Request Access
+          </a>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -311,6 +306,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             tailored pricing
           </p>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2 mb-4">
+            <i class="fas fa-envelope"></i>
+            Contact Us
+          </a>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -351,6 +350,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             for up to 5 seats
           </p>
+          <div class="flex gap-2 mb-4">
+            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-primary text-sm lg:text-base">Docs</a>
+            <a href="/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-outline-primary text-sm lg:text-base">Setup Wizard</a>
+          </div>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -390,6 +393,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             per seat, per month
           </p>
+          <div class="flex gap-2 mb-4">
+            <a href="https://docs.cryptomator.org/en/latest/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-primary text-sm lg:text-base">Docs</a>
+            <a href="/hub/setup/" role="button" class="flex-1 md:flex-auto lg:flex-1 btn btn-outline-primary text-sm lg:text-base">Setup Wizard</a>
+          </div>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -428,6 +435,10 @@
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
             tailored pricing
           </p>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full text-sm lg:text-base mb-4">
+            <i class="fas fa-envelope"></i>
+            Contact Us
+          </a>
         </div>
         <div class="px-4 py-8">
           <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
@@ -540,7 +551,7 @@
 
   <section class="container text-center py-12">
     <h2 id="contact" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">More questions?</h2>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Are you interested in a demo? Would you like to know more about Cryptomator Hub?</p>
+    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Would you like to know more about Cryptomator Hub?</p>
     <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
       <i class="fas fa-envelope"></i> Contact Us
     </a>
