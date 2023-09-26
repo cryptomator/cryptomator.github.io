@@ -341,13 +341,15 @@
 - id: hub_pricing_enterprise_benefit_1
   translation: "Alles in Standard"
 - id: hub_pricing_enterprise_benefit_2
-  translation: "Vorrangiger E-Mail-Support"
+  translation: "Unbegrenzte Sitze"
 - id: hub_pricing_enterprise_benefit_3
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4
-  translation: "Mengenrabatt für große Teams"
+  translation: "Vorrangiger E-Mail- und Chat-Support"
 - id: hub_pricing_managed_enterprise_benefit_1
-  translation: "Eigene Domain"
+  translation: "Option: Eigene Domain"
+- id: hub_pricing_managed_enterprise_benefit_2
+  translation: "Option: Eigener Hosting-Standort"
 - id: hub_pricing_coming_later
   translation: "Derzeit in Entwicklung, voraussichtliche Fertigstellung 2023."
 

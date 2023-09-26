@@ -341,13 +341,15 @@
 - id: hub_pricing_enterprise_benefit_1
   translation: "Everything in Standard"
 - id: hub_pricing_enterprise_benefit_2
-  translation: "Priority email support"
+  translation: "Unlimited seats"
 - id: hub_pricing_enterprise_benefit_3
   translation: "Expert training and assistance"
 - id: hub_pricing_enterprise_benefit_4
-  translation: "Volume discount for large teams"
+  translation: "Priority email and chat support"
 - id: hub_pricing_managed_enterprise_benefit_1
-  translation: "Custom domain"
+  translation: "Option: Custom domain"
+- id: hub_pricing_managed_enterprise_benefit_2
+  translation: "Option: Custom hosting location"
 - id: hub_pricing_coming_later
   translation: "Currently in development, ETA 2023."
 
