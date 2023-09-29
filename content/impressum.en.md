@@ -10,6 +10,9 @@ Am Hauptbahnhof 6<br/>
 Tobias Hagemann (verantwortlich gem. § 55 Abs. 2 RStV)<br/>
 Sebastian Stenzel
 
+<strong>Unternehmenswebseite:</strong><br/>
+[https://skymatic.de/en/](https://skymatic.de/en/)
+
 ## Kontakt
 E-Mail: support [at] cryptomator [dot] org<br/>
 Fax: 02241 / 2667424<br/>
@@ -22,7 +25,7 @@ Eingetragen im Handelsregister des Amtsgericht Bonn: HRB 22635
 gem. § 27 a Umsatzsteuergesetz: DE815664888
 
 ## Weitere Informationen
-Für von uns erbrachte Leistungen gelten unsere AGB. Sie finden sie unter [cryptomator.org/terms](/terms/). Darin ist geregelt, dass deutsches Recht Anwendung findet und dass, soweit zulässig, als Gerichtsstand Bonn vereinbart wird.
+Für von uns erbrachte Leistungen gelten unsere AGB. Sie finden sie unter [cryptomator.org/terms](/terms/) und [cryptomator.org/hub/managed/terms](/hub/managed/terms/). Darin ist geregelt, dass deutsches Recht Anwendung findet und dass, soweit zulässig, als Gerichtsstand Bonn vereinbart wird.
 
 ## Berufshaftpflichtversicherung
 <strong>Name und Sitz des Versicherers:</strong><br/>
