@@ -3,9 +3,7 @@ title: Skymatic
 anchor: developer-info
 weight: 2
 ---
-Skymatic GmbH, a startup from Bonn, Germany, is engaged with the topic "digital self-defense for everyone". It has developed Cryptomator, a software that empowers users to protect their files in any cloud storage.
-
-Skymatic is signatory of the _Charta zur Stärkung der vertrauenswürdigen Kommunikation_ (Charter for Fostering Trustworthy Communication) and member of the _Allianz für Cyber-Sicherheit_ (Alliance for Cyber Security) by _Bundesamt für Sicherheit in der Informationstechnik_ (Federal Office for Information Security).
+Skymatic GmbH, a company based in Bonn, Germany, is engaged with the topic "digital self-defense for everyone". It has developed Cryptomator, a software that empowers users to protect their files in any cloud storage.
 
 Further information can be found {{< extlink "https://skymatic.de/en/" "on the Skymatic website" >}}.
 
