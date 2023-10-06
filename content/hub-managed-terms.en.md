@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: February 2023_
+_Effective date: October 2023_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -15,7 +15,6 @@ Contract language is German. This is a translation from our [German AGB](/de/hub
 {.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Definitions {#definitions}
-
 Unless otherwise indicated, the expressions mentioned in the text are defined as follows:
 
 * **Cryptomator**: refers to the application that can be installed on the Customer's devices and is used for client-side encryption of data. The encrypted data is stored in a location chosen by the user.
@@ -71,7 +70,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 
 ## §5 Support {#support}
-5.1 The Provider shall set up a support service for inquiries of the Customer regarding functions of the Software. Requests can be made via the support channels indicated on the Provider's website (https://cryptomator.org/de/contact/) at the times indicated there or by e-mail. The requests will be processed in the chronological order of their receipt.
+5.1 The Provider shall set up a support service for inquiries of the Customer regarding functions of the Software. Requests can be made via the support channels indicated on the Provider's website (https://cryptomator.org/contact/) at the times indicated there or by email. The requests will be processed in the chronological order of their receipt.
 
 5.2 The support does not cover problems with or damage to the software, insofar as these were caused by
 
@@ -83,13 +82,12 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 6. force majeure.
 {type=i}
 
-
 ## §6 Service Levels; Troubleshooting {#sla}
 6.1 The Provider guarantees an overall availability of the Services of at least 99.5% per month at the Delivery Point. The handover point is the router exit of the data center chosen by the Provider.
 
 6.2 Availability shall be deemed to be the Customer's ability to use all main functions of the Software. Maintenance times as well as times of malfunction in compliance with the remedial time shall be deemed times of availability of the software. Times of insignificant malfunctions shall not be taken into account in the calculation of availability. The measuring instruments in the data center shall be decisive for the proof of availability.
 
-6.3 The Customer shall immediately report malfunctions to the Provider (e-mail: support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 6:00 pm (service hours).
+6.3 The Customer shall immediately report malfunctions to the Provider (email: support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 6:00 pm (service hours).
 
 6.4 Serious malfunctions (the use of the software as a whole or a main function of the software is not possible) shall be remedied by the Provider also outside the service times at the latest within 6 hours from receipt of the notification of the malfunction - provided that the notification is made within the service times (remedying time). If it is foreseeable that it will not be possible to remedy the fault within this period of time, the Provider shall inform the Customer of this without delay and notify the Customer of the expected exceeding of the time period.
 
@@ -97,10 +95,9 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 6.6 The elimination of insignificant disruptions is at the Provider's discretion.
 
-6.7 For each full hour of falling short of the monthly availability of the services, the Provider shall forfeit a contractual penalty in the amount of 0.5% of the agreed monthly remuneration ([§ 12](#fees)). The amount of the contractual penalty is limited to three times the agreed monthly remuneration.
+6.7 For each full hour of falling short of the monthly availability of the services, the Provider shall forfeit a contractual penalty in the amount of 0.5% of the agreed monthly remuneration ([§ 13](#fees)). The amount of the contractual penalty is limited to three times the agreed monthly remuneration.
 
 6.8 Any other legal claims of the Customer against the Provider shall remain unaffected.
-
 
 ## §7 Obligations of the Customer {#customer-obligations}
 7.1 The Customer shall protect the access data transmitted to it against access by third parties and keep it safe in accordance with the state of the art. The Customer shall ensure that use only occurs to the contractually agreed extent. The Provider shall be notified immediately of any unauthorized access.
@@ -113,71 +110,70 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 7.5 The Customer shall regularly make appropriate data backups on its own responsibility.
 
+## §8 Reference Marketing / Logo Use {#reference-marketing}
+8.1 Upon conclusion of the contract, the Customer grants its express consent that the Provider may name and use the Customer as a reference customer (including case studies, work references, success stories, etc.) in digital and analog form, free of charge and unlimited in terms of time and content, using the company mark (esp. logo) and the company name for marketing purposes.
 
-## §8 Warranty {#warranty}
-8.1 With regard to the granting of the use of the Software, the warranty provisions of the German "Mietrecht" shall apply (§§ 535 ff. BGB).
+8.2 The Customer may revoke the consent to reference marketing at any time by email to support@cryptomator.org for good cause, unless the Provider's legitimate interest prevails. The revocation is only valid for the future.
 
-8.2 The Customer shall notify the Provider of any defects without undue delay.
+## §9 Warranty {#warranty}
+9.1 With regard to the granting of the use of the Software, the warranty provisions of the German "Mietrecht" shall apply (§§ 535 ff. BGB).
 
-8.3 The warranty for only insignificant reductions in the suitability of the service is excluded. The strict liability according to § 536a para. 1 BGB for defects that already existed at the time of conclusion of the contract is excluded.
+9.2 The Customer shall notify the Provider of any defects without undue delay.
 
+9.3 The warranty for only insignificant reductions in the suitability of the service is excluded. The strict liability according to § 536a para. 1 BGB for defects that already existed at the time of conclusion of the contract is excluded.
 
-## §9 Liability {#liability}
-9.1 The parties shall be liable without limitation in the event of intent, gross negligence and culpable injury to life, body or health.
+## §10 Liability {#liability}
+10.1 The parties shall be liable without limitation in the event of intent, gross negligence and culpable injury to life, body or health.
 
-9.2 The Provider shall only be liable for indirect and consequential damages as well as for lost profits, additional personnel costs, useless expenses and omitted savings, etc. in the event of intent and gross negligence.
+10.2 The Provider shall only be liable for indirect and consequential damages as well as for lost profits, additional personnel costs, useless expenses and omitted savings, etc. in the event of intent and gross negligence.
 
-9.3 Notwithstanding the cases of unlimited liability according to § 9.1 and liability for consequential damages § 9.2, the parties shall be liable to each other in case of slightly negligent breach of duty only in case of breach of essential contractual obligations, i.e. obligations the fulfillment of which enables the proper execution of the contract in the first place or the breach of which endangers the achievement of the purpose of the contract and the compliance with which the other party may regularly rely on, however, limited to the damage foreseeable at the time of conclusion of the contract and typical for the contract.
+10.3 Notwithstanding the cases of unlimited liability according to § 10.1 and liability for consequential damages § 10.2, the parties shall be liable to each other in case of slightly negligent breach of duty only in case of breach of essential contractual obligations, i.e. obligations the fulfillment of which enables the proper execution of the contract in the first place or the breach of which endangers the achievement of the purpose of the contract and the compliance with which the other party may regularly rely on, however, limited to the damage foreseeable at the time of conclusion of the contract and typical for the contract.
 
-9.4 If the Customer violates its obligation to properly back up data, the Provider's liability for loss of data shall be limited to the amount of damage that would have occurred even if the Customer had properly and regularly backed up the data.
+10.4 If the Customer violates its obligation to properly back up data, the Provider's liability for loss of data shall be limited to the amount of damage that would have occurred even if the Customer had properly and regularly backed up the data.
 
-9.5 The above limitations of liability shall not apply to liability under the German Product Liability Act (Produkthaftungsgesetz) or to guarantees given in writing by one of the Parties.
+10.5 The above limitations of liability shall not apply to liability under the German Product Liability Act (Produkthaftungsgesetz) or to guarantees given in writing by one of the Parties.
 
-9.6 § 9 shall also apply in favor of employees, representatives and bodies of the parties.
+10.6 § 10 shall also apply in favor of employees, representatives and bodies of the parties.
 
+## §11 Deficiencies in Title; Indemnification {#deficiencies-indemnification}
+11.1 The Provider warrants that the Software does not infringe any third-party rights. The Provider shall indemnify the Customer against all claims of third parties due to infringements of property rights for which the Provider is responsible in connection with the contractual use of the Software upon first request and shall reimburse the Customer for the costs of an appropriate legal prosecution. The Customer shall inform the Provider without undue delay of any claims asserted against it by third parties on the basis of the contractual use of the Software and shall grant the Provider all necessary powers of attorney and authority to defend the claims.
 
-## §10 Deficiencies in Title; Indemnification {#deficiencies-indemnification}
-10.1 The Provider warrants that the Software does not infringe any third-party rights. The Provider shall indemnify the Customer against all claims of third parties due to infringements of property rights for which the Provider is responsible in connection with the contractual use of the Software upon first request and shall reimburse the Customer for the costs of an appropriate legal prosecution. The Customer shall inform the Provider without undue delay of any claims asserted against it by third parties on the basis of the contractual use of the Software and shall grant the Provider all necessary powers of attorney and authority to defend the claims.
+11.2 The Customer shall be solely responsible for all content and processed data used by it or its Users and any legal positions required for this purpose. The Provider does not take note of any content of the Customer or its Users and does not check the content used with the Software.
 
-10.2 The Customer shall be solely responsible for all content and processed data used by it or its Users and any legal positions required for this purpose. The Provider does not take note of any content of the Customer or its Users and does not check the content used with the Software.
+11.3 The Customer warrants that the content and data stored on the Provider's servers, as well as its use and provision by the Provider, do not violate applicable law, official orders, third-party rights or agreements with third parties. The Customer shall indemnify the Provider against claims asserted by third parties on the basis of a violation of this clause upon first request. In this context, Customer also agrees to indemnify Provider against any liability and any costs, including possible and actual costs of legal proceedings, in the event that a claim is made against Provider by third parties, including employees of Customer personally, as a result of alleged acts or omissions of Customer. The Provider shall notify the Customer of the claim and, to the extent legally possible, give the Customer the opportunity to defend the asserted claim. At the same time, the Customer shall immediately provide the Provider with all information available to him regarding the facts that are the subject of the claim. Any further claims for damages of the Provider shall remain unaffected.
 
-10.3 The Customer warrants that the content and data stored on the Provider's servers, as well as its use and provision by the Provider, do not violate applicable law, official orders, third-party rights or agreements with third parties. The Customer shall indemnify the Provider against claims asserted by third parties on the basis of a violation of this clause upon first request. In this context, Customer also agrees to indemnify Provider against any liability and any costs, including possible and actual costs of legal proceedings, in the event that a claim is made against Provider by third parties, including employees of Customer personally, as a result of alleged acts or omissions of Customer. The Provider shall notify the Customer of the claim and, to the extent legally possible, give the Customer the opportunity to defend the asserted claim. At the same time, the Customer shall immediately provide the Provider with all information available to him regarding the facts that are the subject of the claim. Any further claims for damages of the Provider shall remain unaffected.
+## §12 Trial {#trial}
+Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 14 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
+## §13 Remuneration and Payment Conditions {#fees}
+13.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/hub/#pricing-plans](https://cryptomator.org/hub/#pricing-plans)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay a monthly fee of EUR 10 per active user to the Provider.
 
-## §11 Trial {#trial}
-Irrespective of the right of withdrawal ([§ 14](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 14 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
+13.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 
+13.3 Invoices shall be issued for 12 months in advance. The invoice shall be due for payment immediately.
 
-## §12 Remuneration and Payment Conditions {#fees}
-12.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)). Unless otherwise agreed (individual agreement, volume discount, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 11](#trial)) - pay a monthly fee of EUR 10 per active user to the Provider.
+13.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
 
-12.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
+13.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the software (development costs) justified by legal changes (e.g. concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the User of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The User may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 14](#termination)). In the event that the Provider, through no fault of the User, notifies the User at a time when the User is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the User may terminate the contractual relationship as of the effective date of the price adjustment.
 
-12.3 Invoices shall be issued for 12 months in advance. The invoice shall be due for payment immediately.
+## §14 Contract Duration and Termination {#termination}
+14.1 The Agreement shall enter into force after the Customer's request and provision of access to the Software by the Provider and shall be concluded for an indefinite period of time.
 
-12.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
+14.2 The contract may be terminated by either party with a notice period of one month to the end of the month.
 
-12.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the software (development costs) justified by legal changes (e.g. concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the User of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The User may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 13](#termination)). In the event that the Provider, through no fault of the User, notifies the User at a time when the User is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the User may terminate the contractual relationship as of the effective date of the price adjustment.
+14.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be in writing.
 
-## §13 Contract Duration and Termination {#termination}
-13.1 The Agreement shall enter into force after the Customer's request and provision of access to the Software by the Provider and shall be concluded for an indefinite period of time.
+14.4 The Provider shall provide the Customer with reasonable support for the retransfer or backup of the data at its own expense after termination of the Agreement.
 
-13.2 The contract may be terminated by either party with a notice period of one month to the end of the month.
+14.5 The Provider shall delete all Customer data remaining on its servers in an unrecoverable manner 30 days after termination of the contractual relationship. There shall be no right of retention or lien on the data in favor of the Provider.
 
-13.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be in writing.
-
-13.4 The Provider shall provide the Customer with reasonable support for the retransfer or backup of the data at its own expense after termination of the Agreement.
-
-13.5 The Provider shall delete all Customer data remaining on its servers in an unrecoverable manner 30 days after termination of the contractual relationship. There shall be no right of retention or lien on the data in favor of the Provider.
-
-
-## §14 Withdrawal {#withdrawal}
+## §16 Withdrawal {#withdrawal}
 If the Customer is a consumer, he has a right of withdrawal.
 
 ### Right of Withdrawal
 You have the right to revoke this contract within fourteen days without giving any reason. The revocation period is fourteen days from the day of the conclusion of the contract.  
 
-To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, e-mail: support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an e-mail). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.   
+To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an email). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.   
 
 To comply with the withdrawal period, it is sufficient that you send the notice of exercise of the right of withdrawal before the expiry of the withdrawal period.
 
@@ -193,7 +189,7 @@ Skymatic GmbH
 Am Hauptbahnhof 6
 53111 Bonn
 Germany
-E-Mail: info@skymatic.de
+Email: info@skymatic.de
 Fax: 02241 / 2667424
 
 I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
@@ -216,25 +212,23 @@ The right of withdrawal expires prematurely if
 * after the Customer, as a consumer, has expressly consented to the commencement of the execution of the contract before the expiry of the revocation period (§ 356 para. 5 no. 1 BGB), and
 * the Customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
 
-## §15 Data Protection; Confidentiality {#data-protection-confidentiality}
-15.1 The Parties shall comply with the applicable data protection provisions applicable to them in each case.
+## §16 Data Protection; Confidentiality {#data-protection-confidentiality}
+16.1 The Parties shall comply with the applicable data protection provisions applicable to them in each case.
  
-15.2 If and to the extent that the Provider has access to personal data of the Customer in the context of the provision of services, the Parties shall conclude a corresponding order processing agreement prior to the start of the processing and attach these GTC as an annex. In this case, the Customer is a controller and the Provider is a processor. In this case, the Provider shall process the relevant personal data solely in accordance with the provisions set forth therein and in accordance with the Customer's instructions.
+16.2 If and to the extent that the Provider has access to personal data of the Customer in the context of the provision of services, the Parties shall conclude a corresponding order processing agreement prior to the start of the processing and attach these GTC as an annex. In this case, the Customer is a controller and the Provider is a processor. In this case, the Provider shall process the relevant personal data solely in accordance with the provisions set forth therein and in accordance with the Customer's instructions.
  
-15.3 The Provider undertakes to maintain confidentiality about all confidential information (including business secrets) that it learns in connection with this Agreement and its performance and not to disclose, pass on or otherwise use such information to third parties. Confidential information is information which is marked as confidential or the confidentiality of which is evident from the circumstances, irrespective of whether it has been communicated in written, electronic, embodied or oral form. The confidentiality obligation does not apply if the Provider is obligated to disclose the confidential information by law or by virtue of a final or legally binding decision of an authority or court. The Provider undertakes to agree with all employees and subcontractors on a provision similar in content to the preceding paragraph.
+16.3 The Provider undertakes to maintain confidentiality about all confidential information (including business secrets) that it learns in connection with this Agreement and its performance and not to disclose, pass on or otherwise use such information to third parties. Confidential information is information which is marked as confidential or the confidentiality of which is evident from the circumstances, irrespective of whether it has been communicated in written, electronic, embodied or oral form. The confidentiality obligation does not apply if the Provider is obligated to disclose the confidential information by law or by virtue of a final or legally binding decision of an authority or court. The Provider undertakes to agree with all employees and subcontractors on a provision similar in content to the preceding paragraph.
 
+## §17 Online Dispute Resolution as well as Information According to § 36 VSBG {#dispute-resolution}
+17.1 The EU Commission has provided a platform for out-of-court dispute resolution at {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
 
-## §16 Online Dispute Resolution as well as Information According to § 36 VSBG {#dispute-resolution}
-16.1 The EU Commission has provided a platform for out-of-court dispute resolution at {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
+17.2 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
-16.2 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
-
-
-## §17 Final Clauses {#final-clauses}
-17.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
+## §18 Final Clauses {#final-clauses}
+18.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
  
-17.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing.
+18.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing.
  
-17.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
+18.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
  
-17.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, insofar as the Customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
+18.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, insofar as the Customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
