@@ -421,7 +421,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/keycloak:22.0.1',
+      image: 'ghcr.io/cryptomator/keycloak:22.0.3',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
