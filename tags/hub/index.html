@@ -172,17 +172,17 @@
       
         <article>
           <h2>Cryptomator Hub 1.2.0: More Control and Flexibility</h2>
-          <p>We&rsquo;re excited to release Cryptomator Hub 1.2.0, featuring essential updates for both administrators and users. &#x1f389; Let&rsquo;s dive into what&rsquo;s new.</p>
-<h2 id="spiral_notepad-audit-logs-premium-feature">&#x1f5d2;&#xfe0f; Audit Logs (Premium Feature)</h2>
+          <p>We&rsquo;re excited to release Cryptomator Hub 1.2.0, featuring essential updates for both administrators and users. 🎉 Let&rsquo;s dive into what&rsquo;s new.</p>
+<h2 id="-audit-logs-premium-feature">🗒 Audit Logs (Premium Feature)</h2>
 <p>Our new Audit Logs feature, available with a paid license, empowers administrators with insights into user activities. Monitor vault changes, key retrievals, and other essential activities, providing an extra layer of transparency and accountability within your organization.</p>
-<h2 id="gear-improved-vault-management">&#x2699;&#xfe0f; Improved Vault Management</h2>
+<h2 id="-improved-vault-management">⚙️ Improved Vault Management</h2>
 <p>With the &ldquo;Edit Vault Metadata&rdquo; action, customizing vault details is now possible. You can now change the name and description of your vaults, helping you keep your vaults organized and easily identifiable. Plus, vault names no longer need to be unique, offering more flexibility.</p>
 <p>We&rsquo;ve also added the &ldquo;Archive Vault&rdquo; action, allowing you to remove vaults from your list. Easily reactivate archived vaults whenever needed.</p>
-<h2 id="bust_in_silhouette-streamlined-user-profile-page">&#x1f464; Streamlined User Profile Page</h2>
+<h2 id="-streamlined-user-profile-page">👤 Streamlined User Profile Page</h2>
 <p>Our new &ldquo;User Profile&rdquo; page centralizes device management and user settings in one convenient location. Additionally, we&rsquo;ve integrated a &ldquo;Manage Account&rdquo; link for users to be able to change their password and configure 2FA via Keycloak.</p>
-<h2 id="arrow_up-upgrade-info">&#x2b06;&#xfe0f; Upgrade Info</h2>
+<h2 id="-upgrade-info">⬆ Upgrade Info</h2>
 <p>Upgrading to 1.2.0 is simple. If you are on the <code>stable</code> lane, you just have to pull the image and restart the service. Otherwise, update the version number in your Docker Compose or Kubernetes spec file before you restart the service. Remember to always <a href="https://docs.cryptomator.org/en/latest/hub/setup/#backup">back up your data</a>, especially before upgrading. For managed instances, rest assured, you&rsquo;re already on the latest version.</p>
-<h2 id="next_track_button-whats-next">&#x23ed;&#xfe0f; What&rsquo;s Next</h2>
+<h2 id="-whats-next">⏭ What&rsquo;s Next</h2>
 <p>We&rsquo;re embarking on a significant refactoring journey for our key management system in the next feature update. This update will introduce &ldquo;user keys&rdquo; as intermediary key pairs between vault keys and device keys. Vault owners will then grant access to users and not individual devices, which allows users to manage their devices independently.</p>
 <p>This refactoring will deprecate vault admin passwords and introduce the vault owner role, providing a more secure and efficient way to manage your vaults.</p>
 <p>Stay tuned for more exciting updates!</p>
@@ -191,9 +191,9 @@
       
         <article>
           <h2>Cryptomator Hub: Managed – Request Access Now</h2>
-          <p>We are happy to announce that managed instances of <a href="/hub/">Cryptomator Hub</a> are now available! &#x1f389; And we have released Hub 1.1.0 with recovery key support.</p>
+          <p>We are happy to announce that managed instances of <a href="/hub/">Cryptomator Hub</a> are now available! 🎉 And we have released Hub 1.1.0 with recovery key support.</p>
 <h2 id="request-access">Request Access</h2>
-<p>First things first. &#x1f680; To get started, you can now <a href="/hub/managed/">request access to a managed instance of Cryptomator Hub</a>. After your request, we will get back to you as soon as possible. Currently, some of the steps we take internally to create a managed Hub instance are still done &ldquo;manually&rdquo;. We are working on automating this process, but we didn&rsquo;t want to delay the release any longer.</p>
+<p>First things first. 🚀 To get started, you can now <a href="/hub/managed/">request access to a managed instance of Cryptomator Hub</a>. After your request, we will get back to you as soon as possible. Currently, some of the steps we take internally to create a managed Hub instance are still done &ldquo;manually&rdquo;. We are working on automating this process, but we didn&rsquo;t want to delay the release any longer.</p>
 <h2 id="managed-vs-self-hosted">Managed vs. Self-Hosted</h2>
 <p>Managed instances of Cryptomator Hub are a great way to start using Cryptomator Hub right away without having to deploy and maintain your self-hosted instance.</p>
 <p>Until now, you could <em>only</em> use the self-hosted version of Hub. This requires a lot of knowledge about how to deploy a software container using Kubernetes or Docker Compose. And if you have the knowledge, you still have to maintain the instance yourself. This includes updating the software, monitoring the instance, and keeping it secure.</p>
@@ -201,13 +201,13 @@
 <p>This is all possible because of the underlying <a href="https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management">zero-knowledge key management</a>. Cryptomator Hub doesn&rsquo;t store unencrypted keys. All key material remains locally on the client. We can&rsquo;t decrypt your data. It also helps that Hub is independent of your cloud storage provider, which means we have no access to either the key material or the cloud files.</p>
 <h2 id="release-110-recovery-key">Release 1.1.0: Recovery Key</h2>
 <p>We didn&rsquo;t stop there and released Cryptomator Hub 1.1.0 with recovery key support. This allows you to access your data in case of disaster. Not only that, the recovery key is compatible with Cryptomator&rsquo;s recovery key. This means you can convert your existing vaults to Hub vaults and vice versa.</p>
-<p>What does that mean for your managed instance? If we cease to exist (we get asked this a lot, thanks to Boxcryptor &#x1f609;), you can convert your Hub vaults to &ldquo;regular&rdquo; password-based vaults, completely offline, so that you <em>always</em> have access to your data under any circumstances. This is also great for your self-hosted instance if something happens to your server.</p>
+<p>What does that mean for your managed instance? If we cease to exist (we get asked this a lot, thanks to Boxcryptor 😉), you can convert your Hub vaults to &ldquo;regular&rdquo; password-based vaults, completely offline, so that you <em>always</em> have access to your data under any circumstances. This is also great for your self-hosted instance if something happens to your server.</p>
 
         </article>
       
         <article>
           <h2>Cryptomator Hub 1.0 Release</h2>
-          <p>We are happy to announce that Cryptomator Hub, the team and enterprise solution for Cryptomator, is now ready for production use! &#x1f389; Huge thanks to our testers that participated in our open beta over the last 3 months for their feedback. &#x2764;&#xfe0f;</p>
+          <p>We are happy to announce that Cryptomator Hub, the team and enterprise solution for Cryptomator, is now ready for production use! 🎉 Huge thanks to our testers that participated in our open beta over the last 3 months for their feedback. ❤️</p>
 <h2 id="what-is-cryptomator-hub">What is Cryptomator Hub?</h2>
 <p>In short: Cryptomator Hub adds access management for your Cryptomator vaults. It enables a secure way for you to work in teams with confidential and sensitive files for any cloud storage.</p>
 <p>Check out our quick introduction video to learn more about the basics.</p>
@@ -219,8 +219,8 @@
 <p>Individual access to Cryptomator vaults is secured through server-side authentication and key management. Hub manages key material based on a zero-knowledge solution without getting in touch with unencrypted keys. <a href="https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management">Learn more.</a></p>
 <h2 id="how-can-i-get-started">How can I get started?</h2>
 <p>The self-hosted solution is delivered as a software container and can be deployed using Kubernetes or Docker. Vist the <a href="/hub/">landing page</a> of Cryptomator Hub to get started.</p>
-<p>Hub can be used for free for up to 5 team members. For larger teams and companies, an annual license can be purchased through the website at $6.00 per seat per month. Until the end of the year, there is a promotional discount that gives 25% off for the first year. &#x1f38a;</p>
-<p>And as always, Cryptomator Hub is fully <a href="https://github.com/cryptomator/hub">open source</a>. If you have more questions, let us know in the discussion below or <a href="mailto:hub@cryptomator.org">contact us</a>. We are looking forward to your feedback! &#x1f916;</p>
+<p>Hub can be used for free for up to 5 team members. For larger teams and companies, an annual license can be purchased through the website at $6.00 per seat per month. Until the end of the year, there is a promotional discount that gives 25% off for the first year. 🎊</p>
+<p>And as always, Cryptomator Hub is fully <a href="https://github.com/cryptomator/hub">open source</a>. If you have more questions, let us know in the discussion below or <a href="mailto:hub@cryptomator.org">contact us</a>. We are looking forward to your feedback! 🤖</p>
 
         </article>
       
