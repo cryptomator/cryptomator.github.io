@@ -26,14 +26,14 @@
       <meta property="og:image:width" content="256" />
       <meta property="og:image:height" content="256" />
     
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content="" />
     
-      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale:alternate" content="" />
     
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.92beabce542123eeb8fccebc271403382664a8dfa6100e5ccd3efff79f10463a.css" integrity="sha256-kr6rzlQhI&#43;64/M68JxQDOCZkqN&#43;mEA5czT7/958QRjo=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.18be4861edfe0d03e2db71effc1a6769e371e978e9cc289c5d42d0b6f0282e63.css" integrity="sha256-GL5IYe3&#43;DQPi23Hv/BpnaeNx6XjpzCicXULQtvAoLmM=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -190,15 +190,15 @@
       <hr class="my-8"/>
 
       <div class="prose prose-sm md:prose max-w-none md:max-w-none">
-        <p>Wir haben kürzlich Cryptomator 1.5.10 für Windows, macOS und Linux mit vielen neuen Features und Fehlerbehebungen veröffentlicht. Nun, eigentlich waren die Änderungen für 1.5.9 vorgesehen, aber wir haben daraufhin einen Hotfix-Release veröffentlicht. 😁 Da sich das (verrückte) Jahr dem Ende zuneigt, möchten wir euch einen Einblick in unsere plattformübergreifende Roadmap für die kommenden Monate geben!</p>
+        <p>Wir haben kürzlich Cryptomator 1.5.10 für Windows, macOS und Linux mit vielen neuen Features und Fehlerbehebungen veröffentlicht. Nun, eigentlich waren die Änderungen für 1.5.9 vorgesehen, aber wir haben daraufhin einen Hotfix-Release veröffentlicht. &#x1f601; Da sich das (verrückte) Jahr dem Ende zuneigt, möchten wir euch einen Einblick in unsere plattformübergreifende Roadmap für die kommenden Monate geben!</p>
 <h2 id="stand-der-desktop-app">Stand der Desktop-App</h2>
-<p>Mit dem Redesign und vollständigen Überarbeitung der Benutzeroberfläche in 1.5.0 haben wir eine gute Grundlage für das Hinzufügen weiterer Features geschaffen. Es gab allerdings ein älteres Feature, das nicht in die engere Wahl geschafft hat, aber jetzt mit der neuesten Version wieder verfügbar ist: Tresor-Statistik. 🎉</p>
+<p>Mit dem Redesign und vollständigen Überarbeitung der Benutzeroberfläche in 1.5.0 haben wir eine gute Grundlage für das Hinzufügen weiterer Features geschaffen. Es gab allerdings ein älteres Feature, das nicht in die engere Wahl geschafft hat, aber jetzt mit der neuesten Version wieder verfügbar ist: Tresor-Statistik. &#x1f389;</p>
 <figure class="text-center">
   <img class="inline-block rounded" src="/img/blog/vault-statistics.png" srcset="/img/blog/vault-statistics.png 1x, /img/blog/vault-statistics@2x.png 2x" alt="Tresor-Statistik in Cryptomator" />
 </figure>
 <p>Aber es geht noch weiter! Tresor-Passwörter können jetzt auch unter Linux in <a href="https://de.wikipedia.org/wiki/KWallet">KWallet</a> gespeichert werden. Herzlichen Dank an Ralph Plawetzki (purejava auf GitHub) für seine Open-Source-Beitrag! Außerdem ist es jetzt unter Windows möglich, den Tresor über FUSE zu mounten. Dies ist allerdings ein Beta-Feature! Um es auszuprobieren, muss <a href="http://www.secfs.net/winfsp/">WinFSP</a> installiert sein. Wir würden uns über euer Feedback dazu freuen!</p>
 <p>Was die Distribution betrifft, so haben wir unsere Erwartungen nicht ganz erfüllt. Flatpak bereitet uns weiterhin Probleme, da wir seine Sandbox nicht davon überzeugen konnten, FUSE-Laufwerke richtig zu unterstützen. Aber wir werden das Vorhaben nicht aufgeben!</p>
-<p>Unter der Haube haben wir die <a href="https://github.com/cryptomator/integrations-api">integrations-api</a> nebst Implementierungen für jedes Betriebssystem eingeführt. Es ist ein neuer Weg für Cryptomator, native (auch OS-spezifische) Funktionalitäten einzubinden. Jetzt ist es einfacher denn je, native Funktionen zu implementieren. Schnappt euch also eure Tastatur und fangt an zu hacken! 😁 Mit dieser Änderung haben wir das alte Repository <a href="https://github.com/cryptomator/native-functions">native-functions</a> archiviert. 👋</p>
+<p>Unter der Haube haben wir die <a href="https://github.com/cryptomator/integrations-api">integrations-api</a> nebst Implementierungen für jedes Betriebssystem eingeführt. Es ist ein neuer Weg für Cryptomator, native (auch OS-spezifische) Funktionalitäten einzubinden. Jetzt ist es einfacher denn je, native Funktionen zu implementieren. Schnappt euch also eure Tastatur und fangt an zu hacken! &#x1f601; Mit dieser Änderung haben wir das alte Repository <a href="https://github.com/cryptomator/native-functions">native-functions</a> archiviert. &#x1f44b;</p>
 <p>Wie geht es weiter? Unser Plan ist es, zur Version 1.6.x überzugehen. Zuerst wollen wir <a href="https://github.com/cryptomator/sanitizer">Sanitizer</a> integrieren, damit ihr den Zustand eures Tresors überprüfen und Bereinigungs- und Wiederherstellungsbefehle direkt in der Cryptomator-Benutzeroberfläche ausführen könnt. Darüber hinaus planen wir, die Schlüsselherleitung von der Tresorverschlüsselung zu entkoppeln, um mehr Optionen für die Authentifizierung anbieten zu können, einschließlich der Speicherung von Passwörtern durch Dritte, 2FA und Mehrbenutzerzugang mit individuellen Passwörtern.</p>
 <h2 id="stand-der-android-app">Stand der Android-App</h2>
 <p>In den letzten Monaten haben wir neue Features wie <a href="https://community.cryptomator.org/t/biometric-authentication-e-g-face-unlock-coming-soon/6089">Face Unlock</a>, <a href="https://community.cryptomator.org/t/sort-directory-listings/5958">Sort Directory Listings</a> und <a href="https://community.cryptomator.org/t/search-in-current-folder-using-glob-pattern-matching/5928">Search Using Glob Pattern Matching</a> hinzugefügt. Einige Communitymitglieder haben die App auch in <a href="https://community.cryptomator.org/t/translated-into-french/5962">Französisch</a> und <a href="https://community.cryptomator.org/t/cryptomator-is-soon-available-in-turkish/6560">Türkisch</a> übersetzt. Vielen Dank für eure Beiträge!</p>
@@ -288,10 +288,10 @@
 
 
     
-    <script type="text/javascript" src="/js/jquery/jquery.min.ff1523fb7389539c84c65aba19260648793bb4f5e29329d2ee8804bc37a3fe6e.js" integrity="sha256-/xUj&#43;3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
+    <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
 
     
-    <script type="text/javascript" src="/js/alpinejs/cdn.min.d1573a45c19419ee881d3f7e6d6810bb955ea0d64470da1f1875537de18c603e.js" integrity="sha256-0Vc6RcGUGe6IHT9&#43;bWgQu5VeoNZEcNofGHVTfeGMYD4=" defer></script>
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.3009dc96fd3bd608049e941b7d65bac1e5d729de7012b5367d9eb2b8362f74f1.js" integrity="sha256-MAnclv071ggEnpQbfWW6weXXKd5wErU2fZ6yuDYvdPE=" defer></script>
 
     
     <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
