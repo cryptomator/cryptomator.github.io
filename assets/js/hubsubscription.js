@@ -228,35 +228,11 @@ class HubSubscription {
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    if (this._subscriptionData.customBilling?.managed && this._subscriptionData.customBilling?.override) {
-      // managed && override
+    if (this._subscriptionData.customBilling?.managed) {
       this.customCheckout(PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID, locale);
-    } else if (this._subscriptionData.customBilling?.managed) {
-      // managed && !override
-      this.standardCheckout(PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID, locale);
-    } else if (this._subscriptionData.customBilling?.override) {
-      // !managed && override
-      this.customCheckout(PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID, locale);
     } else {
-      // !managed && !override
-      this.standardCheckout(PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID, locale);
+      this.customCheckout(PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID, locale);
     }
-  }
-
-  standardCheckout(productId, locale) {
-    this._paddle.then(paddle => {
-      paddle.Checkout.open({
-        product: productId,
-        email: this._subscriptionData.email,
-        quantity: this._subscriptionData.quantity,
-        locale: locale,
-        passthrough: '{"hub_id": ' + this._subscriptionData.hubId + '}',
-        successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
-        closeCallback: () => {
-          this._subscriptionData.inProgress = false;
-        }
-      });
-    });
   }
 
   customCheckout(productId, locale) {
