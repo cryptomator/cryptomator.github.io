@@ -297,16 +297,18 @@
 - id: hub_pricing_community_statement
   translation: "Free"
 - id: hub_pricing_community_description
-  translation: "for up to 5 seats"
+  translation: "to get started"
 - id: hub_pricing_community_benefit_1
   translation: "Unlimited vaults"
 - id: hub_pricing_community_benefit_2
-  translation: "Full access via Desktop app"
+  translation: "Up to 5 seats"
 - id: hub_pricing_community_benefit_3
-  translation: "Read-only access via Mobile apps"
-- id: hub_pricing_community_benefit_3_tooltip
-  translation: "If you unlocked the full version of the mobile app, you will be granted full access."
+  translation: "Full access via Desktop app"
 - id: hub_pricing_community_benefit_4
+  translation: "Read-only access via Mobile apps"
+- id: hub_pricing_community_benefit_4_tooltip
+  translation: "If you unlocked the full version of the mobile app, you will be granted full access."
+- id: hub_pricing_community_benefit_5
   translation: "Community support"
 - id: hub_pricing_standard_title
   translation: "Standard"
@@ -321,12 +323,14 @@
 - id: hub_pricing_standard_benefit_1
   translation: "Everything in Community"
 - id: hub_pricing_standard_benefit_2
-  translation: "Full access via Mobile apps"
-- id: hub_pricing_standard_benefit_2_tooltip
-  translation: "You will be granted full access without having to unlock the full version of the mobile app."
+  translation: "Up to 50 seats"
 - id: hub_pricing_standard_benefit_3
-  translation: "Audit logs"
+  translation: "Full access via Mobile apps"
+- id: hub_pricing_standard_benefit_3_tooltip
+  translation: "You will be granted full access without having to unlock the full version of the mobile app."
 - id: hub_pricing_standard_benefit_4
+  translation: "Audit logs"
+- id: hub_pricing_standard_benefit_5
   translation: "Email support"
 - id: hub_pricing_managed_standard_benefit_1
   translation: "Hosting in Europe"
@@ -341,7 +345,7 @@
 - id: hub_pricing_enterprise_benefit_1
   translation: "Everything in Standard"
 - id: hub_pricing_enterprise_benefit_2
-  translation: "Unlimited seats"
+  translation: "More than 50 seats"
 - id: hub_pricing_enterprise_benefit_3
   translation: "Expert training and assistance"
 - id: hub_pricing_enterprise_benefit_4

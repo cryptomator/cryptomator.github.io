@@ -297,16 +297,18 @@
 - id: hub_pricing_community_statement
   translation: "Kostenlos"
 - id: hub_pricing_community_description
-  translation: "für bis zu 5 Sitze"
+  translation: "zum Loslegen"
 - id: hub_pricing_community_benefit_1
   translation: "Unbegrenzte Tresore"
 - id: hub_pricing_community_benefit_2
-  translation: "Voller Zugriff über Desktop-App"
+  translation: "Bis zu 5 Sitze"
 - id: hub_pricing_community_benefit_3
-  translation: "Lesender Zugriff über Mobile-Apps"
-- id: hub_pricing_community_benefit_3_tooltip
-  translation: "Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff."
+  translation: "Voller Zugriff über Desktop-App"
 - id: hub_pricing_community_benefit_4
+  translation: "Lesender Zugriff über Mobile-Apps"
+- id: hub_pricing_community_benefit_4_tooltip
+  translation: "Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff."
+- id: hub_pricing_community_benefit_5
   translation: "Community-Support"
 - id: hub_pricing_standard_title
   translation: "Standard"
@@ -321,12 +323,14 @@
 - id: hub_pricing_standard_benefit_1
   translation: "Alles in Community"
 - id: hub_pricing_standard_benefit_2
-  translation: "Voller Zugriff über Mobile-Apps"
-- id: hub_pricing_standard_benefit_2_tooltip
-  translation: "Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen."
+  translation: "Bis zu 50 Sitze"
 - id: hub_pricing_standard_benefit_3
-  translation: "Audit-Logs"
+  translation: "Voller Zugriff über Mobile-Apps"
+- id: hub_pricing_standard_benefit_3_tooltip
+  translation: "Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen."
 - id: hub_pricing_standard_benefit_4
+  translation: "Audit-Logs"
+- id: hub_pricing_standard_benefit_5
   translation: "E-Mail-Support"
 - id: hub_pricing_managed_standard_benefit_1
   translation: "Hosting in Europa"
@@ -341,7 +345,7 @@
 - id: hub_pricing_enterprise_benefit_1
   translation: "Alles in Standard"
 - id: hub_pricing_enterprise_benefit_2
-  translation: "Unbegrenzte Sitze"
+  translation: "Mehr als 50 Sitze"
 - id: hub_pricing_enterprise_benefit_3
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4

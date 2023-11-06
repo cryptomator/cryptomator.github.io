@@ -238,7 +238,7 @@
                           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_description" . }}
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_amount_description" . }}
                           </p>
@@ -353,7 +353,7 @@
                     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                       {{ i18n "hub_billing_checkout_standard_quantity" . }}
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_quantity_description" . }}
                     </p>
