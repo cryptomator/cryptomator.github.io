@@ -402,7 +402,7 @@
                           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                             Benötigst du mehr oder weniger Sitze als das aktuelle Limit, kannst du die Anzahl hier anpassen.
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet.
                           </p>
@@ -517,7 +517,7 @@
                     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                       Anzahl der Sitze
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" max="10000" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet.
                     </p>
@@ -534,12 +534,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-863251794" x-model="acceptTerms" />
-<label for="id-863251794">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-893456172" x-model="acceptTerms" />
+<label for="id-893456172">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-479653812" x-model="acceptTerms" />
-<label for="id-479653812">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-643821975" x-model="acceptTerms" />
+<label for="id-643821975">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
