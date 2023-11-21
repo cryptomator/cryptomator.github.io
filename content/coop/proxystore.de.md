@@ -4,7 +4,7 @@ prio: 60
 img: /img/coop/proxystore.png
 img2x: /img/coop/proxystore@2x.png
 description: ProxyStore ist ein in Deutschland ansässiger Anbieter von Waren und Dienstleistungen rund um Datenschutz und Privatsphäre.
-ctalink: https://proxysto.re/de/index.html
+ctalink: https://digitalgoods.proxysto.re/de
 ctatext: "Weitere Infos unter proxysto.re"
 ---
 
