@@ -508,6 +508,11 @@
 - id: hub_billing_checkout_enterprise_action
   translation: "Contact Us"
 
+- id: hub_billing_manualinvoice_description
+  translation: "To manage your subscription, please contact our support team."
+- id: hub_billing_manualinvoice_action
+  translation: "Contact Us"
+
 # Hub Demo
 - id: hub_demo_description
   translation: "Try out Cryptomator Hub with a demo instance. You will be able to create vaults and invite other users to access them."

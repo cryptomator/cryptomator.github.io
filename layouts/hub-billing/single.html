@@ -430,6 +430,22 @@
           </dl>
         </div>
       </template>
+
+      <template x-if="subscriptionData.state == 'MANUAL_INVOICE'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-info-circle fa-fw"></i>
+            {{ i18n "hub_billing_manualinvoice_description" . }}
+          </p>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2">
+            <i class="fas fa-envelope"></i>
+            {{ i18n "hub_billing_manualinvoice_action" . }}
+          </a>
+        </div>
+      </template>
     </form>
   </div>
 

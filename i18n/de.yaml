@@ -508,6 +508,11 @@
 - id: hub_billing_checkout_enterprise_action
   translation: "Kontaktiere uns"
 
+- id: hub_billing_manualinvoice_description
+  translation: "Um dein Abonnement zu verwalten, wende dich bitte an unser Support-Team."
+- id: hub_billing_manualinvoice_action
+  translation: "Kontaktiere uns"
+
 # Hub Demo
 - id: hub_demo_description
   translation: "Probiere Cryptomator Hub mit einer Demo-Instanz aus. Du kannst Tresore erstellen und andere Nutzer einladen, auf sie zuzugreifen."

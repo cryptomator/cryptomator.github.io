@@ -128,7 +128,11 @@ class HubSubscription {
       }
     }).done(data => {
       this.onLoadCustomBillingSucceeded(data);
-      continueHandler();
+      if (data.custom_billing.manual_invoice) {
+        this._subscriptionData.state = 'MANUAL_INVOICE';
+      } else {
+        continueHandler();
+      }
     }).fail(xhr => {
       this.onLoadCustomBillingFailed(xhr.status, xhr.responseJSON?.message || 'Loading custom billing options failed.');
       if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
