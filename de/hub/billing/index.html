@@ -534,12 +534,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-217468953" x-model="acceptTerms" />
-<label for="id-217468953">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-613728954" x-model="acceptTerms" />
+<label for="id-613728954">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-143768529" x-model="acceptTerms" />
-<label for="id-143768529">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-167894235" x-model="acceptTerms" />
+<label for="id-167894235">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -660,6 +660,22 @@
           </dl>
         </div>
       </template>
+
+      <template x-if="subscriptionData.state == 'MANUAL_INVOICE'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            Hub-Abonnement verwalten
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+            <i class="fas fa-info-circle fa-fw"></i>
+            Um dein Abonnement zu verwalten, wende dich bitte an unser Support-Team.
+          </p>
+          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2">
+            <i class="fas fa-envelope"></i>
+            Kontaktiere uns
+          </a>
+        </div>
+      </template>
     </form>
   </div>
 
@@ -667,7 +683,7 @@
     
     <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
     
-    <script type="text/javascript" src="/js/hubsubscription.min.b110e8f771a2b6739aaa1536957116610d6ce15096c4a3a6bc46813042919520.js" integrity="sha256-sRDo93GitnOaqhU2lXEWYQ1s4VCWxKOmvEaBMEKRlSA=" defer></script>
+    <script type="text/javascript" src="/js/hubsubscription.min.856c86c161ff042d94b84c7b6f1c4c57c3a9bf7f68ffa61b0dae146aea9eff25.js" integrity="sha256-hWyGwWH/BC2UuEx7bxxMV8Opv39o/6YbDa4Uauqe/yU=" defer></script>
     
     <script type="text/javascript" src="/js/recaptcha.min.ad20aa2f7e72be34befe0936317c4345651e97f81208a8cc3baba80765077a5e.js" integrity="sha256-rSCqL35yvjS&#43;/gk2MXxDRWUel/gSCKjMO6uoB2UHel4=" defer></script>
   
