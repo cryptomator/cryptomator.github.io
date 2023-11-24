@@ -257,7 +257,7 @@
   translation: "Request Managed"
 - id: hub_header_pricing
   translation: "Ready to get started? Check out our <span class=\"underline\">pricing plans</span>!"
-- id: hub_header_hub_group_alt
+- id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
 - id: hub_video_title
