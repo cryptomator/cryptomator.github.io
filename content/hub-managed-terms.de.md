@@ -3,7 +3,7 @@ title: "AGB für Cryptomator Hub (SaaS)"
 url: "/de/hub/managed/terms"
 ---
 
-_Stand: Oktober 2023_
+_Stand: November 2023_
 
 Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ als Software as a Service (SaaS) Dienstleistung.
 {.text-lg .leading-relaxed .text-gray-700}
@@ -107,9 +107,9 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 7.5 Der Kunde hat in eigener Verantwortung regelmäßig angemessene Datensicherungen vorzunehmen.
 
 ## §8 Referenzmarketing / Logoverwendung {#reference-marketing}
-8.1 Der Kunde erteilt mit Vertragsabschluss seine ausdrückliche Zustimmung, dass der Provider den Kunden unter Verwendung des Unternehmenskennzeichens (insb. Logo) und des Unternehmensnamens zu Marketingzwecken als Referenzkunden (einschließlich Case Studies, Arbeitsreferenzen, Erfolgsgeschichten etc.) in digitaler und analoger Form unentgeltlich und zeitlich sowie inhaltlich unbegrenzt nennen und nutzen darf.
+8.1 Der Kunde hat die Möglichkeit, seine ausdrückliche Zustimmung zu erteilen, dass der Provider den Kunden unter Verwendung des Unternehmenskennzeichens (insb. Logo) und des Unternehmensnamens zu Marketingzwecken als Referenzkunden (einschließlich Case Studies, Arbeitsreferenzen, Erfolgsgeschichten etc.) in digitaler und analoger Form unentgeltlich und zeitlich sowie inhaltlich unbegrenzt nennen und nutzen darf.
 
-8.2 Der Kunde kann die Zustimmung zum Referenzmarketing jederzeit per E-Mail an support@cryptomator.org aus wichtigem Grund widerrufen, soweit nicht das berechtigte Interesse des Providers überwiegt. Der Widerruf gilt nur für die Zukunft.
+8.2 Der Kunde kann die erteilte Zustimmung zum Referenzmarketing jederzeit per E-Mail an support@cryptomator.org widerrufen. Der Widerruf gilt nur für die Zukunft.
 
 ## §9 Gewährleistung {#warranty}
 9.1 Hinsichtlich der Gewährung der Nutzung der Software gelten die Gewährleistungsvorschriften des Mietrechts (§§ 535 ff. BGB).
