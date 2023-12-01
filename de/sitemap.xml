@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/</loc>
-    <lastmod>2023-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
@@ -76,7 +76,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/tags/cryptomator/</loc>
-    <lastmod>2023-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
@@ -89,7 +89,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/</loc>
-    <lastmod>2023-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
@@ -99,6 +99,45 @@
                 rel="alternate"
                 hreflang="de_DE"
                 href="https://cryptomator.org/de/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/blog/2023/12/01/hub-1.3.0/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/blog/2023/12/01/hub-1.3.0/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/blog/2023/12/01/hub-1.3.0/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/hub/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/tags/hub/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/tags/hub/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/</loc>
+    <lastmod>2023-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/2023/09/13/release-1.10.0/</loc>
@@ -153,19 +192,6 @@
                 href="https://cryptomator.org/de/tags/mac/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/de/tags/</loc>
-    <lastmod>2023-09-13T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en_US"
-                href="https://cryptomator.org/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de_DE"
-                href="https://cryptomator.org/de/tags/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/de/tags/windows/</loc>
     <lastmod>2023-09-13T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -190,19 +216,6 @@
                 rel="alternate"
                 hreflang="de_DE"
                 href="https://cryptomator.org/de/blog/2023/08/11/hub-1.2.0/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/de/tags/hub/</loc>
-    <lastmod>2023-08-11T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en_US"
-                href="https://cryptomator.org/tags/hub/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de_DE"
-                href="https://cryptomator.org/de/tags/hub/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/tags/android/</loc>

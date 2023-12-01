@@ -171,6 +171,53 @@
     
       
         <article>
+          <h2>Cryptomator Hub 1.3.0: Das Account Key Update</h2>
+          <p>Die Veröffentlichung von Cryptomator Hub 1.3.0 markiert ein aufregendes Funktionsupdate, das einen <em>Account Key</em> für Benutzer einführt. Dieses Update ist notwendig und nützlich, erfordert aber eine aktive Mitwirkung der Nutzer. Im Folgenden wird beschrieben, was beim Upgrade von Version 1.2.x auf 1.3.0 zu erwarten ist.</p>
+<h2 id="ℹ-vorbereitung-ist-der-schlüssel">ℹ Vorbereitung ist der Schlüssel</h2>
+<p>Bevor wir in den Upgrade-Prozess eintauchen, stelle sicher, dass jeder Tresor-Administrator ein Backup seiner <em>Tresor-Wiederherstellungsschlüssel</em> und <em>Tresor-Admin-Passwörter</em> hat. <strong>⚠️ Die Durchführung dieses Schrittes ist von entscheidender Bedeutung; Diese Backups sind dein Sicherheitsnetz. Ohne sie sind uns die Hände gebunden.</strong></p>
+<h2 id="-aktualisierung-von-cryptomator-hub-server-auf-130">⬆ Aktualisierung von Cryptomator Hub (Server) auf 1.3.0</h2>
+<p>Dieser Abschnitt ist nur für Administratoren relevant, die ihre eigene Cryptomator Hub-Instanz hosten. Wenn du unseren Managed Service verwendest, kannst du diesen Abschnitt überspringen. Wir werden uns mit dir in Verbindung setzen, um einen Termin für das Update deiner Instanz zu vereinbaren.</p>
+<p>Wenn du Administrator einer selbst gehosteten Cryptomator Hub-Instanz bist, führe bitte die folgenden Schritte aus, um Cryptomator Hub zu aktualisieren:</p>
+<ol>
+<li><a href="https://docs.cryptomator.org/en/latest/hub/setup/#backup">Sichere die Datenbank</a>. <strong>:Warnung: Die Bedeutung eines funktionierenden Backups kann nicht hoch genug eingeschätzt werden.</strong></li>
+<li>Aktualisiere das Container-Image auf die neueste Version: <code>ghcr.io/cryptomator/hub:1.3.0</code>
+<ul>
+<li>Überspringe diesen Schritt, wenn du das <code>stable</code> Tag verwendest. Wir werden den <code>stable</code>-Tag in ein paar Wochen aktualisieren, um auf die neue Version zu verweisen.</li>
+</ul>
+</li>
+<li>Wende die Änderungen in deinem Container-Orchestrator an. Überwache den Status des Pods, bevor du fortfährst.</li>
+</ol>
+<h2 id="-aktualisierung-von-cryptomator-desktop-client-auf-1110">⬆ Aktualisierung von Cryptomator (Desktop-Client) auf 1.11.0</h2>
+<p>Die Aktualisierung der Cryptomator-Desktop-Anwendung wird allen Nutzern empfohlen, ist aber derzeit technisch nicht erforderlich. Tresore können weiterhin mit einer alten Version entsperrt werden. Diese Abwärtskompatibilität bietet Flexibilität für eine schrittweise Einführung der aktualisierten Anwendung. Änderungen am Zugang, wie das Hinzufügen neuer Mitglieder zu einem Tresor und das Hinzufügen neuer Geräte, erfordern jedoch Cryptomator 1.11.0 oder höher.</p>
+<h2 id="-einführung-von-account-keys">🔑 Einführung von Account Keys</h2>
+<p>Mit der aktualisierten App werden die Benutzer beim ersten Entsperrungsversuch eine zweistufige Migration durchlaufen:</p>
+<ol>
+<li>Sichere und speichere deinen neuen persönlichen <em>Account Key</em>. <strong>⚠️ Er ist entscheidend für zukünftige Anmeldungen von anderen Geräten aus.</strong></li>
+<li>Verwende den <em>Account Key</em>, um dein Cryptomator-Gerät mit deinem Konto zu verbinden.</li>
+</ol>
+<p>Dieser Vorgang ist für jeden Benutzer einmalig erforderlich. Er ermöglicht es den Benutzern, die verknüpften Geräte selbst zu verwalten, und den Besitzern des Tresors, den Zugriff einfacher zu verwalten, ohne jedes Mal, wenn sich ein Benutzer von einem neuen Gerät aus anmeldet, die Berechtigungen neu erteilen zu müssen.</p>
+<h2 id="-tresor-eigentümer-werden-und-zugriff-erteilen">👤 Tresor-Eigentümer werden und Zugriff erteilen</h2>
+<p>Nach der Aktualisierung auf Hub 1.3.0 werden Tresor-Eigentümer (früher Tresor-Administratoren genannt) aufgefordert, ihren Tresor erneut mit dem <em>Tresor-Admin-Passwort</em> zu beanspruchen. Anfänglich kann nur ein Benutzer Tresor-Eigentümer werden. Anschließend kann dieser anderen Benutzern Eigentumsrechte gewähren, wodurch die Notwendigkeit entfällt, das <em>Tresor-Admin-Passwort</em> zu teilen.</p>
+<p>Nachdem die Tresor-Mitglieder die Kontenmigration abgeschlossen haben, sollten die Tresor-Eigentümer die Berechtigungen zum Tresor aktualisieren. Auf diese Weise werden die erforderlichen Tresorschlüssel sicher an die Benutzer verteilt.</p>
+<h2 id="-häufig-gestellte-fragen">❓ Häufig gestellte Fragen</h2>
+<p><strong>Q: Was genau ist mein <em>Account Key</em>?</strong><br>
+<strong>A:</strong> Der <em>Account Key</em> ist eine eindeutige Kennung, die als persönliches Geheimnis dient und für die Registrierung neuer Geräte und zur Identifizierung in verschiedenen Anwendungen und Browsern benötigt wird. Behandle ihn genauso sicher wie jedes andere wichtige Passwort.</p>
+<p><strong>Q: Wie erhalte ich meinen <em>Account Key</em> zurück, wenn ich ihn verliere?</strong><br>
+<strong>A:</strong> Du kannst deinen <em>Account Key</em> abrufen, indem du dich in deinen Cryptomator Hub-Account einloggst und zur Seite <em>Profil</em> navigierst. Dort kannst du deinen <em>Account Key</em> einsehen. Wenn dein Browser keinen Zugang mehr hat und du ihn nicht mehr abrufen kannst, kannst du dein Konto zurücksetzen. In diesem Fall verlierst du den Zugang zu all deinen Tresoren und der/die Tresorbesitzer müssen dir erneut Zugang gewähren.</p>
+<p><strong>Q: Wirkt sich die Aktualisierung auf meine bestehenden Tresore und die darin enthaltenen Daten aus?</strong><br>
+<strong>A:</strong> Nein, das Update hat keine Auswirkungen auf deine Tresore oder die darin enthaltenen Daten. Dieses Update betrifft nur den Entsperrungsprozess und die Zugriffsverwaltung, nicht die verschlüsselten Daten selbst.</p>
+<p><strong>Q: Was passiert mit dem <em>Tresor-Admin-Passwort</em>, nachdem ich Tresor-Eigentümer geworden bin?</strong><br>
+<strong>A:</strong> Sobald du Tresor-Eigentümer bist, ist das <em>Tresor-Admin-Passwort</em> nicht mehr erforderlich. Du kannst alle Kopien davon vernichten. Kompromittierte <em>Tresor-Admin-Passwörter</em> stellen keine Bedrohung für die Sicherheit des Tresors dar.</p>
+<p><strong>Q: Ist der Prozess für das Hinzufügen neuer Benutzer zu einem Tresor anders?</strong><br>
+<strong>A:</strong> Der Unterschied besteht darin, dass du nicht jedem einzelnen Gerät Zugang gewährst, sondern dem Benutzer nur einmal, dank des <em>Account Keys</em>. Der Benutzer kann seine Geräte mit seinem Konto verknüpfen und von jedem dieser Geräte aus auf den Tresor zugreifen, ohne erneut um Erlaubnis fragen zu müssen.</p>
+<p><strong>Q: Was soll ich tun, wenn ich während des Upgrades auf Probleme stoße?</strong><br>
+<strong>A:</strong> Sollten beim Upgrade Probleme auftreten, wende dich bitte an <a href="mailto:hub@cryptomator.org">hub@cryptomator.org</a>.</p>
+<h2 id="-zusammenfassung">📋 Zusammenfassung</h2>
+<p>Das Upgrade auf Cryptomator Hub 1.3.0 und Cryptomator 1.11.0 ist mehr als ein Routine-Update. Es ist eine Umstellung auf mehr Sicherheit und Benutzerfreundlichkeit. Bereite dich auf das Update vor, indem du wichtige Daten sicherst, und befolge die beschriebenen Schritte, um einen reibungslosen Übergang zu gewährleisten. Freue dich über diese Änderung, denn sie bringt eine robustere und benutzerfreundlichere Art der Verwaltung deiner Tresore mit sich.</p>
+
+        </article>
+      
+        <article>
           <h2>Cryptomator 1.10.0 Release</h2>
           <p>Wir freuen uns, die Veröffentlichung von Cryptomator 1.10.0 bekannt zu geben! 🎉 Schauen wir uns an, was dieses neue Release zu bieten hat!</p>
 <h2 id="experteneinstellungen-bei-der-tresorerstellung">Experteneinstellungen bei der Tresorerstellung</h2>

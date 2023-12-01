@@ -11,8 +11,63 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/</link>
     </image>
-    <lastBuildDate>Tue, 28 Nov 2023 19:59:27 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Dec 2023 17:01:26 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub 1.3.0: The Account Key Update</title>
+        <description>&lt;p&gt;The release of Cryptomator Hub 1.3.0 marks an exciting feature update, which introduces an &lt;em&gt;Account Key&lt;/em&gt; for users. This update, while necessary and beneficial, will require active participation from users. Here&amp;rsquo;s what to expect during the transition from version 1.2.x to 1.3.0.&lt;/p&gt;
+&lt;h2 id=&#34;ℹ-preparation-is-key&#34;&gt;ℹ Preparation is Key&lt;/h2&gt;
+&lt;p&gt;Before we dive into the upgrade process, ensure every vault admin secures a backup of their &lt;em&gt;Vault Recovery Keys&lt;/em&gt; and &lt;em&gt;Vault Admin Passwords&lt;/em&gt;. &lt;strong&gt;⚠️ Doubling down on this step is critical; your backups are your safety net. Without them, our hands are tied.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;-updating-cryptomator-hub-server-to-130&#34;&gt;⬆ Updating Cryptomator Hub (Server) to 1.3.0&lt;/h2&gt;
+&lt;p&gt;This section is only relevant for administrators who host their own Cryptomator Hub instance. If you&amp;rsquo;re using our managed service, you can skip this section. We will reach out to you to arrange a date and time to update your instance.&lt;/p&gt;
+&lt;p&gt;As mentioned above, if you&amp;rsquo;re an administrator of a self-hosted Cryptomator Hub instance, follow these steps to update Cryptomator Hub:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;Back up the database&lt;/a&gt;. &lt;strong&gt;⚠️ The importance of a working backup cannot be overstated.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Refresh your container image to the latest version: &lt;code&gt;ghcr.io/cryptomator/hub:1.3.0&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Skip this step if you&amp;rsquo;re using the &lt;code&gt;stable&lt;/code&gt; tag. We will update the &lt;code&gt;stable&lt;/code&gt; tag to point to the new version in a couple of weeks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implement the changes within your container orchestrator. Monitor for healthy pod statuses before proceeding.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;-updating-cryptomator-desktop-client-to-1110&#34;&gt;⬆ Updating Cryptomator (Desktop Client) to 1.11.0&lt;/h2&gt;
+&lt;p&gt;Updating the Cryptomator desktop application is recommended for all users, but not technically required for now. Vaults can still be unlocked using an old version. This backward compatibility provides flexibility for a gradual rollout of the updated app. Nevertheless, making changes to access, incl. adding new members to a vault and adding new devices, requires Cryptomator 1.11.0 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;-introducing-account-keys&#34;&gt;🔑 Introducing Account Keys&lt;/h2&gt;
+&lt;p&gt;With the updated app, users will encounter a two-step migration on their first unlock attempt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Secure and store their new personal &lt;em&gt;Account Key&lt;/em&gt;. &lt;strong&gt;⚠️ It&amp;rsquo;s crucial for future logins from other devices.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;em&gt;Account Key&lt;/em&gt; to link their Cryptomator device to their account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This procedure is a one-time requirement for every user. It allows users to self-manage linked devices and vault owners to more easily manage access without having to frequently regrant permissions each time a user logs in from a new device.&lt;/p&gt;
+&lt;h2 id=&#34;-claiming-vault-ownership-and-granting-access&#34;&gt;👤 Claiming Vault Ownership and Granting Access&lt;/h2&gt;
+&lt;p&gt;After updating to Hub 1.3.0, vault owners (formerly known as vault admins) are prompted to claim their vault again using the &lt;em&gt;Vault Admin Password&lt;/em&gt;. Initially, only one user can claim ownership. Subsequently, this primary owner can grant ownership rights to others, thus eliminating the need to share the &lt;em&gt;Vault Admin Password&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Once vault members have navigated through the account migration, vault owners should refresh vault permissions. This action will securely distribute the necessary vault keys to the users.&lt;/p&gt;
+&lt;h2 id=&#34;-frequently-asked-questions&#34;&gt;❓ Frequently Asked Questions&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q: What exactly is my &lt;em&gt;Account Key&lt;/em&gt;?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; The &lt;em&gt;Account Key&lt;/em&gt; is a unique identifier that serves as your personal secret, required for registering new devices and establishing your identity across different apps and browsers. Treat it with the same level of security as you would with any important password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: How do I retrieve my &lt;em&gt;Account Key&lt;/em&gt; if I lose it?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; You can retrieve your &lt;em&gt;Account Key&lt;/em&gt; by logging into your Cryptomator Hub account and navigating to the &lt;em&gt;Profile&lt;/em&gt; page. There, you can view your &lt;em&gt;Account Key&lt;/em&gt;. If your browser doesn&amp;rsquo;t have access and you can&amp;rsquo;t retrieve it anymore, you can reset your account. In this case, you will lose access to all your vaults and the vault owner(s) will have to grant you access again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Will the update affect my existing vaults and the data they contain?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; No, the update will not affect your vaults or the data they contain. This update only affects the unlock process and access management, not the encrypted data itself.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What happens to the &lt;em&gt;Vault Admin Password&lt;/em&gt; after I reclaim ownership?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; Upon reclaim, the &lt;em&gt;Vault Admin Password&lt;/em&gt; becomes obsolete. You may destroy any copies of it. Compromised &lt;em&gt;Vault Admin Passwords&lt;/em&gt; don&amp;rsquo;t pose a threat to the security of the vault.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Is the process for adding new users to a vault different?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; The difference is that you don&amp;rsquo;t grant access to each and every device, but to the user once, thanks to the &lt;em&gt;Account Key&lt;/em&gt;. The user can link their devices to their account and access the vault from any of them without having to ask for permission again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What should I do if I encounter problems during the upgrade process?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; If you encounter any problems during the upgrade process, please contact us at &lt;a href=&#34;mailto:hub@cryptomator.org&#34;&gt;hub@cryptomator.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;-wrapping-up&#34;&gt;📋 Wrapping Up&lt;/h2&gt;
+&lt;p&gt;The upgrade to Cryptomator Hub 1.3.0 and Cryptomator 1.11.0 is more than a routine update. It&amp;rsquo;s a shift towards greater security and user agency. Prepare for the update by backing up essential data, and follow the outlined steps to ensure a smooth transition. Embrace the change, as it brings forward a more robust and user-friendly way to manage your vaults.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/12/01/hub-1.3.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/12/01/hub-1.3.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.10.0 Release</title>
@@ -334,41 +389,6 @@
         <category>android</category>
         
         <category>ios</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator 1.6.7 Release: Major Changes on Windows</title>
-        <description>&lt;p&gt;Hello Community!&lt;/p&gt;
-&lt;p&gt;The last blog post is already a while ago. We hope you&amp;rsquo;re all doing fine. Cryptomator 1.6.7 for Desktop is out now and let&amp;rsquo;s explore the changes together since it&amp;rsquo;s more than just a &amp;ldquo;patch&amp;rdquo;! The update contains some noteworthy changes, especially for Windows users.&lt;/p&gt;
-&lt;h2 id=&#34;new-installer&#34;&gt;New Installer&lt;/h2&gt;
-&lt;p&gt;With Cryptomator 1.6.0, instead of delivering a &amp;ldquo;regular&amp;rdquo; executable for installation, we provided a &lt;a href=&#34;https://en.wikipedia.org/wiki/Windows_Installer&#34;&gt;Windows Installer package&lt;/a&gt; to allow easier scripted deployment of Cryptomator. But this approach also had drawbacks: We couldn&amp;rsquo;t bundle third-party drivers (i.e., Dokany) leading to inferior user experience.&lt;/p&gt;
-&lt;p&gt;These dire times are over! When you head over to &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;downloads&lt;/a&gt; and select Windows, you&amp;rsquo;re getting an executable again that bundles the MSI installer as well as additional dependencies. Furthermore, it supports command-line parameters (e.g., &lt;code&gt;/quiet&lt;/code&gt;). For a complete list, run the installer with the &lt;code&gt;/?&lt;/code&gt; parameter.&lt;/p&gt;
-&lt;p&gt;If you want to download the &amp;ldquo;pure&amp;rdquo; MSI installer without dependencies, it&amp;rsquo;s also available on the downloads site or head over to the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.7&#34;&gt;release on GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;new-default-vfs-driver-virtual-volume&#34;&gt;New Default VFS Driver (Virtual Volume)&lt;/h2&gt;
-&lt;p&gt;As already mentioned, the new EXE installer can include dependencies again, so we added one right from the start: &lt;a href=&#34;https://winfsp.dev/&#34;&gt;WinFsp&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This decision is mainly based on the long-term maintenance effort. The integration of a vault into the OS currently supports WebDAV (legacy), Dokany (Windows), and FUSE (all systems). FUSE support (provided by WinFSP) on Windows is now available for quite a while and feedback was very promising. The time has come to make this the default choice so we can focus on a common code base.&lt;/p&gt;
-&lt;p&gt;WebDAV and Dokany will remain part of Cryptomator, should you prefer it in your individual setup. Please note that Dokany 2.x is not yet supported and our existing Dokany 1.x glue code requires a migration.&lt;/p&gt;
-&lt;p&gt;There are some known issues with WinFsp though:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If you are logged in to Windows via an AzureAD account, vaults can only be accessed read-only.&lt;/li&gt;
-&lt;li&gt;Access with the admin rights is only possible when the vault is mounted into a directory (as opposed to a drive letter).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If you aren&amp;rsquo;t affected by any of these issues, we encourage you to use WinFsp/FUSE.&lt;/p&gt;
-&lt;p&gt;Those were the two major changes you should know about. For all changes, have a look at the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.6.7&#34;&gt;changelog&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We hope you are enjoying this Cryptomator update.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/blog/2022/03/25/release-1.6.7/</link>
-        <guid isPermaLink="true">https://cryptomator.org/blog/2022/03/25/release-1.6.7/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>desktop</category>
-        
-        <category>installer</category>
-        
-        <category>windows</category>
         
       </item>
     
