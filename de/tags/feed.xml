@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/</link>
     </image>
-    <lastBuildDate>Fri, 01 Dec 2023 17:01:26 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2023 08:12:04 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -45,7 +45,7 @@
 &lt;p&gt;Nachdem die Tresor-Mitglieder die Kontenmigration abgeschlossen haben, sollten die Tresor-Eigentümer die Berechtigungen zum Tresor aktualisieren. Auf diese Weise werden die erforderlichen Tresorschlüssel sicher an die Benutzer verteilt.&lt;/p&gt;
 &lt;h2 id=&#34;-häufig-gestellte-fragen&#34;&gt;❓ Häufig gestellte Fragen&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Q: Was genau ist mein &lt;em&gt;Account Key&lt;/em&gt;?&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;A:&lt;/strong&gt; Der &lt;em&gt;Account Key&lt;/em&gt; ist eine eindeutige Kennung, die als persönliches Geheimnis dient und für die Registrierung neuer Geräte und zur Identifizierung in verschiedenen Anwendungen und Browsern benötigt wird. Behandle ihn genauso sicher wie jedes andere wichtige Passwort.&lt;/p&gt;
+&lt;strong&gt;A:&lt;/strong&gt; Der &lt;em&gt;Account Key&lt;/em&gt; ist dein persönliches Geheimnis und dient zur Registrierung neuer Geräte und zur Identifizierung in verschiedenen Cryptomator-Anwendungen und Browsern. Behandle ihn genauso sicher wie jedes andere wichtige Passwort.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q: Wie erhalte ich meinen &lt;em&gt;Account Key&lt;/em&gt; zurück, wenn ich ihn verliere?&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;A:&lt;/strong&gt; Du kannst deinen &lt;em&gt;Account Key&lt;/em&gt; abrufen, indem du dich in deinen Cryptomator Hub-Account einloggst und zur Seite &lt;em&gt;Profil&lt;/em&gt; navigierst. Dort kannst du deinen &lt;em&gt;Account Key&lt;/em&gt; einsehen. Wenn dein Browser keinen Zugang mehr hat und du ihn nicht mehr abrufen kannst, kannst du dein Konto zurücksetzen. In diesem Fall verlierst du den Zugang zu all deinen Tresoren und der/die Tresorbesitzer müssen dir erneut Zugang gewähren.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q: Wirkt sich die Aktualisierung auf meine bestehenden Tresore und die darin enthaltenen Daten aus?&lt;/strong&gt;&lt;br&gt;

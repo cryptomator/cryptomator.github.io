@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/vault-format/</link>
     </image>
-    <lastBuildDate>Fri, 01 Dec 2023 17:01:26 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Dec 2023 08:12:04 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -45,7 +45,7 @@
 &lt;p&gt;Once vault members have navigated through the account migration, vault owners should refresh vault permissions. This action will securely distribute the necessary vault keys to the users.&lt;/p&gt;
 &lt;h2 id=&#34;-frequently-asked-questions&#34;&gt;❓ Frequently Asked Questions&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Q: What exactly is my &lt;em&gt;Account Key&lt;/em&gt;?&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;A:&lt;/strong&gt; The &lt;em&gt;Account Key&lt;/em&gt; is a unique identifier that serves as your personal secret, required for registering new devices and establishing your identity across different apps and browsers. Treat it with the same level of security as you would with any important password.&lt;/p&gt;
+&lt;strong&gt;A:&lt;/strong&gt; The &lt;em&gt;Account Key&lt;/em&gt; is your personal secret, required for registering new devices and establishing your identity across different Cryptomator apps and browsers. Treat it with the same level of security as you would with any important password.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q: How do I retrieve my &lt;em&gt;Account Key&lt;/em&gt; if I lose it?&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;A:&lt;/strong&gt; You can retrieve your &lt;em&gt;Account Key&lt;/em&gt; by logging into your Cryptomator Hub account and navigating to the &lt;em&gt;Profile&lt;/em&gt; page. There, you can view your &lt;em&gt;Account Key&lt;/em&gt;. If your browser doesn&amp;rsquo;t have access and you can&amp;rsquo;t retrieve it anymore, you can reset your account. In this case, you will lose access to all your vaults and the vault owner(s) will have to grant you access again.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q: Will the update affect my existing vaults and the data they contain?&lt;/strong&gt;&lt;br&gt;
