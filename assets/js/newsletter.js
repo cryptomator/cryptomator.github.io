@@ -1,4 +1,4 @@
-const SUBSCRIBE_NEWSLETTER_URL = 'https://api.cryptomator.org/mailtrain/subscribe.php';
+const SUBSCRIBE_NEWSLETTER_URL = 'https://api.cryptomator.org/listmonk/subscribe.php';
 
 class Newsletter {
 
