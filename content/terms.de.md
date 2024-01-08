@@ -103,14 +103,14 @@ Das Widerrufsrecht besteht nicht bei Verträgen zur Lieferung von digitalen Inha
 
 Das Widerrufsrecht erlischt vorzeitig, wenn
 
-* der Provider mit der Vertragsausführung beginnt (§ 356 Abs. 5 BGB),
+* Skymatic mit der Vertragsausführung beginnt (§ 356 Abs. 5 BGB),
 * nachdem der Kunde als Verbraucher dem Beginn der Vertragsausführung vor Ablauf der Widerrufsfrist ausdrücklich zugestimmt hat (§ 356 Abs. 5 Nr. 1 BGB) und
 * der der Kunde als Verbraucher seine Kenntnis vom Verlust des Widerrufsrechts bestätigt (§ 356 Abs. 5 Nr. 2 BGB).
 
 ## §10 Außergerichtliche Streitschlichtung sowie Hinweis nach § 36 VSBG
 10.1 Die EU-Kommission hat unter {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}} eine Plattform für außergerichtliche Streitschlichtung bereitgestellt.
 
-10.2 Der Provider ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
+10.2 Skymatic ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
 
 ## §11 Schlussbestimmungen
 11.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
