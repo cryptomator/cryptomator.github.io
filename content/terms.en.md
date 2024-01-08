@@ -110,7 +110,7 @@ The right of withdrawal does not apply to contracts for the delivery of digital 
 The right of withdrawal expires prematurely if
 
 * Skymatic begins with the execution of the contract (§ 356 para. 5 BGB),
-* after the Customer, as a consumer, has expressly consented to the commencement of the execution of the contract before the expiry of the revocation period (§ 356 para. 5 no. 1 BGB), and
+* after the customer, as a consumer, has expressly consented to the commencement of the execution of the contract before the expiry of the revocation period (§ 356 para. 5 no. 1 BGB), and
 * the customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
 
 ## §10 Online Dispute Resolution as well as Information According to § 36 VSBG
