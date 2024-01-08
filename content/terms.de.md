@@ -2,9 +2,10 @@
 title: "AGB"
 ---
 
-_Stand: November 2021_
+_Stand: Januar 2024_
 
-<p class="text-lg leading-relaxed text-gray-700">Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.</p>
+Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.
+{.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Geltungsbereich
 
@@ -63,23 +64,20 @@ Skymatic ist Rechteinhaberin der angebotenen digitalen Inhalte, welche mit den D
 Skymatic speichert die übermittelten personenbezogenen Daten, wie z.B. Name, Bankverbindung und E-Mail-Adresse, zur Abwicklung des Kaufvertrages. Nähere Informationen findet der Kunde in der [Datenschutzerklärung](/de/privacy/).
 
 ## §9 Widerruf
+Ist der Kunde Verbraucher, steht ihm ein gesetzliches Widerrufsrecht zu:
 
-Handelt es sich bei dem Kunden um einen Verbraucher, steht ihm ein Widerrufsrecht zu.
+### Widerrufsrecht
+Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.  
 
-### Widerrufsbelehrung
+Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, E-Mail: support@cryptomator.org, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.   
 
-Der Kunde hat das Recht, binnen 14 Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag des Vertragsabschlusses.  Um das Widerrufsrecht auszuüben, muss der Teilnehmer Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, E-Mail: info@skymatic.de, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief oder E-Mail) über seinen Entschluss, diesen Vertrag zu widerrufen, informieren. Der Kunde kann dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
-
-Zur Wahrung der Widerrufsfrist reicht es aus, dass der Kunde die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absendet.
+Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
 
 ### Folgen des Widerrufs
-
-Wenn der Kunde diesen Vertrag widerruft, hat Skymatic alle Zahlungen, die sie von dem Kunden erhalten hat, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass der Teilnehmer eine andere Art der Lieferung als die von Skymatic angebotene, günstigste Standardlieferung gewählt hat), unverzüglich und spätestens binnen 14 Tagen ab dem Tag zurückzahlen, an dem die Mitteilung über den Widerruf dieses Vertrags bei Skymatic eingegangen ist. Für diese Rückzahlung verwendet Skymatic dasselbe Zahlungsmittel, das der Kunde bei der ursprünglichen Transaktion eingesetzt hat, es sei denn, mit dem Kunden wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden dem Kunden wegen dieser Rückzahlung Entgelte berechnet.
+Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. 
 
 ### Muster-Widerrufsformular
-
-Wenn der Kunde den Vertrag nach Maßgabe der vorstehenden Widerrufsbelehrung widerrufen will, dann kann er dieses Formular ausfüllen und an Skymatic zurücksenden. Die Verwendung des Formulars ist aber nicht zwingend.
-
+Der Gesetzgeber stellt in Anlage 2 zu Artikel 246a § 1 Absatz 2 Satz 1 Nummer 1 und § 2 Absatz 2 Nummer 2 EGBGB das folgende Muster-Widerrufsformular zur Verfügung:
 
 ```
 An:
@@ -91,7 +89,7 @@ Fax: 02241 / 2667424
 
 Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
 
-Bestellt am (*): __________________
+Bestellt am (*) / erhalten am (*): __________________
 Name des/der Verbraucher(s): __________________
 Anschrift des/der Verbraucher(s): __________________
 Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): __________________
@@ -100,20 +98,25 @@ Datum: __________________
 
 _(*) Unzutreffendes streichen._
 
-## §10 Online-Plattform zur außergerichtlichen Streitschlichtung sowie Hinweis nach § 36 VSBG
+### Besondere Hinweise: Ausschluss bzw. vorzeitiges Erlöschen des Widerrufsrechts
+Das Widerrufsrecht besteht nicht bei Verträgen zur Lieferung von digitalen Inhalten, die nicht vorgefertigt sind und für deren Herstellung eine individuelle Auswahl oder Bestimmung durch den Verbraucher maßgeblich ist oder die eindeutig auf die persönlichen Bedürfnisse des Verbrauchers zugeschnitten sind.
 
-Skymatic ist verpflichtet, Teilnehmer, die Verbraucher sind, auf die Plattform zur Online-Streitbeilegung (OS-Plattform) der Europäischen Kommission hinzuweisen. Diese OS-Plattform ist über folgenden Link erreichbar: {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
+Das Widerrufsrecht erlischt vorzeitig, wenn
 
-Skymatic nimmt an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle allerdings nicht teil.
+* Skymatic mit der Vertragsausführung beginnt (§ 356 Abs. 5 BGB),
+* nachdem der Kunde als Verbraucher dem Beginn der Vertragsausführung vor Ablauf der Widerrufsfrist ausdrücklich zugestimmt hat (§ 356 Abs. 5 Nr. 1 BGB) und
+* der der Kunde als Verbraucher seine Kenntnis vom Verlust des Widerrufsrechts bestätigt (§ 356 Abs. 5 Nr. 2 BGB).
 
-## §11 Anwendbares Recht, Vertragssprachen, Gerichtsstand
+## §10 Außergerichtliche Streitschlichtung sowie Hinweis nach § 36 VSBG
+10.1 Die EU-Kommission hat unter {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}} eine Plattform für außergerichtliche Streitschlichtung bereitgestellt.
 
-11.1 Auf die Verträge findet nur das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (United Nations Convention on Contracts for the International Sale of Goods, CISG) an. Bei Verbrauchern gilt diese Rechtswahl nur, soweit hierdurch nicht zwingende verbraucherschützende Vorschriften des Staates, in dem der Kunde seinen gewöhnlichen Aufenthalt hat, entzogen werden.
+10.2 Skymatic ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
 
-11.2 Erfüllungsort für alle Verpflichtungen beider Vertragsteile ist der Sitz von Skymatic.
-
-11.3 Vertragssprachen sind Deutsch und Englisch.
-
-11.4 Gerichtsstand ist, soweit rechtlich vereinbar, Bonn.
-
-11.5 Sollte eine Bestimmung dieser Bedingungen ganz oder teilweise unwirksam sein oder werden, so berührt dies nicht die Gültigkeit der übrigen Bestimmungen.
+## §11 Schlussbestimmungen
+11.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
+ 
+11.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Schriftform.
+ 
+11.3 Es gilt deutsches Recht unter Ausschluss der kollisionsrechtlichen Bestimmungen und des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenverkauf vom 11.4.1980 (UN-Kaufrecht).
+ 
+11.4 Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Bonn, soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder ein öffentlich-rechtliches Sondervermögen ist. Ein etwaiger ausschließlicher Gerichtsstand ist vorrangig.

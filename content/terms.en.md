@@ -2,9 +2,13 @@
 title: "Terms & Conditions"
 ---
 
-_Effective date: November 2021_
+_Effective date: January 2024_
 
-<p class="text-lg leading-relaxed text-gray-700">By purchasing licenses and using software licenses and other digital content offered on this website, you declare your agreement with the following Terms & Conditions (T&C) of Skymatic GmbH in the context of current and future business relations.</p>
+By purchasing licenses and using software licenses and other digital content offered on this website, you declare your agreement with the following Terms & Conditions (T&C) of Skymatic GmbH in the context of current and future business relations.
+{.text-lg .leading-relaxed .text-gray-700}
+
+Contract language is German. This is a translation from our [German AGB](/de/terms). German Version shall prevail.
+{.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Validity
 
@@ -63,22 +67,22 @@ Skymatic is the copyright holder of the digital content offered, which can be ac
 Skymatic processes data required in the context of the conclusion of the contract in accordance with the statutory provisions and our [privacy policy](/privacy/).
 
 ## §9 Withdrawal
-
 If the customer is a consumer, he has a right of withdrawal.
 
-### Withdrawal policy
+### Right of Withdrawal
+You have the right to revoke this contract within fourteen days without giving any reason. The revocation period is fourteen days from the day of the conclusion of the contract.  
 
-The customer has the right to revoke this contract within 14 days without giving reasons. The revocation period is 14 days from the date of conclusion of the contract.  In order to exercise the right of withdrawal, the participant must inform Skymatic (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: info@skymatic.de, fax: +49 2241 / 2667424) of his decision to withdraw from this contract by means of a clear statement (e.g. a letter sent by post or email). The customer may use the attached sample revocation form for this purpose, which is not mandatory.
+To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, e-mail: support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an e-mail). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.   
 
-In order to comply with the revocation period, it is sufficient for the customer to send the notification of the exercise of the right of revocation before the end of the revocation period.
+To comply with the withdrawal period, it is sufficient that you send the notice of exercise of the right of withdrawal before the expiry of the withdrawal period.
+
+Translated with www.DeepL.com/Translator (free version)
 
 ### Consequences of Withdrawal
-
-If the customer revokes this contract, Skymatic shall refund all payments received from the customer, including delivery costs (with the exception of additional costs resulting from the fact that the participant has chosen a different type of delivery than the cheapest standard delivery offered by Skymatic), immediately and at the latest within 14 days from the day on which Skymatic received notification of the revocation of this contract. For this repayment, Skymatic shall use the same means of payment that the customer used for the original transaction, unless expressly agreed otherwise with the customer; under no circumstances shall the customer be charged for this repayment.
+If you revoke this contract, we shall reimburse you all payments we have received from you, including delivery costs (with the exception of additional costs resulting from the fact that you have chosen a type of delivery other than the most favorable standard delivery offered by us), without undue delay and no later than within fourteen days from the day on which we received the notification of your revocation of this contract. For this repayment, we will use the same means of payment that you used for the original transaction, unless expressly agreed otherwise with you; in no case will you be charged for this repayment.
 
 ### Sample Revocation Form
-
-If the customer wishes to revoke the contract in accordance with the aforementioned revocation instructions, he/she can fill out this form and return it to Skymatic. However, the use of the form is not mandatory.
+The legislator provides the following model withdrawal form in Annex 2 to Article 246a § 1 (2) sentence 1 number 1 and § 2 (2) number 2 EGBGB:
 
 ```
 To:
@@ -91,7 +95,7 @@ Fax: 02241 / 2667424
 
 I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
 
-Ordered on (*): __________________
+Ordered on (*) / received on (*): __________________
 Name of the customer: __________________
 Address of the customer: __________________
 Signature (only in the case of paper-based notice): __________________
@@ -100,20 +104,25 @@ Date: __________________
 
 _(*) Delete as applicable._
 
+### Special Notes: Exclusion or Premature Expiration of the Right of Withdrawal
+The right of withdrawal does not apply to contracts for the delivery of digital content that is not prefabricated and for the production of which an individual selection or determination by the consumer is decisive or which is clearly tailored to the personal needs of the consumer.
+
+The right of withdrawal expires prematurely if
+
+* Skymatic begins with the execution of the contract (§ 356 para. 5 BGB),
+* after the customer, as a consumer, has expressly consented to the commencement of the execution of the contract before the expiry of the revocation period (§ 356 para. 5 no. 1 BGB), and
+* the customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
+
 ## §10 Online Dispute Resolution as well as Information According to § 36 VSBG
+10.1 The EU Commission has provided a platform for out-of-court dispute resolution at {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
 
-Skymatic is legally obliged to refer you to the European Online Dispute Resolution Platform (ODR Platform) of the European Commission. This ODR platform can be reached at: {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
+10.2 Skymatic is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
-Skymatic does not, however, take part in a dispute settlement procedure before a consumer arbitration body.
-
-## §11 Applicable Law, Contract Languages, Place of Jurisdiction
-
-11.1 Only the law of the Federal Republic of Germany shall apply to the contracts to the exclusion of the United Nations Convention on Contracts for the International Sale of Goods (CISG). In the case of consumers, this choice of law shall only apply insofar as it does not deprive the customer of mandatory consumer protection provisions of the state in which the customer has his habitual residence.
-
-11.2 The place of performance for all obligations of both contracting parties is the registered office of Skymatic.
-
-11.3 Contract languages are German and English.
-
-11.4 The place of jurisdiction is Bonn, Germany, if legally compatible.
-
-11.5 Should any provision of these terms and conditions be or become invalid in whole or in part, this shall not affect the validity of the remaining provisions.
+## §11 Final Clauses
+11.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
+ 
+11.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing.
+ 
+11.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
+ 
+11.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, Germany, insofar as the customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
