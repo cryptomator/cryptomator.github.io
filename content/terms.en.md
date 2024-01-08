@@ -125,4 +125,4 @@ The right of withdrawal expires prematurely if
  
 11.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
  
-11.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, insofar as the customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
+11.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, Germany, insofar as the customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
