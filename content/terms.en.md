@@ -90,7 +90,7 @@ Skymatic GmbH
 Am Hauptbahnhof 6
 53111 Bonn
 Germany
-E-Mail: info@skymatic.de
+Email: info@skymatic.de
 Fax: 02241 / 2667424
 
 I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
