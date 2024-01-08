@@ -2,7 +2,7 @@
 title: "AGB"
 ---
 
-_Stand: February 2023_
+_Stand: Januar 2024_
 
 Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.
 {.text-lg .leading-relaxed .text-gray-700}

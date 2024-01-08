@@ -2,7 +2,7 @@
 title: "Terms & Conditions"
 ---
 
-_Effective date: February 2023_
+_Effective date: January 2024_
 
 By purchasing licenses and using software licenses and other digital content offered on this website, you declare your agreement with the following Terms & Conditions (T&C) of Skymatic GmbH in the context of current and future business relations.
 {.text-lg .leading-relaxed .text-gray-700}
