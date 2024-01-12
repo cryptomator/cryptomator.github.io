@@ -1168,6 +1168,18 @@
                 href="https://cryptomator.org/de/coop/mountainduck/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/coop/powerfolder/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/coop/powerfolder/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/coop/powerfolder/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/presskit/</loc>
     <xhtml:link
                 rel="alternate"
