@@ -1,6 +1,6 @@
 ---
 title: "ProxyStore"
-prio: 60
+prio: 70
 img: /img/coop/proxystore.png
 img2x: /img/coop/proxystore@2x.png
 description: ProxyStore ist ein in Deutschland ansässiger Anbieter von Waren und Dienstleistungen rund um Datenschutz und Privatsphäre.
