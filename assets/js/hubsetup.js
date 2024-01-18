@@ -113,7 +113,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 3\n\n';
+    result += '# Generated using script version 4\n\n';
 
     return result;
   }
@@ -308,7 +308,9 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         name: 'Cryptomator App',
         enabled: true,
         redirectUris: [
-          'http://127.0.0.1/*'
+          'http://127.0.0.1/*',
+          'org.cryptomator.ios:/hub/auth',
+          'org.cryptomator.android:/hub/auth'
         ],
         webOrigins: ['+'],
         bearerOnly: false,
