@@ -148,6 +148,7 @@ module.exports = {
         hover: 'hover 10s ease-in-out infinite',
       },
       height: {
+        '70px': '70px',
         '412px': '412px',
       },
       keyframes: {
