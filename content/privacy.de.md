@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 aliases: ["/de/privacy-ios", "/de/privacy-android"]
 ---
 
-_Stand: März 2022_
+_Stand: Februar 2024_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
