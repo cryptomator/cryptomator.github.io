@@ -202,7 +202,16 @@ If the user checks for updates, either manually or at a scheduled interval, the 
 * Time of the request
 * IP address
 
-#### 8.1.2 Sending of Error Protocols
+#### 8.1.2 Cross-Reference with Error Database
+If the user grants permission for the Cryptomator desktop application to cross-reference the current error with our database, the following data will be transmitted during the process:
+
+* Operating System Version
+* Software Version
+* Error Code
+* Time of the request
+* IP address
+
+#### 8.1.3 Sending of Error Protocols
 Locally created log file can help identifying problems. If the user decides to send one of these files via email, it may contain the following data:
 
 * Operating system version
@@ -213,7 +222,7 @@ Locally created log file can help identifying problems. If the user decides to s
 
 This data will not be stored together with other personal data of the user.
 
-#### 8.1.3 Accessing Cloud Storage Services (Android, iOS)
+#### 8.1.4 Accessing Cloud Storage Services (Android, iOS)
 If the user authorizes the Cryptomator application for iOS or Android to access one or many cloud storage services, the application is granted access to data stored by the respective service. The application will not access any data other than stored in folders knowingly selected by the user.
 
 Any such data is processed solely on the user's local device. Under no circumstances will we receive any of this data.

@@ -204,7 +204,15 @@ Falls der Nutzer manuell oder per automatischem Intervall die Update-Prüfung nu
 * Uhrzeit der Anfrage
 * IP-Adresse
 
-#### 8.1.2 Übermittlung von Fehlerprotokollen
+#### 8.1.2 Abgleich mit der Fehlerdatenbank
+Sofern der Nutzer der Cryptomator Desktop-Anwendung die Berechtigung erteilt, aktuelle Fehlermeldungen mit der Fehlerdatenbank abzugleichen, werden während dieses Prozesses folgende Daten übermittelt:
+* Version des Betriebssystems
+* Version der Software
+* Fehlercode
+* Uhrzeit der Anfrage
+* IP-Adresse
+
+#### 8.1.3 Übermittlung von Fehlerprotokollen
 Lokal auf dem Gerät des Nutzers erstellte Log-Dateien können bei der Fehlerbehebung behilflich sein. Sendet der Nutzer eine dieser Dateien per E-Mail, können folgende Daten übermittelt werden:
 
 * Betriebssystem
@@ -215,7 +223,7 @@ Lokal auf dem Gerät des Nutzers erstellte Log-Dateien können bei der Fehlerbeh
 
 Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des Nutzers findet nicht statt.
 
-#### 8.1.3 Zugriff auf Cloud-Speicher-Dienste (Android, iOS)
+#### 8.1.4 Zugriff auf Cloud-Speicher-Dienste (Android, iOS)
 Falls der Nutzer die Cryptomator App für iOS oder Android autorisiert, auf einen oder mehrere Cloud-Speicher-Dienste zuzugreifen, erhält die Anwendung Zugriff auf dort gespeicherte Daten. Die Anwendung greift auf keine Daten zu, die außerhalb von durch den Nutzer wissentlich ausgewählten Ordnern liegen.
 
 Diese Daten werden ausschließlich lokal auf dem Gerät des Nutzers verarbeitet. Unter keinen Umständen erhalten wir Teile dieser Daten.
