@@ -23,7 +23,7 @@
   </div>
 
   <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
-    <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "android_keyrecovery_title" . }}</h3>
+    <h3 id="keyrecovery" class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "android_keyrecovery_title" . }}</h3>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "android_keyrecovery_instruction" . }}</p>
