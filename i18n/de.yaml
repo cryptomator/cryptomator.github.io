@@ -348,7 +348,7 @@
 - id: hub_pricing_enterprise_benefit_3
   translation: "Beratung und Unterstützung durch Experten"
 - id: hub_pricing_enterprise_benefit_4
-  translation: "Vorrangiger E-Mail- und Chat-Support"
+  translation: "Vorrangiger E-Mail-Support"
 - id: hub_pricing_managed_enterprise_benefit_1
   translation: "Option: Eigene Domain"
 - id: hub_pricing_managed_enterprise_benefit_2

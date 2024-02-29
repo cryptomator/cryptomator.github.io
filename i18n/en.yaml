@@ -348,7 +348,7 @@
 - id: hub_pricing_enterprise_benefit_3
   translation: "Expert training and assistance"
 - id: hub_pricing_enterprise_benefit_4
-  translation: "Priority email and chat support"
+  translation: "Priority email support"
 - id: hub_pricing_managed_enterprise_benefit_1
   translation: "Option: Custom domain"
 - id: hub_pricing_managed_enterprise_benefit_2
