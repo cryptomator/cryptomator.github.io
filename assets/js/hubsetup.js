@@ -423,7 +423,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/keycloak:22.0.5',
+      image: 'ghcr.io/cryptomator/keycloak:23.0.7',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -795,7 +795,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'ghcr.io/cryptomator/keycloak:22.0.5',
+              image: 'ghcr.io/cryptomator/keycloak:23.0.7',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
