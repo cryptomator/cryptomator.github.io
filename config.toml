@@ -61,18 +61,18 @@ block = true
 [params]
   [params.releases]
     [params.releases.exe]
-      version = "1.12.3"
-      filename = "Cryptomator-1.12.3-x64.exe"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.3/Cryptomator-1.12.3-x64.exe"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.3/Cryptomator-1.12.3-x64.exe.asc"
-      checksum = "d5f1e7bd406f228a1a33e3396aec5358191bb9f77d8fcf1d6657dac12945decc"
+      version = "1.12.4"
+      filename = "Cryptomator-1.12.4-x64.exe"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.4/Cryptomator-1.12.4-x64.exe"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.4/Cryptomator-1.12.4-x64.exe.asc"
+      checksum = "c2a8442edff5e8355f5dad6600436f434e05d374d897643ca6bff32edabc5c38"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.msi]
-      version = "1.12.3"
-      filename = "Cryptomator-1.12.3-x64.msi"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.3/Cryptomator-1.12.3-x64.msi"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.3/Cryptomator-1.12.3-x64.msi.asc"
-      checksum = "0d8ceb8e963b6454687908b5bd2d2f4c792e04fe1ee1dcdedf7228158dd69a7a"
+      version = "1.12.4"
+      filename = "Cryptomator-1.12.4-x64.msi"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.4/Cryptomator-1.12.4-x64.msi"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.12.4/Cryptomator-1.12.4-x64.msi.asc"
+      checksum = "939809d8bd0e8a31be311bd390c0d70c00196e22c83493a085285d72460474f4"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.dmg]
       version = "1.12.3"
