@@ -113,7 +113,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 4\n\n';
+    result += '# Generated using script version 5\n\n';
 
     return result;
   }
@@ -249,6 +249,9 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         },
         {
           username: this.cfg.hub.syncerUser,
+          firstName: "syncer",
+          lastName: "syncer",
+          email: "syncer@localhost",
           enabled: true,
           credentials: [{ type: 'password', value: this.cfg.hub.syncerPw, temporary: false }],
           realmRoles: ['syncer']
@@ -423,7 +426,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/keycloak:23.0.7',
+      image: 'ghcr.io/cryptomator/keycloak:24.0.4',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
