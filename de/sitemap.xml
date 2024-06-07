@@ -1168,6 +1168,18 @@
                 href="https://cryptomator.org/de/coop/mountainduck/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/nis-2-guideline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/nis-2-guideline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/nis-2-guideline/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/coop/powerfolder/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1250,6 +1262,18 @@
                 rel="alternate"
                 hreflang="de_DE"
                 href="https://cryptomator.org/de/coop/webde/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/protecting-data-against-ai/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/protecting-data-against-ai/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/protecting-data-against-ai/"
                 />
   </url>
 </urlset>

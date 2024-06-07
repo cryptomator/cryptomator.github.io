@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to protect your cloud data from AI threats: The ultimate guide with Cryptomator</title>
+    
+      <meta name="description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
+      <meta property="og:title" content="Cryptomator - How to protect your cloud data from AI threats: The ultimate guide with Cryptomator"/>
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://cryptomator.org/protecting-data-against-ai/"/>
+      <meta property="og:site_name" content="Cryptomator"/>
+      <meta property="og:description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
+      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
+    
+    <meta property="og:locale" content="" />
+    
+      <meta property="og:locale:alternate" content="" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.2c4861cfbfd5a89ecf09f53ef424198bb4e5b5164b968aff2560225a050c825a.css" integrity="sha256-LEhhz7/VqJ7PCfU&#43;9CQZi7TltRZLlor/JWAiWgUMglo=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/protecting-data-against-ai/" />
+    
+    
+      
+    
+  </head>
+  <body class="bg-dark font-body text-gray-900">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+  <div class="flex justify-between items-stretch w-full">
+    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
+      <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+      <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+    </a>
+
+    
+    <ul class="hidden lg:flex items-stretch list-none m-0">
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
+      </li>
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+      </li>
+      <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Support Us</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+            <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+            <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+            <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
+          </div>
+        </div>
+      </li>
+      <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Learn More</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+            <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+            <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+            <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+            <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+            <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+            <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
+            <a href="/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">NIS-2-Guideline</a>
+            <a href="/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Protecting cloud data against AI</a>
+          </div>
+        </div>
+      </li>
+      
+      <li class="flex items-center mx-5 my-3 border-l border-primary"></li>
+      
+      <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+          <span>EN</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+            <a :href="'/de/protecting-data-against-ai/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+          </div>
+        </div>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener"><i class="fab fa-mastodon fa-fw" aria-label="Fediverse"></i></a>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener"><i class="fab fa-github fa-fw" aria-label="GitHub"></i></a>
+      </li>
+    </ul>
+    
+    
+    <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+      <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+      <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+    </button>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden">
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Support Us
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Learn More
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/nis-2-guideline/">NIS-2-Guideline</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/protecting-data-against-ai/">Protecting cloud data against AI</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> EN
+    </div>
+    <div class="mt-1">
+      
+      <a :href="'/de/protecting-data-against-ai/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-mastodon fa-fw"></i>
+      <span>Cryptomator on Fediverse</span>
+    </a>
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator on GitHub</span>
+    </a>
+  </div>
+</nav>
+
+    <div class="bg-gray-100 min-vh-80">
+    
+    
+  <div class="container-prose py-12">
+    <article class="prose prose-sm md:prose max-w-none md:max-w-none">
+      <header class="mb-6">
+        <h1>How to protect your cloud data from AI threats: The ultimate guide with Cryptomator</h1>
+      </header>
+      <h2 id="introduction">Introduction</h2>
+<p>Imagine all your important data - whether professional or private - is stored in the cloud and is at risk from modern AI technologies. Sounds scary, doesn&rsquo;t it? However, this is a real threat, which is why it is becoming increasingly important to better secure sensitive data.</p>
+<p>This is where Cryptomator comes in. Our app offers you a user-friendly and effective solution to securely encrypt your cloud data and protect it from unauthorized access. In this guide, we&rsquo;ll show you how you can use Cryptomator to protect your data from the prying eyes of AI-powered systems.</p>
+<h2 id="what-is-cloud-data-and-why-is-it-at-risk">What is cloud data and why is it at risk?</h2>
+<p>Cloud data is any information that you store on external servers instead of on your own device. This can be anything: Documents, photos, videos or even entire databases. This data is particularly vulnerable to attacks as it is accessible via the internet. AI technologies can analyze large amounts of data and recognize patterns that human attackers would overlook. As a result, security gaps can be exploited and sensitive data can be stolen or manipulated. In addition, many cloud services use their users’ data to train their AI systems. This data can then often no longer be deleted, which poses a further security and data protection risk.</p>
+<h3 id="how-ai-affects-data-security-in-the-cloud">How AI affects data security in the cloud</h3>
+<p>AI-supported attacks are particularly dangerous because they work quickly and efficiently. A common example is phishing attacks, in which personalized emails are created by AI to trick you into revealing your login details. Automated data analysis by AI also poses a risk: AI can uncover and exploit vulnerabilities in cloud security that you may not have had on your radar.</p>
+<h3 id="why-traditional-security-measures-are-not-enough">Why traditional security measures are not enough</h3>
+<p>While traditional security methods such as password protection and two-factor authentication are important first steps, they do not provide comprehensive protection against AI-based threats. These methods can often be bypassed by sophisticated AI-powered attacks, especially if the password is very simple and self-imposed. It is therefore important to use innovative security solutions that are specifically designed to counter modern AI threats.</p>
+<h2 id="cryptomator-as-a-solution-introduction-and-advantages">Cryptomator as a solution: introduction and advantages</h2>
+<p>Cryptomator is an <a href="https://cryptomator.org/open-source/">open-source app</a> that reliably encrypts your data in the cloud. It is easy to use and compatible with most cloud services. The main advantages include:</p>
+<ul>
+<li><strong>Security:</strong> Cryptomator uses strong <a href="https://cryptomator.org/encrypt-dropbox/">encryption technologies</a> to protect your data.</li>
+<li><strong>Privacy:</strong> Only you have access to your encrypted data.</li>
+<li><strong>Cost:</strong> Cryptomator is affordable and offers an excellent cost-benefit ratio.</li>
+</ul>
+<h3 id="how-cryptomator-works-technically">How Cryptomator works technically</h3>
+<p>Cryptomator uses advanced encryption techniques to protect your data. Each file is individually encrypted and organized in a structured way that ensures only authorized users have access. The app integrates seamlessly with popular cloud services such as Google Drive, Dropbox, OneDrive and many more, making it particularly easy to use.</p>
+<h3 id="step-by-step-guide-to-using-cryptomator">Step-by-step guide to using Cryptomator</h3>
+<ul>
+<li><strong>Download and install:</strong> Visit the <a href="https://cryptomator.org/">official Cryptomator website</a>, download the app and install it on your device.</li>
+<li><strong>Setup:</strong> Open the app and create a new vault directory. Choose a strong password to protect your vault.</li>
+<li><strong>Use:</strong> Move the files you want to protect to the vault directory. Cryptomator encrypts them automatically and ensures that they are secure.</li>
+</ul>
+<p>You can find detailed instructions on how to use Cryptomator in our manual.</p>
+<h3 id="best-practices-for-protecting-data-in-the-cloud">Best practices for protecting data in the cloud</h3>
+<ul>
+<li><strong>Regular updates:</strong> Make sure Cryptomator and your other security software are regularly updated to protect against the latest threats.</li>
+<li><strong>Backup strategies:</strong> Make regular backups of your data to prevent data loss.</li>
+<li><strong>Awareness and training:</strong> Educate yourself and your team regularly on the latest security risks and measures.</li>
+</ul>
+<h3 id="case-studies-and-user-reports">Case studies and user reports</h3>
+<p>Many users have already had positive experiences with Cryptomator. Users praise the app&rsquo;s ease of use, high level of security, and speak positively about the fact that Cryptomator is an open-source app, which ensures a high level of transparency. These testimonials show how effective Cryptomator is and that users rate the application as secure and reliable in terms of data encryption.</p>
+<h2 id="future-prospects-data-security-and-ai">Future prospects: Data security and AI</h2>
+<p>The future of data security will be significantly shaped by advances in the field of artificial intelligence. AI technologies are becoming increasingly powerful and versatile, which brings with it both new opportunities and significant risks for data security. On the one hand, attackers can use AI to identify and exploit vulnerabilities in security systems more efficiently. On the other hand, AI is also used in defense to detect and fend off threats in real time.</p>
+<h3 id="regulatory-developments-and-data-protection-laws">Regulatory developments and data protection laws</h3>
+<p>With increasing awareness of data protection and stricter data protection laws such as the <a href="https://cryptomator.org/gdpr/">General Data Protection Regulation (GDPR)</a>, the pressure on companies to implement robust security solutions will increase. Cryptomator is adapting to these legal frameworks to remain compliant and meet user requirements.</p>
+<h3 id="education-and-awareness">Education and awareness</h3>
+<p>User awareness and education will play a key role. As threats become more complex, it is increasingly important that users are aware of the best practices for securing their data. Cybersecurity education initiatives will be crucial to ensure a high level of protection.</p>
+<h3 id="the-role-of-open-source-software">The role of open-source software</h3>
+<p>Open-source software such as Cryptomator will continue to play a central role in the development of security solutions. The transparency of the source code allows the community to identify and fix security vulnerabilities, which improves the overall quality and security of the software. At a time when trust in digital solutions is crucial, open-source software offers a high level of credibility and reliability.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Protecting your data in the cloud is more important than ever. With the proliferation of AI technologies and the associated risks, it&rsquo;s crucial that you take proactive measures to secure your sensitive information.</p>
+<p>Cryptomator offers you a reliable and easy-to-use solution specifically designed to protect your cloud data from unauthorized access. It uses advanced encryption technologies to ensure that only you can access your data. With features such as file name obfuscation and individual encryption of each file, Cryptomator sets standards in terms of security and user-friendliness. This flexibility makes Cryptomator an attractive solution for both private individuals and companies.</p>
+<p>Another helpful tool is the <a href="https://cryptomator.org/hub/">Cryptomator Hub</a>, which allows you to efficiently manage and share your encrypted data. The Cryptomator Hub offers additional features such as centralized management and collaboration, which are particularly useful for teams and companies. With Cryptomator Hub, you can ensure that all your encrypted data is clearly organized and accessible at all times.</p>
+<p>In a world where data leaks and cyberattacks are becoming increasingly common, it is essential to rely on proven and future-oriented security solutions. Cryptomator helps you stay in control of your data and protect your privacy. Download Cryptomator today and secure your data effectively.</p>
+<h2 id="faqs">FAQs</h2>
+<p><strong>Is Cryptomator compatible with my cloud service?</strong></p>
+<p>Yes, Cryptomator supports most popular cloud services such as Google Drive, Dropbox, OneDrive and many more. The app creates a virtual drive on your device to which you move your files. These files are then encrypted and stored in your cloud storage.</p>
+<p><strong>Is Cryptomator also suitable for mobile use?</strong></p>
+<p>Yes, Cryptomator offers apps for iOS and Android. These mobile apps allow you to securely access your encrypted data on the go. They are intuitive to use and offer the same security standards as the desktop version.</p>
+<p><strong>Can I use Cryptomator for free?</strong></p>
+<p>Yes, Cryptomator offers a free version with all the basic functions. There is also a <a href="https://cryptomator.org/supporter-cert/">paid version</a> with additional features such as dark mode and support for automatically locking vaults after a certain period of time.</p>
+<p><strong>How does Cryptomator differ from other encryption solutions?</strong></p>
+<p>Cryptomator is specifically designed for the encryption of cloud data and offers seamless integration with common cloud services. Unlike many other solutions, Cryptomator is an open-source application, which means that the <a href="https://github.com/cryptomator">source code is publicly available</a> and verifiable. This increases confidence in the security and integrity of the software. Cryptomator is also easy to use and requires no prior technical knowledge.</p>
+<p><strong>Can I integrate Cryptomator into my existing backup strategy?</strong></p>
+<p>Yes, Cryptomator can be easily integrated into existing backup strategies. Since the app creates a virtual drive on your device, you can integrate your encrypted data into your backup program as usual. This ensures that both the data backup and the encryption of your files are guaranteed.</p>
+<p><strong>How secure is Cryptomator&rsquo;s encryption?</strong></p>
+<p>Cryptomator uses AES-256 bit encryption, which is considered very secure. AES-256 is a symmetric encryption method that is recognized and used by security authorities and companies worldwide. Each file is encrypted individually, which further increases data security. In addition, file name obfuscation ensures that the names of your files and folders are also protected.</p>
+<p><strong>How does file name obfuscation work?</strong></p>
+<p>File name obfuscation is a function that ensures that not only the content but also the names of your files and folders are encrypted. This prevents anyone without the appropriate authorizations from being able to draw conclusions about the content of your files. Cryptomator uses a special algorithm that converts the file names into a random character string.</p>
+<p><strong>What do I do if I forget my password?</strong></p>
+<p>The password you set for your Cryptomator vault is crucial for accessing your encrypted data. If you forget it, there is a way to reset the password by using a recovery key. It is therefore important to keep this recovery key safe. Detailed instructions on how to reset the password can be found on the <a href="https://docs.cryptomator.org/en/latest/desktop/password-and-recovery-key/">Cryptomator documentation page</a>.</p>
+<p><strong>What system requirements does Cryptomator have?</strong></p>
+<p>Cryptomator is available across all platforms and supports Windows, macOS and Linux. For mobile devices, there are apps for iOS and Android. The system requirements are minimal, so the app runs smoothly on most modern devices.</p>
+
+    </article>
+  </div>
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Fediverse</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.3009dc96fd3bd608049e941b7d65bac1e5d729de7012b5367d9eb2b8362f74f1.js" integrity="sha256-MAnclv071ggEnpQbfWW6weXXKd5wErU2fZ6yuDYvdPE=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+  </body>
+</html>

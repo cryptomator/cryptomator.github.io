@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NIS 2 Directive: Higher standards for cybersecurity from October 2024</title>
+    
+      <meta name="description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
+      <meta property="og:title" content="Cryptomator - NIS 2 Directive: Higher standards for cybersecurity from October 2024"/>
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://cryptomator.org/nis-2-guideline/"/>
+      <meta property="og:site_name" content="Cryptomator"/>
+      <meta property="og:description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
+      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
+    
+    <meta property="og:locale" content="" />
+    
+      <meta property="og:locale:alternate" content="" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.2c4861cfbfd5a89ecf09f53ef424198bb4e5b5164b968aff2560225a050c825a.css" integrity="sha256-LEhhz7/VqJ7PCfU&#43;9CQZi7TltRZLlor/JWAiWgUMglo=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/nis-2-guideline/" />
+    
+    
+      
+    
+  </head>
+  <body class="bg-dark font-body text-gray-900">
+    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+  <div class="flex justify-between items-stretch w-full">
+    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/">
+      <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+      <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+    </a>
+
+    
+    <ul class="hidden lg:flex items-stretch list-none m-0">
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
+      </li>
+      <li class="flex items-center lg:mx-2 border-b-2 border-transparent hover:border-primary">
+        <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+      </li>
+      <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Support Us</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+            <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+            <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+            <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
+          </div>
+        </div>
+      </li>
+      <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+          <span>Learn More</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+            <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+            <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+            <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+            <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+            <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+            <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
+            <a href="/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">NIS-2-Guideline</a>
+            <a href="/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Protecting cloud data against AI</a>
+          </div>
+        </div>
+      </li>
+      
+      <li class="flex items-center mx-5 my-3 border-l border-primary"></li>
+      
+      <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
+        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+          <span>EN</span>
+          <i class="fas fa-chevron-down fa-fw text-xs"></i>
+        </button>
+        <div class="relative">
+          <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+            <a :href="'/de/nis-2-guideline/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+          </div>
+        </div>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener"><i class="fab fa-mastodon fa-fw" aria-label="Fediverse"></i></a>
+      </li>
+      <li class="flex items-center border-b-2 border-transparent">
+        <a class="p-2 hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener"><i class="fab fa-github fa-fw" aria-label="GitHub"></i></a>
+      </li>
+    </ul>
+    
+    
+    <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+      <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+      <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+    </button>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden">
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Support Us
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Learn More
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/nis-2-guideline/">NIS-2-Guideline</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/protecting-data-against-ai/">Protecting cloud data against AI</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> EN
+    </div>
+    <div class="mt-1">
+      
+      <a :href="'/de/nis-2-guideline/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-mastodon fa-fw"></i>
+      <span>Cryptomator on Fediverse</span>
+    </a>
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator on GitHub</span>
+    </a>
+  </div>
+</nav>
+
+    <div class="bg-gray-100 min-vh-80">
+    
+    
+  <div class="container-prose py-12">
+    <article class="prose prose-sm md:prose max-w-none md:max-w-none">
+      <header class="mb-6">
+        <h1>NIS 2 Directive: Higher standards for cybersecurity from October 2024</h1>
+      </header>
+      <h2 id="introduction">Introduction</h2>
+<p>In the wake of the new <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/en">NIS 2 Directive</a>, which comes into force in October 2024, companies will have to pay more attention to cybersecurity. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as <a href="https://cryptomator.org/open-source/">open-source software</a>, can help to meet the new requirements.</p>
+<h2 id="what-is-the-nis-2-directive">What is the NIS 2 Directive?</h2>
+<p>The NIS-2 Directive (Network and Information Systems Directive) comes into force in October 2024. This is a new EU regulation that aims to raise the standards of cybersecurity within the European Union. This directive extends the scope and requirements of the original NIS Directive to improve the resilience and security of critical infrastructure against cyberattacks. It is aimed at a wide range of companies, including those in the energy, transportation, banking, healthcare and digital infrastructure sectors.</p>
+<h3 id="who-is-affected-by-the-nis-2-directive">Who is affected by the NIS 2 Directive?</h3>
+<p>The NIS 2 Directive affects all companies that are classified as providers of essential services and operators of critical infrastructure. This includes not only large companies, but also many small and medium-sized enterprises (SMEs) operating in the sectors mentioned. These companies must now implement strict security measures to protect their networks and information systems.</p>
+<p>Companies from the following sectors are particularly affected:</p>
+<ul>
+<li>
+<p><strong>Energy:</strong> Electricity, gas and oil suppliers must secure their networks against cyberattacks. This includes both physical and digital infrastructures.</p>
+</li>
+<li>
+<p><strong>Transportation:</strong> Airlines, shipping companies, railroad companies and transport infrastructure operators must take cybersecurity measures to ensure smooth and secure operations.</p>
+</li>
+<li>
+<p><strong>Banking:</strong> Financial institutions and payment service providers are required to protect their systems from data leaks and attacks to ensure the integrity and confidentiality of financial transactions.</p>
+</li>
+<li>
+<p><strong>Healthcare:</strong> Hospitals, pharmaceutical companies and digital health service providers must protect sensitive patient data and ensure that their digital systems are secured against cyber threats.</p>
+</li>
+<li>
+<p><strong>Digital infrastructure:</strong> Internet service providers, cloud services and data centers must secure their networks and data centers to ensure the availability and security of their services.</p>
+</li>
+</ul>
+<h3 id="consequences-of-non-compliance">Consequences of non-compliance</h3>
+<p>Non-compliance with the NIS 2 Directive can have serious consequences. Companies that do not meet the requirements can face significant fines and sanctions. In addition, inadequate cybersecurity can lead to serious security incidents that can cause both financial and reputational damage. Such incidents could disrupt operations, shake customer confidence and have a long-term negative impact on business.</p>
+<h2 id="how-cryptomator-can-help">How Cryptomator can help</h2>
+<p>Cryptomator is an innovative solution that helps organizations meet the requirements of the NIS-2 directive and improve their cybersecurity standards. Cryptomator protects data from unauthorized access by encrypting it in a simple and effective way.</p>
+<h3 id="cryptomator-features-for-nis-2-compliance">Cryptomator features for NIS-2 compliance</h3>
+<p>Cryptomator offers a range of features that can help organizations meet the requirements of the NIS-2 directive:</p>
+<ul>
+<li>
+<p><strong>End-to-end encryption:</strong> Reliably protects data from unauthorized access, both during transmission and storage. This encryption technology ensures that only authorized users can access the data.</p>
+</li>
+<li>
+<p><strong>Zero-knowledge principle:</strong> Only the users have access to their encrypted data; even the developers of Cryptomator do not have access. This guarantees maximum security and confidentiality.</p>
+</li>
+<li>
+<p><strong>Cross-platform availability:</strong> Cryptomator supports various operating systems such as Windows, macOS, Linux, iOS and Android, which enables flexible and broad application.</p>
+</li>
+<li>
+<p><strong>Easy access and management:</strong> The user-friendly interface allows even non-technical users to securely encrypt and manage data without the need for extensive technical knowledge.</p>
+</li>
+<li>
+<p><strong>Transparent encryption:</strong> Files can still be edited with common applications without having to remove the encryption. This simplifies the work process and increases efficiency.</p>
+</li>
+<li>
+<p><strong>Open source software:</strong> The source code is publicly accessible, which creates transparency and trust in the security measures. Users can check the code themselves and ensure that there are no backdoors.</p>
+</li>
+</ul>
+<h3 id="cryptomator-hub-security-for-teamwork">Cryptomator Hub: Security for teamwork</h3>
+<p>A special highlight is the <a href="https://cryptomator.org/hub/">Cryptomator Hub</a>, which has been specially developed for team collaboration. Cryptomator Hub offers additional functions for managing and sharing encrypted files in a team environment.</p>
+<p>Here are some of the benefits of Cryptomator Hub:</p>
+<ul>
+<li>
+<p><strong>Centralized management:</strong> Manage access rights and encryption settings centrally for all team members. This simplifies administration and increases control over data security.</p>
+</li>
+<li>
+<p><strong>Secure collaboration:</strong> Share files securely within the team without compromising encryption. This enables efficient and secure collaboration, even in distributed teams.</p>
+</li>
+<li>
+<p><strong>Compliance:</strong> Ensure that your organization meets the requirements of the NIS 2 directive and that your data is protected at all times. Cryptomator Hub helps you to implement and maintain the necessary security measures.</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The NIS 2 directive presents companies with new cybersecurity challenges, but with the right tools you can successfully meet these requirements. Cryptomator, with its end-to-end encryption and user-friendly, cross-platform application, offers an effective solution to protect your sensitive data and meet the new security standards. Especially for companies that operate as providers of essential services and operators of critical infrastructure, Cryptomator is an indispensable tool to ensure compliance and ward off cyber threats. Cryptomator Hub also enables teams to collaborate securely and efficiently without compromising on security.</p>
+
+    </article>
+  </div>
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Fediverse</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.3009dc96fd3bd608049e941b7d65bac1e5d729de7012b5367d9eb2b8362f74f1.js" integrity="sha256-MAnclv071ggEnpQbfWW6weXXKd5wErU2fZ6yuDYvdPE=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+  </body>
+</html>
