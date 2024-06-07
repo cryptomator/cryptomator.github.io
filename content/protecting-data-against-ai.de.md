@@ -50,7 +50,7 @@ Eine detaillierte Anleitung zur Nutzung von Cryptomator findest du übrigens in 
 
 ### Fallstudien und Anwenderberichte
 
-Viele Nutzer:innen haben bereits positive Erfahrungen mit Cryptomator gemacht. Ein Nutzer lobt die einfache Bedienung und die hohe Sicherheit der App. Andere Nutzer sprechen positiv über die Tatsache, dass es sich bei Cryptomator um eine Open-Source-App handelt, wodurch eine hohe Transparenz gewährleistet ist. Diese Erfahrungsberichte zeigen, wie effektiv Cryptomator ist und dass Nutzer:innen die Anwendung als sicher und zuverlässig im Bezug auf Datenverschlüsselungen einstufen.
+Viele Nutzer:innen haben bereits positive Erfahrungen mit Cryptomator gemacht. Ein Nutzer lobt die einfache Bedienung und die hohe Sicherheit der App. Andere Nutzer sprechen positiv über die Tatsache, dass es sich bei Cryptomator um eine Open-Source-App handelt, wodurch eine hohe Transparenz gewährleistet ist. Diese Erfahrungsberichte zeigen, wie effektiv Cryptomator ist und dass Nutzer:innen die Anwendung als sicher und zuverlässig in Bezug auf Datenverschlüsselungen einstufen.
 
 ## Zukunftsaussichten: Datensicherheit und KI
 
