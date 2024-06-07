@@ -51,7 +51,7 @@ You can find detailed instructions on how to use Cryptomator in our manual.
 
 ### Case studies and user reports
 
-Many users have already had positive experiences with Cryptomator. Users praises the app's ease of use, high level of security and speak positively about the fact that Cryptomator is an open source app, which ensures a high level of transparency. These testimonials show how effective Cryptomator is and that users rate the application as secure and reliable in terms of data encryption.
+Many users have already had positive experiences with Cryptomator. Users praise the app's ease of use, high level of security, and speak positively about the fact that Cryptomator is an open-source app, which ensures a high level of transparency. These testimonials show how effective Cryptomator is and that users rate the application as secure and reliable in terms of data encryption.
 
 ## Future prospects: Data security and AI
 
