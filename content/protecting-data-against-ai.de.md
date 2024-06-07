@@ -54,7 +54,7 @@ Viele Nutzer:innen haben bereits positive Erfahrungen mit Cryptomator gemacht. E
 
 ## Zukunftsaussichten: Datensicherheit und KI
 
-Die Zukunft der Datensicherheit wird maßgeblich von den Fortschritten im Bereich der künstlichen Intelligenz geprägt sein. KI-Technologien werden immer leistungsfähiger und vielseitiger, was sowohl neue Chancen als auch erhebliche Risiken für die Datensicherheit mit sich bringt. Auf der einen Seite können Angreifer KI nutzen, um Schwachstellen in Sicherheitssystemen effizienter zu identifizieren und auszunutzen. Auf der anderen Seite wird KI auch in der Verteidigung eingesetzt, um Bedrohungen in Echtzeit zu erkennen und abzuwehren.
+Die Zukunft der Datensicherheit wird maßgeblich von den Fortschritten im Bereich der künstlichen Intelligenz geprägt sein. KI-Technologien werden immer leistungsfähiger und vielseitiger, was sowohl neue Chancen als auch erhebliche Risiken für die Datensicherheit mit sich bringt. Einerseits können Angreifer KI nutzen, um Schwachstellen in Sicherheitssystemen effizienter zu identifizieren und auszunutzen. Andererseits wird KI auch in der Verteidigung eingesetzt, um Bedrohungen in Echtzeit zu erkennen und abzuwehren.
 
 ### Weiterentwicklung von Cryptomator
 

@@ -1,16 +1,16 @@
 ---
-title: "NIS 2 Directive: Higher standards for cyber security from October 2024"
+title: "NIS 2 Directive: Higher standards for cybersecurity from October 2024"
 
 navtitle: "NIS-2-Guideline"
 ---
 
 ## Introduction
 
-In the wake of the new [NIS 2 Directive](https://eur-lex.europa.eu/eli/dir/2022/2555/en), which comes into force in October 2024, companies will have to pay more attention to cyber security. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as [open source software](https://cryptomator.org/open-source/), can help to meet the new requirements.
+In the wake of the new [NIS 2 Directive](https://eur-lex.europa.eu/eli/dir/2022/2555/en), which comes into force in October 2024, companies will have to pay more attention to cybersecurity. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as [open source software](https://cryptomator.org/open-source/), can help to meet the new requirements.
 
 ## What is the NIS 2 Directive?
 
-The NIS-2 Directive (Network and Information Systems Directive) comes into force in October 2024. This is a new EU regulation that aims to raise the standards of cyber security within the European Union. This directive extends the scope and requirements of the original NIS Directive to improve the resilience and security of critical infrastructure against cyber-attacks. It is aimed at a wide range of companies, including those in the energy, transportation, banking, healthcare and digital infrastructure sectors.
+The NIS-2 Directive (Network and Information Systems Directive) comes into force in October 2024. This is a new EU regulation that aims to raise the standards of cybersecurity within the European Union. This directive extends the scope and requirements of the original NIS Directive to improve the resilience and security of critical infrastructure against cyberattacks. It is aimed at a wide range of companies, including those in the energy, transportation, banking, healthcare and digital infrastructure sectors.
 
 ### Who is affected by the NIS 2 Directive?
 
@@ -18,9 +18,9 @@ The NIS 2 Directive affects all companies that are classified as providers of es
 
 Companies from the following sectors are particularly affected:
 
-- **Energy:** Electricity, gas and oil suppliers must secure their networks against cyber attacks. This includes both physical and digital infrastructures.
+- **Energy:** Electricity, gas and oil suppliers must secure their networks against cyberattacks. This includes both physical and digital infrastructures.
 
-- **Transportation:** Airlines, shipping companies, railroad companies and transport infrastructure operators must take cyber security measures to ensure smooth and secure operations.
+- **Transportation:** Airlines, shipping companies, railroad companies and transport infrastructure operators must take cybersecurity measures to ensure smooth and secure operations.
 
 - **Banking:** Financial institutions and payment service providers are required to protect their systems from data leaks and attacks to ensure the integrity and confidentiality of financial transactions.
 
@@ -30,11 +30,11 @@ Companies from the following sectors are particularly affected:
 
 ### Consequences of non-compliance
 
-Non-compliance with the NIS 2 Directive can have serious consequences. Companies that do not meet the requirements can face significant fines and sanctions. In addition, inadequate cyber security can lead to serious security incidents that can cause both financial and reputational damage. Such incidents could disrupt operations, shake customer confidence and have a long-term negative impact on business.
+Non-compliance with the NIS 2 Directive can have serious consequences. Companies that do not meet the requirements can face significant fines and sanctions. In addition, inadequate cybersecurity can lead to serious security incidents that can cause both financial and reputational damage. Such incidents could disrupt operations, shake customer confidence and have a long-term negative impact on business.
 
 ## How Cryptomator can help
 
-Cryptomator is an innovative solution that helps organizations meet the requirements of the NIS-2 directive and improve their cyber security standards. Cryptomator protects data from unauthorized access by encrypting it in a simple and effective way.
+Cryptomator is an innovative solution that helps organizations meet the requirements of the NIS-2 directive and improve their cybersecurity standards. Cryptomator protects data from unauthorized access by encrypting it in a simple and effective way.
 
 ### Cryptomator features for NIS-2 compliance
 
@@ -66,5 +66,5 @@ Here are some of the benefits of Cryptomator Hub:
 
 ## Conclusion
 
-The NIS 2 directive presents companies with new cyber security challenges, but with the right tools you can successfully meet these requirements. Cryptomator, with its end-to-end encryption and user-friendly, cross-platform application, offers an effective solution to protect your sensitive data and meet the new security standards. Especially for companies that operate as providers of essential services and operators of critical infrastructure, Cryptomator is an indispensable tool to ensure compliance and ward off cyber threats. Cryptomator Hub also enables teams to collaborate securely and efficiently without compromising on security.
+The NIS 2 directive presents companies with new cybersecurity challenges, but with the right tools you can successfully meet these requirements. Cryptomator, with its end-to-end encryption and user-friendly, cross-platform application, offers an effective solution to protect your sensitive data and meet the new security standards. Especially for companies that operate as providers of essential services and operators of critical infrastructure, Cryptomator is an indispensable tool to ensure compliance and ward off cyber threats. Cryptomator Hub also enables teams to collaborate securely and efficiently without compromising on security.
 
