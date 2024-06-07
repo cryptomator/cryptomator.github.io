@@ -6,7 +6,7 @@ navtitle: "NIS-2-Guideline"
 
 ## Introduction
 
-In the wake of the new [NIS 2 Directive](https://eur-lex.europa.eu/eli/dir/2022/2555/en), which comes into force in October 2024, companies will have to pay more attention to cybersecurity. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as [open source software](https://cryptomator.org/open-source/), can help to meet the new requirements.
+In the wake of the new [NIS 2 Directive](https://eur-lex.europa.eu/eli/dir/2022/2555/en), which comes into force in October 2024, companies will have to pay more attention to cybersecurity. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as [open-source software](https://cryptomator.org/open-source/), can help to meet the new requirements.
 
 ## What is the NIS 2 Directive?
 

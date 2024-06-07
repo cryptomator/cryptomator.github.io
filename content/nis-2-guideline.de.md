@@ -30,7 +30,7 @@ Besonders betroffen sind Unternehmen aus den folgenden Sektoren:
 
 ### Folgen der Nicht-Einhaltung
 
-Die Nichteinhaltung der NIS-2-Richtlinie kann schwerwiegende Folgen haben. Unternehmen, die den Anforderungen nicht entsprechen, müssen mit erheblichen Bußgeldern und Sanktionen rechnen. Darüber hinaus kann eine unzureichende Cyber-Sicherheit zu schwerwiegenden Sicherheitsvorfällen führen, die sowohl finanzielle als auch reputative Schäden verursachen können. Solche Vorfälle könnten den Betrieb stören, das Vertrauen der Kund:innen erschüttern und langfristige negative Auswirkungen auf das Geschäft haben.
+Die Nicht-Einhaltung der NIS-2-Richtlinie kann schwerwiegende Folgen haben. Unternehmen, die den Anforderungen nicht entsprechen, müssen mit erheblichen Bußgeldern und Sanktionen rechnen. Darüber hinaus kann eine unzureichende Cyber-Sicherheit zu schwerwiegenden Sicherheitsvorfällen führen, die sowohl finanzielle als auch reputative Schäden verursachen können. Solche Vorfälle könnten den Betrieb stören, das Vertrauen der Kund:innen erschüttern und langfristige negative Auswirkungen auf das Geschäft haben.
 
 ## Wie Cryptomator helfen kann
 

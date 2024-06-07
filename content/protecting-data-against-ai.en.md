@@ -13,7 +13,7 @@ This is where Cryptomator comes in. Our app offers you a user-friendly and effec
 
 ## What is cloud data and why is it at risk?
 
-Cloud data is any information that you store on external servers instead of on your own device. This can be anything: documents, photos, videos or even entire databases. This data is particularly vulnerable to attacks as it is accessible via the internet. AI technologies can analyze large amounts of data and recognize patterns that human attackers would overlook. As a result, security gaps can be exploited and sensitive data can be stolen or manipulated.
+Cloud data is any information that you store on external servers instead of on your own device. This can be anything: Documents, photos, videos or even entire databases. This data is particularly vulnerable to attacks as it is accessible via the internet. AI technologies can analyze large amounts of data and recognize patterns that human attackers would overlook. As a result, security gaps can be exploited and sensitive data can be stolen or manipulated. In addition, many cloud services use their users’ data to train their AI systems. This data can then often no longer be deleted, which poses a further security and data protection risk.
 
 ### How AI affects data security in the cloud
 
@@ -25,7 +25,7 @@ While traditional security methods such as password protection and two-factor au
 
 ## Cryptomator as a solution: introduction and advantages
 
-Cryptomator is an [open-source app](https://cryptomator.org/open-source/) that reliably encrypts your data in the cloud. It is easy to use and compatible with various cloud services. The main advantages include:
+Cryptomator is an [open-source app](https://cryptomator.org/open-source/) that reliably encrypts your data in the cloud. It is easy to use and compatible with most cloud services. The main advantages include:
 
 - **Security:** Cryptomator uses strong [encryption technologies](https://cryptomator.org/encrypt-dropbox/) to protect your data.
 - **Privacy:** Only you have access to your encrypted data.
@@ -33,7 +33,7 @@ Cryptomator is an [open-source app](https://cryptomator.org/open-source/) that r
 
 ### How Cryptomator works technically
 
-Cryptomator uses advanced encryption techniques to protect your data. Each file is individually encrypted and organized in a structured way that ensures only authorized users have access. The app integrates seamlessly with popular cloud services such as Google Drive, Dropbox and OneDrive, making it particularly easy to use.
+Cryptomator uses advanced encryption techniques to protect your data. Each file is individually encrypted and organized in a structured way that ensures only authorized users have access. The app integrates seamlessly with popular cloud services such as Google Drive, Dropbox, OneDrive and many more, making it particularly easy to use.
 
 ### Step-by-step guide to using Cryptomator
 
@@ -51,15 +51,11 @@ You can find detailed instructions on how to use Cryptomator in our manual.
 
 ### Case studies and user reports
 
-Many users have already had positive experiences with Cryptomator. One user praises the app's ease of use and high level of security. Other users speak positively about the fact that Cryptomator is an open source app, which ensures a high level of transparency. These testimonials show how effective Cryptomator is and that users rate the application as secure and reliable in terms of data encryption.
+Many users have already had positive experiences with Cryptomator. Users praises the app's ease of use, high level of security and speak positively about the fact that Cryptomator is an open source app, which ensures a high level of transparency. These testimonials show how effective Cryptomator is and that users rate the application as secure and reliable in terms of data encryption.
 
 ## Future prospects: Data security and AI
 
 The future of data security will be significantly shaped by advances in the field of artificial intelligence. AI technologies are becoming increasingly powerful and versatile, which brings with it both new opportunities and significant risks for data security. On the one hand, attackers can use AI to identify and exploit vulnerabilities in security systems more efficiently. On the other hand, AI is also used in defense to detect and fend off threats in real time.
-
-### Further development of Cryptomator
-
-Cryptomator is continuously being developed to meet the growing demands on data security. Future versions may include enhanced security features to further protect sensitive data from unwanted access. Additionally, user-friendliness can be further improved so that even less tech-savvy users can effectively protect their data.
 
 ### Regulatory developments and data protection laws
 
@@ -69,9 +65,9 @@ With increasing awareness of data protection and stricter data protection laws s
 
 User awareness and education will play a key role. As threats become more complex, it is increasingly important that users are aware of the best practices for securing their data. Cybersecurity education initiatives will be crucial to ensure a high level of protection.
 
-### The role of open source software
+### The role of open-source software
 
-Open source software such as Cryptomator will continue to play a central role in the development of security solutions. The transparency of the source code allows the community to identify and fix security vulnerabilities, which improves the overall quality and security of the software. At a time when trust in digital solutions is crucial, open source software offers a high level of credibility and reliability.
+Open-source software such as Cryptomator will continue to play a central role in the development of security solutions. The transparency of the source code allows the community to identify and fix security vulnerabilities, which improves the overall quality and security of the software. At a time when trust in digital solutions is crucial, open-source software offers a high level of credibility and reliability.
 
 ## Conclusion
 
@@ -99,7 +95,7 @@ Yes, Cryptomator offers a free version with all the basic functions. There is al
 
 **How does Cryptomator differ from other encryption solutions?**
 
-Cryptomator is specifically designed for the encryption of cloud data and offers seamless integration with common cloud services. Unlike many other solutions, Cryptomator is an open source application, which means that the [source code is publicly available](https://github.com/cryptomator) and verifiable. This increases confidence in the security and integrity of the software. Cryptomator is also easy to use and requires no prior technical knowledge.
+Cryptomator is specifically designed for the encryption of cloud data and offers seamless integration with common cloud services. Unlike many other solutions, Cryptomator is an open-source application, which means that the [source code is publicly available](https://github.com/cryptomator) and verifiable. This increases confidence in the security and integrity of the software. Cryptomator is also easy to use and requires no prior technical knowledge.
 
 **Can I integrate Cryptomator into my existing backup strategy?**
 
@@ -115,11 +111,7 @@ File name obfuscation is a function that ensures that not only the content but a
 
 **What do I do if I forget my password?**
 
-The password you set for your Cryptomator vault is crucial for accessing your encrypted data. If you forget it, there is no way to reset it as Cryptomator does not use a central server or backdoor for password access. It is therefore important to keep your password safe and, if necessary, save it in a password manager.
-
-**Does Cryptomator support collaboration with other users?**
-
-Cryptomator itself is not optimized for collaboration, as the focus is on security and encryption. However, you can still use shared cloud directories by allowing each user to create their own Cryptomator vault and gain access to the encrypted files. For smooth collaboration, all parties should secure the encrypted data with their own passwords.
+The password you set for your Cryptomator vault is crucial for accessing your encrypted data. If you forget it, there is a way to reset the password by using a recovery key. It is therefore important to keep this recovery key safe. Detailed instructions on how to reset the password can be found on the [Cryptomator documentation page](https://docs.cryptomator.org/en/latest/desktop/password-and-recovery-key/).
 
 **What system requirements does Cryptomator have?**
 

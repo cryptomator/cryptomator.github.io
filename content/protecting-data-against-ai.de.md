@@ -12,7 +12,7 @@ Genau hier kommt Cryptomator ins Spiel. Unsere App bietet dir eine benutzerfreun
 
 ## Was sind Cloud-Daten und warum sind sie gefährdet?
 
-Cloud-Daten sind alle Informationen, die du auf externen Servern speicherst, anstatt auf deinem eigenen Gerät. Das kann alles Mögliche sein: Dokumente, Fotos, Videos oder sogar ganze Datenbanken. Diese Daten sind besonders anfällig für Angriffe, da sie über das Internet zugänglich sind. KI-Technologien können große Mengen an Daten analysieren und Muster erkennen, die menschliche Angreifer übersehen würden. Dadurch können Sicherheitslücken ausgenutzt und sensible Daten gestohlen oder manipuliert werden.
+Cloud-Daten sind alle Informationen, die du auf externen Servern speicherst, anstatt auf deinem eigenen Gerät. Das kann alles Mögliche sein: Dokumente, Fotos, Videos oder sogar ganze Datenbanken. Diese Daten sind besonders anfällig für Angriffe, da sie über das Internet zugänglich sind. KI-Technologien können große Mengen an Daten analysieren und Muster erkennen, die menschliche Angreifer übersehen würden. Dadurch können Sicherheitslücken ausgenutzt und sensible Daten gestohlen oder manipuliert werden. Zusätzlich nutzen viele Cloud-Dienste die Daten ihrer Nutzer, um ihre KI-Systeme zu trainieren. Diese Daten können dann oft nicht mehr gelöscht werden, was ein weiteres Sicherheits- und Datenschutzrisiko darstellt.
 
 ### Wie KI die Datensicherheit in der Cloud beeinflusst
 
@@ -55,10 +55,6 @@ Viele Nutzer:innen haben bereits positive Erfahrungen mit Cryptomator gemacht. E
 ## Zukunftsaussichten: Datensicherheit und KI
 
 Die Zukunft der Datensicherheit wird maßgeblich von den Fortschritten im Bereich der künstlichen Intelligenz geprägt sein. KI-Technologien werden immer leistungsfähiger und vielseitiger, was sowohl neue Chancen als auch erhebliche Risiken für die Datensicherheit mit sich bringt. Einerseits können Angreifer KI nutzen, um Schwachstellen in Sicherheitssystemen effizienter zu identifizieren und auszunutzen. Andererseits wird KI auch in der Verteidigung eingesetzt, um Bedrohungen in Echtzeit zu erkennen und abzuwehren.
-
-### Weiterentwicklung von Cryptomator
-
-Cryptomator wird kontinuierlich weiterentwickelt, um den wachsenden Anforderungen an die Datensicherheit gerecht zu werden. Zukünftige Versionen könnten erweiterte Sicherheitsfunktionen beinhalten, die sensible Daten noch besser vor unerwünschten Zugriffen schützen. Zudem kann die Benutzerfreundlichkeit weiter verbessert werden, sodass auch weniger technisch versierte Nutzer:innen ihre Daten effektiv schützen können.
 
 ### Regulatorische Entwicklungen und Datenschutzgesetze
 
@@ -114,11 +110,7 @@ Die Dateinamensverschleierung ist eine Funktion, die sicherstellt, dass nicht nu
 
 **Wie gehe ich vor, wenn ich mein Passwort vergesse?**
 
-Das Passwort, das du für deinen Cryptomator-Tresor festlegst, ist entscheidend für den Zugriff auf deine verschlüsselten Daten. Wenn du es vergisst, gibt es keine Möglichkeit, es zurückzusetzen, da Cryptomator keinen zentralen Server oder eine Hintertür für den Passwortzugriff verwendet. Es ist daher wichtig, dein Passwort sicher zu verwahren und gegebenenfalls in einem Passwort-Manager zu speichern.
-
-**Unterstützt Cryptomator die Zusammenarbeit mit anderen Nutzern?**
-
-Cryptomator selbst ist nicht für die Zusammenarbeit optimiert, da der Fokus auf der Sicherheit und Verschlüsselung liegt. Du kannst jedoch weiterhin gemeinsam genutzte Cloud-Verzeichnisse verwenden, indem jeder Nutzer einen eigenen Cryptomator-Tresor erstellt und Zugriff auf die verschlüsselten Dateien erhält. Für eine reibungslose Zusammenarbeit sollten alle Beteiligten die verschlüsselten Daten mit ihren eigenen Passwörtern sichern.
+Das Passwort, das du für deinen Cryptomator-Tresor festlegst, ist entscheidend für den Zugriff auf deine verschlüsselten Daten. Wenn du es vergisst, gibt es eine Möglichkeit, das Passwort zurückzusetzen, indem du einen Wiederherstellungsschlüssel verwendest. Es ist daher wichtig, diesen Wiederherstellungsschlüssel sicher aufzubewahren. Ausführliche Anleitungen zum Zurücksetzen des Passworts findest du auf der [Cryptomator-Dokumentationsseite](https://docs.cryptomator.org/en/latest/desktop/password-and-recovery-key/).
 
 **Welche Systemanforderungen hat Cryptomator?**
 
