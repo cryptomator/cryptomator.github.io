@@ -33,7 +33,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '18.x'
 
     - name: Install Tools
       run: npm install -g postcss-cli autoprefixer
