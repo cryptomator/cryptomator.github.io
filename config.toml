@@ -103,10 +103,10 @@ block = true
       checksum = "7095f5dbabc0e1d40a4becc829f9c0705cb22188c86717589574fde7842cccde"
       requiredOS = ''
     [params.releases.android]
-      version = "1.10.1"
-      filename = "Cryptomator-1.10.1.apk"
-      downloadUrl = "https://static.cryptomator.org/android/1.10.1/Cryptomator-1.10.1.apk"
-      checksum = "3999f020899d40cf695af430227c6fc8edf506a0af262ed2cc63341c5a9e35c5"
+      version = "1.10.2"
+      filename = "Cryptomator-1.10.2.apk"
+      downloadUrl = "https://static.cryptomator.org/android/1.10.2/Cryptomator-1.10.2.apk"
+      checksum = "7ac9fadd5da11740732fae34652e19f1cd31450dc2eb4b55ddfb9e52fd8be151"
       requiredOS = 'Android 8.0'
 
 [permalinks]
