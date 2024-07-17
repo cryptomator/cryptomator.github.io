@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.c22c9265181774e2344ad628c2eb8e2fd86b708f4b7d8a175aeaf89455ad31ce.css" integrity="sha256-wiySZRgXdOI0StYowuuOL9hrcI9LfYoXWur4lFWtMc4=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.cf14bcb9e209212f2b9e7fcbcb98b392a7993126a25fe78f74418e6a593b899d.css" integrity="sha256-zxS8ueIJIS8rnn/Ly5izkqeZMSaiX&#43;ePdEGOalk7iZ0=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -32,8 +32,8 @@
       
     
   </head>
-  <body class="bg-dark font-body text-gray-900">
-    <nav x-data="{ isNavOpen: false }" :class="isNavOpen ? 'relative' : 'relative'" class="w-full text-primary absolute lg:px-8 bg-white border-t-2 border-primary shadow">
+  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <nav class="w-full max-h-screen text-primary fixed lg:px-8 bg-white shadow z-50">
   <div class="flex justify-between items-stretch w-full">
     <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="/de/">
       <img src="/img/logo.svg" class="h-8" alt="Logo"/>
@@ -109,7 +109,7 @@
   </div>
   
   
-  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden">
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
     <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
     <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
     
@@ -163,8 +163,7 @@
     </a>
   </div>
 </nav>
-
-    <div class="bg-gray-100 min-vh-80">
+<div class="bg-gray-100 min-vh-80 pt-12">
     
     
   <div class="container py-12">
@@ -192,8 +191,8 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-326891457" x-model="acceptTerms" />
-<label for="id-326891457">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-527913846" x-model="acceptTerms" />
+<label for="id-527913846">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
