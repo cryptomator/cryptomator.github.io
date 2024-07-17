@@ -66,9 +66,10 @@
       <!-- optional additional page-specific stuff that goes into head -->
     {{ end }}
   </head>
-  <body class="bg-dark font-body text-gray-900">
+  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
-    <div class="bg-gray-100 min-vh-80">
+    {{- $topPadding := cond .IsHome "" "pt-12" -}}
+    <div class="bg-gray-100 min-vh-80 {{ $topPadding }}">
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->

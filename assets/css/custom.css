@@ -160,6 +160,15 @@ nav a:hover {
   left: 50%;
 }
 
+/* offsetting anchor targets to adjust for fixed navbar */
+[id]::before {
+  content: '';
+  display: block;
+  height: 64px;
+  margin-top: -64px;
+  visibility: hidden;
+}
+
 /* see https://alpinejs.dev/directives/cloak */
 [x-cloak] {
   display: none !important;
