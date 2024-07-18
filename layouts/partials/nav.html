@@ -148,3 +148,11 @@
     </a>
   </div>
 </nav>
+
+{{ if .Site.IsServer }}
+  {{ $navJs := resources.Get "js/nav.js" }}
+  <script type="text/javascript" src="{{ $navJs.RelPermalink }}" defer></script>
+{{ else }}
+  {{ $navJs := resources.Get "js/nav.js" | minify | fingerprint }}
+  <script type="text/javascript" src="{{ $navJs.RelPermalink }}" integrity="{{ $navJs.Data.Integrity }}" defer></script>
+{{ end }}
