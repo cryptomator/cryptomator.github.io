@@ -1,5 +1,5 @@
 $(() => {
-  $.getJSON('https://api.github.com/repos/cryptomator/cryptomator', data => {
+  $.getJSON('https://api.cryptomator.org/desktop/repo.json', data => {
     $('#github-stargazers').text(formatNumber(data.stargazers_count));
   }).fail(() => {
     console.error('Error fetching repository data.');
