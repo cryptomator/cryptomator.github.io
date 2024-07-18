@@ -4,80 +4,95 @@
 {{- $currentRelPermalink := .RelPermalink -}}
 <nav class="w-full max-h-screen text-{{ $textColor }} fixed lg:px-8 {{ $backgroundColor }} shadow z-50">
   <div class="flex justify-between items-stretch w-full">
-    <a class="flex items-center hover:no-underline py-2 mx-2 lg:ml-0" href="{{ .Site.LanguagePrefix }}/">
-      <img src="/img/logo.svg" class="h-8" alt="Logo"/>
-      <span class="font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
-    </a>
-
     <!-- Regular Navigation -->
-    <ul class="hidden lg:flex items-stretch list-none m-0">
-      {{- range .Site.Data.nav.RelLinks }}
-      {{- with $.Site.GetPage . }}
-      {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
-      <li class="flex items-center lg:mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-        <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </li>
-      {{- end }}
-      {{- end }}
-      <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
-        <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
-          <span>{{ i18n "nav_support_us" . }}</span>
-          <i class="fas fa-chevron-down fa-fw text-xs"></i>
-        </button>
-        <div class="relative">
-          <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
-            {{- range .Site.Data.nav.SupportUsRelLinks }}
-            {{- with $.Site.GetPage . }}
-            <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-            {{- end}}
-            {{- end }}
+    <div class="flex items-stretch">
+      <!-- Toggle Button for Smartphone Navigation -->
+      <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-{{ $textColor }} rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+        <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+        <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+      </button>
+
+      <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="{{ .Site.LanguagePrefix }}/">
+        <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+        <span class="hidden md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+      </a>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        {{- range .Site.Data.nav.RelLinks }}
+        {{- with $.Site.GetPage . }}
+        {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
+        <li class="flex items-center mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
+          <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{- end }}
+        {{- end }}
+        <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>{{ i18n "nav_support_us" . }}</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              {{- range .Site.Data.nav.SupportUsRelLinks }}
+              {{- with $.Site.GetPage . }}
+              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+              {{- end}}
+              {{- end }}
+            </div>
           </div>
-        </div>
-      </li>
-      <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
-        <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
-          <span>{{ i18n "nav_learn_more" . }}</span>
-          <i class="fas fa-chevron-down fa-fw text-xs"></i>
-        </button>
-        <div class="relative">
-          <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
-            {{- range .Site.Data.nav.LearnMoreRelLinks }}
-            {{- with $.Site.GetPage . }}
-            <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-            {{- end}}
-            {{- end }}
+        </li>
+        <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+            <span>{{ i18n "nav_learn_more" . }}</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+              {{- range .Site.Data.nav.LearnMoreRelLinks }}
+              {{- with $.Site.GetPage . }}
+              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+              {{- end}}
+              {{- end }}
+            </div>
           </div>
-        </div>
-      </li>
-      
-      <li class="flex items-center mx-5 my-3 border-l border-{{ $textColor }}"></li>
-      
-      <li x-data="{ isLangDropdownOpen: false }" class="flex items-center border-b-2 border-transparent">
-        <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
-          <span>{{ .Site.Language.Lang | upper }}</span>
-          <i class="fas fa-chevron-down fa-fw text-xs"></i>
-        </button>
-        <div class="relative">
-          <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-            {{- range .Translations }}
-            <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
-            {{- end }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-stretch">
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+            <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
+            <span id="github-stargazers"></span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1">{{ i18n "nav_cta" . }}</a>
+        </li>
+      </ul>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center m-3 border-l border-{{ $textColor }}"></li>
+          
+        <li x-data="{ isLangDropdownOpen: false }" class="flex items-center mx-2">
+          <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+            <span>{{ .Site.Language.Lang | upper }}</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="relative">
+            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+              {{- range .Translations }}
+              <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ .Language.LanguageName }}</a>
+              {{- end }}
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="flex items-center border-b-2 border-transparent">
-        <a class="p-2 hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener"><i class="fab fa-mastodon fa-fw" aria-label="Fediverse"></i></a>
-      </li>
-      <li class="flex items-center border-b-2 border-transparent">
-        <a class="p-2 hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener"><i class="fab fa-github fa-fw" aria-label="GitHub"></i></a>
-      </li>
-    </ul>
-    
-    <!-- Toggle Button for Smartphone Navigation -->
-    <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-{{ $textColor }} rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
-      <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
-      <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
-    </button>
+        </li>
+      </ul>
+    </div>
   </div>
   
   <!-- Smartphone Navigation -->
@@ -124,13 +139,9 @@
       <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline">{{ .Language.LanguageName }}</a>
       {{ end }}
     </div>
-    
+
     <hr class="border-primary my-2"/>
-    
-    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener">
-      <i class="fab fa-mastodon fa-fw"></i>
-      <span>{{ i18n "nav_fediverse" . }}</span>
-    </a>
+
     <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
       <i class="fab fa-github fa-fw"></i>
       <span>{{ i18n "nav_github" . }}</span>

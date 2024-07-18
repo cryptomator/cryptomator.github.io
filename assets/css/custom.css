@@ -164,8 +164,8 @@ nav a:hover {
 [id]::before {
   content: '';
   display: block;
-  height: 64px;
-  margin-top: -64px;
+  height: 96px;
+  margin-top: -96px;
   visibility: hidden;
 }
 

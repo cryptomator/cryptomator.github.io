@@ -1,11 +1,11 @@
 - id: site_meta_description
   translation: "Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."
+- id: nav_cta
+  translation: "Get Started"
 - id: nav_support_us
   translation: "Support Us"
 - id: nav_learn_more
   translation: "Learn More"
-- id: nav_fediverse
-  translation: "Cryptomator on Fediverse"
 - id: nav_github
   translation: "Cryptomator on GitHub"
 - id: footer_contribute_title
@@ -214,11 +214,35 @@
 - id: home_header_description
   translation: "With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service."
 - id: home_header_cta
-  translation: "Download Now"
-- id: home_header_hub
-  translation: "Working in teams? Check out <span class=\"underline\">Cryptomator Hub</span>!"
+  translation: "Get Started"
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
+- id: home_get_started_title
+  translation: "How will you use Cryptomator?"
+- id: home_get_started_for_individuals_title
+  translation: "For Individuals"
+- id: home_get_started_for_individuals_subtitle
+  translation: "Secure Your Personal Files"
+- id: home_get_started_for_individuals_benefit_1
+  translation: "Encrypt your data locally with client-side encryption"
+- id: home_get_started_for_individuals_benefit_2
+  translation: "Access your files securely using a vault password"
+- id: home_get_started_for_individuals_benefit_3
+  translation: "Keep your files safe, regardless of storage location"
+- id: home_get_started_for_individuals_cta
+  translation: "Download Now"
+- id: home_get_started_for_teams_title
+  translation: "For Teams"
+- id: home_get_started_for_teams_subtitle
+  translation: "Manage Team Access"
+- id: home_get_started_for_teams_benefit_1
+  translation: "Secure team access with zero-knowledge key management"
+- id: home_get_started_for_teams_benefit_2
+  translation: "Unlock your shared vaults using individual team member accounts"
+- id: home_get_started_for_teams_benefit_3
+  translation: "Integrate your existing identity management easily"
+- id: home_get_started_for_teams_cta
+  translation: "Get Started"
 - id: home_newsletter_title
   translation: "Let's stay in touch"
 - id: home_newsletter_instruction

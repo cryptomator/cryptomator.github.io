@@ -1,11 +1,11 @@
 - id: site_meta_description
   translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
+- id: nav_cta
+  translation: "Jetzt loslegen"
 - id: nav_support_us
   translation: "Unterstütze uns"
 - id: nav_learn_more
   translation: "Mehr erfahren"
-- id: nav_fediverse
-  translation: "Cryptomator auf Fediverse"
 - id: nav_github
   translation: "Cryptomator auf GitHub"
 - id: footer_contribute_title
@@ -214,11 +214,35 @@
 - id: home_header_description
   translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch."
 - id: home_header_cta
-  translation: "Jetzt herunterladen"
-- id: home_header_hub
-  translation: "Arbeitest du in einem Team? Hier geht's zu <span class=\"underline\">Cryptomator Hub</span>!"
+  translation: "Jetzt loslegen"
 - id: home_header_woman_cloud_alt
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
+- id: home_get_started_title
+  translation: "Wie wirst du Cryptomator nutzen?"
+- id: home_get_started_for_individuals_title
+  translation: "Für Einzelnutzer"
+- id: home_get_started_for_individuals_subtitle
+  translation: "Sichere deine persönlichen Dateien"
+- id: home_get_started_for_individuals_benefit_1
+  translation: "Verschlüssele deine Daten lokal mit clientseitiger Verschlüsselung"
+- id: home_get_started_for_individuals_benefit_2
+  translation: "Greife sicher auf deine Dateien mit einem Tresor-Passwort zu"
+- id: home_get_started_for_individuals_benefit_3
+  translation: "Bewahre deine Dateien sicher auf, unabhängig vom Speicherort"
+- id: home_get_started_for_individuals_cta
+  translation: "Jetzt herunterladen"
+- id: home_get_started_for_teams_title
+  translation: "Für Teams"
+- id: home_get_started_for_teams_subtitle
+  translation: "Verwalte den Teamzugriff"
+- id: home_get_started_for_teams_benefit_1
+  translation: "Sichere den Teamzugriff mit Zero-Knowledge-Schlüsselmanagement"
+- id: home_get_started_for_teams_benefit_2
+  translation: "Entsperre deine gemeinsamen Tresore mit individuellen Team-Accounts"
+- id: home_get_started_for_teams_benefit_3
+  translation: "Integriere leicht dein bestehendes Identitätsmanagement"
+- id: home_get_started_for_teams_cta
+  translation: "Jetzt loslegen"
 - id: home_newsletter_title
   translation: "Bleibe mit uns in Verbindung"
 - id: home_newsletter_instruction

@@ -10,8 +10,7 @@
       <div class="w-full md:w-2/3 lg:w-3/5">
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
-        <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "home_header_cta" . }}</a>
-        <p><a href="{{ .Site.LanguagePrefix }}/hub/" role="button" class="text-btn text-white">{{ i18n "home_header_hub" . | safeHTML }}</a></p>
+        <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "home_header_cta" . }}</a>
       </div>
     </header>
   </section>
@@ -20,8 +19,90 @@
     {{ .Content }}
   </div>
 
-  <section id="newsletter" x-data="{data: {email: '', listId: 6, errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
-    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "home_newsletter_title" . }}</h2>
+  <section class="container pt-12 pb-24">
+    <h2 id="get-started" class="text-center font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "home_get_started_title" . }}</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="flex flex-col rounded shadow bg-white">
+        <div class="flex justify-between items-center p-4 border-b border-primary">
+          <h3>
+            <div class="flex items-center">
+              <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+              <span class="font-headline font-bold text-primary ml-2 pb-px">CRYPTOMATOR</span>
+            </div>
+          </h3>
+          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark">
+            {{ i18n "home_get_started_for_individuals_title" . }}
+          </div>
+        </div>
+        <div class="flex flex-col justify-between h-full gap-8 px-4 py-8">
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold lg:text-lg leading-relaxed">
+              {{ i18n "home_get_started_for_individuals_subtitle" . }}
+            </h4>
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                <span>{{ i18n "home_get_started_for_individuals_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                <span>{{ i18n "home_get_started_for_individuals_benefit_2" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                <span>{{ i18n "home_get_started_for_individuals_benefit_3" . }}</span>
+              </li>
+            </ul>
+          </div>
+          <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary w-full lg:w-1/2">
+            {{ i18n "home_get_started_for_individuals_cta" . }}
+          </a>
+        </div>
+      </div>
+    
+      <div class="flex flex-col rounded shadow bg-white">
+        <div class="flex justify-between items-center p-4 border-b border-primary">
+          <h3>
+            <div class="flex items-center">
+              <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+              <span class="font-headline font-bold text-primary ml-2 pb-px">CRYPTOMATOR HUB</span>
+            </div>
+          </h3>
+          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark">
+            {{ i18n "home_get_started_for_teams_title" . }}
+          </div>
+        </div>
+        <div class="flex flex-col justify-between h-full gap-8 px-4 py-8">
+          <div class="flex flex-col gap-4">
+            <h4 class="font-bold lg:text-lg leading-relaxed">
+              {{ i18n "home_get_started_for_teams_subtitle" . }}
+            </h4>
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                <span>{{ i18n "home_get_started_for_teams_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                <span>{{ i18n "home_get_started_for_teams_benefit_2" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                <span>{{ i18n "home_get_started_for_teams_benefit_3" . }}</span>
+              </li>
+            </ul>
+          </div>
+          <a href="{{ .Site.LanguagePrefix }}/hub/" role="button" class="btn btn-primary w-full lg:w-1/2">
+            {{ i18n "home_get_started_for_teams_cta" . }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section x-data="{data: {email: '', listId: 6, errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
+    <h2 id="newsletter" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "home_newsletter_title" . }}</h2>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "home_newsletter_instruction" . | safeHTML }}</p>
