@@ -256,9 +256,6 @@
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
-- id: hub_references_title
-  translation: "Organizations Trusting Cryptomator Hub"
-
 - id: hub_video_title
   translation: "Quick Introduction"
 - id: hub_video_description
