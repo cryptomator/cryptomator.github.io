@@ -246,7 +246,7 @@
 - id: home_newsletter_title
   translation: "Bleibe mit uns in Verbindung"
 - id: home_newsletter_instruction
-  translation: "Abonniere unseren Newsletter oder folge uns auf <a class=\"text-primary no-underline hover:underline\" href=\"https://mastodon.online/@cryptomator\" target=\"_blank\" rel=\"noopener\">@cryptomator@mastodon.online</a>."
+  translation: "Abonniere unseren Newsletter oder folge uns auf Social Media."
 - id: home_newsletter_email_placeholder
   translation: "E-Mail-Adresse"
 - id: home_newsletter_subscribe
