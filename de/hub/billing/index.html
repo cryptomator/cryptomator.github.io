@@ -33,7 +33,7 @@
     
   </head>
   <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
-    <nav class="w-full max-h-screen text-primary fixed lg:px-8 bg-white shadow z-50">
+    <nav x-init="determineGitHubStargazersCount('de')" class="w-full max-h-screen text-primary fixed lg:px-8 bg-white shadow z-50">
   <div class="flex justify-between items-stretch w-full">
     
     <div class="flex items-stretch">
@@ -173,7 +173,7 @@
 
 
   
-  <script type="text/javascript" src="/js/nav.min.8ba18145c25edacc876e54509beee6dc3f5c5592032906a2ac1bd50d25faf9c2.js" integrity="sha256-i6GBRcJe2syHblRQm&#43;7m3D9cVZIDKQairBvVDSX6&#43;cI=" defer></script>
+  <script type="text/javascript" src="/js/nav.min.c207b62e4a96099b751048fbeb67db4f95e0e7d0c5221c0bd599c67194c5d00b.js" integrity="sha256-wge2LkqWCZt1EEj762fbT5Xg59DFIhwL1ZnGcZTF0As=" defer></script>
 
 <div class="bg-gray-100 min-vh-80 pt-12">
     
@@ -549,12 +549,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-139546872" x-model="acceptTerms" />
-<label for="id-139546872">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-615974283" x-model="acceptTerms" />
+<label for="id-615974283">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-623795841" x-model="acceptTerms" />
-<label for="id-623795841">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-837196542" x-model="acceptTerms" />
+<label for="id-837196542">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
