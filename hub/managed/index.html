@@ -39,7 +39,7 @@
     <div class="flex items-stretch">
       
       <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
-        <i x-show="isNavOpen" class="fas fa-times fa-fw"></i>
+        <i x-show="isNavOpen" class="fas fa-times fa-fw" x-cloak></i>
         <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
       </button>
 
@@ -269,8 +269,8 @@
         </p>
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
           
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-186723945" x-model="acceptTerms" />
-<label for="id-186723945">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-496352817" x-model="acceptTerms" />
+<label for="id-496352817">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 
         </p>
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
