@@ -14,7 +14,7 @@
 
       <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="{{ .Site.LanguagePrefix }}/">
         <img src="/img/logo.svg" class="h-8" alt="Logo"/>
-        <span class="hidden md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+        <span class="{{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/hub")) }}hidden{{ end }} md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
@@ -69,11 +69,13 @@
         </li>
       </ul>
 
+      {{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/hub")) -}}
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
           <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1">{{ i18n "nav_cta" . }}</a>
         </li>
       </ul>
+      {{- end }}
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center m-3 border-l border-{{ $textColor }}"></li>
