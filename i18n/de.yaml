@@ -600,7 +600,7 @@
 - id: hub_managed_trial_info
   translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
 - id: hub_managed_instruction
-  translation: "Hub-Instanzen werden manuell erstellt. Wir werden uns so schnell wie möglich bei dir melden. Du erhältst dann eine E-Mail mit weiteren Anweisungen."
+  translation: "Hub-Instanzen werden manuell geprüft. Wir werden uns so schnell wie möglich bei dir melden. Du erhältst dann eine E-Mail mit weiteren Anweisungen."
 - id: hub_managed_loadcaptcha
   translation: "Weiter…"
 - id: hub_managed_submit
