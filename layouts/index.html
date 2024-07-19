@@ -5,7 +5,7 @@
   <section class="flex items-center header-bg bg-dark bg-center min-vh-66 bg-repeat-x">
     <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
       <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
-        <img data-src="/img/home/woman-cloud.png" class="lazyload object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
+        <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-[714/622] w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
@@ -125,16 +125,16 @@
       <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-8 md:mb-12 lg:mb-16">{{ i18n "home_trustingbrands_title" . }}</h2>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:w-3/4 lg:w-2/3 mx-auto">
         <a href="{{ .Site.LanguagePrefix }}/coop/webde/">
-          <img class="inline-block h-20 lazyload" data-src="/img/home/3rdparty/webde-logo.svg" alt="WEB.DE Logo"/>
+          <img class="inline-block h-20 lazyload aspect-square" data-src="/img/home/3rdparty/webde-logo.svg" alt="WEB.DE Logo"/>
         </a>
         <a href="{{ .Site.LanguagePrefix }}/coop/gmx/">
-          <img class="inline-block h-20 lazyload" data-src="/img/home/3rdparty/gmx-logo.svg" alt="GMX Logo"/>
+          <img class="inline-block h-20 lazyload aspect-[123/80]" data-src="/img/home/3rdparty/gmx-logo.svg" alt="GMX Logo"/>
         </a>
         <a href="{{ .Site.LanguagePrefix }}/coop/1und1/">
-          <img class="inline-block h-20 lazyload" data-src="/img/home/3rdparty/1und1-logo.png" alt="1&amp;1 Logo"/>
+          <img class="inline-block h-20 lazyload aspect-square" data-src="/img/home/3rdparty/1und1-logo.png" alt="1&amp;1 Logo"/>
         </a>
         <a class="md:col-span-3" href="https://connect2id.com/blog/deterministic-encryption-with-aes-siv" target="_blank" rel="noopener">
-          <img class="inline-block h-20 lazyload" data-src="/img/home/3rdparty/connect2id-logo.svg" alt="connect2id Logo"/>
+          <img class="inline-block h-20 lazyload aspect-[412/88]" data-src="/img/home/3rdparty/connect2id-logo.svg" alt="connect2id Logo"/>
         </a>
       </div>
     </section>
@@ -143,7 +143,7 @@
       <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-8 md:mb-12 lg:mb-16">{{ i18n "home_sponsors_title" . }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-1 gap-8 md:w-3/4 lg:w-2/3 mb-8 md:mb-12 lg:mb-16 mx-auto">
         <a href="https://www.gee-whiz.de/" target="_blank" rel="noopener">
-          <img class="inline-block h-20 lazyload" data-src="/img/sponsors/geewhiz.svg" alt="gee-whiz Logo"/>
+          <img class="inline-block h-20 lazyload aspect-[613/163]" data-src="/img/sponsors/geewhiz.svg" alt="gee-whiz Logo"/>
         </a>
       </div>
       <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-secondary px-8">
@@ -166,7 +166,7 @@
               <div class="flex justify-between mb-4">
                 <div class="flex items-start">
                   <a class="flex-shrink-0 w-12 lg:w-16" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
-                    <img data-src="{{ .Image }}" class="lazyload object-contain rounded-lg border border-secondary" alt="{{ i18n "home_testimonials_image_alt" . }} {{ .TwitterHandle }}"/>
+                    <img data-src="{{ .Image }}" class="lazyload aspect-square w-full object-contain rounded-lg border border-secondary" alt="{{ i18n "home_testimonials_image_alt" . }} {{ .TwitterHandle }}"/>
                   </a>
                   <a class="text-white px-3 hover:text-secondary hover:no-underline" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
                     <p class="font-headline lg:text-xl">{{ .Name }}</p>
@@ -208,7 +208,7 @@
     <section class="container text-center pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40">
       <figure>
         <a href="https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank" rel="noopener">
-          <img class="lazyload inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">
+          <img class="lazyload aspect-[512/340] h-[170px] inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">
         </a>
         <figcaption>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-1">{{ i18n "home_cebit_title" . }}</h2>
