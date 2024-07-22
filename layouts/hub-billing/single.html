@@ -325,7 +325,7 @@
                 </div>
                 <div x-show="audience === 'consumer'">
                   <p class="flex items-baseline gap-2">
-                    <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
+                    <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-semibold"></span>
                     <span class="text-gray-700">{{ i18n "hub_pricing_vat_included" . }}</span>
                   </p>
                   <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">

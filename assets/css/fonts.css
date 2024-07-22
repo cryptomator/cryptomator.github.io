@@ -17,6 +17,44 @@
 }
 
 /*
+ * For medium text (e.g. paragraphs, medium emphasis) [ASCII + ÄäÖöÜüß€]:
+ * pyftsubset opensans-medium.woff2 --unicodes=U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC --verbose --flavor=woff2 --output-file=opensans-medium.reduced.woff2
+ */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Open Sans Medium'), local('OpenSans-Medium'), url('/fonts/opensans-medium.reduced.woff2') format('woff2');
+  unicode-range: U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC;
+}
+
+/*
+ * For semibold text (e.g. subheadings, semi-bold emphasis) [ASCII + ÄäÖöÜüß€]:
+ * pyftsubset opensans-semibold.woff2 --unicodes=U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC --verbose --flavor=woff2 --output-file=opensans-semibold.reduced.woff2
+ */@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url('/fonts/opensans-semibold.reduced.woff2') format('woff2');
+  unicode-range: U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC;
+}
+
+/*
+ * For bold text (e.g. headings, bold emphasis) [ASCII + ÄäÖöÜüß€]:
+ * pyftsubset opensans-bold.woff2 --unicodes=U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC --verbose --flavor=woff2 --output-file=opensans-bold.reduced.woff2
+ */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('/fonts/opensans-bold.reduced.woff2') format('woff2');
+  unicode-range: U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC;
+}
+
+/*
  * For h3 headings [ASCII + ÄäÖöÜüß€]:
  * pyftsubset quicksand-regular.woff2 --unicodes=U+0020-007F,U+00C4,U+00E4,U+00D6,U+00F6,U+00DC,U+00FC,U+00DF,U+20AC --verbose --flavor=woff2 --output-file=quicksand-regular.reduced.woff2
  */

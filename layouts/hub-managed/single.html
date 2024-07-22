@@ -113,7 +113,7 @@
             {{ i18n "hub_billing_checkout_standard_title" . }}
           </h3>
           <p class="flex items-baseline gap-2">
-            <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+            <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
             <span class="text-xs md:text-sm lg:text-base text-gray-700">{{ i18n "hub_pricing_vat_excluded" . }}</span>
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
@@ -163,7 +163,7 @@
           <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             {{ i18n "hub_pricing_enterprise_title" . }}
           </h3>
-          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+          <p class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
             {{ i18n "hub_pricing_enterprise_statement" . }}
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
