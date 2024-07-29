@@ -87,7 +87,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 6.2 Availability shall be deemed to be the Customer's ability to use all main functions of the Software. Maintenance times as well as times of malfunction in compliance with the remedial time shall be deemed times of availability of the software. Times of insignificant malfunctions shall not be taken into account in the calculation of availability. The measuring instruments in the data center shall be decisive for the proof of availability.
 
-6.3 The Customer shall immediately report malfunctions to the Provider (email: support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 6:00 pm (service hours).
+6.3 The Customer shall immediately report malfunctions to the Provider (email: support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 5:00 pm (service hours).
 
 6.4 Serious malfunctions (the use of the software as a whole or a main function of the software is not possible) shall be remedied by the Provider also outside the service times at the latest within 6 hours from receipt of the notification of the malfunction - provided that the notification is made within the service times (remedying time). If it is foreseeable that it will not be possible to remedy the fault within this period of time, the Provider shall inform the Customer of this without delay and notify the Customer of the expected exceeding of the time period.
 
