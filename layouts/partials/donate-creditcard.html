@@ -17,11 +17,11 @@
     <div class="w-full mb-4 md:w-1/2 md:pl-3">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_frequency" }}</label>
       <div class="flex">
-        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'once'}" @click="frequency = 'once'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': frequency === 'once'}" @click="frequency = 'once'">
           <i class="fas fa-check" x-show="frequency === 'once'"></i>
           {{ i18n "donate_creditcard_frequency_once" }}
         </button>
-        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': frequency === 'recurring'}" @click="frequency = 'recurring'">
           <i class="fas fa-check" x-show="frequency === 'recurring'"></i>
           {{ i18n "donate_creditcard_frequency_recurring" }}
         </button>

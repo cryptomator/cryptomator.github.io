@@ -65,11 +65,11 @@
       <h2 id="pricing-plans" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_pricing_title" . }}</h2>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_pricing_description" . }}</p>
       <div class="flex justify-center mb-4">
-        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-semibold': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': infrastructure === 'managed'}" @click="infrastructure = 'managed'">
           <i class="fa-cloud fa-fw" :class="{'fas': infrastructure === 'managed', 'far': infrastructure !== 'managed'}"></i>
           {{ i18n "hub_pricing_infrastructure_managed" . }}
         </button>
-        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-semibold': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
+        <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': infrastructure === 'self-hosted'}" @click="infrastructure = 'self-hosted'">
           <i class="fa-server fa-fw" :class="{'fas': infrastructure === 'self-hosted', 'far': infrastructure !== 'self-hosted'}"></i>
           {{ i18n "hub_pricing_infrastructure_self_hosted" . }}
         </button>
@@ -79,11 +79,11 @@
     <div x-show="infrastructure === 'managed'" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             {{ i18n "hub_pricing_standard_title" . }}
           </h3>
           <p class="flex items-baseline gap-2">
-            <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+            <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
             <span class="text-xs md:text-sm lg:text-base text-gray-700">{{ i18n "hub_pricing_vat_excluded" . }}</span>
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
@@ -133,10 +133,10 @@
       </div>
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             {{ i18n "hub_pricing_enterprise_title" . }}
           </h3>
-          <p class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
             {{ i18n "hub_pricing_enterprise_statement" . }}
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
@@ -181,10 +181,10 @@
     <div x-show="infrastructure === 'self-hosted'" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4" x-cloak>
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             {{ i18n "hub_pricing_community_title" . }}
           </h3>
-          <p class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
             {{ i18n "hub_pricing_community_statement" . }}
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
@@ -227,11 +227,11 @@
       </div>
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             {{ i18n "hub_pricing_standard_title" . }}
           </h3>
           <p class="flex items-baseline gap-2">
-            <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+            <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
             <span class="text-xs md:text-sm lg:text-base text-gray-700">{{ i18n "hub_pricing_vat_excluded" . }}</span>
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
@@ -274,10 +274,10 @@
       </div>
       <div class="rounded shadow bg-white">
         <div class="p-4 border-b border-primary">
-          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+          <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
             {{ i18n "hub_pricing_enterprise_title" . }}
           </h3>
-          <p class="font-semibold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+          <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
             {{ i18n "hub_pricing_enterprise_statement" . }}
           </p>
           <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">

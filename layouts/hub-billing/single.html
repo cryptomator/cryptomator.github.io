@@ -297,11 +297,11 @@
           </header>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
             <div class="flex justify-center">
-              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'business'}" @click.prevent="audience = 'business'">
+              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'business'}" @click.prevent="audience = 'business'">
                 <i class="fa-building fa-fw" :class="{'fas': audience === 'business', 'far': audience !== 'business'}"></i>
                 {{ i18n "hub_billing_checkout_audience_business" . }}
               </button>
-              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
+              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
                 <i class="fa-house fa-fw" :class="{'fas': audience === 'consumer', 'far': audience !== 'consumer'}"></i>
                 {{ i18n "hub_billing_checkout_audience_consumer" . }}
               </button>
@@ -309,7 +309,7 @@
             <div class="hidden md:block"></div>
             <div class="rounded shadow bg-white">
               <div class="p-4 border-b border-primary">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
                 </h2>
                 <div x-show="audience === 'business'">
@@ -325,7 +325,7 @@
                 </div>
                 <div x-show="audience === 'consumer'">
                   <p class="flex items-baseline gap-2">
-                    <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-semibold"></span>
+                    <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
                     <span class="text-gray-700">{{ i18n "hub_pricing_vat_included" . }}</span>
                   </p>
                   <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
@@ -381,7 +381,7 @@
             </div>
             <div class="flex flex-col rounded shadow bg-white">
               <div class="p-4 border-b border-primary">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
                 </h2>
                 <p class="text-5xl font-bold">
