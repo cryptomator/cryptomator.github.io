@@ -6,8 +6,8 @@ aliases: ["/faq/usage/encrypt-dropbox"]
 
 navtitle: "Encrypt Your Dropbox"
 ctatitle: "You want to encrypt your Dropbox with Cryptomator?"
-ctatext: "Cryptomator is free and can be used without an account. Just download and get started."
-ctalink: /downloads/
+ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
+ctalink: /#get-started
 ctabutton: "Encrypt Your Dropbox Now"
 
 ogimage:

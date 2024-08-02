@@ -5,9 +5,9 @@ description: "You want to encrypt your data in the cloud and are looking for the
 
 navtitle: "Alternative to Boxcryptor"
 ctatitle: "Would you like to test Cryptomator as an alternative to Boxcryptor?"
-ctatext: "Cryptomator is free and can be used without an account. Just download and get started."
-ctalink: /downloads/
-ctabutton: "Download Cryptomator Now"
+ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
+ctalink: /#get-started
+ctabutton: "Get Started With Cryptomator"
 
 ogimage:
   relsrc: /img/boxcryptor-alternative/og-image.png

@@ -6,8 +6,8 @@ aliases: ["/de/faq/security", "/de/faq/security/opensource", "/de/faq/security/a
 
 navtitle: "Wie Open Source die Sicherheit stärkt"
 ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
-ctatext: "Cryptomator ist kostenlos und ohne Account nutzbar. Einfach herunterladen und loslegen."
-ctalink: /de/downloads/
+ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
+ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 
 ogimage:
