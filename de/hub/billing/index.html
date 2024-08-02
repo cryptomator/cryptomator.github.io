@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.5175db017e32796e306458adbc9a29c96950bb9ad364697e5c86357043f65038.css" integrity="sha256-UXXbAX4yeW4wZFitvJopyWlQu5rTZGl&#43;XIY1cEP2UDg=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.46fd1f602a4424fc176490a9d733e8e7d49bcac5ca7c4e544a97dad56b988ab7.css" integrity="sha256-Rv0fYCpEJPwXZJCp1zPo59SbysXKfE5USpfa1WuYirc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -476,11 +476,11 @@
           </header>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
             <div class="flex justify-center">
-              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'business'}" @click.prevent="audience = 'business'">
+              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'business'}" @click.prevent="audience = 'business'">
                 <i class="fa-building fa-fw" :class="{'fas': audience === 'business', 'far': audience !== 'business'}"></i>
                 Für Unternehmen
               </button>
-              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
+              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
                 <i class="fa-house fa-fw" :class="{'fas': audience === 'consumer', 'far': audience !== 'consumer'}"></i>
                 Für zu Hause
               </button>
@@ -488,7 +488,7 @@
             <div class="hidden md:block"></div>
             <div class="rounded shadow bg-white">
               <div class="p-4 border-b border-primary">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   Standard
                 </h2>
                 <div x-show="audience === 'business'">
@@ -549,12 +549,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-357192684" x-model="acceptTerms" />
-<label for="id-357192684">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-964158723" x-model="acceptTerms" />
+<label for="id-964158723">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-675834192" x-model="acceptTerms" />
-<label for="id-675834192">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-361792854" x-model="acceptTerms" />
+<label for="id-361792854">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -566,7 +566,7 @@
             </div>
             <div class="flex flex-col rounded shadow bg-white">
               <div class="p-4 border-b border-primary">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   Enterprise
                 </h2>
                 <p class="text-5xl font-bold">

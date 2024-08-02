@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.5175db017e32796e306458adbc9a29c96950bb9ad364697e5c86357043f65038.css" integrity="sha256-UXXbAX4yeW4wZFitvJopyWlQu5rTZGl&#43;XIY1cEP2UDg=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.46fd1f602a4424fc176490a9d733e8e7d49bcac5ca7c4e544a97dad56b988ab7.css" integrity="sha256-Rv0fYCpEJPwXZJCp1zPo59SbysXKfE5USpfa1WuYirc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -223,8 +223,8 @@
     <input type="hidden" name="hosted_button_id" value="7HHT9KSN2WS3Y" />
     <input type="hidden" name="amount" value="15" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-753196824" x-model="acceptTerms" />
-<label for="id-753196824">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-145276398" x-model="acceptTerms" />
+<label for="id-145276398">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to PayPal</button>
   </form>
@@ -268,11 +268,11 @@
     <div class="w-full mb-4 md:w-1/2 md:pl-3">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Frequency</label>
       <div class="flex">
-        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'once'}" @click="frequency = 'once'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': frequency === 'once'}" @click="frequency = 'once'">
           <i class="fas fa-check" x-show="frequency === 'once'"></i>
           One-Time
         </button>
-        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-bold': frequency === 'recurring'}" @click="frequency = 'recurring'">
+        <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': frequency === 'recurring'}" @click="frequency = 'recurring'">
           <i class="fas fa-check" x-show="frequency === 'recurring'"></i>
           Monthly
         </button>
@@ -292,8 +292,8 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class="text-primary no-underline hover:underline" href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
 
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-372689541" x-model="acceptTerms" />
-<label for="id-372689541">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-495823617" x-model="acceptTerms" />
+<label for="id-495823617">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
 
       <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
@@ -315,8 +315,8 @@
   <div x-show="frequency === 'recurring'" class="text-center">
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Recurring credit card payments will be set up on our Stripe page.</p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-157429638" x-model="acceptTerms" />
-<label for="id-157429638">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-435927168" x-model="acceptTerms" />
+<label for="id-435927168">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" @click="recurringPayment.checkout(amount, currency, 'en')" :disabled="!acceptTerms">
       <i class="fas fa-external-link" aria-hidden="true"></i> Proceed to Stripe
@@ -395,8 +395,8 @@
     <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
     <input type="hidden" name="allow_extra" value="1" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-768312459" x-model="acceptTerms" />
-<label for="id-768312459">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-138724569" x-model="acceptTerms" />
+<label for="id-138724569">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to CoinPayments</button>
   </form>
