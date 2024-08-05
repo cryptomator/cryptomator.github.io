@@ -1,14 +1,22 @@
 ---
 title: "NIS-2-Richtlinie: Höhere Standards für Cyber-Sicherheit ab Oktober 2024"
+type: article
+description: "Die NIS-2-Richtlinie erhöht die Standards der Cyber-Sicherheit innerhalb der EU. Cryptomator hilft Unternehmen, die neuen Anforderungen mit Ende-zu-Ende-Verschlüsselung zu erfüllen."
 
 navtitle: "NIS-2-Richtlinie"
+ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
+ctatext: "Cryptomator sichert deine vertraulichen Dateien in der Cloud mit Ende-zu-Ende-Verschlüsselung. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
+ctalink: /de/#get-started
+ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 ---
+
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+
+# NIS-2-Richtlinie: Höhere Standards für Cyber-Sicherheit ab Oktober 2024
 
 _Aktualisiert am 02.08.2024 mit neuem Abschnitt „Was kannst du jetzt schon tun?“ inkl. „Leitfaden zur Vorbereitung auf das NIS-2-Gesetz“._
 
-## Einleitung
-
-Im Zuge der neuen [NIS-2-Richtlinie](https://eur-lex.europa.eu/eli/dir/2022/2555/oj?locale=de), die im Oktober 2024 in Kraft tritt, müssen Unternehmen verstärkt auf Cyber-Sicherheit achten. Tools wie Cryptomator, das durch Ende-zu-Ende-Verschlüsselung und als [Open-Source-Software](https://cryptomator.org/de/open-source/) höchste Sicherheitsstandards bietet, können dabei helfen, den neuen Anforderungen gerecht zu werden.
+<p class="lead">Im Zuge der neuen <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj?locale=de">NIS-2-Richtlinie</a>, die im Oktober 2024 in Kraft tritt, müssen Unternehmen verstärkt auf Cyber-Sicherheit achten. Tools wie Cryptomator, das durch Ende-zu-Ende-Verschlüsselung und als <a href="/de/open-source/">Open-Source-Software</a> höchste Sicherheitsstandards bietet, können dabei helfen, den neuen Anforderungen gerecht zu werden.</p>
 
 ## Was ist die NIS-2-Richtlinie?
 
@@ -73,3 +81,5 @@ Indem du diese Maßnahmen ergreifen, kannst du dich frühzeitig auf die neuen An
 ## Fazit
 
 Die NIS-2-Richtlinie stellt Unternehmen vor neue Herausforderungen in der Cyber-Sicherheit, doch mit den richtigen Tools kannst du diese Anforderungen erfolgreich bewältigen. Cryptomator bietet mit seiner Ende-zu-Ende-Verschlüsselung und der benutzerfreundlichen, plattformübergreifenden Anwendung eine effektive Lösung, um deine sensiblen Daten zu schützen und den neuen Sicherheitsstandards gerecht zu werden. Besonders für Unternehmen, die als Anbieter wesentlicher Dienste und Betreiber kritischer Infrastrukturen tätig sind, ist Cryptomator ein unverzichtbares Tool, um Compliance zu gewährleisten und Cyberbedrohungen abzuwehren. Mit Cryptomator Hub können auch Teams sicher und effizient zusammenarbeiten, ohne Kompromisse bei der Sicherheit einzugehen.
+
+{{< /markdownify >}}</div>

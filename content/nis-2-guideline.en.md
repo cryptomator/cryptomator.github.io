@@ -1,14 +1,22 @@
 ---
 title: "NIS 2 Directive: Higher standards for cybersecurity from October 2024"
+type: article
+description: "The NIS 2 Directive raises the standards of cybersecurity within the EU. Cryptomator helps companies meet the new requirements with end-to-end encryption."
 
 navtitle: "NIS-2-Guideline"
+ctatitle: "You want to encrypt your cloud storage with Cryptomator?"
+ctatext: "Cryptomator secures your sensitive and confidential files in the cloud using end-to-end encryption. Cryptomator Hub manages team access and is ideal for teams and organizations."
+ctalink: /#get-started
+ctabutton: "Encrypt Your Cloud Storage Now"
 ---
+
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+
+# NIS 2 Directive: Higher standards for cybersecurity from October 2024
 
 _Updated on 2024-08-02 with new section "What Can You Do Now?" incl. "Guide to Preparing for the NIS-2 Law"._
 
-## Introduction
-
-In the wake of the new [NIS 2 Directive](https://eur-lex.europa.eu/eli/dir/2022/2555/en), which comes into force in October 2024, companies will have to pay more attention to cybersecurity. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as [open-source software](https://cryptomator.org/open-source/), can help to meet the new requirements.
+<p class="lead">In the wake of the new <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/en">NIS 2 Directive</a>, which comes into force in October 2024, companies will have to pay more attention to cybersecurity. Tools such as Cryptomator, which offers the highest security standards through end-to-end encryption and as <a href="/open-source/">open-source software</a>, can help to meet the new requirements.</p>
 
 ## What Is the NIS 2 Directive?
 
@@ -73,3 +81,5 @@ By taking these steps, you can prepare early for the new requirements of the NIS
 ## Conclusion
 
 The NIS 2 directive presents companies with new cybersecurity challenges, but with the right tools you can successfully meet these requirements. Cryptomator, with its end-to-end encryption and user-friendly, cross-platform application, offers an effective solution to protect your sensitive data and meet the new security standards. Especially for companies that operate as providers of essential services and operators of critical infrastructure, Cryptomator is an indispensable tool to ensure compliance and ward off cyber threats. Cryptomator Hub also enables teams to collaborate securely and efficiently without compromising on security.
+
+{{< /markdownify >}}</div>
