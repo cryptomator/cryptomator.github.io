@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 aliases: ["/de/privacy-ios", "/de/privacy-android"]
 ---
 
-_Stand: Februar 2024_
+_Stand: August 2024_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
@@ -226,7 +226,11 @@ Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen Daten des N
 #### 8.1.4 Zugriff auf Cloud-Speicher-Dienste (Android, iOS)
 Falls der Nutzer die Cryptomator App für iOS oder Android autorisiert, auf einen oder mehrere Cloud-Speicher-Dienste zuzugreifen, erhält die Anwendung Zugriff auf dort gespeicherte Daten. Die Anwendung greift auf keine Daten zu, die außerhalb von durch den Nutzer wissentlich ausgewählten Ordnern liegen.
 
-Diese Daten werden ausschließlich lokal auf dem Gerät des Nutzers verarbeitet. Unter keinen Umständen erhalten wir Teile dieser Daten.
+Diese Daten werden ausschließlich lokal auf dem Gerät des Nutzers verarbeitet. Unter keinen Umständen erhalten wir Teile dieser Daten. Wir verwenden Sicherheitsverfahren, um die Vertraulichkeit der Daten des Nutzers zu schützen. Im Einzelnen:
+
+* Wir verwenden Verschlüsselung, um die Informationen des Nutzers zu schützen. Alle sensiblen Daten werden mit modernsten Verschlüsselungsalgorithmen verschlüsselt.
+* Unter Android werden sensible Daten im Keystore-System gespeichert, das kryptografische Schlüssel sicher speichert und deren Vertraulichkeit und Integrität gewährleistet.
+* Unter iOS werden sensible Daten im Schlüsselbund gespeichert, der einen sicheren, verschlüsselten und vom System verwalteten Speicherbehälter darstellt.
 
 Sollten solche Cloud-Speicher-Dienste genutzt werden, sind auch die Datenschutzerklärungen der jeweiligen Anbieter zu beachten:
 

@@ -3,7 +3,7 @@ title: "Privacy Policy"
 aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: February 2024_
+_Effective date: August 2024_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -225,7 +225,11 @@ This data will not be stored together with other personal data of the user.
 #### 8.1.4 Accessing Cloud Storage Services (Android, iOS)
 If the user authorizes the Cryptomator application for iOS or Android to access one or many cloud storage services, the application is granted access to data stored by the respective service. The application will not access any data other than stored in folders knowingly selected by the user.
 
-Any such data is processed solely on the user's local device. Under no circumstances will we receive any of this data.
+Any such data is processed solely on the user's local device. Under no circumstances will we receive any of this data. We have implemented security procedures to protect the confidentiality of the user's data. Specifically:
+
+* We use encryption to protect the user's information. All sensitive data is encrypted using state-of-the-art encryption algorithms.
+* On Android, sensitive data is stored in the Keystore system, which securely stores cryptographic keys and ensures their confidentiality and integrity.
+* On iOS, sensitive data is stored in the Keychain, which provides a secure storage container that is encrypted and managed by the system.
 
 When using such a third-party cloud storage services, please refer to the corresponding privacy policy of the provider:
 
