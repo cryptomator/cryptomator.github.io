@@ -11,8 +11,63 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/desktop/</link>
     </image>
-    <lastBuildDate>Tue, 06 Aug 2024 09:50:05 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2024 14:58:51 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Aktuelles Problem mit der Google Drive-Verbindung in Cryptomator für Android und iOS</title>
+        <description>&lt;p&gt;Hallo Community!&lt;/p&gt;
+&lt;p&gt;Wir möchten euch über ein aktuelles Problem informieren, das einige von euch möglicherweise bei der Nutzung unserer Cryptomator-Apps für Android und iOS betrifft. Es handelt sich um Schwierigkeiten bei der Verbindung zu Google Drive, die in den letzten Tagen aufgetreten sind. Hier erfahrt ihr alle Details und unsere aktuellen Fortschritte bei der Lösung.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-passiert&#34;&gt;Was ist passiert?&lt;/h2&gt;
+&lt;p&gt;Google hat vor kurzem bedeutende Änderungen an seinem Verifizierungssystem für Apps eingeführt. Diese Änderungen betreffen insbesondere die Art und Weise, wie Apps auf Dienste wie Google Drive zugreifen. Durch diese Umstellung kann es passieren, dass ihr beim Versuch, Google Drive mit Cryptomator zu verbinden, eine Fehlermeldung erhaltet. Diese besagt, dass Cryptomator blockiert ist, weil es sich um eine „nicht verifizierte App“ handelt.&lt;/p&gt;
+&lt;h2 id=&#34;warum-tritt-dieses-problem-auf&#34;&gt;Warum tritt dieses Problem auf?&lt;/h2&gt;
+&lt;p&gt;Google hat die Anforderungen an die Verifizierung von Apps, die auf sensible Nutzerdaten zugreifen, erheblich verschärft. Dies betrifft nicht nur Cryptomator, sondern potenziell alle Apps, die Google-Dienste integrieren. Das Ziel dieser Änderungen ist es, die Sicherheit der Nutzer zu erhöhen und den Schutz ihrer Daten zu verbessern. Allerdings hat diese Maßnahme auch zur Folge, dass Anwendungen, die noch nicht vollständig an das neue System angepasst wurden, temporär blockiert werden können.&lt;/p&gt;
+&lt;h2 id=&#34;was-tun-wir-um-das-problem-zu-lösen&#34;&gt;Was tun wir, um das Problem zu lösen?&lt;/h2&gt;
+&lt;p&gt;Wir sind uns des Problems bewusst und arbeiten mit Hochdruck daran, eine Lösung zu finden. Unser Team steht in engem Kontakt mit Google, um die notwendigen Verifizierungsprozesse durchzuführen und Cryptomator als vertrauenswürdige App erneut zu zertifizieren. Diese Aufgabe ist leider komplexer als ursprünglich angenommen. Die neuen Anforderungen von Google erfordern zusätzliche Anpassungen in unserer App, die sorgfältig implementiert und getestet werden müssen.&lt;/p&gt;
+&lt;p&gt;Wir möchten an dieser Stelle betonen, dass die Sicherheit eurer Daten für uns höchste Priorität hat. Daher nehmen wir uns die Zeit, diese Änderungen gründlich umzusetzen, um sicherzustellen, dass Cryptomator auch weiterhin eine sichere und zuverlässige Lösung für eure verschlüsselten Daten bleibt.&lt;/p&gt;
+&lt;h2 id=&#34;was-könnt-ihr-tun&#34;&gt;Was könnt ihr tun?&lt;/h2&gt;
+&lt;p&gt;Wir verstehen, dass dieses Problem für viele von euch frustrierend ist, und wir entschuldigen uns aufrichtig für die Unannehmlichkeiten. In der Zwischenzeit gibt es ein paar Dinge, die ihr tun könnt, um eure Arbeit nicht zu unterbrechen:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Alternative Cloud-Dienste nutzen: Wenn ihr Google Drive aktuell nicht verwenden könnt, gibt es die Möglichkeit, alternative Cloud-Dienste wie Dropbox, OneDrive oder WebDAV-basierte Dienste in Cryptomator zu integrieren.&lt;/li&gt;
+&lt;li&gt;Lokale Entschlüsselung: Ihr könnt eure verschlüsselten Tresore weiterhin über die Desktop-Anwendung entschlüsseln. Falls der Tresor nicht so groß ist, könnt ihr ihn auch auf euer Mobilgerät herunterladen und lokal entschlüsseln.&lt;/li&gt;
+&lt;li&gt;Updates beobachten: Wir werden euch regelmäßig über den Fortschritt der Arbeiten auf dem Laufenden halten. Sobald das Problem gelöst ist, informieren wir euch umgehend über die entsprechenden Updates. Behaltet dafür auch unsere Social Media Accounts auf X und Mastodon im Blick.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ausblick&#34;&gt;Ausblick&lt;/h2&gt;
+&lt;p&gt;Wir sind zuversichtlich, dass wir in Kürze eine Lösung bereitstellen können. Unser Ziel ist es, Cryptomator so schnell wie möglich wieder vollständig funktionsfähig zu machen. Eure Geduld und euer Verständnis in dieser Zeit schätzen wir sehr.&lt;/p&gt;
+&lt;p&gt;Nochmals vielen Dank für eure Unterstützung und euer Vertrauen in Cryptomator. Wir arbeiten unermüdlich daran, euch die bestmögliche Erfahrung mit unserer App zu bieten, und werden euch auf dem Laufenden halten, sobald es Neuigkeiten gibt.&lt;/p&gt;
+&lt;p&gt;Mit den besten Grüßen&lt;br&gt;
+Euer Cryptomator-Team&lt;/p&gt;
+&lt;h2 id=&#34;faq-google-oauth-probleme-in-cryptomator-für-android-und-ios&#34;&gt;FAQ: Google OAuth-Probleme in Cryptomator für Android und iOS&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q1: Was ist das Problem mit Google Drive und Cryptomator für Android und iOS?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A1:&lt;/strong&gt; Nutzer haben Probleme, da Google beim Anmeldeprozess in Cryptomator für Android und iOS den Zugriff auf ihre Dateien blockiert.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q2: Wie kann ich auf meine Dateien zugreifen? Gibt es eine Umgehungslösung?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A2:&lt;/strong&gt; Ihr könnt eure Dateien immer auf eurem Desktop-Computer oder durch Kopieren eures Tresors von Google Drive auf die Festplatte eures Telefons zugreifen und dann Cryptomator für Android und iOS verwenden, um lokal darauf zuzugreifen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q3: Sind meine Dateien sicher? Ist mein Konto sicher?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A3:&lt;/strong&gt; Ja. Eure Dateien und euer Konto sind beide sicher und es besteht kein Risiko, dass sie gelöscht oder von bösartigen Akteuren abgerufen werden. Sie sind nicht weniger sicher als vor einer Woche. Eure Dateien sind weiterhin verschlüsselt.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q4: Gibt es ein Problem mit meinem Google-Konto?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A4:&lt;/strong&gt; Nein. Dies ist kein Problem mit eurem Google-Konto, und es sollte alle Nutzer von Cryptomator für Android und iOS und Google Drive betreffen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q5: Ist Cryptomator für Android und iOS sicher?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A5:&lt;/strong&gt; Ja. Cryptomator für Android und iOS ist sicher, und uns sind derzeit keine Sicherheitsprobleme bekannt. Siehe auch &lt;strong&gt;Q7&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q6: Auf welche „sensiblen Informationen“ versucht Cryptomator für Android und iOS zuzugreifen?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A6:&lt;/strong&gt; Um auf die in Google Drive gespeicherten Dateien zuzugreifen und die zugehörige Funktionalität bereitzustellen, benötigt die Cryptomator-App Zugriff auf Google Drive. Auch wenn die Nachricht von Google beängstigend klingt, ist dies nichts Neues und nichts, worüber man sich Sorgen machen müsste. Siehe auch &lt;strong&gt;Q7&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q7: Warum passiert das? Warum blockiert Google Cryptomator für Android und iOS?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A7:&lt;/strong&gt; Um den Zugriff auf die in Google Drive gespeicherten Dateien zu ermöglichen, benötigt Cryptomator sowohl eure Erlaubnis als auch die Zustimmung von Google. Google hat kürzlich neuere und strengere Sicherheitsrichtlinien eingeführt, an die wir uns halten müssen, um den Zugriff auf Google Drive in der App weiterhin zu ermöglichen. Wenn wir Google nicht rechtzeitig nachweisen, dass wir diese Richtlinien einhalten, wird der Zugriff blockiert, was gerade der Fall ist. Wir befinden uns derzeit mitten in diesem Verifizierungsprozess, um den Zugriff wiederzuerlangen, aber das ist ziemlich zeitaufwändig und arbeitsintensiv, was zu dieser Situation geführt hat.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q8: Wie sieht es mit Cryptomator für Desktop aus?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A8:&lt;/strong&gt; Die betroffene Funktionalität wird von Cryptomator für Desktop nicht angeboten, daher gibt es dort derzeit kein Problem.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/08/09/google-drive-issue/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/08/09/google-drive-issue/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>android</category>
+        
+        <category>ios</category>
+        
+        <category>google drive</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator Hub 1.3.0: Das Account Key Update</title>
@@ -360,35 +415,6 @@
         <category>cryptomator</category>
         
         <category>hub</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator Roadmap Early 2022</title>
-        <description>&lt;p&gt;Im vergangenen Jahr hat sich viel getan. Mit dieser Roadmap möchten wir euch einen Überblick darüber geben, was sich in Cryptomator geändert hat und worauf ihr euch in den kommenden Monaten freuen könnt.&lt;/p&gt;
-&lt;h2 id=&#34;ios-version&#34;&gt;iOS Version&lt;/h2&gt;
-&lt;p&gt;Ende des letzten Jahres konnten wir endlich unsere neue iOS-App vorstellen. Eines der Hauptmerkmale ist die vollständige Integration in Apples eigene App „Dateien“. Außerdem haben wir es möglich gemacht, euch eine „Freemium“-Version der App anzubieten. Wenn ihr noch mehr über die neuen Funktionen erfahren wollt, schaut euch diesen &lt;a href=&#34;https://cryptomator.org/de/blog/2021/12/21/ios-2.0/&#34;&gt;Blog-Post&lt;/a&gt; an. Seitdem haben wir in mehreren Updates an weiteren Funktionen gearbeitet, wie z.B. der Auto-Lock Funktion, die mit Version 2.1.0 eingeführt wurde. Mit der gerade veröffentlichten Version 2.2.0 haben wir pCloud integriert und die Unterstützung von Verknüpfungen in Google Drive hinzugefügt.&lt;/p&gt;
-&lt;p&gt;In den kommenden Monaten haben wir noch einiges mehr für die App geplant. Wir werden Cryptomator in &lt;a href=&#34;https://support.apple.com/de-de/guide/shortcuts/welcome/ios&#34;&gt;Kurzbefehle&lt;/a&gt; integrieren, so dass Automatisierungsprozesse wie ein „automatischer Foto-Upload“ möglich sind. Außerdem planen wir die Integration von S3, wie wir es bereits bei unserer Android-App getan haben.&lt;/p&gt;
-&lt;h2 id=&#34;android-version&#34;&gt;Android Version&lt;/h2&gt;
-&lt;p&gt;In den letzten Monaten haben wir daran gearbeitet, die Kompatibilität von Cryptomator zu erhöhen. Dazu gehört, dass wir nun pCloud, S3 und Vault Format 8 unterstützen. Vielen Dank noch einmal an Manuel (mjenny auf GitHub) für die Unterstützung von pCloud und S3. Außerdem kann Cryptomator jetzt über F-Droid installiert und aktualisiert werden. Tresore in Google Drive können nun über Verknüpfungen an Orten außerhalb von „Meine Ablage“ verwendet werden. Dies funktioniert zum Beispiel in „Mit mir geteilt“, „Mein Computer“ und „Mein Ablage“. Bei OneDrive ist es möglich, mehrere Konten gleichzeitig zu verwenden. Wir werden diese Funktion in Zukunft auch für Dropbox und Google Drive zur Verfügung stellen. Außerdem ist in der Android-Version ein „echter“ automatischer Foto-Upload verfügbar, d.h. neue Bilder und Videos werden jetzt nicht erst nach dem Entsperren des Tresors hochgeladen, sondern direkt beim Entsperren.&lt;/p&gt;
-&lt;p&gt;In den kommenden Monaten werden wir die Android-App auf ein Freemium-Modell umstellen, wie wir es schon bei der iOS-Version gemacht haben, und weiter an dem lang erwarteten Document Provider arbeiten.&lt;/p&gt;
-&lt;h2 id=&#34;desktop-version&#34;&gt;Desktop-Version&lt;/h2&gt;
-&lt;p&gt;Mit der Version 1.6.0, die in der letzten Roadmap angekündigt wurde, haben wir Vault Format 8 für unsere Desktop-Version eingeführt. &lt;a href=&#34;https://cryptomator.org/de/blog/2021/10/11/vault-format-8/&#34;&gt;Hier&lt;/a&gt; könnt ihr mehr darüber lesen. Um die Benutzerfreundlichkeit zu verbessern, haben wir Fehlercodes und eine &lt;a href=&#34;https://github.com/cryptomator/cryptomator/discussions/categories/errors&#34;&gt;Wissensdatenbank&lt;/a&gt; eingeführt, in der man Lösungen für das aufgetretene Problem nachschlagen kann. Wir haben auch eine Auto-Lock-Funktion eingeführt, die die Tresore nach einer selbst definierten Inaktivitätszeit automatisch sperrt, sowie eine Plugin-API. Das erste Plugin für Cryptomator ist das &lt;a href=&#34;https://plugin.purejava.org/&#34;&gt;KeePassXC-Plugin&lt;/a&gt;, das durch eine Open-Source-Beitrag von Ralph (purejava auf GitHub) entstanden ist. Darüber hinaus haben wir unsere Build-Systeme so verbessert, dass die Applikationen/Installer für alle Betriebssysteme automatisch erstellt und signiert werden (statt manuell).&lt;/p&gt;
-&lt;p&gt;Vor zwei Jahren haben wir angekündigt, dass wir uns auf die Flatpak-Distribution konzentrieren wollen. Das lief jedoch nicht wie geplant und die Arbeiten daran kamen zum Stillstand&amp;hellip; bis vor kurzem. Unser regelmäßiger Open-Source-Contributor Ralph (purejava auf GitHub) kam uns wieder einmal zur Hilfe. Und wir haben es tatsächlich geschafft! Cryptomator ist jetzt &lt;a href=&#34;https://flathub.org/apps/details/org.cryptomator.Cryptomator&#34;&gt;auf Flathub als Flatpak-App verfügbar&lt;/a&gt;. Nochmals vielen Dank an Ralph für seinen großartigen Beitrag!&lt;/p&gt;
-&lt;p&gt;Für die Desktop-Version von Cryptomator haben wir in naher Zukunft einige große Themen vor uns. Zum einen arbeiten wir an einem größeren FUSE-Refactoring. Dies ist u.a. notwendig, um ARM64-Unterstützung auch unter Windows und Linux anbieten zu können. Auf Apple Silicon Macs unterstützen wir dies bereits seit einigen Versionen. Zum anderen wollen wir die offenen Fragen im Zusammenhang mit &lt;a href=&#34;https://github.com/cryptomator/cryptomator/projects/13&#34;&gt;erweiterten Attributen&lt;/a&gt; angehen. Genauer gesagt geht es um zusätzliche Dateiattribute, die das Tagging ermöglichen und Kompatibilitätsprobleme beheben. Natürlich werden diese Attribute genau wie der Dateiname verschlüsselt.&lt;/p&gt;
-&lt;p&gt;Wenn ihr bis hierher gelesen habt, möchten wir ein Geheimnis mit euch teilen. Wir arbeiten derzeit an &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt;. Das war&amp;rsquo;s fürs Erste, aber ihr werdet bestimmt noch dieses Jahr mehr darüber erfahren.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2022/04/04/roadmap/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/04/04/roadmap/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>desktop</category>
-        
-        <category>android</category>
-        
-        <category>ios</category>
         
       </item>
     

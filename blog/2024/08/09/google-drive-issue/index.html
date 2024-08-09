@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Issue with Google Drive Connection in Cryptomator for Android and iOS</title>
+    
+      <meta name="description" content="Google recently introduced significant changes to its app verification system. These changes particularly affect how apps access services like Google Drive. Here, you will find all the details and updates on our progress in resolving the issue.">
+      <meta property="og:title" content="Current Issue with Google Drive Connection in Cryptomator for Android and iOS">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/blog/2024/08/09/google-drive-issue/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="Google recently introduced significant changes to its app verification system. These changes particularly affect how apps access services like Google Drive. Here, you will find all the details and updates on our progress in resolving the issue.">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2024-08-09" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="android" />
+      
+        <meta property="article:tag" content="ios" />
+      
+        <meta property="article:tag" content="google drive" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
+    
+    <meta property="og:locale" content="" />
+    
+      <meta property="og:locale:alternate" content="" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.46fd1f602a4424fc176490a9d733e8e7d49bcac5ca7c4e544a97dad56b988ab7.css" integrity="sha256-Rv0fYCpEJPwXZJCp1zPo59SbysXKfE5USpfa1WuYirc=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/blog/2024/08/09/google-drive-issue/" />
+    
+    
+      
+    
+  </head>
+  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <nav x-init="determineGitHubStargazersCount('en')" class="w-full max-h-screen text-primary fixed lg:px-8 bg-white shadow z-50">
+  <div class="flex justify-between items-stretch w-full">
+    
+    <div class="flex items-stretch">
+      
+      <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+        <i x-show="isNavOpen" class="fas fa-times fa-fw" x-cloak></i>
+        <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+      </button>
+
+      <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="/">
+        <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+        <span class="hidden md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+      </a>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+        </li>
+        <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Support Us</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+              <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+              <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
+            </div>
+          </div>
+        </li>
+        <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Learn More</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+              <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+              <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+              <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+              <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+              <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+              <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
+              <a href="/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">NIS-2-Guideline</a>
+              <a href="/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Protecting Cloud Data Against AI</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-stretch">
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+            <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
+            <span id="github-stargazers"></span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1">Get Started</a>
+        </li>
+      </ul>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center m-3 border-l border-primary"></li>
+          
+        <li x-data="{ isLangDropdownOpen: false }" class="flex items-center mx-2">
+          <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+            <span>EN</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="relative">
+            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+              <a :href="'/de/blog/2024/08/09/google-drive-issue/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Support Us
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Learn More
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/nis-2-guideline/">NIS-2-Guideline</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/protecting-data-against-ai/">Protecting Cloud Data Against AI</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> EN
+    </div>
+    <div class="mt-1">
+      
+      <a :href="'/de/blog/2024/08/09/google-drive-issue/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      
+    </div>
+
+    <hr class="border-primary my-2"/>
+
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator on GitHub</span>
+    </a>
+  </div>
+</nav>
+
+
+  
+  <script type="text/javascript" src="/js/nav.min.c207b62e4a96099b751048fbeb67db4f95e0e7d0c5221c0bd599c67194c5d00b.js" integrity="sha256-wge2LkqWCZt1EEj762fbT5Xg59DFIhwL1ZnGcZTF0As=" defer></script>
+
+<div class="bg-gray-100 min-vh-80 pt-12">
+    
+    
+  <div class="container-prose py-12">
+    <article class="mb-12">
+      <header class="mb-6">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/blog/">Blog</a> / Current Issue with Google Drive Connection in Cryptomator for Android and iOS</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/blog/2024/08/09/google-drive-issue/">2024-08-09</a></span>
+        </div>
+        
+      </header>
+
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>Hello Community!</p>
+<p>We would like to inform you about a current issue that some of you may be experiencing while using our Cryptomator apps for Android and iOS. It involves difficulties in connecting to Google Drive that have arisen in the past few days. Here, you will find all the details and updates on our progress in resolving the issue.</p>
+<h2 id="what-happened">What Happened?</h2>
+<p>Google recently introduced significant changes to its app verification system. These changes particularly affect how apps access services like Google Drive. As a result of this update, you may encounter an error message when trying to connect Google Drive with Cryptomator, stating that Cryptomator is blocked because it is an &ldquo;unverified app&rdquo;.</p>
+<h2 id="why-is-this-issue-occurring">Why Is This Issue Occurring?</h2>
+<p>Google has substantially tightened the requirements for app verification, especially for apps that access sensitive user data. This not only affects Cryptomator but potentially all apps that integrate with Google services. The aim of these changes is to enhance user security and protect their data. However, as a consequence, apps that have not yet fully adapted to the new system may be temporarily blocked.</p>
+<h2 id="what-are-we-doing-to-resolve-the-issue">What Are We Doing to Resolve the Issue?</h2>
+<p>We are fully aware of the problem and are working diligently to find a solution. Our team is in close contact with Google to complete the necessary verification processes and re-certify Cryptomator as a trusted app. Unfortunately, this task is more complex than initially anticipated. Google&rsquo;s new requirements necessitate additional adjustments to our app, which must be carefully implemented and tested.</p>
+<p>We want to emphasize that the security of your data is our top priority. Therefore, we are taking the time to thoroughly implement these changes to ensure that Cryptomator remains a secure and reliable solution for your encrypted data.</p>
+<h2 id="what-can-you-do">What Can You Do?</h2>
+<p>We understand that this issue is frustrating for many of you, and we sincerely apologize for the inconvenience. In the meantime, there are a few things you can do to avoid interrupting your workflow:</p>
+<ol>
+<li>Use Alternative Cloud Services: If you cannot use Google Drive at the moment, you have the option to integrate alternative cloud services like Dropbox, OneDrive, or WebDAV-based services in Cryptomator.</li>
+<li>Local Decryption: You can still decrypt your encrypted vaults using the desktop application. If the vault is not that large, you can also download it to your mobile device and decrypt it locally.</li>
+<li>Monitor Updates: We will keep you regularly informed about the progress of our work. As soon as the issue is resolved, we will promptly notify you with the corresponding updates. Keep an eye on our social media accounts on X and Mastodon for updates.</li>
+</ol>
+<h2 id="outlook">Outlook</h2>
+<p>We are confident that we will be able to provide a solution soon. Our goal is to restore full functionality to Cryptomator as quickly as possible. We greatly appreciate your patience and understanding during this time.</p>
+<p>Once again, thank you for your support and trust in Cryptomator. We are working tirelessly to provide you with the best possible experience with our app, and we will keep you informed as soon as there are any updates.</p>
+<p>Best regards,<br>
+The Cryptomator Team</p>
+<h2 id="faq-google-oauth-issues-in-cryptomator-for-android-and-ios">FAQ: Google OAuth Issues in Cryptomator for Android and iOS</h2>
+<p><strong>Q1: What is the issue with Google Drive and Cryptomator for Android and iOS?</strong><br>
+<strong>A1:</strong> Users are experiencing issues with Google blocking access to your files when using Cryptomator for Android and iOS during the sign-in process.</p>
+<p><strong>Q2: How can I access my files? Is there a workaround?</strong><br>
+<strong>A2:</strong> You can always access your files on your Desktop computer or by copying your vault from your Google Drive to your phone&rsquo;s harddrive and then using Cryptomator for Android and iOS to access them locally.</p>
+<p><strong>Q3: Are my files safe? Is my account safe?</strong><br>
+<strong>A3:</strong> Yes. Your files and account both are safe and at no risk of being deleted or accessed by malicious actors. They are not any less safe than they were a week ago.
+Also your files are still encrypted.</p>
+<p><strong>Q4: Is there a problem with my Google account?</strong><br>
+<strong>A4:</strong> No. This is not a problem with your Google account and this should affect all users of Cryptomator for Android and iOS and Google Drive.</p>
+<p><strong>Q5: Is Cryptomator for Android and iOS safe?</strong><br>
+<strong>A5:</strong> Yes. Cryptomator for Android is safe and we are currently not aware of any security issues.
+Also see <strong>Q7.</strong></p>
+<p><strong>Q6: Which &ldquo;sensitive info&rdquo; is Cryptomator for Android and iOS trying to access?</strong><br>
+<strong>A6:</strong> To allow access to the files you have stored in Google Drive and to enable the associated functionality, the Cryptomator app needs access to your Google Drive.
+Even if the message from Google sounds scary, this is nothing new and nothing to worry about.
+Also see <strong>Q7.</strong></p>
+<p><strong>Q7: Why is this happening? Why is Google blocking Cryptomator for Android and iOS?</strong><br>
+<strong>A7:</strong> To enable access to your files stored in Google Drive, Cryptomator needs both your permission and Google&rsquo;s consent. Google has recently adopted newer and stricter security policies that we must adhere to in order to continue to provide access to your Google Drive in the app. If we don&rsquo;t prove to Google in time that we comply with these guidelines, access will be blocked, which is what is happening right now. We are currently in the middle of this verification process to regain access, but this is quite time-consuming and labor-intensive, all of which has led to this situation.</p>
+<p><strong>Q8: What about Cryptomator for Desktop?</strong><br>
+<strong>A8:</strong> The affected functionality is not offered by Cryptomator for Desktop, so there currently is no problem there.</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  
+  
+    
+      
+    
+  
+  
+    
+      
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/08/09/google-drive-issue/" defer></script>
+    
+  
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Fediverse</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://twitter.com/Cryptomator" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.358d9afbb1ab5befa2f48061a30776e5bcd7707f410a606ba985f98bc3b1c034.js" integrity="sha256-NY2a&#43;7GrW&#43;&#43;i9IBhowd25bzXcH9BCmBrqYX5i8OxwDQ=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+  </body>
+</html>

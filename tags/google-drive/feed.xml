@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cryptomator Blog</title>
+    <description>Recent Blog Posts on cryptomator.org</description>
+    <link>https://cryptomator.org/tags/google-drive/</link>
+    <language>en</language>
+    <atom:link href="https://cryptomator.org/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://cryptomator.org/img/logo.png</url>
+      <title>Cryptomator Blog</title>
+      <link>https://cryptomator.org/tags/google-drive/</link>
+    </image>
+    <lastBuildDate>Fri, 09 Aug 2024 14:58:51 +0000</lastBuildDate>
+    <generator>Hugo</generator>
+    
+      <item>
+        <title>Current Issue with Google Drive Connection in Cryptomator for Android and iOS</title>
+        <description>&lt;p&gt;Hello Community!&lt;/p&gt;
+&lt;p&gt;We would like to inform you about a current issue that some of you may be experiencing while using our Cryptomator apps for Android and iOS. It involves difficulties in connecting to Google Drive that have arisen in the past few days. Here, you will find all the details and updates on our progress in resolving the issue.&lt;/p&gt;
+&lt;h2 id=&#34;what-happened&#34;&gt;What Happened?&lt;/h2&gt;
+&lt;p&gt;Google recently introduced significant changes to its app verification system. These changes particularly affect how apps access services like Google Drive. As a result of this update, you may encounter an error message when trying to connect Google Drive with Cryptomator, stating that Cryptomator is blocked because it is an &amp;ldquo;unverified app&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;why-is-this-issue-occurring&#34;&gt;Why Is This Issue Occurring?&lt;/h2&gt;
+&lt;p&gt;Google has substantially tightened the requirements for app verification, especially for apps that access sensitive user data. This not only affects Cryptomator but potentially all apps that integrate with Google services. The aim of these changes is to enhance user security and protect their data. However, as a consequence, apps that have not yet fully adapted to the new system may be temporarily blocked.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-we-doing-to-resolve-the-issue&#34;&gt;What Are We Doing to Resolve the Issue?&lt;/h2&gt;
+&lt;p&gt;We are fully aware of the problem and are working diligently to find a solution. Our team is in close contact with Google to complete the necessary verification processes and re-certify Cryptomator as a trusted app. Unfortunately, this task is more complex than initially anticipated. Google&amp;rsquo;s new requirements necessitate additional adjustments to our app, which must be carefully implemented and tested.&lt;/p&gt;
+&lt;p&gt;We want to emphasize that the security of your data is our top priority. Therefore, we are taking the time to thoroughly implement these changes to ensure that Cryptomator remains a secure and reliable solution for your encrypted data.&lt;/p&gt;
+&lt;h2 id=&#34;what-can-you-do&#34;&gt;What Can You Do?&lt;/h2&gt;
+&lt;p&gt;We understand that this issue is frustrating for many of you, and we sincerely apologize for the inconvenience. In the meantime, there are a few things you can do to avoid interrupting your workflow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use Alternative Cloud Services: If you cannot use Google Drive at the moment, you have the option to integrate alternative cloud services like Dropbox, OneDrive, or WebDAV-based services in Cryptomator.&lt;/li&gt;
+&lt;li&gt;Local Decryption: You can still decrypt your encrypted vaults using the desktop application. If the vault is not that large, you can also download it to your mobile device and decrypt it locally.&lt;/li&gt;
+&lt;li&gt;Monitor Updates: We will keep you regularly informed about the progress of our work. As soon as the issue is resolved, we will promptly notify you with the corresponding updates. Keep an eye on our social media accounts on X and Mastodon for updates.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;outlook&#34;&gt;Outlook&lt;/h2&gt;
+&lt;p&gt;We are confident that we will be able to provide a solution soon. Our goal is to restore full functionality to Cryptomator as quickly as possible. We greatly appreciate your patience and understanding during this time.&lt;/p&gt;
+&lt;p&gt;Once again, thank you for your support and trust in Cryptomator. We are working tirelessly to provide you with the best possible experience with our app, and we will keep you informed as soon as there are any updates.&lt;/p&gt;
+&lt;p&gt;Best regards,&lt;br&gt;
+The Cryptomator Team&lt;/p&gt;
+&lt;h2 id=&#34;faq-google-oauth-issues-in-cryptomator-for-android-and-ios&#34;&gt;FAQ: Google OAuth Issues in Cryptomator for Android and iOS&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q1: What is the issue with Google Drive and Cryptomator for Android and iOS?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A1:&lt;/strong&gt; Users are experiencing issues with Google blocking access to your files when using Cryptomator for Android and iOS during the sign-in process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q2: How can I access my files? Is there a workaround?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A2:&lt;/strong&gt; You can always access your files on your Desktop computer or by copying your vault from your Google Drive to your phone&amp;rsquo;s harddrive and then using Cryptomator for Android and iOS to access them locally.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q3: Are my files safe? Is my account safe?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A3:&lt;/strong&gt; Yes. Your files and account both are safe and at no risk of being deleted or accessed by malicious actors. They are not any less safe than they were a week ago.
+Also your files are still encrypted.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q4: Is there a problem with my Google account?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A4:&lt;/strong&gt; No. This is not a problem with your Google account and this should affect all users of Cryptomator for Android and iOS and Google Drive.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q5: Is Cryptomator for Android and iOS safe?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A5:&lt;/strong&gt; Yes. Cryptomator for Android is safe and we are currently not aware of any security issues.
+Also see &lt;strong&gt;Q7.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q6: Which &amp;ldquo;sensitive info&amp;rdquo; is Cryptomator for Android and iOS trying to access?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A6:&lt;/strong&gt; To allow access to the files you have stored in Google Drive and to enable the associated functionality, the Cryptomator app needs access to your Google Drive.
+Even if the message from Google sounds scary, this is nothing new and nothing to worry about.
+Also see &lt;strong&gt;Q7.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q7: Why is this happening? Why is Google blocking Cryptomator for Android and iOS?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A7:&lt;/strong&gt; To enable access to your files stored in Google Drive, Cryptomator needs both your permission and Google&amp;rsquo;s consent. Google has recently adopted newer and stricter security policies that we must adhere to in order to continue to provide access to your Google Drive in the app. If we don&amp;rsquo;t prove to Google in time that we comply with these guidelines, access will be blocked, which is what is happening right now. We are currently in the middle of this verification process to regain access, but this is quite time-consuming and labor-intensive, all of which has led to this situation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q8: What about Cryptomator for Desktop?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A8:&lt;/strong&gt; The affected functionality is not offered by Cryptomator for Desktop, so there currently is no problem there.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2024/08/09/google-drive-issue/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2024/08/09/google-drive-issue/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>android</category>
+        
+        <category>ios</category>
+        
+        <category>google drive</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator Hub 1.3.0: The Account Key Update</title>
+        <description>&lt;p&gt;The release of Cryptomator Hub 1.3.0 marks an exciting feature update, which introduces an &lt;em&gt;Account Key&lt;/em&gt; for users. This update, while necessary and beneficial, will require active participation from users. Here&amp;rsquo;s what to expect during the transition from version 1.2.x to 1.3.0.&lt;/p&gt;
+&lt;h2 id=&#34;ℹ-preparation-is-key&#34;&gt;ℹ Preparation is Key&lt;/h2&gt;
+&lt;p&gt;Before we dive into the upgrade process, ensure every vault admin secures a backup of their &lt;em&gt;Vault Recovery Keys&lt;/em&gt; and &lt;em&gt;Vault Admin Passwords&lt;/em&gt;. &lt;strong&gt;⚠️ Doubling down on this step is critical; your backups are your safety net. Without them, our hands are tied.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;-updating-cryptomator-hub-server-to-130&#34;&gt;⬆ Updating Cryptomator Hub (Server) to 1.3.0&lt;/h2&gt;
+&lt;p&gt;This section is only relevant for administrators who host their own Cryptomator Hub instance. If you&amp;rsquo;re using our managed service, you can skip this section. We will reach out to you to arrange a date and time to update your instance.&lt;/p&gt;
+&lt;p&gt;As mentioned above, if you&amp;rsquo;re an administrator of a self-hosted Cryptomator Hub instance, follow these steps to update Cryptomator Hub:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;Back up the database&lt;/a&gt;. &lt;strong&gt;⚠️ The importance of a working backup cannot be overstated.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Refresh your container image to the latest version: &lt;code&gt;ghcr.io/cryptomator/hub:1.3.0&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Skip this step if you&amp;rsquo;re using the &lt;code&gt;stable&lt;/code&gt; tag. We will update the &lt;code&gt;stable&lt;/code&gt; tag to point to the new version in a couple of weeks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implement the changes within your container orchestrator. Monitor for healthy pod statuses before proceeding.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;-updating-cryptomator-desktop-client-to-1110&#34;&gt;⬆ Updating Cryptomator (Desktop Client) to 1.11.0&lt;/h2&gt;
+&lt;p&gt;Updating the Cryptomator desktop application is recommended for all users, but not technically required for now. Vaults can still be unlocked using an old version. This backward compatibility provides flexibility for a gradual rollout of the updated app. Nevertheless, making changes to access, incl. adding new members to a vault and adding new devices, requires Cryptomator 1.11.0 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;-introducing-account-keys&#34;&gt;🔑 Introducing Account Keys&lt;/h2&gt;
+&lt;p&gt;With the updated app, users will encounter a two-step migration on their first unlock attempt:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Secure and store their new personal &lt;em&gt;Account Key&lt;/em&gt;. &lt;strong&gt;⚠️ It&amp;rsquo;s crucial for future logins from other devices.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Use the &lt;em&gt;Account Key&lt;/em&gt; to link their Cryptomator device to their account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This procedure is a one-time requirement for every user. It allows users to self-manage linked devices and vault owners to more easily manage access without having to frequently regrant permissions each time a user logs in from a new device.&lt;/p&gt;
+&lt;h2 id=&#34;-claiming-vault-ownership-and-granting-access&#34;&gt;👤 Claiming Vault Ownership and Granting Access&lt;/h2&gt;
+&lt;p&gt;After updating to Hub 1.3.0, vault owners (formerly known as vault admins) are prompted to claim their vault again using the &lt;em&gt;Vault Admin Password&lt;/em&gt;. Initially, only one user can claim ownership. Subsequently, this primary owner can grant ownership rights to others, thus eliminating the need to share the &lt;em&gt;Vault Admin Password&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Once vault members have navigated through the account migration, vault owners should refresh vault permissions. This action will securely distribute the necessary vault keys to the users.&lt;/p&gt;
+&lt;h2 id=&#34;-frequently-asked-questions&#34;&gt;❓ Frequently Asked Questions&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Q: What exactly is my &lt;em&gt;Account Key&lt;/em&gt;?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; The &lt;em&gt;Account Key&lt;/em&gt; is your personal secret, required for registering new devices and establishing your identity across different Cryptomator apps and browsers. Treat it with the same level of security as you would with any important password.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: How do I retrieve my &lt;em&gt;Account Key&lt;/em&gt; if I lose it?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; You can retrieve your &lt;em&gt;Account Key&lt;/em&gt; by logging into your Cryptomator Hub account and navigating to the &lt;em&gt;Profile&lt;/em&gt; page. There, you can view your &lt;em&gt;Account Key&lt;/em&gt;. If your browser doesn&amp;rsquo;t have access and you can&amp;rsquo;t retrieve it anymore, you can reset your account. In this case, you will lose access to all your vaults and the vault owner(s) will have to grant you access again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Will the update affect my existing vaults and the data they contain?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; No, the update will not affect your vaults or the data they contain. This update only affects the unlock process and access management, not the encrypted data itself.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What happens to the &lt;em&gt;Vault Admin Password&lt;/em&gt; after I reclaim ownership?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; Upon reclaim, the &lt;em&gt;Vault Admin Password&lt;/em&gt; becomes obsolete. You may destroy any copies of it. Compromised &lt;em&gt;Vault Admin Passwords&lt;/em&gt; don&amp;rsquo;t pose a threat to the security of the vault.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: Is the process for adding new users to a vault different?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; The difference is that you don&amp;rsquo;t grant access to each and every device, but to the user once, thanks to the &lt;em&gt;Account Key&lt;/em&gt;. The user can link their devices to their account and access the vault from any of them without having to ask for permission again.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q: What should I do if I encounter problems during the upgrade process?&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;A:&lt;/strong&gt; If you encounter any problems during the upgrade process, please contact us at &lt;a href=&#34;mailto:hub@cryptomator.org&#34;&gt;hub@cryptomator.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;-wrapping-up&#34;&gt;📋 Wrapping Up&lt;/h2&gt;
+&lt;p&gt;The upgrade to Cryptomator Hub 1.3.0 and Cryptomator 1.11.0 is more than a routine update. It&amp;rsquo;s a shift towards greater security and user agency. Prepare for the update by backing up essential data, and follow the outlined steps to ensure a smooth transition. Embrace the change, as it brings forward a more robust and user-friendly way to manage your vaults.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/12/01/hub-1.3.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/12/01/hub-1.3.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator 1.10.0 Release</title>
+        <description>&lt;p&gt;We&amp;rsquo;re happy to announce the release of Cryptomator 1.10.0. 🎉 Let&amp;rsquo;s dive into what this new release has to offer!&lt;/p&gt;
+&lt;h2 id=&#34;expert-settings-during-vault-creation&#34;&gt;Expert Settings During Vault Creation&lt;/h2&gt;
+&lt;p&gt;We understand that expert users desire more control and would like to override some default values in the vault configuration file. That&amp;rsquo;s why the new version brings the addition of expert settings during vault creation. For now, you can set the maximum length of encrypted file names. This feature ensures that Cryptomator adapts to the peculiarities of various cloud storage systems. 🛠️&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/expert-settings.png&#34; srcset=&#34;https://cryptomator.org/img/blog/expert-settings.png 1x, https://cryptomator.org/img/blog/expert-settings@2x.png 2x&#34; alt=&#34;Expert Settings During Vault Creation&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;proper-tray-menu-support-on-linux&#34;&gt;Proper Tray Menu Support on Linux&lt;/h2&gt;
+&lt;p&gt;A huge shoutout to &lt;a href=&#34;https://github.com/purejava&#34;&gt;Ralph (purejava on GitHub)&lt;/a&gt; for his open-source contribution once again! 🙌 Thanks to his efforts, we now have proper tray menu support with AppIndicator integration. It&amp;rsquo;s yet another step towards making Cryptomator feel native and fluid for Linux users.&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/tray-menu-appindicator.png&#34; srcset=&#34;https://cryptomator.org/img/blog/tray-menu-appindicator.png 1x, https://cryptomator.org/img/blog/tray-menu-appindicator@2x.png 2x&#34; alt=&#34;Proper Tray Menu Support on Linux&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;aarch64-build-for-appimage&#34;&gt;AArch64 Build for AppImage&lt;/h2&gt;
+&lt;p&gt;Good news for Linux users on AArch64 architectures! 🎉 Cryptomator 1.10.0 includes an AArch64 build for AppImage. With this addition, we&amp;rsquo;re expanding our reach and welcome more Linux users.&lt;/p&gt;
+&lt;h2 id=&#34;improved-error-dialog&#34;&gt;Improved Error Dialog&lt;/h2&gt;
+&lt;p&gt;Encountering an error can be frustrating 😓, especially when you&amp;rsquo;re not sure what to do next. We&amp;rsquo;ve redesigned our error dialog to focus on solutions. Now, when you run into an error, the dialog will guide you to a potential solution if it exists in our error database. This enhancement aims to make troubleshooting more user-friendly and efficient. ✅&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/look-up-solution.png&#34; srcset=&#34;https://cryptomator.org/img/blog/look-up-solution.png 1x, https://cryptomator.org/img/blog/look-up-solution@2x.png 2x&#34; alt=&#34;Improved Error Dialog&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;refreshed-macos-app-icon&#34;&gt;Refreshed macOS App Icon&lt;/h2&gt;
+&lt;p&gt;Mac users, we haven&amp;rsquo;t forgotten about you! 🍏 Aesthetics matter, and with this update, Cryptomator boasts a brand-new app icon for macOS. How do you like Cryptobot in a squircle?&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/macos-app-icon-2023.png&#34; srcset=&#34;https://cryptomator.org/img/blog/macos-app-icon-2023.png 1x, https://cryptomator.org/img/blog/macos-app-icon-2023@2x.png 2x&#34; alt=&#34;Refreshed macOS App Icon&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Cryptomator 1.10.0 brings a mix of enhancements and several bug fixes to ensure a smoother user experience. As always, your feedback is welcome. For a detailed list of all changes, please check out the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.10.0&#34;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A special thank you to &lt;a href=&#34;https://github.com/Rexbas&#34;&gt;Bas (Rexbas on GitHub)&lt;/a&gt; and &lt;a href=&#34;https://github.com/sschuberth&#34;&gt;Sebastian (sschuberth on GitHub)&lt;/a&gt; for their open-source contributions as well. 🌟&lt;/p&gt;
+&lt;p&gt;Thank you for your continued support and trust in Cryptomator. ❤️ Update to 1.10.0 now and let us know what you think!&lt;/p&gt;
+&lt;p&gt;Happy crypting! 🔒&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Sep 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/09/13/release-1.10.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/09/13/release-1.10.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>windows</category>
+        
+        <category>mac</category>
+        
+        <category>linux</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator Hub 1.2.0: More Control and Flexibility</title>
+        <description>&lt;p&gt;We&amp;rsquo;re excited to release Cryptomator Hub 1.2.0, featuring essential updates for both administrators and users. 🎉 Let&amp;rsquo;s dive into what&amp;rsquo;s new.&lt;/p&gt;
+&lt;h2 id=&#34;-audit-logs-premium-feature&#34;&gt;🗒 Audit Logs (Premium Feature)&lt;/h2&gt;
+&lt;p&gt;Our new Audit Logs feature, available with a paid license, empowers administrators with insights into user activities. Monitor vault changes, key retrievals, and other essential activities, providing an extra layer of transparency and accountability within your organization.&lt;/p&gt;
+&lt;h2 id=&#34;-improved-vault-management&#34;&gt;⚙️ Improved Vault Management&lt;/h2&gt;
+&lt;p&gt;With the &amp;ldquo;Edit Vault Metadata&amp;rdquo; action, customizing vault details is now possible. You can now change the name and description of your vaults, helping you keep your vaults organized and easily identifiable. Plus, vault names no longer need to be unique, offering more flexibility.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve also added the &amp;ldquo;Archive Vault&amp;rdquo; action, allowing you to remove vaults from your list. Easily reactivate archived vaults whenever needed.&lt;/p&gt;
+&lt;h2 id=&#34;-streamlined-user-profile-page&#34;&gt;👤 Streamlined User Profile Page&lt;/h2&gt;
+&lt;p&gt;Our new &amp;ldquo;User Profile&amp;rdquo; page centralizes device management and user settings in one convenient location. Additionally, we&amp;rsquo;ve integrated a &amp;ldquo;Manage Account&amp;rdquo; link for users to be able to change their password and configure 2FA via Keycloak.&lt;/p&gt;
+&lt;h2 id=&#34;-upgrade-info&#34;&gt;⬆ Upgrade Info&lt;/h2&gt;
+&lt;p&gt;Upgrading to 1.2.0 is simple. If you are on the &lt;code&gt;stable&lt;/code&gt; lane, you just have to pull the image and restart the service. Otherwise, update the version number in your Docker Compose or Kubernetes spec file before you restart the service. Remember to always &lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;back up your data&lt;/a&gt;, especially before upgrading. For managed instances, rest assured, you&amp;rsquo;re already on the latest version.&lt;/p&gt;
+&lt;h2 id=&#34;-whats-next&#34;&gt;⏭ What&amp;rsquo;s Next&lt;/h2&gt;
+&lt;p&gt;We&amp;rsquo;re embarking on a significant refactoring journey for our key management system in the next feature update. This update will introduce &amp;ldquo;user keys&amp;rdquo; as intermediary key pairs between vault keys and device keys. Vault owners will then grant access to users and not individual devices, which allows users to manage their devices independently.&lt;/p&gt;
+&lt;p&gt;This refactoring will deprecate vault admin passwords and introduce the vault owner role, providing a more secure and efficient way to manage your vaults.&lt;/p&gt;
+&lt;p&gt;Stay tuned for more exciting updates!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/08/11/hub-1.2.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/08/11/hub-1.2.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator 1.8.0 for Android</title>
+        <description>&lt;p&gt;As you may have already noticed, we released Cryptomator 1.8.0 for Android last month! It contains a lot of internal changes, a bunch of new features, and some bug fixes.&lt;/p&gt;
+&lt;p&gt;This release took quite some time, but we finally made it. 🎉 In addition to the &lt;a href=&#34;https://github.com/cryptomator/android/releases/tag/1.8.0&#34;&gt;release notes&lt;/a&gt;, we&amp;rsquo;d like to give you more details about some changes.&lt;/p&gt;
+&lt;h2 id=&#34;material-3-design&#34;&gt;Material 3 Design&lt;/h2&gt;
+&lt;p&gt;The most obvious change in this release is the migration to Material 3, which modernizes the user interface.&lt;/p&gt;
+&lt;h2 id=&#34;cryptomator-lite-reproducible-build-and-f-droid&#34;&gt;Cryptomator Lite: Reproducible Build and F-Droid&lt;/h2&gt;
+&lt;p&gt;A less obvious change is that we now offer a new flavor: Cryptomator Lite.&lt;/p&gt;
+&lt;p&gt;This version is built using a reproducible build technique, which has two advantages: You as a user can verify that the published source code matches the published binary, which in turn means that we didn&amp;rsquo;t and couldn&amp;rsquo;t add anything during build time.&lt;/p&gt;
+&lt;p&gt;The other advantage is that this technique allows us to publish our app to stores like the main F-Droid repository, but sign it with our keys, which means we still have control over the signing keys.&lt;/p&gt;
+&lt;p&gt;Cryptomator Lite can be built using the following Docker image and then compared to the corresponding releases: &lt;a href=&#34;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&#34;&gt;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aes-gcm-new-default-for-content-encryption&#34;&gt;AES-GCM: New Default for Content Encryption&lt;/h2&gt;
+&lt;p&gt;Starting with Cryptomator 1.8.0 for Android, we will follow our Desktop application: All newly created vaults will use &lt;a href=&#34;https://en.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; instead of AES-CTR+HMAC for file content encryption.&lt;/p&gt;
+&lt;p&gt;You can continue to use your existing vaults as before, no action is required on your part. Cryptomator for Android will support both modes of operation.&lt;/p&gt;
+&lt;p&gt;Read more about this in the &lt;a href=&#34;https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/&#34;&gt;Cryptomator 1.7.0 blog post&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/04/12/android-1.8.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/04/12/android-1.8.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>android</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator Hub: Managed – Request Access Now</title>
+        <description>&lt;p&gt;We are happy to announce that managed instances of &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt; are now available! 🎉 And we have released Hub 1.1.0 with recovery key support.&lt;/p&gt;
+&lt;h2 id=&#34;request-access&#34;&gt;Request Access&lt;/h2&gt;
+&lt;p&gt;First things first. 🚀 To get started, you can now &lt;a href=&#34;https://cryptomator.org/hub/managed/&#34;&gt;request access to a managed instance of Cryptomator Hub&lt;/a&gt;. After your request, we will get back to you as soon as possible. Currently, some of the steps we take internally to create a managed Hub instance are still done &amp;ldquo;manually&amp;rdquo;. We are working on automating this process, but we didn&amp;rsquo;t want to delay the release any longer.&lt;/p&gt;
+&lt;h2 id=&#34;managed-vs-self-hosted&#34;&gt;Managed vs. Self-Hosted&lt;/h2&gt;
+&lt;p&gt;Managed instances of Cryptomator Hub are a great way to start using Cryptomator Hub right away without having to deploy and maintain your self-hosted instance.&lt;/p&gt;
+&lt;p&gt;Until now, you could &lt;em&gt;only&lt;/em&gt; use the self-hosted version of Hub. This requires a lot of knowledge about how to deploy a software container using Kubernetes or Docker Compose. And if you have the knowledge, you still have to maintain the instance yourself. This includes updating the software, monitoring the instance, and keeping it secure.&lt;/p&gt;
+&lt;p&gt;With managed instances, we will take care of deploying and maintaining your Hub instance, while ensuring that your instance is highly available. You can focus on your work and your team.&lt;/p&gt;
+&lt;p&gt;This is all possible because of the underlying &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;zero-knowledge key management&lt;/a&gt;. Cryptomator Hub doesn&amp;rsquo;t store unencrypted keys. All key material remains locally on the client. We can&amp;rsquo;t decrypt your data. It also helps that Hub is independent of your cloud storage provider, which means we have no access to either the key material or the cloud files.&lt;/p&gt;
+&lt;h2 id=&#34;release-110-recovery-key&#34;&gt;Release 1.1.0: Recovery Key&lt;/h2&gt;
+&lt;p&gt;We didn&amp;rsquo;t stop there and released Cryptomator Hub 1.1.0 with recovery key support. This allows you to access your data in case of disaster. Not only that, the recovery key is compatible with Cryptomator&amp;rsquo;s recovery key. This means you can convert your existing vaults to Hub vaults and vice versa.&lt;/p&gt;
+&lt;p&gt;What does that mean for your managed instance? If we cease to exist (we get asked this a lot, thanks to Boxcryptor 😉), you can convert your Hub vaults to &amp;ldquo;regular&amp;rdquo; password-based vaults, completely offline, so that you &lt;em&gt;always&lt;/em&gt; have access to your data under any circumstances. This is also great for your self-hosted instance if something happens to your server.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/02/28/hub-managed/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/02/28/hub-managed/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator 1.7.0: What You Need to Know</title>
+        <description>&lt;p&gt;If you&amp;rsquo;re subscribed to our &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases&#34;&gt;releases on GitHub&lt;/a&gt;, this is already old news for you: We have released the &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.7.0-beta1&#34;&gt;first beta&lt;/a&gt; of the upcoming Cryptomator 1.7.0! It contains a lot of internal changes and a bunch of new features, some of which are almost as old as Cryptomator itself.&lt;/p&gt;
+&lt;p&gt;We are very proud of this release, as it eliminates technical debt, delivers long-awaited features, and prepares Cryptomator Desktop for the future. But putting aside about 3,000 lines of code changes and a 4-month development iteration (not counting work in our libraries), let&amp;rsquo;s dive into this release to see what you, the user, will get out of it.&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/cryptomator-1-7-0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/cryptomator-1-7-0.png 1x, https://cryptomator.org/img/blog/cryptomator-1-7-0@2x.png 2x&#34; alt=&#34;Cryptomator 1.7.0 Release&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;locate-encrypted-file&#34;&gt;Locate Encrypted File&lt;/h2&gt;
+&lt;p&gt;As already mentioned, Cryptomator 1.7.0 includes a feature that has been requested for a very long time: Locating the encrypted counterpart of a file. Sounds complex, but once you remember that Cryptomator encrypts filenames and obfuscates the directory structure (&lt;a href=&#34;https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption&#34;&gt;see our docs&lt;/a&gt;), it is easy to understand.&lt;/p&gt;
+&lt;p&gt;Prior to 1.7.0, you had to guess which encrypted file corresponds to which cleartext file based on the exact timestamps. Now, once the vault is unlocked, the encrypted counterpart of any file in the vault can be revealed by clicking on the &amp;ldquo;Locate Encrypted File&amp;rdquo; button and selecting a file in the vault. Or you can simply drag and drop the files from your vault onto this button. See for yourself in this short video:&lt;/p&gt;
+&lt;video class=&#34;rounded&#34; autoplay loop muted playsinline&gt;
+  &lt;source src=&#34;https://static.cryptomator.org/blog/locate-encrypted-file.mov&#34; type=&#34;video/mp4&#34;&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+&lt;h2 id=&#34;experimental-support-for-fuse-t&#34;&gt;Experimental Support for FUSE-T&lt;/h2&gt;
+&lt;p&gt;On macOS, Cryptomator can use two different technologies to integrate your vault into the system: macFUSE and WebDAV. Unfortunately, the WebDAV implementation on macOS is not the most reliable one. Starting with Apple Silicon Macs, it became unusable for some users who reported system freezes. To make matters worse, macFUSE, which has been the preferred option for at least 3 years, is also on its last legs. Apple has deprecated the OS APIs used by macFUSE since macOS 12.3.&lt;/p&gt;
+&lt;p&gt;For the past year, we have been desperately searching for an alternative. Our proof of concept using Apple&amp;rsquo;s File Provider framework was not very convincing and would basically require a whole new architecture. Fortunately, you, our community, informed us about an alternative: &lt;a href=&#34;https://www.fuse-t.org/&#34;&gt;FUSE-T&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;FUSE-T is a young project that does not rely on deprecated macOS APIs and can be used as a drop-in-replacement for macFUSE. It requires a much less deep system integration than macFUSE while offering a similar performance. This makes Cryptomator ready for the medium-term future on macOS. But since FUSE-T is quite young, support for it is experimental for now. We encourage you to try it though!&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/preferences-fuse-t.png&#34; srcset=&#34;https://cryptomator.org/img/blog/preferences-fuse-t.png 1x, https://cryptomator.org/img/blog/preferences-fuse-t@2x.png 2x&#34; alt=&#34;Experimental Support for FUSE-T&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;So, while the File Provider extension is not out of our sight, we are relieved to be able to offer you a stable system integration of your Cryptomator vaults.&lt;/p&gt;
+&lt;h2 id=&#34;volume-types-overhaul&#34;&gt;Volume Types Overhaul&lt;/h2&gt;
+&lt;p&gt;Looking at the screenshot above, you might have noticed: The volume types have changed, too. That&amp;rsquo;s right, and that&amp;rsquo;s because we rewrote the entire volume type selection and internal wiring logic. It was a huge development effort, but it resulted in a less complex and easier to maintain architecture under the hood. It also resulted in more options for you.&lt;/p&gt;
+&lt;h3 id=&#34;more-options&#34;&gt;More Options&lt;/h3&gt;
+&lt;p&gt;The old implementation basically offered 3 (or 2) options: WebDAV, Dokany, and FUSE. Now, specialized implementations are offered for each OS. For example, on Windows you can select between WinFsp, WinFsp (Local Drive), Dokany, WebDAV (Windows Explorer) and WebDAV (Fallback).&lt;/p&gt;
+&lt;p&gt;But don&amp;rsquo;t worry, this selection is only important if you have special requirements for the virtual drive. Otherwise, Cryptomator has a new &amp;ldquo;Automatic&amp;rdquo; option and is set up to choose the best suited option for you, and you don&amp;rsquo;t need to worry about it.&lt;/p&gt;
+&lt;p&gt;We have even added an emergency option: The aforementioned &amp;ldquo;WebDAV (Fallback)&amp;rdquo;. If you can&amp;rsquo;t mount your vault at all, it makes your vault accessible via a local-only server using the web standard WebDAV. We&amp;rsquo;ll have a guide describing this in more detail soon.&lt;/p&gt;
+&lt;h3 id=&#34;winfsp-change-local-vs-network-drive&#34;&gt;WinFsp Change: Local vs. Network Drive&lt;/h3&gt;
+&lt;p&gt;Windows users may notice that their vault is now mounted as a network drive by default. This has the advantage of better performance when listing large directories. The disadvantage is that it cannot be mounted into a directory. Accessing the vault as a privileged user is still possible by using the UNC path.&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/winfsp-change.png&#34; srcset=&#34;https://cryptomator.org/img/blog/winfsp-change.png 1x, https://cryptomator.org/img/blog/winfsp-change@2x.png 2x&#34; alt=&#34;WinFsp Change: Local vs. Network Drive&#34; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;If you really need a local drive, you can always change the volume type in the preferences.&lt;/p&gt;
+&lt;h3 id=&#34;dokany-deprecation&#34;&gt;Dokany Deprecation&lt;/h3&gt;
+&lt;p&gt;With the release of Cryptomator 1.7.0, we will officially deprecate Dokany support.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dokan-dev.github.io/&#34;&gt;Dokany&lt;/a&gt;, like FUSE, provides a file system interface to mount virtual drives without requiring elevated privileges. We started supporting Dokany 3 years ago with version 1.4.0. But things didn&amp;rsquo;t go as smoothly with the Dokany volume as we had hoped, so we decided to focus our development efforts on a single file system interface. All Dokany-related issues on GitHub will be closed, and our general recommendation is to use WinFSP which comes with the EXE installer of Cryptomator. You will still be able to use Dokany, but it won&amp;rsquo;t get any updates and support will eventually be removed.&lt;/p&gt;
+&lt;p&gt;It was a great time, and we wish the Dokany project all the best!&lt;/p&gt;
+&lt;h2 id=&#34;linux-aarch64-builds&#34;&gt;Linux AArch64 Builds&lt;/h2&gt;
+&lt;p&gt;With Cryptomator 1.7.0, we&amp;rsquo;ll finally ship AArch64 builds of Cryptomator via Flatpak and PPA.&lt;/p&gt;
+&lt;p&gt;One big obstacle was the aforementioned FUSE file system API on Linux. We were using a rather old project to build the bridge between Cryptomator and FUSE. Thanks to a fantastic development effort started by our lead architect, we now use state-of-the-art technology to implement this bridge. The result is bundled in the library called &lt;a href=&#34;https://github.com/cryptomator/jfuse&#34;&gt;jFUSE&lt;/a&gt;. Not only were we able to change the bridge, we were also able to update to a new major version of FUSE and pave the way to support features like extended attributes.&lt;/p&gt;
+&lt;p&gt;The AppImage is still x86_x64 only, but we plan to deliver it also in AArch64 architecture eventually.&lt;/p&gt;
+&lt;h2 id=&#34;aes-gcm-new-default-for-content-encryption&#34;&gt;AES-GCM: New Default for Content Encryption&lt;/h2&gt;
+&lt;p&gt;Starting with Cryptomator 1.7.0, newly created vaults will use &lt;a href=&#34;https://en.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; instead of AES-CTR+HMAC for file content encryption.&lt;/p&gt;
+&lt;p&gt;Nowadays, almost all non-embedded devices offer hardware acceleration of the Galois/Counter Mode of operation, so encryption and decryption should be significantly faster than in the old mode of operation. The support in our underlying cryptographic library &lt;a href=&#34;https://github.com/cryptomator/cryptolib&#34;&gt;cryptolib&lt;/a&gt; was already added in June 2021 with version 2.0.0. But instead of jumping the gun, we gave it a proper testing period and are now confident to ship this improvement to you.&lt;/p&gt;
+&lt;p&gt;Of course, our mobile apps also support AES-GCM, although vaults created in iOS or Android will continue to use AES-CTR+HMAC for the time being. The mobile apps are scheduled to switch in their next minor release.&lt;/p&gt;
+&lt;p&gt;You can continue to use your existing vaults as before. There are no vault upgrades and there is no action required on your part. Cryptomator will support both modes of operation.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2023/02/01/1-7-0-what-you-need-to-know/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>windows</category>
+        
+        <category>mac</category>
+        
+        <category>linux</category>
+        
+      </item>
+    
+      <item>
+        <title>Boxcryptor Shuts Down – Here is Your Cloud Encryption Alternative</title>
+        <description>&lt;p&gt;As mentioned in the &lt;a href=&#34;https://cryptomator.org/blog/2022/11/30/congratulations-boxcryptor-dropbox/&#34;&gt;last blog post&lt;/a&gt;, Dropbox has acquired Boxcryptor&amp;rsquo;s key technology. This means that Boxcryptor&amp;rsquo;s services will no longer be available to new users and existing users will likely have to migrate when their contracts expire.&lt;/p&gt;
+&lt;p&gt;We are here to stay and offer you the chance to try our open-source software. Cryptomator is free and can be used without an account. &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Just download&lt;/a&gt; and get started.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re looking for a replacement, you&amp;rsquo;ve come to the right place. We compare the features of Boxcryptor with those of Cryptomator. See for yourself!&lt;/p&gt;
+&lt;img class=&#34;inline-block&#34; src=&#34;https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis.png&#34; srcset=&#34;https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis.png 1x, https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x&#34; alt=&#34;Cryptomator is constantly analysed by experts using modern tools.&#34; /&gt;
+&lt;h2 id=&#34;features-of-boxcryptor&#34;&gt;Features of Boxcryptor&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption of all major cloud providers&lt;/li&gt;
+&lt;li&gt;Was available on Windows, macOS, Linux (portable only), iOS, and Android&lt;/li&gt;
+&lt;li&gt;End-to-end and zero-knowledge encryption&lt;/li&gt;
+&lt;li&gt;Filename encryption was only available in a paid plan&lt;/li&gt;
+&lt;li&gt;Plans start with €36 per year, business plan for €72 a year&lt;/li&gt;
+&lt;li&gt;Closed-source software&lt;/li&gt;
+&lt;li&gt;Software &amp;ldquo;Made in Germany&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;features-of-cryptomator&#34;&gt;Features of Cryptomator&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption of all major cloud providers (no restriction on Desktop app; mobile apps compatible with Dropbox, Google Drive, OneDrive, pCloud, iCloud Drive on iOS, and any cloud via WebDAV and S3)&lt;/li&gt;
+&lt;li&gt;Available on Windows, macOS, Linux, iOS, and Android&lt;/li&gt;
+&lt;li&gt;Both for personal use and for businesses: &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;End-to-end and zero-knowledge encryption&lt;/li&gt;
+&lt;li&gt;Free Desktop app, one-time purchase (€15) for the mobile app, no subscription&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cryptomator.org/open-source/&#34;&gt;Maximum transparency through open-source software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Unlimited number of devices&lt;/li&gt;
+&lt;li&gt;Password recovery through offline key recovery&lt;/li&gt;
+&lt;li&gt;Software &amp;ldquo;Made in Germany&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img class=&#34;inline-block&#34; src=&#34;https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault.png&#34; srcset=&#34;https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x&#34; alt=&#34;Cryptomator allows you to access your cleartext data without the need to remove encryption protection.&#34; /&gt;
+&lt;h2 id=&#34;how-to-migrate-from-boxcryptor-to-cryptomator&#34;&gt;How to Migrate From Boxcryptor to Cryptomator&lt;/h2&gt;
+&lt;p&gt;Switching from Boxcryptor to Cryptomator is simple. Boxcryptor provides an &lt;a href=&#34;https://support.boxcryptor.com/en/help/faq-and-troubleshooting/#migration-guide&#34;&gt;off-migration guide&lt;/a&gt; on their website to decrypt all Boxcryptor encrypted files. Make sure that your sensitive data is at no point unencrypted in the cloud. Then, you set up Cryptomator so you can encrypt and securely sync those files back to the cloud.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-easily-set-up-cryptomator&#34;&gt;How to Easily Set Up Cryptomator&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;Download&lt;/a&gt; and install Cryptomator.&lt;/li&gt;
+&lt;li&gt;Once Cryptomator is installed, you can create a new vault.&lt;/li&gt;
+&lt;li&gt;Give your vault a name.&lt;/li&gt;
+&lt;li&gt;Now select a cloud storage of your choice as the storage location of your vault.&lt;/li&gt;
+&lt;li&gt;Enter a password.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And you have successfully created your first vault.&lt;/p&gt;
+&lt;p&gt;If you want, you can unlock it immediately and reveal the virtual drive. From now on, you can store your sensitive files here, e.g., the data that you previously encrypted with Boxcryptor, in order to encrypt them in the cloud with Cryptomator from now on. &lt;a href=&#34;https://docs.cryptomator.org/en/latest/desktop/adding-vaults/&#34;&gt;Detailed instructions are available here.&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</guid>
+        
+        <category>cryptomator</category>
+        
+      </item>
+    
+      <item>
+        <title>Congratulations Boxcryptor &amp; Dropbox! – We Are Here to Stay</title>
+        <description>&lt;p&gt;You may have heard that &lt;a href=&#34;https://www.boxcryptor.com/en/blog/post/new-chapter-with-dropbox/&#34;&gt;Boxcryptor&lt;/a&gt;&amp;rsquo;s IP technology has been acquired by &lt;a href=&#34;https://blog.dropbox.com/topics/company/dropbox-to-acquire-boxcryptor-assets-bring-end-to-end-encryption-to-business-users&#34;&gt;Dropbox&lt;/a&gt;. Congratulations to both companies and we wish them all the best for the future! 🎉&lt;/p&gt;
+&lt;p&gt;For quite some time, Cryptomator has been seen as an &lt;a href=&#34;https://cryptomator.org/boxcryptor-alternative/&#34;&gt;alternative to Boxcryptor&lt;/a&gt; and you can bet that we were very surprised by this news. On today&amp;rsquo;s Computer Security Day, we want to take the opportunity to let you all know that Cryptomator is here to stay. ❤️&lt;/p&gt;
+&lt;h2 id=&#34;what-does-this-mean-for-cryptomator&#34;&gt;What does this mean for Cryptomator?&lt;/h2&gt;
+&lt;p&gt;Obviously, we are not affected by this acquisition. We are still the same team, with the same goals, and the same vision. &lt;a href=&#34;https://skymatic.de/&#34;&gt;Skymatic GmbH&lt;/a&gt; will continue to develop and maintain Cryptomator and we will continue to provide you with a free and open-source solution for end-to-end encryption. 🚀&lt;/p&gt;
+&lt;p&gt;The concept behind Cryptomator does not depend on any single cloud provider and we will continue to support as many cloud providers as we can.&lt;/p&gt;
+&lt;p&gt;Cryptomator is an application that runs solely on the device and does not require any infrastructure from the vendor. This means that even if Skymatic GmbH ceases to operate, existing and new users can continue to use Cryptomator.&lt;/p&gt;
+&lt;p&gt;Again and again, we have observed many times how proprietary services can be influenced by acquisitions in a very sensitive manner. Our belief is that the right to digital self-defense cannot simply be sold. This is not the only reason why Cryptomator relies on open-source licenses. GPLv3 (a copyleft license) guarantees that even in the event of an acquisition, the technology cannot be taken off the market.&lt;/p&gt;
+&lt;p&gt;With open-source tools, it has been shown in the past that a fork of the application can coexist or replace the actual app if it no longer exists. This means that even if Skymatic GmbH, together with the community, stops developing Cryptomator or sells Cryptomator to a third party, it is very likely that one of the many forks of Cryptomator will continue to be actively maintained and developed by the community.&lt;/p&gt;
+&lt;h2 id=&#34;what-does-this-mean-for-dropbox-users&#34;&gt;What does this mean for Dropbox users?&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s probably too early to tell but Dropbox plans to offer end-to-end encryption to its business users only. We are happy to see that Dropbox is taking end-to-end encryption seriously.&lt;/p&gt;
+&lt;p&gt;Cryptomator works very well with Dropbox and for now, &lt;a href=&#34;https://cryptomator.org/encrypt-dropbox/&#34;&gt;encrypting your Dropbox&lt;/a&gt; with Cryptomator is the best option.&lt;/p&gt;
+&lt;h2 id=&#34;what-does-this-mean-for-boxcryptor-users&#34;&gt;What does this mean for Boxcryptor users?&lt;/h2&gt;
+&lt;p&gt;We are very sorry to hear that Boxcryptor is going to end its existing service. It is no longer available for new users and existing users will likely have to migrate when their contracts expire. If you are affected by this, we welcome you to give Cryptomator a try. 😉 Feel free to check out our &lt;a href=&#34;https://community.cryptomator.org/&#34;&gt;community&lt;/a&gt; for help and support.&lt;/p&gt;
+&lt;p&gt;Cryptomator can be &lt;a href=&#34;https://cryptomator.org/downloads/&#34;&gt;downloaded&lt;/a&gt; for all major operating systems and is ideal for personal use out of the box. The Desktop app is free to use and the mobile apps can be purchased for a one-time fee.&lt;/p&gt;
+&lt;p&gt;If you are looking for a team and enterprise solution, check out &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt;, which is open source as well. 🎉&lt;/p&gt;
+&lt;h2 id=&#34;thanks&#34;&gt;Thanks&lt;/h2&gt;
+&lt;p&gt;Cryptomator started almost nine years ago as a side project. We are now a team of passionate developers and are happy to be able to work on Cryptomator. Kudos to all of our open-source contributors, translators, and testers! We are grateful for all the support we have received from the Cryptomator community over the years and for the trust you have placed in us. Special thanks to our sponsors and supporters!&lt;/p&gt;
+&lt;p&gt;We feel like that we are just getting started and have great updates coming up! To support the ongoing open-source development of Cryptomator, consider &lt;a href=&#34;https://cryptomator.org/donate/&#34;&gt;donating&lt;/a&gt; or &lt;a href=&#34;https://cryptomator.org/sponsors/&#34;&gt;sponsoring&lt;/a&gt;. ❤️&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2022/11/30/congratulations-boxcryptor-dropbox/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2022/11/30/congratulations-boxcryptor-dropbox/</guid>
+        
+        <category>cryptomator</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator Hub 1.0 Release</title>
+        <description>&lt;p&gt;We are happy to announce that Cryptomator Hub, the team and enterprise solution for Cryptomator, is now ready for production use! 🎉 Huge thanks to our testers that participated in our open beta over the last 3 months for their feedback. ❤️&lt;/p&gt;
+&lt;h2 id=&#34;what-is-cryptomator-hub&#34;&gt;What is Cryptomator Hub?&lt;/h2&gt;
+&lt;p&gt;In short: Cryptomator Hub adds access management for your Cryptomator vaults. It enables a secure way for you to work in teams with confidential and sensitive files for any cloud storage.&lt;/p&gt;
+&lt;p&gt;Check out our quick introduction video to learn more about the basics.&lt;/p&gt;
+&lt;div class=&#34;relative aspect-16x9&#34;&gt;
+  &lt;iframe class=&#34;absolute w-full h-full&#34; src=&#34;https://www.youtube-nocookie.com/embed/D14fzrsPCxY&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;how-does-cryptomator-hub-work&#34;&gt;How does Cryptomator Hub work?&lt;/h2&gt;
+&lt;p&gt;Cryptomator Hub is based on the same concept of a vault, a secure file storage for syncing to the cloud with end-to-end encryption. New is that Hub replaces the vault password with a central access management.&lt;/p&gt;
+&lt;p&gt;Individual access to Cryptomator vaults is secured through server-side authentication and key management. Hub manages key material based on a zero-knowledge solution without getting in touch with unencrypted keys. &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;Learn more.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-can-i-get-started&#34;&gt;How can I get started?&lt;/h2&gt;
+&lt;p&gt;The self-hosted solution is delivered as a software container and can be deployed using Kubernetes or Docker. Vist the &lt;a href=&#34;https://cryptomator.org/hub/&#34;&gt;landing page&lt;/a&gt; of Cryptomator Hub to get started.&lt;/p&gt;
+&lt;p&gt;Hub can be used for free for up to 5 team members. For larger teams and companies, an annual license can be purchased through the website at $6.00 per seat per month. Until the end of the year, there is a promotional discount that gives 25% off for the first year. 🎊&lt;/p&gt;
+&lt;p&gt;And as always, Cryptomator Hub is fully &lt;a href=&#34;https://github.com/cryptomator/hub&#34;&gt;open source&lt;/a&gt;. If you have more questions, let us know in the discussion below or &lt;a href=&#34;mailto:hub@cryptomator.org&#34;&gt;contact us&lt;/a&gt;. We are looking forward to your feedback! 🤖&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/blog/2022/11/03/hub-1.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/blog/2022/11/03/hub-1.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
+    
+  </channel>
+</rss>
