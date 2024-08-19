@@ -11,12 +11,17 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/encryption/</link>
     </image>
-    <lastBuildDate>Fri, 09 Aug 2024 14:58:51 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Aug 2024 13:07:51 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
         <title>Current Issue with Google Drive Connection in Cryptomator for Android and iOS</title>
-        <description>&lt;p&gt;Hello Community!&lt;/p&gt;
+        <description>&lt;h2 id=&#34;update-2024-08-19&#34;&gt;Update 2024-08-19&lt;/h2&gt;
+&lt;p&gt;We’re pleased to share a positive update regarding the ongoing issue with Google Drive connectivity in Cryptomator for Android and iOS.&lt;/p&gt;
+&lt;p&gt;We have just received confirmation from the auditing company that the Letter of Approval (LOA) is set to be submitted to Google within the next 1-2 business days. This is the final step in the verification process, and once submitted, we anticipate that Google Drive access will be restored shortly thereafter.&lt;/p&gt;
+&lt;p&gt;We are cautiously optimistic that full functionality will be available again within the next few days. We sincerely apologize for the inconvenience this has caused and appreciate your continued patience and understanding as we work through this final stage.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Hello Community!&lt;/p&gt;
 &lt;p&gt;We would like to inform you about a current issue that some of you may be experiencing while using our Cryptomator apps for Android and iOS. It involves difficulties in connecting to Google Drive that have arisen in the past few days. Here, you will find all the details and updates on our progress in resolving the issue.&lt;/p&gt;
 &lt;h2 id=&#34;what-happened&#34;&gt;What Happened?&lt;/h2&gt;
 &lt;p&gt;Google recently introduced significant changes to its app verification system. These changes particularly affect how apps access services like Google Drive. As a result of this update, you may encounter an error message when trying to connect Google Drive with Cryptomator, stating that Cryptomator is blocked because it is an &amp;ldquo;unverified app&amp;rdquo;.&lt;/p&gt;
