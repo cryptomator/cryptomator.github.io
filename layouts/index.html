@@ -10,7 +10,16 @@
       <div class="w-full md:w-2/3 lg:w-3/5">
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
-        <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "home_header_cta" . }}</a>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex flex-col gap-2">
+            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_get_started_for_individuals_title" . }}</p>
+            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "home_get_started_for_individuals_cta" . }}</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_get_started_for_teams_title" . }}</p>
+            <a href="{{ .Site.LanguagePrefix }}/hub/" role="button" class="btn btn-primary text-lg px-8 mb-4">{{ i18n "home_get_started_for_teams_cta" . }}</a>
+          </div>
+        </div>
       </div>
     </header>
   </section>
