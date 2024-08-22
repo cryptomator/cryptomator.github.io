@@ -7,6 +7,16 @@ tags: [cryptomator, android, ios, google drive]
 summary: "Google recently introduced significant changes to its app verification system. These changes particularly affect how apps access services like Google Drive. Here, you will find all the details and updates on our progress in resolving the issue."
 ---
 
+## Update 2024-08-22
+
+We’re thrilled to announce that the issue with Google Drive connectivity in Cryptomator for Android and iOS has been fully resolved. Google has accepted the Letter of Approval from our auditing company.
+
+As a result, Google Drive access has been restored, and you can now use Cryptomator as usual without any restrictions.
+
+We deeply appreciate your patience and understanding throughout this period.
+
+---
+
 ## Update 2024-08-19
 
 We’re pleased to share a positive update regarding the ongoing issue with Google Drive connectivity in Cryptomator for Android and iOS.
