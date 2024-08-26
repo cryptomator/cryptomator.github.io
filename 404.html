@@ -17,12 +17,16 @@
     
     <meta property="og:locale" content="" />
     
+      <meta property="og:locale:alternate" content="" />
+    
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
       <link rel="stylesheet" href="/css/main.min.46fd1f602a4424fc176490a9d733e8e7d49bcac5ca7c4e544a97dad56b988ab7.css" integrity="sha256-Rv0fYCpEJPwXZJCp1zPo59SbysXKfE5USpfa1WuYirc=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/404.html" />
     
     
       
@@ -111,6 +115,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+              <a :href="'/de/404.html' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
             </div>
           </div>
         </li>
@@ -156,6 +161,8 @@
       <i class="fas fa-globe fa-fw"></i> EN
     </div>
     <div class="mt-1">
+      
+      <a :href="'/de/404.html' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
 

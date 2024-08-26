@@ -1278,18 +1278,6 @@
                 href="https://cryptomator.org/hub/managed/terms/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/donate/thanks/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de_DE"
-                href="https://cryptomator.org/de/donate/thanks/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en_US"
-                href="https://cryptomator.org/donate/thanks/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/coop/webde/</loc>
     <xhtml:link
                 rel="alternate"

@@ -202,13 +202,13 @@
 
       <div class="prose prose-sm md:prose max-w-none md:max-w-none">
         <p>The release of Cryptomator Hub 1.3.0 marks an exciting feature update, which introduces an <em>Account Key</em> for users. This update, while necessary and beneficial, will require active participation from users. Here&rsquo;s what to expect during the transition from version 1.2.x to 1.3.0.</p>
-<h2 id="ℹ-preparation-is-key">ℹ Preparation is Key</h2>
-<p>Before we dive into the upgrade process, ensure every vault admin secures a backup of their <em>Vault Recovery Keys</em> and <em>Vault Admin Passwords</em>. <strong>⚠️ Doubling down on this step is critical; your backups are your safety net. Without them, our hands are tied.</strong></p>
-<h2 id="-updating-cryptomator-hub-server-to-130">⬆ Updating Cryptomator Hub (Server) to 1.3.0</h2>
+<h2 id="information_source-preparation-is-key">&#x2139;&#xfe0f; Preparation is Key</h2>
+<p>Before we dive into the upgrade process, ensure every vault admin secures a backup of their <em>Vault Recovery Keys</em> and <em>Vault Admin Passwords</em>. <strong>&#x26a0;&#xfe0f; Doubling down on this step is critical; your backups are your safety net. Without them, our hands are tied.</strong></p>
+<h2 id="arrow_up-updating-cryptomator-hub-server-to-130">&#x2b06;&#xfe0f; Updating Cryptomator Hub (Server) to 1.3.0</h2>
 <p>This section is only relevant for administrators who host their own Cryptomator Hub instance. If you&rsquo;re using our managed service, you can skip this section. We will reach out to you to arrange a date and time to update your instance.</p>
 <p>As mentioned above, if you&rsquo;re an administrator of a self-hosted Cryptomator Hub instance, follow these steps to update Cryptomator Hub:</p>
 <ol>
-<li><a href="https://docs.cryptomator.org/en/latest/hub/setup/#backup">Back up the database</a>. <strong>⚠️ The importance of a working backup cannot be overstated.</strong></li>
+<li><a href="https://docs.cryptomator.org/en/latest/hub/setup/#backup">Back up the database</a>. <strong>&#x26a0;&#xfe0f; The importance of a working backup cannot be overstated.</strong></li>
 <li>Refresh your container image to the latest version: <code>ghcr.io/cryptomator/hub:1.3.0</code>
 <ul>
 <li>Skip this step if you&rsquo;re using the <code>stable</code> tag. We will update the <code>stable</code> tag to point to the new version in a couple of weeks.</li>
@@ -216,19 +216,19 @@
 </li>
 <li>Implement the changes within your container orchestrator. Monitor for healthy pod statuses before proceeding.</li>
 </ol>
-<h2 id="-updating-cryptomator-desktop-client-to-1110">⬆ Updating Cryptomator (Desktop Client) to 1.11.0</h2>
+<h2 id="arrow_up-updating-cryptomator-desktop-client-to-1110">&#x2b06;&#xfe0f; Updating Cryptomator (Desktop Client) to 1.11.0</h2>
 <p>Updating the Cryptomator desktop application is recommended for all users, but not technically required for now. Vaults can still be unlocked using an old version. This backward compatibility provides flexibility for a gradual rollout of the updated app. Nevertheless, making changes to access, incl. adding new members to a vault and adding new devices, requires Cryptomator 1.11.0 or higher.</p>
-<h2 id="-introducing-account-keys">🔑 Introducing Account Keys</h2>
+<h2 id="key-introducing-account-keys">&#x1f511; Introducing Account Keys</h2>
 <p>With the updated app, users will encounter a two-step migration on their first unlock attempt:</p>
 <ol>
-<li>Secure and store their new personal <em>Account Key</em>. <strong>⚠️ It&rsquo;s crucial for future logins from other devices.</strong></li>
+<li>Secure and store their new personal <em>Account Key</em>. <strong>&#x26a0;&#xfe0f; It&rsquo;s crucial for future logins from other devices.</strong></li>
 <li>Use the <em>Account Key</em> to link their Cryptomator device to their account.</li>
 </ol>
 <p>This procedure is a one-time requirement for every user. It allows users to self-manage linked devices and vault owners to more easily manage access without having to frequently regrant permissions each time a user logs in from a new device.</p>
-<h2 id="-claiming-vault-ownership-and-granting-access">👤 Claiming Vault Ownership and Granting Access</h2>
+<h2 id="bust_in_silhouette-claiming-vault-ownership-and-granting-access">&#x1f464; Claiming Vault Ownership and Granting Access</h2>
 <p>After updating to Hub 1.3.0, vault owners (formerly known as vault admins) are prompted to claim their vault again using the <em>Vault Admin Password</em>. Initially, only one user can claim ownership. Subsequently, this primary owner can grant ownership rights to others, thus eliminating the need to share the <em>Vault Admin Password</em>.</p>
 <p>Once vault members have navigated through the account migration, vault owners should refresh vault permissions. This action will securely distribute the necessary vault keys to the users.</p>
-<h2 id="-frequently-asked-questions">❓ Frequently Asked Questions</h2>
+<h2 id="question-frequently-asked-questions">&#x2753; Frequently Asked Questions</h2>
 <p><strong>Q: What exactly is my <em>Account Key</em>?</strong><br>
 <strong>A:</strong> The <em>Account Key</em> is your personal secret, required for registering new devices and establishing your identity across different Cryptomator apps and browsers. Treat it with the same level of security as you would with any important password.</p>
 <p><strong>Q: How do I retrieve my <em>Account Key</em> if I lose it?</strong><br>
@@ -241,7 +241,7 @@
 <strong>A:</strong> The difference is that you don&rsquo;t grant access to each and every device, but to the user once, thanks to the <em>Account Key</em>. The user can link their devices to their account and access the vault from any of them without having to ask for permission again.</p>
 <p><strong>Q: What should I do if I encounter problems during the upgrade process?</strong><br>
 <strong>A:</strong> If you encounter any problems during the upgrade process, please contact us at <a href="mailto:hub@cryptomator.org">hub@cryptomator.org</a>.</p>
-<h2 id="-wrapping-up">📋 Wrapping Up</h2>
+<h2 id="clipboard-wrapping-up">&#x1f4cb; Wrapping Up</h2>
 <p>The upgrade to Cryptomator Hub 1.3.0 and Cryptomator 1.11.0 is more than a routine update. It&rsquo;s a shift towards greater security and user agency. Prepare for the update by backing up essential data, and follow the outlined steps to ensure a smooth transition. Embrace the change, as it brings forward a more robust and user-friendly way to manage your vaults.</p>
 
       </div>

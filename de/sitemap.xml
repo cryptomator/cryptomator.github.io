@@ -1038,18 +1038,6 @@
                 href="https://cryptomator.org/de/coop/cyberduck/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/de/donate/thanks/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en_US"
-                href="https://cryptomator.org/donate/thanks/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de_DE"
-                href="https://cryptomator.org/de/donate/thanks/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/de/privacy/</loc>
     <xhtml:link
                 rel="alternate"
