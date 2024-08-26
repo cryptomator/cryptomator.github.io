@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]')"
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -27,7 +26,7 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.119.0'
+        hugo-version: '0.133.0'
         # extended: true
 
     - name: Setup Node

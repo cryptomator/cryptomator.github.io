@@ -68,7 +68,7 @@
     </a>
   </section>
 
-  {{ if .Site.IsServer }}
+  {{ if hugo.IsServer }}
     {{ $customerPortalJs := resources.Get "js/customerportal.js" }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" defer></script>
   {{ else }}

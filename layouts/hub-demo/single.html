@@ -77,7 +77,7 @@
     </a>
   </section>
 
-  {{ if .Site.IsServer }}
+  {{ if hugo.IsServer }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubDemoJs := resources.Get "js/hubdemo.js" }}

@@ -151,7 +151,7 @@
   </div>
 </nav>
 
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
   {{ $navJs := resources.Get "js/nav.js" }}
   <script type="text/javascript" src="{{ $navJs.RelPermalink }}" defer></script>
 {{ else }}

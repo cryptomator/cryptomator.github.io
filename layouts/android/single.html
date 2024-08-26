@@ -42,7 +42,7 @@
     </div>
   </section>
 
-  {{ if .Site.IsServer }}
+  {{ if hugo.IsServer }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" }}

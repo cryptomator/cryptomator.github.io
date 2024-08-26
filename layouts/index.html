@@ -233,7 +233,7 @@
     </section>
   </div>
 
-  {{ if .Site.IsServer }}
+  {{ if hugo.IsServer }}
     {{ $indexJs := resources.Get "js/index.js" }}
     <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}

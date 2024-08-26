@@ -51,7 +51,7 @@
     </dl>
   </section>
 
-  {{ if .Site.IsServer }}
+  {{ if hugo.IsServer }}
     {{ $downloadJs := resources.Get "js/download.js" }}
     <script type="text/javascript" src="{{ $downloadJs.RelPermalink }}" defer></script>
   {{ else }}

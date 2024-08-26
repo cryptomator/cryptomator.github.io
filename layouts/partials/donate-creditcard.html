@@ -67,7 +67,7 @@
   </div>
 </div>
 
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
   {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
   <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
   {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}

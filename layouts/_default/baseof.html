@@ -51,7 +51,7 @@
       <meta property="og:locale:alternate" content="{{ .Language.Params.LanguageCode }}" />
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
-    {{ if .Site.IsServer }}
+    {{ if hugo.IsServer }}
       {{ $css := resources.Get "css/main.css" | postCSS }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen" />
     {{ else }}

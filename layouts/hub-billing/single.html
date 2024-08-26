@@ -449,7 +449,7 @@
     </form>
   </div>
 
-  {{ if .Site.IsServer }}
+  {{ if hugo.IsServer }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
