@@ -2,8 +2,8 @@
 {{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
 {{- $navBorderColor := cond .IsHome "border-transparent" "border-primary" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
-<nav x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}')" class="w-full max-h-screen text-{{ $textColor }} fixed lg:px-8 {{ $backgroundColor }} shadow z-50">
-  <div class="flex justify-between items-stretch w-full">
+<nav x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}')" class="w-full max-h-screen text-{{ $textColor }} fixed {{ $backgroundColor }} shadow z-50">
+  <div class="flex justify-between items-stretch w-full lg:px-8">
     <!-- Regular Navigation -->
     <div class="flex items-stretch">
       <!-- Toggle Button for Smartphone Navigation -->
