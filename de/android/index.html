@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.46fd1f602a4424fc176490a9d733e8e7d49bcac5ca7c4e544a97dad56b988ab7.css" integrity="sha256-Rv0fYCpEJPwXZJCp1zPo59SbysXKfE5USpfa1WuYirc=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.890e11c03ede76b6c793aeb5bb93be01865e2f3f7688caf839b9016c3f61cc8c.css" integrity="sha256-iQ4RwD7edrbHk661u5O&#43;AYZeLz92iMr4ObkBbD9hzIw=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -33,8 +33,11 @@
     
   </head>
   <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
-    <nav x-init="determineGitHubStargazersCount('de')" class="w-full max-h-screen text-primary fixed lg:px-8 bg-white shadow z-50">
-  <div class="flex justify-between items-stretch w-full">
+    <nav x-init="determineGitHubStargazersCount('de')" class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
+  <div class="w-full bg-primary text-center text-sm text-white p-0.5">
+    <p>🎉 Cryptomator für iOS und Android sind um 33% reduziert! Gültig&nbsp;28.&#8209;30.&nbsp;August.</p>
+  </div>
+  <div class="flex justify-between items-stretch w-full lg:px-8">
     
     <div class="flex items-stretch">
       
@@ -207,9 +210,10 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-798625431" x-model="acceptTerms" />
-<label for="id-798625431">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-875324169" x-model="acceptTerms" />
+<label for="id-875324169">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎉 Gutscheincode <code>SUMMER2024</code> beim Bezahlvorgang eingeben für 33% Rabatt!</p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
       </button>
