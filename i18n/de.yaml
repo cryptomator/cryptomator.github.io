@@ -2,8 +2,6 @@
   translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
 - id: nav_cta
   translation: "Jetzt loslegen"
-- id: nav_promotion
-  translation: ":tada: Cryptomator für iOS und Android sind um 33% reduziert! Gültig&nbsp;28.&#8209;30.&nbsp;August."
 - id: nav_support_us
   translation: "Unterstütze uns"
 - id: nav_learn_more
@@ -48,8 +46,6 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: android_getkey_checkout
   translation: "Zur Zahlung"
-- id: android_getkey_coupon
-  translation: "Gutscheincode <code>SUMMER2024</code> beim Bezahlvorgang eingeben für 33% Rabatt!"
 
 - id: android_getkey_success
   translation: "Deine Zahlung war erfolgreich!"
