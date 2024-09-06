@@ -39,12 +39,6 @@ jobs:
     - name: Build
       run: hugo
 
-    - name: Store site.zip
-      uses: actions/upload-artifact@v4
-      with:
-        name: site
-        path: ./public
-
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
       with:
