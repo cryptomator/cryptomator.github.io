@@ -10,29 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       # with:
       #   submodules: true
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: npm-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          npm-${{ hashFiles('package-lock.json') }}
-          npm-
-
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+      uses: peaceiris/actions-hugo@v3
       with:
         hugo-version: '0.133.0'
         # extended: true
 
-    - name: Setup Node
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v4
       with:
-        node-version: '18.x'
+        node-version: 22
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+
 
     - name: Install Tools
       run: npm install -g postcss-cli autoprefixer
