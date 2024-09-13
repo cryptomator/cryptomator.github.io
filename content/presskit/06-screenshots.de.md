@@ -157,43 +157,43 @@ weight: 6
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-1.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-1.png" alt="Willkommen beim Onboarding"/></a>
-      <figcaption>Willkommen beim Onboarding • 1284x2778 • PNG</figcaption>
+      <figcaption>Willkommen beim Onboarding • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-2.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-2.png" alt="Übersicht aller Tresore in einer Liste"/></a>
-      <figcaption>Übersicht aller Tresore in einer Liste • 1284x2778 • PNG</figcaption>
+      <figcaption>Übersicht aller Tresore in einer Liste • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-3.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-3.png" alt="Unterstützte Cloudspeicher-Dienste"/></a>
-      <figcaption>Unterstützte Cloudspeicher-Dienste • 1284x2778 • PNG</figcaption>
+      <figcaption>Unterstützte Cloudspeicher-Dienste • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-4.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-4.png" alt="Einstellungen und Aktionen eines Tresors"/></a>
-      <figcaption>Einstellungen und Aktionen eines Tresors • 1284x2778 • PNG</figcaption>
+      <figcaption>Einstellungen und Aktionen eines Tresors • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-5.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-5.png" alt="Integriert in die App „Dateien“"/></a>
-      <figcaption>Integriert in die App „Dateien“ • 1284x2778 • PNG</figcaption>
+      <figcaption>Integriert in die App „Dateien“ • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-6.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-6.png" alt="Entsperren des Tresors"/></a>
-      <figcaption>Entsperren des Tresors • 1284x2778 • PNG</figcaption>
+      <figcaption>Entsperren des Tresors • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
   <div class="w-full px-3 md:w-1/2 lg:w-1/4">
     <figure class="rounded shadow bg-white text-center p-2">
       <a href="/de/presskit/iphone-screenshot-7.png"><img class="inline-block m-remover lazyload" data-src="/de/presskit/iphone-screenshot-7.png" alt="Zugriff auf verschlüsselte Daten in der App „Dateien“"/></a>
-      <figcaption>Zugriff auf verschlüsselte Daten in der App „Dateien“ • 1284x2778 • PNG</figcaption>
+      <figcaption>Zugriff auf verschlüsselte Daten in der App „Dateien“ • 1290x2796 • PNG</figcaption>
     </figure>
   </div>
 </div>
