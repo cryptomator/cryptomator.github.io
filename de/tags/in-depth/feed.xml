@@ -11,8 +11,48 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/in-depth/</link>
     </image>
-    <lastBuildDate>Fri, 13 Sep 2024 14:09:36 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2024 10:46:58 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 2.6 für iOS: Was gibt es Neues?</title>
+        <description>&lt;p&gt;Alle Anwender:innen unserer iOS-App dürfen sich über einen neuen Release freuen, denn Version 2.6 ist ab sofort erhältlich! Cryptomator 2.6 bringt nicht nur einen dringend benötigten Bug-Fix für OneDrive, sondern auch spannende neue Funktionen und Verbesserungen, die das Nutzererlebnis weiter optimieren. Werfen wir einen genaueren Blick auf die wichtigsten Änderungen.&lt;/p&gt;
+&lt;h2 id=&#34;die-wichtigsten-neuerungen-im-überblick&#34;&gt;Die wichtigsten Neuerungen im Überblick&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Einführung der Unterstützung für den Cloud-Dienst Box, um sicheren Zugriff auf in Box gespeicherte Tresore zu ermöglichen.&lt;/li&gt;
+&lt;li&gt;Übersetzungen ins Slowenische und Ukrainische hinzugefügt.&lt;/li&gt;
+&lt;li&gt;Fehler behoben, der beim Hochladen von Dateien auf OneDrive die Fehlermeldung „Unautorisiert“ verursachte.&lt;/li&gt;
+&lt;li&gt;Option „Passwort ändern“ für Hub-Tresore entfernt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;a href=&#34;https://apps.apple.com/de/app/cryptomator/id1560822163&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+    &lt;img class=&#34;inline-block rounded md:w-1/2&#34; src=&#34;https://cryptomator.org/img/blog/ios-2.6.png&#34; alt=&#34;Cryptomator 2.6 für iOS&#34; /&gt;
+  &lt;/a&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;was-ist-neu&#34;&gt;Was ist neu?&lt;/h2&gt;
+&lt;h3 id=&#34;unterstützung-für-box&#34;&gt;Unterstützung für Box&lt;/h3&gt;
+&lt;p&gt;Eine der bedeutendsten Änderungen in dieser Version ist die Einführung der Unterstützung für &lt;a href=&#34;https://box.com/&#34;&gt;box.com&lt;/a&gt;. Nutzer:innen, die ihre Daten sicher auf Box speichern, können ab sofort auch mit Cryptomator verschlüsselte Tresore direkt in der Box-Cloud verwalten. Bis April 2023 war ein Box-Zugriff über WebDAV möglich, allerdings wurde die Verbindung seitens Box eingestellt. Ab sofort ist der Zugriff auf Box wieder möglich, und zwar mit einer direkten und nativen Integration.&lt;/p&gt;
+&lt;h3 id=&#34;neue-sprachunterstützung&#34;&gt;Neue Sprachunterstützung&lt;/h3&gt;
+&lt;p&gt;Cryptomator 2.6 wird noch internationaler und benutzerfreundlicher: Ab sofort ist die App auch auf Slowenisch und Ukrainisch verfügbar. Die kontinuierliche Erweiterung der Sprachoptionen zeigt, wie wichtig es uns ist, möglichst vielen Menschen weltweit einen einfachen und sicheren Zugang zu bieten. Mit dieser Erweiterung möchten wir Nutzer:innen aus verschiedenen Regionen die bestmögliche Benutzerfreundlichkeit bieten.&lt;/p&gt;
+&lt;p&gt;Ein großer Dank gilt hier natürlich unserer Community, die uns stetig dabei unterstützt, die App für weitere Länder zugänglich zu machen. Wenn ihr Lust habt, euch an den Übersetzungen zu beteiligen, dann schaut gerne hier vorbei: &lt;a href=&#34;https://translate.cryptomator.org/&#34;&gt;https://translate.cryptomator.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bug-fixes&#34;&gt;Bug Fixes&lt;/h2&gt;
+&lt;h3 id=&#34;onedrive-unautorisiert-fehler-behoben&#34;&gt;OneDrive: „Unautorisiert“-Fehler behoben&lt;/h3&gt;
+&lt;p&gt;Ein Fehler, der viele OneDrive-Nutzer:innen betroffen hat, wurde endlich behoben. Beim Hochladen von Dateien trat in einigen Fällen die Fehlermeldung „Unautorisiert“ auf, was zu erheblichen Störungen führte. Dieses Problem wurde in Version 2.6 behoben und der Upload sollte nun reibungslos funktionieren.&lt;/p&gt;
+&lt;h3 id=&#34;entfernte-option-passwort-ändern-für-hub-tresore&#34;&gt;Entfernte Option: „Passwort ändern“ für Hub-Tresore&lt;/h3&gt;
+&lt;p&gt;Die Option „Passwort ändern“ für Hub-Tresore wurde entfernt, da bei Hub-Tresoren kein individuelles Tresor-Passwort festlegt wird. Nutzer:innen können natürlich nach wie vor ihr Passwort für passwortbasierte Tresore ändern.&lt;/p&gt;
+&lt;h2 id=&#34;schlusswort&#34;&gt;Schlusswort&lt;/h2&gt;
+&lt;p&gt;Cryptomator 2.6 für iOS bringt einige wichtige Verbesserungen und Neuerungen mit sich, die euch helfen sollen, eure Daten noch sicherer und effizienter zu verwalten. Ob die neue Unterstützung für Box, die internationalen Übersetzungen oder die Fehlerbehebungen – dieses Update ist darauf ausgelegt, die Nutzung von Cryptomator auf iOS weiter zu optimieren.&lt;/p&gt;
+&lt;p&gt;Wir schätzen euer fortlaufendes Feedback und eure Unterstützung sehr. Probiert die neue Version aus und lasst uns wissen, was ihr davon haltet!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/09/17/ios-2.6/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/09/17/ios-2.6/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>Aktuelles Problem mit der Google Drive-Verbindung in Cryptomator für Android und iOS</title>
@@ -398,33 +438,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/</guid>
         
         <category>cryptomator</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator Hub 1.0 Release</title>
-        <description>&lt;p&gt;Wir freuen uns, euch mitteilen zu können, dass Cryptomator Hub, die Team- und Unternehmenslösung für Cryptomator, für den Produktionseinsatz bereit ist! &amp;#x1f389; Vielen Dank an unsere Tester, die in den letzten 3 Monaten an unserer offenen Beta teilgenommen haben, für ihr Feedback.&lt;/p&gt;
-&lt;h2 id=&#34;was-ist-cryptomator-hub&#34;&gt;Was ist Cryptomator Hub?&lt;/h2&gt;
-&lt;p&gt;Kurz gesagt: Cryptomator Hub ermöglicht die Zugriffsverwaltung für Cryptomator-Tresore und somit die sichere Zusammenarbeit von Teams mit vertraulichen und sensiblen Dateien für beliebige Cloud-Speicher.&lt;/p&gt;
-&lt;p&gt;Unser kurzes Einführungsvideo zeigt euch mehr über die Grundlagen von Cryptomator Hub.&lt;/p&gt;
-&lt;div class=&#34;relative aspect-16x9&#34;&gt;
-  &lt;iframe class=&#34;absolute w-full h-full&#34; src=&#34;https://www.youtube-nocookie.com/embed/D14fzrsPCxY&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;wie-funktioniert-cryptomator-hub&#34;&gt;Wie funktioniert Cryptomator Hub?&lt;/h2&gt;
-&lt;p&gt;Cryptomator Hub basiert auf dem gleichen Konzept des Tresors, einer gesicherten Dateiablage zum Synchronisieren in die Cloud mit Ende-zu-Ende-Verschlüsselung. Neu ist, dass Hub das Tresor-Passwort durch eine zentrale Zugriffsverwaltung ersetzt.&lt;/p&gt;
-&lt;p&gt;Der individuelle Zugriff auf Cryptomator-Tresore wird durch eine serverseitige Authentifizierung und eine Schlüsselverwaltung gesichert. Hub verwaltet das Schlüsselmaterial basierend auf einer Zero-Knowledge-Lösung, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;Mehr erfahren.&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;wie-kann-ich-losegen&#34;&gt;Wie kann ich losegen?&lt;/h2&gt;
-&lt;p&gt;Die Self-Hosted-Lösung wird als Softwarecontainer ausgeliefert und kann mittels Kubernetes oder Docker installiert werden. Mehr Infos zum Loslegen gibt es auf &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Landing Page&lt;/a&gt; von Cryptomator Hub.&lt;/p&gt;
-&lt;p&gt;Hub kann bis zu einer Teamgröße von 5 Personen kostenlos genutzt werden. Für größere Teams und Unternehmen kann über die Webseite eine jährliche Lizenz mit 6,00€ pro Sitz und Monat erworben werden. Bis zum Ende des Jahres gibt es eine Rabattaktion, die 25% Nachlass auf das erste Jahr gewährt. &amp;#x1f38a;&lt;/p&gt;
-&lt;p&gt;Und wie immer, Cryptomator Hub ist vollständig &lt;a href=&#34;https://github.com/cryptomator/hub&#34;&gt;Open-Source&lt;/a&gt;. Bei weiteren Fragen teilt sie uns gerne in der untenstehenden Diskussion mit oder &lt;a href=&#34;mailto:hub@cryptomator.org&#34;&gt;kontaktiert uns&lt;/a&gt;. Wir freuen uns auf euer Feedback! &amp;#x1f916;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2022/11/03/hub-1.0/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/11/03/hub-1.0/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>hub</category>
         
       </item>
     

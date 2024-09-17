@@ -3,17 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tags</title>
+    <title>Cryptomator 2.6 für iOS: Was gibt es Neues?</title>
     
-      <meta name="description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
-      <meta property="og:title" content="Cryptomator - Tags"/>
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/de/tags/"/>
-      <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
-      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta name="description" content="Alle Anwender:innen unserer iOS-App dürfen sich über einen neuen Release freuen, denn Version 2.6 ist ab sofort erhältlich! Cryptomator 2.6 bringt nicht nur einen dringend benötigten Bug-Fix für OneDrive, sondern auch spannende neue Funktionen und Verbesserungen, die das Nutzererlebnis weiter optimieren. Werfen wir einen genaueren Blick auf die wichtigsten Änderungen.">
+      <meta property="og:title" content="Cryptomator 2.6 für iOS: Was gibt es Neues?">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/de/blog/2024/09/17/ios-2.6/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="Alle Anwender:innen unserer iOS-App dürfen sich über einen neuen Release freuen, denn Version 2.6 ist ab sofort erhältlich! Cryptomator 2.6 bringt nicht nur einen dringend benötigten Bug-Fix für OneDrive, sondern auch spannende neue Funktionen und Verbesserungen, die das Nutzererlebnis weiter optimieren. Werfen wir einen genaueren Blick auf die wichtigsten Änderungen.">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2024-09-17" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="ios" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     
     <meta property="og:locale" content="" />
     
@@ -26,7 +33,7 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
-      <link rel="alternate" hreflang="en" href="/tags/" />
+      <link rel="alternate" hreflang="en" href="/blog/2024/09/17/ios-2.6/" />
     
     
       
@@ -115,7 +122,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-              <a :href="'/tags/' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+              <a :href="'/blog/2024/09/17/ios-2.6/' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
             </div>
           </div>
         </li>
@@ -162,7 +169,7 @@
     </div>
     <div class="mt-1">
       
-      <a :href="'/tags/' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a :href="'/blog/2024/09/17/ios-2.6/' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
       
     </div>
 
@@ -183,109 +190,69 @@
     
     
   <div class="container-prose py-12">
-    <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+    <article class="mb-12">
       <header class="mb-6">
-        <h1>Posts</h1>
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/de/blog/">Blog</a> / Cryptomator 2.6 für iOS: Was gibt es Neues?</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/de/blog/2024/09/17/ios-2.6/">2024-09-17</a></span>
+        </div>
+        
       </header>
+
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>Alle Anwender:innen unserer iOS-App dürfen sich über einen neuen Release freuen, denn Version 2.6 ist ab sofort erhältlich! Cryptomator 2.6 bringt nicht nur einen dringend benötigten Bug-Fix für OneDrive, sondern auch spannende neue Funktionen und Verbesserungen, die das Nutzererlebnis weiter optimieren. Werfen wir einen genaueren Blick auf die wichtigsten Änderungen.</p>
+<h2 id="die-wichtigsten-neuerungen-im-überblick">Die wichtigsten Neuerungen im Überblick</h2>
+<ul>
+<li>Einführung der Unterstützung für den Cloud-Dienst Box, um sicheren Zugriff auf in Box gespeicherte Tresore zu ermöglichen.</li>
+<li>Übersetzungen ins Slowenische und Ukrainische hinzugefügt.</li>
+<li>Fehler behoben, der beim Hochladen von Dateien auf OneDrive die Fehlermeldung „Unautorisiert“ verursachte.</li>
+<li>Option „Passwort ändern“ für Hub-Tresore entfernt.</li>
+</ul>
+<figure class="text-center">
+  <a href="https://apps.apple.com/de/app/cryptomator/id1560822163" target="_blank" rel="noopener">
+    <img class="inline-block rounded md:w-1/2" src="/img/blog/ios-2.6.png" alt="Cryptomator 2.6 für iOS" />
+  </a>
+</figure>
+<h2 id="was-ist-neu">Was ist neu?</h2>
+<h3 id="unterstützung-für-box">Unterstützung für Box</h3>
+<p>Eine der bedeutendsten Änderungen in dieser Version ist die Einführung der Unterstützung für <a href="https://box.com/">box.com</a>. Nutzer:innen, die ihre Daten sicher auf Box speichern, können ab sofort auch mit Cryptomator verschlüsselte Tresore direkt in der Box-Cloud verwalten. Bis April 2023 war ein Box-Zugriff über WebDAV möglich, allerdings wurde die Verbindung seitens Box eingestellt. Ab sofort ist der Zugriff auf Box wieder möglich, und zwar mit einer direkten und nativen Integration.</p>
+<h3 id="neue-sprachunterstützung">Neue Sprachunterstützung</h3>
+<p>Cryptomator 2.6 wird noch internationaler und benutzerfreundlicher: Ab sofort ist die App auch auf Slowenisch und Ukrainisch verfügbar. Die kontinuierliche Erweiterung der Sprachoptionen zeigt, wie wichtig es uns ist, möglichst vielen Menschen weltweit einen einfachen und sicheren Zugang zu bieten. Mit dieser Erweiterung möchten wir Nutzer:innen aus verschiedenen Regionen die bestmögliche Benutzerfreundlichkeit bieten.</p>
+<p>Ein großer Dank gilt hier natürlich unserer Community, die uns stetig dabei unterstützt, die App für weitere Länder zugänglich zu machen. Wenn ihr Lust habt, euch an den Übersetzungen zu beteiligen, dann schaut gerne hier vorbei: <a href="https://translate.cryptomator.org/">https://translate.cryptomator.org/</a></p>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h3 id="onedrive-unautorisiert-fehler-behoben">OneDrive: „Unautorisiert“-Fehler behoben</h3>
+<p>Ein Fehler, der viele OneDrive-Nutzer:innen betroffen hat, wurde endlich behoben. Beim Hochladen von Dateien trat in einigen Fällen die Fehlermeldung „Unautorisiert“ auf, was zu erheblichen Störungen führte. Dieses Problem wurde in Version 2.6 behoben und der Upload sollte nun reibungslos funktionieren.</p>
+<h3 id="entfernte-option-passwort-ändern-für-hub-tresore">Entfernte Option: „Passwort ändern“ für Hub-Tresore</h3>
+<p>Die Option „Passwort ändern“ für Hub-Tresore wurde entfernt, da bei Hub-Tresoren kein individuelles Tresor-Passwort festlegt wird. Nutzer:innen können natürlich nach wie vor ihr Passwort für passwortbasierte Tresore ändern.</p>
+<h2 id="schlusswort">Schlusswort</h2>
+<p>Cryptomator 2.6 für iOS bringt einige wichtige Verbesserungen und Neuerungen mit sich, die euch helfen sollen, eure Daten noch sicherer und effizienter zu verwalten. Ob die neue Unterstützung für Box, die internationalen Übersetzungen oder die Fehlerbehebungen – dieses Update ist darauf ausgelegt, die Nutzung von Cryptomator auf iOS weiter zu optimieren.</p>
+<p>Wir schätzen euer fortlaufendes Feedback und eure Unterstützung sehr. Probiert die neue Version aus und lasst uns wissen, was ihr davon haltet!</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  
+  
     
       
-        <article>
-          <h2>Cryptomator</h2>
-          
-        </article>
+        
       
-        <article>
-          <h2>Ios</h2>
-          
-        </article>
+    
+  
+  
+    
       
-        <article>
-          <h2>Android</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Google Drive</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Hub</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Desktop</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Linux</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Mac</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Windows</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Installer</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Vulnerability</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Event</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Vault-Format</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Data Protection</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Encryption</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Sponsors</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Community</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Cyberduck</h2>
-          
-        </article>
-      
-        <article>
-          <h2>In-Depth</h2>
-          
-        </article>
-      
-    </div>
-  </div>
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/09/17/ios-2.6/" defer></script>
+    
+  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">
