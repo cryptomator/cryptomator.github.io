@@ -3,17 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thank you for downloading Cryptomator!</title>
+    <title>Cryptomator 1.14.0: What’s New?</title>
     
-      <meta name="description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
-      <meta property="og:title" content="Cryptomator - Thank you for downloading Cryptomator!"/>
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/downloads/win-msi/thanks/"/>
-      <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Encrypt Dropbox, Google Drive, and any other cloud. Cryptomator is free and open source."/>
-      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta name="description" content="New features like Quick Access, Auto Start for Linux, and important bugfixes in CryptoFS! Update now!">
+      <meta property="og:title" content="Cryptomator 1.14.0: What’s New?">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/blog/2024/09/17/release-1.14.0/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="New features like Quick Access, Auto Start for Linux, and important bugfixes in CryptoFS! Update now!">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2024-09-17" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="desktop" />
+      
+        <meta property="article:tag" content="windows" />
+      
+        <meta property="article:tag" content="mac" />
+      
+        <meta property="article:tag" content="linux" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     
     <meta property="og:locale" content="" />
     
@@ -26,7 +39,7 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
-      <link rel="alternate" hreflang="de" href="/de/downloads/win-msi/thanks/" />
+      <link rel="alternate" hreflang="de" href="/de/blog/2024/09/17/release-1.14.0/" />
     
     
       
@@ -45,11 +58,11 @@
 
       <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="/">
         <img src="/img/logo.svg" class="h-8" alt="Logo"/>
-        <span class=" md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+        <span class="hidden md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        <li class="flex items-center mx-2 border-b-2 border-primary hover:border-primary">
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
           <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
         </li>
         <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
@@ -99,7 +112,11 @@
         </li>
       </ul>
 
-      
+      <ul class="flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1">Get Started</a>
+        </li>
+      </ul>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center m-3 border-l border-primary"></li>
@@ -111,7 +128,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-              <a :href="'/de/downloads/win-msi/thanks/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+              <a :href="'/de/blog/2024/09/17/release-1.14.0/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
             </div>
           </div>
         </li>
@@ -158,7 +175,7 @@
     </div>
     <div class="mt-1">
       
-      <a :href="'/de/downloads/win-msi/thanks/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      <a :href="'/de/blog/2024/09/17/release-1.14.0/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
 
@@ -178,122 +195,77 @@
 <div class="bg-gray-100 min-vh-80 pt-12">
     
     
+  <div class="container-prose py-12">
+    <article class="mb-12">
+      <header class="mb-6">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/blog/">Blog</a> / Cryptomator 1.14.0: What’s New?</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/blog/2024/09/17/release-1.14.0/">2024-09-17</a></span>
+        </div>
+        
+      </header>
+
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>With the 1.14.0 update, Cryptomator introduces exciting new features and important bug fixes, making working with the app even more efficient. In this article, you’ll find all the essential details about the latest features and bug fixes.</p>
+<h2 id="the-most-important-updates-at-a-glance">The most important updates at a glance:</h2>
+<ul>
+<li>Quick Access feature for faster access to vaults.</li>
+<li>Bug fix in CryptoFS regarding file modification dates.</li>
+<li>Bug fix for using Dropbox vaults and Microsoft Office on Windows.</li>
+</ul>
+<h2 id="whats-new">What’s new?</h2>
+<p><strong>Quick Access Features</strong></p>
+<p>Speed and efficiency are crucial for productive work. With the new &ldquo;Quick Access&rdquo; feature, Cryptomator now simplifies direct access to vaults in the file manager.</p>
+<p>The new &ldquo;Quick Access&rdquo; feature provides quick vault access directly in the file manager and is enabled by default. &ldquo;Quick Access&rdquo; is available for Windows and all major Linux distributions; however, macOS support is currently unavailable due to missing system interfaces.</p>
+<p>Check out the new feature in action in the following video.</p>
+<p><em>Ubuntu(Linux):</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-ubuntu.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><em>Windows:</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-windows.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><strong>Auto Start on Linux</strong></p>
+<p>Some apps are needed as soon as the computer is ready. Now, this is also possible with Cryptomator on Linux! In the app’s settings, you can configure whether Cryptomator should start automatically when you log in. This feature supports the GNOME and KDE desktop environments and is available when installed via AUR, PPA, or DEB.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/auto-start.png" srcset="/img/blog/auto-start.png 1x, /img/blog/auto-start@2x.png 2x" alt="Auto Start on Linux" />
+</figure>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<p><strong>Cryptofs, lastModified &amp; pCloud</strong></p>
+<p>Good news for all pCloud users! Previously, pCloud users encountered the issue where the &ldquo;last modified&rdquo; date was incorrectly set to &ldquo;today&rdquo; whenever a file was copied into a vault. We’ve fixed this problem in Cryptomator’s native file system, CryptoFS. The fix also addressed issues with other cloud providers/storage locations (including FAT32-formatted USB sticks).</p>
+<p><strong>Microsoft Office and Dropbox</strong></p>
+<p>Editing Microsoft Office documents in a Dropbox vault on Windows occasionally led to data loss. The reason: The &ldquo;WinFsp&rdquo; drive type is incompatible with both Microsoft Office and Dropbox, but &ldquo;WinFsp&rdquo; is the default on Windows. From now on, the correct type, &ldquo;WinFsp (Local Drive),&rdquo; is automatically selected when you create or import a new Dropbox vault. Existing vaults can be switched to the correct type in the vault settings under the &ldquo;Mount&rdquo; tab.</p>
+<p>You can find further changes in the latest Cryptomator release notes.</p>
+<h2 id="closing-remarks">Closing Remarks</h2>
+<p>Cryptomator 1.14.0 not only introduces helpful new features but also resolves critical bugs, making your work more secure and efficient. Update to the latest version now and take advantage of these improvements!</p>
+<p>We look forward to your feedback and, as always, thank you for your continued support.</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
   
-  <div class="container py-12" x-data="{showShaSignature: false, showPgpSignature: false}">
-    <div class="flex mx-auto w-full md:w-4/5 lg:w-1/2 bg-primary-l2 border-t-4 border-primary rounded text-dark p-3 shadow mb-2" role="alert">
-      <div class="pr-2">
-        <i class="fas fa-download text-primary" aria-hidden="true"></i>
-      </div>
-      <div>
-        <p class="font-bold mb-1">Your download starts automatically.</p>
-        <p class="text-sm">Didn&#39;t work? Click here to restart: <a class="text-primary no-underline hover:underline" href="https://github.com/cryptomator/cryptomator/releases/download/1.14.0/Cryptomator-1.14.0-x64.msi" download="Cryptomator-1.14.0-x64.msi" target="_self" x-init="$el.click()">Cryptomator-1.14.0-x64.msi</a></p>
-      </div>
-    </div>
-    <p class="grid grid-cols-2 gap-2 text-center text-xs w-full md:w-2/3 lg:w-1/2 mx-auto">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> SHA256 Signature</a>
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showPgpSignature = !showPgpSignature"><i :class="{ 'fa-eye': !showPgpSignature, 'fa-eye-slash': showPgpSignature }" class="fas fa-fw"></i> PGP Signature</a>
-    </p>
-    <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
-      <h3>SHA256 Signature</h3>
-      <p><code class="break-all">998b02c07f9df2bb661aee2c571be458a64c981da01e50d1857a6f7b892d67e4</code></p>
-    </div>
-    <div x-show="showPgpSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
-      <h3>PGP Signature</h3>
-      <p><i class="fas fa-download fa-fw"></i> Download PGP Signature: <a href="https://github.com/cryptomator/cryptomator/releases/download/1.14.0/Cryptomator-1.14.0-x64.msi.asc" target="_blank" rel="noopener">Cryptomator-1.14.0-x64.msi.asc</a></p>
-      <p><pre class="text-left h-64">-----BEGIN PGP PUBLIC KEY BLOCK-----
-
-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
-=/rFy
------END PGP PUBLIC KEY BLOCK-----
-</pre></p>
-      <p>Fingerprint: <code class="break-all">58117AFA1F85B3EEC154677D615D449FE6E6A235</code></p>
-    </div>
-  </div>
-
-  <div class="container text-center py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none">
-      <h1>Thanks for choosing Cryptomator!</h1>
-      <p>After downloading, simply double-click on <em>Cryptomator-1.14.0-x64.msi</em> to start the installation wizard.</p>
-<p>We recommend installing <a href="https://winfsp.dev/" target="_blank" rel="noopener">WinFsp</a>. FUSE is optional but offers better integration into Windows.</p>
-
-    </header>
-  </div>
-
-  <section class="container grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 pb-24">
-    <div class="rounded shadow bg-white">
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-        <h3><i class="fas fa-question-circle fa-fw text-primary"></i> Getting Started</h3>
-      </div>
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        <p class="mb-4">If you are a first-time user, you might be interested to:</p>
-        <ul>
-          <li>Read our <a href="https://docs.cryptomator.org/" target="_blank" rel="noopener">documentation</a>, which should guide you in case you would like some instructions.</li>
-          <li>Join our <a href="https://community.cryptomator.org/" target="_blank" rel="noopener">community forum</a>, which is a great place to ask for support or share your thoughts.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="rounded shadow bg-white">
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-        <h3><i class="fas fa-donate fa-fw text-primary"></i> Support Cryptomator</h3>
-      </div>
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        <p class="mb-4">Development of the desktop application would not be possible without the support of our users.</p>
-        <ul>
-          <li>Would you like to <a href="/donate/">donate</a> or <a href="/sponsors/">become a sponsor</a>?</li>
-          <li>Would you like to <a href="https://translate.cryptomator.org/" target="_blank" rel="noopener">help translating Cryptomator</a>?</li>
-          <li>Would you like to <a href="https://github.com/cryptomator/cryptomator" target="_blank" rel="noopener">contribute code</a> or <a href="https://github.com/cryptomator/cryptomator/issues/new/choose" target="_blank" rel="noopener">report bugs</a>?</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  
+    
+      
+    
+  
+  
+    
+      
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/09/17/release-1.14.0/" defer></script>
+    
+  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">

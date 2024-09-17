@@ -190,6 +190,47 @@
     
       
         <article>
+          <h2>Cryptomator 1.14.0: What’s New?</h2>
+          <p>With the 1.14.0 update, Cryptomator introduces exciting new features and important bug fixes, making working with the app even more efficient. In this article, you’ll find all the essential details about the latest features and bug fixes.</p>
+<h2 id="the-most-important-updates-at-a-glance">The most important updates at a glance:</h2>
+<ul>
+<li>Quick Access feature for faster access to vaults.</li>
+<li>Bug fix in CryptoFS regarding file modification dates.</li>
+<li>Bug fix for using Dropbox vaults and Microsoft Office on Windows.</li>
+</ul>
+<h2 id="whats-new">What’s new?</h2>
+<p><strong>Quick Access Features</strong></p>
+<p>Speed and efficiency are crucial for productive work. With the new &ldquo;Quick Access&rdquo; feature, Cryptomator now simplifies direct access to vaults in the file manager.</p>
+<p>The new &ldquo;Quick Access&rdquo; feature provides quick vault access directly in the file manager and is enabled by default. &ldquo;Quick Access&rdquo; is available for Windows and all major Linux distributions; however, macOS support is currently unavailable due to missing system interfaces.</p>
+<p>Check out the new feature in action in the following video.</p>
+<p><em>Ubuntu(Linux):</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-ubuntu.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><em>Windows:</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-windows.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><strong>Auto Start on Linux</strong></p>
+<p>Some apps are needed as soon as the computer is ready. Now, this is also possible with Cryptomator on Linux! In the app’s settings, you can configure whether Cryptomator should start automatically when you log in. This feature supports the GNOME and KDE desktop environments and is available when installed via AUR, PPA, or DEB.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/auto-start.png" srcset="/img/blog/auto-start.png 1x, /img/blog/auto-start@2x.png 2x" alt="Auto Start on Linux" />
+</figure>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<p><strong>Cryptofs, lastModified &amp; pCloud</strong></p>
+<p>Good news for all pCloud users! Previously, pCloud users encountered the issue where the &ldquo;last modified&rdquo; date was incorrectly set to &ldquo;today&rdquo; whenever a file was copied into a vault. We’ve fixed this problem in Cryptomator’s native file system, CryptoFS. The fix also addressed issues with other cloud providers/storage locations (including FAT32-formatted USB sticks).</p>
+<p><strong>Microsoft Office and Dropbox</strong></p>
+<p>Editing Microsoft Office documents in a Dropbox vault on Windows occasionally led to data loss. The reason: The &ldquo;WinFsp&rdquo; drive type is incompatible with both Microsoft Office and Dropbox, but &ldquo;WinFsp&rdquo; is the default on Windows. From now on, the correct type, &ldquo;WinFsp (Local Drive),&rdquo; is automatically selected when you create or import a new Dropbox vault. Existing vaults can be switched to the correct type in the vault settings under the &ldquo;Mount&rdquo; tab.</p>
+<p>You can find further changes in the latest Cryptomator release notes.</p>
+<h2 id="closing-remarks">Closing Remarks</h2>
+<p>Cryptomator 1.14.0 not only introduces helpful new features but also resolves critical bugs, making your work more secure and efficient. Update to the latest version now and take advantage of these improvements!</p>
+<p>We look forward to your feedback and, as always, thank you for your continued support.</p>
+
+        </article>
+      
+        <article>
           <h2>Cryptomator 1.10.0 Release</h2>
           <p>We&rsquo;re happy to announce the release of Cryptomator 1.10.0. &#x1f389; Let&rsquo;s dive into what this new release has to offer!</p>
 <h2 id="expert-settings-during-vault-creation">Expert Settings During Vault Creation</h2>

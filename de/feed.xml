@@ -11,7 +11,7 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/</link>
     </image>
-    <lastBuildDate>Tue, 17 Sep 2024 10:48:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2024 11:23:53 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
@@ -51,6 +51,62 @@
         <category>cryptomator</category>
         
         <category>ios</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptomator 1.14.0: Was gibt es Neues?</title>
+        <description>&lt;p&gt;Mit dem Update 1.14.0 bringt Cryptomator neue, spannende Funktionen und wichtige Fehlerbehebungen, die das Arbeiten mit der App noch effizienter machen. In diesem Artikel erfahrt ihr alles Wichtige zu den neuesten Features und Bugfixes.&lt;/p&gt;
+&lt;h2 id=&#34;die-wichtigsten-neuerungen-im-überblick&#34;&gt;Die wichtigsten Neuerungen im Überblick:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Quick Access Feature für einen schnelleren Zugriff auf Tresore.&lt;/li&gt;
+&lt;li&gt;Behobener Bug in CryptoFS bezüglich des Änderungsdatums von Dateien.&lt;/li&gt;
+&lt;li&gt;Fehlerbehebung bei der Verwendung von Dropbox-Tresoren und Microsoft Office unter Windows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;was-ist-neu&#34;&gt;Was ist neu?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Quick Access Features&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;chnelligkeit und Effizienz sind entscheidend für produktives Arbeiten. Mit dem neuen „Quick Access“-Feature erleichtert Cryptomator nun den direkten Zugriff auf Tresore im Dateimanager.&lt;/p&gt;
+&lt;p&gt;Mit dem neuen Feature „Quick Access“ bekommt ihr nun einen Tresor-Schnellzugriff für den Dateimanager, der standardmäßig aktiviert ist. „Quick Access“ ist verfügbar für Windows und alle großen Linux-Distributionen, eine Unterstützung von macOS ist aufgrund fehlender Systemschnittstellen aktuell nicht möglich.&lt;/p&gt;
+&lt;p&gt;Im folgenden Video könnt ihr euch direkt von dem neuen Feature überzeugen.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Ubuntu(Linux):&lt;/em&gt;
+&lt;video class=&#34;rounded&#34; autoplay loop muted playsinline&gt;
+&lt;source src=&#34;https://static.cryptomator.org/blog/quickaccess-ubuntu.mp4&#34; type=&#34;video/mp4&#34;&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Windows:&lt;/em&gt;
+&lt;video class=&#34;rounded&#34; autoplay loop muted playsinline&gt;
+&lt;source src=&#34;https://static.cryptomator.org/blog/quickaccess-windows.mp4&#34; type=&#34;video/mp4&#34;&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Auto Start unter Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Manche Apps werden sofort benötigt, sobald der Computer startklar ist. Das geht jetzt auch mit Cryptomator unter Linux! In den Einstellungen der App könnt ihr festlegen, ob Cryptomator beim Login gestartet werden soll. Unterstützt werden die Desktop-Umgebungen GNOME und KDE und bei Installation über AUR, PPA oder DEB.&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/auto-start.png&#34; srcset=&#34;https://cryptomator.org/img/blog/auto-start.png 1x, https://cryptomator.org/img/blog/auto-start@2x.png 2x&#34; alt=&#34;Auto Start unter Linux&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;bug-fixes&#34;&gt;Bug Fixes&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Cryptofs, lastModified &amp;amp; pCloud&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Gute Nachrichten für alle Nutzerinnen und Nutzer von pCloud! Nutzende von pCloud hatten bisher das Problem, dass das Datum ‚zuletzt geändert‘ bei jeder Dateikopie fälschlicherweise auf ‚heute‘ gesetzt wurde. Wir konnten das Problem im Cryptomator-eigenen Dateisystem CryptoFS beheben. Die Änderung behob ebenfalls Probleme bei anderen Cloud-Anbietern/Speicherorten (u.a. FAT32-formatierte USB-Sticks).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Microsoft Office und Dropbox&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Beim Bearbeiten von Microsoft Office-Dokumenten in einem Dropbox-Tresor unter Windows kam es in der Vergangenheit zu Datenverlusten. Der Grund: Der Laufwerkstyp „WinFsp“ ist nicht kompatibel mit Microsoft Office und Dropbox, jedoch ist „WinFsp“ der Standard unter Windows.
+Ab sofort wird der korrekte Typ „Winfsp (Local Drive)“ automatisch ausgewählt, wenn du einen neuen Dropbox-Tresor erstellst oder importierst. Bestehende Tresore können über die Tresor-Einstellungen im Tab „Einbinden“ auf den richtigen Typ umgestellt werden.&lt;/p&gt;
+&lt;p&gt;Weitere Änderungen kannst du in den aktuellen Release-Notes von Cryptomator finden.&lt;/p&gt;
+&lt;h2 id=&#34;closing-remarks&#34;&gt;Closing Remarks&lt;/h2&gt;
+&lt;p&gt;Cryptomator 1.14.0 bietet nicht nur hilfreiche neue Features, sondern behebt auch entscheidende Fehler, die euer Arbeiten sicherer und effizienter machen. Aktualisiert jetzt auf die neueste Version und profitiert von den Verbesserungen!&lt;/p&gt;
+&lt;p&gt;Wir freuen uns auf euer Feedback und bedanken uns wie immer für eure großartige Unterstützung.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 17 Sep 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/09/17/release-1.14.0/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/09/17/release-1.14.0/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>desktop</category>
+        
+        <category>windows</category>
+        
+        <category>mac</category>
+        
+        <category>linux</category>
         
       </item>
     
@@ -407,35 +463,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
         <link>https://cryptomator.org/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</link>
         <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</guid>
-        
-        <category>cryptomator</category>
-        
-      </item>
-    
-      <item>
-        <title>Herzlichen Glückwunsch Boxcryptor &amp; Dropbox! – Wir sind hier um zu bleiben</title>
-        <description>&lt;p&gt;Du hast vielleicht mitbekommen, dass &lt;a href=&#34;https://blog.dropbox.com/topics/company/dropbox-to-acquire-boxcryptor-assets-bring-end-to-end-encryption-to-business-users&#34;&gt;Dropbox&lt;/a&gt; die IP-Technologie von &lt;a href=&#34;https://www.boxcryptor.com/de/blog/post/new-chapter-with-dropbox/&#34;&gt;Boxcryptor&lt;/a&gt; übernommen hat. Wir gratulieren beiden Unternehmen und wünschen ihnen alles Gute für die Zukunft! &amp;#x1f389;&lt;/p&gt;
-&lt;p&gt;Schon seit geraumer Zeit wird Cryptomator als &lt;a href=&#34;https://cryptomator.org/de/boxcryptor-alternative/&#34;&gt;Alternative zu Boxcryptor&lt;/a&gt; betrachtet und man kann sich bestimmt gut vorstellen, dass wir von dieser Neuigkeit sehr überrascht waren. Am heutigen Computer Security Day möchten wir die Gelegenheit nutzen, um dir mitzuteilen, dass Cryptomator hier ist, um zu bleiben &amp;#x2764;&amp;#xfe0f;&lt;/p&gt;
-&lt;h2 id=&#34;was-bedeutet-das-für-cryptomator&#34;&gt;Was bedeutet das für Cryptomator?&lt;/h2&gt;
-&lt;p&gt;Natürlich sind wir von dieser Übernahme nicht betroffen. Wir sind immer noch das gleiche Team, mit den gleichen Zielen und der gleichen Vision. Die &lt;a href=&#34;https://skymatic.de/&#34;&gt;Skymatic GmbH&lt;/a&gt; wird Cryptomator weiterhin entwickeln und pflegen und wir werden auch weiterhin eine freie und quelloffene Lösung für Ende-zu-Ende-Verschlüsselung anbieten. &amp;#x1f680;&lt;/p&gt;
-&lt;p&gt;Das Konzept hinter Cryptomator ist unabhängig von einem einzelnen Cloud-Anbieter und wir werden weiterhin so viele Cloud-Anbieter wie möglich unterstützen.&lt;/p&gt;
-&lt;p&gt;Cryptomator ist eine Anwendung, die ausschließlich auf dem Endgerät läuft, und benötigt keine Infrastruktur vom Anbieter. Das heißt, selbst wenn die Skymatic GmbH den Betrieb einstellt, können bestehende und neue Nutzer:innen Cryptomator weiter verwenden.&lt;/p&gt;
-&lt;p&gt;Wir haben immer wieder beobachtet, wie sensibel proprietäre Dienste durch Übernahmen beeinflusst werden können. Wir sind der Überzeugung, dass das Recht auf digitale Selbstverteidigung nicht einfach verkauft werden darf. Nicht nur aus diesem Grund setzt Cryptomator auf Open-Source-Lizenzen. Durch GPLv3 (eine Copyleft-Lizenz) ist garantiert, dass selbst im Falle einer Übernahme die Technologie nicht vom Markt genommen werden kann.&lt;/p&gt;
-&lt;p&gt;Bei Open-Source-Tools hat sich in der Vergangenheit gezeigt, dass ein Fork der Anwendung koexistieren oder die eigentliche Anwendung ersetzen kann, wenn diese nicht mehr existiert. Das heißt, selbst wenn die Skymatic GmbH zusammen mit der Community die Entwicklung von Cryptomator einstellt oder Cryptomator an einen Dritten verkauft, ist es sehr wahrscheinlich, dass einer der vielen Forks von Cryptomator von der Community aktiv weiter gepflegt und entwickelt wird.&lt;/p&gt;
-&lt;h2 id=&#34;was-bedeutet-das-für-dropbox-nutzerinnen&#34;&gt;Was bedeutet das für Dropbox-Nutzer:innen?&lt;/h2&gt;
-&lt;p&gt;Es ist wahrscheinlich noch zu früh, um dazu Genaueres zu sagen, aber Dropbox plant, ihre Ende-zu-Ende-Verschlüsselung nur für Geschäftskunden anzubieten. Wir freuen uns zu sehen, dass Dropbox die Ende-zu-Ende-Verschlüsselung ernst nimmt.&lt;/p&gt;
-&lt;p&gt;Cryptomator arbeitet sehr gut mit Dropbox zusammen und für den Moment ist die &lt;a href=&#34;https://cryptomator.org/de/encrypt-dropbox/&#34;&gt;Verschlüsselung von Dropbox&lt;/a&gt; mit Cryptomator die beste Option.&lt;/p&gt;
-&lt;h2 id=&#34;was-bedeutet-das-für-boxcryptor-nutzerinnen&#34;&gt;Was bedeutet das für Boxcryptor-Nutzer:innen?&lt;/h2&gt;
-&lt;p&gt;Wir bedauern es sehr, dass Boxcryptor ihren bestehenden Dienst einstellen wird. Es ist für neue Nutzer nicht mehr verfügbar und bestehende Nutzer:innen werden wahrscheinlich migrieren müssen, wenn ihre Verträge auslaufen. Wenn du davon betroffen bist, heißen wir dich herzlich willkommen, Cryptomator auszuprobieren. &amp;#x1f609; Besuche unsere &lt;a href=&#34;https://community.cryptomator.org/&#34;&gt;Community&lt;/a&gt; für Hilfe und Unterstützung.&lt;/p&gt;
-&lt;p&gt;Cryptomator kann für alle gängigen Betriebssysteme &lt;a href=&#34;https://cryptomator.org/de/downloads/&#34;&gt;heruntergeladen&lt;/a&gt; werden und ist ideal für den persönlichen Gebrauch. Die Desktop-App ist kostenlos und die mobilen Apps können gegen eine einmalige Gebühr erworben werden.&lt;/p&gt;
-&lt;p&gt;Wenn du eine Lösung für Teams und Unternehmen suchst, schaue dir &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt; an, das ebenfalls Open-Source ist. &amp;#x1f389;&lt;/p&gt;
-&lt;h2 id=&#34;vielen-dank&#34;&gt;Vielen Dank&lt;/h2&gt;
-&lt;p&gt;Cryptomator begann vor fast neun Jahren als ein Nebenprojekt. Heute sind wir ein Team von leidenschaftlichen Entwicklern und freuen uns, dass wir an Cryptomator arbeiten können. Ein großes Lob an alle unsere Open-Source-Contributors, Übersetzer und Tester! Wir sind dankbar für all die Unterstützung, die wir im Laufe der Jahre von der Cryptomator-Community erhalten haben, und für das Vertrauen, das ihr uns entgegenbringt. Unser besonderer Dank gilt unseren Sponsoren und Unterstützern!&lt;/p&gt;
-&lt;p&gt;Wir haben das Gefühl, dass wir gerade erst am Anfang stehen und haben noch große Updates vor uns! Um die fortlaufende Open-Source-Entwicklung von Cryptomator zu unterstützen, freuen wir uns über eine &lt;a href=&#34;https://cryptomator.org/de/donate/&#34;&gt;Spende&lt;/a&gt; oder ein &lt;a href=&#34;https://cryptomator.org/de/sponsors/&#34;&gt;Sponsoring&lt;/a&gt;. &amp;#x2764;&amp;#xfe0f;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/</guid>
         
         <category>cryptomator</category>
         

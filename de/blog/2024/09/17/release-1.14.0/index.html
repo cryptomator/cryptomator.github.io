@@ -3,17 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cryptomator für Android</title>
+    <title>Cryptomator 1.14.0: Was gibt es Neues?</title>
     
-      <meta name="description" content="Kaufe Cryptomator für Android, ohne über Google Play zu gehen."/>
-      <meta property="og:title" content="Cryptomator - Cryptomator für Android"/>
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/de/android/"/>
-      <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Kaufe Cryptomator für Android, ohne über Google Play zu gehen."/>
-      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta name="description" content="Neue Features wie Quick Access, Auto Start für Linux und wichtige Fehlerbehebungen für CryptoFS! Jetzt aktualisieren!">
+      <meta property="og:title" content="Cryptomator 1.14.0: Was gibt es Neues?">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/de/blog/2024/09/17/release-1.14.0/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="Neue Features wie Quick Access, Auto Start für Linux und wichtige Fehlerbehebungen für CryptoFS! Jetzt aktualisieren!">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2024-09-17" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="desktop" />
+      
+        <meta property="article:tag" content="windows" />
+      
+        <meta property="article:tag" content="mac" />
+      
+        <meta property="article:tag" content="linux" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     
     <meta property="og:locale" content="" />
     
@@ -26,7 +39,7 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
-      <link rel="alternate" hreflang="en" href="/android/" />
+      <link rel="alternate" hreflang="en" href="/blog/2024/09/17/release-1.14.0/" />
     
     
       
@@ -115,7 +128,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-              <a :href="'/android/' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+              <a :href="'/blog/2024/09/17/release-1.14.0/' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
             </div>
           </div>
         </li>
@@ -162,7 +175,7 @@
     </div>
     <div class="mt-1">
       
-      <a :href="'/android/' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a :href="'/blog/2024/09/17/release-1.14.0/' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
       
     </div>
 
@@ -182,177 +195,79 @@
 <div class="bg-gray-100 min-vh-80 pt-12">
     
     
-  <div class="container py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-      <h1>Cryptomator für Android</h1>
-      <p class="lead">Kaufe Cryptomator für Android, ohne über Google Play zu gehen.</p>
-    </header>
+  <div class="container-prose py-12">
+    <article class="mb-12">
+      <header class="mb-6">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/de/blog/">Blog</a> / Cryptomator 1.14.0: Was gibt es Neues?</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/de/blog/2024/09/17/release-1.14.0/">2024-09-17</a></span>
+        </div>
+        
+      </header>
 
-    <div class="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
-      <section class="w-full md:w-1/2">
-        <div x-data="{checkoutData: {price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white">
-  <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary text-center">
-    <h3>Lizenzschlüssel kaufen</h3>
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>Mit dem Update 1.14.0 bringt Cryptomator neue, spannende Funktionen und wichtige Fehlerbehebungen, die das Arbeiten mit der App noch effizienter machen. In diesem Artikel erfahrt ihr alles Wichtige zu den neuesten Features und Bugfixes.</p>
+<h2 id="die-wichtigsten-neuerungen-im-überblick">Die wichtigsten Neuerungen im Überblick:</h2>
+<ul>
+<li>Quick Access Feature für einen schnelleren Zugriff auf Tresore.</li>
+<li>Behobener Bug in CryptoFS bezüglich des Änderungsdatums von Dateien.</li>
+<li>Fehlerbehebung bei der Verwendung von Dropbox-Tresoren und Microsoft Office unter Windows.</li>
+</ul>
+<h2 id="was-ist-neu">Was ist neu?</h2>
+<p><strong>Quick Access Features</strong></p>
+<p>chnelligkeit und Effizienz sind entscheidend für produktives Arbeiten. Mit dem neuen „Quick Access“-Feature erleichtert Cryptomator nun den direkten Zugriff auf Tresore im Dateimanager.</p>
+<p>Mit dem neuen Feature „Quick Access“ bekommt ihr nun einen Tresor-Schnellzugriff für den Dateimanager, der standardmäßig aktiviert ist. „Quick Access“ ist verfügbar für Windows und alle großen Linux-Distributionen, eine Unterstützung von macOS ist aufgrund fehlender Systemschnittstellen aktuell nicht möglich.</p>
+<p>Im folgenden Video könnt ihr euch direkt von dem neuen Feature überzeugen.</p>
+<p><em>Ubuntu(Linux):</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-ubuntu.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><em>Windows:</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-windows.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><strong>Auto Start unter Linux</strong></p>
+<p>Manche Apps werden sofort benötigt, sobald der Computer startklar ist. Das geht jetzt auch mit Cryptomator unter Linux! In den Einstellungen der App könnt ihr festlegen, ob Cryptomator beim Login gestartet werden soll. Unterstützt werden die Desktop-Umgebungen GNOME und KDE und bei Installation über AUR, PPA oder DEB.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/auto-start.png" srcset="/img/blog/auto-start.png 1x, /img/blog/auto-start@2x.png 2x" alt="Auto Start unter Linux" />
+</figure>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<p><strong>Cryptofs, lastModified &amp; pCloud</strong></p>
+<p>Gute Nachrichten für alle Nutzerinnen und Nutzer von pCloud! Nutzende von pCloud hatten bisher das Problem, dass das Datum ‚zuletzt geändert‘ bei jeder Dateikopie fälschlicherweise auf ‚heute‘ gesetzt wurde. Wir konnten das Problem im Cryptomator-eigenen Dateisystem CryptoFS beheben. Die Änderung behob ebenfalls Probleme bei anderen Cloud-Anbietern/Speicherorten (u.a. FAT32-formatierte USB-Sticks).</p>
+<p><strong>Microsoft Office und Dropbox</strong></p>
+<p>Beim Bearbeiten von Microsoft Office-Dokumenten in einem Dropbox-Tresor unter Windows kam es in der Vergangenheit zu Datenverlusten. Der Grund: Der Laufwerkstyp „WinFsp“ ist nicht kompatibel mit Microsoft Office und Dropbox, jedoch ist „WinFsp“ der Standard unter Windows.
+Ab sofort wird der korrekte Typ „Winfsp (Local Drive)“ automatisch ausgewählt, wenn du einen neuen Dropbox-Tresor erstellst oder importierst. Bestehende Tresore können über die Tresor-Einstellungen im Tab „Einbinden“ auf den richtigen Typ umgestellt werden.</p>
+<p>Weitere Änderungen kannst du in den aktuellen Release-Notes von Cryptomator finden.</p>
+<h2 id="closing-remarks">Closing Remarks</h2>
+<p>Cryptomator 1.14.0 bietet nicht nur hilfreiche neue Features, sondern behebt auch entscheidende Fehler, die euer Arbeiten sicherer und effizienter machen. Aktualisiert jetzt auf die neueste Version und profitiert von den Verbesserungen!</p>
+<p>Wir freuen uns auf euer Feedback und bedanken uns wie immer für eure großartige Unterstützung.</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
   </div>
-
-  <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
-    <div class="w-full md:w-1/2 mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Preis</label>
-      <input x-model="checkoutData.price" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Lädt…" readonly/>
-    </div>
-    <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">E-Mail</label>
-      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="E-Mail-Adresse" required/>
-    </div>
-    <div class="text-center mt-8">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-624389175" x-model="acceptTerms" />
-<label for="id-624389175">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
-</p>
-      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64">
-        <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
-      </button>
-      <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
-    </div>
-  </form>
-
-  <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
-    <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">👍 Deine Zahlung war erfolgreich!</h3>
-    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Lizenzschlüssel</label>
-    <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="Lädt…" readonly></textarea>
-    <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700">Dies ist dein Lizenzschlüssel. Gib ihn in der Cryptomator-App ein. Der Lizenzschlüssel wurde auch an deine E-Mail-Adresse geschickt.</p>
-  </div>
-</div>
-
 
   
-  <script type="text/javascript" src="/js/androidkey.min.050b610ad29ca710a361712762f49a6fc586cfd1e8c5dfe07849ca29d08e7f91.js" integrity="sha256-BQthCtKcpxCjYXEnYvSab8WGz9Hoxd/geEnKKdCOf5E=" defer></script>
-
-
-      </section>
-
-      <div class="flex flex-col space-y-6 w-full md:w-1/2">
-        <section>
-          <div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-  <meta itemprop="name" content="Cryptomator"/>
-  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
-  <meta itemprop="applicationCategory" content="Productivity"/>
-  <meta itemprop="softwareVersion" content="1.10.2"/>
-  <meta itemprop="applicationSubCategory" content="Encryption"/>
-  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-  <meta itemprop="operatingSystem" content="Android"/>
-
-  <div class="rounded shadow bg-white">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>APK herunterladen</h3>
-    </div>
-    <div class="px-4 py-8" x-data="{showShaSignature: false}">
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>Version 1.10.2 • Minimum: Android 8.0</p>
-      </div>
-      <a class="btn btn-primary w-full md:w-48 mb-2" href="https://static.cryptomator.org/android/1.10.2/Cryptomator-1.10.2.apk" role="button">
-        <span class="fas fa-download" aria-hidden="true"></span> Download
-      </a>
-      <p class="text-xs">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> SHA256-Signatur</a>
-      </p>
-      <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
-        <p><code class="break-all">7ac9fadd5da11740732fae34652e19f1cd31450dc2eb4b55ddfb9e52fd8be151</code></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-        </section>
-
-        <section>
-          <div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication" x-data="{fdroidVariant: 'cryptomator-repo'}">
-  <meta itemprop="name" content="Cryptomator"/>
-  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
-  <meta itemprop="applicationCategory" content="Productivity"/>
-  <meta itemprop="softwareVersion" content="1.10.2"/>
-  <meta itemprop="applicationSubCategory" content="Encryption"/>
-  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-  <meta itemprop="operatingSystem" content="Android"/>
-
-  <div class="rounded shadow bg-white">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>Auf F-Droid herunterladen</h3>
-    </div>
-
-    <div class="flex justify-center p-4">
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
-        Cryptomator Repository
-      </button>
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
-        Main Repository
-      </button>
-    </div>
-
-    <div x-show="fdroidVariant === 'cryptomator-repo'" class="px-4 pt-4 pb-8" x-data="{showQrCode: false}">
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>Folgenden <a class="text-primary no-underline hover:underline" href="https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD" target="_blank">Link</a> öffnen oder den QR-Code scannen, um unser Repository hinzuzufügen.</p>
-      </div>
-      <p class="text-xs mb-4">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> QR Code</a>
-      </p>
-      <div x-show="showQrCode" x-cloak class="mb-4">
-        <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
-      </div>
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>❌ Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen.</p>
-      </div>
-      <div class="prose prose-sm max-w-none md:max-w-none">
-        <p>Einen detaillierten Vergleich aller Varianten findest du in unserer <a class="text-sm no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/android/setup" target="_blank">Dokumentation</a>.</p>
-      </div>
-    </div>
-
-    <div x-show="fdroidVariant === 'main-repo'" class="px-4 pt-4 pb-8">
-      <a href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
-        <img class="h-10 mx-auto lazyload mb-4" data-src="/de/img/android/fdroid-main-badge.svg">
-      </a>
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>❌ Dropbox, Google Drive, OneDrive und pCloud sind aufgrund erforderlicher API-Schlüssel ausgeschlossen.</p>
-      </div>
-      <div class="prose prose-sm max-w-none md:max-w-none">
-        <p>Einen detaillierten Vergleich aller Varianten findest du in unserer <a class="text-sm no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/android/setup" target="_blank">Dokumentation</a>.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-        </section>
-      </div>
-    </div>
-  </div>
-
-  <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
-    <h3 id="keyrecovery" class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Hast du deinen Lizenschlüssel verloren?</h3>
-
-    <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Um einen verlorenen Lizenschlüssel oder Zahlungsbeleg wiederzuerlangen, gib unten deine E-Mail-Adresse ein.</p>
-      <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="E-Mail-Adresse" required/>
-        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
-          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Abrufen
-        </button>
-      </div>
-      <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
-    </form>
-
-    <div x-show="data.success" x-cloak>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">👍 Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt.</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">❓ Wenn du keine E-Mail bekommen hast, <a class="text-primary no-underline hover:underline" href="mailto:support@cryptomator.org">kontaktiere uns</a>.</p>
-    </div>
-  </section>
-
   
     
-    <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
+      
+        
+      
     
-    <script type="text/javascript" src="/js/keyrecovery.min.6c429a8195dcfd77702bbb390e96bedb6b5cf31e960056780ba701042d4cf288.js" integrity="sha256-bEKagZXc/XdwK7s5Dpa&#43;22tc8x6WAFZ4C6cBBC1M8og=" defer></script>
+  
+  
+    
+      
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/09/17/release-1.14.0/" defer></script>
+    
   
 
     </div>

@@ -190,6 +190,48 @@
     
       
         <article>
+          <h2>Cryptomator 1.14.0: Was gibt es Neues?</h2>
+          <p>Mit dem Update 1.14.0 bringt Cryptomator neue, spannende Funktionen und wichtige Fehlerbehebungen, die das Arbeiten mit der App noch effizienter machen. In diesem Artikel erfahrt ihr alles Wichtige zu den neuesten Features und Bugfixes.</p>
+<h2 id="die-wichtigsten-neuerungen-im-überblick">Die wichtigsten Neuerungen im Überblick:</h2>
+<ul>
+<li>Quick Access Feature für einen schnelleren Zugriff auf Tresore.</li>
+<li>Behobener Bug in CryptoFS bezüglich des Änderungsdatums von Dateien.</li>
+<li>Fehlerbehebung bei der Verwendung von Dropbox-Tresoren und Microsoft Office unter Windows.</li>
+</ul>
+<h2 id="was-ist-neu">Was ist neu?</h2>
+<p><strong>Quick Access Features</strong></p>
+<p>chnelligkeit und Effizienz sind entscheidend für produktives Arbeiten. Mit dem neuen „Quick Access“-Feature erleichtert Cryptomator nun den direkten Zugriff auf Tresore im Dateimanager.</p>
+<p>Mit dem neuen Feature „Quick Access“ bekommt ihr nun einen Tresor-Schnellzugriff für den Dateimanager, der standardmäßig aktiviert ist. „Quick Access“ ist verfügbar für Windows und alle großen Linux-Distributionen, eine Unterstützung von macOS ist aufgrund fehlender Systemschnittstellen aktuell nicht möglich.</p>
+<p>Im folgenden Video könnt ihr euch direkt von dem neuen Feature überzeugen.</p>
+<p><em>Ubuntu(Linux):</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-ubuntu.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><em>Windows:</em>
+<video class="rounded" autoplay loop muted playsinline>
+<source src="https://static.cryptomator.org/blog/quickaccess-windows.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+<p><strong>Auto Start unter Linux</strong></p>
+<p>Manche Apps werden sofort benötigt, sobald der Computer startklar ist. Das geht jetzt auch mit Cryptomator unter Linux! In den Einstellungen der App könnt ihr festlegen, ob Cryptomator beim Login gestartet werden soll. Unterstützt werden die Desktop-Umgebungen GNOME und KDE und bei Installation über AUR, PPA oder DEB.</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/auto-start.png" srcset="/img/blog/auto-start.png 1x, /img/blog/auto-start@2x.png 2x" alt="Auto Start unter Linux" />
+</figure>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<p><strong>Cryptofs, lastModified &amp; pCloud</strong></p>
+<p>Gute Nachrichten für alle Nutzerinnen und Nutzer von pCloud! Nutzende von pCloud hatten bisher das Problem, dass das Datum ‚zuletzt geändert‘ bei jeder Dateikopie fälschlicherweise auf ‚heute‘ gesetzt wurde. Wir konnten das Problem im Cryptomator-eigenen Dateisystem CryptoFS beheben. Die Änderung behob ebenfalls Probleme bei anderen Cloud-Anbietern/Speicherorten (u.a. FAT32-formatierte USB-Sticks).</p>
+<p><strong>Microsoft Office und Dropbox</strong></p>
+<p>Beim Bearbeiten von Microsoft Office-Dokumenten in einem Dropbox-Tresor unter Windows kam es in der Vergangenheit zu Datenverlusten. Der Grund: Der Laufwerkstyp „WinFsp“ ist nicht kompatibel mit Microsoft Office und Dropbox, jedoch ist „WinFsp“ der Standard unter Windows.
+Ab sofort wird der korrekte Typ „Winfsp (Local Drive)“ automatisch ausgewählt, wenn du einen neuen Dropbox-Tresor erstellst oder importierst. Bestehende Tresore können über die Tresor-Einstellungen im Tab „Einbinden“ auf den richtigen Typ umgestellt werden.</p>
+<p>Weitere Änderungen kannst du in den aktuellen Release-Notes von Cryptomator finden.</p>
+<h2 id="closing-remarks">Closing Remarks</h2>
+<p>Cryptomator 1.14.0 bietet nicht nur hilfreiche neue Features, sondern behebt auch entscheidende Fehler, die euer Arbeiten sicherer und effizienter machen. Aktualisiert jetzt auf die neueste Version und profitiert von den Verbesserungen!</p>
+<p>Wir freuen uns auf euer Feedback und bedanken uns wie immer für eure großartige Unterstützung.</p>
+
+        </article>
+      
+        <article>
           <h2>Cryptomator 1.10.0 Release</h2>
           <p>Wir freuen uns, die Veröffentlichung von Cryptomator 1.10.0 bekannt zu geben! &#x1f389; Schauen wir uns an, was dieses neue Release zu bieten hat!</p>
 <h2 id="experteneinstellungen-bei-der-tresorerstellung">Experteneinstellungen bei der Tresorerstellung</h2>
