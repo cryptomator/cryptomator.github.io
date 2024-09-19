@@ -75,18 +75,18 @@ block = true
       checksum = "998b02c07f9df2bb661aee2c571be458a64c981da01e50d1857a6f7b892d67e4"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.dmg]
-      version = "1.14.0"
-      filename = "Cryptomator-1.14.0.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.0/Cryptomator-1.14.0-x64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.0/Cryptomator-1.14.0-x64.dmg.asc"
-      checksum = "2eb6f84421b7f96eded87ae9657030f3691668269bc404a4afea824f9e50b25f"
+      version = "1.14.1"
+      filename = "Cryptomator-1.14.1.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.1/Cryptomator-1.14.1-x64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.1/Cryptomator-1.14.1-x64.dmg.asc"
+      checksum = "966e67cb1ad4e9a4d6ad49a36ed147f9d4c070fa48aa1001cd1a981dc06f17ff"
       requiredOS = 'macOS 11'
     [params.releases.dmg-arm64]
-      version = "1.14.0"
-      filename = "Cryptomator-1.14.0-arm64.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.0/Cryptomator-1.14.0-arm64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.0/Cryptomator-1.14.0-arm64.dmg.asc"
-      checksum = "7dfb37eb6cbf01882883331e9f9453a3bc5b9833f9780a016651cbab6fc5e812"
+      version = "1.14.1"
+      filename = "Cryptomator-1.14.1-arm64.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.1/Cryptomator-1.14.1-arm64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.14.1/Cryptomator-1.14.1-arm64.dmg.asc"
+      checksum = "33663c07fda973a3ff17cb6113b7b28e08e42514506faec5e8fa8bcf24157746"
       requiredOS = 'macOS 11'
     [params.releases.appimage]
       version = "1.14.0"
