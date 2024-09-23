@@ -62,8 +62,21 @@
                 href="https://cryptomator.org/de/downloads/ios/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/tags/android/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/tags/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/tags/android/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/blog/</loc>
-    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
@@ -76,7 +89,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/tags/cryptomator/</loc>
-    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
@@ -89,7 +102,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/de/</loc>
-    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
@@ -99,6 +112,32 @@
                 rel="alternate"
                 hreflang="de_DE"
                 href="https://cryptomator.org/de/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/blog/2024/09/23/android-1.10.3/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/blog/2024/09/23/android-1.10.3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/blog/2024/09/23/android-1.10.3/"
+                />
+  </url><url>
+    <loc>https://cryptomator.org/de/tags/</loc>
+    <lastmod>2024-09-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/tags/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/blog/2024/09/17/release-1.14.0/</loc>
@@ -179,19 +218,6 @@
                 href="https://cryptomator.org/de/tags/mac/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/de/tags/</loc>
-    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en_US"
-                href="https://cryptomator.org/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de_DE"
-                href="https://cryptomator.org/de/tags/"
-                />
-  </url><url>
     <loc>https://cryptomator.org/de/tags/windows/</loc>
     <lastmod>2024-09-17T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -216,19 +242,6 @@
                 rel="alternate"
                 hreflang="de_DE"
                 href="https://cryptomator.org/de/blog/2024/08/09/google-drive-issue/"
-                />
-  </url><url>
-    <loc>https://cryptomator.org/de/tags/android/</loc>
-    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en_US"
-                href="https://cryptomator.org/tags/android/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de_DE"
-                href="https://cryptomator.org/de/tags/android/"
                 />
   </url><url>
     <loc>https://cryptomator.org/de/tags/google-drive/</loc>

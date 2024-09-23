@@ -11,8 +11,40 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/android/</link>
     </image>
-    <lastBuildDate>Mon, 23 Sep 2024 08:22:12 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2024 10:52:52 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 1.10.3 für Android: Was gibt es Neues?</title>
+        <description>&lt;p&gt;Nachdem wir letzte Woche bereits Updates für iOS und die Desktop-Version von Cryptomator veröffentlicht haben, ist nun auch Android an der Reihe! Das neue Update 1.10.3 steht ab sofort zur Verfügung und sorgt für noch besseren Schutz eurer Daten. Werfen wir einen Blick auf die wichtigsten Neuerungen.&lt;/p&gt;
+&lt;h2 id=&#34;die-wichtigsten-neuerungen-im-überblick&#34;&gt;Die wichtigsten Neuerungen im Überblick&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Tresor-Passwörter zu GCM migrieren&lt;/li&gt;
+&lt;li&gt;Thailändisch als neue Sprache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;was-ist-neu&#34;&gt;Was ist neu?&lt;/h2&gt;
+&lt;h3 id=&#34;tresor-passwörter-zu-gcm-migrieren&#34;&gt;Tresor-passwörter zu GCM migrieren&lt;/h3&gt;
+&lt;p&gt;Wir haben die Verschlüsselung für Tresor-Passwörter und Cloud-Zugangsdaten verbessert! Ab sofort nutzen wir AES-256 GCM statt AES-256 CBC, um einen noch stärkeren Schutz zu bieten. Die Passwörter und Zugangsdaten werden weiterhin sicher im Android Keystore gespeichert, und
+dank des Android-Sandbox-Modells bleiben eure Daten im internen Speicher geschützt.&lt;/p&gt;
+&lt;p&gt;Beim Update der App werden bestehende Cloud-Zugangsdaten und Tresor-Passwörter automatisch in das neue Format migriert. Ihr könnt euch gegen die Migration der Tresor-
+Passwörter entscheiden, jedoch werden die Passwörter in diesem Fall aus Sicherheitsgründen
+aus der App gelöscht.&lt;/p&gt;
+&lt;h3 id=&#34;neue-sprache-thailändisch&#34;&gt;Neue Sprache: Thailändisch&lt;/h3&gt;
+&lt;p&gt;Eine weitere großartige Neuerung: Die Cryptomator-App ist jetzt auch in Thailändisch verfügbar! Wir freuen uns, unsere App für noch mehr Nutzer weltweit zugänglich zu machen und so unsere Community zu vergrößern. Mit dieser neuen Sprachoption wird die Nutzung von Cryptomator für thailändische Anwender noch einfacher und komfortabler.&lt;/p&gt;
+&lt;p&gt;Ein großes Dankeschön gilt unserer engagierten Community, die uns dabei unterstützt, Cryptomator für noch mehr Länder und Sprachen zu optimieren. Wenn ihr Lust habt, euch an den Übersetzungen zu beteiligen, besucht uns hier: &lt;a href=&#34;https://translate.cryptomator.org&#34;&gt;https://translate.cryptomator.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;schlusswort&#34;&gt;Schlusswort&lt;/h2&gt;
+&lt;p&gt;Das Update 1.10.3 für Android mag auf den ersten Blick klein erscheinen, doch die Verbesserungen sind entscheidend für den Schutz eurer Daten. Auch wenn die vorherige Implementierung innerhalb des Android-Ökosystems sicher war, wurde sie weiter optimiert, um den neuesten Sicherheitsstandards gerecht zu werden.&lt;/p&gt;
+&lt;p&gt;Wir bedanken uns für euer fortlaufendes Feedback und eure Unterstützung. Probiert die neue Version aus und lasst uns wissen, was ihr davon haltet!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Sep 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/09/23/android-1.10.3/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/09/23/android-1.10.3/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>android</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 2.6 für iOS: Was gibt es Neues?</title>
@@ -415,56 +447,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <category>mac</category>
         
         <category>linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Boxcryptor stellt seine Dienste ein – Hier ist deine Alternative</title>
-        <description>&lt;p&gt;Wie bereits im &lt;a href=&#34;https://cryptomator.org/de/blog/2022/11/30/congratulations-boxcryptor-dropbox/&#34;&gt;letzten Blog-Post&lt;/a&gt; erwähnt, hat Dropbox die Schlüsseltechnologie von Boxcryptor übernommen. Das bedeutet, dass die Dienste von Boxcryptor für neue Nutzer:innen nicht mehr verfügbar sind und bestehende Nutzer:innen wahrscheinlich migrieren müssen, wenn ihre Verträge auslaufen.&lt;/p&gt;
-&lt;p&gt;Wir sind hier, um zu bleiben, und bieten dir an, unsere Open-Source-Software auszutesten. Cryptomator ist kostenlos und ohne Account nutzbar. &lt;a href=&#34;https://cryptomator.org/de/downloads/&#34;&gt;Einfach herunterladen&lt;/a&gt; und loslegen.&lt;/p&gt;
-&lt;p&gt;Wenn du auf der Suche nach einem Ersatz bist, dann bist du hier richtig. Wir vergleichen die Funktionen von Boxcryptor mit Cryptomator. Überzeuge dich selbst!&lt;/p&gt;
-&lt;img class=&#34;inline-block&#34; src=&#34;https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis.png&#34; srcset=&#34;https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis.png 1x, https://cryptomator.org/img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x&#34; alt=&#34;Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert.&#34; /&gt;
-&lt;h2 id=&#34;funktionen-und-eigenschaften-von-boxcryptor&#34;&gt;Funktionen und Eigenschaften von Boxcryptor&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Verschlüsselung von allen gängigen Cloud-Anbietern&lt;/li&gt;
-&lt;li&gt;War auf Windows, macOS, Linux (nur Portable), iOS und Android verfügbar&lt;/li&gt;
-&lt;li&gt;Ende-zu-Ende- und Zero-Knowledge-Verschlüsselung&lt;/li&gt;
-&lt;li&gt;Dateinamenverschlüsselung war kostenpflichtig&lt;/li&gt;
-&lt;li&gt;Lizenzen ab 36€ pro Jahr, Business-Lizenzen ab 72€ pro Jahr&lt;/li&gt;
-&lt;li&gt;Closed-Source-Software&lt;/li&gt;
-&lt;li&gt;Software „Made in Germany“&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;funktionen-und-eigenschaften-von-cryptomator&#34;&gt;Funktionen und Eigenschaften von Cryptomator&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Verschlüsselung von allen gängigen Cloud-Anbietern (keine Einschränkung bei Desktop-App; mobile Apps mit Dropbox, Google Drive, OneDrive, pCloud, iCloud Drive unter iOS und jeder Cloud via WebDAV und S3 kompatibel)&lt;/li&gt;
-&lt;li&gt;Verfügbar auf Windows, macOS, Linux, iOS und Android&lt;/li&gt;
-&lt;li&gt;Sowohl für den persönlichen Gebrauch als auch für Unternehmen: &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Ende-zu-Ende- und Zero-Knowledge-Verschlüsselung&lt;/li&gt;
-&lt;li&gt;Kostenlose Desktop-App, Einmalkauf (15€) bei der mobilen App, kein Abonnement&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cryptomator.org/de/open-source/&#34;&gt;Maximale Transparenz durch Open-Source-Software&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Unbeschränkte Anzahl an Geräten&lt;/li&gt;
-&lt;li&gt;Passwort-Wiederherstellung durch Offline Key Recovery&lt;/li&gt;
-&lt;li&gt;Software „Made in Germany“&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img class=&#34;inline-block&#34; src=&#34;https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault.png&#34; srcset=&#34;https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault.png 1x, https://cryptomator.org/img/encrypt-dropbox/cryptobot-unlocking-vault@2x.png 2x&#34; alt=&#34;Cryptomator ermöglicht dir den Zugang zu deinen Klartextdaten, ohne dass der Schutz der Verschlüsselung aufgehoben werden muss.&#34; /&gt;
-&lt;h2 id=&#34;wie-du-von-boxcryptor-zu-cryptomator-wechselst&#34;&gt;Wie du von Boxcryptor zu Cryptomator wechselst&lt;/h2&gt;
-&lt;p&gt;Der Umzug von Boxcryptor zu Cryptomator ist einfach. Boxcryptor bietet auf deren Website einen &lt;a href=&#34;https://support.boxcryptor.com/de/help/faq-and-troubleshooting/#migration-guide&#34;&gt;Off-Migration Guide&lt;/a&gt;, um alle mit Boxcryptor verschlüsselten Dateien zu entschlüsseln. Stelle zu jedem Zeitpunkt sicher, dass keine sensiblen Daten unverschlüsselt in der Cloud liegen. Anschließend richtest du Cryptomator ein, damit du diese Dateien wieder sicher und verschlüsselt in die Cloud synchronisieren kannst.&lt;/p&gt;
-&lt;h3 id=&#34;so-leicht-richtest-du-cryptomator-ein&#34;&gt;So leicht richtest du Cryptomator ein&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://cryptomator.org/de/downloads/&#34;&gt;Lade Cryptomator herunter&lt;/a&gt; und installiere es.&lt;/li&gt;
-&lt;li&gt;Sobald Cryptomator installiert ist, kannst du einen neuen Tresor erstellen.&lt;/li&gt;
-&lt;li&gt;Gib deinem Tresor einen Namen.&lt;/li&gt;
-&lt;li&gt;Wähle nun als Ablageort deines Tresors einen Cloud-Speicher deiner Wahl aus.&lt;/li&gt;
-&lt;li&gt;Vergib ein Passwort.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Und schon hast du deinen ersten Tresor erfolgreich erstellt.&lt;/p&gt;
-&lt;p&gt;Wenn du möchtest, kannst du diesen sofort entsperren und das virtuelle Laufwerk sichtbar werden lassen. Hier legst du ab sofort deine sensiblen Dateien ab, bspw. die Daten, die du vorher mit Boxcryptor verschlüsselt hast, um diese in der Cloud von nun an mit Cryptomator zu verschlüsseln. &lt;a href=&#34;https://docs.cryptomator.org/en/latest/desktop/adding-vaults/&#34;&gt;Eine ausführliche Anleitung gibt es hier.&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2022/12/08/boxcryptor-shuts-down-find-your-cloud-encryption-alternative/</guid>
-        
-        <category>cryptomator</category>
         
       </item>
     
