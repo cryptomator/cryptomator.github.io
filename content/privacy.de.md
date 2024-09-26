@@ -234,6 +234,7 @@ Diese Daten werden ausschließlich lokal auf dem Gerät des Nutzers verarbeitet.
 
 Sollten solche Cloud-Speicher-Dienste genutzt werden, sind auch die Datenschutzerklärungen der jeweiligen Anbieter zu beachten:
 
+* [Box](https://www.box.com/legal/privacypolicy)
 * [iCloud Drive](https://www.apple.com/legal/privacy/en-ww/)
 * [Dropbox](https://www.dropbox.com/privacy)
 * [Google Drive](https://developers.google.com/terms/api-services-user-data-policy)
