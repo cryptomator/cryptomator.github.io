@@ -383,17 +383,21 @@
     </div>
   </section>
 
-  <section x-data="{data: {email: '', listId: 6, errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
+  <section x-data="{data: {email: '', listId: 6, acceptTerms: false, errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
     <h2 id="newsletter" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Let&#39;s stay in touch</h2>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto mb-4">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Subscribe to our mailing list or follow us on social media.</p>
-      <div class="flex justify-center items-center rounded bg-gray-300">
+      <div class="flex justify-center items-center rounded bg-gray-300 mb-4">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Email address" required/>
-        <button :disabled="data.inProgress" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
+        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Subscribe
         </button>
       </div>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700">
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-523187649" x-model="data.acceptTerms" />
+<label for="id-523187649">I agree to get updates from Cryptomator and accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+</p>
       <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
     </form>
 
