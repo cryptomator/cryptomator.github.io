@@ -139,7 +139,7 @@ Wenn Sie mit uns Kontakt aufnehmen, werden Ihre Daten in einem Benutzerprofil ge
 - Dauer eines Telefongesprächs (falls zutreffend)
 - Notizen aus früheren Interaktionen
 
-Wir verarbeiten diese Daten auf Grundlage unseres berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO) an einem effizienten Support, der Pflege der Kundenbeziehung und der Sicherstellung einer reibungslosen Kommunikation. Bezieht sich Ihre Anfrage auf einen Vertrag oder eine vorvertragliche Maßnahme, erfolgt die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b GDPR.
+Wir verarbeiten diese Daten auf Grundlage unseres berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO) an einem effizienten Support, der Pflege der Kundenbeziehung und der Sicherstellung einer reibungslosen Kommunikation. Bezieht sich Ihre Anfrage auf einen Vertrag oder eine vorvertragliche Maßnahme, erfolgt die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.
 
 Ihre Daten können auf verschiedene Weise in unser System aufgenommen werden:
 
@@ -149,20 +149,20 @@ Ihre Daten können auf verschiedene Weise in unser System aufgenommen werden:
 
 Die Informationen, die Sie während dieser Interaktionen zur Verfügung stellen, werden in unserem System gespeichert, um ein umfassendes Profil zu erstellen, das uns hilft, zukünftige Anfragen effektiver zu verwalten und zu beantworten.
 
-Die Daten werden so lange aufbewahrt, wie es notwendig ist, um den Zweck zu erfüllen, für den sie gesammelt wurden, oder um gesetzliche Anforderungen zu erfüllen. Die Daten werden gelöscht, wenn das GDPR-Recht auf Löschung ausgeübt wird, es sei denn, gesetzliche Verpflichtungen oder berechtigte Interessen erfordern eine weitere Speicherung. Die Aufbewahrung bestimmter Daten ermöglicht es unseren Support- und Vertriebsteams, einen besseren Service zu bieten, indem sie auf Erkenntnisse aus früheren Interaktionen zurückgreifen können.
+Die Daten werden so lange aufbewahrt, wie es notwendig ist, um den Zweck zu erfüllen, für den sie gesammelt wurden, oder um gesetzliche Anforderungen zu erfüllen. Die Daten werden gelöscht, wenn das DSGVO-Recht auf Löschung ausgeübt wird, es sei denn, gesetzliche Verpflichtungen oder berechtigte Interessen erfordern eine weitere Speicherung. Die Aufbewahrung bestimmter Daten ermöglicht es unseren Support- und Vertriebsteams, einen besseren Service zu bieten, indem sie auf Erkenntnisse aus früheren Interaktionen zurückgreifen können.
 
 Wir geben Ihre Daten nicht an Dritte weiter, es sei denn, dies ist zur Erfüllung vertraglicher Verpflichtungen oder zur Erbringung notwendiger Dienstleistungen durch einen in unserem Namen handelnden autorisierten Dienstleister erforderlich.
 
 ### 5.5 Verwendung des Newsletters
 Wir verwenden selbst gehostete Open-Source-Softwarelösungen, um den Versand von Newslettern zu gewährleisten.
 
-Sie haben die Möglichkeit, über unsere Website unseren Newsletter zu abonnieren. Der Versand des Newsletters erfolgt nur, wenn Sie uns eine Einwilligung nach Art. 6 Abs.. 1 lit. a GDPR erteilt haben. Nach der Anmeldung auf unserer Website erhalten Sie eine Bestätigungs-E-Mail an die von Ihnen angegebene E-Mail-Adresse (sog. Double-Opt-In). Sie können Ihre Einwilligung jederzeit widerrufen. Eine einfache Möglichkeit zur Abmeldung wird in jedem Newsletter über einen Link bereitgestellt.
+Sie haben die Möglichkeit, über unsere Website unseren Newsletter zu abonnieren. Der Versand des Newsletters erfolgt nur, wenn Sie uns eine Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO erteilt haben. Nach der Anmeldung auf unserer Website erhalten Sie eine Bestätigungs-E-Mail an die von Ihnen angegebene E-Mail-Adresse (sog. Double-Opt-In). Sie können Ihre Einwilligung jederzeit widerrufen. Eine einfache Möglichkeit zur Abmeldung wird in jedem Newsletter über einen Link bereitgestellt.
 
 Bei der Anmeldung zum Newsletter speichern wir über die bereits genannten Daten hinaus ggf. weitere Informationen, um nachzuweisen, dass Sie den Newsletter abonniert haben. Dazu kann die Speicherung der vollständigen IP-Adresse zum Zeitpunkt der Anmeldung oder der Bestätigung des Newsletters gehören. Diese Datenverarbeitung beruht auf unserem berechtigten Interesse, die Rechtmäßigkeit des Newsletterversands nachweisen zu können (Art. 6 Abs. 1 lit. f DSGVO).
 
 Eine Weitergabe der gespeicherten Daten an Dritte erfolgt nicht, es sei denn, dies ist zur Erfüllung vertraglicher Verpflichtungen durch einen in unserem Auftrag handelnden Dienstleister erforderlich.
 
-### 5.5 Widerspruchs- und Beseitigungsmöglichkeit
+### 5.6 Widerspruchs- und Beseitigungsmöglichkeit
 Der Nutzer hat jederzeit die Möglichkeit, seine Einwilligung zur Verarbeitung der personenbezogenen Daten zu widerrufen. Nimmt der Nutzer per E-Mail Kontakt zu uns auf, so kann er der Speicherung seiner personenbezogenen Daten jederzeit widersprechen. In einem solchen Fall kann die Konversation nicht fortgeführt werden.
 
 Den Widerspruch können Sie jederzeit formlos an [privacy@cryptomator.org](mailto:privacy@cryptomator.org) oder jede andere von uns bereitgestellte Kontaktmöglichkeit (z.B. postalisch) richten.
