@@ -159,7 +159,7 @@ You have the option to subscribe to our newsletter through our website. The news
 
 When signing up for the newsletter, we may store additional information beyond the data already mentioned, if necessary, to demonstrate that you have subscribed. This may include storing the full IP address at the time of registration or confirmation of the newsletter. This data processing is based on our legitimate interest in being able to provide evidence of the lawful nature of our newsletter distribution (Art. 6 para. 1 lit. f GDPR).
 
-We do not share the data stored in Listmonk with third parties unless required to fulfill contractual obligations through a service provider acting on our behalf.
+We do not share the data stored third parties unless required to fulfill contractual obligations through a service provider acting on our behalf.
 
 ### 5.6 Opposition and Removal Possibility
 The user has the possibility to revoke his consent to the processing of personal data at any time. If the user contacts us by email, he can object to the storage of his personal data at any time. In such a case the conversation cannot be continued.
