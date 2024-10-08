@@ -3,7 +3,7 @@ title: "Privacy Policy"
 aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: August 2024_
+_Effective date: October 2024_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -121,12 +121,47 @@ The legal basis for the processing of the data transmitted in the course of send
 ### 5.3 Purpose of Data Processing
 The processing of personal data serves us solely to process the contact. This also includes the necessary legitimate interest in processing the data.
 
-### 5.4 Duration of Storage
-The data will be deleted as soon as it is no longer necessary for the purpose of its collection. For personal data sent by email, this is the case when the respective conversation with the user has ended. The conversation is ended when it can be inferred from the circumstances that the matter in question has been finally clarified.
+### 5.4 Handling Inquiries and Customer Relationship Management
+We use self-hosted open-source software solutions to manage external inquiries and customer relationships efficiently. These tools help us organize, respond to, and track interactions with customers, partners, and interested parties in a service-oriented and structured manner.
 
-If the purpose of the contact was the conclusion of a contract and if this contract has been concluded, the purpose is achieved after the contract has been fully executed. In addition, statutory storage obligations, e.g. according to the German tax code, may make further storage necessary.
+When you contact us, your data is stored in a user profile to process your inquiry, handle follow-up questions, and manage our relationship with you. The data processed may include:
 
-### 5.5 Opposition and Removal Possibility
+- First name
+- Last name
+- Email address
+- Username (if applicable)
+- Organization/Company
+- Time of inquiry
+- Content of the inquiry
+- Communication history
+- Phone number (if applicable)
+- Duration of a phone call (if applicable)
+- Notes from previous interactions
+
+We process this data based on our legitimate interest (Art. 6 para. 1 lit. f GDPR) in providing efficient support, maintaining customer relationships, and ensuring smooth communication. If your inquiry relates to a contract or a pre-contractual measure, data processing is based on Art. 6 para. 1 lit. b GDPR.
+
+Your data can be added to our system in several ways:
+
+- By contacting us via phone, email, or through our website
+- By providing information during a meeting, trade show, or event
+- When placing an order or engaging in a business transaction with us
+
+The information you provide during these interactions is stored in our system to create a comprehensive profile, helping us manage and respond to future inquiries more effectively.
+
+Data is retained as long as necessary to fulfill the purpose for which it was collected or to comply with legal requirements. Data will be deleted if the GDPR right to erasure is exercised, unless legal obligations or legitimate interests require further retention. Retaining certain data allows our support and sales teams to provide better service by drawing on insights gained from past interactions.
+
+We do not share your data with third parties unless required to fulfill contractual obligations or provide necessary services through an authorized service provider acting on our behalf.
+
+### 5.5 Use of the Newsletter
+We use self-hosted open-source software solutions to manage the distribution of newsletters.
+
+You have the option to subscribe to our newsletter through our website. The newsletter is only sent if you have provided us with consent in accordance with Art. 6 para. 1 lit. a GDPR. After registering on our website, you will receive a confirmation email to the email address you provided (so-called double opt-in). You can withdraw your consent at any time. An easy way to unsubscribe is provided in each newsletter via a link.
+
+When signing up for the newsletter, we may store additional information beyond the data already mentioned, if necessary, to demonstrate that you have subscribed. This may include storing the full IP address at the time of registration or confirmation of the newsletter. This data processing is based on our legitimate interest in being able to provide evidence of the lawful nature of our newsletter distribution (Art. 6 para. 1 lit. f GDPR).
+
+We do not share the data stored third parties unless required to fulfill contractual obligations through a service provider acting on our behalf.
+
+### 5.6 Opposition and Removal Possibility
 The user has the possibility to revoke his consent to the processing of personal data at any time. If the user contacts us by email, he can object to the storage of his personal data at any time. In such a case the conversation cannot be continued.
 
 You can send your objection informally at any time to [privacy@cryptomator.org](mailto:privacy@cryptomator.org) or any other means of contact provided by us (e.g. by post).
