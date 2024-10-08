@@ -121,70 +121,39 @@ The legal basis for the processing of the data transmitted in the course of send
 ### 5.3 Purpose of Data Processing
 The processing of personal data serves us solely to process the contact. This also includes the necessary legitimate interest in processing the data.
 
-### 5.4 Use of the Email Ticket System (Zammad)
-The open-source software Zammad, hosted by us, is used as the main tool for handling and responding to external inquiries.
+### 5.4 Handling Inquiries and Customer Relationship Management
+We use self-hosted open-source software solutions to manage external inquiries and customer relationships efficiently. These tools help us organize, respond to, and track interactions with customers, partners, and interested parties in a service-oriented and structured manner.
 
-Zammad helps us manage customer or interested party requests quickly and efficiently, ensuring a high level of service that aligns with our legitimate interests (Art. 6 para. 1 lit. f GDPR).
-
-When you contact us, your data is added to a user profile in Zammad to process your inquiry and handle any follow-up questions. The same applies if you’re named as a contact for fulfilling a contract with us. The data processed may include:
+When you contact us, your data is stored in a user profile to process your inquiry, handle follow-up questions, and manage our relationship with you. The data processed may include:
 
 - First name
 - Last name
 - Email address
-- Username
+- Username (if applicable)
 - Organization/Company
 - Time of inquiry
 - Content of the inquiry
 - Communication history
-- Phone number
-- Duration of a phone call
-
-We process this data based on our legitimate interest (Art. 6 para. 1 lit. f GDPR) in providing you with efficient and up-to-date support. If we have requested and you have given your consent, the data processing is also based on Art. 6 para. 1 lit. a GDPR. If your inquiry is related to a contract or a pre-contractual measure, data processing is based on Art. 6 para. 1 lit. b GDPR.
-
-Your data can reach our helpdesk in several ways:
-
-- By phone or in person
-- By email (e.g., via support@cryptomator.org, hub@cryptomator.org, etc.)
-
-If you share your concern with us in person or by phone, we may manually enter your data and request details into our helpdesk system. The phone number provided can be added to a user profile if it is not already in our system.
-
-When you email us at support@cryptomator.org, hub@cryptomator.org, etc., the data processing happens automatically. If the sender's email address isn't already in our system, a user profile is automatically created and enriched with data from the email. We may further add to this information to better respond to your future inquiries.
-
-Data is deleted if the GDPR right to erasure is exercised. Data is retained based on our legitimate interest, as it helps our support staff address new inquiries more effectively by using knowledge gained from handling similar cases in the past.
-
-Your data is not shared with third parties unless it is necessary to transfer data to a processor involved in fulfilling contractual obligations.
-
-### 5.5 Use of the CRM System (EspoCRM)
-The open-source software EspoCRM, hosted by us, is used to manage our customer relationships and organize interactions with customers, partners, and prospects. EspoCRM is hosted by us and is an essential tool for maintaining effective communication.
-
-When you interact with us (e.g., by submitting an inquiry or placing an order), relevant data may be stored and processed in EspoCRM. This can include:
-
-- First name
-- Last name
-- Email address
-- Phone number
-- Company/Organization
-- Communication history
-- Inquiry details
-- Contract information
+- Phone number (if applicable)
+- Duration of a phone call (if applicable)
 - Notes from previous interactions
 
-The legal basis for processing this data is our legitimate interest (Art. 6 para. 1 lit. f GDPR) in providing efficient customer support, managing customer relationships, and ensuring a smooth communication process. If your interaction relates to a contract or pre-contractual measure, the legal basis for processing is Art. 6 para. 1 lit. b GDPR.
+We process this data based on our legitimate interest (Art. 6 para. 1 lit. f GDPR) in providing efficient support, maintaining customer relationships, and ensuring smooth communication. If your inquiry relates to a contract or a pre-contractual measure, data processing is based on Art. 6 para. 1 lit. b GDPR.
 
-Your data can be added to our CRM system in several ways:
+Your data can be added to our system in several ways:
 
-- When you contact us via email, phone, or our website
-- When you place an order or engage in a business transaction with us
-- When you provide information during an in-person meeting, trade show, or event
+- By contacting us via phone, email, or through our website
+- By providing information during a meeting, trade show, or event
+- When placing an order or engaging in a business transaction with us
 
-The data you provide during these interactions is entered into our CRM system to create a comprehensive profile that helps us respond more effectively to your inquiries and manage our ongoing relationship with you. 
+The information you provide during these interactions is stored in our system to create a comprehensive profile, helping us manage and respond to future inquiries more effectively.
 
-Data stored in EspoCRM is retained as long as it is necessary to fulfill the purpose for which it was collected or to comply with legal requirements. Data will be deleted if the GDPR right to erasure is exercised, unless legal obligations or legitimate interests require further retention. Retaining certain data allows our support and sales teams to offer better service by drawing on insights gained from past interactions.
+Data is retained as long as necessary to fulfill the purpose for which it was collected or to comply with legal requirements. Data will be deleted if the GDPR right to erasure is exercised, unless legal obligations or legitimate interests require further retention. Retaining certain data allows our support and sales teams to provide better service by drawing on insights gained from past interactions.
 
-We do not share the data stored in EspoCRM with third parties unless required to fulfill contractual obligations through a service provider acting on our behalf.
+We do not share your data with third parties unless required to fulfill contractual obligations or provide necessary services through an authorized service provider acting on our behalf.
 
-### 5.6 Use of the Newsletter (Listmonk)
-The open-source software Listmonk, hosted by us, is used to manage the distribution of newsletters.
+### 5.5 Use of the Newsletter
+We use self-hosted open-source software solutions to manage the distribution of newsletters.
 
 You have the option to subscribe to our newsletter through our website. The newsletter is only sent if you have provided us with consent in accordance with Art. 6 para. 1 lit. a GDPR. After registering on our website, you will receive a confirmation email to the email address you provided (so-called double opt-in). You can withdraw your consent at any time. An easy way to unsubscribe is provided in each newsletter via a link.
 
@@ -192,7 +161,7 @@ When signing up for the newsletter, we may store additional information beyond t
 
 We do not share the data stored in Listmonk with third parties unless required to fulfill contractual obligations through a service provider acting on our behalf.
 
-### 5.7 Opposition and Removal Possibility
+### 5.6 Opposition and Removal Possibility
 The user has the possibility to revoke his consent to the processing of personal data at any time. If the user contacts us by email, he can object to the storage of his personal data at any time. In such a case the conversation cannot be continued.
 
 You can send your objection informally at any time to [privacy@cryptomator.org](mailto:privacy@cryptomator.org) or any other means of contact provided by us (e.g. by post).
