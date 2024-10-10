@@ -6,26 +6,32 @@ weight: 5
 <div class="flex flex-wrap -mx-3">
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2">
-      <div class="relative aspect-16x9 mb-2">
-        <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/oIv0n4MYgdw" frameborder="0" allowfullscreen></iframe>
+      <div class="relative mb-2">
+        <video controls class="w-full h-auto">
+          <source src="https://static.cryptomator.org/desktop/get-started.mp4" type="video/mp4">
+        </video>
       </div>
-      <figcaption>Cryptomator • 1080p • YouTube</figcaption>
+      <figcaption>Cryptomator • <a href="https://www.youtube.com/watch?v=oIv0n4MYgdw" target="blank">YouTube</a></figcaption>
     </figure>
   </div>
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2">
-      <div class="relative aspect-16x9 mb-2">
-        <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/AIS5vbUAFc0" frameborder="0" allowfullscreen></iframe>
+      <div class="relative mb-2">
+        <video controls class="w-full h-auto">
+          <source src="https://static.cryptomator.org/desktop/tutorial-de.mp4" type="video/mp4">
+        </video>
       </div>
-      <figcaption>Cryptomator Tutorial: Erste Schritte • 1080p • YouTube</figcaption>
+      <figcaption>Cryptomator Tutorial: Erste Schritte • <a href="https://www.youtube.com/watch?v=AIS5vbUAFc0" target="blank">YouTube</a></figcaption>
     </figure>
   </div>
-    <div class="w-full px-3 lg:w-1/2">
+  <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2">
-      <div class="relative aspect-16x9 mb-2">
-        <iframe class="absolute w-full h-full" src="https://www.youtube-nocookie.com/embed/D14fzrsPCxY" frameborder="0" allowfullscreen></iframe>
+      <div class="relative mb-2">
+        <video controls class="w-full h-auto">
+          <source src="https://static.cryptomator.org/hub/quick-introduction.mp4" type="video/mp4">
+        </video>
       </div>
-      <figcaption>Cryptomator Hub: Quick Introduction • 2160p • YouTube</figcaption>
+      <figcaption>Cryptomator Hub: Quick Introduction • <a href="https://www.youtube.com/watch?v=D14fzrsPCxY" target="blank">YouTube</a></figcaption>
     </figure>
   </div>
 </div>
