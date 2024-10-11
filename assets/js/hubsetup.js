@@ -113,7 +113,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 5\n\n';
+    result += '# Generated using script version 6\n\n';
 
     return result;
   }
@@ -217,11 +217,16 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
             composite: false
           },
           {
+            name: 'create-vaults',
+            description: 'Can create vaults',
+            composite: false
+          },
+          {
             name: 'admin',
             description: 'Administrator',
             composite: true,
             composites: {
-              realm: ['user'],
+              realm: ['user', 'create-vaults'],
               client: {
                 'realm-management': ['realm-admin']
               }
