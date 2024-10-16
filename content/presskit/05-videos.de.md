@@ -7,8 +7,9 @@ weight: 5
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2">
       <div class="relative mb-2">
-        <video controls class="w-full h-auto">
+        <video controls preload="none" poster="https://static.cryptomator.org/desktop/get-started.jpg" class="w-full h-auto">
           <source src="https://static.cryptomator.org/desktop/get-started.mp4" type="video/mp4">
+          static.cryptomator.org/desktop/get-started.jpeg
         </video>
       </div>
       <figcaption>Cryptomator • <a href="https://www.youtube.com/watch?v=oIv0n4MYgdw" target="blank">YouTube</a></figcaption>
@@ -17,7 +18,7 @@ weight: 5
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2">
       <div class="relative mb-2">
-        <video controls class="w-full h-auto">
+        <video controls preload="none" poster="https://static.cryptomator.org/desktop/tutorial-de.jpg" class="w-full h-auto">
           <source src="https://static.cryptomator.org/desktop/tutorial-de.mp4" type="video/mp4">
         </video>
       </div>
@@ -27,7 +28,7 @@ weight: 5
   <div class="w-full px-3 lg:w-1/2">
     <figure class="rounded shadow bg-white text-center p-2">
       <div class="relative mb-2">
-        <video controls class="w-full h-auto">
+        <video controls preload="none" poster="https://static.cryptomator.org/hub/quick-introduction.png" class="w-full h-auto">
           <source src="https://static.cryptomator.org/hub/quick-introduction.mp4" type="video/mp4">
         </video>
       </div>
