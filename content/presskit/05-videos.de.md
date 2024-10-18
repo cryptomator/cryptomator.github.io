@@ -11,7 +11,7 @@ weight: 5
           <source src="https://static.cryptomator.org/desktop/get-started.mp4" type="video/mp4">
         </video>
       </div>
-      <figcaption>Cryptomator • <a href="https://www.youtube.com/watch?v=oIv0n4MYgdw" target="blank">YouTube</a></figcaption>
+      <figcaption>Cryptomator • 1080p • <a href="https://www.youtube.com/watch?v=oIv0n4MYgdw" target="blank" rel="noopener">YouTube</a></figcaption>
     </figure>
   </div>
   <div class="w-full px-3 lg:w-1/2">
@@ -21,7 +21,7 @@ weight: 5
           <source src="https://static.cryptomator.org/desktop/tutorial-de.mp4" type="video/mp4">
         </video>
       </div>
-      <figcaption>Cryptomator Tutorial: Erste Schritte • <a href="https://www.youtube.com/watch?v=AIS5vbUAFc0" target="blank">YouTube</a></figcaption>
+      <figcaption>Cryptomator Tutorial: Erste Schritte • 1080p • <a href="https://www.youtube.com/watch?v=AIS5vbUAFc0" target="blank" rel="noopener">YouTube</a></figcaption>
     </figure>
   </div>
   <div class="w-full px-3 lg:w-1/2">
@@ -31,7 +31,7 @@ weight: 5
           <source src="https://static.cryptomator.org/hub/quick-introduction.mp4" type="video/mp4">
         </video>
       </div>
-      <figcaption>Cryptomator Hub: Quick Introduction • <a href="https://www.youtube.com/watch?v=D14fzrsPCxY" target="blank">YouTube</a></figcaption>
+      <figcaption>Cryptomator Hub: Quick Introduction • 2160p • <a href="https://www.youtube.com/watch?v=D14fzrsPCxY" target="blank" rel="noopener">YouTube</a></figcaption>
     </figure>
   </div>
 </div>
