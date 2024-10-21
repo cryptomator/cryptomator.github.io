@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cryptomator Hub: Abrechnung</title>
     
-      <meta name="description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
+      <meta name="description" content="Cryptomator ist ein Open-Source-Verschlüsselungstool für sicheren Cloud-Speicher. Schütze deine Privatsphäre kostenlos bei Dropbox, Google Drive, OneDrive und mehr."/>
       <meta property="og:title" content="Cryptomator - Cryptomator Hub: Abrechnung"/>
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://cryptomator.org/de/hub/billing/"/>
       <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."/>
+      <meta property="og:description" content="Cryptomator ist ein Open-Source-Verschlüsselungstool für sicheren Cloud-Speicher. Schütze deine Privatsphäre kostenlos bei Dropbox, Google Drive, OneDrive und mehr."/>
       <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
       <meta property="og:image:width" content="1200"/>
       <meta property="og:image:height" content="630"/>
@@ -549,12 +549,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-413267895" x-model="acceptTerms" />
-<label for="id-413267895">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-297345168" x-model="acceptTerms" />
+<label for="id-297345168">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-519273468" x-model="acceptTerms" />
-<label for="id-519273468">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-384597261" x-model="acceptTerms" />
+<label for="id-384597261">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
