@@ -1,5 +1,5 @@
 - id: site_meta_description
-  translation: "Verschlüssle deine Dropbox, Google Drive, und Co. Cryptomator ist eine freie Open-Source-Software."
+  translation: "Cryptomator ist ein Open-Source-Verschlüsselungstool für sicheren Cloud-Speicher. Schütze deine Privatsphäre kostenlos bei Dropbox, Google Drive, OneDrive und mehr."
 - id: nav_cta
   translation: "Jetzt loslegen"
 - id: nav_support_us
@@ -210,7 +210,7 @@
 
 # Home
 - id: home_header_title
-  translation: "Hänge&nbsp;ein&nbsp;Schloss vor&nbsp;deine&nbsp;Cloud"
+  translation: "Cloud&nbsp;verschlüsseln, Privatsphäre&nbsp;schützen"
 - id: home_header_description
   translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch."
 - id: home_header_woman_cloud_alt
