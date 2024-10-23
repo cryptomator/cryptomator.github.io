@@ -3,17 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tags</title>
+    <title>Cryptomator 2.6.3 for iOS: New Features and Bug Fixes</title>
     
-      <meta name="description" content="Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."/>
-      <meta property="og:title" content="Cryptomator - Tags"/>
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/tags/"/>
-      <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."/>
-      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta name="description" content="We&rsquo;re excited to announce the release of Cryptomator iOS version 2.6.3! This update mainly contains important bug fixes to improve your user experience. However, you can also look forward to a small new feature.">
+      <meta property="og:title" content="Cryptomator 2.6.3 for iOS: New Features and Bug Fixes">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/blog/2024/10/23/ios-2.6.3/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="We&rsquo;re excited to announce the release of Cryptomator iOS version 2.6.3! This update mainly contains important bug fixes to improve your user experience. However, you can also look forward to a small new feature.">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2024-10-23" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="ios" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     
     <meta property="og:locale" content="" />
     
@@ -26,7 +33,7 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
-      <link rel="alternate" hreflang="de" href="/de/tags/" />
+      <link rel="alternate" hreflang="de" href="/de/blog/2024/10/23/ios-2.6.3/" />
     
     
       
@@ -115,7 +122,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-              <a :href="'/de/tags/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+              <a :href="'/de/blog/2024/10/23/ios-2.6.3/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
             </div>
           </div>
         </li>
@@ -162,7 +169,7 @@
     </div>
     <div class="mt-1">
       
-      <a :href="'/de/tags/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      <a :href="'/de/blog/2024/10/23/ios-2.6.3/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
 
@@ -183,109 +190,62 @@
     
     
   <div class="container-prose py-12">
-    <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+    <article class="mb-12">
       <header class="mb-6">
-        <h1>Posts</h1>
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/blog/">Blog</a> / Cryptomator 2.6.3 for iOS: New Features and Bug Fixes</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/blog/2024/10/23/ios-2.6.3/">2024-10-23</a></span>
+        </div>
+        
       </header>
+
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>We&rsquo;re excited to announce the release of Cryptomator iOS version 2.6.3! This update mainly contains important bug fixes to improve your user experience. However, you can also look forward to a small new feature. Let&rsquo;s take a look at everything in detail!</p>
+<h2 id="key-updates-at-a-glance">Key Updates at a Glance</h2>
+<ul>
+<li>New variants of app icons.</li>
+<li>More comprehensible error dialog introduced when re-authentication is required.</li>
+<li>Missing lock symbol restored.</li>
+</ul>
+<figure class="text-center">
+  <a href="https://apps.apple.com/us/app/cryptomator/id1560822163" target="_blank" rel="noopener">
+    <img class="inline-block rounded" src="/img/blog/ios-2.6.3.png" srcset="/img/blog/ios-2.6.3.png 1x, /img/blog/ios-2.6.3@2x.png 2x" alt="New variants of app icons in Cryptomator 2.6.3 for iOS" />
+  </a>
+</figure>
+<h2 id="whats-new">What&rsquo;s New?</h2>
+<h3 id="new-app-icons">New App Icons</h3>
+<p>In this update, we&rsquo;ve added new app icon variants for dark mode and tinted mode, offering a more personalized look depending on your preferences and environment. Whether you prefer a sleek dark interface or a touch of color, Cryptomator now adapts to your style!</p>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h3 id="clearer-error-screen-for-re-authentication">Clearer Error Screen for Re-Authentication</h3>
+<p>Additionally, we&rsquo;ve made a significant improvement to the error screen. If access to a vault is denied due to authentication issues, the app now provides a clearer message that re-authentication is required in the main app.</p>
+<h3 id="lock-icon-in-vault-list">Lock Icon in Vault List</h3>
+<p>Lastly, we&rsquo;ve addressed an issue many of you reported: the missing lock icon in the vaults list. With this bug fix, you can now quickly see which vaults are unlocked at a glance and easily lock them again using the lock icon.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>We&rsquo;re always working to enhance your privacy and security, and this update is no exception! As always, we look forward to your feedback and continue to thank you for your ongoing trust and support.</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
+  </div>
+
+  
+  
     
       
-        <article>
-          <h2>Cryptomator</h2>
-          
-        </article>
+    
+  
+  
+    
       
-        <article>
-          <h2>Ios</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Android</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Desktop</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Linux</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Mac</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Windows</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Google Drive</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Hub</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Installer</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Vulnerability</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Event</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Vault-Format</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Data Protection</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Encryption</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Sponsors</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Community</h2>
-          
-        </article>
-      
-        <article>
-          <h2>Cyberduck</h2>
-          
-        </article>
-      
-        <article>
-          <h2>In-Depth</h2>
-          
-        </article>
-      
-    </div>
-  </div>
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/10/23/ios-2.6.3/" defer></script>
+    
+  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">

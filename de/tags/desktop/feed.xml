@@ -11,8 +11,43 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/desktop/</link>
     </image>
-    <lastBuildDate>Tue, 22 Oct 2024 10:15:13 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2024 10:34:59 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator 2.6.3 für iOS: Neue Funktionen und Bugfixes</title>
+        <description>&lt;p&gt;Wir freuen uns, die Veröffentlichung von Cryptomator iOS Version 2.6.3 bekannt zu geben! Dieses Update enthält vor allem wichtige Bugfixes, um dein Nutzungserlebnis zu verbessern. Allerdings dürft ihr euch auch über eine kleine Neuerung freuen. Schauen wir uns alles einmal im Detail an!&lt;/p&gt;
+&lt;h2 id=&#34;die-wichtigsten-neuerungen-im-überblick&#34;&gt;Die wichtigsten Neuerungen im Überblick&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Neue Varianten von App-Icons.&lt;/li&gt;
+&lt;li&gt;Verständlicheren Fehlerdialog eingeführt, wenn eine erneute Authentifizierung erforderlich ist.&lt;/li&gt;
+&lt;li&gt;Fehlendes Schloss-Symbol wieder hergestellt.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;a href=&#34;https://apps.apple.com/de/app/cryptomator/id1560822163&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+    &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/ios-2.6.3.png&#34; srcset=&#34;https://cryptomator.org/img/blog/ios-2.6.3.png 1x, https://cryptomator.org/img/blog/ios-2.6.3@2x.png 2x&#34; alt=&#34;Neue Varianten von App-Icons in Cryptomator 2.6.3 für iOS&#34; /&gt;
+  &lt;/a&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;was-ist-neu&#34;&gt;Was ist neu?&lt;/h2&gt;
+&lt;h3 id=&#34;neue-app-icons&#34;&gt;Neue App-Icons&lt;/h3&gt;
+&lt;p&gt;In dieser Version haben wir neue App-Icon-Varianten für den Dunkelmodus und den eingefärbten Modus hinzugefügt. So kannst du das Aussehen der App jetzt noch besser an deine Vorlieben und die Umgebung von iOS anpassen. Ob du ein elegantes dunkles Interface bevorzugst oder ein wenig Farbe ins Spiel bringen möchtest – Cryptomator bietet dir nun mehr Flexibilität!&lt;/p&gt;
+&lt;h2 id=&#34;bug-fixes&#34;&gt;Bug Fixes&lt;/h2&gt;
+&lt;h3 id=&#34;verbesserung-des-fehlerdialogs-bei-re-authentifizierung&#34;&gt;Verbesserung des Fehlerdialogs bei Re-Authentifizierung&lt;/h3&gt;
+&lt;p&gt;Zusätzlich haben wir den Fehlerbildschirm verbessert. Wenn der Zugriff auf einen Tresor aufgrund von Authentifizierungsproblemen verweigert wird, zeigt die App nun eine klarere Meldung an, dass eine bei Re-Authentifizierung in der Haupt-App erforderlich ist.&lt;/p&gt;
+&lt;h3 id=&#34;schloss-symbol-in-tresorliste&#34;&gt;Schloss-Symbol in Tresorliste&lt;/h3&gt;
+&lt;p&gt;Zu guter Letzt haben wir einen von vielen gemeldeten Fehler behoben: das fehlende Schloss-Symbol in der Tresorliste. Dank dieses Bugfixes kannst du jetzt auf einen Blick erkennen, welche Tresore entsperrt sind, und über das Schloss-Symbol bequem wieder sperren.&lt;/p&gt;
+&lt;h2 id=&#34;schlusswort&#34;&gt;Schlusswort&lt;/h2&gt;
+&lt;p&gt;Wir arbeiten ständig daran, deine Privatsphäre und Sicherheit zu verbessern und dieses Update ist da keine Ausnahme. Wie immer freuen wir uns über euer Feedback und danken euch weiterhin für euer Vertrauen und Unterstützung.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/10/23/ios-2.6.3/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/10/23/ios-2.6.3/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>ios</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 1.10.3 für Android: Was gibt es Neues?</title>
@@ -383,70 +418,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <category>cryptomator</category>
         
         <category>hub</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator 1.7.0: Was hat sich geändert?</title>
-        <description>&lt;p&gt;Wenn du unsere &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases&#34;&gt;Releases auf GitHub&lt;/a&gt; abonniert hast, hast du es vielleicht schon bemerkt: Wir haben die &lt;a href=&#34;https://github.com/cryptomator/cryptomator/releases/tag/1.7.0-beta1&#34;&gt;erste Beta&lt;/a&gt; der kommenden Version 1.7.0 von Cryptomator veröffentlicht! Sie enthält viele interne Änderungen und eine Reihe neuer Funktionen, von denen einige fast so alt sind wie Cryptomator selbst.&lt;/p&gt;
-&lt;p&gt;Wir sind sehr stolz auf diese Version, da sie technische Altlasten beseitigt, lang erwartete Funktionen liefert und Cryptomator Desktop auf die Zukunft vorbereitet. Aber abgesehen von etwa 3.000 Zeilen Code-Änderungen und 4 Monaten Entwicklungszeit (die Arbeit an unseren Bibliotheken nicht mitgerechnet), lass uns in diese Version eintauchen, um zu sehen, was du davon hast.&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/cryptomator-1-7-0.png&#34; srcset=&#34;https://cryptomator.org/img/blog/cryptomator-1-7-0.png 1x, https://cryptomator.org/img/blog/cryptomator-1-7-0@2x.png 2x&#34; alt=&#34;Cryptomator 1.7.0 Release&#34; /&gt;
-&lt;/figure&gt;
-&lt;h2 id=&#34;verschlüsselte-datei-finden&#34;&gt;Verschlüsselte Datei finden&lt;/h2&gt;
-&lt;p&gt;Wie bereits erwähnt, enthält Cryptomator 1.7.0 eine Funktion, die schon lange gewünscht wurde: Die Suche nach dem verschlüsselten Gegenstück einer Datei. Das klingt kompliziert, ist aber leicht zu verstehen, wenn man sich vor Augen hält, dass Cryptomator Dateinamen verschlüsselt und die Verzeichnisstruktur verschleiert (&lt;a href=&#34;https://docs.cryptomator.org/en/latest/security/architecture/#filename-encryption&#34;&gt;siehe unsere Dokumentation&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Vor Version 1.7.0 musste man anhand der genauen Zeitstempel erraten, welche verschlüsselte Datei zu welcher Klartextdatei gehört. Jetzt kannst du, sobald der Tresor entsperrt ist, das verschlüsselte Gegenstück zu jeder Datei im Tresor herausfinden, indem du auf „Verschlüsselte Datei finden“ klickst und eine Datei im Tresor auswählst. Du kannst auch einfach Dateien aus deinem Tresor auf diese Schaltfläche ziehen. Überzeuge dich selbst in diesem kurzen Video:&lt;/p&gt;
-&lt;video class=&#34;rounded&#34; autoplay loop muted playsinline&gt;
-  &lt;source src=&#34;https://static.cryptomator.org/blog/locate-encrypted-file.mov&#34; type=&#34;video/mp4&#34;&gt;
-  Dein Browser unterstützt kein Video-Tag.
-&lt;/video&gt;
-&lt;h2 id=&#34;experimentelle-unterstützung-für-fuse-t&#34;&gt;Experimentelle Unterstützung für FUSE-T&lt;/h2&gt;
-&lt;p&gt;Unter macOS kann Cryptomator zwei verschiedene Technologien verwenden, um den Tresor in das System zu integrieren: macFUSE und WebDAV. Leider ist die WebDAV-Implementierung unter macOS nicht die zuverlässigste. Beginnend mit den Apple Silicon Macs wurde sie für einige Benutzer unbrauchbar, die von Systemabstürzen berichteten. Erschwerend kommt hinzu, dass macFUSE, das seit mindestens 3 Jahren die bevorzugte Option war, ebenfalls in die Jahre gekommen ist. Apple hat die von macFUSE verwendeten Betriebssystem-APIs seit macOS 12.3 eingeschränkt.&lt;/p&gt;
-&lt;p&gt;Im vergangenen Jahr haben wir verzweifelt nach einer Alternative gesucht. Unser Proof-of-Concept mit Apples File Provider Framework war nicht sehr überzeugend und würde im Grunde eine komplett neue Architektur erfordern. Glücklicherweise hat uns unsere Community auf eine Alternative hingewiesen: &lt;a href=&#34;https://www.fuse-t.org/&#34;&gt;FUSE-T&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;FUSE-T ist ein junges Projekt, das nicht auf veraltete macOS-APIs zurückgreift und als direkter Ersatz für macFUSE verwendet werden kann. Es erfordert eine weit weniger tiefe Systemintegration als macFUSE, bietet aber eine ähnliche Performance. Damit ist Cryptomator für die mittelfristige Zukunft von macOS gerüstet. Da FUSE-T noch recht neu ist, ist die Unterstützung im Moment noch experimentell. Wir ermutigen dich aber, es auszuprobieren!&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/preferences-fuse-t.png&#34; srcset=&#34;https://cryptomator.org/img/blog/preferences-fuse-t.png 1x, https://cryptomator.org/img/blog/preferences-fuse-t@2x.png 2x&#34; alt=&#34;Experimentelle Unterstützung für FUSE-T&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;Obwohl wir die Erweiterung des File Providers nicht aus den Augen verloren haben, sind wir erleichtert, dir eine stabile Systemintegration deiner Cryptomator-Tresore anbieten zu können.&lt;/p&gt;
-&lt;h2 id=&#34;überarbeitung-der-laufwerkstypen&#34;&gt;Überarbeitung der Laufwerkstypen&lt;/h2&gt;
-&lt;p&gt;Wenn du dir den Screenshot oben anschaust, hast du es vielleicht schon bemerkt: Auch die Laufwerkstypen haben sich geändert. Das liegt daran, dass wir die gesamte Laufwerkstypenauswahl und die interne Verkabelungslogik neu geschrieben haben. Das war ein enormer Entwicklungsaufwand, aber das Ergebnis ist eine weniger komplexe und leichter zu wartende Architektur unter der Haube. Außerdem haben wir mehr Optionen für dich geschaffen.&lt;/p&gt;
-&lt;h3 id=&#34;mehr-optionen&#34;&gt;Mehr Optionen&lt;/h3&gt;
-&lt;p&gt;Die alte Implementierung bot im Wesentlichen 3 (oder 2) Optionen: WebDAV, Dokany und FUSE. Jetzt gibt es für jedes Betriebssystem eine eigene Implementierung. Unter Windows kann man z.B. zwischen WinFsp, WinFsp (Local Drive), Dokany, WebDAV (Windows Explorer) und WebDAV (Fallback) wählen.&lt;/p&gt;
-&lt;p&gt;Aber keine Sorge, diese Auswahl ist nur wichtig, wenn man spezielle Anforderungen an das virtuelle Laufwerk hat. Ansonsten hat Cryptomator eine neue Option „Automatisch“ und ist so eingestellt, dass er die beste Option für dich auswählt, ohne dass du dich darum kümmern musst.&lt;/p&gt;
-&lt;p&gt;Wir haben sogar eine Notfalloption hinzugefügt: Die bereits erwähnte Option „WebDAV (Fallback)“. Wenn du deinen Tresor nicht mounten kannst, kannst du über einen lokalen Server, der den WebDAV-Standard verwendet, auf deinen Tresor zugreifen. Wir werden in Kürze eine Anleitung veröffentlichen, die dies genauer beschreibt.&lt;/p&gt;
-&lt;h3 id=&#34;winfsp-änderung-lokales-vs-netzlaufwerk&#34;&gt;WinFsp-Änderung: Lokales vs. Netzlaufwerk&lt;/h3&gt;
-&lt;p&gt;Windows-Benutzer werden feststellen, dass ihr Tresor jetzt standardmäßig als Netzlaufwerk eingebunden ist. Dies hat den Vorteil einer besseren Performance beim Auflisten großer Verzeichnisse. Der Nachteil ist, dass der Tresor nicht in ein Verzeichnis eingebunden werden kann. Der Zugriff auf den Tresor als privilegierter Benutzer ist weiterhin über den UNC-Pfad möglich.&lt;/p&gt;
-&lt;figure class=&#34;text-center&#34;&gt;
-  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/winfsp-change.png&#34; srcset=&#34;https://cryptomator.org/img/blog/winfsp-change.png 1x, https://cryptomator.org/img/blog/winfsp-change@2x.png 2x&#34; alt=&#34;WinFsp-Änderung: Lokales vs. Netzlaufwerk&#34; /&gt;
-&lt;/figure&gt;
-&lt;p&gt;Falls wirklich ein lokales Laufwerk benötigt wird, kann der Laufwerkstyp jederzeit in den Einstellungen geändert werden.&lt;/p&gt;
-&lt;h3 id=&#34;einstellung-der-dokany-unterstützung&#34;&gt;Einstellung der Dokany-Unterstützung&lt;/h3&gt;
-&lt;p&gt;Mit der Veröffentlichung von Cryptomator 1.7.0 wird die Unterstützung von Dokany offiziell eingestellt.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://dokan-dev.github.io/&#34;&gt;Dokany&lt;/a&gt; bietet wie FUSE eine Dateisystemschnittstelle zum Einbinden von virtuellen Laufwerken ohne erhöhte Rechte. Wir haben vor 3 Jahren mit der Unterstützung von Dokany in der Version 1.4.0 begonnen. Aber die Dinge liefen mit dem Dokany-Laufwerk nicht so glatt, wie wir gehofft hatten, so dass wir beschlossen, unsere Entwicklungsbemühungen auf eine einzige Dateisystemschnittstelle zu konzentrieren. Alle Dokany-bezognen Issues auf GitHub werden geschlossen und unsere allgemeine Empfehlung ist, WinFSP zu verwenden, das mit dem EXE-Installer von Cryptomator geliefert wird. Du kannst Dokany weiterhin benutzen, aber es wird keine Updates mehr geben und der Support wird eingestellt.&lt;/p&gt;
-&lt;p&gt;Es war eine tolle Zeit und wir wünschen dem Dokany-Projekt alles Gute!&lt;/p&gt;
-&lt;h2 id=&#34;linux-aarch64-builds&#34;&gt;Linux AArch64 Builds&lt;/h2&gt;
-&lt;p&gt;Mit Cryptomator 1.7.0 werden wir endlich AArch64-Builds von Cryptomator via Flatpak und PPA ausliefern.&lt;/p&gt;
-&lt;p&gt;Eine große Hürde war das bereits erwähnte FUSE-Filesystem-API unter Linux. Wir haben ein ziemlich altes Projekt verwendet, um die Brücke zwischen Cryptomator und FUSE zu schlagen. Dank der fantastischen Entwicklungsarbeit, die unser Chefarchitekt geleistet hat, verwenden wir nun die neueste Technologie, um diese Brücke zu implementieren. Das Ergebnis ist in der Bibliothek &lt;a href=&#34;https://github.com/cryptomator/jfuse&#34;&gt;jFUSE&lt;/a&gt; zusammengefasst. Wir haben nicht nur die Brücke geändert, sondern auch auf eine neue Hauptversion von FUSE aktualisiert und den Weg für die Unterstützung von Features wie Extended Attributes geebnet.&lt;/p&gt;
-&lt;p&gt;Noch ist das AppImage nur für x86_x64 verfügbar, aber wir planen, es in Zukunft auch für die AArch64-Architektur anzubieten.&lt;/p&gt;
-&lt;h2 id=&#34;aes-gcm-neuer-standard-für-inhaltsverschlüsselung&#34;&gt;AES-GCM: Neuer Standard für Inhaltsverschlüsselung&lt;/h2&gt;
-&lt;p&gt;Ab Cryptomator 1.7.0 verwenden neu erstellte Tresore &lt;a href=&#34;https://de.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; anstelle von AES-CTR+HMAC für die Verschlüsselung von Dateiinhalten.&lt;/p&gt;
-&lt;p&gt;Heutzutage bieten fast alle nicht eingebetteten Geräte Hardwarebeschleunigung im Galois/Counter-Modus, so dass die Ver- und Entschlüsselung deutlich schneller sein sollte als im alten Modus. Die Unterstützung in unserer zugrundeliegenden kryptographischen Bibliothek &lt;a href=&#34;https://github.com/cryptomator/cryptolib&#34;&gt;cryptolib&lt;/a&gt; wurde bereits im Juni 2021 mit der Version 2.0.0 hinzugefügt. Wir haben jedoch nicht überstürzt gehandelt, sondern eine angemessene Testphase eingeräumt und sind nun zuversichtlich, dir diese Verbesserung anbieten zu können.&lt;/p&gt;
-&lt;p&gt;Selbstverständlich unterstützen auch unsere mobilen Apps AES-GCM, auch wenn Tresore, die mit iOS oder Android erstellt wurden, vorerst weiterhin AES-CTR+HMAC verwenden. Die mobilen Apps werden mit der nächsten Minor-Version umgestellt.&lt;/p&gt;
-&lt;p&gt;Du kannst deine bestehenden Tresore wie bisher verwenden. Es gibt keine Tresor-Upgrades und es sind keine Maßnahmen von deiner Seite erforderlich. Cryptomator unterstützt beide Modi.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2023/02/01/1-7-0-what-you-need-to-know/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/02/01/1-7-0-what-you-need-to-know/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>desktop</category>
-        
-        <category>windows</category>
-        
-        <category>mac</category>
-        
-        <category>linux</category>
         
       </item>
     
