@@ -3,7 +3,7 @@ title: "AGB für Cryptomator Hub (SaaS)"
 url: "/de/hub/managed/terms"
 ---
 
-_Stand: November 2023_
+_Stand: Oktober 2023_
 
 Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ als Software as a Service (SaaS) Dienstleistung.
 {.text-lg .leading-relaxed .text-gray-700}
@@ -83,7 +83,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 
 6.2 Als Verfügbarkeit gilt die Möglichkeit des Kunden sämtliche Hauptfunktionen der Software zu nutzen. Wartungszeiten sowie Zeiten der Störung unter Einhaltung der Behebungszeit gelten als Zeiten der Verfügbarkeit der Software. Zeiten unerheblicher Störungen bleiben bei der Berechnung der Verfügbarkeit außer Betracht. Für den Nachweis der Verfügbarkeit sind die Messinstrumente im Rechenzentrum maßgeblich.
 
-6.3 Der Kunde hat Störungen unverzüglich an den Provider (E-Mail: support@cryptomator.org, Fax: 02241 / 2667424) auf Deutsch oder Englisch zu melden. Eine Störungsmeldung und -behebung ist Montag bis Freitag (ausgenommen bundesweite Feiertage) zwischen 9:00 Uhr bis 17:00 Uhr gewährleistet (Servicezeiten).
+6.3 Der Kunde hat Störungen unverzüglich an den Provider (E-Mail: hub-support@cryptomator.org, Fax: 02241 / 2667424) auf Deutsch oder Englisch zu melden. Eine Störungsmeldung und -behebung ist Montag bis Freitag (ausgenommen bundesweite Feiertage) zwischen 9:00 Uhr bis 17:00 Uhr gewährleistet (Servicezeiten).
 
 6.4 Schwerwiegende Störungen (die Nutzung der Software insgesamt oder eine Hauptfunktion der Software ist nicht möglich) wird der Provider auch außerhalb der Servicezeiten spätestens binnen 6 Stunden ab Eingang der Meldung der Störung – sofern die Meldung innerhalb der Servicezeiten erfolgt – beheben (Behebungszeit). Sofern absehbar ist, dass eine Behebung der Störung nicht innerhalb dieser Zeitspanne möglich ist, wird er dem Kunden hierüber unverzüglich informieren und die voraussichtliche Überschreitung der Zeitspanne mitteilen.
 
@@ -109,7 +109,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 ## §8 Referenzmarketing / Logoverwendung {#reference-marketing}
 8.1 Der Kunde hat die Möglichkeit, seine ausdrückliche Zustimmung zu erteilen, dass der Provider den Kunden unter Verwendung des Unternehmenskennzeichens (insb. Logo) und des Unternehmensnamens zu Marketingzwecken als Referenzkunden (einschließlich Case Studies, Arbeitsreferenzen, Erfolgsgeschichten etc.) in digitaler und analoger Form unentgeltlich und zeitlich sowie inhaltlich unbegrenzt nennen und nutzen darf.
 
-8.2 Der Kunde kann die erteilte Zustimmung zum Referenzmarketing jederzeit per E-Mail an support@cryptomator.org widerrufen. Der Widerruf gilt nur für die Zukunft.
+8.2 Der Kunde kann die erteilte Zustimmung zum Referenzmarketing jederzeit per E-Mail an hub-support@cryptomator.org widerrufen. Der Widerruf gilt nur für die Zukunft.
 
 ## §9 Gewährleistung {#warranty}
 9.1 Hinsichtlich der Gewährung der Nutzung der Software gelten die Gewährleistungsvorschriften des Mietrechts (§§ 535 ff. BGB).
@@ -170,7 +170,7 @@ Ist der Kunde Verbraucher, steht ihm ein gesetzliches Widerrufsrecht zu:
 ### Widerrufsrecht
 Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag des Vertragsabschlusses.  
 
-Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, E-Mail: support@cryptomator.org, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.   
+Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, E-Mail: hub-support@cryptomator.org, Fax: 02241 / 2667424) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
 
 Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
 
