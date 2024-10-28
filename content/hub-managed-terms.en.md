@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: November 2023_
+_Effective date: October 2023_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -87,7 +87,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 6.2 Availability shall be deemed to be the Customer's ability to use all main functions of the Software. Maintenance times as well as times of malfunction in compliance with the remedial time shall be deemed times of availability of the software. Times of insignificant malfunctions shall not be taken into account in the calculation of availability. The measuring instruments in the data center shall be decisive for the proof of availability.
 
-6.3 The Customer shall immediately report malfunctions to the Provider (email: support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 5:00 pm (service hours).
+6.3 The Customer shall immediately report malfunctions to the Provider (email: hub-support@cryptomator.org, fax: 02241 / 2667424) in German or English. A fault report and correction is guaranteed Monday to Friday (excluding national holidays) between 9:00 am and 5:00 pm (service hours).
 
 6.4 Serious malfunctions (the use of the software as a whole or a main function of the software is not possible) shall be remedied by the Provider also outside the service times at the latest within 6 hours from receipt of the notification of the malfunction - provided that the notification is made within the service times (remedying time). If it is foreseeable that it will not be possible to remedy the fault within this period of time, the Provider shall inform the Customer of this without delay and notify the Customer of the expected exceeding of the time period.
 
@@ -113,7 +113,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 ## §8 Reference Marketing / Logo Use {#reference-marketing}
 8.1 The Customer has the option of giving its express consent for the Provider to name and use the Customer as a reference customer (including case studies, work references, success stories, etc.) in digital and analog form, free of charge and unlimited in terms of time and content, using the company mark (esp. logo) and the company name for marketing purposes.
 
-8.2 The Customer may revoke their consent to reference marketing at any time by sending an email to support@cryptomator.org. The revocation is only valid for the future.
+8.2 The Customer may revoke their consent to reference marketing at any time by sending an email to hub-support@cryptomator.org. The revocation is only valid for the future.
 
 ## §9 Warranty {#warranty}
 9.1 With regard to the granting of the use of the Software, the warranty provisions of the German "Mietrecht" shall apply (§§ 535 ff. BGB).
@@ -173,7 +173,7 @@ If the Customer is a consumer, he has a right of withdrawal.
 ### Right of Withdrawal
 You have the right to revoke this contract within fourteen days without giving any reason. The revocation period is fourteen days from the day of the conclusion of the contract.  
 
-To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an email). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.   
+To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: hub-support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an email). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.
 
 To comply with the withdrawal period, it is sufficient that you send the notice of exercise of the right of withdrawal before the expiry of the withdrawal period.
 
