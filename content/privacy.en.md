@@ -317,3 +317,13 @@ The right to object includes the possibility for data subjects to object, in a s
 Without prejudice to any other administrative or judicial remedy, you shall have the right to complain to a supervisory authority, in particular in the member state of your residence, place of work or place of alleged infringement, if you believe that the processing of the personal data concerning you is against the GDPR violates.
 
 The supervisory authority to which the complaint has been submitted shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy pursuant to Article 78 of the GDPR.
+
+## 10. Use of Analytics
+
+We use a privacy-preserving and self-hosted analytics service for internal reach measurement, using technology that enables cross-page user recognition to analyse behaviour.
+
+We gather various information (e.g., anonymized IP address, referrer URLs, browsers, and operating systems used) and measure specific visitor actions (e.g., clicks, purchases, etc.).
+
+No “cookies” are stored on your device, no information are retrieved from your device for the analytics. Where personal data (e.g., IP addresses) is collected, it is stored fully anonymized.
+
+The legal basis for processing your data is Art. 6 para. 1 lit. a GDPR in conjunction with § 25 para. 1 of the TDDDG, the website operator has a legitimate interest in anonymized user behavior analysis to optimize its online offerings.

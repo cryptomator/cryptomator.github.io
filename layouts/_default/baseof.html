@@ -64,6 +64,8 @@
     {{ end }}
     {{ block "head" . }}
       <!-- optional additional page-specific stuff that goes into head -->
+      <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js"></script>
+      <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>      
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
