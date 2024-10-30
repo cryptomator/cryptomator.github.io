@@ -1,3 +1,12 @@
+{{ define "head" }}
+  {{ if hugo.IsServer }}
+    {{ $404 := resources.Get "js/404.js" }}
+    <script type="text/javascript" src="{{ $404.RelPermalink }}"></script>
+  {{ else }}
+    {{ $404 := resources.Get "js/404.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $404.RelPermalink }}" integrity="{{ $404.Data.Integrity }}"></script>
+  {{ end }}
+{{ end }}
 {{ define "main"}}
 <div class="container flex flex-wrap justify-center py-12">
   <div class="flex justify-center items-center w-32 lg:w-64 md:pr-4 lg:pr-8 mb-4">

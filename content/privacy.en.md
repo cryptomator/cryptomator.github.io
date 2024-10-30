@@ -18,6 +18,7 @@ This privacy policy consists of the following sections:
 7. [Disclosure of Personal Data to Third Parties](#thirdparty)
 8. [Using the Cryptomator Application](#app)
 9. [Rights of the Affected Person](#rights)
+10. [Use of Analytics](#analytics)
 
 
 ## 1. Name and address of the responsible company {#contact}
@@ -317,3 +318,13 @@ The right to object includes the possibility for data subjects to object, in a s
 Without prejudice to any other administrative or judicial remedy, you shall have the right to complain to a supervisory authority, in particular in the member state of your residence, place of work or place of alleged infringement, if you believe that the processing of the personal data concerning you is against the GDPR violates.
 
 The supervisory authority to which the complaint has been submitted shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy pursuant to Article 78 of the GDPR.
+
+## 10. Use of Analytics {#analytics}
+
+For internal audience measurement, we use a privacy-preserving, self-hosted analytics service that uses cross-page user recognition technology to analyze behavior.
+
+We collect various information (e.g., anonymized IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g., clicks, purchases, etc.).
+
+No "cookies" are stored on your device, and no information is retrieved from your device for analysis. Where personal data (e.g. IP addresses) is collected, it is stored in a completely anonymized form.
+
+The legal basis for the processing of your data is Art. 6 para. 1 lit. a GDPR in connection with § 25 para. 1 TDDDG, as the website operator has a legitimate interest in the anonymous analysis of user behavior in order to optimize its online services.

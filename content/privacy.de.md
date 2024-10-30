@@ -18,6 +18,7 @@ Diese Datenschutzerklärung strukturiert sich in folgende Abschnitte:
 7. [Weitergabe personenbezogener Daten an Dritte](#thirdparty)
 8. [Nutzung der Anwendung Cryptomator](#app)
 9. [Rechte der betroffenen Person](#rights)
+10. [Nutzung von Analytics](#analytics)
 
 
 ## 1. Name und Anschrift der Verantwortlichen {#contact}
@@ -318,3 +319,13 @@ Das Recht auf Widerspruch beinhaltet die Möglichkeit für Betroffene, in einer 
 Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechtsbehelfs steht Ihnen das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres Aufenthaltsorts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, zu, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt.
 
 Die Aufsichtsbehörde, bei der die Beschwerde eingereicht wurde, unterrichtet den Beschwerdeführer über den Stand und die Ergebnisse der Beschwerde einschließlich der Möglichkeit eines gerichtlichen Rechtsbehelfs nach Art. 78 DSGVO.
+
+## 10. Nutzung von Analytics {#analytics}
+
+Wir nutzen einen datenschutzfreundlichen und selbst gehosteten Analysedienst für die interne Reichweitenmessung, der eine Technologie zur seitenübergreifenden Nutzererkennung einsetzt, um das Verhalten zu analysieren.
+
+Wir erfassen verschiedene Informationen (z. B. anonymisierte IP-Adresse, Referrer-URLs, verwendete Browser und Betriebssysteme) und messen bestimmte Besucheraktionen (z. B. Klicks, Käufe usw.).
+
+Es werden keine „Cookies“ auf Ihrem Gerät gespeichert, es werden keine Informationen von Ihrem Gerät für die Analyse abgerufen. Soweit personenbezogene Daten (z.B. IP-Adressen) erhoben werden, werden diese vollständig anonymisiert gespeichert.
+
+Die Rechtsgrundlage für die Verarbeitung Ihrer Daten ist Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit § 25 Abs. 1 TDDDG hat der Websitebetreiber ein berechtigtes Interesse an der anonymisierten Analyse des Nutzerverhaltens zur Optimierung seines Onlineangebotes.
