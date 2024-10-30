@@ -1,10 +1,10 @@
 {{ define "head" }}
   {{ if hugo.IsServer }}
-    {{ $plausible404eventlistener := resources.Get "js/plausible404eventlistener.js" }}
-    <script type="text/javascript" src="{{ $plausible404eventlistener.RelPermalink }}"></script>
+    {{ $404 := resources.Get "js/404.js" }}
+    <script type="text/javascript" src="{{ $404.RelPermalink }}"></script>
   {{ else }}
-    {{ $plausible404eventlistener := resources.Get "js/plausible404eventlistener.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $plausible404eventlistener.RelPermalink }}" integrity="{{ $plausible404eventlistener.Data.Integrity }}"></script>
+    {{ $404 := resources.Get "js/404.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $404.RelPermalink }}" integrity="{{ $404.Data.Integrity }}"></script>
   {{ end }}
 {{ end }}
 {{ define "main"}}

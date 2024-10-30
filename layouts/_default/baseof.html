@@ -86,6 +86,6 @@
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}" async></script>
 
-    <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js"></script>
+    <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js" integrity="sha384-+tt0STxxWB96REUfXF1ykJzPEC5cT+TVotVR/JnYqAP04zxND4o8a0JcHg+aq46t" crossorigin="anonymous"></script>
   </body>
 </html>
