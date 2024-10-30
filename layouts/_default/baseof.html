@@ -64,8 +64,6 @@
     {{ end }}
     {{ block "head" . }}
       <!-- optional additional page-specific stuff that goes into head -->
-      <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js"></script>
-      <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>      
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
@@ -87,5 +85,14 @@
 
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}" async></script>
+
+    <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js"></script>
+    {{ if hugo.IsServer }}
+      {{ $plausible404init := resources.Get "js/plausible404init.js" }}
+      <script type="text/javascript" src="{{ $plausible404init.RelPermalink }}"></script>
+    {{ else }}
+      {{ $plausible404init := resources.Get "js/plausible404init.js" | minify | fingerprint }}
+      <script type="text/javascript" src="{{ $plausible404init.RelPermalink }}" integrity="{{ $plausible404init.Data.Integrity }}"></script>
+   {{ end }}
   </body>
 </html>

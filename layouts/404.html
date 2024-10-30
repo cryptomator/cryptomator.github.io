@@ -1,3 +1,12 @@
+{{ define "head" }}
+  {{ if hugo.IsServer }}
+    {{ $plausible404eventlistener := resources.Get "js/plausible404eventlistener.js" }}
+    <script type="text/javascript" src="{{ $plausible404eventlistener.RelPermalink }}"></script>
+  {{ else }}
+    {{ $plausible404eventlistener := resources.Get "js/plausible404eventlistener.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $plausible404eventlistener.RelPermalink }}" integrity="{{ $plausible404eventlistener.Data.Integrity }}"></script>
+  {{ end }}
+{{ end }}
 {{ define "main"}}
 <div class="container flex flex-wrap justify-center py-12">
   <div class="flex justify-center items-center w-32 lg:w-64 md:pr-4 lg:pr-8 mb-4">
