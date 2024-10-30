@@ -18,6 +18,7 @@ Diese Datenschutzerklärung strukturiert sich in folgende Abschnitte:
 7. [Weitergabe personenbezogener Daten an Dritte](#thirdparty)
 8. [Nutzung der Anwendung Cryptomator](#app)
 9. [Rechte der betroffenen Person](#rights)
+10. [Nutzung von Analytics](#analytics)
 
 
 ## 1. Name und Anschrift der Verantwortlichen {#contact}

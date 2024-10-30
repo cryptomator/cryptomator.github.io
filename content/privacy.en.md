@@ -18,6 +18,7 @@ This privacy policy consists of the following sections:
 7. [Disclosure of Personal Data to Third Parties](#thirdparty)
 8. [Using the Cryptomator Application](#app)
 9. [Rights of the Affected Person](#rights)
+10. [Use of Analytics](#analytics)
 
 
 ## 1. Name and address of the responsible company {#contact}
@@ -320,10 +321,10 @@ The supervisory authority to which the complaint has been submitted shall inform
 
 ## 10. Use of Analytics
 
-We use a privacy-preserving and self-hosted analytics service for internal reach measurement, using technology that enables cross-page user recognition to analyse behaviour.
+We use a privacy-preserving and self-hosted analytics service for internal audience measurement, using technology that enables cross-page user recognition to analyse behaviour.
 
-We gather various information (e.g., anonymized IP address, referrer URLs, browsers, and operating systems used) and measure specific visitor actions (e.g., clicks, purchases, etc.).
+We collect various information (e.g. anonymised IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g. clicks, purchases, etc.).
 
-No “cookies” are stored on your device, no information are retrieved from your device for the analytics. Where personal data (e.g., IP addresses) is collected, it is stored fully anonymized.
+No "cookies" are stored on your device, and no information is retrieved from your device for analysis. Where personal data (e.g. IP addresses) is collected, it is stored in a fully anonymised form.
 
-The legal basis for processing your data is Art. 6 para. 1 lit. a GDPR in conjunction with § 25 para. 1 of the TDDDG, the website operator has a legitimate interest in anonymized user behavior analysis to optimize its online offerings.
+The legal basis for the processing of your data is Art. 6 para. 1 lit. a GDPR in connection with § 25 para. 1 TDDDG, as the website operator has a legitimate interest in the anonymous analysis of user behaviour in order to optimise its online services.
