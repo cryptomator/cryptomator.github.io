@@ -320,7 +320,7 @@ Unbeschadet eines anderweitigen verwaltungsrechtlichen oder gerichtlichen Rechts
 
 Die Aufsichtsbehörde, bei der die Beschwerde eingereicht wurde, unterrichtet den Beschwerdeführer über den Stand und die Ergebnisse der Beschwerde einschließlich der Möglichkeit eines gerichtlichen Rechtsbehelfs nach Art. 78 DSGVO.
 
-## 10. Nutzung von Analytics
+## 10. Nutzung von Analytics {#analytics}
 
 Wir nutzen einen datenschutzfreundlichen und selbst gehosteten Analysedienst für die interne Reichweitenmessung, der eine Technologie zur seitenübergreifenden Nutzererkennung einsetzt, um das Verhalten zu analysieren.
 

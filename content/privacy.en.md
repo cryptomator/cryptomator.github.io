@@ -319,12 +319,12 @@ Without prejudice to any other administrative or judicial remedy, you shall have
 
 The supervisory authority to which the complaint has been submitted shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy pursuant to Article 78 of the GDPR.
 
-## 10. Use of Analytics
+## 10. Use of Analytics {#analytics}
 
-We use a privacy-preserving and self-hosted analytics service for internal audience measurement, using technology that enables cross-page user recognition to analyse behaviour.
+For internal audience measurement, we use a privacy-preserving, self-hosted analytics service that uses cross-page user recognition technology to analyze behavior.
 
-We collect various information (e.g. anonymised IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g. clicks, purchases, etc.).
+We collect various information (e.g., anonymized IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g., clicks, purchases, etc.).
 
-No "cookies" are stored on your device, and no information is retrieved from your device for analysis. Where personal data (e.g. IP addresses) is collected, it is stored in a fully anonymised form.
+No "cookies" are stored on your device, and no information is retrieved from your device for analysis. Where personal data (e.g. IP addresses) is collected, it is stored in a completely anonymized form.
 
-The legal basis for the processing of your data is Art. 6 para. 1 lit. a GDPR in connection with § 25 para. 1 TDDDG, as the website operator has a legitimate interest in the anonymous analysis of user behaviour in order to optimise its online services.
+The legal basis for the processing of your data is Art. 6 para. 1 lit. a GDPR in connection with § 25 para. 1 TDDDG, as the website operator has a legitimate interest in the anonymous analysis of user behavior in order to optimize its online services.
