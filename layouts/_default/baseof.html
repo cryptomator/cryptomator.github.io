@@ -87,12 +87,5 @@
     <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}" async></script>
 
     <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js"></script>
-    {{ if hugo.IsServer }}
-      {{ $plausible404init := resources.Get "js/plausible404init.js" }}
-      <script type="text/javascript" src="{{ $plausible404init.RelPermalink }}"></script>
-    {{ else }}
-      {{ $plausible404init := resources.Get "js/plausible404init.js" | minify | fingerprint }}
-      <script type="text/javascript" src="{{ $plausible404init.RelPermalink }}" integrity="{{ $plausible404init.Data.Integrity }}"></script>
-   {{ end }}
   </body>
 </html>
