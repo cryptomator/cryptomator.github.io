@@ -375,7 +375,7 @@
 - id: hub_pricing_managed_enterprise_benefit_2
   translation: "Option: Custom hosting location"
 - id: hub_pricing_coming_later
-  translation: "Hub support for Android is currently in development, ETA in 2024."
+  translation: "Hub support for Android is currently in development, ETA in Q1/2025."
 
 - id: hub_contact_us_title
   translation: "More questions?"
