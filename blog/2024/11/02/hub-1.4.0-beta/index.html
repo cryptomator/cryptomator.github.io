@@ -3,17 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cryptomator for Android</title>
+    <title>Cryptomator Hub Celebrates Its Second Anniversary – Test New Features in Beta Now!</title>
     
-      <meta name="description" content="Purchase Cryptomator for Android without going through Google Play."/>
-      <meta property="og:title" content="Cryptomator - Cryptomator for Android"/>
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://cryptomator.org/android/"/>
-      <meta property="og:site_name" content="Cryptomator"/>
-      <meta property="og:description" content="Purchase Cryptomator for Android without going through Google Play."/>
-      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+      <meta name="description" content="Cryptomator Hub is turning two years old! Celebrate with us and test exciting new features in the beta version. Learn more about the new &ldquo;Web of Trust&rdquo; and the &ldquo;Create-Vaults Role&rdquo;.">
+      <meta property="og:title" content="Cryptomator Hub Celebrates Its Second Anniversary – Test New Features in Beta Now!">
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="https://cryptomator.org/blog/2024/11/02/hub-1.4.0-beta/">
+      <meta property="og:site_name" content="Cryptomator">
+      <meta property="og:description" content="Cryptomator Hub is turning two years old! Celebrate with us and test exciting new features in the beta version. Learn more about the new &ldquo;Web of Trust&rdquo; and the &ldquo;Create-Vaults Role&rdquo;.">
+      <meta property="article:author" content="Cryptobot" />
+      <meta property="article:published_time" content="2024-11-02" />
+      
+        <meta property="article:tag" content="cryptomator" />
+      
+        <meta property="article:tag" content="hub" />
+      
+      <meta property="og:image" content="https://cryptomator.org/img/logo.png" />
+      <meta property="og:image:width" content="256" />
+      <meta property="og:image:height" content="256" />
     
     <meta property="og:locale" content="" />
     
@@ -26,7 +33,7 @@
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
-      <link rel="alternate" hreflang="de" href="/de/android/" />
+      <link rel="alternate" hreflang="de" href="/de/blog/2024/11/02/hub-1.4.0-beta/" />
     
     
       
@@ -45,7 +52,7 @@
 
       <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="/">
         <img src="/img/logo.svg" class="h-8" alt="Logo"/>
-        <span class="hidden md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+        <span class=" md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
@@ -99,11 +106,7 @@
         </li>
       </ul>
 
-      <ul class="flex items-stretch list-none m-0">
-        <li class="flex items-center mx-2">
-          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1">Get Started</a>
-        </li>
-      </ul>
+      
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center m-3 border-l border-primary"></li>
@@ -115,7 +118,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-              <a :href="'/de/android/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+              <a :href="'/de/blog/2024/11/02/hub-1.4.0-beta/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
             </div>
           </div>
         </li>
@@ -162,7 +165,7 @@
     </div>
     <div class="mt-1">
       
-      <a :href="'/de/android/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      <a :href="'/de/blog/2024/11/02/hub-1.4.0-beta/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
       
     </div>
 
@@ -182,177 +185,51 @@
 <div class="bg-gray-100 min-vh-80 pt-12">
     
     
-  <div class="container py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-      <h1>Cryptomator for Android</h1>
-      <p class="lead">Purchase Cryptomator for Android without going through Google Play.</p>
-    </header>
+  <div class="container-prose py-12">
+    <article class="mb-12">
+      <header class="mb-6">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+          <h1><a href="/blog/">Blog</a> / Cryptomator Hub Celebrates Its Second Anniversary – Test New Features in Beta Now!</a></h1>
+        </div>
+        <div class="flex items-center mb-4">
+          
+          <span><a class="text-primary no-underline hover:underline" href="/blog/2024/11/02/hub-1.4.0-beta/">2024-11-02</a></span>
+        </div>
+        
+      </header>
 
-    <div class="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
-      <section class="w-full md:w-1/2">
-        <div x-data="{checkoutData: {price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="rounded shadow bg-white">
-  <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary text-center">
-    <h3>Buy a license key</h3>
+      <hr class="my-8"/>
+
+      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <p>It&rsquo;s hard to believe that Cryptomator Hub is already two years old! As a central management platform for encrypted cloud storage solutions, Cryptomator Hub enables businesses and organizations to securely and efficiently manage access and permissions. Since its release on November 2, 2022, we&rsquo;ve worked hard with our community to develop an even stronger and more secure tool to meet your needs. First of all, a huge thank you to the community! To celebrate this milestone, we&rsquo;re introducing exciting new features – and the best part: you can test them now in a beta version!</p>
+<figure class="text-center">
+  <img class="inline-block rounded" src="/img/blog/hub-identity-verification.png" srcset="/img/blog/hub-identity-verification.png 1x, /img/blog/hub-identity-verification@2x.png 2x" alt="Identity verification by confirming fingerprint characters in Cryptomator Hub 1.4.0" />
+</figure>
+<h2 id="web-of-trust--enhanced-security-through-mutual-verification">&ldquo;Web of Trust&rdquo; – Enhanced Security through Mutual Verification</h2>
+<p>Our brand-new &ldquo;Web of Trust&rdquo; feature adds an extra layer of security to your Cryptomator instance. Until now, users could verify others, but now we&rsquo;re taking it a step further: once a verification is made, it&rsquo;s automatically signed and shared, making it possible for others to see when someone has been marked as trustworthy. This creates a network where trust and authenticity become visible.</p>
+<p>This feature allows teams to see at a glance how trustworthy someone is within the network, based on prior verifications by other users. It&rsquo;s especially beneficial for organizations that prioritize secure collaboration and high authenticity, as it makes trust visible and traceable within the platform.</p>
+<h2 id="create-vaults-role--precise-control-over-vault-creation">&ldquo;Create-Vaults Role&rdquo; – Precise Control Over Vault Creation</h2>
+<p>With the &ldquo;Create-Vaults Role,&rdquo; admins now have the ability to precisely control who can create their own vaults within the Hub. Previously, anyone in the Hub could create new vaults, but now, permissions can be finely configured. For instance, admins can decide that only certain departments, such as IT or HR, can create new vaults. This function ensures clear structure, prevents unwanted vaults, and adapts to your organization&rsquo;s unique needs. This flexibility is particularly beneficial for larger teams.</p>
+<h2 id="test-the-beta-now">Test the Beta Now!</h2>
+<p>These features are available in the beta version and are waiting for you to try them out. Give us your feedback and help us fine-tune these functions before the official release. The full rollout is planned for the coming weeks – until then, we look forward to your support and insights!</p>
+
+      </div>
+    </article>
+
+    <div id="discourse-comments"></div>
   </div>
-
-  <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
-    <div class="w-full md:w-1/2 mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Price</label>
-      <input x-model="checkoutData.price" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Loading…" readonly/>
-    </div>
-    <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Email</label>
-      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="Email address" required/>
-    </div>
-    <div class="text-center mt-8">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-629145738" x-model="acceptTerms" />
-<label for="id-629145738">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
-</p>
-      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
-        <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
-      </button>
-      <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
-    </div>
-  </form>
-
-  <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
-    <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">👍 Your payment was successful!</h3>
-    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">License Key</label>
-    <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="Loading…" readonly></textarea>
-    <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700">This is your license key. Enter it in the Cryptomator app. The license key has also been sent to your email address.</p>
-  </div>
-</div>
-
 
   
-  <script type="text/javascript" src="/js/androidkey.min.050b610ad29ca710a361712762f49a6fc586cfd1e8c5dfe07849ca29d08e7f91.js" integrity="sha256-BQthCtKcpxCjYXEnYvSab8WGz9Hoxd/geEnKKdCOf5E=" defer></script>
-
-
-      </section>
-
-      <div class="flex flex-col space-y-6 w-full md:w-1/2">
-        <section>
-          <div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
-  <meta itemprop="name" content="Cryptomator"/>
-  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
-  <meta itemprop="applicationCategory" content="Productivity"/>
-  <meta itemprop="softwareVersion" content="1.10.3"/>
-  <meta itemprop="applicationSubCategory" content="Encryption"/>
-  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-  <meta itemprop="operatingSystem" content="Android"/>
-
-  <div class="rounded shadow bg-white">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>Download APK</h3>
-    </div>
-    <div class="px-4 py-8" x-data="{showShaSignature: false}">
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>Version 1.10.3 • Minimum: Android 8.0</p>
-      </div>
-      <a class="btn btn-primary w-full md:w-48 mb-2" href="https://static.cryptomator.org/android/1.10.3/Cryptomator-1.10.3.apk" role="button">
-        <span class="fas fa-download" aria-hidden="true"></span> Download
-      </a>
-      <p class="text-xs">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> SHA256 Signature</a>
-      </p>
-      <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
-        <p><code class="break-all">a433c3bd2c05c73d5e9e7e0da2fbe5ab942591ce1935852207e14cd7ad896543</code></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-        </section>
-
-        <section>
-          <div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication" x-data="{fdroidVariant: 'cryptomator-repo'}">
-  <meta itemprop="name" content="Cryptomator"/>
-  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
-  <meta itemprop="applicationCategory" content="Productivity"/>
-  <meta itemprop="softwareVersion" content="1.10.3"/>
-  <meta itemprop="applicationSubCategory" content="Encryption"/>
-  <meta itemprop="image" content="https://cryptomator.org/img/logo.png"/>
-  <meta itemprop="operatingSystem" content="Android"/>
-
-  <div class="rounded shadow bg-white">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>Get it on F-Droid</h3>
-    </div>
-
-    <div class="flex justify-center p-4">
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
-        Cryptomator Repository
-      </button>
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
-        Main Repository
-      </button>
-    </div>
-
-    <div x-show="fdroidVariant === 'cryptomator-repo'" class="px-4 pt-4 pb-8" x-data="{showQrCode: false}">
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>Open this <a class="text-primary no-underline hover:underline" href="https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD" target="_blank">link</a> or scan the QR code on your phone to add our repository.</p>
-      </div>
-      <p class="text-xs mb-4">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> QR Code</a>
-      </p>
-      <div x-show="showQrCode" x-cloak class="mb-4">
-        <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
-      </div>
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>❌ Google Drive is excluded due to proprietary dependencies.</p>
-      </div>
-      <div class="prose prose-sm max-w-none md:max-w-none">
-        <p>A detailed comparison of all variants can be found in our <a class="text-sm no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/android/setup" target="_blank">docs</a>.</p>
-      </div>
-    </div>
-
-    <div x-show="fdroidVariant === 'main-repo'" class="px-4 pt-4 pb-8">
-      <a href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
-        <img class="h-10 mx-auto lazyload mb-4" data-src="/img/android/fdroid-main-badge.svg">
-      </a>
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>❌ Dropbox, Google Drive, OneDrive, and pCloud are excluded due to required API keys.</p>
-      </div>
-      <div class="prose prose-sm max-w-none md:max-w-none">
-        <p>A detailed comparison of all variants can be found in our <a class="text-sm no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/android/setup" target="_blank">docs</a>.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-        </section>
-      </div>
-    </div>
-  </div>
-
-  <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
-    <h3 id="keyrecovery" class="font-headline text-xl md:text-2xl leading-relaxed mb-4">Did you lose your license key?</h3>
-
-    <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">To recover a lost license key or receipt, enter your email address below.</p>
-      <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Email address" required/>
-        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
-          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Retrieve
-        </button>
-      </div>
-      <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
-    </form>
-
-    <div x-show="data.success" x-cloak>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">👍 We&#39;ve sent details of your past transactions and licenses to you via email.</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">❓ If you didn't get an email, <a class="text-primary no-underline hover:underline" href="mailto:support@cryptomator.org">contact us</a>.</p>
-    </div>
-  </section>
-
   
     
-    <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
+      
     
-    <script type="text/javascript" src="/js/keyrecovery.min.6c429a8195dcfd77702bbb390e96bedb6b5cf31e960056780ba701042d4cf288.js" integrity="sha256-bEKagZXc/XdwK7s5Dpa&#43;22tc8x6WAFZ4C6cBBC1M8og=" defer></script>
+  
+  
+    
+      
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/11/02/hub-1.4.0-beta/" defer></script>
+    
   
 
     </div>

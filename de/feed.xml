@@ -11,8 +11,32 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/</link>
     </image>
-    <lastBuildDate>Thu, 31 Oct 2024 09:49:59 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 Nov 2024 10:36:03 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Cryptomator Hub feiert seinen zweiten Geburtstag – Neue Features jetzt in der Beta testen!</title>
+        <description>&lt;p&gt;Es ist kaum zu glauben, dass Cryptomator Hub nun schon zwei Jahre alt wird! Als zentrale Verwaltungsplattform für verschlüsselte Cloud-Speicherlösungen ermöglicht Cryptomator Hub Unternehmen und Organisationen, ihre Zugänge und Berechtigungen sicher und effizient zu verwalten. Seit dem Release am 2. November 2022 haben wir gemeinsam mit unserer Community hart daran gearbeitet, ein noch stärkeres und sichereres Tool für eure Bedürfnisse zu entwickeln. Dafür erst einmal ein großes Dankeschön an die Community! Zum zweiten Geburtstag haben wir spannende neue Features für euch – und das Beste daran: Ihr könnt sie schon jetzt in einer Beta-Version testen!&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/hub-identity-verification.png&#34; srcset=&#34;https://cryptomator.org/img/blog/hub-identity-verification.png 1x, https://cryptomator.org/img/blog/hub-identity-verification@2x.png 2x&#34; alt=&#34;Identitätsüberprüfung durch Bestätigung von Fingerabdruckzeichen in Cryptomator Hub 1.4.0&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;web-of-trust--mehr-sicherheit-durch-gegenseitige-verifikation&#34;&gt;„Web of Trust“ – Mehr Sicherheit durch gegenseitige Verifikation&lt;/h2&gt;
+&lt;p&gt;Unser brandneues „Web of Trust“-Feature bringt eine zusätzliche Ebene an Sicherheit in eure Cryptomator-Instanz. Bisher war es bereits möglich, dass Nutzer:innen andere Personen verifizieren. Nun gehen wir einen Schritt weiter: Sobald eine Verifizierung stattfindet, wird dieser Vorgang automatisch signiert und geteilt. Andere Personen können davon profitieren, wenn eine Person eine andere als vertrauenswürdig einstuft. So entsteht ein Netzwerk, das Vertrauen und Authentizität sichtbar macht.&lt;/p&gt;
+&lt;p&gt;Dieses Feature ermöglicht es Teams, auf einen Blick zu erkennen, wie vertrauenswürdig eine Person innerhalb des Netzwerks eingestuft wird, basierend auf den bisherigen Verifizierungen durch andere Nutzer:innen. Es eignet sich besonders für Organisationen, die großen Wert auf sichere Zusammenarbeit und hohe Authentizität legen, denn so wird Vertrauen innerhalb der Plattform sichtbar und nachvollziehbar.&lt;/p&gt;
+&lt;h2 id=&#34;create-vaults-role--präzise-kontrolle-über-tresorerstellung&#34;&gt;„Create-Vaults Role“ – Präzise Kontrolle über Tresorerstellung&lt;/h2&gt;
+&lt;p&gt;Mit der „Create-Vaults Role“ geben wir Admins die Möglichkeit, präzise zu steuern, wer innerhalb des Hubs eigene Tresore anlegen darf und wer nicht. Bisher konnte jede:r im Hub neue Tresore erstellen, doch dank dieses Updates kann die Berechtigung gezielt konfiguriert werden. So können Admins beispielsweise festlegen, dass nur bestimmte Abteilungen, wie IT oder HR, die Möglichkeit haben, neue Tresore zu erstellen. Diese Funktion sorgt für klare Strukturen, vermeidet ungewollte Tresore und passt sich den individuellen Anforderungen eurer Organisation an. Die neue Funktion bietet besonders in größeren Teams die nötige Flexibilität.&lt;/p&gt;
+&lt;h2 id=&#34;teste-jetzt-die-beta&#34;&gt;Teste jetzt die Beta!&lt;/h2&gt;
+&lt;p&gt;Diese Features sind bereits in der Beta-Version verfügbar und warten darauf, von euch ausprobiert zu werden. Gebt uns euer Feedback und helft uns, die Funktionen vor dem offiziellen Release zu verbessern. Der vollständige Rollout ist für die kommenden Wochen geplant – bis dahin freuen wir uns auf euer Feedback und eure Unterstützung!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/11/02/hub-1.4.0-beta/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/11/02/hub-1.4.0-beta/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>hub</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator 2.6.3 für iOS: Neue Funktionen und Bugfixes</title>
@@ -394,30 +418,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <category>cryptomator</category>
         
         <category>android</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator Hub: Managed – Jetzt Zugang anfordern</title>
-        <description>&lt;p&gt;Wir freuen uns, euch mitteilen zu können, dass Managed-Instanzen von &lt;a href=&#34;https://cryptomator.org/de/hub/&#34;&gt;Cryptomator Hub&lt;/a&gt; ab sofort verfügbar sind! &amp;#x1f389; Außerdem haben wir Hub 1.1.0 mit Unterstützung für Wiederherstellungsschlüssel veröffentlicht.&lt;/p&gt;
-&lt;h2 id=&#34;zugang-anfordern&#34;&gt;Zugang anfordern&lt;/h2&gt;
-&lt;p&gt;Das Wichtigste zuerst. &amp;#x1f680; Um loszulegen, könnt ihr jetzt &lt;a href=&#34;https://cryptomator.org/de/hub/managed/&#34;&gt;Zugang zu einer Managed-Instanz von Cryptomator Hub anfordern&lt;/a&gt;. Nach Beantragung werden wir uns so schnell wie möglich zurückmelden. Derzeit werden einige der Schritte, die wir intern durchführen, um eine Managed-Hub-Instanz zu erstellen, noch „manuell“ ausgeführt. Wir arbeiten daran, diesen Prozess zu automatisieren, aber wir wollten die Veröffentlichung nicht länger verzögern.&lt;/p&gt;
-&lt;h2 id=&#34;managed-vs-self-hosted&#34;&gt;Managed vs. Self-Hosted&lt;/h2&gt;
-&lt;p&gt;Managed-Instanzen von Cryptomator Hub ermöglichen die sofortige Nutzung von Cryptomator Hub, ohne eine Self-Hosted-Instanz installieren und warten zu müssen.&lt;/p&gt;
-&lt;p&gt;Bisher konnte man &lt;em&gt;nur&lt;/em&gt; die Self-Hosted-Version von Cryptomator Hub verwenden. Dies erfordert eine Menge Wissen darüber, wie man einen Software-Container mittels Kubernetes oder Docker Compose installiert. Und wenn man dieses Wissen hat, muss man die Instanz immer noch selbst warten. Dazu gehört, die Software zu aktualisieren, die Instanz zu überwachen und ihre Sicherheit zu gewährleisten.&lt;/p&gt;
-&lt;p&gt;Bei Managed-Instanzen kümmern wir uns um die Installation und Wartung eurer Hub-Instanz und stellen gleichzeitig sicher, dass eure Instanz hochverfügbar ist. Ihr könnt euch auf eure Arbeit und euer Team konzentrieren.&lt;/p&gt;
-&lt;p&gt;All dies wird durch das zugrundeliegende &lt;a href=&#34;https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management&#34;&gt;Zero-Knowledge Key Management&lt;/a&gt; ermöglicht. Cryptomator Hub speichert keine unverschlüsselten Schlüssel. Das gesamte Schlüsselmaterial bleibt lokal auf dem Client und wir können eure Daten nicht entschlüsseln. Zudem ist Hub unabhängig von eurem Cloudspeicher-Anbieter ist. Zusammengefasst: Wir haben keinen Zugriff auf das Schlüsselmaterial oder die Cloud-Dateien.&lt;/p&gt;
-&lt;h2 id=&#34;release-110-wiederherstellungsschlüssel&#34;&gt;Release 1.1.0: Wiederherstellungsschlüssel&lt;/h2&gt;
-&lt;p&gt;Und es geht weiter: Wir haben Cryptomator Hub 1.1.0 mit Unterstützung für Wiederherstellungsschlüssel veröffentlicht. Damit kann man im Katastrophenfall auf seine Daten zugreifen. Und nicht nur das: Der Wiederherstellungsschlüssel ist mit dem von Cryptomator kompatibel. Das bedeutet, dass ihr eure bestehenden Tresore in Hub-Tresore umwandeln könnt und umgekehrt.&lt;/p&gt;
-&lt;p&gt;Was heißt das für eure Managed-Instanz? Wenn wir aufhören zu existieren (wir werden oft gefragt, dank Boxcryptor &amp;#x1f609;), könnt ihr eure Hub-Tresore in „normale“ passwortbasierte Tresore umwandeln, komplett offline, so dass ihr &lt;em&gt;immer&lt;/em&gt; und unter allen Umständen Zugriff auf eure Daten habt. Dies ist auch für eure Self-Hosted-Instanzen von Vorteil, falls eurem Server etwas zustoßen sollte.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2023/02/28/hub-managed/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/02/28/hub-managed/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>hub</category>
         
       </item>
     
