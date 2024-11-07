@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptomator Hub: Self-Hosted</title>
+    
+      <meta name="description" content="Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."/>
+      <meta property="og:title" content="Cryptomator - Cryptomator Hub: Self-Hosted"/>
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://cryptomator.org/hub/self-hosted/"/>
+      <meta property="og:site_name" content="Cryptomator"/>
+      <meta property="og:description" content="Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."/>
+      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
+    
+    <meta property="og:locale" content="" />
+    
+      <meta property="og:locale:alternate" content="" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.ad9fba037f491e2b138e7993923a3114d922d7eb6e94253dc390a8a531619297.css" integrity="sha256-rZ&#43;6A39JHisTjnmTkjoxFNki1&#43;tulCU9w5CopTFhkpc=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/hub/self-hosted/" />
+    
+    
+      
+    
+  </head>
+  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <nav x-init="determineGitHubStargazersCount('en')" class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
+  <div class="flex justify-between items-stretch w-full lg:px-8">
+    
+    <div class="flex items-stretch">
+      
+      <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+        <i x-show="isNavOpen" class="fas fa-times fa-fw" x-cloak></i>
+        <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+      </button>
+
+      <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="/">
+        <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+        <span class=" md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+      </a>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-primary hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+        </li>
+        <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Support Us</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+              <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+              <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
+            </div>
+          </div>
+        </li>
+        <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Learn More</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+              <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+              <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+              <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+              <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+              <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+              <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
+              <a href="/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">NIS-2-Guideline</a>
+              <a href="/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Protecting Cloud Data Against AI</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-stretch">
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+            <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
+            <span id="github-stargazers"></span>
+          </a>
+        </li>
+      </ul>
+
+      
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center m-3 border-l border-primary"></li>
+          
+        <li x-data="{ isLangDropdownOpen: false }" class="flex items-center mx-2">
+          <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+            <span>EN</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="relative">
+            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+              <a :href="'/de/hub/self-hosted/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Support Us
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Learn More
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/nis-2-guideline/">NIS-2-Guideline</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/protecting-data-against-ai/">Protecting Cloud Data Against AI</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> EN
+    </div>
+    <div class="mt-1">
+      
+      <a :href="'/de/hub/self-hosted/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      
+    </div>
+
+    <hr class="border-primary my-2"/>
+
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator on GitHub</span>
+    </a>
+  </div>
+</nav>
+
+
+  
+  <script type="text/javascript" src="/js/nav.min.c207b62e4a96099b751048fbeb67db4f95e0e7d0c5221c0bd599c67194c5d00b.js" integrity="sha256-wge2LkqWCZt1EEj762fbT5Xg59DFIhwL1ZnGcZTF0As=" defer></script>
+
+<div class="bg-gray-100 min-vh-80 pt-12">
+    
+    
+  <div class="container space-y-6 py-12" x-data="{cfg: HubSetup.defaultConfig(), deploymentType: '', output: ''}" x-init="output = HubSetup.generateOutput(cfg); $watch('cfg', _ => output = HubSetup.generateOutput(cfg))">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+      <h1>Cryptomator Hub: Self-Hosted</h1>
+      <p class="lead">Generate the necessary configuration templates for your Hub deployment and get your team on board with client-side encryption for your cloud storage.</p>
+      <p>You can find more documentation at <a href="https://docs.cryptomator.org/en/latest/hub/setup/">docs.cryptomator.org</a>.</p>
+    </header>
+
+    
+    <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+      <header class="md:col-span-1">
+        <h2 class="text-lg font-medium leading-6 text-gray-900">
+          Deployment
+        </h2>
+        <p class="mt-1 text-sm text-gray-500">
+          On what type of infrastructure do you want to deploy Cryptomator Hub?
+        </p>
+      </header>
+      <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+        <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-3">
+          
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'kubernetes' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-kubernetes-label">
+            <span id="deployment-type-kubernetes-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'kubernetes' ? 'text-indigo-900' : 'text-gray-900'">Kubernetes</span>
+          </label>
+
+          
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-prod' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="compose-prod" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-compose-prod-label">
+            <span id="deployment-type-compose-prod-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-prod' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Prod)</span>
+          </label>
+
+          
+          <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-test' ? 'border-secondary z-10' : 'border-gray-300'">
+            <input type="radio" name="deployment-type" value="compose-test" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig(); cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'" aria-describedby="deployment-type-compose-test-label">
+            <span id="deployment-type-compose-test-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-test' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Test)</span>
+          </label>
+        </div>
+
+        
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'kubernetes'" x-cloak>
+          <label for="k8sNamespace" class="block text-sm font-medium text-gray-700">
+            Namespace
+          </label>
+          <input type="text" id="k8sNamespace" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.k8s.namespace">
+          <p class="mt-2 text-sm text-gray-500">
+            Namespace for the Kubernetes resources.
+          </p>
+        </div>
+        <div class="col-span-6" x-show="deploymentType == 'kubernetes'" x-cloak>
+          <label for="k8sIncludeIngress" class="block text-sm font-medium text-gray-700">
+            Ingress
+          </label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="k8sIncludeIngress" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.k8s.includeIngress">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="k8sIncludeIngress" class="font-medium text-gray-700">
+                Include Ingress object in Kubernetes config.
+              </label>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-prod'" x-cloak>
+          <label for="composeIncludeTraefik" class="block text-sm font-medium text-gray-700">
+            Traefik
+          </label>
+          <div class="mt-2 flex items-start">
+            <div class="h-5 flex items-center">
+              <input id="composeIncludeTraefik" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.compose.includeTraefik">
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="composeIncludeTraefik" class="font-medium text-gray-700">
+                Include Traefik in Docker Compose config.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-prod' && cfg.compose.includeTraefik" x-cloak>
+          <label for="composePublicNetwork" class="block text-sm font-medium text-gray-700">
+            Public Network
+          </label>
+          <input type="text" id="composePublicNetwork" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.compose.publicNetwork">
+          <p class="mt-2 text-sm text-gray-500">
+            Name of the publicly exposed network of Traefik.
+          </p>
+        </div>
+
+        
+        <div class="col-span-6 lg:col-span-4" x-show="deploymentType == 'compose-test'" x-cloak>
+          <p class="text-sm text-gray-500">
+            This deployment type is only intended for testing purposes on `localhost`. This can be used as-is without any further configuration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div x-show="deploymentType != ''" class="space-y-6" x-cloak>
+      
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            Cryptomator Hub
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            General information about your Hub installation.
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6 lg:col-span-3">
+            <label for="hubVersion" class="block text-sm font-medium text-gray-700">Version</label>
+            <select id="hubVersion" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.version">
+              <option>stable</option>
+              <option>beta</option>
+            </select>
+            <p class="mt-2 text-sm text-gray-500">
+              For production deployments, use the stable lane.
+            </p>
+          </div>
+          
+          <div class="col-span-6 lg:col-span-4">
+            <label for="hubPublicUrl" class="block text-sm font-medium text-gray-700">
+              Public Hub URL
+            </label>
+            <input type="url" id="hubPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.publicUrl" :readonly="deploymentType == 'compose-test'">
+            <p class="mt-2 text-sm text-gray-500">
+              The full URL including protocol, port, and path of your Hub installation.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="hubAdminUser" class="block text-sm font-medium text-gray-700">
+              Admin User
+            </label>
+            <input type="text" id="hubAdminUser" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.adminUser">
+            <p class="mt-2 text-sm text-gray-500">
+              User name of the initial user that will be created.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="hubAdminPw" class="block text-sm font-medium text-gray-700">
+              Admin Password
+            </label>
+            <input type="password" id="hubAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.hub.adminPw">
+            <p class="mt-2 text-sm text-gray-500">
+              Password for the initial user. You will be asked to change this on your first login.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            Keycloak
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            Cryptomator Hub depends on Keycloak for identity management.
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6" x-show="deploymentType != 'compose-test'">
+            <label class="block text-sm font-medium text-gray-700">
+              External Keycloak
+            </label>
+            <div class="mt-2 flex items-start">
+              <div class="h-5 flex items-center">
+                <input id="externalKeycloak" type="checkbox" class="rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" x-model="cfg.keycloak.useExternal" @change="cfg.keycloak.publicUrl">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="externalKeycloak" class="font-medium text-gray-700">
+                  Use an existing Keycloak installation.
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="keycloakPublicUrl" class="block text-sm font-medium text-gray-700">
+              Public Keycloak URL
+            </label>
+            <input type="url" id="keycloakPublicUrl" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.publicUrl" :readonly="deploymentType == 'compose-test'">
+            <p class="mt-2 text-sm text-gray-500" x-show="cfg.keycloak.useExternal">
+              The full URL including protocol, port, and path of your Keycloak installation.
+            </p>
+            <p class="mt-2 text-sm text-gray-500" x-show="!cfg.keycloak.useExternal">
+              Internal Keycloak container will be deployed to this URL.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="deploymentType != 'compose-test'">
+            <label for="keycloakRealmId" class="block text-sm font-medium text-gray-700">
+              Realm ID
+            </label>
+            <input type="text" id="keycloakRealmId" pattern="[A-Za-z0-9_-]+" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.realmId">
+            <p class="mt-2 text-sm text-gray-500">
+              Part of the URL used to login to the correct realm. Therefore it must be an URL-safe string, unique per Keycloak instance.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="keycloakAdminUser" class="block text-sm font-medium text-gray-700">
+              Admin User
+            </label>
+            <input type="text" id="keycloakAdminUser" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.adminUser">
+            <p class="mt-2 text-sm text-gray-500">
+              User name of the admin user that will be created.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="keycloakAdminPw" class="block text-sm font-medium text-gray-700">
+              Initial Admin Password
+            </label>
+            <input type="password" id="keycloakAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.keycloak.adminPw">
+            <p class="mt-2 text-sm text-gray-500">
+              Temporary password for the admin user. You should change this on your first login.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            Database
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            Cryptomator Hub depends on PostgreSQL for persisting data.
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6 lg:col-span-4">
+            <label for="dbAdminPw" class="block text-sm font-medium text-gray-700">
+              Admin Password
+            </label>
+            <input type="password" id="dbAdminPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.adminPw">
+            <p class="mt-2 text-sm text-gray-500">
+              Superuser password for default `postgres` user.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4">
+            <label for="dbHubPw" class="block text-sm font-medium text-gray-700">
+              Hub Password
+            </label>
+            <input type="password" id="dbHubPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.hubPw">
+            <p class="mt-2 text-sm text-gray-500">
+              Password for `hub` user with access to `hub` database.
+            </p>
+          </div>
+
+          <div class="col-span-6 lg:col-span-4" x-show="!cfg.keycloak.useExternal">
+            <label for="dbKeycloakPw" class="block text-sm font-medium text-gray-700">
+              Keycloak Password
+            </label>
+            <input type="password" id="dbKeycloakPw" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="cfg.db.keycloakPw">
+            <p class="mt-2 text-sm text-gray-500">
+              Password for `keycloak` user with access to `keycloak` database.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="text-center">
+        <div class="fa-stack text-2xl text-primary">
+          <i class="far fa-circle fa-stack-2x"></i>
+          <i class="fas fa-chevron-double-down fa-stack-1x"></i>
+        </div>
+      </div>
+
+      
+      <section class="rounded shadow bg-white px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+        <header class="md:col-span-1">
+          <h2 class="text-lg font-medium leading-6 text-gray-900">
+            Config
+          </h2>
+          <p class="mt-1 text-sm text-gray-500">
+            Use this configuration template to deploy Cryptomator Hub.
+          </p>
+        </header>
+        <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="col-span-6" x-show="deploymentType == 'kubernetes'">
+            <label for="k8sOutput" class="block text-sm font-medium text-gray-700">k8s-hub.yml</label>
+            <textarea id="k8sOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.k8s" readonly></textarea>
+          </div>
+          <div class="col-span-6" x-show="deploymentType == 'compose-prod' || deploymentType == 'compose-test'">
+            <label for="composeOutput" class="block text-sm font-medium text-gray-700">docker-compose.yml</label>
+            <textarea id="composeOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.compose" readonly></textarea>
+          </div>
+          <div class="col-span-6" x-show="cfg.keycloak.useExternal">
+            <label for="realmOutput" class="block text-sm font-medium text-gray-700">realm.json</label>
+            <textarea id="realmOutput" rows="10" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="output.realm" readonly></textarea>
+          </div>
+          <div class="col-span-6" x-show="deploymentType == 'kubernetes' || deploymentType == 'compose-prod'">
+            <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Hint: Hub and Keycloak requires proper TLS termination in production. Only for tests with localhost or 127.0.0.1 this is not necessary. In the setup wizard you can add the config for the reverse proxies Ingress or Traefik. The deployment for the respective proxy is not included. There are some proxy deployment examples in the <a class="text-primary no-underline hover:underline" href="https://docs.cryptomator.org/en/latest/hub/setup/#reverse-proxy" target="_blank" rel="noopener">documentation</a>.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    
+    <section class="container text-center py-12">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Need some help with your configuration?</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">This wizard creates a sensible default for common configurations. Feel free to contact us if you want us to tailor the setup to your specific needs.</p>
+      <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+        <i class="fas fa-envelope"></i> Contact Us
+      </a>
+    </section>
+  </div>
+
+  
+  <script type="text/javascript" src="/js/js-yaml/js-yaml.min.45dc3dd03dc07a06705a2c2989b8c7f709013f04bd5386e3279d4e447f07ebd7.js" integrity="sha256-Rdw90D3AegZwWiwpibjH9wkBPwS9U4bjJ51ORH8H69c="></script>
+
+  
+    
+    <script type="text/javascript" src="/js/hubsetup.min.20ae3610afef06fe82813bc0ae95431262899fd702283f4bf3c58fdc25bbec51.js" integrity="sha256-IK42EK/vBv6CgTvArpVDEmKJn9cCKD9L88WP3CW77FE=" defer></script>
+  
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Mastodon</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://linkedin.com/company/skymatic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.358d9afbb1ab5befa2f48061a30776e5bcd7707f410a606ba985f98bc3b1c034.js" integrity="sha256-NY2a&#43;7GrW&#43;&#43;i9IBhowd25bzXcH9BCmBrqYX5i8OxwDQ=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+
+    
+      <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js" integrity="sha384-+tt0STxxWB96REUfXF1ykJzPEC5cT+TVotVR/JnYqAP04zxND4o8a0JcHg+aq46t" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

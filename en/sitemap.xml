@@ -1067,16 +1067,16 @@
                 href="https://cryptomator.org/hub/managed/"
                 />
   </url><url>
-    <loc>https://cryptomator.org/hub/setup/</loc>
+    <loc>https://cryptomator.org/hub/self-hosted/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de_DE"
-                href="https://cryptomator.org/de/hub/setup/"
+                href="https://cryptomator.org/de/hub/self-hosted/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en_US"
-                href="https://cryptomator.org/hub/setup/"
+                href="https://cryptomator.org/hub/self-hosted/"
                 />
   </url><url>
     <loc>https://cryptomator.org/coop/cyberduck/</loc>
