@@ -275,8 +275,14 @@
   translation: "The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
 - id: hub_header_description
   translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
-- id: hub_header_cta
-  translation: "Get Started"
+- id: hub_header_managed_title
+  translation: "Managed"
+- id: hub_header_managed_cta
+  translation: "Register Now"
+- id: hub_header_self_hosted_title
+  translation: "Self-Hosted"
+- id: hub_header_self_hosted_cta
+  translation: "Deploy Now"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -336,10 +342,8 @@
   translation: "per seat, per month"
 - id: hub_pricing_managed_cta
   translation: "Register Now"
-- id: hub_pricing_self_hosted_cta_1
-  translation: "Docs"
-- id: hub_pricing_self_hosted_cta_2
-  translation: "Setup Wizard"
+- id: hub_pricing_self_hosted_cta
+  translation: "Jetzt einrichten"
 - id: hub_pricing_standard_benefit_1
   translation: "Everything in Community"
 - id: hub_pricing_standard_benefit_2

@@ -303,16 +303,16 @@
           </div>
         </div>
       </section>
-
-      <!-- CONTACT -->
-      <section class="container text-center py-12">
-        <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_setup_contact_us_title" . }}</h2>
-        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_setup_contact_us_description" . | safeHTML }}</p>
-        <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
-          <i class="fas fa-envelope"></i> {{ i18n "hub_setup_contact_us_button" . }}
-        </a>
-      </section>
     </div>
+
+    <!-- CONTACT -->
+    <section class="container text-center py-12">
+      <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_setup_contact_us_title" . }}</h2>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_setup_contact_us_description" . | safeHTML }}</p>
+      <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+        <i class="fas fa-envelope"></i> {{ i18n "hub_setup_contact_us_button" . }}
+      </a>
+    </section>
   </div>
 
   {{ $jsYaml := resources.Get "js/js-yaml/js-yaml.min.js" | fingerprint }}
