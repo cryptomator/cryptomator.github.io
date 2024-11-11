@@ -581,7 +581,7 @@
 - id: hub_managed_info_header_title
   translation: "Information"
 - id: hub_managed_info_header_description
-  translation: "Auf der Grundlage deiner Eingaben werden wir eine neue Hub-Instanz für dich erstellen. Du wirst der erste Administrator dieser Instanz sein."
+  translation: "Auf der Grundlage deiner Eingaben wird eine neue Hub-Instanz für dich erstellt. Du wirst der erste Administrator dieser Instanz sein."
 - id: hub_managed_info_subdomain
   translation: "Subdomain"
 - id: hub_managed_info_subdomain_description
@@ -601,8 +601,6 @@
 
 - id: hub_managed_trial_info
   translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
-- id: hub_managed_instruction
-  translation: "Hub-Instanzen werden manuell geprüft. Wir werden uns so schnell wie möglich bei dir melden. Du erhältst dann eine E-Mail mit weiteren Anweisungen."
 - id: hub_managed_loadcaptcha
   translation: "Weiter…"
 - id: hub_managed_submit
