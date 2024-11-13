@@ -300,7 +300,7 @@
 - id: hub_features_feature_3_title
   translation: "Zero Knowledge"
 - id: hub_features_feature_3_description
-  translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a href=\"https://github.com/cryptomator/hub/wiki/Zero-Knowledge-Key-Management\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+  translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a href=\"https://docs.cryptomator.org/en/latest/security/hub\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
 
 - id: hub_pricing_title
   translation: "Preisgestaltung"
