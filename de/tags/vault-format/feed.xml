@@ -11,8 +11,38 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/vault-format/</link>
     </image>
-    <lastBuildDate>Wed, 13 Nov 2024 01:42:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2024 13:05:18 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>Was ist neu in Cryptomator 1.14.2: Die Änderungen im Überblick!</title>
+        <description>&lt;p&gt;Wir freuen uns, die neueste Version von Cryptomator Desktop mit euch zu teilen! Dieses Update konzentriert sich vor allem auf Fehlerbehebungen für ein reibungsloseres Erlebnis. Werfen wir einen Blick auf die Details:&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-neu&#34;&gt;Was ist neu?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;FUSE-T: Jetzt standardmäßig mit SMB-Backend&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Cryptomator entwickelt sich stetig weiter, um eine bessere Leistung und einen nahtloseren Zugriff zu bieten. Mit diesem Update verwendet FUSE-T nun standardmäßig das SMB-Backend, was zu zuverlässigeren Dateioperationen unter macOS 15.0.0 führt.&lt;/p&gt;
+&lt;h2 id=&#34;fehlerbehebungen&#34;&gt;Fehlerbehebungen&lt;/h2&gt;
+&lt;p&gt;Wir haben intensiv daran gearbeitet, gemeldete Probleme zu beheben und Cryptomator noch stabiler zu machen:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cache-Invaliderung für Verzeichnisse&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;CryptoFS enthält aus Performancegründen einen Cache, der Klartextnamen verschlüsselten Verzeichnissen zuordnet. Ein Fehler sorgte dafür, dass der Cache nach dem Verschieben oder Löschen von Verzeichnissen nicht korrekt invalidiert wurde. Das Update behebt diesen Fehler, sodass die Verzeichnisauflistung nun immer korrekt ist.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;„Serververbindung unterbrochen“&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Seit macOS 15.0.0 kam es bei der Verwendung von FUSE-T häufig zu Verbindungsabbrüchen zwischen dem System und einem geöffneten Tresor. Dies wurde durch den Dialog „Serververbindung unterbrochen“ angezeigt. Durch die Umstellung auf SMB als Standard wurde das Problem entschärft und gleichzeitig die Performance verbessert.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quick-Access-Fix für GNOME Nautilus&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ein Problem, das ungültige Quick-Access-Einträge in GNOME Nautilus verursachte, wurde behoben.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Konsistenz des Dateisystems&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ein bislang theoretisches Problem, das zu einem inkonsistenten Dateisystem führen konnte, wurde behoben. Zuvor konnte dies nur durch manuelles Sperren und Entsperren gelöst werden.&lt;/p&gt;
+&lt;h2 id=&#34;weitere-änderungen&#34;&gt;Weitere Änderungen&lt;/h2&gt;
+&lt;p&gt;Wir haben außerdem die Übersetzung für Thai aktualisiert, um sicherzustellen, dass Cryptomator die Sprache noch besser spricht.&lt;/p&gt;
+&lt;h2 id=&#34;schlusswort&#34;&gt;Schlusswort&lt;/h2&gt;
+&lt;p&gt;Wir arbeiten kontinuierlich daran, Cryptomator für unsere Community zu verbessern. Solltet ihr auf Probleme stoßen oder Feedback haben, meldet euch gerne bei uns oder bringt euch auf GitHub ein.&lt;/p&gt;
+&lt;p&gt;Bleibt dran für weitere Updates, und danke, dass ihr Teil der Community seid!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/11/19/release-1.14.2/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/11/19/release-1.14.2/</guid>
+        
+        <category>cryptomator</category>
+        
+      </item>
     
       <item>
         <title>Cryptomator Hub feiert seinen zweiten Geburtstag – Neue Features jetzt in der Beta testen!</title>
@@ -392,32 +422,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <category>cryptomator</category>
         
         <category>hub</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator 1.8.0 for Android</title>
-        <description>&lt;p&gt;Wie du vielleicht schon bemerkt hast, haben wir letzten Monat Cryptomator 1.8.0 für Android veröffentlicht! Diese Version enthält viele interne Änderungen, einige neue Funktionen und einige Bugfixes.&lt;/p&gt;
-&lt;p&gt;Diese Version hat eine ganze Weile gedauert, aber wir haben es endlich geschafft! &amp;#x1f389; Zusätzlich zu den &lt;a href=&#34;https://github.com/cryptomator/android/releases/tag/1.8.0&#34;&gt;Release Notes&lt;/a&gt; möchten wir dir hier noch mehr Details zu einigen Änderungen geben.&lt;/p&gt;
-&lt;h2 id=&#34;material-3-design&#34;&gt;Material 3 Design&lt;/h2&gt;
-&lt;p&gt;Die auffälligste Änderung in dieser Version ist der Wechsel zu Material 3, das die Benutzeroberfläche modernisiert.&lt;/p&gt;
-&lt;h2 id=&#34;cryptomator-lite-reproduzierbarer-build-und-f-droid&#34;&gt;Cryptomator Lite: Reproduzierbarer Build und F-Droid&lt;/h2&gt;
-&lt;p&gt;Eine weniger offensichtliche Änderung ist die Einführung einer neuen Version: Cryptomator Lite.&lt;/p&gt;
-&lt;p&gt;Diese Version wird mit einer reproduzierbaren Build-Technik erstellt, die zwei Vorteile hat: Du als Benutzer kannst überprüfen, ob der veröffentlichte Quellcode mit der veröffentlichten Binärdatei übereinstimmt, was wiederum bedeutet, dass wir während der Build-Phase nichts hinzugefügt haben und auch nichts hinzufügen konnten.&lt;/p&gt;
-&lt;p&gt;Der andere Vorteil ist, dass diese Technik es uns erlaubt, unsere App in Stores wie dem F-Droid Haupt-Repository zu veröffentlichen, sie aber mit unseren Schlüsseln zu signieren, was bedeutet, dass wir immer noch die Kontrolle über die Signierschlüssel haben.&lt;/p&gt;
-&lt;p&gt;Cryptomator Lite kann mit dem folgenden Docker-Image gebaut und dann mit den entsprechenden Versionen verglichen werden: &lt;a href=&#34;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&#34;&gt;https://github.com/cryptomator/android/blob/main/buildsystem/Dockerfile&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;aes-gcm-neuer-standard-für-die-verschlüsselung-von-inhalten&#34;&gt;AES-GCM: Neuer Standard für die Verschlüsselung von Inhalten&lt;/h2&gt;
-&lt;p&gt;Beginnend mit Cryptomator 1.8.0 für Android werden wir unserer Desktop-Anwendung folgen: Alle neu erstellten Tresore werden &lt;a href=&#34;https://de.wikipedia.org/wiki/Galois/Counter_Mode&#34;&gt;AES-GCM&lt;/a&gt; anstelle von AES-CTR+HMAC für die Verschlüsselung von Dateiinhalten verwenden.&lt;/p&gt;
-&lt;p&gt;Du kannst deine bestehenden Tresore wie gewohnt verwenden, es sind keine Maßnahmen von deiner Seite erforderlich. Cryptomator für Android unterstützt beide Modi.&lt;/p&gt;
-&lt;p&gt;Lies mehr darüber im &lt;a href=&#34;https://cryptomator.org/blog/2023/02/01/1-7-0-was-man-wissen-muss/&#34;&gt;Cryptomator 1.7.0 Blog-Post&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2023/04/12/android-1.8.0/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/04/12/android-1.8.0/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>android</category>
         
       </item>
     

@@ -190,6 +190,30 @@
     
       
         <article>
+          <h2>Was ist neu in Cryptomator 1.14.2: Die Änderungen im Überblick!</h2>
+          <p>Wir freuen uns, die neueste Version von Cryptomator Desktop mit euch zu teilen! Dieses Update konzentriert sich vor allem auf Fehlerbehebungen für ein reibungsloseres Erlebnis. Werfen wir einen Blick auf die Details:</p>
+<h2 id="was-ist-neu">Was ist neu?</h2>
+<p><strong>FUSE-T: Jetzt standardmäßig mit SMB-Backend</strong></p>
+<p>Cryptomator entwickelt sich stetig weiter, um eine bessere Leistung und einen nahtloseren Zugriff zu bieten. Mit diesem Update verwendet FUSE-T nun standardmäßig das SMB-Backend, was zu zuverlässigeren Dateioperationen unter macOS 15.0.0 führt.</p>
+<h2 id="fehlerbehebungen">Fehlerbehebungen</h2>
+<p>Wir haben intensiv daran gearbeitet, gemeldete Probleme zu beheben und Cryptomator noch stabiler zu machen:</p>
+<p><strong>Cache-Invaliderung für Verzeichnisse</strong></p>
+<p>CryptoFS enthält aus Performancegründen einen Cache, der Klartextnamen verschlüsselten Verzeichnissen zuordnet. Ein Fehler sorgte dafür, dass der Cache nach dem Verschieben oder Löschen von Verzeichnissen nicht korrekt invalidiert wurde. Das Update behebt diesen Fehler, sodass die Verzeichnisauflistung nun immer korrekt ist.</p>
+<p><strong>„Serververbindung unterbrochen“</strong></p>
+<p>Seit macOS 15.0.0 kam es bei der Verwendung von FUSE-T häufig zu Verbindungsabbrüchen zwischen dem System und einem geöffneten Tresor. Dies wurde durch den Dialog „Serververbindung unterbrochen“ angezeigt. Durch die Umstellung auf SMB als Standard wurde das Problem entschärft und gleichzeitig die Performance verbessert.</p>
+<p><strong>Quick-Access-Fix für GNOME Nautilus</strong></p>
+<p>Ein Problem, das ungültige Quick-Access-Einträge in GNOME Nautilus verursachte, wurde behoben.</p>
+<p><strong>Konsistenz des Dateisystems</strong></p>
+<p>Ein bislang theoretisches Problem, das zu einem inkonsistenten Dateisystem führen konnte, wurde behoben. Zuvor konnte dies nur durch manuelles Sperren und Entsperren gelöst werden.</p>
+<h2 id="weitere-änderungen">Weitere Änderungen</h2>
+<p>Wir haben außerdem die Übersetzung für Thai aktualisiert, um sicherzustellen, dass Cryptomator die Sprache noch besser spricht.</p>
+<h2 id="schlusswort">Schlusswort</h2>
+<p>Wir arbeiten kontinuierlich daran, Cryptomator für unsere Community zu verbessern. Solltet ihr auf Probleme stoßen oder Feedback haben, meldet euch gerne bei uns oder bringt euch auf GitHub ein.</p>
+<p>Bleibt dran für weitere Updates, und danke, dass ihr Teil der Community seid!</p>
+
+        </article>
+      
+        <article>
           <h2>Cryptomator Hub feiert seinen zweiten Geburtstag – Neue Features jetzt in der Beta testen!</h2>
           <p>Es ist kaum zu glauben, dass Cryptomator Hub nun schon zwei Jahre alt wird! Als zentrale Verwaltungsplattform für verschlüsselte Cloud-Speicherlösungen ermöglicht Cryptomator Hub Unternehmen und Organisationen, ihre Zugänge und Berechtigungen sicher und effizient zu verwalten. Seit dem Release am 2. November 2022 haben wir gemeinsam mit unserer Community hart daran gearbeitet, ein noch stärkeres und sichereres Tool für eure Bedürfnisse zu entwickeln. Dafür erst einmal ein großes Dankeschön an die Community! Zum zweiten Geburtstag haben wir spannende neue Features für euch – und das Beste daran: Ihr könnt sie schon jetzt in einer Beta-Version testen!</p>
 <figure class="text-center">
