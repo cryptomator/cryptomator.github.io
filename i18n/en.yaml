@@ -345,7 +345,7 @@
 - id: hub_pricing_managed_cta
   translation: "Get Started"
 - id: hub_pricing_self_hosted_cta
-  translation: "Jetzt einrichten"
+  translation: "Deploy Now"
 - id: hub_pricing_standard_benefit_1
   translation: "Everything in Community"
 - id: hub_pricing_standard_benefit_2
