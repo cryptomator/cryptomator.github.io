@@ -272,7 +272,7 @@
 
 # Hub
 - id: hub_header_title
-  translation: "The&nbsp;secure&nbsp;way to&nbsp;work&nbsp;in&nbsp;teams"
+  translation: "Encrypted&nbsp;collaboration for&nbsp;your&nbsp;team"
 - id: hub_header_description
   translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
 - id: hub_header_managed_title
