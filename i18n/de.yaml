@@ -276,11 +276,13 @@
 - id: hub_header_managed_title
   translation: "Managed"
 - id: hub_header_managed_cta
-  translation: "Jetzt registrieren"
+  translation: "Jetzt loslegen"
 - id: hub_header_self_hosted_title
   translation: "Self-Hosted"
 - id: hub_header_self_hosted_cta
   translation: "Jetzt einrichten"
+- id: hub_header_cta_description
+  translation: "Starte deine kostenlose 14-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -339,7 +341,7 @@
 - id: hub_pricing_standard_description
   translation: "pro Sitz, pro Monat"
 - id: hub_pricing_managed_cta
-  translation: "Jetzt registrieren"
+  translation: "Jetzt loslegen"
 - id: hub_pricing_self_hosted_cta
   translation: "Jetzt einrichten"
 - id: hub_pricing_standard_benefit_1

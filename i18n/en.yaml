@@ -278,11 +278,13 @@
 - id: hub_header_managed_title
   translation: "Managed"
 - id: hub_header_managed_cta
-  translation: "Register Now"
+  translation: "Get Started"
 - id: hub_header_self_hosted_title
   translation: "Self-Hosted"
 - id: hub_header_self_hosted_cta
   translation: "Deploy Now"
+- id: hub_header_cta_description
+  translation: "Start your free 14-day trial today, no credit card required."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -341,7 +343,7 @@
 - id: hub_pricing_standard_description
   translation: "per seat, per month"
 - id: hub_pricing_managed_cta
-  translation: "Register Now"
+  translation: "Get Started"
 - id: hub_pricing_self_hosted_cta
   translation: "Jetzt einrichten"
 - id: hub_pricing_standard_benefit_1
