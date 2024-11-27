@@ -363,12 +363,7 @@ Let's now take a look at these features. For this we compare the features again 
           <span>Sharing Without Disclosing Passwords</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        <div class="has-tooltip">
-          <i class="fas fa-times-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">currently only for white labels</div>
-        </div>
-      </td>
+      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isShareKeysOpen" x-cloak>

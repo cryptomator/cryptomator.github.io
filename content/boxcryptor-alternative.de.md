@@ -363,12 +363,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
           <span>Gemeinsame Nutzung ohne Weitergabe von Passwörtern</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
-        <div class="has-tooltip">
-          <i class="fas fa-times-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">derzeit nur für White-Labels</div>
-        </div>
-      </td>
+      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isShareKeysOpen" x-cloak>
