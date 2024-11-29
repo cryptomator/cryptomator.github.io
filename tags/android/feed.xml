@@ -11,20 +11,20 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/tags/android/</link>
     </image>
-    <lastBuildDate>Wed, 27 Nov 2024 10:43:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2024 15:13:48 +0000</lastBuildDate>
     <generator>Hugo</generator>
     
       <item>
         <title>What&#39;s New in Cryptomator 1.14.2: Latest Update Highlights!</title>
         <description>&lt;p&gt;We are excited to share the latest version of Cryptomator Desktop with you! This update focuses primarily on bug fixes for a smoother user experience. Let’s take a closer look at the details:&lt;/p&gt;
-&lt;h2 id=&#34;whats-new&#34;&gt;What’s new?&lt;/h2&gt;
+&lt;h2 id=&#34;whats-new&#34;&gt;What’s New?&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;FUSE-T: Now Default with SMB Backend&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Cryptomator continues to evolve, offering better performance and seamless system integration. With this update, FUSE-T now defaults to the SMB backend, ensuring more reliable file operations on macOS 15.0.0.&lt;/p&gt;
 &lt;h2 id=&#34;bugfixes&#34;&gt;Bugfixes&lt;/h2&gt;
 &lt;p&gt;We’ve worked hard to resolve reported issues and make Cryptomator even more stable:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Cache Invalidation for Directories&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;CryptoFS includes a cache for performance reasons, which maps plaintext names to encrypted directories. A bug caused the cache not to invalidate correctly after directories were moved or deleted. This update fixes the issue, ensuring that directory listings are always accurate.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;„Server Connection Interrupted“&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;Server Connection Interrupted&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On macOS 15.0.0, frequent connection interruptions between the system and an open vault were reported when using FUSE-T. These interruptions appeared as &amp;ldquo;Server Connection Interrupted&amp;rdquo; dialogs. Switching to SMB as the default backend has mitigated this issue while also improving performance.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Quick Access Fix for GNOME Nautilus&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;An issue causing invalid quick-access entries in GNOME Nautilus has been resolved.&lt;/p&gt;
@@ -32,7 +32,7 @@
 &lt;p&gt;A previously theoretical issue that could lead to an inconsistent filesystem has been fixed. Previously, this could only be resolved by manually locking and unlocking the vault.&lt;/p&gt;
 &lt;h2 id=&#34;other-changes&#34;&gt;Other Changes&lt;/h2&gt;
 &lt;p&gt;We’ve also updated the Thai translation to ensure Cryptomator speaks the language more fluently.&lt;/p&gt;
-&lt;h2 id=&#34;closing-remarks&#34;&gt;CLOSING REMARKS&lt;/h2&gt;
+&lt;h2 id=&#34;closing-remarks&#34;&gt;Closing Remarks&lt;/h2&gt;
 &lt;p&gt;We are continuously working to improve Cryptomator for our community. If you encounter any issues or have feedback, feel free to reach out to us or contribute on GitHub.&lt;/p&gt;
 &lt;p&gt;Stay tuned for more updates, and thank you for being part of the community!&lt;/p&gt;
 </description>
