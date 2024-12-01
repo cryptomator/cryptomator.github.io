@@ -2,6 +2,8 @@
   translation: "Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."
 - id: nav_cta
   translation: "Get Started"
+- id: nav_promotion
+  translation: ":wrapped_gift: 33%* Discount in December on Mobile Apps and Supporter Certificate! <a class=\"whitespace-nowrap font-bold\" href=\"/blog/2024/12/01/december-sale/\">More Info&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_support_us
   translation: "Support Us"
 - id: nav_learn_more
@@ -48,6 +50,8 @@
   translation: "Payments are securely handled by Paddle."
 - id: android_getkey_checkout
   translation: "Checkout"
+- id: android_getkey_discount
+  translation: "Use discount code <code>DEC24</code> at checkout to get 33% off!"
 
 - id: android_getkey_success
   translation: "Your payment was successful!"
@@ -767,6 +771,8 @@
   translation: "Payments are securely handled by Paddle."
 - id: supporter_cert_funder_checkout
   translation: "Checkout"
+- id: supporter_cert_funder_discount
+  translation: "Use discount code <code>DEC24</code> at checkout to get 33% off! Only valid for the first option."
 - id: supporter_cert_funder_success
   translation: "Your payment was successful!"
 - id: supporter_cert_funder_key
