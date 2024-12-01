@@ -11,8 +11,36 @@
       <title>Cryptomator Blog</title>
       <link>https://cryptomator.org/de/tags/mac/</link>
     </image>
-    <lastBuildDate>Fri, 29 Nov 2024 15:13:48 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2024 07:00:47 +0000</lastBuildDate>
     <generator>Hugo</generator>
+    
+      <item>
+        <title>33 %* Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat!</title>
+        <description>&lt;p&gt;Ihr könnt die Worte „Black Friday“ auch nicht mehr hören? Wir auch nicht – genau deshalb gibt es unseren Sale im Dezember, ganz ohne Hintertüren und Preisfallen. Vom 1. bis zum 31. Dezember könnt ihr unsere Mobile-Apps in der Vollversion sowie das Supporter-Zertifikat mit einem Rabatt von 33 %* erwerben. Lasst euch diese Aktion nicht entgehen!&lt;/p&gt;
+&lt;p&gt;Nutzt für die APK-Version der Android-App und für das Supporter-Zertifikat den Rabattcode „DEC24“ und spart 33 %* auf euren Kauf!&lt;/p&gt;
+&lt;figure class=&#34;text-center&#34;&gt;
+  &lt;img class=&#34;inline-block rounded&#34; src=&#34;https://cryptomator.org/img/blog/december-2024-sale.png&#34; srcset=&#34;https://cryptomator.org/img/blog/december-2024-sale.png 1x, https://cryptomator.org/img/blog/december-2024-sale@2x.png 2x&#34; alt=&#34;33 % Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat&#34; /&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;einmal-kaufen-dauerhaft-nutzen--und-noch-vor-der-preiserhöhung-zugreifen&#34;&gt;Einmal kaufen, dauerhaft nutzen – und noch vor der Preiserhöhung zugreifen&lt;/h2&gt;
+&lt;p&gt;Mit unserem Dezember-Sale möchten wir euch die Chance geben, Cryptomator zu einem besonders günstigen Preis zu kaufen, bevor wir im kommenden Jahr die Preise erhöhen. Der alte Preis beläuft sich auf 14,99 €*, und mit dem 33 %* Rabatt im Dezember zahlt ihr nur 9,99 €*. Im neuen Jahr wird der Preis auf 19,99 €* steigen.&lt;/p&gt;
+&lt;p&gt;Unsere Einmalkaufpreise bieten weiterhin ein hervorragendes Preis-Leistungs-Verhältnis. Während Konkurrenzprodukte auf ein Abo-Modell setzen und damit laufende Kosten verursachen, möchten wir sicherstellen, dass ihr mit Cryptomator auf lange Sicht keine zusätzlichen Ausgaben habt. Daher bezahlt ihr nur einmal einen Festpreis und könnt die App lebenslang nutzen. Schon nach wenigen Monaten im Abo-Modell unserer Konkurrenten habt ihr die Kosten für Cryptomator ausgeglichen.&lt;/p&gt;
+&lt;h2 id=&#34;open-source-für-maximale-transparenz&#34;&gt;Open Source für maximale Transparenz&lt;/h2&gt;
+&lt;p&gt;Cryptomator bleibt Open Source! Das bedeutet, dass unser Quellcode jederzeit öffentlich einsehbar ist – für maximale Transparenz und Vertrauen. Wir sind stolz darauf, der Community ein offenes Produkt bieten zu können, und sind auch weiterhin auf eure Unterstützung angewiesen – sei es durch &lt;a href=&#34;https://cryptomator.org/de/contact/&#34;&gt;Feedback&lt;/a&gt;, &lt;a href=&#34;https://cryptomator.org/de/donate/&#34;&gt;Spenden&lt;/a&gt; oder &lt;a href=&#34;https://cryptomator.org/de/sponsors/&#34;&gt;Sponsoring&lt;/a&gt;. Euer Input hilft uns, Cryptomator stetig zu verbessern und noch sicherer zu machen.&lt;/p&gt;
+&lt;h2 id=&#34;kaufkraftparität-neue-preisstruktur-für-mehr-fairness&#34;&gt;Kaufkraftparität: Neue Preisstruktur für mehr Fairness&lt;/h2&gt;
+&lt;p&gt;Aufgrund hoher Nachfrage haben wir Kaufkraftparität für unsere Nutzer:innen eingeführt. Das bedeutet, dass unsere Preise nun an die jeweilige Kaufkraft in verschiedenen Ländern angepasst sind. So möchten wir sicherstellen, dass unsere Software weltweit fair zugänglich ist. Solltet ihr jedoch feststellen, dass euer Land noch nicht optimal berücksichtigt wird, freuen wir uns über euer Feedback. Wir arbeiten kontinuierlich daran, unser Angebot zu verbessern.&lt;/p&gt;
+&lt;h2 id=&#34;schlusswort&#34;&gt;Schlusswort&lt;/h2&gt;
+&lt;p&gt;Unsere besondere Rabattaktion läuft den gesamten Dezember – so lange gab es bei uns noch nie einen Sale! Wir möchten euch die Möglichkeit geben, euch die Angebote in Ruhe anzusehen und eine fundierte Entscheidung zu treffen, bevor die Preiserhöhung im neuen Jahr kommt.&lt;/p&gt;
+&lt;p&gt;Wir wünschen euch einen sicheren und entspannten Dezember – und freuen uns darauf, euch auch im neuen Jahr weiter beim Schutz eurer Daten zu unterstützen!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+        <link>https://cryptomator.org/de/blog/2024/12/01/december-sale/</link>
+        <guid isPermaLink="true">https://cryptomator.org/de/blog/2024/12/01/december-sale/</guid>
+        
+        <category>cryptomator</category>
+        
+        <category>sale</category>
+        
+      </item>
     
       <item>
         <title>Was ist neu in Cryptomator 1.14.2: Die Änderungen im Überblick!</title>
@@ -395,33 +423,6 @@ Euer Cryptomator-Team&lt;/p&gt;
         <category>mac</category>
         
         <category>linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptomator Hub 1.2.0: Mehr Kontrolle und Flexibilität</title>
-        <description>&lt;p&gt;Wir freuen uns, Cryptomator Hub 1.2.0 zu veröffentlichen, mit wichtigen Updates für Administratoren und Benutzer. &amp;#x1f389; Schauen wir uns an, was neu ist.&lt;/p&gt;
-&lt;h2 id=&#34;spiral_notepad-audit-logs-premium-feature&#34;&gt;&amp;#x1f5d2;&amp;#xfe0f; Audit Logs (Premium Feature)&lt;/h2&gt;
-&lt;p&gt;Unser neues Feature „Audit Logs“, die mit einer kostenpflichtigen Lizenz verfügbar ist, ermöglicht Administratoren Einblicke in die Benutzeraktivitäten. Überwache Tresoränderungen, Schlüsselabrufe sowie andere wichtige Aktivitäten und schaffe so eine zusätzliche Ebene der Transparenz und Verantwortlichkeit in deinem Unternehmen.&lt;/p&gt;
-&lt;h2 id=&#34;gear-verbesserte-tresorverwaltung&#34;&gt;&amp;#x2699;&amp;#xfe0f; Verbesserte Tresorverwaltung&lt;/h2&gt;
-&lt;p&gt;Mit der Aktion „Tresor-Metadaten bearbeiten“ ist es jetzt möglich, Tresor-Details individuell anzupassen. Du kannst jetzt den Namen und die Beschreibung deiner Tresore ändern, damit du deine Tresore übersichtlich und leicht identifizierbar halten kannst. Außerdem müssen die Namen der Tresore nicht mehr eindeutig sein, was mehr Flexibilität bietet.&lt;/p&gt;
-&lt;p&gt;Wir haben außerdem die Aktion „Tresor archivieren“ hinzugefügt, mit der du Tresore aus deiner Liste entfernen kannst. Reaktiviere archivierte Tresore bei Bedarf ganz einfach wieder.&lt;/p&gt;
-&lt;h2 id=&#34;bust_in_silhouette-optimierte-benutzerprofilseite&#34;&gt;&amp;#x1f464; Optimierte Benutzerprofilseite&lt;/h2&gt;
-&lt;p&gt;Unsere neue „Benutzerprofil“-Seite zentralisiert das Gerätemanagement und die Benutzereinstellungen an einem Ort. Zusätzlich haben wir einen „Konto verwalten“-Link integriert, über den Benutzer bei Keycloak ihr Passwort ändern und 2FA konfigurieren können.&lt;/p&gt;
-&lt;h2 id=&#34;arrow_up-upgrade-informationen&#34;&gt;&amp;#x2b06;&amp;#xfe0f; Upgrade-Informationen&lt;/h2&gt;
-&lt;p&gt;Ein Upgrade auf 1.2.0 ist einfach. Wenn du die stabile Version &lt;code&gt;stable&lt;/code&gt; verwendest, musst du nur das Image pullen und den Service neu starten. Andernfalls aktualisiere die Versionsnummer in deiner Docker Compose- oder Kubernetes-Spec-Datei, bevor du den Service neu startest. Denke daran, immer ein &lt;a href=&#34;https://docs.cryptomator.org/en/latest/hub/setup/#backup&#34;&gt;Backup deiner Daten&lt;/a&gt; zu erstellen, insbesondere vor dem Upgrade. Bei Managed-Instanzen kannst du sicher sein, dass du bereits die neueste Version verwendest.&lt;/p&gt;
-&lt;h2 id=&#34;next_track_button-was-kommt-als-nächstes&#34;&gt;&amp;#x23ed;&amp;#xfe0f; Was kommt als Nächstes?&lt;/h2&gt;
-&lt;p&gt;Mit dem nächsten Feature-Update werden wir unser Schlüsselverwaltungssystem grundlegend überarbeiten. Mit diesem Update werden „Benutzerschlüssel“ als zwischengeschaltete Schlüsselpaare zwischen Tresorschlüsseln und Geräteschlüsseln eingeführt. Tresor-Eigentühmer gewähren dann den Benutzern und nicht den einzelnen Geräten Zugriff, so dass die Benutzer ihre Geräte unabhängig verwalten können.&lt;/p&gt;
-&lt;p&gt;Mit dieser Überarbeitung werden die Tresor-Admin-Passwörter abgeschafft und die Rolle des Tresor-Eigentümers eingeführt, die eine sicherere und effizientere Verwaltung deiner Tresore ermöglicht.&lt;/p&gt;
-&lt;p&gt;Weitere spannende Updates werden folgen!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
-        <link>https://cryptomator.org/de/blog/2023/08/11/hub-1.2.0/</link>
-        <guid isPermaLink="true">https://cryptomator.org/de/blog/2023/08/11/hub-1.2.0/</guid>
-        
-        <category>cryptomator</category>
-        
-        <category>hub</category>
         
       </item>
     

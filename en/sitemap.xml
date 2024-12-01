@@ -62,8 +62,21 @@
                 href="https://cryptomator.org/downloads/ios/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/blog/2024/12/01/december-sale/</loc>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/blog/2024/12/01/december-sale/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/blog/2024/12/01/december-sale/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/blog/</loc>
-    <lastmod>2024-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de_DE"
@@ -76,7 +89,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/tags/cryptomator/</loc>
-    <lastmod>2024-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de_DE"
@@ -89,7 +102,7 @@
                 />
   </url><url>
     <loc>https://cryptomator.org/</loc>
-    <lastmod>2024-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de_DE"
@@ -101,8 +114,21 @@
                 href="https://cryptomator.org/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/tags/sale/</loc>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/tags/sale/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/tags/sale/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/tags/</loc>
-    <lastmod>2024-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de_DE"
