@@ -20,6 +20,8 @@
   translation: "RSS-Feed"
 - id: footer_legal_title
   translation: "Rechtliches"
+- id: accept_newsletter_privacy
+  translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
