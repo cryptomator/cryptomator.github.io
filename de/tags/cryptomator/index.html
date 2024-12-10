@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.9e436ffa73ffa958274ca3bbd741e396a4033a18a1042b4881649ad359e6eb24.css" integrity="sha256-nkNv&#43;nP/qVgnTKO710HjlqQDOhihBCtIgWSa01nm6yQ=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.65f17b433a05c561d9c8d382dda13b496075b17db79d4bb83b4f773316378e39.css" integrity="sha256-ZfF7QzoFxWHZyNOC3aE7SWB1sX23nUu4O093MxY3jjk=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -52,11 +52,23 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/de/downloads/">Downloads</a>
+        <li x-data="{ isProductsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isProductsDropdownOpen = !isProductsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Produkte</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/de/downloads/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Downloads</a>
+              <a href="/de/hub/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Cryptomator Hub</a>
+            </div>
+          </div>
         </li>
         <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+          <a class="p-2 hover:no-underline" href="/de/pricing/">Preise</a>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/de/blog/">Blog</a>
         </li>
         <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
           <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
@@ -128,8 +140,17 @@
   
   
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Produkte
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/pricing/">Preise</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a>
     
     <hr class="border-primary my-2"/>
 
@@ -1587,7 +1608,7 @@ Wenn Sie sich zu den paranoideren Benutzern zählen, die es vorziehen, alles sel
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/presskit/">Pressemappe</a></li>
       </ul>

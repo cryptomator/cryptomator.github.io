@@ -1322,6 +1322,18 @@
                 href="https://cryptomator.org/de/coop/powerfolder/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/de/pricing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/pricing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/pricing/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/de/presskit/</loc>
     <xhtml:link
                 rel="alternate"

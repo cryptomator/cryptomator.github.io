@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.9e436ffa73ffa958274ca3bbd741e396a4033a18a1042b4881649ad359e6eb24.css" integrity="sha256-nkNv&#43;nP/qVgnTKO710HjlqQDOhihBCtIgWSa01nm6yQ=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.65f17b433a05c561d9c8d382dda13b496075b17db79d4bb83b4f773316378e39.css" integrity="sha256-ZfF7QzoFxWHZyNOC3aE7SWB1sX23nUu4O093MxY3jjk=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
     
@@ -52,11 +52,23 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/downloads/">Downloads</a>
+        <li x-data="{ isProductsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isProductsDropdownOpen = !isProductsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Products</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/downloads/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Downloads</a>
+              <a href="/hub/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Cryptomator Hub</a>
+            </div>
+          </div>
         </li>
-        <li class="flex items-center mx-2 border-b-2 border-primary hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/hub/">Cryptomator Hub</a>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/pricing/">Pricing</a>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/blog/">Blog</a>
         </li>
         <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
           <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
@@ -124,8 +136,17 @@
   
   
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Products
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/pricing/">Pricing</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/blog/">Blog</a>
     
     <hr class="border-primary my-2"/>
 
@@ -186,7 +207,7 @@
       <header class="mb-6">
         <h1>Terms &amp; Conditions for Cryptomator Hub (SaaS)</h1>
       </header>
-      <p><em>Effective date: October 2023</em></p>
+      <p><em>Effective date: December 2024</em></p>
 <p class="text-lg leading-relaxed text-gray-700">The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter &ldquo;Provider&rdquo;) and the customers (m/f/d, hereinafter &ldquo;Customer&rdquo;) of &ldquo;Cryptomator Hub&rdquo; provided as Software as a Service (SaaS).</p>
 <p class="text-lg leading-relaxed text-gray-700">Conflicting or different general terms and conditions of the users do not become part of the contract. This also applies if the Provider does not expressly object to them.</p>
 <p class="text-lg leading-relaxed text-gray-700">Contract language is German. This is a translation from our <a href="/de/hub/managed/terms">German AGB</a>. German Version shall prevail.</p>
@@ -276,7 +297,7 @@
 <h2 id="trial">§12 Trial</h2>
 <p>Irrespective of the right of withdrawal (<a href="/hub/managed/terms/#withdrawal">§ 16</a>), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 14 days free of charge and without obligation for both parties (hereinafter &ldquo;test phase&rdquo;). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to <a href="/hub/managed/terms/#sla">§ 6</a>.</p>
 <h2 id="fees">§13 Remuneration and Payment Conditions</h2>
-<p>13.1 The Customer can view the prices for the software and services on the website (<a href="https://cryptomator.org/hub/#pricing-plans">https://cryptomator.org/hub/#pricing-plans</a>). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase (<a href="/hub/managed/terms/#trial">§ 12</a>) - pay a monthly fee of EUR 10 per active user to the Provider.</p>
+<p>13.1 The Customer can view the prices for the software and services on the website (<a href="https://cryptomator.org/pricing/#for-teams">https://cryptomator.org/pricing/#for-teams</a>). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase (<a href="/hub/managed/terms/#trial">§ 12</a>) - pay a monthly fee of EUR 10 per active user to the Provider.</p>
 <p>13.2 Contractual penalties forfeited by the Provider pursuant to <a href="/hub/managed/terms/#sla">§ 6 (7)</a> shall be automatically offset against the payable fee on a monthly basis.</p>
 <p>13.3 Invoices shall be issued for 12 months in advance. The invoice shall be due for payment immediately.</p>
 <p>13.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer&rsquo;s access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.</p>
@@ -343,7 +364,7 @@ Date: __________________
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
       </ul>

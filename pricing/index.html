@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing and Features</title>
+    
+      <meta name="description" content="Secure your data with our open-source solutions at fair prices. Whether for personal use with Cryptomator or team collaboration with Cryptomator Hub, our plans are designed to fit your needs — no hidden costs, just transparent protection."/>
+      <meta property="og:title" content="Cryptomator - Pricing and Features"/>
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://cryptomator.org/pricing/"/>
+      <meta property="og:site_name" content="Cryptomator"/>
+      <meta property="og:description" content="Secure your data with our open-source solutions at fair prices. Whether for personal use with Cryptomator or team collaboration with Cryptomator Hub, our plans are designed to fit your needs — no hidden costs, just transparent protection."/>
+      <meta property="og:image" content="https://cryptomator.org/img/og-image.png">
+      <meta property="og:image:width" content="1200"/>
+      <meta property="og:image:height" content="630"/>
+    
+    <meta property="og:locale" content="" />
+    
+      <meta property="og:locale:alternate" content="" />
+    
+    <meta name="apple-itunes-app" content="app-id=1560822163">
+    
+      
+      <link rel="stylesheet" href="/css/main.min.65f17b433a05c561d9c8d382dda13b496075b17db79d4bb83b4f773316378e39.css" integrity="sha256-ZfF7QzoFxWHZyNOC3aE7SWB1sX23nUu4O093MxY3jjk=" media="screen" />
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
+    
+      <link rel="alternate" hreflang="de" href="/de/pricing/" />
+    
+    
+      
+    
+  </head>
+  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <nav x-init="determineGitHubStargazersCount('en')" class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
+  <div class="w-full bg-primary text-center text-sm text-white p-0.5">
+    <p>🎁 33%* Discount in December on Mobile Apps and Supporter Certificate! <a class="whitespace-nowrap font-bold" href="/blog/2024/12/01/december-sale/">More Info&nbsp;<span aria-hidden="true">&rarr;</span></a></p>
+  </div>
+  <div class="flex justify-between items-stretch w-full lg:px-8">
+    
+    <div class="flex items-stretch">
+      
+      <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-primary rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+        <i x-show="isNavOpen" class="fas fa-times fa-fw" x-cloak></i>
+        <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+      </button>
+
+      <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="/">
+        <img src="/img/logo.svg" class="h-8" alt="Logo"/>
+        <span class="hidden md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+      </a>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li x-data="{ isProductsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isProductsDropdownOpen = !isProductsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Products</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/downloads/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Downloads</a>
+              <a href="/hub/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Cryptomator Hub</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-primary hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/pricing/">Pricing</a>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/blog/">Blog</a>
+        </li>
+        <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Support Us</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter Certificate</a>
+              <a href="/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Donate</a>
+              <a href="/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsors</a>
+            </div>
+          </div>
+        </li>
+        <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Learn More</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+              <a href="/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">How Open Source Strengthens Security</a>
+              <a href="/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Encrypt Your Dropbox</a>
+              <a href="/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative to Boxcryptor</a>
+              <a href="/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Our Cooperation Partners</a>
+              <a href="/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Customizations for Your Enterprise</a>
+              <a href="/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">GDPR Compliancy</a>
+              <a href="/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">NIS-2-Guideline</a>
+              <a href="/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Protecting Cloud Data Against AI</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex items-stretch">
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+            <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
+            <span id="github-stargazers"></span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="flex items-stretch list-none m-0">
+        <li class="flex items-center mx-2">
+          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1">Get Started</a>
+        </li>
+      </ul>
+
+      <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li class="flex items-center m-3 border-l border-primary"></li>
+          
+        <li x-data="{ isLangDropdownOpen: false }" class="flex items-center mx-2">
+          <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+            <span>EN</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="relative">
+            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+              <a :href="'/de/pricing/' + (window.location.search ?? '')" lang="de" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Deutsch</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Products
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/hub/">Cryptomator Hub</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/pricing/">Pricing</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/blog/">Blog</a>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Support Us
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/supporter-cert/">Supporter Certificate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/donate/">Donate</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/sponsors/">Sponsors</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Learn More
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/open-source/">How Open Source Strengthens Security</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/encrypt-dropbox/">Encrypt Your Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/boxcryptor-alternative/">Alternative to Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/coop/">Our Cooperation Partners</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/enterprise/">Customizations for Your Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/gdpr/">GDPR Compliancy</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/nis-2-guideline/">NIS-2-Guideline</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/protecting-data-against-ai/">Protecting Cloud Data Against AI</a>
+    </div>
+
+    <hr class="border-primary my-2"/>
+    
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      <i class="fas fa-globe fa-fw"></i> EN
+    </div>
+    <div class="mt-1">
+      
+      <a :href="'/de/pricing/' + (window.location.search ?? '')" lang="de" class="block px-2 py-1 hover:text-secondary hover:no-underline">Deutsch</a>
+      
+    </div>
+
+    <hr class="border-primary my-2"/>
+
+    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-fw"></i>
+      <span>Cryptomator on GitHub</span>
+    </a>
+  </div>
+</nav>
+
+
+  
+  <script type="text/javascript" src="/js/nav.min.c207b62e4a96099b751048fbeb67db4f95e0e7d0c5221c0bd599c67194c5d00b.js" integrity="sha256-wge2LkqWCZt1EEj762fbT5Xg59DFIhwL1ZnGcZTF0As=" defer></script>
+
+<div class="bg-gray-100 min-vh-80 pt-12">
+    
+    
+  <div class="container py-12">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+      <h1>Pricing and Features</h1>
+      <p class="lead">Secure your data with our open-source solutions at fair prices. Whether for personal use with Cryptomator or team collaboration with Cryptomator Hub, our plans are designed to fit your needs — no hidden costs, just transparent protection.</p>
+    </header>
+
+    <div x-data="{planOption: location.hash}" @hashchange.window="planOption = location.hash" class="py-12">
+      <header class="text-center">
+        <h2 class="text-center font-headline font-medium text-xl md:text-2xl leading-snug mb-4">
+          Find the Right Plan for You
+        </h2>
+        <div class="flex justify-center mb-4">
+          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption !== '#for-teams'}" @click="location.hash = '#for-individuals'">
+            <i class="fa-user fa-fw" :class="{'fas': planOption !== '#for-teams', 'far': planOption === '#for-teams'}"></i>
+            For Individuals
+          </button>
+          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption === '#for-teams'}" @click="location.hash = '#for-teams'">
+            <i class="fa-building fa-fw" :class="{'fas': planOption === '#for-teams', 'far': planOption !== '#for-teams'}"></i>
+            For Teams
+          </button>
+        </div>
+      </header>
+
+      <div x-show="planOption !== '#for-teams'">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-4">
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-windows"></i>
+                  Windows
+                </div>
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-apple"></i>
+                  macOS
+                </div>
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-linux"></i>
+                  Linux
+                </div>
+              </div>
+              <div class="lg:h-[26px]"></div>
+              <p class="font-bold text-2xl md:text-3xl leading-relaxed">
+                Free
+              </p>
+              <p class="text-sm md:text-base text-gray-500 mb-4">
+                Donationware
+              </p>
+              <div class="flex gap-2">
+                <a href="/downloads/" role="button" class="flex-1 btn btn-primary">
+                  Download Now
+                </a>
+                <a href="/supporter-cert/" role="button" class="flex-1 btn btn-outline-primary">
+                  Support Us
+                </a>
+              </div>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Works with any cloud storage that syncs to your file system, incl. Dropbox, Google Drive, OneDrive, Nextcloud, and more</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Client-side encryption for ultimate privacy</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Transparent access via virtual drive</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>No accounts, no data shared</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-4">
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-android"></i>
+                  Android
+                </div>
+                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
+                  <i class="fas fa-gift"></i>
+                  <span>33%<sup>1</sup> off in December</span>
+                </p>
+              </div>
+              <p class="font-bold leading-relaxed text-gray-500 line-through decoration-red-600">
+                €14.99
+              </p>
+              <p class="flex items-baseline gap-2">
+                <span class="font-bold text-2xl md:text-3xl leading-relaxed">
+                  €9.99
+                </span>
+                <span class="text-xs text-gray-700">
+                  incl. VAT
+                </span>
+              </p>
+              <p class="text-sm md:text-base text-gray-500 mb-4">
+                Lifetime License
+              </p>
+              <a href="/downloads/" role="button" class="btn btn-primary w-full">
+                Download Now
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Works with Dropbox, Google Drive, OneDrive, pCloud, WebDAV- and S3-based cloud storage</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Access and encrypt cloud files on the go</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Unlock vaults with biometric authentication</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>No accounts, no data shared</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-4">
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-apple"></i>
+                  iOS
+                </div>
+                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
+                  <i class="fas fa-gift"></i>
+                  <span>33%<sup>1</sup> off in December</span>
+                </p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-gray-300 mb-4">
+                <div class="pr-4">
+                  <div class="lg:h-[26px]"></div>
+                  <div class="font-bold text-2xl md:text-3xl leading-relaxed">
+                    Free
+                  </div>
+                  <p class="text-sm md:text-base text-gray-500">
+                    Read-Only Mode
+                  </p>
+                </div>
+                <div class="pl-4">
+                  <p class="font-bold leading-relaxed text-gray-500 line-through decoration-red-600">
+                    €14.99
+                  </p>
+                  <p class="flex items-baseline gap-2">
+                    <span class="font-bold text-2xl md:text-3xl leading-relaxed">
+                      €9.99
+                    </span>
+                    <span class="text-xs text-gray-700">
+                      incl. VAT
+                    </span>
+                  </p>
+                  <p class="text-sm md:text-base text-gray-500">
+                    Lifetime License
+                  </p>
+                </div>
+              </div>
+              <a href="/downloads/" role="button" class="btn btn-primary w-full">
+                Download Now
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Works with iCloud Drive, Dropbox, Google Drive, OneDrive, pCloud, Box, WebDAV- and S3-based cloud storage</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Fully integrated into the Files app</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Unlock vaults with Face ID / Touch ID</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>No accounts, no data shared</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-700">
+          <sup>1</sup>
+          <span>The discount amount of the December sale may vary by region.</span>
+        </p>
+
+        <section class="container py-12">
+          <header class="text-center">
+            <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
+          </header>
+          <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Is Cryptomator free to use?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Cryptomator is free to use on Windows, macOS, Linux, and iOS, but not Android (yet). However, the free version on iOS is read-only. If you purchase a license key for one platform, it is not valid for another. A bundle license does not exist.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Why is Cryptomator free to use on some platforms, but not on others?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Our licensing strategy differs across platforms because of constraints imposed by App Store / Google Play policies, and technical differences across operating systems.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Do I need a supporter certificate to use Cryptomator on Desktop?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              All functional and encryption features are absolutely free to use on the desktop. By obtaining a supporter certificate, you can unlock the dark mode on desktop apps and also help accelerate Cryptomator&rsquo;s development. Please note, a supporter certificate is not a license key that can be used to unlock mobile apps.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>How can I purchase Cryptomator on Android?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              It is a one-time purchase through Google Play or as an APK download from our website or through F-Droid. If you buy the app without going through Google Play, you will receive an Android-only license key. You cannot test the app before purchasing it, but you have a right of withdrawal within 14 days.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>How can I purchase Cryptomator on iOS?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              We use a freemium model on iOS. You can download the Cryptomator app from the App Store for free and use it in read-only mode indefinitely. A one-time in-app purchase through the App Store will grant you write access.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Is there a freemium version of Cryptomator for Android?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Not yet, but we have plans to introduce a freemium model on Android like we have on iOS. You can keep up with our progress by following <a href="https://github.com/cryptomator/android/issues/428">this GitHub issue</a>. Stay tuned!
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Can I avoid big-tech/gatekeepers for my purchase?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              This is possible on Android only, as you can download the Cryptomator app as an APK file or through F-Droid and buy the license using our website. The supporter certificate can only be purchased using our website.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Can I purchase Cryptomator anonymously?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Yes, you can buy a Cryptomator for Android license key or a supporter certificate through <a href="https://digitalgoods.proxysto.re/en">ProxyStore</a>. They accept Monero, Bitcoin, and cash. You can read more about our cooperation <a href="/coop/proxystore/">here</a>.
+            </dd>
+          </dl>
+        </section>
+      </div>
+
+      <div x-show="planOption === '#for-teams'" x-cloak>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
+                Community
+              </h3>
+              <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
+                Self-Hosted
+              </p>
+              <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+                Free
+              </p>
+              <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                to get started
+              </p>
+              <a href="/hub/self-hosted/" role="button" class="btn btn-primary w-full">
+                Deploy Now
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Unlimited vaults</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Up to 5 seats</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Full access via Desktop app</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Read-only access via Mobile apps</span>
+                  <span><sup>1</sup></span>
+                  <div class="has-tooltip">
+                    <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                    <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">If you unlocked the full version of the mobile app, you will be granted full access.</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Community support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-8">
+                <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+                  Standard
+                </h3>
+                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
+                  <i class="fas fa-calendar-star"></i>
+                  Free 14-Day Trial
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span id="hub-standard-managed-label" class="block uppercase tracking-wide text-xs font-bold" :class="infrastructure === 'managed' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'managed'">
+                  Managed
+                </span>
+                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
+                  <span class="sr-only">Use setting</span>
+                  <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" :class="infrastructure === 'managed' ? 'translate-x-0' : 'translate-x-4'"></span>
+                </button>
+                <span id="hub-standard-self-hosted-label" class="block uppercase tracking-wide text-gray-500 text-xs font-bold" :class="infrastructure === 'self-hosted' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'self-hosted'">
+                  Self-Hosted
+                </span>
+              </div>
+              <div x-show="infrastructure === 'managed'">
+                <p class="flex items-baseline gap-2">
+                  <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+                  <span class="text-xs text-gray-700">
+                    excl. VAT
+                  </span>
+                </p>
+                <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                  per seat, per month
+                </p>
+                <a href="/hub/managed/" role="button" class="btn btn-primary w-full">
+                  Get Started
+                </a>
+              </div>
+              <div x-show="infrastructure === 'self-hosted'">
+                <p class="flex items-baseline gap-2">
+                  <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('en', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+                  <span class="text-xs text-gray-700">
+                    excl. VAT
+                  </span>
+                </p>
+                <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                  per seat, per month
+                </p>
+                <a href="/hub/self-hosted/" role="button" class="btn btn-primary w-full">
+                  Deploy Now
+                </a>
+              </div>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+                  <span>Everything in Community</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Up to 50 seats</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Full access via Mobile apps</span>
+                  <span><sup>1</sup></span>
+                  <div class="has-tooltip">
+                    <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                    <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">You will be granted full access without having to unlock the full version of the mobile app.</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Audit logs</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Email support</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                  <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">Always maintained and updated by our team</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                  <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">ISO/IEC 27001 certified data center in the EU</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
+                Enterprise
+              </h3>
+              <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
+                Self-Hosted & Managed
+              </p>
+              <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+                Custom
+              </p>
+              <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                tailored pricing
+              </p>
+              <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full">
+                <i class="fas fa-envelope"></i>
+                Contact Us
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+                  <span>Everything in Standard</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>More than 50 seats</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Expert training and assistance</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Dedicated account manager</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>Priority email support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-700">
+          <sup>1</sup>
+          <span>Hub support for Android is currently in development, ETA in Q1/2025.</span>
+        </p>
+
+        <section class="container py-12">
+          <header class="text-center">
+            <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Frequently Asked Questions</h2>
+          </header>
+          <dl x-data="{isOpen: [false, false, false, false, false, false, false, false]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[0] = !isOpen[0]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[0], 'fa-chevron-circle-down': isOpen[0] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>How are seats calculated?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[0]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[1] = !isOpen[1]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[1], 'fa-chevron-circle-down': isOpen[1] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>How is the subscription fee calculated for paid plans?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[1]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              You will be charged a yearly fee for each seat. This fee applies even if you have unused seats.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[2] = !isOpen[2]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[2], 'fa-chevron-circle-down': isOpen[2] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Can I add more seats during the current billing cycle?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[2]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[3] = !isOpen[3]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[3], 'fa-chevron-circle-down': isOpen[3] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Do the paid plans include 5 free seats?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[3]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              No, you will have to pay for all seats on your plan. We charge for every seat because all users benefit from the extra features enabled by paid plans. For example, all users have full access to the vaults via the mobile apps without having to unlock the full version.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[4] = !isOpen[4]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[4], 'fa-chevron-circle-down': isOpen[4] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Do you offer discounts?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[4]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Yes, we offer discounts for nonprofits and educational institutions. Please contact us to check if you qualify.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[5] = !isOpen[5]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[5], 'fa-chevron-circle-down': isOpen[5] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>Do you offer cloud storage?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[5]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice.
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[6] = !isOpen[6]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[6], 'fa-chevron-circle-down': isOpen[6] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>How do I access the contents of a vault?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android is currently in development.)
+            </dd>
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[7], 'fa-chevron-circle-down': isOpen[7] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>What is the difference between Managed and Self-Hosted?</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              Cryptomator Hub is available in a managed and a self-hosted version. In the managed version, Skymatic GmbH maintains the infrastructure required for Cryptomator Hub and Keycloak in a ISO/IEC 27001:2022 certified data center in the EU and is responsible for security, availability, backups, and up-to-dateness. With the self-hosted version, this is your responsibility.
+            </dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  
+    
+    <script type="text/javascript" src="/js/store.min.4af436fceadb08555c98709fda655db9ef58520397bd5b18e7ec6f59acde4ac8.js" integrity="sha256-SvQ2/OrbCFVcmHCf2mVdue9YUgOXvVsY5&#43;xvWazeSsg=" defer></script>
+    
+    <script type="text/javascript" src="/js/hubpricing.min.7ac3703913bf57d9d33a141fc2b83ae5f9c8ea70512cfa296b83f6a2a15358bc.js" integrity="sha256-esNwORO/V9nTOhQfwrg65fnI6nBRLPopa4P2oqFTWLw=" defer></script>
+    
+    <script type="text/javascript" src="/js/newsletter.min.e6c2f9386af61079d8a25c520b7f6fab1ee403f4a0b3ddbc3f261bbb04303f36.js" integrity="sha256-5sL5OGr2EHnYolxSC39vqx7kA/Sgs928PyYbuwQwPzY=" defer></script>
+  
+
+    </div>
+    <footer class="border-t-2 border-secondary pt-8 pb-16">
+  <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/downloads/">Downloads</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/presskit/">Press Kit</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Contribute</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/donate/">Donate</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">Translate</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Follow Us</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Mastodon</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://linkedin.com/company/skymatic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/feed.xml" rel="alternate" type="application/rss+xml">RSS Feed</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Legal</h4>
+      <ul class="list-none m-0">
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/impressum/">Impressum</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/privacy/">Privacy Policy</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </section>
+</footer>
+
+
+    
+    <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
+
+    
+    <script type="text/javascript" src="/js/alpinejs/cdn.min.358d9afbb1ab5befa2f48061a30776e5bcd7707f410a606ba985f98bc3b1c034.js" integrity="sha256-NY2a&#43;7GrW&#43;&#43;i9IBhowd25bzXcH9BCmBrqYX5i8OxwDQ=" defer></script>
+
+    
+    <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
+
+    
+      <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.outbound-links.js" integrity="sha384-+tt0STxxWB96REUfXF1ykJzPEC5cT+TVotVR/JnYqAP04zxND4o8a0JcHg+aq46t" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

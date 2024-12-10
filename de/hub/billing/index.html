@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.9e436ffa73ffa958274ca3bbd741e396a4033a18a1042b4881649ad359e6eb24.css" integrity="sha256-nkNv&#43;nP/qVgnTKO710HjlqQDOhihBCtIgWSa01nm6yQ=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.65f17b433a05c561d9c8d382dda13b496075b17db79d4bb83b4f773316378e39.css" integrity="sha256-ZfF7QzoFxWHZyNOC3aE7SWB1sX23nUu4O093MxY3jjk=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -52,11 +52,23 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/de/downloads/">Downloads</a>
+        <li x-data="{ isProductsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isProductsDropdownOpen = !isProductsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>Produkte</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              <a href="/de/downloads/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Downloads</a>
+              <a href="/de/hub/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Cryptomator Hub</a>
+            </div>
+          </div>
         </li>
-        <li class="flex items-center mx-2 border-b-2 border-primary hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/de/pricing/">Preise</a>
+        </li>
+        <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
+          <a class="p-2 hover:no-underline" href="/de/blog/">Blog</a>
         </li>
         <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
           <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
@@ -124,8 +136,17 @@
   
   
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      Produkte
+    </div>
+    <div class="mt-1">
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+    </div>
+    
+    <hr class="border-primary my-2"/>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/pricing/">Preise</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a>
     
     <hr class="border-primary my-2"/>
 
@@ -502,7 +523,7 @@
                   <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
                     <span x-text="subscriptionData.monthlyPrice.recurringNetAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
                     <span>zzgl. USt.</span>
-                    <span>nach dem ersten Jahr</span>
+                    <span></span>
                   </p>
                 </div>
                 <div x-show="audience === 'consumer'">
@@ -513,7 +534,7 @@
                   <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
                     <span x-text="subscriptionData.monthlyPrice.recurringGrossAmount.toLocaleString('de', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
                     <span>inkl. USt.</span>
-                    <span>nach dem ersten Jahr</span>
+                    <span></span>
                   </p>
                 </div>
                 <p class="text-lg text-gray-500 mb-4">
@@ -552,12 +573,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-851294673" x-model="acceptTerms" />
-<label for="id-851294673">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-782416395" x-model="acceptTerms" />
+<label for="id-782416395">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-973485126" x-model="acceptTerms" />
-<label for="id-973485126">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-364915782" x-model="acceptTerms" />
+<label for="id-364915782">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -664,7 +685,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS). (Hinweis: Die Kompatibilität mit Android und iOS befindet sich derzeit in der Entwicklung.)
+              Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS). (Hinweis: Die Kompatibilität mit Android befindet sich derzeit in der Entwicklung.)
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
@@ -673,7 +694,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[7]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              Cryptomator Hub ist in einer Managed- und einer Self-Hosted-Version verfügbar. Bei der Managed-Version betreibt die Skymatic GmbH die Infrastruktur für Cryptomator Hub und Keycloak und ist verantwortlich für Sicherheit, Verfügbarkeit, Backups und Aktualität. Bei der Self-Hosted-Version liegt diese Verantwortung bei dir.
+              Cryptomator Hub ist in einer Managed- und einer Self-Hosted-Version verfügbar. Bei der Managed-Version betreibt die Skymatic GmbH die für Cryptomator Hub und Keycloak notwendige Infrastruktur in einem ISO/IEC 27001:2022-zertifizierten Rechenzentrum in der EU und ist verantwortlich für Sicherheit, Verfügbarkeit, Backups und Aktualität. Bei der Self-Hosted-Version liegt diese Verantwortung bei dir.
             </dd>
           </dl>
         </div>
@@ -712,7 +733,7 @@
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
         <li><a class="text-white hover:text-secondary hover:no-underline" href="/de/presskit/">Pressemappe</a></li>
       </ul>

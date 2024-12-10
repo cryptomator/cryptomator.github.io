@@ -1310,6 +1310,18 @@
                 href="https://cryptomator.org/presskit/"
                 />
   </url><url>
+    <loc>https://cryptomator.org/pricing/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de_DE"
+                href="https://cryptomator.org/de/pricing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en_US"
+                href="https://cryptomator.org/pricing/"
+                />
+  </url><url>
     <loc>https://cryptomator.org/privacy/</loc>
     <xhtml:link
                 rel="alternate"
