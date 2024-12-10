@@ -748,6 +748,9 @@
 - id: pricing_ios_benefit_4
   translation: "Keine Accounts, keine Datenweitergabe"
 
+- id: pricing_discount_note
+  translation: "Die Höhe des Rabatts im Dezember-Sale kann je nach Region variieren."
+
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
 - id: pricing_hub_self_hosted_cta
