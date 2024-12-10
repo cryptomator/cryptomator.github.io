@@ -36,8 +36,8 @@
     </header>
 
     {{- $data := index $.Site.Data $.Site.Language.Lang }}
-    <dl x-data="{isOpen: [{{ range $i, $e := $data.license_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
-      {{- range $index, $element := $data.license_faq }}
+    <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+      {{- range $index, $element := $data.pricing_individuals_faq }}
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>

@@ -21,11 +21,26 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
+        <li x-data="{ isProductsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
+          <button @click="isProductsDropdownOpen = !isProductsDropdownOpen" class="whitespace-nowrap p-2">
+            <span>{{ i18n "nav_products" . }}</span>
+            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+          </button>
+          <div class="absolute">
+            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+              {{- range .Site.Data.nav.ProductsRelLinks }}
+              {{- with $.Site.GetPage . }}
+              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+              {{- end}}
+              {{- end }}
+            </div>
+          </div>
+        </li>
         {{- range .Site.Data.nav.RelLinks }}
         {{- with $.Site.GetPage . }}
         {{- $borderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $textColor "transparent" }}
         <li class="flex items-center mx-2 border-b-2 border-{{ $borderColor }} hover:border-{{ $textColor }}">
-          <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
         </li>
         {{- end }}
         {{- end }}
@@ -102,9 +117,22 @@
   
   <!-- Smartphone Navigation -->
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      {{ i18n "nav_products" . }}
+    </div>
+    <div class="mt-1">
+      {{- range .Site.Data.nav.ProductsRelLinks }}
+      {{- with $.Site.GetPage . }}
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+      {{- end }}
+      {{- end }}
+    </div>
+    
+    <hr class="border-primary my-2"/>
+
     {{- range .Site.Data.nav.RelLinks }}
     {{- with $.Site.GetPage . }}
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
     {{- end }}
     {{- end }}
     

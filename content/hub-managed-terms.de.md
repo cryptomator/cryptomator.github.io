@@ -3,7 +3,7 @@ title: "AGB für Cryptomator Hub (SaaS)"
 url: "/de/hub/managed/terms"
 ---
 
-_Stand: Oktober 2023_
+_Stand: Dezember 2024_
 
 Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ als Software as a Service (SaaS) Dienstleistung.
 {.text-lg .leading-relaxed .text-gray-700}
@@ -142,7 +142,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 Unabhängig des Widerrufsrechts ([§ 15](#withdrawal)) steht dem Kunden, d.h. sowohl dem Verbraucher wie auch Unternehmer, das Recht zu, die Software 14 Tage kostenfrei und für beide Seiten unverbindlich zu nutzen (nachfolgend „Testphase“). In der Testphase hat der Kunde insbesondere keinen Anspruch auf uneingeschränkten Funktionsumfang der Software oder Störungsbehebung sowie Vertragsstrafe nach [§ 6](#sla).
 
 ## §13 Vergütungs- und Zahlungsbedingungen {#fees}
-13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/hub/#pricing-plans](https://cryptomator.org/de/hub/#pricing-plans)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich ein Entgelt in Höhe von 10 EUR pro aktiven Nutzer an den Provider zu zahlen.
+13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/#for-teams](https://cryptomator.org/de/pricing/#for-teams)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich ein Entgelt in Höhe von 10 EUR pro aktiven Nutzer an den Provider zu zahlen.
 
 13.2 Vom Provider nach [§ 6 (7)](#sla) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
 

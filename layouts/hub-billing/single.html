@@ -315,23 +315,23 @@
                 <div x-show="audience === 'business'">
                   <p class="flex items-baseline gap-2">
                     <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
-                    <span class="text-gray-700">{{ i18n "hub_pricing_vat_excluded" . }}</span>
+                    <span class="text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
                   </p>
                   <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
                     <span x-text="subscriptionData.monthlyPrice.recurringNetAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
-                    <span>{{ i18n "hub_pricing_vat_excluded" . }}</span>
-                    <span>{{ i18n "hub_pricing_different_recurring_description" . }}</span>
+                    <span>{{ i18n "pricing_vat_excluded" . }}</span>
+                    <span>{{ i18n "pricing_different_recurring_description" . }}</span>
                   </p>
                 </div>
                 <div x-show="audience === 'consumer'">
                   <p class="flex items-baseline gap-2">
                     <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
-                    <span class="text-gray-700">{{ i18n "hub_pricing_vat_included" . }}</span>
+                    <span class="text-gray-700">{{ i18n "pricing_vat_included" . }}</span>
                   </p>
                   <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
                     <span x-text="subscriptionData.monthlyPrice.recurringGrossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
-                    <span>{{ i18n "hub_pricing_vat_included" . }}</span>
-                    <span>{{ i18n "hub_pricing_different_recurring_description" . }}</span>
+                    <span>{{ i18n "pricing_vat_included" . }}</span>
+                    <span>{{ i18n "pricing_different_recurring_description" . }}</span>
                   </p>
                 </div>
                 <p class="text-lg text-gray-500 mb-4">
@@ -415,8 +415,8 @@
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-24">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.hub_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200">
-            {{- range $index, $element := $data.hub_faq }}
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200">
+            {{- range $index, $element := $data.pricing_teams_faq }}
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>

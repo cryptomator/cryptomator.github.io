@@ -4,6 +4,8 @@
   translation: "Jetzt loslegen"
 - id: nav_promotion
   translation: ":wrapped_gift: 33 %* Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat! <a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2024/12/01/december-sale/\">Mehr Infos&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+- id: nav_products
+  translation: "Produkte"
 - id: nav_support_us
   translation: "Unterstütze uns"
 - id: nav_learn_more
@@ -311,81 +313,11 @@
   translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a href=\"https://docs.cryptomator.org/en/latest/security/hub\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
 
 - id: hub_pricing_title
-  translation: "Preisgestaltung"
+  translation: "Entdecke unser flexibles Preismodell"
 - id: hub_pricing_description
-  translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
-- id: hub_pricing_infrastructure_managed
-  translation: "Managed"
-- id: hub_pricing_infrastructure_self_hosted
-  translation: "Self-Hosted"
-- id: hub_pricing_vat_excluded
-  translation: "zzgl. USt."
-- id: hub_pricing_vat_included
-  translation: "inkl. USt."
-- id: hub_pricing_different_recurring_description
-  translation: "nach dem ersten Jahr"
-- id: hub_pricing_community_title
-  translation: "Community"
-- id: hub_pricing_community_statement
-  translation: "Kostenlos"
-- id: hub_pricing_community_description
-  translation: "zum Loslegen"
-- id: hub_pricing_community_benefit_1
-  translation: "Unbegrenzte Tresore"
-- id: hub_pricing_community_benefit_2
-  translation: "Bis zu 5 Sitze"
-- id: hub_pricing_community_benefit_3
-  translation: "Voller Zugriff über Desktop-App"
-- id: hub_pricing_community_benefit_4
-  translation: "Lesender Zugriff über Mobile-Apps"
-- id: hub_pricing_community_benefit_4_tooltip
-  translation: "Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff."
-- id: hub_pricing_community_benefit_5
-  translation: "Community-Support"
-- id: hub_pricing_standard_title
-  translation: "Standard"
-- id: hub_pricing_standard_description
-  translation: "pro Sitz, pro Monat"
-- id: hub_pricing_managed_cta
-  translation: "Jetzt loslegen"
-- id: hub_pricing_self_hosted_cta
-  translation: "Jetzt einrichten"
-- id: hub_pricing_standard_benefit_1
-  translation: "Alles in Community"
-- id: hub_pricing_standard_benefit_2
-  translation: "Bis zu 50 Sitze"
-- id: hub_pricing_standard_benefit_3
-  translation: "Voller Zugriff über Mobile-Apps"
-- id: hub_pricing_standard_benefit_3_tooltip
-  translation: "Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen."
-- id: hub_pricing_standard_benefit_4
-  translation: "Audit-Logs"
-- id: hub_pricing_standard_benefit_5
-  translation: "E-Mail-Support"
-- id: hub_pricing_managed_standard_benefit_1
-  translation: "Hosting in Europa"
-- id: hub_pricing_enterprise_title
-  translation: "Enterprise"
-- id: hub_pricing_enterprise_statement
-  translation: "Individuell"
-- id: hub_pricing_enterprise_description
-  translation: "maßgeschneiderte Preise"
-- id: hub_pricing_enterprise_cta
-  translation: "Kontaktiere uns"
-- id: hub_pricing_enterprise_benefit_1
-  translation: "Alles in Standard"
-- id: hub_pricing_enterprise_benefit_2
-  translation: "Mehr als 50 Sitze"
-- id: hub_pricing_enterprise_benefit_3
-  translation: "Beratung und Unterstützung durch Experten"
-- id: hub_pricing_enterprise_benefit_4
-  translation: "Vorrangiger E-Mail-Support"
-- id: hub_pricing_managed_enterprise_benefit_1
-  translation: "Option: Eigene Domain"
-- id: hub_pricing_managed_enterprise_benefit_2
-  translation: "Option: Eigener Hosting-Standort"
-- id: hub_pricing_coming_later
-  translation: "Hub-Unterstützung für Android befindet sich derzeit in Entwicklung, voraussichtliche Fertigstellung in Q1/2025."
+  translation: "Finde den richtigen Plan für dein Unternehmen. Vergleiche die Funktionen und wähle die beste Option für die sichere Verwaltung deines verschlüsselten Speichers mit Cryptomator Hub."
+- id: hub_pricing_button
+  translation: "Preisgestaltung anzeigen"
 
 - id: hub_contact_us_title
   translation: "Weitere Fragen?"
@@ -744,6 +676,149 @@
   translation: "Dieser Assistent erstellt sinnvolle Voreinstellungen für gängige Konfigurationen. Wenn du möchtest, dass wir das Deployment an deine speziellen Bedürfnisse anpassen, kannst du uns gerne kontaktieren."
 - id: hub_setup_contact_us_button
   translation: "Kontaktiere uns"
+
+# Pricing
+- id: pricing_title
+  translation: "Finde die passende Option für dich"
+- id: pricing_individuals
+  translation: "Für Einzelnutzer"
+- id: pricing_teams
+  translation: "Für Teams"
+- id: pricing_vat_excluded
+  translation: "zzgl. USt."
+- id: pricing_vat_included
+  translation: "inkl. USt."
+- id: pricing_free
+  translation: "Kostenlos"
+- id: hub_different_recurring_description
+  translation: "nach dem ersten Jahr"
+
+- id: pricing_desktop_price_description
+  translation: "Donationware"
+- id: pricing_desktop_cta_1
+  translation: "Jetzt herunterladen"
+- id: pricing_desktop_cta_2
+  translation: "Unterstütze uns"
+- id: pricing_desktop_benefit_1
+  translation: "Kompatibel mit jedem Cloud-Speicher mit Dateisystem-Synchronisierung, z.B. Dropbox, Google Drive, OneDrive, Nextcloud uvm."
+- id: pricing_desktop_benefit_2
+  translation: "Clientseitige Verschlüsselung für Privatsphäre"
+- id: pricing_desktop_benefit_3
+  translation: "Zugriff über virtuelles Laufwerk"
+- id: pricing_desktop_benefit_4
+  translation: "Keine Accounts, keine Datenweitergabe"
+
+- id: pricing_android_discount
+  translation: "<span>-33%<sup>1</sup> im Dezember</span>"
+- id: pricing_android_price
+  translation: "14,99 €"
+- id: pricing_android_price_discounted
+  translation: "9,99 €"
+- id: pricing_android_price_description
+  translation: "Lebenslange Lizenz"
+- id: pricing_android_cta
+  translation: "Jetzt herunterladen"
+- id: pricing_android_benefit_1
+  translation: "Kompatibel mit Dropbox, Google Drive, OneDrive, pCloud, WebDAV- und S3-basiertem Cloud-Speicher"
+- id: pricing_android_benefit_2
+  translation: "Mobiler Zugriff auf verschlüsselte Dateien"
+- id: pricing_android_benefit_3
+  translation: "Tresore mit biometrischer Auth entsperren"
+- id: pricing_android_benefit_4
+  translation: "Keine Accounts, keine Datenweitergabe"
+
+- id: pricing_ios_discount
+  translation: "<span>-33%<sup>1</sup> im Dezember</span>"
+- id: pricing_ios_free_description
+  translation: "Lesezugriff"
+- id: pricing_ios_price
+  translation: "14,99 €"
+- id: pricing_ios_price_discounted
+  translation: "9,99 €"
+- id: pricing_ios_price_description
+  translation: "Lebenslange Lizenz"
+- id: pricing_ios_cta
+  translation: "Jetzt herunterladen"
+- id: pricing_ios_benefit_1
+  translation: "Kompatibel mit iCloud Drive, Dropbox, Google Drive, OneDrive, pCloud, Box, WebDAV- und S3-basiertem Cloud-Speicher"
+- id: pricing_ios_benefit_2
+  translation: "Vollständig in die Dateien-App integriert"
+- id: pricing_ios_benefit_3
+  translation: "Tresore mit Face ID / Touch ID entsperren"
+- id: pricing_ios_benefit_4
+  translation: "Keine Accounts, keine Datenweitergabe"
+
+- id: pricing_hub_self_hosted_title
+  translation: "Self-Hosted"
+- id: pricing_hub_self_hosted_cta
+  translation: "Jetzt einrichten"
+
+- id: pricing_hub_managed_title
+  translation: "Managed"
+- id: pricing_hub_managed_cta
+  translation: "Jetzt loslegen"
+
+- id: pricing_hub_community_title
+  translation: "Community"
+- id: pricing_hub_community_price_description
+  translation: "zum Loslegen"
+- id: pricing_hub_community_benefit_1
+  translation: "Unbegrenzte Tresore"
+- id: pricing_hub_community_benefit_2
+  translation: "Bis zu 5 Sitze"
+- id: pricing_hub_community_benefit_3
+  translation: "Voller Zugriff über Desktop-App"
+- id: pricing_hub_community_benefit_4
+  translation: "Lesender Zugriff über Mobile-Apps"
+- id: pricing_hub_community_benefit_4_tooltip
+  translation: "Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff."
+- id: pricing_hub_community_benefit_5
+  translation: "Community-Support"
+
+- id: pricing_hub_standard_title
+  translation: "Standard"
+- id: pricing_hub_standard_price_description
+  translation: "pro Sitz, pro Monat"
+- id: pricing_hub_standard_trial
+  translation: "14 Tage kostenlos"
+- id: pricing_hub_standard_benefit_1
+  translation: "Alles in Community"
+- id: pricing_hub_standard_benefit_2
+  translation: "Bis zu 50 Sitze"
+- id: pricing_hub_standard_benefit_3
+  translation: "Voller Zugriff über Mobile-Apps"
+- id: pricing_hub_standard_benefit_3_tooltip
+  translation: "Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen."
+- id: pricing_hub_standard_benefit_4
+  translation: "Audit-Logs"
+- id: pricing_hub_standard_benefit_5
+  translation: "E-Mail-Support"
+
+- id: pricing_hub_enterprise_title
+  translation: "Enterprise"
+- id: pricing_hub_enterprise_price
+  translation: "Individuell"
+- id: pricing_hub_enterprise_price_description
+  translation: "maßgeschneiderte Preise"
+- id: pricing_hub_enterprise_cta
+  translation: "Kontaktiere uns"
+- id: pricing_hub_enterprise_benefit_1
+  translation: "Alles in Standard"
+- id: pricing_hub_enterprise_benefit_2
+  translation: "Mehr als 50 Sitze"
+- id: pricing_hub_enterprise_benefit_3
+  translation: "Beratung und Unterstützung durch Experten"
+- id: pricing_hub_enterprise_benefit_4
+  translation: "Dedizierter Kundenbetreuer"
+- id: pricing_hub_enterprise_benefit_5
+  translation: "Vorrangiger E-Mail-Support"
+- id: pricing_hub_standard_managed_benefit_1
+  translation: "Gewartet und aktualisiert von unserem Team"
+- id: pricing_hub_standard_managed_benefit_2
+  translation: "ISO/IEC 27001-zert. Rechenzentrum in der EU"
+
+- id: pricing_hub_coming_later
+  translation: "Hub-Unterstützung für Android befindet sich derzeit in Entwicklung, voraussichtliche Fertigstellung in Q1/2025."
 
 # Supporter Certificate
 - id: supporter_cert_common_email

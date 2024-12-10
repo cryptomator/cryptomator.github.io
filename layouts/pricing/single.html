@@ -1,0 +1,454 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <div x-data="{planOption: location.hash}" @hashchange.window="planOption = location.hash" class="py-12">
+      <header class="text-center">
+        <h2 class="text-center font-headline font-medium text-xl md:text-2xl leading-snug mb-4">
+          {{ i18n "pricing_title" . }}
+        </h2>
+        <div class="flex justify-center mb-4">
+          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption !== '#for-teams'}" @click="location.hash = '#for-individuals'">
+            <i class="fa-user fa-fw" :class="{'fas': planOption !== '#for-teams', 'far': planOption === '#for-teams'}"></i>
+            {{ i18n "pricing_individuals" . }}
+          </button>
+          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption === '#for-teams'}" @click="location.hash = '#for-teams'">
+            <i class="fa-building fa-fw" :class="{'fas': planOption === '#for-teams', 'far': planOption !== '#for-teams'}"></i>
+            {{ i18n "pricing_teams" . }}
+          </button>
+        </div>
+      </header>
+
+      <div x-show="planOption !== '#for-teams'">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-4">
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-windows"></i>
+                  Windows
+                </div>
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-apple"></i>
+                  macOS
+                </div>
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-linux"></i>
+                  Linux
+                </div>
+              </div>
+              <div class="lg:h-[26px]"></div>
+              <p class="font-bold text-2xl md:text-3xl leading-relaxed">
+                {{ i18n "pricing_free" . }}
+              </p>
+              <p class="text-sm md:text-base text-gray-500 mb-4">
+                {{ i18n "pricing_desktop_price_description" . }}
+              </p>
+              <div class="flex gap-2">
+                <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="flex-1 btn btn-primary">
+                  {{ i18n "pricing_desktop_cta_1" . }}
+                </a>
+                <a href="{{ .Site.LanguagePrefix }}/supporter-cert/" role="button" class="flex-1 btn btn-outline-primary">
+                  {{ i18n "pricing_desktop_cta_2" . }}
+                </a>
+              </div>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_desktop_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_desktop_benefit_2" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_desktop_benefit_3" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_desktop_benefit_4" . }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-4">
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-android"></i>
+                  Android
+                </div>
+                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
+                  <i class="fas fa-gift"></i>
+                  {{ i18n "pricing_android_discount" . | safeHTML }}
+                </p>
+              </div>
+              <p class="font-bold leading-relaxed text-gray-500 line-through decoration-red-600">
+                {{ i18n "pricing_android_price" . }}
+              </p>
+              <p class="flex items-baseline gap-2">
+                <span class="font-bold text-2xl md:text-3xl leading-relaxed">
+                  {{ i18n "pricing_android_price_discounted" . }}
+                </span>
+                <span class="text-xs text-gray-700">
+                  {{ i18n "pricing_vat_included" . }}
+                </span>
+              </p>
+              <p class="text-sm md:text-base text-gray-500 mb-4">
+                {{ i18n "pricing_android_price_description" . }}
+              </p>
+              <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary w-full">
+                {{ i18n "pricing_android_cta" . }}
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_android_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_android_benefit_2" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_android_benefit_3" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_android_benefit_4" . }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-4">
+                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
+                  <i class="fab fa-apple"></i>
+                  iOS
+                </div>
+                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
+                  <i class="fas fa-gift"></i>
+                  {{ i18n "pricing_ios_discount" . | safeHTML }}
+                </p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-gray-300 mb-4">
+                <div class="pr-4">
+                  <div class="lg:h-[26px]"></div>
+                  <div class="font-bold text-2xl md:text-3xl leading-relaxed">
+                    {{ i18n "pricing_free" . }}
+                  </div>
+                  <p class="text-sm md:text-base text-gray-500">
+                    {{ i18n "pricing_ios_free_description" . }}
+                  </p>
+                </div>
+                <div class="pl-4">
+                  <p class="font-bold leading-relaxed text-gray-500 line-through decoration-red-600">
+                    {{ i18n "pricing_ios_price" . }}
+                  </p>
+                  <p class="flex items-baseline gap-2">
+                    <span class="font-bold text-2xl md:text-3xl leading-relaxed">
+                      {{ i18n "pricing_ios_price_discounted" . }}
+                    </span>
+                    <span class="text-xs text-gray-700">
+                      {{ i18n "pricing_vat_included" . }}
+                    </span>
+                  </p>
+                  <p class="text-sm md:text-base text-gray-500">
+                    {{ i18n "pricing_ios_price_description" . }}
+                  </p>
+                </div>
+              </div>
+              <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary w-full">
+                {{ i18n "pricing_ios_cta" . }}
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_ios_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_ios_benefit_2" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_ios_benefit_3" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_ios_benefit_4" . }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-700">
+          <sup>1</sup>
+          <span>{{ i18n "pricing_discount_note" . }}</span>
+        </p>
+
+        <section class="container py-12">
+          <header class="text-center">
+            <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "faq_title" . }}</h2>
+          </header>
+      
+          {{- $data := index $.Site.Data $.Site.Language.Lang }}
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+            {{- range $index, $element := $data.pricing_individuals_faq }}
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>{{ .Question }}</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              {{ .Answer | markdownify }}
+            </dd>
+            {{- end }}
+          </dl>
+        </section>
+      </div>
+
+      <div x-show="planOption === '#for-teams'" x-cloak>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
+                {{ i18n "pricing_hub_community_title" . }}
+              </h3>
+              <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
+                {{ i18n "pricing_hub_self_hosted_title" . }}
+              </p>
+              <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+                {{ i18n "pricing_free" . }}
+              </p>
+              <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                {{ i18n "pricing_hub_community_price_description" . }}
+              </p>
+              <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary w-full">
+                {{ i18n "pricing_hub_self_hosted_cta" . }}
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_community_benefit_3" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_community_benefit_4" . }}</span>
+                  <span><sup>1</sup></span>
+                  <div class="has-tooltip">
+                    <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                    <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_community_benefit_4_tooltip" . }}</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_community_benefit_5" . }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <div class="flex gap-2 mb-8">
+                <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+                  {{ i18n "pricing_hub_standard_title" . }}
+                </h3>
+                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
+                  <i class="fas fa-calendar-star"></i>
+                  {{ i18n "pricing_hub_standard_trial" . }}
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span id="hub-standard-managed-label" class="block uppercase tracking-wide text-xs font-bold" :class="infrastructure === 'managed' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'managed'">
+                  {{ i18n "pricing_hub_managed_title" . }}
+                </span>
+                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
+                  <span class="sr-only">Use setting</span>
+                  <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" :class="infrastructure === 'managed' ? 'translate-x-0' : 'translate-x-4'"></span>
+                </button>
+                <span id="hub-standard-self-hosted-label" class="block uppercase tracking-wide text-gray-500 text-xs font-bold" :class="infrastructure === 'self-hosted' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'self-hosted'">
+                  {{ i18n "pricing_hub_self_hosted_title" . }}
+                </span>
+              </div>
+              <div x-show="infrastructure === 'managed'">
+                <p class="flex items-baseline gap-2">
+                  <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+                  <span class="text-xs text-gray-700">
+                    {{ i18n "pricing_vat_excluded" . }}
+                  </span>
+                </p>
+                <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                  {{ i18n "pricing_hub_standard_price_description" . }}
+                </p>
+                <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary w-full">
+                  {{ i18n "pricing_hub_managed_cta" . }}
+                </a>
+              </div>
+              <div x-show="infrastructure === 'self-hosted'">
+                <p class="flex items-baseline gap-2">
+                  <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+                  <span class="text-xs text-gray-700">
+                    {{ i18n "pricing_vat_excluded" . }}
+                  </span>
+                </p>
+                <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                  {{ i18n "pricing_hub_standard_price_description" . }}
+                </p>
+                <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary w-full">
+                  {{ i18n "pricing_hub_self_hosted_cta" . }}
+                </a>
+              </div>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_standard_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_standard_benefit_2" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_standard_benefit_3" . }}</span>
+                  <span><sup>1</sup></span>
+                  <div class="has-tooltip">
+                    <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                    <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_standard_benefit_3_tooltip" . }}</div>
+                  </div>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_standard_benefit_4" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_standard_benefit_5" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                  <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                  <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_2" . }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rounded shadow bg-white">
+            <div class="p-4 border-b border-primary">
+              <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
+                {{ i18n "pricing_hub_enterprise_title" . }}
+              </h3>
+              <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
+                {{ i18n "pricing_hub_self_hosted_title" . }} & {{ i18n "pricing_hub_managed_title" . }}
+              </p>
+              <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+                {{ i18n "pricing_hub_enterprise_price" . }}
+              </p>
+              <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+                {{ i18n "pricing_hub_enterprise_price_description" . }}
+              </p>
+              <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full">
+                <i class="fas fa-envelope"></i>
+                {{ i18n "pricing_hub_enterprise_cta" . }}
+              </a>
+            </div>
+            <div class="px-4 py-8">
+              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                <li>
+                  <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_enterprise_benefit_1" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_enterprise_benefit_2" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_enterprise_benefit_3" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_enterprise_benefit_4" . }}</span>
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span>{{ i18n "pricing_hub_enterprise_benefit_5" . }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-700">
+          <sup>1</sup>
+          <span>{{ i18n "pricing_hub_coming_later" . }}</span>
+        </p>
+
+        <section class="container py-12">
+          <header class="text-center">
+            <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "faq_title" . }}</h2>
+          </header>
+      
+          {{- $data := index $.Site.Data $.Site.Language.Lang }}
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+            {{- range $index, $element := $data.pricing_teams_faq }}
+            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+              <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <span>{{ .Question }}</span>
+              </a>
+            </dt>
+            <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+              {{ .Answer | markdownify }}
+            </dd>
+            {{- end }}
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  {{ if hugo.IsServer }}
+    {{ $storeJs := resources.Get "js/store.js" }}
+    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
+    {{ $hubPricingJs := resources.Get "js/hubpricing.js" }}
+    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" defer></script>
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
+    {{ $hubPricingJs := resources.Get "js/hubpricing.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubPricingJs.RelPermalink }}" integrity="{{ $hubPricingJs.Data.Integrity }}" defer></script>
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

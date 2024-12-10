@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: October 2023_
+_Effective date: December 2024_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -146,7 +146,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 14 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 ## §13 Remuneration and Payment Conditions {#fees}
-13.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/hub/#pricing-plans](https://cryptomator.org/hub/#pricing-plans)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay a monthly fee of EUR 10 per active user to the Provider.
+13.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/#for-teams](https://cryptomator.org/pricing/#for-teams)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay a monthly fee of EUR 10 per active user to the Provider.
 
 13.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 

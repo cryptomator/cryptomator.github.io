@@ -1,5 +1,5 @@
 - Question: "Is Cryptomator free to use?"
-  Answer: "Cryptomator is free to use on Windows, macOS, and Linux, but not on iOS and Android. If you purchase a license key for one platform, it is not valid for another. A bundle license does not exist."
+  Answer: "Cryptomator is free to use on Windows, macOS, Linux, and iOS, but not Android (yet). However, the free version on iOS is read-only. If you purchase a license key for one platform, it is not valid for another. A bundle license does not exist."
 - Question: "Why is Cryptomator free to use on some platforms, but not on others?"
   Answer: "Our licensing strategy differs across platforms because of constraints imposed by App Store / Google Play policies, and technical differences across operating systems."
 - Question: "Do I need a supporter certificate to use Cryptomator on Desktop?"
