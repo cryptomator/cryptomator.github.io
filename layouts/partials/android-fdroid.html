@@ -13,10 +13,10 @@
     </div>
 
     <div class="flex justify-center p-4">
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
+      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary plausible-event-name=android-fdroid-cryptomator-repo-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
         Cryptomator Repository
       </button>
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
+      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary plausible-event-name=android-fdroid-main-repo-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
         Main Repository
       </button>
     </div>
@@ -26,7 +26,7 @@
         <p>{{ i18n "android_fdroid_repo" | safeHTML }}</p>
       </div>
       <p class="text-xs mb-4">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
+        <a class="text-primary no-underline hover:underline plausible-event-name=android-fdroid-cryptomator-repo-qr-code" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
       </p>
       <div x-show="showQrCode" x-cloak class="mb-4">
         <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
@@ -40,7 +40,7 @@
     </div>
 
     <div x-show="fdroidVariant === 'main-repo'" class="px-4 pt-4 pb-8">
-      <a href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
+      <a class="plausible-event-name=android-fdroid-main-repo-link" href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
         <img class="h-10 mx-auto lazyload mb-4" data-src="{{ .Params.FdroidMainRepoImageUrl }}">
       </a>
       <div class="prose prose-sm max-w-none md:max-w-none mb-4">

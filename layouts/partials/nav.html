@@ -80,7 +80,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -90,7 +90,7 @@
       {{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/hub")) -}}
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1">{{ i18n "nav_cta" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1 plausible-event-name=nav-cta">{{ i18n "nav_cta" . }}</a>
         </li>
       </ul>
       {{- end }}
