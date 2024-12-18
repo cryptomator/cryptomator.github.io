@@ -107,7 +107,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -573,12 +573,12 @@
                     Zahlungen werden über Paddle abgewickelt.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-736912458" x-model="acceptTerms" />
-<label for="id-736912458">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-534791826" x-model="acceptTerms" />
+<label for="id-534791826">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-934127865" x-model="acceptTerms" />
-<label for="id-934127865">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-957486321" x-model="acceptTerms" />
+<label for="id-957486321">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('de')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>

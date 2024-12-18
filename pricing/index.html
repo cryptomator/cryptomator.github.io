@@ -107,7 +107,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -116,7 +116,7 @@
 
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1">Get Started</a>
+          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1 plausible-event-name=nav-cta">Get Started</a>
         </li>
       </ul>
 
@@ -218,11 +218,11 @@
           Find the Right Plan for You
         </h2>
         <div class="flex justify-center mb-4">
-          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption !== '#for-teams'}" @click="location.hash = '#for-individuals'">
+          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary plausible-event-name=pricing-individuals-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption !== '#for-teams'}" @click="location.hash = '#for-individuals'">
             <i class="fa-user fa-fw" :class="{'fas': planOption !== '#for-teams', 'far': planOption === '#for-teams'}"></i>
             For Individuals
           </button>
-          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption === '#for-teams'}" @click="location.hash = '#for-teams'">
+          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary plausible-event-name=pricing-teams-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption === '#for-teams'}" @click="location.hash = '#for-teams'">
             <i class="fa-building fa-fw" :class="{'fas': planOption === '#for-teams', 'far': planOption !== '#for-teams'}"></i>
             For Teams
           </button>
@@ -255,10 +255,10 @@
                 Donationware
               </p>
               <div class="flex gap-2">
-                <a href="/downloads/" role="button" class="flex-1 btn btn-primary">
+                <a href="/downloads/" role="button" class="flex-1 btn btn-primary plausible-event-name=pricing-desktop-cta-1">
                   Download Now
                 </a>
-                <a href="/supporter-cert/" role="button" class="flex-1 btn btn-outline-primary">
+                <a href="/supporter-cert/" role="button" class="flex-1 btn btn-outline-primary plausible-event-name=pricing-desktop-cta-2">
                   Support Us
                 </a>
               </div>
@@ -310,7 +310,7 @@
               <p class="text-sm md:text-base text-gray-500 mb-4">
                 Lifetime License
               </p>
-              <a href="/downloads/" role="button" class="btn btn-primary w-full">
+              <a href="/downloads/" role="button" class="btn btn-primary w-full plausible-event-name=pricing-android-cta">
                 Download Now
               </a>
             </div>
@@ -374,7 +374,7 @@
                   </p>
                 </div>
               </div>
-              <a href="/downloads/" role="button" class="btn btn-primary w-full">
+              <a href="/downloads/" role="button" class="btn btn-primary w-full plausible-event-name=pricing-ios-cta">
                 Download Now
               </a>
             </div>
@@ -503,7 +503,7 @@
               <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
                 to get started
               </p>
-              <a href="/hub/self-hosted/" role="button" class="btn btn-primary w-full">
+              <a href="/hub/self-hosted/" role="button" class="btn btn-primary w-full plausible-event-name=pricing-hub-community-self-hosted-cta">
                 Deploy Now
               </a>
             </div>
@@ -552,7 +552,7 @@
                 <span id="hub-standard-managed-label" class="block uppercase tracking-wide text-xs font-bold" :class="infrastructure === 'managed' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'managed'">
                   Managed
                 </span>
-                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
+                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1 plausible-event-name=pricing-hub-standard-infrastructure-switch" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
                   <span class="sr-only">Use setting</span>
                   <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" :class="infrastructure === 'managed' ? 'translate-x-0' : 'translate-x-4'"></span>
                 </button>
@@ -570,7 +570,7 @@
                 <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
                   per seat, per month
                 </p>
-                <a href="/hub/managed/" role="button" class="btn btn-primary w-full">
+                <a href="/hub/managed/" role="button" class="btn btn-primary w-full plausible-event-name=pricing-hub-standard-managed-cta">
                   Get Started
                 </a>
               </div>
@@ -584,7 +584,7 @@
                 <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
                   per seat, per month
                 </p>
-                <a href="/hub/self-hosted/" role="button" class="btn btn-primary w-full">
+                <a href="/hub/self-hosted/" role="button" class="btn btn-primary w-full plausible-event-name=pricing-hub-standard-self-hosted-cta">
                   Deploy Now
                 </a>
               </div>
@@ -641,7 +641,7 @@
               <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
                 tailored pricing
               </p>
-              <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full">
+              <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full plausible-event-name=pricing-hub-enterprise-cta">
                 <i class="fas fa-envelope"></i>
                 Contact Us
               </a>

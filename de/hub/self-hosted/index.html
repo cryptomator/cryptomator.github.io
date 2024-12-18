@@ -107,7 +107,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -223,19 +223,19 @@
         <div class="col-span-6 grid grid-flow-row auto-rows-max grid-cols-1 gap-x-6 gap-y-4 lg:grid-cols-3">
           
           <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'kubernetes' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-kubernetes-label">
+            <input type="radio" name="deployment-type" value="kubernetes" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary plausible-event-name=hub-self-hosted-kubernetes-tab" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-kubernetes-label">
             <span id="deployment-type-kubernetes-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'kubernetes' ? 'text-indigo-900' : 'text-gray-900'">Kubernetes</span>
           </label>
 
           
           <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-prod' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="compose-prod" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-compose-prod-label">
+            <input type="radio" name="deployment-type" value="compose-prod" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary plausible-event-name=hub-self-hosted-compose-prod-tab" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig()" aria-describedby="deployment-type-compose-prod-label">
             <span id="deployment-type-compose-prod-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-prod' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Prod)</span>
           </label>
 
           
           <label class="relative bg-white border rounded p-4 flex cursor-pointer focus:outline-none" :class="deploymentType == 'compose-test' ? 'border-secondary z-10' : 'border-gray-300'">
-            <input type="radio" name="deployment-type" value="compose-test" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig(); cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'" aria-describedby="deployment-type-compose-test-label">
+            <input type="radio" name="deployment-type" value="compose-test" class="mt-0.5 h-4 w-4 flex-shrink-0 cursor-pointer text-secondary border-gray-500 focus:ring-secondary plausible-event-name=hub-self-hosted-compose-test-tab" x-model="deploymentType" @click="cfg = HubSetup.defaultConfig(); cfg.hub.publicUrl = 'http://localhost:30000'; cfg.keycloak.publicUrl = 'http://localhost:31000'" aria-describedby="deployment-type-compose-test-label">
             <span id="deployment-type-compose-test-label" class="block text-sm font-medium ml-3" :class="deploymentType == 'compose-test' ? 'text-indigo-900' : 'text-gray-900'">Docker Compose (Test)</span>
           </label>
         </div>
@@ -512,7 +512,7 @@
     <section class="container text-center py-12">
       <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Brauchst du Hilfe bei deiner Konfiguration?</h2>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Dieser Assistent erstellt sinnvolle Voreinstellungen für gängige Konfigurationen. Wenn du möchtest, dass wir das Deployment an deine speziellen Bedürfnisse anpassen, kannst du uns gerne kontaktieren.</p>
-      <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+      <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8 plausible-event-name=hub-self-hosted-contact-us">
         <i class="fas fa-envelope"></i> Kontaktiere uns
       </a>
     </section>

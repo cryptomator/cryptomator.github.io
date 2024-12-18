@@ -107,7 +107,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -217,11 +217,11 @@
         <div class="flex flex-col md:flex-row gap-6 mb-4">
           <div class="flex flex-col gap-2">
             <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">Managed</p>
-            <a href="/de/hub/managed/" role="button" class="btn btn-primary text-lg px-8">Jetzt loslegen</a>
+            <a href="/de/hub/managed/" role="button" class="btn btn-primary text-lg px-8 plausible-event-name=hub-header-managed-cta">Jetzt loslegen</a>
           </div>
           <div class="flex flex-col gap-2">
             <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">Self-Hosted</p>
-            <a href="/de/hub/self-hosted/" role="button" class="btn btn-primary text-lg px-8">Jetzt einrichten</a>
+            <a href="/de/hub/self-hosted/" role="button" class="btn btn-primary text-lg px-8 plausible-event-name=hub-header-self-hosted-cta">Jetzt einrichten</a>
           </div>
         </div>
         <p class="text-sm md:text-base leading-relaxed text-gray-700">Starte deine kostenlose 14-Tage-Testversion noch heute, keine Kreditkarte erforderlich.</p>
@@ -275,7 +275,7 @@
     <div class="max-w-3xl mx-auto">
       <h2 id="pricing-plans" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Entdecke unser flexibles Preismodell</h2>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Finde den richtigen Plan für dein Unternehmen. Vergleiche die Funktionen und wähle die beste Option für die sichere Verwaltung deines verschlüsselten Speichers mit Cryptomator Hub.</p>
-      <a href="/de/pricing/#for-teams" role="button" class="btn btn-primary px-8">
+      <a href="/de/pricing/#for-teams" role="button" class="btn btn-primary px-8 plausible-event-name=hub-pricing">
         Preisgestaltung anzeigen
       </a>
     </div>
@@ -364,7 +364,7 @@
   <section class="container text-center py-12">
     <h2 id="contact" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Weitere Fragen?</h2>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Möchtest du mehr über Cryptomator Hub erfahren?</p>
-    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8 plausible-event-name=hub-contact-us">
       <i class="fas fa-envelope"></i> Kontaktiere uns
     </a>
   </section>
@@ -376,13 +376,13 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Abonniere unseren Hub-Newsletter, um als Erste:r mehr zu erfahren.</p>
       <div class="flex justify-center items-center rounded bg-gray-300 mb-4">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="E-Mail-Adresse" required/>
-        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
+        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=hub-newsletter-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Anmelden
         </button>
       </div>
       <p class="text-sm md:text-base leading-relaxed text-gray-700">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-841562397" x-model="data.acceptTerms" />
-<label for="id-841562397">Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-462175983" x-model="data.acceptTerms" />
+<label for="id-462175983">Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
       <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
     </form>

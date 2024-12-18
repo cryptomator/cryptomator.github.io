@@ -107,7 +107,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -286,14 +286,14 @@
         </p>
         <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
           
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-679431825" x-model="acceptTerms" />
-<label for="id-679431825">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-749236518" x-model="acceptTerms" />
+<label for="id-749236518">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/hub/managed/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 
         </p>
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
           <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">Weiter…</button>
         </div>
-        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
+        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" x-cloak>
           <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Zugang anfragen
         </button>
         <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
@@ -374,7 +374,7 @@
   <section class="container text-center pt-12 pb-24">
     <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">Weitere Informationen benötigt?</h2>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen.</p>
-    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
+    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8 plausible-event-name=hub-managed-contact-us">
       <i class="fas fa-envelope"></i> Kontaktiere uns
     </a>
   </section>

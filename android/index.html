@@ -107,7 +107,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span id="github-stargazers"></span>
           </a>
@@ -116,7 +116,7 @@
 
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1">Get Started</a>
+          <a href="/#get-started" role="button" class="self-center btn btn-primary py-1 plausible-event-name=nav-cta">Get Started</a>
         </li>
       </ul>
 
@@ -231,11 +231,11 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Payments are securely handled by Paddle.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-134856297" x-model="acceptTerms" />
-<label for="id-134856297">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-489713625" x-model="acceptTerms" />
+<label for="id-489713625">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎁 Use discount code <code>DEC24</code> at checkout to get 33% off!</p>
-      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64">
+      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('en')" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=android-getkey-checkout">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Checkout
       </button>
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
@@ -277,11 +277,11 @@
       <div class="prose prose-sm max-w-none md:max-w-none mb-4">
         <p>Version 1.10.3 • Minimum: Android 8.0</p>
       </div>
-      <a class="btn btn-primary w-full md:w-48 mb-2" href="https://static.cryptomator.org/android/1.10.3/Cryptomator-1.10.3.apk" role="button">
+      <a class="btn btn-primary w-full md:w-48 mb-2 plausible-event-name=android-download" href="https://static.cryptomator.org/android/1.10.3/Cryptomator-1.10.3.apk" role="button">
         <span class="fas fa-download" aria-hidden="true"></span> Download
       </a>
       <p class="text-xs">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> SHA256 Signature</a>
+        <a class="text-primary no-underline hover:underline plausible-event-name=android-download-sha256-signature" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> SHA256 Signature</a>
       </p>
       <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
         <p><code class="break-all">a433c3bd2c05c73d5e9e7e0da2fbe5ab942591ce1935852207e14cd7ad896543</code></p>
@@ -308,10 +308,10 @@
     </div>
 
     <div class="flex justify-center p-4">
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
+      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary plausible-event-name=android-fdroid-cryptomator-repo-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'cryptomator-repo'}" @click="fdroidVariant = 'cryptomator-repo'">
         Cryptomator Repository
       </button>
-      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
+      <button class="w-1/2 ms:w-1/4 p-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary plausible-event-name=android-fdroid-main-repo-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': fdroidVariant === 'main-repo'}" @click="fdroidVariant = 'main-repo'">
         Main Repository
       </button>
     </div>
@@ -321,7 +321,7 @@
         <p>Open this <a class="text-primary no-underline hover:underline" href="https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD" target="_blank">link</a> or scan the QR code on your phone to add our repository.</p>
       </div>
       <p class="text-xs mb-4">
-        <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> QR Code</a>
+        <a class="text-primary no-underline hover:underline plausible-event-name=android-fdroid-cryptomator-repo-qr-code" href="#" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> QR Code</a>
       </p>
       <div x-show="showQrCode" x-cloak class="mb-4">
         <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
@@ -335,7 +335,7 @@
     </div>
 
     <div x-show="fdroidVariant === 'main-repo'" class="px-4 pt-4 pb-8">
-      <a href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
+      <a class="plausible-event-name=android-fdroid-main-repo-link" href="https://f-droid.org/packages/org.cryptomator.lite" role="button">
         <img class="h-10 mx-auto lazyload mb-4" data-src="/img/android/fdroid-main-badge.svg">
       </a>
       <div class="prose prose-sm max-w-none md:max-w-none mb-4">
@@ -360,7 +360,7 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">To recover a lost license key or receipt, enter your email address below.</p>
       <div class="flex justify-center items-center rounded bg-gray-300">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="Email address" required/>
-        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
+        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=android-keyrecovery-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> Retrieve
         </button>
       </div>
