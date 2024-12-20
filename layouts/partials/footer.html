@@ -4,11 +4,11 @@
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Cryptomator</h4>
       <ul class="list-none m-0">
         {{- with .Site.GetPage "/downloads" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-downloads" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-merchandise" href="https://cryptomator.redbubble.com/" target="_blank" rel="noopener">Merchandise</a></li>
         {{- with .Site.GetPage "/presskit" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-presskit" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
       </ul>
     </div>
@@ -16,21 +16,21 @@
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">{{ i18n "footer_contribute_title" }}</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">GitHub</a></li>
         {{- with .Site.GetPage "/donate" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-donate" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">{{ i18n "footer_contribute_translate" }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-translate" href="https://translate.cryptomator.org/" target="_blank" rel="noopener">{{ i18n "footer_contribute_translate" }}</a></li>
       </ul>
     </div>
     
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">Support</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-docs" href="https://docs.cryptomator.org/" target="_blank" rel="noopener">Docs</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-community" href="https://community.cryptomator.org/" target="_blank" rel="noopener">Community</a></li>
         {{- with .Site.GetPage "/contact" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-contact" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
       </ul>
     </div>
@@ -38,9 +38,9 @@
     <div>
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">{{ i18n "footer_follow_us_title" }}</h4>
       <ul class="list-none m-0">
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Mastodon</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="https://linkedin.com/company/skymatic" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .Site.LanguagePrefix }}/feed.xml" rel="alternate" type="application/rss+xml">{{ i18n "footer_follow_us_rss_feed" }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-mastodon" href="https://mastodon.online/@cryptomator" target="_blank" rel="noopener me">Mastodon</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-linkedin" href="https://linkedin.com/company/skymatic" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-rss-feed" href="{{ .Site.LanguagePrefix }}/feed.xml" rel="alternate" type="application/rss+xml">{{ i18n "footer_follow_us_rss_feed" }}</a></li>
       </ul>
     </div>
     
@@ -48,13 +48,13 @@
       <h4 class="block uppercase tracking-wide text-gray-400 text-xs font-bold mb-2">{{ i18n "footer_legal_title" }}</h4>
       <ul class="list-none m-0">
         {{- with .Site.GetPage "/impressum" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-impressum" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
         {{- with .Site.GetPage "/privacy" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-privacy" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
         {{- with .Site.GetPage "/terms" }}
-        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a class="text-white hover:text-secondary hover:no-underline plausible-event-name=footer-terms" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
       </ul>
     </div>
