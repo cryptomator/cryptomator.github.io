@@ -62,16 +62,16 @@
           </button>
           <div class="absolute">
             <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
-              <a href="/de/downloads/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Downloads</a>
-              <a href="/de/hub/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Cryptomator Hub</a>
+              <a href="/de/downloads/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-downloads">Downloads</a>
+              <a href="/de/hub/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-hub">Cryptomator Hub</a>
             </div>
           </div>
         </li>
         <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/de/pricing/">Preise</a>
+          <a class="p-2 hover:no-underline plausible-event-name=nav-pricing" href="/de/pricing/">Preise</a>
         </li>
         <li class="flex items-center mx-2 border-b-2 border-transparent hover:border-primary">
-          <a class="p-2 hover:no-underline" href="/de/blog/">Blog</a>
+          <a class="p-2 hover:no-underline plausible-event-name=nav-blog" href="/de/blog/">Blog</a>
         </li>
         <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
           <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
@@ -80,9 +80,9 @@
           </button>
           <div class="absolute">
             <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
-              <a href="/de/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Supporter-Zertifikat</a>
-              <a href="/de/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Spenden</a>
-              <a href="/de/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Sponsoren</a>
+              <a href="/de/supporter-cert/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-supporter-cert">Supporter-Zertifikat</a>
+              <a href="/de/donate/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-donate">Spenden</a>
+              <a href="/de/sponsors/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-sponsors">Sponsoren</a>
             </div>
           </div>
         </li>
@@ -93,14 +93,14 @@
           </button>
           <div class="absolute">
             <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
-              <a href="/de/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Wie Open Source die Sicherheit stärkt</a>
-              <a href="/de/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Verschlüsselung deiner Dropbox</a>
-              <a href="/de/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Alternative zu Boxcryptor</a>
-              <a href="/de/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Unsere Kooperationspartner</a>
-              <a href="/de/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Einsatz im Enterprise</a>
-              <a href="/de/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">DSGVO-Konformität</a>
-              <a href="/de/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">NIS-2-Richtlinie</a>
-              <a href="/de/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">Cloud-Daten gegen KI schützen</a>
+              <a href="/de/open-source/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-open-source">Wie Open Source die Sicherheit stärkt</a>
+              <a href="/de/encrypt-dropbox/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-encrypt-dropbox">Verschlüsselung deiner Dropbox</a>
+              <a href="/de/boxcryptor-alternative/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-boxcryptor-alternative">Alternative zu Boxcryptor</a>
+              <a href="/de/coop/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-coop">Unsere Kooperationspartner</a>
+              <a href="/de/enterprise/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-enterprise">Einsatz im Enterprise</a>
+              <a href="/de/gdpr/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-gdpr">DSGVO-Konformität</a>
+              <a href="/de/nis-2-guideline/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-nis-2-guideline">NIS-2-Richtlinie</a>
+              <a href="/de/protecting-data-against-ai/" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-protecting-data-against-ai">Cloud-Daten gegen KI schützen</a>
             </div>
           </div>
         </li>
@@ -133,7 +133,7 @@
           </button>
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
-              <a :href="'/404.html' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline">English</a>
+              <a :href="'/404.html' + (window.location.search ?? '')" lang="en" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-lang-en">English</a>
             </div>
           </div>
         </li>
@@ -147,13 +147,13 @@
       Produkte
     </div>
     <div class="mt-1">
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/downloads/">Downloads</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/hub/">Cryptomator Hub</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-downloads" href="/de/downloads/">Downloads</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-hub" href="/de/hub/">Cryptomator Hub</a>
     </div>
     
     <hr class="border-primary my-2"/>
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/pricing/">Preise</a>
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/blog/">Blog</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-pricing" href="/de/pricing/">Preise</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-blog" href="/de/blog/">Blog</a>
     
     <hr class="border-primary my-2"/>
 
@@ -161,9 +161,9 @@
       Unterstütze uns
     </div>
     <div class="mt-1">
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/supporter-cert/">Supporter-Zertifikat</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/donate/">Spenden</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/sponsors/">Sponsoren</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-supporter-cert" href="/de/supporter-cert/">Supporter-Zertifikat</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-donate" href="/de/donate/">Spenden</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-sponsors" href="/de/sponsors/">Sponsoren</a>
     </div>
     
     <hr class="border-primary my-2"/>
@@ -172,14 +172,14 @@
       Mehr erfahren
     </div>
     <div class="mt-1">
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/open-source/">Wie Open Source die Sicherheit stärkt</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/encrypt-dropbox/">Verschlüsselung deiner Dropbox</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/boxcryptor-alternative/">Alternative zu Boxcryptor</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/coop/">Unsere Kooperationspartner</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/enterprise/">Einsatz im Enterprise</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/gdpr/">DSGVO-Konformität</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/nis-2-guideline/">NIS-2-Richtlinie</a>
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline" href="/de/protecting-data-against-ai/">Cloud-Daten gegen KI schützen</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-open-source" href="/de/open-source/">Wie Open Source die Sicherheit stärkt</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-encrypt-dropbox" href="/de/encrypt-dropbox/">Verschlüsselung deiner Dropbox</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-boxcryptor-alternative" href="/de/boxcryptor-alternative/">Alternative zu Boxcryptor</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-coop" href="/de/coop/">Unsere Kooperationspartner</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-enterprise" href="/de/enterprise/">Einsatz im Enterprise</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-gdpr" href="/de/gdpr/">DSGVO-Konformität</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-nis-2-guideline" href="/de/nis-2-guideline/">NIS-2-Richtlinie</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-protecting-data-against-ai" href="/de/protecting-data-against-ai/">Cloud-Daten gegen KI schützen</a>
     </div>
 
     <hr class="border-primary my-2"/>
@@ -189,13 +189,13 @@
     </div>
     <div class="mt-1">
       
-      <a :href="'/404.html' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline">English</a>
+      <a :href="'/404.html' + (window.location.search ?? '')" lang="en" class="block px-2 py-1 hover:text-secondary hover:no-underline plausible-event-name=nav-lang-en">English</a>
       
     </div>
 
     <hr class="border-primary my-2"/>
 
-    <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+    <a class="block p-2 hover:text-secondary hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
       <i class="fab fa-github fa-fw"></i>
       <span>Cryptomator auf GitHub</span>
     </a>
