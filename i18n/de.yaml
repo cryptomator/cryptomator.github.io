@@ -871,13 +871,6 @@
 - id: supporter_cert_contributor_instruction
   translation: "In unserem <a class=\"text-primary no-underline hover:underline\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">Contribution Guide</a> findest du die ersten Informationen."
 
-- id: supporter_cert_translator_crowdin_username
-  translation: "Crowdin Username"
-- id: supporter_cert_translator_crowdin_username_placeholder
-  translation: "Username auf Crowdin"
-- id: supporter_cert_translator_instruction
-  translation: "<a class=\"text-primary no-underline hover:underline\" href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Hierüber</a> kannst du Cryptomator in deine bevorzugte Sprache übersetzen."
-
 - id: supporter_cert_influencer_reference
   translation: "Referenz"
 - id: supporter_cert_influencer_reference_placeholder
