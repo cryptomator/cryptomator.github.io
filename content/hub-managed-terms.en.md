@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: December 2024_
+_Effective date: January 2025_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -143,10 +143,10 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 11.3 The Customer warrants that the content and data stored on the Provider's servers, as well as its use and provision by the Provider, do not violate applicable law, official orders, third-party rights or agreements with third parties. The Customer shall indemnify the Provider against claims asserted by third parties on the basis of a violation of this clause upon first request. In this context, Customer also agrees to indemnify Provider against any liability and any costs, including possible and actual costs of legal proceedings, in the event that a claim is made against Provider by third parties, including employees of Customer personally, as a result of alleged acts or omissions of Customer. The Provider shall notify the Customer of the claim and, to the extent legally possible, give the Customer the opportunity to defend the asserted claim. At the same time, the Customer shall immediately provide the Provider with all information available to him regarding the facts that are the subject of the claim. Any further claims for damages of the Provider shall remain unaffected.
 
 ## §12 Trial {#trial}
-Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 14 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
+Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 ## §13 Remuneration and Payment Conditions {#fees}
-13.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/#for-teams](https://cryptomator.org/pricing/#for-teams)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay a monthly fee of EUR 10 per active user to the Provider.
+13.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/#for-teams](https://cryptomator.org/pricing/#for-teams)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay a monthly fee of EUR 12 per active user to the Provider.
 
 13.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 

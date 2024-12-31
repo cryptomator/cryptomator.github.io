@@ -2,8 +2,6 @@
   translation: "Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."
 - id: nav_cta
   translation: "Get Started"
-- id: nav_promotion
-  translation: ":wrapped_gift: 33%* Discount in December on Mobile Apps and Supporter Certificate! <a class=\"whitespace-nowrap font-bold\" href=\"/blog/2024/12/01/december-sale/\">More Info&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Products"
 - id: nav_support_us
@@ -52,8 +50,6 @@
   translation: "Payments are securely handled by Paddle."
 - id: android_getkey_checkout
   translation: "Checkout"
-- id: android_getkey_discount
-  translation: "Use discount code <code>DEC24</code> at checkout to get 33% off!"
 
 - id: android_getkey_success
   translation: "Your payment was successful!"
@@ -290,7 +286,7 @@
 - id: hub_header_self_hosted_cta
   translation: "Deploy Now"
 - id: hub_header_cta_description
-  translation: "Start your free 14-day trial today, no credit card required."
+  translation: "Start your free 30-day trial today, no credit card required."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -540,7 +536,7 @@
   translation: "If you have any questions or special requirements, please let us know."
 
 - id: hub_managed_trial_info
-  translation: "No credit card required. Get started today with your 14-day free trial."
+  translation: "No credit card required. Get started today with your 30-day free trial."
 - id: hub_managed_loadcaptcha
   translation: "Continue…"
 - id: hub_managed_submit
@@ -553,7 +549,7 @@
 - id: hub_managed_pricing_title
   translation: "Pricing"
 - id: hub_managed_pricing_description
-  translation: "No credit card required. Get started today with your 14-day free trial."
+  translation: "No credit card required. Get started today with your 30-day free trial."
 
 - id: hub_managed_contact_us_title
   translation: "Need more information?"
@@ -708,12 +704,8 @@
 - id: pricing_desktop_benefit_4
   translation: "No accounts, no data shared"
 
-- id: pricing_android_discount
-  translation: "<span>33%<sup>1</sup> off in December</span>"
 - id: pricing_android_price
-  translation: "€14.99"
-- id: pricing_android_price_discounted
-  translation: "€9.99"
+  translation: "€19.99"
 - id: pricing_android_price_description
   translation: "Lifetime License"
 - id: pricing_android_cta
@@ -727,14 +719,10 @@
 - id: pricing_android_benefit_4
   translation: "No accounts, no data shared"
 
-- id: pricing_ios_discount
-  translation: "<span>33%<sup>1</sup> off in December</span>"
 - id: pricing_ios_free_description
   translation: "Read-Only Mode"
 - id: pricing_ios_price
-  translation: "€14.99"
-- id: pricing_ios_price_discounted
-  translation: "€9.99"
+  translation: "€19.99"
 - id: pricing_ios_price_description
   translation: "Lifetime License"
 - id: pricing_ios_cta
@@ -747,9 +735,6 @@
   translation: "Unlock vaults with Face ID / Touch ID"
 - id: pricing_ios_benefit_4
   translation: "No accounts, no data shared"
-
-- id: pricing_discount_note
-  translation: "The discount amount of the December sale may vary by region."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -783,7 +768,7 @@
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_trial
-  translation: "Free 14-Day Trial"
+  translation: "Free 30-Day Trial"
 - id: pricing_hub_standard_benefit_1
   translation: "Everything in Community"
 - id: pricing_hub_standard_benefit_2
@@ -849,8 +834,6 @@
   translation: "Payments are securely handled by Paddle."
 - id: supporter_cert_funder_checkout
   translation: "Checkout"
-- id: supporter_cert_funder_discount
-  translation: "Use discount code <code>DEC24</code> at checkout to get 33% off! Only valid for the first option."
 - id: supporter_cert_funder_success
   translation: "Your payment was successful!"
 - id: supporter_cert_funder_key

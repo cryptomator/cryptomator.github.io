@@ -2,8 +2,6 @@
   translation: "Cryptomator ist ein Open-Source-Verschlüsselungstool für sicheren Cloud-Speicher. Schütze deine Privatsphäre kostenlos bei Dropbox, Google Drive, OneDrive und mehr."
 - id: nav_cta
   translation: "Jetzt loslegen"
-- id: nav_promotion
-  translation: ":wrapped_gift: 33 %* Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat! <a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2024/12/01/december-sale/\">Mehr Infos&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Produkte"
 - id: nav_support_us
@@ -52,8 +50,6 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: android_getkey_checkout
   translation: "Zur Zahlung"
-- id: android_getkey_discount
-  translation: "Rabattcode <code>DEC24</code> beim Bezahlvorgang eingeben für 33 % Rabatt!"
 
 - id: android_getkey_success
   translation: "Deine Zahlung war erfolgreich!"
@@ -290,7 +286,7 @@
 - id: hub_header_self_hosted_cta
   translation: "Jetzt einrichten"
 - id: hub_header_cta_description
-  translation: "Starte deine kostenlose 14-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
+  translation: "Starte deine kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -540,7 +536,7 @@
   translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
 
 - id: hub_managed_trial_info
-  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
+  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 30-Tage-Testversion."
 - id: hub_managed_loadcaptcha
   translation: "Weiter…"
 - id: hub_managed_submit
@@ -553,7 +549,7 @@
 - id: hub_managed_pricing_title
   translation: "Preise"
 - id: hub_managed_pricing_description
-  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 14-Tage-Testversion."
+  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 30-Tage-Testversion."
 
 - id: hub_managed_contact_us_title
   translation: "Weitere Informationen benötigt?"
@@ -708,12 +704,8 @@
 - id: pricing_desktop_benefit_4
   translation: "Keine Accounts, keine Datenweitergabe"
 
-- id: pricing_android_discount
-  translation: "<span>-33%<sup>1</sup> im Dezember</span>"
 - id: pricing_android_price
-  translation: "14,99 €"
-- id: pricing_android_price_discounted
-  translation: "9,99 €"
+  translation: "19,99 €"
 - id: pricing_android_price_description
   translation: "Lebenslange Lizenz"
 - id: pricing_android_cta
@@ -727,14 +719,10 @@
 - id: pricing_android_benefit_4
   translation: "Keine Accounts, keine Datenweitergabe"
 
-- id: pricing_ios_discount
-  translation: "<span>-33%<sup>1</sup> im Dezember</span>"
 - id: pricing_ios_free_description
   translation: "Lesezugriff"
 - id: pricing_ios_price
-  translation: "14,99 €"
-- id: pricing_ios_price_discounted
-  translation: "9,99 €"
+  translation: "19,99 €"
 - id: pricing_ios_price_description
   translation: "Lebenslange Lizenz"
 - id: pricing_ios_cta
@@ -747,9 +735,6 @@
   translation: "Tresore mit Face ID / Touch ID entsperren"
 - id: pricing_ios_benefit_4
   translation: "Keine Accounts, keine Datenweitergabe"
-
-- id: pricing_discount_note
-  translation: "Die Höhe des Rabatts im Dezember-Sale kann je nach Region variieren."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -783,7 +768,7 @@
 - id: pricing_hub_standard_price_description
   translation: "pro Sitz, pro Monat"
 - id: pricing_hub_standard_trial
-  translation: "14 Tage kostenlos"
+  translation: "30 Tage kostenlos"
 - id: pricing_hub_standard_benefit_1
   translation: "Alles in Community"
 - id: pricing_hub_standard_benefit_2
@@ -849,8 +834,6 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: supporter_cert_funder_checkout
   translation: "Zur Zahlung"
-- id: supporter_cert_funder_discount
-  translation: "Rabattcode <code>DEC24</code> beim Bezahlvorgang eingeben für 33 % Rabatt! Gilt nur für die erste Option."
 - id: supporter_cert_funder_success
   translation: "Deine Zahlung war erfolgreich!"
 - id: supporter_cert_funder_key
