@@ -22,7 +22,7 @@
     <meta name="apple-itunes-app" content="app-id=1560822163">
     
       
-      <link rel="stylesheet" href="/css/main.min.65f17b433a05c561d9c8d382dda13b496075b17db79d4bb83b4f773316378e39.css" integrity="sha256-ZfF7QzoFxWHZyNOC3aE7SWB1sX23nUu4O093MxY3jjk=" media="screen" />
+      <link rel="stylesheet" href="/css/main.min.e6e485bd3c275d11fd49de0535c77387ef3edc71762a0f38f5b4455f8c8a2d72.css" integrity="sha256-5uSFvTwnXRH9Sd4FNcdzh&#43;8&#43;3HF2Kg849bRFX4yKLXI=" media="screen" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/de/feed.xml" />
     
@@ -34,9 +34,6 @@
   </head>
   <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     <nav x-init="determineGitHubStargazersCount('de')" class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
-  <div class="w-full bg-primary text-center text-sm text-white p-0.5">
-    <p>🎁 33 %* Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat! <a class="whitespace-nowrap font-bold" href="/de/blog/2024/12/01/december-sale/">Mehr Infos&nbsp;<span aria-hidden="true">&rarr;</span></a></p>
-  </div>
   <div class="flex justify-between items-stretch w-full lg:px-8">
     
     <div class="flex items-stretch">
@@ -231,10 +228,9 @@
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Zahlungen werden über Paddle abgewickelt.</p>
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-537618942" x-model="acceptTerms" />
-<label for="id-537618942">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-915637428" x-model="acceptTerms" />
+<label for="id-915637428">Ich akzeptiere die <a class="text-primary no-underline hover:underline" href="/de/terms/">AGB</a> sowie die <a class="text-primary no-underline hover:underline" href="/de/privacy/">Datenschutzerklärung</a>.</label>
 </p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 rounded bg-primary-l2 p-2 mb-4">🎁 Rabattcode <code>DEC24</code> beim Bezahlvorgang eingeben für 33 % Rabatt!</p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('de')" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=android-getkey-checkout">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> Zur Zahlung
       </button>
