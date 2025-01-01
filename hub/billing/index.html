@@ -570,12 +570,12 @@
                     Payments are securely handled by Paddle.
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-719342856" x-model="acceptTerms" />
-<label for="id-719342856">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-274583961" x-model="acceptTerms" />
+<label for="id-274583961">I accept the <a class="text-primary no-underline hover:underline" href="/hub/managed/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-256419738" x-model="acceptTerms" />
-<label for="id-256419738">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-924538617" x-model="acceptTerms" />
+<label for="id-924538617">I accept the <a class="text-primary no-underline hover:underline" href="/terms/">Terms & Conditions</a> as well as the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('en')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
@@ -682,7 +682,7 @@
               </a>
             </dt>
             <dd x-show="isOpen[6]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android is currently in development.)
+              For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS).
             </dd>
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[7] = !isOpen[7]">
