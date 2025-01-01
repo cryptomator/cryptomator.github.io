@@ -805,9 +805,6 @@
 - id: pricing_hub_enterprise_benefit_5
   translation: "Priority email support"
 
-- id: pricing_hub_coming_later
-  translation: "Hub support for Android is currently in development, ETA in Q1/2025."
-
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "Email"

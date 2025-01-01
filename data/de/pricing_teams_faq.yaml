@@ -11,6 +11,6 @@
 - Question: "Bietet ihr Cloud-Speicher an?"
   Answer: "Nein, Cryptomator Hub erweitert Cryptomator ausschließlich um ein Zero-Knowledge Schlüsselmanagement. Und Cryptomator kümmert sich um die Verschlüsselung deiner Dateien auf deinem Endgerät. Wir empfehlen dir, deine Tresore auf einem Cloud-Speicher deiner Wahl zu speichern."
 - Question: "Wie kann ich auf den Inhalt eines Tresors zugreifen?"
-  Answer: "Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS). (Hinweis: Die Kompatibilität mit Android befindet sich derzeit in der Entwicklung.)"
+  Answer: "Damit die clientseitige Verschlüsselung funktioniert, erfolgt der Zugriff auf den Inhalt eines Tresors über Cryptomator für Desktop (Windows, macOS, Linux) und Mobile (Android, iOS)."
 - Question: "Was ist der Unterschied zwischen Managed und Self-Hosted?"
   Answer: "Cryptomator Hub ist in einer Managed- und einer Self-Hosted-Version verfügbar. Bei der Managed-Version betreibt die Skymatic GmbH die für Cryptomator Hub und Keycloak notwendige Infrastruktur in einem ISO/IEC 27001:2022-zertifizierten Rechenzentrum in der EU und ist verantwortlich für Sicherheit, Verfügbarkeit, Backups und Aktualität. Bei der Self-Hosted-Version liegt diese Verantwortung bei dir."

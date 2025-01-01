@@ -11,6 +11,6 @@
 - Question: "Do you offer cloud storage?"
   Answer: "No, Cryptomator Hub only adds zero-knowledge key management to Cryptomator. And Cryptomator takes care of encrypting your files on your device. We recommend you to store your vaults on a cloud storage of your choice."
 - Question: "How do I access the contents of a vault?"
-  Answer: "For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS). (Note: Compatibility with Android is currently in development.)"
+  Answer: "For the client-side encryption to work, you access the contents of a vault via Cryptomator for Desktop (Windows, macOS, Linux) and Mobile (Android, iOS)."
 - Question: "What is the difference between Managed and Self-Hosted?"
   Answer: "Cryptomator Hub is available in a managed and a self-hosted version. In the managed version, Skymatic GmbH maintains the infrastructure required for Cryptomator Hub and Keycloak in a ISO/IEC 27001:2022 certified data center in the EU and is responsible for security, availability, backups, and up-to-dateness. With the self-hosted version, this is your responsibility."

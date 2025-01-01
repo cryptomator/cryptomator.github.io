@@ -805,9 +805,6 @@
 - id: pricing_hub_standard_managed_benefit_2
   translation: "ISO/IEC 27001-zert. Rechenzentrum in der EU"
 
-- id: pricing_hub_coming_later
-  translation: "Hub-Unterstützung für Android befindet sich derzeit in Entwicklung, voraussichtliche Fertigstellung in Q1/2025."
-
 # Supporter Certificate
 - id: supporter_cert_common_email
   translation: "E-Mail"
