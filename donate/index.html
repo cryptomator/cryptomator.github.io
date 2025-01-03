@@ -32,8 +32,8 @@
       
     
   </head>
-  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
-    <nav x-init="determineGitHubStargazersCount('en')" class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
+  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('en', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <nav class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
   <div class="flex justify-between items-stretch w-full lg:px-8">
     
     <div class="flex items-stretch">
@@ -106,7 +106,7 @@
         <li class="flex items-center mx-2">
           <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
-            <span id="github-stargazers"></span>
+            <span x-text="globalData.githubStargazers"></span>
           </a>
         </li>
       </ul>
@@ -195,11 +195,6 @@
     </a>
   </div>
 </nav>
-
-
-  
-  <script type="text/javascript" src="/js/nav.min.c207b62e4a96099b751048fbeb67db4f95e0e7d0c5221c0bd599c67194c5d00b.js" integrity="sha256-wge2LkqWCZt1EEj762fbT5Xg59DFIhwL1ZnGcZTF0As=" defer></script>
-
 <div class="bg-gray-100 min-vh-80 pt-12">
     
     
@@ -244,8 +239,8 @@
     <input type="hidden" name="hosted_button_id" value="7HHT9KSN2WS3Y" />
     <input type="hidden" name="amount" value="15" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-856943172" x-model="acceptTerms" />
-<label for="id-856943172">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-695317284" x-model="acceptTerms" />
+<label for="id-695317284">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=donate-paypal-link" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to PayPal</button>
   </form>
@@ -313,8 +308,8 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class="text-primary no-underline hover:underline" href="https://support.stripe.com/questions/unknown-charge-on-card-from-stripe" target="_blank" rel="noopener">charged by Stripe</a>.</p>
 
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-783169542" x-model="acceptTerms" />
-<label for="id-783169542">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-831792456" x-model="acceptTerms" />
+<label for="id-831792456">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
 
       <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
@@ -336,21 +331,14 @@
   <div x-show="frequency === 'recurring'" class="text-center">
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Recurring credit card payments will be set up on our Stripe page.</p>
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-468537192" x-model="acceptTerms" />
-<label for="id-468537192">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-395287416" x-model="acceptTerms" />
+<label for="id-395287416">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=donate-creditcard-recurring-checkout" @click="recurringPayment.checkout(amount, currency, 'en')" :disabled="!acceptTerms">
       <i class="fas fa-external-link" aria-hidden="true"></i> Proceed to Stripe
     </button>
   </div>
 </div>
-
-
-  
-  <script type="text/javascript" src="/js/recaptcha.min.ad20aa2f7e72be34befe0936317c4345651e97f81208a8cc3baba80765077a5e.js" integrity="sha256-rSCqL35yvjS&#43;/gk2MXxDRWUel/gSCKjMO6uoB2UHel4=" defer></script>
-  
-  <script type="text/javascript" src="/js/cardpayments.min.eaa8d64c5cdb32a6f30113a73767abd0d00026fec38cbe4e3c8cc867c38cb0c0.js" integrity="sha256-6qjWTFzbMqbzAROnN2er0NAAJv7DjL5OPIzIZ8OMsMA=" defer></script>
-
 
             </div>
           </div>
@@ -416,8 +404,8 @@
     <input type="hidden" name="success_url" value="https://cryptomator.org/donate/thanks" />
     <input type="hidden" name="allow_extra" value="1" />
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
-<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-735692184" x-model="acceptTerms" />
-<label for="id-735692184">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
+<input class="mr-1 rounded text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="id-594187326" x-model="acceptTerms" />
+<label for="id-594187326">I accept the <a class="text-primary no-underline hover:underline" href="/privacy/">Privacy Policy</a>.</label>
 </p>
     <button type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=donate-crypto-link" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> Proceed to CoinPayments</button>
   </form>
@@ -456,11 +444,6 @@
       <i class="fas fa-heart"></i> Become a Sponsor
     </a>
   </section>
-
-  
-    
-    <script type="text/javascript" src="/js/customerportal.min.d61ba4a971207ee9354b4db90a3e0fc1886920fe6e70dca43c88e9da206e05ac.js" integrity="sha256-1hukqXEgfuk1S025Cj4PwYhpIP5ucNykPIjp2iBuBaw=" defer></script>
-  
 
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">
@@ -512,18 +495,26 @@
   </section>
 </footer>
 
+    
+      <script data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous" defer></script>
+      
+      <script type="text/javascript" src="/js/base.min.89c68cc29a663af31d4a430e02278169204b93eb4d1a83f115a94e4ebfd086cd.js" integrity="sha256-icaMwppmOvMdSkMOAieBaSBLk&#43;tNGoPxFalOTr/Qhs0=" defer></script>
+    
+    
+  
+    
+    <script type="text/javascript" src="/js/customerportal.min.d61ba4a971207ee9354b4db90a3e0fc1886920fe6e70dca43c88e9da206e05ac.js" integrity="sha256-1hukqXEgfuk1S025Cj4PwYhpIP5ucNykPIjp2iBuBaw=" defer></script>
+    
+    <script type="text/javascript" src="/js/recaptcha.min.ad20aa2f7e72be34befe0936317c4345651e97f81208a8cc3baba80765077a5e.js" integrity="sha256-rSCqL35yvjS&#43;/gk2MXxDRWUel/gSCKjMO6uoB2UHel4=" defer></script>
+    
+    <script type="text/javascript" src="/js/cardpayments.min.eaa8d64c5cdb32a6f30113a73767abd0d00026fec38cbe4e3c8cc867c38cb0c0.js" integrity="sha256-6qjWTFzbMqbzAROnN2er0NAAJv7DjL5OPIzIZ8OMsMA=" defer></script>
+  
 
     
     <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
-
     
     <script type="text/javascript" src="/js/alpinejs/cdn.min.358d9afbb1ab5befa2f48061a30776e5bcd7707f410a606ba985f98bc3b1c034.js" integrity="sha256-NY2a&#43;7GrW&#43;&#43;i9IBhowd25bzXcH9BCmBrqYX5i8OxwDQ=" defer></script>
-
     
     <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
-
-    
-      <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous"></script>
-    
   </body>
 </html>

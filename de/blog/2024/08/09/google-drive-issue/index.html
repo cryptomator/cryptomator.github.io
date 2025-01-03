@@ -43,8 +43,8 @@
       
     
   </head>
-  <body x-data="{ isNavOpen: false }" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
-    <nav x-init="determineGitHubStargazersCount('de')" class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
+  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('de', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <nav class="w-full max-h-screen text-primary fixed bg-white shadow z-50">
   <div class="flex justify-between items-stretch w-full lg:px-8">
     
     <div class="flex items-stretch">
@@ -117,7 +117,7 @@
         <li class="flex items-center mx-2">
           <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
-            <span id="github-stargazers"></span>
+            <span x-text="globalData.githubStargazers"></span>
           </a>
         </li>
       </ul>
@@ -206,11 +206,6 @@
     </a>
   </div>
 </nav>
-
-
-  
-  <script type="text/javascript" src="/js/nav.min.c207b62e4a96099b751048fbeb67db4f95e0e7d0c5221c0bd599c67194c5d00b.js" integrity="sha256-wge2LkqWCZt1EEj762fbT5Xg59DFIhwL1ZnGcZTF0As=" defer></script>
-
 <div class="bg-gray-100 min-vh-80 pt-12">
     
     
@@ -285,21 +280,6 @@ Euer Cryptomator-Team</p>
     <div id="discourse-comments"></div>
   </div>
 
-  
-  
-    
-      
-        
-      
-    
-  
-  
-    
-      
-      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/08/09/google-drive-issue/" defer></script>
-    
-  
-
     </div>
     <footer class="border-t-2 border-secondary pt-8 pb-16">
   <section class="container text-white font-light leading-loose grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-5">
@@ -350,18 +330,32 @@ Euer Cryptomator-Team</p>
   </section>
 </footer>
 
+    
+      <script data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous" defer></script>
+      
+      <script type="text/javascript" src="/js/base.min.89c68cc29a663af31d4a430e02278169204b93eb4d1a83f115a94e4ebfd086cd.js" integrity="sha256-icaMwppmOvMdSkMOAieBaSBLk&#43;tNGoPxFalOTr/Qhs0=" defer></script>
+    
+    
+  
+  
+    
+      
+        
+      
+    
+  
+  
+    
+      
+      <script type="text/javascript" src="/js/discourse.min.374efbbf81706b172eaddb3bda5113b92aff2eb23b063f6b4c31c2acfb3c7c67.js" integrity="sha256-N077v4Fwaxcurds72lETuSr/LrI7Bj9rTDHCrPs8fGc=" x-url="https://cryptomator.org/blog/2024/08/09/google-drive-issue/" defer></script>
+    
+  
 
     
     <script type="text/javascript" src="/js/jquery/jquery.min.fc9a93dd241f6b045cbff0481cf4e1901becd0e12fb45166a8f17f95823f0b1a.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
-
     
     <script type="text/javascript" src="/js/alpinejs/cdn.min.358d9afbb1ab5befa2f48061a30776e5bcd7707f410a606ba985f98bc3b1c034.js" integrity="sha256-NY2a&#43;7GrW&#43;&#43;i9IBhowd25bzXcH9BCmBrqYX5i8OxwDQ=" defer></script>
-
     
     <script type="text/javascript" src="/js/lazysizes/lazysizes.min.3d9120fa621da6d613c1698b7014ec6bdf4620366e8f2b7b547059f4b6f6272b.js" integrity="sha256-PZEg&#43;mIdptYTwWmLcBTsa99GIDZujyt7VHBZ9Lb2Jys=" async></script>
-
-    
-      <script defer data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous"></script>
-    
   </body>
 </html>
