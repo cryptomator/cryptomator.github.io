@@ -66,15 +66,3 @@
     </button>
   </div>
 </div>
-
-{{ if hugo.IsServer }}
-  {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
-  <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
-  {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}
-  <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" defer></script>
-{{ else }}
-  {{ $recaptchaJs := resources.Get "js/recaptcha.js" | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" integrity="{{ $recaptchaJs.Data.Integrity }}" defer></script>
-  {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" integrity="{{ $cardPaymentsJs.Data.Integrity }}" defer></script>
-{{ end }}

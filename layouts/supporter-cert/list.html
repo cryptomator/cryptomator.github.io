@@ -84,7 +84,8 @@
       {{- end }}
     </dl>
   </section>
-
+{{ end }}
+{{ define "script" }}
   {{ if hugo.IsServer }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>

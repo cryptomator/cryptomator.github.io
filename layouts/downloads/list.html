@@ -50,7 +50,8 @@
       {{- end }}
     </dl>
   </section>
-
+{{ end }}
+{{ define "script" }}
   {{ if hugo.IsServer }}
     {{ $downloadJs := resources.Get "js/download.js" }}
     <script type="text/javascript" src="{{ $downloadJs.RelPermalink }}" defer></script>

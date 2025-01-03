@@ -228,7 +228,8 @@
       </figure>
     </section>
   </div>
-
+{{ end }}
+{{ define "script" }}
   {{ if hugo.IsServer }}
     {{ $indexJs := resources.Get "js/index.js" }}
     <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" defer></script>

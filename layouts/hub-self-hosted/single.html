@@ -314,10 +314,10 @@
       </a>
     </section>
   </div>
-
+{{ end }}
+{{ define "script" }}
   {{ $jsYaml := resources.Get "js/js-yaml/js-yaml.min.js" | fingerprint }}
   <script type="text/javascript" src="{{ $jsYaml.RelPermalink }}" integrity="{{ $jsYaml.Data.Integrity }}"></script>
-
   {{ if hugo.IsServer }}
     {{ $setupJs := resources.Get "js/hubsetup.js" }}
     <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" defer></script>

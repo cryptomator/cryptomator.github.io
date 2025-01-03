@@ -30,11 +30,3 @@
     <p class="text-sm md:text-base leading-relaxed text-gray-700">{{ i18n "android_getkey_key_instruction" }}</p>
   </div>
 </div>
-
-{{ if hugo.IsServer }}
-  {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
-  <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" defer></script>
-{{ else }}
-  {{ $androidKeyJs := resources.Get "js/androidkey.js" | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" integrity="{{ $androidKeyJs.Data.Integrity }}" defer></script>
-{{ end }}

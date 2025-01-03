@@ -1,6 +1,8 @@
-function determineGitHubStargazersCount(locale) {
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+
+function determineGitHubStargazersCount(locale, globalData) {
   $.getJSON('https://api.cryptomator.org/desktop/repo.json', data => {
-    $('#github-stargazers').text(formatNumber(data.stargazers_count, locale));
+    globalData.githubStargazers = formatNumber(data.stargazers_count, locale);
   }).fail(() => {
     console.error('Error fetching repository data.');
   });

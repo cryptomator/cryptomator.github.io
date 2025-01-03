@@ -126,7 +126,8 @@
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ ":love_letter:" | emojify }} {{ i18n "hub_newsletter_success" . }}</p>
     </div>
   </section>
-
+{{ end }}
+{{ define "script" }}
   {{ if hugo.IsServer }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>

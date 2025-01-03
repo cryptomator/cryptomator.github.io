@@ -2,7 +2,7 @@
 {{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
 {{- $navBorderColor := cond .IsHome "border-transparent" "border-primary" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
-<nav x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}')" class="w-full max-h-screen text-{{ $textColor }} fixed {{ $backgroundColor }} shadow z-50">
+<nav class="w-full max-h-screen text-{{ $textColor }} fixed {{ $backgroundColor }} shadow z-50">
   <div class="flex justify-between items-stretch w-full lg:px-8">
     <!-- Regular Navigation -->
     <div class="flex items-stretch">
@@ -79,7 +79,7 @@
         <li class="flex items-center mx-2">
           <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
-            <span id="github-stargazers"></span>
+            <span x-text="globalData.githubStargazers"></span>
           </a>
         </li>
       </ul>
@@ -178,11 +178,3 @@
     </a>
   </div>
 </nav>
-
-{{ if hugo.IsServer }}
-  {{ $navJs := resources.Get "js/nav.js" }}
-  <script type="text/javascript" src="{{ $navJs.RelPermalink }}" defer></script>
-{{ else }}
-  {{ $navJs := resources.Get "js/nav.js" | minify | fingerprint }}
-  <script type="text/javascript" src="{{ $navJs.RelPermalink }}" integrity="{{ $navJs.Data.Integrity }}" defer></script>
-{{ end }}
