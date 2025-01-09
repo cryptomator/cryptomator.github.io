@@ -78,10 +78,12 @@
     {{ partial "footer.html" . }}
     {{ if hugo.IsServer }}
       <script data-domain="cryptomator.local" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.local.js" integrity="sha384-eSdyNyMq4w2Hzeb7A3pkbi2+zvI/skXuKlWsX5uzccigZEHDhHyBYoTASuSW+ZUQ" crossorigin="anonymous" defer></script>
+      <script src="https://umami.skymatic.de/script.js" data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c" integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B" crossorigin="anonymous" defer></script>
       {{ $baseJs := resources.Get "js/base.js" }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" defer></script>
     {{ else }}
       <script data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous" defer></script>
+      <script src="https://umami.skymatic.de/script.js" data-website-id="8d451e39-ffb2-4697-82c9-9f69eff497f1" integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B" crossorigin="anonymous" defer></script>
       {{ $baseJs := resources.Get "js/base.js" | minify | fingerprint }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" integrity="{{ $baseJs.Data.Integrity }}" defer></script>
     {{ end }}
