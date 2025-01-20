@@ -544,7 +544,7 @@
 - id: hub_managed_success_title
   translation: "Your request has been sent!"
 - id: hub_managed_success_description
-  translation: "We have received your request and will evaluate it as soon as possible. Depending on our work load, it may take several days."
+  translation: "We have received your request and will evaluate it as soon as possible."
 
 - id: hub_managed_pricing_title
   translation: "Pricing"
