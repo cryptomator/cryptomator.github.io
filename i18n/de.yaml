@@ -544,7 +544,7 @@
 - id: hub_managed_success_title
   translation: "Deine Anfrage wurde versendet!"
 - id: hub_managed_success_description
-  translation: "Wir haben deine Anfrage erhalten und werden sie so schnell wie möglich prüfen.
+  translation: "Wir haben deine Anfrage erhalten und werden sie so schnell wie möglich prüfen."
 
 - id: hub_managed_pricing_title
   translation: "Preise"
