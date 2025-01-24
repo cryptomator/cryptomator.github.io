@@ -1,5 +1,5 @@
 ---
-title: "Cryptomator for Android Now Available on Accrescent"
+title: "Cryptomator for Android Now on Accrescent"
 slug: cryptomator-accrescent
 date: 2025-01-24
 tags: [cryptomator, android, accrescent]
