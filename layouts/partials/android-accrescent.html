@@ -1,0 +1,26 @@
+<div class="text-center" itemscope itemtype="http://schema.org/SoftwareApplication">
+  <meta itemprop="name" content="Cryptomator"/>
+  <meta itemprop="description" content="A free software to encrypt your cloud files."/>
+  <meta itemprop="applicationCategory" content="Productivity"/>
+  <meta itemprop="softwareVersion" content="{{ .Site.Params.releases.android.version }}"/>
+  <meta itemprop="applicationSubCategory" content="Encryption"/>
+  <meta itemprop="image" content="{{ "/img/logo.png" | absURL }}"/>
+  <meta itemprop="operatingSystem" content="Android"/>
+
+  <div class="rounded shadow bg-white">
+    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
+      <h3>Accrescent</h3>
+    </div>
+    <div class="p-4">
+      <div class="prose prose-sm max-w-none mb-4">
+        <p>Minimum: Android 8.0</p>
+      </div>
+      <a href="https://accrescent.app/app/org.cryptomator" role="button" class="plausible-event-name=downloads-android-accrescent">
+        <img class="h-10 mx-auto lazyload mb-4" data-src="/img/downloads/accrescent-badge.png">
+      </a>
+      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
+        <p>{{ ":x:" | emojify }} {{ i18n "android_accrescent_exclusion" | safeHTML }}</p>
+      </div>
+    </div>
+  </div>
+</div>
