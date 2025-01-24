@@ -18,6 +18,8 @@ Accrescent aligns with our core values of security, privacy, and user control. I
 
 Additionally, Accrescent is the preinstalled app store on some Android variants such as [GrapheneOS](https://en.wikipedia.org/wiki/GrapheneOS), making it an ideal addition to our distribution strategy.
 
+Additionally, Accrescent can be installed with a single click on some custom Android variants like [GrapheneOS](https://en.wikipedia.org/wiki/GrapheneOS), making it an ideal addition to our distribution strategy by offering a seamless installation experience for privacy-conscious users.
+
 ## Commitment to Security and Transparency
 
 Publishing Cryptomator on Accrescent aligns with our core principles. Our primary concern has always been security, privacy and transparency, which is why we value features like app signing key control, verifiable metadata, and the fact that no account is required for usage.

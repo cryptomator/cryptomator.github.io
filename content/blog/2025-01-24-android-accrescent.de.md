@@ -17,7 +17,7 @@ Dies erweitert unsere bestehenden Vertriebskanäle, darunter [Google Play](https
 
 Accrescent entspricht unseren Kernwerten in Bezug auf Sicherheit, Datenschutz und Benutzerkontrolle. Es erfordert kein Benutzerkonto und bietet Funktionen wie signierte Repository-Metadaten, App-Signing-Key-Pinning und Mindestversionsanforderungen, um sicherzustellen, dass Cryptomator eine vertrauenswürdige und sichere Wahl für Android-Nutzer bleibt.
 
-Darüber hinaus ist Accrescent der vorinstallierte App-Store auf einigen Android-Varianten wie [GrapheneOS](https://en.wikipedia.org/wiki/GrapheneOS) und stellt daher eine ideale Ergänzung unserer Distributionsstrategie dar.
+Zusätzlich kann Accrescent mit nur einem Klick auf einigen Android-Varianten wie [GrapheneOS](https://en.wikipedia.org/wiki/GrapheneOS) installiert werden, was es zu einer idealen Ergänzung unserer Vertriebsstrategie macht, indem es eine nahtlose Installationserfahrung für datenschutzbewusste Benutzer:innen bietet.
 
 ## Engagement für Sicherheit und Transparenz
 
