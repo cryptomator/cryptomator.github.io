@@ -92,6 +92,8 @@
   translation: "Google Drive is excluded due to proprietary dependencies."
 - id: android_fdroid_cloud_exclusion_hint
   translation: "A detailed comparison of all variants can be found in our <a class=\"text-sm no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/android/setup\" target=\"_blank\">docs</a>."
+- id: android_accrescent_exclusion
+  translation: "Google Drive is excluded due to proprietary dependencies."
 
 # Blog
 - id: blob_post_author_prefix
