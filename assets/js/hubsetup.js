@@ -803,7 +803,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'ghcr.io/cryptomator/keycloak:23.0.7',
+              image: 'ghcr.io/cryptomator/keycloak:24.0.4',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
