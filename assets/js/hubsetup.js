@@ -113,7 +113,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 6\n\n';
+    result += '# Generated using script version 7\n\n';
 
     return result;
   }
@@ -431,7 +431,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/keycloak:24.0.4',
+      image: 'ghcr.io/cryptomator/keycloak:25.0.6',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -441,7 +441,7 @@ EOF`;
       },
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`]}),
       healthcheck: {
-        test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
+        test: ['CMD', 'curl', '-f', `http://localhost:9000${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
         interval: '60s',
         timeout: '3s',
       },
@@ -454,10 +454,10 @@ EOF`;
         KC_DB_USERNAME: 'keycloak',
         KC_DB_PASSWORD: this.cfg.db.keycloakPw,
         KC_HEALTH_ENABLED: 'true',
-        KC_HOSTNAME: devMode ? null : this.getHostname(this.cfg.keycloak.publicUrl),
+        KC_HOSTNAME: devMode ? null : 'https://' + this.getHostname(this.cfg.keycloak.publicUrl),
         // KC_HOSTNAME_PORT: devMode ? null : this.getPort(this.cfg.keycloak.publicUrl), // FIXME as string!! FIXME does not work at all!!
         KC_HTTP_ENABLED: 'true',
-        KC_PROXY: 'edge',
+        KC_PROXY_HEADERS: 'xforwarded',
         KC_HTTP_RELATIVE_PATH: this.getPathname(this.cfg.keycloak.publicUrl),
       },
       ...(this.cfg.compose.includeTraefik && this.getTraefikConfig(this.cfg.keycloak.publicUrl, 'kc'))
@@ -478,7 +478,7 @@ EOF`;
       },
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`]}),
       healthcheck: {
-        test: ['CMD-SHELL', '(curl -f http://localhost:8080/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
+        test: ['CMD-SHELL', '(curl -f http://localhost:9000/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
         interval: '10s',
         timeout: '3s',
       },
@@ -657,7 +657,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               args: [
                 '/bin/sh',
                 '-c',
-                `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live" 2>>/dev/null; do sleep 10; done`
+                `set -x; while ! wget -q --spider "http://keycloak-svc:9000${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live" 2>>/dev/null; do sleep 10; done`
               ]
             }] : [])],
             containers: [{
@@ -775,11 +775,11 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       {name: 'KC_DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
       {name: 'KC_HEALTH_ENABLED', value: 'true'},
       {name: 'KC_HTTP_ENABLED', value: 'true'},
-      {name: 'KC_PROXY', value: 'edge'},
+      {name: 'KC_PROXY_HEADERS', value: 'xforwarded'},
       {name: 'KC_HTTP_RELATIVE_PATH', value: this.getPathname(this.cfg.keycloak.publicUrl)}
     ];
     if (!devMode) {
-      env.push({name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)});
+      env.push({name: 'KC_HOSTNAME', value: 'https://' + this.getHostname(this.cfg.keycloak.publicUrl)});
       // env.push({name: 'KC_HOSTNAME_PORT', value: '' + this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
     }
     let deployment = {
@@ -803,7 +803,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'ghcr.io/cryptomator/keycloak:24.0.4',
+              image: 'ghcr.io/cryptomator/keycloak:25.0.6',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
@@ -811,12 +811,12 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 limits: {cpu: '1000m', memory: '1024Mi'},
               },
               livenessProbe: {
-                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`, port: 8080},
+                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`, port: 9000},
                 initialDelaySeconds: 120,
                 periodSeconds: 60
               },
               readinessProbe: {
-                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/ready`, port: 8080},
+                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/ready`, port: 9000},
                 initialDelaySeconds: 10,
                 periodSeconds: 3
               },
@@ -878,7 +878,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       spec: {
         selector: {app: 'keycloak'},
         ports: [
-          {protocol: 'TCP', port: 8080}
+          {protocol: 'TCP', port: 8080},
+          {protocol: 'TCP', port: 9000}
         ]
       }
     }
