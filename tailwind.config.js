@@ -1,20 +1,8 @@
 module.exports = {
-  purge: {
-    enabled: process.env.HUGO_ENV !== 'development',
-    content: [
-      './content/**/*.html',
-      './content/**/*.md',
-      './layouts/**/*.html',
-    ],
-    options: {
-      safelist: [
-        'hover:border-white',
-        'StripeElement',
-        'StripeElement--focus',
-        'underline'
-      ],
-    },
-  },
+  content: [
+    './content/**/*.{html,md}',
+    './layouts/**/*.html',
+  ],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -157,78 +145,6 @@ module.exports = {
           '50%': { transform: 'rotate(-3deg) translateY(-10px)' },
         },
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            a: {
-              color: theme('colors.primary'),
-              textDecoration: 'none',
-              '&:hover': {
-                color: theme('colors.primary'),
-                textDecoration: 'underline',
-              },
-            },
-            h1: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.medium'),
-            },
-            h2: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.medium'),
-            },
-            h3: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.normal'),
-            },
-            h4: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.normal'),
-            },
-            'code::before': {
-              content: 'unset',
-            },
-            'code::after': {
-              content: 'unset',
-            },
-            blockquote: {
-              fontStyle: 'normal',
-            },
-            'blockquote p:first-of-type::before': {
-              content: 'unset',
-            },
-            'blockquote p:last-of-type::after': {
-              content: 'unset',
-            },
-            'ul > li::before': {
-              backgroundColor: theme('colors.gray.500'),
-            },
-          },
-        },
-        sm: {
-          css: {
-            a: {
-              color: theme('colors.primary'),
-              textDecoration: 'none',
-              '&:hover': {
-                color: theme('colors.primary'),
-                textDecoration: 'underline',
-              },
-            },
-            h1: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.medium'),
-            },
-            h2: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.medium'),
-            },
-            h3: {
-              fontFamily: theme('fontFamily.headline'),
-              fontWeight: theme('fontWeight.normal'),
-            },
-          },
-        },
-      }),
       width: {
         'fit': 'fit-content',
       },
@@ -255,7 +171,6 @@ module.exports = {
       'lg': '1280px',
     },
   },
-  variants: {},
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),

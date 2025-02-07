@@ -1,13 +1,13 @@
-module.exports = {
+export default {
   theme: {
     extend: {}
   },
   variants: {
     appearance: []
   },
-  plugins: [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-  ]
+  plugins: {
+    "postcss-import": {},
+    tailwindcss: {},
+    autoprefixer: {},
+  }
 }

@@ -2,7 +2,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 /* purgecss end ignore */
-@import "assets/css/custom.css";
-@import "assets/css/fonts.css";
+@import "custom.css";
+@import "fonts.css";
 @import "@skymatic/fontawesome-pro/css/all";
 @import "tailwindcss/utilities";
