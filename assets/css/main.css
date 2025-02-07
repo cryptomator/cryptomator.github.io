@@ -8,6 +8,8 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@config './tailwind.config.js';
+
 @theme {
   --color-*: initial;
   --color-transparent: transparent;
