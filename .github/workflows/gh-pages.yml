@@ -2,11 +2,6 @@ name: GitHub Pages
 
 on:
   push:
-    branches: # TODO: Decide which branches to build
-    - main
-    - develop
-    - feature/deploy-pages
-  workflow_dispatch:
 
 jobs:
   # BUILD
