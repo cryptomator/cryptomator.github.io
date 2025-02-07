@@ -26,13 +26,15 @@ jobs:
         node-version: 22
         cache: 'npm'
         cache-dependency-path: package-lock.json
+        registry-url: 'https://npm.pkg.github.com/'
     - name: Install Tools
       run: npm install -g postcss-cli autoprefixer
     - name: NPM install
       run: |
         npm config set "@skymatic:registry" https://npm.pkg.github.com/
-        npm config set '//npm.pkg.github.com/:_authToken' "${{ secrets.FONTAWESOME_AUTH_TOKEN }}"
-        npm install
+        npm ci --ignore-scripts
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build
       run: hugo
     - name: Upload artifact
