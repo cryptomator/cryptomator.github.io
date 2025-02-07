@@ -5,7 +5,7 @@ on:
     branches: # TODO: Decide which branches to build
     - main
     - develop
-    - deploy-pages
+    - feature/deploy-pages
   workflow_dispatch:
 
 jobs:
