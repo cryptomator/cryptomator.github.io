@@ -2,47 +2,54 @@ name: GitHub Pages
 
 on:
   push:
-    branches:
-    - develop
 
 jobs:
+  # BUILD
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      # with:
-      #   submodules: true
-
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
         hugo-version: '0.133.0'
-        # extended: true
-
     - uses: actions/setup-node@v4
       with:
         node-version: 22
         cache: 'npm'
         cache-dependency-path: package-lock.json
-
-
+        registry-url: 'https://npm.pkg.github.com/'
     - name: Install Tools
       run: npm install -g postcss-cli autoprefixer
-
     - name: NPM install
       run: |
         npm config set "@skymatic:registry" https://npm.pkg.github.com/
-        npm config set '//npm.pkg.github.com/:_authToken' "${{ secrets.FONTAWESOME_AUTH_TOKEN }}"
-        npm install
-
+        npm ci --ignore-scripts
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build
       run: hugo
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: main
-        cname: cryptomator.org
+        path: 'public'
+
+  # DEPLOY
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [build]
+    permissions: # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+    environment: # Deploy to the github-pages environment
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
