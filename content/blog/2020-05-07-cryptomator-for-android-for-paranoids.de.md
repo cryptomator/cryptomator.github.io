@@ -20,7 +20,7 @@ Eine Backdoor erfordert Kommunikation mit einem externen Server. Wenn Tresore nu
 Verwendet man dieses Setup, kann die Internet-Berechtigung der Cryptomator-App entzogen werden, wodurch die App anschließend keine Daten aus dem Internet empfangen oder senden kann.
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/blog/android-for-paranoids-permission.png" alt="Internet-Berechtigung für Cryptomator auf Android entziehen" />
+  <img class="inline-block rounded-sm" src="/img/blog/android-for-paranoids-permission.png" alt="Internet-Berechtigung für Cryptomator auf Android entziehen" />
 </figure>
 
 Selbst wenn es also jemals eine Hintertür in der Cryptomator Android-App gäbe, wäre es nicht möglich, dass die abgefangenen Daten das Smartphone verlassen. Dies wird durch das Betriebssystem sichergestellt.

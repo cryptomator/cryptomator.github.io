@@ -35,7 +35,7 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
 <table class="my-6">
   <tr>
     <td class="text-center">
-      <div class="fa-stack flex-shrink-0 text-xl text-secondary">
+      <div class="fa-stack shrink-0 text-xl text-secondary">
         <i class="fas fa-circle fa-stack-2x"></i>
         <strong class="fa-stack-1x fa-inverse">1</strong>
       </div>
@@ -54,7 +54,7 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
 
   <tr>
     <td class="text-center">
-      <div class="fa-stack flex-shrink-0 text-xl text-secondary">
+      <div class="fa-stack shrink-0 text-xl text-secondary">
         <i class="fas fa-circle fa-stack-2x"></i>
         <strong class="fa-stack-1x fa-inverse">2</strong>
       </div>
@@ -90,7 +90,7 @@ Bevor wir weitergehen, lass uns nun noch kurz die Maxime der Datenverschlüsselu
 Die Sicherheit eines Verschlüsselungsverfahrens muss allein vom Schlüssel abhängen und darf nicht auf der Geheimhaltung der Verschlüsselungsalgorithmen beruhen. (Das sogenannte {{< extlink "https://de.wikipedia.org/wiki/Kerckhoffs%E2%80%99_Prinzip" "Kerckhoffs’sche Prinzip" >}}.)
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/open-source/auguste-kerckhoffs.jpg" alt="Auguste Kerckhoffs" />
+  <img class="inline-block rounded-sm" src="/img/open-source/auguste-kerckhoffs.jpg" alt="Auguste Kerckhoffs" />
   <figcaption>Benannt nach {{< extlink "https://de.wikipedia.org/wiki/Auguste_Kerckhoffs" "Auguste Kerckhoffs" >}} (1835 – 1903)</figcaption>
 </figure>
 
@@ -101,7 +101,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 {{< /markdownify >}}</div>
 
 <div class="flex my-6">
-  <div class="fa-stack flex-shrink-0 text-xl text-secondary mr-3">
+  <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-users fa-stack-1x fa-inverse"></i>
   </div>
@@ -109,7 +109,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode kann von einer Community aus Programmierern – vom Hobbyprogrammierer bis zum Sicherheitsforscher – eingesehen werden, wodurch unbefugter Zugriff direkt erkannt wird.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded shadow bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Weil jeder den Quellcode einsehen kann, wird verhindert, dass unbemerkt Hintertüren für Regierungen, Strafverfolgungsbehörden oder Geschäftspartner eingebaut werden können.</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700"><strong>Würde also jemand Unbefugtes Zugriff auf deine Daten haben, würde das zumindest sehr schnell auffallen.</strong></p>
@@ -120,7 +120,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 </div>
 
 <div class="flex my-6">
-  <div class="fa-stack flex-shrink-0 text-xl text-secondary mr-3">
+  <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
   </div>
@@ -128,7 +128,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode wird ständig überprüft und somit laufend weiter verbessert.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded shadow bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Abgesehen von offiziellen Audits wird der Quellcode auch von Dritten verwendet und somit ständig überprüft.</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Werden dabei Schwachstellen gefunden, können diese nicht stillschweigend ignoriert werden. Falls es mal ein Problem gibt, fällt dies schnell auf und der Anbieter der Verschlüsselungssoftware ist zu einer zügigen Reaktion gezwungen. Sowohl die Ursache als auch die Abhilfe werden öffentlich dokumentiert.</p>
@@ -141,7 +141,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 </div>
 
 <div class="flex mt-6 mb-12">
-  <div class="fa-stack flex-shrink-0 text-xl text-secondary mr-3">
+  <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
   </div>
@@ -149,7 +149,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode wird hundertfach kopiert, was die Verschlüsselung unabhängig vom Anbieter macht.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded shadow bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Selbst wenn der Anbieter der Verschlüsselungssoftware irgendwann seinen Betrieb einstellt, <strong>hast du weiterhin Zugriff auf deine verschlüsselten Daten und kannst deinen Cloud-Speicher weiterhin verschlüsseln.</strong></p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700">Denn der Quellcode wird hunderte Male kopiert und kann völlig legal von anderen weiterveröffentlicht werden.</p>

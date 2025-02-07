@@ -2,12 +2,12 @@
 {{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
 {{- $navBorderColor := cond .IsHome "border-transparent" "border-primary" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
-<nav class="w-full max-h-screen text-{{ $textColor }} fixed {{ $backgroundColor }} shadow z-50">
+<nav class="w-full max-h-screen text-{{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
   <div class="flex justify-between items-stretch w-full lg:px-8">
     <!-- Regular Navigation -->
     <div class="flex items-stretch">
       <!-- Toggle Button for Smartphone Navigation -->
-      <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-{{ $textColor }} rounded px-2 py-1 mx-2" aria-label="Toggle Navigation">
+      <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border border-{{ $textColor }} rounded-sm px-2 py-1 mx-2" aria-label="Toggle Navigation">
         <i x-show="isNavOpen" class="fas fa-times fa-fw" x-cloak></i>
         <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
       </button>
@@ -24,7 +24,7 @@
             <i class="fas fa-chevron-down fa-fw text-xs"></i>
           </button>
           <div class="absolute">
-            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded-sm shadow-md z-50">
               {{- range .Site.Data.nav.ProductsRelLinks }}
               {{- with $.Site.GetPage . }}
               <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
@@ -47,7 +47,7 @@
             <i class="fas fa-chevron-down fa-fw text-xs"></i>
           </button>
           <div class="absolute">
-            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded shadow-md z-50">
+            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded-sm shadow-md z-50">
               {{- range .Site.Data.nav.SupportUsRelLinks }}
               {{- with $.Site.GetPage . }}
               <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
@@ -62,7 +62,7 @@
             <i class="fas fa-chevron-down fa-fw text-xs"></i>
           </button>
           <div class="absolute">
-            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded shadow-md z-50">
+            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded-sm shadow-md z-50">
               {{- range .Site.Data.nav.LearnMoreRelLinks }}
               {{- with $.Site.GetPage . }}
               <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
@@ -101,7 +101,7 @@
             <i class="fas fa-chevron-down fa-fw text-xs"></i>
           </button>
           <div class="relative">
-            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded shadow-md z-50">
+            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded-sm shadow-md z-50">
               {{- range .Translations }}
               <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
               {{- end }}

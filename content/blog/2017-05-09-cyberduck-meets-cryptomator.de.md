@@ -11,7 +11,7 @@ summary: Cyberduck 6.0 unterstützt jetzt Cryptomator-Tresore! Greifen Sie direk
 Cyberduck 6.0 mit der Unterstützung von Cryptomator-Tresoren ist seit heute erhältlich. Die neue Version ist unter {{< extlink "https://cyberduck.io/" "cyberduck.io" >}} herunterladbar. Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows und ist somit das perfekte Tool für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen.
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
+  <img class="inline-block rounded-sm" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
   <figcaption>Illustration von {{< extlink "https://ktoons.org" "Katharina Hagemann" >}}</figcaption>
 </figure>
 

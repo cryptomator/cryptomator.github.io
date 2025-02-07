@@ -39,7 +39,7 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-      <div class="rounded shadow bg-white">
+      <div class="rounded-sm shadow-sm bg-white">
         <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
         </div>
@@ -48,7 +48,7 @@
         </div>
       </div>
     
-      <div class="rounded shadow bg-white">
+      <div class="rounded-sm shadow-sm bg-white">
         <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-lock-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
         </div>
@@ -57,7 +57,7 @@
         </div>
       </div>
     
-      <div class="rounded shadow bg-white">
+      <div class="rounded-sm shadow-sm bg-white">
         <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-key fa-fw text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
         </div>
@@ -84,11 +84,11 @@
     </header>
 
     {{- $data := index $.Site.Data $.Site.Language.Lang }}
-    <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+    <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded-sm shadow-sm bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
       {{- range $index, $element := $data.pricing_teams_faq }}
       <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>{{ .Question }}</span>
         </a>
       </dt>
@@ -112,9 +112,9 @@
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_newsletter_instruction" . | safeHTML }}</p>
-      <div class="flex justify-center items-center rounded bg-gray-300 mb-4">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
-        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=hub-newsletter-form">
+      <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
+        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=hub-newsletter-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
         </button>
       </div>

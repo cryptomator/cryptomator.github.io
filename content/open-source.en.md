@@ -35,7 +35,7 @@ Which of the following scenarios sounds safer to you:
 <table class="my-6">
   <tr>
     <td class="text-center">
-      <div class="fa-stack flex-shrink-0 text-xl text-secondary">
+      <div class="fa-stack shrink-0 text-xl text-secondary">
         <i class="fas fa-circle fa-stack-2x"></i>
         <strong class="fa-stack-1x fa-inverse">1</strong>
       </div>
@@ -54,7 +54,7 @@ Which of the following scenarios sounds safer to you:
 
   <tr>
     <td class="text-center">
-      <div class="fa-stack flex-shrink-0 text-xl text-secondary">
+      <div class="fa-stack shrink-0 text-xl text-secondary">
         <i class="fas fa-circle fa-stack-2x"></i>
         <strong class="fa-stack-1x fa-inverse">2</strong>
       </div>
@@ -90,7 +90,7 @@ Before we go any further, let's now briefly look at the following axiom of data 
 The security of an encryption process must depend solely on the key and must not be based on the secrecy of the encryption algorithms. (The so-called {{< extlink "https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle" "Kerckhoff's principle" >}}.)
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/open-source/auguste-kerckhoffs.jpg" alt="Auguste Kerckhoffs" />
+  <img class="inline-block rounded-sm" src="/img/open-source/auguste-kerckhoffs.jpg" alt="Auguste Kerckhoffs" />
   <figcaption>Named after {{< extlink "https://en.wikipedia.org/wiki/Auguste_Kerckhoffs" "Auguste Kerckhoffs" >}} (1835 – 1903)</figcaption>
 </figure>
 
@@ -101,7 +101,7 @@ At the same time, however, open source has many security-enhancing advantages:
 {{< /markdownify >}}</div>
 
 <div class="flex my-6">
-  <div class="fa-stack flex-shrink-0 text-xl text-secondary mr-3">
+  <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-users fa-stack-1x fa-inverse"></i>
   </div>
@@ -109,7 +109,7 @@ At the same time, however, open source has many security-enhancing advantages:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">The source code can be viewed by a community of programmers – from hobby programmers to security researchers – which directly detects unauthorized access.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded shadow bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Because anyone can view the source code, it prevents backdoors for governments, law enforcement agencies, or business partners from being built in unnoticed.</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700"><strong>So if someone unauthorized had access to your data, it would at least be noticed very quickly.</strong></p>
@@ -120,7 +120,7 @@ At the same time, however, open source has many security-enhancing advantages:
 </div>
 
 <div class="flex my-6">
-  <div class="fa-stack flex-shrink-0 text-xl text-secondary mr-3">
+  <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
   </div>
@@ -128,7 +128,7 @@ At the same time, however, open source has many security-enhancing advantages:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">The source code is constantly reviewed and thus continuously improved.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded shadow bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Apart from official audits, the source code is also used by third parties and is thus constantly checked.</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">If vulnerabilities are found, they cannot be silently ignored. If there is ever a problem, it is quickly noticed and the provider of the encryption software is forced to react quickly. Both the cause and the remedy are publicly documented.</p>
@@ -141,7 +141,7 @@ At the same time, however, open source has many security-enhancing advantages:
 </div>
 
 <div class="flex mt-6 mb-12">
-  <div class="fa-stack flex-shrink-0 text-xl text-secondary mr-3">
+  <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
   </div>
@@ -149,7 +149,7 @@ At the same time, however, open source has many security-enhancing advantages:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">The source code is copied hundreds of times, which makes the encryption independent of the provider.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded shadow bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Even if the encryption software provider eventually ceases operations, <strong>you will still have access to your encrypted data and can continue to encrypt your cloud storage.</strong></p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700">This is because the source code is copied hundreds of times and can be legally re-published by others.</p>

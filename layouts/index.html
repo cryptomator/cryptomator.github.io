@@ -5,7 +5,7 @@
   <section class="flex items-center header-bg bg-dark bg-center min-vh-66 bg-repeat-x">
     <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
       <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
-        <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-[714/622] w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
+        <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
         <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
@@ -32,7 +32,7 @@
     <h2 id="get-started" class="text-center font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "home_get_started_title" . }}</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="flex flex-col rounded shadow bg-white">
+      <div class="flex flex-col rounded-sm shadow-sm bg-white">
         <div class="flex justify-between items-center p-4 border-b border-primary">
           <h3>
             <div class="flex items-center">
@@ -70,7 +70,7 @@
         </div>
       </div>
     
-      <div class="flex flex-col rounded shadow bg-white">
+      <div class="flex flex-col rounded-sm shadow-sm bg-white">
         <div class="flex justify-between items-center p-4 border-b border-primary">
           <h3>
             <div class="flex items-center">
@@ -115,9 +115,9 @@
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto mb-4">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "home_newsletter_instruction" . | safeHTML }}</p>
-      <div class="flex justify-center items-center rounded bg-gray-300 mb-4">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "home_newsletter_email_placeholder" }}" required/>
-        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=home-newsletter-form">
+      <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "home_newsletter_email_placeholder" }}" required/>
+        <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=home-newsletter-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "home_newsletter_subscribe" }}
         </button>
       </div>
@@ -143,13 +143,13 @@
           <img class="inline-block h-20 lazyload aspect-square" data-src="/img/home/3rdparty/webde-logo.svg" alt="WEB.DE Logo"/>
         </a>
         <a href="{{ .Site.LanguagePrefix }}/coop/gmx/">
-          <img class="inline-block h-20 lazyload aspect-[123/80]" data-src="/img/home/3rdparty/gmx-logo.svg" alt="GMX Logo"/>
+          <img class="inline-block h-20 lazyload aspect-123/80" data-src="/img/home/3rdparty/gmx-logo.svg" alt="GMX Logo"/>
         </a>
         <a href="{{ .Site.LanguagePrefix }}/coop/1und1/">
           <img class="inline-block h-20 lazyload aspect-square" data-src="/img/home/3rdparty/1und1-logo.png" alt="1&amp;1 Logo"/>
         </a>
         <a class="md:col-span-3" href="https://connect2id.com/blog/deterministic-encryption-with-aes-siv" target="_blank" rel="noopener">
-          <img class="inline-block h-20 lazyload aspect-[412/88]" data-src="/img/home/3rdparty/connect2id-logo.svg" alt="connect2id Logo"/>
+          <img class="inline-block h-20 lazyload aspect-412/88" data-src="/img/home/3rdparty/connect2id-logo.svg" alt="connect2id Logo"/>
         </a>
       </div>
     </section>
@@ -175,7 +175,7 @@
             <div class="rounded-lg border border-secondary p-4">
               <div class="flex justify-between mb-4">
                 <div class="flex items-start">
-                  <a class="flex-shrink-0 w-12 lg:w-16" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
+                  <a class="shrink-0 w-12 lg:w-16" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
                     <img data-src="{{ .Image }}" class="lazyload aspect-square w-full object-contain rounded-lg border border-secondary" alt="{{ i18n "home_testimonials_image_alt" . }} {{ .TwitterHandle }}"/>
                   </a>
                   <a class="text-white px-3 hover:text-secondary hover:no-underline" href="{{ .ProfileURL }}" target="_blank" rel="noopener">
@@ -218,7 +218,7 @@
     <section class="container text-center pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-40">
       <figure>
         <a href="https://web.archive.org/web/20190525164100id_/https://www.cebitaward.de/de/sonderpreis-cryptomator-1759.html" target="_blank" rel="noopener">
-          <img class="lazyload aspect-[512/340] h-[170px] inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">
+          <img class="lazyload aspect-512/340 h-[170px] inline-block mb-6" data-src="/img/home/3rdparty/cebit-award.png" data-srcset="/img/home/3rdparty/cebit-award.png 1x, /img/home/3rdparty/cebit-award@2x.png 2x" alt="CeBIT Innovation Award 2016">
         </a>
         <figcaption>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-1">{{ i18n "home_cebit_title" . }}</h2>

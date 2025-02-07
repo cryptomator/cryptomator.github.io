@@ -6,8 +6,6 @@ export default {
     appearance: []
   },
   plugins: {
-    "postcss-import": {},
-    tailwindcss: {},
-    autoprefixer: {},
+    '@tailwindcss/postcss': {},
   }
 }

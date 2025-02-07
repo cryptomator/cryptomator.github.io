@@ -2,15 +2,15 @@
   <div class="flex flex-wrap md:flex-nowrap">
     <div class="w-full mb-4 md:w-1/2 md:pr-3">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_amount" }}</label>
-      <div class="flex items-center rounded bg-gray-300">
-        <div class="flex-shrink-0 relative text-gray-700 w-16">
+      <div class="flex items-center rounded-sm bg-gray-300">
+        <div class="shrink-0 relative text-gray-700 w-16">
           <select x-model="currency" class="w-full rounded-l border-gray-300 bg-gray-300 focus:ring-0 focus:border-secondary">
             <option value="EUR">€</option>
             <option value="USD">$</option>
           </select>
         </div>
-        <input type="number" min="1" step="1" x-model="amount" class="flex-grow min-w-0 text-right border-gray-300 focus:ring-0 focus:border-secondary md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
-        <div class="flex-shrink-0 text-gray-700 px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
+        <input type="number" min="1" step="1" x-model="amount" class="grow min-w-0 text-right border-gray-300 focus:ring-0 focus:border-secondary md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+        <div class="shrink-0 text-gray-700 px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "donate_creditcard_number" }}</label>
       <div> <!-- wrapper needed for stripe text field -->
-        <input type="text" x-ref="stripePlaceholder" class="w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
+        <input type="text" x-ref="stripePlaceholder" class="w-full rounded-sm border-gray-300 focus:ring-0 focus:border-secondary" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
       </div>
     </div>
 
