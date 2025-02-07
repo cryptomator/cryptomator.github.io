@@ -57,7 +57,7 @@
     {{ end }}
   {{ end }}
   {{ if gt (len $discourseEmbedUrl) 0 }}
-    {{ if hugo.IsServer }}
+    {{ if hugo.IsDevelopment }}
       {{ $discourseJs := resources.Get "js/discourse.js" }}
       <script type="text/javascript" src="{{ $discourseJs.RelPermalink }}" x-url="{{ $discourseEmbedUrl }}" defer></script>
     {{ else }}

@@ -229,7 +229,7 @@
   </div>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $indexJs := resources.Get "js/index.js" }}
     <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
