@@ -1,6 +1,4 @@
-/* purgecss start ignore */
 @import 'tailwindcss';
-/* purgecss end ignore */
 @import './custom.css';
 @import './fonts.css';
 @import '@skymatic/fontawesome-pro/css/all' layer(components);
