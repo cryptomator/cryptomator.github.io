@@ -12,7 +12,7 @@
   </div>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $404Js := resources.Get "js/404.js" }}
     <script type="text/javascript" src="{{ $404Js.RelPermalink }}" defer></script>
   {{ else }}

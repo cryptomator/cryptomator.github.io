@@ -69,7 +69,7 @@
   </section>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $customerPortalJs := resources.Get "js/customerportal.js" }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" defer></script>
     {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}

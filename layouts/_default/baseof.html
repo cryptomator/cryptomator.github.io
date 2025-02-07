@@ -51,7 +51,7 @@
       <meta property="og:locale:alternate" content="{{ .Language.Params.LanguageCode }}" />
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
-    {{ if hugo.IsServer }}
+    {{ if hugo.IsDevelopment }}
       {{ $css := resources.Get "css/main.css" | postCSS }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen" />
     {{ else }}
@@ -76,7 +76,7 @@
     {{ end }}
     </div>
     {{ partial "footer.html" . }}
-    {{ if hugo.IsServer }}
+    {{ if hugo.IsDevelopment }}
       <script data-domain="cryptomator.local" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.local.js" integrity="sha384-eSdyNyMq4w2Hzeb7A3pkbi2+zvI/skXuKlWsX5uzccigZEHDhHyBYoTASuSW+ZUQ" crossorigin="anonymous" defer></script>
       {{ $baseJs := resources.Get "js/base.js" }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" defer></script>

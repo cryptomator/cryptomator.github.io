@@ -11,5 +11,6 @@
 ## Building
 1. `npm install`
 1. run hugo
-  * for production simply run `hugo`
-  * for local development run `HUGO_ENV=development hugo server`
+  * for production builds simply run `npm run build`
+  * for local development run `npm run dev`
+  * for local production tests `npm run serve`
