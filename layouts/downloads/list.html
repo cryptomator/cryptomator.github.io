@@ -1,4 +1,4 @@
-{{ define "head" }}
+{{ define "preloads" }}
   <link rel="dns-prefetch" href="https://github.com">
 {{ end }}
 {{ define "main" }}
@@ -52,7 +52,7 @@
   </section>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $downloadJs := resources.Get "js/download.js" }}
     <script type="text/javascript" src="{{ $downloadJs.RelPermalink }}" defer></script>
   {{ else }}

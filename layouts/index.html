@@ -1,5 +1,13 @@
-{{ define "head" }}
+{{ define "preloads" }}
   <link rel="prerender" href="{{ "/downloads" | absLangURL }}">
+  <link rel="preload" fetchpriority="high" as="image" href="img/home/header-background.avif" type="image/avif">
+  <link rel="preload" fetchpriority="high" as="image" href="img/home/woman-cloud.png" type="image/png">
+  <link rel="preload" fetchpriority="auto" href="/fonts/opensans-regular.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" fetchpriority="auto" href="/fonts/opensans-medium.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" fetchpriority="auto" href="/fonts/opensans-bold.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" fetchpriority="auto" href="/fonts/quicksand-regular.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" fetchpriority="auto" href="/fonts/quicksand-medium.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" fetchpriority="high" href="/fonts/quicksand-bold.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 {{ end }}
 {{ define "main" }}
   <section class="flex items-center header-bg bg-dark bg-center min-vh-66 bg-repeat-x">
@@ -36,7 +44,7 @@
         <div class="flex justify-between items-center p-4 border-b border-primary">
           <h3>
             <div class="flex items-center">
-              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2" alt="Logo"/>
+              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
               <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR</span>
             </div>
           </h3>
@@ -74,7 +82,7 @@
         <div class="flex justify-between items-center p-4 border-b border-primary">
           <h3>
             <div class="flex items-center">
-              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2" alt="Logo"/>
+              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
               <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
             </div>
           </h3>
@@ -229,7 +237,7 @@
   </div>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $indexJs := resources.Get "js/index.js" }}
     <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
