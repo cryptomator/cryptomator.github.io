@@ -1,6 +1,6 @@
 /* custom classes: */
 .header-bg {
-  background-image: url(/img/home/header-background.png), linear-gradient(to bottom, #0b0f17 0%, #143454 38%, #3f8bd9 72%, #9ac7f5 90%);
+  background-image: url(/img/home/header-background.avif), linear-gradient(to bottom, #0b0f17 0%, #143454 38%, #3f8bd9 72%, #9ac7f5 90%);
   background-size: auto 100%;
 }
 
