@@ -160,8 +160,3 @@ textarea:read-only {
   margin-top: -96px;
   visibility: hidden;
 }
-
-/* see https://alpinejs.dev/directives/cloak */
-[x-cloak] {
-  display: none !important;
-}

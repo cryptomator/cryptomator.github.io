@@ -1,6 +1,10 @@
 @import 'tailwindcss';
-@import './custom.css';
 @import './fonts.css';
+
+@layer components {
+  @import './custom.css';
+}
+
 @import '@skymatic/fontawesome-pro/css/all' layer(components);
 
 @plugin '@tailwindcss/forms';
@@ -163,6 +167,11 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+/* see https://alpinejs.dev/directives/cloak */
+[x-cloak] {
+  display: none;
 }
 
 /*
