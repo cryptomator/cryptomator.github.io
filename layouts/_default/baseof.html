@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
+    {{ block "preloads" . }}
+      <!-- optional additional page-specific preloads -->
+    {{ end }}
+    <link rel="preload" fetchpriority="low" as="image" href="favicon.ico" type="image/x-icon">
+    <link rel="preload" fetchpriority="low" as="image" href="img/logo.svg" type="image/svg+xml">
+    <link rel="preload" fetchpriority="low" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" fetchpriority="low" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     {{ if and (eq .Section "blog") .IsPage }}
       <meta name="description" content="{{ .Summary }}">
       <meta property="og:title" content="{{ .Title }}">
@@ -61,9 +68,6 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
     {{ range .Translations }}
       <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
-    {{ end }}
-    {{ block "head" . }}
-      <!-- optional additional page-specific stuff that goes into head -->
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
