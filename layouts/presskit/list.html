@@ -1,22 +1,20 @@
 {{ define "main" }}
   <div class="container py-12">
-    <div class="prose prose-sm md:prose max-w-none md:max-w-none">
-      <nav class="fixed hidden md:block">
-        <h1>{{ .Title }}</h1>
-        {{ range .Pages }}
-          <p><a href="#{{ .Params.Anchor }}">{{ .Title }}</a></p>
-        {{ end }}
-      </nav>
+    <nav class="fixed hidden md:block">
+      <h1 class="font-h1 text-3xl mb-8">{{ .Title }}</h1>
+      {{ range .Pages }}
+        <a class="block text-link my-4" href="#{{ .Params.Anchor }}">{{ .Title }}</a>
+      {{ end }}
+    </nav>
 
+    <div class="prose prose-sm md:prose max-w-none md:max-w-none md:w-2/3 md:ml-auto lg:w-3/4">
       <h1 class="md:hidden">{{ .Title }}</h1>
-      <div class="md:w-2/3 md:ml-auto lg:w-3/4">
-        {{ range .Pages }}
-          <article id="{{ .Params.Anchor }}">
-            <h2>{{ .Title }}</h2>
-            {{ .Content }}
-          </article>
-        {{ end }}
-      </div>
+      {{ range .Pages }}
+        <article id="{{ .Params.Anchor }}">
+          <h2>{{ .Title }}</h2>
+          {{ .Content }}
+        </article>
+      {{ end }}
     </div>
   </div>
 {{ end }}

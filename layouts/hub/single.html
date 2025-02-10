@@ -10,7 +10,7 @@
           <span class="font-headline font-bold text-primary ml-2 pb-px">CRYPTOMATOR&nbsp;HUB</span>
         </div>
         <h1 class="font-h1 mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
-        <p class="font-lead mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
+        <p class="lead mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-4">
           <div class="flex flex-col gap-2">
             <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">{{ i18n "hub_header_managed_title" . }}</p>
@@ -40,29 +40,29 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="white-box">
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-          <h3><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-primary">
+          <h3 class="font-h3"><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
         </div>
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-          <p>{{ i18n "hub_features_feature_1_description" . | safeHTML }}</p>
-        </div>
-      </div>
-    
-      <div class="white-box">
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-          <h3><i class="fas fa-lock-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
-        </div>
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-          <p>{{ i18n "hub_features_feature_2_description" . | safeHTML }}</p>
+        <div class="p-4">
+          <p class="font-p">{{ i18n "hub_features_feature_1_description" . | safeHTML }}</p>
         </div>
       </div>
     
       <div class="white-box">
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-          <h3><i class="fas fa-key fa-fw text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-primary">
+          <h3 class="font-h3"><i class="fas fa-lock-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
         </div>
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-          <p>{{ i18n "hub_features_feature_3_description" . | safeHTML }}</p>
+        <div class="p-4">
+          <p class="font-p">{{ i18n "hub_features_feature_2_description" . | safeHTML }}</p>
+        </div>
+      </div>
+    
+      <div class="white-box">
+        <div class="px-4 py-2 border-b border-primary">
+          <h3 class="font-h3"><i class="fas fa-key fa-fw text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
+        </div>
+        <div class="p-4">
+          <p class="font-p">{{ i18n "hub_features_feature_3_description" . | safeHTML }}</p>
         </div>
       </div>
     </div>

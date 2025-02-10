@@ -8,21 +8,17 @@
   <meta itemprop="operatingSystem" content="Android"/>
 
   <div class="white-box">
-    <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-      <h3>{{ i18n "android_download_title" }}</h3>
+    <div class="px-4 py-2 border-b border-primary">
+      <h3 class="font-h3 text-lg">{{ i18n "android_download_title" }}</h3>
     </div>
     <div class="px-4 py-8" x-data="{showShaSignature: false}">
-      <div class="prose prose-sm max-w-none md:max-w-none mb-4">
-        <p>Version {{ .Site.Params.releases.android.version }} • Minimum: Android 8.0</p>
-      </div>
+      <p class="font-p text-sm mb-4">Version {{ .Site.Params.releases.android.version }} • Minimum: Android 8.0</p>
       <a class="btn btn-primary w-full md:w-48 mb-2 plausible-event-name=android-download" href="{{ .Site.Params.releases.android.downloadUrl }}" role="button">
         <span class="fas fa-download" aria-hidden="true"></span> {{ i18n "android_download_button" }}
       </a>
-      <p class="text-xs">
-        <a class="text-link plausible-event-name=android-download-sha256-signature" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
-      </p>
-      <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
-        <p><code class="break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
+      <a class="block text-link text-xs plausible-event-name=android-download-sha256-signature" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
+      <div x-show="showShaSignature" x-cloak class="mt-4">
+        <p class="font-p text-xs"><code class="font-code break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
       </div>
     </div>
   </div>

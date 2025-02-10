@@ -60,8 +60,8 @@
 
       <template x-if="subscriptionData.state == 'EXISTING_CUSTOMER'">
         <div>
-          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-            <h1>{{ .Title }}</h1>
+          <header class="mb-6">
+            <h1 class="font-h1">{{ .Title }}</h1>
           </header>
           <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div class="white-box p-4">
@@ -291,8 +291,8 @@
 
       <template x-if="subscriptionData.state == 'NEW_CUSTOMER'">
         <div x-data="{audience: 'business'}">
-          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-            <h1>{{ .Title }}</h1>
+          <header class="mb-6">
+            <h1 class="font-h1 mb-8">{{ .Title }}</h1>
             <p class="lead">{{ i18n "hub_billing_checkout_description" . }}</p>
           </header>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">

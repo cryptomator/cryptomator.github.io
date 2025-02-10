@@ -196,19 +196,19 @@
 - id: downloads_thanks_getting_started_detail
   translation: "Wenn du Cryptomator zum ersten Mal nutzt, könnte dich folgendes interessieren:"
 - id: downloads_thanks_getting_started_detail_1
-  translation: "Lies unsere <a href=\"https://docs.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Dokumentation</a>, die dir als Leitfaden dienen soll, falls du eine Anleitung wünschst."
+  translation: "Lies unsere <a class=\"text-link\" href=\"https://docs.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Dokumentation</a>, die dir als Leitfaden dienen soll, falls du eine Anleitung wünschst."
 - id: downloads_thanks_getting_started_detail_2
-  translation: "Tritt unserem <a href=\"https://community.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Community-Forum</a> bei, das eine gute Anlaufstelle ist, um dich mit anderen Nutzern auszutauschen."
+  translation: "Tritt unserem <a class=\"text-link\" href=\"https://community.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">Community-Forum</a> bei, das eine gute Anlaufstelle ist, um dich mit anderen Nutzern auszutauschen."
 - id: downloads_thanks_support_cryptomator_title
   translation: "Cryptomator unterstützen"
 - id: downloads_thanks_support_cryptomator_detail
   translation: "Die Entwicklung der Desktop-Anwendung wäre ohne die Unterstützung unserer Nutzer nicht möglich."
 - id: downloads_thanks_support_cryptomator_detail_1
-  translation: "Möchtest du <a href=\"/de/donate/\">spenden</a> oder <a href=\"/de/sponsors/\">Sponsor werden</a>?"
+  translation: "Möchtest du <a class=\"text-link\" href=\"/de/donate/\">spenden</a> oder <a class=\"text-link\" href=\"/de/sponsors/\">Sponsor werden</a>?"
 - id: downloads_thanks_support_cryptomator_detail_2
-  translation: "Möchtest du <a href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">bei der Übersetzung von Cryptomator helfen</a>?"
+  translation: "Möchtest du <a class=\"text-link\" href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">bei der Übersetzung von Cryptomator helfen</a>?"
 - id: downloads_thanks_support_cryptomator_detail_3
-  translation: "Möchtest du <a href=\"https://github.com/cryptomator/cryptomator\" target=\"_blank\" rel=\"noopener\">Code beitragen</a> oder <a href=\"https://github.com/cryptomator/cryptomator/issues/new/choose\" target=\"_blank\" rel=\"noopener\">Fehler melden</a>?"
+  translation: "Möchtest du <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator\" target=\"_blank\" rel=\"noopener\">Code beitragen</a> oder <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator/issues/new/choose\" target=\"_blank\" rel=\"noopener\">Fehler melden</a>?"
 
 # Enterprise
 - id: enterprise_contact_us_title
@@ -302,15 +302,15 @@
 - id: hub_features_feature_1_title
   translation: "Starke Authentifizierung"
 - id: hub_features_feature_1_description
-  translation: "Binde Cryptomator Hub in deine bestehende Identitätsinfrastruktur und richte branchenübliche Authentifizierungsmethoden ein. <a href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+  translation: "Binde Cryptomator Hub in deine bestehende Identitätsinfrastruktur und richte branchenübliche Authentifizierungsmethoden ein. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
 - id: hub_features_feature_2_title
   translation: "Ende-zu-Ende-Verschlüsselung"
 - id: hub_features_feature_2_description
-  translation: "Mit Cryptomator Hub erstellte Tresore werden auf die gleiche Weise gespeichert, wie du es von Cryptomator gewohnt bist – sicher mit Ende-zu-Ende-Verschlüsselung. <a href=\"https://docs.cryptomator.org/en/latest/security/architecture/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+  translation: "Mit Cryptomator Hub erstellte Tresore werden auf die gleiche Weise gespeichert, wie du es von Cryptomator gewohnt bist – sicher mit Ende-zu-Ende-Verschlüsselung. <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/architecture/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
 - id: hub_features_feature_3_title
   translation: "Zero Knowledge"
 - id: hub_features_feature_3_description
-  translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a href=\"https://docs.cryptomator.org/en/latest/security/hub\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+  translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/hub\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
 
 - id: hub_pricing_title
   translation: "Entdecke unser flexibles Preismodell"
@@ -583,7 +583,7 @@
 - id: hub_setup_description
   translation: "Generiere die erforderlichen Konfigurationsvorlagen für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 - id: hub_setup_more_info
-  translation: "Weitere Dokumentation findest du unter <a href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
+  translation: "Weitere Dokumentation findest du unter <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
 
 - id: hub_setup_deployment_header_title
   translation: "Deployment"
