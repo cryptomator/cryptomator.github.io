@@ -40,28 +40,28 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="white-box">
-        <div class="prose-article px-4 py-2 border-b border-primary">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
         </div>
-        <div class="prose-article p-4">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
           <p>{{ i18n "hub_features_feature_1_description" . | safeHTML }}</p>
         </div>
       </div>
     
       <div class="white-box">
-        <div class="prose-article px-4 py-2 border-b border-primary">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-lock-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
         </div>
-        <div class="prose-article p-4">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
           <p>{{ i18n "hub_features_feature_2_description" . | safeHTML }}</p>
         </div>
       </div>
     
       <div class="white-box">
-        <div class="prose-article px-4 py-2 border-b border-primary">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-key fa-fw text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
         </div>
-        <div class="prose-article p-4">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
           <p>{{ i18n "hub_features_feature_3_description" . | safeHTML }}</p>
         </div>
       </div>
@@ -92,7 +92,7 @@
           <span>{{ .Question }}</span>
         </a>
       </dt>
-      <dd x-show="isOpen[{{ $index }}]" class="prose-article p-4">
+      <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         {{ .Answer | markdownify }}
       </dd>
       {{- end }}
@@ -113,7 +113,7 @@
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="font-p mb-4">{{ i18n "hub_newsletter_instruction" . | safeHTML }}</p>
       <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
         <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=hub-newsletter-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
         </button>

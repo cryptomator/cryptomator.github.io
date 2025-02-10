@@ -85,10 +85,6 @@
   @apply text-primary no-underline hover:underline;
 }
 
-.prose-article {
-  @apply prose prose-sm md:prose max-w-none md:max-w-none;
-}
-
 .font-h1 {
   @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
 }
@@ -109,8 +105,16 @@
   @apply text-sm md:text-base leading-relaxed text-gray-700;
 }
 
+.label-uppercase {
+  @apply block font-bold text-xs uppercase tracking-wide text-gray-600;
+}
+
 .white-box {
   @apply rounded-sm shadow-sm bg-white;
+}
+
+.input-box {
+  @apply rounded-sm border-gray-300 focus:ring-0 focus:border-secondary;
 }
 
 .StripeElement {

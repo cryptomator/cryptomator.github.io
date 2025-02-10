@@ -60,12 +60,12 @@
 
       <template x-if="subscriptionData.state == 'EXISTING_CUSTOMER'">
         <div>
-          <header class="prose-article mb-6">
+          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
           </header>
           <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div class="white-box p-4">
-              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+              <dt class="label-uppercase mb-2">
                 {{ i18n "hub_billing_manage_status_title" . }}
               </dt>
               <dd>
@@ -101,7 +101,7 @@
               </dd>
             </div>
             <div class="white-box p-4">
-              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+              <dt class="label-uppercase mb-2">
                 {{ i18n "hub_billing_manage_next_payment_title" . }}
               </dt>
               <dd>
@@ -132,7 +132,7 @@
               </dd>
             </div>
             <div class="white-box p-4">
-              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+              <dt class="label-uppercase mb-2">
                 {{ i18n "hub_billing_manage_payment_info_title" . }}
               </dt>
               <dd>
@@ -169,7 +169,7 @@
           <p class="font-p mb-4">
             {{ i18n "hub_billing_manage_license_key_instruction" . }}
           </p>
-          <textarea x-model="subscriptionData.token" class="text-sm md:text-base leading-relaxed break-all rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="6" readonly></textarea>
+          <textarea x-model="subscriptionData.token" class="input-box w-full text-sm md:text-base leading-relaxed break-all" rows="6" readonly></textarea>
           <button :disabled="subscriptionData.inProgress || !subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
             {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
           </button>
@@ -238,7 +238,7 @@
                           <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_description" . }}
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_amount_description" . }}
                           </p>
@@ -291,7 +291,7 @@
 
       <template x-if="subscriptionData.state == 'NEW_CUSTOMER'">
         <div x-data="{audience: 'business'}">
-          <header class="prose-article mb-6">
+          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
             <h1>{{ .Title }}</h1>
             <p class="lead">{{ i18n "hub_billing_checkout_description" . }}</p>
           </header>
@@ -341,29 +341,29 @@
               <div class="px-4 py-8">
                 <div class="flex flex-wrap md:flex-nowrap">
                   <div class="w-full mb-4 md:w-1/2 md:pr-3">
-                    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                    <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_hubid" . }}
                     </label>
-                    <input x-model="subscriptionData.hubId" type="text" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" readonly/>
+                    <input x-model="subscriptionData.hubId" type="text" class="input-box w-full mb-2" readonly/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_hubid_description" . }}
                     </p>
                   </div>
                   <div class="w-full mb-4 md:w-1/2 md:pl-3">
-                    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                    <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_quantity" . }}
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_quantity_description" . }}
                     </p>
                   </div>
                 </div>
                 <div>
-                  <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                  <label class="label-uppercase mb-2">
                     {{ i18n "hub_billing_checkout_standard_email" . }}
                   </label>
-                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
+                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
                 </div>
                 <div class="text-center mt-8">
                   <p class="font-p mb-4">
@@ -423,7 +423,7 @@
                 <span>{{ .Question }}</span>
               </a>
             </dt>
-            <dd x-show="isOpen[{{ $index }}]" class="prose-article p-4">
+            <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
               {{ .Answer | markdownify }}
             </dd>
             {{- end }}

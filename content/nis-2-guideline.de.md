@@ -10,7 +10,7 @@ ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 ---
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # NIS-2-Richtlinie: Höhere Standards für Cyber-Sicherheit ab Oktober 2024
 

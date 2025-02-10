@@ -21,7 +21,7 @@
       <p class="text-xs">
         <a class="text-link plausible-event-name=android-download-sha256-signature" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
       </p>
-      <div x-show="showShaSignature" x-cloak class="prose-article text-sm mt-4">
+      <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none text-sm mt-4">
         <p><code class="break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
       </div>
     </div>

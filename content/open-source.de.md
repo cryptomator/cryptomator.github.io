@@ -16,7 +16,7 @@ ogimage:
   height: 541
 ---
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Deine Daten sicher im Cloud-Speicher verschlüsseln: Wie du durch Open Source deine Datensicherheit weiter erhöhst
 
@@ -65,7 +65,7 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
   </tr>
 </table>
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 Wahrscheinlich spürst du bereits eine Tendenz: Die fremde Person kann noch so nett aussehen – und in den meisten Fällen gibt es sicher keinen Grund für Misstrauen.
 
@@ -159,7 +159,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
   </div>
 </div>
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 ## Cloud-Speicher mit Open-Source-Software verschlüsseln: Mit Cryptomator auf der sicheren Seite {#robust-crypto}
 
