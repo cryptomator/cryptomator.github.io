@@ -12,7 +12,7 @@ Ihr könnt die Worte „Black Friday“ auch nicht mehr hören? Wir auch nicht �
 Nutzt für die APK-Version der Android-App und für das Supporter-Zertifikat den Rabattcode „DEC24“ und spart 33 %\* auf euren Kauf!
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/blog/december-2024-sale.png" srcset="/img/blog/december-2024-sale.png 1x, /img/blog/december-2024-sale@2x.png 2x" alt="33 % Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat" />
+  <img class="inline-block rounded-sm" src="/img/blog/december-2024-sale.png" srcset="/img/blog/december-2024-sale.png 1x, /img/blog/december-2024-sale@2x.png 2x" alt="33 % Rabatt im Dezember auf Mobile-Apps und Supporter-Zertifikat" />
 </figure>
 
 ## Einmal kaufen, dauerhaft nutzen – und noch vor der Preiserhöhung zugreifen

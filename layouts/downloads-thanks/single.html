@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $release := index .Site.Params.releases .Params.release }}
   <div class="container py-12" x-data="{showShaSignature: false, showPgpSignature: false}">
-    <div class="flex mx-auto w-full md:w-4/5 lg:w-1/2 bg-primary-l2 border-t-4 border-primary rounded text-dark p-3 shadow mb-2" role="alert">
+    <div class="flex mx-auto w-full md:w-4/5 lg:w-1/2 bg-primary-l2 border-t-4 border-primary rounded-sm text-dark p-3 shadow-sm mb-2" role="alert">
       <div class="pr-2">
         <i class="fas fa-download text-primary" aria-hidden="true"></i>
       </div>
@@ -34,7 +34,7 @@
   </div>
 
   <section class="container grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 pb-24">
-    <div class="rounded shadow bg-white">
+    <div class="rounded-sm shadow-sm bg-white">
       <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
         <h3><i class="fas fa-question-circle fa-fw text-primary"></i> {{ i18n "downloads_thanks_getting_started_title" }}</h3>
       </div>
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="rounded shadow bg-white">
+    <div class="rounded-sm shadow-sm bg-white">
       <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
         <h3><i class="fas fa-donate fa-fw text-primary"></i> {{ i18n "downloads_thanks_support_cryptomator_title" }}</h3>
       </div>

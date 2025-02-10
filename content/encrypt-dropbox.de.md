@@ -38,7 +38,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 {{< /markdownify >}}</div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fab fa-dropbox fa-fw text-primary"></i> Nutze Dropbox wie bisher</h3>
   </div>
@@ -47,7 +47,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-share fa-fw text-primary"></i> Geschützte Daten bequem für Freunde, Familie und Kollegen freigeben</h3>
   </div>
@@ -56,7 +56,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-key fa-fw text-primary"></i> Zugriff auf deine Cloud-Daten hat nur, wer ihn haben soll</h3>
   </div>
@@ -65,7 +65,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-sync fa-fw text-primary"></i> Keine Dateien versehentlich überschreiben</h3>
   </div>
@@ -74,7 +74,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
   </div>
 </div>
 
-<div class="rounded shadow bg-white mt-6 mb-12">
+<div class="rounded-sm shadow-sm bg-white mt-6 mb-12">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-clouds fa-fw text-primary"></i> Deine sensiblen Daten in Dropbox überall schnell griffbereit</h3>
   </div>

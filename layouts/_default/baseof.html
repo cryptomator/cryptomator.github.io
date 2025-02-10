@@ -59,10 +59,11 @@
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
     {{ if hugo.IsDevelopment }}
-      {{ $css := resources.Get "css/main.css" | postCSS }}
+      {{ $css := resources.Get "css/main.css" | css.TailwindCSS }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen" />
     {{ else }}
-      {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
+      {{ $tailwindOpts := dict "minify" true }}
+      {{ $css := resources.Get "css/main.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />

@@ -81,7 +81,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
 
 {{< /markdownify >}}</div>
 
-<table class="table-fixed divide-y divide-primary rounded shadow bg-white min-w-full mt-6 mb-12">
+<table class="table-fixed divide-y divide-primary rounded-sm shadow-sm bg-white min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
@@ -102,7 +102,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig</div>
         </div>
       </td>
     </tr>
@@ -112,7 +112,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in für lokalen Account; Standardeinstellung speichert Schlüssel auf Boxcryptor-Server</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in für lokalen Account; Standardeinstellung speichert Schlüssel auf Boxcryptor-Server</div>
         </div>
       </td>
     </tr>
@@ -126,7 +126,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
         <span>Passwort wiederherstellen ohne E-Mail-Adresse („Offline Key Recovery“)</span>
         <div class="has-tooltip">
           <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">Deine Daten liegen nicht in Mails bei einem E-Mail-Account-Anbieter, was die Sicherheit weiter erhöht.</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Deine Daten liegen nicht in Mails bei einem E-Mail-Account-Anbieter, was die Sicherheit weiter erhöht.</div>
         </div>
       </td>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
@@ -142,13 +142,13 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">Windows, macOS, Linux, Android, iOS</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Windows, macOS, Linux, Android, iOS</div>
         </div>
       </td>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
             <p class="mb-2">Windows, macOS, Android, iOS</p>
             <p><i class="fas fa-times fa-fw text-red-600"></i> kein Linux</p>
           </div>
@@ -168,7 +168,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
 
 {{< /markdownify >}}</div>
 
-<table class="table-fixed divide-y divide-primary rounded shadow bg-white min-w-full mt-6 mb-12">
+<table class="table-fixed divide-y divide-primary rounded-sm shadow-sm bg-white min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
@@ -186,7 +186,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileContentEncryptionOpen = !isFileContentEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Dateiinhalte-Verschlüsselung</span>
         </a>
       </td>
@@ -204,7 +204,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileNameEncryptionOpen = !isFileNameEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Dateinamen-Verschlüsselung</span>
         </a>
       </td>
@@ -212,7 +212,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig und optional</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig und optional</div>
         </div>
       </td>
     </tr>
@@ -227,14 +227,14 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileAttributeEncryptionOpen = !isFileAttributeEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Dateiattribute-Verschlüsselung</span>
         </a>
       </td>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">geplant</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">geplant</div>
         </div>
       </td>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
@@ -250,7 +250,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isFOSSOpen = !isFOSSOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Freie & quelloffene Software (FOSS)</span>
         </a>
       </td>
@@ -268,7 +268,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isDirectoryObfuscationOpen = !isDirectoryObfuscationOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Verzeichnis-Verschleierung</span>
         </a>
       </td>
@@ -286,7 +286,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isIntegrityProtectionOpen = !isIntegrityProtectionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Integritätsschutz</span>
         </a>
       </td>
@@ -304,7 +304,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isQuantumResistantOpen = !isQuantumResistantOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Quantenresistente Kryptographie</span>
         </a>
       </td>
@@ -322,7 +322,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isAuditedCryptographyOpen = !isAuditedCryptographyOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Geprüfte Kryptographie</span>
         </a>
       </td>
@@ -340,7 +340,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isMemoryHardKDFOpen = !isMemoryHardKDFOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Speicherintensive KDF</span>
         </a>
       </td>
@@ -359,7 +359,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
         <a class="flex items-center" href="#" @click.prevent="isShareKeysOpen = !isShareKeysOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Gemeinsame Nutzung ohne Weitergabe von Passwörtern</span>
         </a>
       </td>

@@ -64,7 +64,7 @@
             <h1>{{ .Title }}</h1>
           </header>
           <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div class="rounded shadow bg-white p-4">
+            <div class="rounded-sm shadow-sm bg-white p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 {{ i18n "hub_billing_manage_status_title" . }}
               </dt>
@@ -100,7 +100,7 @@
                 </p>
               </dd>
             </div>
-            <div class="rounded shadow bg-white p-4">
+            <div class="rounded-sm shadow-sm bg-white p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 {{ i18n "hub_billing_manage_next_payment_title" . }}
               </dt>
@@ -131,7 +131,7 @@
                 </p>
               </dd>
             </div>
-            <div class="rounded shadow bg-white p-4">
+            <div class="rounded-sm shadow-sm bg-white p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 {{ i18n "hub_billing_manage_payment_info_title" . }}
               </dt>
@@ -169,7 +169,7 @@
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
             {{ i18n "hub_billing_manage_license_key_instruction" . }}
           </p>
-          <textarea x-model="subscriptionData.token" class="text-sm md:text-base leading-relaxed break-all rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="6" readonly></textarea>
+          <textarea x-model="subscriptionData.token" class="text-sm md:text-base leading-relaxed break-all rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="6" readonly></textarea>
           <button :disabled="subscriptionData.inProgress || !subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
             {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
           </button>
@@ -178,10 +178,10 @@
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
             <div class="fixed z-10 inset-0 overflow-y-auto">
               <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-                <div class="relative rounded shadow bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                <div class="relative rounded-sm shadow-sm bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
                   <div class="p-4">
                     <div class="md:flex md:items-start">
-                      <div class="flex-shrink-0 text-center">
+                      <div class="shrink-0 text-center">
                         <div class="fa-stack text-2xl text-primary-l2 md:text-xl">
                           <i class="fas fa-circle fa-stack-2x"></i>
                           <i class="fas fa-play fa-stack-1x text-primary"></i>
@@ -203,11 +203,11 @@
                     </div>
                   </div>
                   <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="submit" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
-                    <button :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.restartModal.open = false" type="button" class="btn btn-outline-gray-500 flex-shrink-0 w-full md:w-auto">
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.restartModal.open = false" type="button" class="btn btn-outline-gray-500 shrink-0 w-full md:w-auto">
                       {{ i18n "modal_cancel" . }}
                     </button>
                     <p x-show="subscriptionData.errorMessage" class="text-center text-sm text-red-600 mt-4 md:text-left md:mr-3 md:mt-0" x-text="subscriptionData.errorMessage"></p>
@@ -221,10 +221,10 @@
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
             <div class="fixed z-10 inset-0 overflow-y-auto">
               <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-                <div class="relative rounded shadow bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                <div class="relative rounded-sm shadow-sm bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
                   <div class="p-4">
                     <div class="md:flex md:items-start">
-                      <div class="flex-shrink-0 text-center">
+                      <div class="shrink-0 text-center">
                         <div class="fa-stack text-2xl text-primary-l2 md:text-xl">
                           <i class="fas fa-circle fa-stack-2x"></i>
                           <i class="fas fa-arrows-v fa-stack-1x text-primary"></i>
@@ -238,7 +238,7 @@
                           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_description" . }}
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_amount_description" . }}
                           </p>
@@ -269,15 +269,15 @@
                     </div>
                   </div>
                   <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="submit" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_continue" . }}
                     </button>
-                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" type="submit" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
-                    <button :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.changeSeatsModal.open = false" type="button" class="btn btn-outline-gray-500 flex-shrink-0 w-full md:w-auto">
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.changeSeatsModal.open = false" type="button" class="btn btn-outline-gray-500 shrink-0 w-full md:w-auto">
                       {{ i18n "modal_cancel" . }}
                     </button>
                     <p x-show="subscriptionData.errorMessage" class="text-center text-sm text-red-600 mt-4 md:text-left md:mr-3 md:mt-0" x-text="subscriptionData.errorMessage"></p>
@@ -307,7 +307,7 @@
               </button>
             </div>
             <div class="hidden md:block"></div>
-            <div class="rounded shadow bg-white">
+            <div class="rounded-sm shadow-sm bg-white">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
@@ -344,7 +344,7 @@
                     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                       {{ i18n "hub_billing_checkout_standard_hubid" . }}
                     </label>
-                    <input x-model="subscriptionData.hubId" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" readonly/>
+                    <input x-model="subscriptionData.hubId" type="text" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" readonly/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_hubid_description" . }}
                     </p>
@@ -353,7 +353,7 @@
                     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                       {{ i18n "hub_billing_checkout_standard_quantity" . }}
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_quantity_description" . }}
                     </p>
@@ -363,7 +363,7 @@
                   <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                     {{ i18n "hub_billing_checkout_standard_email" . }}
                   </label>
-                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
+                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
                 </div>
                 <div class="text-center mt-8">
                   <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
@@ -379,7 +379,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-col rounded shadow bg-white">
+            <div class="flex flex-col rounded-sm shadow-sm bg-white">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
@@ -391,7 +391,7 @@
                   {{ i18n "hub_billing_checkout_enterprise_description" . }}
                 </p>
               </div>
-              <div class="flex-grow">
+              <div class="grow">
                 <div class="flex flex-col items-center text-center h-full px-4 py-8">
                   <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4 md:mb-0">
                     {{ i18n "hub_billing_checkout_enterprise_subtitle" . }}
@@ -415,11 +415,11 @@
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-24">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200">
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded-sm shadow-sm bg-white divide-y divide-gray-200">
             {{- range $index, $element := $data.pricing_teams_faq }}
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>{{ .Question }}</span>
               </a>
             </dt>

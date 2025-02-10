@@ -22,8 +22,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: package-lock.json
         registry-url: 'https://npm.pkg.github.com/'
-    - name: Install Tools
-      run: npm install -g postcss-cli autoprefixer
     - name: NPM install
       run: |
         npm config set "@skymatic:registry" https://npm.pkg.github.com/

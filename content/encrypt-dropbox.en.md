@@ -38,7 +38,7 @@ This means that attackers would not even benefit from drilling through the wall 
 
 {{< /markdownify >}}</div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fab fa-dropbox fa-fw text-primary"></i> Use Dropbox as before</h3>
   </div>
@@ -47,7 +47,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-share fa-fw text-primary"></i> Share protected data conveniently with friends, family, and colleagues</h3>
   </div>
@@ -56,7 +56,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-key fa-fw text-primary"></i> Only those have access to your cloud data who should have it</h3>
   </div>
@@ -65,7 +65,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
+<div class="rounded-sm shadow-sm bg-white my-6">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-sync fa-fw text-primary"></i> Files don't accidentally get overwritten</h3>
   </div>
@@ -74,7 +74,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="rounded shadow bg-white mt-6 mb-12">
+<div class="rounded-sm shadow-sm bg-white mt-6 mb-12">
   <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
     <h3><i class="fas fa-clouds fa-fw text-primary"></i> Quickly access your sensitive data in Dropbox from everywhere</h3>
   </div>

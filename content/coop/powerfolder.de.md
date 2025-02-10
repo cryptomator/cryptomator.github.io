@@ -9,7 +9,7 @@ ctatext: "Weitere Infos unter powerfolder.com"
 ---
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/coop/powerfolder-banner.png" srcset="/img/coop/powerfolder-banner.png 1x, /img/coop/powerfolder-banner@2x.png 2x" alt="PowerFolder Logo"/>
+  <img class="inline-block rounded-sm" src="/img/coop/powerfolder-banner.png" srcset="/img/coop/powerfolder-banner.png 1x, /img/coop/powerfolder-banner@2x.png 2x" alt="PowerFolder Logo"/>
   <figcaption>PowerFolder verschlüsselt Daten nun mit Cryptomator.</figcaption>
 </figure>
 
