@@ -1,4 +1,4 @@
-<div x-data="{checkoutData: {prices: PADDLE_DESKTOP_PRODUCT_IDS.map(productId => { return {productId: productId} }), selectedPriceIndex: 1, quantity: 1, amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null}, acceptTerms: false, desktopLicense: null}" x-init="desktopLicense = new DesktopLicense($refs.funderForm, checkoutData); desktopLicense.loadPrice()">
+<div x-data="{checkoutData: {prices: PADDLE_DESKTOP_PRODUCT_IDS.map(productId => { return {productId: productId} }), selectedPriceIndex: 1, quantity: 1, amount: 25, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null, acceptNewsletter: false}, acceptTerms: false, desktopLicense: null}" x-init="desktopLicense = new DesktopLicense($refs.funderForm, checkoutData); desktopLicense.loadPrice()">
   <form x-show="!checkoutData.success" x-ref="funderForm">
     <div class="flex flex-wrap md:flex-nowrap">
       <fieldset class="w-full mb-4 md:w-1/2 md:pr-3">
@@ -25,7 +25,8 @@
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-2">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-newsletter-optional.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter") }}</p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="desktopLicense.checkout(checkoutData.prices[checkoutData.selectedPriceIndex].productId, '{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=supporter-cert-funder-checkout">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "supporter_cert_funder_checkout" }}
       </button>
