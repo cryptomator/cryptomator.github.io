@@ -81,7 +81,7 @@ Let's now compare the visible features. The following table shows you the simila
 
 {{< /markdownify >}}</div>
 
-<table class="table-fixed divide-y divide-primary rounded-sm shadow-sm bg-white min-w-full mt-6 mb-12">
+<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
@@ -168,7 +168,7 @@ Let's now take a look at these features. For this we compare the features again 
 
 {{< /markdownify >}}</div>
 
-<table class="table-fixed divide-y divide-primary rounded-sm shadow-sm bg-white min-w-full mt-6 mb-12">
+<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>

@@ -6,7 +6,7 @@
 
     {{ range .Pages.ByDate.Reverse }}
       <section class="mb-6">
-        <article class="border rounded-sm shadow-sm bg-white p-4">
+        <article class="border white-box p-4">
           <p class="text-xs md:text-sm text-gray-600 mb-1">{{ dateFormat "2006-01-02" .Params.Date }}</p>
           <div class="prose prose-sm md:prose max-w-none md:max-w-none">
             <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>

@@ -64,7 +64,7 @@
             <h1>{{ .Title }}</h1>
           </header>
           <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div class="rounded-sm shadow-sm bg-white p-4">
+            <div class="white-box p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 {{ i18n "hub_billing_manage_status_title" . }}
               </dt>
@@ -100,7 +100,7 @@
                 </p>
               </dd>
             </div>
-            <div class="rounded-sm shadow-sm bg-white p-4">
+            <div class="white-box p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 {{ i18n "hub_billing_manage_next_payment_title" . }}
               </dt>
@@ -131,7 +131,7 @@
                 </p>
               </dd>
             </div>
-            <div class="rounded-sm shadow-sm bg-white p-4">
+            <div class="white-box p-4">
               <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
                 {{ i18n "hub_billing_manage_payment_info_title" . }}
               </dt>
@@ -178,7 +178,7 @@
             <div class="fixed inset-0 bg-gray-500/75"></div>
             <div class="fixed z-10 inset-0 overflow-y-auto">
               <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-                <div class="relative rounded-sm shadow-sm bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                <div class="relative white-box text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
                   <div class="p-4">
                     <div class="md:flex md:items-start">
                       <div class="shrink-0 text-center">
@@ -221,7 +221,7 @@
             <div class="fixed inset-0 bg-gray-500/75"></div>
             <div class="fixed z-10 inset-0 overflow-y-auto">
               <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-                <div class="relative rounded-sm shadow-sm bg-white text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                <div class="relative white-box text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
                   <div class="p-4">
                     <div class="md:flex md:items-start">
                       <div class="shrink-0 text-center">
@@ -307,7 +307,7 @@
               </button>
             </div>
             <div class="hidden md:block"></div>
-            <div class="rounded-sm shadow-sm bg-white">
+            <div class="white-box">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
@@ -379,7 +379,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-col rounded-sm shadow-sm bg-white">
+            <div class="flex flex-col white-box">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
@@ -415,7 +415,7 @@
           </div>
           <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-24">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded-sm shadow-sm bg-white divide-y divide-gray-200">
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200">
             {{- range $index, $element := $data.pricing_teams_faq }}
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
