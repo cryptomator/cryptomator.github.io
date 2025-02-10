@@ -12,12 +12,12 @@
 }
 
 .btn {
-  @apply inline-block border rounded no-underline text-center px-4 py-2;
+  @apply inline-block border rounded-sm no-underline text-center px-4 py-2;
 }
 
 .btn:hover,
 .btn:focus {
-  @apply no-underline outline-none;
+  @apply no-underline outline-hidden;
 }
 
 .btn:disabled,
@@ -82,7 +82,7 @@
 }
 
 .StripeElement {
-  @apply rounded border border-gray-300 px-3 py-2;
+  @apply rounded-sm border border-gray-300 px-3 py-2;
 }
 
 .StripeElement--focus {
@@ -127,14 +127,6 @@ textarea:read-only {
   min-height: 80vh;
 }
 
-nav a {
-  color: inherit;
-}
-
-nav a:hover {
-  color: inherit;
-}
-
 .bg-trans-white {
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -167,9 +159,4 @@ nav a:hover {
   height: 96px;
   margin-top: -96px;
   visibility: hidden;
-}
-
-/* see https://alpinejs.dev/directives/cloak */
-[x-cloak] {
-  display: none !important;
 }

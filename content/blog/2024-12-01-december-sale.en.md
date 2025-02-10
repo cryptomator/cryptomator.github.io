@@ -12,7 +12,7 @@ Tired of hearing the words "Black Friday"? So are we – that's why our sale is 
 Use the discount code "DEC24" for the APK version of the Android app and the Supporter Certificate to save 33%\* on your purchase!
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/blog/december-2024-sale.png" srcset="/img/blog/december-2024-sale.png 1x, /img/blog/december-2024-sale@2x.png 2x" alt="33%* Discount in December on Mobile Apps and Supporter Certificate!" />
+  <img class="inline-block rounded-sm" src="/img/blog/december-2024-sale.png" srcset="/img/blog/december-2024-sale.png 1x, /img/blog/december-2024-sale@2x.png 2x" alt="33%* Discount in December on Mobile Apps and Supporter Certificate!" />
 </figure>
 
 ## Buy Once, Use Forever – And Get In Before the Price Increase

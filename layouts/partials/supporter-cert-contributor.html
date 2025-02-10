@@ -2,15 +2,15 @@
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_contributor_github_username" }}</label>
-      <input x-model="submitData.github_username" x-ref="github_username" @blur="$refs.github_username.classList.add('show-invalid')" type="text" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$" maxlength="39" placeholder="{{ i18n "supporter_cert_contributor_github_username_placeholder" }}" required/>
+      <input x-model="submitData.github_username" x-ref="github_username" @blur="$refs.github_username.classList.add('show-invalid')" type="text" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$" maxlength="39" placeholder="{{ i18n "supporter_cert_contributor_github_username_placeholder" }}" required/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_contributor_github_contribution_link" }}</label>
-      <input x-model="submitData.github_contribution_link" x-ref="github_contribution_link" @blur="$refs.github_contribution_link.classList.add('show-invalid')" type="url" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_contributor_github_contribution_link_placeholder" }}" required/>
+      <input x-model="submitData.github_contribution_link" x-ref="github_contribution_link" @blur="$refs.github_contribution_link.classList.add('show-invalid')" type="url" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_contributor_github_contribution_link_placeholder" }}" required/>
     </div>
     <div class="mb-4">
       <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_common_email" }}</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_contributor_instruction" . | safeHTML }}</p>

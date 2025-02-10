@@ -7,7 +7,7 @@
 
     <div class="rounded-md bg-blue-100 p-4 mb-6">
       <div class="flex items-center">
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <i class="fas fa-info-circle fa-fw text-blue-500"></i>
         </div>
         <div class="ml-3 text-sm text-dark">
@@ -20,9 +20,9 @@
       {{ range .Pages }}
         <div class="space-y-2 lg:space-y-0">
           <div class="w-full lg:pr-3 lg:w-1/2">
-            <button @click.prevent="location.hash = '{{ .Params.TabHash }}'" :class="{'border-white': showTab != '{{ .Params.TabHash }}', 'border-primary': showTab == '{{ .Params.TabHash }}'}" class="flex items-center justify-between bg-white border-l-4 rounded shadow text-left p-4 w-full plausible-event-name=donate-{{ substr .Params.TabHash 1 }}-tab">
+            <button @click.prevent="location.hash = '{{ .Params.TabHash }}'" :class="{'border-white': showTab != '{{ .Params.TabHash }}', 'border-primary': showTab == '{{ .Params.TabHash }}'}" class="flex items-center justify-between bg-white border-l-4 rounded-sm shadow-sm text-left p-4 w-full plausible-event-name=donate-{{ substr .Params.TabHash 1 }}-tab">
               <div class="flex items-center">
-                <i :class="{'text-gray-600': showTab != '{{ .Params.TabHash }}', 'text-primary': showTab == '{{ .Params.TabHash }}'}" class="flex-shrink-0 {{ .Params.FaIcon }} fa-fw text-2xl mr-4" aria-hidden="true"></i>
+                <i :class="{'text-gray-600': showTab != '{{ .Params.TabHash }}', 'text-primary': showTab == '{{ .Params.TabHash }}'}" class="shrink-0 {{ .Params.FaIcon }} fa-fw text-2xl mr-4" aria-hidden="true"></i>
                 <h2 :class="{'text-primary': showTab == '{{ .Params.TabHash }}'}" class="font-headline font-medium text-xl lg:text-2xl leading-snug">{{ .Title }}</h2>
               </div>
               <div class="ml-3">
@@ -32,7 +32,7 @@
             </button>
           </div>
           <div x-show="showTab == '{{ .Params.TabHash }}'" class="w-full lg:absolute lg:top-0 lg:right-0 lg:pl-3 lg:w-1/2" x-cloak>
-            <div class="rounded shadow bg-white p-4" x-cloak>
+            <div class="rounded-sm shadow-sm bg-white p-4" x-cloak>
               {{ partial .Params.Partial (dict "context" . "Site" $.Site "Params" $.Params) }}
             </div>
           </div>
@@ -46,9 +46,9 @@
 
     <form x-show="!feedbackData.success" x-ref="form" class="max-w-xl mx-auto">
       <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "donate_customer_portal_instruction" . }}</p>
-      <div class="flex justify-center items-center rounded bg-gray-300">
-        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="flex-grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "donate_customer_portal_email_placeholder" }}" required/>
-        <button :disabled="feedbackData.inProgress" @click.prevent="customerPortal.request()" type="submit" class="flex-shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=donate-customer-portal-form">
+      <div class="flex justify-center items-center rounded-sm bg-gray-300">
+        <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "donate_customer_portal_email_placeholder" }}" required/>
+        <button :disabled="feedbackData.inProgress" @click.prevent="customerPortal.request()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=donate-customer-portal-form">
           <i :class="{'fa-envelope': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "donate_customer_portal_retrieve" }}
         </button>
       </div>

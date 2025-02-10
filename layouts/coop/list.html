@@ -6,7 +6,7 @@
 
     {{ range (.Pages.ByParam "prio") }}
       <section class="mb-6">
-        <article class="flex border rounded shadow bg-white p-4">
+        <article class="flex border rounded-sm shadow-sm bg-white p-4">
           <div class="w-1/6 text-center mr-3">
             <a href="{{ .RelPermalink }}"><img class="inline-block" src="{{ .Params.Img }}" srcset="{{ .Params.Img }} 1x, {{ .Params.Img2x }} 2x"/></a>
           </div>
@@ -23,7 +23,7 @@
     <hr class="my-8"/>
 
     <section class="mb-6">
-      <article class="flex border rounded shadow bg-white p-4">
+      <article class="flex border rounded-sm shadow-sm bg-white p-4">
         <div class="w-1/6 text-center mr-3">
           <a href="{{ .RelPermalink }}"><i class="fas fa-question-circle text-5xl md:text-7xl text-gray-400"></i></a>
         </div>

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"extensions": {
+		"recommendations": [
+			"bradlc.vscode-tailwindcss"
+		]
+	},
+	"settings": {
+		"files.associations": {
+			"*.css": "tailwindcss"
+		},
+		"files.exclude": {
+			"**/.DS_Store": true
+		},
+	}
+}
