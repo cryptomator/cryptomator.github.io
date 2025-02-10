@@ -24,9 +24,9 @@
       <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-2">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-newsletter-optional.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter") }}</p>
+      <p class="font-p mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>
+      <p class="font-p mb-2">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="font-p mb-4">{{ partial "accept-newsletter-optional.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter") }}</p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="desktopLicense.checkout(checkoutData.prices[checkoutData.selectedPriceIndex].productId, '{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=supporter-cert-funder-checkout">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "supporter_cert_funder_checkout" }}
       </button>
@@ -35,10 +35,10 @@
   </form>
 
   <div x-show="checkoutData.success" x-cloak>
-    <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_funder_success" }}</h3>
+    <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_funder_success" }}</h3>
     <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_funder_key" }}</label>
     <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="{{ i18n "supporter_cert_funder_key_placeholder" }}" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700">{{ i18n "supporter_cert_funder_key_instruction" }}</p>
+    <p class="font-p">{{ i18n "supporter_cert_funder_key_instruction" }}</p>
   </div>
 </div>

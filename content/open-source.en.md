@@ -16,7 +16,7 @@ ogimage:
   height: 541
 ---
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 # Encrypt Your Data Securely in the Cloud: How You Can Further Increase Your Data Security Through Open Source
 
@@ -41,13 +41,13 @@ Which of the following scenarios sounds safer to you:
       </div>
     </td>
     <td class="pl-3">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">The bartender prepares your drink right in front of you.</p>
+      <p class="font-p">The bartender prepares your drink right in front of you.</p>
     </td>
   </tr>
 
   <tr>
     <td class="text-center py-6">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">or</p>
+      <p class="font-p">or</p>
     </td>
     <td></td>
   </tr>
@@ -60,12 +60,12 @@ Which of the following scenarios sounds safer to you:
       </div>
     </td>
     <td class="pl-3">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">A stranger offers you some of his drink.</p>
+      <p class="font-p">A stranger offers you some of his drink.</p>
     </td>
   </tr>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 You probably already sense a tendency: The stranger may look nice – and in most cases there is certainly no reason for suspicion.
 
@@ -106,13 +106,13 @@ At the same time, however, open source has many security-enhancing advantages:
     <i class="fas fa-users fa-stack-1x fa-inverse"></i>
   </div>
   <div>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">The source code can be viewed by a community of programmers – from hobby programmers to security researchers – which directly detects unauthorized access.</p>
+    <p class="font-p mb-4">The source code can be viewed by a community of programmers – from hobby programmers to security researchers – which directly detects unauthorized access.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Because anyone can view the source code, it prevents backdoors for governments, law enforcement agencies, or business partners from being built in unnoticed.</p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700"><strong>So if someone unauthorized had access to your data, it would at least be noticed very quickly.</strong></p>
+          <p class="font-p mb-4">Because anyone can view the source code, it prevents backdoors for governments, law enforcement agencies, or business partners from being built in unnoticed.</p>
+          <p class="font-p"><strong>So if someone unauthorized had access to your data, it would at least be noticed very quickly.</strong></p>
         </div>
       </div>
     </div>
@@ -125,15 +125,15 @@ At the same time, however, open source has many security-enhancing advantages:
     <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
   </div>
   <div>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">The source code is constantly reviewed and thus continuously improved.</p>
+    <p class="font-p mb-4">The source code is constantly reviewed and thus continuously improved.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Apart from official audits, the source code is also used by third parties and is thus constantly checked.</p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">If vulnerabilities are found, they cannot be silently ignored. If there is ever a problem, it is quickly noticed and the provider of the encryption software is forced to react quickly. Both the cause and the remedy are publicly documented.</p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4"><strong>So you can rest assured that when you encrypt your cloud storage, the security is not just verified one-time intensively, but also on an ongoing basis by professionals.</strong></p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700">History shows that in other cases (with so-called closed-source software) security vulnerabilities remained unfixed for years because the provider had no public pressure to react.</p>
+          <p class="font-p mb-4">Apart from official audits, the source code is also used by third parties and is thus constantly checked.</p>
+          <p class="font-p mb-4">If vulnerabilities are found, they cannot be silently ignored. If there is ever a problem, it is quickly noticed and the provider of the encryption software is forced to react quickly. Both the cause and the remedy are publicly documented.</p>
+          <p class="font-p mb-4"><strong>So you can rest assured that when you encrypt your cloud storage, the security is not just verified one-time intensively, but also on an ongoing basis by professionals.</strong></p>
+          <p class="font-p">History shows that in other cases (with so-called closed-source software) security vulnerabilities remained unfixed for years because the provider had no public pressure to react.</p>
         </div>
       </div>
     </div>
@@ -146,20 +146,20 @@ At the same time, however, open source has many security-enhancing advantages:
     <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
   </div>
   <div>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">The source code is copied hundreds of times, which makes the encryption independent of the provider.</p>
+    <p class="font-p mb-4">The source code is copied hundreds of times, which makes the encryption independent of the provider.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Learn more</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Even if the encryption software provider eventually ceases operations, <strong>you will still have access to your encrypted data and can continue to encrypt your cloud storage.</strong></p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700">This is because the source code is copied hundreds of times and can be legally re-published by others.</p>
+          <p class="font-p mb-4">Even if the encryption software provider eventually ceases operations, <strong>you will still have access to your encrypted data and can continue to encrypt your cloud storage.</strong></p>
+          <p class="font-p">This is because the source code is copied hundreds of times and can be legally re-published by others.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 ## Encrypt Cloud Storage With Open Source Software: On the Safe Side With Cryptomator {#robust-crypto}
 

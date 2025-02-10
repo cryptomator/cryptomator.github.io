@@ -16,26 +16,26 @@
               <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4" id="quantity-one-modal-title">
                 {{ i18n "hub_managed_low_quantity_title" }}
               </h3>
-              <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+              <p class="font-p mb-4">
                 {{ i18n "hub_managed_low_quantity_description" }}
               </p>
               <template x-if="{{ .quantity }} == 1">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_1" }}
                 </p>
               </template>
               <template x-if="{{ .quantity }} == 2">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_2" | safeHTML }}
                 </p>
               </template>
               <template x-if="{{ .quantity }} >= 3">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_3" | safeHTML }}
                 </p>
               </template>
               <template x-if="{{ .quantity }} >= 3">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_4" | safeHTML }}
                 </p>
               </template>

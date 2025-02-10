@@ -21,17 +21,17 @@
 - id: footer_legal_title
   translation: "Rechtliches"
 - id: accept_newsletter_privacy
-  translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+  translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator per E-Mail zu erhalten (optional)."
 - id: accept_privacy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+  translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
-  translation: "Durch die Überweisung akzeptiere ich die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+  translation: "Durch die Überweisung akzeptiere ich die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_terms_and_privacy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+  translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/terms/\">AGB</a> sowie die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_hub_managed_terms_and_privacy
-  translation: "Ich akzeptiere die <a class=\"text-primary no-underline hover:underline\" href=\"/de/hub/managed/terms/\">AGB</a> sowie die <a class=\"text-primary no-underline hover:underline\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+  translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/hub/managed/terms/\">AGB</a> sowie die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: faq_title
   translation: "Häufig gestellte Fragen"
 - id: modal_cancel
@@ -80,12 +80,12 @@
 - id: android_keyrecovery_success
   translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
 - id: android_keyrecovery_contact_us
-  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
 
 - id: android_fdroid_title
   translation: "Auf F-Droid herunterladen"
 - id: android_fdroid_repo
-  translation: "Folgenden <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\" target=\"_blank\">Link</a> öffnen oder den QR-Code scannen, um unser Repository hinzuzufügen."
+  translation: "Folgenden <a class=\"text-link\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\" target=\"_blank\">Link</a> öffnen oder den QR-Code scannen, um unser Repository hinzuzufügen."
 - id: android_fdroid_qr_code
   translation: "QR Code"
 - id: android_fdroid_main_cloud_exclusion
@@ -93,7 +93,7 @@
 - id: android_fdroid_cryptomator_cloud_exclusion
   translation: "Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen."
 - id: android_fdroid_cloud_exclusion_hint
-  translation: "Einen detaillierten Vergleich aller Varianten findest du in unserer <a class=\"text-sm no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/android/setup\" target=\"_blank\">Dokumentation</a>."
+  translation: "Einen detaillierten Vergleich aller Varianten findest du in unserer <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/android/setup\" target=\"_blank\">Dokumentation</a>."
 - id: android_accrescent_exclusion
   translation: "Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen."
 
@@ -130,7 +130,7 @@
 - id: donate_creditcard_number
   translation: "Kreditkarte"
 - id: donate_creditcard_once_instruction
-  translation: "Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a class=\"text-primary no-underline hover:underline\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">eine Buchung von Stripe</a> enthalten sein."
+  translation: "Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a class=\"text-link\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">eine Buchung von Stripe</a> enthalten sein."
 - id: donate_creditcard_once_loading
   translation: "Lädt…"
 - id: donate_creditcard_once_loadcaptcha
@@ -163,7 +163,7 @@
 - id: donate_customer_portal_success
   translation: "Ein Kundenportal wurde für dich erstellt und dir per E-Mail zugesandt."
 - id: donate_customer_portal_contact_us
-  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
 
 - id: donate_become_sponsor_title
   translation: "Möchtest du ein offizieller Sponsor werden?"
@@ -569,9 +569,9 @@
 - id: hub_managed_low_quantity_description_1
   translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore alleine nutzen möchtest."
 - id: hub_managed_low_quantity_description_2
-  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit jemandem teilen möchtest. Lies die <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
+  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit jemandem teilen möchtest. Lies die <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
 - id: hub_managed_low_quantity_description_3
-  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit einem kleinen Team teilen möchtest. Lies die <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
+  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit einem kleinen Team teilen möchtest. Lies die <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
 - id: hub_managed_low_quantity_description_4
   translation: "Ansonsten kannst du gerne Zugang zu einer Managed-Instanz von Cryptomator Hub anfragen."
 - id: hub_managed_low_quantity_submit_1
@@ -668,7 +668,7 @@
 - id: hub_setup_output_header_description
   translation: "Verwende diese Konfigurationsvorlage, um Cryptomator Hub zu deployen."
 - id: hub_setup_output_hint
-  translation: "Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten. In der <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">Dokumentation</a> gibt es einige Beispiele für die Einrichtung eines Proxy."
+  translation: "Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten. In der <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">Dokumentation</a> gibt es einige Beispiele für die Einrichtung eines Proxy."
 
 - id: hub_setup_contact_us_title
   translation: "Brauchst du Hilfe bei deiner Konfiguration?"
@@ -853,7 +853,7 @@
 - id: supporter_cert_contributor_github_contribution_link_placeholder
   translation: "Link zur Contribution auf GitHub (https://github.com/...)"
 - id: supporter_cert_contributor_instruction
-  translation: "In unserem <a class=\"text-primary no-underline hover:underline\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">Contribution Guide</a> findest du die ersten Informationen."
+  translation: "In unserem <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">Contribution Guide</a> findest du die ersten Informationen."
 
 - id: supporter_cert_influencer_reference
   translation: "Referenz"
@@ -880,4 +880,4 @@
 - id: supporter_cert_recovery_success
   translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
 - id: supporter_cert_recovery_contact_us
-  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
+  translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."

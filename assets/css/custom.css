@@ -81,6 +81,34 @@
   @apply cursor-not-allowed no-underline text-gray-300;
 }
 
+.text-link {
+  @apply text-primary no-underline hover:underline;
+}
+
+.prose-article {
+  @apply prose prose-sm md:prose max-w-none md:max-w-none;
+}
+
+.font-h1 {
+  @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
+}
+
+.font-h2 {
+  @apply font-headline font-medium text-xl md:text-2xl leading-snug;
+}
+
+.font-h3 {
+  @apply font-headline text-lg md:text-xl leading-relaxed;
+}
+
+.font-lead {
+  @apply text-lg md:text-xl leading-relaxed text-gray-700;
+}
+
+.font-p {
+  @apply text-sm md:text-base leading-relaxed text-gray-700;
+}
+
 .white-box {
   @apply rounded-sm shadow-sm bg-white;
 }

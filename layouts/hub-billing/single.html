@@ -6,7 +6,7 @@
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             {{ i18n "hub_billing_generic_title" . }}
           </h3>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          <p class="font-p mb-4">
             <i class="fas fa-info-circle fa-fw"></i>
             {{ i18n "hub_billing_missingparams_description" . }}
           </p>
@@ -18,7 +18,7 @@
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             {{ i18n "hub_billing_generic_title" . }}
           </h3>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          <p class="font-p mb-4">
             <i class="fas fa-spinner fa-spin fa-fw"></i>
             {{ i18n "hub_billing_loading_description" . }}
           </p>
@@ -31,7 +31,7 @@
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             {{ i18n "hub_billing_generic_title" . }}
           </h3>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          <p class="font-p mb-4">
             <i class="fas fa-sign-in fa-fw"></i>
             {{ i18n "hub_billing_createsession_description" . }}
           </p>
@@ -51,7 +51,7 @@
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             {{ i18n "hub_billing_generic_title" . }}
           </h3>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          <p class="font-p mb-4">
             <i class="fas fa-envelope fa-fw"></i>
             {{ i18n "hub_billing_createsession_success_description" . }}
           </p>
@@ -60,7 +60,7 @@
 
       <template x-if="subscriptionData.state == 'EXISTING_CUSTOMER'">
         <div>
-          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+          <header class="prose-article mb-6">
             <h1>{{ .Title }}</h1>
           </header>
           <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
@@ -163,10 +163,10 @@
           </dl>
           <p class="text-sm text-gray-700">{{ i18n "hub_billing_pricing_vat_included" . }}</p>
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
-          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-12">
+          <h2 class="font-h2 mb-4 mt-12">
             {{ i18n "hub_billing_manage_license_key_title" . }}
           </h2>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          <p class="font-p mb-4">
             {{ i18n "hub_billing_manage_license_key_instruction" . }}
           </p>
           <textarea x-model="subscriptionData.token" class="text-sm md:text-base leading-relaxed break-all rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="6" readonly></textarea>
@@ -191,11 +191,11 @@
                         <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4" id="restart-modal-title">
                           {{ i18n "hub_billing_manage_restart_subscription_title" . }}
                         </h3>
-                        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                        <p class="font-p mb-4">
                           <i class="fas fa-exclamation-triangle fa-fw text-yellow-500"></i>
                           {{ i18n "hub_billing_manage_restart_subscription_warning" . }}
                         </p>
-                        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                        <p class="font-p mb-4">
                           <i class="fas fa-credit-card fa-fw text-primary"></i>
                           {{ i18n "hub_billing_manage_modal_charge_amount_description" . }}: <span x-text="subscriptionData.restartModal.nextPayment ? subscriptionData.restartModal.nextPayment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.restartModal.nextPayment.currency }) : '…'"></span>
                         </p>
@@ -235,7 +235,7 @@
                           {{ i18n "hub_billing_manage_change_quantity_title" . }}
                         </h3>
                         <div x-show="!subscriptionData.changeSeatsModal.confirmation">
-                          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                          <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_description" . }}
                           </p>
                           <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
@@ -244,23 +244,23 @@
                           </p>
                         </div>
                         <div x-show="subscriptionData.changeSeatsModal.confirmation">
-                          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                          <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_confirmation_current_amount_description" . }}: <span x-text="subscriptionData.details.quantity"></span>
                           </p>
-                          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                          <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_confirmation_new_amount_description" . }}: <span x-text="subscriptionData.quantity"></span>
                           </p>
                           <div x-show="subscriptionData.quantity > subscriptionData.details.quantity">
-                            <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                            <p class="font-p mb-4">
                               <i class="fas fa-exclamation-triangle fa-fw text-yellow-500"></i>
                               {{ i18n "hub_billing_manage_change_quantity_confirmation_increase_warning" . }}
                             </p>
-                            <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                            <p class="font-p mb-4">
                               <i class="fas fa-credit-card fa-fw text-primary"></i>
                               {{ i18n "hub_billing_manage_modal_charge_amount_description" . }}: <span x-text="subscriptionData.changeSeatsModal.immediatePayment ? subscriptionData.changeSeatsModal.immediatePayment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.immediatePayment.currency }) : '…'"></span>
                             </p>
                           </div>
-                          <p x-show="subscriptionData.quantity < subscriptionData.details.quantity" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                          <p x-show="subscriptionData.quantity < subscriptionData.details.quantity" class="font-p mb-4">
                             <i class="fas fa-exclamation-triangle fa-fw text-yellow-500"></i>
                             {{ i18n "hub_billing_manage_change_quantity_confirmation_decrease_warning" . }}
                           </p>
@@ -291,7 +291,7 @@
 
       <template x-if="subscriptionData.state == 'NEW_CUSTOMER'">
         <div x-data="{audience: 'business'}">
-          <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+          <header class="prose-article mb-6">
             <h1>{{ .Title }}</h1>
             <p class="lead">{{ i18n "hub_billing_checkout_description" . }}</p>
           </header>
@@ -366,11 +366,11 @@
                   <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
                 </div>
                 <div class="text-center mt-8">
-                  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                  <p class="font-p mb-4">
                     {{ i18n "hub_billing_checkout_standard_instruction" . }}
                   </p>
-                  <p x-show="subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-                  <p x-show="!subscriptionData.customBilling?.managed" class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+                  <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+                  <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}
@@ -393,7 +393,7 @@
               </div>
               <div class="grow">
                 <div class="flex flex-col items-center text-center h-full px-4 py-8">
-                  <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4 md:mb-0">
+                  <h3 class="font-h3 mb-4 md:mb-0">
                     {{ i18n "hub_billing_checkout_enterprise_subtitle" . }}
                   </h3>
                   <div class="mb-4 md:my-auto lg:max-w-sm">
@@ -401,7 +401,7 @@
                       <i class="fas fa-circle fa-stack-2x"></i>
                       <i class="fas fa-building fa-stack-1x text-primary"></i>
                     </div>
-                    <p class="text-sm md:text-base leading-relaxed text-gray-700">
+                    <p class="font-p">
                       {{ i18n "hub_billing_checkout_enterprise_cta" . }}
                     </p>
                   </div>
@@ -413,17 +413,17 @@
               </div>
             </div>
           </div>
-          <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4 mt-24">{{ i18n "faq_title" . }}</h2>
+          <h2 class="font-h2 mb-4 mt-24">{{ i18n "faq_title" . }}</h2>
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
           <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200">
             {{- range $index, $element := $data.pricing_teams_faq }}
-            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+            <dt class="font-p p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
                 <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>{{ .Question }}</span>
               </a>
             </dt>
-            <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+            <dd x-show="isOpen[{{ $index }}]" class="prose-article p-4">
               {{ .Answer | markdownify }}
             </dd>
             {{- end }}
@@ -436,7 +436,7 @@
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             {{ i18n "hub_billing_generic_title" . }}
           </h3>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+          <p class="font-p mb-4">
             <i class="fas fa-info-circle fa-fw"></i>
             {{ i18n "hub_billing_manualinvoice_description" . }}
           </p>
