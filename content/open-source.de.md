@@ -109,7 +109,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode kann von einer Community aus Programmierern – vom Hobbyprogrammierer bis zum Sicherheitsforscher – eingesehen werden, wodurch unbefugter Zugriff direkt erkannt wird.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Weil jeder den Quellcode einsehen kann, wird verhindert, dass unbemerkt Hintertüren für Regierungen, Strafverfolgungsbehörden oder Geschäftspartner eingebaut werden können.</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700"><strong>Würde also jemand Unbefugtes Zugriff auf deine Daten haben, würde das zumindest sehr schnell auffallen.</strong></p>
@@ -128,7 +128,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode wird ständig überprüft und somit laufend weiter verbessert.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Abgesehen von offiziellen Audits wird der Quellcode auch von Dritten verwendet und somit ständig überprüft.</p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Werden dabei Schwachstellen gefunden, können diese nicht stillschweigend ignoriert werden. Falls es mal ein Problem gibt, fällt dies schnell auf und der Anbieter der Verschlüsselungssoftware ist zu einer zügigen Reaktion gezwungen. Sowohl die Ursache als auch die Abhilfe werden öffentlich dokumentiert.</p>
@@ -149,7 +149,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode wird hundertfach kopiert, was die Verschlüsselung unabhängig vom Anbieter macht.</p>
     <div x-data="{ isLearnMoreOpen: false }">
       <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
-      <div x-show="isLearnMoreOpen" x-cloak class="rounded-sm shadow-sm bg-white mt-4">
+      <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
           <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Selbst wenn der Anbieter der Verschlüsselungssoftware irgendwann seinen Betrieb einstellt, <strong>hast du weiterhin Zugriff auf deine verschlüsselten Daten und kannst deinen Cloud-Speicher weiterhin verschlüsseln.</strong></p>
           <p class="text-sm md:text-base leading-relaxed text-gray-700">Denn der Quellcode wird hunderte Male kopiert und kann völlig legal von anderen weiterveröffentlicht werden.</p>

@@ -24,7 +24,7 @@
 
       <div x-show="planOption !== '#for-teams'">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div class="rounded-sm shadow-sm bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
@@ -76,7 +76,7 @@
               </ul>
             </div>
           </div>
-          <div class="rounded-sm shadow-sm bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
@@ -120,7 +120,7 @@
               </ul>
             </div>
           </div>
-          <div class="rounded-sm shadow-sm bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
@@ -184,7 +184,7 @@
           </header>
       
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded-sm shadow-sm bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
             {{- range $index, $element := $data.pricing_individuals_faq }}
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
@@ -202,7 +202,7 @@
 
       <div x-show="planOption === '#for-teams'" x-cloak>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div class="rounded-sm shadow-sm bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
                 {{ i18n "pricing_hub_community_title" . }}
@@ -249,7 +249,7 @@
               </ul>
             </div>
           </div>
-          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="rounded-sm shadow-sm bg-white">
+          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-8">
                 <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
@@ -338,7 +338,7 @@
               </ul>
             </div>
           </div>
-          <div class="rounded-sm shadow-sm bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
                 {{ i18n "pricing_hub_enterprise_title" . }}
@@ -390,7 +390,7 @@
           </header>
       
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded-sm shadow-sm bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
             {{- range $index, $element := $data.pricing_teams_faq }}
             <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
