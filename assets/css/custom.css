@@ -85,10 +85,6 @@
   @apply text-primary no-underline hover:underline;
 }
 
-.prose-article {
-  @apply prose prose-sm md:prose max-w-none md:max-w-none;
-}
-
 .font-h1 {
   @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
 }

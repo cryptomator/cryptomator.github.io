@@ -10,7 +10,7 @@ ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 ---
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # NIS 2 Directive: Higher standards for cybersecurity from October 2024
 

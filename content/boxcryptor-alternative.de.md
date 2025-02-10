@@ -15,7 +15,7 @@ ogimage:
   height: 541
 ---
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Die beste Alternative, um deine sensiblen Daten in der Cloud zu verschlüsseln: Boxcryptor vs. Cryptomator
 
@@ -158,7 +158,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
   </tbody>
 </table>
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 ### Sicherheitsrelevante Features {#security-relevant-features}
 
@@ -377,7 +377,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
   </tbody>
 </table>
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 ## Fazit: Wann Boxcryptor bzw. Cryptomator die passende Alternative für dich ist {#conclusion}
 

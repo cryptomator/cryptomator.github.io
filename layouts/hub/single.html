@@ -40,28 +40,28 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="white-box">
-        <div class="prose-article px-4 py-2 border-b border-primary">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
         </div>
-        <div class="prose-article p-4">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
           <p>{{ i18n "hub_features_feature_1_description" . | safeHTML }}</p>
         </div>
       </div>
     
       <div class="white-box">
-        <div class="prose-article px-4 py-2 border-b border-primary">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-lock-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
         </div>
-        <div class="prose-article p-4">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
           <p>{{ i18n "hub_features_feature_2_description" . | safeHTML }}</p>
         </div>
       </div>
     
       <div class="white-box">
-        <div class="prose-article px-4 py-2 border-b border-primary">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
           <h3><i class="fas fa-key fa-fw text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
         </div>
-        <div class="prose-article p-4">
+        <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
           <p>{{ i18n "hub_features_feature_3_description" . | safeHTML }}</p>
         </div>
       </div>
@@ -92,7 +92,7 @@
           <span>{{ .Question }}</span>
         </a>
       </dt>
-      <dd x-show="isOpen[{{ $index }}]" class="prose-article p-4">
+      <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         {{ .Answer | markdownify }}
       </dd>
       {{- end }}

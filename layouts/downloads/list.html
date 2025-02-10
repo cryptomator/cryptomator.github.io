@@ -44,7 +44,7 @@
           <span>{{ .Question }}</span>
         </a>
       </dt>
-      <dd x-show="isOpen[{{ $index }}]" class="prose-article p-4">
+      <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
         {{ .Answer | markdownify }}
       </dd>
       {{- end }}

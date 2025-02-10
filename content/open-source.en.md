@@ -16,7 +16,7 @@ ogimage:
   height: 541
 ---
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Encrypt Your Data Securely in the Cloud: How You Can Further Increase Your Data Security Through Open Source
 
@@ -65,7 +65,7 @@ Which of the following scenarios sounds safer to you:
   </tr>
 </table>
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 You probably already sense a tendency: The stranger may look nice – and in most cases there is certainly no reason for suspicion.
 
@@ -159,7 +159,7 @@ At the same time, however, open source has many security-enhancing advantages:
   </div>
 </div>
 
-<div class="prose-article">{{< markdownify >}}
+<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 ## Encrypt Cloud Storage With Open Source Software: On the Safe Side With Cryptomator {#robust-crypto}
 
