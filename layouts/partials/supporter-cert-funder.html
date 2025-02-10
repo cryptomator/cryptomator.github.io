@@ -15,13 +15,13 @@
       </fieldset>
       <div class="w-full mb-4 md:w-1/2 md:pl-3">
         <label class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_quantity" }}</label>
-        <input x-model="checkoutData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="1000" step="1" class="input-box mb-2" placeholder="min. 1" required/>
+        <input x-model="checkoutData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="1000" step="1" class="input-box w-full mb-2" placeholder="min. 1" required/>
         <p class="text-xs text-gray-600">{{ i18n "supporter_cert_funder_quantity_help" }}</p>
       </div>
     </div>
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "supporter_cert_common_email" }}</label>
-      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
+      <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>
@@ -37,7 +37,7 @@
   <div x-show="checkoutData.success" x-cloak>
     <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_funder_success" }}</h3>
     <label class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="input-box text-sm md:text-base leading-relaxed break-all mb-2" rows="6" placeholder="{{ i18n "supporter_cert_funder_key_placeholder" }}" readonly></textarea>
+    <textarea x-model="checkoutData.licenseKey" class="input-box w-full text-sm md:text-base leading-relaxed break-all mb-2" rows="6" placeholder="{{ i18n "supporter_cert_funder_key_placeholder" }}" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="font-p">{{ i18n "supporter_cert_funder_key_instruction" }}</p>
   </div>

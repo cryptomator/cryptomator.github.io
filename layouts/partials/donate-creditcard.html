@@ -9,7 +9,7 @@
             <option value="USD">$</option>
           </select>
         </div>
-        <input type="number" min="1" step="1" x-model="amount" class="grow min-w-0 text-right border-gray-300 focus:ring-0 focus:border-secondary md:pr-0" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
+        <input type="number" min="1" step="1" x-model="amount" class="grow min-w-0 text-right input-box rounded-none" placeholder="{{ i18n "donate_creditcard_amount_placeholder" }}" required/>
         <div class="shrink-0 text-gray-700 px-3">{{ i18n "donate_creditcard_amount_suffix" }}</div>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "donate_creditcard_number" }}</label>
       <div> <!-- wrapper needed for stripe text field -->
-        <input type="text" x-ref="stripePlaceholder" class="input-box" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
+        <input type="text" x-ref="stripePlaceholder" class="input-box w-full" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
       </div>
     </div>
 

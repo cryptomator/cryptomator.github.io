@@ -24,7 +24,7 @@
               </label>
               <div class="mt-1 flex items-center rounded-sm bg-gray-300">
                 <div class="text-gray-700 px-3">https://</div>
-                <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?" class="block w-full rounded-none border-gray-300 focus:ring-0 focus:border-secondary" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
+                <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?" class="block input-box rounded-none w-full" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
                 <div class="text-gray-700 px-3">.cryptomator.cloud</div>
               </div>
               <p class="mt-2 text-sm text-gray-500">
@@ -36,7 +36,7 @@
               <label for="email" class="block text-sm font-medium text-gray-700">
                 {{ i18n "hub_managed_info_email" }}
               </label>
-              <input type="email" id="email" class="mt-1 block input-box" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
+              <input type="email" id="email" class="mt-1 block input-box w-full" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
               <p class="mt-2 text-sm text-gray-500">
                 {{ i18n "hub_managed_info_email_description" }}
               </p>
@@ -46,7 +46,7 @@
               <label for="quantity" class="block text-sm font-medium text-gray-700">
                 {{ i18n "hub_managed_info_quantity" }}
               </label>
-              <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block input-box" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
+              <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block input-box w-full" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
               <p class="mt-2 text-sm text-gray-500">
                 {{ i18n "hub_managed_info_quantity_description" }}
               </p>

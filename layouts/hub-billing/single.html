@@ -169,7 +169,7 @@
           <p class="font-p mb-4">
             {{ i18n "hub_billing_manage_license_key_instruction" . }}
           </p>
-          <textarea x-model="subscriptionData.token" class="input-box text-sm md:text-base leading-relaxed break-all" rows="6" readonly></textarea>
+          <textarea x-model="subscriptionData.token" class="input-box w-full text-sm md:text-base leading-relaxed break-all" rows="6" readonly></textarea>
           <button :disabled="subscriptionData.inProgress || !subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
             {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
           </button>
@@ -238,7 +238,7 @@
                           <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_description" . }}
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box mb-2" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_amount_description" . }}
                           </p>
@@ -344,7 +344,7 @@
                     <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_hubid" . }}
                     </label>
-                    <input x-model="subscriptionData.hubId" type="text" class="input-box mb-2" readonly/>
+                    <input x-model="subscriptionData.hubId" type="text" class="input-box w-full mb-2" readonly/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_hubid_description" . }}
                     </p>
@@ -353,7 +353,7 @@
                     <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_quantity" . }}
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box mb-2" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_quantity_description" . }}
                     </p>
@@ -363,7 +363,7 @@
                   <label class="label-uppercase mb-2">
                     {{ i18n "hub_billing_checkout_standard_email" . }}
                   </label>
-                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
+                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
                 </div>
                 <div class="text-center mt-8">
                   <p class="font-p mb-4">
