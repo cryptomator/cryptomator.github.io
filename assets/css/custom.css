@@ -117,6 +117,10 @@
   @apply rounded-sm shadow-sm bg-white;
 }
 
+.input-box {
+  @apply rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full;
+}
+
 .StripeElement {
   @apply rounded-sm border border-gray-300 px-3 py-2;
 }

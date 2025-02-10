@@ -2,11 +2,11 @@
   <form x-show="!feedbackData.success" x-ref="form">
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "supporter_cert_influencer_reference" }}</label>
-      <textarea x-model="submitData.reference" x-ref="reference" @blur="$refs.reference.classList.add('show-invalid')" type="url" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" rows="5" maxlength="800" placeholder="{{ i18n "supporter_cert_influencer_reference_placeholder" }}" required></textarea>
+      <textarea x-model="submitData.reference" x-ref="reference" @blur="$refs.reference.classList.add('show-invalid')" type="url" class="input-box" rows="5" maxlength="800" placeholder="{{ i18n "supporter_cert_influencer_reference_placeholder" }}" required></textarea>
     </div>
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "supporter_cert_common_email" }}</label>
-      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
+      <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "supporter_cert_influencer_instruction" }}</p>

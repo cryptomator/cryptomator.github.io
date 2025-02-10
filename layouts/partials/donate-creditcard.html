@@ -33,7 +33,7 @@
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "donate_creditcard_number" }}</label>
       <div> <!-- wrapper needed for stripe text field -->
-        <input type="text" x-ref="stripePlaceholder" class="w-full rounded-sm border-gray-300 focus:ring-0 focus:border-secondary" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
+        <input type="text" x-ref="stripePlaceholder" class="input-box" @focus.once="oneTimePayment.initStripeField($refs.stripePlaceholder, '{{ i18n "donate_creditcard_once_loading" }}', '{{ .Site.Language.Lang }}')"/>
       </div>
     </div>
 
