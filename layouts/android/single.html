@@ -50,6 +50,8 @@
   {{ if hugo.IsDevelopment }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" }}
     <script type="text/javascript" src="{{ $keyRecoveryJs.RelPermalink }}" defer></script>
     {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
@@ -57,6 +59,8 @@
   {{ else }}
     {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $keyRecoveryJs.RelPermalink }}" integrity="{{ $keyRecoveryJs.Data.Integrity }}" defer></script>
     {{ $androidKeyJs := resources.Get "js/androidkey.js" | minify | fingerprint }}

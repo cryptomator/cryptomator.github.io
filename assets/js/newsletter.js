@@ -1,3 +1,5 @@
+"use strict";
+
 const SUBSCRIBE_NEWSLETTER_URL = 'https://api.cryptomator.org/listmonk/subscribe.php';
 
 class Newsletter {
@@ -17,28 +19,10 @@ class Newsletter {
     this._data.inProgress = true;
     this._data.errorMessage = '';
     this._data.success = false;
-    $.ajax({
-      url: SUBSCRIBE_NEWSLETTER_URL,
-      type: 'GET',
-      xhrFields: {
-        withCredentials: true
-      }
-    }).done(_ => {
-      $.ajax({
-        url: SUBSCRIBE_NEWSLETTER_URL,
-        type: 'POST',
-        data: {
-          email: this._data.email,
-          listid: this._data.listId
-        },
-        xhrFields: {
-          withCredentials: true
-        }
-      }).done(_ => {
-        this.onSubscribeSucceeded();
-      }).fail(xhr => {
-        this.onSubscribeFailed(xhr.responseJSON?.message || 'Subscribing to newsletter failed.');
-      });
+    subscribeToNewsletter(
+      this._data.email, this._data.listId
+    ).done(() => {
+      this.onSubscribeSucceeded();
     }).fail(xhr => {
       this.onSubscribeFailed(xhr.responseJSON?.message || 'Subscribing to newsletter failed.');
     });
@@ -55,5 +39,26 @@ class Newsletter {
     this._data.errorMessage = '';
     this._data.inProgress = false;
   }
+}
 
+function subscribeToNewsletter(email, listId) {
+  return $.ajax({
+    url: SUBSCRIBE_NEWSLETTER_URL,
+    type: 'GET',
+    xhrFields: {
+      withCredentials: true
+    }
+  }).then(() => {
+    return $.ajax({
+      url: SUBSCRIBE_NEWSLETTER_URL,
+      type: 'POST',
+      data: {
+        email: email,
+        listid: listId
+      },
+      xhrFields: {
+        withCredentials: true
+      }
+    });
+  });
 }
