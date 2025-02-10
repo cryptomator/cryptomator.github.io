@@ -2,7 +2,7 @@
   <form x-show="!checkoutData.success" x-ref="funderForm">
     <div class="flex flex-wrap md:flex-nowrap">
       <fieldset class="w-full mb-4 md:w-1/2 md:pr-3">
-        <legend class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_funder_price" }}</legend>
+        <legend class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_price" }}</legend>
         <div class="grid grid-cols-3 gap-2 mb-2">
           <template x-for="(price, index) in checkoutData.prices">
             <label :class="{'border-gray-300 hover:border-primary': checkoutData.selectedPriceIndex != index, 'border-primary bg-primary text-white': checkoutData.selectedPriceIndex == index}" class="flex items-center justify-center rounded-sm px-3 py-2 cursor-pointer border focus:ring-0 focus:border-secondary" @click="checkoutData.selectedPriceIndex = index">
@@ -14,13 +14,13 @@
         <p class="text-xs text-gray-600">{{ i18n "supporter_cert_funder_price_help" }}</p>
       </fieldset>
       <div class="w-full mb-4 md:w-1/2 md:pl-3">
-        <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_funder_quantity" }}</label>
+        <label class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_quantity" }}</label>
         <input x-model="checkoutData.quantity" x-ref="quantity" @blur="$refs.quantity.classList.add('show-invalid')" type="number" min="1" max="1000" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" placeholder="min. 1" required/>
         <p class="text-xs text-gray-600">{{ i18n "supporter_cert_funder_quantity_help" }}</p>
       </div>
     </div>
     <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_common_email" }}</label>
+      <label class="label-uppercase mb-2">{{ i18n "supporter_cert_common_email" }}</label>
       <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
@@ -36,7 +36,7 @@
 
   <div x-show="checkoutData.success" x-cloak>
     <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_funder_success" }}</h3>
-    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "supporter_cert_funder_key" }}</label>
+    <label class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_key" }}</label>
     <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="{{ i18n "supporter_cert_funder_key_placeholder" }}" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="font-p">{{ i18n "supporter_cert_funder_key_instruction" }}</p>

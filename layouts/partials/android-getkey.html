@@ -5,11 +5,11 @@
 
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
     <div class="w-full md:w-1/2 mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "android_getkey_price" }}</label>
+      <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
       <input x-model="checkoutData.price" type="text" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "android_getkey_price_placeholder" }}" readonly/>
     </div>
     <div class="mb-4">
-      <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "android_getkey_email" }}</label>
+      <label class="label-uppercase mb-2">{{ i18n "android_getkey_email" }}</label>
       <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "android_getkey_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
@@ -25,7 +25,7 @@
 
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
     <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success" }}</h3>
-    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">{{ i18n "android_getkey_key" }}</label>
+    <label class="label-uppercase mb-2">{{ i18n "android_getkey_key" }}</label>
     <textarea x-model="checkoutData.licenseKey" class="text-sm md:text-base leading-relaxed break-all rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
     <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
     <p class="font-p">{{ i18n "android_getkey_key_instruction" }}</p>

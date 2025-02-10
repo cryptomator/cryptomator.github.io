@@ -65,7 +65,7 @@
           </header>
           <dl class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div class="white-box p-4">
-              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+              <dt class="label-uppercase mb-2">
                 {{ i18n "hub_billing_manage_status_title" . }}
               </dt>
               <dd>
@@ -101,7 +101,7 @@
               </dd>
             </div>
             <div class="white-box p-4">
-              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+              <dt class="label-uppercase mb-2">
                 {{ i18n "hub_billing_manage_next_payment_title" . }}
               </dt>
               <dd>
@@ -132,7 +132,7 @@
               </dd>
             </div>
             <div class="white-box p-4">
-              <dt class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+              <dt class="label-uppercase mb-2">
                 {{ i18n "hub_billing_manage_payment_info_title" . }}
               </dt>
               <dd>
@@ -341,7 +341,7 @@
               <div class="px-4 py-8">
                 <div class="flex flex-wrap md:flex-nowrap">
                   <div class="w-full mb-4 md:w-1/2 md:pr-3">
-                    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                    <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_hubid" . }}
                     </label>
                     <input x-model="subscriptionData.hubId" type="text" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" readonly/>
@@ -350,7 +350,7 @@
                     </p>
                   </div>
                   <div class="w-full mb-4 md:w-1/2 md:pl-3">
-                    <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                    <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_quantity" . }}
                     </label>
                     <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full mb-2" required/>
@@ -360,7 +360,7 @@
                   </div>
                 </div>
                 <div>
-                  <label class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">
+                  <label class="label-uppercase mb-2">
                     {{ i18n "hub_billing_checkout_standard_email" . }}
                   </label>
                   <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>

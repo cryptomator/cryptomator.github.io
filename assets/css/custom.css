@@ -109,6 +109,10 @@
   @apply text-sm md:text-base leading-relaxed text-gray-700;
 }
 
+.label-uppercase {
+  @apply block font-bold text-xs uppercase tracking-wide text-gray-600;
+}
+
 .white-box {
   @apply rounded-sm shadow-sm bg-white;
 }
