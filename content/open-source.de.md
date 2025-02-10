@@ -16,7 +16,7 @@ ogimage:
   height: 541
 ---
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 # Deine Daten sicher im Cloud-Speicher verschlüsseln: Wie du durch Open Source deine Datensicherheit weiter erhöhst
 
@@ -41,13 +41,13 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
       </div>
     </td>
     <td class="pl-3">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">Der Barkeeper bereitet deinen Drink live vor deinen Augen zu.</p>
+      <p class="font-p">Der Barkeeper bereitet deinen Drink live vor deinen Augen zu.</p>
     </td>
   </tr>
 
   <tr>
     <td class="text-center py-6">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">oder</p>
+      <p class="font-p">oder</p>
     </td>
     <td></td>
   </tr>
@@ -60,12 +60,12 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
       </div>
     </td>
     <td class="pl-3">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">Ein Unbekannter bietet dir etwas von seinem Getränk an.</p>
+      <p class="font-p">Ein Unbekannter bietet dir etwas von seinem Getränk an.</p>
     </td>
   </tr>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 Wahrscheinlich spürst du bereits eine Tendenz: Die fremde Person kann noch so nett aussehen – und in den meisten Fällen gibt es sicher keinen Grund für Misstrauen.
 
@@ -106,13 +106,13 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <i class="fas fa-users fa-stack-1x fa-inverse"></i>
   </div>
   <div>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode kann von einer Community aus Programmierern – vom Hobbyprogrammierer bis zum Sicherheitsforscher – eingesehen werden, wodurch unbefugter Zugriff direkt erkannt wird.</p>
+    <p class="font-p mb-4">Der Quellcode kann von einer Community aus Programmierern – vom Hobbyprogrammierer bis zum Sicherheitsforscher – eingesehen werden, wodurch unbefugter Zugriff direkt erkannt wird.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Weil jeder den Quellcode einsehen kann, wird verhindert, dass unbemerkt Hintertüren für Regierungen, Strafverfolgungsbehörden oder Geschäftspartner eingebaut werden können.</p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700"><strong>Würde also jemand Unbefugtes Zugriff auf deine Daten haben, würde das zumindest sehr schnell auffallen.</strong></p>
+          <p class="font-p mb-4">Weil jeder den Quellcode einsehen kann, wird verhindert, dass unbemerkt Hintertüren für Regierungen, Strafverfolgungsbehörden oder Geschäftspartner eingebaut werden können.</p>
+          <p class="font-p"><strong>Würde also jemand Unbefugtes Zugriff auf deine Daten haben, würde das zumindest sehr schnell auffallen.</strong></p>
         </div>
       </div>
     </div>
@@ -125,15 +125,15 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
   </div>
   <div>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode wird ständig überprüft und somit laufend weiter verbessert.</p>
+    <p class="font-p mb-4">Der Quellcode wird ständig überprüft und somit laufend weiter verbessert.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Abgesehen von offiziellen Audits wird der Quellcode auch von Dritten verwendet und somit ständig überprüft.</p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Werden dabei Schwachstellen gefunden, können diese nicht stillschweigend ignoriert werden. Falls es mal ein Problem gibt, fällt dies schnell auf und der Anbieter der Verschlüsselungssoftware ist zu einer zügigen Reaktion gezwungen. Sowohl die Ursache als auch die Abhilfe werden öffentlich dokumentiert.</p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4"><strong>Du kannst dich also darauf verlassen, dass die Sicherheit beim Verschlüsseln deines Cloud-Speichers nicht nur einmalig intensiv, sondern auch laufend durch Leute vom Fach verifiziert wird.</strong></p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700">Die Geschichte zeigt, dass in anderen Fällen (bei sogenannter Closed-Source-Software) Sicherheitslücken über Jahre ungefixt blieben, weil der Anbieter keinen öffentlichen Druck zur Reaktion hatte.</p>
+          <p class="font-p mb-4">Abgesehen von offiziellen Audits wird der Quellcode auch von Dritten verwendet und somit ständig überprüft.</p>
+          <p class="font-p mb-4">Werden dabei Schwachstellen gefunden, können diese nicht stillschweigend ignoriert werden. Falls es mal ein Problem gibt, fällt dies schnell auf und der Anbieter der Verschlüsselungssoftware ist zu einer zügigen Reaktion gezwungen. Sowohl die Ursache als auch die Abhilfe werden öffentlich dokumentiert.</p>
+          <p class="font-p mb-4"><strong>Du kannst dich also darauf verlassen, dass die Sicherheit beim Verschlüsseln deines Cloud-Speichers nicht nur einmalig intensiv, sondern auch laufend durch Leute vom Fach verifiziert wird.</strong></p>
+          <p class="font-p">Die Geschichte zeigt, dass in anderen Fällen (bei sogenannter Closed-Source-Software) Sicherheitslücken über Jahre ungefixt blieben, weil der Anbieter keinen öffentlichen Druck zur Reaktion hatte.</p>
         </div>
       </div>
     </div>
@@ -146,20 +146,20 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
     <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
   </div>
   <div>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Der Quellcode wird hundertfach kopiert, was die Verschlüsselung unabhängig vom Anbieter macht.</p>
+    <p class="font-p mb-4">Der Quellcode wird hundertfach kopiert, was die Verschlüsselung unabhängig vom Anbieter macht.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
-          <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">Selbst wenn der Anbieter der Verschlüsselungssoftware irgendwann seinen Betrieb einstellt, <strong>hast du weiterhin Zugriff auf deine verschlüsselten Daten und kannst deinen Cloud-Speicher weiterhin verschlüsseln.</strong></p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700">Denn der Quellcode wird hunderte Male kopiert und kann völlig legal von anderen weiterveröffentlicht werden.</p>
+          <p class="font-p mb-4">Selbst wenn der Anbieter der Verschlüsselungssoftware irgendwann seinen Betrieb einstellt, <strong>hast du weiterhin Zugriff auf deine verschlüsselten Daten und kannst deinen Cloud-Speicher weiterhin verschlüsseln.</strong></p>
+          <p class="font-p">Denn der Quellcode wird hunderte Male kopiert und kann völlig legal von anderen weiterveröffentlicht werden.</p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 ## Cloud-Speicher mit Open-Source-Software verschlüsseln: Mit Cryptomator auf der sicheren Seite {#robust-crypto}
 

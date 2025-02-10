@@ -1,5 +1,5 @@
 <div class="text-center">
-  <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "donate_crypto_instruction" }}</p>
+  <p class="font-p mb-4">{{ i18n "donate_crypto_instruction" }}</p>
   <form action="https://www.coinpayments.net/index.php" method="post" target="_top" x-data="{acceptTerms: false}">
     <input type="hidden" name="cmd" value="_donate" />
     <input type="hidden" name="reset" value="1" />
@@ -11,7 +11,7 @@
     <input type="hidden" name="allow_amount" value="1" />
     <input type="hidden" name="success_url" value="{{ "/donate/thanks" | absURL }}" />
     <input type="hidden" name="allow_extra" value="1" />
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+    <p class="font-p mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
     <button type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=donate-crypto-link" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
   </form>
 </div>

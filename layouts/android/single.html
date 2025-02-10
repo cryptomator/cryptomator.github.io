@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
+    <header class="prose-article mb-6">
       <h1>{{ .Title }}</h1>
       <p class="lead">{{ .Description }}</p>
     </header>
@@ -30,7 +30,7 @@
     <h3 id="keyrecovery" class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "android_keyrecovery_title" . }}</h3>
 
     <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "android_keyrecovery_instruction" . }}</p>
+      <p class="font-p mb-4">{{ i18n "android_keyrecovery_instruction" . }}</p>
       <div class="flex justify-center items-center rounded-sm bg-gray-300">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "android_keyrecovery_email_placeholder" }}" required/>
         <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=android-keyrecovery-form">
@@ -41,8 +41,8 @@
     </form>
 
     <div x-show="data.success" x-cloak>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_keyrecovery_success" . }}</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700">{{ ":question:" | emojify }} {{ i18n "android_keyrecovery_contact_us" . | safeHTML }}</p>
+      <p class="font-p mb-4">{{ ":+1:" | emojify }} {{ i18n "android_keyrecovery_success" . }}</p>
+      <p class="font-p">{{ ":question:" | emojify }} {{ i18n "android_keyrecovery_contact_us" . | safeHTML }}</p>
     </div>
   </section>
 {{ end }}

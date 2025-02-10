@@ -7,18 +7,18 @@
       </div>
       <div>
         <p class="font-bold mb-1">{{ i18n "downloads_thanks_notification_title" }}</p>
-        <p class="text-sm">{{ i18n "downloads_thanks_notification_detail" }} <a class="text-primary no-underline hover:underline" href="{{ $release.downloadUrl }}" download="{{ $release.filename }}" target="_self" x-init="$el.click()">{{ $release.filename }}</a></p>
+        <p class="text-sm">{{ i18n "downloads_thanks_notification_detail" }} <a class="text-link" href="{{ $release.downloadUrl }}" download="{{ $release.filename }}" target="_self" x-init="$el.click()">{{ $release.filename }}</a></p>
       </div>
     </div>
     <p class="grid grid-cols-2 gap-2 text-center text-xs w-full md:w-2/3 lg:w-1/2 mx-auto">
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_sha256_signature" }}</a>
-      <a class="text-primary no-underline hover:underline" href="#" @click.prevent="showPgpSignature = !showPgpSignature"><i :class="{ 'fa-eye': !showPgpSignature, 'fa-eye-slash': showPgpSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature" }}</a>
+      <a class="text-link" href="#" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_sha256_signature" }}</a>
+      <a class="text-link" href="#" @click.prevent="showPgpSignature = !showPgpSignature"><i :class="{ 'fa-eye': !showPgpSignature, 'fa-eye-slash': showPgpSignature }" class="fas fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature" }}</a>
     </p>
-    <div x-show="showShaSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
+    <div x-show="showShaSignature" x-cloak class="prose-article mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
       <h3>{{ i18n "downloads_thanks_sha256_signature" }}</h3>
       <p><code class="break-all">{{ $release.checksum }}</code></p>
     </div>
-    <div x-show="showPgpSignature" x-cloak class="prose prose-sm md:prose max-w-none md:max-w-none mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
+    <div x-show="showPgpSignature" x-cloak class="prose-article mx-auto w-full md:w-4/5 lg:w-1/2 text-center mt-8">
       <h3>{{ i18n "downloads_thanks_pgp_signature" }}</h3>
       <p><i class="fas fa-download fa-fw"></i> {{ i18n "downloads_thanks_pgp_signature_download" }}: <a href="{{ $release.signatureUrl }}" target="_blank" rel="noopener">{{ $release.filename }}.asc</a></p>
       <p><pre class="text-left h-64">{{ partial "pgpkey-E6E6A235.asc" . }}</pre></p>
@@ -27,7 +27,7 @@
   </div>
 
   <div class="container text-center py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none">
+    <header class="prose-article">
       <h1>{{ i18n "downloads_thanks_title" }}</h1>
       {{ .Content }}
     </header>
@@ -35,10 +35,10 @@
 
   <section class="container grid grid-cols-1 md:grid-cols-2 gap-4 pt-12 pb-24">
     <div class="white-box">
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
+      <div class="prose-article px-4 py-2 border-b border-primary">
         <h3><i class="fas fa-question-circle fa-fw text-primary"></i> {{ i18n "downloads_thanks_getting_started_title" }}</h3>
       </div>
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+      <div class="prose-article p-4">
         <p class="mb-4">{{ i18n "downloads_thanks_getting_started_detail" }}</p>
         <ul>
           <li>{{ i18n "downloads_thanks_getting_started_detail_1" | safeHTML }}</li>
@@ -48,10 +48,10 @@
     </div>
 
     <div class="white-box">
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
+      <div class="prose-article px-4 py-2 border-b border-primary">
         <h3><i class="fas fa-donate fa-fw text-primary"></i> {{ i18n "downloads_thanks_support_cryptomator_title" }}</h3>
       </div>
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+      <div class="prose-article p-4">
         <p class="mb-4">{{ i18n "downloads_thanks_support_cryptomator_detail" }}</p>
         <ul>
           <li>{{ i18n "downloads_thanks_support_cryptomator_detail_1" | safeHTML }}</li>

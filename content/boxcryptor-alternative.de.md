@@ -15,7 +15,7 @@ ogimage:
   height: 541
 ---
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 # Die beste Alternative, um deine sensiblen Daten in der Cloud zu verschlüsseln: Boxcryptor vs. Cryptomator
 
@@ -84,12 +84,12 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
 <table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Cryptomator</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/cryptomator-logo.png" srcset="/img/boxcryptor-alternative/cryptomator-logo.png 1x, /img/boxcryptor-alternative/cryptomator-logo@2x.png 2x">
       </th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Boxcryptor</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/boxcryptor-logo.png" srcset="/img/boxcryptor-alternative/boxcryptor-logo.png 1x, /img/boxcryptor-alternative/boxcryptor-logo@2x.png 2x">
       </th>
@@ -97,9 +97,9 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
   </thead>
   <tbody class="divide-y divide-gray-200">
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Unbeschränkte Anzahl Geräte</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">Unbeschränkte Anzahl Geräte</td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig</div>
@@ -107,9 +107,9 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Kein Account notwendig</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">Kein Account notwendig</td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in für lokalen Account; Standardeinstellung speichert Schlüssel auf Boxcryptor-Server</div>
@@ -117,35 +117,35 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Direktes Teilen von Dateien („Integrated Sharing“)</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">Direktes Teilen von Dateien („Integrated Sharing“)</td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <span>Passwort wiederherstellen ohne E-Mail-Adresse („Offline Key Recovery“)</span>
         <div class="has-tooltip">
           <i class="fas fa-info-circle fa-fw text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Deine Daten liegen nicht in Mails bei einem E-Mail-Account-Anbieter, was die Sicherheit weiter erhöht.</div>
         </div>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Erkennung von Synchronisationskonflikten bei Bearbeitung durch mehrere Personen</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4">Erkennung von Synchronisationskonflikten bei Bearbeitung durch mehrere Personen</td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Unterstützung aller gängigen Betriebssysteme</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">Unterstützung aller gängigen Betriebssysteme</td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Windows, macOS, Linux, Android, iOS</div>
         </div>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
@@ -158,7 +158,7 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 ### Sicherheitsrelevante Features {#security-relevant-features}
 
@@ -171,12 +171,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
 <table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Cryptomator</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/cryptomator-logo.png" srcset="/img/boxcryptor-alternative/cryptomator-logo.png 1x, /img/boxcryptor-alternative/cryptomator-logo@2x.png 2x">
       </th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Boxcryptor</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/boxcryptor-logo.png" srcset="/img/boxcryptor-alternative/boxcryptor-logo.png 1x, /img/boxcryptor-alternative/boxcryptor-logo@2x.png 2x">
       </th>
@@ -184,17 +184,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
   </thead>
   <tbody x-data="{ isFileContentEncryptionOpen: false, isFileNameEncryptionOpen: false, isFileAttributeEncryptionOpen: false, isFOSSOpen: false, isDirectoryObfuscationOpen: false, isIntegrityProtectionOpen: false, isQuantumResistantOpen: false, isAuditedCryptographyOpen: false, isMemoryHardKDFOpen: false, isShareKeysOpen: false }" class="divide-y divide-gray-200">
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileContentEncryptionOpen = !isFileContentEncryptionOpen">
           <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Dateiinhalte-Verschlüsselung</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isFileContentEncryptionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Niemand kann unberechtigt den Dateiinhalt mitlesen.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -202,14 +202,14 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileNameEncryptionOpen = !isFileNameEncryptionOpen">
           <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Dateinamen-Verschlüsselung</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig und optional</div>
@@ -217,7 +217,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr x-show="isFileNameEncryptionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Niemand kann unberechtigt den Dateinamen erkennen.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -225,22 +225,22 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileAttributeEncryptionOpen = !isFileAttributeEncryptionOpen">
           <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Dateiattribute-Verschlüsselung</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">geplant</div>
         </div>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isFileAttributeEncryptionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Niemand erhält Zugriff auf zusätzliche Dateiattribute.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -248,17 +248,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFOSSOpen = !isFOSSOpen">
           <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Freie & quelloffene Software (FOSS)</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isFOSSOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Der Quellcode ist einer breiten Community zugänglich, was die Sicherheit der Verschlüsselung erhöht.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -266,17 +266,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isDirectoryObfuscationOpen = !isDirectoryObfuscationOpen">
           <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Verzeichnis-Verschleierung</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isDirectoryObfuscationOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Die verschlüsselte Verzeichnisstruktur entspricht nicht der tatsächlichen bzw. unverschlüsselten Verzeichnisstruktur.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -284,17 +284,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isIntegrityProtectionOpen = !isIntegrityProtectionOpen">
           <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Integritätsschutz</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isIntegrityProtectionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Da Verschlüsselung nicht sofort auch vor Manipulation der Daten schützt, muss eine unbefugte Veränderung der Daten erkannt werden.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -302,17 +302,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isQuantumResistantOpen = !isQuantumResistantOpen">
           <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Quantenresistente Kryptographie</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isQuantumResistantOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Die eingesetzten Verschlüsselungsalgorithmen sind auch dann noch sicher, wenn der Angreifer über Quantencomputer verfügt.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -320,17 +320,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isAuditedCryptographyOpen = !isAuditedCryptographyOpen">
           <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Geprüfte Kryptographie</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isAuditedCryptographyOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Der Verschlüsselungscode wird von unabhängigen Gutachtern untersucht.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -338,17 +338,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isMemoryHardKDFOpen = !isMemoryHardKDFOpen">
           <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Speicherintensive KDF</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isMemoryHardKDFOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Die Key Derivation Function (KDF) wird verwendet, um aus dem von dir eingegebenen Passwort den kryptografischen Schlüssel herzuleiten. Diese Funktion muss möglichst komplex sein, um Bruteforce-Angriffe (das wahllose Ausprobieren von Zeichenkombinationen) zu verhindern.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -357,17 +357,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isShareKeysOpen = !isShareKeysOpen">
           <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Gemeinsame Nutzung ohne Weitergabe von Passwörtern</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isShareKeysOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
+      <td class="font-p p-4" colspan="3">
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Was bedeutet das?</p>
         <p class="mb-4">Ideal bei Team-Nutzung des Cloud-Speichers: Jedes Teammitglied kann ein individuelles Passwort verwenden – trotzdem habt ihr Zugriff auf die verschlüsselten Daten.</p>
         <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Warum ist das wichtig für die Datensicherheit?</p>
@@ -377,7 +377,7 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+<div class="prose-article">{{< markdownify >}}
 
 ## Fazit: Wann Boxcryptor bzw. Cryptomator die passende Alternative für dich ist {#conclusion}
 

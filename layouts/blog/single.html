@@ -2,14 +2,14 @@
   <div class="container-prose py-12">
     <article class="mb-12">
       <header class="mb-6">
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
+        <div class="prose-article mb-4">
           <h1><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</a></h1>
         </div>
         <div class="flex items-center mb-4">
           {{ if .Params.Author }}
             {{ if .Params.Authorimg }}
               {{ if .Params.Authorlink }}
-                <a class="text-primary no-underline hover:underline" href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">
+                <a class="text-link" href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">
               {{ end }}
               <img src="{{ .Params.Authorimg }}" class="w-12 rounded-full mr-2"/>
               {{ if .Params.Authorlink }}
@@ -19,14 +19,14 @@
             <span class="mr-1">
               {{ i18n "blob_post_author_prefix" }}
               {{ if .Params.Authorlink }}
-                <a class="text-primary no-underline hover:underline" href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">{{ .Params.Author }}</a>
+                <a class="text-link" href="{{ .Params.Authorlink }}" target="_blank" rel="noopener">{{ .Params.Author }}</a>
               {{ else }}
                 {{ .Params.Author }}
               {{ end }}
             </span>
             <span class="mr-1">•</span class="mr-2">
           {{ end }}
-          <span><a class="text-primary no-underline hover:underline" href="{{ .RelPermalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
+          <span><a class="text-link" href="{{ .RelPermalink }}">{{ dateFormat "2006-01-02" .Params.Date }}</a></span>
         </div>
         {{ if .Params.Notice }}
           <p class="italic">{{ .Params.Notice }}</p>
@@ -35,7 +35,7 @@
 
       <hr class="my-8"/>
 
-      <div class="prose prose-sm md:prose max-w-none md:max-w-none">
+      <div class="prose-article">
         {{ .Content }}
       </div>
     </article>

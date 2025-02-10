@@ -13,8 +13,8 @@
       <input x-model="submitData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="rounded-sm border-gray-300 focus:ring-0 focus:border-secondary w-full" placeholder="{{ i18n "supporter_cert_common_email_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "supporter_cert_contributor_instruction" . | safeHTML }}</p>
-      <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="font-p mb-4">{{ i18n "supporter_cert_contributor_instruction" . | safeHTML }}</p>
+      <p class="font-p mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "supporter_cert_common_loadcaptcha" }}</button>
       </div>
@@ -26,7 +26,7 @@
   </form>
 
   <div x-show="feedbackData.success" x-cloak>
-    <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_common_success_title" }}</h3>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700">{{ i18n "supporter_cert_common_success_description" }}</p>
+    <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_common_success_title" }}</h3>
+    <p class="font-p">{{ i18n "supporter_cert_common_success_description" }}</p>
   </div>
 </div>
