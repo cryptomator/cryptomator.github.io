@@ -2,9 +2,7 @@
   <div class="container-prose py-12">
     <article class="mb-12">
       <header class="mb-6">
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
-          <h1><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</a></h1>
-        </div>
+        <h1 class="font-h1 mb-4"><a class="text-link" href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> / {{ .Title }}</a></h1>
         <div class="flex items-center mb-4">
           {{ if .Params.Author }}
             {{ if .Params.Authorimg }}

@@ -101,6 +101,10 @@
   @apply text-sm md:text-base leading-relaxed;
 }
 
+.font-code {
+  @apply font-semibold;
+}
+
 .lead {
   @apply text-lg md:text-xl leading-relaxed text-gray-700;
 }
@@ -109,12 +113,38 @@
   @apply block font-bold text-xs uppercase tracking-wide text-gray-600;
 }
 
+ul.list-primary,
+ul.list-primary ul {
+  @apply list-disc text-base leading-relaxed pl-6.5;
+}
+
+ul.list-primary-sm,
+ul.list-primary-sm ul {
+  @apply text-sm pl-5.5;
+}
+
+ul.list-primary li {
+  @apply pl-1.5 my-2;
+}
+
+ul.list-primary-sm li {
+  @apply pl-1.5 my-1;
+}
+
+ul.list-primary li::marker {
+  @apply text-gray-400;
+}
+
 .white-box {
   @apply rounded-sm shadow-sm bg-white;
 }
 
 .input-box {
   @apply rounded-sm border-gray-300 focus:ring-0 focus:border-secondary;
+}
+
+.pre-box {
+  @apply rounded-sm overflow-x-auto text-white bg-gray-800 p-4;
 }
 
 .StripeElement {

@@ -1,16 +1,14 @@
 {{ define "main" }}
   <div class="container-prose py-12">
-    <div class="prose prose-sm md:prose max-w-none md:max-w-none">
-      <header class="mb-6">
-        <h1>Posts</h1>
-      </header>
-    
-      {{ range .Pages }}
-        <article>
-          <h2>{{ .Title }}</h2>
-          {{ .Content }}
-        </article>
-      {{ end }}
-    </div>
+    <header class="mb-6">
+      <h1 class="font-h1">Posts</h1>
+    </header>
+  
+    {{ range .Pages }}
+      <article class="prose prose-sm md:prose max-w-none md:max-w-none">
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+      </article>
+    {{ end }}
   </div>
 {{ end }}
