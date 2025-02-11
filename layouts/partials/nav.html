@@ -27,7 +27,7 @@
             <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded-sm shadow-md z-50">
               {{- range .Site.Data.nav.ProductsRelLinks }}
               {{- with $.Site.GetPage . }}
-              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
               {{- end}}
               {{- end }}
             </div>
@@ -37,7 +37,7 @@
         {{- with $.Site.GetPage . }}
         {{- $navItemBorderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $borderColor "border-transparent" }}
         <li class="flex items-center mx-2 border-b-2 {{ $navItemBorderColor }} hover:{{ $borderColor }}">
-          <a class="p-2 hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+          <a class="p-2 hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
         </li>
         {{- end }}
         {{- end }}
@@ -50,7 +50,7 @@
             <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded-sm shadow-md z-50">
               {{- range .Site.Data.nav.SupportUsRelLinks }}
               {{- with $.Site.GetPage . }}
-              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
               {{- end}}
               {{- end }}
             </div>
@@ -65,7 +65,7 @@
             <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded-sm shadow-md z-50">
               {{- range .Site.Data.nav.LearnMoreRelLinks }}
               {{- with $.Site.GetPage . }}
-              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
               {{- end}}
               {{- end }}
             </div>
@@ -77,7 +77,7 @@
     <div class="flex items-stretch">
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+          <a class="flex items-center hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener" data-umami-event="nav-github">
             <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
             <span x-text="globalData.githubStargazers"></span>
           </a>
@@ -87,7 +87,7 @@
       {{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/hub")) -}}
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
-          <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1 plausible-event-name=nav-cta">{{ i18n "nav_cta" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1 plausible-event-name=nav-cta" data-umami-event="nav-cta">{{ i18n "nav_cta" . }}</a>
         </li>
       </ul>
       {{- end }}
@@ -103,7 +103,7 @@
           <div class="relative">
             <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded-sm shadow-md z-50">
               {{- range .Translations }}
-              <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+              <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
               {{- end }}
             </div>
           </div>
@@ -120,7 +120,7 @@
     <div class="mt-1">
       {{- range .Site.Data.nav.ProductsRelLinks }}
       {{- with $.Site.GetPage . }}
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
       {{- end }}
       {{- end }}
     </div>
@@ -129,7 +129,7 @@
 
     {{- range .Site.Data.nav.RelLinks }}
     {{- with $.Site.GetPage . }}
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
     {{- end }}
     {{- end }}
     
@@ -141,7 +141,7 @@
     <div class="mt-1">
       {{- range .Site.Data.nav.SupportUsRelLinks }}
       {{- with $.Site.GetPage . }}
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
       {{- end }}
       {{- end }}
     </div>
@@ -154,7 +154,7 @@
     <div class="mt-1">
       {{- range .Site.Data.nav.LearnMoreRelLinks }}
       {{- with $.Site.GetPage . }}
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
       {{- end }}
       {{- end }}
     </div>
@@ -166,13 +166,13 @@
     </div>
     <div class="mt-1">
       {{ range .Translations }}
-      <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+      <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
       {{ end }}
     </div>
 
     <hr class="border-primary my-2"/>
 
-    <a class="block p-2 hover:text-secondary hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener">
+    <a class="block p-2 hover:text-secondary hover:no-underline plausible-event-name=nav-github" href="https://github.com/cryptomator" target="_blank" rel="noopener" data-umami-event="nav-github">
       <i class="fab fa-github fa-fw"></i>
       <span>{{ i18n "nav_github" . }}</span>
     </a>
