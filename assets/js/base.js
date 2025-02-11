@@ -1,5 +1,13 @@
 window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
 
+$('a').each(function() {
+  const $a = $(this);
+  if ($a[0].host !== window.location.host && !$a.attr('data-umami-event')) {
+    $a.attr('data-umami-event', 'outbound-link-click');
+    $a.attr('data-umami-event-url', $a.attr('href'));
+  }
+});
+
 function determineGitHubStargazersCount(locale, globalData) {
   $.getJSON('https://api.cryptomator.org/desktop/repo.json', data => {
     globalData.githubStargazers = formatNumber(data.stargazers_count, locale);

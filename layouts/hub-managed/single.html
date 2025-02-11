@@ -87,7 +87,7 @@
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
           <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "hub_managed_loadcaptcha" }}</button>
         </div>
-        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" x-cloak>
+        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" data-umami-event="hub-managed-form" x-cloak>
           <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_managed_submit" }}
         </button>
         <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
@@ -100,7 +100,7 @@
   <section class="container text-center pt-12 pb-24">
     <h2 class="font-h2 mb-4">{{ i18n "hub_managed_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_managed_contact_us_description" . | safeHTML }}</p>
-    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8 plausible-event-name=hub-managed-contact-us">
+    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8 plausible-event-name=hub-managed-contact-us" data-umami-event="hub-managed-contact-us">
       <i class="fas fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
     </a>
   </section>
