@@ -1,6 +1,7 @@
 "use strict";
 
 // requires store.js
+// requires newsletter.js
 
 class DesktopLicense {
 
@@ -56,13 +57,16 @@ class DesktopLicense {
         locale: locale,
         successCallback: data => {
           this.onCheckoutSucceeded();
-          this.getPaddleOrderDetails(data.checkout.id)
+          this.getPaddleOrderDetails(data.checkout.id);
+          if (this._checkoutData.acceptNewsletter) {
+            subscribeToNewsletter(data.user.email, 6);
+          }
         },
         closeCallback: () => {
           this._checkoutData.inProgress = false;
         }
       });
-    })
+    });
   }
 
   getPaddleOrderDetails(checkoutId) {

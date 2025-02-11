@@ -10,7 +10,7 @@ aliases: ["/coop/mountainduck_en.html"]
 ---
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
+  <img class="inline-block rounded-sm" src="/img/coop/cyberduck-banner.jpg" srcset="/img/coop/cyberduck-banner.jpg 1x, /img/coop/cyberduck-banner@2x.jpg 2x" alt="Cyberduck meets Cryptomator"/>
   <figcaption>Illustration by {{< extlink "https://ktoons.org" "Katharina Hagemann" >}}</figcaption>
 </figure>
 

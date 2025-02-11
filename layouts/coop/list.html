@@ -1,20 +1,18 @@
 {{ define "main" }}
   <div class="container-prose py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-      <h1>{{ .Title }}</h1>
+    <header class="mb-6">
+      <h1 class="font-h1">{{ .Title }}</h1>
     </header>
 
     {{ range (.Pages.ByParam "prio") }}
       <section class="mb-6">
-        <article class="flex border rounded shadow bg-white p-4">
+        <article class="flex border white-box p-4">
           <div class="w-1/6 text-center mr-3">
             <a href="{{ .RelPermalink }}"><img class="inline-block" src="{{ .Params.Img }}" srcset="{{ .Params.Img }} 1x, {{ .Params.Img2x }} 2x"/></a>
           </div>
           <div class="w-5/6">
-            <div class="prose prose-sm md:prose max-w-none md:max-w-none">
-              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-              <p>{{ .Description }}</p>
-            </div>
+            <h2 class="font-h2 mb-6"><a class="text-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="font-p">{{ .Description }}</p>
           </div>
         </article>
       </section>
@@ -23,15 +21,13 @@
     <hr class="my-8"/>
 
     <section class="mb-6">
-      <article class="flex border rounded shadow bg-white p-4">
+      <article class="flex border white-box p-4">
         <div class="w-1/6 text-center mr-3">
           <a href="{{ .RelPermalink }}"><i class="fas fa-question-circle text-5xl md:text-7xl text-gray-400"></i></a>
         </div>
         <div class="w-5/6">
-          <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
-            <h2>{{ i18n "coop_your_business_title" . }}</h2>
-            <p>{{ i18n "coop_your_business_paragraph" . }}</p>
-          </div>
+          <h2 class="font-h2 mb-6">{{ i18n "coop_your_business_title" . }}</h2>
+          <p class="font-p mb-4">{{ i18n "coop_your_business_paragraph" . }}</p>
           <a href="{{ .Site.LanguagePrefix }}/enterprise/" class="btn btn-outline-primary px-8">{{ i18n "coop_more_info" }}</a>
         </div>
       </article>

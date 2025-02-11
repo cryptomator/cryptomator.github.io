@@ -21,15 +21,17 @@
 - id: footer_legal_title
   translation: "Legal"
 - id: accept_newsletter_privacy
-  translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+- id: accept_newsletter_optional
+  translation: "I agree to get updates from Cryptomator via email (optional)."
 - id: accept_privacy
-  translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
-  translation: "By transferring, I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "By transferring, I accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_terms_and_privacy
-  translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
 - id: accept_hub_managed_terms_and_privacy
-  translation: "I accept the <a class=\"text-primary no-underline hover:underline\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-primary no-underline hover:underline\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
 - id: faq_title
   translation: "Frequently Asked Questions"
 - id: modal_cancel
@@ -78,12 +80,12 @@
 - id: android_keyrecovery_success
   translation: "We've sent details of your past transactions and licenses to you via email."
 - id: android_keyrecovery_contact_us
-  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+  translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
 - id: android_fdroid_title
   translation: "Get it on F-Droid"
 - id: android_fdroid_repo
-  translation: "Open this <a class=\"text-primary no-underline hover:underline\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\" target=\"_blank\">link</a> or scan the QR code on your phone to add our repository."
+  translation: "Open this <a class=\"text-link\" href=\"https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD\" target=\"_blank\">link</a> or scan the QR code on your phone to add our repository."
 - id: android_fdroid_qr_code
   translation: "QR Code"
 - id: android_fdroid_main_cloud_exclusion
@@ -91,7 +93,9 @@
 - id: android_fdroid_cryptomator_cloud_exclusion
   translation: "Google Drive is excluded due to proprietary dependencies."
 - id: android_fdroid_cloud_exclusion_hint
-  translation: "A detailed comparison of all variants can be found in our <a class=\"text-sm no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/android/setup\" target=\"_blank\">docs</a>."
+  translation: "A detailed comparison of all variants can be found in our <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/android/setup\" target=\"_blank\">docs</a>."
+- id: android_accrescent_exclusion
+  translation: "Google Drive is excluded due to proprietary dependencies."
 
 # Blog
 - id: blob_post_author_prefix
@@ -126,7 +130,7 @@
 - id: donate_creditcard_number
   translation: "Credit Card"
 - id: donate_creditcard_once_instruction
-  translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class=\"text-primary no-underline hover:underline\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
+  translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class=\"text-link\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
 - id: donate_creditcard_once_loading
   translation: "Loading…"
 - id: donate_creditcard_once_loadcaptcha
@@ -159,7 +163,7 @@
 - id: donate_customer_portal_success
   translation: "A customer portal has been created for you and sent to you via email."
 - id: donate_customer_portal_contact_us
-  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+  translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
 - id: donate_become_sponsor_title
   translation: "Want to become an official sponsor?"
@@ -192,19 +196,19 @@
 - id: downloads_thanks_getting_started_detail
   translation: "If you are a first-time user, you might be interested to:"
 - id: downloads_thanks_getting_started_detail_1
-  translation: "Read our <a href=\"https://docs.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">documentation</a>, which should guide you in case you would like some instructions."
+  translation: "Read our <a class=\"text-link\" href=\"https://docs.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">documentation</a>, which should guide you in case you would like some instructions."
 - id: downloads_thanks_getting_started_detail_2
-  translation: "Join our <a href=\"https://community.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">community forum</a>, which is a great place to ask for support or share your thoughts."
+  translation: "Join our <a class=\"text-link\" href=\"https://community.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">community forum</a>, which is a great place to ask for support or share your thoughts."
 - id: downloads_thanks_support_cryptomator_title
   translation: "Support Cryptomator"
 - id: downloads_thanks_support_cryptomator_detail
   translation: "Development of the desktop application would not be possible without the support of our users."
 - id: downloads_thanks_support_cryptomator_detail_1
-  translation: "Would you like to <a href=\"/donate/\">donate</a> or <a href=\"/sponsors/\">become a sponsor</a>?"
+  translation: "Would you like to <a class=\"text-link\" href=\"/donate/\">donate</a> or <a class=\"text-link\" href=\"/sponsors/\">become a sponsor</a>?"
 - id: downloads_thanks_support_cryptomator_detail_2
-  translation: "Would you like to <a href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">help translating Cryptomator</a>?"
+  translation: "Would you like to <a class=\"text-link\" href=\"https://translate.cryptomator.org/\" target=\"_blank\" rel=\"noopener\">help translating Cryptomator</a>?"
 - id: downloads_thanks_support_cryptomator_detail_3
-  translation: "Would you like to <a href=\"https://github.com/cryptomator/cryptomator\" target=\"_blank\" rel=\"noopener\">contribute code</a> or <a href=\"https://github.com/cryptomator/cryptomator/issues/new/choose\" target=\"_blank\" rel=\"noopener\">report bugs</a>?"
+  translation: "Would you like to <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator\" target=\"_blank\" rel=\"noopener\">contribute code</a> or <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator/issues/new/choose\" target=\"_blank\" rel=\"noopener\">report bugs</a>?"
 
 # Enterprise
 - id: enterprise_contact_us_title
@@ -298,15 +302,15 @@
 - id: hub_features_feature_1_title
   translation: "Strong Authentication"
 - id: hub_features_feature_1_description
-  translation: "Hook up Cryptomator Hub to your existing identity infrastructure and set up any industry-standard authentication method for your team. <a href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+  translation: "Hook up Cryptomator Hub to your existing identity infrastructure and set up any industry-standard authentication method for your team. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
 - id: hub_features_feature_2_title
   translation: "End-to-End Encryption"
 - id: hub_features_feature_2_description
-  translation: "Vaults created with Cryptomator Hub will be stored the same way as you're used to with Cryptomator – securely using end-to-end encryption. <a href=\"https://docs.cryptomator.org/en/latest/security/architecture/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+  translation: "Vaults created with Cryptomator Hub will be stored the same way as you're used to with Cryptomator – securely using end-to-end encryption. <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/architecture/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
 - id: hub_features_feature_3_title
   translation: "Zero Knowledge"
 - id: hub_features_feature_3_description
-  translation: "Cryptomator Hub manages key material without getting in touch with unencrypted keys. It is a true zero-knowledge solution. <a href=\"https://docs.cryptomator.org/en/latest/security/hub\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+  translation: "Cryptomator Hub manages key material without getting in touch with unencrypted keys. It is a true zero-knowledge solution. <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/hub\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
 
 - id: hub_pricing_title
   translation: "Explore Our Flexible Pricing"
@@ -544,7 +548,7 @@
 - id: hub_managed_success_title
   translation: "Your request has been sent!"
 - id: hub_managed_success_description
-  translation: "We have received your request and will evaluate it as soon as possible. Depending on our work load, it may take several days."
+  translation: "We have received your request and will evaluate it as soon as possible."
 
 - id: hub_managed_pricing_title
   translation: "Pricing"
@@ -565,9 +569,9 @@
 - id: hub_managed_low_quantity_description_1
   translation: "Download Cryptomator without Hub if you intend to use vaults on your own."
 - id: hub_managed_low_quantity_description_2
-  translation: "Download Cryptomator without Hub if you intend to share vaults with another person. Check out the <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
+  translation: "Download Cryptomator without Hub if you intend to share vaults with another person. Check out the <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
 - id: hub_managed_low_quantity_description_3
-  translation: "Download Cryptomator without Hub if you intend to share vaults with a small team. Check out the <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
+  translation: "Download Cryptomator without Hub if you intend to share vaults with a small team. Check out the <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
 - id: hub_managed_low_quantity_description_4
   translation: "Otherwise, feel free to request access to a managed instance of Cryptomator Hub."
 - id: hub_managed_low_quantity_submit_1
@@ -579,7 +583,7 @@
 - id: hub_setup_description
   translation: "Generate the necessary configuration templates for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
 - id: hub_setup_more_info
-  translation: "You can find more documentation at <a href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
+  translation: "You can find more documentation at <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/\">docs.cryptomator.org</a>."
 
 - id: hub_setup_deployment_header_title
   translation: "Deployment"
@@ -664,7 +668,7 @@
 - id: hub_setup_output_header_description
   translation: "Use this configuration template to deploy Cryptomator Hub."
 - id: hub_setup_output_hint
-  translation: "Hint: Hub and Keycloak requires proper TLS termination in production. Only for tests with localhost or 127.0.0.1 this is not necessary. In the setup wizard you can add the config for the reverse proxies Ingress or Traefik. The deployment for the respective proxy is not included. There are some proxy deployment examples in the <a class=\"text-primary no-underline hover:underline\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">documentation</a>."
+  translation: "Hint: Hub and Keycloak requires proper TLS termination in production. Only for tests with localhost or 127.0.0.1 this is not necessary. In the setup wizard you can add the config for the reverse proxies Ingress or Traefik. The deployment for the respective proxy is not included. There are some proxy deployment examples in the <a class=\"text-link\" href=\"https://docs.cryptomator.org/en/latest/hub/setup/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">documentation</a>."
 
 - id: hub_setup_contact_us_title
   translation: "Need some help with your configuration?"
@@ -849,7 +853,7 @@
 - id: supporter_cert_contributor_github_contribution_link_placeholder
   translation: "Contribution link on GitHub (https://github.com/...)"
 - id: supporter_cert_contributor_instruction
-  translation: "Check out our <a class=\"text-primary no-underline hover:underline\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">contribution guide</a> to get started."
+  translation: "Check out our <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">contribution guide</a> to get started."
 
 - id: supporter_cert_influencer_reference
   translation: "Reference"
@@ -876,4 +880,4 @@
 - id: supporter_cert_recovery_success
   translation: "We've sent details of your past transactions and licenses to you via email."
 - id: supporter_cert_recovery_contact_us
-  translation: "If you didn't get an email, <a class=\"text-primary no-underline hover:underline\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+  translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."

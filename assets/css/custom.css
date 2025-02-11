@@ -1,6 +1,6 @@
 /* custom classes: */
 .header-bg {
-  background-image: url(/img/home/header-background.png), linear-gradient(to bottom, #0b0f17 0%, #143454 38%, #3f8bd9 72%, #9ac7f5 90%);
+  background-image: url(/img/home/header-background.avif), linear-gradient(to bottom, rgb(4.31% 5.88% 9.02%) 0%, rgb(7.84% 20.39% 32.94%) 38%, rgb(24.71% 54.51% 85.1%) 72%, rgb(60.39% 78.04% 96.08%) 90%);
   background-size: auto 100%;
 }
 
@@ -12,12 +12,12 @@
 }
 
 .btn {
-  @apply inline-block border rounded no-underline text-center px-4 py-2;
+  @apply inline-block border rounded-sm no-underline text-center px-4 py-2;
 }
 
 .btn:hover,
 .btn:focus {
-  @apply no-underline outline-none;
+  @apply no-underline outline-hidden;
 }
 
 .btn:disabled,
@@ -81,8 +81,74 @@
   @apply cursor-not-allowed no-underline text-gray-300;
 }
 
+.text-link {
+  @apply text-primary no-underline hover:underline;
+}
+
+.font-h1 {
+  @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
+}
+
+.font-h2 {
+  @apply font-headline font-medium text-xl md:text-2xl leading-snug;
+}
+
+.font-h3 {
+  @apply font-headline text-lg md:text-xl leading-relaxed;
+}
+
+.font-p {
+  @apply text-sm md:text-base leading-relaxed;
+}
+
+.font-code {
+  @apply font-semibold;
+}
+
+.lead {
+  @apply text-lg md:text-xl leading-relaxed text-gray-700;
+}
+
+.label-uppercase {
+  @apply block font-bold text-xs uppercase tracking-wide text-gray-600;
+}
+
+ul.list-primary,
+ul.list-primary ul {
+  @apply list-disc text-base leading-relaxed pl-6.5;
+}
+
+ul.list-primary-sm,
+ul.list-primary-sm ul {
+  @apply text-sm pl-5.5;
+}
+
+ul.list-primary li {
+  @apply pl-1.5 my-2;
+}
+
+ul.list-primary-sm li {
+  @apply pl-1.5 my-1;
+}
+
+ul.list-primary li::marker {
+  @apply text-gray-400;
+}
+
+.white-box {
+  @apply rounded-sm shadow-sm bg-white;
+}
+
+.input-box {
+  @apply rounded-sm border-gray-300 focus:ring-0 focus:border-secondary;
+}
+
+.pre-box {
+  @apply rounded-sm overflow-x-auto text-white bg-gray-800 p-4;
+}
+
 .StripeElement {
-  @apply rounded border border-gray-300 px-3 py-2;
+  @apply rounded-sm border border-gray-300 px-3 py-2;
 }
 
 .StripeElement--focus {
@@ -127,14 +193,6 @@ textarea:read-only {
   min-height: 80vh;
 }
 
-nav a {
-  color: inherit;
-}
-
-nav a:hover {
-  color: inherit;
-}
-
 .bg-trans-white {
   background-color: rgba(255, 255, 255, 0.05);
 }
@@ -167,9 +225,4 @@ nav a:hover {
   height: 96px;
   margin-top: -96px;
   visibility: hidden;
-}
-
-/* see https://alpinejs.dev/directives/cloak */
-[x-cloak] {
-  display: none !important;
 }

@@ -1,13 +1,13 @@
 {{ define "main" }}
   <div class="container py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-      <h1>{{ .Title }}</h1>
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ .Description }}</p>
     </header>
 
     <div x-data="{planOption: location.hash}" @hashchange.window="planOption = location.hash" class="py-12">
       <header class="text-center">
-        <h2 class="text-center font-headline font-medium text-xl md:text-2xl leading-snug mb-4">
+        <h2 class="text-center font-h2 mb-4">
           {{ i18n "pricing_title" . }}
         </h2>
         <div class="flex justify-center mb-4">
@@ -24,7 +24,7 @@
 
       <div x-show="planOption !== '#for-teams'">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div class="rounded shadow bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
@@ -76,7 +76,7 @@
               </ul>
             </div>
           </div>
-          <div class="rounded shadow bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
@@ -120,7 +120,7 @@
               </ul>
             </div>
           </div>
-          <div class="rounded shadow bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
@@ -180,15 +180,15 @@
 
         <section class="container py-12">
           <header class="text-center">
-            <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "faq_title" . }}</h2>
+            <h2 class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
           </header>
       
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
             {{- range $index, $element := $data.pricing_individuals_faq }}
-            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+            <dt class="font-p p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>{{ .Question }}</span>
               </a>
             </dt>
@@ -202,7 +202,7 @@
 
       <div x-show="planOption === '#for-teams'" x-cloak>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div class="rounded shadow bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
                 {{ i18n "pricing_hub_community_title" . }}
@@ -239,7 +239,7 @@
                   <span>{{ i18n "pricing_hub_community_benefit_4" . }}</span>
                   <div class="has-tooltip">
                     <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-                    <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_community_benefit_4_tooltip" . }}</div>
+                    <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_community_benefit_4_tooltip" . }}</div>
                   </div>
                 </li>
                 <li>
@@ -249,7 +249,7 @@
               </ul>
             </div>
           </div>
-          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="rounded shadow bg-white">
+          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-8">
                 <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
@@ -264,9 +264,9 @@
                 <span id="hub-standard-managed-label" class="block uppercase tracking-wide text-xs font-bold" :class="infrastructure === 'managed' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'managed'">
                   {{ i18n "pricing_hub_managed_title" . }}
                 </span>
-                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-1 plausible-event-name=pricing-hub-standard-infrastructure-switch" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
+                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1 plausible-event-name=pricing-hub-standard-infrastructure-switch" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
                   <span class="sr-only">Use setting</span>
-                  <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out" :class="infrastructure === 'managed' ? 'translate-x-0' : 'translate-x-4'"></span>
+                  <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out" :class="infrastructure === 'managed' ? 'translate-x-0' : 'translate-x-4'"></span>
                 </button>
                 <span id="hub-standard-self-hosted-label" class="block uppercase tracking-wide text-gray-500 text-xs font-bold" :class="infrastructure === 'self-hosted' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'self-hosted'">
                   {{ i18n "pricing_hub_self_hosted_title" . }}
@@ -316,7 +316,7 @@
                   <span>{{ i18n "pricing_hub_standard_benefit_3" . }}</span>
                   <div class="has-tooltip">
                     <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-                    <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_standard_benefit_3_tooltip" . }}</div>
+                    <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_standard_benefit_3_tooltip" . }}</div>
                   </div>
                 </li>
                 <li>
@@ -338,7 +338,7 @@
               </ul>
             </div>
           </div>
-          <div class="rounded shadow bg-white">
+          <div class="white-box">
             <div class="p-4 border-b border-primary">
               <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
                 {{ i18n "pricing_hub_enterprise_title" . }}
@@ -386,15 +386,15 @@
 
         <section class="container py-12">
           <header class="text-center">
-            <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "faq_title" . }}</h2>
+            <h2 class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
           </header>
       
           {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
             {{- range $index, $element := $data.pricing_teams_faq }}
-            <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+            <dt class="font-p p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
                 <span>{{ .Question }}</span>
               </a>
             </dt>
@@ -409,7 +409,7 @@
   </div>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubPricingJs := resources.Get "js/hubpricing.js" }}

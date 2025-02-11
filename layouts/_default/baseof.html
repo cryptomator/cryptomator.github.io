@@ -4,6 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
+    {{ block "preloads" . }}
+      <!-- optional additional page-specific preloads -->
+    {{ end }}
+    <link rel="preload" fetchpriority="low" as="image" href="/favicon.ico" type="image/x-icon" crossorigin="anonymous">
+    <link rel="preload" fetchpriority="low" as="image" href="/img/logo.svg" type="image/svg+xml">
+    <link rel="preload" fetchpriority="low" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" fetchpriority="low" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     {{ if and (eq .Section "blog") .IsPage }}
       <meta name="description" content="{{ .Summary }}">
       <meta property="og:title" content="{{ .Title }}">
@@ -51,19 +58,17 @@
       <meta property="og:locale:alternate" content="{{ .Language.Params.LanguageCode }}" />
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
-    {{ if hugo.IsServer }}
-      {{ $css := resources.Get "css/main.css" | postCSS }}
+    {{ if hugo.IsDevelopment }}
+      {{ $css := resources.Get "css/main.css" | css.TailwindCSS }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen" />
     {{ else }}
-      {{ $css := resources.Get "css/main.css" | postCSS | minify | fingerprint }}
+      {{ $tailwindOpts := dict "minify" true }}
+      {{ $css := resources.Get "css/main.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
     {{ range .Translations }}
       <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
-    {{ end }}
-    {{ block "head" . }}
-      <!-- optional additional page-specific stuff that goes into head -->
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
@@ -76,7 +81,7 @@
     {{ end }}
     </div>
     {{ partial "footer.html" . }}
-    {{ if hugo.IsServer }}
+    {{ if hugo.IsDevelopment }}
       <script data-domain="cryptomator.local" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.local.js" integrity="sha384-eSdyNyMq4w2Hzeb7A3pkbi2+zvI/skXuKlWsX5uzccigZEHDhHyBYoTASuSW+ZUQ" crossorigin="anonymous" defer></script>
       <script src="https://umami.skymatic.de/script.js" data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c" integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B" crossorigin="anonymous" defer></script>
       {{ $baseJs := resources.Get "js/base.js" }}

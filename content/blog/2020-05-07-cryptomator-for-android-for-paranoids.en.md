@@ -20,7 +20,7 @@ A backdoor usually requires communication with an external server. If vaults are
 Using this setup, the Cryptomator app can have its internet access revoked using the Android operating system features, which prevents the app from sending or receiving any data to or from the internet.
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/blog/android-for-paranoids-permission.png" alt="Android revoke Cryptomator's internet permission" />
+  <img class="inline-block rounded-sm" src="/img/blog/android-for-paranoids-permission.png" alt="Android revoke Cryptomator's internet permission" />
 </figure>
 
 Thus, even if there ever was a backdoor in Cryptomator for Android, it would not be possible for the intercepted data to leave the smartphone. This is ensured by the operating system.

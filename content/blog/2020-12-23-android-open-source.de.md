@@ -9,7 +9,7 @@ summary: "Wir haben es letzten Monat angekündigt und nun ist es soweit… unser
 Wir haben es letzten Monat angekündigt und nun ist es soweit… unser Geschenk an die Community rechtzeitig zu den Feiertagen: Cryptomator für Android ist jetzt vollständig Open-Source! Das Repository befindet sich hier: https://github.com/cryptomator/android
 
 <figure class="text-center">
-  <img class="inline-block rounded" src="/img/blog/android-open-source.png" srcset="/img/blog/android-open-source.png 1x, /img/blog/android-open-source@2x.png 2x" alt="Cryptomator für Android is nun Open-Source" />
+  <img class="inline-block rounded-sm" src="/img/blog/android-open-source.png" srcset="/img/blog/android-open-source.png 1x, /img/blog/android-open-source@2x.png 2x" alt="Cryptomator für Android is nun Open-Source" />
 </figure>
 
 Es wird definitiv eine Übergangsphase und Lernkurve für uns geben, um das Repository feinzutunen und Open-Source-Beiträge zu koordinieren, aber es sollte nicht allzu weit vom "Haupt"-Repository Cryptomator für Windows, macOS und Linux entfernt sein, das von Anfang an Open-Source war.

@@ -38,48 +38,48 @@ This means that attackers would not even benefit from drilling through the wall 
 
 {{< /markdownify >}}</div>
 
-<div class="rounded shadow bg-white my-6">
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fab fa-dropbox fa-fw text-primary"></i> Use Dropbox as before</h3>
+<div class="white-box my-6">
+  <div class="px-4 py-2 border-b border-primary">
+    <h3 class="font-h3"><i class="fab fa-dropbox fa-fw text-primary"></i> Use Dropbox as before</h3>
   </div>
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p><strong>You can keep your folder structure in Dropbox as before</strong> – Cryptomator adapts seamlessly. You can encrypt individual folders of your Dropbox and leave files or folders unencrypted.</p>
-  </div>
-</div>
-
-<div class="rounded shadow bg-white my-6">
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fas fa-share fa-fw text-primary"></i> Share protected data conveniently with friends, family, and colleagues</h3>
-  </div>
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>Make your data safe in the cloud and <strong>maintain privacy across multiple computers with Cryptomator.</strong> All you need is Cryptomator on each device and the password to gain access to the data.</p>
+  <div class="p-4">
+    <p class="font-p"><strong>You can keep your folder structure in Dropbox as before</strong> – Cryptomator adapts seamlessly. You can encrypt individual folders of your Dropbox and leave files or folders unencrypted.</p>
   </div>
 </div>
 
-<div class="rounded shadow bg-white my-6">
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fas fa-key fa-fw text-primary"></i> Only those have access to your cloud data who should have it</h3>
+<div class="white-box my-6">
+  <div class="px-4 py-2 border-b border-primary">
+    <h3 class="font-h3"><i class="fas fa-share fa-fw text-primary"></i> Share protected data conveniently with friends, family, and colleagues</h3>
   </div>
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p><strong>End-to-end encryption</strong> makes it even harder for potential attackers to harm you. That's because encrypted file names mean third parties can't draw conclusions about file types – which is one of the most common gateways for them to get in.</p>
-  </div>
-</div>
-
-<div class="rounded shadow bg-white my-6">
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fas fa-sync fa-fw text-primary"></i> Files don't accidentally get overwritten</h3>
-  </div>
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>If several devices access a document at the same time, and <strong>synchronization conflicts</strong> arise as a result, Cryptomator detects them despite file name encryption. Additionally, the version history from your cloud storage provider is preserved so that you can restore old versions of individual files. Note: Finding the correct file to restore is currently practically unfeasible, but will soon be possible in Cryptomator 1.7.0.</p>
+  <div class="p-4">
+    <p class="font-p">Make your data safe in the cloud and <strong>maintain privacy across multiple computers with Cryptomator.</strong> All you need is Cryptomator on each device and the password to gain access to the data.</p>
   </div>
 </div>
 
-<div class="rounded shadow bg-white mt-6 mb-12">
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-    <h3><i class="fas fa-clouds fa-fw text-primary"></i> Quickly access your sensitive data in Dropbox from everywhere</h3>
+<div class="white-box my-6">
+  <div class="px-4 py-2 border-b border-primary">
+    <h3 class="font-h3"><i class="fas fa-key fa-fw text-primary"></i> Only those have access to your cloud data who should have it</h3>
   </div>
-  <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-    <p>Cryptomator is specifically designed to <strong>encrypt cloud services</strong>. Because the <strong>files are encrypted individually</strong>, only the files you just changed are uploaded or encrypted – and not (as with so-called "container solutions") the entire folder. Changes are synchronized much faster – and this is especially noticeable when you are on the road.</p>
+  <div class="p-4">
+    <p class="font-p"><strong>End-to-end encryption</strong> makes it even harder for potential attackers to harm you. That's because encrypted file names mean third parties can't draw conclusions about file types – which is one of the most common gateways for them to get in.</p>
+  </div>
+</div>
+
+<div class="white-box my-6">
+  <div class="px-4 py-2 border-b border-primary">
+    <h3 class="font-h3"><i class="fas fa-sync fa-fw text-primary"></i> Files don't accidentally get overwritten</h3>
+  </div>
+  <div class="p-4">
+    <p class="font-p">If several devices access a document at the same time, and <strong>synchronization conflicts</strong> arise as a result, Cryptomator detects them despite file name encryption. Additionally, the version history from your cloud storage provider is preserved so that you can restore old versions of individual files. Note: Finding the correct file to restore is currently practically unfeasible, but will soon be possible in Cryptomator 1.7.0.</p>
+  </div>
+</div>
+
+<div class="white-box mt-6 mb-12">
+  <div class="px-4 py-2 border-b border-primary">
+    <h3 class="font-h3"><i class="fas fa-clouds fa-fw text-primary"></i> Quickly access your sensitive data in Dropbox from everywhere</h3>
+  </div>
+  <div class="p-4">
+    <p class="font-p">Cryptomator is specifically designed to <strong>encrypt cloud services</strong>. Because the <strong>files are encrypted individually</strong>, only the files you just changed are uploaded or encrypted – and not (as with so-called "container solutions") the entire folder. Changes are synchronized much faster – and this is especially noticeable when you are on the road.</p>
   </div>
 </div>
 

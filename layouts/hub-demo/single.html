@@ -1,12 +1,12 @@
 {{ define "main" }}
   <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: '', url: null, username: null, password: null}, submitData: {captcha: null, email: ''}, hubDemo: null}" x-init="hubDemo = new HubDemo($refs.form, feedbackData, submitData)" class="container py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-      <h1>{{ .Title }}</h1>
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_demo_description" }}</p>
     </header>
 
     <form x-ref="form">
-      <section class="relative rounded shadow bg-white">
+      <section class="relative white-box">
         <div x-show="!feedbackData.success" class="px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
           <header class="md:col-span-1">
             <h2 class="text-lg font-medium leading-6 text-gray-900">
@@ -22,7 +22,7 @@
               <label for="email" class="block text-sm font-medium text-gray-700">
                 {{ i18n "hub_demo_info_email" }}
               </label>
-              <input type="email" id="email" class="mt-1 block w-full rounded border-gray-300 focus:ring-0 focus:border-secondary" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
+              <input type="email" id="email" class="mt-1 block input-box w-full" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
               <p class="mt-2 text-sm text-gray-500">
                 {{ i18n "hub_demo_info_email_description" }}
               </p>
@@ -32,12 +32,12 @@
 
         <div x-show="feedbackData.success" class="flex flex-col gap-4 text-center px-4 py-5 md:p-6" x-cloak>
           <i class="fas fa-check-circle text-7xl text-secondary"></i>
-          <h3 class="font-headline text-lg md:text-xl leading-relaxed">
+          <h3 class="font-h3">
             {{ i18n "hub_demo_success_title" }}
           </h3>
-          <dl class="grid auto-cols-min gap-x-4 mx-auto text-sm md:text-base leading-relaxed text-gray-700">
+          <dl class="grid auto-cols-min gap-x-4 mx-auto font-p">
             <dt class="text-right col-start-1">{{ i18n "hub_demo_success_url" }}:</dt>
-            <dd class="text-left col-start-2"><a class="text-primary no-underline hover:underline" :href="feedbackData.url" x-text="feedbackData.url" target="_blank" rel="noopener"></a></dd>
+            <dd class="text-left col-start-2"><a class="text-link" :href="feedbackData.url" x-text="feedbackData.url" target="_blank" rel="noopener"></a></dd>
 
             <dt class="text-right col-start-1">{{ i18n "hub_demo_success_username" }}:</dt>
             <dd class="text-left col-start-2"><code x-text="feedbackData.username"></code></dd>
@@ -45,17 +45,17 @@
             <dt class="text-right col-start-1">{{ i18n "hub_demo_success_password" }}:</dt>
             <dd class="text-left col-start-2"><code x-text="feedbackData.password"></code></dd>
           </dl>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700">
+          <p class="font-p">
             <strong>{{ ":warning:" | emojify }} {{ i18n "hub_demo_success_reset_notice" }}</strong>
           </p>
-          <p class="text-sm md:text-base leading-relaxed text-gray-700">
+          <p class="font-p">
             {{ i18n "hub_demo_success_further_instructions" }}
           </p>
         </div>
       </section>
 
       <div x-show="!feedbackData.success" class="text-center mt-8">
-        <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+        <p class="font-p mb-4">
           {{ i18n "hub_demo_instruction" }}
         </p>
         <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
@@ -70,15 +70,15 @@
   </section>
 
   <section class="container text-center py-12">
-    <h2 class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "hub_demo_contact_us_title" . }}</h2>
-    <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">{{ i18n "hub_demo_contact_us_description" . | safeHTML }}</p>
+    <h2 class="font-h2 mb-4">{{ i18n "hub_demo_contact_us_title" . }}</h2>
+    <p class="font-p mb-4">{{ i18n "hub_demo_contact_us_description" . | safeHTML }}</p>
     <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
       <i class="fas fa-envelope"></i> {{ i18n "hub_demo_contact_us_button" . }}
     </a>
   </section>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $storeJs := resources.Get "js/store.js" }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubDemoJs := resources.Get "js/hubdemo.js" }}

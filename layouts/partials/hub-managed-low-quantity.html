@@ -1,12 +1,12 @@
 <div x-show="{{ .isOpen }}" class="relative z-10" aria-labelledby="quantity-one-modal-title" role="dialog" aria-modal="true" x-cloak>
-  <div x-show="{{ .isOpen }}" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div x-show="{{ .isOpen }}" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-500/75 transition-opacity"></div>
 
   <div class="fixed z-10 inset-0 overflow-y-auto">
     <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-      <div x-show="{{ .isOpen }}" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" x-transition:enter-end="opacity-100 translate-y-0 md:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 md:scale-100" x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" class="relative transform rounded shadow bg-white text-left overflow-hidden transition-all md:my-8 md:max-w-xl md:w-full">
+      <div x-show="{{ .isOpen }}" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" x-transition:enter-end="opacity-100 translate-y-0 md:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 md:scale-100" x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95" class="relative transform white-box text-left overflow-hidden transition-all md:my-8 md:max-w-xl md:w-full">
         <div class="p-4">
           <div class="md:flex md:items-start">
-            <div class="flex-shrink-0 text-center">
+            <div class="shrink-0 text-center">
               <div class="fa-stack text-2xl text-primary-l2 md:text-xl">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-lightbulb-on fa-stack-1x text-primary"></i>
@@ -16,26 +16,26 @@
               <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4" id="quantity-one-modal-title">
                 {{ i18n "hub_managed_low_quantity_title" }}
               </h3>
-              <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+              <p class="font-p mb-4">
                 {{ i18n "hub_managed_low_quantity_description" }}
               </p>
               <template x-if="{{ .quantity }} == 1">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_1" }}
                 </p>
               </template>
               <template x-if="{{ .quantity }} == 2">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_2" | safeHTML }}
                 </p>
               </template>
               <template x-if="{{ .quantity }} >= 3">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_3" | safeHTML }}
                 </p>
               </template>
               <template x-if="{{ .quantity }} >= 3">
-                <p class="text-sm md:text-base leading-relaxed text-gray-700 mb-4">
+                <p class="font-p mb-4">
                   {{ i18n "hub_managed_low_quantity_description_4" | safeHTML }}
                 </p>
               </template>
@@ -44,21 +44,21 @@
         </div>
         <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
           <template x-if="{{ .quantity }} < 3">
-            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
               {{ i18n "hub_managed_low_quantity_submit_1" }}
             </a>
           </template>
           <template x-if="{{ .quantity }} >= 3">
-            <button type="submit" class="btn btn-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0" @click.prevent="{{ .hubManaged }}.request(); {{ .isOpen }} = false">
+            <button type="submit" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0" @click.prevent="{{ .hubManaged }}.request(); {{ .isOpen }} = false">
               {{ i18n "hub_managed_low_quantity_submit_2" }}
             </button>
           </template>
           <template x-if="{{ .quantity }} >= 3">
-            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-outline-primary flex-shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-outline-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
               {{ i18n "hub_managed_low_quantity_submit_1" }}
             </a>
           </template>
-          <button type="button" class="btn btn-outline-gray-500 flex-shrink-0 w-full md:w-auto" @click.prevent="{{ .isOpen }} = false">
+          <button type="button" class="btn btn-outline-gray-500 shrink-0 w-full md:w-auto" @click.prevent="{{ .isOpen }} = false">
             {{ i18n "modal_cancel" }}
           </button>
         </div>

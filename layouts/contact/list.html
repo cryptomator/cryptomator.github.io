@@ -1,19 +1,17 @@
 {{ define "main" }}
   <div class="container py-12">
-    <header class="prose prose-sm md:prose max-w-none md:max-w-none mb-6">
-      <h1>{{ .Title }}</h1>
+    <header class="mb-6">
+      <h1 class="font-h1">{{ .Title }}</h1>
     </header>
 
     {{ range .Sections.ByParam "prio" }}
       <section class="mb-12">
-        <div class="prose prose-sm md:prose max-w-none md:max-w-none mb-4">
-          <h2><i class="{{ .Params.faIcon }} fa-fw text-primary" aria-hidden="true"></i> {{ .Title }}</h2>
-        </div>
+        <h2 class="font-h2 mb-4"><i class="{{ .Params.faIcon }} fa-fw text-primary" aria-hidden="true"></i> {{ .Title }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           {{ range .Pages }}
-            <div class="rounded shadow bg-white">
-              <div class="prose prose-sm md:prose max-w-none md:max-w-none px-4 py-2 border-b border-primary">
-                <h3><i class="{{ .Params.faIcon }} fa-fw text-primary" aria-hidden="true"></i> {{ .Title }}</h3>
+            <div class="white-box">
+              <div class="px-4 py-2 border-b border-primary">
+                <h3 class="font-h3"><i class="{{ .Params.faIcon }} fa-fw text-primary" aria-hidden="true"></i> {{ .Title }}</h3>
               </div>
               <div class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
                 {{ .Content }}

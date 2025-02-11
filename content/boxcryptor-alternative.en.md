@@ -81,15 +81,15 @@ Let's now compare the visible features. The following table shows you the simila
 
 {{< /markdownify >}}</div>
 
-<table class="table-fixed divide-y divide-primary rounded shadow bg-white min-w-full mt-6 mb-12">
+<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Cryptomator</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/cryptomator-logo.png" srcset="/img/boxcryptor-alternative/cryptomator-logo.png 1x, /img/boxcryptor-alternative/cryptomator-logo@2x.png 2x">
       </th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Boxcryptor</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/boxcryptor-logo.png" srcset="/img/boxcryptor-alternative/boxcryptor-logo.png 1x, /img/boxcryptor-alternative/boxcryptor-logo@2x.png 2x">
       </th>
@@ -97,58 +97,58 @@ Let's now compare the visible features. The following table shows you the simila
   </thead>
   <tbody class="divide-y divide-gray-200">
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Unlimited number of devices</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">Unlimited number of devices</td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs</div>
         </div>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">No account needed</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">No account needed</td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in for local account; default settings store your key on Boxcryptor server</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in for local account; default settings store your key on Boxcryptor server</div>
         </div>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Direct file sharing ("integrated sharing")</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">Direct file sharing ("integrated sharing")</td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <span>Restore password without email address ("offline key recovery")</span>
         <div class="has-tooltip">
           <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">Your data is not stored in mails with an email account provider, which further increases security.</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Your data is not stored in mails with an email account provider, which further increases security.</div>
         </div>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Detection of sync conflicts while editing by several people</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4">Detection of sync conflicts while editing by several people</td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">Support for all common operating systems</td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">Support for all common operating systems</td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">Windows, macOS, Linux, Android, iOS</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Windows, macOS, Linux, Android, iOS</div>
         </div>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
             <p class="mb-2">Windows, macOS, Android, iOS</p>
             <p><i class="fas fa-times fa-fw text-red-600"></i> no Linux</p>
           </div>
@@ -168,15 +168,15 @@ Let's now take a look at these features. For this we compare the features again 
 
 {{< /markdownify >}}</div>
 
-<table class="table-fixed divide-y divide-primary rounded shadow bg-white min-w-full mt-6 mb-12">
+<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Cryptomator</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/cryptomator-logo.png" srcset="/img/boxcryptor-alternative/cryptomator-logo.png 1x, /img/boxcryptor-alternative/cryptomator-logo@2x.png 2x">
       </th>
-      <th class="font-headline text-lg md:text-xl leading-relaxed font-normal text-left px-4 py-2 w-1/4">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
         <span class="hidden md:block">Boxcryptor</span>
         <img class="object-scale-down w-16 md:hidden" src="/img/boxcryptor-alternative/boxcryptor-logo.png" srcset="/img/boxcryptor-alternative/boxcryptor-logo.png 1x, /img/boxcryptor-alternative/boxcryptor-logo@2x.png 2x">
       </th>
@@ -184,193 +184,193 @@ Let's now take a look at these features. For this we compare the features again 
   </thead>
   <tbody x-data="{ isFileContentEncryptionOpen: false, isFileNameEncryptionOpen: false, isFileAttributeEncryptionOpen: false, isFOSSOpen: false, isDirectoryObfuscationOpen: false, isIntegrityProtectionOpen: false, isQuantumResistantOpen: false, isAuditedCryptographyOpen: false, isMemoryHardKDFOpen: false, isShareKeysOpen: false }" class="divide-y divide-gray-200">
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileContentEncryptionOpen = !isFileContentEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>File Content Encryption</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isFileContentEncryptionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">No one can read the file content without authorization.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>This is the basic requirement for taking your right to privacy into your own hands.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileNameEncryptionOpen = !isFileNameEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>File Name Encryption</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs and optional</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs and optional</div>
         </div>
       </td>
     </tr>
     <tr x-show="isFileNameEncryptionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">No one can recognize the file name without authorization.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>Metadata like the file name reveal more about you than you think. File extensions can be used to create a profile of the data you use. In the worst case, even if the file content is encrypted, the name "Human Rights Violations Report.docx" could get you into trouble at the wrong airport.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileAttributeEncryptionOpen = !isFileAttributeEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>File Attribute Encryption</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <div class="has-tooltip">
           <i class="fas fa-times-circle fa-fw text-2xl text-gray-600"></i>
-          <div class="tooltip tooltip-center rounded shadow-md bg-white text-xs w-max max-w-xs p-2">planned</div>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">planned</div>
         </div>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isFileAttributeEncryptionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">No one gets access to additional file attributes.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>Some third-party software may store metadata about your file in its file attributes. If these are not encrypted, anyone can read them and even manipulate them to force your operating system to behave in certain ways.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFOSSOpen = !isFOSSOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Free & Open-Source Software (FOSS)</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isFOSSOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The source code is accessible to a broad community, which increases the security of the encryption.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>The security of a system must depend solely on the key and must not be based on the secrecy of the algorithms. Since the encryption algorithm is controlled and discussed by a broad community, vulnerabilities or errors in the code are quickly detected.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isDirectoryObfuscationOpen = !isDirectoryObfuscationOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Directory Obfuscation</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isDirectoryObfuscationOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The encrypted directory structure does not correspond to the actual or unencrypted directory structure.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>When saving, some applications create several files that are stored in certain structures. If these structures are still recognizable in the encrypted state, an attacker can draw conclusions about the type of data despite encryption.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isIntegrityProtectionOpen = !isIntegrityProtectionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Integrity Protection</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isIntegrityProtectionOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">Since encryption does not immediately protect against manipulation of the data, unauthorized modification of the data must be detected.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>To protect yourself from a variety of sophisticated attacks, the integrity of your encrypted data must be verified before you decrypt it. If this does not happen, it is conceivable that manipulated data could be injected, which you could then open unnoticed. ({{< extlink "https://en.wikipedia.org/wiki/Chosen-ciphertext_attack" "In the worst case, this can even be used by attackers to crack the encryption." >}})</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isQuantumResistantOpen = !isQuantumResistantOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Quantum-Resistant Cryptography</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isQuantumResistantOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The encryption algorithms used are still secure even if the attacker has quantum computers.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?<p>
+        <p class="label-uppercase mb-2">Why is this important for data security?<p>
         <p>Some encryption methods are based on mathematical problems that are normally difficult to calculate. For quantum computers, however, they are much less complex. If an attacker has access to a corresponding quantum computer, the encryption of your data is de facto ineffective.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isAuditedCryptographyOpen = !isAuditedCryptographyOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Audited Cryptography</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isAuditedCryptographyOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean</p>
         <p class="mb-4">The encryption code is examined by independent experts.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>Audits focusing on cryptographically relevant code can be an important element of quality control, provided the auditor has enough time and does not just get a cursory overview.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isMemoryHardKDFOpen = !isMemoryHardKDFOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Memory-Hard KDF</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isMemoryHardKDFOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The key derivation function (KDF) is used to derive the cryptographic key from the password you enter. This function must be as complex as possible to prevent bruteforce attacks (randomly trying out combinations of characters).</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?<p>
+        <p class="label-uppercase mb-2">Why is this important for data security?<p>
         <p class="mb-2">To derive your key from your password, a computer needs 200ms. That sounds short, but it quickly adds up to astronomically high times if an attacker has to try all conceivable passwords. Attackers could, however, use special hardware (so-called ASICs) to try hundreds of thousands of possibilities simultaneously.</p>
         <p>To prevent this, KDFs are used that are memory-intensive ("memory-hard"), i.e. they require a particularly large amount of memory. This makes an attack disproportionately costly and thus unattractive for the attacker.</p>
       </td>
     </tr>
     <tr>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isShareKeysOpen = !isShareKeysOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>Sharing Without Disclosing Passwords</span>
         </a>
       </td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isShareKeysOpen" x-cloak>
-      <td class="text-sm md:text-base leading-relaxed text-gray-700 p-4" colspan="3">
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">What does that mean?</p>
+      <td class="font-p p-4" colspan="3">
+        <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">Ideal for team use of the cloud storage: Each team member can use an individual password – yet you still have access to the encrypted data.</p>
-        <p class="block uppercase tracking-wide text-gray-600 text-xs font-bold mb-2">Why is this important for data security?</p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>Individual passwords in larger teams increase security. On the one hand, because sharing a password poses a risk depending on the communication channel. On the other hand, because passwords that are shared are often weaker (because easier to remember).</p>
       </td>
     </tr>

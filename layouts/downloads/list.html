@@ -1,4 +1,4 @@
-{{ define "head" }}
+{{ define "preloads" }}
   <link rel="dns-prefetch" href="https://github.com">
 {{ end }}
 {{ define "main" }}
@@ -12,7 +12,7 @@
       </section>
     {{ end }}
     
-    <section class="bg-white shadow">
+    <section class="bg-white shadow-sm">
       <div class="container flex flex-wrap justify-center text-white p-2">
         {{ range $index, $element := .Pages }}
           <div class="w-1/3 md:w-1/5 p-2">
@@ -32,15 +32,15 @@
 
   <section class="container pt-12 pb-24">
     <header class="text-center">
-      <h2 id="faq" class="font-headline font-medium text-xl md:text-2xl leading-snug mb-4">{{ i18n "faq_title" . }}</h2>
+      <h2 id="faq" class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
     </header>
 
     {{- $data := index $.Site.Data $.Site.Language.Lang }}
-    <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="rounded shadow bg-white divide-y divide-gray-200 max-w-3xl mx-auto">
+    <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
       {{- range $index, $element := $data.pricing_individuals_faq }}
-      <dt class="text-sm md:text-base leading-relaxed text-gray-700 p-4">
+      <dt class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="flex-shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
           <span>{{ .Question }}</span>
         </a>
       </dt>
@@ -52,7 +52,7 @@
   </section>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $downloadJs := resources.Get "js/download.js" }}
     <script type="text/javascript" src="{{ $downloadJs.RelPermalink }}" defer></script>
   {{ else }}
