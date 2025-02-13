@@ -67,8 +67,8 @@
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
-    {{ range .Translations }}
-      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
+    {{ range .AllTranslations }}
+      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
