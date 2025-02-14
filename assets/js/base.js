@@ -8,6 +8,24 @@ $('a').each(function() {
   }
 });
 
+(function removeUTMParams() {
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+  const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  let modified = false;
+  utmParams.forEach(param => {
+    if (params.has(param)) {
+      params.delete(param);
+      modified = true;
+    }
+  });
+  if (modified) {
+    const newQuery = params.toString() ? '?' + params.toString() : '';
+    const newUrl = url.pathname + newQuery + url.hash;
+    window.history.replaceState({}, document.title, newUrl);
+  }
+})();
+
 function determineGitHubStargazersCount(locale, globalData) {
   $.getJSON('https://api.cryptomator.org/desktop/repo.json', data => {
     globalData.githubStargazers = formatNumber(data.stargazers_count, locale);
