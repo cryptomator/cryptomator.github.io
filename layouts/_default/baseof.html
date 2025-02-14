@@ -80,7 +80,7 @@
     {{ end }}
     </div>
     {{ partial "footer.html" . }}
-    {{ if hugo.IsDevelopment }}
+    {{ if hugo.IsServer }}
       <script data-domain="cryptomator.local" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.local.js" integrity="sha384-eSdyNyMq4w2Hzeb7A3pkbi2+zvI/skXuKlWsX5uzccigZEHDhHyBYoTASuSW+ZUQ" crossorigin="anonymous" defer></script>
       <script src="https://umami.skymatic.de/script.js" data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c" integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B" crossorigin="anonymous" defer></script>
       {{ $baseJs := resources.Get "js/base.js" }}
