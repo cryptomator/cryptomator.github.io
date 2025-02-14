@@ -7,7 +7,6 @@
     {{ block "preloads" . }}
       <!-- optional additional page-specific preloads -->
     {{ end }}
-    <link rel="preload" fetchpriority="low" as="image" href="/favicon.ico" type="image/x-icon" crossorigin="anonymous">
     <link rel="preload" fetchpriority="low" as="image" href="/img/logo.svg" type="image/svg+xml">
     <link rel="preload" fetchpriority="low" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" fetchpriority="low" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -67,8 +66,8 @@
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
-    {{ range .Translations }}
-      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .RelPermalink }}" />
+    {{ range .AllTranslations }}
+      <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
@@ -81,14 +80,31 @@
     {{ end }}
     </div>
     {{ partial "footer.html" . }}
-    {{ if hugo.IsDevelopment }}
+    {{ if hugo.IsServer }}
       <script data-domain="cryptomator.local" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.local.js" integrity="sha384-eSdyNyMq4w2Hzeb7A3pkbi2+zvI/skXuKlWsX5uzccigZEHDhHyBYoTASuSW+ZUQ" crossorigin="anonymous" defer></script>
-      <script src="https://umami.skymatic.de/script.js" data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c" integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B" crossorigin="anonymous" defer></script>
+      <script
+        src="https://umami.skymatic.de/script.js"
+        data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c"
+        integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B"
+        crossorigin="anonymous"
+        defer
+        {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
+      </script>
+    {{ else }}
+      <script data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous" defer></script>
+      <script
+        src="https://umami.skymatic.de/script.js"
+        data-website-id="8d451e39-ffb2-4697-82c9-9f69eff497f1"
+        integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B"
+        crossorigin="anonymous"
+        defer
+        {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
+      </script>
+    {{ end }}
+    {{ if hugo.IsDevelopment }}
       {{ $baseJs := resources.Get "js/base.js" }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" defer></script>
     {{ else }}
-      <script data-domain="cryptomator.org" src="https://plausible.skymatic.de/js/script.file-downloads.hash.outbound-links.tagged-events.js" integrity="sha384-egs8fp2Vph6JyDsFP2YT8pcJ87gHh8zcRbUNh9YokH9WugpdG6hBOlJI7+uxrBEf" crossorigin="anonymous" defer></script>
-      <script src="https://umami.skymatic.de/script.js" data-website-id="8d451e39-ffb2-4697-82c9-9f69eff497f1" integrity="sha384-/WQteTtaLX4nU22mvCeTi4Yz3iK/J3yZ2rKq5jDxPMlizEQGzgJOlSofJxh+bx4B" crossorigin="anonymous" defer></script>
       {{ $baseJs := resources.Get "js/base.js" | minify | fingerprint }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" integrity="{{ $baseJs.Data.Integrity }}" defer></script>
     {{ end }}

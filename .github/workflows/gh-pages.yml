@@ -29,7 +29,7 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
     - name: Build
-      run: hugo
+      run: hugo --minify
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:

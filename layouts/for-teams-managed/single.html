@@ -107,14 +107,14 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.js" }}
+    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" defer></script>
     {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
     <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
+    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" integrity="{{ $hubManagedJs.Data.Integrity }}" defer></script>
