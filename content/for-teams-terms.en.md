@@ -1,6 +1,6 @@
 ---
 title: "Terms & Conditions for Cryptomator Hub (SaaS)"
-url: "/hub/managed/terms"
+url: "/for-teams/managed/terms"
 ---
 
 _Effective date: January 2025_

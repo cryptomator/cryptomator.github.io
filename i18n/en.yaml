@@ -276,7 +276,97 @@
 - id: home_cebit_subtitle
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
 
-# Hub
+# For Individuals
+- id: for_individuals_contact_us_button
+  translation: "Join Community"
+- id: for_individuals_contact_us_description
+  translation: "Couldn't find an answer? Join our community forum and get help from other users."
+- id: for_individuals_contact_us_title
+  translation: "Ask the Community"
+- id: for_individuals_downloads_description
+  translation: "Downloads"
+- id: for_individuals_downloads_title
+  translation: "1.5M"
+- id: for_individuals_expertise_description
+  translation: "of Expertise"
+- id: for_individuals_expertise_title
+  translation: "10 Years"
+- id: for_individuals_features_title
+  translation: "Why Cryptomator?"
+- id: for_individuals_features_subtitle
+  translation: "See how Cryptomator protects your files with strong encryption, privacy-first principles, and seamless cross-platform support."
+- id: for_individuals_features_feature_1_description
+  translation: "Enhance security with strong authentication methods, ensuring that only authorized users can access your encrypted vaults."
+- id: for_individuals_features_feature_1_title
+  translation: "Strong Authentication"
+- id: for_individuals_features_feature_2_description
+  translation: "Your files are securely encrypted before they leave your device and remain protected during transfer and storage."
+- id: for_individuals_features_feature_2_title
+  translation: "End-to-End Encryption"
+- id: for_individuals_features_feature_3_description
+  translation: "We follow a zero-knowledge principle, meaning that we have no access to your passwords or encrypted files."
+- id: for_individuals_features_feature_3_title
+  translation: "Zero Knowledge"
+- id: for_individuals_features_feature_4_description
+  translation: "Encryption happens entirely on your device, ensuring that your files are never exposed to third parties or cloud providers."
+- id: for_individuals_features_feature_4_title
+  translation: "Client-Side Encryption"
+- id: for_individuals_features_feature_5_description
+  translation: "Built with transparency in mind—our source code is open to the public, ensuring security through community-driven audits."
+- id: for_individuals_features_feature_5_title
+  translation: "Open Source"
+- id: for_individuals_features_feature_6_description
+  translation: "Designed with privacy in mind, Cryptomator is fully GDPR-compliant and requires no personal data to function."
+- id: for_individuals_features_feature_6_title
+  translation: "Privacy Compliant"
+- id: for_individuals_features_feature_7_description
+  translation: "Seamlessly integrates with your existing cloud storage providers, allowing you to secure your files without changing your workflow."
+- id: for_individuals_features_feature_7_title
+  translation: "Easy Integration"
+- id: for_individuals_features_feature_8_description
+  translation: "Designed for simplicity, with an intuitive interface that makes encrypting and managing your files effortless."
+- id: for_individuals_features_feature_8_title
+  translation: "User-Friendly Interface"
+- id: for_individuals_features_feature_9_description
+  translation: "Available on all major platforms, ensuring secure access to your encrypted files wherever you need them."
+- id: for_individuals_features_feature_9_title
+  translation: "Cross-Platform Compatibility"
+- id: for_individuals_header_cta
+  translation: "Download Now"
+- id: for_individuals_header_cta_description
+  translation: "Available for Windows, macOS, Linux, Android & iOS."
+- id: for_individuals_header_description
+  translation: "Your data stored in the cloud is not fully protected. Whether documents, photos, or personal data – Cryptomator locks them in just a few steps to truly secure them. This way, only you can access your data. No one else."
+- id: for_individuals_header_title
+  translation: "Cryptomator. Privacy for everyone."
+- id: for_individuals_open_source_description
+  translation: "Commitment"
+- id: for_individuals_open_source_title
+  translation: "Open Source"
+- id: for_individuals_section_1_alt
+  translation: "Cryptomator app interface with multiple vaults"
+- id: for_individuals_section_1_description
+  translation: "Create as many vaults as you need to organize and secure your files. Each vault is protected with a unique password, ensuring that only you can access its contents. Your data remains fully encrypted and safe from unauthorized access."
+- id: for_individuals_section_1_title
+  translation: "Set a Password"
+- id: for_individuals_section_2_alt
+  translation: "Unlocked vault displaying decrypted files"
+- id: for_individuals_section_2_description
+  translation: "Enter your vault’s password to instantly unlock and access your files. As long as only you know the password, your data stays private, fully decrypted for you, and completely hidden from everyone else."
+- id: for_individuals_section_2_title
+  translation: "Visible to You"
+- id: for_individuals_section_3_alt
+  translation: "Encrypted folder with obfuscated filenames in a file explorer."
+- id: for_individuals_section_3_description
+  translation: "Even if a data breach occurs, attackers won’t be able to make sense of your files. They will only see cryptic filenames with no clues about the content, keeping your sensitive information completely protected."
+- id: for_individuals_section_3_title
+  translation: "Unreadable for Others"
+- id: for_individuals_users_worldwide_description
+  translation: "Users Worldwide"
+- id: for_individuals_users_worldwide_title
+  translation: "100K+"
+
+# For Teams
 - id: hub_header_title
   translation: "Encrypted&nbsp;collaboration for&nbsp;your&nbsp;team"
 - id: hub_header_description
@@ -337,7 +427,7 @@
 - id: hub_newsletter_success
   translation: "Thank you for subscribing! A confirmation link has been sent to your email address."
 
-# Hub Billing
+# For Teams Billing
 - id: hub_billing_generic_title
   translation: "Manage Hub Subscription"
 
@@ -475,7 +565,7 @@
 - id: hub_billing_manualinvoice_action
   translation: "Contact Us"
 
-# Hub Demo
+# For Teams Demo
 - id: hub_demo_description
   translation: "Try out Cryptomator Hub with a demo instance. You will be able to create vaults and invite other users to access them."
 
@@ -514,7 +604,7 @@
 - id: hub_demo_contact_us_button
   translation: "Contact Us"
 
-# Hub Managed
+# For Teams Managed
 - id: hub_managed_description
   translation: "Request access to a managed instance of Cryptomator Hub and get your team on board with client-side encryption for your cloud storage."
 
@@ -579,7 +669,7 @@
 - id: hub_managed_low_quantity_submit_2
   translation: "Confirm Request"
 
-# Hub Setup
+# For Teams Self-Hosted
 - id: hub_setup_description
   translation: "Generate the necessary configuration templates for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
 - id: hub_setup_more_info

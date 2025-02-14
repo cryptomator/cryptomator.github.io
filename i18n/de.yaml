@@ -276,7 +276,97 @@
 - id: home_cebit_subtitle
   translation: "Cryptomator ist Gewinner des Sonderpreises für Usable Security and Privacy."
 
-# Hub
+# Für Individuals
+- id: for_individuals_contact_us_button
+  translation: "Community beitreten"
+- id: for_individuals_contact_us_description
+  translation: "Keine Antwort gefunden? Tritt unserem Community-Forum bei und erhalte Hilfe von anderen Nutzern."
+- id: for_individuals_contact_us_title
+  translation: "Frage die Community"
+- id: for_individuals_downloads_description
+  translation: "Downloads"
+- id: for_individuals_downloads_title
+  translation: "1,5M"
+- id: for_individuals_expertise_description
+  translation: "Erfahrung"
+- id: for_individuals_expertise_title
+  translation: "10 Jahre"
+- id: for_individuals_features_title
+  translation: "Warum Cryptomator?"
+- id: for_individuals_features_subtitle
+  translation: "Erfahre, wie Cryptomator deine Dateien mit starker Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
+- id: for_individuals_features_feature_1_description
+  translation: "Erhöhe die Sicherheit mit starken Authentifizierungsmethoden, die sicherstellen, dass nur autorisierte Benutzer auf deine verschlüsselten Tresore zugreifen können."
+- id: for_individuals_features_feature_1_title
+  translation: "Starke Authentifizierung"
+- id: for_individuals_features_feature_2_description
+  translation: "Deine Dateien werden sicher verschlüsselt, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+- id: for_individuals_features_feature_2_title
+  translation: "Ende-zu-Ende-Verschlüsselung"
+- id: for_individuals_features_feature_3_description
+  translation: "Wir folgen dem Zero-Knowledge-Prinzip, was bedeutet, dass wir keinen Zugriff auf deine Passwörter oder verschlüsselten Dateien haben."
+- id: for_individuals_features_feature_3_title
+  translation: "Zero Knowledge"
+- id: for_individuals_features_feature_4_description
+  translation: "Die Verschlüsselung erfolgt vollständig auf deinem Gerät, sodass deine Dateien niemals Dritten oder Cloud-Anbietern offengelegt werden."
+- id: for_individuals_features_feature_4_title
+  translation: "Client-seitige Verschlüsselung"
+- id: for_individuals_features_feature_5_description
+  translation: "Mit Transparenz im Sinn entwickelt – unser Quellcode ist öffentlich zugänglich und ermöglicht Sicherheitsprüfungen durch die Community."
+- id: for_individuals_features_feature_5_title
+  translation: "Open Source"
+- id: for_individuals_features_feature_6_description
+  translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig DSGVO-konform und erfordert keine persönlichen Daten."
+- id: for_individuals_features_feature_6_title
+  translation: "Datenschutzkonform"
+- id: for_individuals_features_feature_7_description
+  translation: "Lässt sich nahtlos in bestehende Cloud-Speicherdienste integrieren, sodass du deine Dateien sichern kannst, ohne deinen Workflow zu ändern."
+- id: for_individuals_features_feature_7_title
+  translation: "Einfache Integration"
+- id: for_individuals_features_feature_8_description
+  translation: "Entwickelt für eine intuitive Nutzung – die benutzerfreundliche Oberfläche macht das Verschlüsseln und Verwalten deiner Dateien mühelos."
+- id: for_individuals_features_feature_8_title
+  translation: "Benutzerfreundliche Oberfläche"
+- id: for_individuals_features_feature_9_description
+  translation: "Verfügbar auf allen wichtigen Plattformen, sodass du jederzeit und überall sicher auf deine verschlüsselten Dateien zugreifen kannst."
+- id: for_individuals_features_feature_9_title
+  translation: "Geräteübergreifend"
+- id: for_individuals_header_cta
+  translation: "Jetzt herunterladen"
+- id: for_individuals_header_cta_description
+  translation: "Verfügbar für Windows, macOS, Linux, Android & iOS."
+- id: for_individuals_header_description
+  translation: "Deine in der Cloud gespeicherten Daten sind nicht vollständig geschützt. Ob Dokumente, Fotos oder persönliche Daten – Cryptomator verschlüsselt sie mit wenigen Klicks und sichert sie wirklich ab. So hast nur du Zugriff auf deine Daten. Niemand sonst."
+- id: for_individuals_header_title
+  translation: "Cryptomator. Datenschutz für alle."
+- id: for_individuals_open_source_description
+  translation: "Engagement"
+- id: for_individuals_open_source_title
+  translation: "Open Source"
+- id: for_individuals_section_1_alt
+  translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
+- id: for_individuals_section_1_description
+  translation: "Erstelle so viele Tresore, wie du benötigst, um deine Dateien zu organisieren und zu sichern. Jeder Tresor ist mit einem einzigartigen Passwort geschützt, sodass nur du auf die Inhalte zugreifen kannst. Deine Daten bleiben vollständig verschlüsselt und vor unbefugtem Zugriff sicher."
+- id: for_individuals_section_1_title
+  translation: "Passwort setzen"
+- id: for_individuals_section_2_alt
+  translation: "Entsperrter Tresor mit entschlüsselten Dateien"
+- id: for_individuals_section_2_description
+  translation: "Gib das Passwort deines Tresors ein, um sofortigen Zugriff auf deine Dateien zu erhalten. Solange nur du das Passwort kennst, bleiben deine Daten privat, vollständig entschlüsselt für dich und für alle anderen unsichtbar."
+- id: for_individuals_section_2_title
+  translation: "Sichtbar für dich"
+- id: for_individuals_section_3_alt
+  translation: "Verschlüsselter Ordner mit obskuren Dateinamen in einem Datei-Explorer."
+- id: for_individuals_section_3_description
+  translation: "Selbst wenn ein Datenleck auftritt, können Angreifer mit deinen Dateien nichts anfangen. Sie sehen nur kryptische Dateinamen ohne Hinweise auf den Inhalt, wodurch deine sensiblen Informationen vollständig geschützt bleiben."
+- id: for_individuals_section_3_title
+  translation: "Unlesbar für andere"
+- id: for_individuals_users_worldwide_description
+  translation: "Nutzer weltweit"
+- id: for_individuals_users_worldwide_title
+  translation: "100K+"
+
+# For Teams
 - id: hub_header_title
   translation: "Verschlüsselte&nbsp;Zusammenarbeit im&nbsp;Team"
 - id: hub_header_description
@@ -337,7 +427,7 @@
 - id: hub_newsletter_success
   translation: "Vielen Dank für deine Anmeldung! Ein Bestätigungslink wurde an deine E-Mail-Adresse zugeschickt."
 
-# Hub Billing
+# For Teams Billing
 - id: hub_billing_generic_title
   translation: "Hub-Abonnement verwalten"
 
@@ -475,7 +565,7 @@
 - id: hub_billing_manualinvoice_action
   translation: "Kontaktiere uns"
 
-# Hub Demo
+# For Teams Demo
 - id: hub_demo_description
   translation: "Probiere Cryptomator Hub mit einer Demo-Instanz aus. Du kannst Tresore erstellen und andere Nutzer einladen, auf sie zuzugreifen."
 
@@ -514,7 +604,7 @@
 - id: hub_demo_contact_us_button
   translation: "Kontaktiere uns"
 
-# Hub Managed
+# For Teams Managed
 - id: hub_managed_description
   translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 
@@ -579,7 +669,7 @@
 - id: hub_managed_low_quantity_submit_2
   translation: "Anfrage bestätigen"
 
-# Hub Setup
+# For Teams Self-Hosted
 - id: hub_setup_description
   translation: "Generiere die erforderlichen Konfigurationsvorlagen für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 - id: hub_setup_more_info
