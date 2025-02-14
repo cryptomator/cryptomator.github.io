@@ -451,14 +451,14 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.js" }}
+    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
     {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
     <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.js" | minify | fingerprint }}
+    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
