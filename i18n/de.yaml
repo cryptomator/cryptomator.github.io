@@ -276,7 +276,7 @@
 - id: home_cebit_subtitle
   translation: "Cryptomator ist Gewinner des Sonderpreises für Usable Security and Privacy."
 
-# Für Individuals
+# For Individuals
 - id: for_individuals_contact_us_button
   translation: "Community beitreten"
 - id: for_individuals_contact_us_description
@@ -427,7 +427,7 @@
 - id: hub_newsletter_success
   translation: "Vielen Dank für deine Anmeldung! Ein Bestätigungslink wurde an deine E-Mail-Adresse zugeschickt."
 
-# For Teams Billing
+# Hub Billing
 - id: hub_billing_generic_title
   translation: "Hub-Abonnement verwalten"
 
@@ -565,7 +565,7 @@
 - id: hub_billing_manualinvoice_action
   translation: "Kontaktiere uns"
 
-# For Teams Demo
+# Hub Teams Demo
 - id: hub_demo_description
   translation: "Probiere Cryptomator Hub mit einer Demo-Instanz aus. Du kannst Tresore erstellen und andere Nutzer einladen, auf sie zuzugreifen."
 
@@ -604,7 +604,7 @@
 - id: hub_demo_contact_us_button
   translation: "Kontaktiere uns"
 
-# For Teams Managed
+# Hub Teams Managed
 - id: hub_managed_description
   translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 
@@ -669,7 +669,7 @@
 - id: hub_managed_low_quantity_submit_2
   translation: "Anfrage bestätigen"
 
-# For Teams Self-Hosted
+# Hub Self-Hosted
 - id: hub_setup_description
   translation: "Generiere die erforderlichen Konfigurationsvorlagen für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 - id: hub_setup_more_info
