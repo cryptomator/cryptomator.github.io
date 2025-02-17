@@ -565,7 +565,7 @@
 - id: hub_billing_manualinvoice_action
   translation: "Kontaktiere uns"
 
-# Hub Teams Demo
+# Hub Demo
 - id: hub_demo_description
   translation: "Probiere Cryptomator Hub mit einer Demo-Instanz aus. Du kannst Tresore erstellen und andere Nutzer einladen, auf sie zuzugreifen."
 
@@ -604,7 +604,7 @@
 - id: hub_demo_contact_us_button
   translation: "Kontaktiere uns"
 
-# Hub Teams Managed
+# Hub Managed
 - id: hub_managed_description
   translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 
