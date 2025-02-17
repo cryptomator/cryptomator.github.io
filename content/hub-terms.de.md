@@ -1,6 +1,6 @@
 ---
 title: "AGB für Cryptomator Hub (SaaS)"
-url: "/de/for-teams/managed/terms"
+url: "/de/hub/managed/terms"
 ---
 
 _Stand: Januar 2025_
