@@ -267,43 +267,31 @@
 - id: for_individuals_features_title
   translation: "Why Cryptomator?"
 - id: for_individuals_features_subtitle
-  translation: "See how Cryptomator protects your files with strong encryption, privacy-first principles, and seamless cross-platform support."
+  translation: "Discover how Cryptomator protects your files with strong encryption, privacy principles, and seamless cross-platform support."
 - id: for_individuals_features_feature_1_title
-  translation: "Strong Authentication"
-- id: for_individuals_features_feature_1_description
-  translation: "Enhance security with strong authentication methods, ensuring that only authorized users can access your encrypted vaults."
-- id: for_individuals_features_feature_2_title
-  translation: "End-to-End Encryption"
-- id: for_individuals_features_feature_2_description
-  translation: "Your files are securely encrypted before they leave your device and remain protected during transfer and storage."
-- id: for_individuals_features_feature_3_title
-  translation: "Zero Knowledge"
-- id: for_individuals_features_feature_3_description
-  translation: "We follow a zero-knowledge principle, meaning that we have no access to your passwords or encrypted files."
-- id: for_individuals_features_feature_4_title
   translation: "Client-Side Encryption"
+- id: for_individuals_features_feature_1_description
+  translation: "Your files are securely encrypted before leaving your device, keeping them protected during transfer and storage."
+- id: for_individuals_features_feature_2_title
+  translation: "Compatible with Your Cloud"
+- id: for_individuals_features_feature_2_description
+  translation: "Seamlessly integrates with existing cloud storage, allowing you to sync your data securely and effortlessly."
+- id: for_individuals_features_feature_3_title
+  translation: "Cross-Platform"
+- id: for_individuals_features_feature_3_description
+  translation: "Available on all major platforms, so you can securely access your encrypted files anytime, anywhere."
+- id: for_individuals_features_feature_4_title
+  translation: "User-Friendly Interface"
 - id: for_individuals_features_feature_4_description
-  translation: "Encryption happens entirely on your device, ensuring that your files are never exposed to third parties or cloud providers."
+  translation: "Intuitively designed – the user-friendly interface makes encrypting and managing your files effortless."
 - id: for_individuals_features_feature_5_title
   translation: "Open Source"
 - id: for_individuals_features_feature_5_description
-  translation: "Built with transparency in mind—our source code is open to the public, ensuring security through community-driven audits."
+  translation: "Built with transparency in mind – our source code is publicly available for community security audits."
 - id: for_individuals_features_feature_6_title
-  translation: "Privacy Compliant"
+  translation: "Privacy-Compliant"
 - id: for_individuals_features_feature_6_description
-  translation: "Designed with privacy in mind, Cryptomator is fully GDPR-compliant and requires no personal data to function."
-- id: for_individuals_features_feature_7_title
-  translation: "Easy Integration"
-- id: for_individuals_features_feature_7_description
-  translation: "Seamlessly integrates with your existing cloud storage providers, allowing you to secure your files without changing your workflow."
-- id: for_individuals_features_feature_8_title
-  translation: "User-Friendly Interface"
-- id: for_individuals_features_feature_8_description
-  translation: "Designed for simplicity, with an intuitive interface that makes encrypting and managing your files effortless."
-- id: for_individuals_features_feature_9_title
-  translation: "Cross-Platform Compatibility"
-- id: for_individuals_features_feature_9_description
-  translation: "Available on all major platforms, ensuring secure access to your encrypted files wherever you need them."
+  translation: "Designed with privacy in focus: Cryptomator is fully GDPR-compliant and does not require any personal data."
 
 - id: for_individuals_join_community_title
   translation: "Couldn't find an answer?"

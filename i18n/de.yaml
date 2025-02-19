@@ -269,21 +269,21 @@
 - id: for_individuals_features_subtitle
   translation: "Erfahre, wie Cryptomator deine Dateien mit starker Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
 - id: for_individuals_features_feature_1_title
-  translation: "Starke Authentifizierung"
-- id: for_individuals_features_feature_1_description
-  translation: "Erhöhe die Sicherheit mit starken Authentifizierungsmethoden, die sicherstellen, dass nur autorisierte Benutzer auf deine verschlüsselten Tresore zugreifen können."
-- id: for_individuals_features_feature_2_title
-  translation: "Ende-zu-Ende-Verschlüsselung"
-- id: for_individuals_features_feature_2_description
-  translation: "Deine Dateien werden sicher verschlüsselt, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
-- id: for_individuals_features_feature_3_title
-  translation: "Zero Knowledge"
-- id: for_individuals_features_feature_3_description
-  translation: "Wir folgen dem Zero-Knowledge-Prinzip, was bedeutet, dass wir keinen Zugriff auf deine Passwörter oder verschlüsselten Dateien haben."
-- id: for_individuals_features_feature_4_title
   translation: "Client-seitige Verschlüsselung"
+- id: for_individuals_features_feature_1_description
+  translation: "Deine Dateien werden sicher verschlüsselt, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+- id: for_individuals_features_feature_2_title
+  translation: "Kompatibel mit deiner Cloud"
+- id: for_individuals_features_feature_2_description
+  translation: "Integriert sich nahtlos in bestehende Cloud-Speicher, so dass du deine Daten sicher und bequem synchronisieren kannst."
+- id: for_individuals_features_feature_3_title
+  translation: "Geräteübergreifend"
+- id: for_individuals_features_feature_3_description
+  translation: "Verfügbar auf allen wichtigen Plattformen, so dass du jederzeit und überall sicher auf deine verschlüsselten Dateien zugreifen kannst."
+- id: for_individuals_features_feature_4_title
+  translation: "Benutzerfreundliche Oberfläche"
 - id: for_individuals_features_feature_4_description
-  translation: "Die Verschlüsselung erfolgt vollständig auf deinem Gerät, sodass deine Dateien niemals Dritten oder Cloud-Anbietern offengelegt werden."
+  translation: "Intuitiv gestaltet – die benutzerfreundliche Oberfläche macht das Verschlüsseln und Verwalten deiner Dateien mühelos."
 - id: for_individuals_features_feature_5_title
   translation: "Open Source"
 - id: for_individuals_features_feature_5_description
@@ -292,18 +292,6 @@
   translation: "Datenschutzkonform"
 - id: for_individuals_features_feature_6_description
   translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig DSGVO-konform und erfordert keine persönlichen Daten."
-- id: for_individuals_features_feature_7_title
-  translation: "Einfache Integration"
-- id: for_individuals_features_feature_7_description
-  translation: "Lässt sich nahtlos in bestehende Cloud-Speicherdienste integrieren, sodass du deine Dateien sichern kannst, ohne deinen Workflow zu ändern."
-- id: for_individuals_features_feature_8_title
-  translation: "Benutzerfreundliche Oberfläche"
-- id: for_individuals_features_feature_8_description
-  translation: "Entwickelt für eine intuitive Nutzung – die benutzerfreundliche Oberfläche macht das Verschlüsseln und Verwalten deiner Dateien mühelos."
-- id: for_individuals_features_feature_9_title
-  translation: "Geräteübergreifend"
-- id: for_individuals_features_feature_9_description
-  translation: "Verfügbar auf allen wichtigen Plattformen, sodass du jederzeit und überall sicher auf deine verschlüsselten Dateien zugreifen kannst."
 
 - id: for_individuals_join_community_title
   translation: "Keine Antwort gefunden?"
