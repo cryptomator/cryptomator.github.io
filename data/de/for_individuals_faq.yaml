@@ -5,7 +5,7 @@
 - Question: "Wie funktioniert Cryptomator?"
   Answer: "Cryptomator erstellt verschlüsselte Tresore auf deinem Computer oder Mobilgerät. Dateien werden verschlüsselt, bevor sie in die Cloud hochgeladen werden, so dass nur du oder autorisierte Personen darauf zugreifen können."
 - Question: "Welche Verschlüsselungsmethode verwendet Cryptomator?"
-  Answer: "Cryptomator verwendet AES (Advanced Encryption Standard) und 256-Bit-Schlüssellänge für maximale Sicherheit. Jede Datei wird einzeln verschlüsselt, und auch Dateinamen sind geschützt."
+  Answer: "Cryptomator verwendet AES (Advanced Encryption Standard) und 256-Bit-Schlüssellänge für maximale Sicherheit. Jede Datei wird einzeln verschlüsselt, und auch Dateinamen sind geschützt. Weitere Informationen findest du in unserer [Sicherheitsarchitektur](https://docs.cryptomator.org/security/architecture/)."
 - Question: "Kann ich mehrere Tresore erstellen?"
   Answer: "Ja, du kannst beliebig viele Tresore erstellen, um verschiedene Dateien oder Projekte separat zu verschlüsseln."
 - Question: "Ist Cryptomator Open Source?"

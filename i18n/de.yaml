@@ -271,7 +271,7 @@
 - id: for_individuals_features_feature_1_title
   translation: "Client-seitige Verschlüsselung"
 - id: for_individuals_features_feature_1_description
-  translation: "Deine Dateien werden sicher verschlüsselt, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+  translation: "Deine Dateien werden sicher <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
 - id: for_individuals_features_feature_2_title
   translation: "Kompatibel mit deiner Cloud"
 - id: for_individuals_features_feature_2_description
@@ -281,17 +281,17 @@
 - id: for_individuals_features_feature_3_description
   translation: "Verfügbar auf allen wichtigen Plattformen, so dass du jederzeit und überall sicher auf deine verschlüsselten Dateien zugreifen kannst."
 - id: for_individuals_features_feature_4_title
-  translation: "Benutzerfreundliche Oberfläche"
+  translation: "Kinderleichte Bedienung"
 - id: for_individuals_features_feature_4_description
-  translation: "Intuitiv gestaltet – die benutzerfreundliche Oberfläche macht das Verschlüsseln und Verwalten deiner Dateien mühelos."
+  translation: "Die Einrichtung von Cryptomator erfolgt in nur wenigen Minuten. Es sind keine technischen Vorkenntnisse nötig."
 - id: for_individuals_features_feature_5_title
   translation: "Open Source"
 - id: for_individuals_features_feature_5_description
-  translation: "Mit Transparenz im Sinn entwickelt – unser Quellcode ist öffentlich zugänglich und ermöglicht Sicherheitsprüfungen durch die Community."
+  translation: "Unser Quellcode ist öffentlich zugänglich und ermöglicht Sicherheitsprüfungen durch die Community. <a class=\"text-link\" href=\"/de/open-source/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
 - id: for_individuals_features_feature_6_title
   translation: "Datenschutzkonform"
 - id: for_individuals_features_feature_6_description
-  translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig DSGVO-konform und erfordert keine persönlichen Daten."
+  translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig <a class=\"text-link\" href=\"/de/gdpr/\" target=\"_blank\" rel=\"noopener\">DSGVO-konform</a> und erfordert keine persönlichen Daten."
 
 - id: for_individuals_join_community_title
   translation: "Keine Antwort gefunden?"
