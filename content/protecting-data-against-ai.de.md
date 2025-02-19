@@ -110,7 +110,7 @@ Die Dateinamensverschleierung ist eine Funktion, die sicherstellt, dass nicht nu
 
 **Wie gehe ich vor, wenn ich mein Passwort vergesse?**
 
-Das Passwort, das du für deinen Cryptomator-Tresor festlegst, ist entscheidend für den Zugriff auf deine verschlüsselten Daten. Wenn du es vergisst, gibt es eine Möglichkeit, das Passwort zurückzusetzen, indem du einen Wiederherstellungsschlüssel verwendest. Es ist daher wichtig, diesen Wiederherstellungsschlüssel sicher aufzubewahren. Ausführliche Anleitungen zum Zurücksetzen des Passworts findest du auf der [Cryptomator-Dokumentationsseite](https://docs.cryptomator.org/en/latest/desktop/password-and-recovery-key/).
+Das Passwort, das du für deinen Cryptomator-Tresor festlegst, ist entscheidend für den Zugriff auf deine verschlüsselten Daten. Wenn du es vergisst, gibt es eine Möglichkeit, das Passwort zurückzusetzen, indem du einen Wiederherstellungsschlüssel verwendest. Es ist daher wichtig, diesen Wiederherstellungsschlüssel sicher aufzubewahren. Ausführliche Anleitungen zum Zurücksetzen des Passworts findest du auf der [Cryptomator-Dokumentationsseite](https://docs.cryptomator.org/desktop/password-and-recovery-key/).
 
 **Welche Systemanforderungen hat Cryptomator?**
 

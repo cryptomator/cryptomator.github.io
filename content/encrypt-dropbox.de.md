@@ -109,6 +109,6 @@ Wenn du möchtest, kannst du diesen sofort entsperren und das virtuelle Laufwerk
 
 Hier legst du ab sofort deine sensiblen Dateien ab, um diese in Dropbox zu verschlüsseln.
 
-{{< extlink "https://docs.cryptomator.org/en/latest/desktop/adding-vaults/" "Eine ausführliche Anleitung gibt es hier." >}}
+{{< extlink "https://docs.cryptomator.org/desktop/adding-vaults/" "Eine ausführliche Anleitung gibt es hier." >}}
 
 {{< /markdownify >}}</div>
