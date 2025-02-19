@@ -73,7 +73,7 @@
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
     {{- $topPadding := cond .IsHome "" "pt-12" -}}
-    <div class="bg-gray-100 min-vh-80 {{ $topPadding }}">
+    <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->

@@ -216,19 +216,107 @@
 - id: enterprise_contact_us_button
   translation: "Contact Us for an Offer"
 
+# For Individuals
+- id: for_individuals_header_title
+  translation: "Keep your cloud data truly yours"
+- id: for_individuals_header_description
+  translation: "Data in the cloud is often not sufficiently protected. Cryptomator encrypts your documents, photos, and personal files with just a few clicks - ensuring that only you have access. No one else."
+- id: for_individuals_header_cta
+  translation: "Download Now"
+- id: for_individuals_header_cta_description
+  translation: "Available for Windows, macOS, Linux, Android, and iOS."
+- id: for_individuals_header_woman_laptop_alt
+  translation: "Person sitting in front of a laptop while Cryptobot next to the person is pointing at the laptop"
+
+- id: for_individuals_downloads_title
+  translation: "3M+"
+- id: for_individuals_downloads_description
+  translation: "Downloads"
+- id: for_individuals_expertise_title
+  translation: "10 Years"
+- id: for_individuals_expertise_description
+  translation: "of Expertise"
+- id: for_individuals_open_source_title
+  translation: "Open Source"
+- id: for_individuals_open_source_description
+  translation: "Commitment"
+- id: for_individuals_users_worldwide_title
+  translation: "150k+"
+- id: for_individuals_users_worldwide_description
+  translation: "Users Worldwide"
+
+- id: for_individuals_workflow_step_1_title
+  translation: "1. Create a Vault"
+- id: for_individuals_workflow_step_1_description
+  translation: "Set up a vault – whether in Dropbox, Google Drive, OneDrive, or any other location. Choose a strong password to ensure that only you can access the contents of your vault."
+- id: for_individuals_workflow_step_1_alt
+  translation: "Cryptomator app interface with multiple vaults"
+- id: for_individuals_workflow_step_2_title
+  translation: "2. Securely Store Files"
+- id: for_individuals_workflow_step_2_description
+  translation: "Simply save your files in your unlocked vault. Cryptomator provides you with a virtual drive where your data is automatically encrypted – no extra steps required."
+- id: for_individuals_workflow_step_2_alt
+  translation: "Unlocked vault with decrypted files"
+- id: for_individuals_workflow_step_3_title
+  translation: "3. Sit Back and Relax"
+- id: for_individuals_workflow_step_3_description
+  translation: "Enjoy the peace of mind knowing your data in the cloud is now secure. Even if a data breach occurs, attackers won't be able to do anything with your encrypted vault – your sensitive information remains fully protected."
+- id: for_individuals_workflow_step_3_alt
+  translation: "Encrypted folder with obscure filenames in a file explorer"
+
+- id: for_individuals_features_title
+  translation: "Why Cryptomator?"
+- id: for_individuals_features_subtitle
+  translation: "Discover how Cryptomator protects your files with strong encryption, privacy principles, and seamless cross-platform support."
+- id: for_individuals_features_feature_1_title
+  translation: "Client-Side Encryption"
+- id: for_individuals_features_feature_1_description
+  translation: "Your files are securely encrypted before leaving your device, keeping them protected during transfer and storage."
+- id: for_individuals_features_feature_2_title
+  translation: "Compatible with Your Cloud"
+- id: for_individuals_features_feature_2_description
+  translation: "Seamlessly integrates with existing cloud storage, allowing you to sync your data securely and effortlessly."
+- id: for_individuals_features_feature_3_title
+  translation: "Cross-Platform"
+- id: for_individuals_features_feature_3_description
+  translation: "Available on all major platforms, so you can securely access your encrypted files anytime, anywhere."
+- id: for_individuals_features_feature_4_title
+  translation: "User-Friendly Interface"
+- id: for_individuals_features_feature_4_description
+  translation: "Intuitively designed – the user-friendly interface makes encrypting and managing your files effortless."
+- id: for_individuals_features_feature_5_title
+  translation: "Open Source"
+- id: for_individuals_features_feature_5_description
+  translation: "Built with transparency in mind – our source code is publicly available for community security audits."
+- id: for_individuals_features_feature_6_title
+  translation: "Privacy-Compliant"
+- id: for_individuals_features_feature_6_description
+  translation: "Designed with privacy in focus: Cryptomator is fully GDPR-compliant and does not require any personal data."
+
+- id: for_individuals_join_community_title
+  translation: "Couldn't find an answer?"
+- id: for_individuals_join_community_description
+  translation: "Join our community forum and get help from other users."
+- id: for_individuals_join_community_button
+  translation: "Join Community"
+
 # Home
 - id: home_header_title
   translation: "Encrypt&nbsp;your&nbsp;cloud, protect&nbsp;your&nbsp;privacy"
 - id: home_header_description
-  translation: "With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service."
+  translation: "With Cryptomator, the key to your data is in your hands. Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
+- id: home_header_for_individuals_cta
+  translation: "For Individuals"
+- id: home_header_for_teams_cta
+  translation: "For Teams"
 - id: home_get_started_title
   translation: "How will you use Cryptomator?"
 - id: home_get_started_for_individuals_title
   translation: "For Individuals"
 - id: home_get_started_for_individuals_subtitle
-  translation: "Secure Your Personal Files"
+  translation: "Private Users & Solo Workers"
 - id: home_get_started_for_individuals_benefit_1
   translation: "Encrypt your data locally with client-side encryption"
 - id: home_get_started_for_individuals_benefit_2
@@ -236,11 +324,11 @@
 - id: home_get_started_for_individuals_benefit_3
   translation: "Keep your files safe, regardless of storage location"
 - id: home_get_started_for_individuals_cta
-  translation: "Download Now"
+  translation: "Secure Your Personal Files"
 - id: home_get_started_for_teams_title
   translation: "For Teams"
 - id: home_get_started_for_teams_subtitle
-  translation: "Manage Team Access"
+  translation: "Businesses of All Sizes"
 - id: home_get_started_for_teams_benefit_1
   translation: "Secure team access with zero-knowledge key management"
 - id: home_get_started_for_teams_benefit_2
@@ -248,7 +336,7 @@
 - id: home_get_started_for_teams_benefit_3
   translation: "Integrate your existing identity management easily"
 - id: home_get_started_for_teams_cta
-  translation: "Set Up Now"
+  translation: "Manage Access in a Team"
 - id: home_newsletter_title
   translation: "Let's stay in touch"
 - id: home_newsletter_instruction

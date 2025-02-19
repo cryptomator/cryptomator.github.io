@@ -216,19 +216,107 @@
 - id: enterprise_contact_us_button
   translation: "Kontaktiere uns für ein Angebot"
 
+# For Individuals
+- id: for_individuals_header_title
+  translation: "Deine Daten in der Cloud gehören dir allein"
+- id: for_individuals_header_description
+  translation: "Daten in der Cloud sind oft nicht ausreichend geschützt. Cryptomator verschlüsselt deine Dokumente, Fotos und persönlichen Dateien mit wenigen Klicks – so hast nur du Zugriff. Niemand sonst."
+- id: for_individuals_header_cta
+  translation: "Jetzt herunterladen"
+- id: for_individuals_header_cta_description
+  translation: "Verfügbar für Windows, macOS, Linux, Android und iOS."
+- id: for_individuals_header_woman_laptop_alt
+  translation: "Person, die vor einem Laptop sitzt, während Cryptobot neben der Person auf den Laptop zeigt"
+
+- id: for_individuals_downloads_title
+  translation: "3M+"
+- id: for_individuals_downloads_description
+  translation: "Downloads"
+- id: for_individuals_expertise_title
+  translation: "10 Jahre"
+- id: for_individuals_expertise_description
+  translation: "Erfahrung"
+- id: for_individuals_open_source_title
+  translation: "Open Source"
+- id: for_individuals_open_source_description
+  translation: "Engagement"
+- id: for_individuals_users_worldwide_title
+  translation: "150k+"
+- id: for_individuals_users_worldwide_description
+  translation: "Nutzer weltweit"
+
+- id: for_individuals_workflow_step_1_title
+  translation: "1. Tresor erstellen"
+- id: for_individuals_workflow_step_1_description
+  translation: "Lege einen Tresor an – egal ob in Dropbox, Google Drive, OneDrive oder an einem beliebigen anderen Ort. Vergib ein sicheres Passwort, so dass nur du auf die Inhalte deines Tresors zugreifen kannst."
+- id: for_individuals_workflow_step_1_alt
+  translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
+- id: for_individuals_workflow_step_2_title
+  translation: "2. Dateien sicher ablegen"
+- id: for_individuals_workflow_step_2_description
+  translation: "Speichere deine Dateien einfach in deinem entsperrten Tresor. Cryptomator stellt dir ein virtuelles Laufwerk bereit, in dem deine Daten automatisch verschlüsselt werden – ohne zusätzliche Schritte."
+- id: for_individuals_workflow_step_2_alt
+  translation: "Entsperrter Tresor mit entschlüsselten Dateien"
+- id: for_individuals_workflow_step_3_title
+  translation: "3. Entspannt zurücklehnen"
+- id: for_individuals_workflow_step_3_description
+  translation: "Genieße das gute Gefühl, dass deine Daten in der Cloud jetzt sicher sind. Selbst wenn ein Datenleck auftritt, können Angreifer mit dem verschlüsselten Tresor nichts anfangen – deine sensiblen Informationen bleiben vollständig geschützt."
+- id: for_individuals_workflow_step_3_alt
+  translation: "Verschlüsselter Ordner mit obskuren Dateinamen in einem Datei-Explorer"
+
+- id: for_individuals_features_title
+  translation: "Warum Cryptomator?"
+- id: for_individuals_features_subtitle
+  translation: "Erfahre, wie Cryptomator deine Dateien mit starker Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
+- id: for_individuals_features_feature_1_title
+  translation: "Client-seitige Verschlüsselung"
+- id: for_individuals_features_feature_1_description
+  translation: "Deine Dateien werden sicher verschlüsselt, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+- id: for_individuals_features_feature_2_title
+  translation: "Kompatibel mit deiner Cloud"
+- id: for_individuals_features_feature_2_description
+  translation: "Integriert sich nahtlos in bestehende Cloud-Speicher, so dass du deine Daten sicher und bequem synchronisieren kannst."
+- id: for_individuals_features_feature_3_title
+  translation: "Geräteübergreifend"
+- id: for_individuals_features_feature_3_description
+  translation: "Verfügbar auf allen wichtigen Plattformen, so dass du jederzeit und überall sicher auf deine verschlüsselten Dateien zugreifen kannst."
+- id: for_individuals_features_feature_4_title
+  translation: "Benutzerfreundliche Oberfläche"
+- id: for_individuals_features_feature_4_description
+  translation: "Intuitiv gestaltet – die benutzerfreundliche Oberfläche macht das Verschlüsseln und Verwalten deiner Dateien mühelos."
+- id: for_individuals_features_feature_5_title
+  translation: "Open Source"
+- id: for_individuals_features_feature_5_description
+  translation: "Mit Transparenz im Sinn entwickelt – unser Quellcode ist öffentlich zugänglich und ermöglicht Sicherheitsprüfungen durch die Community."
+- id: for_individuals_features_feature_6_title
+  translation: "Datenschutzkonform"
+- id: for_individuals_features_feature_6_description
+  translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig DSGVO-konform und erfordert keine persönlichen Daten."
+
+- id: for_individuals_join_community_title
+  translation: "Keine Antwort gefunden?"
+- id: for_individuals_join_community_description
+  translation: "Tritt unserem Community-Forum bei und erhalte Hilfe von anderen Nutzern."
+- id: for_individuals_join_community_button
+  translation: "Community beitreten"
+
 # Home
 - id: home_header_title
   translation: "Cloud&nbsp;verschlüsseln, Privatsphäre&nbsp;schützen"
 - id: home_header_description
-  translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator ver&shy;schlüsselst du deine Daten schnell und unkompliziert. Anschließend lädst du sie geschützt in deinen Lieblingscloudservice hoch."
+  translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator sicherst und verschlüsselst du deine sensiblen Daten in deiner Lieblingscloud. So bleiben sie privat und vor unbefugtem Zugriff geschützt."
 - id: home_header_woman_cloud_alt
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
+- id: home_header_for_individuals_cta
+  translation: "Für Einzelnutzer"
+- id: home_header_for_teams_cta
+  translation: "Für Teams"
 - id: home_get_started_title
   translation: "Wie wirst du Cryptomator nutzen?"
 - id: home_get_started_for_individuals_title
   translation: "Für Einzelnutzer"
 - id: home_get_started_for_individuals_subtitle
-  translation: "Sichere deine persönlichen Dateien"
+  translation: "Privatnutzer & Selbstständige"
 - id: home_get_started_for_individuals_benefit_1
   translation: "Verschlüssele deine Daten lokal mit clientseitiger Verschlüsselung"
 - id: home_get_started_for_individuals_benefit_2
@@ -236,11 +324,11 @@
 - id: home_get_started_for_individuals_benefit_3
   translation: "Bewahre deine Dateien sicher auf, unabhängig vom Speicherort"
 - id: home_get_started_for_individuals_cta
-  translation: "Jetzt herunterladen"
+  translation: "Sichere deine persönlichen Dateien"
 - id: home_get_started_for_teams_title
   translation: "Für Teams"
 - id: home_get_started_for_teams_subtitle
-  translation: "Verwalte den Teamzugriff"
+  translation: "Unternehmen jeglicher Größe"
 - id: home_get_started_for_teams_benefit_1
   translation: "Sichere den Teamzugriff mit Zero-Knowledge-Schlüsselmanagement"
 - id: home_get_started_for_teams_benefit_2
@@ -248,7 +336,7 @@
 - id: home_get_started_for_teams_benefit_3
   translation: "Integriere leicht dein bestehendes Identitätsmanagement"
 - id: home_get_started_for_teams_cta
-  translation: "Jetzt einrichten"
+  translation: "Verwalte den Zugriff im Team"
 - id: home_newsletter_title
   translation: "Bleibe mit uns in Verbindung"
 - id: home_newsletter_instruction
