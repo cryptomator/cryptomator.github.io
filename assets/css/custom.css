@@ -185,14 +185,6 @@ textarea:read-only {
   opacity: 1;
 }
 
-.min-vh-66 {
-  min-height: 66vh;
-}
-
-.min-vh-80 {
-  min-height: 80vh;
-}
-
 .bg-trans-white {
   background-color: rgba(255, 255, 255, 0.05);
 }
