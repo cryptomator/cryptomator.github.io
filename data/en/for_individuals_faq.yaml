@@ -5,7 +5,7 @@
 - Question: "How does Cryptomator work?"
   Answer: "Cryptomator creates encrypted vaults on your computer or mobile device. Files are encrypted before being uploaded to the cloud, ensuring that only you or authorized individuals can access them."
 - Question: "What encryption method does Cryptomator use?"
-  Answer: "Cryptomator uses AES (Advanced Encryption Standard) with 256-bit key length for maximum security. Each file is encrypted individually, and filenames are also protected."
+  Answer: "Cryptomator uses AES (Advanced Encryption Standard) with 256-bit key length for maximum security. Each file is encrypted individually, and filenames are also protected. You can find more information in our [security architecture](https://docs.cryptomator.org/security/architecture/)."
 - Question: "Can I create multiple vaults?"
   Answer: "Yes, you can create as many vaults as you need to keep different files or projects separately encrypted."
 - Question: "Is Cryptomator open source?"
