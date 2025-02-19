@@ -110,7 +110,7 @@ File name obfuscation is a function that ensures that not only the content but a
 
 **What do I do if I forget my password?**
 
-The password you set for your Cryptomator vault is crucial for accessing your encrypted data. If you forget it, there is a way to reset the password by using a recovery key. It is therefore important to keep this recovery key safe. Detailed instructions on how to reset the password can be found on the [Cryptomator documentation page](https://docs.cryptomator.org/en/latest/desktop/password-and-recovery-key/).
+The password you set for your Cryptomator vault is crucial for accessing your encrypted data. If you forget it, there is a way to reset the password by using a recovery key. It is therefore important to keep this recovery key safe. Detailed instructions on how to reset the password can be found on the [Cryptomator documentation page](https://docs.cryptomator.org/desktop/password-and-recovery-key/).
 
 **What system requirements does Cryptomator have?**
 

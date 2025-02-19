@@ -109,6 +109,6 @@ If you want, you can unlock it immediately and reveal the virtual drive.
 
 Here you can store your sensitive files to encrypt them in Dropbox.
 
-{{< extlink "https://docs.cryptomator.org/en/latest/desktop/adding-vaults/" "Detailed instructions are available here." >}}
+{{< extlink "https://docs.cryptomator.org/desktop/adding-vaults/" "Detailed instructions are available here." >}}
 
 {{< /markdownify >}}</div>
