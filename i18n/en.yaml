@@ -307,8 +307,12 @@
   translation: "With Cryptomator, the key to your data is in your hands. Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
+- id: home_header_for_individuals_title
+  translation: "Free Download"
 - id: home_header_for_individuals_cta
   translation: "For Individuals"
+- id: home_header_for_teams_title
+  translation: "Free 30-Day Trial"
 - id: home_header_for_teams_cta
   translation: "For Teams"
 - id: home_get_started_title

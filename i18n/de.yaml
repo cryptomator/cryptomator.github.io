@@ -307,8 +307,12 @@
   translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator sicherst und verschlüsselst du deine sensiblen Daten in deiner Lieblingscloud. So bleiben sie privat und vor unbefugtem Zugriff geschützt."
 - id: home_header_woman_cloud_alt
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
+- id: home_header_for_individuals_title
+  translation: "Kostenloser Download"
 - id: home_header_for_individuals_cta
   translation: "Für Einzelnutzer"
+- id: home_header_for_teams_title
+  translation: "Kostenlose 30-Tage-Testversion"
 - id: home_header_for_teams_cta
   translation: "Für Teams"
 - id: home_get_started_title
