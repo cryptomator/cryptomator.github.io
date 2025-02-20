@@ -1,5 +1,6 @@
 {{- $textColor := cond .IsHome "text-white" "text-primary" -}}
 {{- $borderColor := cond .IsHome "border-white" "border-primary" -}}
+{{- $hoverBorderColor := cond .IsHome "hover:border-white" "hover:border-primary" -}}
 {{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
 <nav class="w-full max-h-screen {{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
@@ -18,59 +19,49 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        <li x-data="{ isProductsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
-          <button @click="isProductsDropdownOpen = !isProductsDropdownOpen" class="whitespace-nowrap p-2">
-            <span>{{ i18n "nav_products" . }}</span>
+        {{- range .Site.Data.nav }}
+        {{- if .Title }}
+        <!-- Dropdown item -->
+        <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2 border-b-2 border-transparent" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
+          <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
+            <span>{{ i18n .Title . }}</span>
             <i class="fas fa-chevron-down fa-fw text-xs"></i>
           </button>
           <div class="absolute">
-            <div x-show="isProductsDropdownOpen" @click.outside="isProductsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded-sm shadow-md z-50">
-              {{- range .Site.Data.nav.ProductsRelLinks }}
+            <ul x-show="isDropdownOpen" x-cloak class="absolute mt-6 py-2 whitespace-nowrap bg-white rounded-sm shadow-md z-50">
+              {{- range .Children }}
+              {{- if eq . "|" }}
+              <li>
+                <hr class="border-gray-200 my-2"/>
+              </li>
+              {{- else }}
               {{- with $.Site.GetPage . }}
-              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-              {{- end}}
+              <li>
+                <a href="{{ .RelPermalink }}" class="flex items-center px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+                  <span>{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</span>
+                  {{- if .Params.Navbadge }}
+                  <span class="inline-flex px-2 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark ml-2">{{ .Params.Navbadge }}</span>
+                  {{- end }}
+                </a>
+              </li>
               {{- end }}
-            </div>
+              {{- end }}
+              {{- end }}
+            </ul>
           </div>
         </li>
-        {{- range .Site.Data.nav.RelLinks }}
-        {{- with $.Site.GetPage . }}
+        {{- else if .URL }}
+        <!-- Direct link -->
+        {{- with $.Site.GetPage .URL }}
         {{- $navItemBorderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $borderColor "border-transparent" }}
-        <li class="flex items-center mx-2 border-b-2 {{ $navItemBorderColor }} hover:{{ $borderColor }}">
-          <a class="p-2 hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+        <li class="flex items-center mx-2 border-b-2 {{ $navItemBorderColor }} {{ $hoverBorderColor }}">
+          <a class="p-2 hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+            {{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}
+          </a>
         </li>
         {{- end }}
         {{- end }}
-        <li x-data="{ isSupportUsDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
-          <button @click="isSupportUsDropdownOpen = !isSupportUsDropdownOpen" class="whitespace-nowrap p-2">
-            <span>{{ i18n "nav_support_us" . }}</span>
-            <i class="fas fa-chevron-down fa-fw text-xs"></i>
-          </button>
-          <div class="absolute">
-            <div x-show="isSupportUsDropdownOpen" @click.outside="isSupportUsDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-64 bg-white rounded-sm shadow-md z-50">
-              {{- range .Site.Data.nav.SupportUsRelLinks }}
-              {{- with $.Site.GetPage . }}
-              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-              {{- end}}
-              {{- end }}
-            </div>
-          </div>
-        </li>
-        <li x-data="{ isLearnMoreDropdownOpen: false }" class="flex items-center mx-2 border-b-2 border-transparent">
-          <button @click="isLearnMoreDropdownOpen = !isLearnMoreDropdownOpen" class="whitespace-nowrap p-2">
-            <span>{{ i18n "nav_learn_more" . }}</span>
-            <i class="fas fa-chevron-down fa-fw text-xs"></i>
-          </button>
-          <div class="absolute">
-            <div x-show="isLearnMoreDropdownOpen" @click.outside="isLearnMoreDropdownOpen = false" x-cloak class="absolute mt-6 py-2 w-96 bg-white rounded-sm shadow-md z-50">
-              {{- range .Site.Data.nav.LearnMoreRelLinks }}
-              {{- with $.Site.GetPage . }}
-              <a href="{{ .RelPermalink }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-              {{- end}}
-              {{- end }}
-            </div>
-          </div>
-        </li>
+        {{- end }}
       </ul>
     </div>
 
@@ -94,18 +85,19 @@
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center m-3 border-l {{ $borderColor }}"></li>
-          
-        <li x-data="{ isLangDropdownOpen: false }" class="flex items-center mx-2">
-          <button @click="isLangDropdownOpen = !isLangDropdownOpen" class="whitespace-nowrap p-2">
+        <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
+          <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
             <span>{{ .Site.Language.Lang | upper }}</span>
             <i class="fas fa-chevron-down fa-fw text-xs"></i>
           </button>
           <div class="relative">
-            <div x-show="isLangDropdownOpen" @click.outside="isLangDropdownOpen = false" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded-sm shadow-md z-50">
+            <ul x-show="isDropdownOpen" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded-sm shadow-md z-50">
               {{- range .Translations }}
-              <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+              <li>
+                <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline plausible-event-name=nav-lang-{{ .Lang }}" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+              </li>
               {{- end }}
-            </div>
+            </ul>
           </div>
         </li>
       </ul>
@@ -114,53 +106,38 @@
   
   <!-- Smartphone Navigation -->
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
+    {{- range .Site.Data.nav }}
+    {{- if .Title }}
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      {{ i18n "nav_products" . }}
+      {{ i18n .Title . }}
     </div>
-    <div class="mt-1">
-      {{- range .Site.Data.nav.ProductsRelLinks }}
-      {{- with $.Site.GetPage . }}
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-      {{- end }}
-      {{- end }}
-    </div>
-    
+    {{- range .Children }}
+    {{- if eq . "|" }}
     <hr class="border-primary my-2"/>
-
-    {{- range .Site.Data.nav.RelLinks }}
+    {{- else }}
     {{- with $.Site.GetPage . }}
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}"
+        href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+      <span>{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</span>
+      {{- if .Params.Navbadge }}
+      <span class="inline-flex px-2 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark ml-2">{{ .Params.Navbadge }}</span>
+      {{- end }}
+    </a>
     {{- end }}
     {{- end }}
-    
+    {{- end }}
     <hr class="border-primary my-2"/>
-
-    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      {{ i18n "nav_support_us" . }}
-    </div>
-    <div class="mt-1">
-      {{- range .Site.Data.nav.SupportUsRelLinks }}
-      {{- with $.Site.GetPage . }}
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-      {{- end }}
-      {{- end }}
-    </div>
-    
+    {{- else if .URL }}
+    {{- with $.Site.GetPage .URL }}
+    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}"
+        href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+      {{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}
+    </a>
     <hr class="border-primary my-2"/>
+    {{- end }}
+    {{- end }}
+    {{- end }}
 
-    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      {{ i18n "nav_learn_more" . }}
-    </div>
-    <div class="mt-1">
-      {{- range .Site.Data.nav.LearnMoreRelLinks }}
-      {{- with $.Site.GetPage . }}
-      <a class="block py-2 mx-2 hover:text-secondary hover:no-underline plausible-event-name=nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</a>
-      {{- end }}
-      {{- end }}
-    </div>
-
-    <hr class="border-primary my-2"/>
-    
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
       <i class="fas fa-globe fa-fw"></i> {{ .Site.Language.Lang | upper }}
     </div>
