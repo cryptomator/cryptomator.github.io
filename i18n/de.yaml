@@ -868,7 +868,7 @@
 - id: pricing_hub_standard_benefit_1
   translation: "Alles in Community"
 - id: pricing_hub_standard_benefit_2
-  translation: "Bis zu 50 Sitze"
+  translation: "Unbegrenzte Sitze"
 - id: pricing_hub_standard_benefit_3
   translation: "Voller Zugriff über Mobile-Apps"
 - id: pricing_hub_standard_benefit_3_tooltip
@@ -877,6 +877,10 @@
   translation: "Audit-Logs"
 - id: pricing_hub_standard_benefit_5
   translation: "E-Mail-Support"
+- id: pricing_hub_standard_managed_benefit_1
+  translation: "Gewartet und aktualisiert von unserem Team"
+- id: pricing_hub_standard_managed_benefit_2
+  translation: "ISO/IEC 27001-zert. Rechenzentrum in der EU"
 
 - id: pricing_hub_enterprise_title
   translation: "Enterprise"
@@ -889,17 +893,11 @@
 - id: pricing_hub_enterprise_benefit_1
   translation: "Alles in Standard"
 - id: pricing_hub_enterprise_benefit_2
-  translation: "Mehr als 50 Sitze"
-- id: pricing_hub_enterprise_benefit_3
   translation: "Beratung und Unterstützung durch Experten"
-- id: pricing_hub_enterprise_benefit_4
+- id: pricing_hub_enterprise_benefit_3
   translation: "Dedizierter Kundenbetreuer"
-- id: pricing_hub_enterprise_benefit_5
+- id: pricing_hub_enterprise_benefit_4
   translation: "Vorrangiger E-Mail-Support"
-- id: pricing_hub_standard_managed_benefit_1
-  translation: "Gewartet und aktualisiert von unserem Team"
-- id: pricing_hub_standard_managed_benefit_2
-  translation: "ISO/IEC 27001-zert. Rechenzentrum in der EU"
 
 # Supporter Certificate
 - id: supporter_cert_common_email

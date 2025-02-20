@@ -868,7 +868,7 @@
 - id: pricing_hub_standard_benefit_1
   translation: "Everything in Community"
 - id: pricing_hub_standard_benefit_2
-  translation: "Up to 50 seats"
+  translation: "Unlimited seats"
 - id: pricing_hub_standard_benefit_3
   translation: "Full access via Mobile apps"
 - id: pricing_hub_standard_benefit_3_tooltip
@@ -893,12 +893,10 @@
 - id: pricing_hub_enterprise_benefit_1
   translation: "Everything in Standard"
 - id: pricing_hub_enterprise_benefit_2
-  translation: "More than 50 seats"
-- id: pricing_hub_enterprise_benefit_3
   translation: "Expert training and assistance"
-- id: pricing_hub_enterprise_benefit_4
+- id: pricing_hub_enterprise_benefit_3
   translation: "Dedicated account manager"
-- id: pricing_hub_enterprise_benefit_5
+- id: pricing_hub_enterprise_benefit_4
   translation: "Priority email support"
 
 # Supporter Certificate
