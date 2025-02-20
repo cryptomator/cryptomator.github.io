@@ -1,3 +1,7 @@
+{{ define "preloads" }}
+  <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/managed/">
+  <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/">
+{{ end }}
 {{ define "main" }}
   <section class="flex items-center min-h-[66vh]">
     <header class="container flex items-center py-12 md:py-16 lg:py-20">
