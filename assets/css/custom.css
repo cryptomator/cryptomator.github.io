@@ -170,10 +170,6 @@ textarea:read-only {
   @apply bg-gray-200;
 }
 
-.aspect-16x9 {
-  padding-bottom: 56.25%;
-}
-
 .img-muted {
   filter: grayscale(100%);
   opacity: .5;
@@ -183,14 +179,6 @@ textarea:read-only {
 .img-muted:hover {
   filter: none;
   opacity: 1;
-}
-
-.bg-trans-white {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.m-remover {
-  margin: 0 !important;
 }
 
 .has-tooltip {
