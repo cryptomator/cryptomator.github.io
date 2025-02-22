@@ -1,72 +1,200 @@
 {{ define "main" }}
-  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, message: ''}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData)" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_managed_step_1_nav_title" }}', '{{ i18n "hub_managed_step_2_nav_title" }}', '{{ i18n "hub_managed_step_3_nav_title" }}', '{{ i18n "hub_managed_step_4_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, subdomain: '', email: '', quantity: null, team: '', acceptNewsletter: false}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData); $watch('submitData.team', team => submitData.subdomain = teamToSubdomain(team))" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_managed_description" }}</p>
     </header>
 
     <form x-ref="form">
-      <section class="relative white-box">
-        <div x-show="!feedbackData.success" class="px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
-          <header class="md:col-span-1">
-            <h2 class="text-lg font-medium leading-6 text-gray-900">
-              {{ i18n "hub_managed_info_header_title" }}
-            </h2>
-            <p class="mt-1 text-sm text-gray-500">
-              {{ i18n "hub_managed_info_header_description" }}
-            </p>
+      <section class="white-box">
+        <div x-show="!feedbackData.success" class="md:min-h-110 px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+          <header class="mb-8 md:col-span-1 md:mt-4">
+            <nav class="flex items-center justify-center gap-6" aria-label="Progress">
+              <p class="font-p text-sm text-gray-500 md:hidden">
+                {{ i18n "hub_managed_steps_title" | safeHTML }}
+              </p>
+              <ol role="list" class="flex items-center gap-3 md:flex-col md:items-start md:gap-6">
+                <template x-for="(step, index) in steps" :key="index">
+                  <li>
+                    <!-- Complete Step -->
+                    <template x-if="index < feedbackData.currentStep">
+                      <a href="#" class="group" @click.prevent="feedbackData.currentStep = index">
+                        <span class="flex items-center gap-3">
+                          <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
+                            <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                            </svg>
+                          </div>
+                          <p class="hidden md:block font-p text-sm text-gray-500 group-hover:text-gray-900" x-text="step"></p>
+                        </span>
+                      </a>
+                    </template>
+
+                    <!-- Current Step -->
+                    <template x-if="index === feedbackData.currentStep">
+                      <div class="flex items-center gap-3" aria-current="step">
+                        <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
+                          <span class="absolute w-4 h-4 rounded-full bg-primary-l2"></span>
+                          <span class="relative block w-2 h-2 rounded-full bg-primary"></span>
+                        </div>
+                        <p class="hidden md:block font-p text-sm font-medium text-primary" x-text="step"></p>
+                      </div>
+                    </template>
+
+                    <!-- Upcoming Step -->
+                    <template x-if="index > feedbackData.currentStep">
+                      <div class="flex items-center gap-3">
+                        <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
+                          <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                        </div>
+                        <p class="hidden md:block font-p text-sm text-gray-500" x-text="step"></p>
+                      </div>
+                    </template>
+                  </li>
+                </template>
+              </ol>
+            </nav>
           </header>
 
-          <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
-            <div class="col-span-6 lg:col-span-4">
-              <label for="subdomain" class="block text-sm font-medium text-gray-700">
-                {{ i18n "hub_managed_info_subdomain" }}
-              </label>
-              <div class="mt-1 flex items-center rounded-sm bg-gray-300">
-                <div class="text-gray-700 px-3">https://</div>
-                <input type="text" id="subdomain" pattern="[a-z\d](?:[a-z\d-]{0,61}[a-z\d])?" class="block input-box rounded-none w-full" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
-                <div class="text-gray-700 px-3">.cryptomator.cloud</div>
+          <!-- Step 1: Work Email -->
+          <template x-if="feedbackData.currentStep == 0">
+            <div class="md:col-span-2 grid grid-cols-6 gap-6">
+              <div class="flex flex-col col-span-6 lg:col-span-4">
+                <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                  {{ i18n "hub_managed_steps_title" | safeHTML }}
+                </p>
+                <h2 class="font-h2 mb-6">
+                  {{ i18n "hub_managed_step_1_title" }}
+                </h2>
+                <input type="email" id="email" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_managed_step_1_email_placeholder" }}" x-init="$el.focus()" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
+                <div class="mt-auto">
+                  <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateEmail()" class="btn btn-primary w-full md:w-64">
+                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    {{ i18n "hub_managed_steps_next" }}
+                  </button>
+                </div>
               </div>
-              <p class="mt-2 text-sm text-gray-500">
-                {{ i18n "hub_managed_info_subdomain_description" | safeHTML }}
-              </p>
             </div>
+          </template>
 
-            <div class="col-span-6 lg:col-span-4">
-              <label for="email" class="block text-sm font-medium text-gray-700">
-                {{ i18n "hub_managed_info_email" }}
-              </label>
-              <input type="email" id="email" class="mt-1 block input-box w-full" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
-              <p class="mt-2 text-sm text-gray-500">
-                {{ i18n "hub_managed_info_email_description" }}
-              </p>
-            </div>
-
-            <div class="col-span-6 lg:col-span-4">
-              <label for="quantity" class="block text-sm font-medium text-gray-700">
-                {{ i18n "hub_managed_info_quantity" }}
-              </label>
-              <input type="number" id="quantity" min="1" max="10000" step="1" class="mt-1 block input-box w-full" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
-              <p class="mt-2 text-sm text-gray-500">
-                {{ i18n "hub_managed_info_quantity_description" }}
-              </p>
-            </div>
-
-            <div class="col-span-6">
-              <label for="message" class="block text-sm font-medium text-gray-700">
-                {{ i18n "hub_managed_info_message" }}
-              </label>
-              <div class="mt-1">
-                <textarea id="message" rows="3" maxlength="400" class="block w-full rounded-md border-gray-300 shadow-xs focus:ring-0 focus:border-secondary" x-model="submitData.message"></textarea>
+          <!-- Step 2: Team Name -->
+          <template x-if="feedbackData.currentStep == 1">
+            <div class="md:col-span-2 grid grid-cols-6 gap-6">
+              <div class="flex flex-col col-span-6 lg:col-span-4">
+                <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                  {{ i18n "hub_managed_steps_title" | safeHTML }}
+                </p>
+                <h2 class="font-h2 mb-6">
+                  {{ i18n "hub_managed_step_2_title" }}
+                </h2>
+                <input type="text" id="team" class="block input-box w-full mb-6" placeholder="{{ i18n "hub_managed_step_2_team_placeholder" }}" x-init="$el.focus()" x-model="submitData.team" @blur="$el.classList.add('show-invalid')" required>
+                <p class="font-p text-sm mb-2">
+                  {{ i18n "hub_managed_step_2_subdomain_description" }}
+                </p>
+                <div class="col-span-6 mb-8 lg:col-span-4">
+                  <div class="flex items-center rounded-sm bg-gray-300">
+                    <div class="text-gray-700 px-3">https://</div>
+                    <input type="text" id="subdomain" pattern="[a-z\d\-](?:[a-z\d\-]{0,61}[a-z\d])?" class="block input-box rounded-none w-full" placeholder="{{ i18n "hub_managed_step_2_subdomain_placeholder" }}" maxlength="63" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
+                    <div class="text-gray-700 px-3">.cryptomator.cloud</div>
+                  </div>
+                </div>
+                <div class="mt-auto">
+                  <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateSubdomainAndTeam()" class="btn btn-primary w-full md:w-64">
+                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    {{ i18n "hub_managed_steps_next" }}
+                  </button>
+                </div>
               </div>
-              <p class="mt-2 text-sm text-gray-500">
-                {{ i18n "hub_managed_info_message_description" }}
-              </p>
             </div>
-          </div>
+          </template>
+
+          <!-- Step 3: Expected Users -->
+          <template x-if="feedbackData.currentStep == 2">
+            <div class="md:col-span-2 grid grid-cols-6 gap-6">
+              <div class="flex flex-col col-span-6 lg:col-span-4">
+                <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                  {{ i18n "hub_managed_steps_title" | safeHTML }}
+                </p>
+                <h2 class="font-h2 mb-6">
+                  {{ i18n "hub_managed_step_3_title" }}
+                </h2>
+                <p class="font-p text-sm mb-2">
+                  {{ i18n "hub_managed_step_3_quantity_description" }}
+                </p>
+                <input type="number" id="quantity" min="1" max="10000" step="1" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_managed_step_3_quantity_placeholder" }}" x-init="$el.focus()" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
+                <div class="mt-auto">
+                  <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                  <button :disabled="feedbackData.inProgress" @click.prevent="submitData.quantity > 0 && submitData.quantity < 3 ? lowQuantityModalIsOpen = true : hubManaged.validateQuantity()" class="btn btn-primary w-full md:w-64">
+                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    {{ i18n "hub_managed_steps_next" }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <!-- Step 4: Summary -->
+          <template x-if="feedbackData.currentStep == 3">
+            <div class="md:col-span-2 grid grid-cols-6 gap-6">
+              <div class="flex flex-col col-span-6 lg:col-span-4">
+                <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                  {{ i18n "hub_managed_steps_title" | safeHTML }}
+                </p>
+                <h2 class="font-h2 mb-6">
+                  {{ i18n "hub_managed_step_4_title" }}
+                </h2>
+                <ul class="space-y-2 mb-6">
+                  <li class="flex justify-between">
+                    <span class="font-p text-sm text-gray-500">
+                      {{ i18n "hub_managed_step_4_email" }}
+                    </span>
+                    <span class="font-p text-sm" x-text="submitData.email"></span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="font-p text-sm text-gray-500">
+                      {{ i18n "hub_managed_step_4_team" }}
+                    </span>
+                    <span class="font-p text-sm" x-text="submitData.team"></span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="font-p text-sm text-gray-500">
+                      {{ i18n "hub_managed_step_4_url" }}
+                    </span>
+                    <span class="font-p text-sm" x-text="subdomainToURL(submitData.subdomain)"></span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="font-p text-sm text-gray-500">
+                      {{ i18n "hub_managed_step_4_quantity" }}
+                    </span>
+                    <span class="font-p text-sm" x-text="submitData.quantity"></span>
+                  </li>
+                </ul>
+                <p class="font-p text-sm mb-2">
+                  {{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}
+                </p>
+                <p class="font-p text-sm mb-2">
+                  {{ partial "accept-hub-newsletter-optional.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter") }}
+                </p>
+                <div class="mt-auto">
+                  <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                  <div x-show="!submitData.captcha" x-ref="captchaWrapper">
+                    <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">
+                      {{ i18n "hub_managed_step_4_loadcaptcha" }}
+                    </button>
+                  </div>
+                  <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" data-umami-event="hub-managed-form" x-cloak>
+                    <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    {{ i18n "hub_managed_step_4_submit" }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </template>
         </div>
 
-        <div x-show="feedbackData.success" class="flex flex-col gap-4 text-center px-4 py-5 md:p-6" x-cloak>
+        <div x-show="feedbackData.success" class="flex flex-col justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6" x-cloak>
           <i class="fas fa-check-circle text-7xl text-secondary"></i>
           <h3 class="font-h3">
             {{ i18n "hub_managed_success_title" }}
@@ -81,16 +209,6 @@
         <p class="font-p mb-4">
           {{ i18n "hub_managed_trial_info" }}
         </p>
-        <p class="font-p mb-4">
-          {{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}
-        </p>
-        <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
-          <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "hub_managed_loadcaptcha" }}</button>
-        </div>
-        <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="submitData.quantity > 0 && submitData.quantity < 5 ? lowQuantityModalIsOpen = true : hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" data-umami-event="hub-managed-form" x-cloak>
-          <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_managed_submit" }}
-        </button>
-        <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
       </div>
     </form>
 
@@ -109,6 +227,8 @@
   {{ if hugo.IsDevelopment }}
     {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" defer></script>
     {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
@@ -116,6 +236,8 @@
   {{ else }}
     {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
     <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" integrity="{{ $hubManagedJs.Data.Integrity }}" defer></script>
     {{ $recaptchaJs := resources.Get "js/recaptcha.js" | minify | fingerprint }}

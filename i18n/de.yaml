@@ -24,6 +24,8 @@
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator per E-Mail zu erhalten (optional)."
+- id: accept_hub_newsletter_optional
+  translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
@@ -610,41 +612,61 @@
 - id: hub_managed_description
   translation: "Beantrage Zugang zu einer Managed-Instanz von Cryptomator Hub und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 
-- id: hub_managed_info_header_title
-  translation: "Information"
-- id: hub_managed_info_header_description
-  translation: "Auf der Grundlage deiner Eingaben wird eine neue Hub-Instanz für dich erstellt. Du wirst der erste Administrator dieser Instanz sein."
-- id: hub_managed_info_subdomain
-  translation: "Subdomain"
-- id: hub_managed_info_subdomain_description
-  translation: "Die URL deiner Hub-Instanz. Wenn du eine eigene Domain verwenden möchtest, teile uns dies bitte unten mit."
-- id: hub_managed_info_email
-  translation: "Arbeits-E-Mail"
-- id: hub_managed_info_email_description
-  translation: "Die E-Mail-Adresse der Person, die der erste Administrator deiner Hub-Instanz sein wird."
-- id: hub_managed_info_quantity
-  translation: "Anzahl der erwarteten Nutzer"
-- id: hub_managed_info_quantity_description
-  translation: "Die Anzahl der Nutzer, die du voraussichtlich haben wirst. Diese kann später geändert werden."
-- id: hub_managed_info_message
-  translation: "Nachricht (optional)"
-- id: hub_managed_info_message_description
-  translation: "Wenn du Fragen oder besondere Wünsche hast, lass sie uns bitte wissen."
+- id: hub_managed_steps_title
+  translation: "Schritt <span x-text=\"feedbackData.currentStep + 1\"></span> von <span x-text=\"steps.length\"></span>"
+- id: hub_managed_steps_next
+  translation: "Weiter"
 
-- id: hub_managed_trial_info
-  translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 30-Tage-Testversion."
-- id: hub_managed_loadcaptcha
+- id: hub_managed_step_1_nav_title
+  translation: "Arbeits-E-Mail"
+- id: hub_managed_step_1_title
+  translation: "Wie lautet die E-Mail-Adresse für deine Arbeit?"
+- id: hub_managed_step_1_email_placeholder
+  translation: "E-Mail-Adresse für die Arbeit"
+
+- id: hub_managed_step_2_nav_title
+  translation: "Team-Name"
+- id: hub_managed_step_2_title
+  translation: "Wie heißt dein Team?"
+- id: hub_managed_step_2_team_placeholder
+  translation: "Name deines Teams, Unternehmens oder deiner Organisation"
+- id: hub_managed_step_2_subdomain_description
+  translation: "Dies ist die URL deiner Hub-Instanz."
+- id: hub_managed_step_2_subdomain_placeholder
+  translation: "Subdomain deiner Hub-Instanz"
+
+- id: hub_managed_step_3_nav_title
+  translation: "Erwartete Nutzer"
+- id: hub_managed_step_3_title
+  translation: "Wie viele Nutzer erwartest du?"
+- id: hub_managed_step_3_quantity_description
+  translation: "Dies kann nur eine Schätzung sein und später geändert werden."
+- id: hub_managed_step_3_quantity_placeholder
+  translation: "Anzahl der erwarteten Nutzer"
+
+- id: hub_managed_step_4_nav_title
+  translation: "Zusammenfassung"
+- id: hub_managed_step_4_title
+  translation: "Zusammenfassung"
+- id: hub_managed_step_4_email
+  translation: "E-Mail"
+- id: hub_managed_step_4_team
+  translation: "Team-Name"
+- id: hub_managed_step_4_url
+  translation: "URL"
+- id: hub_managed_step_4_quantity
+  translation: "Anzahl der erwarteten Nutzer"
+- id: hub_managed_step_4_loadcaptcha
   translation: "Weiter…"
-- id: hub_managed_submit
+- id: hub_managed_step_4_submit
   translation: "Zugang anfragen"
+
 - id: hub_managed_success_title
   translation: "Deine Anfrage wurde versendet!"
 - id: hub_managed_success_description
   translation: "Wir haben deine Anfrage erhalten und werden sie so schnell wie möglich prüfen."
 
-- id: hub_managed_pricing_title
-  translation: "Preise"
-- id: hub_managed_pricing_description
+- id: hub_managed_trial_info
   translation: "Keine Kreditkarte erforderlich. Starte noch heute mit deiner kostenlosen 30-Tage-Testversion."
 
 - id: hub_managed_contact_us_title
@@ -662,14 +684,8 @@
   translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore alleine nutzen möchtest."
 - id: hub_managed_low_quantity_description_2
   translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit jemandem teilen möchtest. Lies die <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
-- id: hub_managed_low_quantity_description_3
-  translation: "Lade Cryptomator ohne Hub herunter, wenn du Tresore mit einem kleinen Team teilen möchtest. Lies die <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">Best Practices zum Teilen von Tresoren</a>."
-- id: hub_managed_low_quantity_description_4
-  translation: "Ansonsten kannst du gerne Zugang zu einer Managed-Instanz von Cryptomator Hub anfragen."
-- id: hub_managed_low_quantity_submit_1
+- id: hub_managed_low_quantity_submit
   translation: "Zu Downloads"
-- id: hub_managed_low_quantity_submit_2
-  translation: "Anfrage bestätigen"
 
 # Hub Setup
 - id: hub_setup_description
