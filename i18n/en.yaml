@@ -21,19 +21,19 @@
 - id: footer_legal_title
   translation: "Legal"
 - id: accept_newsletter_privacy
-  translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_newsletter_optional
   translation: "I agree to get updates from Cryptomator via email (optional)."
 - id: accept_hub_newsletter_optional
   translation: "I agree to get updates from Cryptomator Hub via email (optional)."
 - id: accept_privacy
-  translation: "I accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
-  translation: "By transferring, I accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "By transferring, I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_terms_and_privacy
-  translation: "I accept the <a class=\"text-link\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/terms/\" target=\"_blank\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_hub_managed_terms_and_privacy
-  translation: "I accept the <a class=\"text-link\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/hub/managed/terms/\" target=\"_blank\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: faq_title
   translation: "Frequently Asked Questions"
 - id: modal_cancel
