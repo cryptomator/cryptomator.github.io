@@ -10,7 +10,7 @@
     </div>
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "supporter_cert_influencer_instruction" }}</p>
-      <p class="font-p mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
       <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
         <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "supporter_cert_common_loadcaptcha" }}</button>
       </div>

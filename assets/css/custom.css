@@ -155,9 +155,7 @@ ul.list-primary li::marker {
   @apply border-secondary;
 }
 
-input:focus:invalid,
 input.show-invalid:invalid,
-textarea:focus:invalid,
 textarea.show-invalid:invalid {
   @apply border-red-500 ring-0;
 }

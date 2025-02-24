@@ -130,7 +130,7 @@
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "home_newsletter_subscribe" }}
         </button>
       </div>
-      <p class="font-p">{{ partial "accept-newsletter-privacy.html" (dict "context" . "alpineVariable" "data.acceptTerms") }}</p>
+      <p class="font-p">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "data.acceptTerms" "label" (i18n "accept_newsletter_privacy" | safeHTML)) }}</p>
       <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
     </form>
 
