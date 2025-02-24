@@ -4,7 +4,7 @@
     <input type="hidden" name="cmd" value="_s-xclick" />
     <input type="hidden" name="hosted_button_id" value="{{ .Params.paypalHostedButtonId }}" />
     <input type="hidden" name="amount" value="15" />
-    <p class="font-p mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+    <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
     <button type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=donate-paypal-link" data-umami-event="donate-paypal-link" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_paypal_calltoaction" }}</button>
   </form>
 </div>

@@ -40,7 +40,7 @@
     <div class="text-center mt-8" x-show="!oneTimePaymentStatus.success">
       <p class="font-p mb-4">{{ i18n "donate_creditcard_once_instruction" | safeHTML }}</p>
 
-      <p class="font-p mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+      <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
 
       <div x-ref="captchaWrapper" x-show="!oneTimePaymentStatus.captcha" class="flex justify-center">
         <button :disabled="!oneTimePaymentStatus.validCardNum || !acceptTerms" @click="loadRecaptcha($refs.captchaWrapper, (token) => oneTimePaymentStatus.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "donate_creditcard_once_loadcaptcha" }}</button>
@@ -60,7 +60,7 @@
 
   <div x-show="frequency === 'recurring'" class="text-center">
     <p class="font-p mb-4">{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
-    <p class="font-p mb-4">{{ partial "accept-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+    <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
     <button type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=donate-creditcard-recurring-checkout" data-umami-event="donate-creditcard-recurring-checkout" @click="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}')" :disabled="!acceptTerms">
       <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
     </button>

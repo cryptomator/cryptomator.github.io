@@ -172,10 +172,10 @@
                   </li>
                 </ul>
                 <p class="font-p text-sm mb-2">
-                  {{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
                 </p>
                 <p class="font-p text-sm mb-2">
-                  {{ partial "accept-hub-newsletter-optional.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter") }}
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
                 </p>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
