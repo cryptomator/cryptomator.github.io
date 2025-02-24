@@ -656,6 +656,12 @@
   translation: "URL"
 - id: hub_managed_step_4_quantity
   translation: "Expected Users"
+- id: hub_managed_step_4_message
+  translation: "Message"
+- id: hub_managed_step_4_message_add
+  translation: "Add message (optional)"
+- id: hub_managed_step_4_message_add_placeholder
+  translation: "Message to the Cryptomator team (optional)"
 - id: hub_managed_step_4_loadcaptcha
   translation: "Continue…"
 - id: hub_managed_step_4_submit

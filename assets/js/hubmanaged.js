@@ -35,7 +35,7 @@ class HubManaged {
     });
   }
 
-  validateSubdomainAndTeam() {
+  validateTeamAndSubdomain() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       this._feedbackData.errorMessage = 'Please fill in all required fields.';
@@ -48,13 +48,13 @@ class HubManaged {
       url: VALIDATE_HUB_MANAGED_REQUEST_URL,
       type: 'GET',
       data: {
-        subdomain: this._submitData.subdomain,
-        team: this._submitData.team
+        team: this._submitData.team,
+        subdomain: this._submitData.subdomain
       }
     }).done(_ => {
       this.onValidationSucceeded();
     }).fail(xhr => {
-      this.onValidationFailed(xhr.responseJSON?.message || 'Validating subdomain and team failed.');
+      this.onValidationFailed(xhr.responseJSON?.message || 'Validating team and subdomain failed.');
     });
   }
 

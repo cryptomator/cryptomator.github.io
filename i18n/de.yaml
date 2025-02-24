@@ -655,7 +655,13 @@
 - id: hub_managed_step_4_url
   translation: "URL"
 - id: hub_managed_step_4_quantity
-  translation: "Anzahl der erwarteten Nutzer"
+  translation: "Erwartete Nutzer"
+- id: hub_managed_step_4_message
+  translation: "Nachricht"
+- id: hub_managed_step_4_message_add
+  translation: "Nachricht hinzufügen (optional)"
+- id: hub_managed_step_4_message_add_placeholder
+  translation: "Nachricht an das Cryptomator-Team (optional)"
 - id: hub_managed_step_4_loadcaptcha
   translation: "Weiter…"
 - id: hub_managed_step_4_submit
