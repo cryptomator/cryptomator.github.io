@@ -369,8 +369,8 @@
                   <p class="font-p mb-4">
                     {{ i18n "hub_billing_checkout_standard_instruction" . }}
                   </p>
-                  <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "accept-hub-managed-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-                  <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
+                  <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
+                  <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
                   <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full lg:w-1/2">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}

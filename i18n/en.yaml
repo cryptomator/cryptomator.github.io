@@ -21,17 +21,19 @@
 - id: footer_legal_title
   translation: "Legal"
 - id: accept_newsletter_privacy
-  translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_newsletter_optional
   translation: "I agree to get updates from Cryptomator via email (optional)."
+- id: accept_hub_newsletter_optional
+  translation: "I agree to get updates from Cryptomator Hub via email (optional)."
 - id: accept_privacy
-  translation: "I accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
-  translation: "By transferring, I accept the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "By transferring, I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_terms_and_privacy
-  translation: "I accept the <a class=\"text-link\" href=\"/terms/\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/terms/\" target=\"_blank\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_hub_managed_terms_and_privacy
-  translation: "I accept the <a class=\"text-link\" href=\"/hub/managed/terms/\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\">Privacy Policy</a>."
+  translation: "I accept the <a class=\"text-link\" href=\"/hub/managed/terms/\" target=\"_blank\">Terms & Conditions</a> as well as the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: faq_title
   translation: "Frequently Asked Questions"
 - id: modal_cancel
@@ -610,41 +612,67 @@
 - id: hub_managed_description
   translation: "Request access to a managed instance of Cryptomator Hub and get your team on board with client-side encryption for your cloud storage."
 
-- id: hub_managed_info_header_title
-  translation: "Information"
-- id: hub_managed_info_header_description
-  translation: "Based on your input, a new Hub instance will be created for you. You will be the first admin of this instance."
-- id: hub_managed_info_subdomain
-  translation: "Subdomain"
-- id: hub_managed_info_subdomain_description
-  translation: "The URL of your Hub instance. If you'd like to use a custom domain, please let us know below."
-- id: hub_managed_info_email
-  translation: "Work Email"
-- id: hub_managed_info_email_description
-  translation: "The email address of the person who will be the first admin of your Hub instance."
-- id: hub_managed_info_quantity
-  translation: "Number of Expected Users"
-- id: hub_managed_info_quantity_description
-  translation: "The number of users you expect to have. This can be changed later."
-- id: hub_managed_info_message
-  translation: "Message (optional)"
-- id: hub_managed_info_message_description
-  translation: "If you have any questions or special requirements, please let us know."
+- id: hub_managed_steps_title
+  translation: "Step <span x-text=\"feedbackData.currentStep + 1\"></span> of <span x-text=\"steps.length\"></span>"
+- id: hub_managed_steps_next
+  translation: "Next"
 
-- id: hub_managed_trial_info
-  translation: "No credit card required. Get started today with your 30-day free trial."
-- id: hub_managed_loadcaptcha
+- id: hub_managed_step_1_nav_title
+  translation: "Work Email"
+- id: hub_managed_step_1_title
+  translation: "What's your email address for work?"
+- id: hub_managed_step_1_email_placeholder
+  translation: "Email address for work"
+
+- id: hub_managed_step_2_nav_title
+  translation: "Team Name"
+- id: hub_managed_step_2_title
+  translation: "What's your team's name?"
+- id: hub_managed_step_2_team_placeholder
+  translation: "Name of your team, company, or organization"
+- id: hub_managed_step_2_subdomain_description
+  translation: "This is the URL of your Hub instance."
+- id: hub_managed_step_2_subdomain_placeholder
+  translation: "Subdomain of your Hub instance"
+
+- id: hub_managed_step_3_nav_title
+  translation: "Expected Users"
+- id: hub_managed_step_3_title
+  translation: "How many users do you expect?"
+- id: hub_managed_step_3_quantity_description
+  translation: "This can be just an estimate and changed later."
+- id: hub_managed_step_3_quantity_placeholder
+  translation: "Number of expected users"
+
+- id: hub_managed_step_4_nav_title
+  translation: "Summary"
+- id: hub_managed_step_4_title
+  translation: "Summary"
+- id: hub_managed_step_4_email
+  translation: "Email"
+- id: hub_managed_step_4_team
+  translation: "Team Name"
+- id: hub_managed_step_4_url
+  translation: "URL"
+- id: hub_managed_step_4_quantity
+  translation: "Expected Users"
+- id: hub_managed_step_4_message
+  translation: "Message"
+- id: hub_managed_step_4_message_add
+  translation: "Add message (optional)"
+- id: hub_managed_step_4_message_add_placeholder
+  translation: "Message to the Cryptomator team (optional)"
+- id: hub_managed_step_4_loadcaptcha
   translation: "Continue…"
-- id: hub_managed_submit
+- id: hub_managed_step_4_submit
   translation: "Request Access"
+
 - id: hub_managed_success_title
   translation: "Your request has been sent!"
 - id: hub_managed_success_description
   translation: "We have received your request and will evaluate it as soon as possible."
 
-- id: hub_managed_pricing_title
-  translation: "Pricing"
-- id: hub_managed_pricing_description
+- id: hub_managed_trial_info
   translation: "No credit card required. Get started today with your 30-day free trial."
 
 - id: hub_managed_contact_us_title
@@ -662,14 +690,8 @@
   translation: "Download Cryptomator without Hub if you intend to use vaults on your own."
 - id: hub_managed_low_quantity_description_2
   translation: "Download Cryptomator without Hub if you intend to share vaults with another person. Check out the <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
-- id: hub_managed_low_quantity_description_3
-  translation: "Download Cryptomator without Hub if you intend to share vaults with a small team. Check out the <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/best-practices/#sharing-of-vaults\" target=\"_blank\" rel=\"noopener\">best practices on how to share vaults</a>."
-- id: hub_managed_low_quantity_description_4
-  translation: "Otherwise, feel free to request access to a managed instance of Cryptomator Hub."
-- id: hub_managed_low_quantity_submit_1
+- id: hub_managed_low_quantity_submit
   translation: "Go to Downloads"
-- id: hub_managed_low_quantity_submit_2
-  translation: "Confirm Request"
 
 # Hub Setup
 - id: hub_setup_description

@@ -25,8 +25,8 @@
     </div>
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>
-      <p class="font-p mb-2">{{ partial "accept-terms-and-privacy.html" (dict "context" . "alpineVariable" "acceptTerms") }}</p>
-      <p class="font-p mb-4">{{ partial "accept-newsletter-optional.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter") }}</p>
+      <p class="font-p mb-2">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
+      <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter" "label" (i18n "accept_newsletter_optional")) }}</p>
       <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="desktopLicense.checkout(checkoutData.prices[checkoutData.selectedPriceIndex].productId, '{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=supporter-cert-funder-checkout" data-umami-event="supporter-cert-funder-checkout">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "supporter_cert_funder_checkout" }}
       </button>
