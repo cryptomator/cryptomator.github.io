@@ -269,9 +269,9 @@
 - id: for_individuals_features_title
   translation: "Why Cryptomator?"
 - id: for_individuals_features_subtitle
-  translation: "Discover how Cryptomator protects your files with strong encryption, privacy principles, and seamless cross-platform support."
+  translation: "Discover how Cryptomator protects your files with client-side encryption, privacy principles, and seamless cross-platform support."
 - id: for_individuals_features_feature_1_title
-  translation: "Client-Side Encryption"
+  translation: "End-to-End Encryption"
 - id: for_individuals_features_feature_1_description
   translation: "Your files are securely <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">encrypted</a> before leaving your device, keeping them protected during transfer and storage."
 - id: for_individuals_features_feature_2_title
@@ -324,7 +324,7 @@
 - id: home_get_started_for_individuals_subtitle
   translation: "Private Users & Solo Workers"
 - id: home_get_started_for_individuals_benefit_1
-  translation: "Encrypt your data locally with client-side encryption"
+  translation: "Encrypt your data locally with end-to-end encryption"
 - id: home_get_started_for_individuals_benefit_2
   translation: "Access your files securely using a vault password"
 - id: home_get_started_for_individuals_benefit_3
