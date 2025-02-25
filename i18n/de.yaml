@@ -269,9 +269,9 @@
 - id: for_individuals_features_title
   translation: "Warum Cryptomator?"
 - id: for_individuals_features_subtitle
-  translation: "Erfahre, wie Cryptomator deine Dateien mit starker Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
+  translation: "Erfahre, wie Cryptomator deine Dateien mit clientseitiger Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
 - id: for_individuals_features_feature_1_title
-  translation: "Client-seitige Verschlüsselung"
+  translation: "Ende-zu-Ende-Verschlüsselung"
 - id: for_individuals_features_feature_1_description
   translation: "Deine Dateien werden sicher <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
 - id: for_individuals_features_feature_2_title
@@ -324,7 +324,7 @@
 - id: home_get_started_for_individuals_subtitle
   translation: "Privatnutzer & Selbstständige"
 - id: home_get_started_for_individuals_benefit_1
-  translation: "Verschlüssele deine Daten lokal mit clientseitiger Verschlüsselung"
+  translation: "Verschlüssele deine Daten lokal mit Ende-zu-Ende-Verschlüsselung"
 - id: home_get_started_for_individuals_benefit_2
   translation: "Greife sicher auf deine Dateien mit einem Tresor-Passwort zu"
 - id: home_get_started_for_individuals_benefit_3
