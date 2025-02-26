@@ -41,7 +41,7 @@ Um sich vor diesen Risiken zu schützen, solltest du deine Daten eigenverantwort
 Die Forderungen der britischen Regierung gegenüber Apple sind kein Einzelfall. Immer wieder versuchen Regierungen weltweit, verschlüsselte Kommunikation zu schwächen:
 
 - **Die EU und Client-Side-Scanning:** Die EU-Kommission diskutiert über „Client-Side-Scanning“ (CSS), bei dem Inhalte auf Nutzergeräten analysiert werden, bevor sie verschlüsselt werden. Dies könnte als Türöffner für umfassende Überwachungsmaßnahmen dienen.
-- **Die USA und das FBI:** In den USA fordert das FBI seit Jahren Zugang zu verschlüsselten Geräten und Cloud-Diensten. Sogenannte „Backdoors“ könnten jedoch nicht nur von Behörden, sondern auch von Cyberkriminellen oder autoritären Regimen ausgenutzt werden.
+- **Die USA und das FBI:** In den Vereinigten Staaten drängt das FBI seit langem auf den Zugang zu verschlüsselten Geräten und Cloud-Diensten. Solche „Backdoors” könnten nicht nur von Behörden, sondern auch von Cyberkriminellen und autoritären Regimen ausgenutzt werden. Jüngsten Berichten zufolge hat das FBI seine Warnungen vor Sicherheitslücken in iPhones und Android-Geräten verschärft und betont, dass eine stärkere Kontrolle über die Verschlüsselung erforderlich ist, um aufkommende Cyberbedrohungen zu bekämpfen.
 - **Australien und das Entschlüsselungsgesetz:** Mit dem „Telecommunications and Other Legislation Amendment (Assistance and Access) Act“ verpflichtet Australien Unternehmen, auf Regierungsanfrage technische Lösungen zur Entschlüsselung bereitzustellen. Dies könnte weltweite Auswirkungen auf Sicherheitsstandards haben.
 
 ## Fazit: Eigenverantwortung ist der beste Schutz
