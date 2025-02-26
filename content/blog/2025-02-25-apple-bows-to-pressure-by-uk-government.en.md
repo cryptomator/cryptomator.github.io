@@ -41,7 +41,7 @@ To mitigate these risks, users should take responsibility for encrypting their d
 The UK government’s demands on Apple are not an isolated case. Governments worldwide are attempting to weaken encrypted communication:
 
 - **The EU and Client-Side Scanning:** The European Commission is discussing "client-side scanning" (CSS), where content is analyzed on user devices before being encrypted. This could pave the way for widespread surveillance.
-- **The US and the FBI:** In the United States, the FBI has long pushed for access to encrypted devices and cloud services. Such "backdoors" could be exploited not only by authorities but also by cybercriminals and authoritarian regimes.
+- **The US and the FBI:** In the United States, the FBI has long pushed for access to encrypted devices and cloud services. Such "backdoors" could be exploited not only by authorities but also by cybercriminals and authoritarian regimes. Recent reports indicate that the FBI has intensified its warnings about security vulnerabilities in iPhones and Android devices, emphasizing the need for greater control over encryption to combat emerging cyber threats.
 - **Australia and the Decryption Law:** Australia's "Telecommunications and Other Legislation Amendment (Assistance and Access) Act" requires companies to provide technical solutions for decryption upon government request. This law could set a global precedent for weakened security standards.
 
 ## Conclusion: Personal Responsibility is the Best Protection
