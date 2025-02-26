@@ -303,6 +303,8 @@
   translation: "Join Community"
 
 # Home
+- id: home_header_kicker
+  translation: "150,000+ users trust us to protect their privacy"
 - id: home_header_title
   translation: "Encrypt&nbsp;your&nbsp;cloud, protect&nbsp;your&nbsp;privacy"
 - id: home_header_description

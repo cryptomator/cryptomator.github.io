@@ -303,6 +303,8 @@
   translation: "Community beitreten"
 
 # Home
+- id: home_header_kicker
+  translation: "150.000+ Nutzer vertrauen auf unseren Schutz"
 - id: home_header_title
   translation: "Cloud&nbsp;verschlüsseln, Privatsphäre&nbsp;schützen"
 - id: home_header_description
