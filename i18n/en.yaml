@@ -135,8 +135,6 @@
   translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class=\"text-link\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
 - id: donate_creditcard_once_loading
   translation: "Loading…"
-- id: donate_creditcard_once_loadcaptcha
-  translation: "Continue…"
 - id: donate_creditcard_once_paynow
   translation: "Pay Now"
 - id: donate_creditcard_once_success
@@ -447,8 +445,6 @@
   translation: "To access your subscription information, a confirmation link will be sent to the email you used to make your purchase."
 - id: hub_billing_createsession_success_description
   translation: "Please check your email for the link to manage your Hub subscription."
-- id: hub_billing_createsession_loadcaptcha
-  translation: "Continue…"
 - id: hub_billing_createsession_submit
   translation: "Request Access"
 
@@ -586,8 +582,6 @@
 
 - id: hub_demo_instruction
   translation: "Demo instances are created automatically. There are a limited number of demo instances available. All demo instances are reset at 00:00 UTC."
-- id: hub_demo_loadcaptcha
-  translation: "Continue…"
 - id: hub_demo_submit
   translation: "Try Demo"
 - id: hub_demo_success_title
@@ -928,8 +922,6 @@
   translation: "Email"
 - id: supporter_cert_common_email_placeholder
   translation: "Email address"
-- id: supporter_cert_common_loadcaptcha
-  translation: "Continue…"
 - id: supporter_cert_common_submit
   translation: "Send Request"
 - id: supporter_cert_common_success_title
@@ -995,3 +987,17 @@
   translation: "We've sent details of your past transactions and licenses to you via email."
 - id: supporter_cert_recovery_contact_us
   translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+
+# Altcha
+- id: altcha_label
+  translation: "I\\'m not a bot"
+- id: altcha_error
+  translation: "Verification failed. Try again later."
+- id: altcha_expired
+  translation: "Verification expired. Try again."
+- id: altcha_verified
+  translation: "Verified!"
+- id: altcha_verifying
+  translation: "Verifying…"
+- id: altcha_waitAlert
+  translation: "Verifying… please wait."

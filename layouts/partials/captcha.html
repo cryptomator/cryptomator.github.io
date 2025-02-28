@@ -1,0 +1,16 @@
+<altcha-widget
+  challengeurl="https://api.cryptomator.org/altcha/challenge.php"
+  hidelogo
+  hidefooter
+  floating="auto"
+  @statechange="{{ .captchaState }} = $event.detail.state; if ($event.detail.state === 'verified') { {{ .captchaPayload }} = $event.detail.payload }"
+  :strings="JSON.stringify({
+    label: '{{ i18n "altcha_label" }}',
+    error: '{{ i18n "altcha_error" }}',
+    expired: '{{ i18n "altcha_expired" }}',
+    verified: '{{ i18n "altcha_verified" }}',
+    verifying: '{{ i18n "altcha_verifying" }}',
+    waitAlert: '{{ i18n "altcha_waitAlert" }}'
+  })"
+  x-ref="captcha"
+></altcha-widget>

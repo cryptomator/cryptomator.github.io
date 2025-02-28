@@ -1,5 +1,5 @@
-<div x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, type: 'influencer', email: '', reference: ''}, acceptTerms: false}">
-  <form x-show="!feedbackData.success" x-ref="form">
+<div x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, type: 'influencer', email: '', reference: ''}, acceptTerms: false, captchaState: null}">
+  <form x-show="!feedbackData.success" x-ref="form" @submit.prevent="new SupporterCertificate($refs.form, feedbackData, submitData).request(); $refs.captcha.reset()">
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "supporter_cert_influencer_reference" }}</label>
       <textarea x-model="submitData.reference" x-ref="reference" @blur="$refs.reference.classList.add('show-invalid')" type="url" class="input-box w-full" rows="5" maxlength="800" placeholder="{{ i18n "supporter_cert_influencer_reference_placeholder" }}" required></textarea>
@@ -11,12 +11,10 @@
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "supporter_cert_influencer_instruction" }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
-      <div x-show="!submitData.captcha" x-ref="captchaWrapper" class="flex justify-center">
-        <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">{{ i18n "supporter_cert_common_loadcaptcha" }}</button>
-      </div>
-      <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="new SupporterCertificate($refs.form, feedbackData, submitData).request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=supporter-cert-influencer-form" data-umami-event="supporter-cert-influencer-form" x-cloak>
+      <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=supporter-cert-influencer-form" data-umami-event="supporter-cert-influencer-form" x-cloak>
         <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "supporter_cert_common_submit" }}
       </button>
+      {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
       <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
     </div>
   </form>
