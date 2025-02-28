@@ -303,10 +303,8 @@
   translation: "Join Community"
 
 # Home
-- id: home_header_kicker_1
+- id: home_header_kicker
   translation: "3,000,000+ Downloads"
-- id: home_header_kicker_2
-  translation: "150,000+ Users"
 - id: home_header_title
   translation: "Encrypt&nbsp;your&nbsp;cloud, protect&nbsp;your&nbsp;privacy"
 - id: home_header_description
