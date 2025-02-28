@@ -17,7 +17,16 @@
         <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
-        <p class="uppercase tracking-widest text-gray-300 font-medium mb-4">{{ i18n "home_header_kicker" }}</p>
+        <div class="flex gap-2 mb-4">
+          <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
+            <i class="fas fa-cloud-download"></i>
+            {{ i18n "home_header_kicker_1" }}
+          </div>
+          <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
+            <i class="fas fa-users"></i>
+            {{ i18n "home_header_kicker_2" }}
+          </div>
+        </div>
         <h1 class="font-h1 mb-6">{{ i18n "home_header_title" . | safeHTML }}</h1>
         <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6">
