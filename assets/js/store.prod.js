@@ -8,3 +8,6 @@ const PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID = 770132;
 const PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID = 807339;
 const PADDLE_PRICES_URL = 'https://checkout.paddle.com/api/2.0/prices';
 const STORE_API_URL = 'https://store.cryptomator.org/api';
+const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
+const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GejOEdJtfL3kdH'};
+const STRIPE_PHP_URL = 'https://api.cryptomator.org/stripe/prepare_payment.php';

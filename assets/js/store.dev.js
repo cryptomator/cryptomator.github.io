@@ -8,3 +8,6 @@ const PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID = 23141;
 const PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID = 42235;
 const PADDLE_PRICES_URL = 'https://sandbox-checkout.paddle.com/api/2.0/prices';
 const STORE_API_URL = 'http://localhost:8787/api';
+const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
+const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'};
+const STRIPE_PHP_URL = 'http://localhost/stripe/prepare_payment.php';

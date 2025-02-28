@@ -135,8 +135,6 @@
   translation: "Kreditkartenzahlungen werden über Stripe abgewickelt. Wir können dabei weder deine Kartennummer noch die Prüfziffer einsehen. In deiner Abrechnung wird <a class=\"text-link\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">eine Buchung von Stripe</a> enthalten sein."
 - id: donate_creditcard_once_loading
   translation: "Lädt…"
-- id: donate_creditcard_once_loadcaptcha
-  translation: "Weiter…"
 - id: donate_creditcard_once_paynow
   translation: "Jetzt bezahlen"
 - id: donate_creditcard_once_success
@@ -447,8 +445,6 @@
   translation: "Um auf deine Abonnement-Informationen zuzugreifen, wird ein Bestätigungslink an die E-Mail-Adresse gesendet, die du für den Kauf verwendet hast."
 - id: hub_billing_createsession_success_description
   translation: "Bitte überprüfe deine E-Mails auf den Link zur Verwaltung deines Hub-Abonnements."
-- id: hub_billing_createsession_loadcaptcha
-  translation: "Weiter…"
 - id: hub_billing_createsession_submit
   translation: "Zugang anfordern"
 
@@ -586,8 +582,6 @@
 
 - id: hub_demo_instruction
   translation: "Demo-Instanzen werden automatisch erstellt. Es gibt eine begrenzte Anzahl von Demo-Instanzen. Alle Demo-Instanzen werden um 00:00 UTC zurückgesetzt."
-- id: hub_demo_loadcaptcha
-  translation: "Weiter…"
 - id: hub_demo_submit
   translation: "Demo ausprobieren"
 - id: hub_demo_success_title
@@ -928,8 +922,6 @@
   translation: "E-Mail"
 - id: supporter_cert_common_email_placeholder
   translation: "E-Mail-Adresse"
-- id: supporter_cert_common_loadcaptcha
-  translation: "Weiter…"
 - id: supporter_cert_common_submit
   translation: "Anfrage senden"
 - id: supporter_cert_common_success_title
@@ -995,3 +987,17 @@
   translation: "Wir haben dir die Details zu deinen vergangenen Transaktionen und Lizenzen per E-Mail zugesandt."
 - id: supporter_cert_recovery_contact_us
   translation: "Wenn du keine E-Mail bekommen hast, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">kontaktiere uns</a>."
+
+# Altcha
+- id: altcha_label
+  translation: "Ich bin kein Bot"
+- id: altcha_error
+  translation: "Verifizierung fehlgeschlagen. Versuche es später erneut."
+- id: altcha_expired
+  translation: "Verifizierung abgelaufen. Bitte erneut versuchen."
+- id: altcha_verified
+  translation: "Verifiziert!"
+- id: altcha_verifying
+  translation: "Verifizierung läuft…"
+- id: altcha_waitAlert
+  translation: "Verifizierung läuft… bitte warten."
