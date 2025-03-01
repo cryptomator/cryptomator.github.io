@@ -867,7 +867,7 @@
 - id: pricing_hub_community_benefit_1
   translation: "Unlimited vaults"
 - id: pricing_hub_community_benefit_2
-  translation: "Up to 5 seats"
+  translation: "5 seats"
 - id: pricing_hub_community_benefit_3
   translation: "Full access via Desktop app"
 - id: pricing_hub_community_benefit_4
@@ -886,7 +886,7 @@
 - id: pricing_hub_standard_benefit_1
   translation: "Everything in Community"
 - id: pricing_hub_standard_benefit_2
-  translation: "Unlimited seats"
+  translation: "Unlimited seats (at least 3)"
 - id: pricing_hub_standard_benefit_3
   translation: "Full access via Mobile apps"
 - id: pricing_hub_standard_benefit_3_tooltip
