@@ -23,9 +23,6 @@
       {{ range .Params.tags }}
         <meta property="article:tag" content="{{ . }}" />
       {{ end }}
-      <meta property="og:image" content="{{ "/img/logo.png" | absURL }}" />
-      <meta property="og:image:width" content="256" />
-      <meta property="og:image:height" content="256" />
     {{ else if (eq .Type "article") }}
       <meta name="description" content="{{ .Params.Description }}">
       <meta name="fediverse:creator" content="@cryptomator@mastodon.online">
@@ -34,15 +31,6 @@
       <meta property="og:url" content="{{ .Permalink }}">
       <meta property="og:site_name" content="{{ .Site.Title }}">
       <meta property="og:description" content="{{ .Params.Description }}">
-      {{ if .Params.Ogimage }}
-        <meta property="og:image" content="{{ .Params.Ogimage.Relsrc | absURL }}">
-        <meta property="og:image:width" content="{{ .Params.Ogimage.Width }}"/>
-        <meta property="og:image:height" content="{{ .Params.Ogimage.Height }}"/>
-      {{ else }}
-        <meta property="og:image" content="{{ "/img/og-image.png" | absURL }}">
-        <meta property="og:image:width" content="1200"/>
-        <meta property="og:image:height" content="630"/>
-      {{ end }}
     {{ else }}
       <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ i18n "site_meta_description" }}{{ end }}"/>
       <meta property="og:title" content="{{ if not .IsHome }}Cryptomator - {{ end }}{{ .Title }}"/>
@@ -50,9 +38,15 @@
       <meta property="og:url" content="{{ .Permalink }}"/>
       <meta property="og:site_name" content="{{ .Site.Title }}"/>
       <meta property="og:description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ i18n "site_meta_description" }}{{ end }}"/>
-      <meta property="og:image" content="{{ "/img/og-image.png" | absURL }}">
-      <meta property="og:image:width" content="1200"/>
-      <meta property="og:image:height" content="630"/>
+    {{ end }}
+    {{ if .Params.Ogimage }}
+      <meta property="og:image" content="{{ .Params.Ogimage.Relsrc | absURL }}">
+      <meta property="og:image:width" content="{{ .Params.Ogimage.Width }}"/>
+      <meta property="og:image:height" content="{{ .Params.Ogimage.Height }}"/>
+    {{ else }}
+      <meta property="og:image" content="{{ "/img/og-image.png" | absURL }}" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
     {{ end }}
     <meta property="og:locale" content="{{ .Site.Language.Params.LanguageCode }}" />
     {{ range .Translations }}
