@@ -867,7 +867,7 @@
 - id: pricing_hub_community_benefit_1
   translation: "Unbegrenzte Tresore"
 - id: pricing_hub_community_benefit_2
-  translation: "Bis zu 5 Sitze"
+  translation: "5 Sitze"
 - id: pricing_hub_community_benefit_3
   translation: "Voller Zugriff über Desktop-App"
 - id: pricing_hub_community_benefit_4
@@ -886,7 +886,7 @@
 - id: pricing_hub_standard_benefit_1
   translation: "Alles in Community"
 - id: pricing_hub_standard_benefit_2
-  translation: "Unbegrenzte Sitze"
+  translation: "Unbegrenzte Sitze (mindestens 3)"
 - id: pricing_hub_standard_benefit_3
   translation: "Voller Zugriff über Mobile-Apps"
 - id: pricing_hub_standard_benefit_3_tooltip
