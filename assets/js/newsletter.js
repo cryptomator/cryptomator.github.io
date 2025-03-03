@@ -1,6 +1,6 @@
 "use strict";
 
-const SUBSCRIBE_NEWSLETTER_URL = 'https://api.cryptomator.org/listmonk/subscribe.php';
+const SUBSCRIBE_NEWSLETTER_URL = BASE_API_URL + '/listmonk/subscribe.php';
 
 class Newsletter {
 

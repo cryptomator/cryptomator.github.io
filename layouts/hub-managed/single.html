@@ -231,8 +231,6 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" }}
@@ -242,8 +240,6 @@
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
     <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}

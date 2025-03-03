@@ -1,6 +1,5 @@
 "use strict";
 
-// requires store.js
 // requires newsletter.js
 
 class DesktopLicense {

@@ -1,6 +1,5 @@
 "use strict";
 
-// requires store.js
 const REQUEST_HUB_DEMO_URL = STORE_API_URL + '/hub/request-demo';
 
 class HubDemo {

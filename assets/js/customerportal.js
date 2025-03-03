@@ -1,8 +1,6 @@
 "use strict";
 
-const REQUEST_CUSTOMER_PORTAL_URL = 'https://api.cryptomator.org/stripe/request_customer_portal.php';
-
-// const REQUEST_CUSTOMER_PORTAL_URL = 'http://localhost/stripe/request_customer_portal.php';
+const REQUEST_CUSTOMER_PORTAL_URL = BASE_API_URL + '/stripe/request_customer_portal.php';
 
 class CustomerPortal {
 

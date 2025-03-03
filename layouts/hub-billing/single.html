@@ -449,8 +449,6 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
@@ -458,8 +456,6 @@
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
     <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
