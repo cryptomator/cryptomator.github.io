@@ -70,8 +70,6 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $customerPortalJs := resources.Get "js/customerportal.js" }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
@@ -81,8 +79,6 @@
     {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}
     <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $customerPortalJs := resources.Get "js/customerportal.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" integrity="{{ $customerPortalJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}

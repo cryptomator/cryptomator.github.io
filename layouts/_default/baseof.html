@@ -98,9 +98,13 @@
       </script>
     {{ end }}
     {{ if hugo.IsDevelopment }}
+      {{ $constJs := resources.Get "js/const.dev.js" | resources.ExecuteAsTemplate "js/const.js" . }}
+      <script type="text/javascript" src="{{ $constJs.RelPermalink }}" defer></script>
       {{ $baseJs := resources.Get "js/base.js" }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" defer></script>
     {{ else }}
+      {{ $constJs := resources.Get "js/const.prod.js" | resources.ExecuteAsTemplate "js/const.js" . | minify | fingerprint }}
+      <script type="text/javascript" src="{{ $constJs.RelPermalink }}" integrity="{{ $constJs.Data.Integrity }}" defer></script>
       {{ $baseJs := resources.Get "js/base.js" | minify | fingerprint }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" integrity="{{ $baseJs.Data.Integrity }}" defer></script>
     {{ end }}

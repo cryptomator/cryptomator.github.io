@@ -1,7 +1,5 @@
 "use strict";
 
-// requires store.js
-
 class HubPricing {
 
   constructor(data) {
