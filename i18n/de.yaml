@@ -614,11 +614,11 @@
   translation: "Weiter"
 
 - id: hub_managed_step_1_nav_title
-  translation: "Arbeits-E-Mail"
+  translation: "E-Mail-Adresse"
 - id: hub_managed_step_1_title
-  translation: "Wie lautet die E-Mail-Adresse für deine Arbeit?"
+  translation: "Wie lautet deine E-Mail-Adresse?"
 - id: hub_managed_step_1_email_placeholder
-  translation: "E-Mail-Adresse für die Arbeit"
+  translation: "E-Mail-Adresse"
 
 - id: hub_managed_step_2_nav_title
   translation: "Team-Name"
