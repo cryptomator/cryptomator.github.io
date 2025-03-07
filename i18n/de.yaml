@@ -242,10 +242,10 @@
   translation: "Open Source"
 - id: for_individuals_open_source_description
   translation: "Engagement"
-- id: for_individuals_users_worldwide_title
+- id: for_individuals_dau_title
   translation: "150k+"
-- id: for_individuals_users_worldwide_description
-  translation: "Nutzer weltweit"
+- id: for_individuals_dau_descriptions
+  translation: "Täglich aktive Nutzer"
 
 - id: for_individuals_workflow_step_1_title
   translation: "1. Tresor erstellen"
@@ -374,7 +374,7 @@
 - id: hub_header_title
   translation: "Verschlüsselte&nbsp;Zusammenarbeit im&nbsp;Team"
 - id: hub_header_description
-  translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
+  translation: "Cryptomator Hub erweitert Cryptomator für Teams und Organisationen – mit End-to-End-Verschlüsselung, Zugriff nur für autorisierte Personen und nahtloser Integration in eure IT-Infrastruktur. So behaltet ihr die volle Kontrolle, egal welche Cloud ihr nutzt."
 - id: hub_header_managed_title
   translation: "Managed"
 - id: hub_header_managed_cta
@@ -392,6 +392,25 @@
   translation: "Kurze Einführung"
 - id: hub_video_description
   translation: "Wir zeigen dir hier wie Cryptomator Hub die Zugriffsverwaltung für deine Cryptomator-Tresore ermöglicht."
+
+- id: hub_workflow_step_1_title
+  translation: "1. Sichere Tresore für euer Team"
+- id: hub_workflow_step_1_description
+  translation: "Egal ob sensible Kundendaten, Finanzdokumente, Verträge oder Forschungsergebnisse – mit Cryptomator Hub erstellt ihr verschlüsselte Tresore für eure Teams und speichert Daten sicher in der Cloud. Ihr behaltet die volle Kontrolle darüber, wer Zugriff erhält."
+- id: hub_workflow_step_1_alt
+  translation: "Cryptomator-Hub-Oberfläche mit mehreren Tresoren"
+- id: hub_workflow_step_2_title
+  translation: "2. Zugriffskontrolle leicht gemacht"
+- id: hub_workflow_step_2_description
+  translation: "Nicht jeder soll alles sehen? Kein Problem! Weise Teammitgliedern gezielt Berechtigungen zu und verwalte den Zugriff auf eure Tresore mit wenigen Klicks. So bleiben sensible Daten wirklich nur für autorisierte Personen zugänglich."
+- id: hub_workflow_step_2_alt
+  translation: "Verwaltung der Zugriffsrechte für einen Tresor"
+- id: hub_workflow_step_3_title
+  translation: "3. Entsperren & loslegen – ohne Passwort"
+- id: hub_workflow_step_3_description
+  translation: "Ladet euren Tresor über Cryptomator Hub herunter und öffnet ihn direkt in der Cryptomator App als bestehenden Tresor. Statt ein Passwort einzugeben, erfolgt die Authentifizierung sicher über Hub – so bleibt alles geschützt und trotzdem komfortabel zugänglich."
+- id: hub_workflow_step_3_alt
+  translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
 
 - id: hub_features_feature_1_title
   translation: "Starke Authentifizierung"

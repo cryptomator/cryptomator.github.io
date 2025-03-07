@@ -242,10 +242,10 @@
   translation: "Open Source"
 - id: for_individuals_open_source_description
   translation: "Commitment"
-- id: for_individuals_users_worldwide_title
+- id: for_individuals_dau_title
   translation: "150k+"
-- id: for_individuals_users_worldwide_description
-  translation: "Users Worldwide"
+- id: for_individuals_dau_description
+  translation: "Daily Active Users"
 
 - id: for_individuals_workflow_step_1_title
   translation: "1. Create a Vault"
@@ -374,7 +374,7 @@
 - id: hub_header_title
   translation: "Encrypted&nbsp;collaboration for&nbsp;your&nbsp;team"
 - id: hub_header_description
-  translation: "Cryptomator Hub adds zero-knowledge key management for teams and organizations to Cryptomator. It easily integrates into your existing identity management incl. OpenID Connect, SAML, and LDAP. As usual, your favorite cloud service remains your free choice."
+  translation: "Cryptomator Hub extends Cryptomator for teams and organizations – with end-to-end encryption, access restricted to authorized users, and seamless integration into your IT infrastructure. This way, you retain full control, no matter which cloud you use."
 - id: hub_header_managed_title
   translation: "Managed"
 - id: hub_header_managed_cta
@@ -392,6 +392,25 @@
   translation: "Quick Introduction"
 - id: hub_video_description
   translation: "Let us show you how Cryptomator Hub adds access management for your Cryptomator vaults."
+
+- id: hub_workflow_step_1_title
+  translation: "1. Secure vaults for your team"
+- id: hub_workflow_step_1_description
+  translation: "Whether it's sensitive customer data, financial documents, contracts or research results – with Cryptomator Hub, you create encrypted vaults for your teams and store data securely in the cloud. You retain full control over who has access."
+- id: hub_workflow_step_1_alt
+  translation: "Cryptomator Hub interface with multiple vaults"
+- id: hub_workflow_step_2_title
+  translation: "2. Easy access management"
+- id: hub_workflow_step_2_description
+  translation: "Not everyone should see everything? No problem! Assign permissions to team members and manage access to your vaults with just a few clicks. This ensures that sensitive data remains accessible only to authorized persons."
+- id: hub_workflow_step_2_alt
+  translation: "Access management for a vault"
+- id: hub_workflow_step_3_title
+  translation: "3. Unlock & get started – no password required"
+- id: hub_workflow_step_3_description
+  translation: "Download your vault via Cryptomator Hub and open it directly in the Cryptomator app as an existing vault. Instead of entering a password, authentication is securely handled through Hub – keeping everything protected while ensuring easy access."
+- id: hub_workflow_step_3_alt
+  translation: "Cryptomator app interface with multiple vaults"
 
 - id: hub_features_feature_1_title
   translation: "Strong Authentication"
