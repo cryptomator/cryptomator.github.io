@@ -36,13 +36,55 @@
       <p class="font-p mb-4">{{ i18n "hub_video_description" . }}</p>
     </header>
 
-    <div class="max-w-3xl mx-auto mb-12">
-      <video controls preload="none" poster="https://static.cryptomator.org/hub/quick-introduction.png" class="w-full h-auto">
-        <source src="https://static.cryptomator.org/hub/quick-introduction.mp4" type="video/mp4">
-      </video>
-    </div>
+    <div class="relative max-w-5xl mx-auto mb-12">
+      <div class="relative">
+        <video controls preload="none" poster="https://static.cryptomator.org/hub/quick-introduction.png"
+          class="w-full h-auto rounded-xl shadow-lg">
+          <source src="https://static.cryptomator.org/hub/quick-introduction.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>    
+  </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+  <section class="container py-12">
+    <div class="flex flex-wrap mb-24">
+      <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pr-6">
+        <img data-src="/img/hub/for-teams-screenshot-1.png" class="lazyload w-full h-auto" alt="{{i18n "hub_workflow_step_1_alt" }}"/>
+      </figure>
+      <div class="w-full md:w-1/2 md:pl-6">
+        <h2 class="font-h2 mb-6">{{ i18n "hub_workflow_step_1_title" }}</h2>
+        <p class="lead">{{ i18n "hub_workflow_step_1_description" }}</p>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap mb-24 md:flex-row-reverse">
+      <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pl-6">
+        <img data-src="/img/hub/for-teams-screenshot-2.png" class="lazyload w-full h-auto" alt="{{i18n "hub_workflow_step_2_alt" }}"/>
+      </figure>
+      <div class="w-full md:w-1/2 md:pr-6">
+        <h2 class="font-h2 mb-6">{{ i18n "hub_workflow_step_2_title" }}</h2>
+        <p class="lead">{{ i18n "hub_workflow_step_2_description" }}</p>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap">
+      <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pr-6">
+        <img data-src="/img/hub/for-teams-screenshot-3.png" class="lazyload w-full h-auto" alt="{{i18n "hub_workflow_step_3_alt" }}"/>
+      </figure>
+      <div class="w-full md:w-1/2 md:pl-6">
+        <h2 class="font-h2 mb-6">{{ i18n "hub_workflow_step_3_title" }}</h2>
+        <p class="lead">{{ i18n "hub_workflow_step_3_description" }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-12">
+    <header class="text-center">
+      <h2 id="features" class="font-h2 mb-4">{{ i18n "for_individuals_features_title" . }}</h2>
+      <p class="font-p mb-4">{{ i18n "for_individuals_features_subtitle" . }}</p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4"> 
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
           <h3 class="font-h3"><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
