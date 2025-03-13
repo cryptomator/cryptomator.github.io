@@ -323,7 +323,7 @@ The supervisory authority to which the complaint has been submitted shall inform
 
 For internal audience measurement, we use a privacy-preserving, self-hosted analytics service that uses cross-page user recognition technology to analyze behavior.
 
-We collect various information (e.g., anonymized IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g., clicks, purchases, etc.).
+We collect various information (e.g., shortened IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g., clicks, purchases, etc.).
 
 No "cookies" are stored on your device. Where personal data (e.g. IP addresses) is collected, it is stored in a completely pseudonymised form. Re-identification is not possible for us unless you actively contact us providing data that allows us to correlate said data.
 
