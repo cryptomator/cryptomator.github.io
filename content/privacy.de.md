@@ -3,7 +3,7 @@ title: "Datenschutzerklärung"
 aliases: ["/de/privacy-ios", "/de/privacy-android"]
 ---
 
-_Stand: Oktober 2024_
+_Stand: März 2025_
 
 <p class="text-lg leading-relaxed text-gray-700">Als Anbieter einer Software zur Stärkung der Privatsphäre liegen uns Ihre Rechte in Bezug auf Datenschutz und informationelle Selbstbestimmung am Herzen. Von uns bereitgestellte Dienste erheben nur absolut notwendige Daten. Selbstverständlich verzichten wir auf den Einsatz von Analysetools und unnötigen Cookies. Für einige Vorgänge, insbesondere im Zusammenhang mit Zahlungsvorgängen sind wir jedoch auf Dienste Dritter angewiesen und Sie sollten auch deren Datenschutzerklärungen aufmerksam lesen.</p>
 
@@ -326,6 +326,6 @@ Wir nutzen einen datenschutzfreundlichen und selbst gehosteten Analysedienst fü
 
 Wir erfassen verschiedene Informationen (z. B. anonymisierte IP-Adresse, Referrer-URLs, verwendete Browser und Betriebssysteme) und messen bestimmte Besucheraktionen (z. B. Klicks, Käufe usw.).
 
-Es werden keine „Cookies“ auf Ihrem Gerät gespeichert, es werden keine Informationen von Ihrem Gerät für die Analyse abgerufen. Soweit personenbezogene Daten (z.B. IP-Adressen) erhoben werden, werden diese vollständig anonymisiert gespeichert.
+Es werden keine „Cookies“ auf Ihrem Gerät gespeichert. Soweit personenbezogene Daten (z.B. IP-Adressen) erhoben werden, werden diese vollständig pseudoanonymisiert gespeichert. Eine Re-Identifizierung ist für uns grundsätzlich ausgeschlossen, es sei denn Sie übermitteln aktiv durch eine Kontaktaufnahme Informationen, die eine entsprechende Zuordnung ermöglichen könnte.
 
 Die Rechtsgrundlage für die Verarbeitung Ihrer Daten ist Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit § 25 Abs. 1 TDDDG hat der Websitebetreiber ein berechtigtes Interesse an der anonymisierten Analyse des Nutzerverhaltens zur Optimierung seines Onlineangebotes.
