@@ -324,7 +324,7 @@ Die Aufsichtsbehörde, bei der die Beschwerde eingereicht wurde, unterrichtet de
 
 Wir nutzen einen datenschutzfreundlichen und selbst gehosteten Analysedienst für die interne Reichweitenmessung, der eine Technologie zur seitenübergreifenden Nutzererkennung einsetzt, um das Verhalten zu analysieren.
 
-Wir erfassen verschiedene Informationen (z. B. anonymisierte IP-Adresse, Referrer-URLs, verwendete Browser und Betriebssysteme) und messen bestimmte Besucheraktionen (z. B. Klicks, Käufe usw.).
+Wir erfassen verschiedene Informationen (z. B. gekürzte IP-Adresse, Referrer-URLs, verwendete Browser und Betriebssysteme) und messen bestimmte Besucheraktionen (z. B. Klicks, Käufe usw.).
 
 Es werden keine „Cookies“ auf Ihrem Gerät gespeichert. Soweit personenbezogene Daten (z.B. IP-Adressen) erhoben werden, werden diese vollständig pseudoanonymisiert gespeichert. Eine Re-Identifizierung ist für uns grundsätzlich ausgeschlossen, es sei denn Sie übermitteln aktiv durch eine Kontaktaufnahme Informationen, die eine entsprechende Zuordnung ermöglichen könnte.
 
