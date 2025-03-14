@@ -1,12 +1,6 @@
 "use strict";
 
-const STRIPE_PK = 'pk_live_eSasX216vGvC26GdbVwA011V';
-const STRIPE_PLANS = {'EUR': 'plan_GgW4ovr7c6upzx', 'USD': 'plan_GejOEdJtfL3kdH'}; // live
-const STRIPE_PHP_URL = 'https://api.cryptomator.org/stripe/prepare_payment.php';
-
-//const STRIPE_PK = 'pk_test_JhF3MoFQGw2Is0DB3BSv345P';
-//const STRIPE_PLANS = {'EUR': 'plan_GgVY2JfD49bc02', 'USD': 'plan_GgVZwj545E0uH3'}; // test
-//const STRIPE_PHP_URL = 'http://localhost/stripe/prepare_payment.php';
+const STRIPE_PHP_URL = BASE_API_URL + '/stripe/prepare_payment.php';
 
 class OneTimePayment {
 
@@ -14,7 +8,7 @@ class OneTimePayment {
    * Initializes the one-time payments helper and stores a references to the status object that can be observed by AlpineJS
    * @param {Object} status 
    * @param {boolean} status.validCardNum Whether the Stripe input field considers the credit card number valid
-   * @param {string} status.captcha The captcha (if reCAPTCHA validation finished) or null
+   * @param {string} status.captcha The captcha (if captcha validation finished) or null
    * @param {string} status.errorMessage An error message or null
    * @param {boolean} status.inProgress Whether an async payment task is currently running
    * @param {boolean} status.success Whether the payment succeeded
@@ -127,10 +121,6 @@ class OneTimePayment {
     this._status.success = false;
     this._status.errorMessage = error.message;
     this._status.inProgress = false;
-    if (grecaptcha) {
-      this._status.captcha = '';
-      grecaptcha.reset();
-    }
   }
 
   onPaymentSucceeded() {
@@ -138,10 +128,6 @@ class OneTimePayment {
     this._status.success = true;
     this._status.errorMessage = '';
     this._status.inProgress = false;
-    if (grecaptcha) {
-      this._status.captcha = '';
-      grecaptcha.reset();
-    }
   }
 
 }

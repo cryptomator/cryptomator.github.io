@@ -135,8 +135,6 @@
   translation: "Credit card payments are securely handled by Stripe. We will not be able to see your card number or CVC. Please expect to be <a class=\"text-link\" href=\"https://support.stripe.com/questions/unknown-charge-on-card-from-stripe\" target=\"_blank\" rel=\"noopener\">charged by Stripe</a>."
 - id: donate_creditcard_once_loading
   translation: "Loading…"
-- id: donate_creditcard_once_loadcaptcha
-  translation: "Continue…"
 - id: donate_creditcard_once_paynow
   translation: "Pay Now"
 - id: donate_creditcard_once_success
@@ -303,6 +301,8 @@
   translation: "Join Community"
 
 # Home
+- id: home_header_kicker
+  translation: "3,000,000+ Downloads"
 - id: home_header_title
   translation: "Encrypt&nbsp;your&nbsp;cloud, protect&nbsp;your&nbsp;privacy"
 - id: home_header_description
@@ -417,9 +417,9 @@
 - id: hub_features_feature_1_description
   translation: "Hook up Cryptomator Hub to your existing identity infrastructure and set up any industry-standard authentication method for your team. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
 - id: hub_features_feature_2_title
-  translation: "End-to-End Encryption"
+  translation: "Client-Side Encryption"
 - id: hub_features_feature_2_description
-  translation: "Vaults created with Cryptomator Hub will be stored the same way as you're used to with Cryptomator – securely using end-to-end encryption. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+  translation: "Vaults created with Cryptomator Hub will be stored the same way as you're used to with Cryptomator – securely using client-side encryption. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
 - id: hub_features_feature_3_title
   translation: "Zero Knowledge"
 - id: hub_features_feature_3_description
@@ -464,8 +464,6 @@
   translation: "To access your subscription information, a confirmation link will be sent to the email you used to make your purchase."
 - id: hub_billing_createsession_success_description
   translation: "Please check your email for the link to manage your Hub subscription."
-- id: hub_billing_createsession_loadcaptcha
-  translation: "Continue…"
 - id: hub_billing_createsession_submit
   translation: "Request Access"
 
@@ -603,8 +601,6 @@
 
 - id: hub_demo_instruction
   translation: "Demo instances are created automatically. There are a limited number of demo instances available. All demo instances are reset at 00:00 UTC."
-- id: hub_demo_loadcaptcha
-  translation: "Continue…"
 - id: hub_demo_submit
   translation: "Try Demo"
 - id: hub_demo_success_title
@@ -637,11 +633,11 @@
   translation: "Next"
 
 - id: hub_managed_step_1_nav_title
-  translation: "Work Email"
+  translation: "Email Address"
 - id: hub_managed_step_1_title
-  translation: "What's your email address for work?"
+  translation: "What's your email address?"
 - id: hub_managed_step_1_email_placeholder
-  translation: "Email address for work"
+  translation: "Email address"
 
 - id: hub_managed_step_2_nav_title
   translation: "Team Name"
@@ -890,7 +886,7 @@
 - id: pricing_hub_community_benefit_1
   translation: "Unlimited vaults"
 - id: pricing_hub_community_benefit_2
-  translation: "Up to 5 seats"
+  translation: "5 seats"
 - id: pricing_hub_community_benefit_3
   translation: "Full access via Desktop app"
 - id: pricing_hub_community_benefit_4
@@ -909,7 +905,7 @@
 - id: pricing_hub_standard_benefit_1
   translation: "Everything in Community"
 - id: pricing_hub_standard_benefit_2
-  translation: "Unlimited seats"
+  translation: "Unlimited seats (at least 3)"
 - id: pricing_hub_standard_benefit_3
   translation: "Full access via Mobile apps"
 - id: pricing_hub_standard_benefit_3_tooltip
@@ -945,8 +941,6 @@
   translation: "Email"
 - id: supporter_cert_common_email_placeholder
   translation: "Email address"
-- id: supporter_cert_common_loadcaptcha
-  translation: "Continue…"
 - id: supporter_cert_common_submit
   translation: "Send Request"
 - id: supporter_cert_common_success_title
@@ -1012,3 +1006,17 @@
   translation: "We've sent details of your past transactions and licenses to you via email."
 - id: supporter_cert_recovery_contact_us
   translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."
+
+# Altcha
+- id: altcha_label
+  translation: "I\\'m not a bot"
+- id: altcha_error
+  translation: "Verification failed. Try again later."
+- id: altcha_expired
+  translation: "Verification expired. Try again."
+- id: altcha_verified
+  translation: "Verified!"
+- id: altcha_verifying
+  translation: "Verifying…"
+- id: altcha_waitAlert
+  translation: "Verifying… please wait."

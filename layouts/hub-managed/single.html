@@ -1,11 +1,11 @@
 {{ define "main" }}
-  <section x-data="{steps: ['{{ i18n "hub_managed_step_1_nav_title" }}', '{{ i18n "hub_managed_step_2_nav_title" }}', '{{ i18n "hub_managed_step_3_nav_title" }}', '{{ i18n "hub_managed_step_4_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, email: '', team: '', subdomain: '', quantity: null, message: null, acceptNewsletter: false}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData); $watch('submitData.team', team => submitData.subdomain = teamToSubdomain(team))" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_managed_step_1_nav_title" }}', '{{ i18n "hub_managed_step_2_nav_title" }}', '{{ i18n "hub_managed_step_3_nav_title" }}', '{{ i18n "hub_managed_step_4_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, email: '', team: '', subdomain: '', quantity: null, message: null, acceptNewsletter: false}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null, captchaState: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData); $watch('submitData.team', team => submitData.subdomain = teamToSubdomain(team))" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_managed_description" }}</p>
     </header>
 
-    <form x-ref="form">
+    <form x-ref="form" @submit.prevent="hubManaged.request(); $refs.captcha.reset()">
       <section class="white-box">
         <div x-show="!feedbackData.success" class="md:min-h-110 px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
           <header class="mb-8 md:col-span-1 md:mt-4">
@@ -56,7 +56,7 @@
             </nav>
           </header>
 
-          <!-- Step 1: Work Email -->
+          <!-- Step 1: Email Address -->
           <template x-if="feedbackData.currentStep == 0">
             <div class="md:col-span-2 grid grid-cols-6 gap-6">
               <div class="flex flex-col col-span-6 lg:col-span-4">
@@ -189,15 +189,11 @@
                 </p>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <div x-show="!submitData.captcha" x-ref="captchaWrapper">
-                    <button :disabled="!acceptTerms" @click.prevent="loadRecaptcha($refs.captchaWrapper, (token) => submitData.captcha = token)" class="btn btn-primary w-full md:w-64">
-                      {{ i18n "hub_managed_step_4_loadcaptcha" }}
-                    </button>
-                  </div>
-                  <button x-show="submitData.captcha" :disabled="feedbackData.inProgress || !acceptTerms" @click.prevent="hubManaged.request()" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" data-umami-event="hub-managed-form" x-cloak>
+                  <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" data-umami-event="hub-managed-form" x-cloak>
                     <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_managed_step_4_submit" }}
                   </button>
+                  {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
                 </div>
               </div>
             </div>
@@ -235,22 +231,22 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" defer></script>
-    {{ $recaptchaJs := resources.Get "js/recaptcha.js" }}
-    <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" integrity="{{ $hubManagedJs.Data.Integrity }}" defer></script>
-    {{ $recaptchaJs := resources.Get "js/recaptcha.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $recaptchaJs.RelPermalink }}" integrity="{{ $recaptchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}

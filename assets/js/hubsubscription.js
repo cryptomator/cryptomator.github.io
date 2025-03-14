@@ -1,6 +1,5 @@
 "use strict";
 
-// requires store.js
 const BILLING_PORTAL_SESSION_URL = STORE_API_URL + '/hub/billing-portal-session';
 const CUSTOM_BILLING_URL = STORE_API_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = STORE_API_URL + '/hub/generate-pay-link';
