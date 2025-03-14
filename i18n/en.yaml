@@ -271,7 +271,7 @@
 - id: for_individuals_features_feature_1_title
   translation: "Client-Side Encryption"
 - id: for_individuals_features_feature_1_description
-  translation: "Your files are securely <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">encrypted</a> before leaving your device, keeping them protected during transfer and storage."
+  translation: "Your files are <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">securely encrypted</a> before leaving your device, keeping them protected during transfer and storage."
 - id: for_individuals_features_feature_2_title
   translation: "Compatible with Your Cloud"
 - id: for_individuals_features_feature_2_description
@@ -412,18 +412,34 @@
 - id: hub_workflow_step_3_alt
   translation: "Cryptomator app interface with multiple vaults"
 
+- id: hub_features_title
+  translation: "Why Cryptomator Hub?"
+- id: hub_features_subtitle
+  translation: "Discover how Cryptomator Hub protects your files with strong encryption, privacy principles, and seamless cross-platform support."
 - id: hub_features_feature_1_title
-  translation: "Strong Authentication"
-- id: hub_features_feature_1_description
-  translation: "Hook up Cryptomator Hub to your existing identity infrastructure and set up any industry-standard authentication method for your team. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
-- id: hub_features_feature_2_title
-  translation: "Client-Side Encryption"
-- id: hub_features_feature_2_description
-  translation: "Vaults created with Cryptomator Hub will be stored the same way as you're used to with Cryptomator – securely using client-side encryption. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
-- id: hub_features_feature_3_title
   translation: "Zero Knowledge"
-- id: hub_features_feature_3_description
+- id: hub_features_feature_1_description
   translation: "Cryptomator Hub manages key material without getting in touch with unencrypted keys. It is a true zero-knowledge solution. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/hub/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+- id: hub_features_feature_2_title
+  translation: "Strong Authentication"
+- id: hub_features_feature_2_description
+  translation: "Integrate with your existing identity system and set up any industry-standard authentication method for your team. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+- id: hub_features_feature_3_title
+  translation: "Client-Side Encryption"
+- id: hub_features_feature_3_description
+  translation: "Your files are <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">securely encrypted</a> before leaving your device, keeping them protected during transfer and storage."
+- id: hub_features_feature_4_title
+  translation: "Easy to Use"
+- id: hub_features_feature_4_description
+  translation: "Setting up Cryptomator Hub takes just a few minutes. No technical knowledge required – encrypt your files effortlessly."
+- id: hub_features_feature_5_title
+  translation: "Open Source"
+- id: hub_features_feature_5_description
+  translation: "Built with transparency in mind – our source code is publicly available for community security audits. <a class=\"text-link\" href=\"/open-source/\" target=\"_blank\" rel=\"noopener\">Learn more.</a>"
+- id: hub_features_feature_6_title
+  translation: "Privacy-Compliant"
+- id: hub_features_feature_6_description
+  translation: "Designed with privacy in focus: Cryptomator is fully <a class=\"text-link\" href=\"/gdpr/\" target=\"_blank\" rel=\"noopener\">GDPR-compliant</a> and does not require any personal data."
 
 - id: hub_pricing_title
   translation: "Explore Our Flexible Pricing"

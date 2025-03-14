@@ -271,7 +271,7 @@
 - id: for_individuals_features_feature_1_title
   translation: "Clientseitige Verschlüsselung"
 - id: for_individuals_features_feature_1_description
-  translation: "Deine Dateien werden sicher <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+  translation: "Deine Dateien werden <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">sicher verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
 - id: for_individuals_features_feature_2_title
   translation: "Kompatibel mit deiner Cloud"
 - id: for_individuals_features_feature_2_description
@@ -412,18 +412,34 @@
 - id: hub_workflow_step_3_alt
   translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
 
+- id: hub_features_title
+  translation: "Warum Cryptomator Hub?"
+- id: hub_features_subtitle
+  translation: "Erfahre, wie Cryptomator Hub deine Dateien mit starker Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
 - id: hub_features_feature_1_title
-  translation: "Starke Authentifizierung"
-- id: hub_features_feature_1_description
-  translation: "Binde Cryptomator Hub in deine bestehende Identitätsinfrastruktur und richte branchenübliche Authentifizierungsmethoden ein. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
-- id: hub_features_feature_2_title
-  translation: "Clientseitige Verschlüsselung"
-- id: hub_features_feature_2_description
-  translation: "Mit Cryptomator Hub erstellte Tresore werden auf die gleiche Weise gespeichert, wie du es von Cryptomator gewohnt bist – sicher mit clientseitiger Verschlüsselung. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
-- id: hub_features_feature_3_title
   translation: "Zero Knowledge"
-- id: hub_features_feature_3_description
+- id: hub_features_feature_1_description
   translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/hub/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+- id: hub_features_feature_2_title
+  translation: "Starke Authentifizierung"
+- id: hub_features_feature_2_description
+  translation: "Binde Cryptomator Hub in deine bestehende Identitätsinfrastruktur und richte branchenübliche Authentifizierungsmethoden ein. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+- id: hub_features_feature_3_title
+  translation: "Clientseitige Verschlüsselung"
+- id: hub_features_feature_3_description
+  translation: "Deine Dateien werden <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">sicher verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+- id: hub_features_feature_4_title
+  translation: "Kinderleichte Bedienung"
+- id: hub_features_feature_4_description
+  translation: "Die Einrichtung von Cryptomator Hub erfolgt in nur wenigen Minuten. Es sind keine technischen Vorkenntnisse nötig."
+- id: hub_features_feature_5_title
+  translation: "Open Source"
+- id: hub_features_feature_5_description
+  translation: "Unser Quellcode ist öffentlich zugänglich und ermöglicht Sicherheitsprüfungen durch die Community. <a class=\"text-link\" href=\"/de/open-source/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+- id: hub_features_feature_6_title
+  translation: "Datenschutzkonform"
+- id: hub_features_feature_6_description
+  translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig <a class=\"text-link\" href=\"/de/gdpr/\" target=\"_blank\" rel=\"noopener\">DSGVO-konform</a> und erfordert keine persönlichen Daten."
 
 - id: hub_pricing_title
   translation: "Entdecke unser flexibles Preismodell"
