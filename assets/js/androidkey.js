@@ -30,6 +30,7 @@ class AndroidLicense {
     }).done(data => {
       this._checkoutData.price = {
         amount: data.response.products[0].price.gross,
+        listAmount: data.response.products[0].list_price.gross,
         currency: data.response.products[0].currency
       };
     });
