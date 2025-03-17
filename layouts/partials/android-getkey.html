@@ -4,9 +4,11 @@
   </div>
 
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
-    <div class="w-full md:w-1/2 mb-4">
+    <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
-      <input x-model="checkoutData.price" type="text" class="input-box w-full" placeholder="{{ i18n "android_getkey_price_placeholder" }}" readonly/>
+      <div class="input-box flex items-center w-full lg:w-1/2">
+        <span x-text="checkoutData.price ? checkoutData.price.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'">…</span>
+      </div>
     </div>
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_email" }}</label>

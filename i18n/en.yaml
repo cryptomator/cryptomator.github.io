@@ -44,8 +44,6 @@
   translation: "Buy a license key"
 - id: android_getkey_price
   translation: "Price"
-- id: android_getkey_price_placeholder
-  translation: "Loading…"
 - id: android_getkey_email
   translation: "Email"
 - id: android_getkey_email_placeholder

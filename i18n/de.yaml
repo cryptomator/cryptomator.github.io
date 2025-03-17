@@ -44,8 +44,6 @@
   translation: "Lizenzschlüssel kaufen"
 - id: android_getkey_price
   translation: "Preis"
-- id: android_getkey_price_placeholder
-  translation: "Lädt…"
 - id: android_getkey_email
   translation: "E-Mail"
 - id: android_getkey_email_placeholder
