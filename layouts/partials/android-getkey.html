@@ -7,7 +7,7 @@
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
       <div class="input-box flex items-center gap-2 w-full lg:w-1/2">
-        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" x-text="checkoutData.price ? checkoutData.price.listAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'" class="text-gray-500 line-through decoration-red-600"></span>
+        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" x-text="checkoutData.price ? checkoutData.price.listAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
         <span x-text="checkoutData.price ? checkoutData.price.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'">…</span>
       </div>
     </div>
