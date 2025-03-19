@@ -4,9 +4,13 @@
   </div>
 
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
-    <div class="w-full md:w-1/2 mb-4">
+    <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
-      <input x-model="checkoutData.price" type="text" class="input-box w-full" placeholder="{{ i18n "android_getkey_price_placeholder" }}" readonly/>
+      <div class="relative input-box flex items-center gap-2 w-full lg:w-1/2">
+        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" x-text="checkoutData.price ? checkoutData.price.listAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
+        <span x-text="checkoutData.price ? checkoutData.price.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'">…</span>
+        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" class="absolute top-0 left-0 -translate-2 -rotate-5 px-1 rounded-xs text-xs text-white bg-red-600 z-10" x-cloeak>-<span x-text="((1 - checkoutData.price.amount / checkoutData.price.listAmount) * 100).toFixed(0)"></span>%</span>
+      </div>
     </div>
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_email" }}</label>
