@@ -32,6 +32,7 @@ class DesktopLicense {
         return {
           productId: product.product_id,
           amount: product.price.gross,
+          listAmount: product.list_price.gross,
           currency: product.currency
         }
       });

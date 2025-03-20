@@ -2,6 +2,8 @@
   translation: "Cryptomator ist ein Open-Source-Verschlüsselungstool für sicheren Cloud-Speicher. Schütze deine Privatsphäre kostenlos bei Dropbox, Google Drive, OneDrive und mehr."
 - id: nav_cta
   translation: "Jetzt loslegen"
+- id: nav_promotion
+  translation: ":cherry_blossom: Spring Sale: 25 %* Rabatt auf Cryptomator – Bis&nbsp;zum&nbsp;World&nbsp;Backup&nbsp;Day!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2025/03/20/spring-sale/\">Mehr erfahren&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Produkte"
 - id: nav_support_us
@@ -44,8 +46,6 @@
   translation: "Lizenzschlüssel kaufen"
 - id: android_getkey_price
   translation: "Preis"
-- id: android_getkey_price_placeholder
-  translation: "Lädt…"
 - id: android_getkey_email
   translation: "E-Mail"
 - id: android_getkey_email_placeholder
@@ -217,6 +217,8 @@
   translation: "Kontaktiere uns für ein Angebot"
 
 # For Individuals
+- id: for_individuals_header_kicker_sale
+  translation: "25 %* Rabatt – Spring Sale"
 - id: for_individuals_header_title
   translation: "Deine Daten in der Cloud gehören dir allein"
 - id: for_individuals_header_description
@@ -301,6 +303,8 @@
   translation: "Community beitreten"
 
 # Home
+- id: home_header_kicker_sale
+  translation: "25 %* Rabatt – Spring Sale"
 - id: home_header_kicker
   translation: "3.000.000+ Downloads"
 - id: home_header_title
@@ -371,8 +375,10 @@
   translation: "Cryptomator ist Gewinner des Sonderpreises für Usable Security and Privacy."
 
 # Hub
+- id: hub_header_kicker_sale
+  translation: "25 % Rabatt im ersten Jahr – Spring Sale"
 - id: hub_header_title
-  translation: "Verschlüsselte&nbsp;Zusammenarbeit im&nbsp;Team"
+  translation: "Verschlüsselte Zusammenarbeit im Team"
 - id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator für Teams und Organisationen – mit End-to-End-Verschlüsselung, Zugriff nur für autorisierte Personen und nahtloser Integration in eure IT-Infrastruktur. So behaltet ihr die volle Kontrolle, egal welche Cloud ihr nutzt."
 - id: hub_header_managed_title
@@ -855,6 +861,8 @@
 
 - id: pricing_android_price
   translation: "19,99 €"
+- id: pricing_android_price_discounted
+  translation: "14,99 €"
 - id: pricing_android_price_description
   translation: "Lebenslange Lizenz"
 - id: pricing_android_cta
@@ -872,6 +880,8 @@
   translation: "Lesezugriff"
 - id: pricing_ios_price
   translation: "19,99 €"
+- id: pricing_ios_price_discounted
+  translation: "14,99 €"
 - id: pricing_ios_price_description
   translation: "Lebenslange Lizenz"
 - id: pricing_ios_cta
@@ -884,6 +894,9 @@
   translation: "Tresore mit Face ID / Touch ID entsperren"
 - id: pricing_ios_benefit_4
   translation: "Keine Accounts, keine Datenweitergabe"
+
+- id: pricing_discount_note
+  translation: "Die Höhe des Rabatts kann je nach Region variieren."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -914,6 +927,8 @@
 
 - id: pricing_hub_standard_title
   translation: "Standard"
+- id: pricing_hub_standard_price_first_year
+  translation: "im ersten Jahr"
 - id: pricing_hub_standard_price_description
   translation: "pro Sitz, pro Monat"
 - id: pricing_hub_standard_trial

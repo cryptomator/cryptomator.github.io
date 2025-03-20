@@ -140,7 +140,7 @@ ul.list-primary li::marker {
 }
 
 .input-box {
-  @apply rounded-sm border-gray-300 focus:ring-0 focus:border-secondary;
+  @apply rounded-sm border border-gray-300 focus:ring-0 focus:border-secondary px-3 py-2;
 }
 
 .pre-box {
@@ -200,7 +200,7 @@ textarea:read-only {
 [id]::before {
   content: '';
   display: block;
-  height: 96px;
-  margin-top: -96px;
+  height: 138px;
+  margin-top: -138px;
   visibility: hidden;
 }
