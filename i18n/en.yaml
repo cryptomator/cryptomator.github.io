@@ -3,7 +3,7 @@
 - id: nav_cta
   translation: "Get Started"
 - id: nav_promotion
-  translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until&nbsp;World&nbsp;Backup&nbsp;Day!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/03/20/spring-sale/\">More Info&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+  translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until&nbsp;World&nbsp;Backup&nbsp;Day!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/03/20/spring-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Products"
 - id: nav_support_us
@@ -302,7 +302,7 @@
 
 # Home
 - id: home_header_kicker_sale
-  translation: "25% Off – Spring Sale"
+  translation: "25%* Off – Spring Sale"
 - id: home_header_kicker
   translation: "3,000,000+ Downloads"
 - id: home_header_title
