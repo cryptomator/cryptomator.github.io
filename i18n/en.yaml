@@ -2,6 +2,8 @@
   translation: "Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."
 - id: nav_cta
   translation: "Get Started"
+- id: nav_promotion
+  translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until World Backup Day! <a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/20/03/spring-sale/\">More Info&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Products"
 - id: nav_support_us
@@ -818,6 +820,8 @@
 
 - id: pricing_android_price
   translation: "€19.99"
+- id: pricing_android_price_discounted
+  translation: "€14.99"
 - id: pricing_android_price_description
   translation: "Lifetime License"
 - id: pricing_android_cta
@@ -835,6 +839,8 @@
   translation: "Read-Only Mode"
 - id: pricing_ios_price
   translation: "€19.99"
+- id: pricing_ios_price_discounted
+  translation: "€14.99"
 - id: pricing_ios_price_description
   translation: "Lifetime License"
 - id: pricing_ios_cta
@@ -847,6 +853,9 @@
   translation: "Unlock vaults with Face ID / Touch ID"
 - id: pricing_ios_benefit_4
   translation: "No accounts, no data shared"
+
+- id: pricing_discount_note
+  translation: "The discount amount may vary by region."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -877,6 +886,8 @@
 
 - id: pricing_hub_standard_title
   translation: "Standard"
+- id: pricing_hub_standard_price_first_year
+  translation: "in the first year"
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_trial
