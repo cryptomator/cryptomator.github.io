@@ -246,7 +246,7 @@
   translation: "Engagement"
 - id: for_individuals_dau_title
   translation: "150k+"
-- id: for_individuals_dau_descriptions
+- id: for_individuals_dau_description
   translation: "Täglich aktive Nutzer"
 
 - id: for_individuals_workflow_step_1_title
