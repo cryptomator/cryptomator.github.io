@@ -374,7 +374,7 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Verschlüsselte&nbsp;Zusammenarbeit im&nbsp;Team"
+  translation: "Verschlüsselte Zusammenarbeit im Team"
 - id: hub_header_description
   translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
 - id: hub_header_managed_title
