@@ -217,6 +217,8 @@
   translation: "Contact Us for an Offer"
 
 # For Individuals
+- id: for_individuals_header_kicker_sale
+  translation: "25%* Off – Spring Sale"
 - id: for_individuals_header_title
   translation: "Keep your cloud data truly yours"
 - id: for_individuals_header_description
@@ -373,6 +375,8 @@
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
 
 # Hub
+- id: hub_header_kicker_sale
+  translation: "25% Off in the First Year – Spring Sale"
 - id: hub_header_title
   translation: "Encrypted&nbsp;collaboration for&nbsp;your&nbsp;team"
 - id: hub_header_description
