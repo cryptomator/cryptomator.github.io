@@ -26,6 +26,8 @@
   translation: "I agree to get updates from Cryptomator and accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_newsletter_optional
   translation: "I agree to get updates from Cryptomator via email (optional)."
+- id: accept_hub_newsletter_privacy
+  translation: "I agree to get updates from Cryptomator Hub and accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_hub_newsletter_optional
   translation: "I agree to get updates from Cryptomator Hub via email (optional)."
 - id: accept_privacy
@@ -378,9 +380,9 @@
 - id: hub_header_kicker_sale
   translation: "25% Off in the First Year – Spring Sale"
 - id: hub_header_title
-  translation: "Encrypted&nbsp;collaboration for&nbsp;your&nbsp;team"
+  translation: "Secure&nbsp;collaboration in&nbsp;your&nbsp;team"
 - id: hub_header_description
-  translation: "Cryptomator Hub extends Cryptomator for teams and organizations – with end-to-end encryption, access restricted to authorized users, and seamless integration into your IT infrastructure. This way, you retain full control, no matter which cloud you use."
+  translation: "Cryptomator Hub extends Cryptomator for your team or organization – with zero-knowledge encryption, access restricted to authorized users, and seamless integration into your IT infrastructure. This way, you retain full control, no matter which cloud you use."
 - id: hub_header_managed_title
   translation: "Managed"
 - id: hub_header_managed_cta
@@ -400,19 +402,19 @@
   translation: "Let us show you how Cryptomator Hub adds access management for your Cryptomator vaults."
 
 - id: hub_workflow_step_1_title
-  translation: "1. Secure vaults for your team"
+  translation: "1. Secure Vaults for Your Team"
 - id: hub_workflow_step_1_description
   translation: "Whether it's sensitive customer data, financial documents, contracts or research results – with Cryptomator Hub, you create encrypted vaults for your teams and store data securely in the cloud. You retain full control over who has access."
 - id: hub_workflow_step_1_alt
   translation: "Cryptomator Hub interface with multiple vaults"
 - id: hub_workflow_step_2_title
-  translation: "2. Easy access management"
+  translation: "2. Easy Access Management"
 - id: hub_workflow_step_2_description
   translation: "Not everyone should see everything? No problem! Assign permissions to team members and manage access to your vaults with just a few clicks. This ensures that sensitive data remains accessible only to authorized persons."
 - id: hub_workflow_step_2_alt
   translation: "Access management for a vault"
 - id: hub_workflow_step_3_title
-  translation: "3. Unlock & get started – no password required"
+  translation: "3. Unlock & Get Started – No Password Required"
 - id: hub_workflow_step_3_description
   translation: "Download your vault via Cryptomator Hub and open it directly in the Cryptomator app as an existing vault. Instead of entering a password, authentication is securely handled through Hub – keeping everything protected while ensuring easy access."
 - id: hub_workflow_step_3_alt
@@ -435,9 +437,9 @@
 - id: hub_features_feature_3_description
   translation: "Your files are <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">securely encrypted</a> before leaving your device, keeping them protected during transfer and storage."
 - id: hub_features_feature_4_title
-  translation: "Easy to Use"
+  translation: "Compatible with Your Cloud"
 - id: hub_features_feature_4_description
-  translation: "Setting up Cryptomator Hub takes just a few minutes. No technical knowledge required – encrypt your files effortlessly."
+  translation: "Seamlessly integrates with existing cloud storage, allowing you to sync your data securely and effortlessly."
 - id: hub_features_feature_5_title
   translation: "Open Source"
 - id: hub_features_feature_5_description

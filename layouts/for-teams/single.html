@@ -116,7 +116,7 @@
 
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-mouse-pointer fa-fw text-primary"></i> {{ i18n "hub_features_feature_4_title" . }}</h3>
+          <h3 class="font-h3"><i class="fas fa-cloud fa-fw text-primary"></i> {{ i18n "hub_features_feature_4_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_4_description" . | safeHTML }}</p>
@@ -193,7 +193,7 @@
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
         </button>
       </div>
-      <p class="font-p">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "data.acceptTerms" "label" (i18n "accept_newsletter_privacy" | safeHTML)) }}</p>
+      <p class="font-p">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "data.acceptTerms" "label" (i18n "accept_hub_newsletter_privacy" | safeHTML)) }}</p>
       <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
     </form>
 
