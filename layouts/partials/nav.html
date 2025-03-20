@@ -78,7 +78,7 @@
         </li>
       </ul>
 
-      {{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/hub")) -}}
+      {{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/for-individuals") (in .RelPermalink "/for-teams")) -}}
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
           <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1 plausible-event-name=nav-cta" data-umami-event="nav-cta">{{ i18n "nav_cta" . }}</a>
