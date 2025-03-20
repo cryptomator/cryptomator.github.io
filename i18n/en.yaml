@@ -3,7 +3,7 @@
 - id: nav_cta
   translation: "Get Started"
 - id: nav_promotion
-  translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until World Backup Day! <a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/20/03/spring-sale/\">More Info&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+  translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until World Backup Day! <a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/03/20/spring-sale/\">More Info&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Products"
 - id: nav_support_us
