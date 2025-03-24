@@ -3,6 +3,9 @@ title: "GDPR"
 aliases: ["/faq/gdpr", "/faq/gdpr/gdpr-compliant", "/faq/gdpr/dpa-cryptomator", "/faq/gdpr/dpa-cloudprovider"]
 
 navtitle: "GDPR Compliancy"
+
+cardtitle: "Is Cryptomator GDPR-compliant?"
+cardtext: "Yes! According to a Belgian court ruling, encrypted data using Cryptomator can be stored outside the EU in a GDPR-compliant and secure way."
 ---
 
 ## Does Cryptomator allow GDPR-compliant file storage?

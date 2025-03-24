@@ -10,6 +10,9 @@ ctatext: "Cryptomator secures your personal files in the cloud and can be used w
 ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 
+cardtitle: "Why Open Source Matters for Encryption"
+cardtext: "Discover how open-source encryption significantly boosts your cloud security – and why you shouldn't blindly trust cloud providers."
+
 ogimage:
   relsrc: /img/open-source/og-image.png
   width: 1200

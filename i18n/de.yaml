@@ -4,6 +4,8 @@
   translation: "Jetzt loslegen"
 - id: nav_products
   translation: "Produkte"
+- id: nav_resources
+  translation: "Ressourcen"
 - id: nav_support_us
   translation: "Unterstütze uns"
 - id: nav_learn_more
@@ -102,6 +104,48 @@
 # Blog
 - id: blob_post_author_prefix
   translation: "von"
+
+#Comparison
+- id: comparison_header_title
+  translation: "Vergleich"
+- id: comparison_header_description
+  translation: "Erfahre, wie Cryptomator im Vergleich zu anderen Verschlüsselungstools abschneidet und warum es die beste Wahl für deine Daten ist."
+
+- id: comparison_features_1
+  translation: "Clientseitige Verschlüsselung"
+- id: comparison_features_2
+  translation: "Kompatibel mit deiner Cloud"
+- id: comparison_features_3
+  translation: "Geräteübergreifend"
+- id: comparison_features_4
+  translation: "Kinderleichte Bedienung"
+- id: comparison_features_5
+  translation: "Open Source"
+- id: comparison_features_6
+  translation: "Datenschutzkonform"
+- id: comparison_features_7
+  translation: "Zero Knowledge"
+- id: comparison_features_8
+  translation: "Preis"
+- id: comparison_features_9
+  translation: "Unternehmenslösung"
+- id: comparison_features_10
+  translation: "Community-Unterstützung"
+- id: comparison_features_11
+  translation: "Kostenlose Testversion"
+
+- id: comparison_button_pricing
+  translation: "Preise"
+- id: comparison_button_detailed_comparison
+  translation: "Detailvergleich"
+- id: comparison_button_comming_soon
+  translation: "Bald verfügbar"
+
+# Compliance
+- id: compliance_header_title
+  translation: "Konformität"
+- id: compliance_header_description
+  translation: "Erfahre, wie Cryptomator dir hilft, Compliance-Anforderungen zu erfüllen und deine sensiblen Daten sicher nach gesetzlichen Vorgaben zu speichern."
 
 # Coop
 - id: coop_more_info
@@ -300,6 +344,12 @@
 - id: for_individuals_join_community_button
   translation: "Community beitreten"
 
+# Guides
+- id: guides_header_title
+  translation: "Anleitungen"
+- id: guides_header_description
+  translation: "Erfahre, wie du Cryptomator auf deinem Gerät installierst und einrichtest, und wie du deine Dateien sicher in der Cloud speicherst."
+  
 # Home
 - id: home_header_kicker
   translation: "3.000.000+ Downloads"

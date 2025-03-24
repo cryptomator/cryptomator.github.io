@@ -2,7 +2,11 @@
 title: "Wie du deine Cloud-Daten vor KI-Bedrohungen schützt: Der ultimative Leitfaden mit Cryptomator"
 
 navtitle: "Cloud-Daten gegen KI schützen"
+
+cardtitle: "Cloud-Daten vor KI schützen"
+cardtext: "Erfahre, wie du deine Cloud-Daten mit Cryptomator zuverlässig gegen moderne KI-Bedrohungen absicherst."
 ---
+
 
 ## Einleitung
 

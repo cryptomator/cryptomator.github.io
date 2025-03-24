@@ -10,6 +10,9 @@ ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist o
 ctalink: /de/#get-started
 ctabutton: "Jetzt deine Dropbox verschlüsseln"
 
+cardtitle: "Dropbox sicher verschlüsseln mit Cryptomator"
+cardtext: "Schütze deine sensiblen Dateien in Dropbox mit Ende-zu-Ende-Verschlüsselung – ganz ohne Einschränkungen bei Synchronisation und Nutzung."
+
 ogimage:
   relsrc: /img/encrypt-dropbox/og-image.png
   width: 1200

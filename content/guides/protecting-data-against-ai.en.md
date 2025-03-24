@@ -2,6 +2,9 @@
 title: "How to Protect Your Cloud Data From AI Threats: The Ultimate Guide With Cryptomator"
 
 navtitle: "Protecting Cloud Data Against AI"
+
+cardtitle: "Protect Your Cloud From AI"
+cardtext: "Learn how Cryptomator helps you secure your cloud data against modern AI-driven threats."
 ---
 
 ## Introduction

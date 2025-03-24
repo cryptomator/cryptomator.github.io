@@ -10,6 +10,9 @@ ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist o
 ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 
+cardtitle: "Warum Open Source beim Verschlüsseln so wichtig ist"
+cardtext: "Erfahre, wie Open-Source-Verschlüsselung deine Datensicherheit deutlich erhöht – und warum du Cloud-Anbietern nicht blind vertrauen solltest."
+
 ogimage:
   relsrc: /img/open-source/og-image.png
   width: 1200

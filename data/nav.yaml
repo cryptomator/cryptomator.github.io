@@ -1,8 +1,7 @@
 - Title: nav_products
   Children: ["/for-individuals", "/for-teams", "|", "/downloads"]
 - URL: "/pricing"
-- URL: "/blog"
 - Title: nav_support_us
   Children:  ["/supporter-cert", "/donate", "/sponsors"]
-- Title: nav_learn_more
-  Children: ["/open-source", "/encrypt-dropbox", "/boxcryptor-alternative", "/coop", "/enterprise", "/gdpr", "/nis-2-guideline", "/protecting-data-against-ai"]
+- Title: nav_resources
+  Children: ["/blog", "/guides", "/compliance", "/comparisons"]

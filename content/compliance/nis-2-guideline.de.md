@@ -8,6 +8,9 @@ ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine vertraulichen Dateien in der Cloud mit Ende-zu-Ende-Verschlüsselung. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
 ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
+
+cardtitle: "NIS-2: Neue Anforderungen ab Oktober 2024"
+cardtext: "Die NIS-2-Richtlinie bringt strengere Vorgaben für Cyber-Sicherheit. Erfahre, wie Cryptomator hilft, diese mit Ende-zu-Ende-Verschlüsselung zu erfüllen."
 ---
 
 <div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
