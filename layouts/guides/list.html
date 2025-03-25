@@ -1,32 +1,25 @@
 {{ define "main" }}
-<section class="container py-12">
-  <header class="mb-6">
-    <div class="w-full md:w-2/3 lg:w-3/5">
-      <h1 class="font-h1 mb-8">
-        <i class="fas fa-book text-primary mr-2"></i>{{ i18n "guides_header_title" . | safeHTML }}
-      </h1>
-      <p class="lead mb-6">{{ i18n "guides_header_description" . | safeHTML }}</p>
-    </div>
-  </header>
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {{ range .Pages.ByDate.Reverse }}
-    <section>
-      <article class="border white-box overflow-hidden flex flex-col h-full">
-        <figure class="h-48 w-full">
-          <img class="w-full h-full object-contain"
-            src="{{ with .Params.cardimage }}{{ . }}{{ else }}/img/logo.png{{ end }}" alt="{{ .Title }}">
-        </figure>
-        <hr class="border-t border-primary">
-        <div class="p-4">
-          <h2 class="font-h2 mb-4">
-            <a class="text-link" href="{{ .RelPermalink }}">{{ .Params.cardtitle }}</a>
-          </h2>
-          <p class="font-p">{{ .Params.cardtext }}</p>
-        </div>
-      </article>
-    </section>
-    {{ end }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range .Pages.ByDate.Reverse }}
+        <article class="border white-box overflow-hidden flex flex-col h-full">
+          <figure class="h-48 w-full">
+            <img class="w-full h-full object-contain" src="{{ with .Params.cardimage }}{{ . }}{{ else }}/img/logo.png{{ end }}" alt="{{ .Title }}">
+          </figure>
+          <hr class="border-t border-primary">
+          <div class="p-4">
+            <h2 class="font-h2 mb-4">
+              <a class="text-link" href="{{ .RelPermalink }}">{{ .Params.cardtitle }}</a>
+            </h2>
+            <p class="font-p">{{ .Params.cardtext }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
   </div>
-</section>
 {{ end }}

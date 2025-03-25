@@ -104,11 +104,6 @@
   translation: "von"
 
 # Comparison
-- id: comparison_header_title
-  translation: "Vergleich"
-- id: comparison_header_description
-  translation: "Erfahre, wie Cryptomator im Vergleich zu anderen Verschlüsselungstools abschneidet und warum es die beste Wahl für deine Daten ist."
-
 - id: comparison_features_1
   translation: "Clientseitige Verschlüsselung"
 - id: comparison_features_2
@@ -138,12 +133,6 @@
   translation: "Detailvergleich"
 - id: comparison_button_comming_soon
   translation: "Bald verfügbar"
-
-# Compliance
-- id: compliance_header_title
-  translation: "Konformität"
-- id: compliance_header_description
-  translation: "Erfahre, wie Cryptomator dir hilft, Compliance-Anforderungen zu erfüllen und deine sensiblen Daten sicher nach gesetzlichen Vorgaben zu speichern."
 
 # Coop
 - id: coop_more_info
@@ -341,12 +330,6 @@
   translation: "Tritt unserem Community-Forum bei und erhalte Hilfe von anderen Nutzern."
 - id: for_individuals_join_community_button
   translation: "Community beitreten"
-
-# Guides
-- id: guides_header_title
-  translation: "Anleitungen"
-- id: guides_header_description
-  translation: "Erfahre, wie du Cryptomator auf deinem Gerät installierst und einrichtest, und wie du deine Dateien sicher in der Cloud speicherst."
   
 # Home
 - id: home_header_kicker

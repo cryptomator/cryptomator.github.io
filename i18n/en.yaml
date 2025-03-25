@@ -104,11 +104,6 @@
   translation: "by"
 
 # Comparison
-- id: comparison_header_title
-  translation: "Comparison"
-- id: comparison_header_description
-  translation: "Find out how Cryptomator compares to other encryption tools and why it's the best choice for your data."
-
 - id: comparison_features_1
   translation: "Client-side encryption"
 - id: comparison_features_2
@@ -138,12 +133,6 @@
   translation: "Full comparison"
 - id: comparison_button_comming_soon
   translation: "Coming soon"
-
-# Compliance
-- id: compliance_header_title
-  translation: "Compliance"
-- id: compliance_header_description
-  translation: "Learn how Cryptomator helps you meet compliance requirements and securely store sensitive data in accordance with legal and regulatory standards."
 
 # Coop
 - id: coop_more_info
@@ -341,12 +330,6 @@
   translation: "Join our community forum and get help from other users."
 - id: for_individuals_join_community_button
   translation: "Join Community"
-
-# Guides
-- id: guides_header_title
-  translation: "Guides"
-- id: guides_header_description
-  translation: "Learn how to set up Cryptomator, manage your vaults, and get the most out of your encrypted cloud storage."
 
 # Home
 - id: home_header_kicker

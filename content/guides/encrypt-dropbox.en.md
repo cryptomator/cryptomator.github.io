@@ -4,13 +4,12 @@ type: article
 description: "Protecting your cloud: How to encrypt your sensitive files in Dropbox with Cryptomator."
 aliases: ["/encrypt-dropbox", "/faq/usage/encrypt-dropbox"]
 
-navtitle: "Encrypt Your Dropbox"
 ctatitle: "You want to encrypt your Dropbox with Cryptomator?"
 ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
 ctalink: /#get-started
 ctabutton: "Encrypt Your Dropbox Now"
 
-cardtitle: "Securely Encrypt Your Dropbox With Cryptomator"
+cardtitle: "Encrypt Your Dropbox"
 cardtext: "Protect your sensitive Dropbox files with end-to-end encryption – without compromising synchronization or usability."
 cardimage: /img/encrypt-dropbox/cryptobot-unlocking-vault.png
 

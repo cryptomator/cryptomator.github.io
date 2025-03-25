@@ -5,13 +5,12 @@ aliases: ["/de/nis-2-guideline"]
 type: article
 description: "Die NIS-2-Richtlinie erhöht die Standards der Cyber-Sicherheit innerhalb der EU. Cryptomator hilft Unternehmen, die neuen Anforderungen mit Ende-zu-Ende-Verschlüsselung zu erfüllen."
 
-navtitle: "NIS-2-Richtlinie"
 ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine vertraulichen Dateien in der Cloud mit Ende-zu-Ende-Verschlüsselung. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
 ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 
-cardtitle: "NIS-2: Neue Anforderungen ab Oktober 2024"
+cardtitle: "NIS-2-Richtlinie"
 cardtext: "Die NIS-2-Richtlinie bringt strengere Vorgaben für Cyber-Sicherheit. Erfahre, wie Cryptomator hilft, diese mit Ende-zu-Ende-Verschlüsselung zu erfüllen."
 ---
 

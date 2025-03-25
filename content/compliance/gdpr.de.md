@@ -2,10 +2,8 @@
 title: "DSGVO"
 aliases: ["/de/faq/gdpr", "/de/faq/gdpr/gdpr-compliant", "/de/faq/gdpr/dpa-cryptomator", "/de/faq/gdpr/dpa-cloudprovider"]
 
-navtitle: "DSGVO-Konformität"
-
-cardtitle: "Ist Cryptomator DSGVO-konform?"
-cardtext: "Ja! Verschlüsselte Daten mit Cryptomator dürfen laut Urteil des belgischen Staatsrats auch außerhalb der EU gespeichert werden – datenschutzkonform und sicher."
+cardtitle: "DSGVO-Konformität"
+cardtext: "Verschlüsselte Daten mit Cryptomator dürfen laut Urteil des belgischen Staatsrats auch außerhalb der EU gespeichert werden – datenschutzkonform und sicher."
 ---
 
 ## Ermöglicht Cryptomator DSGVO-konforme Datenspeicherung?

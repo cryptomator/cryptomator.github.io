@@ -5,7 +5,6 @@ aliases: ["/de/boxcryptor-alternative"]
 type: article
 description: "Du willst deine Daten in der Cloud verschlüsseln und suchst die beste Alternative? Wir vergleichen für dich Boxcryptor mit der Open-Source-Lösung Cryptomator."
 
-navtitle: "Alternative zu Boxcryptor"
 ctatitle: "Möchtest du Cryptomator als Alternative zu Boxcryptor testen?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
 ctalink: /de/#get-started

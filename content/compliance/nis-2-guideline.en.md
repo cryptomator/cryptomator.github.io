@@ -5,13 +5,12 @@ aliases: ["/nis-2-guideline"]
 type: article
 description: "The NIS 2 Directive raises the standards of cybersecurity within the EU. Cryptomator helps companies meet the new requirements with end-to-end encryption."
 
-navtitle: "NIS-2-Guideline"
 ctatitle: "You want to encrypt your cloud storage with Cryptomator?"
 ctatext: "Cryptomator secures your sensitive and confidential files in the cloud using end-to-end encryption. Cryptomator Hub manages team access and is ideal for teams and organizations."
 ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 
-cardtitle: "NIS 2: New Cybersecurity Rules from October 2024"
+cardtitle: "NIS-2 Guideline"
 cardtext: "The NIS 2 Directive introduces stricter cybersecurity standards. Learn how Cryptomator helps you comply with end-to-end encryption."
 ---
 

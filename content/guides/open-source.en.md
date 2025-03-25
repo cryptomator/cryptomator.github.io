@@ -2,15 +2,14 @@
 title: "Encrypt Cloud Storage: How Open Source Strengthens Security"
 type: article
 description: "Trust, but verify: If you want to encrypt your cloud storage, open source encryption software offers you even more protection."
-aliases: ["/faq/security", "/faq/security/opensource", "/faq/security/audits", "/open-source"]
+aliases: ["/open-source", "/faq/security", "/faq/security/opensource", "/faq/security/audits"]
 
-navtitle: "How Open Source Strengthens Security"
 ctatitle: "You want to encrypt your cloud storage with Cryptomator?"
 ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
 ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 
-cardtitle: "Why Open Source Matters for Encryption"
+cardtitle: "How Open Source Strengthens Security"
 cardtext: "Discover how open-source encryption significantly boosts your cloud security – and why you shouldn't blindly trust cloud providers."
 cardimage: /img/open-source/bartender-vs-stranger.png
 
