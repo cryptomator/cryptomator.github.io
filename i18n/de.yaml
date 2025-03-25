@@ -8,8 +8,6 @@
   translation: "Ressourcen"
 - id: nav_support_us
   translation: "Unterstütze uns"
-- id: nav_learn_more
-  translation: "Mehr erfahren"
 - id: nav_github
   translation: "Cryptomator auf GitHub"
 - id: footer_contribute_title
@@ -105,7 +103,7 @@
 - id: blob_post_author_prefix
   translation: "von"
 
-#Comparison
+# Comparison
 - id: comparison_header_title
   translation: "Vergleich"
 - id: comparison_header_description

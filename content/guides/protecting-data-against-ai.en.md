@@ -1,5 +1,6 @@
 ---
 title: "How to Protect Your Cloud Data From AI Threats: The Ultimate Guide With Cryptomator"
+aliases: ["/protecting-data-against-ai"]
 
 navtitle: "Protecting Cloud Data Against AI"
 

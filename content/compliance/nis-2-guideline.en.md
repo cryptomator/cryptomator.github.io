@@ -1,5 +1,7 @@
 ---
 title: "NIS 2 Directive: Higher standards for cybersecurity from October 2024"
+aliases: ["/nis-2-guideline"]
+
 type: article
 description: "The NIS 2 Directive raises the standards of cybersecurity within the EU. Cryptomator helps companies meet the new requirements with end-to-end encryption."
 

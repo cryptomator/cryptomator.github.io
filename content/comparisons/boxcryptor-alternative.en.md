@@ -1,5 +1,7 @@
 ---
 title: "Free Alternative to Boxcryptor: Cryptomator"
+aliases: ["/boxcryptor-alternative"]
+
 type: article
 description: "You want to encrypt your data in the cloud and are looking for the best alternative? We compare Boxcryptor with the open-source solution Cryptomator."
 

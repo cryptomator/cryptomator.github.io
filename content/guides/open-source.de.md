@@ -2,7 +2,7 @@
 title: "Cloud-Speicher verschlüsseln: Wie Open Source die Sicherheit stärkt"
 type: article
 description: "Vertrauen ist gut, Kontrolle ist besser: Willst du deinen Cloud-Speicher verschlüsseln, bietet dir Open-Source-Verschlüsselungssoftware noch mehr Schutz."
-aliases: ["/de/faq/security", "/de/faq/security/opensource", "/de/faq/security/audits"]
+aliases: ["/de/faq/security", "/de/faq/security/opensource", "/de/faq/security/audits", "/de/open-source"]
 
 navtitle: "Wie Open Source die Sicherheit stärkt"
 ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
@@ -12,6 +12,7 @@ ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 
 cardtitle: "Warum Open Source beim Verschlüsseln so wichtig ist"
 cardtext: "Erfahre, wie Open-Source-Verschlüsselung deine Datensicherheit deutlich erhöht – und warum du Cloud-Anbietern nicht blind vertrauen solltest."
+cardimage: /img/open-source/bartender-vs-stranger.png
 
 ogimage:
   relsrc: /img/open-source/og-image.png

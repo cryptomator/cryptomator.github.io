@@ -1,5 +1,6 @@
 ---
 title: "Wie du deine Cloud-Daten vor KI-Bedrohungen schützt: Der ultimative Leitfaden mit Cryptomator"
+aliases: ["/de/protecting-data-against-ai"]
 
 navtitle: "Cloud-Daten gegen KI schützen"
 

@@ -1,5 +1,7 @@
 ---
 title: "NIS-2-Richtlinie: Höhere Standards für Cyber-Sicherheit ab Oktober 2024"
+aliases: ["/de/nis-2-guideline"]
+
 type: article
 description: "Die NIS-2-Richtlinie erhöht die Standards der Cyber-Sicherheit innerhalb der EU. Cryptomator hilft Unternehmen, die neuen Anforderungen mit Ende-zu-Ende-Verschlüsselung zu erfüllen."
 

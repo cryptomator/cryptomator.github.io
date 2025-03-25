@@ -15,7 +15,7 @@
       <article class="border white-box overflow-hidden flex flex-col h-full">
         <figure class="h-48 w-full">
           <img class="w-full h-full object-contain"
-            src="{{ with .Params.ogimage.relsrc }}{{ . }}{{ else }}/img/logo.png{{ end }}" alt="{{ .Title }}">
+            src="{{ with .Params.cardimage }}{{ . }}{{ else }}/img/logo.png{{ end }}" alt="{{ .Title }}">
         </figure>
         <hr class="border-t border-primary">
         <div class="p-4">
