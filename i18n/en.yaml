@@ -6,10 +6,10 @@
   translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until&nbsp;World&nbsp;Backup&nbsp;Day!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/03/20/spring-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Products"
+- id: nav_resources
+  translation: "Resources"
 - id: nav_support_us
   translation: "Support Us"
-- id: nav_learn_more
-  translation: "Learn More"
 - id: nav_github
   translation: "Cryptomator on GitHub"
 - id: footer_contribute_title
@@ -104,6 +104,37 @@
 # Blog
 - id: blob_post_author_prefix
   translation: "by"
+
+# Comparison
+- id: comparison_features_1
+  translation: "Client-side encryption"
+- id: comparison_features_2
+  translation: "Compatible with your cloud"
+- id: comparison_features_3
+  translation: "Cross-device support"
+- id: comparison_features_4
+  translation: "Easy to use"
+- id: comparison_features_5
+  translation: "Open source"
+- id: comparison_features_6
+  translation: "Privacy-compliant"
+- id: comparison_features_7
+  translation: "Zero knowledge"
+- id: comparison_features_8
+  translation: "Price"
+- id: comparison_features_9
+  translation: "Enterprise solution"
+- id: comparison_features_10
+  translation: "Community support"
+- id: comparison_features_11
+  translation: "Free trial"
+
+- id: comparison_button_pricing
+  translation: "Pricing"
+- id: comparison_button_detailed_comparison
+  translation: "Full comparison"
+- id: comparison_button_comming_soon
+  translation: "Coming soon"
 
 # Coop
 - id: coop_more_info

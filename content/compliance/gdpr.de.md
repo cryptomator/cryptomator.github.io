@@ -1,9 +1,21 @@
 ---
-title: "DSGVO"
-aliases: ["/de/faq/gdpr", "/de/faq/gdpr/gdpr-compliant", "/de/faq/gdpr/dpa-cryptomator", "/de/faq/gdpr/dpa-cloudprovider"]
+type: article
+weight: 1
 
-navtitle: "DSGVO-Konformität"
+title: "DSGVO-Konformität"
+description: "Verschlüsselte Daten mit Cryptomator dürfen auch außerhalb der EU gespeichert werden – datenschutzkonform und sicher."
+aliases: ["/de/gdpr", "/de/faq/gdpr", "/de/faq/gdpr/gdpr-compliant", "/de/faq/gdpr/dpa-cryptomator", "/de/faq/gdpr/dpa-cloudprovider"]
+
+ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
+ctatext: "Cryptomator sichert deine vertraulichen Dateien in der Cloud mit Ende-zu-Ende-Verschlüsselung. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
+ctalink: /de/#get-started
+ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
+
+cardtitle: "DSGVO-Konformität"
+cardtext: "Verschlüsselte Daten mit Cryptomator dürfen auch außerhalb der EU gespeichert werden – datenschutzkonform und sicher."
 ---
+
+# DSGVO-Konformität
 
 ## Ermöglicht Cryptomator DSGVO-konforme Datenspeicherung?
 Ja. Das hat {{< extlink "https://gdprhub.eu/index.php?title=Council_of_State_-_251.378" "der Belgische Staatsrat am 19. August 2021 entschieden" >}}: Wenn personenbezogene Daten in nicht-EU-Ländern gespeichert werden, welche keinen zur DSGVO äquivalenten Datenschutz sicherstellen, müssen Unternehmen zusätzliche Maßnahmen ergreifen. Laut dem Urteil gilt die Verschlüsselung der Daten als eine angemessene Maßnahme.

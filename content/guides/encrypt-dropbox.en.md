@@ -1,22 +1,25 @@
 ---
-title: "Encrypt Dropbox: Protect Your Data Securely With Cryptomator"
 type: article
-description: "Protecting your cloud: How to encrypt your sensitive files in Dropbox with Cryptomator."
-aliases: ["/faq/usage/encrypt-dropbox"]
+weight: 1
 
-navtitle: "Encrypt Your Dropbox"
+title: "Encrypt Dropbox: Protect Your Data Securely With Cryptomator"
+description: "Protecting your cloud: How to encrypt your sensitive files in Dropbox with Cryptomator."
+aliases: ["/encrypt-dropbox", "/faq/usage/encrypt-dropbox"]
+
 ctatitle: "You want to encrypt your Dropbox with Cryptomator?"
 ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
 ctalink: /#get-started
 ctabutton: "Encrypt Your Dropbox Now"
+
+cardtitle: "Encrypt Your Dropbox"
+cardtext: "Protect your sensitive Dropbox files with end-to-end encryption – without compromising synchronization or usability."
+cardimage: /img/encrypt-dropbox/cryptobot-unlocking-vault.png
 
 ogimage:
   relsrc: /img/encrypt-dropbox/og-image.png
   width: 1200
   height: 541
 ---
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Encrypt Dropbox Securely: How to Protect Your Sensitive Files in the Cloud With Cryptomator
 
@@ -36,9 +39,7 @@ This means that attackers would not even benefit from drilling through the wall 
 
 ## Encrypt Your Dropbox and Reliably Protect Your Data: This Is How Cryptomator Helps You {#features}
 
-{{< /markdownify >}}</div>
-
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fab fa-dropbox fa-fw text-primary"></i> Use Dropbox as before</h3>
   </div>
@@ -47,7 +48,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-share fa-fw text-primary"></i> Share protected data conveniently with friends, family, and colleagues</h3>
   </div>
@@ -56,7 +57,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-key fa-fw text-primary"></i> Only those have access to your cloud data who should have it</h3>
   </div>
@@ -65,7 +66,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-sync fa-fw text-primary"></i> Files don't accidentally get overwritten</h3>
   </div>
@@ -74,7 +75,7 @@ This means that attackers would not even benefit from drilling through the wall 
   </div>
 </div>
 
-<div class="white-box mt-6 mb-12">
+<div class="not-prose white-box mt-6 mb-12">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-clouds fa-fw text-primary"></i> Quickly access your sensitive data in Dropbox from everywhere</h3>
   </div>
@@ -82,8 +83,6 @@ This means that attackers would not even benefit from drilling through the wall 
     <p class="font-p">Cryptomator is specifically designed to <strong>encrypt cloud services</strong>. Because the <strong>files are encrypted individually</strong>, only the files you just changed are uploaded or encrypted – and not (as with so-called "container solutions") the entire folder. Changes are synchronized much faster – and this is especially noticeable when you are on the road.</p>
   </div>
 </div>
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 ## And This Is How Cryptomator Works in Practice {#how-cryptomator-works}
 
@@ -110,5 +109,3 @@ If you want, you can unlock it immediately and reveal the virtual drive.
 Here you can store your sensitive files to encrypt them in Dropbox.
 
 {{< extlink "https://docs.cryptomator.org/desktop/adding-vaults/" "Detailed instructions are available here." >}}
-
-{{< /markdownify >}}</div>
