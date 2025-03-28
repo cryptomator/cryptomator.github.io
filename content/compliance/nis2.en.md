@@ -12,7 +12,7 @@ ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 
 cardtitle: "NIS2 Directive"
-cardtext: "Cryptomator helps you meet the strict requirements of the NIS2 Directive for cybersecurity with end-to-end encryption."
+cardtext: "Meet the strict requirements of the NIS2 Directive for cybersecurity with Cryptomator's end-to-end encryption."
 ---
 
 # NIS2 Directive: Higher Standards for Cybersecurity From October 2024

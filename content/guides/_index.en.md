@@ -1,4 +1,4 @@
 ---
 title: "Guides"
-description: "Learn how to set up Cryptomator, manage your vaults, and get the most out of your encrypted cloud storage."
+description: "Discover practical insights and actionable advice for protecting your privacy in the cloud with Cryptomator's client-side encryption."
 ---

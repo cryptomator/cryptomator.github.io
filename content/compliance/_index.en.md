@@ -1,4 +1,4 @@
 ---
 title: "Compliance"
-description: "Learn how Cryptomator helps you meet compliance requirements and securely store sensitive data in accordance with legal and regulatory standards."
+description: "Cryptomator helps you store sensitive data securely and in compliance with legal and regulatory standards."
 ---

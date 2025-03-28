@@ -1,4 +1,4 @@
 ---
 title: "Leitfäden"
-description: "Erfahre, wie du Cryptomator auf deinem Gerät installierst und einrichtest, und wie du deine Dateien sicher in der Cloud speicherst."
+description: "Entdecke praktische Einblicke und umsetzbare Tipps zum Schutz deiner Privatsphäre in der Cloud mit der clientseitigen Verschlüsselung von Cryptomator."
 ---

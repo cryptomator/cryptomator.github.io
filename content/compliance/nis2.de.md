@@ -12,7 +12,7 @@ ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 
 cardtitle: "NIS2-Richtlinie"
-cardtext: "Cryptomator hilft dir dabei, die strengen Vorgaben der NIS2-Richtlinie für Cyber-Sicherheit mit Verschlüsselung zu erfüllen."
+cardtext: "Erfülle die strengen Vorgaben der NIS2-Richtlinie für Cyber-Sicherheit mit der Ende-zu-Ende-Verschlüsselung von Cryptomator."
 ---
 
 # NIS2-Richtlinie: Höhere Standards für Cyber-Sicherheit ab Oktober 2024
