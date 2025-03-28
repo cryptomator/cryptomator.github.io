@@ -1,6 +1,8 @@
 ---
-title: "Cloud-Speicher verschlüsseln: Wie Open Source die Sicherheit stärkt"
 type: article
+weight: 2
+
+title: "Cloud-Speicher verschlüsseln: Wie Open Source die Sicherheit stärkt"
 description: "Vertrauen ist gut, Kontrolle ist besser: Willst du deinen Cloud-Speicher verschlüsseln, bietet dir Open-Source-Verschlüsselungssoftware noch mehr Schutz."
 aliases: ["/de/open-source", "/de/faq/security", "/de/faq/security/opensource", "/de/faq/security/audits"]
 
@@ -9,7 +11,7 @@ ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist o
 ctalink: /de/#get-started
 ctabutton: "Jetzt deinen Cloud-Speicher verschlüsseln"
 
-cardtitle: "Wie Open Source die Sicherheit stärkt"
+cardtitle: "Sicherheit durch Open Source"
 cardtext: "Erfahre, wie Open-Source-Verschlüsselung deine Datensicherheit deutlich erhöht – und warum du Cloud-Anbietern nicht blind vertrauen solltest."
 cardimage: /img/open-source/bartender-vs-stranger.png
 
@@ -18,8 +20,6 @@ ogimage:
   width: 1200
   height: 541
 ---
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Deine Daten sicher im Cloud-Speicher verschlüsseln: Wie du durch Open Source deine Datensicherheit weiter erhöhst
 
@@ -33,9 +33,7 @@ Stell dir vor, du bist in einer fremden Stadt und besuchst abends einen Stadttei
 
 Welche der folgenden Szenarien hört sich für dich sicherer an:
 
-{{< /markdownify >}}</div>
-
-<table class="my-6">
+<table class="not-prose my-6">
   <tr>
     <td class="text-center">
       <div class="fa-stack shrink-0 text-xl text-secondary">
@@ -68,8 +66,6 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
   </tr>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 Wahrscheinlich spürst du bereits eine Tendenz: Die fremde Person kann noch so nett aussehen – und in den meisten Fällen gibt es sicher keinen Grund für Misstrauen.
 
 Doch du weißt nicht: Was, wenn da doch etwas in dem Drink ist, was da lieber nicht drin sein sollte?
@@ -101,9 +97,7 @@ Da also die Sicherheit lediglich vom Schlüssel abhängt, ergibt sich durch die 
 
 Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 
-{{< /markdownify >}}</div>
-
-<div class="flex my-6">
+<div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-users fa-stack-1x fa-inverse"></i>
@@ -122,7 +116,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
   </div>
 </div>
 
-<div class="flex my-6">
+<div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
@@ -143,7 +137,7 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
   </div>
 </div>
 
-<div class="flex mt-6 mb-12">
+<div class="not-prose flex mt-6 mb-12">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
@@ -162,8 +156,6 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
   </div>
 </div>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ## Cloud-Speicher mit Open-Source-Software verschlüsseln: Mit Cryptomator auf der sicheren Seite {#robust-crypto}
 
 Cryptomator ist genauso eine solche Open-Source-Verschlüsselungssoftware. Dank des quelloffenen Charakters ist eine maximale Transparenz gewährleistet. Somit wird die Sicherheit deiner Daten also auf vielen Ebenen gesichert und ständig weiter erhöht:
@@ -180,10 +172,8 @@ All dies führt zu einer herausragenden Widerstandsfähigkeit der kryptografisch
 >
 > _Die kryptografische Implementierung wies ein ganz außergewöhnliches Maß an Robustheit auf._
 
-– {{< extlink "https://cryptomator.org/audits/2017-11-27%20crypto%20cure53.pdf" "Audit von Cure53" >}}
+– {{< extlink "/audits/2017-11-27%20crypto%20cure53.pdf" "Audit von Cure53" >}}
 
 **In anderen Worten: Diese Robustheit erhöht deine Datensicherheit um ein Vielfaches, wenn du deine Dateien im Cloud-Speicher mit Open-Source-Software verschlüsselst.**
 
-Mit Cryptomator haben wir zudem einen Fokus auf hohe Anwenderfreundlichkeit gelegt. Du kannst [Dropbox](/de/encrypt-dropbox/), Google Drive, OneDrive und Co. wie gewohnt nutzen und weißt gleichzeitig alle sensiblen Daten sicher.
-
-{{< /markdownify >}}</div>
+Mit Cryptomator haben wir zudem einen Fokus auf hohe Anwenderfreundlichkeit gelegt. Du kannst [Dropbox](/de/guides/encrypt-dropbox/), Google Drive, OneDrive und Co. wie gewohnt nutzen und weißt gleichzeitig alle sensiblen Daten sicher.

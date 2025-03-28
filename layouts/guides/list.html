@@ -6,7 +6,7 @@
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{ range .Pages.ByDate.Reverse }}
+      {{ range .Pages }}
         <article class="border white-box overflow-hidden flex flex-col h-full">
           <figure class="h-48 w-full">
             <img class="w-full h-full object-contain" src="{{ with .Params.cardimage }}{{ . }}{{ else }}/img/logo.png{{ end }}" alt="{{ .Title }}">

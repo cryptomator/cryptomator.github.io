@@ -1,9 +1,9 @@
 ---
-title: "Free Alternative to Boxcryptor: Cryptomator"
-aliases: ["/boxcryptor-alternative"]
-
 type: article
+
+title: "Free Alternative to Boxcryptor: Cryptomator"
 description: "You want to encrypt your data in the cloud and are looking for the best alternative? We compare Boxcryptor with the open-source solution Cryptomator."
+aliases: ["/boxcryptor-alternative"]
 
 ctatitle: "Would you like to test Cryptomator as an alternative to Boxcryptor?"
 ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
@@ -15,8 +15,6 @@ ogimage:
   width: 1200
   height: 541
 ---
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # The Best Alternative to Encrypt Your Sensitive Data in the Cloud: Boxcryptor vs. Cryptomator
 
@@ -70,7 +68,7 @@ So you don't see the strengths of open-source encryption software at first glanc
 
 **Continue reading here if you want to learn more about data security and open-source software:**
 
-[Encrypt your data securely in the cloud: How you can further increase your data security through open source.](/open-source/)
+[Encrypt your data securely in the cloud: How you can further increase your data security through open source.](/guides/open-source/)
 
 ## Comparison of Boxcryptor and Cryptomator Features {#comparison}
 
@@ -80,9 +78,7 @@ While Cryptomator concentrates on its core task (encryption of cloud storage), B
 
 Let's now compare the visible features. The following table shows you the similarities and differences between the two encryption software solutions:
 
-{{< /markdownify >}}</div>
-
-<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
@@ -159,17 +155,13 @@ Let's now compare the visible features. The following table shows you the simila
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ### Security-Relevant Features {#security-relevant-features}
 
 As already described at the beginning, the big difference between Boxcryptor and Cryptomator is invisible, because you do not see the open-source and security-relevant features in everyday life.
 
 Let's now take a look at these features. For this we compare the features again as a table:
 
-{{< /markdownify >}}</div>
-
-<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
@@ -378,8 +370,6 @@ Let's now take a look at these features. For this we compare the features again 
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ## Conclusion: When Boxcryptor or Cryptomator Is the Right Alternative for You {#conclusion}
 
 Now you know the differences between Boxcryptor and its alternative Cryptomator. Draw your own conclusions:
@@ -387,5 +377,3 @@ Now you know the differences between Boxcryptor and its alternative Cryptomator.
 Check whether the advantages of open-source software and thus the security-relevant criteria are important to you. If you like the approach of Cryptomator, it could be the more suitable alternative for you.
 
 Perhaps the features provided by Boxcryptor are sufficient for you? Then you can decide according to your personal preference.
-
-{{< /markdownify >}}</div>

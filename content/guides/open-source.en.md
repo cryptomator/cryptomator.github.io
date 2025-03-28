@@ -1,6 +1,8 @@
 ---
-title: "Encrypt Cloud Storage: How Open Source Strengthens Security"
 type: article
+weight: 2
+
+title: "Encrypt Cloud Storage: How Open Source Strengthens Security"
 description: "Trust, but verify: If you want to encrypt your cloud storage, open source encryption software offers you even more protection."
 aliases: ["/open-source", "/faq/security", "/faq/security/opensource", "/faq/security/audits"]
 
@@ -9,7 +11,7 @@ ctatext: "Cryptomator secures your personal files in the cloud and can be used w
 ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 
-cardtitle: "How Open Source Strengthens Security"
+cardtitle: "Security Through Open Source"
 cardtext: "Discover how open-source encryption significantly boosts your cloud security – and why you shouldn't blindly trust cloud providers."
 cardimage: /img/open-source/bartender-vs-stranger.png
 
@@ -18,8 +20,6 @@ ogimage:
   width: 1200
   height: 541
 ---
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Encrypt Your Data Securely in the Cloud: How You Can Further Increase Your Data Security Through Open Source
 
@@ -33,9 +33,7 @@ Imagine you are in a foreign city. In the evening, you visit a part of town that
 
 Which of the following scenarios sounds safer to you:
 
-{{< /markdownify >}}</div>
-
-<table class="my-6">
+<table class="not-prose my-6">
   <tr>
     <td class="text-center">
       <div class="fa-stack shrink-0 text-xl text-secondary">
@@ -68,8 +66,6 @@ Which of the following scenarios sounds safer to you:
   </tr>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 You probably already sense a tendency: The stranger may look nice – and in most cases there is certainly no reason for suspicion.
 
 But you don't know: What if there is something in the drink that shouldn't be there?
@@ -101,9 +97,7 @@ Thus, since security depends only on the key, there is no disadvantage in publis
 
 At the same time, however, open source has many security-enhancing advantages:
 
-{{< /markdownify >}}</div>
-
-<div class="flex my-6">
+<div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-users fa-stack-1x fa-inverse"></i>
@@ -122,7 +116,7 @@ At the same time, however, open source has many security-enhancing advantages:
   </div>
 </div>
 
-<div class="flex my-6">
+<div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
@@ -143,7 +137,7 @@ At the same time, however, open source has many security-enhancing advantages:
   </div>
 </div>
 
-<div class="flex mt-6 mb-12">
+<div class="not-prose flex mt-6 mb-12">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
     <i class="fas fa-circle fa-stack-2x"></i>
     <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
@@ -162,8 +156,6 @@ At the same time, however, open source has many security-enhancing advantages:
   </div>
 </div>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ## Encrypt Cloud Storage With Open Source Software: On the Safe Side With Cryptomator {#robust-crypto}
 
 Cryptomator is just such an open source encryption software. Thanks to its open source nature, maximum transparency is guaranteed. Thus, the security of your data is secured on many levels and constantly increased:
@@ -178,10 +170,8 @@ All this leads to an outstanding robustness of the cryptographic implementation,
 
 > The cryptographic implementation exhibited a quite exceptional level of robustness.
 
-– {{< extlink "https://cryptomator.org/audits/2017-11-27%20crypto%20cure53.pdf" "Audit by Cure53" >}}
+– {{< extlink "/audits/2017-11-27%20crypto%20cure53.pdf" "Audit by Cure53" >}}
 
 **In other words: This robustness increases your data security many times over when you encrypt your files in the cloud with open source software.**
 
-With Cryptomator, we also put a focus on high user-friendliness. You can use [Dropbox](/encrypt-dropbox/), Google Drive, OneDrive, etc. as usual and at the same time know that all your sensitive data is safe.
-
-{{< /markdownify >}}</div>
+With Cryptomator, we also put a focus on high user-friendliness. You can use [Dropbox](/guides/encrypt-dropbox/), Google Drive, OneDrive, etc. as usual and at the same time know that all your sensitive data is safe.
