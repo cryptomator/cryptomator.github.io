@@ -66,7 +66,7 @@
       <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
     {{ end }}
   </head>
-  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null } }" x-init="determineGitHubStargazersCount('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
     {{- $topPadding := cond .IsHome "" "pt-24 md:pt-18" -}}
     <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
