@@ -1,178 +1,163 @@
 {{ define "main" }}
   <div class="container py-12">
-    <div class="-mx-6 mb-6">
-      <div class="px-6">
-        <h1 class="font-h1 mb-8">{{ .Title }}</h1>
-        <p class="lead">{{ .Description }}</p>
-      </div>
-    </div>
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
 
-    <div class="-mx-6 mt-8 flex overflow-x-auto">
-      <div class="px-6">
-        <table
-          class="table-fixed divide-y divide-primary white-box min-w-full mb-12 pb-4 rounded-sm overflow-hidden">
-          <thead class="bg-white">
-            <tr class="py-3">
-              <th class="font-h3 font-normal text-left px-6 py-3 min-w-[250px]">
-                &nbsp;
+    <div class="flex overflow-x-auto -mx-4">
+      <div class="grow px-4">
+        <table class="table-fixed divide-y divide-primary white-box w-full mb-1">
+          <thead>
+            <tr class="py-2">
+              <th class="font-headline font-normal text-xs md:text-base leading-relaxed p-2 md:p-4 w-36 md:w-72"></th>
+              <th class="font-headline font-normal text-xs md:text-base leading-relaxed p-2 md:p-4 w-36 md:w-48">
+                <div class="inline-flex flex-col-reverse gap-2 items-center">
+                  <span class="text-primary font-bold">CRYPTOMATOR</span>
+                  <img class="max-w-16 h-12" src="/img/logo.svg">
+                </div>
               </th>
-              <th class="font-h3 font-normal text-center px-4 py-3 w-[180px]">
-                <span class="hidden md:block text-primary font-bold">CRYPTOMATOR</span>
-                <img class="object-scale-down w-16 md:hidden mx-auto block"
-                  src="/img/comparisons/cryptomator-logo.png"
-                  srcset="/img/comparisons/cryptomator-logo.png 1x, /img/comparisons/cryptomator-logo@2x.png 2x">
-                <span class="block text-sm md:hidden mt-1 text-primary font-bold">CRYPTOMATOR</span>
+              <th class="font-normal text-xs md:text-base leading-relaxed p-2 md:p-4 w-36 md:w-48">
+                <div class="inline-flex flex-col-reverse gap-2 items-center">
+                  <span>Boxcryptor</span>
+                  <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+                </div>
               </th>
-              <th class="font-h3 font-normal text-center px-4 py-3 w-[180px]">
-                <span class="hidden md:block">Boxcryptor</span>
-                <img class="object-scale-down w-16 md:hidden mx-auto block"
-                  src="/img/comparisons/boxcryptor-logo.png"
-                  srcset="/img/comparisons/boxcryptor-logo.png 1x, /img/comparisons/boxcryptor-logo@2x.png 2x">
-                <span class="block text-sm md:hidden mt-1">Boxcryptor</span>
+              <th class="font-normal text-xs md:text-base leading-relaxed p-2 md:p-4 w-36 md:w-48">
+                <div class="inline-flex flex-col-reverse gap-2 items-center">
+                  <span>VeraCrypt</span>
+                  <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
+                </div>
               </th>
-              <th class="font-h3 font-normal text-center px-4 py-3 w-[180px]">
-                <span class="hidden md:block">VeraCrypt</span>
-                <img class="object-scale-down w-16 md:hidden mx-auto block"
-                  src="/img/comparisons/veracrypt-logo.png"
-                  srcset="/img/comparisons/veracrypt-logo.png 1x, /img/comparisons/veracrypt-logo@2x.png 2x">
-                <span class="block text-sm md:hidden mt-1">VeraCrypt</span>
+              <th class="font-normal text-xs md:text-base leading-relaxed p-2 md:p-4 w-36 md:w-48">
+                <div class="inline-flex flex-col-reverse gap-2 items-center">
+                  <span>Tresorit</span>
+                  <img class="max-w-16 h-12" src="/img/comparisons/tresorit-logo.svg">
+                </div>
               </th>
-              <th class="font-h3 font-normal text-center px-4 py-3 w-[180px]">
-                <span class="hidden md:block">Tresorit</span>
-                <img class="object-scale-down w-16 md:hidden mx-auto block"
-                  src="/img/comparisons/tresorit-logo.png"
-                  srcset="/img/comparisons/tresorit-logo.png 1x, /img/comparisons/tresorit-logo@2x.png 2x">
-                <span class="block text-sm md:hidden mt-1">Tresorit</span>
-              </th>
-              <th class="font-h3 font-normal text-center px-4 py-3 w-[180px]">
-                <span class="hidden md:block">AxCrypt</span>
-                <img class="object-scale-down w-16 md:hidden mx-auto block"
-                  src="/img/comparisons/axcrypt-logo.png"
-                  srcset="/img/comparisons/axcrypt-logo.png 1x, /img/comparisons/axcrypt-logo@2x.png 2x">
-                <span class="block text-sm md:hidden mt-1">AxCrypt</span>
+              <th class="font-normal text-xs md:text-base leading-relaxed p-2 md:p-4 w-36 md:w-48">
+                <div class="inline-flex flex-col-reverse gap-2 items-center">
+                  <span>AxCrypt</span>
+                  <img class="max-w-16 h-12" src="/img/comparisons/axcrypt-logo.svg">
+                </div>
               </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-50">
-            <tr class="bg-white px-6 py-4 border-b border-gray-200">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_1" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_1" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_2" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_2" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_3" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_3" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_4" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_4" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_5" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_5" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_6" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_6" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_7" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_7" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_8" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_8" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_9" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_9" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_10" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_10" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left">{{ i18n "comparison_features_11" . | safeHTML }}</td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-gray-600"></i></td>
-              <td class="font-p p-4 text-center"><i class="fas fa-check-circle text-2xl text-primary"></i></td>
+            <tr>
+              <td class="font-p p-2 md:p-4">{{ i18n "comparison_features_11" . }}</td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i></td>
+              <td class="font-p text-center p-2 md:p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
             </tr>
-            <tr class="bg-white">
-              <td class="font-p p-4 text-left font-bold align-middle"></td>
-              <td class="font-p p-4 text-center align-middle">
-                <a href="/pricing/"
-                  class="btn btn-primary w-40 h-12 text-base md:text-lg flex items-center justify-center">
-                  {{ i18n "comparison_button_pricing" . | safeHTML }}
+            <tr>
+              <td class="font-p p-2 md:p-4"></td>
+              <td class="font-p p-2 md:p-4">
+                <a class="btn btn-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" href="{{ .Site.LanguagePrefix }}/pricing/">
+                  {{ i18n "comparison_pricing_button" . }}
                 </a>
               </td>
-              <td class="font-p p-4 text-center align-middle">
-                <a href="/boxcryptor-alternative"
-                  class="btn btn-outline-primary w-40 h-12 flex items-center justify-center">
-                  {{ i18n "comparison_button_detailed_comparison" . | safeHTML }}
+              <td class="font-p p-2 md:p-4">
+                <a class="btn btn-outline-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" href="{{ .Site.LanguagePrefix }}/comparisons/boxcryptor-alternative/">
+                  {{ i18n "comparison_full_comparison_button" . }}
                 </a>
               </td>
-              <td class="font-p p-4 text-center align-middle">
-                <a href="/pricing/"
-                  class="btn btn-outline-primary w-40 h-12 opacity-50 cursor-not-allowed pointer-events-none flex items-center justify-center">
-                  {{ i18n "comparison_button_comming_soon" . | safeHTML }}
-                </a>
+              <td class="font-p p-2 md:p-4">
+                <button class="btn btn-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" disabled>
+                  {{ i18n "comparison_coming_soon_button" . }}
+                </button>
               </td>
-              <td class="font-p p-4 text-center align-middle">
-                <a href="/pricing/"
-                  class="btn btn-outline-primary w-40 h-12 opacity-50 cursor-not-allowed pointer-events-none flex items-center justify-center">
-                  {{ i18n "comparison_button_comming_soon" . | safeHTML }}
-                </a>
+              <td class="font-p p-2 md:p-4">
+                <button class="btn btn-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" disabled>
+                  {{ i18n "comparison_coming_soon_button" . }}
+                </button>
               </td>
-              <td class="font-p p-4 text-center align-middle">
-                <a href="/pricing/"
-                  class="btn btn-outline-primary w-40 h-12 opacity-50 cursor-not-allowed pointer-events-none flex items-center justify-center">
-                  {{ i18n "comparison_button_comming_soon" . | safeHTML }}
-                </a>
+              <td class="font-p p-2 md:p-4">
+                <button class="btn btn-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" disabled>
+                  {{ i18n "comparison_coming_soon_button" . }}
+                </button>
               </td>
             </tr>
           </tbody>

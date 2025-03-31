@@ -127,11 +127,11 @@
 - id: comparison_features_11
   translation: "Kostenlose Testversion"
 
-- id: comparison_button_pricing
+- id: comparison_pricing_button
   translation: "Preise"
-- id: comparison_button_detailed_comparison
+- id: comparison_full_comparison_button
   translation: "Detailvergleich"
-- id: comparison_button_comming_soon
+- id: comparison_coming_soon_button
   translation: "Bald verfügbar"
 
 # Coop

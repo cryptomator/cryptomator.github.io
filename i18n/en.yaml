@@ -127,12 +127,12 @@
 - id: comparison_features_11
   translation: "Free trial"
 
-- id: comparison_button_pricing
+- id: comparison_pricing_button
   translation: "Pricing"
-- id: comparison_button_detailed_comparison
-  translation: "Full comparison"
-- id: comparison_button_comming_soon
-  translation: "Coming soon"
+- id: comparison_full_comparison_button
+  translation: "Full Comparison"
+- id: comparison_coming_soon_button
+  translation: "Coming Soon"
 
 # Coop
 - id: coop_more_info
