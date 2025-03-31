@@ -2,8 +2,6 @@
   translation: "Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."
 - id: nav_cta
   translation: "Get Started"
-- id: nav_promotion
-  translation: ":cherry_blossom: Spring Sale: 25%* Off Cryptomator – Until&nbsp;World&nbsp;Backup&nbsp;Day!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/03/20/spring-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: nav_products
   translation: "Products"
 - id: nav_support_us
@@ -219,8 +217,6 @@
   translation: "Contact Us for an Offer"
 
 # For Individuals
-- id: for_individuals_header_kicker_sale
-  translation: "25%* Off – Spring Sale"
 - id: for_individuals_header_title
   translation: "Keep your cloud data truly yours"
 - id: for_individuals_header_description
@@ -305,8 +301,6 @@
   translation: "Join Community"
 
 # Home
-- id: home_header_kicker_sale
-  translation: "25%* Off – Spring Sale"
 - id: home_header_kicker
   translation: "3,000,000+ Downloads"
 - id: home_header_title
@@ -377,8 +371,6 @@
   translation: "Cryptomator won the Special Award for Usable Security and Privacy."
 
 # Hub
-- id: hub_header_kicker_sale
-  translation: "25% Off in the First Year – Spring Sale"
 - id: hub_header_title
   translation: "Secure&nbsp;collaboration in&nbsp;your&nbsp;team"
 - id: hub_header_description
@@ -863,8 +855,6 @@
 
 - id: pricing_android_price
   translation: "€19.99"
-- id: pricing_android_price_discounted
-  translation: "€14.99"
 - id: pricing_android_price_description
   translation: "Lifetime License"
 - id: pricing_android_cta
@@ -882,8 +872,6 @@
   translation: "Read-Only Mode"
 - id: pricing_ios_price
   translation: "€19.99"
-- id: pricing_ios_price_discounted
-  translation: "€14.99"
 - id: pricing_ios_price_description
   translation: "Lifetime License"
 - id: pricing_ios_cta
@@ -896,9 +884,6 @@
   translation: "Unlock vaults with Face ID / Touch ID"
 - id: pricing_ios_benefit_4
   translation: "No accounts, no data shared"
-
-- id: pricing_discount_note
-  translation: "The discount amount may vary by region."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -929,8 +914,6 @@
 
 - id: pricing_hub_standard_title
   translation: "Standard"
-- id: pricing_hub_standard_price_first_year
-  translation: "in the first year"
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_trial
