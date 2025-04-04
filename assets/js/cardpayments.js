@@ -1,6 +1,6 @@
 "use strict";
 
-// requires store.js
+const STRIPE_PHP_URL = BASE_API_URL + '/stripe/prepare_payment.php';
 
 class OneTimePayment {
 

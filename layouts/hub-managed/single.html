@@ -18,7 +18,7 @@
                   <li>
                     <!-- Complete Step -->
                     <template x-if="index < feedbackData.currentStep">
-                      <a href="#" class="group" :class="`plausible-event-name=hub-managed-nav-step-${index + 1}`" @click.prevent="feedbackData.currentStep = index" :data-umami-event="`hub-managed-nav-step-${index + 1}`">
+                      <a href="#" class="group" @click.prevent="feedbackData.currentStep = index" :data-umami-event="`hub-managed-nav-step-${index + 1}`">
                         <span class="flex items-center gap-3">
                           <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
                             <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -56,7 +56,7 @@
             </nav>
           </header>
 
-          <!-- Step 1: Work Email -->
+          <!-- Step 1: Email Address -->
           <template x-if="feedbackData.currentStep == 0">
             <div class="md:col-span-2 grid grid-cols-6 gap-6">
               <div class="flex flex-col col-span-6 lg:col-span-4">
@@ -69,7 +69,7 @@
                 <input type="email" id="email" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_managed_step_1_email_placeholder" }}" x-init="$el.focus()" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateEmail()" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-step-1" data-umami-event="hub-managed-step-1">
+                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-1">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateTeamAndSubdomain()" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-step-2" data-umami-event="hub-managed-step-2">
+                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateTeamAndSubdomain()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-2">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
@@ -126,7 +126,7 @@
                 <input type="number" id="quantity" min="1" max="10000" step="1" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_managed_step_3_quantity_placeholder" }}" x-init="$el.focus()" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress" @click.prevent="submitData.quantity > 0 && submitData.quantity < 3 ? lowQuantityModalIsOpen = true : hubManaged.validateQuantity()" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-step-3" data-umami-event="hub-managed-step-3">
+                  <button :disabled="feedbackData.inProgress" @click.prevent="submitData.quantity > 0 && submitData.quantity < 3 ? lowQuantityModalIsOpen = true : hubManaged.validateQuantity()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-3">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
@@ -189,7 +189,7 @@
                 </p>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=hub-managed-form" data-umami-event="hub-managed-form" x-cloak>
+                  <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-form" x-cloak>
                     <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
                     {{ i18n "hub_managed_step_4_submit" }}
                   </button>
@@ -224,15 +224,13 @@
   <section class="container text-center pt-12 pb-24">
     <h2 class="font-h2 mb-4">{{ i18n "hub_managed_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_managed_contact_us_description" . | safeHTML }}</p>
-    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8 plausible-event-name=hub-managed-contact-us" data-umami-event="hub-managed-contact-us">
+    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-managed-contact-us">
       <i class="fas fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
     </a>
   </section>
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" }}
@@ -242,8 +240,6 @@
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
     <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}

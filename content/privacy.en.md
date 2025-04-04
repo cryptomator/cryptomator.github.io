@@ -3,7 +3,7 @@ title: "Privacy Policy"
 aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
-_Effective date: October 2024_
+_Effective date: March 2025_
 
 <p class="text-lg leading-relaxed text-gray-700">As a provider of software to strengthen privacy, your rights regarding data protection and informational self-determination are important to us. We attempt to restrict the use of data to the absolute  essential minimum. Of course, we do not use analysis tools and unnecessary cookies. However, for some processes, especially in connection with payment transactions, we depend on the services of third parties and you should also read their privacy policies carefully.</p>
 
@@ -323,8 +323,8 @@ The supervisory authority to which the complaint has been submitted shall inform
 
 For internal audience measurement, we use a privacy-preserving, self-hosted analytics service that uses cross-page user recognition technology to analyze behavior.
 
-We collect various information (e.g., anonymized IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g., clicks, purchases, etc.).
+We collect various information (e.g., shortened IP address, referrer URL, browser and operating system used) and measure certain visitor actions (e.g., clicks, purchases, etc.).
 
-No "cookies" are stored on your device, and no information is retrieved from your device for analysis. Where personal data (e.g. IP addresses) is collected, it is stored in a completely anonymized form.
+No "cookies" are stored on your device. Where personal data (e.g. IP addresses) is collected, it is stored in a completely pseudonymised form. Re-identification is not possible for us unless you actively contact us providing data that allows us to correlate said data.
 
 The legal basis for the processing of your data is Art. 6 para. 1 lit. a GDPR in connection with § 25 para. 1 TDDDG, as the website operator has a legitimate interest in the anonymous analysis of user behavior in order to optimize its online services.

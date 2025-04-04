@@ -140,7 +140,7 @@ ul.list-primary li::marker {
 }
 
 .input-box {
-  @apply rounded-sm border-gray-300 focus:ring-0 focus:border-secondary;
+  @apply rounded-sm border border-gray-300 focus:ring-0 focus:border-secondary px-3 py-2;
 }
 
 .pre-box {

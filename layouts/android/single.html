@@ -33,7 +33,7 @@
       <p class="font-p mb-4">{{ i18n "android_keyrecovery_instruction" . }}</p>
       <div class="flex justify-center items-center rounded-sm bg-gray-300">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "android_keyrecovery_email_placeholder" }}" required/>
-        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4 plausible-event-name=android-keyrecovery-form" data-umami-event="android-keyrecovery-form">
+        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4" data-umami-event="android-keyrecovery-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "android_keyrecovery_retrieve" }}
         </button>
       </div>
@@ -48,8 +48,6 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
-    {{ $storeJs := resources.Get "js/store.dev.js" | resources.ExecuteAsTemplate "js/store.js" . }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" }}
@@ -57,8 +55,6 @@
     {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
     <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" defer></script>
   {{ else }}
-    {{ $storeJs := resources.Get "js/store.prod.js" | resources.ExecuteAsTemplate "js/store.js" . | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $storeJs.RelPermalink }}" integrity="{{ $storeJs.Data.Integrity }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" | minify | fingerprint }}

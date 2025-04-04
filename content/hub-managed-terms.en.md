@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: January 2025_
+_Effective date: March 2025_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -150,7 +150,7 @@ Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.
 
 13.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 
-13.3 Invoices shall be issued for 12 months in advance. The invoice shall be due for payment immediately.
+13.3 Invoices shall be issued for 12 months in advance. Unless otherwise agreed (individual agreement, discount campaign or similar), the invoice shall be due for payment immediately.
 
 13.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
 

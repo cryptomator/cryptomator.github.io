@@ -1,6 +1,5 @@
 "use strict";
 
-// requires store.js
 // requires newsletter.js
 
 class AndroidLicense {
@@ -22,10 +21,18 @@ class AndroidLicense {
   }
 
   loadPrice() {
-    this._paddle.then(paddle => {
-      paddle.Product.Prices(PADDLE_ANDROID_PRODUCT_ID, prices => {
-        this._checkoutData.price = prices.price.gross;
-      });
+    $.ajax({
+      url: PADDLE_PRICES_URL,
+      dataType: 'jsonp',
+      data: {
+        product_ids: PADDLE_ANDROID_PRODUCT_ID
+      },
+    }).done(data => {
+      this._checkoutData.price = {
+        amount: data.response.products[0].price.gross,
+        listAmount: data.response.products[0].list_price.gross,
+        currency: data.response.products[0].currency
+      };
     });
   }
 

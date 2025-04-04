@@ -24,6 +24,8 @@
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator zu erhalten, und akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator per E-Mail zu erhalten (optional)."
+- id: accept_hub_newsletter_privacy
+  translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub zu erhalten, und akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_hub_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
 - id: accept_privacy
@@ -44,8 +46,6 @@
   translation: "Lizenzschlüssel kaufen"
 - id: android_getkey_price
   translation: "Preis"
-- id: android_getkey_price_placeholder
-  translation: "Lädt…"
 - id: android_getkey_email
   translation: "E-Mail"
 - id: android_getkey_email_placeholder
@@ -271,10 +271,10 @@
   translation: "Open Source"
 - id: for_individuals_open_source_description
   translation: "Engagement"
-- id: for_individuals_users_worldwide_title
+- id: for_individuals_dau_title
   translation: "150k+"
-- id: for_individuals_users_worldwide_description
-  translation: "Nutzer weltweit"
+- id: for_individuals_dau_description
+  translation: "Täglich aktive Nutzer"
 
 - id: for_individuals_workflow_step_1_title
   translation: "1. Tresor erstellen"
@@ -302,7 +302,7 @@
 - id: for_individuals_features_feature_1_title
   translation: "Clientseitige Verschlüsselung"
 - id: for_individuals_features_feature_1_description
-  translation: "Deine Dateien werden sicher <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+  translation: "Deine Dateien werden <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">sicher verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
 - id: for_individuals_features_feature_2_title
   translation: "Kompatibel mit deiner Cloud"
 - id: for_individuals_features_feature_2_description
@@ -403,9 +403,9 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Verschlüsselte&nbsp;Zusammenarbeit im&nbsp;Team"
+  translation: "Sichere Zusammenarbeit in eurem Team"
 - id: hub_header_description
-  translation: "Cryptomator Hub erweitert Cryptomator um ein Zero-Knowledge Schlüsselmanagement für Teams und Organisationen. Es lässt sich leicht in dein bestehendes Identitätsmanagement integrieren, einschließlich OpenID Connect, SAML und LDAP. Dein Lieblingscloudservice bleibt wie gewohnt deine freie Wahl."
+  translation: "Cryptomator Hub erweitert Cryptomator für euer Team oder eure Organisation – mit Zero-Knowledge-Verschlüsselung, Zugriff nur für autorisierte Personen und nahtloser Integration in eure IT-Infrastruktur. So behaltet ihr die volle Kontrolle, egal welche Cloud ihr nutzt."
 - id: hub_header_managed_title
   translation: "Managed"
 - id: hub_header_managed_cta
@@ -415,7 +415,7 @@
 - id: hub_header_self_hosted_cta
   translation: "Jetzt einrichten"
 - id: hub_header_cta_description
-  translation: "Starte deine kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
+  translation: "Startet eure kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -424,18 +424,53 @@
 - id: hub_video_description
   translation: "Wir zeigen dir hier wie Cryptomator Hub die Zugriffsverwaltung für deine Cryptomator-Tresore ermöglicht."
 
+- id: hub_workflow_step_1_title
+  translation: "1. Sichere Tresore für euer Team"
+- id: hub_workflow_step_1_description
+  translation: "Egal ob sensible Kundendaten, Finanzdokumente, Verträge oder Forschungsergebnisse – mit Cryptomator Hub erstellt ihr verschlüsselte Tresore für eure Teams und speichert Daten sicher in der Cloud. Ihr behaltet die volle Kontrolle darüber, wer Zugriff erhält."
+- id: hub_workflow_step_1_alt
+  translation: "Cryptomator-Hub-Oberfläche mit mehreren Tresoren"
+- id: hub_workflow_step_2_title
+  translation: "2. Zugriffskontrolle leicht gemacht"
+- id: hub_workflow_step_2_description
+  translation: "Nicht jeder soll alles sehen? Kein Problem! Weise Teammitgliedern gezielt Berechtigungen zu und verwalte den Zugriff auf eure Tresore mit wenigen Klicks. So bleiben sensible Daten wirklich nur für autorisierte Personen zugänglich."
+- id: hub_workflow_step_2_alt
+  translation: "Verwaltung der Zugriffsrechte für einen Tresor"
+- id: hub_workflow_step_3_title
+  translation: "3. Entsperren & loslegen – ohne Passwort"
+- id: hub_workflow_step_3_description
+  translation: "Ladet euren Tresor über Cryptomator Hub herunter und öffnet ihn direkt in der Cryptomator App als bestehenden Tresor. Statt ein Passwort einzugeben, erfolgt die Authentifizierung sicher über Hub – so bleibt alles geschützt und trotzdem komfortabel zugänglich."
+- id: hub_workflow_step_3_alt
+  translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
+
+- id: hub_features_title
+  translation: "Warum Cryptomator Hub?"
+- id: hub_features_subtitle
+  translation: "Erfahre, wie Cryptomator Hub deine Dateien mit starker Verschlüsselung, Datenschutzprinzipien und nahtloser plattformübergreifender Unterstützung schützt."
 - id: hub_features_feature_1_title
-  translation: "Starke Authentifizierung"
-- id: hub_features_feature_1_description
-  translation: "Binde Cryptomator Hub in deine bestehende Identitätsinfrastruktur und richte branchenübliche Authentifizierungsmethoden ein. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
-- id: hub_features_feature_2_title
-  translation: "Clientseitige Verschlüsselung"
-- id: hub_features_feature_2_description
-  translation: "Mit Cryptomator Hub erstellte Tresore werden auf die gleiche Weise gespeichert, wie du es von Cryptomator gewohnt bist – sicher mit clientseitiger Verschlüsselung. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
-- id: hub_features_feature_3_title
   translation: "Zero Knowledge"
-- id: hub_features_feature_3_description
+- id: hub_features_feature_1_description
   translation: "Cryptomator Hub verwaltet das Schlüsselmaterial, ohne mit unverschlüsselten Schlüsseln in Berührung zu kommen. Es ist eine echte Zero-Knowledge-Lösung. <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/hub/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+- id: hub_features_feature_2_title
+  translation: "Starke Authentifizierung"
+- id: hub_features_feature_2_description
+  translation: "Bindet Cryptomator Hub in eure bestehende Identitätsinfrastruktur und richtet branchenübliche Authentifizierungsmethoden ein. <a class=\"text-link\" href=\"https://www.keycloak.org/\" target=\"_blank\" rel=\"noopener\">Powered by Keycloak.</a>"
+- id: hub_features_feature_3_title
+  translation: "Clientseitige Verschlüsselung"
+- id: hub_features_feature_3_description
+  translation: "Deine Dateien werden <a class=\"text-link\" href=\"https://docs.cryptomator.org/security/architecture/\" target=\"_blank\" rel=\"noopener\">sicher verschlüsselt</a>, bevor sie dein Gerät verlassen, und bleiben während der Übertragung und Speicherung geschützt."
+- id: hub_features_feature_4_title
+  translation: "Kompatibel mit eurer Cloud"
+- id: hub_features_feature_4_description
+  translation: "Integriert sich nahtlos in bestehende Cloud-Speicher, so dass ihr eure Daten sicher und bequem synchronisieren könnt."
+- id: hub_features_feature_5_title
+  translation: "Open Source"
+- id: hub_features_feature_5_description
+  translation: "Unser Quellcode ist öffentlich zugänglich und ermöglicht Sicherheitsprüfungen durch die Community. <a class=\"text-link\" href=\"/de/open-source/\" target=\"_blank\" rel=\"noopener\">Mehr erfahren.</a>"
+- id: hub_features_feature_6_title
+  translation: "Datenschutzkonform"
+- id: hub_features_feature_6_description
+  translation: "Entwickelt mit Fokus auf Datenschutz: Cryptomator ist vollständig <a class=\"text-link\" href=\"/de/gdpr/\" target=\"_blank\" rel=\"noopener\">DSGVO-konform</a> und erfordert keine persönlichen Daten."
 
 - id: hub_pricing_title
   translation: "Entdecke unser flexibles Preismodell"
@@ -645,11 +680,11 @@
   translation: "Weiter"
 
 - id: hub_managed_step_1_nav_title
-  translation: "Arbeits-E-Mail"
+  translation: "E-Mail-Adresse"
 - id: hub_managed_step_1_title
-  translation: "Wie lautet die E-Mail-Adresse für deine Arbeit?"
+  translation: "Wie lautet deine E-Mail-Adresse?"
 - id: hub_managed_step_1_email_placeholder
-  translation: "E-Mail-Adresse für die Arbeit"
+  translation: "E-Mail-Adresse"
 
 - id: hub_managed_step_2_nav_title
   translation: "Team-Name"

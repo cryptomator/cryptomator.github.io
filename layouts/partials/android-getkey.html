@@ -4,9 +4,13 @@
   </div>
 
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
-    <div class="w-full md:w-1/2 mb-4">
+    <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
-      <input x-model="checkoutData.price" type="text" class="input-box w-full" placeholder="{{ i18n "android_getkey_price_placeholder" }}" readonly/>
+      <div class="relative input-box flex items-center gap-2 w-full lg:w-1/2">
+        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" x-text="checkoutData.price ? checkoutData.price.listAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
+        <span x-text="checkoutData.price ? checkoutData.price.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'">…</span>
+        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" class="absolute top-0 left-0 -translate-2 -rotate-5 px-1 rounded-xs text-xs text-white bg-red-600 z-10" x-cloak>-<span x-text="((1 - checkoutData.price.amount / checkoutData.price.listAmount) * 100).toFixed(0)"></span>%</span>
+      </div>
     </div>
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_email" }}</label>
@@ -16,7 +20,7 @@
       <p class="font-p mb-4">{{ i18n "android_getkey_instruction" }}</p>
       <p class="font-p mb-2">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter" "label" (i18n "accept_newsletter_optional")) }}</p>
-      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=android-getkey-checkout" data-umami-event="android-getkey-checkout">
+      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="android-getkey-checkout">
         <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "android_getkey_checkout" }}
       </button>
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>

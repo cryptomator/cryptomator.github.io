@@ -1,6 +1,5 @@
 "use strict";
 
-// requires store.js
 const REQUEST_SUPPORTER_CERT_URL = STORE_API_URL + '/desktop/request-supporter-cert';
 
 class SupporterCertificate {

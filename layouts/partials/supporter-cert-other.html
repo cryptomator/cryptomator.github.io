@@ -11,7 +11,7 @@
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "supporter_cert_other_instruction" }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
-      <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64 plausible-event-name=supporter-cert-other-form" data-umami-event="supporter-cert-other-form" x-cloak>
+      <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="supporter-cert-other-form" x-cloak>
         <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "supporter_cert_common_submit" }}
       </button>
       {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
