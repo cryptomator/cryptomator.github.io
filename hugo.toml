@@ -70,46 +70,46 @@ block = true
 [params]
   [params.releases]
     [params.releases.exe]
-      version = "1.15.1"
-      filename = "Cryptomator-1.15.1-x64.exe"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-x64.exe"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-x64.exe.asc"
-      checksum = "2cfe8650b34abdd3e6da00c60c7806cf5c370bd784499c5b4700376a40837411"
+      version = "1.15.2"
+      filename = "Cryptomator-1.15.2-x64.exe"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.exe"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.exe.asc"
+      checksum = "8fe76f4b14c771bc9f7134e3b4a4cbe0a1cf529107dd4c2d85900b0cb942433e"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.msi]
-      version = "1.15.1"
-      filename = "Cryptomator-1.15.1-x64.msi"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-x64.msi"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-x64.msi.asc"
-      checksum = "8e8af2420d7cd78f22ac11f3be52253d653075c294e603607b9c61a2bf95775e"
+      version = "1.15.2"
+      filename = "Cryptomator-1.15.2-x64.msi"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.msi"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.msi.asc"
+      checksum = "a000059df6e3ae628667d4b97c7639a3b5551916e63c0e356a39859741396fd2"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.dmg]
-      version = "1.15.1"
-      filename = "Cryptomator-1.15.1.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-x64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-x64.dmg.asc"
-      checksum = "bf83c62e28c978706e8d2ffb89e5c1ef2d513355517c39650ee0dc2a1583d4b3"
+      version = "1.15.2"
+      filename = "Cryptomator-1.15.2.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg.asc"
+      checksum = "9b4381a1310d76f8e6045756d66ade80e8519122dc3ea7a9065881c345c54b91"
       requiredOS = 'macOS 11'
     [params.releases.dmg-arm64]
-      version = "1.15.1"
-      filename = "Cryptomator-1.15.1-arm64.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-arm64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/Cryptomator-1.15.1-arm64.dmg.asc"
-      checksum = "ecbd58228d3407d3f4c801c633006d4f9e836a758bc6db25d022830365ed3ed1"
+      version = "1.15.2"
+      filename = "Cryptomator-1.15.2-arm64.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-arm64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-arm64.dmg.asc"
+      checksum = "2a000a96bb310c8ee47a392eb4e005dd06eb437335dc97ad922d5b00120a1f01"
       requiredOS = 'macOS 11'
     [params.releases.appimage]
-      version = "1.15.1"
-      filename = "cryptomator-1.15.1-x86_64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/cryptomator-1.15.1-x86_64.AppImage"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/cryptomator-1.15.1-x86_64.AppImage.asc"
-      checksum = "0873ed665202493e3b00ecdb8ec9fd2d5b5d318089fb5cf048c045278772e3ba"
+      version = "1.15.2"
+      filename = "cryptomator-1.15.2-x86_64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/cryptomator-1.15.2-x86_64.AppImage"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/cryptomator-1.15.2-x86_64.AppImage.asc"
+      checksum = "c43e752656bbb833f215f8443a385fb6408a2dc2436d0f5a919c2f5fd24626b4"
       requiredOS = ''
     [params.releases.appimage-aarch64]
-      version = "1.15.1"
-      filename = "cryptomator-1.15.1-aarch64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/cryptomator-1.15.1-aarch64.AppImage"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.1/cryptomator-1.15.1-aarch64.AppImage.asc"
-      checksum = "57f37cf9453b6139bf279f50e6bc319b97c584256f232901fdc9095e59a9883f"
+      version = "1.15.2"
+      filename = "cryptomator-1.15.2-aarch64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/cryptomator-1.15.2-aarch64.AppImage"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/cryptomator-1.15.2-aarch64.AppImage.asc"
+      checksum = "12790e2a4e10eba8f352c68a40cb34d53bef91685bf49a42a0f18357e8e983e9"
       requiredOS = ''
     [params.releases.android]
       version = "1.11.1"
