@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container-prose py-12">
-    <article>
+    <article class="prose prose-sm md:prose max-w-none md:max-w-none">
       {{ .Content }}
     </article>
     {{ if and .Params.Ctatitle .Params.Ctatext .Params.Ctalink .Params.Ctabutton }}
