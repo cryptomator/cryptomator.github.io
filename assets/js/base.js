@@ -1,5 +1,3 @@
-window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
-
 $('a').each(function() {
   const $a = $(this);
   if ($a[0].host !== window.location.host && !$a.attr('data-umami-event')) {
