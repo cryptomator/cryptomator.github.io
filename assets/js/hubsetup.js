@@ -33,8 +33,7 @@ class HubSetup {
         publicUrl: 'https://domain.tld',
         adminUser: 'admin',
         adminPw: 'admin',
-        syncerUser: 'syncer', // TODO: randomize?
-        syncerPw: HubSetup.uuid(),
+        systemClientSecret: HubSetup.uuid(),
       }
     }
   }
@@ -231,16 +230,6 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
                 'realm-management': ['realm-admin']
               }
             }
-          },
-          {
-            name: 'syncer',
-            description: 'syncer',
-            composite: true,
-            composites: {
-              client: {
-                'realm-management': ['view-users']
-              }
-            }
           }
         ],
       },
@@ -253,13 +242,11 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
           realmRoles: ['admin']
         },
         {
-          username: this.cfg.hub.syncerUser,
-          firstName: "syncer",
-          lastName: "syncer",
-          email: "syncer@localhost",
+          username: 'system',
+          email: "system@localhost",
           enabled: true,
-          credentials: [{ type: 'password', value: this.cfg.hub.syncerPw, temporary: false }],
-          realmRoles: ['syncer']
+          serviceAccountClientId: "cryptomatorhub-system",
+          clientRoles: { 'realm-management' : ['realm-admin'] }
         }
       ],
       scopeMappings: [
@@ -325,6 +312,16 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         frontchannelLogout: false,
         protocol: 'openid-connect',
         attributes: { 'pkce.code.challenge.method': 'S256' },
+      },
+      {
+        clientId: 'cryptomatorhub-system',
+        serviceAccountsEnabled: true,
+        publicClient: false,
+        name: 'Cryptomator Hub System',
+        enabled: true,
+        clientAuthenticatorType: 'client-secret',
+        secret: this.cfg.hub.systemClientSecret,
+        standardFlowEnabled: false,
       }],
       browserSecurityHeaders: {
         contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' ${HubSetup.urlWithTrailingSlash(this.cfg.hub.publicUrl)}; object-src 'none';`
@@ -488,9 +485,8 @@ EOF`;
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_REALM: this.cfg.keycloak.realmId,
-        HUB_KEYCLOAK_SYNCER_USERNAME: this.cfg.hub.syncerUser,
-        HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
-        HUB_KEYCLOAK_SYNCER_CLIENT_ID: 'admin-cli',
+        HUB_KEYCLOAK_SYSTEM_CLIENT_ID: 'cryptomatorhub-system',
+        HUB_KEYCLOAK_SYSTEM_CLIENT_SECRET: this.cfg.hub.systemClientSecret,
         HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
         HUB_KEYCLOAK_OIDC_CRYPTOMATOR_CLIENT_ID: 'cryptomator',
         QUARKUS_OIDC_AUTH_SERVER_URL: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href, // network-internal URL
@@ -608,8 +604,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         'db_admin_pass': this.cfg.db.adminPw,
         'db_hub_pass': this.cfg.db.hubPw,
         ...(!this.cfg.keycloak.useExternal) && { 'db_kc_pass': this.cfg.db.keycloakPw },
-        'hub_syncer_user': this.cfg.hub.syncerUser,
-        'hub_syncer_pass': this.cfg.hub.syncerPw,
+        'hub_system_client_secret': this.cfg.hub.systemClientSecret,
         'initdb.sql': this.getInitDbSQL(),
         ...(!this.cfg.keycloak.useExternal) && { 'realm.json': JSON.stringify(realmCfg, null, 2) }
       }
@@ -683,9 +678,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_LOCAL_URL', value: !this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_REALM', value: this.cfg.keycloak.realmId},
-                {name: 'HUB_KEYCLOAK_SYNCER_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_user'}}},
-                {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
-                {name: 'HUB_KEYCLOAK_SYNCER_CLIENT_ID', value: 'admin-cli'},
+                {name: 'HUB_KEYCLOAK_SYSTEM_CLIENT_ID', value: 'cryptomatorhub-system'},
+                {name: 'HUB_KEYCLOAK_SYSTEM_CLIENT_SECRET', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_system_client_secret'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_PERIOD', value: '5m'}, // TODO make configurable?
                 {name: 'HUB_KEYCLOAK_OIDC_CRYPTOMATOR_CLIENT_ID', value: 'cryptomator'},
                 {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href},
