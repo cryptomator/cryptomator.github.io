@@ -8,7 +8,7 @@ comparison:
       <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
     </div>
   footer: |
-    <button class="btn btn-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" disabled>Coming Soon</button>
+    <button class="btn btn-primary w-full px-2 md:px-4 py-1 md:py-1" disabled>Coming Soon</button>
   generalFeatures:
     unlimitedDevices: |
       <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>

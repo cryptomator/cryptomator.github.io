@@ -8,7 +8,7 @@ comparison:
       <img class="max-w-16 h-12" src="/img/logo.svg">
     </div>
   footer: |
-    <a class="btn btn-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" href="/de/pricing/">Preise</a>
+    <a class="btn btn-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/pricing/">Preise</a>
   generalFeatures:
     unlimitedDevices: |
       <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>

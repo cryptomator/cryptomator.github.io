@@ -23,7 +23,7 @@ comparison:
       <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
     </div>
   footer: |
-    <a class="btn btn-outline-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/boxcryptor-alternative/">Detailvergleich</a>
+    <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/boxcryptor-alternative/">Detailvergleich</a>
   generalFeatures:
     unlimitedDevices: |
       <div class="has-tooltip">
