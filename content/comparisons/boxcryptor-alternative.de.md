@@ -1,5 +1,6 @@
 ---
 type: article
+weight: 2
 
 title: "Kostenlose Alternative zu Boxcryptor: Cryptomator"
 description: "Du willst deine Daten in der Cloud verschlüsseln und suchst die beste Alternative? Wir vergleichen für dich Boxcryptor mit der Open-Source-Lösung Cryptomator."
@@ -14,6 +15,64 @@ ogimage:
   relsrc: /img/boxcryptor-alternative/og-image.png
   width: 1200
   height: 541
+
+comparison:
+  header: |
+    <div class="inline-flex flex-col-reverse gap-2 items-center">
+      <span class="font-normal">Boxcryptor</span>
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+    </div>
+  footer: |
+    <a class="btn btn-outline-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/boxcryptor-alternative/">Detailvergleich</a>
+  generalFeatures:
+    unlimitedDevices: |
+      <div class="has-tooltip">
+        <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig</div>
+      </div>
+    noAccountNeeded: |
+      <div class="has-tooltip">
+        <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in für lokalen Account; Standardeinstellung speichert Schlüssel auf Boxcryptor-Server</div>
+      </div>
+    integratedSharing: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+    offlineKeyRecovery: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    syncConflictDetection: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    supportForAllOS: |
+      <div class="has-tooltip">
+        <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
+          <p class="mb-2">Windows, macOS, Android, iOS</p>
+          <p><i class="fas fa-times fa-fw text-red-600"></i> kein Linux</p>
+        </div>
+      </div>
+  securityRelevantFeatures:
+    fileContentEncryption: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+    fileNameEncryption: |
+      <div class="has-tooltip">
+        <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig und optional</div>
+      </div>
+    fileAttributeEncryption: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    foss: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    directoryObfuscation: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    integrityProtection: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    quantumResistant: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    auditedCryptography: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+    memoryHardKDF: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    shareKeys: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
 ---
 
 # Die beste Alternative, um deine sensiblen Daten in der Cloud zu verschlüsseln: Boxcryptor vs. Cryptomator

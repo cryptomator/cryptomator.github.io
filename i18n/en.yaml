@@ -103,37 +103,6 @@
 - id: blob_post_author_prefix
   translation: "by"
 
-# Comparison
-- id: comparison_features_1
-  translation: "Client-side encryption"
-- id: comparison_features_2
-  translation: "Compatible with your cloud"
-- id: comparison_features_3
-  translation: "Cross-device support"
-- id: comparison_features_4
-  translation: "Easy to use"
-- id: comparison_features_5
-  translation: "Open source"
-- id: comparison_features_6
-  translation: "Privacy-compliant"
-- id: comparison_features_7
-  translation: "Zero knowledge"
-- id: comparison_features_8
-  translation: "Price"
-- id: comparison_features_9
-  translation: "Enterprise solution"
-- id: comparison_features_10
-  translation: "Community support"
-- id: comparison_features_11
-  translation: "Free trial"
-
-- id: comparison_pricing_button
-  translation: "Pricing"
-- id: comparison_full_comparison_button
-  translation: "Full Comparison"
-- id: comparison_coming_soon_button
-  translation: "Coming Soon"
-
 # Coop
 - id: coop_more_info
   translation: "More Info"

@@ -1,5 +1,6 @@
 ---
 type: article
+weight: 2
 
 title: "Free Alternative to Boxcryptor: Cryptomator"
 description: "You want to encrypt your data in the cloud and are looking for the best alternative? We compare Boxcryptor with the open-source solution Cryptomator."
@@ -14,6 +15,64 @@ ogimage:
   relsrc: /img/boxcryptor-alternative/og-image.png
   width: 1200
   height: 541
+
+comparison:
+  header: |
+    <div class="inline-flex flex-col-reverse gap-2 items-center">
+      <span class="font-normal">Boxcryptor</span>
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+    </div>
+  footer: |
+    <a class="btn btn-outline-primary text-xs md:text-base w-full px-2 md:px-4 py-1 md:py-1" href="/comparisons/boxcryptor-alternative/">Full Comparison</a>
+  generalFeatures:
+    unlimitedDevices: |
+      <div class="has-tooltip">
+        <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs</div>
+      </div>
+    noAccountNeeded: |
+      <div class="has-tooltip">
+        <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in for local account; default settings store your key on Boxcryptor server</div>
+      </div>
+    integratedSharing: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+    offlineKeyRecovery: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    syncConflictDetection: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    supportForAllOS: |
+      <div class="has-tooltip">
+        <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
+          <p class="mb-2">Windows, macOS, Android, iOS</p>
+          <p><i class="fas fa-times fa-fw text-red-600"></i> no Linux</p>
+        </div>
+      </div>
+  securityRelevantFeatures:
+    fileContentEncryption: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+    fileNameEncryption: |
+      <div class="has-tooltip">
+        <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs and optional</div>
+      </div>
+    fileAttributeEncryption: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    foss: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    directoryObfuscation: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    integrityProtection: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    quantumResistant: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    auditedCryptography: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+    memoryHardKDF: |
+      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+    shareKeys: |
+      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
 ---
 
 # The Best Alternative to Encrypt Your Sensitive Data in the Cloud: Boxcryptor vs. Cryptomator
@@ -308,7 +367,7 @@ Let's now take a look at these features. For this we compare the features again 
       <td class="font-p p-4" colspan="3">
         <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The encryption algorithms used are still secure even if the attacker has quantum computers.</p>
-        <p class="label-uppercase mb-2">Why is this important for data security?<p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>Some encryption methods are based on mathematical problems that are normally difficult to calculate. For quantum computers, however, they are much less complex. If an attacker has access to a corresponding quantum computer, the encryption of your data is de facto ineffective.</p>
       </td>
     </tr>
@@ -344,7 +403,7 @@ Let's now take a look at these features. For this we compare the features again 
       <td class="font-p p-4" colspan="3">
         <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The key derivation function (KDF) is used to derive the cryptographic key from the password you enter. This function must be as complex as possible to prevent bruteforce attacks (randomly trying out combinations of characters).</p>
-        <p class="label-uppercase mb-2">Why is this important for data security?<p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p class="mb-2">To derive your key from your password, a computer needs 200ms. That sounds short, but it quickly adds up to astronomically high times if an attacker has to try all conceivable passwords. Attackers could, however, use special hardware (so-called ASICs) to try hundreds of thousands of possibilities simultaneously.</p>
         <p>To prevent this, KDFs are used that are memory-intensive ("memory-hard"), i.e. they require a particularly large amount of memory. This makes an attack disproportionately costly and thus unattractive for the attacker.</p>
       </td>
