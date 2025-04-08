@@ -1,24 +1,26 @@
 - Key: "generalFeatures"
   Content: "Generelle Features"
   Features:
+  - Key: "cloudStorageOptimized"
+    Content: "Optimiert für Cloudspeicher"
+  - Key: "cloudProviderAgnostic"
+    Content: "Kompatibel mit großen Cloud-Anbietern"
   - Key: "unlimitedDevices"
     Content: "Unbeschränkte Anzahl Geräte"
-  - Key: "noAccountNeeded"
-    Content: "Kein Account notwendig"
   - Key: "integratedSharing"
-    Content: "Direktes Teilen von Dateien („Integrated Sharing“)"
+    Content: "Direktes Teilen von Dateien"
   - Key: "offlineKeyRecovery"
     Content: |
-      <span>Passwort wiederherstellen ohne E-Mail-Adresse („Offline Key Recovery“)</span>
+      <span>Offline Key Recovery</span>
       <div class="has-tooltip">
         <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
           Deine Daten liegen nicht in Mails bei einem E-Mail-Account-Anbieter, was die Sicherheit weiter erhöht.
         </div>
       </div>
   - Key: "syncConflictDetection"
-    Content: "Erkennung von Synchronisationskonflikten bei Bearbeitung durch mehrere Personen"
-  - Key: "supportForAllOS"
+    Content: "Erkennung von Sync-Konflikten"
+  - Key: "crossPlatformSupport"
     Content: "Unterstützung aller gängigen Betriebssysteme"
 - Key: "securityRelevantFeatures"
   Content: "Sicherheitsrelevante Features"
@@ -64,7 +66,7 @@
       <p class="label-uppercase mb-2">Was bedeutet das?</p>
       <p class="mb-4">Da Verschlüsselung nicht sofort auch vor Manipulation der Daten schützt, muss eine unbefugte Veränderung der Daten erkannt werden.</p>
       <p class="label-uppercase mb-2">Warum ist das wichtig für die Datensicherheit?</p>
-      <p>Um dich vor einer Vielzahl raffinierter Angriffe zu schützen, muss die Unversehrtheit deiner verschlüsselten Daten überprüft werden, bevor du sie entschlüsselst. Passiert dies nicht, ist es grundsätzlich denkbar, dass manipulierte Daten eingeschleust werden, die du dann unbemerkt öffnest. ({{< extlink "https://en.wikipedia.org/wiki/Chosen-ciphertext_attack" "Dies kann im schlimmsten Fall sogar von Angreifern genutzt werden, um die Verschlüsselung zu knacken." >}})</p>
+      <p>Um dich vor einer Vielzahl raffinierter Angriffe zu schützen, muss die Unversehrtheit deiner verschlüsselten Daten überprüft werden, bevor du sie entschlüsselst. Passiert dies nicht, ist es grundsätzlich denkbar, dass manipulierte Daten eingeschleust werden, die du dann unbemerkt öffnest. (<a class="text-link" href="https://de.wikipedia.org/wiki/Chosen-Ciphertext-Angriff" target="_blank" rel="noopener">Dies kann im schlimmsten Fall sogar von Angreifern genutzt werden, um die Verschlüsselung zu knacken.</a>)</p>
   - Key: "quantumResistant"
     Content: "Quantenresistente Kryptographie"
     Explanation: |

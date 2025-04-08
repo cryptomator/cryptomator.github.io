@@ -1,25 +1,27 @@
 - Key: "generalFeatures"
   Content: "General Features"
   Features:
+  - Key: "cloudStorageOptimized"
+    Content: "Optimized for Cloud Storage"
+  - Key: "cloudProviderAgnostic"
+    Content: "Compatible with Major Cloud Providers"
   - Key: "unlimitedDevices"
-    Content: "Unlimited number of devices"
-  - Key: "noAccountNeeded"
-    Content: "No account needed"
+    Content: "Unlimited Number of Devices"
   - Key: "integratedSharing"
-    Content: "Direct file sharing (\"integrated sharing\")"
+    Content: "Direct File Sharing"
   - Key: "offlineKeyRecovery"
     Content: |
-      <span>Restore password without email address ("offline key recovery")</span>
+      <span>Offline Key Recovery</span>
       <div class="has-tooltip">
         <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
           Your data is not stored in mails with an email account provider, which further increases security.
         </div>
       </div>
   - Key: "syncConflictDetection"
-    Content: "Detection of sync conflicts while editing by several people"
-  - Key: "supportForAllOS"
-    Content: "Support for all common operating systems"
+    Content: "Sync Conflict Detection"
+  - Key: "crossPlatformSupport"
+    Content: "Support for All Common Operating Systems"
 - Key: "securityRelevantFeatures"
   Content: "Security-Relevant Features"
   Features:
@@ -48,9 +50,9 @@
     Content: "Free & Open-Source Software (FOSS)"
     Explanation: |
       <p class="label-uppercase mb-2">What does that mean?</p>
-      <p class="mb-4">No one gets access to additional file attributes.</p>
+      <p class="mb-4">The source code is accessible to a broad community, which increases the security of the encryption.</p>
       <p class="label-uppercase mb-2">Why is this important for data security?</p>
-      <p>Some third-party software may store metadata about your file in its file attributes. If these are not encrypted, anyone can read them and even manipulate them to force your operating system to behave in certain ways.</p>
+      <p>The security of a system must depend solely on the key and must not be based on the secrecy of the algorithms. Since the encryption algorithm is controlled and discussed by a broad community, vulnerabilities or errors in the code are quickly detected.</p>
   - Key: "directoryObfuscation"
     Content: "Directory Obfuscation"
     Explanation: |

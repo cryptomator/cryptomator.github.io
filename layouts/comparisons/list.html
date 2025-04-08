@@ -12,7 +12,7 @@
             <tr class="py-2">
               <th class="w-44 lg:w-72"></th>
                 {{ range .Pages }}
-                  <th class="font-bold text-xs lg:text-base leading-relaxed p-2 lg:p-4 w-36 lg:w-48">
+                  <th class="font-bold text-xs lg:text-sm leading-relaxed p-2 lg:p-4 w-36 lg:w-48">
                     {{ .Params.Comparison.Header | safeHTML }}
                   </th>
                 {{ end }}
@@ -23,11 +23,11 @@
             {{ range $category := $data.comparisons }}
               <tr>
                 {{ $colspan := add (len $.Pages) 1 }}
-                <td class="font-bold text-xs lg:text-base leading-relaxed p-2 lg:p-4" colspan="{{ $colspan }}">{{ $category.Content | safeHTML }}</td>
+                <td class="font-bold text-xs lg:text-sm leading-relaxed p-2 lg:p-4" colspan="{{ $colspan }}">{{ $category.Content | safeHTML }}</td>
               </tr>
               {{ range $feature := $category.Features }}
                 <tr>
-                  <td class="text-xs lg:text-base leading-relaxed p-2 lg:p-4">
+                  <td class="text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
                     {{ if $feature.Explanation }}
                       <a class="flex items-center" href="#" @click.prevent="isExplanationOpen['{{ $feature.Key }}'] = !isExplanationOpen['{{ $feature.Key }}']">
                         <i :class="{ 'fa-chevron-circle-right': !isExplanationOpen['{{ $feature.Key }}'], 'fa-chevron-circle-down': isExplanationOpen['{{ $feature.Key }}'] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
@@ -38,14 +38,14 @@
                     {{ end }}
                     </td>
                   {{ range $page := $.Pages }}
-                    <td class="text-xs lg:text-base leading-relaxed text-center p-2 lg:p-4">
+                    <td class="text-center p-2 lg:p-4">
                       {{ index (index $page.Params.Comparison $category.Key) $feature.Key | safeHTML }}
                     </td>
                   {{ end }}
                 </tr>
                 {{ if $feature.Explanation }}
                   <tr x-show="isExplanationOpen['{{ $feature.Key }}']" x-cloak>
-                    <td class="text-xs lg:text-base leading-relaxed p-4">
+                    <td class="text-xs lg:text-sm leading-relaxed p-4">
                       {{ $feature.Explanation | safeHTML }}
                     </td>
                   </tr>
@@ -57,7 +57,7 @@
             <tr>
               <td></td>
               {{ range .Pages }}
-                <td class="text-xs lg:text-base leading-relaxed p-2 lg:p-4">
+                <td class="text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
                   {{ .Params.Comparison.Footer | safeHTML }}
                 </td>
               {{ end }}

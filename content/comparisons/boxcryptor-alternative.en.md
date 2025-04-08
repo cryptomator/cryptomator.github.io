@@ -19,60 +19,87 @@ ogimage:
 comparison:
   header: |
     <div class="inline-flex flex-col-reverse gap-2 items-center">
-      <span class="font-normal">Boxcryptor</span>
+      <div class="font-normal">
+        <span>Boxcryptor</span>
+        <div class="has-tooltip">
+          <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
+            Boxcryptor has been acquired by Dropbox in November 2022, but continues to support existing customers through the duration of their contracts.
+          </div>
+        </div>
+      </div>
       <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
     </div>
   footer: |
     <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/comparisons/boxcryptor-alternative/">Full Comparison</a>
   generalFeatures:
+    cloudStorageOptimized: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    cloudProviderAgnostic: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     unlimitedDevices: |
-      <div class="has-tooltip">
-        <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs</div>
-      </div>
-    noAccountNeeded: |
-      <div class="has-tooltip">
-        <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in for local account; default settings store your key on Boxcryptor server</div>
-      </div>
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     integratedSharing: |
-      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     offlineKeyRecovery: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     syncConflictDetection: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-    supportForAllOS: |
       <div class="has-tooltip">
-        <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
-          <p class="mb-2">Windows, macOS, Android, iOS</p>
-          <p><i class="fas fa-times fa-fw text-red-600"></i> no Linux</p>
-        </div>
+        <i class="relative fas fa-minus-circle text-xl lg:text-2xl text-gray-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">not applicable</div>
+      </div>
+    crossPlatformSupport: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">no Linux</div>
       </div>
   securityRelevantFeatures:
     fileContentEncryption: |
-      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     fileNameEncryption: |
       <div class="has-tooltip">
-        <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor with costs and optional</div>
+        <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">optional</div>
       </div>
     fileAttributeEncryption: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     foss: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     directoryObfuscation: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     integrityProtection: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     quantumResistant: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <div class="flex items-center justify-center divide-x divide-gray-400">
+        <div class="px-4">
+          <div class="has-tooltip">
+            <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            </i>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">uses symmetric encryption AES</div>
+          </div>
+        </div>
+        <div class="px-4">
+          <div class="has-tooltip">
+            <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            </i>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">uses asymmetric encryption RSA</div>
+          </div>
+        </div>
+      </div>
     auditedCryptography: |
-      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     memoryHardKDF: |
-      <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     shareKeys: |
-      <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
 ---
 
 # The Best Alternative to Encrypt Your Sensitive Data in the Cloud: Boxcryptor vs. Cryptomator
