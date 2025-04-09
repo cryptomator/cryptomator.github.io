@@ -9,15 +9,6 @@
     Content: "Unlimited Number of Devices"
   - Key: "integratedSharing"
     Content: "Direct File Sharing"
-  - Key: "offlineKeyRecovery"
-    Content: |
-      <span>Offline Key Recovery</span>
-      <div class="has-tooltip">
-        <i class="fas fa-info-circle fa-fw text-gray-600"></i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
-          Your data is not stored in mails with an email account provider, which further increases security.
-        </div>
-      </div>
   - Key: "syncConflictDetection"
     Content: "Sync Conflict Detection"
   - Key: "crossPlatformSupport"
