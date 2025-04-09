@@ -188,7 +188,7 @@ textarea:read-only {
 }
 
 .tooltip {
-  @apply absolute hidden z-50;
+  @apply absolute hidden text-left z-50;
 }
 
 .tooltip-center {
