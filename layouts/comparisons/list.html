@@ -1,0 +1,70 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <div class="flex overflow-x-auto -mx-4">
+      <div class="grow px-4">
+        <table class="table-fixed divide-y divide-primary white-box w-full mb-1">
+          <thead>
+            <tr class="py-2">
+              <th class="w-44 lg:w-72"></th>
+                {{ range .Pages }}
+                  <th class="font-bold text-xs lg:text-sm leading-relaxed p-2 lg:p-4 w-36 lg:w-48">
+                    {{ .Params.Comparison.Header | safeHTML }}
+                  </th>
+                {{ end }}
+            </tr>
+          </thead>
+          <tbody x-data="{ isExplanationOpen: {} }" class="divide-y divide-gray-200">
+            {{ $data := index $.Site.Data $.Site.Language.Lang }}
+            {{ range $category := $data.comparisons }}
+              <tr>
+                {{ $colspan := add (len $.Pages) 1 }}
+                <td class="font-bold text-xs lg:text-sm leading-relaxed p-2 lg:p-4" colspan="{{ $colspan }}">{{ $category.Content | safeHTML }}</td>
+              </tr>
+              {{ range $feature := $category.Features }}
+                <tr>
+                  <td class="text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+                    {{ if $feature.Explanation }}
+                      <a class="flex items-center" href="#" @click.prevent="isExplanationOpen['{{ $feature.Key }}'] = !isExplanationOpen['{{ $feature.Key }}']">
+                        <i :class="{ 'fa-chevron-circle-right': !isExplanationOpen['{{ $feature.Key }}'], 'fa-chevron-circle-down': isExplanationOpen['{{ $feature.Key }}'] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                        <span>{{ $feature.Content | safeHTML }}</span>
+                      </a>
+                    {{ else }}
+                      {{ $feature.Content | safeHTML }}
+                    {{ end }}
+                    </td>
+                  {{ range $page := $.Pages }}
+                    <td class="text-center p-2 lg:p-4">
+                      {{ index (index $page.Params.Comparison $category.Key) $feature.Key | safeHTML }}
+                    </td>
+                  {{ end }}
+                </tr>
+                {{ if $feature.Explanation }}
+                  <tr x-show="isExplanationOpen['{{ $feature.Key }}']" x-cloak>
+                    <td class="text-xs lg:text-sm leading-relaxed p-4">
+                      {{ $feature.Explanation | safeHTML }}
+                    </td>
+                  </tr>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              {{ range .Pages }}
+                <td class="text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+                  {{ .Params.Comparison.Footer | safeHTML }}
+                </td>
+              {{ end }}
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+{{ end }}

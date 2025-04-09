@@ -1,0 +1,98 @@
+- Key: "generalFeatures"
+  Content: "General Features"
+  Features:
+  - Key: "cloudStorageOptimized"
+    Content: "Optimized for Cloud Storage"
+  - Key: "cloudProviderAgnostic"
+    Content: "Compatible with Major Cloud Providers"
+  - Key: "unlimitedDevices"
+    Content: "Unlimited Number of Devices"
+  - Key: "integratedSharing"
+    Content: "Direct File Sharing"
+  - Key: "offlineKeyRecovery"
+    Content: |
+      <span>Offline Key Recovery</span>
+      <div class="has-tooltip">
+        <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
+          Your data is not stored in mails with an email account provider, which further increases security.
+        </div>
+      </div>
+  - Key: "syncConflictDetection"
+    Content: "Sync Conflict Detection"
+  - Key: "crossPlatformSupport"
+    Content: "Support for All Common Operating Systems"
+- Key: "securityRelevantFeatures"
+  Content: "Security-Relevant Features"
+  Features:
+  - Key: "fileContentEncryption"
+    Content: "File Content Encryption"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">No one can read the file content without authorization.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>This is the basic requirement for taking your right to privacy into your own hands.</p>
+  - Key: "fileNameEncryption"
+    Content: "File Name Encryption"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">No one can recognize the file name without authorization.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>Metadata like the file name reveal more about you than you think. File extensions can be used to create a profile of the data you use. In the worst case, even if the file content is encrypted, the name "Human Rights Violations Report.docx" could get you into trouble at the wrong airport.</p>
+  - Key: "fileAttributeEncryption"
+    Content: "File Attribute Encryption"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">No one gets access to additional file attributes.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>Some third-party software may store metadata about your file in its file attributes. If these are not encrypted, anyone can read them and even manipulate them to force your operating system to behave in certain ways.</p>
+  - Key: "foss"
+    Content: "Free & Open-Source Software (FOSS)"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">The source code is accessible to a broad community, which increases the security of the encryption.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>The security of a system must depend solely on the key and must not be based on the secrecy of the algorithms. Since the encryption algorithm is controlled and discussed by a broad community, vulnerabilities or errors in the code are quickly detected.</p>
+  - Key: "directoryObfuscation"
+    Content: "Directory Obfuscation"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">The encrypted directory structure does not correspond to the actual or unencrypted directory structure.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>When saving, some applications create several files that are stored in certain structures. If these structures are still recognizable in the encrypted state, an attacker can draw conclusions about the type of data despite encryption.</p>
+  - Key: "integrityProtection"
+    Content: "Integrity Protection"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">Since encryption does not immediately protect against manipulation of the data, unauthorized modification of the data must be detected.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>To protect yourself from a variety of sophisticated attacks, the integrity of your encrypted data must be verified before you decrypt it. If this does not happen, it is conceivable that manipulated data could be injected, which you could then open unnoticed. (<a class="text-link" href="https://en.wikipedia.org/wiki/Chosen-ciphertext_attack" target="_blank" rel="noopener">In the worst case, this can even be used by attackers to crack the encryption.</a>)</p>
+  - Key: "quantumResistant"
+    Content: "Quantum-Resistant Cryptography"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">The encryption algorithms used are still secure even if the attacker has quantum computers.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>Some encryption methods are based on mathematical problems that are normally difficult to calculate. For quantum computers, however, they are much less complex. If an attacker has access to a corresponding quantum computer, the encryption of your data is de facto ineffective.</p>
+  - Key: "auditedCryptography"
+    Content: "Audited Cryptography"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean</p>
+      <p class="mb-4">The encryption code is examined by independent experts.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>Audits focusing on cryptographically relevant code can be an important element of quality control, provided the auditor has enough time and does not just get a cursory overview.</p>
+  - Key: "memoryHardKDF"
+    Content: "Memory-Hard KDF"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">The key derivation function (KDF) is used to derive the cryptographic key from the password you enter. This function must be as complex as possible to prevent bruteforce attacks (randomly trying out combinations of characters).</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p class="mb-2">To derive your key from your password, a computer needs 200ms. That sounds short, but it quickly adds up to astronomically high times if an attacker has to try all conceivable passwords. Attackers could, however, use special hardware (so-called ASICs) to try hundreds of thousands of possibilities simultaneously.</p>
+      <p>To prevent this, KDFs are used that are memory-intensive ("memory-hard"), i.e. they require a particularly large amount of memory. This makes an attack disproportionately costly and thus unattractive for the attacker.</p>
+  - Key: "shareKeys"
+    Content: "Sharing Without Disclosing Passwords"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p class="mb-4">Ideal for team use of the cloud storage: Each team member can use an individual password – yet you still have access to the encrypted data.</p>
+      <p class="label-uppercase mb-2">Why is this important for data security?</p>
+      <p>Individual passwords in larger teams increase security. On the one hand, because sharing a password poses a risk depending on the communication channel. On the other hand, because passwords that are shared are often weaker (because easier to remember).</p>
