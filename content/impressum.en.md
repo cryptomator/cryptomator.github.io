@@ -43,5 +43,5 @@ Dieses Impressum gilt auch für die folgenden Auftritte in den sozialen Medien:
 
 Mastodon: {{< extlink "https://mastodon.online/@cryptomator" "https://mastodon.online/@cryptomator" >}}<br/>
 LinkedIn: {{< extlink "https://linkedin.com/company/skymatic" "https://linkedin.com/company/skymatic" >}}<br/>
-X: {{< extlink "https://x.com/Cryptomator" "https://x.com/Cryptomator" >}}
 Facebook: {{< extlink "https://facebook.com/Cryptomator" "https://facebook.com/Cryptomator" >}}<br/>
+X: {{< extlink "https://x.com/Cryptomator" "https://x.com/Cryptomator" >}}
