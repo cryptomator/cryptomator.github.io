@@ -1,22 +1,25 @@
 ---
-title: "Dropbox verschlüsseln: Deine Daten sicher schützen mit Cryptomator"
 type: article
-description: "Schutz für deine Cloud: Wie du mit Cryptomator deine sensiblen Dateien in Dropbox verschlüsseln kannst."
-aliases: ["/de/faq/usage/encrypt-dropbox"]
+weight: 1
 
-navtitle: "Verschlüsselung deiner Dropbox"
+title: "Dropbox verschlüsseln: Deine Daten sicher schützen mit Cryptomator"
+description: "Schutz für deine Cloud: Wie du mit Cryptomator deine sensiblen Dateien in Dropbox verschlüsseln kannst."
+aliases: ["/de/encrypt-dropbox", "/de/faq/usage/encrypt-dropbox"]
+
 ctatitle: "Du willst deine Dropbox mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
 ctalink: /de/#get-started
 ctabutton: "Jetzt deine Dropbox verschlüsseln"
+
+cardtitle: "Verschlüsselung deiner Dropbox"
+cardtext: "Schütze deine sensiblen Dateien in Dropbox mit Verschlüsselung – ganz ohne Einschränkungen bei Synchronisation und Nutzung."
+cardimage: /img/encrypt-dropbox/cryptobot-unlocking-vault.png
 
 ogimage:
   relsrc: /img/encrypt-dropbox/og-image.png
   width: 1200
   height: 541
 ---
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 # Dropbox sicher verschlüsseln: So schützt du mit Cryptomator deine sensiblen Dateien in der Cloud
 
@@ -36,9 +39,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 ## Deine Dropbox verschlüsseln und Daten zuverlässig schützen: So hilft dir Cryptomator dabei {#features}
 
-{{< /markdownify >}}</div>
-
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fab fa-dropbox fa-fw text-primary"></i> Nutze Dropbox wie bisher</h3>
   </div>
@@ -47,43 +48,41 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
   </div>
 </div>
 
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-share fa-fw text-primary"></i> Geschützte Daten bequem für Freunde, Familie und Kollegen freigeben</h3>
   </div>
   <div class="p-4">
-    <p class"font-p">Macht mit Cryptomator eure Daten in der Cloud sicher und <strong>bewahrt die Privatsphäre über mehrere Computer hinweg.</strong> Alles, was ihr braucht, ist Cryptomator auf jedem Gerät und das Passwort, um Zugriff auf die Daten zu erhalten.</p>
+    <p class="font-p">Macht mit Cryptomator eure Daten in der Cloud sicher und <strong>bewahrt die Privatsphäre über mehrere Computer hinweg.</strong> Alles, was ihr braucht, ist Cryptomator auf jedem Gerät und das Passwort, um Zugriff auf die Daten zu erhalten.</p>
   </div>
 </div>
 
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-key fa-fw text-primary"></i> Zugriff auf deine Cloud-Daten hat nur, wer ihn haben soll</h3>
   </div>
   <div class="p-4">
-    <p class"font-p">Die <strong>Ende-zu-Ende-Verschlüsselung</strong> macht es potenziellen Angreifer noch schwieriger, dir zu schaden. Denn dank der verschlüsselten Dateinamen können Dritte keine Rückschlüsse auf die Dateitypen ziehen – was eines der häufigsten Einfallstore für sie ist.</p>
+    <p class="font-p">Die <strong>Ende-zu-Ende-Verschlüsselung</strong> macht es potenziellen Angreifer noch schwieriger, dir zu schaden. Denn dank der verschlüsselten Dateinamen können Dritte keine Rückschlüsse auf die Dateitypen ziehen – was eines der häufigsten Einfallstore für sie ist.</p>
   </div>
 </div>
 
-<div class="white-box my-6">
+<div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-sync fa-fw text-primary"></i> Keine Dateien versehentlich überschreiben</h3>
   </div>
   <div class="p-4">
-    <p class"font-p">Wenn gleichzeitig mehrere Geräte auf ein Dokument zugreifen, und dadurch <strong>Synchronisationskonflikte</strong> entstehen, erkennt Cryptomator diese trotz Dateinamensverschlüsselung. Zusätzlich bleibt die Versionshistorie von deinem Cloud-Speicher-Anbieter erhalten, so dass du alte Versionen einzelner Dateien wiederherstellen kannst. Hinweis: Das Auffinden der richtigen Datei zum Wiederherstellen ist derzeit praktisch nicht machbar, aber wird bald ab Cryptomator 1.7.0 ermöglicht.</p>
+    <p class="font-p">Wenn gleichzeitig mehrere Geräte auf ein Dokument zugreifen, und dadurch <strong>Synchronisationskonflikte</strong> entstehen, erkennt Cryptomator diese trotz Dateinamensverschlüsselung. Zusätzlich bleibt die Versionshistorie von deinem Cloud-Speicher-Anbieter erhalten, so dass du alte Versionen einzelner Dateien wiederherstellen kannst. Hinweis: Das Auffinden der richtigen Datei zum Wiederherstellen ist derzeit praktisch nicht machbar, aber wird bald ab Cryptomator 1.7.0 ermöglicht.</p>
   </div>
 </div>
 
-<div class="white-box mt-6 mb-12">
+<div class="not-prose white-box mt-6 mb-12">
   <div class="px-4 py-2 border-b border-primary">
     <h3 class="font-h3"><i class="fas fa-clouds fa-fw text-primary"></i> Deine sensiblen Daten in Dropbox überall schnell griffbereit</h3>
   </div>
   <div class="p-4">
-    <p class"font-p">Cryptomator wurde speziell für die <strong>Verschlüsselung von Cloud-Diensten</strong> entwickelt. Weil die <strong>Dateien einzeln verschlüsselt sind</strong>, werden immer nur die Dateien neu hochgeladen bzw. verschlüsselt, die du gerade geändert hast – und nicht (wie bei sogenannten „Containerlösungen“) der gesamte Ordner. Änderungen synchronisieren sich also viel schneller – und das macht sich gerade unterwegs bemerkbar.</p>
+    <p class="font-p">Cryptomator wurde speziell für die <strong>Verschlüsselung von Cloud-Diensten</strong> entwickelt. Weil die <strong>Dateien einzeln verschlüsselt sind</strong>, werden immer nur die Dateien neu hochgeladen bzw. verschlüsselt, die du gerade geändert hast – und nicht (wie bei sogenannten „Containerlösungen“) der gesamte Ordner. Änderungen synchronisieren sich also viel schneller – und das macht sich gerade unterwegs bemerkbar.</p>
   </div>
 </div>
-
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
 
 ## Und so funktioniert Cryptomator in der Praxis {#how-cryptomator-works}
 
@@ -110,5 +109,3 @@ Wenn du möchtest, kannst du diesen sofort entsperren und das virtuelle Laufwerk
 Hier legst du ab sofort deine sensiblen Dateien ab, um diese in Dropbox zu verschlüsseln.
 
 {{< extlink "https://docs.cryptomator.org/desktop/adding-vaults/" "Eine ausführliche Anleitung gibt es hier." >}}
-
-{{< /markdownify >}}</div>

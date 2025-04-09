@@ -4,10 +4,10 @@
   translation: "Get Started"
 - id: nav_products
   translation: "Products"
+- id: nav_resources
+  translation: "Resources"
 - id: nav_support_us
   translation: "Support Us"
-- id: nav_learn_more
-  translation: "Learn More"
 - id: nav_github
   translation: "Cryptomator on GitHub"
 - id: footer_contribute_title

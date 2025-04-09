@@ -1,9 +1,11 @@
 ---
-title: "Free Alternative to Boxcryptor: Cryptomator"
 type: article
-description: "You want to encrypt your data in the cloud and are looking for the best alternative? We compare Boxcryptor with the open-source solution Cryptomator."
+weight: 2
 
-navtitle: "Alternative to Boxcryptor"
+title: "Free Alternative to Boxcryptor: Cryptomator"
+description: "You want to encrypt your data in the cloud and are looking for the best alternative? We compare Boxcryptor with the open-source solution Cryptomator."
+aliases: ["/boxcryptor-alternative"]
+
 ctatitle: "Would you like to test Cryptomator as an alternative to Boxcryptor?"
 ctatext: "Cryptomator secures your personal files in the cloud and can be used without an account. Cryptomator Hub manages team access and is ideal for teams and organizations."
 ctalink: /#get-started
@@ -13,9 +15,92 @@ ogimage:
   relsrc: /img/boxcryptor-alternative/og-image.png
   width: 1200
   height: 541
----
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+comparison:
+  header: |
+    <div class="inline-flex flex-col-reverse gap-2 items-center">
+      <div class="font-normal">
+        <span>Boxcryptor</span>
+        <div class="has-tooltip">
+          <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
+            Boxcryptor has been acquired by Dropbox in November 2022, but continues to support existing customers through the duration of their contracts.
+          </div>
+        </div>
+      </div>
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+    </div>
+  footer: |
+    <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/comparisons/boxcryptor-alternative/" data-umami-event="comparisons-boxcryptor-cta">Full Comparison</a>
+  generalFeatures:
+    cloudStorageOptimized: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    cloudProviderAgnostic: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    unlimitedDevices: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    integratedSharing: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    offlineKeyRecovery: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    syncConflictDetection: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-minus-circle text-xl lg:text-2xl text-gray-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Not applicable without file name encryption, but could be problematic with optional file name encryption.</div>
+      </div>
+    crossPlatformSupport: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">No Linux.</div>
+      </div>
+  securityRelevantFeatures:
+    fileContentEncryption: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    fileNameEncryption: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Optional.</div>
+      </div>
+    fileAttributeEncryption: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    foss: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    directoryObfuscation: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    integrityProtection: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    quantumResistant: |
+      <div class="flex items-center justify-center divide-x divide-gray-400">
+        <div class="px-4">
+          <div class="has-tooltip">
+            <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            </i>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Uses symmetric encryption AES.</div>
+          </div>
+        </div>
+        <div class="px-4">
+          <div class="has-tooltip">
+            <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            </i>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Uses asymmetric encryption RSA.</div>
+          </div>
+        </div>
+      </div>
+    auditedCryptography: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    memoryHardKDF: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    shareKeys: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+---
 
 # The Best Alternative to Encrypt Your Sensitive Data in the Cloud: Boxcryptor vs. Cryptomator
 
@@ -69,7 +154,7 @@ So you don't see the strengths of open-source encryption software at first glanc
 
 **Continue reading here if you want to learn more about data security and open-source software:**
 
-[Encrypt your data securely in the cloud: How you can further increase your data security through open source.](/open-source/)
+[Encrypt your data securely in the cloud: How you can further increase your data security through open source.](/guides/open-source/)
 
 ## Comparison of Boxcryptor and Cryptomator Features {#comparison}
 
@@ -79,9 +164,7 @@ While Cryptomator concentrates on its core task (encryption of cloud storage), B
 
 Let's now compare the visible features. The following table shows you the similarities and differences between the two encryption software solutions:
 
-{{< /markdownify >}}</div>
-
-<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
@@ -158,17 +241,13 @@ Let's now compare the visible features. The following table shows you the simila
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ### Security-Relevant Features {#security-relevant-features}
 
 As already described at the beginning, the big difference between Boxcryptor and Cryptomator is invisible, because you do not see the open-source and security-relevant features in everyday life.
 
 Let's now take a look at these features. For this we compare the features again as a table:
 
-{{< /markdownify >}}</div>
-
-<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
@@ -315,7 +394,7 @@ Let's now take a look at these features. For this we compare the features again 
       <td class="font-p p-4" colspan="3">
         <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The encryption algorithms used are still secure even if the attacker has quantum computers.</p>
-        <p class="label-uppercase mb-2">Why is this important for data security?<p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p>Some encryption methods are based on mathematical problems that are normally difficult to calculate. For quantum computers, however, they are much less complex. If an attacker has access to a corresponding quantum computer, the encryption of your data is de facto ineffective.</p>
       </td>
     </tr>
@@ -351,7 +430,7 @@ Let's now take a look at these features. For this we compare the features again 
       <td class="font-p p-4" colspan="3">
         <p class="label-uppercase mb-2">What does that mean?</p>
         <p class="mb-4">The key derivation function (KDF) is used to derive the cryptographic key from the password you enter. This function must be as complex as possible to prevent bruteforce attacks (randomly trying out combinations of characters).</p>
-        <p class="label-uppercase mb-2">Why is this important for data security?<p>
+        <p class="label-uppercase mb-2">Why is this important for data security?</p>
         <p class="mb-2">To derive your key from your password, a computer needs 200ms. That sounds short, but it quickly adds up to astronomically high times if an attacker has to try all conceivable passwords. Attackers could, however, use special hardware (so-called ASICs) to try hundreds of thousands of possibilities simultaneously.</p>
         <p>To prevent this, KDFs are used that are memory-intensive ("memory-hard"), i.e. they require a particularly large amount of memory. This makes an attack disproportionately costly and thus unattractive for the attacker.</p>
       </td>
@@ -377,8 +456,6 @@ Let's now take a look at these features. For this we compare the features again 
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ## Conclusion: When Boxcryptor or Cryptomator Is the Right Alternative for You {#conclusion}
 
 Now you know the differences between Boxcryptor and its alternative Cryptomator. Draw your own conclusions:
@@ -386,5 +463,3 @@ Now you know the differences between Boxcryptor and its alternative Cryptomator.
 Check whether the advantages of open-source software and thus the security-relevant criteria are important to you. If you like the approach of Cryptomator, it could be the more suitable alternative for you.
 
 Perhaps the features provided by Boxcryptor are sufficient for you? Then you can decide according to your personal preference.
-
-{{< /markdownify >}}</div>

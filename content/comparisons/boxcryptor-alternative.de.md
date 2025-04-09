@@ -1,9 +1,11 @@
 ---
-title: "Kostenlose Alternative zu Boxcryptor: Cryptomator"
 type: article
-description: "Du willst deine Daten in der Cloud verschlüsseln und suchst die beste Alternative? Wir vergleichen für dich Boxcryptor mit der Open-Source-Lösung Cryptomator."
+weight: 2
 
-navtitle: "Alternative zu Boxcryptor"
+title: "Kostenlose Alternative zu Boxcryptor: Cryptomator"
+description: "Du willst deine Daten in der Cloud verschlüsseln und suchst die beste Alternative? Wir vergleichen für dich Boxcryptor mit der Open-Source-Lösung Cryptomator."
+aliases: ["/de/boxcryptor-alternative"]
+
 ctatitle: "Möchtest du Cryptomator als Alternative zu Boxcryptor testen?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
 ctalink: /de/#get-started
@@ -13,9 +15,92 @@ ogimage:
   relsrc: /img/boxcryptor-alternative/og-image.png
   width: 1200
   height: 541
----
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
+comparison:
+  header: |
+    <div class="inline-flex flex-col-reverse gap-2 items-center">
+      <div class="font-normal">
+        <span>Boxcryptor</span>
+        <div class="has-tooltip">
+          <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+          <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
+            Boxcryptor wurde im November 2022 von Dropbox übernommen, unterstützt aber weiterhin bestehende Kunden während der Laufzeit ihrer Verträge.
+          </div>
+        </div>
+      </div>
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+    </div>
+  footer: |
+    <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/boxcryptor-alternative/" data-umami-event="comparisons-boxcryptor-cta">Detailvergleich</a>
+  generalFeatures:
+    cloudStorageOptimized: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    cloudProviderAgnostic: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    unlimitedDevices: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    integratedSharing: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    offlineKeyRecovery: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    syncConflictDetection: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-minus-circle text-xl lg:text-2xl text-gray-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Nicht anwendbar ohne Dateinamen-Verschlüsselung, könnte aber mit optionaler Dateinamen-Verschlüsselung problematisch sein.</div>
+      </div>
+    crossPlatformSupport: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Kein Linux.</div>
+      </div>
+  securityRelevantFeatures:
+    fileContentEncryption: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    fileNameEncryption: |
+      <div class="has-tooltip">
+        <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        </i>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Optional.</div>
+      </div>
+    fileAttributeEncryption: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    foss: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    directoryObfuscation: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    integrityProtection: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    quantumResistant: |
+      <div class="flex items-center justify-center divide-x divide-gray-400">
+        <div class="px-4">
+          <div class="has-tooltip">
+            <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            </i>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Verwendet symmetrische Verschlüsselung AES.</div>
+          </div>
+        </div>
+        <div class="px-4">
+          <div class="has-tooltip">
+            <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            </i>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Verwendet asymmetrische Verschlüsselung RSA.</div>
+          </div>
+        </div>
+      </div>
+    auditedCryptography: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+    memoryHardKDF: |
+      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+    shareKeys: |
+      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+---
 
 # Die beste Alternative, um deine sensiblen Daten in der Cloud zu verschlüsseln: Boxcryptor vs. Cryptomator
 
@@ -69,7 +154,7 @@ Die Stärken von quelloffener Verschlüsselungssoftware siehst du also auf den e
 
 **Lies hier weiter, wenn du noch mehr über Datensicherheit und Open-Source-Software erfahren willst:**
 
-[Deine Daten in der Cloud sicher verschlüsseln: Wie du durch Open Source deine Datensicherheit weiter stärkst.](/de/open-source/)
+[Deine Daten in der Cloud sicher verschlüsseln: Wie du durch Open Source deine Datensicherheit weiter stärkst.](/de/guides/open-source/)
 
 ## Vergleich der Features von Boxcryptor und Cryptomator {#comparison}
 
@@ -79,9 +164,7 @@ Während Cryptomator sich auf seine Kernaufgabe konzentriert (Verschlüsselung v
 
 Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zeigt dir die Gemeinsamkeiten und Unterschiede der beiden Verschlüsselungssoftwares:
 
-{{< /markdownify >}}</div>
-
-<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
@@ -158,17 +241,13 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ### Sicherheitsrelevante Features {#security-relevant-features}
 
 Wie bereits zu Anfang geschildert, ist der große Unterschied zwischen Boxcryptor und Cryptomator unsichtbar, denn die Quelloffenheit und sicherheitsrelevanten Merkmale siehst du im Alltag nicht.
 
 Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die Features wieder als Tabelle:
 
-{{< /markdownify >}}</div>
-
-<table class="table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
       <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
@@ -377,8 +456,6 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
   </tbody>
 </table>
 
-<div class="prose prose-sm md:prose max-w-none md:max-w-none">{{< markdownify >}}
-
 ## Fazit: Wann Boxcryptor bzw. Cryptomator die passende Alternative für dich ist {#conclusion}
 
 Du kennst jetzt die Unterschiede zwischen Boxcryptor und der Alternative Cryptomator. Nun kannst du dir selbst eine Meinung bilden:
@@ -386,5 +463,3 @@ Du kennst jetzt die Unterschiede zwischen Boxcryptor und der Alternative Cryptom
 Prüfe, ob dir die Vorteile von Open-Source-Software und damit die sicherheitsrelevanten Kriterien wichtig sind. Sagt dir der Ansatz von Cryptomator zu, könnte es für dich die passendere Alternative sein.
 
 Möglicherweise ist der Funktionsumfang von Boxcryptor für dich ausreichend? Dann kannst du nach persönlicher Präferenz entscheiden.
-
-{{< /markdownify >}}</div>
