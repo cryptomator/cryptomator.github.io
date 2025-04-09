@@ -8,7 +8,7 @@ comparison:
       <img class="max-w-16 h-12" src="/img/logo.svg">
     </div>
   footer: |
-    <a class="btn btn-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/pricing/">Preise</a>
+    <a class="btn btn-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/pricing/" data-umami-event="comparisons-cryptomator-cta">Preise</a>
   generalFeatures:
     cloudStorageOptimized: |
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
@@ -21,7 +21,7 @@ comparison:
         <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Tresore lassen sich nur als Ganzes teilen</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Tresore lassen sich nur als Ganzes teilen.</div>
       </div>
     offlineKeyRecovery: |
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
@@ -39,7 +39,7 @@ comparison:
         <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">geplant</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">In Planung, aber nicht auf der aktuellen Roadmap.</div>
       </div>
     foss: |
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
@@ -54,7 +54,7 @@ comparison:
             <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
               <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
-            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Cryptomator verwendet symmetrische Verschlüsselung AES-GCM und AES-SIV</div>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Cryptomator verwendet symmetrische Verschlüsselung AES-GCM und AES-SIV.</div>
           </div>
         </div>
         <div class="px-4">
@@ -62,7 +62,7 @@ comparison:
             <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
               <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
-            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Cryptomator Hub verwendet asymmetrische Verschlüsselung ECDH und ECDSA; geplant, auf quantenresistente Algorithmen umzusteigen, sobald die Standardisierung ausgreift ist</div>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Cryptomator Hub verwendet asymmetrische Verschlüsselung ECDH und ECDSA; Umstieg auf quantenresistente Algorithmen in Planung, sobald die Standardisierung ausgreift ist.</div>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ comparison:
             <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
               <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
-            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">mit Cryptomator</div>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Die gemeinsame Nutzung passwortbasierter Cryptomator-Tresore wird nicht empfohlen.</div>
           </div>
         </div>
         <div class="px-4">
@@ -85,7 +85,7 @@ comparison:
             <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
               <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
-            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">mit Cryptomator Hub</div>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Cryptomator Hub ermöglicht die sichere gemeinsame Nutzung von Tresoren ohne Weitergabe von Passwörtern.</div>
           </div>
         </div>
       </div>

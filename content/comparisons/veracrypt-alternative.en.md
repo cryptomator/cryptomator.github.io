@@ -27,7 +27,7 @@ comparison:
         <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">mobile apps are not official</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Mobile apps are not official.</div>
       </div>
   securityRelevantFeatures:
     fileContentEncryption: |

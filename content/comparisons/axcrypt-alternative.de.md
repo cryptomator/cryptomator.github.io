@@ -25,14 +25,14 @@ comparison:
         <i class="relative fas fa-minus-circle text-xl lg:text-2xl text-gray-600">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">nicht anwendbar</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Nicht anwendbar wegen fehlender Dateinamen-Verschlüsselung.</div>
       </div>
     crossPlatformSupport: |
       <div class="has-tooltip">
         <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">kein Linux</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Kein Linux.</div>
       </div>
   securityRelevantFeatures:
     fileContentEncryption: |
@@ -54,7 +54,7 @@ comparison:
             <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
               <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
-            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">verwendet symmetrische Verschlüsselung AES</div>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Verwendet symmetrische Verschlüsselung AES.</div>
           </div>
         </div>
         <div class="px-4">
@@ -62,7 +62,7 @@ comparison:
             <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
               <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
-            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">verwendet asymmetrische Verschlüsselung RSA</div>
+            <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Verwendet asymmetrische Verschlüsselung RSA.</div>
           </div>
         </div>
       </div>
