@@ -23,8 +23,6 @@ comparison:
         </i>
         <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Vaults can only be shared as a whole.</div>
       </div>
-    offlineKeyRecovery: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     syncConflictDetection: |
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     crossPlatformSupport: |

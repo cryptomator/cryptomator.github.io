@@ -18,8 +18,6 @@ comparison:
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
     integratedSharing: |
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
-    offlineKeyRecovery: |
-      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     syncConflictDetection: |
       <div class="has-tooltip">
         <i class="relative fas fa-minus-circle text-xl lg:text-2xl text-gray-600">
