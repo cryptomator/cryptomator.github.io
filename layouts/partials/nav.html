@@ -20,7 +20,7 @@
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
         {{- range .Site.Data.nav }}
-        {{- if .Title }}
+        {{- if .Dropdown }}
         <!-- Dropdown item -->
         <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2 border-b-2 border-transparent" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
           <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
@@ -29,34 +29,41 @@
           </button>
           <div class="absolute">
             <ul x-show="isDropdownOpen" x-cloak class="absolute mt-6 py-2 whitespace-nowrap bg-white rounded-sm shadow-md z-50">
-              {{- range .Children }}
-              {{- if eq . "|" }}
-              <li>
-                <hr class="border-gray-200 my-2"/>
-              </li>
-              {{- else }}
-              {{- with $.Site.GetPage . }}
+              {{- range $dropdownItem := .Dropdown }}
+              {{- if $dropdownItem.Path }}
+              {{- with $.Site.GetPage $dropdownItem.Path }}
               <li>
                 <a href="{{ .RelPermalink }}" class="flex items-center px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
-                  <span>{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</span>
-                  {{- if .Params.Navbadge }}
-                  <span class="inline-flex px-2 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark ml-2">{{ .Params.Navbadge }}</span>
+                  <span>{{ .Title }}</span>
+                  {{- if $dropdownItem.Badge }}
+                  <span class="inline-flex px-2 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark ml-2">{{ i18n $dropdownItem.Badge . }}</span>
                   {{- end }}
                 </a>
               </li>
               {{- end }}
+              {{- else if $dropdownItem.URL }}
+              <li>
+                <a href="{{ $dropdownItem.URL }}" target="_blank" rel="noopener" class="flex items-center px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-{{ $dropdownItem.UmamiEvent }}">
+                  <span>{{ i18n $dropdownItem.Title . }}</span>
+                  <i class="fas fa-external-link fa-fw ml-2"></i>
+                </a>
+              </li>
+              {{- else if $dropdownItem.Separator }}
+              <li>
+                <hr class="border-gray-200 my-2"/>
+              </li>
               {{- end }}
               {{- end }}
             </ul>
           </div>
         </li>
-        {{- else if .URL }}
-        <!-- Direct link -->
-        {{- with $.Site.GetPage .URL }}
+        {{- else if .Path }}
+        <!-- Page item -->
+        {{- with $.Site.GetPage .Path }}
         {{- $navItemBorderColor := cond (hasPrefix $currentRelPermalink .RelPermalink) $borderColor "border-transparent" }}
         <li class="flex items-center mx-2 border-b-2 {{ $navItemBorderColor }} {{ $hoverBorderColor }}">
           <a class="p-2 hover:no-underline" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
-            {{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}
+            {{ .Title }}
           </a>
         </li>
         {{- end }}
@@ -107,31 +114,37 @@
   <!-- Smartphone Navigation -->
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
     {{- range .Site.Data.nav }}
-    {{- if .Title }}
+    {{- if .Dropdown }}
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
       {{ i18n .Title . }}
     </div>
-    {{- range .Children }}
-    {{- if eq . "|" }}
-    <hr class="border-primary my-2"/>
-    {{- else }}
-    {{- with $.Site.GetPage . }}
-    <a class="block py-2 mx-2 hover:text-secondary hover:no-underline"
-        href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
-      <span>{{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}</span>
-      {{- if .Params.Navbadge }}
-      <span class="inline-flex px-2 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark ml-2">{{ .Params.Navbadge }}</span>
+    {{- range $dropdownItem := .Dropdown }}
+    <!-- Dropdown item -->
+    {{- if $dropdownItem.Path }}
+    {{- with $.Site.GetPage $dropdownItem.Path }}
+    <a class="flex items-center py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+      <span>{{ .Title }}</span>
+      {{- if $dropdownItem.Badge }}
+      <span class="inline-flex px-2 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark ml-2">{{ i18n $dropdownItem.Badge . }}</span>
       {{- end }}
     </a>
     {{- end }}
+    {{- else if $dropdownItem.URL }}
+    <a class="flex items-center py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ $dropdownItem.URL }}" target="_blank" rel="noopener" data-umami-event="nav-{{ $dropdownItem.UmamiEvent }}">
+      <span>{{ i18n $dropdownItem.Title . }}</span>
+      <i class="fas fa-external-link fa-fw ml-2"></i>
+    </a>
+    {{- else if $dropdownItem.Separator }}
+    <hr class="border-primary my-2"/>
     {{- end }}
     {{- end }}
     <hr class="border-primary my-2"/>
-    {{- else if .URL }}
-    {{- with $.Site.GetPage .URL }}
+    {{- else if .Path }}
+    <!-- Page item -->
+    {{- with $.Site.GetPage .Path }}
     <a class="block py-2 mx-2 hover:text-secondary hover:no-underline"
         href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
-      {{ cond (isset .Params "navtitle") .Params.Navtitle .Title }}
+      {{ .Title }}
     </a>
     <hr class="border-primary my-2"/>
     {{- end }}

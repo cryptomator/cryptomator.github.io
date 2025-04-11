@@ -4,10 +4,16 @@
   translation: "Jetzt loslegen"
 - id: nav_products
   translation: "Produkte"
-- id: nav_resources
-  translation: "Ressourcen"
+- id: nav_products_for_individuals_badge
+  translation: "Für Einzelnutzer"
+- id: nav_products_for_teams_badge
+  translation: "Für Teams"
 - id: nav_support_us
   translation: "Unterstütze uns"
+- id: nav_resources
+  translation: "Ressourcen"
+- id: nav_docs
+  translation: "Docs"
 - id: nav_github
   translation: "Cryptomator auf GitHub"
 - id: footer_contribute_title

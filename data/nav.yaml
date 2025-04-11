@@ -1,7 +1,27 @@
 - Title: nav_products
-  Children: ["/for-individuals", "/for-teams", "|", "/downloads"]
-- URL: "/pricing"
+  Dropdown:
+  - Path: "/for-individuals"
+    Badge: nav_products_for_individuals_badge
+  - Path: "/for-teams"
+    Badge: nav_products_for_teams_badge
+  - Separator: true
+  - Path: "/downloads"
+- Path: "/pricing"
 - Title: nav_support_us
-  Children:  ["/supporter-cert", "/donate", "/sponsors"]
+  Dropdown:  
+  - Path: "/supporter-cert"
+  - Path: "/donate"
+  - Path: "/sponsors"
 - Title: nav_resources
-  Children: ["/blog", "/guides", "/compliance", "/comparisons", "|", "/coop", "/enterprise"]
+  Dropdown:
+  - Path: "/blog"
+  - Path: "/guides"
+  - Path: "/comparisons"
+  - Path: "/compliance"
+  - Separator: true
+  - Path: "/coop"
+  - Path: "/enterprise"
+  - Separator: true
+  - Title: nav_docs
+    URL: "https://docs.cryptomator.org/"
+    UmamiEvent: "docs"
