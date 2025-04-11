@@ -23,7 +23,7 @@
       </header>
 
       <div x-show="planOption !== '#for-teams'">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           <div class="white-box">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
@@ -176,7 +176,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
         <section class="container py-12">
           <header class="text-center">
@@ -198,10 +198,23 @@
             {{- end }}
           </dl>
         </section>
+
+        <section class="container text-center py-12">
+          <h2 class="font-h2 mb-4">{{ i18n "pricing_support_us_title" . }}</h2>
+          <p class="font-p mb-4">{{ i18n "pricing_support_us_description" . }}</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="{{ .Site.LanguagePrefix }}/donate/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-donate">
+              <i class="fas fa-donate"></i> {{ i18n "pricing_support_us_donate_button" . }}
+            </a>
+            <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-sponsors">
+              <i class="fas fa-handshake"></i> {{ i18n "pricing_support_us_sponsor_button" . }}
+            </a>
+          </div>
+        </section>
       </div>
 
       <div x-show="planOption === '#for-teams'" x-cloak>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           <div class="white-box">
             <div class="p-4 border-b border-primary">
               <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
@@ -378,7 +391,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
         <section class="container py-12">
           <header class="text-center">

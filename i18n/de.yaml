@@ -927,7 +927,7 @@
 - id: pricing_hub_standard_benefit_1
   translation: "Alles in Community"
 - id: pricing_hub_standard_benefit_2
-  translation: "Unbegrenzte Sitze (mindestens 3)"
+  translation: "Ab 3 Sitze"
 - id: pricing_hub_standard_benefit_3
   translation: "Voller Zugriff über Mobile-Apps"
 - id: pricing_hub_standard_benefit_3_tooltip
@@ -957,6 +957,15 @@
   translation: "Dedizierter Kundenbetreuer"
 - id: pricing_hub_enterprise_benefit_4
   translation: "Vorrangiger E-Mail-Support"
+
+- id: pricing_support_us_title
+  translation: "Möchtest du unser Open-Source-Projekt unterstützen?"
+- id: pricing_support_us_description
+  translation: "Wenn dir Cryptomator gefällt, unterstütze uns mit einer Spende oder werde Sponsor."
+- id: pricing_support_us_donate_button
+  translation: "Spende"
+- id: pricing_support_us_sponsor_button
+  translation: "Werde Sponsor"
 
 # Supporter Certificate
 - id: supporter_cert_common_email
