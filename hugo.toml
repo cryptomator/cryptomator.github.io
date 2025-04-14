@@ -1,18 +1,17 @@
 baseURL = "https://cryptomator.org/"
 title = "Cryptomator"
-languageCode = "en-us"
-DefaultContentLanguage = "en"
+defaultContentLanguage = "en"
 enableemoji = true
 
 [languages]
   [languages.en]
     weight = 1
     languageName = "English"
-    languageCode = "en_US"
+    languageCode = "en-US"
   [languages.de]
     weight = 2
     languageName = "Deutsch"
-    languageCode = "de_DE"
+    languageCode = "de-DE"
 
 [build]
   [[build.cachebusters]]
