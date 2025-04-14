@@ -872,8 +872,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       spec: {
         selector: {app: 'keycloak'},
         ports: [
-          {protocol: 'TCP', port: 8080},
-          {protocol: 'TCP', port: 9000}
+          {protocol: 'TCP', port: 8080}
         ]
       }
     }
