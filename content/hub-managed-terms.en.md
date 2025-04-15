@@ -11,7 +11,7 @@ The following General Terms and Conditions apply exclusively within the framewor
 Conflicting or different general terms and conditions of the users do not become part of the contract. This also applies if the Provider does not expressly object to them.
 {.text-lg .leading-relaxed .text-gray-700}
 
-Contract language is German. This is a translation from our [German AGB](/de/hub/managed/terms). German Version shall prevail.
+Contract language is German. This is a translation from our [German AGB](/de/hub/managed/terms/). German Version shall prevail.
 {.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Definitions {#definitions}
