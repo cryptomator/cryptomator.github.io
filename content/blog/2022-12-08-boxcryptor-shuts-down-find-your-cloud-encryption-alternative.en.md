@@ -52,4 +52,4 @@ Switching from Boxcryptor to Cryptomator is simple. Boxcryptor provides an [off-
 
 And you have successfully created your first vault.
 
-If you want, you can unlock it immediately and reveal the virtual drive. From now on, you can store your sensitive files here, e.g., the data that you previously encrypted with Boxcryptor, in order to encrypt them in the cloud with Cryptomator from now on. [Detailed instructions are available here.](https://docs.cryptomator.org/en/latest/desktop/adding-vaults/)
+If you want, you can unlock it immediately and reveal the virtual drive. From now on, you can store your sensitive files here, e.g., the data that you previously encrypted with Boxcryptor, in order to encrypt them in the cloud with Cryptomator from now on. [Detailed instructions are available here.](https://docs.cryptomator.org/desktop/adding-vaults/)

@@ -11,7 +11,7 @@ summary: "Cryptomator für Android ist jetzt auf Accrescent verfügbar und biete
 
 Wir freuen uns, ankündigen zu können, dass Cryptomator für Android jetzt auf [Accrescent](https://accrescent.app/app/org.cryptomator) verfügbar ist – einem datenschutzorientierten App-Store mit robusten Sicherheitsfunktionen.
 
-Dies erweitert unsere bestehenden Vertriebskanäle, darunter [Google Play](https://docs.cryptomator.org/en/latest/android/setup/#google-play-store), [APK Store](https://docs.cryptomator.org/en/latest/android/setup/#apk-store) und F-Droid (sowohl [unser Repository](https://docs.cryptomator.org/en/latest/android/setup/#cryptomator-f-droid-repository) als auch das [Haupt-Repository](https://docs.cryptomator.org/en/latest/android/setup/#main-f-droid-repository)). Warum haben wir einen weiteren Vertriebskanal hinzugefügt?
+Dies erweitert unsere bestehenden Vertriebskanäle, darunter [Google Play](https://docs.cryptomator.org/android/setup/#google-play-store), [APK Store](https://docs.cryptomator.org/android/setup/#apk-store) und F-Droid (sowohl [unser Repository](https://docs.cryptomator.org/android/setup/#cryptomator-f-droid-repository) als auch das [Haupt-Repository](https://docs.cryptomator.org/android/setup/#main-f-droid-repository)). Warum haben wir einen weiteren Vertriebskanal hinzugefügt?
 
 ## Warum Accrescent?
 
