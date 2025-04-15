@@ -3,7 +3,7 @@
 # Usage
 ## Requirements
 * Hugo
-* Fontawesome Pro `npm config set "@skymatic:registry" https://npm.pkg.github.com/ && npm config set "//npm.pkg.github.com/:_authToken" TOKEN`
+* Font Awesome Pro `npm config set "@awesome.me:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" TOKEN`
 
 ## Building
 1. `npm install`

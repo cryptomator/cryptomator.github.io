@@ -37,7 +37,7 @@ enableemoji = true
     target = "assets"
 
   [[module.mounts]]
-    source = "node_modules/@skymatic/fontawesome-pro/webfonts"
+    source = "node_modules/@awesome.me/kit-628503cc21/icons/webfonts"
     target = "static/webfonts"
 
   [[module.mounts]]
