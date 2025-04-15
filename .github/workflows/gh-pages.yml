@@ -21,10 +21,10 @@ jobs:
         node-version: 22
         cache: 'npm'
         cache-dependency-path: package-lock.json
-        registry-url: 'https://npm.pkg.github.com/'
+        registry-url: 'https://npm.fontawesome.com/'
     - name: NPM install
       run: |
-        npm config set "@skymatic:registry" https://npm.pkg.github.com/
+        npm config set "@awesome.me:registry" https://npm.fontawesome.com/
         npm ci --ignore-scripts
       env:
         NODE_AUTH_TOKEN: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}

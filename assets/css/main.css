@@ -5,7 +5,7 @@
   @import './custom.css';
 }
 
-@import '@skymatic/fontawesome-pro/css/all' layer(components);
+@import '@awesome.me/kit-628503cc21/icons/css/all.css' layer(components);
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
