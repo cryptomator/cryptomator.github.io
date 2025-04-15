@@ -7,7 +7,7 @@ _Effective date: January 2024_
 By purchasing licenses and using software licenses and other digital content offered on this website, you declare your agreement with the following Terms & Conditions (T&C) of Skymatic GmbH in the context of current and future business relations.
 {.text-lg .leading-relaxed .text-gray-700}
 
-Contract language is German. This is a translation from our [German AGB](/de/terms). German Version shall prevail.
+Contract language is German. This is a translation from our [German AGB](/de/terms/). German Version shall prevail.
 {.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Validity
