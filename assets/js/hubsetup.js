@@ -495,6 +495,7 @@ EOF`;
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
+        QUARKUS_HTTP_PROXY_PROXY_ADDRESS_FORWARDING: true,
         QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE: `default-src 'self'; connect-src 'self' api.cryptomator.org ${HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`
       },
       ...(this.cfg.compose.includeTraefik && this.getTraefikConfig(this.cfg.hub.publicUrl, 'hub')),
@@ -688,6 +689,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
+                {name: 'QUARKUS_HTTP_PROXY_PROXY_ADDRESS_FORWARDING', value: 'true'},
                 ...(this.cfg.keycloak.useExternal || this.getHostname(this.cfg.hub.publicUrl) != this.getHostname(this.cfg.keycloak.publicUrl) ? [{name: 'QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE', value: `default-src 'self'; connect-src 'self' api.cryptomator.org ${HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`}] : [])
               ]
             }]
