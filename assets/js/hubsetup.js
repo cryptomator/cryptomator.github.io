@@ -33,8 +33,7 @@ class HubSetup {
         publicUrl: 'https://domain.tld',
         adminUser: 'admin',
         adminPw: 'admin',
-        syncerUser: 'syncer', // TODO: randomize?
-        syncerPw: HubSetup.uuid(),
+        systemClientSecret: HubSetup.uuid(),
       }
     }
   }
@@ -113,7 +112,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 6\n\n';
+    result += '# Generated using script version 7\n\n';
 
     return result;
   }
@@ -231,16 +230,6 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
                 'realm-management': ['realm-admin']
               }
             }
-          },
-          {
-            name: 'syncer',
-            description: 'syncer',
-            composite: true,
-            composites: {
-              client: {
-                'realm-management': ['view-users']
-              }
-            }
           }
         ],
       },
@@ -253,13 +242,11 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
           realmRoles: ['admin']
         },
         {
-          username: this.cfg.hub.syncerUser,
-          firstName: "syncer",
-          lastName: "syncer",
-          email: "syncer@localhost",
+          username: 'system',
+          email: "system@localhost",
           enabled: true,
-          credentials: [{ type: 'password', value: this.cfg.hub.syncerPw, temporary: false }],
-          realmRoles: ['syncer']
+          serviceAccountClientId: "cryptomatorhub-system",
+          clientRoles: { 'realm-management' : ['realm-admin'] }
         }
       ],
       scopeMappings: [
@@ -325,6 +312,16 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
         frontchannelLogout: false,
         protocol: 'openid-connect',
         attributes: { 'pkce.code.challenge.method': 'S256' },
+      },
+      {
+        clientId: 'cryptomatorhub-system',
+        serviceAccountsEnabled: true,
+        publicClient: false,
+        name: 'Cryptomator Hub System',
+        enabled: true,
+        clientAuthenticatorType: 'client-secret',
+        secret: this.cfg.hub.systemClientSecret,
+        standardFlowEnabled: false,
       }],
       browserSecurityHeaders: {
         contentSecurityPolicy: `frame-src 'self'; frame-ancestors 'self' ${HubSetup.urlWithTrailingSlash(this.cfg.hub.publicUrl)}; object-src 'none';`
@@ -431,7 +428,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/keycloak:24.0.4',
+      image: 'ghcr.io/cryptomator/keycloak:26.1.5',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -441,7 +438,7 @@ EOF`;
       },
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`]}),
       healthcheck: {
-        test: ['CMD', 'curl', '-f', `http://localhost:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
+        test: ['CMD', 'curl', '-f', `http://localhost:9000${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
         interval: '60s',
         timeout: '3s',
       },
@@ -454,10 +451,10 @@ EOF`;
         KC_DB_USERNAME: 'keycloak',
         KC_DB_PASSWORD: this.cfg.db.keycloakPw,
         KC_HEALTH_ENABLED: 'true',
-        KC_HOSTNAME: devMode ? null : this.getHostname(this.cfg.keycloak.publicUrl),
+        KC_HOSTNAME: devMode ? null : 'https://' + this.getHostname(this.cfg.keycloak.publicUrl),
         // KC_HOSTNAME_PORT: devMode ? null : this.getPort(this.cfg.keycloak.publicUrl), // FIXME as string!! FIXME does not work at all!!
         KC_HTTP_ENABLED: 'true',
-        KC_PROXY: 'edge',
+        KC_PROXY_HEADERS: 'xforwarded',
         KC_HTTP_RELATIVE_PATH: this.getPathname(this.cfg.keycloak.publicUrl),
       },
       ...(this.cfg.compose.includeTraefik && this.getTraefikConfig(this.cfg.keycloak.publicUrl, 'kc'))
@@ -478,7 +475,7 @@ EOF`;
       },
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`]}),
       healthcheck: {
-        test: ['CMD-SHELL', '(curl -f http://localhost:8080/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
+        test: ['CMD-SHELL', '(curl -f http://localhost:9000/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
         interval: '10s',
         timeout: '3s',
       },
@@ -488,9 +485,8 @@ EOF`;
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_REALM: this.cfg.keycloak.realmId,
-        HUB_KEYCLOAK_SYNCER_USERNAME: this.cfg.hub.syncerUser,
-        HUB_KEYCLOAK_SYNCER_PASSWORD: this.cfg.hub.syncerPw,
-        HUB_KEYCLOAK_SYNCER_CLIENT_ID: 'admin-cli',
+        HUB_KEYCLOAK_SYSTEM_CLIENT_ID: 'cryptomatorhub-system',
+        HUB_KEYCLOAK_SYSTEM_CLIENT_SECRET: this.cfg.hub.systemClientSecret,
         HUB_KEYCLOAK_SYNCER_PERIOD: '5m', // TODO make configurable?
         HUB_KEYCLOAK_OIDC_CRYPTOMATOR_CLIENT_ID: 'cryptomator',
         QUARKUS_OIDC_AUTH_SERVER_URL: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href, // network-internal URL
@@ -499,6 +495,7 @@ EOF`;
         QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:postgresql://postgres:5432/hub',
         QUARKUS_DATASOURCE_USERNAME: 'hub',
         QUARKUS_DATASOURCE_PASSWORD: this.cfg.db.hubPw,
+        QUARKUS_HTTP_PROXY_PROXY_ADDRESS_FORWARDING: true,
         QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE: `default-src 'self'; connect-src 'self' api.cryptomator.org ${HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`
       },
       ...(this.cfg.compose.includeTraefik && this.getTraefikConfig(this.cfg.hub.publicUrl, 'hub')),
@@ -608,8 +605,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
         'db_admin_pass': this.cfg.db.adminPw,
         'db_hub_pass': this.cfg.db.hubPw,
         ...(!this.cfg.keycloak.useExternal) && { 'db_kc_pass': this.cfg.db.keycloakPw },
-        'hub_syncer_user': this.cfg.hub.syncerUser,
-        'hub_syncer_pass': this.cfg.hub.syncerPw,
+        'hub_system_client_secret': this.cfg.hub.systemClientSecret,
         'initdb.sql': this.getInitDbSQL(),
         ...(!this.cfg.keycloak.useExternal) && { 'realm.json': JSON.stringify(realmCfg, null, 2) }
       }
@@ -657,7 +653,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               args: [
                 '/bin/sh',
                 '-c',
-                `set -x; while ! wget -q --spider "http://keycloak-svc:8080${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live" 2>>/dev/null; do sleep 10; done`
+                `set -x; while ! wget -q --spider "http://keycloak-svc:9000${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live" 2>>/dev/null; do sleep 10; done`
               ]
             }] : [])],
             containers: [{
@@ -683,9 +679,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_LOCAL_URL', value: !this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_REALM', value: this.cfg.keycloak.realmId},
-                {name: 'HUB_KEYCLOAK_SYNCER_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_user'}}},
-                {name: 'HUB_KEYCLOAK_SYNCER_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_syncer_pass'}}},
-                {name: 'HUB_KEYCLOAK_SYNCER_CLIENT_ID', value: 'admin-cli'},
+                {name: 'HUB_KEYCLOAK_SYSTEM_CLIENT_ID', value: 'cryptomatorhub-system'},
+                {name: 'HUB_KEYCLOAK_SYSTEM_CLIENT_SECRET', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'hub_system_client_secret'}}},
                 {name: 'HUB_KEYCLOAK_SYNCER_PERIOD', value: '5m'}, // TODO make configurable?
                 {name: 'HUB_KEYCLOAK_OIDC_CRYPTOMATOR_CLIENT_ID', value: 'cryptomator'},
                 {name: 'QUARKUS_OIDC_AUTH_SERVER_URL', value: new URL(`realms/${this.cfg.keycloak.realmId}`, HubSetup.urlWithTrailingSlash(!this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl)).href},
@@ -694,6 +689,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 {name: 'QUARKUS_DATASOURCE_JDBC_URL', value: 'jdbc:postgresql://postgres-svc:5432/hub'},
                 {name: 'QUARKUS_DATASOURCE_USERNAME', value: 'hub'},
                 {name: 'QUARKUS_DATASOURCE_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_hub_pass'}}},
+                {name: 'QUARKUS_HTTP_PROXY_PROXY_ADDRESS_FORWARDING', value: 'true'},
                 ...(this.cfg.keycloak.useExternal || this.getHostname(this.cfg.hub.publicUrl) != this.getHostname(this.cfg.keycloak.publicUrl) ? [{name: 'QUARKUS_HTTP_HEADER__CONTENT_SECURITY_POLICY__VALUE', value: `default-src 'self'; connect-src 'self' api.cryptomator.org ${HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl)}; object-src 'none'; child-src 'self'; img-src * data:; frame-ancestors 'none'`}] : [])
               ]
             }]
@@ -775,11 +771,11 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       {name: 'KC_DB_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'db_kc_pass'}}},
       {name: 'KC_HEALTH_ENABLED', value: 'true'},
       {name: 'KC_HTTP_ENABLED', value: 'true'},
-      {name: 'KC_PROXY', value: 'edge'},
+      {name: 'KC_PROXY_HEADERS', value: 'xforwarded'},
       {name: 'KC_HTTP_RELATIVE_PATH', value: this.getPathname(this.cfg.keycloak.publicUrl)}
     ];
     if (!devMode) {
-      env.push({name: 'KC_HOSTNAME', value: this.getHostname(this.cfg.keycloak.publicUrl)});
+      env.push({name: 'KC_HOSTNAME', value: 'https://' + this.getHostname(this.cfg.keycloak.publicUrl)});
       // env.push({name: 'KC_HOSTNAME_PORT', value: '' + this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
     }
     let deployment = {
@@ -803,7 +799,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'ghcr.io/cryptomator/keycloak:24.0.4',
+              image: 'ghcr.io/cryptomator/keycloak:26.1.5',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
@@ -811,12 +807,12 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 limits: {cpu: '1000m', memory: '1024Mi'},
               },
               livenessProbe: {
-                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`, port: 8080},
+                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`, port: 9000},
                 initialDelaySeconds: 120,
                 periodSeconds: 60
               },
               readinessProbe: {
-                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/ready`, port: 8080},
+                httpGet: {path: `${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/ready`, port: 9000},
                 initialDelaySeconds: 10,
                 periodSeconds: 3
               },
