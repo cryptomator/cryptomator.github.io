@@ -5,7 +5,7 @@
       <p class="lead">{{ .Description }}</p>
     </header>
 
-    <div x-data="{planOption: location.hash}" @hashchange.window="planOption = location.hash" class="py-12">
+    <div x-data="{planOption: location.hash}" x-init="location.hash = planOption || '#for-individuals'" @hashchange.window="planOption = location.hash" class="py-12">
       <header class="text-center">
         <h2 class="text-center font-h2 mb-4">
           {{ i18n "pricing_title" . }}
@@ -95,7 +95,7 @@
               <p class="text-sm md:text-base text-gray-500 mb-4">
                 {{ i18n "pricing_android_price_description" . }}
               </p>
-              <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-android-cta">
+              <a href="{{ .Site.LanguagePrefix }}/downloads/#android" role="button" class="btn btn-primary w-full" data-umami-event="pricing-android-cta">
                 {{ i18n "pricing_android_cta" . }}
               </a>
             </div>
@@ -151,7 +151,7 @@
                   </p>
                 </div>
               </div>
-              <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-ios-cta">
+              <a href="{{ .Site.LanguagePrefix }}/downloads/#ios" role="button" class="btn btn-primary w-full" data-umami-event="pricing-ios-cta">
                 {{ i18n "pricing_ios_cta" . }}
               </a>
             </div>
