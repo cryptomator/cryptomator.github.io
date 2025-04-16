@@ -52,4 +52,4 @@ Der Umzug von Boxcryptor zu Cryptomator ist einfach. Boxcryptor bietet auf deren
 
 Und schon hast du deinen ersten Tresor erfolgreich erstellt.
 
-Wenn du möchtest, kannst du diesen sofort entsperren und das virtuelle Laufwerk sichtbar werden lassen. Hier legst du ab sofort deine sensiblen Dateien ab, bspw. die Daten, die du vorher mit Boxcryptor verschlüsselt hast, um diese in der Cloud von nun an mit Cryptomator zu verschlüsseln. [Eine ausführliche Anleitung gibt es hier.](https://docs.cryptomator.org/en/latest/desktop/adding-vaults/)
+Wenn du möchtest, kannst du diesen sofort entsperren und das virtuelle Laufwerk sichtbar werden lassen. Hier legst du ab sofort deine sensiblen Dateien ab, bspw. die Daten, die du vorher mit Boxcryptor verschlüsselt hast, um diese in der Cloud von nun an mit Cryptomator zu verschlüsseln. [Eine ausführliche Anleitung gibt es hier.](https://docs.cryptomator.org/desktop/adding-vaults/)
