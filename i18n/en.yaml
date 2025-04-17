@@ -311,6 +311,8 @@
   translation: "3,000,000+ Downloads"
 - id: home_header_title
   translation: "Protect your privacy in"
+- id: home_header_title_last_item
+  translation: "any cloud"
 - id: home_header_description
   translation: "With Cryptomator, the key to your data is in your hands. Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
 - id: home_header_woman_cloud_alt
