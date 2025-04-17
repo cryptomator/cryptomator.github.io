@@ -148,6 +148,7 @@
   --breakpoint-lg: 1280px;
 
   --animate-hover: hover 10s ease-in-out infinite;
+  --animate-slide: slide 20s cubic-bezier(0.83, 0, 0.17, 1) infinite;
 
   --height-70px: 70px;
   --height-412px: 412px;
@@ -155,12 +156,42 @@
   --width-fit: fit-content;
 
   @keyframes hover {
-    0%,
-    100% {
+    0%, 100% {
       transform: rotate(0deg) translateY(0);
     }
     50% {
       transform: rotate(-3deg) translateY(-10px);
+    }
+  }
+
+  /* see https://cruip.com/creating-a-sliding-text-animation-with-tailwind-css/ */
+  @keyframes slide {
+    0%, 10% {
+      transform: translateY(0%);
+    }
+    12.5%, 22.5% {
+      transform: translateY(-11.11%);
+    }
+    25%, 35% {
+      transform: translateY(-22.22%);
+    }
+    37.5%, 47.5% {
+      transform: translateY(-33.33%);
+    }
+    50%, 60% {
+      transform: translateY(-44.44%);
+    }
+    62.5%, 72.5% {
+      transform: translateY(-55.55%);
+    }
+    75%, 85% {
+      transform: translateY(-66.66%);
+    }
+    87.5%, 97.5% {
+      transform: translateY(-77.77%);
+    }
+    100% {
+      transform: translateY(-88.88%);
     }
   }
 }
