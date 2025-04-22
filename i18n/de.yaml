@@ -100,8 +100,6 @@
   translation: "Dropbox, Google Drive, OneDrive und pCloud sind aufgrund erforderlicher API-Schlüssel ausgeschlossen."
 - id: android_fdroid_cryptomator_cloud_exclusion
   translation: "Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen."
-- id: android_fdroid_cloud_exclusion_hint
-  translation: "Einen detaillierten Vergleich aller Varianten findest du in unserer <a class=\"text-link\" href=\"https://docs.cryptomator.org/android/setup/\" target=\"_blank\">Dokumentation</a>."
 - id: android_accrescent_exclusion
   translation: "Google Drive ist aufgrund proprietärer Abhängigkeiten ausgeschlossen."
 

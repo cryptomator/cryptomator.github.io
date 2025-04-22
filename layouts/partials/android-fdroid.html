@@ -27,16 +27,14 @@
       <div x-show="showQrCode" x-cloak class="mb-4">
         <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
       </div>
-      <p class="font-p text-sm mb-4">{{ ":x:" | emojify }} {{ i18n "android_fdroid_cryptomator_cloud_exclusion" | safeHTML }}</p>
-      <p class="font-p text-sm">{{ i18n "android_fdroid_cloud_exclusion_hint" | safeHTML }}</p>
+      <p class="font-p text-sm">{{ ":x:" | emojify }} {{ i18n "android_fdroid_cryptomator_cloud_exclusion" | safeHTML }}</p>
     </div>
 
     <div x-show="fdroidVariant === 'main-repo'" class="px-4 pt-4 pb-8">
       <a href="https://f-droid.org/packages/org.cryptomator.lite" role="button" data-umami-event="android-fdroid-main-repo-link">
         <img class="h-10 mx-auto lazyload mb-4" data-src="{{ .Params.FdroidMainRepoImageUrl }}">
       </a>
-      <p class="font-p text-sm mb-4">{{ ":x:" | emojify }} {{ i18n "android_fdroid_main_cloud_exclusion" | safeHTML }}</p>
-      <p class="font-p text-sm">{{ i18n "android_fdroid_cloud_exclusion_hint" | safeHTML }}</p>
+      <p class="font-p text-sm">{{ ":x:" | emojify }} {{ i18n "android_fdroid_main_cloud_exclusion" | safeHTML }}</p>
     </div>
   </div>
 </div>
