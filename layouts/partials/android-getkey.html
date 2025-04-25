@@ -1,4 +1,4 @@
-<div x-data="{checkoutData: {price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null, acceptNewsletter: false}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="white-box">
+<div x-data="{checkoutData: {price: null, discountedPrice: null, email: '', errorMessage: '', success: false, inProgress: false, acceptNewsletter: false}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="white-box">
   <div class="px-4 py-2 border-b border-primary text-center">
     <h3 class="font-h3 text-lg">{{ i18n "android_getkey_title" }}</h3>
   </div>
@@ -7,9 +7,9 @@
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
       <div class="relative input-box flex items-center gap-2 w-full lg:w-1/2">
-        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" x-text="checkoutData.price ? checkoutData.price.listAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
-        <span x-text="checkoutData.price ? checkoutData.price.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'">…</span>
-        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" class="absolute top-0 left-0 -translate-2 -rotate-5 px-1 rounded-xs text-xs text-white bg-red-600 z-10" x-cloak>-<span x-text="((1 - checkoutData.price.amount / checkoutData.price.listAmount) * 100).toFixed(0)"></span>%</span>
+        <span x-show="checkoutData.discountedPrice && checkoutData.price" x-text="checkoutData.price ? checkoutData.price.formattedAmount : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
+        <span x-text="checkoutData.discountedPrice ? checkoutData.discountedPrice.formattedAmount : checkoutData.price ? checkoutData.price.formattedAmount : '…'">…</span>
+        <span x-show="checkoutData.discountedPrice && checkoutData.price" class="absolute top-0 left-0 -translate-2 -rotate-5 px-1 rounded-xs text-xs text-white bg-red-600 z-10" x-cloak>-<span x-text="checkoutData.discountedPrice && checkoutData.price ? ((1 - checkoutData.discountedPrice.amount / checkoutData.price.amount) * 100).toFixed(0) : '0'"></span>%</span>
       </div>
     </div>
     <div class="mb-4">
@@ -28,10 +28,7 @@
   </form>
 
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
-    <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success" }}</h3>
-    <label class="label-uppercase mb-2">{{ i18n "android_getkey_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="input-box w-full text-sm md:text-base leading-relaxed break-all mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
-    <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
-    <p class="font-p">{{ i18n "android_getkey_key_instruction" }}</p>
+    <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success_title" }}</h3>
+    <p class="font-p">{{ i18n "android_getkey_success_description" }}</p>
   </div>
 </div>

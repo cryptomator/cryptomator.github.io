@@ -36,40 +36,16 @@
       </div>
     </div>
   </div>
-
-  <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center pt-12 pb-24">
-    <h3 id="keyrecovery" class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "android_keyrecovery_title" . }}</h3>
-
-    <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
-      <p class="font-p mb-4">{{ i18n "android_keyrecovery_instruction" . }}</p>
-      <div class="flex justify-center items-center rounded-sm bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "android_keyrecovery_email_placeholder" }}" required/>
-        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4" data-umami-event="android-keyrecovery-form">
-          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "android_keyrecovery_retrieve" }}
-        </button>
-      </div>
-      <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
-    </form>
-
-    <div x-show="data.success" x-cloak>
-      <p class="font-p mb-4">{{ ":+1:" | emojify }} {{ i18n "android_keyrecovery_success" . }}</p>
-      <p class="font-p">{{ ":question:" | emojify }} {{ i18n "android_keyrecovery_contact_us" . | safeHTML }}</p>
-    </div>
-  </section>
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
-    {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" }}
-    <script type="text/javascript" src="{{ $keyRecoveryJs.RelPermalink }}" defer></script>
     {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
     <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
-    {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $keyRecoveryJs.RelPermalink }}" integrity="{{ $keyRecoveryJs.Data.Integrity }}" defer></script>
     {{ $androidKeyJs := resources.Get "js/androidkey.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" integrity="{{ $androidKeyJs.Data.Integrity }}" defer></script>
   {{ end }}

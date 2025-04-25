@@ -61,14 +61,10 @@
 - id: android_getkey_checkout
   translation: "Checkout"
 
-- id: android_getkey_success
+- id: android_getkey_success_title
   translation: "Your payment was successful!"
-- id: android_getkey_key
-  translation: "License Key"
-- id: android_getkey_key_placeholder
-  translation: "Loading…"
-- id: android_getkey_key_instruction
-  translation: "This is your license key. Enter it in the Cryptomator app. The license key has also been sent to your email address."
+- id: android_getkey_success_description
+  translation: "The license key has been sent to your email address."
 
 - id: android_download_title
   translation: "Download APK"
@@ -76,19 +72,6 @@
   translation: "Download"
 - id: android_download_sha256_signature
   translation: "SHA256 Signature"
-
-- id: android_keyrecovery_title
-  translation: "Did you lose your license key?"
-- id: android_keyrecovery_instruction
-  translation: "To recover a lost license key or receipt, enter your email address below."
-- id: android_keyrecovery_email_placeholder
-  translation: "Email address"
-- id: android_keyrecovery_retrieve
-  translation: "Retrieve"
-- id: android_keyrecovery_success
-  translation: "We've sent details of your past transactions and licenses to you via email."
-- id: android_keyrecovery_contact_us
-  translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
 - id: android_fdroid_title
   translation: "Get it on F-Droid"
@@ -828,6 +811,12 @@
 - id: hub_setup_contact_us_button
   translation: "Contact Us"
 
+# Paddle Checkout
+- id: paddle_checkout
+  translation: "Checkout"
+- id: paddle_checkout_success
+  translation: "Your payment was successful!"
+
 # Pricing
 - id: pricing_title
   translation: "Find the Right Plan for You"
@@ -991,14 +980,10 @@
   translation: "Payments are securely handled by Paddle."
 - id: supporter_cert_funder_checkout
   translation: "Checkout"
-- id: supporter_cert_funder_success
+- id: supporter_cert_funder_success_title
   translation: "Your payment was successful!"
-- id: supporter_cert_funder_key
-  translation: "Supporter Certificate"
-- id: supporter_cert_funder_key_placeholder
-  translation: "Loading…"
-- id: supporter_cert_funder_key_instruction
-  translation: "This is your supporter certificate. Enter it in the Cryptomator settings under \"Support Us\". It has also been sent to your email address."
+- id: supporter_cert_funder_success_description
+  translation: "The supporter certificate has been sent to your email address."
 
 - id: supporter_cert_contributor_github_username
   translation: "GitHub Username"
@@ -1024,19 +1009,6 @@
   translation: "max. 800 characters"
 - id: supporter_cert_other_instruction
   translation: "Let us know any other reason that doesn't fit in the other categories."
-
-- id: supporter_cert_recovery_title
-  translation: "Did you lose your supporter certificate?"
-- id: supporter_cert_recovery_instruction
-  translation: "To recover a lost certificate or receipt, enter your email address below."
-- id: supporter_cert_recovery_email_placeholder
-  translation: "Email address"
-- id: supporter_cert_recovery_retrieve
-  translation: "Retrieve"
-- id: supporter_cert_recovery_success
-  translation: "We've sent details of your past transactions and licenses to you via email."
-- id: supporter_cert_recovery_contact_us
-  translation: "If you didn't get an email, <a class=\"text-link\" href=\"mailto:support@cryptomator.org\">contact us</a>."
 
 # Altcha
 - id: altcha_label

@@ -8,31 +8,57 @@ class AndroidLicense {
     this._form = form;
     this._checkoutData = checkoutData;
     this._paddle = $.ajax({
-      url: 'https://cdn.paddle.com/paddle/paddle.js',
+      url: 'https://cdn.paddle.com/paddle/v2/paddle.js',
       cache: true,
       dataType: 'script'
     }).then(() => {
       if (PADDLE_ENABLE_SANDBOX) {
         window.Paddle.Environment.set('sandbox');
       }
-      window.Paddle.Setup({ vendor: PADDLE_VENDOR_ID });
+      window.Paddle.Initialize({
+        token: PADDLE_TOKEN,
+        eventCallback: data => {
+          if (data.name == "checkout.completed") {
+            this.onCheckoutSucceeded();
+            if (this._checkoutData.acceptNewsletter) {
+              subscribeToNewsletter(data.customer.email, 6);
+            }
+          } else if (data.name == "checkout.closed") {
+            this._checkoutData.inProgress = false;
+          }
+        }
+      });
       return window.Paddle;
     });
   }
 
   loadPrice() {
-    $.ajax({
-      url: PADDLE_PRICES_URL,
-      dataType: 'jsonp',
-      data: {
-        product_ids: PADDLE_ANDROID_PRODUCT_ID
-      },
-    }).done(data => {
-      this._checkoutData.price = {
-        amount: data.response.products[0].price.gross,
-        listAmount: data.response.products[0].list_price.gross,
-        currency: data.response.products[0].currency
+    this._paddle.then(paddle => {
+      let request = {
+        items: [{ priceId: PADDLE_ANDROID_PRICE_ID, quantity: 1}]
       };
+      paddle.PricePreview(request).then(result => {
+        this._checkoutData.price = {
+          amount: result.data.details.lineItems[0].totals.total,
+          formattedAmount: result.data.details.lineItems[0].formattedTotals.total
+        };
+      }).catch(() => {
+        this._checkoutData.errorMessage = 'Retrieving price failed. Please try again later.';
+      });
+      // let discountedRequest = {
+      //   items: [{ priceId: PADDLE_ANDROID_PRICE_ID, quantity: 1}],
+      //   discountId: 'dsc_',
+      // };
+      // paddle.PricePreview(discountedRequest).then(discountedResult => {
+      //   if (Number(discountedResult.data.details.lineItems[0].totals.discount) > 0) {
+      //     this._checkoutData.discountedPrice = {
+      //       amount: discountedResult.data.details.lineItems[0].totals.total,
+      //       formattedAmount: discountedResult.data.details.lineItems[0].formattedTotals.total
+      //     };
+      //   }
+      // }).catch(error => {
+      //   this._checkoutData.errorMessage = 'Retrieving discounted price failed. Please try again later.';
+      // });
     });
   }
 
@@ -48,33 +74,9 @@ class AndroidLicense {
     this._checkoutData.success = false;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
-        product: PADDLE_ANDROID_PRODUCT_ID,
-        email: this._checkoutData.email,
-        allowQuantity: false,
-        locale: locale,
-        successCallback: data => {
-          this.onCheckoutSucceeded();
-          this.getPaddleOrderDetails(data.checkout.id);
-          if (this._checkoutData.acceptNewsletter) {
-            subscribeToNewsletter(data.user.email, 6);
-          }
-        },
-        closeCallback: () => {
-          this._checkoutData.inProgress = false;
-        }
-      });
-    });
-  }
-
-  getPaddleOrderDetails(checkoutId) {
-    this._paddle.then(paddle => {
-      paddle.Order.details(checkoutId, data => {
-        let licenseKey = data.lockers?.[0]?.license_code;
-        if (licenseKey) {
-          this._checkoutData.licenseKey = licenseKey;
-        } else {
-          this._checkoutData.errorMessage = 'Retrieving license key failed. Please check your emails instead.';
-        }
+        settings: { locale: locale },
+        items: [{ priceId: PADDLE_ANDROID_PRICE_ID, quantity: 1 }],
+        customer: { email: this._checkoutData.email }
       });
     });
   }
