@@ -4,7 +4,7 @@ slug: cryptomator-for-android-for-paranoids
 date: 2020-05-07
 author: Julian Raufelder
 authorlink: https://github.com/SailReal
-authorimg: https://avatars0.githubusercontent.com/u/1786772?s=96
+authorimg: https://avatars.githubusercontent.com/u/1786772?s=96
 tags: [cryptomator, android]
 
 summary: Use Cryptomator for Android and revoke the app's internet permissions to make backdoors almost impossible.
