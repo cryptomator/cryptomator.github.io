@@ -83,7 +83,7 @@ block = true
       checksum = "df49eecb6dad107bc15348f7230e0b8729af0e2b2ec5ee96a6f1677a226b2fc3"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.dmg]
-      version = "1.16.0"
+      version = "1.15.2"
       filename = "Cryptomator-1.15.2.dmg"
       downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg"
       signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg.asc"
