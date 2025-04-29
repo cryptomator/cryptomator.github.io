@@ -47,6 +47,12 @@ module.exports = {
             'ul > li::before': {
               backgroundColor: 'var(--color-gray-500)',
             },
+            'ul > li:has(input[type="checkbox"])': {
+              listStyle: 'none',
+            },
+            'ul > li > input[type="checkbox"]:first-child': {
+              margin: '0 16px 0 -32px !important',
+            },
           },
         }
       }),
