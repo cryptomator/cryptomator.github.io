@@ -83,11 +83,11 @@ block = true
       checksum = "df49eecb6dad107bc15348f7230e0b8729af0e2b2ec5ee96a6f1677a226b2fc3"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.dmg]
-      version = "1.16.0"
-      filename = "Cryptomator-1.16.0.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.16.0/Cryptomator-1.16.0-x64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.16.0/Cryptomator-1.16.0-x64.dmg.asc"
-      checksum = "2b486e8847caf688074b82be43ce0cdb2eee979d9f04b0aeb7daa3c6b1628a65"
+      version = "1.15.2"
+      filename = "Cryptomator-1.15.2.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg.asc"
+      checksum = "36cfd2cd906071940e6684af596d8f4ab70a2faa6bd7459f184f99296538558b"
       requiredOS = 'macOS 11'
     [params.releases.dmg-arm64]
       version = "1.16.0"
