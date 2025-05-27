@@ -10,6 +10,11 @@ ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist o
 ctalink: /de/#get-started
 ctabutton: "Jetzt mit Cryptomator loslegen"
 
+ogimage:
+  relsrc: /img/comparisons/og-image.png
+  width: 1200
+  height: 541
+
 comparison:
   header: |
     <div class="inline-flex flex-col-reverse gap-2 items-center">
@@ -69,6 +74,8 @@ comparison:
 # VeraCrypt vs. Cryptomator: Welches Tool passt besser zu mir?
 
 <p class="lead">Sicherheit und Datenschutz sind heute wichtiger denn je. Wenn du deine Dateien schützen möchtest, stehen dir verschiedene Verschlüsselungstools zur Auswahl – zwei der bekanntesten sind Cryptomator und VeraCrypt. Beide Tools sind kostenlos, quelloffen und bieten starke Verschlüsselungsoptionen. Doch welches ist das richtige für dich?</p>
+
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
 
 In diesem Artikel vergleichen wir Cryptomator und VeraCrypt und zeigen, wie sich die beiden Lösungen für unterschiedliche Anforderungen eignen. Mit Cryptomator Hub bietet Cryptomator zudem eine Möglichkeit, die zentrale Verwaltung verschlüsselter Daten für Teams zu optimieren – ein weiterer Vorteil für Unternehmen.
 

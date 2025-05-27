@@ -12,7 +12,7 @@ ctalink: /de/#get-started
 ctabutton: "Jetzt mit Cryptomator loslegen"
 
 ogimage:
-  relsrc: /img/boxcryptor-alternative/og-image.png
+  relsrc: /img/comparisons/og-image.png
   width: 1200
   height: 541
 
@@ -104,7 +104,7 @@ comparison:
 
 <p class="lead">Boxcryptor und die Alternative Cryptomator dienen demselben Zweck: deine Privatsphäre zu sichern und gleichzeitig Daten bequem in der Cloud zu speichern. Worin genau unterscheiden sie sich? Und was passt besser zu deinen Bedürfnissen? Hier erfährst du es.</p>
 
-<img class="inline-block" src="/img/boxcryptor-alternative/cryptobot-analysis.png" srcset="/img/boxcryptor-alternative/cryptobot-analysis.png 1x, /img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
 
 Du willst deine sensiblen Daten in der Cloud sicher wissen. Doch bisher konnte dich noch keine Verschlüsselungslösung überzeugen?
 
