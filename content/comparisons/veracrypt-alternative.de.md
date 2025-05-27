@@ -97,42 +97,46 @@ Es wurde für die Verschlüsselung lokaler und externer Laufwerke entwickelt, wa
 <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
-      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
-      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
-        <span class="hidden md:block">Cryptomator</span>
-        <img class="object-scale-down w-16 md:hidden" src="/img/logo.svg">
+      <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
+      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+        <div class="inline-flex flex-col-reverse gap-2 items-center">
+          <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
+          <img class="max-w-16 h-12" src="/img/logo.svg">
+        </div>
       </th>
-      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
-        <span class="hidden md:block">VeraCrypt</span>
-        <img class="object-scale-down w-16 md:hidden" src="/img/comparisons/veracrypt-logo.svg">
+      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+        <div class="inline-flex flex-col-reverse gap-2 items-center">
+          <span class="font-normal">VeraCrypt</span>
+          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
+        </div>
       </th>
     </tr>
   </thead>
   <tbody class="divide-y divide-gray-200">
     <tr>
-      <td class="font-p p-4">Primärer Zweck</td>
-      <td class="font-p p-4">Verschlüsselung von Dateien speziell für Cloud-Speicher (z.B. Google Drive, Dropbox)</td>
-      <td class="font-p p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Container-Dateien)</td>
+      <td class="font-p font-bold p-2 lg:p-4">Primärer Zweck</td>
+      <td class="font-p p-2 lg:p-4">Verschlüsselung von Dateien speziell für Cloud-Speicher (z.B. Google Drive, Dropbox)</td>
+      <td class="font-p p-2 lg:p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Container-Dateien)</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Benutzerfreundlichkeit</td>
-      <td class="font-p p-4">Für Cloud-Nutzer:innen optimiert; einfache und intuitive Benutzeroberfläche</td>
-      <td class="font-p p-4">Für technisch versierte Nutzer:innen; komplexe Konfigurationsmöglichkeiten</td>
+      <td class="font-p font-bold p-2 lg:p-4">Benutzerfreundlichkeit</td>
+      <td class="font-p p-2 lg:p-4">Für Cloud-Nutzer:innen optimiert; einfache und intuitive Benutzeroberfläche</td>
+      <td class="font-p p-2 lg:p-4">Für technisch versierte Nutzer:innen; komplexe Konfigurationsmöglichkeiten</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Sicherheitsansatz</td>
-      <td class="font-p p-4">Dateibasierte Verschlüsselung in verschlüsselten Cloud-Ordnern (Tresore)</td>
-      <td class="font-p p-4">Verschlüsselung ganzer Laufwerke und Partitionen</td>
+      <td class="font-p font-bold p-2 lg:p-4">Sicherheitsansatz</td>
+      <td class="font-p p-2 lg:p-4">Dateibasierte Verschlüsselung in verschlüsselten Cloud-Ordnern (Tresore)</td>
+      <td class="font-p p-2 lg:p-4">Verschlüsselung ganzer Laufwerke und Partitionen</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Schlüssellänge & Algorithmen</td>
-      <td class="font-p p-4">Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden</td>
-      <td class="font-p p-4">Bietet AES-256, Serpent, Twofish oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
+      <td class="font-p font-bold p-2 lg:p-4">Schlüssellänge & Algorithmen</td>
+      <td class="font-p p-2 lg:p-4">Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden</td>
+      <td class="font-p p-2 lg:p-4">Bietet AES-256, Serpent, Twofish oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Cloud-Integration</td>
-      <td class="font-p p-4">Entwickelt für Cloud-Umgebungen und vollständig kompatibel mit vielen Cloud-Anbietern</td>
-      <td class="font-p p-4">Keine direkte Integration; Daten müssen manuell synchronisiert werden</td>
+      <td class="font-p font-bold p-2 lg:p-4">Cloud-Integration</td>
+      <td class="font-p p-2 lg:p-4">Entwickelt für Cloud-Umgebungen und vollständig kompatibel mit vielen Cloud-Anbietern</td>
+      <td class="font-p p-2 lg:p-4">Keine direkte Integration; Daten müssen manuell synchronisiert werden</td>
     </tr>
   </tbody>
 </table>
@@ -197,26 +201,26 @@ Für die Cloud ist VeraCrypt deshalb nur mit Einschränkungen empfehlenswert –
 <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
     <tr class="py-2">
-      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2">Szenario</th>
-      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2">Empfohlenes Tool</th>
+      <th class="font-h3 font-normal text-left p-2 lg:p-4">Szenario</th>
+      <th class="font-h3 font-normal text-left p-2 lg:p-4">Empfohlenes Tool</th>
     </tr>
   </thead>
   <tbody class="divide-y divide-gray-200">
     <tr>
-      <td class="font-p p-4">Du möchtest eine komplette Festplatte verschlüsseln</td>
-      <td class="font-p p-4"><span class="font-medium">VeraCrypt</span></td>
+      <td class="font-p p-2 lg:p-4">Du möchtest eine komplette Festplatte verschlüsseln</td>
+      <td class="font-p font-bold p-2 lg:p-4">VeraCrypt</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Du möchtest deine Cloud-Daten verschlüsseln</td>
-      <td class="font-p p-4"><span class="font-medium">Cryptomator</span></td>
+      <td class="font-p p-2 lg:p-4">Du möchtest deine Cloud-Daten verschlüsseln</td>
+      <td class="font-p font-bold p-2 lg:p-4">Cryptomator</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Du benötigst eine Lösung für mehrere Geräte und Systeme</td>
-      <td class="font-p p-4"><span class="font-medium">Beide, je nach Bedarf</span></td>
+      <td class="font-p p-2 lg:p-4">Du benötigst eine Lösung für mehrere Geräte und Systeme</td>
+      <td class="font-p font-bold p-2 lg:p-4">Beide, je nach Bedarf</td>
     </tr>
     <tr>
-      <td class="font-p p-4">Du möchtest zentrale Steuerung für Teams</td>
-      <td class="font-p p-4"><span class="font-medium">Cryptomator Hub</span></td>
+      <td class="font-p p-2 lg:p-4">Du möchtest zentrale Steuerung für Teams</td>
+      <td class="font-p font-bold p-2 lg:p-4">Cryptomator Hub</td>
     </tr>
   </tbody>
 </table>
