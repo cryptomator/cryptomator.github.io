@@ -5,7 +5,7 @@ comparison:
   header: |
     <div class="inline-flex flex-col-reverse gap-2 items-center">
       <span class="font-normal">AxCrypt</span>
-      <img class="max-w-16 h-12" src="/img/comparisons/axcrypt-logo.svg">
+      <img class="max-w-16 h-12" src="/img/comparisons/axcrypt-logo.svg" aria-hidden="true">
     </div>
   footer: |
     <button class="btn btn-primary w-full px-2 md:px-4 py-1 md:py-1" disabled>Coming Soon</button>
