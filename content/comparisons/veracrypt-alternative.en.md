@@ -19,7 +19,7 @@ comparison:
   header: |
     <div class="inline-flex flex-col-reverse gap-2 items-center">
       <span class="font-normal">VeraCrypt</span>
-      <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
+      <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
     </div>
   footer: |
     <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/comparisons/veracrypt-alternative/" data-umami-event="comparisons-veracrypt-cta">Full Comparison</a>
@@ -101,13 +101,13 @@ It is designed to encrypt local and external drives, allowing users to secure en
       <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
         <div class="inline-flex flex-col-reverse gap-2 items-center">
           <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg">
+          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
         </div>
       </th>
       <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
         <div class="inline-flex flex-col-reverse gap-2 items-center">
           <span class="font-normal">VeraCrypt</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
+          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
         </div>
       </th>
     </tr>
@@ -162,7 +162,7 @@ VeraCrypt offers more customization and greater control over encryption, but thi
 
 Both tools use AES-256 as their primary algorithm, which is widely considered one of the most secure encryption standards.
 
-VeraCrypt also allows the use of other algorithms such as:
+VeraCrypt also allows the use of other algorithms, such as:
 
 - Serpent
 - Twofish

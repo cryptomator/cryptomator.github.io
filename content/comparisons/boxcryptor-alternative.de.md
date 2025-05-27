@@ -28,7 +28,7 @@ comparison:
           </div>
         </div>
       </div>
-      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg" aria-hidden="true">
     </div>
   footer: |
     <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/boxcryptor-alternative/" data-umami-event="comparisons-boxcryptor-cta">Detailvergleich</a>

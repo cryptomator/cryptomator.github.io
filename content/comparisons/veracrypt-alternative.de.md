@@ -19,7 +19,7 @@ comparison:
   header: |
     <div class="inline-flex flex-col-reverse gap-2 items-center">
       <span class="font-normal">VeraCrypt</span>
-      <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
+      <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
     </div>
   footer: |
     <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/veracrypt-alternative/" data-umami-event="comparisons-veracrypt-cta">Detailvergleich</a>
@@ -101,13 +101,13 @@ Es wurde für die Verschlüsselung lokaler und externer Laufwerke entwickelt, wa
       <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
         <div class="inline-flex flex-col-reverse gap-2 items-center">
           <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg">
+          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
         </div>
       </th>
       <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
         <div class="inline-flex flex-col-reverse gap-2 items-center">
           <span class="font-normal">VeraCrypt</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg">
+          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
         </div>
       </th>
     </tr>
