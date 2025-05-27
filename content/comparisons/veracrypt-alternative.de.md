@@ -93,13 +93,50 @@ VeraCrypt ist ein Open-Source-Verschlüsselungstool, das eine On-the-Fly-Verschl
 
 Es wurde für die Verschlüsselung lokaler und externer Laufwerke entwickelt, was bedeutet, dass Benutzer:innen ganze Laufwerke und Partitionen verschlüsseln können, ohne einzelne Dateien manuell zu bearbeiten.
 
-| Funktion                 | Cryptomator                                                                  | VeraCrypt                                                                          |
-|------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Primärer Zweck        | Verschlüsselung von Dateien speziell für Cloud-Speicher (z. B. Google Drive, Dropbox) | Festplattenverschlüsselung (ganze Laufwerke / Partitionen und Container-Dateien)              |
-| Benutzerfreundlichkeit            | Für Cloud-Nutzer:innen optimiert; einfache und intuitive Benutzeroberfläche                    | Für technisch versierte Nutzer:innen; komplexe Konfigurationsmöglichkeiten                |
-| Sicherheitsansatz      | Dateibasierte Verschlüsselung in verschlüsselten Cloud-Ordnern (Tresore)                | Verschlüsselung ganzer Laufwerke und Partitionen                                                |
-| Schlüssellänge und Algorithmen | Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden                     | Bietet AES-256, Serpent, Twofish oder deren Kombinationen mit hoher Anpassungsfähigkeit |
-| Cloud-Integration      | Entwickelt für Cloud-Umgebungen und vollständig kompatibel mit vielen Cloud-Anbietern     | Keine direkte Integration; Daten müssen manuell synchronisiert werden                                |
+<div class="overflow-x-auto">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+  <thead>
+    <tr class="py-2">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">Cryptomator</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/logo.svg">
+      </th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">VeraCrypt</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/comparisons/veracrypt-logo.svg">
+      </th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200">
+    <tr>
+      <td class="font-p p-4">Primärer Zweck</td>
+      <td class="font-p p-4">Verschlüsselung von Dateien speziell für Cloud-Speicher (z.B. Google Drive, Dropbox)</td>
+      <td class="font-p p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Container-Dateien)</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Benutzerfreundlichkeit</td>
+      <td class="font-p p-4">Für Cloud-Nutzer:innen optimiert; einfache und intuitive Benutzeroberfläche</td>
+      <td class="font-p p-4">Für technisch versierte Nutzer:innen; komplexe Konfigurationsmöglichkeiten</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Sicherheitsansatz</td>
+      <td class="font-p p-4">Dateibasierte Verschlüsselung in verschlüsselten Cloud-Ordnern (Tresore)</td>
+      <td class="font-p p-4">Verschlüsselung ganzer Laufwerke und Partitionen</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Schlüssellänge & Algorithmen</td>
+      <td class="font-p p-4">Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden</td>
+      <td class="font-p p-4">Bietet AES-256, Serpent, Twofish oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Cloud-Integration</td>
+      <td class="font-p p-4">Entwickelt für Cloud-Umgebungen und vollständig kompatibel mit vielen Cloud-Anbietern</td>
+      <td class="font-p p-4">Keine direkte Integration; Daten müssen manuell synchronisiert werden</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ## Die Unterschiede im Detail
 
@@ -157,12 +194,32 @@ Für die Cloud ist VeraCrypt deshalb nur mit Einschränkungen empfehlenswert –
 
 ## Zusammenfassung: Welches Tool passt besser zu mir?
 
-| Scenario                                             | Recommended Tool       |
-|------------------------------------------------------|------------------------|
-| Du möchtest eine komplette Festplatte verschlüsseln  | VeraCrypt              |
-| Du möchtest deine Cloud-Daten verschlüsseln          | Cryptomator            |
-| Du benötigst eine Lösung für mehrere Geräte und Systeme | Beide, je nach Bedarf |
-| Du möchtest zentrale Steuerung für Teams             | Cryptomator Hub        |
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+  <thead>
+    <tr class="py-2">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2">Szenario</th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2">Empfohlenes Tool</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200">
+    <tr>
+      <td class="font-p p-4">Du möchtest eine komplette Festplatte verschlüsseln</td>
+      <td class="font-p p-4"><span class="font-medium">VeraCrypt</span></td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Du möchtest deine Cloud-Daten verschlüsseln</td>
+      <td class="font-p p-4"><span class="font-medium">Cryptomator</span></td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Du benötigst eine Lösung für mehrere Geräte und Systeme</td>
+      <td class="font-p p-4"><span class="font-medium">Beide, je nach Bedarf</span></td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Du möchtest zentrale Steuerung für Teams</td>
+      <td class="font-p p-4"><span class="font-medium">Cryptomator Hub</span></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Fazit
 

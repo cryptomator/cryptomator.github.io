@@ -93,13 +93,50 @@ VeraCrypt is an open-source encryption tool that provides on-the-fly encryption 
 
 It is designed to encrypt local and external drives, allowing users to secure entire disks and partitions without having to encrypt individual files manually.
 
-| Feature                 | Cryptomator                                                                  | VeraCrypt                                                                          |
-|------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Primary Purpose         | File encryption specifically for cloud storage (e.g., Google Drive, Dropbox) | Full disk encryption (entire drives, partitions, and container files)              |
-| Ease of Use             | Optimized for cloud users; simple and intuitive interface                    | Designed for tech-savvy users; offers complex configuration options                |
-| Security Approach       | File-based encryption inside encrypted cloud folders (vaults)                | Full drive and partition encryption                                                |
-| Key Length & Algorithms | Uses AES-256, one of the most trusted encryption methods                     | Offers AES-256, Serpent, Twofish, or combinations thereof with high customizations |
-| Cloud Integration       | Built for cloud environments; fully compatible with many cloud providers     | No direct integration; data must be synced manually                                |
+<div class="overflow-x-auto">
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+  <thead>
+    <tr class="py-2">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2"></th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">Cryptomator</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/logo.svg">
+      </th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/4">
+        <span class="hidden md:block">VeraCrypt</span>
+        <img class="object-scale-down w-16 md:hidden" src="/img/comparisons/veracrypt-logo.svg">
+      </th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200">
+    <tr>
+      <td class="font-p p-4">Primary Purpose</td>
+      <td class="font-p p-4">File encryption specifically for cloud storage (e.g., Google Drive, Dropbox)</td>
+      <td class="font-p p-4">Full disk encryption (entire drives, partitions, and container files)</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Ease of Use</td>
+      <td class="font-p p-4">Optimized for cloud users; simple and intuitive interface</td>
+      <td class="font-p p-4">Designed for tech-savvy users; offers complex configuration options</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Security Approach</td>
+      <td class="font-p p-4">File-based encryption inside encrypted cloud folders (vaults)</td>
+      <td class="font-p p-4">Full drive and partition encryption</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Key Length & Algorithms</td>
+      <td class="font-p p-4">Uses AES-256, one of the most trusted encryption methods</td>
+      <td class="font-p p-4">Offers AES-256, Serpent, Twofish, or combinations thereof with high customizations</td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">Cloud Integration</td>
+      <td class="font-p p-4">Built for cloud environments; fully compatible with many cloud providers</td>
+      <td class="font-p p-4">No direct integration; data must be synced manually</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ## Key Differences in Detail
 
@@ -159,12 +196,32 @@ That’s why VeraCrypt is only suitable for cloud use with significant limitatio
 
 ## Summary: Which Tool Is Better for Me?
 
-| Scenario                                             | Recommended Tool       |
-|------------------------------------------------------|------------------------|
-| You want to encrypt an entire hard drive             | VeraCrypt              |
-| You want to encrypt your cloud data                  | Cryptomator            |
-| You need a solution for multiple devices and systems | Both, depending on use |
-| You want centralized team management                 | Cryptomator Hub        |
+<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+  <thead>
+    <tr class="py-2">
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2">Scenario</th>
+      <th class="font-h3 font-normal text-left px-4 py-2 w-1/2">Recommended Tool</th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200">
+    <tr>
+      <td class="font-p p-4">You want to encrypt an entire hard drive</td>
+      <td class="font-p p-4"><span class="font-medium">VeraCrypt</span></td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">You want to encrypt your cloud data</td>
+      <td class="font-p p-4"><span class="font-medium">Cryptomator</span></td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">You need a solution for multiple devices and systems</td>
+      <td class="font-p p-4"><span class="font-medium">Both, depending on use</span></td>
+    </tr>
+    <tr>
+      <td class="font-p p-4">You want centralized team management</td>
+      <td class="font-p p-4"><span class="font-medium">Cryptomator Hub</span></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Conclusion
 
