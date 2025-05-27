@@ -45,7 +45,7 @@ comparison:
         <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Mobile-Apps sind nicht offiziell.</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Mobile-Apps werden nicht offiziell unterstützt.</div>
       </div>
   securityRelevantFeatures:
     fileContentEncryption: |
@@ -116,7 +116,7 @@ Es wurde für die Verschlüsselung lokaler und externer Laufwerke entwickelt, wa
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Primärer Zweck</td>
       <td class="font-p p-2 lg:p-4">Verschlüsselung von Dateien speziell für Cloud-Speicher (z.B. Google Drive, Dropbox)</td>
-      <td class="font-p p-2 lg:p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Container-Dateien)</td>
+      <td class="font-p p-2 lg:p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Containerdateien)</td>
     </tr>
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Benutzerfreundlichkeit</td>
@@ -131,7 +131,7 @@ Es wurde für die Verschlüsselung lokaler und externer Laufwerke entwickelt, wa
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Schlüssellänge & Algorithmen</td>
       <td class="font-p p-2 lg:p-4">Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden</td>
-      <td class="font-p p-2 lg:p-4">Bietet AES-256, Serpent, Twofish oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
+      <td class="font-p p-2 lg:p-4">Bietet AES-256, Serpent, Twofish, oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
     </tr>
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Cloud-Integration</td>
@@ -162,7 +162,7 @@ VeraCrypt bietet viele Anpassungsoptionen und eine stärkere Kontrolle über die
 
 Beide Tools verwenden AES-256 als primären Algorithmus, der als einer der sichersten Verschlüsselungsstandards gilt.
 
-VeraCrypt erlaubt zusätzlich die Nutzung anderer Algorithmen wie:
+VeraCrypt erlaubt zusätzlich die Nutzung anderer Algorithmen, wie:
 
 - Serpent
 - Twofish

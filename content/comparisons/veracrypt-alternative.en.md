@@ -45,7 +45,7 @@ comparison:
         <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
           <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
-        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Mobile apps are not official.</div>
+        <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Mobile apps are not officially supported.</div>
       </div>
   securityRelevantFeatures:
     fileContentEncryption: |
@@ -75,7 +75,7 @@ comparison:
 
 <p class="lead">Security and privacy are more important than ever. If you want to protect your files, there are several encryption tools available — two of the most well-known are Cryptomator and VeraCrypt. Both tools are free, open-source, and offer strong encryption options. But which one is right for you?</p>
 
-<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator is constantly analysed by experts using modern tools." />
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator is constantly analyzed by experts using modern tools." />
 
 In this article, we compare Cryptomator and VeraCrypt and explain how each solution fits different needs. With Cryptomator Hub, Cryptomator also offers a way to centrally manage encrypted data for teams — an added benefit for organizations.
 
@@ -116,7 +116,7 @@ It is designed to encrypt local and external drives, allowing users to secure en
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
       <td class="font-p p-2 lg:p-4">File encryption specifically for cloud storage (e.g., Google Drive, Dropbox)</td>
-      <td class="font-p p-2 lg:p-4">Full disk encryption (entire drives, partitions, and container files)</td>
+      <td class="font-p p-2 lg:p-4">Full-disk encryption (entire drives, partitions, and container files)</td>
     </tr>
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Ease of Use</td>
@@ -162,7 +162,7 @@ VeraCrypt offers more customization and greater control over encryption, but thi
 
 Both tools use AES-256 as their primary algorithm, which is widely considered one of the most secure encryption standards.
 
-VeraCrypt also allows the use of other algorithms like:
+VeraCrypt also allows the use of other algorithms such as:
 
 - Serpent
 - Twofish

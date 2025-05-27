@@ -104,7 +104,7 @@ comparison:
 
 <p class="lead">Boxcryptor and the alternative Cryptomator serve the same purpose: to secure your privacy while conveniently storing data in the cloud. What exactly is the difference between them? And which suits your needs better? Find out here.</p>
 
-<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator is constantly analysed by experts using modern tools." />
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator is constantly analyzed by experts using modern tools." />
 
 You want your sensitive data to be secure in the cloud. But so far, no encryption solution has been able to convince you?
 
