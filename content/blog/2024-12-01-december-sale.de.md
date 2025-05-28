@@ -6,6 +6,11 @@ notice: "*Hinweis: Der Rabatt und der Preis können je nach Region variieren."
 tags: [cryptomator, sale]
 
 summary: "Vom 1. bis zum 31. Dezember könnt ihr unsere Mobile-Apps in der Vollversion sowie das Supporter-Zertifikat mit einem Rabatt von 33 %* erwerben. Lasst euch diese Aktion nicht entgehen!"
+
+ogimage:
+  relsrc: /img/blog/december-2024-sale.png
+  width: 600
+  height: 338
 ---
 Ihr könnt die Worte „Black Friday“ auch nicht mehr hören? Wir auch nicht – genau deshalb gibt es unseren Sale im Dezember, ganz ohne Hintertüren und Preisfallen. Vom 1. bis zum 31. Dezember könnt ihr unsere Mobile-Apps in der Vollversion sowie das Supporter-Zertifikat mit einem Rabatt von 33 %\* erwerben. Lasst euch diese Aktion nicht entgehen!
 

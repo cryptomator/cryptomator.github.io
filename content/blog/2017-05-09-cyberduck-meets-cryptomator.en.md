@@ -7,6 +7,11 @@ aliases: ["/blog/2017/05/09/cyberduck-meets-cryptomator_en.html"]
 discourseEmbedUrl: https://cryptomator.org/blog/2017/05/09/cyberduck-meets-cryptomator_en.html
 
 summary: Cyberduck 6.0 now supports Cryptomator vaults! Access cloud storage directly without local sync, compatible with vaults from both Cyberduck and Cryptomator.​
+
+ogimage:
+  relsrc: /img/coop/cyberduck-banner.jpg
+  width: 1140
+  height: 430
 ---
 Cyberduck 6.0 with support for Cryptomator vaults has been released today. You can download the new version at {{< extlink "https://cyberduck.io/" "cyberduck.io" >}}. Cyberduck is a libre remote file browser for Mac and Windows, making it the perfect tool for all, who do not want to synchronize their cloud files locally.
 

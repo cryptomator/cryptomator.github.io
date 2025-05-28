@@ -13,12 +13,12 @@
       {{ if $featured_post }}
         {{ range $page := $featured_post }}
           <article class="white-box grid grid-cols-1 lg:grid-cols-2 overflow-hidden mb-6">
-            <figure class="h-48 w-full md:h-72 lg:h-96">
+            <figure class="relative h-48 w-full md:h-72 lg:h-96 bg-primary-l2">
               <a href="{{ .RelPermalink }}">
                 {{ if .Params.ogimage }}
-                  <img class="size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
+                  <img class="absolute inset-0 size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
                 {{ else }}
-                  <img class="size-full object-contain bg-primary-l2 p-6 md:p-12" src="/img/logo.svg" alt="{{ .Title }}">
+                  <img class="absolute inset-0 size-full object-contain p-6 md:p-12" src="/img/logo.svg" alt="{{ .Title }}">
                 {{ end }}
               </a>
             </figure>
@@ -39,12 +39,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {{ range $page := $card_posts }}
             <article class="white-box overflow-hidden">
-              <figure class="h-48 w-full">
+              <figure class="relative h-48 w-full bg-primary-l2">
                 <a href="{{ .RelPermalink }}">
                   {{ if .Params.ogimage }}
-                    <img class="size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
+                    <img class="absolute inset-0 size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
                   {{ else }}
-                    <img class="size-full object-contain bg-primary-l2 p-6" src="/img/logo.svg" alt="{{ .Title }}">
+                    <img class="absolute inset-0 size-full object-contain p-6" src="/img/logo.svg" alt="{{ .Title }}">
                   {{ end }}
                 </a>
               </figure>
@@ -66,12 +66,12 @@
         <div class="space-y-6 mb-6">
           {{ range $page := $list_posts_page1 }}
             <article class="white-box grid grid-cols-1 md:grid-cols-[192px_1fr] overflow-hidden mb-6">
-              <figure class="h-48 w-full md:h-full">
+              <figure class="relative h-48 w-full md:h-full bg-primary-l2">
                 <a href="{{ .RelPermalink }}">
                   {{ if .Params.ogimage }}
-                    <img class="size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
+                    <img class="absolute inset-0 size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
                   {{ else }}
-                    <img class="size-full object-contain bg-primary-l2 p-6" src="/img/logo.svg" alt="{{ .Title }}">
+                    <img class="absolute inset-0 size-full object-contain p-6" src="/img/logo.svg" alt="{{ .Title }}">
                   {{ end }}
                 </a>
               </figure>
@@ -94,12 +94,12 @@
         <div class="space-y-6 mb-6">
           {{ range $page := $list_posts_others }}
             <article class="white-box grid grid-cols-1 md:grid-cols-[192px_1fr] overflow-hidden mb-6">
-              <figure class="h-48 w-full md:h-full">
+              <figure class="relative h-48 w-full md:h-full bg-primary-l2">
                 <a href="{{ .RelPermalink }}">
                   {{ if .Params.ogimage }}
-                    <img class="size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
+                    <img class="absolute inset-0 size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
                   {{ else }}
-                    <img class="size-full object-contain bg-primary-l2 p-6" src="/img/logo.svg" alt="{{ .Title }}">
+                    <img class="absolute inset-0 size-full object-contain p-6" src="/img/logo.svg" alt="{{ .Title }}">
                   {{ end }}
                 </a>
               </figure>
