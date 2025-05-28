@@ -8,6 +8,11 @@ authorimg: https://avatars.githubusercontent.com/u/1786772?s=96
 tags: [cryptomator, android]
 
 summary: Use Cryptomator for Android and revoke the app's internet permissions to make backdoors almost impossible.
+
+ogimage:
+  relsrc: /img/blog/android-for-paranoids-permission.png
+  width: 338
+  height: 600
 ---
 
 This blog post is aimed towards the paranoid Cryptomator power users among us and describes how to fully establish a relationship of trust with Cryptomator for Android.

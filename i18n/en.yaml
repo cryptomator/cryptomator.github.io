@@ -828,6 +828,12 @@
 - id: hub_setup_contact_us_button
   translation: "Contact Us"
 
+# Pagination
+- id: pagination_previous
+  translation: "Previous"
+- id: pagination_next
+  translation: "Next"
+
 # Pricing
 - id: pricing_title
   translation: "Find the Right Plan for You"

@@ -5,6 +5,11 @@ date: 2020-12-23
 tags: [cryptomator, android]
 
 summary: "We announced it last month and now we are ready… our gift to the community for the holidays: Cryptomator for Android is now fully open-source!"
+
+ogimage:
+  relsrc: /img/blog/android-open-source.png
+  width: 600
+  height: 338
 ---
 We announced it last month and now we are ready… our gift to the community for the holidays: Cryptomator for Android is now fully open-source! Check out the repository here: https://github.com/cryptomator/android
 
