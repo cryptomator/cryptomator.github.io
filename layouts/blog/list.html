@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="container py-12">
     <header class="mb-6">
-      <h1 class="font-h1">{{ .Title }} <a class="text-link" href="{{ .Site.LanguagePrefix }}/feed.xml"><i class="fas fa-rss-square"></i></a></h1>
+      <h1 class="font-h1 mb-8">{{ .Title }} <a class="text-link" href="{{ .Site.LanguagePrefix }}/feed.xml"><i class="fas fa-rss-square"></i></a></h1>
     </header>
 
     {{ $paginator := .Paginate (.Pages.ByDate.Reverse) 10 }}
@@ -12,7 +12,7 @@
       {{ $featured_post := first 1 $paginator.Pages }}
       {{ if $featured_post }}
         {{ range $page := $featured_post }}
-          <article class="white-box grid grid-cols-1 lg:grid-cols-2 overflow-hidden mb-6">
+          <article class="white-box grid grid-cols-1 lg:grid-cols-2 overflow-hidden mb-6 md:mb-12">
             <figure class="relative h-48 w-full md:h-72 lg:h-96 bg-primary-l2">
               <a href="{{ .RelPermalink }}">
                 {{ if .Params.ogimage }}
@@ -36,7 +36,7 @@
       <!-- Section 2: Next 2 Posts (2-column cards) (only on Page 1) -->
       {{ $card_posts := first 2 (after 1 $paginator.Pages) }}
       {{ if $card_posts }}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 md:mb-12">
           {{ range $page := $card_posts }}
             <article class="white-box overflow-hidden">
               <figure class="relative h-48 w-full bg-primary-l2">
@@ -63,9 +63,9 @@
       <!-- Section 3: Remaining 7 Posts (on Page 1) -->
       {{ $list_posts_page1 := after 3 $paginator.Pages }}
       {{ if $list_posts_page1 }}
-        <div class="space-y-6 mb-6">
+        <div class="space-y-6 mb-12">
           {{ range $page := $list_posts_page1 }}
-            <article class="white-box grid grid-cols-1 md:grid-cols-[192px_1fr] overflow-hidden mb-6">
+            <article class="white-box grid grid-cols-1 md:grid-cols-[192px_1fr] overflow-hidden">
               <figure class="relative h-48 w-full md:h-full bg-primary-l2">
                 <a href="{{ .RelPermalink }}">
                   {{ if .Params.ogimage }}
@@ -91,9 +91,9 @@
       <!-- Section 3: All 10 Posts (on Subsequent Pages) -->
       {{ $list_posts_others := $paginator.Pages }}
       {{ if $list_posts_others }}
-        <div class="space-y-6 mb-6">
+        <div class="space-y-6 mb-12">
           {{ range $page := $list_posts_others }}
-            <article class="white-box grid grid-cols-1 md:grid-cols-[192px_1fr] overflow-hidden mb-6">
+            <article class="white-box grid grid-cols-1 md:grid-cols-[192px_1fr] overflow-hidden">
               <figure class="relative h-48 w-full md:h-full bg-primary-l2">
                 <a href="{{ .RelPermalink }}">
                   {{ if .Params.ogimage }}
