@@ -6,6 +6,11 @@ notice: "*Note: The discount and price may vary by region."
 tags: [cryptomator, sale]
 
 summary: "From December 1st to 31st, you can get the full version of our mobile apps and the Supporter Certificate at a 33%* discount. Don't miss out on this offer!"
+
+ogimage:
+  relsrc: /img/blog/december-2024-sale.png
+  width: 600
+  height: 338
 ---
 Tired of hearing the words "Black Friday"? So are we – that's why our sale is in December, with no hidden terms or price tricks. From December 1st to 31st, you can get the full version of our mobile apps and the Supporter Certificate at a 33%\* discount. Don't miss out on this offer!
 
