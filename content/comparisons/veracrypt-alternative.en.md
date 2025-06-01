@@ -189,7 +189,8 @@ VeraCrypt, in contrast, does not offer direct cloud integration. Although VeraCr
 
 ### Real-World Example: Why VeraCrypt Can Be Impractical for the Cloud
 
-Imagine you create a 10 GB encrypted container using VeraCrypt — this container acts like an encrypted hard drive. You can place it in a cloud folder, like Dropbox or OneDrive.  
+Imagine you create a 10 GB encrypted container using VeraCrypt — this container acts like an encrypted hard drive. You can place it in a cloud folder, like Dropbox or OneDrive.
+
 However, the issue arises during synchronization: even if you only change a small file inside the container, the cloud sync client sees the entire container as changed.
 
 The result: all 10 GB are re-uploaded. This can be extremely time-consuming, especially with slow internet connections or large containers.
