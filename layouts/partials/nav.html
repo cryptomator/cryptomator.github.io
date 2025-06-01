@@ -4,6 +4,9 @@
 {{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
 <nav class="w-full max-h-screen {{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
+  <div class="w-full bg-primary text-center text-sm text-white p-0.5">
+    <p>{{ i18n "nav_promotion" . | emojify }}</p>
+  </div>
   <div class="flex justify-between items-stretch w-full lg:px-8">
     <!-- Regular Navigation -->
     <div class="flex items-stretch">
