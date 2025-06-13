@@ -103,8 +103,9 @@
           <div class="relative">
             <ul x-show="isDropdownOpen" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded-sm shadow-md z-50">
               {{- range .Translations }}
+              {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
               <li>
-                <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+                <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
               </li>
               {{- end }}
             </ul>
@@ -159,7 +160,8 @@
     </div>
     <div class="mt-1">
       {{ range .Translations }}
-      <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+      {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
+      <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
       {{ end }}
     </div>
 

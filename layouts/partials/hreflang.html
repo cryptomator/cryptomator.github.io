@@ -1,0 +1,31 @@
+{{/* 
+  Hreflang partial for handling pagination-aware alternate language links
+  Usage: {{ partial "hreflang.html" . }}
+*/}}
+
+{{/* Get current page number if paginated */}}
+{{ $pageNumber := 1 }}
+{{ $isPaginated := false }}
+{{ if and .IsNode .Paginator }}
+  {{ $pageNumber = .Paginator.PageNumber }}
+  {{ $isPaginated = true }}
+{{ end }}
+
+{{/* Use canonical URL partial */}}
+<link rel="canonical" href="{{ partial "canonical-url.html" . }}" />
+
+{{/* Include hreflang for all pages */}}
+{{ range .AllTranslations }}
+  {{ $altURL := .Permalink }}
+  {{ if and $isPaginated (gt $pageNumber 1) }}
+    {{ $baseURL := .Permalink }}
+    {{ if not (strings.HasSuffix $baseURL "/") }}
+      {{ $baseURL = printf "%s/" $baseURL }}
+    {{ end }}
+    {{ $altURL = printf "%spage/%d/" $baseURL $pageNumber }}
+  {{ end }}
+  <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ $altURL }}" />
+  {{ if eq .Language.Lang "en" }}
+    <link rel="alternate" hreflang="x-default" href="{{ $altURL }}" />
+  {{ end }}
+{{ end }}

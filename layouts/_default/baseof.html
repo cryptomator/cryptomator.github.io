@@ -10,7 +10,7 @@
     <link rel="preload" fetchpriority="low" as="image" href="/img/logo.svg" type="image/svg+xml">
     <link rel="preload" fetchpriority="low" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" fetchpriority="low" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:url" content="{{ partial "canonical-url.html" . }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ if and (eq .Section "blog") .IsPage }}
       <meta name="description" content="{{ .Summary }}">
@@ -58,12 +58,7 @@
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
-    {{ range .AllTranslations }}
-      <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
-      {{ if eq .Language.Lang "en" }}
-        <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
-      {{ end }}
-    {{ end }}
+    {{ partial "hreflang.html" . }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
