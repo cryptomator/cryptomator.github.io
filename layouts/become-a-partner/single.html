@@ -1,0 +1,185 @@
+{{ define "main" }}
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {firstName: '', lastName: '', email: '', company: '', website: '', partnershipType: '', description: '', captcha: null, acceptNewsletter: false}, acceptTerms: false, becomePartner: null, captchaState: null}" x-init="becomePartner = new BecomePartner($refs.form, feedbackData, submitData)" class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <form x-ref="form" @submit.prevent="becomePartner.request(); $refs.captcha.reset()">
+      <div x-show="!feedbackData.success" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <!-- Left Side - Partner Form -->
+        <section class="white-box md:col-span-2">
+          <div class="px-4 py-5 md:p-6">
+            <div class="grid grid-cols-6 gap-6">
+              <div class="flex flex-col col-span-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- First Name -->
+                <div>
+                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                    {{ i18n "partner_first_name" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="text" id="firstName" name="firstName" x-model="submitData.firstName" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+
+                <!-- Last Name -->
+                <div>
+                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                    {{ i18n "partner_last_name" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="text" id="lastName" name="lastName" x-model="submitData.lastName" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-6">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_email" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" x-model="submitData.email" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Company -->
+              <div class="mb-6">
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_company" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="company" name="company" x-model="submitData.company" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Company Website -->
+              <div class="mb-6">
+                <label for="website" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_website" }}
+                </label>
+                <input type="url" id="website" name="website" x-model="submitData.website" class="block input-box w-full" placeholder="https://">
+              </div>
+
+              <!-- Partnership Type -->
+              <div class="mb-6">
+                <label for="partnershipType" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_type" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <select id="partnershipType" name="partnershipType" x-model="submitData.partnershipType" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                  <option value="">{{ i18n "partner_type_placeholder" }}</option>
+                  <option value="reseller">{{ i18n "partner_type_reseller" }}</option>
+                  <option value="technology">{{ i18n "partner_type_technology" }}</option>
+                  <option value="consulting">{{ i18n "partner_type_consulting" }}</option>
+                  <option value="distribution">{{ i18n "partner_type_distribution" }}</option>
+                  <option value="other">{{ i18n "partner_type_other" }}</option>
+                </select>
+              </div>
+
+              <!-- Description -->
+              <div class="mb-6">
+                <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_description" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <textarea id="description" name="description" x-model="submitData.description" rows="4" class="block input-box w-full" placeholder="{{ i18n "partner_description_placeholder" }}" required aria-required="true" @blur="$el.classList.add('show-invalid')"></textarea>
+              </div>
+
+              <!-- Terms & Privacy Acceptance -->
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
+              </p>
+
+              <!-- Optional Newsletter -->
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+              </p>
+
+              <div class="mt-8">
+                <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="become-partner-form" x-cloak>
+                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                  {{ i18n "partner_submit" }}
+                </button>
+                {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Side - Sidebar -->
+        <aside class="white-box md:col-span-1">
+          <div class="px-4 py-5 md:p-6">
+            <div class="space-y-8">
+              <!-- What happens next section -->
+              <div>
+                <h3 class="font-h3 mb-6">{{ i18n "partner_what_happens_title" }}</h3>
+                
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "partner_step_1_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "partner_step_1_description" }}</p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "partner_step_2_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "partner_step_2_description" }}</p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "partner_step_3_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "partner_step_3_description" }}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section x-show="feedbackData.success" class="white-box" x-cloak>
+        <div class="flex flex-col justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6">
+          <i class="fas fa-check-circle text-7xl text-secondary"></i>
+          <h3 class="font-h3">
+            {{ i18n "partner_success_title" }}
+          </h3>
+          <p class="font-p">
+            {{ i18n "partner_success_message" }}
+          </p>
+          <p class="font-p text-gray-500 text-sm mt-2">
+            {{ i18n "partner_success_next_steps" }}
+          </p>
+        </div>
+      </section>
+    </form>
+  </section>
+{{ end }}
+
+{{ define "script" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
+    {{ $becomePartnerJs := resources.Get "js/becomepartner.js" }}
+    <script type="text/javascript" src="{{ $becomePartnerJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
+    {{ $becomePartnerJs := resources.Get "js/becomepartner.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $becomePartnerJs.RelPermalink }}" integrity="{{ $becomePartnerJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

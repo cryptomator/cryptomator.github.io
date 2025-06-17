@@ -1,0 +1,275 @@
+{{ define "main" }}
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {firstName: '', lastName: '', email: '', company: '', interests: [], attendees: [], message: '', captcha: null, acceptNewsletter: false}, acceptTerms: false, bookDemo: null, captchaState: null}" x-init="bookDemo = new BookDemo($refs.form, feedbackData, submitData)" class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <form x-ref="form" @submit.prevent="bookDemo.request(); $refs.captcha.reset()">
+      <div x-show="!feedbackData.success" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <!-- Left Side - Contact Form -->
+        <section class="white-box md:col-span-2">
+          <div class="px-4 py-5 md:p-6">
+            <div class="grid grid-cols-6 gap-6">
+              <div class="flex flex-col col-span-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- First Name -->
+                <div>
+                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                    {{ i18n "book_demo_first_name" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="text" id="firstName" name="firstName" x-model="submitData.firstName" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+
+                <!-- Last Name -->
+                <div>
+                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                    {{ i18n "book_demo_last_name" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="text" id="lastName" name="lastName" x-model="submitData.lastName" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-6">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "book_demo_email" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" x-model="submitData.email" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Company (Optional) -->
+              <div class="mb-6">
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "book_demo_company" }}
+                </label>
+                <input type="text" id="company" name="company" x-model="submitData.company" class="block input-box w-full">
+              </div>
+
+              <!-- What do you want to learn? -->
+              <div class="mb-6">
+                <fieldset>
+                  <legend class="block text-sm font-medium text-gray-700 mb-3">
+                    {{ i18n "book_demo_learn_about" }}
+                  </legend>
+                  <div class="space-y-3">
+                    <label class="flex items-start">
+                      <input type="checkbox" name="interests[]" value="setup" x-model="submitData.interests" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_interest_setup" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="interests[]" value="features" x-model="submitData.interests" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_interest_features" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="interests[]" value="integration" x-model="submitData.interests" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_interest_integration" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="interests[]" value="licensing" x-model="submitData.interests" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_interest_licensing" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="interests[]" value="security" x-model="submitData.interests" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_interest_security" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="interests[]" value="other" x-model="submitData.interests" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_interest_other" }}</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <!-- Who will attend? -->
+              <div class="mb-6">
+                <fieldset>
+                  <legend class="block text-sm font-medium text-gray-700 mb-3">
+                    {{ i18n "book_demo_attendees" }}
+                  </legend>
+                  <div class="space-y-3">
+                    <label class="flex items-start">
+                      <input type="checkbox" name="attendees[]" value="it-engineering" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_it" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="attendees[]" value="compliance-security" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_compliance" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="attendees[]" value="management" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_management" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="attendees[]" value="procurement" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_procurement" }}</span>
+                    </label>
+                    <label class="flex items-start">
+                      <input type="checkbox" name="attendees[]" value="not-sure" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_not_sure" }}</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <!-- Message -->
+              <div class="mb-6">
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "book_demo_message" }}
+                </label>
+                <textarea id="message" name="message" x-model="submitData.message" rows="4" class="block input-box w-full" placeholder="{{ i18n "book_demo_message_placeholder" }}"></textarea>
+              </div>
+
+              <!-- Terms & Privacy Acceptance -->
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
+              </p>
+
+              <!-- Optional Newsletter -->
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+              </p>
+
+              <div class="mt-8">
+                <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="book-demo-form" x-cloak>
+                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                  {{ i18n "book_demo_submit" }}
+                </button>
+                {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Side - Sidebar -->
+        <aside class="white-box md:col-span-1">
+          <div class="px-4 py-5 md:p-6">
+            <div class="space-y-8">
+              <!-- What happens next section -->
+              <div>
+                <h3 class="font-h3 mb-6">{{ i18n "book_demo_sidebar_title" }}</h3>
+                
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "book_demo_step_1_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "book_demo_step_1_description" }}</p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "book_demo_step_2_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "book_demo_step_2_description" }}</p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "book_demo_step_3_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "book_demo_step_3_description" }}</p>
+                    </div>
+                  </li>
+                  
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium text-gray-900 mb-1">{{ i18n "book_demo_step_4_title" }}</h4>
+                      <p class="text-sm text-gray-600">{{ i18n "book_demo_step_4_description" }}</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Divider -->
+              <hr class="border-gray-200">
+
+              <!-- Looking for something else section -->
+              <div>
+                <h3 class="font-h3 mb-6">{{ i18n "book_demo_looking_for_title" }}</h3>
+                
+                <ul class="space-y-6">
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" class="flex items-start group">
+                      <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "book_demo_link_contact_sales" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "book_demo_link_contact_sales_description" }}</p>
+                      </div>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/become-a-partner/" class="flex items-start group">
+                      <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "book_demo_link_partner" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "book_demo_link_partner_description" }}</p>
+                      </div>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/contact/" class="flex items-start group">
+                      <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "book_demo_link_contact" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "book_demo_link_contact_description" }}</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section x-show="feedbackData.success" class="white-box" x-cloak>
+        <div class="flex flex-col justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6">
+          <i class="fas fa-check-circle text-7xl text-secondary"></i>
+          <h3 class="font-h3">
+            {{ i18n "book_demo_success_title" }}
+          </h3>
+          <p class="font-p">
+            {{ i18n "book_demo_success_message" }}
+          </p>
+        </div>
+      </section>
+    </form>
+  </section>
+{{ end }}
+
+{{ define "script" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
+    {{ $bookDemoJs := resources.Get "js/bookdemo.js" }}
+    <script type="text/javascript" src="{{ $bookDemoJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
+    {{ $bookDemoJs := resources.Get "js/bookdemo.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $bookDemoJs.RelPermalink }}" integrity="{{ $bookDemoJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}
