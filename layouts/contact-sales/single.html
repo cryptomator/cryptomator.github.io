@@ -49,13 +49,13 @@
               <!-- Topic Dropdown -->
               <div class="mb-6">
                 <label for="topic" class="block text-sm font-medium text-gray-700 mb-2">
-                  {{ i18n "contact_sales_topic" }} <span class="text-red-500" aria-label="required">*</span>
+                  {{ i18n "contact_sales_topic" }}
                 </label>
-                <select id="topic" name="topic" x-model="submitData.topic" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                <select id="topic" name="topic" x-model="submitData.topic" class="block input-box w-full">
                   <option value="">{{ i18n "contact_sales_topic_placeholder" }}</option>
                   <option value="pricing">{{ i18n "contact_sales_topic_pricing" }}</option>
-                  <option value="technical">{{ i18n "contact_sales_topic_technical" }}</option>
-                  <option value="compliance">{{ i18n "contact_sales_topic_compliance" }}</option>
+                  <option value="technical-integration">{{ i18n "contact_sales_topic_technical" }}</option>
+                  <option value="compliance-security">{{ i18n "contact_sales_topic_compliance" }}</option>
                   <option value="other">{{ i18n "contact_sales_topic_other" }}</option>
                 </select>
               </div>
@@ -63,9 +63,9 @@
               <!-- Message -->
               <div class="mb-6">
                 <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
-                  {{ i18n "contact_sales_message" }} <span class="text-red-500" aria-label="required">*</span>
+                  {{ i18n "contact_sales_message" }}
                 </label>
-                <textarea id="message" name="message" x-model="submitData.message" rows="4" class="block input-box w-full" placeholder="{{ i18n "contact_sales_message_placeholder" }}" required aria-required="true" @blur="$el.classList.add('show-invalid')"></textarea>
+                <textarea id="message" name="message" x-model="submitData.message" rows="4" class="block input-box w-full" placeholder="{{ i18n "contact_sales_message_placeholder" }}"></textarea>
               </div>
 
               <!-- Terms & Privacy Acceptance -->
@@ -99,6 +99,7 @@
                 <h3 class="font-h3 mb-6">{{ i18n "contact_sales_what_happens_title" }}</h3>
                 
                 <ul class="space-y-4">
+                  <!-- TODO: Uncomment when email confirmation system implemented
                   <li class="flex items-start">
                     <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
                       <i class="fas fa-check text-white text-xs"></i>
@@ -108,6 +109,7 @@
                       <p class="text-sm text-gray-600">{{ i18n "contact_sales_step_1_description" }}</p>
                     </div>
                   </li>
+                  -->
                   
                   <li class="flex items-start">
                     <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
@@ -163,8 +165,8 @@
                     <a href="{{ .Site.LanguagePrefix }}/contact/" class="flex items-start group">
                       <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
                       <div>
-                        <div class="font-medium text-link group-hover:underline">{{ i18n "contact_sales_link_docs" }}</div>
-                        <p class="text-sm text-gray-600 mt-1">{{ i18n "contact_sales_link_docs_description" }}</p>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "contact_sales_link_general" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "contact_sales_link_general_description" }}</p>
                       </div>
                     </a>
                   </li>

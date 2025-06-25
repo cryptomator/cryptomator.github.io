@@ -1052,27 +1052,27 @@
 - id: altcha_waitAlert
   translation: "Verifizierung läuft… bitte warten."
 
-# Solutions
+# Solutions List
 - id: coming_soon
   translation: "Bald verfügbar"
-- id: solutions_list_subtitle
-  translation: "Entdecken Sie, wie Cryptomator Organisationen branchenübergreifend schützt und dabei nahtlose Arbeitsabläufe und vollständige Datenkontrolle aufrechterhält."
 - id: solutions_contact_title
-  translation: "Ihre Branche nicht aufgelistet?"
+  translation: "Deine Branche nicht aufgelistet?"
 - id: solutions_contact_description
-  translation: "Wir arbeiten mit Organisationen aller Branchen zusammen. Teilen Sie uns Ihre Anforderungen mit und wir finden die passende Verschlüsselungslösung."
+  translation: "Wir arbeiten mit Organisationen aller Branchen zusammen. Teile uns deine Anforderungen mit und wir finden die passende Verschlüsselungslösung."
 - id: solutions_contact_button
   translation: "Kontaktiere uns"
+
+# Solutions Single
 - id: solutions_hero_get_started
   translation: "Jetzt loslegen"
 - id: solutions_hero_book_demo
   translation: "Demo buchen"
-
-# Solutions Single Page Contact
+- id: solutions_trusted_by_title
+  translation: "Vertrauen von 100+ Organisationen weltweit"
 - id: solutions_single_contact_title
   translation: "Bereit, diese Lösung umzusetzen?"
 - id: solutions_single_contact_description
-  translation: "Unser Team unterstützt Sie bei der Umsetzung mit Beratung zu Konfiguration und Setup."
+  translation: "Unser Team unterstützt dich bei der Umsetzung mit Beratung zu Konfiguration und Setup."
 - id: solutions_single_contact_button
   translation: "Kontaktiere uns"
 
@@ -1086,7 +1086,7 @@
 - id: book_demo_company
   translation: "Unternehmen (optional)"
 - id: book_demo_learn_about
-  translation: "Worüber möchten Sie mehr erfahren?"
+  translation: "Worüber möchtest du mehr erfahren?"
 - id: book_demo_interest_setup
   translation: "Setup"
 - id: book_demo_interest_features
@@ -1098,7 +1098,7 @@
 - id: book_demo_interest_security
   translation: "Sicherheit"
 - id: book_demo_interest_other
-  translation: "Andere"
+  translation: "Sonstiges"
 - id: book_demo_attendees
   translation: "Wer wird teilnehmen?"
 - id: book_demo_attendee_it
@@ -1114,45 +1114,45 @@
 - id: book_demo_message
   translation: "Nachricht"
 - id: book_demo_message_placeholder
-  translation: "Erzählen Sie uns mehr über Ihre spezifischen Bedürfnisse oder Fragen..."
+  translation: "Erzähle uns mehr über deine spezifischen Bedürfnisse oder Fragen..."
 - id: book_demo_submit
   translation: "Demo buchen"
 - id: book_demo_success_title
   translation: "Demo-Anfrage erhalten!"
 - id: book_demo_success_message
-  translation: "Vielen Dank für Ihr Interesse an Cryptomator Hub. Wir werden uns bald bei Ihnen melden, um Ihre persönliche Demo zu vereinbaren."
+  translation: "Vielen Dank für dein Interesse an Cryptomator Hub. Wir werden uns bald bei dir melden, um deine persönliche Demo zu vereinbaren."
 - id: book_demo_sidebar_title
   translation: "Was passiert nach dem Ausfüllen dieses Formulars?"
 - id: book_demo_step_1_title
-  translation: "Bestätigung Ihrer Anfrage"
+  translation: "Bestätigung deiner Anfrage"
 - id: book_demo_step_1_description
-  translation: "Wir werden uns innerhalb eines Werktages bei Ihnen melden, um Ihre Demo-Anfrage zu bestätigen."
+  translation: "Wir werden uns innerhalb eines Werktages bei dir melden, um deine Demo-Anfrage zu bestätigen."
 - id: book_demo_step_2_title
-  translation: "Vorbereitung Ihrer Demo"
+  translation: "Vorbereitung deiner Demo"
 - id: book_demo_step_2_description
-  translation: "Unser Team wird die Demo basierend auf Ihren spezifischen Interessen und Bedürfnissen anpassen."
+  translation: "Unser Team wird die Demo basierend auf deinen spezifischen Interessen und Bedürfnissen anpassen."
 - id: book_demo_step_3_title
   translation: "Durchführung der Plattform-Demo"
 - id: book_demo_step_3_description
-  translation: "Erleben Sie die Features von Cryptomator Hub durch eine live, interaktive Demonstration."
+  translation: "Erlebe die Features von Cryptomator Hub durch eine live, interaktive Demonstration."
 - id: book_demo_step_4_title
   translation: "Nachbereitung"
 - id: book_demo_step_4_description
-  translation: "Wir stellen zusätzliche Ressourcen zur Verfügung und beantworten alle Ihre Fragen."
+  translation: "Wir stellen zusätzliche Ressourcen zur Verfügung und beantworten alle deine Fragen."
 - id: book_demo_looking_for_title
-  translation: "Suchen Sie nach etwas anderem?"
+  translation: "Suchst du nach etwas anderem?"
 - id: book_demo_link_contact_sales
   translation: "Vertrieb kontaktieren"
 - id: book_demo_link_contact_sales_description
-  translation: "Besprechen Sie Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
+  translation: "Besprich Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
 - id: book_demo_link_partner
   translation: "Partner werden"
 - id: book_demo_link_partner_description
-  translation: "Treten Sie unserem Partnerprogramm bei und integrieren Sie Cryptomator in Ihr Geschäftsangebot."
+  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
 - id: book_demo_link_contact
   translation: "Allgemeine Kontakt"
 - id: book_demo_link_contact_description
-  translation: "Nehmen Sie Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
+  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Contact Sales
 - id: contact_sales_first_name
@@ -1164,9 +1164,9 @@
 - id: contact_sales_website
   translation: "Unternehmens-Website (optional)"
 - id: contact_sales_topic
-  translation: "Was ist Ihr Thema?"
+  translation: "Was ist dein Thema?"
 - id: contact_sales_topic_placeholder
-  translation: "Bitte wählen Sie ein Thema"
+  translation: "Bitte wähle ein Thema"
 - id: contact_sales_topic_pricing
   translation: "Preise"
 - id: contact_sales_topic_technical
@@ -1178,41 +1178,41 @@
 - id: contact_sales_message
   translation: "Nachricht"
 - id: contact_sales_message_placeholder
-  translation: "Bitte beschreiben Sie Ihre spezifischen Bedürfnisse oder Fragen..."
+  translation: "Bitte beschreibe deine spezifischen Bedürfnisse oder Fragen..."
 - id: contact_sales_submit
   translation: "Nachricht senden"
 - id: contact_sales_success_title
   translation: "Nachricht gesendet!"
 - id: contact_sales_success_message
-  translation: "Vielen Dank für Ihre Kontaktaufnahme. Unser Vertriebsteam wird sich innerhalb eines Werktages bei Ihnen melden."
+  translation: "Vielen Dank für deine Kontaktaufnahme. Unser Vertriebsteam wird sich innerhalb eines Werktages bei dir melden."
 - id: contact_sales_what_happens_title
   translation: "Was passiert nach dem Ausfüllen dieses Formulars?"
 - id: contact_sales_step_1_title
   translation: "Nachricht erhalten"
 - id: contact_sales_step_1_description
-  translation: "Wir bestätigen den Erhalt Ihrer Nachricht innerhalb weniger Stunden."
+  translation: "Wir bestätigen den Erhalt deiner Nachricht innerhalb weniger Stunden."
 - id: contact_sales_step_2_title
   translation: "Expertenprüfung"
 - id: contact_sales_step_2_description
-  translation: "Unser Vertriebsteam prüft Ihre Anfrage und bereitet eine maßgeschneiderte Antwort vor."
+  translation: "Unser Vertriebsteam prüft deine Anfrage und bereitet eine maßgeschneiderte Antwort vor."
 - id: contact_sales_step_3_title
   translation: "Persönliche Antwort"
 - id: contact_sales_step_3_description
-  translation: "Sie erhalten innerhalb eines Werktages eine detaillierte Antwort von unserem Team."
+  translation: "Du erhältst innerhalb eines Werktages eine detaillierte Antwort von unserem Team."
 - id: contact_sales_sidebar_title
-  translation: "Suchen Sie nach etwas anderem?"
+  translation: "Suchst du nach etwas anderem?"
 - id: contact_sales_link_demo
   translation: "Demo buchen"
 - id: contact_sales_link_demo_description
-  translation: "Buchen Sie eine personalisierte Demo, um Cryptomator Hub in Aktion mit Ihrem Anwendungsfall zu sehen."
+  translation: "Buche eine personalisierte Demo, um Cryptomator Hub in Aktion mit deinem Anwendungsfall zu sehen."
 - id: contact_sales_link_partner
   translation: "Partner werden"
 - id: contact_sales_link_partner_description
-  translation: "Treten Sie unserem Partnerprogramm bei und integrieren Sie Cryptomator in Ihr Geschäftsangebot."
+  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
 - id: contact_sales_link_general
   translation: "Allgemeine Kontakt"
 - id: contact_sales_link_general_description
-  translation: "Nehmen Sie Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
+  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Partner Form
 - id: partner_first_name
@@ -1242,26 +1242,26 @@
 - id: partner_description
   translation: "Partnerschaftsbeschreibung"
 - id: partner_description_placeholder
-  translation: "Bitte beschreiben Sie Ihr Unternehmen, Ihre Dienstleistungen und wie Sie mit Cryptomator zusammenarbeiten möchten..."
+  translation: "Bitte beschreibe dein Unternehmen, deine Dienstleistungen und wie du mit Cryptomator zusammenarbeiten möchtest..."
 - id: partner_submit
   translation: "Anfrage senden"
 - id: partner_success_title
   translation: "Partnerschaftsanfrage erhalten!"
 - id: partner_success_message
-  translation: "Vielen Dank für Ihr Interesse, Cryptomator-Partner zu werden."
+  translation: "Vielen Dank für dein Interesse, Cryptomator-Partner zu werden."
 - id: partner_success_next_steps
-  translation: "Unser Partnership-Team wird Ihre Bewerbung prüfen und sich innerhalb von 2-3 Werktagen mit Ihnen in Verbindung setzen, um die nächsten Schritte zu besprechen."
+  translation: "Unser Partnership-Team wird deine Bewerbung prüfen und sich innerhalb von 2-3 Werktagen mit dir in Verbindung setzen, um die nächsten Schritte zu besprechen."
 - id: partner_what_happens_title
   translation: "Was passiert nach dem Ausfüllen dieses Formulars?"
 - id: partner_step_1_title
   translation: "Bewerbung erhalten"
 - id: partner_step_1_description
-  translation: "Wir bestätigen den Erhalt Ihrer Partnerschaftsanfrage innerhalb weniger Stunden."
+  translation: "Wir bestätigen den Erhalt deiner Partnerschaftsanfrage innerhalb weniger Stunden."
 - id: partner_step_2_title
   translation: "Prüfung durch unser Team"
 - id: partner_step_2_description
-  translation: "Unser Partnership-Team prüft Ihre Bewerbung und bereitet eine maßgeschneiderte Antwort vor."
+  translation: "Unser Partnership-Team prüft deine Bewerbung und bereitet eine maßgeschneiderte Antwort vor."
 - id: partner_step_3_title
   translation: "Persönliche Kontaktaufnahme"
 - id: partner_step_3_description
-  translation: "Sie erhalten innerhalb von 2-3 Werktagen eine detaillierte Antwort über die nächsten Schritte."
+  translation: "Du erhältst innerhalb von 2-3 Werktagen eine detaillierte Antwort über die nächsten Schritte."

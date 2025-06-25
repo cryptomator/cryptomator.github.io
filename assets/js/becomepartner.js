@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_BECOME_PARTNER_URL = STORE_API_URL + '/become-partner/request';
+const REQUEST_BECOME_PARTNER_URL = STORE_API_URL + '/hub/become-partner';
 
 class BecomePartner {
 

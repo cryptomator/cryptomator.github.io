@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_BOOK_DEMO_URL = STORE_API_URL + '/book-demo/request';
+const REQUEST_BOOK_DEMO_URL = STORE_API_URL + '/hub/book-demo';
 
 class BookDemo {
 

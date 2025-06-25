@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_CONTACT_SALES_URL = STORE_API_URL + '/contact-sales/request';
+const REQUEST_CONTACT_SALES_URL = STORE_API_URL + '/hub/contact-sales';
 
 class ContactSales {
 

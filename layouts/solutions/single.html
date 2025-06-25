@@ -10,7 +10,7 @@
           <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">{{ .Title }}</span>
         </div>
         <h1 class="font-h1 mb-6">{{ .Params.hero_title | default .Title }}</h1>
-        <p class="lead mb-8 max-w-3xl mx-auto">{{ .Params.hero_description | default .Description | safeHTML }}</p>
+        <p class="lead mb-8 max-w-4xl mx-auto">{{ .Params.hero_description | default .Description | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-6 justify-center">
           <div class="flex flex-col gap-2">
             <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="solutions-get-started">{{ i18n "solutions_hero_get_started" . }}</a>
@@ -59,8 +59,8 @@
   <section class="container py-16">
     {{ if .Params.key_features }}
     <header class="text-center mb-12">
-      <h2 class="font-h2 mb-4">{{ .Params.key_features_title | default "Key Features" }}</h2>
-      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.key_features_subtitle | default "Powerful capabilities designed for your needs" | safeHTML }}</p>
+      <h2 class="font-h2 mb-4">{{ .Params.key_features_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.key_features_subtitle | safeHTML }}</p>
     </header>
 
     {{ range $index, $feature := .Params.key_features }}
@@ -86,8 +86,8 @@
     {{ end }}
     {{ else if .Params.features }}
     <header class="text-center mb-12">
-      <h2 class="font-h2 mb-4">{{ .Params.features_title | default "Key Features" }}</h2>
-      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.features_subtitle | default "Powerful capabilities designed for your needs" | safeHTML }}</p>
+      <h2 class="font-h2 mb-4">{{ .Params.features_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.features_subtitle | safeHTML }}</p>
     </header>
 
     {{ range $index, $feature := .Params.features }}
@@ -112,10 +112,11 @@
     {{ end }}
   </section>
 
+  {{ if .Params.case_studies_show }}
   <section class="container py-16">
     <header class="text-center mb-12">
-      <h2 class="font-h2 mb-4">{{ .Params.case_studies_title | default "Success Stories" }}</h2>
-      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.case_studies_subtitle | default "See how organizations like yours have benefited" | safeHTML }}</p>
+      <h2 class="font-h2 mb-4">{{ .Params.case_studies_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.case_studies_subtitle | safeHTML }}</p>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -152,9 +153,14 @@
       {{ end }}
     </div>
   </section>
+  {{ end }}
 
   {{- $data := index $.Site.Data $.Site.Language.Lang }}
-  {{ if $data.solutions_education_faq }}
+  {{- $faqData := "" }}
+  {{ if .Params.faq_key }}
+    {{- $faqData = index $data .Params.faq_key }}
+  {{ end }}
+  {{ if $faqData }}
   <section class="container py-16">
     <header class="text-center mb-12">
       <h2 class="font-h2 mb-4">{{ .Params.faq_title | default (i18n "faq_title" .) }}</h2>
@@ -163,8 +169,8 @@
       {{ end }}
     </header>
 
-    <dl x-data="{isOpen: [{{ range $i, $e := $data.solutions_education_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
-      {{ range $index, $item := $data.solutions_education_faq }}
+    <dl x-data="{isOpen: [{{ range $i, $e := $faqData }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
+      {{ range $index, $item := $faqData }}
       <dt class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
           <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
@@ -181,7 +187,7 @@
 
   <section class="container text-center py-12">
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "solutions_single_contact_title" . }}</h2>
-    <p class="font-p text-gray-700 mb-6 max-w-2xl mx-auto">{{ i18n "solutions_single_contact_description" . | safeHTML }}</p>
+    <p class="font-p text-gray-700 mb-6 max-w-3xl mx-auto">{{ i18n "solutions_single_contact_description" . | safeHTML }}</p>
     <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8" data-umami-event="solutions-implementation-contact">
       <i class="fas fa-envelope"></i> {{ i18n "solutions_single_contact_button" . }}
     </a>

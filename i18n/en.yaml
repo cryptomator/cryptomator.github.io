@@ -1052,27 +1052,27 @@
 - id: altcha_waitAlert
   translation: "Verifying… please wait."
 
-# Solutions
+# Solutions List
 - id: coming_soon
   translation: "Coming Soon"
-- id: solutions_list_subtitle
-  translation: "Discover how Cryptomator protects organizations across industries while maintaining seamless workflows and complete data control."
 - id: solutions_contact_title
   translation: "Your Industry Not Listed?"
 - id: solutions_contact_description
   translation: "We work with organizations across all sectors. Let us know your specific requirements and we'll help you implement the right encryption solution."
 - id: solutions_contact_button
   translation: "Contact Us"
+
+# Solutions Single
 - id: solutions_hero_get_started
   translation: "Get Started"
 - id: solutions_hero_book_demo
   translation: "Book a Demo"
-
-# Solutions Single Page Contact
+- id: solutions_trusted_by_title
+  translation: "Trusted by 100+ organizations worldwide"
 - id: solutions_single_contact_title
   translation: "Ready to implement this solution?"
 - id: solutions_single_contact_description
-  translation: "Our team can help you implement this solution with guidance on configuration and setup."
+  translation: "Our team supports you with implementation guidance on configuration and setup."
 - id: solutions_single_contact_button
   translation: "Contact Us"
 
@@ -1178,41 +1178,41 @@
 - id: contact_sales_message
   translation: "Message"
 - id: contact_sales_message_placeholder
-  translation: "Please describe your specific needs or questions..."
+  translation: "Tell us about your requirements, timeline, or specific questions..."
 - id: contact_sales_submit
   translation: "Send Message"
 - id: contact_sales_success_title
   translation: "Message Sent!"
 - id: contact_sales_success_message
-  translation: "Thank you for contacting us. Our sales team will get back to you within one business day."
+  translation: "Thanks for reaching out! Our sales team will respond within one business day with tailored information for your needs."
 - id: contact_sales_what_happens_title
-  translation: "What happens after you fill out this form?"
+  translation: "What happens next?"
 - id: contact_sales_step_1_title
   translation: "Message received"
 - id: contact_sales_step_1_description
   translation: "We'll acknowledge receipt of your message within a few hours."
 - id: contact_sales_step_2_title
-  translation: "Expert review"
+  translation: "Expert analysis"
 - id: contact_sales_step_2_description
-  translation: "Our sales team will review your inquiry and prepare a tailored response."
+  translation: "Our team analyzes your needs and prepares a customized solution."
 - id: contact_sales_step_3_title
   translation: "Personal response"
 - id: contact_sales_step_3_description
-  translation: "You'll receive a detailed response from our team within one business day."
+  translation: "Get a detailed, personalized response within one business day."
 - id: contact_sales_sidebar_title
   translation: "Looking for something else?"
 - id: contact_sales_link_demo
   translation: "Book a demo"
 - id: contact_sales_link_demo_description
-  translation: "Schedule a personalized demo to see Cryptomator Hub in action with your use case."
+  translation: "See Cryptomator Hub in action with a demo tailored to your use case."
 - id: contact_sales_link_partner
   translation: "Become a partner"
 - id: contact_sales_link_partner_description
-  translation: "Join our partner program and integrate Cryptomator into your business offerings."
-- id: contact_sales_link_docs
+  translation: "Integrate Cryptomator into your business through our partner program."
+- id: contact_sales_link_general
   translation: "General contact"
-- id: contact_sales_link_docs_description
-  translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
+- id: contact_sales_link_general_description
+  translation: "Reach out for support, general inquiries, or other questions."
 
 # Partner Form
 - id: partner_first_name
