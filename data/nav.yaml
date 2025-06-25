@@ -6,6 +6,7 @@
     Badge: nav_products_for_teams_badge
   - Separator: true
   - Path: "/downloads"
+- Path: "/solutions"
 - Path: "/pricing"
 - Title: nav_support_us
   Dropdown:  
