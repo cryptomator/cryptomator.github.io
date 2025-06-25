@@ -828,6 +828,12 @@
 - id: hub_setup_contact_us_button
   translation: "Contact Us"
 
+# Pagination
+- id: pagination_previous
+  translation: "Previous"
+- id: pagination_next
+  translation: "Next"
+
 # Pricing
 - id: pricing_title
   translation: "Find the Right Plan for You"
@@ -1265,3 +1271,23 @@
   translation: "Personal contact"
 - id: partner_step_3_description
   translation: "You'll receive a detailed response within 2-3 business days about next steps."
+
+# Sale
+- id: nav_promotion
+  translation: ":sunny: Summer Sale: 25%* Off Cryptomator – All&nbsp;June&nbsp;Long!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/06/01/summer-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+- id: sale_off
+  translation: "Off"
+- id: for_individuals_header_kicker_sale
+  translation: "25%* Off – Summer Sale"
+- id: home_header_kicker_sale
+  translation: "25%* Off – Summer Sale"
+- id: hub_header_kicker_sale
+  translation: "25% Off in the First Year – Summer Sale"
+- id: pricing_android_price_discounted
+  translation: "€14.99"
+- id: pricing_ios_price_discounted
+  translation: "€14.99"
+- id: pricing_discount_note
+  translation: "The discount amount may vary by region."
+- id: pricing_hub_standard_price_first_year
+  translation: "in the first year"

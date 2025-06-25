@@ -12,7 +12,7 @@ ctalink: /#get-started
 ctabutton: "Get Started With Cryptomator"
 
 ogimage:
-  relsrc: /img/boxcryptor-alternative/og-image.png
+  relsrc: /img/comparisons/og-image.png
   width: 1200
   height: 541
 
@@ -28,7 +28,7 @@ comparison:
           </div>
         </div>
       </div>
-      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg" aria-hidden="true">
     </div>
   footer: |
     <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/comparisons/boxcryptor-alternative/" data-umami-event="comparisons-boxcryptor-cta">Full Comparison</a>
@@ -104,7 +104,7 @@ comparison:
 
 <p class="lead">Boxcryptor and the alternative Cryptomator serve the same purpose: to secure your privacy while conveniently storing data in the cloud. What exactly is the difference between them? And which suits your needs better? Find out here.</p>
 
-<img class="inline-block" src="/img/boxcryptor-alternative/cryptobot-analysis.png" srcset="/img/boxcryptor-alternative/cryptobot-analysis.png 1x, /img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x" alt="Cryptomator is constantly analysed by experts using modern tools." />
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator is constantly analyzed by experts using modern tools." />
 
 You want your sensitive data to be secure in the cloud. But so far, no encryption solution has been able to convince you?
 

@@ -1,0 +1,26 @@
+{{/*
+  Get translation URL with pagination support
+  Usage: {{ partial "translation-url.html" (dict "context" $ "translation" .) }}
+  Returns: The URL for the translation, including pagination path if applicable
+*/}}
+
+{{ $ctx := .context }}
+{{ $translation := .translation }}
+
+{{/* Get current page number */}}
+{{ $pageNumber := 1 }}
+{{ if and $ctx.IsNode $ctx.Paginator }}
+  {{ $pageNumber = $ctx.Paginator.PageNumber }}
+{{ end }}
+
+{{/* Build translation URL */}}
+{{ $url := $translation.RelPermalink }}
+{{ if gt $pageNumber 1 }}
+  {{ $baseURL := $translation.RelPermalink }}
+  {{ if not (strings.HasSuffix $baseURL "/") }}
+    {{ $baseURL = printf "%s/" $baseURL }}
+  {{ end }}
+  {{ $url = printf "%spage/%d/" $baseURL $pageNumber }}
+{{ end }}
+
+{{ return $url }}
