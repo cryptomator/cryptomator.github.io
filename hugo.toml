@@ -2,6 +2,7 @@ baseURL = "https://cryptomator.org/"
 title = "Cryptomator"
 defaultContentLanguage = "en"
 enableemoji = true
+theme = ["hugo-admonitions"]
 
 [languages]
   [languages.en]
