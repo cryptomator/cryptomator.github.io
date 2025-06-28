@@ -61,13 +61,29 @@ theme = ["hugo-admonitions"]
     source = "node_modules/altcha/dist_external"
     target = "assets/js/altcha"
 
-[markup.goldmark.renderer]
-unsafe = true
+  [[module.mounts]]
+    source = "node_modules/mathjax/es5"
+    target = "assets/js/mathjax"
 
-[markup.goldmark.parser.attribute]
-block = true
+  [[module.mounts]]
+    source = "node_modules/mathjax/es5/output/chtml/fonts/woff-v2"
+    target = "static/webfonts/mathjax"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+      [markup.goldmark.renderer]
+      unsafe = true
+      [markup.goldmark.parser.attribute]
+      block = true
 
 [params]
+  math = false # set to true in frontmatter if required
   [params.releases]
     [params.releases.exe]
       version = "1.17.0"

@@ -109,5 +109,11 @@
     <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}" defer></script>
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}" async></script>
+    {{ if .Param "math" }}
+      {{ $mjconfig := resources.Get "js/mathjax-config.js" | fingerprint }}
+      <script type="text/javascript" src="{{ $mjconfig.RelPermalink }}" integrity="{{ $mjconfig.Data.Integrity }}"></script>
+      {{ $mathjax := resources.Get "js/mathjax/tex-chtml.js" | fingerprint }}
+      <script type="text/javascript" src="{{ $mathjax.RelPermalink }}" integrity="{{ $mathjax.Data.Integrity }}"></script>
+    {{ end }}
   </body>
 </html>
