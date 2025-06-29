@@ -14,18 +14,18 @@
     <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ if and (eq .Section "blog") .IsPage }}
       <meta name="description" content="{{ .Summary }}">
-      <meta name="fediverse:creator" content="@cryptomator@mastodon.online">
+      <meta name="fediverse:creator" content="{{ .Params.fediverseCreator | default "@cryptomator@mastodon.online" }}">
       <meta property="og:title" content="{{ .Title }}">
       <meta property="og:type" content="article" />
       <meta property="og:description" content="{{ .Summary }}">
-      <meta property="article:author" content="{{ with .Params.Author }}{{ . }}{{ else }}Cryptobot{{ end }}" />
+      <meta property="article:author" content="{{ .Params.Author | default "Cryptobot" }}" />
       <meta property="article:published_time" content="{{ dateFormat "2006-01-02" .Params.Date }}" />
       {{ range .Params.tags }}
         <meta property="article:tag" content="{{ . }}" />
       {{ end }}
     {{ else if (eq .Type "article") }}
       <meta name="description" content="{{ .Params.Description }}">
-      <meta name="fediverse:creator" content="@cryptomator@mastodon.online">
+      <meta name="fediverse:creator" content="{{ .Params.fediverseCreator | default "@cryptomator@mastodon.online" }}">
       <meta property="og:title" content="{{ .Title }}">
       <meta property="og:type" content="article" />
       <meta property="og:description" content="{{ .Params.Description }}">
