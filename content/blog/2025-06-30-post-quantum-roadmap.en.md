@@ -66,7 +66,7 @@ If a quantum computer can be built that is capable of running Shor's algorithm o
 
 Imagine a number lock with four digits. To guess the correct combination, a traditional computer would have to check every possibility, starting with 0000 and ending with 9999. On average, it would take 5,000 guesses. Now, what if I told you that a quantum computer could do it in just 100 guesses? Sounds like magic? That is exactly what Grover's algorithm can achieve. 
 
-More generally, when a traditional algorithm takes \(n/2\) steps on average, a quantum computer only needs √n attempts—a speed-up that the BBBV theorem proves to be the best possible solution. If you want to understand how this works, there's [a great video by 3Blue1Brown about Grover's Algorithm](https://www.youtube.com/watch?v=RQWpF2Gb-gU).
+More generally, when a traditional algorithm takes \(n/2\) steps on average, a quantum computer only needs \(\sqrt n\) attempts—a speed-up that the BBBV theorem proves to be the best possible solution. If you want to understand how this works, there's [a great video by 3Blue1Brown about Grover's Algorithm](https://www.youtube.com/watch?v=RQWpF2Gb-gU).
 
 This "magic" applies to any problem where one can efficiently verify whether a guessed input is correct. That's obviously a problem if you don't want an attacker to guess your secret key. Fortunately, the defense is simple: increase \(n\) to a size where even \(\sqrt n\) becomes large enough to make Grover's algorithm impractical.
 
@@ -132,9 +132,9 @@ This confirmed our belief that now is the perfect time to begin adopting X-Wing 
 
 In every industry, standardization plays a key role. It ensures compatibility, promotes interoperability, and reduces costs by enabling different systems and organizations to work together using common protocols and specifications—maintaining consistency and reliability.
 
-In the security sector, standardization is even more critical. Algorithms, protocols, and data formats must work not only function reliably across heterogeneous systems—they must also withstand rigorous scrutiny. The more experts peer review a standard, the better. As with the NIST competitions mentioned earlier, such scrutiny can uncover weaknesses *before* a cipher is deployed in production. By adhering to established, transparent standards, both developers and users benefit from stronger, more trustworthy protection—especially as the threat landscape evolves with technologies like quantum computing.
+In the security sector, standardization is even more critical. Algorithms, protocols, and data formats must not only function reliably across heterogeneous systems—they must also withstand rigorous scrutiny. The more experts peer review a standard, the better. As with the NIST competitions mentioned earlier, such scrutiny can uncover weaknesses *before* a cipher is deployed in production. By adhering to established, transparent standards, both developers and users benefit from stronger, more trustworthy protection—especially as the threat landscape evolves with technologies like quantum computing.
 
-Ignoring such standards—sometimes in the name of speed of convenience—sets you on a path that may be paved with hidden flaws. Even the smallest change can introduce serious vulnerabilities that, without thorough peer reviews, are likely to be discovered first by someone smarter and less well-intentioned.
+Ignoring such standards—sometimes in the name of speed or convenience—sets you on a path that may be paved with hidden flaws. Even the smallest change can introduce serious vulnerabilities that, without thorough peer reviews, are likely to be discovered first by someone smarter and less well-intentioned.
 
 At Cryptomator, we've always stood agains "security through obscurity" (which is also [why open source matters](https://cryptomator.org/guides/open-source/)). Needless to say, we've never used home-cooked ciphers—that would pose a serious risk. And the more widely used an algorithm or protocol is, the easier it becomes to understand, verify, and audit the system as a whole.
 
@@ -144,14 +144,16 @@ Many standards are built upon others. Without ML-KEM, there would be no X-Wing. 
 
 HPKE stands for Hybrid Public Key Encryption—and to be precise, it doesn't depend on X-Wing at all. Instead, it defines how to combine three different cryptographic ingredients—KEM, KDF, and AEAD—in a specific way that ensures well-defined security properties. And X-Wing can serve as one of these ingredients (the KEM).
 
-Another standard that we've come to love is JWE, a data format for exchanging encrypted payloads. And guess what—there are people working on standardizing the use of X-Wing-based HPKE in JWE. That's exactly what we want to adopt in Cryptomator Hub, replacing the current ECDH-based JWEs.
+Another standard that we've come to love is JWE, a data format for exchanging encrypted payloads. And guess what—there are people working on [standardizing the use of X-Wing-based HPKE in JWE](https://datatracker.ietf.org/doc/html/draft-reddy-cose-jose-pqc-hybrid-hpke-07). That's exactly what we want to adopt in Cryptomator Hub, replacing the current ECDH-based JWEs.
 
-In addition to the peer reviews, using these standards instead of proprietary data formats offers several further benefits:
+Beyond the aforementioned benefits of peer reviews, adopting standardized formats over proprietary ones provides several additional advantages:
 
 - Common APIs make it easy to swap out implementations—for example, HPKE usage remains the same regardless of the underlying algorithms
-- Wide availability of well-established libraries—for instance, there are dozens of JWE/JWT libraries
+- Wide availability of well-established libraries. For instance, there are dozens of JWE/JWT libraries
 - Official test vectors allows us to write tests that fail the build early if something goes wrong
 - Faster vulnerabilities awareness: If a flaw is discovered in a widely used standard, it will likely be reported quickly—whereas a single proprietary implementation may go unnoticed for much longer.
+
+Both JWE and HPKE support interchangeable internal algorithms while maintaining a consistent external interface. This allows us to retain the overall structure and quickly replace internal components if vulnerabilities arise.
 
 > [!QUOTE]
 > The moral is the need for cryptographic agility. It’s not enough to implement a single standard; it’s vital that our systems be able to easily swap in new algorithms when required.
