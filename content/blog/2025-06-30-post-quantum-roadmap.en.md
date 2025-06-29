@@ -5,6 +5,10 @@ date: 2025-06-30
 tags: [cryptomator, encryption]
 params:
   math: true
+  fediverseCreator: "@overheadhunter@mastodon.social"
+  Author: "Sebastian Stenzel"
+  Authorimg: "https://static.cryptomator.org/photos/team/sebastian-512.jpg"
+#  Authorlink: "https://mastodon.social/@overheadhunter" ?
 
 summary: "Quantum computers will break many traditional ciphers. Learn how we plan to adjust Cryptomator Hub in order to stay ahead of attackers."
 
