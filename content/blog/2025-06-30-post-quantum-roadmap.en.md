@@ -13,7 +13,7 @@ params:
 summary: "Quantum computers will break many traditional ciphers. Learn how we plan to adjust Cryptomator Hub in order to stay ahead of attackers."
 
 ogimage:
-  relsrc: /img/blog/cryptobot-xwing@2x.png
+  relsrc: /img/blog/cryptobot-xwing-bg.png
   width: 1480
   height: 832
 ---
@@ -22,12 +22,14 @@ If you're reading this, chances are you've heard about quantum computers and how
 
 ## Cryptographic Breakdown
 
-First, let's take a look at the ciphers involved in Cryptomator.
+First, let's take a look at the ciphers involved in Cryptomator:
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/traditional-cipher-breakdown.svg" alt="Plot showing the growth of 2^n compared to n^2" />
   <figcaption>Cryptographic Breakdown of Cryptomator & Hub</figcaption>
 </figure>
+
+As you can see, we mostly rely on AES- and EC-based algorithms. These are considered traditional algorithms, so their security assumptions refer to a world of traditional (non-quantum) computers. The general idea is that computations are easy if you know the right key but practically impossible without. When I say "practically impossible" I mean on traditional computers, as the computations are just "too complex".
 
 ## A Few Words About Complexity
 
@@ -45,7 +47,7 @@ When we want to express how many steps a certain computation requires, we catego
 
 To ensure that breaking a cipher requires an insane amount of time and energy, cryptographic algorithms rely on hard-to-compute problems—i.e., we're operating on the more complex side of the spectrum.
 
-The most illustrative example for this is the factorization problem: Determine the prime factors of 8633. The result is easy to verify through a simple multiplication (89 \* 97), but finding the factors from the product is hard; [harder than polynomial but subexponential](https://en.wikipedia.org/wiki/General_number_field_sieve). This is exactly what the RSA crypto scheme is based on (except with some *very* large numbers), where the prime factors constitute the encryption keys.
+The most illustrative example for this is the factorization problem: Determine the prime factors of 8633. The result is easy to verify through a simple multiplication (89 × 97), but finding the factors from the product is hard; [harder than polynomial but subexponential](https://en.wikipedia.org/wiki/General_number_field_sieve). This is exactly what the RSA crypto scheme is based on (except with some *very* large numbers), where the public key essentially is the product of two secret primes that are required to compute the private key.
 
 ## How Quantum Computers Weaken Ciphers
 
@@ -71,9 +73,11 @@ More generally, when a traditional algorithm takes \(n/2\) steps on average, a q
 This "magic" applies to any problem where one can efficiently verify whether a guessed input is correct. That's obviously a problem if you don't want an attacker to guess your secret key. Fortunately, the defense is simple: increase \(n\) to a size where even \(\sqrt n\) becomes large enough to make Grover's algorithm impractical.
 
 > [!QUESTION] Why is AES-256 quantum-secure?
-> Ever wondered why we use AES-256 instead of AES-128? The "256" refers to the number of key bits, resulting in \(2^{256}\) possible keys. On average, guessing the correct key would take \(2^{256} / 2 = 2^{255}\) attempts. With Grover's algorithm, however, it would only take \(\sqrt{2^{256}} = 2^{128}\) attempts.
+> Ever wondered why we use AES-256 instead of AES-128?
+> 
+> The "256" refers to the number of key bits, resulting in \(2^{256}\) possible keys. Guessing the correct key would therefore take \(2^{256} / 2 = 2^{255}\) attempts on a traditional computer and \(\sqrt{2^{256}} = 2^{128}\) attempts using Grover's algorithm.
 >
-> An effective key space of \(2^{128}\) is still considered secure. So, AES-128 is secure on traditional computers, but in a post-quantum world, we require AES-256.
+> Making \(2^{128}\) guesses is simply unfeasible. So, while AES-128 suffices on traditional computers, the post-quantum world demands for AES-256.
 
 ## A New Era of Ciphers
 
