@@ -155,35 +155,6 @@
   </section>
   {{ end }}
 
-  {{- $data := index $.Site.Data $.Site.Language.Lang }}
-  {{- $faqData := "" }}
-  {{ if .Params.faq_key }}
-    {{- $faqData = index $data .Params.faq_key }}
-  {{ end }}
-  {{ if $faqData }}
-  <section class="container py-16">
-    <header class="text-center mb-12">
-      <h2 class="font-h2 mb-4">{{ .Params.faq_title | default (i18n "faq_title" .) }}</h2>
-      {{ if .Params.faq_subtitle }}
-      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.faq_subtitle | safeHTML }}</p>
-      {{ end }}
-    </header>
-
-    <dl x-data="{isOpen: [{{ range $i, $e := $faqData }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
-      {{ range $index, $item := $faqData }}
-      <dt class="font-p p-4">
-        <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
-          <span>{{ .Question }}</span>
-        </a>
-      </dt>
-      <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-        {{ .Answer | markdownify }}
-      </dd>
-      {{ end }}
-    </dl>
-  </section>
-  {{ end }}
 
   <section class="container text-center py-12">
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "solutions_single_contact_title" . }}</h2>
