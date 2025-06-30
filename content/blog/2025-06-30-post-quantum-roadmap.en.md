@@ -29,7 +29,7 @@ First, let's take a look at the ciphers involved in Cryptomator:
   <figcaption>Cryptographic Breakdown of Cryptomator & Hub</figcaption>
 </figure>
 
-As you can see, we mostly rely on AES- and EC-based algorithms. These are considered traditional algorithms, so their security assumptions refer to a world of traditional (non-quantum) computers. The general idea is that computations are easy if you know the right key but practically impossible without. When I say "practically impossible" I mean on traditional computers, as the computations are just "too complex".
+As you can see, we mostly rely on AES- and EC-based algorithms. These are traditional algorithms whose security assumptions apply in a world of classical (non-quantum) computers. The general idea is that computations are efficient if you know the right key but practically impossible without. When I say "practically impossible" I mean on traditional computers, as the computations are just "too complex".
 
 ## A Few Words About Complexity
 
@@ -47,13 +47,13 @@ When we want to express how many steps a certain computation requires, we catego
 
 To ensure that breaking a cipher requires an insane amount of time and energy, cryptographic algorithms rely on hard-to-compute problems—i.e., we're operating on the more complex side of the spectrum.
 
-The most illustrative example for this is the factorization problem: Determine the prime factors of 8633. The result is easy to verify through a simple multiplication (89 × 97), but finding the factors from the product is hard; [harder than polynomial but subexponential](https://en.wikipedia.org/wiki/General_number_field_sieve). This is exactly what the RSA crypto scheme is based on (except with some *very* large numbers), where the public key essentially is the product of two secret primes that are required to compute the private key.
+The most illustrative example for this is the factorization problem: Determine the prime factors of 8633. The result is easy to verify through a simple multiplication (89 × 97), but finding the factors from the product is hard; [harder than polynomial but subexponential](https://en.wikipedia.org/wiki/General_number_field_sieve). This is exactly what the RSA crypto scheme is based on (except with some *very* large numbers), where the public key includes the product of two secret primes that are required to compute the private key.
 
 ## How Quantum Computers Weaken Ciphers
 
 ### Asymmetric Cryptography
 
-Quantum computers are not inherently faster, but they allow for a different set of algorithms to run. So, if a certain problem is proven to be complex using traditional algorithms, quantum algorithms may be significantly less complex in terms of computational costs.
+Quantum computers are not inherently faster, but they allow for a different set of algorithms to run. So, while a problem may be hard-to-compute for traditional algorithms, it could be far less complex when solved with quantum algorithms.
 
 One of the most infamous examples is [Shor's algorithm](https://en.wikipedia.org/wiki/Shor%27s_algorithm), which solves the factorization problem in polynomial time. While polynomial time is just one row above exponential time in the table above, it makes all the difference. The following graph illustrates the effect of an increasing problem size on the two complexity classes:
 
@@ -70,7 +70,7 @@ Imagine a number lock with four digits. To guess the correct combination, a trad
 
 More generally, when a traditional algorithm takes \(n/2\) steps on average, a quantum computer only needs \(\sqrt n\) attempts—a speed-up that the BBBV theorem proves to be the best possible solution. If you want to understand how this works, there's [a great video by 3Blue1Brown about Grover's Algorithm](https://www.youtube.com/watch?v=RQWpF2Gb-gU).
 
-This "magic" applies to any problem where one can efficiently verify whether a guessed input is correct. That's obviously a problem if you don't want an attacker to guess your secret key. Fortunately, the defense is simple: increase \(n\) to a size where even \(\sqrt n\) becomes large enough to make Grover's algorithm impractical.
+This "magic" applies to any problem where it's efficient to check if a guessed solution is correct. That's obviously a problem if you don't want an attacker to guess your secret key. Fortunately, the defense is simple: increase \(n\) to a size where even \(\sqrt n\) becomes large enough to make Grover's algorithm impractical.
 
 > [!QUESTION] Why is AES-256 quantum-secure?
 > Ever wondered why we use AES-256 instead of AES-128?
@@ -86,7 +86,7 @@ This "magic" applies to any problem where one can efficiently verify whether a g
   <figcaption>Kyber and Dilithium</figcaption>
 </figure>
 
-So, while a sufficiently large key space is enough in the symmetric world, asymmetric ciphers need to be replaced to withstand attacks from quantum computers. In 2016, the National Institute of Standards and Technology (NIST) launched a competition to identify quantum-resistant cryptographic algorithms. 
+So, while a sufficiently large key space is enough for AES, our asymmetric ciphers need to be replaced to withstand attacks from quantum computers. In 2016, the National Institute of Standards and Technology (NIST) launched a competition to identify quantum-resistant cryptographic algorithms. 
 
 Electing algorithms through a competition has already proven successful in the past, as with AES and SHA-3. This approach attracts significant attention from experts, who do their best to uncover weaknesses.
 
@@ -140,7 +140,7 @@ In the security sector, standardization is even more critical. Algorithms, proto
 
 Ignoring such standards—sometimes in the name of speed or convenience—sets you on a path that may be paved with hidden flaws. Even the smallest change can introduce serious vulnerabilities that, without thorough peer reviews, are likely to be discovered first by someone smarter and less well-intentioned.
 
-At Cryptomator, we've always stood agains "security through obscurity" (which is also [why open source matters](https://cryptomator.org/guides/open-source/)). Needless to say, we've never used home-cooked ciphers—that would pose a serious risk. And the more widely used an algorithm or protocol is, the easier it becomes to understand, verify, and audit the system as a whole.
+At Cryptomator, we've always stood against "security through obscurity" (which is also [why open source matters](https://cryptomator.org/guides/open-source/)). Needless to say, we've never used home-cooked ciphers—that would pose a serious risk. And the more widely used an algorithm or protocol is, the easier it becomes to understand, verify, and audit the system as a whole.
 
 ### A Strong Foundation
 
@@ -170,7 +170,7 @@ So, if all the ciphers used in Cryptomator products—as well as the exchange of
 
 While we use well-established cryptography, the file formats themselves are our own. But we want to change that. Some time ago, we joined forces with developers of Cyberduck, gocryptfs, and rclone to derive a common format for encrypted directories—ensuring interoperability across our tools. Although the format is still a work in progress, we hope to share more details with you in a couple of months. In the meantime, you're of course invited to review the format and contribute ideas for improvement on [GitHub](https://github.com/encryption-alliance/unified-vault-format).
 
-One key benefit of this *Unified Vault Format* is that it enables key rotation—which itself brings two major advatages:
+One key benefit of this *Unified Vault Format* is that it enables key rotation—which itself brings two major advantages:
 
 1. **Access revocation**: After rotating keys, former vault members can no longer decrypt files added after their access got revoked. What is trivial with access control lists requires special care when we want to enforce this cryptographically.
 2. **Cipher agility**: To some extent, it enables cipher upgrades. For example, if a vulnerability is found in one algorithm, we can flip a switch and transition to a new JWE algorithm—instantly protecting all newly added files.
@@ -183,4 +183,4 @@ As explained above, Cryptomator is already quantum-secure. Since it uses only sy
 
 ### Cryptomator Hub
 
-We are currently in the process of implementing X-Wing and HPKE-7 in JWE libraries. As a 100% open-source company, we have always contributed to other libraries and projects. So it comes as no surprise that we are now in close contact with the maintainers of one of the most widely used [JOSE libraries for Java](https://connect2id.com/products/nimbus-jose-jwt), the authors of [JOSE HPKE RFC](https://datatracker.ietf.org/doc/html/draft-reddy-cose-jose-pqc-hybrid-hpke-07) and the [X-Wing RFC](https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/) as well as the JDK security team, contributing these new standard to upstream projects as for example with [X-Wing support in the OpenJDK](https://github.com/openjdk/jdk/pull/26032). All to collaboratively build the necessary foundation for the years to come.
+We are currently in the process of implementing X-Wing and HPKE-7 in JWE libraries. As a 100% open-source company, we have always contributed to other libraries and projects. So it comes as no surprise that we are now in close contact with the maintainers of one of the most widely used [JOSE libraries for Java](https://connect2id.com/products/nimbus-jose-jwt), the authors of [JOSE HPKE RFC](https://datatracker.ietf.org/doc/html/draft-reddy-cose-jose-pqc-hybrid-hpke-07) and the [X-Wing RFC](https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/) as well as the JDK security team, contributing these new standard to upstream projects such as [X-Wing support in the OpenJDK](https://github.com/openjdk/jdk/pull/26032). All to collaboratively build a resilient foundation for the years ahead.
