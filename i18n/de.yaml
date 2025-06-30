@@ -1057,23 +1057,3 @@
   translation: "Verifizierung läuft…"
 - id: altcha_waitAlert
   translation: "Verifizierung läuft… bitte warten."
-
-# Sale
-- id: nav_promotion
-  translation: ":sunny: Summer Sale: 25 %* Rabatt auf Cryptomator – den&nbsp;ganzen&nbsp;Juni!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2025/06/01/summer-sale/\">Mehr erfahren&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
-- id: sale_off
-  translation: "Rabatt"
-- id: for_individuals_header_kicker_sale
-  translation: "25 %* Rabatt – Summer Sale"
-- id: home_header_kicker_sale
-  translation: "25 %* Rabatt – Summer Sale"
-- id: hub_header_kicker_sale
-  translation: "25 % Rabatt im ersten Jahr – Summer Sale"
-- id: pricing_android_price_discounted
-  translation: "14,99 €"
-- id: pricing_ios_price_discounted
-  translation: "14,99 €"
-- id: pricing_discount_note
-  translation: "Die Höhe des Rabatts kann je nach Region variieren."
-- id: pricing_hub_standard_price_first_year
-  translation: "im ersten Jahr"
