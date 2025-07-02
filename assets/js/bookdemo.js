@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_BOOK_DEMO_URL = STORE_API_URL + '/hub/book-demo';
+const REQUEST_BOOK_DEMO_URL = STORE_API_URL + '/hub/request-contact';
 
 class BookDemo {
 
@@ -20,10 +20,16 @@ class BookDemo {
     this._feedbackData.success = false;
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
+
+    const requestData = {
+      ...this._submitData,
+      formType: 'book-demo'
+    };
+
     $.ajax({
       url: REQUEST_BOOK_DEMO_URL,
       type: 'POST',
-      data: this._submitData
+      data: requestData
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {

@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_CONTACT_SALES_URL = STORE_API_URL + '/hub/contact-sales';
+const REQUEST_CONTACT_SALES_URL = STORE_API_URL + '/hub/request-contact';
 
 class ContactSales {
 
@@ -20,10 +20,16 @@ class ContactSales {
     this._feedbackData.success = false;
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
+
+    const requestData = {
+      ...this._submitData,
+      formType: 'contact-sales'
+    };
+
     $.ajax({
       url: REQUEST_CONTACT_SALES_URL,
       type: 'POST',
-      data: this._submitData
+      data: requestData
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {

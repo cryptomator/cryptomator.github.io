@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_BECOME_PARTNER_URL = STORE_API_URL + '/hub/become-partner';
+const REQUEST_BECOME_PARTNER_URL = STORE_API_URL + '/hub/request-contact';
 
 class BecomePartner {
 
@@ -20,10 +20,16 @@ class BecomePartner {
     this._feedbackData.success = false;
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
+
+    const requestData = {
+      ...this._submitData,
+      formType: 'become-partner'
+    };
+
     $.ajax({
       url: REQUEST_BECOME_PARTNER_URL,
       type: 'POST',
-      data: this._submitData
+      data: requestData
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
