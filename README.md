@@ -27,8 +27,8 @@ Using WebP (for smaller images) or AVIF (for >80 kiB due to larger overhead) may
   * Example (lossless): `avifenc -l input.png output.avif`
   * Example (lossy): `avifenc --qcolor 70 --qalpha 100 --depth 8 input.png output.avif`
 * `brew install libwebm`
-  * Example (lossless): `cwebp -preset drawing -lossless -z 6 input.png -o output.webp`
-  * Example (lossy): `cwebp -preset drawing -q 90 -alpha_q 100 input.png -o output.webp`
+  * Example (lossless): `cwebp -preset drawing -lossless -z 6 -metadata all input.png -o output.webp`
+  * Example (lossy): `cwebp -preset drawing -q 90 -alpha_q 100 -metadata all input.png -o output.webp`
 * `brew install optipng`
   * Example: `optipng -o3 image.png`
 
