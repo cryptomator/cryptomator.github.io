@@ -1245,9 +1245,9 @@
   translation: "Distributions-Partner"
 - id: partner_type_other
   translation: "Andere"
-- id: partner_description
+- id: partner_message
   translation: "Partnerschaftsbeschreibung"
-- id: partner_description_placeholder
+- id: partner_message_placeholder
   translation: "Bitte beschreibe dein Unternehmen, deine Dienstleistungen und wie du mit Cryptomator zusammenarbeiten möchtest..."
 - id: partner_submit
   translation: "Anfrage senden"
