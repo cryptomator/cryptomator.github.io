@@ -1234,7 +1234,7 @@
 - id: partner_type
   translation: "Partnerschaftstyp"
 - id: partner_type_placeholder
-  translation: "Bitte wählen Sie einen Partnerschaftstyp"
+  translation: "Bitte wähle einen Partnerschaftstyp"
 - id: partner_type_reseller
   translation: "Reseller-Partner"
 - id: partner_type_technology

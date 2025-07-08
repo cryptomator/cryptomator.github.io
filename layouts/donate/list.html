@@ -73,18 +73,18 @@
     {{ $customerPortalJs := resources.Get "js/customerportal.js" }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
     {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" }}
     <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $customerPortalJs := resources.Get "js/customerportal.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" integrity="{{ $customerPortalJs.Data.Integrity }}" defer></script>
-    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
-    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" | fingerprint }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" | fingerprint }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
     {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" integrity="{{ $cardPaymentsJs.Data.Integrity }}" defer></script>
   {{ end }}
