@@ -1,11 +1,11 @@
 {{ define "main" }}
-  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {firstName: '', lastName: '', email: '', website: '', topic: '', message: '', captcha: null, acceptNewsletter: false}, acceptTerms: false, contactSales: null, captchaState: null}" x-init="contactSales = new ContactSales($refs.form, feedbackData, submitData)" class="container py-12">
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {firstName: '', lastName: '', email: '', website: '', topic: '', message: '', captcha: null, acceptNewsletter: false, formType: 'contact-sales'}, acceptTerms: false, hubContact: null, captchaState: null}" x-init="hubContact = new HubContact($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ .Description }}</p>
     </header>
 
-    <form x-ref="form" @submit.prevent="contactSales.request(); $refs.captcha.reset()">
+    <form x-ref="form" @submit.prevent="hubContact.request(); $refs.captcha.reset()">
       <div x-show="!feedbackData.success" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
         <!-- Left Side - Contact Form -->
         <section class="white-box md:col-span-2">
@@ -196,8 +196,8 @@
   {{ if hugo.IsDevelopment }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
-    {{ $contactSalesJs := resources.Get "js/contactsales.js" }}
-    <script type="text/javascript" src="{{ $contactSalesJs.RelPermalink }}" defer></script>
+    {{ $hubContactJs := resources.Get "js/hubcontact.js" }}
+    <script type="text/javascript" src="{{ $hubContactJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
@@ -205,8 +205,8 @@
   {{ else }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
-    {{ $contactSalesJs := resources.Get "js/contactsales.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $contactSalesJs.RelPermalink }}" integrity="{{ $contactSalesJs.Data.Integrity }}" defer></script>
+    {{ $hubContactJs := resources.Get "js/hubcontact.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubContactJs.RelPermalink }}" integrity="{{ $hubContactJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" | fingerprint }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" | fingerprint }}

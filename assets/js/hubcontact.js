@@ -1,8 +1,8 @@
 "use strict";
 
-const REQUEST_BOOK_DEMO_URL = STORE_API_URL + '/hub/request-contact';
+const REQUEST_HUB_CONTACT_URL = STORE_API_URL + '/hub/request-contact';
 
-class BookDemo {
+class HubContact {
 
   constructor(form, feedbackData, submitData) {
     this._form = form;
@@ -21,22 +21,17 @@ class BookDemo {
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
 
-    const requestData = {
-      ...this._submitData,
-      formType: 'book-demo'
-    };
-
     $.ajax({
-      url: REQUEST_BOOK_DEMO_URL,
+      url: REQUEST_HUB_CONTACT_URL,
       type: 'POST',
-      data: requestData
+      data: this._submitData
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
         subscribeToNewsletter(this._submitData.email, 7);
       }
     }).fail(xhr => {
-      this.onRequestFailed(xhr.responseJSON?.message || 'Booking demo failed.');
+      this.onRequestFailed(xhr.responseJSON?.message || 'Request failed.');
     });
   }
 
