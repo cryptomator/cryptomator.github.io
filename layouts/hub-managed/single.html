@@ -244,9 +244,9 @@
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $hubManagedJs := resources.Get "js/hubmanaged.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubManagedJs.RelPermalink }}" integrity="{{ $hubManagedJs.Data.Integrity }}" defer></script>
-    {{ $altchaJs := resources.Get "js/altcha/altcha.js" | fingerprint }}
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
-    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" | fingerprint }}
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
     <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}
