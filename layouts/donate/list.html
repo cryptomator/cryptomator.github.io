@@ -81,9 +81,9 @@
   {{ else }}
     {{ $customerPortalJs := resources.Get "js/customerportal.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $customerPortalJs.RelPermalink }}" integrity="{{ $customerPortalJs.Data.Integrity }}" defer></script>
-    {{ $altchaJs := resources.Get "js/altcha/altcha.js" | fingerprint }}
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
-    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" | fingerprint }}
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
     <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
     {{ $cardPaymentsJs := resources.Get "js/cardpayments.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $cardPaymentsJs.RelPermalink }}" integrity="{{ $cardPaymentsJs.Data.Integrity }}" defer></script>
