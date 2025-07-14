@@ -151,7 +151,7 @@
                   –
                 </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
+                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     {{ i18n "hub_billing_manage_payment_info_update_action" . }}
                   </button>
