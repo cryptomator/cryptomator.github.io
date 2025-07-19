@@ -178,7 +178,7 @@
                       <i class="fas fa-plus-circle"></i>
                       {{ i18n "hub_managed_step_4_message_add" }}
                     </a>
-                    <textarea x-show="submitData.message != null" id="message" rows="3" maxlength="400" class="input-box text-sm w-full max-w-xs" placeholder="{{ i18n "hub_managed_step_4_message_add_placeholder" }}" x-model="submitData.message" x-cloak></textarea>
+                    <textarea x-show="submitData.message != null" id="message" rows="3" maxlength="2000" class="input-box text-sm w-full max-w-xs" placeholder="{{ i18n "hub_managed_step_4_message_add_placeholder" }}" x-model="submitData.message" x-cloak></textarea>
                   </li>
                 </ul>
                 <p class="font-p text-sm mb-2">
