@@ -662,15 +662,13 @@
   translation: "E-Mail-Adresse"
 
 - id: hub_managed_step_2_nav_title
-  translation: "Team-Name"
+  translation: "Subdomain"
 - id: hub_managed_step_2_title
-  translation: "Wie heißt dein Team?"
-- id: hub_managed_step_2_team_placeholder
-  translation: "Name deines Teams, Unternehmens oder deiner Organisation"
+  translation: "Welche Subdomain möchtest du?"
 - id: hub_managed_step_2_subdomain_description
-  translation: "Dies ist die URL deiner Hub-Instanz."
+  translation: "Dies wird die URL deiner Hub-Instanz sein."
 - id: hub_managed_step_2_subdomain_placeholder
-  translation: "Subdomain deiner Hub-Instanz"
+  translation: "deine-subdomain"
 
 - id: hub_managed_step_3_nav_title
   translation: "Erwartete Nutzer"
@@ -687,8 +685,6 @@
   translation: "Zusammenfassung"
 - id: hub_managed_step_4_email
   translation: "E-Mail"
-- id: hub_managed_step_4_team
-  translation: "Team-Name"
 - id: hub_managed_step_4_url
   translation: "URL"
 - id: hub_managed_step_4_quantity
