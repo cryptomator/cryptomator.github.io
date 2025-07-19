@@ -27,14 +27,21 @@ class HubManaged {
       data: {
         email: this._submitData.email
       }
-    }).done(_ => {
+    }).done(response => {
+      // Auto-populate subdomain only if it's a company email
+      if (response.isCompanyEmail) {
+        this._submitData.subdomain = emailToSubdomain(this._submitData.email);
+      } else {
+        // Clear subdomain for non-company emails (freemail, etc.)
+        this._submitData.subdomain = '';
+      }
       this.onValidationSucceeded();
     }).fail(xhr => {
       this.onValidationFailed(xhr.responseJSON?.message || 'Validating email failed.');
     });
   }
 
-  validateTeamAndSubdomain() {
+  validateSubdomain() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       this._feedbackData.errorMessage = 'Please fill in all required fields.';
@@ -47,13 +54,12 @@ class HubManaged {
       url: VALIDATE_HUB_MANAGED_REQUEST_URL,
       type: 'GET',
       data: {
-        team: this._submitData.team,
         subdomain: this._submitData.subdomain
       }
     }).done(_ => {
       this.onValidationSucceeded();
     }).fail(xhr => {
-      this.onValidationFailed(xhr.responseJSON?.message || 'Validating team and subdomain failed.');
+      this.onValidationFailed(xhr.responseJSON?.message || 'Validating subdomain failed.');
     });
   }
 
@@ -151,6 +157,73 @@ function teamToSubdomain(team) {
     subdomain = subdomain.replace(/-+$/, "");
   }
   return subdomain;
+}
+
+function emailToSubdomain(email) {
+  if (!email || !email.includes('@')) {
+    return '';
+  }
+  
+  // Extract domain from email
+  const domain = email.split('@')[1].toLowerCase();
+  
+  // Extract subdomain from email domain
+  const domainParts = domain.split('.');
+  
+  // For domains with multiple levels, try to find the most meaningful part
+  let subdomain = '';
+  
+  if (domainParts.length >= 2) {
+    // Common TLDs and country codes to ignore
+    const tlds = ['com', 'org', 'net', 'edu', 'gov', 'mil', 'co', 'io', 'me', 'info', 'biz'];
+    const countryCodes = ['de', 'uk', 'fr', 'es', 'it', 'nl', 'at', 'ch', 'us', 'ca', 'au', 'jp', 'cn', 'in', 'br'];
+    
+    // For academic domains (containing .edu, .ac, .edu.*, .ac.*)
+    if (domain.includes('.edu') || domain.includes('.ac.')) {
+      // Try to find the institution name (usually right before .edu/.ac)
+      for (let i = domainParts.length - 3; i >= 0; i--) {
+        if (!tlds.includes(domainParts[i]) && !countryCodes.includes(domainParts[i])) {
+          subdomain = domainParts[i];
+          break;
+        }
+      }
+    }
+    
+    // If no academic pattern or no match found, use heuristics
+    if (!subdomain) {
+      // Skip the last part (TLD) and country code if present
+      let skipParts = 1;
+      if (domainParts.length > 2 && countryCodes.includes(domainParts[domainParts.length - 1])) {
+        skipParts = 2;
+      }
+      
+      // Look for the most meaningful part (skip common subdomains)
+      const commonSubdomains = ['www', 'mail', 'email', 'smtp', 'pop', 'imap', 'webmail', 'smail'];
+      for (let i = domainParts.length - skipParts - 1; i >= 0; i--) {
+        if (!commonSubdomains.includes(domainParts[i])) {
+          subdomain = domainParts[i];
+          break;
+        }
+      }
+      
+      // If all parts are common subdomains, just use the first part
+      if (!subdomain && domainParts.length > skipParts) {
+        subdomain = domainParts[0];
+      }
+    }
+    
+    // Clean up the subdomain to match the allowed pattern
+    subdomain = subdomain.replace(/[^a-z0-9-]/g, '-');
+    subdomain = subdomain.replace(/-+/g, '-');
+    subdomain = subdomain.replace(/^-+|-+$/g, '');
+    
+    // Ensure it's not empty and within length limits
+    if (subdomain && subdomain.length <= 63) {
+      return subdomain;
+    }
+  }
+  
+  return '';
 }
 
 function subdomainToURL(subdomain) {
