@@ -28,11 +28,9 @@ class HubManaged {
         email: this._submitData.email
       }
     }).done(response => {
-      // Auto-populate subdomain only if it's a company email
-      if (response.isCompanyEmail) {
-        this._submitData.subdomain = emailToSubdomain(this._submitData.email);
+      if (response.isCompanyEmail && response.domainWithoutSuffix) {
+        this._submitData.subdomain = response.domainWithoutSuffix;
       } else {
-        // Clear subdomain for non-company emails (freemail, etc.)
         this._submitData.subdomain = '';
       }
       this.onValidationSucceeded();
@@ -133,97 +131,6 @@ class HubManaged {
     window.scrollTo(0, 0);
   }
 
-}
-
-function teamToSubdomain(team) {
-  // Convert to lowercase
-  let subdomain = team.toLowerCase();
-  // Replace German specific characters
-  subdomain = subdomain.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
-  // Normalize to decompose accented characters and remove diacritics
-  subdomain = subdomain.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  // Replace any whitespace (including spaces, tabs, etc.) with a hyphen
-  subdomain = subdomain.replace(/\s+/g, "-");
-  // Remove any characters that are not letters, numbers, or hyphens
-  subdomain = subdomain.replace(/[^a-z0-9-]/g, "");
-  // Replace multiple hyphens with a single hyphen
-  subdomain = subdomain.replace(/-+/g, "-");
-  // Remove any leading or trailing hyphens
-  subdomain = subdomain.replace(/^-+/, "").replace(/-+$/, "");
-  // Cap the subdomain at 63 characters
-  if (subdomain.length > 63) {
-    subdomain = subdomain.slice(0, 63);
-    // Remove any trailing hyphen after truncation
-    subdomain = subdomain.replace(/-+$/, "");
-  }
-  return subdomain;
-}
-
-function emailToSubdomain(email) {
-  if (!email || !email.includes('@')) {
-    return '';
-  }
-  
-  // Extract domain from email
-  const domain = email.split('@')[1].toLowerCase();
-  
-  // Extract subdomain from email domain
-  const domainParts = domain.split('.');
-  
-  // For domains with multiple levels, try to find the most meaningful part
-  let subdomain = '';
-  
-  if (domainParts.length >= 2) {
-    // Common TLDs and country codes to ignore
-    const tlds = ['com', 'org', 'net', 'edu', 'gov', 'mil', 'co', 'io', 'me', 'info', 'biz'];
-    const countryCodes = ['de', 'uk', 'fr', 'es', 'it', 'nl', 'at', 'ch', 'us', 'ca', 'au', 'jp', 'cn', 'in', 'br'];
-    
-    // For academic domains (containing .edu, .ac, .edu.*, .ac.*)
-    if (domain.includes('.edu') || domain.includes('.ac.')) {
-      // Try to find the institution name (usually right before .edu/.ac)
-      for (let i = domainParts.length - 3; i >= 0; i--) {
-        if (!tlds.includes(domainParts[i]) && !countryCodes.includes(domainParts[i])) {
-          subdomain = domainParts[i];
-          break;
-        }
-      }
-    }
-    
-    // If no academic pattern or no match found, use heuristics
-    if (!subdomain) {
-      // Skip the last part (TLD) and country code if present
-      let skipParts = 1;
-      if (domainParts.length > 2 && countryCodes.includes(domainParts[domainParts.length - 1])) {
-        skipParts = 2;
-      }
-      
-      // Look for the most meaningful part (skip common subdomains)
-      const commonSubdomains = ['www', 'mail', 'email', 'smtp', 'pop', 'imap', 'webmail', 'smail'];
-      for (let i = domainParts.length - skipParts - 1; i >= 0; i--) {
-        if (!commonSubdomains.includes(domainParts[i])) {
-          subdomain = domainParts[i];
-          break;
-        }
-      }
-      
-      // If all parts are common subdomains, just use the first part
-      if (!subdomain && domainParts.length > skipParts) {
-        subdomain = domainParts[0];
-      }
-    }
-    
-    // Clean up the subdomain to match the allowed pattern
-    subdomain = subdomain.replace(/[^a-z0-9-]/g, '-');
-    subdomain = subdomain.replace(/-+/g, '-');
-    subdomain = subdomain.replace(/^-+|-+$/g, '');
-    
-    // Ensure it's not empty and within length limits
-    if (subdomain && subdomain.length <= 63) {
-      return subdomain;
-    }
-  }
-  
-  return '';
 }
 
 function subdomainToURL(subdomain) {
