@@ -2,7 +2,7 @@
 title: "Terms & Conditions"
 ---
 
-_Effective date: January 2024_
+_Effective date: July 2025_
 
 By purchasing licenses and using software licenses and other digital content offered on this website, you declare your agreement with the following Terms & Conditions (T&C) of Skymatic GmbH in the context of current and future business relations.
 {.text-lg .leading-relaxed .text-gray-700}
@@ -112,9 +112,7 @@ The right of withdrawal expires prematurely if
 * the customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
 
 ## §10 Online Dispute Resolution as well as Information According to § 36 VSBG
-10.1 The EU Commission has provided a platform for out-of-court dispute resolution at {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
-
-10.2 Skymatic is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
+Skymatic is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
 ## §11 Final Clauses
 11.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.

@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: March 2025_
+_Effective date: July 2025_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -220,9 +220,7 @@ The right of withdrawal expires prematurely if
 16.3 The Provider undertakes to maintain confidentiality about all confidential information (including business secrets) that it learns in connection with this Agreement and its performance and not to disclose, pass on or otherwise use such information to third parties. Confidential information is information which is marked as confidential or the confidentiality of which is evident from the circumstances, irrespective of whether it has been communicated in written, electronic, embodied or oral form. The confidentiality obligation does not apply if the Provider is obligated to disclose the confidential information by law or by virtue of a final or legally binding decision of an authority or court. The Provider undertakes to agree with all employees and subcontractors on a provision similar in content to the preceding paragraph.
 
 ## §17 Online Dispute Resolution as well as Information According to § 36 VSBG {#dispute-resolution}
-17.1 The EU Commission has provided a platform for out-of-court dispute resolution at {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}}.
-
-17.2 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
+The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
 ## §18 Final Clauses {#final-clauses}
 18.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
