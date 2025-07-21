@@ -35,7 +35,7 @@ Markel International Insurance Company Limited, Niederlassung für Deutschland, 
 Weltweit außer USA und Kanada
 
 ## EU-Streitschlichtung
-Skymatic nimmt jedoch nicht an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil und wir sind dazu auch nicht verpflichtet.
+Skymatic ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
 
 ## Soziale Medien
 Dieses Impressum gilt auch für die folgenden Auftritte in den sozialen Medien:
