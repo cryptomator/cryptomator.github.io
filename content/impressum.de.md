@@ -34,7 +34,7 @@ Markel International Insurance Company Limited, Niederlassung für Deutschland, 
 <strong>Geltungsraum der Versicherung:</strong><br/>
 Weltweit außer USA und Kanada
 
-## EU-Streitschlichtung
+## Außergerichtliche Streitschlichtung sowie Hinweis nach § 36 VSBG
 Skymatic ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
 
 ## Soziale Medien
