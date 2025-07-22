@@ -2,7 +2,7 @@
 title: "AGB"
 ---
 
-_Stand: Januar 2024_
+_Stand: Juli 2025_
 
 Durch den Erwerb von Lizenzen und die Nutzung von auf dieser Website angebotenen Softwarelizenzen und sonstigen digitalen Inhalten erklären Sie Ihr Einverständnis mit den folgenden Allgemeinen Geschäftsbedingungen (AGB) der Skymatic GmbH im Rahmen gegenwärtiger und zukünftiger Geschäftsbeziehungen.
 {.text-lg .leading-relaxed .text-gray-700}
@@ -108,9 +108,7 @@ Das Widerrufsrecht erlischt vorzeitig, wenn
 * der der Kunde als Verbraucher seine Kenntnis vom Verlust des Widerrufsrechts bestätigt (§ 356 Abs. 5 Nr. 2 BGB).
 
 ## §10 Außergerichtliche Streitschlichtung sowie Hinweis nach § 36 VSBG
-10.1 Die EU-Kommission hat unter {{< extlink "https://webgate.ec.europa.eu/odr" "https://webgate.ec.europa.eu/odr" >}} eine Plattform für außergerichtliche Streitschlichtung bereitgestellt.
-
-10.2 Skymatic ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
+Skymatic ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
 
 ## §11 Schlussbestimmungen
 11.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
