@@ -92,9 +92,9 @@
     {{ $desktopKeyJs := resources.Get "js/desktopkey.js" }}
     <script type="text/javascript" src="{{ $desktopKeyJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
     {{ $supporterCertJs := resources.Get "js/supportercert.js" }}
     <script type="text/javascript" src="{{ $supporterCertJs.RelPermalink }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" }}
@@ -105,9 +105,9 @@
     {{ $desktopKeyJs := resources.Get "js/desktopkey.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $desktopKeyJs.RelPermalink }}" integrity="{{ $desktopKeyJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
     {{ $supporterCertJs := resources.Get "js/supportercert.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $supporterCertJs.RelPermalink }}" integrity="{{ $supporterCertJs.Data.Integrity }}" defer></script>
     {{ $keyRecoveryJs := resources.Get "js/keyrecovery.js" | minify | fingerprint }}

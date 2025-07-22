@@ -135,23 +135,27 @@
               </dt>
               <dd>
                 <template x-if="subscriptionData.details.payment_information">
-                  <div x-show="subscriptionData.details.payment_information.payment_method == 'card'">
-                    <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
-                      {{ i18n "hub_billing_manage_payment_info_credit_card" . }}
-                    </p>
-                    <p class="text-xs text-gray-600 mt-1">
-                      {{ i18n "hub_billing_manage_payment_info_credit_card_last_four_digits_description" . }}: <span x-text="subscriptionData.details.payment_information.last_four_digits"></span>
+                  <div>
+                    <div x-show="subscriptionData.details.payment_information.payment_method.toLowerCase() == 'card'">
+                      <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                        {{ i18n "hub_billing_manage_payment_info_credit_card" . }}
+                      </p>
+                      <p class="text-xs text-gray-600 mt-1">
+                        {{ i18n "hub_billing_manage_payment_info_credit_card_last_four_digits_description" . }}: <span x-text="subscriptionData.details.payment_information.last_four_digits"></span>
+                      </p>
+                    </div>
+                    <p x-show="subscriptionData.details.payment_information.payment_method.toLowerCase() == 'paypal'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                      {{ i18n "hub_billing_manage_payment_info_paypal" . }}
                     </p>
                   </div>
-                  <p x-show="subscriptionData.details.payment_information.payment_method == 'paypal'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
-                    {{ i18n "hub_billing_manage_payment_info_paypal" . }}
+                </template>
+                <template x-if="!subscriptionData.details.payment_information">
+                  <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                    –
                   </p>
                 </template>
-                <p x-show="!subscriptionData.details.payment_information" class="font-bold text-2xl md:text-3xl lg:text-4xl">
-                  –
-                </p>
                 <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" x-show="subscriptionData.details.update_url" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
+                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
                     <i class="fas fa-external-link fa-fw"></i>
                     {{ i18n "hub_billing_manage_payment_info_update_action" . }}
                   </button>
@@ -312,15 +316,6 @@
                 </h2>
                 <div x-show="audience === 'business'">
                   <p class="flex items-baseline gap-2">
-                    <span x-text="(subscriptionData.monthlyPrice.netAmount * 0.75).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="font-bold leading-relaxed"></span>
-                    <span class="text-xs text-gray-700">
-                      {{ i18n "pricing_hub_standard_price_first_year" . }}
-                    </span>
-                    <span class="self-center px-1 rounded-xs text-xs text-white bg-red-600">
-                      -25% Summer Sale
-                    </span>
-                  </p>
-                  <p class="flex items-baseline gap-2">
                     <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
                     <span class="text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
                   </p>
@@ -331,15 +326,6 @@
                   </p>
                 </div>
                 <div x-show="audience === 'consumer'">
-                  <p class="flex items-baseline gap-2">
-                    <span x-text="(subscriptionData.monthlyPrice.grossAmount * 0.75).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="font-bold leading-relaxed"></span>
-                    <span class="text-xs text-gray-700">
-                      {{ i18n "pricing_hub_standard_price_first_year" . }}
-                    </span>
-                    <span class="self-center px-1 rounded-xs text-xs text-white bg-red-600">
-                      -25% Summer Sale
-                    </span>
-                  </p>
                   <p class="flex items-baseline gap-2">
                     <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
                     <span class="text-gray-700">{{ i18n "pricing_vat_included" . }}</span>
@@ -400,7 +386,6 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
                 </h2>
-                <div class="md:h-[26px]"></div>
                 <p class="text-5xl font-bold">
                   {{ i18n "hub_billing_checkout_enterprise_statement" . }}
                 </p>
@@ -471,15 +456,15 @@
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
-    <script type="module" type="text/javascript" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}
