@@ -114,16 +114,16 @@ So, to be extra cautious, we combine a traditional cipher and a post-quantum one
 X-Wing is still a work in progress, but I reached out to the RFC authors—Deirdre Connolly, Peter Schwabe, and Bas Westerbaan—to ask when we can expect the final specification to be published. Just ten minutes later, Bas replied:
 
 > [!QUOTE]
-> „X-Wing is final and being shipped by Google and Apple presumably in hardware.“
+> X-Wing is final and being shipped by Google and Apple presumably in hardware.
 >
-> \- Bas Westerbaan
+> — Bas Westerbaan
 
 To be sure, I followed up and asked whether they expect any further changes to the current RFC draft—which they don't:
 
 > [!QUOTE]
-> „No significant changes, no changes planned or expected at all“
+> No significant changes, no changes planned or expected at all.
 >
-> \- Deirdre Connolly
+> — Deirdre Connolly
 
 This confirmed our belief that now is the perfect time to begin adopting X-Wing as the future standard for key encapsulation.
 
@@ -140,7 +140,7 @@ In the security sector, standardization is even more critical. Algorithms, proto
 
 Ignoring such standards—sometimes in the name of speed or convenience—sets you on a path that may be paved with hidden flaws. Even the smallest change can introduce serious vulnerabilities that, without thorough peer reviews, are likely to be discovered first by someone smarter and less well-intentioned.
 
-At Cryptomator, we've always stood against "security through obscurity" (which is also [why open source matters](https://cryptomator.org/guides/open-source/)). Needless to say, we've never used home-cooked ciphers—that would pose a serious risk. And the more widely used an algorithm or protocol is, the easier it becomes to understand, verify, and audit the system as a whole.
+At Cryptomator, we've always stood against "security through obscurity" (which is also [why open source matters](/guides/open-source/)). Needless to say, we've never used home-cooked ciphers—that would pose a serious risk. And the more widely used an algorithm or protocol is, the easier it becomes to understand, verify, and audit the system as a whole.
 
 ### A Strong Foundation
 
@@ -152,9 +152,9 @@ Another standard that we've come to love is JWE, a data format for exchanging en
 
 Beyond the aforementioned benefits of peer reviews, adopting standardized formats over proprietary ones provides several additional advantages:
 
-- Common APIs make it easy to swap out implementations—for example, HPKE usage remains the same regardless of the underlying algorithms
-- Wide availability of well-established libraries. For instance, there are dozens of JWE/JWT libraries
-- Official test vectors allows us to write tests that fail the build early if something goes wrong
+- Common APIs make it easy to swap out implementations—for example, HPKE usage remains the same regardless of the underlying algorithms.
+- Wide availability of well-established libraries. For instance, there are dozens of JWE/JWT libraries.
+- Official test vectors allows us to write tests that fail the build early if something goes wrong.
 - Faster vulnerabilities awareness: If a flaw is discovered in a widely used standard, it will likely be reported quickly—whereas a single proprietary implementation may go unnoticed for much longer.
 
 Both JWE and HPKE support interchangeable internal algorithms while maintaining a consistent external interface. This allows us to retain the overall structure and quickly replace internal components if vulnerabilities arise.
