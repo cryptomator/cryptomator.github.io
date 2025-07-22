@@ -1,7 +1,8 @@
 ---
 title: "Unser Fahrplan zur Post-Quanten-Kryptografie"
 slug: post-quantum-cryptography
-date: 2025-06-30
+date: 2025-07-24
+publishDate: 2025-07-22 # Remove this line when publishing
 tags: [cryptomator, encryption]
 params:
   math: true
@@ -16,6 +17,10 @@ ogimage:
   relsrc: /img/blog/cryptobot-xwing-bg.png
   width: 1480
   height: 832
+
+# Remove the following when publishing
+build:
+  list: never
 ---
 
 Wenn du dies liest, hast du wahrscheinlich schon von Quantencomputern gehört und davon, dass sie möglicherweise einige traditionelle Verschlüsselungsverfahren brechen könnten. In diesem Artikel zeigen wir auf, wie sich dies auf Cryptomator auswirkt und was unser Plan ist, um vollständig quantensicher zu werden.
