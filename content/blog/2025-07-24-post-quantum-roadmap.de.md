@@ -1,6 +1,6 @@
 ---
 title: "Unser Fahrplan zur Post-Quanten-Kryptografie"
-slug: post-quantum-cryptography
+slug: post-quantum-roadmap
 date: 2025-07-24
 publishDate: 2025-07-22 # Remove this line when publishing
 tags: [cryptomator, encryption]
