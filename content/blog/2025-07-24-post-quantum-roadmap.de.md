@@ -2,7 +2,6 @@
 title: "Unser Fahrplan zur Post-Quanten-Kryptografie"
 slug: post-quantum-roadmap
 date: 2025-07-24
-publishDate: 2025-07-22 # Remove this line when publishing
 tags: [cryptomator, encryption]
 params:
   math: true
@@ -19,6 +18,8 @@ ogimage:
   height: 832
 
 # Remove the following when publishing
+publishDate: 2025-07-22
+disableComments: true
 build:
   list: never
 ---
