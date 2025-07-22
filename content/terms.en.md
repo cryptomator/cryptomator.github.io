@@ -111,7 +111,7 @@ The right of withdrawal expires prematurely if
 * after the customer, as a consumer, has expressly consented to the commencement of the execution of the contract before the expiry of the revocation period (§ 356 para. 5 no. 1 BGB), and
 * the customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
 
-## §10 Online Dispute Resolution as well as Information According to § 36 VSBG
+## §10 Out-of-Court Dispute Resolution as well as Information According to § 36 VSBG
 Skymatic is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
 ## §11 Final Clauses

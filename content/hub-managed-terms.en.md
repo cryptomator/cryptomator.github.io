@@ -219,7 +219,7 @@ The right of withdrawal expires prematurely if
  
 16.3 The Provider undertakes to maintain confidentiality about all confidential information (including business secrets) that it learns in connection with this Agreement and its performance and not to disclose, pass on or otherwise use such information to third parties. Confidential information is information which is marked as confidential or the confidentiality of which is evident from the circumstances, irrespective of whether it has been communicated in written, electronic, embodied or oral form. The confidentiality obligation does not apply if the Provider is obligated to disclose the confidential information by law or by virtue of a final or legally binding decision of an authority or court. The Provider undertakes to agree with all employees and subcontractors on a provision similar in content to the preceding paragraph.
 
-## §17 Online Dispute Resolution as well as Information According to § 36 VSBG {#dispute-resolution}
+## §17 Out-of-Court Dispute Resolution as well as Information According to § 36 VSBG {#dispute-resolution}
 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
 ## §18 Final Clauses {#final-clauses}
