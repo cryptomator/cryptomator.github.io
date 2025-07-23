@@ -43,7 +43,7 @@ While we aim to avoid complexity when it comes to usability or code legibility, 
 
 When we want to express how many steps a certain computation requires, we categorize algorithms into classes of computational complexity. To illustrate this concept, here are some dog-related examples:
 
-| Complexity Class | Example                                                                                                                                                | Big-O    |
+| Complexity Class | Example                                                                                                                                                | Big O    |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | Constant Time    | Blowing the dog whistle always takes the same time, regardless of how many dogs are listening.                                                         | O(1)     |
 | Logarithmic Time | Finding the phone number of a pet clinic is easy with a telephone book, as it's sorted alphabetically and allows you to quickly narrow down the pages. | O(log n) |
