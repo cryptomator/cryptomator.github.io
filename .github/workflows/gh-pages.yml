@@ -10,12 +10,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        submodules: true
     - name: Setup Pages
       uses: actions/configure-pages@v5
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v3
       with:
-        hugo-version: '0.147.8'
+        hugo-version: '0.148.1'
     - uses: actions/setup-node@v4
       with:
         node-version: 22
