@@ -3,7 +3,7 @@ title: "Our Roadmap to Post-Quantum Cryptography"
 slug: post-quantum-roadmap
 date: 2025-07-24
 author: "Sebastian Stenzel"
-#authorlink: "https://mastodon.social/@overheadhunter" ?
+authorlink: "https://mastodon.social/@overheadhunter"
 authorimg: "https://static.cryptomator.org/photos/team/sebastian-512.jpg"
 fediversecreator: "@overheadhunter@mastodon.social"
 tags: [cryptomator, encryption]
