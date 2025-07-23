@@ -88,7 +88,7 @@ comparison:
         </div>
       </div>
 
-_build:
+build:
   render: false
   list: local
 ---

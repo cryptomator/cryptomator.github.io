@@ -666,9 +666,11 @@
 - id: hub_managed_step_2_title
   translation: "What subdomain would you like?"
 - id: hub_managed_step_2_subdomain_description
-  translation: "This will be the URL of your Hub instance."
+  translation: "Only lowercase letters, numbers, and hyphens are allowed."
 - id: hub_managed_step_2_subdomain_placeholder
-  translation: "your-subdomain"
+  translation: "my-team"
+- id: hub_managed_step_2_url_description
+  translation: "This will be the unique URL of your Hub instance."
 
 - id: hub_managed_step_3_nav_title
   translation: "Expected Users"

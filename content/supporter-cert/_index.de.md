@@ -5,10 +5,10 @@ description: "Beantrage ein Supporter-Zertifikat, um deine Software zu registrie
 hint: "Das Supporter-Zertifikat ist nur für Cryptomator für Desktop gültig. Es gilt nicht für Android oder iOS. Weitere Informationen findest du unten in den häufig gestellten Fragen."
 aliases: ["/de/store/desktop"]
 
-_build:
+build:
   render: true
 cascade:
-  _build:
+  build:
     render: false
     list: local
 ---
