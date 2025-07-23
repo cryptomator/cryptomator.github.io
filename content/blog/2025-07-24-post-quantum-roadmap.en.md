@@ -2,13 +2,11 @@
 title: "Our Roadmap to Post-Quantum Cryptography"
 slug: post-quantum-roadmap
 date: 2025-07-24
+author: "Sebastian Stenzel"
+#authorlink: "https://mastodon.social/@overheadhunter" ?
+authorimg: "https://static.cryptomator.org/photos/team/sebastian-512.jpg"
+fediversecreator: "@overheadhunter@mastodon.social"
 tags: [cryptomator, encryption]
-params:
-  math: true
-  fediverseCreator: "@overheadhunter@mastodon.social"
-  Author: "Sebastian Stenzel"
-  Authorimg: "https://static.cryptomator.org/photos/team/sebastian-512.jpg"
-#  Authorlink: "https://mastodon.social/@overheadhunter" ?
 
 summary: "Quantum computers will break many traditional ciphers. Learn how we plan to adjust Cryptomator Hub in order to stay ahead of attackers."
 
@@ -16,6 +14,8 @@ ogimage:
   relsrc: /img/blog/cryptobot-xwing-bg.png
   width: 1480
   height: 832
+
+math: true
 
 # Remove the following when publishing
 publishDate: 2025-07-22
