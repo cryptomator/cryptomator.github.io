@@ -43,10 +43,10 @@ Während wir Komplexität vermeiden, wenn es um Benutzerfreundlichkeit oder Code
 
 Wenn wir ausdrücken wollen, wie viele Schritte eine bestimmte Berechnung erfordert, kategorisieren wir Algorithmen in Klassen von Rechenkomplexität. Zur Veranschaulichung hier ein paar Beispiele mit Hunden:
 
-| Komplexitätsklasse | Beispiel                                                                                                                                                      | Big-O    |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| Komplexitätsklasse  | Beispiel                                                                                                                                                                     | O‑Notation |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | Konstante Zeit      | Eine Hundepfeife zu nutzen, dauert immer gleich lang, egal wie viele Hunde zuhören.                                                                                          | O(1)       |
-| Logarithmische Zeit | Die Telefonnummer einer Tierklinik im Telefonbuch zu finden ist einfach, da es alphabetisch sortiert ist und man die Seiten schnell eingrenzen kann.                         | O(log n)   |
+| Logarithmische Zeit | Die Telefonnummer einer Tierklinik im Telefonbuch zu finden ist einfach, da es alphabetisch sortiert ist und man die Seiten schnell eingrenzen kann.                         | O(log n)   |
 | Lineare Zeit        | Jeden Hund streicheln. Wenn jeder Hund gleich viel Aufmerksamkeit bekommt, dauert es genau n-mal so lange, wenn du n Hunde hast.                                             | O(n)       |
 | Polynomielle Zeit   | Wenn jeder Hund auf einer Party jeden anderen Hund beschnuppern und begrüßen will. Hund 1 schnuppert an Hund 2, 3, 4, ... Hund 2 schnuppert an Hund 3, 4, ... und so weiter. | O(nᵏ)      |
 | Exponentielle Zeit  | Jeder Hund bekommt 4 Welpen. Das ergibt 16 Hunde nach zwei Generationen, 64 nach drei und 256 nach vier Generationen.                                                        | O(kⁿ)      |
