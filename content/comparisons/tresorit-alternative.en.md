@@ -71,7 +71,7 @@ comparison:
     shareKeys: |
       <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
 
-_build:
+build:
   render: false
   list: local
 ---

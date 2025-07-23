@@ -3,7 +3,7 @@ title: "Vielen Dank für das Herunterladen von Cryptomator!"
 url: "/de/downloads/mac/thanks"
 release: "dmg"
 
-_build:
+build:
   list: never
 ---
 

@@ -3,7 +3,7 @@ title: "Thank you for downloading Cryptomator!"
 url: "/downloads/linux/thanks"
 release: "appimage"
 
-_build:
+build:
   list: never
 ---
 
