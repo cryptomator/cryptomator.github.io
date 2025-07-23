@@ -42,51 +42,51 @@
             </g>
           </g>
           <g>
-            <g fill="#000000" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="12px" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">
+            <g fill="#000000" font-family="&quot;Helvetica&quot;" text-anchor="middle" font-size="12px" style="fill: rgb(0, 0, 0);">
               <text x="469.5" y="95.34">Post Quantum Cryptomator Hub</text>
             </g>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-37">
           <g>
-            <path d="M 470 99.84 L 470 124 L 330 124 L 330 163.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 330 168.88 L 326.5 161.88 L 330 163.63 L 333.5 161.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 470 99.84 L 470 124 L 330 124 L 330 163.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 330 168.88 L 326.5 161.88 L 330 163.63 L 333.5 161.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-38">
           <g>
-            <path d="M 470 99.84 L 470 124 L 610 124 L 610 164.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 610 169.88 L 606.5 162.88 L 610 164.63 L 613.5 162.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 470 99.84 L 470 124 L 610 124 L 610 164.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 610 169.88 L 606.5 162.88 L 610 164.63 L 613.5 162.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-39">
           <g>
-            <path d="M 197.5 265 L 100 265 L 100 293.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 100 298.88 L 96.5 291.88 L 100 293.63 L 103.5 291.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 197.5 265 L 100 265 L 100 293.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 100 298.88 L 96.5 291.88 L 100 293.63 L 103.5 291.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-40">
           <g>
-            <path d="M 230 280 L 230 313.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 230 318.88 L 226.5 311.88 L 230 313.63 L 233.5 311.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 230 280 L 230 313.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 230 318.88 L 226.5 311.88 L 230 313.63 L 233.5 311.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-41">
           <g>
-            <path d="M 262.5 265 L 350 265 L 350 293.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 350 298.88 L 346.5 291.88 L 350 293.63 L 353.5 291.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 262.5 265 L 350 265 L 350 293.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 350 298.88 L 346.5 291.88 L 350 293.63 L 353.5 291.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-42">
           <g>
-            <path d="M 310 185 L 230 185 L 230 243.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 230 248.88 L 226.5 241.88 L 230 243.63 L 233.5 241.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 310 185 L 230 185 L 230 243.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 230 248.88 L 226.5 241.88 L 230 243.63 L 233.5 241.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-43">
           <g>
-            <path d="M 350 185 L 485 185 L 485 243.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 485 248.88 L 481.5 241.88 L 485 243.63 L 488.5 241.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 350 185 L 485 185 L 485 243.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 485 248.88 L 481.5 241.88 L 485 243.63 L 488.5 241.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-44">
@@ -99,7 +99,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 185px; margin-left: 311px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">JWE</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">JWE</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -118,7 +118,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 186px; margin-left: 581px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">ML-DSA (TBD)</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">ML-DSA (TBD)</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -129,14 +129,14 @@
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-54">
           <g>
-            <path d="M 70 315 L 50 315 L 50 333.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 50 338.88 L 46.5 331.88 L 50 333.63 L 53.5 331.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 70 315 L 50 315 L 50 333.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 50 338.88 L 46.5 331.88 L 50 333.63 L 53.5 331.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-56">
           <g>
-            <path d="M 130 315 L 150 315 L 150 333.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 150 338.88 L 146.5 331.88 L 150 333.63 L 153.5 331.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 130 315 L 150 315 L 150 333.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 150 338.88 L 146.5 331.88 L 150 333.63 L 153.5 331.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-46">
@@ -149,7 +149,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 315px; margin-left: 71px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">X-Wing</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">X-Wing</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -168,7 +168,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 335px; margin-left: 131px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">HKDF-SHA256</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">HKDF-SHA256</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -187,7 +187,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 88px; height: 1px; padding-top: 315px; margin-left: 306px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">AES-GCM</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">AES-GCM</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -206,7 +206,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 63px; height: 1px; padding-top: 265px; margin-left: 199px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="color: light-dark(rgb(136, 136, 136), rgb(120, 120, 120));">alg:</font><br/>HPKE-7</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="color: rgb(136, 136, 136);">alg:</font><br/>HPKE-7</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -217,8 +217,8 @@
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-50">
           <g>
-            <path d="M 485 280 L 485 323.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-            <path d="M 485 328.88 L 481.5 321.88 L 485 323.63 L 488.5 321.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+            <path d="M 485 280 L 485 323.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(0, 0, 0);"/>
+            <path d="M 485 328.88 L 481.5 321.88 L 485 323.63 L 488.5 321.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-51">
@@ -231,7 +231,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 148px; height: 1px; padding-top: 265px; margin-left: 411px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="color: light-dark(rgb(136, 136, 136), rgb(120, 120, 120));">enc:<br/></font>A256GCM</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; "><font style="color: rgb(136, 136, 136);">enc:<br/></font>A256GCM</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -250,7 +250,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 345px; margin-left: 456px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">AES-GCM</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">AES-GCM</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -269,7 +269,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 355px; margin-left: 11px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">ECDH-ES<br/>(X25519)</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">ECDH-ES<br/>(X25519)</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -288,7 +288,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 355px; margin-left: 111px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">ML-KEM-768</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">ML-KEM-768</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -299,8 +299,8 @@
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-57">
           <g>
-            <path d="M 100 420 Q 150 440 230 410 Q 310 380 423.82 408.46" fill="none" stroke="#49b04a" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(73, 176, 74), rgb(48, 136, 48));"/>
-            <path d="M 428.92 409.73 L 421.28 411.43 L 423.82 408.46 L 422.97 404.64 Z" fill="#49b04a" stroke="#49b04a" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(73, 176, 74), rgb(48, 136, 48)); stroke: light-dark(rgb(73, 176, 74), rgb(48, 136, 48));"/>
+            <path d="M 100 420 Q 150 440 230 410 Q 310 380 423.82 408.46" fill="none" stroke="#49b04a" stroke-miterlimit="10" pointer-events="stroke" style="stroke: rgb(73, 176, 74);"/>
+            <path d="M 428.92 409.73 L 421.28 411.43 L 423.82 408.46 L 422.97 404.64 Z" fill="#49b04a" stroke="#49b04a" stroke-miterlimit="10" pointer-events="all" style="fill: rgb(73, 176, 74); stroke: rgb(73, 176, 74);"/>
           </g>
         </g>
         <g data-cell-id="TN_SeyobdlnUlEKYRI20-58">
@@ -313,7 +313,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 395px; margin-left: 71px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #49B04A; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#49B04A, #308830); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">decap</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #49B04A; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">decap</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -332,7 +332,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 385px; margin-left: 176px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #49B04A; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#49B04A, #308830); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">extract &amp; expand</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #49B04A; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">extract &amp; expand</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -351,7 +351,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 48px; height: 1px; padding-top: 375px; margin-left: 326px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #49B04A; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#49B04A, #308830); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">open CEK</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #49B04A; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">open CEK</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -370,7 +370,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 48px; height: 1px; padding-top: 395px; margin-left: 461px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #49B04A; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#49B04A, #308830); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">decrypt payload</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #49B04A; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">decrypt payload</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -398,7 +398,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 48px; height: 1px; padding-top: 220px; margin-left: 586px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #49B04A; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#49B04A, #308830); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">identity<br/>verification</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #49B04A; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">identity<br/>verification</div>
                     </div>
                   </div>
                 </foreignObject>
@@ -418,7 +418,7 @@
                 <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
                   <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 48px; height: 1px; padding-top: 215px; margin-left: 306px;">
                     <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #49B04A; ">
-                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#49B04A, #308830); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">vault key encryption</div>
+                      <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: #49B04A; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">vault key encryption</div>
                     </div>
                   </div>
                 </foreignObject>
