@@ -32,7 +32,7 @@ First, let's take a look at the ciphers involved in Cryptomator:
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/traditional-cipher-breakdown.svg" alt="Plot showing the growth of 2^n compared to n^2" />
-  <figcaption>Cryptographic Breakdown of Cryptomator & Hub</figcaption>
+  <figcaption>Cryptographic Breakdown of Cryptomator & Cryptomator Hub</figcaption>
 </figure>
 
 As you can see, we mostly rely on AES- and EC-based algorithms. These are traditional algorithms whose security assumptions apply in a world of classical (non-quantum) computers. The general idea is that computations are efficient if you know the right key but practically impossible without. When I say "practically impossible" I mean on traditional computers, as the computations are just "too complex".
