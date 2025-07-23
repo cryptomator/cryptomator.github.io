@@ -91,13 +91,11 @@
                 <p class="font-p text-sm mb-2">
                   {{ i18n "hub_managed_step_2_subdomain_description" }}
                 </p>
-                <div class="col-span-6 mb-8 lg:col-span-4">
-                  <div class="flex items-center rounded-sm bg-gray-300">
-                    <div class="text-sm text-gray-700 px-3">https://</div>
-                    <input type="text" id="subdomain" pattern="[a-z\d\-](?:[a-z\d\-]{0,61}[a-z\d])?" class="block input-box rounded-none text-sm w-full" placeholder="{{ i18n "hub_managed_step_2_subdomain_placeholder" }}" maxlength="63" x-init="$el.focus()" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
-                    <div class="text-sm text-gray-700 px-3">.cryptomator.cloud</div>
-                  </div>
-                </div>
+                <input type="text" id="subdomain" pattern="[a-z\d\-](?:[a-z\d\-]{0,61}[a-z\d])?" class="block input-box w-full mb-4" placeholder="{{ i18n "hub_managed_step_2_subdomain_placeholder" }}" maxlength="63" x-init="$el.focus()" x-model="submitData.subdomain" @blur="$el.classList.add('show-invalid')" required>
+                <p class="font-p text-sm mb-2">
+                  {{ i18n "hub_managed_step_2_url_description" }}
+                </p>
+                <input type="text" class="block input-box w-full mb-8" :value="submitData.subdomain ? subdomainToURL(submitData.subdomain) : 'https://<{{ i18n "hub_managed_step_2_subdomain_placeholder" }}>.cryptomator.cloud'" readonly>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                   <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateSubdomain()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-2">

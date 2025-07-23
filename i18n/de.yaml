@@ -666,9 +666,11 @@
 - id: hub_managed_step_2_title
   translation: "Welche Subdomain möchtest du?"
 - id: hub_managed_step_2_subdomain_description
-  translation: "Dies wird die URL deiner Hub-Instanz sein."
+  translation: "Es sind nur Kleinbuchstaben, Zahlen und Bindestriche zulässig."
 - id: hub_managed_step_2_subdomain_placeholder
-  translation: "deine-subdomain"
+  translation: "mein-team"
+- id: hub_managed_step_2_url_description
+  translation: "Dies wird die eindeutige URL deiner Hub-Instanz sein."
 
 - id: hub_managed_step_3_nav_title
   translation: "Erwartete Nutzer"
