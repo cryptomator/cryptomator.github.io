@@ -16,12 +16,6 @@ ogimage:
   height: 832
 
 math: true
-
-# Remove the following when publishing
-publishDate: 2025-07-22
-disableComments: true
-build:
-  list: never
 ---
 
 Wenn du dies liest, hast du wahrscheinlich schon von Quantencomputern gehört und davon, dass sie eines Tages einige traditionelle Verschlüsselungsverfahren brechen könnten. In diesem Artikel erklären wir, wie sich dies auf Cryptomator auswirkt und was unser Plan ist, um vollständig quantensicher zu werden.
