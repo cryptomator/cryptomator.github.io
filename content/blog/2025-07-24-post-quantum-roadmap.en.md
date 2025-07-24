@@ -16,12 +16,6 @@ ogimage:
   height: 832
 
 math: true
-
-# Remove the following when publishing
-publishDate: 2025-07-22
-disableComments: true
-build:
-  list: never
 ---
 
 If you're reading this, chances are you've heard about quantum computers and how they may eventually break some traditional ciphers. In this article, we outline how this affects Cryptomator and what our plan is to become fully quantum-secure. 
