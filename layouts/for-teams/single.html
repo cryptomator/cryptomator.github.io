@@ -86,7 +86,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-key fa-fw text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
+          <h3 class="font-h3"><i class="fa-solid fa-key text-primary"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_1_description" . | safeHTML }}</p>
@@ -95,7 +95,7 @@
     
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-shield-check fa-fw text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
+          <h3 class="font-h3"><i class="fa-solid fa-shield-check text-primary"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_2_description" . | safeHTML }}</p>
@@ -104,7 +104,7 @@
     
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-lock-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
+          <h3 class="font-h3"><i class="fa-solid fa-lock-alt text-primary"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_3_description" . | safeHTML }}</p>
@@ -113,7 +113,7 @@
 
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-cloud fa-fw text-primary"></i> {{ i18n "hub_features_feature_4_title" . }}</h3>
+          <h3 class="font-h3"><i class="fa-solid fa-cloud text-primary"></i> {{ i18n "hub_features_feature_4_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_4_description" . | safeHTML }}</p>
@@ -122,7 +122,7 @@
     
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-code fa-fw text-primary"></i> {{ i18n "hub_features_feature_5_title" . }}</h3>
+          <h3 class="font-h3"><i class="fa-solid fa-code text-primary"></i> {{ i18n "hub_features_feature_5_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_5_description" . | safeHTML }}</p>
@@ -131,7 +131,7 @@
     
       <div class="white-box">
         <div class="px-4 py-2 border-b border-primary">
-          <h3 class="font-h3"><i class="fas fa-shield-alt fa-fw text-primary"></i> {{ i18n "hub_features_feature_6_title" . }}</h3>
+          <h3 class="font-h3"><i class="fa-solid fa-shield-alt text-primary"></i> {{ i18n "hub_features_feature_6_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_6_description" . | safeHTML }}</p>
@@ -160,7 +160,7 @@
       {{- range $index, $element := $data.pricing_teams_faq }}
       <dt class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>{{ .Question }}</span>
         </a>
       </dt>
@@ -175,7 +175,7 @@
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "hub_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_contact_us_description" . | safeHTML }}</p>
     <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-contact-us">
-      <i class="fas fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
+      <i class="fa-solid fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
     </a>
   </section>
 
@@ -187,7 +187,7 @@
       <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
         <button :disabled="data.inProgress || !data.acceptTerms" @click.prevent="new Newsletter($refs.form, data).subscribe()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4" data-umami-event="hub-newsletter-form">
-          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
+          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
         </button>
       </div>
       <p class="font-p">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "data.acceptTerms" "label" (i18n "accept_hub_newsletter_privacy" | safeHTML)) }}</p>
@@ -198,9 +198,9 @@
       <p class="font-p mb-4">{{ ":love_letter:" | emojify }} {{ i18n "hub_newsletter_success" . }}</p>
     </div>
 
-    <div class="flex justify-center gap-4">
-      <a class="text-gray-600 hover:text-primary" href="https://mastodon.online/@cryptomator" aria-label="Cryptomator on Mastodon" target="_blank" rel="noopener" data-umami-event="hub-mastodon"><i class="fab fa-mastodon text-2xl"></i></a>
-      <a class="text-gray-600 hover:text-primary" href="https://www.linkedin.com/company/skymatic/" aria-label="Skymatic on LinkedIn" target="_blank" rel="noopener" data-umami-event="hub-linkedin"><i class="fab fa-linkedin text-2xl"></i></a>
+    <div class="flex justify-center gap-2">
+      <a class="text-gray-600 hover:text-primary" href="https://mastodon.online/@cryptomator" aria-label="Cryptomator on Mastodon" target="_blank" rel="noopener" data-umami-event="hub-mastodon"><i class="fa-brands fa-mastodon text-2xl"></i></a>
+      <a class="text-gray-600 hover:text-primary" href="https://www.linkedin.com/company/skymatic/" aria-label="Skymatic on LinkedIn" target="_blank" rel="noopener" data-umami-event="hub-linkedin"><i class="fa-brands fa-linkedin text-2xl"></i></a>
     </div>
   </section>
 {{ end }}

@@ -6,7 +6,7 @@
     <div class="absolute left-0">
       {{ if $paginator.HasPrev }}
         <a href="{{ $paginator.Prev.URL }}" class="inline-block border rounded-sm no-underline text-center text-sm md:text-base px-3 md:px-4 py-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
-          <i class="fas fa-arrow-left text-primary" aria-hidden="true"></i>
+          <i class="fa-solid fa-arrow-left text-primary" aria-hidden="true"></i>
           <span class="hidden md:inline ml-2">{{ i18n "pagination_previous" }}</span>
           <span class="md:hidden sr-only">{{ i18n "pagination_previous" }}</span>
         </a>
@@ -72,7 +72,7 @@
       {{ if $paginator.HasNext }}
         <a href="{{ $paginator.Next.URL }}" class="inline-block border rounded-sm no-underline text-center text-sm md:text-base px-3 md:px-4 py-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
           <span class="hidden md:inline mr-2">{{ i18n "pagination_next" }}</span>
-          <i class="fas fa-arrow-right text-primary" aria-hidden="true"></i>
+          <i class="fa-solid fa-arrow-right text-primary" aria-hidden="true"></i>
           <span class="md:hidden sr-only">{{ i18n "pagination_next" }}</span>
         </a>
       {{ end }}

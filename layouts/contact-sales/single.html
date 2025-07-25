@@ -81,7 +81,7 @@
               <div class="mt-8">
                 <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                 <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="contact-sales-form" x-cloak>
-                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                   {{ i18n "contact_sales_submit" }}
                 </button>
                 {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
@@ -102,7 +102,7 @@
                   <!-- TODO: Uncomment when email confirmation system implemented
                   <li class="flex items-start">
                     <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
-                      <i class="fas fa-check text-white text-xs"></i>
+                      <i class="fa-solid fa-check text-white text-xs"></i>
                     </div>
                     <div>
                       <h4 class="font-medium text-gray-900 mb-1">{{ i18n "contact_sales_step_1_title" }}</h4>
@@ -113,7 +113,7 @@
                   
                   <li class="flex items-start">
                     <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
-                      <i class="fas fa-check text-white text-xs"></i>
+                      <i class="fa-solid fa-check text-white text-xs"></i>
                     </div>
                     <div>
                       <h4 class="font-medium text-gray-900 mb-1">{{ i18n "contact_sales_step_2_title" }}</h4>
@@ -123,7 +123,7 @@
                   
                   <li class="flex items-start">
                     <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
-                      <i class="fas fa-check text-white text-xs"></i>
+                      <i class="fa-solid fa-check text-white text-xs"></i>
                     </div>
                     <div>
                       <h4 class="font-medium text-gray-900 mb-1">{{ i18n "contact_sales_step_3_title" }}</h4>
@@ -143,7 +143,7 @@
                 <ul class="space-y-6">
                   <li>
                     <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" class="flex items-start group">
-                      <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
                       <div>
                         <div class="font-medium text-link group-hover:underline">{{ i18n "contact_sales_link_demo" }}</div>
                         <p class="text-sm text-gray-600 mt-1">{{ i18n "contact_sales_link_demo_description" }}</p>
@@ -153,7 +153,7 @@
                   
                   <li>
                     <a href="{{ .Site.LanguagePrefix }}/become-a-partner/" class="flex items-start group">
-                      <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
                       <div>
                         <div class="font-medium text-link group-hover:underline">{{ i18n "contact_sales_link_partner" }}</div>
                         <p class="text-sm text-gray-600 mt-1">{{ i18n "contact_sales_link_partner_description" }}</p>
@@ -163,7 +163,7 @@
                   
                   <li>
                     <a href="{{ .Site.LanguagePrefix }}/contact/" class="flex items-start group">
-                      <i class="fas fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
                       <div>
                         <div class="font-medium text-link group-hover:underline">{{ i18n "contact_sales_link_general" }}</div>
                         <p class="text-sm text-gray-600 mt-1">{{ i18n "contact_sales_link_general_description" }}</p>
@@ -179,7 +179,7 @@
 
       <section x-show="feedbackData.success" class="white-box" x-cloak>
         <div class="flex flex-col justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6">
-          <i class="fas fa-check-circle text-7xl text-secondary"></i>
+          <i class="fa-solid fa-check-circle text-7xl text-secondary"></i>
           <h3 class="font-h3">
             {{ i18n "contact_sales_success_title" }}
           </h3>
@@ -191,7 +191,9 @@
     </form>
   </section>
 {{ end }}
-
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}

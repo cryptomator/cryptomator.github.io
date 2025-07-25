@@ -41,7 +41,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 <div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
-    <h3 class="font-h3"><i class="fab fa-dropbox fa-fw text-primary"></i> Nutze Dropbox wie bisher</h3>
+    <h3 class="font-h3"><i class="fa-brands fa-dropbox text-primary"></i> Nutze Dropbox wie bisher</h3>
   </div>
   <div class="p-4">
     <p class="font-p"><strong>Deine Ordner-Struktur in Dropbox kannst du wie bisher beibehalten</strong> – Cryptomator passt sich nahtlos an. Du kannst gezielt einzelne Ordner deiner Dropbox verschlüsseln und weiterhin Dateien oder Ordner unverschlüsselt lassen.</p>
@@ -50,7 +50,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 <div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
-    <h3 class="font-h3"><i class="fas fa-share fa-fw text-primary"></i> Geschützte Daten bequem für Freunde, Familie und Kollegen freigeben</h3>
+    <h3 class="font-h3"><i class="fa-solid fa-share text-primary"></i> Geschützte Daten bequem für Freunde, Familie und Kollegen freigeben</h3>
   </div>
   <div class="p-4">
     <p class="font-p">Macht mit Cryptomator eure Daten in der Cloud sicher und <strong>bewahrt die Privatsphäre über mehrere Computer hinweg.</strong> Alles, was ihr braucht, ist Cryptomator auf jedem Gerät und das Passwort, um Zugriff auf die Daten zu erhalten.</p>
@@ -59,7 +59,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 <div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
-    <h3 class="font-h3"><i class="fas fa-key fa-fw text-primary"></i> Zugriff auf deine Cloud-Daten hat nur, wer ihn haben soll</h3>
+    <h3 class="font-h3"><i class="fa-solid fa-key text-primary"></i> Zugriff auf deine Cloud-Daten hat nur, wer ihn haben soll</h3>
   </div>
   <div class="p-4">
     <p class="font-p">Die <strong>Ende-zu-Ende-Verschlüsselung</strong> macht es potenziellen Angreifer noch schwieriger, dir zu schaden. Denn dank der verschlüsselten Dateinamen können Dritte keine Rückschlüsse auf die Dateitypen ziehen – was eines der häufigsten Einfallstore für sie ist.</p>
@@ -68,7 +68,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 <div class="not-prose white-box my-6">
   <div class="px-4 py-2 border-b border-primary">
-    <h3 class="font-h3"><i class="fas fa-sync fa-fw text-primary"></i> Keine Dateien versehentlich überschreiben</h3>
+    <h3 class="font-h3"><i class="fa-solid fa-sync text-primary"></i> Keine Dateien versehentlich überschreiben</h3>
   </div>
   <div class="p-4">
     <p class="font-p">Wenn gleichzeitig mehrere Geräte auf ein Dokument zugreifen, und dadurch <strong>Synchronisationskonflikte</strong> entstehen, erkennt Cryptomator diese trotz Dateinamensverschlüsselung. Zusätzlich bleibt die Versionshistorie von deinem Cloud-Speicher-Anbieter erhalten, so dass du alte Versionen einzelner Dateien wiederherstellen kannst. Hinweis: Das Auffinden der richtigen Datei zum Wiederherstellen ist derzeit praktisch nicht machbar, aber wird bald ab Cryptomator 1.7.0 ermöglicht.</p>
@@ -77,7 +77,7 @@ Das heißt: Angreifern würde es nicht mal etwas bringen, sich durch die Wand de
 
 <div class="not-prose white-box mt-6 mb-12">
   <div class="px-4 py-2 border-b border-primary">
-    <h3 class="font-h3"><i class="fas fa-clouds fa-fw text-primary"></i> Deine sensiblen Daten in Dropbox überall schnell griffbereit</h3>
+    <h3 class="font-h3"><i class="fa-solid fa-clouds text-primary"></i> Deine sensiblen Daten in Dropbox überall schnell griffbereit</h3>
   </div>
   <div class="p-4">
     <p class="font-p">Cryptomator wurde speziell für die <strong>Verschlüsselung von Cloud-Diensten</strong> entwickelt. Weil die <strong>Dateien einzeln verschlüsselt sind</strong>, werden immer nur die Dateien neu hochgeladen bzw. verschlüsselt, die du gerade geändert hast – und nicht (wie bei sogenannten „Containerlösungen“) der gesamte Ordner. Änderungen synchronisieren sich also viel schneller – und das macht sich gerade unterwegs bemerkbar.</p>

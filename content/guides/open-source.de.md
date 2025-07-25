@@ -37,7 +37,7 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
   <tr>
     <td class="text-center">
       <div class="fa-stack shrink-0 text-xl text-secondary">
-        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fa-solid fa-circle fa-stack-2x"></i>
         <strong class="fa-stack-1x fa-inverse">1</strong>
       </div>
     </td>
@@ -56,7 +56,7 @@ Welche der folgenden Szenarien hört sich für dich sicherer an:
   <tr>
     <td class="text-center">
       <div class="fa-stack shrink-0 text-xl text-secondary">
-        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fa-solid fa-circle fa-stack-2x"></i>
         <strong class="fa-stack-1x fa-inverse">2</strong>
       </div>
     </td>
@@ -99,13 +99,13 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 
 <div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
-    <i class="fas fa-circle fa-stack-2x"></i>
-    <i class="fas fa-users fa-stack-1x fa-inverse"></i>
+    <i class="fa-solid fa-circle fa-stack-2x"></i>
+    <i class="fa-solid fa-users fa-stack-1x fa-inverse"></i>
   </div>
   <div>
     <p class="font-p mb-4">Der Quellcode kann von einer Community aus Programmierern – vom Hobbyprogrammierer bis zum Sicherheitsforscher – eingesehen werden, wodurch unbefugter Zugriff direkt erkannt wird.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fa-solid"></i> Mehr erfahren</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
           <p class="font-p mb-4">Weil jeder den Quellcode einsehen kann, wird verhindert, dass unbemerkt Hintertüren für Regierungen, Strafverfolgungsbehörden oder Geschäftspartner eingebaut werden können.</p>
@@ -118,13 +118,13 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 
 <div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
-    <i class="fas fa-circle fa-stack-2x"></i>
-    <i class="fas fa-sync fa-stack-1x fa-inverse"></i>
+    <i class="fa-solid fa-circle fa-stack-2x"></i>
+    <i class="fa-solid fa-sync fa-stack-1x fa-inverse"></i>
   </div>
   <div>
     <p class="font-p mb-4">Der Quellcode wird ständig überprüft und somit laufend weiter verbessert.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fa-solid"></i> Mehr erfahren</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
           <p class="font-p mb-4">Abgesehen von offiziellen Audits wird der Quellcode auch von Dritten verwendet und somit ständig überprüft.</p>
@@ -139,13 +139,13 @@ Gleichzeitig hat Quelloffenheit aber viele sicherheitsfördernde Vorteile:
 
 <div class="not-prose flex mt-6 mb-12">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
-    <i class="fas fa-circle fa-stack-2x"></i>
-    <i class="fas fa-clouds fa-stack-1x fa-inverse"></i>
+    <i class="fa-solid fa-circle fa-stack-2x"></i>
+    <i class="fa-solid fa-clouds fa-stack-1x fa-inverse"></i>
   </div>
   <div>
     <p class="font-p mb-4">Der Quellcode wird hundertfach kopiert, was die Verschlüsselung unabhängig vom Anbieter macht.</p>
     <div x-data="{ isLearnMoreOpen: false }">
-      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fas fa-fw"></i> Mehr erfahren</a>
+      <a class="text-link" href="#" @click.prevent="isLearnMoreOpen = !isLearnMoreOpen"><i :class="{ 'fa-eye': !isLearnMoreOpen, 'fa-eye-slash': isLearnMoreOpen }" class="fa-solid"></i> Mehr erfahren</a>
       <div x-show="isLearnMoreOpen" x-cloak class="white-box mt-4">
         <div class="p-4">
           <p class="font-p mb-4">Selbst wenn der Anbieter der Verschlüsselungssoftware irgendwann seinen Betrieb einstellt, <strong>hast du weiterhin Zugriff auf deine verschlüsselten Daten und kannst deinen Cloud-Speicher weiterhin verschlüsseln.</strong></p>

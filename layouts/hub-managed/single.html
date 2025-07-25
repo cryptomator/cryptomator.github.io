@@ -70,7 +70,7 @@
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                   <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-1">
-                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
                 </div>
@@ -99,7 +99,7 @@
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                   <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateSubdomain()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-2">
-                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
                 </div>
@@ -124,7 +124,7 @@
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                   <button :disabled="feedbackData.inProgress" @click.prevent="submitData.quantity > 0 && submitData.quantity < 3 ? lowQuantityModalIsOpen = true : hubManaged.validateQuantity()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-3">
-                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
                 </div>
@@ -166,7 +166,7 @@
                       {{ i18n "hub_managed_step_4_message" }}
                     </span>
                     <a x-show="submitData.message == null" href="#" class="font-p text-link text-sm" @click.prevent="submitData.message = ''">
-                      <i class="fas fa-plus-circle"></i>
+                      <i class="fa-solid fa-plus-circle"></i>
                       {{ i18n "hub_managed_step_4_message_add" }}
                     </a>
                     <textarea x-show="submitData.message != null" id="message" rows="3" maxlength="2000" class="input-box text-sm w-full max-w-xs" placeholder="{{ i18n "hub_managed_step_4_message_add_placeholder" }}" x-model="submitData.message" x-cloak></textarea>
@@ -181,7 +181,7 @@
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                   <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-form" x-cloak>
-                    <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+                    <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_step_4_submit" }}
                   </button>
                   {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
@@ -192,7 +192,7 @@
         </div>
 
         <div x-show="feedbackData.success" class="flex flex-col justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6" x-cloak>
-          <i class="fas fa-check-circle text-7xl text-secondary"></i>
+          <i class="fa-solid fa-check-circle text-7xl text-secondary"></i>
           <h3 class="font-h3">
             {{ i18n "hub_managed_success_title" }}
           </h3>
@@ -216,9 +216,12 @@
     <h2 class="font-h2 mb-4">{{ i18n "hub_managed_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_managed_contact_us_description" . | safeHTML }}</p>
     <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-managed-contact-us">
-      <i class="fas fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
+      <i class="fa-solid fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
     </a>
   </section>
+{{ end }}
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}

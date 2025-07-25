@@ -12,6 +12,6 @@
     <input type="hidden" name="success_url" value="{{ "/donate/thanks" | absURL }}" />
     <input type="hidden" name="allow_extra" value="1" />
     <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
-    <button type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="donate-crypto-link" :disabled="!acceptTerms"><i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
+    <button type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="donate-crypto-link" :disabled="!acceptTerms"><i class="fa-solid fa-external-link" aria-hidden="true"></i> {{ i18n "donate_crypto_calltoaction" }}</button>
   </form>
 </div>

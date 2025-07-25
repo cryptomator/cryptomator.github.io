@@ -35,7 +35,7 @@
         <div class="white-box">
           <div class="px-6 py-4 border-b border-primary">
             <h3 class="font-h3">
-              <i class="{{ .icon | default "fas fa-building" }} fa-fw text-primary mr-2"></i>
+              <i class="{{ .icon | default "fa-solid fa-building" }} text-primary mr-2"></i>
               {{ .title }}
             </h3>
           </div>
@@ -44,7 +44,7 @@
             <ul class="space-y-2">
               {{ range .features }}
               <li class="flex items-start">
-                <i class="fas fa-check text-primary mt-1 mr-2 flex-shrink-0"></i>
+                <i class="fa-solid fa-check text-primary mt-1 mr-2 flex-shrink-0"></i>
                 <span class="font-p text-sm">{{ . }}</span>
               </li>
               {{ end }}
@@ -75,7 +75,7 @@
         <ul class="space-y-3">
           {{ range .details }}
           <li class="flex items-start">
-            <i class="fas fa-check text-primary mt-1 mr-3 flex-shrink-0"></i>
+            <i class="fa-solid fa-check text-primary mt-1 mr-3 flex-shrink-0"></i>
             <span class="font-p">{{ . }}</span>
           </li>
           {{ end }}
@@ -101,7 +101,7 @@
         <ul class="space-y-3">
           {{ range .details }}
           <li class="flex items-start">
-            <i class="fas fa-arrow-right text-primary mt-1 mr-3 flex-shrink-0"></i>
+            <i class="fa-solid fa-arrow-right text-primary mt-1 mr-3 flex-shrink-0"></i>
             <span class="font-p">{{ . }}</span>
           </li>
           {{ end }}
@@ -126,16 +126,16 @@
           {{ if .comingsoon }}
             <div class="absolute top-4 left-4 z-20">
               <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase border border-primary text-primary bg-transparent">
-                <i class="fas fa-hourglass-half"></i>
+                <i class="fa-solid fa-hourglass-half"></i>
                 <span>{{ i18n "coming_soon" . }}</span>
               </div>
             </div>
             <div class="w-full h-full bg-primary-l2 opacity-50 flex items-center justify-center">
-              <i class="fas fa-image text-primary text-4xl opacity-60"></i>
+              <i class="fa-solid fa-image text-primary text-4xl opacity-60"></i>
             </div>
           {{ else }}
             <div class="w-full h-full bg-primary-l2 flex items-center justify-center">
-              <i class="fas fa-image text-primary text-4xl opacity-80"></i>
+              <i class="fa-solid fa-image text-primary text-4xl opacity-80"></i>
             </div>
           {{ end }}
         </figure>
@@ -160,7 +160,7 @@
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "solutions_single_contact_title" . }}</h2>
     <p class="font-p text-gray-700 mb-6 max-w-3xl mx-auto">{{ i18n "solutions_single_contact_description" . | safeHTML }}</p>
     <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8" data-umami-event="solutions-implementation-contact">
-      <i class="fas fa-envelope"></i> {{ i18n "solutions_single_contact_button" . }}
+      <i class="fa-solid fa-envelope"></i> {{ i18n "solutions_single_contact_button" . }}
     </a>
   </section>
 {{ end }}

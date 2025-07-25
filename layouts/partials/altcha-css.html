@@ -1,0 +1,7 @@
+{{ if hugo.IsDevelopment }}
+  {{ $altchaCss := resources.Get "js/altcha/altcha.css" }}
+  <link rel="stylesheet" href="{{ $altchaCss.RelPermalink }}" media="screen" />
+{{ else }}
+  {{ $altchaCss := resources.Get "js/altcha/altcha.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $altchaCss.RelPermalink }}" integrity="{{ $altchaCss.Data.Integrity }}" media="screen" />
+{{ end }}

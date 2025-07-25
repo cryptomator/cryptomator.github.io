@@ -37,19 +37,19 @@ Now **25% off for the first year** – and ready for immediate deployment.
 
 <ul role="list" class="not-prose fa-ul text-sm md:text-base ml-7 md:ml-8">
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>End-to-end encryption</strong> for cloud services like Dropbox, Google Drive, OneDrive, or iCloud</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Open source</strong> for full transparency</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Cross-platform support</strong>: Windows, macOS, Linux, iOS, and Android</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>No subscription, no hidden costs</strong> – just one-time payment</span>
   </li>
 </ul>
@@ -58,19 +58,19 @@ Now **25% off for the first year** – and ready for immediate deployment.
 
 <ul role="list" class="not-prose fa-ul text-sm md:text-base ml-7 md:ml-8">
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Centralized management of encrypted vaults</strong> – simple, secure, and efficient</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Role-based access control</strong> tailored to your team’s structure</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Zero-knowledge architecture</strong> – only you have access to your data</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span>Perfect for NGOs, academic institutions, research environments, and companies</span>
   </li>
 </ul>
