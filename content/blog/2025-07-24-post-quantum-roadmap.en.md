@@ -187,7 +187,7 @@ Cryptomator Hub, on the other hand, will need to migrate to different algorithms
 
 1. _(In progress)_ Implement X-Wing: As a 100% open-source company, we have always contributed to other libraries and projects. As mentioned before, we're in contact with the authors of the [X-Wing RFC](https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/) and also with the JDK security team in order to add [X-Wing support in the OpenJDK](https://github.com/openjdk/jdk/pull/26032).
 2. _(In progress)_ Implement HPKE in JWE libraries: We have been contributing to one of the most widely used [JOSE libraries for Java](https://connect2id.com/products/nimbus-jose-jwt) from the very beginning of Cryptomator. Unsurprisingly, it is therefore in our interest to add HPKE support (and then X-Wing based HPHKE) as defined in [JOSE HPKE RFC](https://datatracker.ietf.org/doc/html/draft-reddy-cose-jose-pqc-hybrid-hpke-07). The RFC authors (one of whom we know personally) are already eager to hear our feedback.
-3. Migrate the JWEs used in Cryptomator Hub from traditional to PQ/T hybrid cryptography. We want to start this as soon as the standards are final and the aforementioned algorithm implementations can be published in upstream libraries.
+3. Migrate the JWEs used in Cryptomator Hub from traditional to PQ/T hybrid cryptography. We want to start this as soon as the standards are finalized and the aforementioned algorithm implementations can be published in upstream libraries.
 4. Introduce a new vault format that will improve the cipher agility and has further benefits for Cryptomator Hub users.
 
 As you can see this is a collaborative effort. All to build a resilient foundation for the years ahead.
