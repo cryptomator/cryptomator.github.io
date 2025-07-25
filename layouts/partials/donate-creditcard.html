@@ -19,11 +19,11 @@
         <label class="label-uppercase mb-2">{{ i18n "donate_creditcard_frequency" }}</label>
         <div class="flex">
           <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': frequency === 'once'}" @click="frequency = 'once'">
-            <i class="fas fa-check" x-show="frequency === 'once'"></i>
+            <i class="fa-solid fa-check" x-show="frequency === 'once'"></i>
             {{ i18n "donate_creditcard_frequency_once" }}
           </button>
           <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': frequency === 'recurring'}" @click="frequency = 'recurring'">
-            <i class="fas fa-check" x-show="frequency === 'recurring'"></i>
+            <i class="fa-solid fa-check" x-show="frequency === 'recurring'"></i>
             {{ i18n "donate_creditcard_frequency_recurring" }}
           </button>
         </div>
@@ -44,7 +44,7 @@
         <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
 
         <button :disabled="oneTimePaymentStatus.inProgress || !oneTimePaymentStatus.validCardNum || !acceptTerms || captchaState == 'verifying'" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-onetime-checkout">
-          <i :class="{'fa-credit-card': !oneTimePaymentStatus.inProgress, 'fa-spinner fa-spin': oneTimePaymentStatus.inProgress}" class="fas fa-fw" aria-hidden="true"></i>
+          <i :class="{'fa-credit-card': !oneTimePaymentStatus.inProgress, 'fa-spinner fa-spin': oneTimePaymentStatus.inProgress}" class="fa-solid" aria-hidden="true"></i>
           {{ i18n "donate_creditcard_once_paynow" }}
         </button>
 
@@ -58,7 +58,7 @@
       <p class="font-p mb-4">{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
       <button type="button" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-recurring-checkout" @click="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}')" :disabled="!acceptTerms">
-        <i class="fas fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
+        <i class="fa-solid fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
       </button>
     </div>
   </div>

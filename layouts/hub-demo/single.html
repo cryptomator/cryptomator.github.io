@@ -31,7 +31,7 @@
         </div>
 
         <div x-show="feedbackData.success" class="flex flex-col gap-4 text-center px-4 py-5 md:p-6" x-cloak>
-          <i class="fas fa-check-circle text-7xl text-secondary"></i>
+          <i class="fa-solid fa-check-circle text-7xl text-secondary"></i>
           <h3 class="font-h3">
             {{ i18n "hub_demo_success_title" }}
           </h3>
@@ -59,7 +59,7 @@
           {{ i18n "hub_demo_instruction" }}
         </p>
         <button :disabled="feedbackData.inProgress || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" x-cloak>
-          <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "hub_demo_submit" }}
+          <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "hub_demo_submit" }}
         </button>
         {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
         <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="feedbackData.errorMessage"></p>
@@ -71,9 +71,12 @@
     <h2 class="font-h2 mb-4">{{ i18n "hub_demo_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_demo_contact_us_description" . | safeHTML }}</p>
     <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8">
-      <i class="fas fa-envelope"></i> {{ i18n "hub_demo_contact_us_button" . }}
+      <i class="fa-solid fa-envelope"></i> {{ i18n "hub_demo_contact_us_button" . }}
     </a>
   </section>
+{{ end }}
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}

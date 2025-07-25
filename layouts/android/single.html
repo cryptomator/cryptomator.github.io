@@ -8,7 +8,7 @@
     <div class="rounded-md bg-blue-100 p-4 mb-6">
       <div class="flex items-center">
         <div class="shrink-0">
-          <i class="fas fa-info-circle fa-fw text-blue-500"></i>
+          <i class="fa-solid fa-info-circle text-blue-500"></i>
         </div>
         <div class="ml-3 text-sm text-dark">
           <p>{{ .Params.Hint | safeHTML }}</p>
@@ -45,7 +45,7 @@
       <div class="flex justify-center items-center rounded-sm bg-gray-300">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "android_keyrecovery_email_placeholder" }}" required/>
         <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4" data-umami-event="android-keyrecovery-form">
-          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fas fa-fw" aria-hidden="true"></i> {{ i18n "android_keyrecovery_retrieve" }}
+          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "android_keyrecovery_retrieve" }}
         </button>
       </div>
       <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>

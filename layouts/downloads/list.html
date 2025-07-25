@@ -26,7 +26,7 @@
   <section class="container text-center py-12">
     <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "downloads_all_versions_title" . }}</h3>
     <a href="https://github.com/cryptomator/cryptomator/releases" target="_blank" rel="noopener" role="button" class="btn btn-outline-primary px-8" data-umami-event="downloads-all-versions">
-      <i class="fab fa-github"></i> {{ i18n "downloads_all_versions_button" .}}
+      <i class="fa-brands fa-github"></i> {{ i18n "downloads_all_versions_button" .}}
     </a>
   </section>
 
@@ -40,7 +40,7 @@
       {{- range $index, $element := $data.pricing_individuals_faq }}
       <dt class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>{{ .Question }}</span>
         </a>
       </dt>

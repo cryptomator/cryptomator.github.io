@@ -37,19 +37,19 @@ Jetzt **25 % günstiger im ersten Jahr** – und bereit für den produktiven Ein
 
 <ul role="list" class="not-prose fa-ul text-sm md:text-base ml-7 md:ml-8">
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Ende-zu-Ende-Verschlüsselung</strong> für Cloud-Dienste wie Dropbox, Google Drive, OneDrive oder iCloud</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Open Source</strong> für maximale Transparenz</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Plattformübergreifend nutzbar</strong> auf Windows, macOS, Linux, iOS und Android</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Kein Abo, keine versteckten Kosten</strong> – nur einmal zahlen</span>
   </li>
 </ul>
@@ -58,19 +58,19 @@ Jetzt **25 % günstiger im ersten Jahr** – und bereit für den produktiven Ein
 
 <ul role="list" class="not-prose fa-ul text-sm md:text-base ml-7 md:ml-8">
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Zentrale Verwaltung verschlüsselter Tresore</strong> – einfach, sicher und effizient  </span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Rollenbasierte Zugriffssteuerung</strong> für unterschiedliche Teamstrukturen</span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span><strong>Zero-Knowledge-Architektur</strong> – niemand außer euch hat Zugriff auf die verschlüsselten Daten  </span>
   </li>
   <li class="pl-1.5 my-1 md:my-2">
-    <span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>
+    <span class="fa-li"><i class="fa-solid fa-check-circle text-primary"></i></span>
     <span>Perfekt für NGOs, Forschungseinrichtungen, Bildungseinrichtungen und Unternehmen</span>
   </li>
 </ul>
