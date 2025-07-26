@@ -1,5 +1,5 @@
 ---
 title: "Sonstige Anfragen"
 prio: 2
-faIcon: "fas fa-comment-dots"
+faIcon: "fa-solid fa-comment-dots"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Email Support"
-faIcon: "fas fa-envelope"
+faIcon: "fa-solid fa-envelope"
 weight: 3
 ---
 

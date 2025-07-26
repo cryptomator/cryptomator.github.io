@@ -1,6 +1,6 @@
 ---
 title: "Jobs"
-faIcon: "fas fa-user-plus"
+faIcon: "fa-solid fa-user-plus"
 weight: 3
 ---
 
