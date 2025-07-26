@@ -1,5 +1,5 @@
 ---
 title: "Etwas beitragen"
 prio: 2
-faIcon: "fas fa-hands-helping"
+faIcon: "fa-solid fa-hands-helping"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Report Bugs"
-faIcon: "fas fa-bug"
+faIcon: "fa-solid fa-bug"
 weight: 1
 ---
 

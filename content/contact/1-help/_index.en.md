@@ -1,5 +1,5 @@
 ---
 title: "Help"
 prio: 1
-faIcon: "fas fa-user-headset"
+faIcon: "fa-solid fa-user-headset"
 ---
