@@ -1,6 +1,6 @@
 ---
 title: "Mountain Duck"
-prio: 50
+prio: 20
 img: /img/coop/mountainduck.png
 img2x: /img/coop/mountainduck@2x.png
 description: Mit Mountain Duck lassen sich Server- und Cloudspeicher als Laufwerk in Finder unter macOS und im File Explorer unter Windows bereitstellen. Ab Version 2.0 unterstützt Mountain Duck Cryptomator-Tresore.
