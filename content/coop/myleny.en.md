@@ -1,6 +1,6 @@
 ---
 title: "myLeny including LenyMobile"
-prio: 80
+prio: 40
 img: /img/coop/myleny.png
 img2x: /img/coop/myleny@2x.png
 description: "myLeny®, the secure ecosystem for your digital self-determination from Switzerland; location-independent, secure, anonymous. Including Cryptomator on all LenyMobile®."
