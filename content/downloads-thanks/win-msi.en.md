@@ -3,7 +3,7 @@ title: "Thank you for downloading Cryptomator!"
 url: "/downloads/win-msi/thanks"
 release: "msi"
 
-_build:
+build:
   list: never
 ---
 

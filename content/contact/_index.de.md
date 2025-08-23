@@ -3,10 +3,10 @@ title: "Kontakt"
 type: contact
 aliases: ["/de/support"]
 
-_build:
+build:
   render: true
 cascade:
-  _build:
+  build:
     render: false
     list: local
 ---

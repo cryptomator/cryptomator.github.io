@@ -1,6 +1,6 @@
 ---
 title: "Cyberduck"
-prio: 40
+prio: 10
 img: /img/coop/cyberduck.png
 img2x: /img/coop/cyberduck@2x.png
 description: "Cyberduck is a libre remote file browser for Mac and Windows. As of version 6.0, Cyberduck supports Cryptomator vaults and thus is the perfect tool for all, who do not want to synchronize their cloud files locally."

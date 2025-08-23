@@ -38,29 +38,33 @@
       </div>
     </article>
 
-    <div id="discourse-comments"></div>
+    {{ if not .Params.disableComments }}
+      <div id="discourse-comments"></div>
+    {{ end }}
   </div>
 {{ end }}
 {{ define "script" }}
-  {{ $discourseEmbedUrl := "" }}
-  {{ if .Params.DiscourseEmbedUrl }}
-    {{ $discourseEmbedUrl = .Params.DiscourseEmbedUrl }}
-  {{ else }}
-    {{ if eq .Site.Language.Lang "en" }}
-      {{ $discourseEmbedUrl = .Permalink }}
+  {{ if not .Params.disableComments }}
+    {{ $discourseEmbedUrl := "" }}
+    {{ if .Params.DiscourseEmbedUrl }}
+      {{ $discourseEmbedUrl = .Params.DiscourseEmbedUrl }}
     {{ else }}
-      {{ range first 1 (where .Translations "Lang" "==" "en") }}
-        {{ $discourseEmbedUrl = .Permalink}}
+      {{ if eq .Site.Language.Lang "en" }}
+        {{ $discourseEmbedUrl = .Permalink }}
+      {{ else }}
+        {{ range first 1 (where .Translations "Lang" "==" "en") }}
+          {{ $discourseEmbedUrl = .Permalink}}
+        {{ end }}
       {{ end }}
     {{ end }}
-  {{ end }}
-  {{ if gt (len $discourseEmbedUrl) 0 }}
-    {{ if hugo.IsDevelopment }}
-      {{ $discourseJs := resources.Get "js/discourse.js" }}
-      <script type="text/javascript" src="{{ $discourseJs.RelPermalink }}" x-url="{{ $discourseEmbedUrl }}" defer></script>
-    {{ else }}
-      {{ $discourseJs := resources.Get "js/discourse.js" | minify | fingerprint }}
-      <script type="text/javascript" src="{{ $discourseJs.RelPermalink }}" integrity="{{ $discourseJs.Data.Integrity }}" x-url="{{ $discourseEmbedUrl }}" defer></script>
+    {{ if gt (len $discourseEmbedUrl) 0 }}
+      {{ if hugo.IsDevelopment }}
+        {{ $discourseJs := resources.Get "js/discourse.js" }}
+        <script type="text/javascript" src="{{ $discourseJs.RelPermalink }}" x-url="{{ $discourseEmbedUrl }}" defer></script>
+      {{ else }}
+        {{ $discourseJs := resources.Get "js/discourse.js" | minify | fingerprint }}
+        <script type="text/javascript" src="{{ $discourseJs.RelPermalink }}" integrity="{{ $discourseJs.Data.Integrity }}" x-url="{{ $discourseEmbedUrl }}" defer></script>
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

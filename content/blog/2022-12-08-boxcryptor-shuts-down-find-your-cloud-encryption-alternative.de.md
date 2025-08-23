@@ -12,7 +12,7 @@ Wir sind hier, um zu bleiben, und bieten dir an, unsere Open-Source-Software aus
 
 Wenn du auf der Suche nach einem Ersatz bist, dann bist du hier richtig. Wir vergleichen die Funktionen von Boxcryptor mit Cryptomator. Überzeuge dich selbst!
 
-<img class="inline-block" src="/img/boxcryptor-alternative/cryptobot-analysis.png" srcset="/img/boxcryptor-alternative/cryptobot-analysis.png 1x, /img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
 
 ## Funktionen und Eigenschaften von Boxcryptor
 

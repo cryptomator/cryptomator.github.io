@@ -2,6 +2,7 @@ baseURL = "https://cryptomator.org/"
 title = "Cryptomator"
 defaultContentLanguage = "en"
 enableemoji = true
+theme = ["hugo-admonitions"]
 
 [languages]
   [languages.en]
@@ -60,55 +61,71 @@ enableemoji = true
     source = "node_modules/altcha/dist_external"
     target = "assets/js/altcha"
 
-[markup.goldmark.renderer]
-unsafe = true
+  [[module.mounts]]
+    source = "node_modules/mathjax/es5"
+    target = "assets/js/mathjax"
 
-[markup.goldmark.parser.attribute]
-block = true
+  [[module.mounts]]
+    source = "node_modules/mathjax/es5/output/chtml/fonts/woff-v2"
+    target = "static/webfonts/mathjax"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+      [markup.goldmark.renderer]
+      unsafe = true
+      [markup.goldmark.parser.attribute]
+      block = true
 
 [params]
+  math = false # set to true in frontmatter if required
   [params.releases]
     [params.releases.exe]
-      version = "1.15.2"
-      filename = "Cryptomator-1.15.2-x64.exe"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.exe"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.exe.asc"
-      checksum = "3cc0b786fe99923969a03f3829c378db3fe3d284baf90ddc2f15221d08f83f38"
+      version = "1.17.1"
+      filename = "Cryptomator-1.17.1-x64.exe"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.exe"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.exe.asc"
+      checksum = "a11dfcfc5bb9b032448292755a2229bb6cc181f4978864f8f4f0df626c4e6e69"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.msi]
-      version = "1.15.2"
-      filename = "Cryptomator-1.15.2-x64.msi"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.msi"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.msi.asc"
-      checksum = "d97a3aa93b1a7eebbd1e0918e4a92a584c1adeae382baec98dccf2abfbfce45a"
+      version = "1.17.1"
+      filename = "Cryptomator-1.17.1-x64.msi"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.msi"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.msi.asc"
+      checksum = "794435f090232a8af2d0e9fb770e02ce2d99326323433a46f4125cefb3e6713b"
       requiredOS = 'Windows 10, Version 1803'
     [params.releases.dmg]
-      version = "1.15.2"
-      filename = "Cryptomator-1.15.2.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-x64.dmg.asc"
-      checksum = "36cfd2cd906071940e6684af596d8f4ab70a2faa6bd7459f184f99296538558b"
+      version = "1.17.1"
+      filename = "Cryptomator-1.17.1.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-x64.dmg.asc"
+      checksum = "0111ad60e0a9749a63f11eb4eae183aaf05ceb6dde67b8c28bcc8b2447b86850"
       requiredOS = 'macOS 11'
     [params.releases.dmg-arm64]
-      version = "1.15.2"
-      filename = "Cryptomator-1.15.2-arm64.dmg"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-arm64.dmg"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.2/Cryptomator-1.15.2-arm64.dmg.asc"
-      checksum = "21c4586179482e09a681d75b681b324698272ac5b961d641e7c105d2afd40db8"
+      version = "1.17.1"
+      filename = "Cryptomator-1.17.1-arm64.dmg"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-arm64.dmg"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/Cryptomator-1.17.1-arm64.dmg.asc"
+      checksum = "34c75e5f744bcedb96cf900a7e73ae96a5b39568a2e0994a1239fc59b31bc0d5"
       requiredOS = 'macOS 11'
     [params.releases.appimage]
-      version = "1.15.3"
-      filename = "cryptomator-1.15.3-x86_64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.3/cryptomator-1.15.3-x86_64.AppImage"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.3/cryptomator-1.15.3-x86_64.AppImage.asc"
-      checksum = "5b95260e940e9c579577de66a436aa1fea4c559b42f391c632e9703287af45ee"
+      version = "1.17.1"
+      filename = "cryptomator-1.17.1-x86_64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/cryptomator-1.17.1-x86_64.AppImage"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/cryptomator-1.17.1-x86_64.AppImage.asc"
+      checksum = "290d30f81535483d01f1a799d380c90c2a194a0b6151418ac636f0f015d0372a"
       requiredOS = ''
     [params.releases.appimage-aarch64]
-      version = "1.15.3"
-      filename = "cryptomator-1.15.3-aarch64.AppImage"
-      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.3/cryptomator-1.15.3-aarch64.AppImage"
-      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.15.3/cryptomator-1.15.3-aarch64.AppImage.asc"
-      checksum = "2ac9df55a30718ab4c5a9d9fd5e4db65de2cf0890620e6e866e95ab84a24ac2a"
+      version = "1.17.1"
+      filename = "cryptomator-1.17.1-aarch64.AppImage"
+      downloadUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/cryptomator-1.17.1-aarch64.AppImage"
+      signatureUrl = "https://github.com/cryptomator/cryptomator/releases/download/1.17.1/cryptomator-1.17.1-aarch64.AppImage.asc"
+      checksum = "5bb552c3f801c0007c5dc5c2a7e9e29eaf2ec0c28e5dca1d5e52c473905fba2f"
       requiredOS = ''
     [params.releases.android]
       version = "1.11.1"
@@ -124,6 +141,6 @@ block = true
   [[server.headers]]
       for = '/**'
       [server.headers.values]
-        Content-Security-Policy = "default-src 'none'; script-src 'self' 'unsafe-eval' https://umami.skymatic.de/ https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/; style-src 'self' 'unsafe-inline' https://*.paddle.com/; img-src 'self' data: https://static.cryptomator.org/ https://*.paddle.com/ https://paddle.s3.amazonaws.com/; connect-src 'self' https://api.cryptomator.org/ https://store.cryptomator.org/ https://umami.skymatic.de/ https://*.paddle.com/ http://localhost/ http://localhost:8787/; font-src 'self'; media-src https://static.cryptomator.org/; frame-src https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/; base-uri 'self'; form-action 'self' https://www.paypal.com/ https://www.coinpayments.net/; frame-ancestors 'none'"
+        Content-Security-Policy = "default-src 'none'; script-src 'self' 'unsafe-eval' https://umami.skymatic.de/ https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/; style-src 'self' 'unsafe-inline' https://*.paddle.com/; img-src 'self' data: https://static.cryptomator.org/ https://*.paddle.com/ https://paddle.s3.amazonaws.com/ https://avatars.githubusercontent.com/; connect-src 'self' https://api.cryptomator.org/ https://store.cryptomator.org/ https://umami.skymatic.de/ https://*.paddle.com/ http://localhost/ http://localhost:8787/; font-src 'self'; media-src https://static.cryptomator.org/; frame-src https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/; base-uri 'self'; form-action 'self' https://www.paypal.com/ https://www.coinpayments.net/; frame-ancestors 'none';"
         Strict-Transport-Security = "max-age=31536000; includeSubDomains"
         X-Content-Type-Options = "nosniff"

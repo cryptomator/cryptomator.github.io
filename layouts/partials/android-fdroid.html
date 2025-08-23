@@ -23,7 +23,7 @@
 
     <div x-show="fdroidVariant === 'cryptomator-repo'" class="px-4 pt-4 pb-8" x-data="{showQrCode: false}">
       <p class="font-p text-sm mb-4">{{ i18n "android_fdroid_repo" | safeHTML }}</p>
-      <a class="block text-link text-xs mb-4" href="#" data-umami-event="android-fdroid-cryptomator-repo-qr-code" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fas fa-fw"></i> {{ i18n "android_fdroid_qr_code" }}</a>
+      <a class="block text-link text-xs mb-4" href="#" data-umami-event="android-fdroid-cryptomator-repo-qr-code" @click.prevent="showQrCode = !showQrCode"><i :class="{ 'fa-eye': !showQrCode, 'fa-eye-slash': showQrCode }" class="fa-solid"></i> {{ i18n "android_fdroid_qr_code" }}</a>
       <div x-show="showQrCode" x-cloak class="mb-4">
         <img class="inline-block h-48" src="/img/android/fdroid-qr-code.svg"/>
       </div>

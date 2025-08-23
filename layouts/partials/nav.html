@@ -9,8 +9,8 @@
     <div class="flex items-stretch">
       <!-- Toggle Button for Smartphone Navigation -->
       <button @click="isNavOpen = !isNavOpen" type="button" class="self-center lg:hidden border {{ $borderColor }} rounded-sm px-2 py-1 mx-2" aria-label="Toggle Navigation">
-        <i x-show="isNavOpen" class="fas fa-times fa-fw" x-cloak></i>
-        <i x-show="!isNavOpen" class="fas fa-bars fa-fw"></i>
+        <i x-show="isNavOpen" class="fa-solid fa-times" x-cloak></i>
+        <i x-show="!isNavOpen" class="fa-solid fa-bars"></i>
       </button>
 
       <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="{{ .Site.LanguagePrefix }}/">
@@ -25,7 +25,7 @@
         <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2 border-b-2 border-transparent" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
           <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
             <span>{{ i18n .Title . }}</span>
-            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
           </button>
           <div class="absolute">
             <ul x-show="isDropdownOpen" x-cloak class="absolute mt-6 py-2 whitespace-nowrap bg-white rounded-sm shadow-md z-50">
@@ -45,7 +45,7 @@
               <li>
                 <a href="{{ $dropdownItem.URL }}" target="_blank" rel="noopener" class="flex items-center px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-{{ $dropdownItem.UmamiEvent }}">
                   <span>{{ i18n $dropdownItem.Title . }}</span>
-                  <i class="fas fa-external-link fa-fw ml-2"></i>
+                  <i class="fa-solid fa-external-link ml-2"></i>
                 </a>
               </li>
               {{- else if $dropdownItem.Separator }}
@@ -76,7 +76,7 @@
       <ul class="hidden lg:flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
           <a class="flex items-center hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener" data-umami-event="nav-github">
-            <i class="fab fa-github text-2xl p-2" aria-label="GitHub"></i>
+            <i class="fa-brands fa-github text-2xl mr-1" aria-label="GitHub"></i>
             <span x-text="globalData.githubStargazers"></span>
           </a>
         </li>
@@ -95,13 +95,14 @@
         <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
           <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
             <span>{{ .Site.Language.Lang | upper }}</span>
-            <i class="fas fa-chevron-down fa-fw text-xs"></i>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
           </button>
           <div class="relative">
             <ul x-show="isDropdownOpen" x-cloak class="absolute right-0 mt-6 py-2 w-48 bg-white rounded-sm shadow-md z-50">
               {{- range .Translations }}
+              {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
               <li>
-                <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+                <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
               </li>
               {{- end }}
             </ul>
@@ -132,7 +133,7 @@
     {{- else if $dropdownItem.URL }}
     <a class="flex items-center py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ $dropdownItem.URL }}" target="_blank" rel="noopener" data-umami-event="nav-{{ $dropdownItem.UmamiEvent }}">
       <span>{{ i18n $dropdownItem.Title . }}</span>
-      <i class="fas fa-external-link fa-fw ml-2"></i>
+      <i class="fa-solid fa-external-link ml-2"></i>
     </a>
     {{- else if $dropdownItem.Separator }}
     <hr class="border-primary my-2"/>
@@ -152,18 +153,19 @@
     {{- end }}
 
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
-      <i class="fas fa-globe fa-fw"></i> {{ .Site.Language.Lang | upper }}
+      <i class="fa-solid fa-globe"></i> {{ .Site.Language.Lang | upper }}
     </div>
     <div class="mt-1">
       {{ range .Translations }}
-      <a :href="'{{ .RelPermalink }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+      {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
+      <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
       {{ end }}
     </div>
 
     <hr class="border-primary my-2"/>
 
     <a class="block p-2 hover:text-secondary hover:no-underline" href="https://github.com/cryptomator" target="_blank" rel="noopener" data-umami-event="nav-github">
-      <i class="fab fa-github fa-fw"></i>
+      <i class="fa-brands fa-github"></i>
       <span>{{ i18n "nav_github" . }}</span>
     </a>
   </div>

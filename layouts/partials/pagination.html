@@ -1,0 +1,82 @@
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<div class="relative">
+  <div class="flex items-center justify-center">
+    <!-- Previous Button -->
+    <div class="absolute left-0">
+      {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="inline-block border rounded-sm no-underline text-center text-sm md:text-base px-3 md:px-4 py-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+          <i class="fa-solid fa-arrow-left text-primary" aria-hidden="true"></i>
+          <span class="hidden md:inline ml-2">{{ i18n "pagination_previous" }}</span>
+          <span class="md:hidden sr-only">{{ i18n "pagination_previous" }}</span>
+        </a>
+      {{ end }}
+    </div>
+
+    <!-- Page Numbers -->
+    <nav class="flex border rounded-sm bg-white border-gray-300 text-gray-700 divide-x divide-gray-300 overflow-hidden" aria-label="Pagination">
+      {{ $currentPage := $paginator.PageNumber }}
+      {{ $totalPages := $paginator.TotalPages }}
+      {{ $windowDelta := 1 }}
+
+      {{ $windowActualStart := sub $currentPage $windowDelta }}
+      {{ $windowActualEnd := add $currentPage $windowDelta }}
+
+      {{ if lt $windowActualStart 1 }} {{ $windowActualStart = 1 }} {{ end }}
+      {{ if gt $windowActualEnd $totalPages }} {{ $windowActualEnd = $totalPages }} {{ end }}
+
+      <!-- Show Page 1 and potentially left ellipsis -->
+      {{ if gt $windowActualStart 1 }}
+        <a href="{{ (index $paginator.Pagers 0).URL }}" class="text-center text-sm md:text-base px-3 md:px-4 py-2 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+          1
+        </a>
+        {{ $leftEllipsisTarget := sub $windowActualStart 1 }}
+        {{ if gt $leftEllipsisTarget 1 }}
+          <a href="{{ (index $paginator.Pagers (sub $leftEllipsisTarget 1)).URL }}" class="text-center text-sm md:text-base px-3 md:px-4 py-2 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+            …
+          </a>
+        {{ end }}
+      {{ end }}
+
+      <!-- Page numbers in the window -->
+      {{ range $pager := $paginator.Pagers }}
+        {{ if and (ge .PageNumber $windowActualStart) (le .PageNumber $windowActualEnd) }}
+          {{ if eq .PageNumber $currentPage }}
+            <a href="{{ .URL }}" aria-current="page" class="bg-primary text-white text-center text-sm md:text-base px-3 md:px-4 py-2">
+              {{ .PageNumber }}
+            </a>
+          {{ else }}
+            <a href="{{ .URL }}" class="text-center text-sm md:text-base px-3 md:px-4 py-2 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+              {{ .PageNumber }}
+            </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      <!-- Show right ellipsis and potentially Page $totalPages -->
+      {{ if lt $windowActualEnd $totalPages }}
+        {{ $rightEllipsisTarget := add $windowActualEnd 1 }}
+        {{ if lt $rightEllipsisTarget $totalPages }}
+          <a href="{{ (index $paginator.Pagers (sub $rightEllipsisTarget 1)).URL }}" class="text-center text-sm md:text-base px-3 md:px-4 py-2 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+            …
+          </a>
+        {{ end }}
+        <a href="{{ (index $paginator.Pagers (sub $totalPages 1)).URL }}" class="text-center text-sm md:text-base px-3 md:px-4 py-2 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+          {{ $totalPages }}
+        </a>
+      {{ end }}
+    </nav>
+
+    <!-- Next Button -->
+    <div class="absolute right-0">
+      {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="inline-block border rounded-sm no-underline text-center text-sm md:text-base px-3 md:px-4 py-2 bg-white border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700">
+          <span class="hidden md:inline mr-2">{{ i18n "pagination_next" }}</span>
+          <i class="fa-solid fa-arrow-right text-primary" aria-hidden="true"></i>
+          <span class="md:hidden sr-only">{{ i18n "pagination_next" }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

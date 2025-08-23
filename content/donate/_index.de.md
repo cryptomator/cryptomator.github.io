@@ -5,10 +5,10 @@ description: "Wenn du an der Weiterentwicklung von Cryptomator interessiert bist
 hint: "Wenn du ein Supporter-Zertifikat benötigst, um deine Software zu registrieren und den Dunkel-Modus freizuschalten, besuche bitte die <a class=\"text-blue-500 no-underline hover:underline\" href=\"/de/supporter-cert/\">Supporter-Zertifikat-Seite</a>."
 paypalHostedButtonId: NUQ7XQSWMQEGS
 
-_build:
+build:
   render: true
 cascade:
-  _build:
+  build:
     render: false
     list: local
 ---

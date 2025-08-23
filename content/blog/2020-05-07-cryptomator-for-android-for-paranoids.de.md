@@ -4,10 +4,15 @@ slug: cryptomator-for-android-for-paranoids
 date: 2020-05-07
 author: Julian Raufelder
 authorlink: https://github.com/SailReal
-authorimg: https://avatars0.githubusercontent.com/u/1786772?s=96
+authorimg: https://avatars.githubusercontent.com/u/1786772?s=96
 tags: [cryptomator, android]
 
 summary: Cryptomator für Android ohne Internet-Zugriffsrechte verwenden, um Hintertüren fast unmöglich zu machen.
+
+ogimage:
+  relsrc: /img/blog/android-for-paranoids-permission.png
+  width: 338
+  height: 600
 ---
 
 Dieser Blogeintrag richtet sich an die Cryptomator-"Power-User" unter uns und beschreibt, wie man das Vertrauensverhältnis zur Cryptomator Android-App vollständig herstellen kann.

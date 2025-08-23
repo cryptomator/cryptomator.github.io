@@ -5,10 +5,10 @@ description: "Claim a supporter certificate to register your software and unlock
 hint: "The supporter certificate is only valid for Cryptomator for Desktop. It is not valid for Android or iOS. See the FAQ below for more information."
 aliases: ["/store/desktop"]
 
-_build:
+build:
   render: true
 cascade:
-  _build:
+  build:
     render: false
     list: local
 ---

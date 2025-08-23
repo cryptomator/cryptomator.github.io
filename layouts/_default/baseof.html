@@ -10,22 +10,22 @@
     <link rel="preload" fetchpriority="low" as="image" href="/img/logo.svg" type="image/svg+xml">
     <link rel="preload" fetchpriority="low" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" fetchpriority="low" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:url" content="{{ partial "canonical-url.html" . }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ if and (eq .Section "blog") .IsPage }}
       <meta name="description" content="{{ .Summary }}">
-      <meta name="fediverse:creator" content="@cryptomator@mastodon.online">
+      <meta name="fediverse:creator" content="{{ .Params.fediverseCreator | default "@cryptomator@mastodon.online" }}">
       <meta property="og:title" content="{{ .Title }}">
       <meta property="og:type" content="article" />
       <meta property="og:description" content="{{ .Summary }}">
-      <meta property="article:author" content="{{ with .Params.Author }}{{ . }}{{ else }}Cryptobot{{ end }}" />
+      <meta property="article:author" content="{{ .Params.Author | default "Cryptobot" }}" />
       <meta property="article:published_time" content="{{ dateFormat "2006-01-02" .Params.Date }}" />
       {{ range .Params.tags }}
         <meta property="article:tag" content="{{ . }}" />
       {{ end }}
     {{ else if (eq .Type "article") }}
       <meta name="description" content="{{ .Params.Description }}">
-      <meta name="fediverse:creator" content="@cryptomator@mastodon.online">
+      <meta name="fediverse:creator" content="{{ .Params.fediverseCreator | default "@cryptomator@mastodon.online" }}">
       <meta property="og:title" content="{{ .Title }}">
       <meta property="og:type" content="article" />
       <meta property="og:description" content="{{ .Params.Description }}">
@@ -58,12 +58,7 @@
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
-    {{ range .AllTranslations }}
-      <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
-      {{ if eq .Language.Lang "en" }}
-        <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
-      {{ end }}
-    {{ end }}
+    {{ partial "hreflang.html" . }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
@@ -79,7 +74,7 @@
       <script
         src="https://umami.skymatic.de/script.js"
         data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c"
-        integrity="sha384-q6BX6At4CnPxi1irWTLEV0m+RYSC74RoYMZ5FDoo5xSqAuXe5KaKa62bb5nw+ZQ6"
+        integrity="sha384-gW+82edTiLqRoEvPbT3xKDCYZ5M02YXbW4tA3gbojZWiiMYNJZb4YneJrS4ri3Rn"
         crossorigin="anonymous"
         defer
         {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
@@ -88,7 +83,7 @@
       <script
         src="https://umami.skymatic.de/script.js"
         data-website-id="8d451e39-ffb2-4697-82c9-9f69eff497f1"
-        integrity="sha384-q6BX6At4CnPxi1irWTLEV0m+RYSC74RoYMZ5FDoo5xSqAuXe5KaKa62bb5nw+ZQ6"
+        integrity="sha384-gW+82edTiLqRoEvPbT3xKDCYZ5M02YXbW4tA3gbojZWiiMYNJZb4YneJrS4ri3Rn"
         crossorigin="anonymous"
         defer
         {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
@@ -114,5 +109,11 @@
     <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}" defer></script>
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $lazysizes.RelPermalink }}" integrity="{{ $lazysizes.Data.Integrity }}" async></script>
+    {{ if .Param "math" }}
+      {{ $mjconfig := resources.Get "js/mathjax-config.js" | fingerprint }}
+      <script type="text/javascript" src="{{ $mjconfig.RelPermalink }}" integrity="{{ $mjconfig.Data.Integrity }}"></script>
+      {{ $mathjax := resources.Get "js/mathjax/tex-chtml.js" | fingerprint }}
+      <script type="text/javascript" src="{{ $mathjax.RelPermalink }}" integrity="{{ $mathjax.Data.Integrity }}"></script>
+    {{ end }}
   </body>
 </html>

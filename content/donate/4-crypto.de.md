@@ -1,6 +1,6 @@
 ---
 title: "Crypto"
-faIcon: "fas fa-alien-monster"
+faIcon: "fa-solid fa-alien-monster"
 tabHash: "#crypto"
 partial: "donate-crypto.html"
 weight: 4

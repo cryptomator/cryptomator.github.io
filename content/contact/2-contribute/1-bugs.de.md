@@ -1,6 +1,6 @@
 ---
 title: "Fehler melden"
-faIcon: "fas fa-bug"
+faIcon: "fa-solid fa-bug"
 weight: 1
 ---
 

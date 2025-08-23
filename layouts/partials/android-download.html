@@ -14,9 +14,9 @@
     <div class="px-4 py-8" x-data="{showShaSignature: false}">
       <p class="font-p text-sm mb-4">Version {{ .Site.Params.releases.android.version }} • Minimum: Android 8.0</p>
       <a class="btn btn-primary w-full md:w-56 mb-2" href="{{ .Site.Params.releases.android.downloadUrl }}" role="button" data-umami-event="android-download">
-        <span class="fas fa-download" aria-hidden="true"></span> {{ i18n "android_download_button" }}
+        <span class="fa-solid fa-download" aria-hidden="true"></span> {{ i18n "android_download_button" }}
       </a>
-      <a class="block text-link text-xs" href="#" data-umami-event="android-download-sha256-signature" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fas fa-fw"></i> {{ i18n "android_download_sha256_signature" }}</a>
+      <a class="block text-link text-xs" href="#" data-umami-event="android-download-sha256-signature" @click.prevent="showShaSignature = !showShaSignature"><i :class="{ 'fa-eye': !showShaSignature, 'fa-eye-slash': showShaSignature }" class="fa-solid"></i> {{ i18n "android_download_sha256_signature" }}</a>
       <div x-show="showShaSignature" x-cloak class="mt-4">
         <p class="font-p text-xs"><code class="font-code break-all">{{ .Site.Params.releases.android.checksum }}</code></p>
       </div>

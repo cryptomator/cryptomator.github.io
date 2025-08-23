@@ -1,10 +1,10 @@
 ---
 title: "Pressemappe"
 
-_build:
+build:
   render: true
 cascade:
-  _build:
+  build:
     render: false
     list: local
 ---

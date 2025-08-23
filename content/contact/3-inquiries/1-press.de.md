@@ -1,6 +1,6 @@
 ---
 title: "Presse"
-faIcon: "fas fa-newspaper"
+faIcon: "fa-solid fa-newspaper"
 weight: 1
 ---
 

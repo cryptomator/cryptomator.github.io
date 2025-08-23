@@ -27,14 +27,19 @@ class HubManaged {
       data: {
         email: this._submitData.email
       }
-    }).done(_ => {
+    }).done(response => {
+      if (response.isCompanyEmail && response.domainWithoutSuffix) {
+        this._submitData.subdomain = response.domainWithoutSuffix;
+      } else {
+        this._submitData.subdomain = '';
+      }
       this.onValidationSucceeded();
     }).fail(xhr => {
       this.onValidationFailed(xhr.responseJSON?.message || 'Validating email failed.');
     });
   }
 
-  validateTeamAndSubdomain() {
+  validateSubdomain() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
       this._feedbackData.errorMessage = 'Please fill in all required fields.';
@@ -47,13 +52,12 @@ class HubManaged {
       url: VALIDATE_HUB_MANAGED_REQUEST_URL,
       type: 'GET',
       data: {
-        team: this._submitData.team,
         subdomain: this._submitData.subdomain
       }
     }).done(_ => {
       this.onValidationSucceeded();
     }).fail(xhr => {
-      this.onValidationFailed(xhr.responseJSON?.message || 'Validating team and subdomain failed.');
+      this.onValidationFailed(xhr.responseJSON?.message || 'Validating subdomain failed.');
     });
   }
 
@@ -127,30 +131,6 @@ class HubManaged {
     window.scrollTo(0, 0);
   }
 
-}
-
-function teamToSubdomain(team) {
-  // Convert to lowercase
-  let subdomain = team.toLowerCase();
-  // Replace German specific characters
-  subdomain = subdomain.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
-  // Normalize to decompose accented characters and remove diacritics
-  subdomain = subdomain.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  // Replace any whitespace (including spaces, tabs, etc.) with a hyphen
-  subdomain = subdomain.replace(/\s+/g, "-");
-  // Remove any characters that are not letters, numbers, or hyphens
-  subdomain = subdomain.replace(/[^a-z0-9-]/g, "");
-  // Replace multiple hyphens with a single hyphen
-  subdomain = subdomain.replace(/-+/g, "-");
-  // Remove any leading or trailing hyphens
-  subdomain = subdomain.replace(/^-+/, "").replace(/-+$/, "");
-  // Cap the subdomain at 63 characters
-  if (subdomain.length > 63) {
-    subdomain = subdomain.slice(0, 63);
-    // Remove any trailing hyphen after truncation
-    subdomain = subdomain.replace(/-+$/, "");
-  }
-  return subdomain;
 }
 
 function subdomainToURL(subdomain) {

@@ -12,11 +12,11 @@
         </h2>
         <div class="flex justify-center mb-4">
           <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" data-umami-event="pricing-individuals-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption !== '#for-teams'}" @click="location.hash = '#for-individuals'">
-            <i class="fa-user fa-fw" :class="{'fas': planOption !== '#for-teams', 'far': planOption === '#for-teams'}"></i>
+            <i class="fa-user" :class="{'fas': planOption !== '#for-teams', 'far': planOption === '#for-teams'}"></i>
             {{ i18n "pricing_individuals" . }}
           </button>
           <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" data-umami-event="pricing-teams-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption === '#for-teams'}" @click="location.hash = '#for-teams'">
-            <i class="fa-building fa-fw" :class="{'fas': planOption === '#for-teams', 'far': planOption !== '#for-teams'}"></i>
+            <i class="fa-building" :class="{'fas': planOption === '#for-teams', 'far': planOption !== '#for-teams'}"></i>
             {{ i18n "pricing_teams" . }}
           </button>
         </div>
@@ -28,15 +28,15 @@
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fab fa-windows"></i>
+                  <i class="fa-brands fa-windows"></i>
                   Windows
                 </div>
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fab fa-apple"></i>
+                  <i class="fa-brands fa-apple"></i>
                   macOS
                 </div>
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fab fa-linux"></i>
+                  <i class="fa-brands fa-linux"></i>
                   Linux
                 </div>
               </div>
@@ -58,19 +58,19 @@
             <div class="px-4 py-8">
               <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_desktop_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_desktop_benefit_2" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_desktop_benefit_3" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_desktop_benefit_4" . }}</span>
                 </li>
               </ul>
@@ -80,7 +80,7 @@
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fab fa-android"></i>
+                  <i class="fa-brands fa-android"></i>
                   Android
                 </div>
               </div>
@@ -102,19 +102,19 @@
             <div class="px-4 py-8">
               <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_android_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_android_benefit_2" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_android_benefit_3" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_android_benefit_4" . }}</span>
                 </li>
               </ul>
@@ -124,7 +124,7 @@
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-4">
                 <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fab fa-apple"></i>
+                  <i class="fa-brands fa-apple"></i>
                   iOS
                 </div>
               </div>
@@ -158,19 +158,19 @@
             <div class="px-4 py-8">
               <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_ios_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_ios_benefit_2" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_ios_benefit_3" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_ios_benefit_4" . }}</span>
                 </li>
               </ul>
@@ -188,7 +188,7 @@
             {{- range $index, $element := $data.pricing_individuals_faq }}
             <dt class="font-p p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
                 <span>{{ .Question }}</span>
               </a>
             </dt>
@@ -204,10 +204,10 @@
           <p class="font-p mb-4">{{ i18n "pricing_support_us_description" . }}</p>
           <div class="flex flex-wrap justify-center gap-4">
             <a href="{{ .Site.LanguagePrefix }}/donate/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-donate">
-              <i class="fas fa-donate"></i> {{ i18n "pricing_support_us_donate_button" . }}
+              <i class="fa-solid fa-donate"></i> {{ i18n "pricing_support_us_donate_button" . }}
             </a>
             <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-sponsors">
-              <i class="fas fa-handshake"></i> {{ i18n "pricing_support_us_sponsor_button" . }}
+              <i class="fa-solid fa-handshake"></i> {{ i18n "pricing_support_us_sponsor_button" . }}
             </a>
           </div>
         </section>
@@ -236,27 +236,27 @@
             <div class="px-4 py-8">
               <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_community_benefit_3" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_community_benefit_4" . }}</span>
                   <div class="has-tooltip">
-                    <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                    <i class="fa-solid fa-info-circle text-gray-600"></i>
                     <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_community_benefit_4_tooltip" . }}</div>
                   </div>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_community_benefit_5" . }}</span>
                 </li>
               </ul>
@@ -269,7 +269,7 @@
                   {{ i18n "pricing_hub_standard_title" . }}
                 </h3>
                 <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
-                  <i class="fas fa-calendar-star"></i>
+                  <i class="fa-solid fa-calendar-star"></i>
                   {{ i18n "pricing_hub_standard_trial" . }}
                 </p>
               </div>
@@ -286,7 +286,7 @@
                 </span>
               </div>
               <div x-show="infrastructure === 'managed'">
-                <p class="flex items-baseline gap-2">
+                <p class="flex items-baseline gap-2 mt-2">
                   <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
                   <span class="text-xs md:text-sm lg:text-base text-gray-700">
                     {{ i18n "pricing_vat_excluded" . }}
@@ -300,7 +300,7 @@
                 </a>
               </div>
               <div x-show="infrastructure === 'self-hosted'">
-                <p class="flex items-baseline gap-2">
+                <p class="flex items-baseline gap-2 mt-2">
                   <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
                   <span class="text-xs md:text-sm lg:text-base text-gray-700">
                     {{ i18n "pricing_vat_excluded" . }}
@@ -317,35 +317,35 @@
             <div class="px-4 py-8">
               <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
                 <li>
-                  <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-plus text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_standard_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_standard_benefit_2" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_standard_benefit_3" . }}</span>
                   <div class="has-tooltip">
-                    <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+                    <i class="fa-solid fa-info-circle text-gray-600"></i>
                     <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_standard_benefit_3_tooltip" . }}</div>
                   </div>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_standard_benefit_4" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_standard_benefit_5" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                  <span class="fa-li"><i class="fa-solid" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
                   <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                  <span class="fa-li"><i class="fa-solid" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
                   <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_2" . }}</span>
                 </li>
               </ul>
@@ -366,26 +366,26 @@
                 {{ i18n "pricing_hub_enterprise_price_description" . }}
               </p>
               <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-enterprise-cta">
-                <i class="fas fa-envelope"></i>
+                <i class="fa-solid fa-envelope"></i>
                 {{ i18n "pricing_hub_enterprise_cta" . }}
               </a>
             </div>
             <div class="px-4 py-8">
               <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
                 <li>
-                  <span class="fa-li"><i class="fas fa-plus text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-plus text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_enterprise_benefit_1" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_enterprise_benefit_2" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_enterprise_benefit_3" . }}</span>
                 </li>
                 <li>
-                  <span class="fa-li"><i class="fas fa-check text-primary"></i></span>
+                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
                   <span>{{ i18n "pricing_hub_enterprise_benefit_4" . }}</span>
                 </li>
               </ul>
@@ -403,7 +403,7 @@
             {{- range $index, $element := $data.pricing_teams_faq }}
             <dt class="font-p p-4">
               <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
                 <span>{{ .Question }}</span>
               </a>
             </dt>

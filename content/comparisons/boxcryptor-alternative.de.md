@@ -12,7 +12,7 @@ ctalink: /de/#get-started
 ctabutton: "Jetzt mit Cryptomator loslegen"
 
 ogimage:
-  relsrc: /img/boxcryptor-alternative/og-image.png
+  relsrc: /img/comparisons/og-image.png
   width: 1200
   height: 541
 
@@ -22,89 +22,89 @@ comparison:
       <div class="font-normal">
         <span>Boxcryptor</span>
         <div class="has-tooltip">
-          <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+          <i class="fa-solid fa-info-circle text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">
             Boxcryptor wurde im November 2022 von Dropbox übernommen, unterstützt aber weiterhin bestehende Kunden während der Laufzeit ihrer Verträge.
           </div>
         </div>
       </div>
-      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg">
+      <img class="max-w-16 h-12" src="/img/comparisons/boxcryptor-logo.svg" aria-hidden="true">
     </div>
   footer: |
     <a class="btn btn-outline-primary w-full px-2 md:px-4 py-1 md:py-1" href="/de/comparisons/boxcryptor-alternative/" data-umami-event="comparisons-boxcryptor-cta">Detailvergleich</a>
   generalFeatures:
     cloudStorageOptimized: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     cloudProviderAgnostic: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     unlimitedDevices: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     integratedSharing: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     syncConflictDetection: |
       <div class="has-tooltip">
-        <i class="relative fas fa-minus-circle text-xl lg:text-2xl text-gray-600">
-          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        <i class="relative fa-solid fa-minus-circle text-xl lg:text-2xl text-gray-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fa-solid fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
         <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Nicht anwendbar ohne Dateinamen-Verschlüsselung, könnte aber mit optionaler Dateinamen-Verschlüsselung problematisch sein.</div>
       </div>
     crossPlatformSupport: |
       <div class="has-tooltip">
-        <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
-          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        <i class="relative fa-solid fa-times-circle text-xl lg:text-2xl text-red-600">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fa-solid fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
         <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Kein Linux.</div>
       </div>
   securityRelevantFeatures:
     fileContentEncryption: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     fileNameEncryption: |
       <div class="has-tooltip">
-        <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
-          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+        <i class="relative fa-solid fa-check-circle text-xl lg:text-2xl text-primary">
+          <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fa-solid fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
         </i>
         <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Optional.</div>
       </div>
     fileAttributeEncryption: |
-      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+      <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     foss: |
-      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+      <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     directoryObfuscation: |
-      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+      <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     integrityProtection: |
-      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+      <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     quantumResistant: |
       <div class="flex items-center justify-center divide-x divide-gray-400">
         <div class="px-4">
           <div class="has-tooltip">
-            <i class="relative fas fa-check-circle text-xl lg:text-2xl text-primary">
-              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            <i class="relative fa-solid fa-check-circle text-xl lg:text-2xl text-primary">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fa-solid fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
             <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Verwendet symmetrische Verschlüsselung AES.</div>
           </div>
         </div>
         <div class="px-4">
           <div class="has-tooltip">
-            <i class="relative fas fa-times-circle text-xl lg:text-2xl text-red-600">
-              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fas fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
+            <i class="relative fa-solid fa-times-circle text-xl lg:text-2xl text-red-600">
+              <i class="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 fa-solid fa-info-circle text-xs text-gray-600 bg-white border border-white rounded-full"></i>
             </i>
             <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-3xs p-2">Verwendet asymmetrische Verschlüsselung RSA.</div>
           </div>
         </div>
       </div>
     auditedCryptography: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     memoryHardKDF: |
-      <i class="fas fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+      <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     shareKeys: |
-      <i class="fas fa-check-circle text-xl lg:text-2xl text-primary"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
 ---
 
 # Die beste Alternative, um deine sensiblen Daten in der Cloud zu verschlüsseln: Boxcryptor vs. Cryptomator
 
 <p class="lead">Boxcryptor und die Alternative Cryptomator dienen demselben Zweck: deine Privatsphäre zu sichern und gleichzeitig Daten bequem in der Cloud zu speichern. Worin genau unterscheiden sie sich? Und was passt besser zu deinen Bedürfnissen? Hier erfährst du es.</p>
 
-<img class="inline-block" src="/img/boxcryptor-alternative/cryptobot-analysis.png" srcset="/img/boxcryptor-alternative/cryptobot-analysis.png 1x, /img/boxcryptor-alternative/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
+<img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
 
 Du willst deine sensiblen Daten in der Cloud sicher wissen. Doch bisher konnte dich noch keine Verschlüsselungslösung überzeugen?
 
@@ -179,59 +179,59 @@ Kommen wir nun zum Vergleich der sichtbaren Funktionen. Die folgende Tabelle zei
   <tbody class="divide-y divide-gray-200">
     <tr>
       <td class="font-p p-4">Unbeschränkte Anzahl Geräte</td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
       <td class="font-p p-4">
         <div class="has-tooltip">
-          <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
+          <i class="fa-solid fa-check-circle text-2xl text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig</div>
         </div>
       </td>
     </tr>
     <tr>
       <td class="font-p p-4">Kein Account notwendig</td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
       <td class="font-p p-4">
         <div class="has-tooltip">
-          <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+          <i class="fa-solid fa-times-circle text-2xl text-red-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Opt-in für lokalen Account; Standardeinstellung speichert Schlüssel auf Boxcryptor-Server</div>
         </div>
       </td>
     </tr>
     <tr>
       <td class="font-p p-4">Direktes Teilen von Dateien („Integrated Sharing“)</td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
     </tr>
     <tr>
       <td class="font-p p-4">
         <span>Passwort wiederherstellen ohne E-Mail-Adresse („Offline Key Recovery“)</span>
         <div class="has-tooltip">
-          <i class="fas fa-info-circle fa-fw text-gray-600"></i>
+          <i class="fa-solid fa-info-circle text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Deine Daten liegen nicht in Mails bei einem E-Mail-Account-Anbieter, was die Sicherheit weiter erhöht.</div>
         </div>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr>
       <td class="font-p p-4">Erkennung von Synchronisationskonflikten bei Bearbeitung durch mehrere Personen</td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr>
       <td class="font-p p-4">Unterstützung aller gängigen Betriebssysteme</td>
       <td class="font-p p-4">
         <div class="has-tooltip">
-          <i class="fas fa-check-circle fa-fw text-2xl text-primary"></i>
+          <i class="fa-solid fa-check-circle text-2xl text-primary"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">Windows, macOS, Linux, Android, iOS</div>
         </div>
       </td>
       <td class="font-p p-4">
         <div class="has-tooltip">
-          <i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i>
+          <i class="fa-solid fa-times-circle text-2xl text-red-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">
             <p class="mb-2">Windows, macOS, Android, iOS</p>
-            <p><i class="fas fa-times fa-fw text-red-600"></i> kein Linux</p>
+            <p><i class="fa-solid fa-times text-red-600"></i> kein Linux</p>
           </div>
         </div>
       </td>
@@ -263,12 +263,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileContentEncryptionOpen = !isFileContentEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileContentEncryptionOpen, 'fa-chevron-circle-down': isFileContentEncryptionOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Dateiinhalte-Verschlüsselung</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isFileContentEncryptionOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -281,14 +281,14 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileNameEncryptionOpen = !isFileNameEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileNameEncryptionOpen, 'fa-chevron-circle-down': isFileNameEncryptionOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Dateinamen-Verschlüsselung</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
       <td class="font-p p-4">
         <div class="has-tooltip">
-          <i class="fas fa-check-circle fa-fw text-2xl text-gray-600"></i>
+          <i class="fa-solid fa-check-circle text-2xl text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">in Boxcryptor kostenpflichtig und optional</div>
         </div>
       </td>
@@ -304,17 +304,17 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFileAttributeEncryptionOpen = !isFileAttributeEncryptionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFileAttributeEncryptionOpen, 'fa-chevron-circle-down': isFileAttributeEncryptionOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Dateiattribute-Verschlüsselung</span>
         </a>
       </td>
       <td class="font-p p-4">
         <div class="has-tooltip">
-          <i class="fas fa-times-circle fa-fw text-2xl text-gray-600"></i>
+          <i class="fa-solid fa-times-circle text-2xl text-gray-600"></i>
           <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-max max-w-xs p-2">geplant</div>
         </div>
       </td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isFileAttributeEncryptionOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -327,12 +327,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isFOSSOpen = !isFOSSOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isFOSSOpen, 'fa-chevron-circle-down': isFOSSOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Freie & quelloffene Software (FOSS)</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isFOSSOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -345,12 +345,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isDirectoryObfuscationOpen = !isDirectoryObfuscationOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isDirectoryObfuscationOpen, 'fa-chevron-circle-down': isDirectoryObfuscationOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Verzeichnis-Verschleierung</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isDirectoryObfuscationOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -363,12 +363,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isIntegrityProtectionOpen = !isIntegrityProtectionOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isIntegrityProtectionOpen, 'fa-chevron-circle-down': isIntegrityProtectionOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Integritätsschutz</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isIntegrityProtectionOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -381,12 +381,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isQuantumResistantOpen = !isQuantumResistantOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isQuantumResistantOpen, 'fa-chevron-circle-down': isQuantumResistantOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Quantenresistente Kryptographie</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isQuantumResistantOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -399,12 +399,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isAuditedCryptographyOpen = !isAuditedCryptographyOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isAuditedCryptographyOpen, 'fa-chevron-circle-down': isAuditedCryptographyOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Geprüfte Kryptographie</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isAuditedCryptographyOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -417,12 +417,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isMemoryHardKDFOpen = !isMemoryHardKDFOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isMemoryHardKDFOpen, 'fa-chevron-circle-down': isMemoryHardKDFOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Speicherintensive KDF</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-times-circle fa-fw text-2xl text-red-600"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-times-circle text-2xl text-red-600"></i></td>
     </tr>
     <tr x-show="isMemoryHardKDFOpen" x-cloak>
       <td class="font-p p-4" colspan="3">
@@ -436,12 +436,12 @@ Lass uns jetzt einen Blick auf diese Merkmale werfen. Dafür vergleichen wir die
     <tr>
       <td class="font-p p-4">
         <a class="flex items-center" href="#" @click.prevent="isShareKeysOpen = !isShareKeysOpen">
-          <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="shrink-0 fas fa-fw text-gray-600 mr-2"></i>
+          <i :class="{ 'fa-chevron-circle-right': !isShareKeysOpen, 'fa-chevron-circle-down': isShareKeysOpen }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
           <span>Gemeinsame Nutzung ohne Weitergabe von Passwörtern</span>
         </a>
       </td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
-      <td class="font-p p-4"><i class="fas fa-check-circle fa-fw text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
+      <td class="font-p p-4"><i class="fa-solid fa-check-circle text-2xl text-primary"></i></td>
     </tr>
     <tr x-show="isShareKeysOpen" x-cloak>
       <td class="font-p p-4" colspan="3">

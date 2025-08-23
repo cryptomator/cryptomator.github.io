@@ -1,0 +1,25 @@
+{{/*
+  Get canonical URL with pagination support
+  Usage: {{ partial "canonical-url.html" . }}
+  Returns: The canonical URL for the current page, including pagination path if applicable
+*/}}
+
+{{/* Get current page number if paginated */}}
+{{ $pageNumber := 1 }}
+{{ $isPaginated := false }}
+{{ if and .IsNode .Paginator }}
+  {{ $pageNumber = .Paginator.PageNumber }}
+  {{ $isPaginated = true }}
+{{ end }}
+
+{{/* Build canonical URL */}}
+{{ $canonicalURL := .Permalink }}
+{{ if and $isPaginated (gt $pageNumber 1) }}
+  {{ $baseURL := .Permalink }}
+  {{ if not (strings.HasSuffix $baseURL "/") }}
+    {{ $baseURL = printf "%s/" $baseURL }}
+  {{ end }}
+  {{ $canonicalURL = printf "%spage/%d/" $baseURL $pageNumber }}
+{{ end }}
+
+{{ return $canonicalURL }}

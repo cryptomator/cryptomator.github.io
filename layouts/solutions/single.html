@@ -1,0 +1,166 @@
+{{ define "main" }}
+  <section class="flex items-center min-h-[66vh]">
+    <header class="container text-center py-12 md:py-16 lg:py-20">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
+          <div class="flex items-center">
+            <img src="/img/logo.svg" class="h-8 aspect-1110/942" alt="Logo"/>
+            <span class="font-headline font-bold text-primary ml-2 pb-px">CRYPTOMATOR HUB</span>
+          </div>
+          <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">{{ .Title }}</span>
+        </div>
+        <h1 class="font-h1 mb-6">{{ .Params.hero_title | default .Title }}</h1>
+        <p class="lead mb-8 max-w-4xl mx-auto">{{ .Params.hero_description | default .Description | safeHTML }}</p>
+        <div class="flex flex-col md:flex-row gap-6 mb-6 justify-center">
+          <div class="flex flex-col gap-2">
+            <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="solutions-get-started">{{ i18n "solutions_hero_get_started" . }}</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="solutions-book-demo">{{ i18n "solutions_hero_book_demo" . }}</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <section class="bg-gray-50 py-16">
+    <div class="container">
+      <header class="text-center mb-12">
+        <h2 class="font-h2 mb-4">{{ .Params.use_cases_title | default "Use Cases" }}</h2>
+        <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.use_cases_subtitle | default "See how organizations like yours benefit from our solution" | safeHTML }}</p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {{ range .Params.use_cases }}
+        <div class="white-box">
+          <div class="px-6 py-4 border-b border-primary">
+            <h3 class="font-h3">
+              <i class="{{ .icon | default "fa-solid fa-building" }} text-primary mr-2"></i>
+              {{ .title }}
+            </h3>
+          </div>
+          <div class="p-6">
+            <p class="font-p mb-4">{{ .description | safeHTML }}</p>
+            <ul class="space-y-2">
+              {{ range .features }}
+              <li class="flex items-start">
+                <i class="fa-solid fa-check text-primary mt-1 mr-2 flex-shrink-0"></i>
+                <span class="font-p text-sm">{{ . }}</span>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-16">
+    {{ if .Params.key_features }}
+    <header class="text-center mb-12">
+      <h2 class="font-h2 mb-4">{{ .Params.key_features_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.key_features_subtitle | safeHTML }}</p>
+    </header>
+
+    {{ range $index, $feature := .Params.key_features }}
+    <div class="flex flex-wrap mb-24{{ if eq (mod $index 2) 1 }} md:flex-row-reverse{{ end }}">
+      <figure class="w-full mb-12 md:w-1/2 md:mb-0 {{ if eq (mod $index 2) 0 }}md:pr-6{{ else }}md:pl-6{{ end }}">
+        <img data-src="{{ .image | default "/img/hub/screenshot-1.png" }}" class="lazyload w-full h-auto" alt="{{ .image_alt | default .title }}"/>
+      </figure>
+      <div class="w-full md:w-1/2 {{ if eq (mod $index 2) 0 }}md:pl-6{{ else }}md:pr-6{{ end }}">
+        <h3 class="font-h2 mb-6">{{ .title }}</h3>
+        <p class="lead mb-6">{{ .description | safeHTML }}</p>
+        {{ if .details }}
+        <ul class="space-y-3">
+          {{ range .details }}
+          <li class="flex items-start">
+            <i class="fa-solid fa-check text-primary mt-1 mr-3 flex-shrink-0"></i>
+            <span class="font-p">{{ . }}</span>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ else if .Params.features }}
+    <header class="text-center mb-12">
+      <h2 class="font-h2 mb-4">{{ .Params.features_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.features_subtitle | safeHTML }}</p>
+    </header>
+
+    {{ range $index, $feature := .Params.features }}
+    <div class="flex flex-wrap mb-24{{ if eq (mod $index 2) 1 }} md:flex-row-reverse{{ end }}">
+      <figure class="w-full mb-12 md:w-1/2 md:mb-0 {{ if eq (mod $index 2) 0 }}md:pr-6{{ else }}md:pl-6{{ end }}">
+        <img data-src="{{ .image | default "/img/hub/screenshot-1.png" }}" class="lazyload w-full h-auto rounded-lg shadow-lg" alt="{{ .image_alt | default .title }}"/>
+      </figure>
+      <div class="w-full md:w-1/2 {{ if eq (mod $index 2) 0 }}md:pl-6{{ else }}md:pr-6{{ end }}">
+        <h3 class="font-h2 mb-6">{{ .title }}</h3>
+        <p class="lead mb-4">{{ .description | safeHTML }}</p>
+        <ul class="space-y-3">
+          {{ range .details }}
+          <li class="flex items-start">
+            <i class="fa-solid fa-arrow-right text-primary mt-1 mr-3 flex-shrink-0"></i>
+            <span class="font-p">{{ . }}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </section>
+
+  {{ if .Params.case_studies_show }}
+  <section class="container py-16">
+    <header class="text-center mb-12">
+      <h2 class="font-h2 mb-4">{{ .Params.case_studies_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.case_studies_subtitle | safeHTML }}</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {{ range .Params.case_studies }}
+      <article class="white-box overflow-hidden relative {{ if not .comingsoon }}group cursor-pointer{{ end }}">
+        <figure class="aspect-video relative">
+          {{ if .comingsoon }}
+            <div class="absolute top-4 left-4 z-20">
+              <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase border border-primary text-primary bg-transparent">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <span>{{ i18n "coming_soon" . }}</span>
+              </div>
+            </div>
+            <div class="w-full h-full bg-primary-l2 opacity-50 flex items-center justify-center">
+              <i class="fa-solid fa-image text-primary text-4xl opacity-60"></i>
+            </div>
+          {{ else }}
+            <div class="w-full h-full bg-primary-l2 flex items-center justify-center">
+              <i class="fa-solid fa-image text-primary text-4xl opacity-80"></i>
+            </div>
+          {{ end }}
+        </figure>
+        <div class="p-6 {{ if .comingsoon }}opacity-70{{ end }}">
+          <h3 class="font-h2 mb-4 {{ if not .comingsoon }}group-hover:text-primary transition-colors duration-200{{ end }}">
+            {{ if .comingsoon }}
+              <span class="text-gray-600">{{ .title }}</span>
+            {{ else }}
+              <span class="text-link">{{ .title }}</span>
+            {{ end }}
+          </h3>
+          <p class="font-p leading-relaxed {{ if .comingsoon }}text-gray-500{{ else }}text-gray-700{{ end }}">{{ .description | safeHTML }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+
+  <section class="container text-center py-12">
+    <h2 id="contact" class="font-h2 mb-4">{{ i18n "solutions_single_contact_title" . }}</h2>
+    <p class="font-p text-gray-700 mb-6 max-w-3xl mx-auto">{{ i18n "solutions_single_contact_description" . | safeHTML }}</p>
+    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8" data-umami-event="solutions-implementation-contact">
+      <i class="fa-solid fa-envelope"></i> {{ i18n "solutions_single_contact_button" . }}
+    </a>
+  </section>
+{{ end }}
