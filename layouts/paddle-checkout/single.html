@@ -21,7 +21,7 @@
   </div>
 {{ end }}
 {{ define "script" }}
-  {{ if hugo.IsServer }}
+  {{ if hugo.IsDevelopment }}
     {{ $paddleCheckoutJs := resources.Get "js/paddlecheckout.js" }}
     <script type="text/javascript" src="{{ $paddleCheckoutJs.RelPermalink }}" defer></script>
   {{ else }}
