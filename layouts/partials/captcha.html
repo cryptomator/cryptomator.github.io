@@ -1,5 +1,6 @@
+{{ $defaultChallengeUrl :=  printf "%s/altcha/challenge.php" .Site.Params.legacyApiUrl }}
 <altcha-widget
-  challengeurl="{{ .Site.Params.legacyApiUrl }}/altcha/challenge.php"
+  challengeurl="{{ .challengeUrl | default $defaultChallengeUrl }}"
   hidelogo
   hidefooter
   floating="auto"
