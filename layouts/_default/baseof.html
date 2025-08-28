@@ -70,32 +70,21 @@
     {{ end }}
     </div>
     {{ partial "footer.html" . }}
-    {{ if hugo.IsServer }}
-      <script
-        src="https://umami.skymatic.de/script.js"
-        data-website-id="57a36f3a-bd97-4d8a-9563-0e8d39ddb20c"
-        integrity="sha384-gW+82edTiLqRoEvPbT3xKDCYZ5M02YXbW4tA3gbojZWiiMYNJZb4YneJrS4ri3Rn"
-        crossorigin="anonymous"
-        defer
-        {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
-      </script>
-    {{ else }}
-      <script
-        src="https://umami.skymatic.de/script.js"
-        data-website-id="8d451e39-ffb2-4697-82c9-9f69eff497f1"
-        integrity="sha384-gW+82edTiLqRoEvPbT3xKDCYZ5M02YXbW4tA3gbojZWiiMYNJZb4YneJrS4ri3Rn"
-        crossorigin="anonymous"
-        defer
-        {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
-      </script>
-    {{ end }}
+    <script
+      src="https://umami.skymatic.de/script.js"
+      data-website-id="{{ .Site.Params.umamiWebsiteId }}"
+      integrity="sha384-gW+82edTiLqRoEvPbT3xKDCYZ5M02YXbW4tA3gbojZWiiMYNJZb4YneJrS4ri3Rn"
+      crossorigin="anonymous"
+      defer
+      {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
+    </script>
     {{ if hugo.IsDevelopment }}
-      {{ $constJs := resources.Get "js/const.dev.js" | resources.ExecuteAsTemplate "js/const.js" . }}
+      {{ $constJs := resources.Get "js/const.template.js" | resources.ExecuteAsTemplate "js/const.js" . }}
       <script type="text/javascript" src="{{ $constJs.RelPermalink }}" defer></script>
       {{ $baseJs := resources.Get "js/base.js" }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" defer></script>
     {{ else }}
-      {{ $constJs := resources.Get "js/const.prod.js" | resources.ExecuteAsTemplate "js/const.js" . | minify | fingerprint }}
+      {{ $constJs := resources.Get "js/const.template.js" | resources.ExecuteAsTemplate "js/const.js" . | minify | fingerprint }}
       <script type="text/javascript" src="{{ $constJs.RelPermalink }}" integrity="{{ $constJs.Data.Integrity }}" defer></script>
       {{ $baseJs := resources.Get "js/base.js" | minify | fingerprint }}
       <script type="text/javascript" src="{{ $baseJs.RelPermalink }}" integrity="{{ $baseJs.Data.Integrity }}" defer></script>
