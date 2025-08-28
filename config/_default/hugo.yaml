@@ -1,0 +1,95 @@
+baseURL: https://cryptomator.org/
+title: Cryptomator
+defaultContentLanguage: en
+
+enableemoji: true
+theme:
+  - hugo-admonitions
+
+languages:
+  en:
+    weight: 1
+    languageName: English
+    languageCode: en-US
+  de:
+    weight: 2
+    languageName: Deutsch
+    languageCode: de-DE
+
+build:
+  cachebusters:
+    - source: layouts/.*
+      target: css
+
+outputs:
+  home:
+    - HTML
+    - RSS
+  section:
+    - HTML
+outputFormats:
+  RSS:
+    mediatype: application/rss
+    baseName: feed
+
+module:
+  mounts:
+    - source: static
+      target: static
+    - source: assets
+      target: assets
+    - source: node_modules/@awesome.me/kit-628503cc21/icons/webfonts
+      target: static/webfonts
+    - source: node_modules/jquery/dist
+      target: assets/js/jquery
+    - source: node_modules/alpinejs/dist
+      target: assets/js/alpinejs
+    - source: node_modules/lazysizes
+      target: assets/js/lazysizes
+    - source: node_modules/js-yaml/dist
+      target: assets/js/js-yaml
+    - source: node_modules/altcha/dist_external
+      target: assets/js/altcha
+    - source: node_modules/mathjax/es5
+      target: assets/js/mathjax
+    - source: node_modules/mathjax/es5/output/chtml/fonts/woff-v2
+      target: static/webfonts/mathjax
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+
+permalinks:
+  blog: /blog/:year/:month/:day/:slug/
+
+server:
+  headers:
+    - for: /**
+      values:
+        Content-Security-Policy: >
+          default-src 'none';
+          script-src 'self' 'unsafe-eval' https://umami.skymatic.de/ https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/;
+          style-src 'self' 'unsafe-inline' https://*.paddle.com/;
+          img-src 'self' data: https://static.cryptomator.org/ https://*.paddle.com/ https://paddle.s3.amazonaws.com/ https://avatars.githubusercontent.com/;
+          connect-src 'self' https://api.cryptomator.org/ https://store.cryptomator.org/ https://umami.skymatic.de/ https://*.paddle.com/ http://localhost/ http://localhost:8787/;
+          font-src 'self';
+          media-src https://static.cryptomator.org/;
+          frame-src https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/;
+          base-uri 'self';
+          form-action 'self' https://www.paypal.com/ https://www.coinpayments.net/;
+          frame-ancestors 'none';
+        Strict-Transport-Security: max-age=31536000; includeSubDomains
+        X-Content-Type-Options: nosniff
