@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_HUB_CONTACT_URL = STORE_API_URL + '/hub/request-contact';
+const REQUEST_HUB_CONTACT_URL = LEGACY_STORE_URL + '/hub/request-contact';
 
 class HubContact {
 
