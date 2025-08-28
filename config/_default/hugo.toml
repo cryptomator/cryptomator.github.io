@@ -1,0 +1,94 @@
+baseURL = "https://cryptomator.org/"
+title = "Cryptomator"
+defaultContentLanguage = "en"
+enableemoji = true
+theme = ["hugo-admonitions"]
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "English"
+    languageCode = "en-US"
+  [languages.de]
+    weight = 2
+    languageName = "Deutsch"
+    languageCode = "de-DE"
+
+[build]
+  [[build.cachebusters]]
+    source = 'layouts/.*'
+    target = 'css'
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
+
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "node_modules/@awesome.me/kit-628503cc21/icons/webfonts"
+    target = "static/webfonts"
+
+  [[module.mounts]]
+    source = "node_modules/jquery/dist"
+    target = "assets/js/jquery"
+
+  [[module.mounts]]
+    source = "node_modules/alpinejs/dist"
+    target = "assets/js/alpinejs"
+
+  [[module.mounts]]
+    source = "node_modules/lazysizes"
+    target = "assets/js/lazysizes"
+
+  [[module.mounts]]
+    source = "node_modules/js-yaml/dist"
+    target = "assets/js/js-yaml"
+
+  [[module.mounts]]
+    source = "node_modules/altcha/dist_external"
+    target = "assets/js/altcha"
+
+  [[module.mounts]]
+    source = "node_modules/mathjax/es5"
+    target = "assets/js/mathjax"
+
+  [[module.mounts]]
+    source = "node_modules/mathjax/es5/output/chtml/fonts/woff-v2"
+    target = "static/webfonts/mathjax"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+      [markup.goldmark.renderer]
+      unsafe = true
+      [markup.goldmark.parser.attribute]
+      block = true
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:slug/"
+
+[server]
+  [[server.headers]]
+      for = '/**'
+      [server.headers.values]
+        Content-Security-Policy = "default-src 'none'; script-src 'self' 'unsafe-eval' https://umami.skymatic.de/ https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/; style-src 'self' 'unsafe-inline' https://*.paddle.com/; img-src 'self' data: https://static.cryptomator.org/ https://*.paddle.com/ https://paddle.s3.amazonaws.com/ https://avatars.githubusercontent.com/; connect-src 'self' https://api.cryptomator.org/ https://store.cryptomator.org/ https://umami.skymatic.de/ https://*.paddle.com/ http://localhost/ http://localhost:8787/; font-src 'self'; media-src https://static.cryptomator.org/; frame-src https://community.cryptomator.org/ https://js.stripe.com/ https://*.paddle.com/; base-uri 'self'; form-action 'self' https://www.paypal.com/ https://www.coinpayments.net/; frame-ancestors 'none';"
+        Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options = "nosniff"

@@ -1,0 +1,19 @@
+baseApiUrl = "http://localhost"
+storeApiUrl = "http://localhost:8787/api"
+
+umamiWebsiteId = "57a36f3a-bd97-4d8a-9563-0e8d39ddb20c"
+
+paddleEnableSandbox = true
+paddleToken = "test_693d7082cf217f0c0d3cc21f888"
+paddleDesktopPriceIds = ["pri_01jb24dee06jaxrsz6xhfakkvy", "pri_01jb24dvt2cj55r7p8agebef65", "pri_01jb24e3z1zkzsq5yrhm5252bd"]
+paddleAndroidPriceId = "pri_01jb2432chrz583xtxb029g40m"
+paddleVendorId = 1385
+paddleHubSelfHostedSubscriptionPlanId = 23141
+paddleHubManagedSubscriptionPlanId = 42235
+paddlePricesUrl = "https://sandbox-checkout.paddle.com/api/2.0/prices"
+
+stripePk = "pk_test_JhF3MoFQGw2Is0DB3BSv345P"
+
+[stripePlans]
+EUR = "plan_GgVY2JfD49bc02"
+USD = "plan_GgVZwj545E0uH3"
