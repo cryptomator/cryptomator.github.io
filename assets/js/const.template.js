@@ -1,6 +1,6 @@
 "use strict";
 
-const API_BASE_URL = '{{ .Site.Params.apiBaseURL }}';
+const API_BASE_URL = '{{ .Site.Params.apiBaseUrl }}';
 const LEGACY_API_URL = '{{ .Site.Params.legacyApiUrl }}';
 const PADDLE_ENABLE_SANDBOX = {{ .Site.Params.paddleEnableSandbox }};
 const PADDLE_TOKEN = '{{ .Site.Params.paddleToken }}';

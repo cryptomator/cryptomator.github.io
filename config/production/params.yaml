@@ -1,5 +1,5 @@
 # API
-apiBaseURL: https://api.cryptomator.org
+apiBaseUrl: https://api.cryptomator.org
 legacyApiUrl: http://api.cryptomator.org
 legacyStoreUrl: https://store.cryptomator.org/api
 
