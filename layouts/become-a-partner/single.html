@@ -93,7 +93,8 @@
                   <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                   {{ i18n "partner_submit" }}
                 </button>
-                {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+                {{ $captchaUrl := printf "%s/connect/contact/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $captchaUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
               </div>
             </div>
           </div>

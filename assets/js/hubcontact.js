@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_HUB_CONTACT_URL = LEGACY_STORE_URL + '/hub/request-contact';
+const REQUEST_HUB_CONTACT_URL = API_BASE_URL + '/connect/contact/request-contact';
 
 class HubContact {
 
@@ -24,7 +24,8 @@ class HubContact {
     $.ajax({
       url: REQUEST_HUB_CONTACT_URL,
       type: 'POST',
-      data: this._submitData
+      data: JSON.stringify(this._submitData),
+      contentType: "application/json; charset=utf-8",
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
