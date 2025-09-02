@@ -30,7 +30,7 @@ function determineGlobalData(locale, globalData) {
 }
 
 function determineGitHubStargazersCount(locale, globalData) {
-  $.getJSON('https://api.cryptomator.org/desktop/repo.json', data => {
+  $.getJSON(`${API_BASE_URL}/connect/social/github`, data => {
     globalData.githubStargazers = formatNumber(data.stargazers_count, locale);
   }).fail(() => {
     console.error('Error fetching repository data.');
@@ -38,7 +38,7 @@ function determineGitHubStargazersCount(locale, globalData) {
 }
 
 function determineMastodonFollowersCount(locale, globalData) {
-  $.getJSON('https://api.cryptomator.org/social/mastodon.json', data => {
+  $.getJSON(`${API_BASE_URL}/connect/social/mastodon`, data => {
     globalData.mastodonFollowers = formatNumber(data.followers_count, locale);
   }).fail(() => {
     console.error('Error fetching Mastodon data.');
