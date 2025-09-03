@@ -1,6 +1,6 @@
 "use strict";
 
-const STRIPE_PHP_URL = LEGACY_API_URL + '/stripe/prepare_payment.php';
+const STRIPE_PREPARE_PAYMENT_URL = API_BASE_URL + '/billing/stripe/payments/prepare';
 
 class OneTimePayment {
 
@@ -85,7 +85,7 @@ class OneTimePayment {
     this._status.success = false;
 
     let preparedPayment = $.ajax({
-      url: STRIPE_PHP_URL,
+      url: STRIPE_PREPARE_PAYMENT_URL,
       type: 'POST',
       data: {
         currency: currency,
