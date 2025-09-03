@@ -20,7 +20,7 @@ paddleHubManagedSubscriptionPlanId: 42235
 paddlePricesUrl: https://sandbox-checkout.paddle.com/api/2.0/prices
 
 # STRIPE
-stripePk: pk_test_JhF3MoFQGw2Is0DB3BSv345P
+stripePk: pk_test_51RCM24IBZmkR4F9UiLBiSmsAnJvWqmHcDLxXR8ABKK1MNsZk3zCk2VJW7ZfaBlD81zpQxCX243sS3LEp9dABwiG800kJnGykDF
 stripePlans:
   EUR: plan_GgVY2JfD49bc02
   USD: plan_GgVZwj545E0uH3
