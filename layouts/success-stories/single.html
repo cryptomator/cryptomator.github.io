@@ -1,0 +1,150 @@
+{{ define "main" }}
+<section class="container py-20">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Left Column -->
+    <div>
+      <div class="mb-6">
+        <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium uppercase tracking-wide">SUCCESS STORY</span>
+      </div>
+      <h1 class="font-h1 mb-6">{{ .Params.company }}</h1>
+      <p class="text-xl text-gray-700 mb-20 leading-relaxed">{{ .Params.hero_description | safeHTML }}</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {{ if .Params.company_size }}
+        <div class="text-center md:text-left">
+          <i class="fa-solid fa-users text-primary text-2xl mb-3 block mx-auto md:mx-0"></i>
+          <div class="text-sm text-gray-500 mb-1">{{ i18n "success_story_company_size" . }}</div>
+          <div class="font-medium">{{ .Params.company_size }}</div>
+        </div>
+        {{ end }}
+        {{ if .Params.location }}
+        <div class="text-center md:text-left">
+          <i class="fa-solid fa-map-marker-alt text-primary text-2xl mb-3 block mx-auto md:mx-0"></i>
+          <div class="text-sm text-gray-500 mb-1">{{ i18n "success_story_headquarters" . }}</div>
+          <div class="font-medium">{{ .Params.location }}</div>
+        </div>
+        {{ end }}
+        {{ if .Params.industry }}
+        <div class="text-center md:text-left">
+          <i class="fa-solid fa-industry text-primary text-2xl mb-3 block mx-auto md:mx-0"></i>
+          <div class="text-sm text-gray-500 mb-1">{{ i18n "success_story_industry" . }}</div>
+          <div class="font-medium">{{ .Params.industry }}</div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    
+    <div class="flex items-center">
+      {{ if .Params.hero_image }}
+      <figure class="rounded-lg overflow-hidden shadow-lg max-h-96 w-full relative">
+        <img src="{{ .Params.hero_image }}" class="w-full h-full object-cover" alt="{{ .Params.hero_image_alt | default .Params.company }}"/>
+        {{ if .Params.hero_image_company_logo }}
+        <div class="absolute bottom-4 right-4 bg-white rounded-lg shadow-md w-24 h-16 flex items-center justify-center p-2">
+          <img src="{{ .Params.hero_image_company_logo }}" alt="{{ .Params.company }} Logo" class="max-w-full max-h-full object-contain"/>
+        </div>
+        {{ end }}
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if .Params.quote }}
+<section class="bg-gray-50 py-10">
+  <div class="container">
+    <div class="max-w-5xl mx-auto text-center">
+      <i class="fa-solid fa-quote-left text-primary text-2xl mb-4"></i>
+      <blockquote class="text-lg md:text-xl font-medium text-gray-700 leading-relaxed mb-4" style="text-wrap:balance;">
+        {{ .Params.quote }}
+      </blockquote>
+      {{ if .Params.quote_author }}
+      <footer>
+        <cite class="text-gray-600 text-sm">
+          {{ .Params.quote_author }}{{ if .Params.quote_title }}, {{ .Params.quote_title }}{{ end }}
+          {{ if .Params.quote_company }}, {{ .Params.quote_company }}{{ end }}
+        </cite>
+      </footer>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="py-20">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+      <!-- Left Sidebar - Table of Contents (Desktop Only) -->
+      <div class="hidden lg:block lg:col-span-1">
+        <div class="lg:sticky lg:top-4 lg:h-screen lg:overflow-y-auto">
+          <div class="prose max-w-none">
+            <h2 class="font-h2 mb-6">{{ i18n "success_story_table_of_contents" . }}</h2>
+            <nav class="space-y-3 mb-8">
+              {{ range .Params.sections }}
+              <a href="#{{ .anchor | default (urlize .title) }}" class="block text-gray-600 hover:text-primary transition-colors duration-200 text-sm">
+                {{ .title }}
+              </a>
+              {{ end }}
+            </nav>
+            {{ if .Params.pdf_download }}
+            <div>
+              <a href="{{ .Params.pdf_download }}" class="btn btn-outline-primary text-center text-sm px-3 py-2" download>
+                <i class="fa-solid fa-download mr-1"></i>
+                {{ i18n "success_story_download_pdf" . }}
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:col-span-3">
+        <div class="prose max-w-none">
+          {{ range $index, $section := .Params.sections }}
+          <div id="{{ .anchor | default (urlize .title) }}" class="mb-16 scroll-mt-8">
+            <h2 class="font-h2 mb-6{{ if eq $index 0 }} mt-0{{ end }}">{{ .title }}</h2>
+            {{ if .content }}
+            <div class="text-gray-700 leading-relaxed">
+              {{ .content | markdownify }}
+            </div>
+            {{ end }}
+            {{ if .bullets }}
+            <ul class="list-disc pl-6 space-y-2 mt-6">
+              {{ range .bullets }}
+              <li class="text-gray-700">{{ . }}</li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          {{ if .Params.pdf_download }}
+          <div class="lg:hidden mt-8 text-center">
+            <a href="{{ .Params.pdf_download }}" class="btn btn-outline-primary text-center text-sm px-3 py-2" download>
+              <i class="fa-solid fa-download mr-1"></i>
+              {{ i18n "success_story_download_pdf" . }}
+            </a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-gray-50 py-16">
+  <div class="container text-center">
+    <h2 class="font-h2 mb-4">{{ i18n "success_story_cta_title" . }}</h2>
+    <p class="font-p text-gray-700 mb-8 max-w-3xl mx-auto">
+      {{ i18n "success_story_cta_description" . }}
+    </p>
+    <div class="flex flex-col md:flex-row gap-4 justify-center">
+      <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary px-8" data-umami-event="success-story-get-started">
+        {{ i18n "success_story_cta_get_started" . }}
+      </a>
+      <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-outline-primary px-8" data-umami-event="success-story-book-demo">
+        {{ i18n "success_story_cta_book_demo" . }}
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

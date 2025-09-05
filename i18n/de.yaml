@@ -1,5 +1,23 @@
 - id: site_meta_description
   translation: "Cryptomator ist ein Open-Source-Verschlüsselungstool für sicheren Cloud-Speicher. Schütze deine Privatsphäre kostenlos bei Dropbox, Google Drive, OneDrive und mehr."
+- id: success_story_company_size
+  translation: "Unternehmensgröße"
+- id: success_story_headquarters
+  translation: "Hauptsitz"
+- id: success_story_industry
+  translation: "Branche"
+- id: success_story_table_of_contents
+  translation: "Inhaltsverzeichnis"
+- id: success_story_download_pdf
+  translation: "PDF herunterladen"
+- id: success_story_cta_title
+  translation: "Interessiert an einer ähnlichen Lösung?"
+- id: success_story_cta_description
+  translation: "Entdecken Sie, wie Cryptomator Hub auch Ihr Unternehmen bei der sicheren Verwaltung sensibler Daten unterstützen kann."
+- id: success_story_cta_get_started
+  translation: "Jetzt starten"
+- id: success_story_cta_book_demo
+  translation: "Demo buchen"
 - id: nav_cta
   translation: "Jetzt loslegen"
 - id: nav_products

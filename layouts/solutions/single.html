@@ -112,15 +112,15 @@
     {{ end }}
   </section>
 
-  {{ if .Params.case_studies_show }}
+  {{ if .Params.success_stories_show }}
   <section class="container py-16">
     <header class="text-center mb-12">
-      <h2 class="font-h2 mb-4">{{ .Params.case_studies_title }}</h2>
-      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.case_studies_subtitle | safeHTML }}</p>
+      <h2 class="font-h2 mb-4">{{ .Params.success_stories_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.success_stories_subtitle | safeHTML }}</p>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {{ range .Params.case_studies }}
+      {{ range .Params.success_stories }}
       <article class="white-box overflow-hidden relative {{ if not .comingsoon }}group cursor-pointer{{ end }}">
         <figure class="aspect-video relative">
           {{ if .comingsoon }}
