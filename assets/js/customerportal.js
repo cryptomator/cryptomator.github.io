@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_CUSTOMER_PORTAL_URL = API_BASE_URL + '/billing/stripe/portal/request-link';
+const REQUEST_CUSTOMER_PORTAL_URL = API_BASE_URL + '/donations/stripe/portal/request-link';
 
 class CustomerPortal {
 

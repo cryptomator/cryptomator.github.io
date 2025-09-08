@@ -1,6 +1,6 @@
 "use strict";
 
-const STRIPE_PREPARE_PAYMENT_URL = API_BASE_URL + '/billing/stripe/payments/prepare';
+const STRIPE_PREPARE_PAYMENT_URL = API_BASE_URL + '/donations/stripe/payments/prepare';
 
 class OneTimePayment {
 
