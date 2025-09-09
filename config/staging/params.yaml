@@ -1,5 +1,5 @@
 # API
-baseApiUrl: http://api.staging.cryptomator.cloud
+baseApiUrl: https://api.staging.cryptomator.cloud
 storeApiUrl: https://store.staging.cryptomator.org/
 
 # UMAMI
