@@ -1,6 +1,8 @@
+baseURL: https://staging.cryptomator.org/
+
 # API
-baseApiUrl: http://localhost
-storeApiUrl: http://localhost:8787/api
+baseApiUrl: http://api.staging.cryptomator.cloud
+storeApiUrl: https://store.staging.cryptomator.org/
 
 # UMAMI
 umamiWebsiteId: 57a36f3a-bd97-4d8a-9563-0e8d39ddb20c
