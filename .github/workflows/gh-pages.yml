@@ -34,7 +34,7 @@ jobs:
     - name: Build production
       run: hugo --minify --destination public/prod
     - name: Build staging
-      run: hugo --environment=staging --minify --destination public/staging
+      run: hugo --baseURL=https://staging.cryptomator.org/ --environment=staging --minify --destination public/staging
     - name: Upload Prod Pages artifact
       uses: actions/upload-pages-artifact@v3
       with:

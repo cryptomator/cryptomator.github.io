@@ -1,5 +1,3 @@
-baseURL: https://cryptomator.org/
-
 # API
 baseApiUrl: http://api.cryptomator.org
 storeApiUrl: https://store.cryptomator.org/api

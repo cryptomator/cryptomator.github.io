@@ -1,5 +1,3 @@
-baseURL: https://staging.cryptomator.org/
-
 # API
 baseApiUrl: http://api.staging.cryptomator.cloud
 storeApiUrl: https://store.staging.cryptomator.org/
