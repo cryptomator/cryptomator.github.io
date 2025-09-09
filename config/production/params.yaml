@@ -1,5 +1,5 @@
 # API
-baseApiUrl: http://api.cryptomator.org
+baseApiUrl: https://api.cryptomator.org
 storeApiUrl: https://store.cryptomator.org/api
 
 # UMAMI
