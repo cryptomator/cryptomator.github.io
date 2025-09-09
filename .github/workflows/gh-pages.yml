@@ -35,11 +35,16 @@ jobs:
       run: hugo --minify --destination public/prod
     - name: Build staging
       run: hugo --environment=staging --minify --destination public/staging
-    - name: Upload artifacts
+    - name: Upload Prod Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        name: prod-site
+        path: ./public/prod
+    - name: Upload Staging artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: site
-        path: 'public'
+        name: staging-site
+        path: ./public/staging
 
   # DEPLOY PROD
   deploy-prod:
@@ -51,16 +56,11 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:
-      - name: Download build
-        uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: ./public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
         with:
-          path: ./public/prod
+          artifact_name: prod-site
     environment: # Deploy to the github-pages environment
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -75,14 +75,14 @@ jobs:
       - name: Download build
         uses: actions/download-artifact@v4
         with:
-          name: site
+          name: staging-site
           path: ./public
       - name: Deploy to Staging Repository
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.GITHUB_TOKEN }}
           external_repository: cryptomator/staging.cryptomator.org
-          publish_dir: ./public/staging
+          publish_dir: ./public
           publish_branch: main
           cname: staging.cryptomator.org
 
