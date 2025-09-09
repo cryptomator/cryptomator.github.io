@@ -35,6 +35,8 @@ jobs:
       run: hugo --minify --destination public/prod
     - name: Build staging
       run: hugo --baseURL=https://staging.cryptomator.org/ --environment=staging --minify --destination public/staging
+    - name: Add robots.txt for staging
+      run: 'echo -e "User-agent: *\nDisallow: /" > public/staging/robots.txt'
     - name: Upload Prod Pages artifact
       uses: actions/upload-pages-artifact@v3
       with:
