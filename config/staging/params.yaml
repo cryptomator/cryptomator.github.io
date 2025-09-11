@@ -1,5 +1,5 @@
 # API
-apiBaseUrl: https://api-staging.cryptomator.org
+apiBaseUrl: https://api.staging.cryptomator.org
 legacyApiUrl: http://localhost
 legacyStoreUrl: http://localhost:8787/api
 
