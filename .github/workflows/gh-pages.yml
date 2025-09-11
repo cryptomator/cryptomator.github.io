@@ -31,27 +31,17 @@ jobs:
         npm ci --ignore-scripts
       env:
         NODE_AUTH_TOKEN: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
-    - name: Build production
-      run: hugo --minify --destination public/prod
-    - name: Build staging
-      run: hugo --baseURL=https://staging.cryptomator.org/ --environment=staging --minify --destination public/staging
-    - name: Add robots.txt for staging
-      run: 'echo -e "User-agent: *\nDisallow: /" > public/staging/robots.txt'
-    - name: Upload Prod Pages artifact
+    - name: Build
+      run: hugo --minify
+    - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        name: prod-site
-        path: ./public/prod
-    - name: Upload Staging artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: staging-site
-        path: ./public/staging
+        path: 'public'
 
-  # DEPLOY PROD
-  deploy-prod:
+  # DEPLOY
+  deploy:
     if: github.ref == 'refs/heads/main'
-    name: Deploy Prod to GitHub Pages
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs: [build]
     permissions: # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
@@ -61,30 +51,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
-        with:
-          artifact_name: prod-site
     environment: # Deploy to the github-pages environment
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-  # DEPLOY STAGING
-  deploy-staging:
-    if: github.ref == 'refs/heads/develop'
-    name: Deploy Staging to GitHub Pages
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Download build
-        uses: actions/download-artifact@v4
-        with:
-          name: staging-site
-          path: ./public
-      - name: Deploy to Staging Repository
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.CRYPTOBOT_DEPLOY_STAGING_WEBSITE }}
-          external_repository: cryptomator/staging.cryptomator.org
-          publish_dir: ./public
-          publish_branch: main
-          cname: staging.cryptomator.org
-
