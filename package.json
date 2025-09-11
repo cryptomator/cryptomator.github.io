@@ -7,7 +7,7 @@
     "clean": "rm -r public",
     "build": "hugo",
     "dev": "hugo server --environment=development",
-    "serve": "hugo server --environment=staging --minify",
+    "serve": "hugo server --environment=production --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian Stenzel",
