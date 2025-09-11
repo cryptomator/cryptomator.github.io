@@ -83,7 +83,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.CRYPTOBOT_DEPLOY_STAGING_WEBSITE }}
-          external_repository: cryptomator/staging.cryptomator.github.io
+          external_repository: cryptomator/staging.cryptomator.org
           publish_dir: ./public
           publish_branch: main
           cname: staging.cryptomator.org
