@@ -14,21 +14,21 @@
         <div class="text-center md:text-left">
           <i class="fa-solid fa-users text-primary text-2xl mb-3 block mx-auto md:mx-0"></i>
           <div class="text-sm text-gray-500 mb-1">{{ i18n "success_story_company_size" . }}</div>
-          <div class="font-medium">{{ .Params.company_size }}</div>
+          <div class="font-medium">{{ .Params.company_size | safeHTML }}</div>
         </div>
         {{ end }}
         {{ if .Params.location }}
         <div class="text-center md:text-left">
           <i class="fa-solid fa-map-marker-alt text-primary text-2xl mb-3 block mx-auto md:mx-0"></i>
           <div class="text-sm text-gray-500 mb-1">{{ i18n "success_story_headquarters" . }}</div>
-          <div class="font-medium">{{ .Params.location }}</div>
+          <div class="font-medium">{{ .Params.location | safeHTML }}</div>
         </div>
         {{ end }}
         {{ if .Params.industry }}
         <div class="text-center md:text-left">
           <i class="fa-solid fa-industry text-primary text-2xl mb-3 block mx-auto md:mx-0"></i>
           <div class="text-sm text-gray-500 mb-1">{{ i18n "success_story_industry" . }}</div>
-          <div class="font-medium">{{ .Params.industry }}</div>
+          <div class="font-medium">{{ .Params.industry | safeHTML }}</div>
         </div>
         {{ end }}
       </div>
@@ -61,7 +61,6 @@
       <footer>
         <cite class="text-gray-600 text-sm">
           {{ .Params.quote_author }}{{ if .Params.quote_title }}, {{ .Params.quote_title }}{{ end }}
-          {{ if .Params.quote_company }}, {{ .Params.quote_company }}{{ end }}
         </cite>
       </footer>
       {{ end }}
@@ -75,10 +74,10 @@
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
       <!-- Left Sidebar - Table of Contents (Desktop Only) -->
       <div class="hidden lg:block lg:col-span-1">
-        <div class="lg:sticky lg:top-4 lg:h-screen lg:overflow-y-auto">
+        <div class="lg:sticky lg:top-40 lg:h-screen lg:overflow-y-auto">
           <div class="prose max-w-none">
             <h2 class="font-h2 mb-6">{{ i18n "success_story_table_of_contents" . }}</h2>
-            <nav class="space-y-3 mb-8">
+            <nav class="space-y-3 mb-6">
               {{ range .Params.sections }}
               <a href="#{{ .anchor | default (urlize .title) }}" class="block text-gray-600 hover:text-primary transition-colors duration-200 text-sm">
                 {{ .title }}
@@ -86,10 +85,10 @@
               {{ end }}
             </nav>
             {{ if .Params.pdf_download }}
+            <hr class="border-gray-300 mt-2 mb-6">
             <div>
-              <a href="{{ .Params.pdf_download }}" class="btn btn-outline-primary text-center text-sm px-3 py-2" download>
-                <i class="fa-solid fa-download mr-1"></i>
-                {{ i18n "success_story_download_pdf" . }}
+              <a href="{{ .Params.pdf_download }}" role="button" class="btn btn-outline-primary px-8 hover:text-white" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-download"></i> {{ i18n "success_story_download_pdf" . }}
               </a>
             </div>
             {{ end }}
@@ -119,9 +118,8 @@
           
           {{ if .Params.pdf_download }}
           <div class="lg:hidden mt-8 text-center">
-            <a href="{{ .Params.pdf_download }}" class="btn btn-outline-primary text-center text-sm px-3 py-2" download>
-              <i class="fa-solid fa-download mr-1"></i>
-              {{ i18n "success_story_download_pdf" . }}
+            <a href="{{ .Params.pdf_download }}" role="button" class="btn btn-outline-primary px-8 hover:text-white" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-download"></i> {{ i18n "success_story_download_pdf" . }}
             </a>
           </div>
           {{ end }}
