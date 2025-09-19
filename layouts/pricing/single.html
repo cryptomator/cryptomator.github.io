@@ -40,6 +40,7 @@
                   Linux
                 </div>
               </div>
+              <div class="lg:h-[26px]"></div>
               <p class="font-bold text-2xl md:text-3xl leading-relaxed">
                 {{ i18n "pricing_free" . }}
               </p>
@@ -84,9 +85,17 @@
                   Android
                 </div>
               </div>
+              <p class="flex items-center gap-2">
+                <span class="font-bold leading-relaxed text-gray-500 line-through decoration-red-600">
+                  {{ i18n "pricing_android_price" . }}
+                </span>
+                <span class="px-1 rounded-xs text-xs text-white bg-red-600">
+                  25%<sup>1</sup> {{ i18n "sale_off" . }}
+                </span>
+              </p>
               <p class="flex items-baseline gap-2">
                 <span class="font-bold text-2xl md:text-3xl leading-relaxed">
-                  {{ i18n "pricing_android_price" . }}
+                  {{ i18n "pricing_android_price_discounted" . }}
                 </span>
                 <span class="text-xs md:text-sm text-gray-700">
                   {{ i18n "pricing_vat_included" . }}
@@ -130,6 +139,7 @@
               </div>
               <div class="grid grid-cols-2 divide-x divide-gray-300 mb-4">
                 <div class="pr-4">
+                  <div class="lg:h-[26px]"></div>
                   <div class="font-bold text-2xl md:text-3xl leading-relaxed">
                     {{ i18n "pricing_free" . }}
                   </div>
@@ -138,9 +148,17 @@
                   </p>
                 </div>
                 <div class="pl-4">
+                  <p class="flex items-center gap-2">
+                    <span class="font-bold leading-relaxed text-gray-500 line-through decoration-red-600">
+                      {{ i18n "pricing_ios_price" . }}
+                    </span>
+                    <span class="px-1 rounded-xs text-xs text-white bg-red-600">
+                      25%<sup>1</sup> {{ i18n "sale_off" . }}
+                    </span>
+                  </p>
                   <p class="flex items-baseline gap-2">
                     <span class="font-bold text-2xl md:text-3xl leading-relaxed">
-                      {{ i18n "pricing_ios_price" . }}
+                      {{ i18n "pricing_ios_price_discounted" . }}
                     </span>
                     <span class="text-xs md:text-sm text-gray-700">
                       {{ i18n "pricing_vat_included" . }}
@@ -177,6 +195,11 @@
             </div>
           </div>
         </section>
+
+        <p class="text-sm text-gray-700">
+          <sup>1</sup>
+          <span>{{ i18n "pricing_discount_note" . }}</span>
+        </p>
 
         <section class="container py-12">
           <header class="text-center">
@@ -223,6 +246,7 @@
               <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
                 {{ i18n "pricing_hub_self_hosted_title" . }}
               </p>
+              <div class="lg:h-[34px]"></div>
               <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
                 {{ i18n "pricing_free" . }}
               </p>
@@ -287,6 +311,15 @@
               </div>
               <div x-show="infrastructure === 'managed'">
                 <p class="flex items-baseline gap-2 mt-2">
+                  <span x-text="data.managedMonthlyPrice ? (data.managedMonthlyPrice.amount * 0.75).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold leading-relaxed"></span>
+                  <span class="text-xs text-gray-700">
+                    {{ i18n "pricing_hub_standard_price_first_year" . }}
+                  </span>
+                  <span class="self-center px-1 rounded-xs text-xs text-white bg-red-600">
+                    25% {{ i18n "sale_off" . }}
+                  </span>
+                </p>
+                <p class="flex items-baseline gap-2">
                   <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
                   <span class="text-xs md:text-sm lg:text-base text-gray-700">
                     {{ i18n "pricing_vat_excluded" . }}
@@ -301,6 +334,15 @@
               </div>
               <div x-show="infrastructure === 'self-hosted'">
                 <p class="flex items-baseline gap-2 mt-2">
+                  <span x-text="data.selfHostedMonthlyPrice ? (data.selfHostedMonthlyPrice.amount * 0.75).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold leading-relaxed"></span>
+                  <span class="text-xs text-gray-700">
+                    {{ i18n "pricing_hub_standard_price_first_year" . }}
+                  </span>
+                  <span class="self-center px-1 rounded-xs text-xs text-white bg-red-600">
+                    25% {{ i18n "sale_off" . }}
+                  </span>
+                </p>
+                <p class="flex items-baseline gap-2">
                   <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
                   <span class="text-xs md:text-sm lg:text-base text-gray-700">
                     {{ i18n "pricing_vat_excluded" . }}
@@ -359,6 +401,7 @@
               <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
                 {{ i18n "pricing_hub_managed_title" . }} & {{ i18n "pricing_hub_self_hosted_title" . }}
               </p>
+              <div class="lg:h-[34px]"></div>
               <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
                 {{ i18n "pricing_hub_enterprise_price" . }}
               </p>
