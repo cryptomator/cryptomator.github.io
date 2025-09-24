@@ -22,12 +22,10 @@
         <p class="lead mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-4">
           <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">{{ i18n "hub_header_managed_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
+            <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-demo-cta">{{ i18n "hub_header_demo_cta" . }}</a>
           </div>
           <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">{{ i18n "hub_header_self_hosted_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-self-hosted-cta">{{ i18n "hub_header_self_hosted_cta" . }}</a>
+            <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary text-lg w-full md:w-64" data-umami-event="hub-header-contact-cta">{{ i18n "hub_header_contact_cta" . }}</a>
           </div>
         </div>
         <p class="font-p">{{ i18n "hub_header_cta_description" . | safeHTML }}</p>

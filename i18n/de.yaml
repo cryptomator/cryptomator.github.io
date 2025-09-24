@@ -378,19 +378,13 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Sichere Zusammenarbeit in eurem Team"
+  translation: "Datensicherheit statt bloßem Datenschutz"
 - id: hub_header_description
-  translation: "Cryptomator Hub erweitert Cryptomator für euer Team oder eure Organisation – mit Zero-Knowledge-Verschlüsselung, Zugriff nur für autorisierte Personen und nahtloser Integration in eure IT-Infrastruktur. So behaltet ihr die volle Kontrolle, egal welche Cloud ihr nutzt."
-- id: hub_header_managed_title
-  translation: "Managed"
-- id: hub_header_managed_cta
-  translation: "Jetzt loslegen"
-- id: hub_header_self_hosted_title
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_cta
-  translation: "Jetzt einrichten"
-- id: hub_header_cta_description
-  translation: "Startet eure kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
+  translation: "Verlasse dich nicht nur auf die Versprechen deines Cloud-Anbieters. Cryptomator Hub verschlüsselt deine vertraulichen Unternehmensdaten wie personenbezogene Kundendaten oder interne Geschäftsdokumente."
+- id: hub_header_demo_cta
+  translation: "Live-Demo buchen"
+- id: hub_header_contact_cta
+  translation: "Vertrieb kontaktieren"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
