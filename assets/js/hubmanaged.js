@@ -1,8 +1,8 @@
 "use strict";
 
 // requires newsletter.js
-const REQUEST_HUB_MANAGED_URL = STORE_API_URL + '/hub/request-managed';
-const VALIDATE_HUB_MANAGED_REQUEST_URL = STORE_API_URL + '/hub/validate-managed-request';
+const REQUEST_HUB_MANAGED_URL = LEGACY_STORE_URL + '/hub/request-managed';
+const VALIDATE_HUB_MANAGED_REQUEST_URL = LEGACY_STORE_URL + '/hub/validate-managed-request';
 
 class HubManaged {
 

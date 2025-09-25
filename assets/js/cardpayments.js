@@ -1,6 +1,6 @@
 "use strict";
 
-const STRIPE_PHP_URL = BASE_API_URL + '/stripe/prepare_payment.php';
+const STRIPE_PHP_URL = LEGACY_API_URL + '/stripe/prepare_payment.php';
 
 class OneTimePayment {
 
