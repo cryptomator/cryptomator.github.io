@@ -1,7 +1,7 @@
 # API
 apiBaseUrl: https://api.staging.cryptomator.org
-legacyApiUrl: http://localhost
-legacyStoreUrl: http://localhost:8787/api
+legacyApiUrl: https://api.staging.cryptomator.org
+legacyStoreUrl: https://store.staging.cryptomator.org
 
 # UMAMI
 umamiWebsiteId: 57a36f3a-bd97-4d8a-9563-0e8d39ddb20c

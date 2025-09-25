@@ -1,6 +1,6 @@
 # API
 apiBaseUrl: https://api.cryptomator.org
-legacyApiUrl: http://api.cryptomator.org
+legacyApiUrl: https://api.cryptomator.org
 legacyStoreUrl: https://store.cryptomator.org/api
 
 # UMAMI
