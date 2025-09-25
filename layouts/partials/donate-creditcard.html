@@ -48,7 +48,8 @@
           {{ i18n "donate_creditcard_once_paynow" }}
         </button>
 
-        {{ partial "captcha.html" (dict "captchaPayload" "oneTimePaymentStatus.captcha" "captchaState" "captchaState") }}
+        {{ $challengeUrl := printf "%s/donations/stripe/payments/challenge" .Site.Params.apiBaseUrl }}
+        {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "oneTimePaymentStatus.captcha" "captchaState" "captchaState") }}
 
         <p class="text-sm text-red-600 mt-2" x-text="oneTimePaymentStatus.errorMessage"></p>
       </div>
