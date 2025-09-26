@@ -235,3 +235,7 @@ If you're looking for a comprehensive solution to encrypt your local drives and 
 Organizations and teams also benefit from Cryptomator Hub, which enables centralized access management — a big plus for collaborative work and secure file sharing.
 
 Both tools have their strengths and are suited to different security needs. Choose the one that best fits your personal requirements and intended use.
+
+---
+
+<p class="text-sm text-gray-600 italic mt-8">This comparison is based on information available as of September 2025. Features and pricing may have changed since then.</p>

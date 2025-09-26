@@ -461,3 +461,7 @@ Now you know the differences between Boxcryptor and its alternative Cryptomator.
 Check whether the advantages of open-source software and thus the security-relevant criteria are important to you. If you like the approach of Cryptomator, it could be the more suitable alternative for you.
 
 Perhaps the features provided by Boxcryptor are sufficient for you? Then you can decide according to your personal preference.
+
+---
+
+<p class="text-sm text-gray-600 italic mt-8">This comparison is based on information available as of September 2025. Features and pricing may have changed since then.</p>

@@ -233,3 +233,7 @@ Für die Cloud ist VeraCrypt deshalb nur mit Einschränkungen empfehlenswert –
 Wenn du eine umfassende Lösung für die Verschlüsselung deiner lokalen Festplatten suchst und dabei erweiterte Konfigurationsmöglichkeiten wünschst, ist VeraCrypt die richtige Wahl. Wenn du jedoch hauptsächlich Daten in der Cloud speichern und diese vor dem Zugriff Dritter schützen möchtest, bietet Cryptomator eine einfache und Cloud-freundliche Lösung. Unternehmen und Teams profitieren zudem von Cryptomator Hub, mit dem Zugriffsrechte zentral gesteuert werden können – ein Plus für alle, die in Gruppen arbeiten und Daten sicher teilen möchten.
 
 Beide Tools haben ihre Stärken und eignen sich für unterschiedliche Sicherheitsanforderungen. Entscheide anhand deiner individuellen Bedürfnisse und der geplanten Nutzung, welches Tool besser zu dir passt.
+
+---
+
+<p class="text-sm text-gray-600 italic mt-8">Dieser Vergleich basiert auf Informationen, die Stand September 2025 verfügbar sind. Funktionen und Preise können sich seitdem geändert haben.</p>
