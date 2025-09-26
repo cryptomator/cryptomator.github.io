@@ -111,7 +111,7 @@ class HubManaged {
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
-        subscribeToNewsletter(this._submitData.email, 7);
+        subscribeToNewsletter(this._submitData.email, 7); // FIXME move to backend
       }
     }).fail(xhr => {
       this.onRequestFailed(xhr.responseJSON?.message || 'Requesting Hub Managed failed.');

@@ -25,7 +25,7 @@ class SupporterCertificate {
       type: 'POST',
       data: JSON.stringify(this._submitData),
       contentType: "application/json; charset=utf-8",
-    dataType: "json"
+      dataType: "json"
     }).done(_ => {
       this.onRequestSucceeded();
     }).fail(xhr => {

@@ -1,5 +1,5 @@
-<div x-data="{checkoutData: {prices: PADDLE_DESKTOP_PRICE_IDS.map(priceId => { return {priceId: priceId} }), discountedPrice: null, selectedPriceIndex: 1, quantity: 1, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null, acceptNewsletter: false}, acceptTerms: false, desktopLicense: null}" x-init="desktopLicense = new DesktopLicense($refs.funderForm, checkoutData); desktopLicense.loadPrice()">
-  <form x-show="!checkoutData.success" x-ref="funderForm">
+<div x-data="{checkoutData: {prices: PADDLE_DESKTOP_PRICE_IDS.map(priceId => { return {priceId: priceId} }), discountedPrice: null, selectedPriceIndex: 1, quantity: 1, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null, acceptNewsletter: false, captcha: null}, acceptTerms: false, desktopLicense: null, captchaState: null}" x-init="desktopLicense = new DesktopLicense($refs.funderForm, checkoutData); desktopLicense.loadPrice()">
+  <form x-show="!checkoutData.success" x-ref="funderForm" @submit.prevent="checkoutData.acceptNewsletter && subscribeToNewsletter(checkoutData.email, 'cryptomator', checkoutData.captcha); desktopLicense.checkout(checkoutData.prices[checkoutData.selectedPriceIndex].priceId, '{{ .Site.Language.Lang }}'); $refs.captcha.reset()">
     <div class="flex flex-wrap md:flex-nowrap">
       <fieldset class="w-full mb-4 md:w-1/2 md:pr-3">
         <legend class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_price" }}</legend>
@@ -28,9 +28,11 @@
       <p class="font-p mb-4">{{ i18n "supporter_cert_funder_instruction" }}</p>
       <p class="font-p mb-2">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter" "label" (i18n "accept_newsletter_optional")) }}</p>
-      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="desktopLicense.checkout(checkoutData.prices[checkoutData.selectedPriceIndex].priceId, '{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="supporter-cert-funder-checkout">
+      <button :disabled="checkoutData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="supporter-cert-funder-checkout">
         <i :class="{'fa-shopping-cart': !checkoutData.inProgress, 'fa-spinner fa-spin': checkoutData.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "supporter_cert_funder_checkout" }}
       </button>
+      {{ $captchaUrl := printf "%s/connect/newsletter/challenge" .Site.Params.apiBaseUrl }}
+      {{ partial "captcha.html" (dict "challengeUrl" $captchaUrl "captchaPayload" "checkoutData.captcha" "captchaState" "captchaState") }}
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
     </div>
   </form>

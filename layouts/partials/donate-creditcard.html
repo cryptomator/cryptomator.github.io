@@ -43,7 +43,7 @@
 
         <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
 
-        <button :disabled="oneTimePaymentStatus.inProgress || !oneTimePaymentStatus.validCardNum || !acceptTerms || captchaState == 'verifying'" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-onetime-checkout">
+        <button :disabled="oneTimePaymentStatus.inProgress || !oneTimePaymentStatus.validCardNum || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-onetime-checkout">
           <i :class="{'fa-credit-card': !oneTimePaymentStatus.inProgress, 'fa-spinner fa-spin': oneTimePaymentStatus.inProgress}" class="fa-solid" aria-hidden="true"></i>
           {{ i18n "donate_creditcard_once_paynow" }}
         </button>

@@ -1,7 +1,5 @@
 "use strict";
 
-// requires newsletter.js
-
 class DesktopLicense {
 
   constructor(form, checkoutData) {
@@ -20,9 +18,6 @@ class DesktopLicense {
         eventCallback: data => {
           if (data.name == "checkout.completed") {
             this.onCheckoutSucceeded();
-            if (this._checkoutData.acceptNewsletter) {
-              subscribeToNewsletter(data.customer.email, 6);
-            }
           } else if (data.name == "checkout.closed") {
             this._checkoutData.inProgress = false;
           }

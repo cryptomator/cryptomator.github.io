@@ -63,10 +63,14 @@
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $androidKeyJs := resources.Get "js/androidkey.js" }}
     <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $androidKeyJs := resources.Get "js/androidkey.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $androidKeyJs.RelPermalink }}" integrity="{{ $androidKeyJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}
