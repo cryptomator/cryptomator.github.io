@@ -40,7 +40,7 @@ Mit Cryptomator Desktop 1.18.0 bringen wir wieder einige Verbesserungen und Bugf
   Unter der kommenden macOS-Version 26 wurde macFUSE teilweise nicht erkannt, was zu Problemen beim Einbinden von Tresoren führen konnte. Dieses Problem ist behoben, damit Cryptomator auch auf den neuesten macOS-Versionen reibungslos läuft.
 
 <div class="text-center">
-  <a href="/downloads/"><i class="fa-solid fa-download"></i> Beta 1.18.0 herunterladen</a>
+  <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.18.0-beta1/"><i class="fa-solid fa-download"></i> Beta 1.18.0 herunterladen</a>
 </div>
 
 ## Wir brauchen eure Unterstützung!

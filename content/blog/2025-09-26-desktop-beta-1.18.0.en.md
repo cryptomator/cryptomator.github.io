@@ -40,7 +40,7 @@ With Cryptomator Desktop 1.18.0, we’re once again bringing improvements and bu
   In the upcoming macOS version 26, macFUSE was sometimes not detected, leading to problems when mounting vaults. This issue is fixed to ensure Cryptomator works smoothly on the latest macOS releases.
 
 <div class="text-center">
-  <a href="/downloads/"><i class="fa-solid fa-download"></i> Download the Beta 1.18.0 here</a>
+  <a href="https://github.com/cryptomator/cryptomator/releases/tag/1.18.0-beta1/"><i class="fa-solid fa-download"></i> Download the Beta 1.18.0 here</a>
 </div>
 
 ## We Need Your Support!
