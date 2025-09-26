@@ -28,9 +28,6 @@ class HubContact {
       contentType: "application/json; charset=utf-8",
     }).done(_ => {
       this.onRequestSucceeded();
-      if (this._submitData.acceptNewsletter) {
-        subscribeToNewsletter(this._submitData.email, 7); // FIXME move to backend
-      }
     }).fail(xhr => {
       this.onRequestFailed(xhr.responseJSON?.message || 'Request failed.');
     });
