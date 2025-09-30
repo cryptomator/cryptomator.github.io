@@ -103,7 +103,7 @@ Cryptomator ist eine kostenlose Open-Source-Software, die speziell für die Vers
 
 Für Unternehmen und Teams bietet Cryptomator Hub eine zentrale Verwaltung der Zugriffsrechte und Benutzerrollen. Damit ist eine sichere Zusammenarbeit garantiert.
 
-## Was ist VeraCrypt?
+## Was ist AxCrypt?
 
 AxCrypt ist ein Verschlüsselungstool, das sich vor allem an Einzelpersonen richtet, die Dateien lokal auf ihrem Windows- oder macOS-System schützen möchten. Die Software integriert sich nahtlos in den Datei-Explorer bzw. Finder und ermöglicht die schnelle Verschlüsselung einzelner Dateien per Rechtsklick.
 
@@ -159,17 +159,17 @@ Es steht eine kostenlose Version mit grundlegenden Funktionen zur Verfügung (z.
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Plattformen</td>
       <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+      <td class="font-p p-2 lg:p-4">Windows, macOS, iOS, Android</td>
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Dateifreigabe</td>
-      <td class="font-p p-2 lg:p-4">Ja, über verschlüsselte Tresore</td>
+      <td class="font-p p-2 lg:p-4">Keine integrierte Dateifreigabe</td>
       <td class="font-p p-2 lg:p-4">Ja (in Premium-Version)</td>
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Team-Integration</td>
       <td class="font-p p-2 lg:p-4">Ja, durch Cryptomator Hub für die zentrale Verwaltung</td>
-      <td class="font-p p-2 lg:p-4">Nein</td>
+      <td class="font-p p-2 lg:p-4">Ja (Business-Version)</td>
     </tr>
   </tbody>
 </table>
@@ -250,4 +250,4 @@ Je nach deinen individuellen Anforderungen kannst du das passende Tool für dein
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Dieser Vergleich basiert auf Informationen, die Stand September 2025 verfügbar sind. Funktionen und Preise können sich seitdem geändert haben.</p>
+<p class="text-sm text-gray-600 italic mt-8">Stand September 2025. Funktionen und Preise können sich geändert haben.</p>

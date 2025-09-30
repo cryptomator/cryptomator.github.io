@@ -464,4 +464,4 @@ Perhaps the features provided by Boxcryptor are sufficient for you? Then you can
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">This comparison is based on information available as of September 2025. Features and pricing may have changed since then.</p>
+<p class="text-sm text-gray-600 italic mt-8">Information as of September 2025. Features and pricing may have changed.</p>

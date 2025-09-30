@@ -31,7 +31,7 @@ comparison:
     unlimitedDevices: |
       <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
     integratedSharing: |
-      <i class="fa-solid fa-times-circle text-xl lg:text-2xl text-red-600"></i>
+      <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     syncConflictDetection: |
       <i class="fa-solid fa-check-circle text-xl lg:text-2xl text-primary"></i>
     crossPlatformSupport: |
@@ -145,7 +145,7 @@ Tresorit ist ein Cloud-Speicherdienst mit integriertem Sicherheitsansatz. Es bie
     </tr>
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">Dateifreigabe</td>
-      <td class="font-p p-2 lg:p-4">Über bestehenden Cloud-Dienst; mit Cryptomator Hub zentral steuerbar</td>
+      <td class="font-p p-2 lg:p-4">Keine integrierte Dateifreigabe</td>
       <td class="font-p p-2 lg:p-4">Ja, mit granularer Kontrolle</td>
     </tr>
      <tr>
@@ -155,12 +155,12 @@ Tresorit ist ein Cloud-Speicherdienst mit integriertem Sicherheitsansatz. Es bie
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Kosten</td>
-      <td class="font-p p-2 lg:p-4">App kostenlos (Donationware); Hub self-hosted, kostenpflichtig</td>
+      <td class="font-p p-2 lg:p-4">Desktop-Apps kostenlos (Donationware); Mobile Apps einmaliger Kauf; Hub verfügbar als self-hosted (kostenlos bis 5 Nutzer) oder managed (kostenpflichtig)</td>
       <td class="font-p p-2 lg:p-4">Abonnement (14-Tage-Test; Basic-Version mit eingeschränkten Funktionen)</td>
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Team-Integration</td>
-      <td class="font-p p-2 lg:p-4">Ja, mit Cryptomator Hub (self-hosted)</td>
+      <td class="font-p p-2 lg:p-4">Ja, mit Cryptomator Hub</td>
       <td class="font-p p-2 lg:p-4">Ja, optimiert für Teams und Unternehmen</td>
     </tr>
   </tbody>
@@ -179,8 +179,8 @@ Cryptomator punktet mit Flexibilität: Es funktioniert mit nahezu jedem Cloud-Di
 
 ### Team-Integration
 
-Beide Lösungen bieten Funktionen für Teams und Organisationen.  
-Cryptomator stellt mit dem Cryptomator Hub eine Self-Hosted-Erweiterung zur Verfügung, die es erlaubt, Zugriffsrechte granular zu steuern, Vaults zentral bereitzustellen und Audit-Logs zu verwalten – bei voller Kontrolle über die eigene Infrastruktur.  
+Beide Lösungen bieten Funktionen für Teams und Organisationen.
+Cryptomator stellt mit dem Cryptomator Hub eine Erweiterung zur Verfügung, die als self-hosted oder managed Lösung verfügbar ist und es erlaubt, Zugriffsrechte granular zu steuern, Vaults zentral bereitzustellen und Audit-Logs zu verwalten. Die self-hosted Version bietet volle Kontrolle über die eigene Infrastruktur.
 Tresorit bietet ebenfalls umfangreiche Team-Funktionen wie Rollen- und Nutzerverwaltung, Aktivitätsprotokolle und Compliance-Optionen – allerdings ausschließlich innerhalb des Tresorit-Dienstes.
 
 ### Einfache Bedienung
@@ -195,7 +195,7 @@ Tresorit ist ein kommerzieller Anbieter mit Rechenzentren in der Schweiz und der
 
 #### Kostenstruktur
 
-Cryptomator ist kostenlos nutzbar. Der Cryptomator Hub für Teams ist kostenpflichtig, wird aber self-hosted betrieben.  
+Die Desktop-Apps von Cryptomator sind kostenlos nutzbar (Donationware), während die mobilen Apps einen einmaligen Kauf erfordern. Der Cryptomator Hub für Teams ist als self-hosted Lösung (kostenlos für bis zu 5 Nutzer, kostenpflichtige Lizenz für größere Teams) oder als managed Lösung (kostenpflichtig) verfügbar.
 Tresorit ist primär abonnementbasiert und bietet eine 14-tägige Testphase; zusätzlich existiert eine Basic-Version mit eingeschränkten Funktionen.
 
 ## Zusammenfassung: Welches Tool passt besser zu Dir?
@@ -239,4 +239,4 @@ Berücksichtige deine spezifischen Anforderungen, um das für dich passende Tool
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Dieser Vergleich basiert auf Informationen, die Stand September 2025 verfügbar sind. Funktionen und Preise können sich seitdem geändert haben.</p>
+<p class="text-sm text-gray-600 italic mt-8">Stand September 2025. Funktionen und Preise können sich geändert haben.</p>

@@ -146,7 +146,7 @@ Tresorit is a cloud storage service with a built-in security-first approach. It 
     </tr>
     <tr>
       <td class="font-p font-bold p-2 lg:p-4">File Sharing</td>
-      <td class="font-p p-2 lg:p-4">Via your existing cloud provider, centrally manageable with Cryptomator Hub</td>
+      <td class="font-p p-2 lg:p-4">No integrated file sharing</td>
       <td class="font-p p-2 lg:p-4">Built-in with granular access control</td>
     </tr>
      <tr>
@@ -156,7 +156,7 @@ Tresorit is a cloud storage service with a built-in security-first approach. It 
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Cost</td>
-      <td class="font-p p-2 lg:p-4">App free (donationware); Hub self-hosted, paid</td>
+      <td class="font-p p-2 lg:p-4">Desktop apps free (donationware); mobile apps one-time purchase; Hub available self-hosted (free up to 5 users) or managed (paid)</td>
       <td class="font-p p-2 lg:p-4">Subscription (14-day trial; Basic tier with limited features)</td>
     </tr>
      <tr>
@@ -181,8 +181,8 @@ Cryptomator stands out for its flexibility: it works with almost any cloud servi
 
 ### Team Integration
 
-Both solutions offer features for teams and organizations.  
-Cryptomator provides Cryptomator Hub, a self-hosted extension that allows for granular access control, centralized vault provisioning, and audit logging—while keeping full control over your own infrastructure.  
+Both solutions offer features for teams and organizations.
+Cryptomator provides Cryptomator Hub, available as self-hosted or managed solution, that allows for granular access control, centralized vault provisioning, and audit logging. The self-hosted version gives you full control over your own infrastructure.
 Tresorit also includes robust team features like role-based user management, activity logs, and compliance options—but these are available only within the Tresorit service.
 
 ### Ease of Use
@@ -197,7 +197,7 @@ Tresorit is a commercial provider with data centers located in Switzerland and t
 
 #### Cost Structure
 
-Cryptomator is free to use (donationware). Cryptomator Hub, the team-focused extension, is paid and runs as a self-hosted solution.  
+Cryptomator's desktop apps are free to use (donationware), while mobile apps require a one-time purchase. Cryptomator Hub, the team-focused extension, is available as self-hosted solution (free for up to 5 users, paid license for larger teams) or as managed solution (paid).
 Tresorit is primarily subscription-based and includes a 14-day trial; a Basic tier with limited features is also available.
 
 ## Summary: Which Tool Is Right for You?
@@ -241,4 +241,4 @@ Consider your specific needs to choose the tool that suits you best. No matter w
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">This comparison is based on information available as of September 2025. Features and pricing may have changed since then.</p>
+<p class="text-sm text-gray-600 italic mt-8">Information as of September 2025. Features and pricing may have changed.</p>

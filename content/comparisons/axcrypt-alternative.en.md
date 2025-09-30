@@ -160,17 +160,17 @@ A free version with basic functionality (e.g. AES-128 encryption) is available, 
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Platforms</td>
       <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+      <td class="font-p p-2 lg:p-4">Windows, macOS, iOS, Android</td>
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">File Sharing</td>
-      <td class="font-p p-2 lg:p-4">Yes, via encrypted vaults</td>
+      <td class="font-p p-2 lg:p-4">No integrated file sharing</td>
       <td class="font-p p-2 lg:p-4">Yes (in Premium version)</td>
     </tr>
      <tr>
       <td class="font-p font-bold p-2 lg:p-4">Team Integration</td>
       <td class="font-p p-2 lg:p-4">Yes, through Cryptomator Hub for centralized management</td>
-      <td class="font-p p-2 lg:p-4">Yes (Premium version)</td>
+      <td class="font-p p-2 lg:p-4">Yes (Business version)</td>
     </tr>
   </tbody>
 </table>
@@ -251,4 +251,4 @@ Depending on your individual needs, you can choose the tool that best fits your 
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">This comparison is based on information available as of September 2025. Features and pricing may have changed since then.</p>
+<p class="text-sm text-gray-600 italic mt-8">Information as of September 2025. Features and pricing may have changed.</p>
