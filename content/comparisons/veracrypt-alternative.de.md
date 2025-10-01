@@ -236,4 +236,4 @@ Beide Tools haben ihre Stärken und eignen sich für unterschiedliche Sicherheit
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Stand September 2025. Funktionen und Preise können sich geändert haben.</p>
+<p class="text-sm text-gray-600 italic mt-8">Stand Mai 2025. Funktionen und Preise können sich geändert haben.</p>

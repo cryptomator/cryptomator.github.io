@@ -238,4 +238,4 @@ Both tools have their strengths and are suited to different security needs. Choo
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Information as of September 2025. Features and pricing may have changed.</p>
+<p class="text-sm text-gray-600 italic mt-8">Information as of May 2025. Features and pricing may have changed.</p>

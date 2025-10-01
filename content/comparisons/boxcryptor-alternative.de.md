@@ -464,4 +464,4 @@ Möglicherweise ist der Funktionsumfang von Boxcryptor für dich ausreichend? Da
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Stand September 2025. Funktionen und Preise können sich geändert haben.</p>
+<p class="text-sm text-gray-600 italic mt-8">Stand August 2021. Funktionen und Preise können sich geändert haben.</p>
