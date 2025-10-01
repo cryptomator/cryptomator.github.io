@@ -199,7 +199,8 @@ Both tools rely on strong encryption, but differ in the details:
 
 ### Cloud Integration
 
-AxCrypt offers direct cloud integration only in its Business and Premium models. This means you can manually place encrypted files in a synchronized folder, and the cloud service handles the rest.  
+AxCrypt offers direct cloud integration only in its Business and Premium models. This means you can manually place encrypted files in a synchronized folder, and the cloud service handles the rest.
+
 However, there is no vault system or automated encryption for entire folders—each file must be encrypted individually. Decryption is also only possible using the AxCrypt software itself. This makes file previewing or mobile editing more difficult.
 
 ### Real-World Example: Encrypting Individual Files with AxCrypt

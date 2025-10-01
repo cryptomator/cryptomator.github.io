@@ -105,74 +105,75 @@ Cryptomator is an open-source tool specifically designed to encrypt files before
 Tresorit is a cloud storage service with a built-in security-first approach. It offers end-to-end encryption and a zero-knowledge architecture, meaning that even Tresorit itself has no access to your data. Tresorit is ideal for users who are looking for a combination of secure storage, easy synchronization, and file sharing.
 
 <div class="overflow-x-auto">
-<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
-  <thead>
-    <tr class="py-2">
-      <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
-        </div>
-      </th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-normal">Tresorit</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/tresorit-logo.svg" aria-hidden="true">
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody class="divide-y divide-gray-200">
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
-      <td class="font-p p-2 lg:p-4">Encryption for existing cloud services</td>
-      <td class="font-p p-2 lg:p-4">Secure cloud storage with built-in encryption</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Open Source</td>
-      <td class="font-p p-2 lg:p-4">Yes</td>
-      <td class="font-p p-2 lg:p-4">No</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Security Approach</td>
-      <td class="font-p p-2 lg:p-4">AES-256 encryption before uploading</td>
-      <td class="font-p p-2 lg:p-4">Full end-to-end encryption</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Cloud Integration</td>
-      <td class="font-p p-2 lg:p-4">Works with all common cloud providers</td>
-      <td class="font-p p-2 lg:p-4">Standalone cloud service</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">File Sharing</td>
-      <td class="font-p p-2 lg:p-4">No integrated file sharing</td>
-      <td class="font-p p-2 lg:p-4">Built-in with granular access control</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Platforms</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Cost</td>
-      <td class="font-p p-2 lg:p-4">Desktop apps free (donationware); mobile apps one-time purchase; Hub available self-hosted (free up to 5 users) or managed (paid)</td>
-      <td class="font-p p-2 lg:p-4">Subscription (14-day trial; Basic tier with limited features)</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Team Integration</td>
-      <td class="font-p p-2 lg:p-4">Yes, via Cryptomator Hub</td>
-      <td class="font-p p-2 lg:p-4">Yes, optimized for teams and businesses</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+    <thead>
+      <tr class="py-2">
+        <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
+            <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
+          </div>
+        </th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-normal">Tresorit</span>
+            <img class="max-w-16 h-12" src="/img/comparisons/tresorit-logo.svg" aria-hidden="true">
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
+        <td class="font-p p-2 lg:p-4">Encryption for existing cloud services</td>
+        <td class="font-p p-2 lg:p-4">Secure cloud storage with built-in encryption</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Open Source</td>
+        <td class="font-p p-2 lg:p-4">Yes</td>
+        <td class="font-p p-2 lg:p-4">No</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Security Approach</td>
+        <td class="font-p p-2 lg:p-4">AES-256 encryption before uploading</td>
+        <td class="font-p p-2 lg:p-4">Full end-to-end encryption</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Cloud Integration</td>
+        <td class="font-p p-2 lg:p-4">Works with all common cloud providers</td>
+        <td class="font-p p-2 lg:p-4">Standalone cloud service</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">File Sharing</td>
+        <td class="font-p p-2 lg:p-4">No integrated file sharing</td>
+        <td class="font-p p-2 lg:p-4">Built-in with granular access control</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Platforms</td>
+        <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+        <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Cost</td>
+        <td class="font-p p-2 lg:p-4">Desktop apps free (donationware); mobile apps one-time purchase; Hub available self-hosted (free up to 5 users) or managed (paid)</td>
+        <td class="font-p p-2 lg:p-4">Subscription (14-day trial; Basic tier with limited features)</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Team Integration</td>
+        <td class="font-p p-2 lg:p-4">Yes, via Cryptomator Hub</td>
+        <td class="font-p p-2 lg:p-4">Yes, optimized for teams and businesses</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ## The Differences in Detail
 
 ### Security Approach
 
-Cryptomator encrypts your files locally and client-side before they are uploaded to the cloud. It’s an open-source solution that offers maximum transparency. You can continue using your preferred cloud services such as Google Drive, Dropbox, or OneDrive.  
+Cryptomator encrypts your files locally and client-side before they are uploaded to the cloud. It’s an open-source solution that offers maximum transparency. You can continue using your preferred cloud services such as Google Drive, Dropbox, or OneDrive.
+
 Tresorit, on the other hand, is a proprietary all-in-one service that provides its own cloud infrastructure with built-in end-to-end encryption. Your data is stored directly with Tresorit—no third-party cloud providers involved.
 
 ### Flexibility
@@ -187,12 +188,14 @@ Tresorit also includes robust team features like role-based user management, act
 
 ### Ease of Use
 
-Cryptomator is ideal for anyone who wants to enhance the security of their existing cloud usage—without having to switch providers or possess technical expertise. Setup is straightforward, and the user interface is intuitive.  
+Cryptomator is ideal for anyone who wants to enhance the security of their existing cloud usage—without having to switch providers or possess technical expertise. Setup is straightforward, and the user interface is intuitive.
+
 Tresorit offers a complete solution for users looking for a secure, all-in-one cloud infrastructure. The interface is modern and designed for easy administration—without the need for third-party tools.
 
 ### Privacy & Transparency
 
-Cryptomator is fully open source and requires no user account; encryption happens entirely client-side, and your files are not stored on our servers.  
+Cryptomator is fully open source and requires no user account; encryption happens entirely client-side, and your files are not stored on our servers.
+
 Tresorit is a commercial provider with data centers located in Switzerland and the EU. It complies with GDPR regulations, but its source code is not publicly available.
 
 ### Cost Structure

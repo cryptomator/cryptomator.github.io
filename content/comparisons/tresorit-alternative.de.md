@@ -185,12 +185,14 @@ Tresorit bietet ebenfalls umfangreiche Team-Funktionen wie Rollen- und Nutzerver
 
 ### Einfache Bedienung
 
-Cryptomator richtet sich an alle, die ihre bereits genutzten Cloud-Dienste sicherer machen möchten – ganz ohne Wechsel oder technische Vorkenntnisse. Die Einrichtung ist unkompliziert, die Benutzeroberfläche intuitiv.  
+Cryptomator richtet sich an alle, die ihre bereits genutzten Cloud-Dienste sicherer machen möchten – ganz ohne Wechsel oder technische Vorkenntnisse. Die Einrichtung ist unkompliziert, die Benutzeroberfläche intuitiv.
+
 Tresorit bietet eine Komplettlösung für alle, die eine sichere Cloud-Infrastruktur aus einer Hand suchen. Die Benutzeroberfläche ist modern und auf einfache Verwaltung ausgerichtet – ohne zusätzliche Drittanbieter-Software.
 
 ### Datenschutz & Transparenz
 
-Cryptomator ist vollständig Open Source und erfordert kein Nutzerkonto; die Verschlüsselung erfolgt vollständig clientseitig, und deine Dateien werden nicht auf unseren Servern gespeichert.  
+Cryptomator ist vollständig Open Source und erfordert kein Nutzerkonto; die Verschlüsselung erfolgt vollständig clientseitig, und deine Dateien werden nicht auf unseren Servern gespeichert.
+
 Tresorit ist ein kommerzieller Anbieter mit Rechenzentren in der Schweiz und der EU, der DSGVO-konform arbeitet, jedoch keinen öffentlich einsehbaren Quellcode bietet.
 
 ### Kostenstruktur

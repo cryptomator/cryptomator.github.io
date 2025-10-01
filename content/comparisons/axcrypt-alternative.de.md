@@ -198,7 +198,8 @@ Beide Tools setzen auf starke Verschlüsselung, doch unterscheiden sich im Detai
 
 ### Cloud-Integration
 
-AxCrypt bietet eine direkte Cloud-Integration nur in ihrem Business- und Premium-Modell an. Das bedeutet: Du kannst verschlüsselte Dateien manuell in einen synchronisierten Ordner legen, und der Cloud-Dienst übernimmt den Rest.  
+AxCrypt bietet eine direkte Cloud-Integration nur in ihrem Business- und Premium-Modell an. Das bedeutet: Du kannst verschlüsselte Dateien manuell in einen synchronisierten Ordner legen, und der Cloud-Dienst übernimmt den Rest.
+
 Allerdings gibt es keinen Tresor oder automatisierte Verschlüsselung für ganze Ordner – jede Datei muss einzeln verschlüsselt werden. Auch das Entschlüsseln funktioniert nur über die AxCrypt-Software selbst. Eine Vorschau oder mobile Bearbeitung ist dadurch erschwert.
 
 ### Praxisbeispiel: Einzeldatei-Verschlüsselung mit AxCrypt
