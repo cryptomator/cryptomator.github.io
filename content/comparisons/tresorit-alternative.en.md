@@ -195,7 +195,7 @@ Tresorit offers a complete solution for users looking for a secure, all-in-one c
 Cryptomator is fully open source and requires no user account; encryption happens entirely client-side, and your files are not stored on our servers.  
 Tresorit is a commercial provider with data centers located in Switzerland and the EU. It complies with GDPR regulations, but its source code is not publicly available.
 
-#### Cost Structure
+### Cost Structure
 
 Cryptomator's desktop apps are free to use (donationware), while mobile apps require a one-time purchase. Cryptomator Hub, the team-focused extension, is available as self-hosted solution (free for up to 5 users, paid license for larger teams) or as managed solution (paid).
 Tresorit is primarily subscription-based and includes a 14-day trial; a Basic tier with limited features is also available.

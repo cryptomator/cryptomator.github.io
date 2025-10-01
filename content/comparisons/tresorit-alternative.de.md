@@ -193,7 +193,7 @@ Tresorit bietet eine Komplettlösung für alle, die eine sichere Cloud-Infrastru
 Cryptomator ist vollständig Open Source und erfordert kein Nutzerkonto; die Verschlüsselung erfolgt vollständig clientseitig, und deine Dateien werden nicht auf unseren Servern gespeichert.  
 Tresorit ist ein kommerzieller Anbieter mit Rechenzentren in der Schweiz und der EU, der DSGVO-konform arbeitet, jedoch keinen öffentlich einsehbaren Quellcode bietet.
 
-#### Kostenstruktur
+### Kostenstruktur
 
 Die Desktop-Apps von Cryptomator sind kostenlos nutzbar (Donationware), während die mobilen Apps einen einmaligen Kauf erfordern. Der Cryptomator Hub für Teams ist als self-hosted Lösung (kostenlos für bis zu 5 Nutzer, kostenpflichtige Lizenz für größere Teams) oder als managed Lösung (kostenpflichtig) verfügbar.
 Tresorit ist primär abonnementbasiert und bietet eine 14-tägige Testphase; zusätzlich existiert eine Basic-Version mit eingeschränkten Funktionen.
