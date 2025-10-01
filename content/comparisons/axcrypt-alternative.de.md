@@ -179,9 +179,9 @@ Es steht eine kostenlose Version mit grundlegenden Funktionen zur Verfügung (z.
 
 ### Einsatzgebiet
 
-Cryptomator ist eine perfekte Wahl, wenn Du Cloud-Daten zusätzlich schützen möchtest. Tresore, die als verschlüsselte Ordner fungieren, lassen sich leicht in verschiedene Cloud-Dienste hochladen und sorgen dafür, dass nur verschlüsselte Daten in der Cloud gespeichert werden. Besonders für Unternehmen und Teams bietet Cryptomator Hub eine zentrale Verwaltung, ideal für die sichere Zusammenarbeit.
+Cryptomator ist eine perfekte Wahl, wenn du Cloud-Daten zusätzlich schützen möchtest. Tresore, die als verschlüsselte Ordner fungieren, lassen sich leicht in verschiedene Cloud-Dienste hochladen und sorgen dafür, dass nur verschlüsselte Daten in der Cloud gespeichert werden. Besonders für Unternehmen und Teams bietet Cryptomator Hub eine zentrale Verwaltung, ideal für die sichere Zusammenarbeit.
 
-AxCrypt hingegen ist eine gute Option, wenn Du Dateien und Ordner auf lokalen Systemen verschlüsseln möchtest. Die einfache Integration in den Datei-Explorer ermöglicht es, Dateien direkt aus dem Explorer heraus zu verschlüsseln und wieder zu entschlüsseln. Die kostenpflichtige Version von AxCrypt bietet zusätzliche Funktionen wie erweiterte Verschlüsselung und Passwortmanagement. Die Business-Version bietet darüber hinaus Funktionen, die für das Arbeiten im Team nützlich sind.
+AxCrypt hingegen ist eine gute Option, wenn du Dateien und Ordner auf lokalen Systemen verschlüsseln möchtest. Die einfache Integration in den Datei-Explorer ermöglicht es, Dateien direkt aus dem Explorer heraus zu verschlüsseln und wieder zu entschlüsseln. Die kostenpflichtige Version von AxCrypt bietet zusätzliche Funktionen wie erweiterte Verschlüsselung und Passwortmanagement. Die Business-Version bietet darüber hinaus Funktionen, die für das Arbeiten im Team nützlich sind.
 
 ### Benutzerfreundlichkeit
 
@@ -213,7 +213,7 @@ Das bedeutet: Es gibt keinen durchgängigen, automatisierten Schutz vor versehen
 
 Im Gegensatz zu Cryptomator, das ganze Ordner verschlüsselt und cloud-ready hält, eignet sich AxCrypt vor allem für punktuelle Verschlüsselung einzelner Dateien. Für vollständig integrierte Cloud-Arbeitsabläufe mit automatisierter Ordnerstruktur-Verschlüsselung ist Cryptomator die komfortablere Wahl.
 
-## Zusammenfassung: Welches Tool passt besser zu Dir?
+## Zusammenfassung: Welches Tool passt besser zu dir?
 
 <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
