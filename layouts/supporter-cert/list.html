@@ -44,26 +44,6 @@
     </div>
   </div>
 
-  <section x-data="{data: {email: '', errorMessage: '', success: false, inProgress: false}}" class="container text-center py-12">
-    <h3 id="supporter-certificate-recovery" class="font-headline text-xl md:text-2xl leading-relaxed mb-4">{{ i18n "supporter_cert_recovery_title" . }}</h3>
-
-    <form x-show="!data.success" x-ref="form" class="max-w-xl mx-auto">
-      <p class="font-p mb-4">{{ i18n "supporter_cert_recovery_instruction" . }}</p>
-      <div class="flex justify-center items-center rounded-sm bg-gray-300">
-        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "supporter_cert_recovery_email_placeholder" }}" required/>
-        <button :disabled="data.inProgress" @click.prevent="new KeyRecovery($refs.form, data).getUserHistory()" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4" data-umami-event="supporter-cert-recovery-form">
-          <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "supporter_cert_recovery_retrieve" }}
-        </button>
-      </div>
-      <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
-    </form>
-
-    <div x-show="data.success" x-cloak>
-      <p class="font-p mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_recovery_success" . }}</p>
-      <p class="font-p">{{ ":question:" | emojify }} {{ i18n "supporter_cert_recovery_contact_us" . | safeHTML }}</p>
-    </div>
-  </section>
-
   <section class="container pt-12 pb-24">
     <header class="text-center">
       <h2 id="faq" class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
