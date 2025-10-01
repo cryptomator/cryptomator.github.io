@@ -211,11 +211,11 @@ Tresorit is primarily subscription-based and includes a 14-day trial; a Basic ti
   </thead>
   <tbody class="divide-y divide-gray-200">
     <tr>
-      <td class="font-p p-2 lg:p-4">You already use cloud services and want to encrypt your files.</td>
+      <td class="font-p p-2 lg:p-4">You already use cloud services and want to encrypt your files</td>
       <td class="font-p font-bold p-2 lg:p-4">Cryptomator</td>
     </tr>
     <tr>
-      <td class="font-p p-2 lg:p-4">You are looking for an all-in-one solution with secure cloud storage.</td>
+      <td class="font-p p-2 lg:p-4">You are looking for an all-in-one solution with secure cloud storage</td>
       <td class="font-p font-bold p-2 lg:p-4">Tresorit</td>
     </tr>
     <tr>
@@ -223,11 +223,11 @@ Tresorit is primarily subscription-based and includes a 14-day trial; a Basic ti
       <td class="font-p font-bold p-2 lg:p-4">Cryptomator</td>
     </tr>
     <tr>
-      <td class="font-p p-2 lg:p-4">You want secure file sharing and team management.</td>
+      <td class="font-p p-2 lg:p-4">You want secure file sharing and team management</td>
       <td class="font-p font-bold p-2 lg:p-4">Both, depending on your needs</td>
     </tr>
     <tr>
-      <td class="font-p p-2 lg:p-4">You are a company and require comprehensive security features.</td>
+      <td class="font-p p-2 lg:p-4">You are a company and require comprehensive security features</td>
       <td class="font-p font-bold p-2 lg:p-4">Tresorit</td>
     </tr>
   </tbody>

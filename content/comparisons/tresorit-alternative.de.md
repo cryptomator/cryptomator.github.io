@@ -89,7 +89,7 @@ comparison:
 
 # Cryptomator vs. Tresorit: Welches Tool ist besser für deine Datensicherheit?
 
-<p class="lead">Die sichere Speicherung sensibler Daten in der Cloud ist heute wichtiger denn je. Mit Tools wie Cryptomator und Tresorit gibt es leistungsstarke Lösungen, die Ihre Dateien vor unbefugtem Zugriff schützen können. Doch welches dieser beiden Tools ist die bessere Wahl? In diesem Artikel vergleichen wir Cryptomator und Tresorit hinsichtlich ihrer Funktionen, Anwendungsfälle und Zielgruppen.</p>
+<p class="lead">Die sichere Speicherung sensibler Daten in der Cloud ist heute wichtiger denn je. Mit Tools wie Cryptomator und Tresorit gibt es leistungsstarke Lösungen, die deine Dateien vor unbefugtem Zugriff schützen können. Doch welches dieser beiden Tools ist die bessere Wahl? In diesem Artikel vergleichen wir Cryptomator und Tresorit hinsichtlich ihrer Funktionen, Anwendungsfälle und Zielgruppen.</p>
 
 <img class="inline-block" src="/img/comparisons/cryptobot-analysis.png" srcset="/img/comparisons/cryptobot-analysis.png 1x, /img/comparisons/cryptobot-analysis@2x.png 2x" alt="Cryptomator wird ständig von Fachleuten mit modernen Tools analysiert." />
 
@@ -209,7 +209,7 @@ Tresorit ist primär abonnementbasiert und bietet eine 14-tägige Testphase; zus
   </thead>
   <tbody class="divide-y divide-gray-200">
     <tr>
-      <td class="font-p p-2 lg:p-4">Du benutzt bereits Cloud-Dienste und möchtest deine Dateien verschlüsseln.</td>
+      <td class="font-p p-2 lg:p-4">Du benutzt bereits Cloud-Dienste und möchtest deine Dateien verschlüsseln</td>
       <td class="font-p font-bold p-2 lg:p-4">Cryptomator</td>
     </tr>
     <tr>
