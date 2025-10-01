@@ -94,52 +94,52 @@ VeraCrypt is an open-source encryption tool that provides on-the-fly encryption 
 It is designed to encrypt local and external drives, allowing users to secure entire disks and partitions without having to encrypt individual files manually.
 
 <div class="overflow-x-auto">
-<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
-  <thead>
-    <tr class="py-2">
-      <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
-        </div>
-      </th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-normal">VeraCrypt</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody class="divide-y divide-gray-200">
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
-      <td class="font-p p-2 lg:p-4">File encryption specifically for cloud storage (e.g., Google Drive, Dropbox)</td>
-      <td class="font-p p-2 lg:p-4">Full-disk encryption (entire drives, partitions, and container files)</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Ease of Use</td>
-      <td class="font-p p-2 lg:p-4">Optimized for cloud users; simple and intuitive interface</td>
-      <td class="font-p p-2 lg:p-4">Designed for tech-savvy users; offers complex configuration options</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Security Approach</td>
-      <td class="font-p p-2 lg:p-4">File-based encryption inside encrypted cloud folders (vaults)</td>
-      <td class="font-p p-2 lg:p-4">Full drive and partition encryption</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Key Length & Algorithms</td>
-      <td class="font-p p-2 lg:p-4">Uses AES-256, one of the most trusted encryption methods</td>
-      <td class="font-p p-2 lg:p-4">Offers AES-256, Serpent, Twofish, or combinations thereof with high customizations</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Cloud Integration</td>
-      <td class="font-p p-2 lg:p-4">Built for cloud environments; fully compatible with many cloud providers</td>
-      <td class="font-p p-2 lg:p-4">No direct integration; data must be synced manually</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+    <thead>
+      <tr class="py-2">
+        <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
+            <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
+          </div>
+        </th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-normal">VeraCrypt</span>
+            <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
+        <td class="font-p p-2 lg:p-4">File encryption specifically for cloud storage (e.g., Google Drive, Dropbox)</td>
+        <td class="font-p p-2 lg:p-4">Full-disk encryption (entire drives, partitions, and container files)</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Ease of Use</td>
+        <td class="font-p p-2 lg:p-4">Optimized for cloud users; simple and intuitive interface</td>
+        <td class="font-p p-2 lg:p-4">Designed for tech-savvy users; offers complex configuration options</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Security Approach</td>
+        <td class="font-p p-2 lg:p-4">File-based encryption inside encrypted cloud folders (vaults)</td>
+        <td class="font-p p-2 lg:p-4">Full drive and partition encryption</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Key Length & Algorithms</td>
+        <td class="font-p p-2 lg:p-4">Uses AES-256, one of the most trusted encryption methods</td>
+        <td class="font-p p-2 lg:p-4">Offers AES-256, Serpent, Twofish, or combinations thereof with high customizations</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Cloud Integration</td>
+        <td class="font-p p-2 lg:p-4">Built for cloud environments; fully compatible with many cloud providers</td>
+        <td class="font-p p-2 lg:p-4">No direct integration; data must be synced manually</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ## Key Differences in Detail
@@ -235,3 +235,7 @@ If you're looking for a comprehensive solution to encrypt your local drives and 
 Organizations and teams also benefit from Cryptomator Hub, which enables centralized access management — a big plus for collaborative work and secure file sharing.
 
 Both tools have their strengths and are suited to different security needs. Choose the one that best fits your personal requirements and intended use.
+
+---
+
+<p class="text-sm text-gray-600 italic mt-8">Information as of May 2025. Features and pricing may have changed.</p>
