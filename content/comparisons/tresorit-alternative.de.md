@@ -87,7 +87,7 @@ comparison:
 
 ---
 
-# Cryptomator vs. Tresorit: Welches Tool ist besser für Ihre Datensicherheit?
+# Cryptomator vs. Tresorit: Welches Tool ist besser für deine Datensicherheit?
 
 <p class="lead">Die sichere Speicherung sensibler Daten in der Cloud ist heute wichtiger denn je. Mit Tools wie Cryptomator und Tresorit gibt es leistungsstarke Lösungen, die Ihre Dateien vor unbefugtem Zugriff schützen können. Doch welches dieser beiden Tools ist die bessere Wahl? In diesem Artikel vergleichen wir Cryptomator und Tresorit hinsichtlich ihrer Funktionen, Anwendungsfälle und Zielgruppen.</p>
 
@@ -198,7 +198,7 @@ Tresorit ist ein kommerzieller Anbieter mit Rechenzentren in der Schweiz und der
 Die Desktop-Apps von Cryptomator sind kostenlos nutzbar (Donationware), während die mobilen Apps einen einmaligen Kauf erfordern. Der Cryptomator Hub für Teams ist als self-hosted Lösung (kostenlos für bis zu 5 Nutzer, kostenpflichtige Lizenz für größere Teams) oder als managed Lösung (kostenpflichtig) verfügbar.
 Tresorit ist primär abonnementbasiert und bietet eine 14-tägige Testphase; zusätzlich existiert eine Basic-Version mit eingeschränkten Funktionen.
 
-## Zusammenfassung: Welches Tool passt besser zu Dir?
+## Zusammenfassung: Welches Tool passt besser zu dir?
 
 <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
   <thead>
