@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_SUPPORTER_CERT_URL = STORE_API_URL + '/desktop/request-supporter-cert';
+const REQUEST_SUPPORTER_CERT_URL = LEGACY_STORE_URL + '/desktop/request-supporter-cert';
 
 class SupporterCertificate {
 

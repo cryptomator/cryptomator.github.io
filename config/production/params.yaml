@@ -1,0 +1,25 @@
+# API
+apiBaseURL: https://api.cryptomator.org
+legacyApiUrl: https://api.cryptomator.org
+legacyStoreUrl: https://store.cryptomator.org/api
+
+# UMAMI
+umamiWebsiteId: 8d451e39-ffb2-4697-82c9-9f69eff497f1
+
+# PADDLE
+paddleEnableSandbox: false
+paddleDesktopProductIds:
+  - 840163
+  - 840164
+  - 840165
+paddleAndroidProductId: 578277
+paddleVendorId: 39223
+paddleHubSelfHostedSubscriptionPlanId: 770132
+paddleHubManagedSubscriptionPlanId: 807339
+paddlePricesUrl: https://checkout.paddle.com/api/2.0/prices
+
+# STRIPE
+stripePk: pk_live_eSasX216vGvC26GdbVwA011V
+stripePlans:
+  EUR: plan_GgW4ovr7c6upzx
+  USD: plan_GejOEdJtfL3kdH

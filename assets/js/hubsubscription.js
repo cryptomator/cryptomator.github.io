@@ -1,10 +1,10 @@
 "use strict";
 
-const BILLING_PORTAL_SESSION_URL = STORE_API_URL + '/hub/billing-portal-session';
-const CUSTOM_BILLING_URL = STORE_API_URL + '/hub/custom-billing';
-const GENERATE_PAY_LINK_URL = STORE_API_URL + '/hub/generate-pay-link';
-const MANAGE_SUBSCRIPTION_URL = STORE_API_URL + '/hub/manage-subscription';
-const UPDATE_PAYMENT_METHOD_URL = STORE_API_URL + '/hub/update-payment-method';
+const BILLING_PORTAL_SESSION_URL = LEGACY_STORE_URL + '/hub/billing-portal-session';
+const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
+const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
+const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
+const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
 
 class HubSubscription {
 

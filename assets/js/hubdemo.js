@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_HUB_DEMO_URL = STORE_API_URL + '/hub/request-demo';
+const REQUEST_HUB_DEMO_URL = LEGACY_STORE_URL + '/hub/request-demo';
 
 class HubDemo {
 

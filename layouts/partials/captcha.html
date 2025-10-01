@@ -1,5 +1,6 @@
+{{ $defaultChallengeUrl :=  printf "%s/altcha/challenge.php" site.Params.legacyApiUrl }}
 <altcha-widget
-  challengeurl="https://api.cryptomator.org/altcha/challenge.php"
+  challengeurl="{{ .challengeUrl | default $defaultChallengeUrl }}"
   hidelogo
   hidefooter
   floating="auto"
