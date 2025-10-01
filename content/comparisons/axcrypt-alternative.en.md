@@ -113,67 +113,67 @@ In addition to the desktop version, AxCrypt also offers mobile apps for Android 
 A free version with basic functionality (e.g. AES-128 encryption) is available, while the paid Premium version includes additional features such as AES-256 encryption, password management, automatic locking, and collaboration capabilities (file sharing with other AxCrypt users).
 
 <div class="overflow-x-auto">
-<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
-  <thead>
-    <tr class="py-2">
-      <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
-        </div>
-      </th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-normal">AxCrypt</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/axcrypt-logo.svg" aria-hidden="true">
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody class="divide-y divide-gray-200">
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
-      <td class="font-p p-2 lg:p-4">Encryption for cloud storage (files in cloud services)</td>
-      <td class="font-p p-2 lg:p-4">File encryption on local systems</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Open Source</td>
-      <td class="font-p p-2 lg:p-4">Yes</td>
-      <td class="font-p p-2 lg:p-4">No</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Security Approach</td>
-      <td class="font-p p-2 lg:p-4">Encrypted vaults for cloud data</td>
-      <td class="font-p p-2 lg:p-4">File-based encryption for local files</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Key Length</td>
-      <td class="font-p p-2 lg:p-4">AES-256</td>
-      <td class="font-p p-2 lg:p-4">AES-128 (Free), AES-256 (Premium)</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Cloud Integration</td>
-      <td class="font-p p-2 lg:p-4">Designed for cloud environments, compatible with many providers</td>
-      <td class="font-p p-2 lg:p-4">No direct cloud integration</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Platforms</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, iOS, Android</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">File Sharing</td>
-      <td class="font-p p-2 lg:p-4">No integrated file sharing</td>
-      <td class="font-p p-2 lg:p-4">Yes (in Premium version)</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Team Integration</td>
-      <td class="font-p p-2 lg:p-4">Yes, through Cryptomator Hub for centralized management</td>
-      <td class="font-p p-2 lg:p-4">Yes (Business version)</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+    <thead>
+      <tr class="py-2">
+        <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
+            <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
+          </div>
+        </th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-normal">AxCrypt</span>
+            <img class="max-w-16 h-12" src="/img/comparisons/axcrypt-logo.svg" aria-hidden="true">
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Primary Purpose</td>
+        <td class="font-p p-2 lg:p-4">Encryption for cloud storage (files in cloud services)</td>
+        <td class="font-p p-2 lg:p-4">File encryption on local systems</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Open Source</td>
+        <td class="font-p p-2 lg:p-4">Yes</td>
+        <td class="font-p p-2 lg:p-4">No</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Security Approach</td>
+        <td class="font-p p-2 lg:p-4">Encrypted vaults for cloud data</td>
+        <td class="font-p p-2 lg:p-4">File-based encryption for local files</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Key Length</td>
+        <td class="font-p p-2 lg:p-4">AES-256</td>
+        <td class="font-p p-2 lg:p-4">AES-128 (Free), AES-256 (Premium)</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Cloud Integration</td>
+        <td class="font-p p-2 lg:p-4">Designed for cloud environments, compatible with many providers</td>
+        <td class="font-p p-2 lg:p-4">No direct cloud integration</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Platforms</td>
+        <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+        <td class="font-p p-2 lg:p-4">Windows, macOS, iOS, Android</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">File Sharing</td>
+        <td class="font-p p-2 lg:p-4">No integrated file sharing</td>
+        <td class="font-p p-2 lg:p-4">Yes (in Premium version)</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Team Integration</td>
+        <td class="font-p p-2 lg:p-4">Yes, through Cryptomator Hub for centralized management</td>
+        <td class="font-p p-2 lg:p-4">Yes (Business version)</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ## The Differences in Detail

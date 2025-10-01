@@ -94,52 +94,52 @@ VeraCrypt ist ein Open-Source-Verschlüsselungstool, das eine On-the-Fly-Verschl
 Es wurde für die Verschlüsselung lokaler und externer Laufwerke entwickelt, was bedeutet, dass Benutzer:innen ganze Laufwerke und Partitionen verschlüsseln können, ohne einzelne Dateien manuell zu bearbeiten.
 
 <div class="overflow-x-auto">
-<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
-  <thead>
-    <tr class="py-2">
-      <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
-        </div>
-      </th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-normal">VeraCrypt</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody class="divide-y divide-gray-200">
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Primärer Zweck</td>
-      <td class="font-p p-2 lg:p-4">Verschlüsselung von Dateien speziell für Cloud-Speicher (z.B. Google Drive, Dropbox)</td>
-      <td class="font-p p-2 lg:p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Containerdateien)</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Benutzerfreundlichkeit</td>
-      <td class="font-p p-2 lg:p-4">Für Cloud-Nutzer:innen optimiert; einfache und intuitive Benutzeroberfläche</td>
-      <td class="font-p p-2 lg:p-4">Für technisch versierte Nutzer:innen; komplexe Konfigurationsmöglichkeiten</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Sicherheitsansatz</td>
-      <td class="font-p p-2 lg:p-4">Dateibasierte Verschlüsselung in verschlüsselten Cloud-Ordnern (Tresore)</td>
-      <td class="font-p p-2 lg:p-4">Verschlüsselung ganzer Laufwerke und Partitionen</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Schlüssellänge & Algorithmen</td>
-      <td class="font-p p-2 lg:p-4">Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden</td>
-      <td class="font-p p-2 lg:p-4">Bietet AES-256, Serpent, Twofish, oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Cloud-Integration</td>
-      <td class="font-p p-2 lg:p-4">Entwickelt für Cloud-Umgebungen und vollständig kompatibel mit vielen Cloud-Anbietern</td>
-      <td class="font-p p-2 lg:p-4">Keine direkte Integration; Daten müssen manuell synchronisiert werden</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+    <thead>
+      <tr class="py-2">
+        <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
+            <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
+          </div>
+        </th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-normal">VeraCrypt</span>
+            <img class="max-w-16 h-12" src="/img/comparisons/veracrypt-logo.svg" aria-hidden="true">
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Primärer Zweck</td>
+        <td class="font-p p-2 lg:p-4">Verschlüsselung von Dateien speziell für Cloud-Speicher (z.B. Google Drive, Dropbox)</td>
+        <td class="font-p p-2 lg:p-4">Festplattenverschlüsselung (ganze Laufwerke, Partitionen und Containerdateien)</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Benutzerfreundlichkeit</td>
+        <td class="font-p p-2 lg:p-4">Für Cloud-Nutzer:innen optimiert; einfache und intuitive Benutzeroberfläche</td>
+        <td class="font-p p-2 lg:p-4">Für technisch versierte Nutzer:innen; komplexe Konfigurationsmöglichkeiten</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Sicherheitsansatz</td>
+        <td class="font-p p-2 lg:p-4">Dateibasierte Verschlüsselung in verschlüsselten Cloud-Ordnern (Tresore)</td>
+        <td class="font-p p-2 lg:p-4">Verschlüsselung ganzer Laufwerke und Partitionen</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Schlüssellänge & Algorithmen</td>
+        <td class="font-p p-2 lg:p-4">Setzt auf AES-256, eine der bewährtesten Verschlüsselungsmethoden</td>
+        <td class="font-p p-2 lg:p-4">Bietet AES-256, Serpent, Twofish, oder deren Kombinationen mit hoher Anpassungsfähigkeit</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Cloud-Integration</td>
+        <td class="font-p p-2 lg:p-4">Entwickelt für Cloud-Umgebungen und vollständig kompatibel mit vielen Cloud-Anbietern</td>
+        <td class="font-p p-2 lg:p-4">Keine direkte Integration; Daten müssen manuell synchronisiert werden</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ## Die Unterschiede im Detail

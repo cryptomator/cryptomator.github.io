@@ -219,7 +219,7 @@ Tresorit is primarily subscription-based and includes a 14-day trial; a Basic ti
       <td class="font-p font-bold p-2 lg:p-4">Tresorit</td>
     </tr>
     <tr>
-      <td class="font-p p-2 lg:p-4">You need a free solution.</td>
+      <td class="font-p p-2 lg:p-4">You need a free solution</td>
       <td class="font-p font-bold p-2 lg:p-4">Cryptomator</td>
     </tr>
     <tr>

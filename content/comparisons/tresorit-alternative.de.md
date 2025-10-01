@@ -104,67 +104,67 @@ Cryptomator ist ein Open-Source-Tool, das sich speziell auf die Verschlüsselung
 Tresorit ist ein Cloud-Speicherdienst mit integriertem Sicherheitsansatz. Es bietet Ende-zu-Ende-Verschlüsselung und eine Zero-Knowledge-Architektur, was bedeutet, dass selbst Tresorit keinen Zugriff auf deine Daten hat. Tresorit ist ideal für Nutzer:innen, die eine Kombination aus sicherer Speicherung, einfacher Synchronisation und Datenfreigabe suchen.
 
 <div class="overflow-x-auto">
-<table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
-  <thead>
-    <tr class="py-2">
-      <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
-          <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
-        </div>
-      </th>
-      <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
-        <div class="inline-flex flex-col-reverse gap-2 items-center">
-          <span class="font-normal">Tresorit</span>
-          <img class="max-w-16 h-12" src="/img/comparisons/tresorit-logo.svg" aria-hidden="true">
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody class="divide-y divide-gray-200">
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Primärer Zweck</td>
-      <td class="font-p p-2 lg:p-4">Verschlüsselung für bestehende Cloud-Dienste</td>
-      <td class="font-p p-2 lg:p-4">Sicherer Cloud-Speicher mit integrierter Verschlüsselung</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Open Source</td>
-      <td class="font-p p-2 lg:p-4">Ja</td>
-      <td class="font-p p-2 lg:p-4">Nein</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Sicherheitsansatz</td>
-      <td class="font-p p-2 lg:p-4">AES-256 Verschlüsselung vor dem Hochladen</td>
-      <td class="font-p p-2 lg:p-4">Vollständige Ende-zu-Ende-Verschlüsselung</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Cloud-Integration</td>
-      <td class="font-p p-2 lg:p-4">Funktioniert mit allen gängigen Cloud-Diensten</td>
-      <td class="font-p p-2 lg:p-4">Eigenständiger Cloud-Dienst</td>
-    </tr>
-    <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Dateifreigabe</td>
-      <td class="font-p p-2 lg:p-4">Keine integrierte Dateifreigabe</td>
-      <td class="font-p p-2 lg:p-4">Ja, mit granularer Kontrolle</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Plattformen</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-      <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Kosten</td>
-      <td class="font-p p-2 lg:p-4">Desktop-Apps kostenlos (Donationware); Mobile Apps einmaliger Kauf; Hub verfügbar als self-hosted (kostenlos bis 5 Nutzer) oder managed (kostenpflichtig)</td>
-      <td class="font-p p-2 lg:p-4">Abonnement (14-Tage-Test; Basic-Version mit eingeschränkten Funktionen)</td>
-    </tr>
-     <tr>
-      <td class="font-p font-bold p-2 lg:p-4">Team-Integration</td>
-      <td class="font-p p-2 lg:p-4">Ja, mit Cryptomator Hub</td>
-      <td class="font-p p-2 lg:p-4">Ja, optimiert für Teams und Unternehmen</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="not-prose table-fixed divide-y divide-primary white-box min-w-full mt-6 mb-12">
+    <thead>
+      <tr class="py-2">
+        <th class="font-h3 font-normal text-left p-2 lg:p-4"></th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-headline font-bold text-primary">CRYPTOMATOR</span>
+            <img class="max-w-16 h-12" src="/img/logo.svg" aria-hidden="true">
+          </div>
+        </th>
+        <th class="font-h3 font-normal text-left text-xs lg:text-sm leading-relaxed p-2 lg:p-4">
+          <div class="inline-flex flex-col-reverse gap-2 items-center">
+            <span class="font-normal">Tresorit</span>
+            <img class="max-w-16 h-12" src="/img/comparisons/tresorit-logo.svg" aria-hidden="true">
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Primärer Zweck</td>
+        <td class="font-p p-2 lg:p-4">Verschlüsselung für bestehende Cloud-Dienste</td>
+        <td class="font-p p-2 lg:p-4">Sicherer Cloud-Speicher mit integrierter Verschlüsselung</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Open Source</td>
+        <td class="font-p p-2 lg:p-4">Ja</td>
+        <td class="font-p p-2 lg:p-4">Nein</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Sicherheitsansatz</td>
+        <td class="font-p p-2 lg:p-4">AES-256 Verschlüsselung vor dem Hochladen</td>
+        <td class="font-p p-2 lg:p-4">Vollständige Ende-zu-Ende-Verschlüsselung</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Cloud-Integration</td>
+        <td class="font-p p-2 lg:p-4">Funktioniert mit allen gängigen Cloud-Diensten</td>
+        <td class="font-p p-2 lg:p-4">Eigenständiger Cloud-Dienst</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Dateifreigabe</td>
+        <td class="font-p p-2 lg:p-4">Keine integrierte Dateifreigabe</td>
+        <td class="font-p p-2 lg:p-4">Ja, mit granularer Kontrolle</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Plattformen</td>
+        <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+        <td class="font-p p-2 lg:p-4">Windows, macOS, Linux, iOS, Android</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Kosten</td>
+        <td class="font-p p-2 lg:p-4">Desktop-Apps kostenlos (Donationware); Mobile Apps einmaliger Kauf; Hub verfügbar als self-hosted (kostenlos bis 5 Nutzer) oder managed (kostenpflichtig)</td>
+        <td class="font-p p-2 lg:p-4">Abonnement (14-Tage-Test; Basic-Version mit eingeschränkten Funktionen)</td>
+      </tr>
+      <tr>
+        <td class="font-p font-bold p-2 lg:p-4">Team-Integration</td>
+        <td class="font-p p-2 lg:p-4">Ja, mit Cryptomator Hub</td>
+        <td class="font-p p-2 lg:p-4">Ja, optimiert für Teams und Unternehmen</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 ## Die Unterschiede im Detail
