@@ -1075,9 +1075,9 @@
 - id: coming_soon
   translation: "Bald verfügbar"
 - id: solutions_contact_title
-  translation: "Deine Branche nicht aufgelistet?"
+  translation: "Hast du einen spezifischen Anwendungsfall?"
 - id: solutions_contact_description
-  translation: "Wir arbeiten mit Organisationen aller Branchen zusammen. Teile uns deine Anforderungen mit und wir finden die passende Verschlüsselungslösung."
+  translation: "Teile uns deine Anforderungen mit und wir helfen dir, die passende Verschlüsselungslösung zu finden."
 - id: solutions_contact_button
   translation: "Kontaktiere uns"
 

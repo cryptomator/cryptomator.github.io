@@ -1075,9 +1075,9 @@
 - id: coming_soon
   translation: "Coming Soon"
 - id: solutions_contact_title
-  translation: "Your Industry Not Listed?"
+  translation: "Have a Specific Use Case?"
 - id: solutions_contact_description
-  translation: "We work with organizations across all sectors. Let us know your specific requirements and we'll help you implement the right encryption solution."
+  translation: "We work with organizations across all sectors to implement tailored encryption solutions. Let us know your requirements and we'll help you find the right approach."
 - id: solutions_contact_button
   translation: "Contact Us"
 
