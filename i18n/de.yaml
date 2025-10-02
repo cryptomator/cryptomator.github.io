@@ -1137,20 +1137,6 @@
   translation: "Nachbereitung"
 - id: book_demo_step_4_description
   translation: "Wir stellen zusätzliche Ressourcen zur Verfügung und beantworten alle deine Fragen."
-- id: book_demo_looking_for_title
-  translation: "Suchst du nach etwas anderem?"
-- id: book_demo_link_contact_sales
-  translation: "Vertrieb kontaktieren"
-- id: book_demo_link_contact_sales_description
-  translation: "Besprich Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
-- id: book_demo_link_partner
-  translation: "Partner werden"
-- id: book_demo_link_partner_description
-  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
-- id: book_demo_link_contact
-  translation: "Allgemeine Kontakt"
-- id: book_demo_link_contact_description
-  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Contact Sales
 - id: contact_sales_first_name
@@ -1197,20 +1183,6 @@
   translation: "Persönliche Antwort"
 - id: contact_sales_step_3_description
   translation: "Du erhältst innerhalb eines Werktages eine detaillierte Antwort von unserem Team."
-- id: contact_sales_sidebar_title
-  translation: "Suchst du nach etwas anderem?"
-- id: contact_sales_link_demo
-  translation: "Demo buchen"
-- id: contact_sales_link_demo_description
-  translation: "Buche eine personalisierte Demo, um Cryptomator Hub in Aktion mit deinem Anwendungsfall zu sehen."
-- id: contact_sales_link_partner
-  translation: "Partner werden"
-- id: contact_sales_link_partner_description
-  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
-- id: contact_sales_link_general
-  translation: "Allgemeine Kontakt"
-- id: contact_sales_link_general_description
-  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Partner Form
 - id: partner_first_name
@@ -1263,6 +1235,26 @@
   translation: "Persönliche Kontaktaufnahme"
 - id: partner_step_3_description
   translation: "Du erhältst innerhalb von 2-3 Werktagen eine detaillierte Antwort über die nächsten Schritte."
+
+# Other Contact
+- id: other_contact_looking_for_title
+  translation: "Suchst du nach etwas anderem?"
+- id: other_contact_link_contact_sales
+  translation: "Vertrieb kontaktieren"
+- id: other_contact_link_contact_sales_description
+  translation: "Besprich Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
+- id: other_contact_link_book_demo
+  translation: "Demo buchen"
+- id: other_contact_link_book_demo_description
+  translation: "Buche eine personalisierte Demo, um Cryptomator Hub in Aktion mit deinem Anwendungsfall zu sehen."
+- id: other_contact_link_partner
+  translation: "Partner werden"
+- id: other_contact_link_partner_description
+  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
+- id: other_contact_link_contact
+  translation: "Allgemeine Kontakt"
+- id: other_contact_link_contact_description
+  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Sale
 - id: nav_promotion

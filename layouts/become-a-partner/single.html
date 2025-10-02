@@ -10,28 +10,25 @@
         <!-- Left Side - Partner Form -->
         <section class="white-box md:col-span-2">
           <div class="px-4 py-5 md:p-6">
-            <div class="grid grid-cols-6 gap-6">
-              <div class="flex flex-col col-span-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <!-- First Name -->
-                <div>
-                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
-                    {{ i18n "partner_first_name" }} <span class="text-red-500" aria-label="required">*</span>
-                  </label>
-                  <input type="text" id="firstName" name="firstName" x-model="submitData.firstName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
-                </div>
+            <div class="grid grid-cols-2 gap-6">
+              <!-- First Name -->
+              <div class="col-span-2 md:col-span-1">
+                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_first_name" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="firstName" name="firstName" x-model="submitData.firstName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
 
-                <!-- Last Name -->
-                <div>
-                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
-                    {{ i18n "partner_last_name" }} <span class="text-red-500" aria-label="required">*</span>
-                  </label>
-                  <input type="text" id="lastName" name="lastName" x-model="submitData.lastName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
-                </div>
+              <!-- Last Name -->
+              <div class="col-span-2 md:col-span-1">
+                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "partner_last_name" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="lastName" name="lastName" x-model="submitData.lastName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
               </div>
 
               <!-- Email -->
-              <div class="mb-6">
+              <div class="col-span-2">
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
                   {{ i18n "partner_email" }} <span class="text-red-500" aria-label="required">*</span>
                 </label>
@@ -39,7 +36,7 @@
               </div>
 
               <!-- Company -->
-              <div class="mb-6">
+              <div class="col-span-2">
                 <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
                   {{ i18n "partner_company" }} <span class="text-red-500" aria-label="required">*</span>
                 </label>
@@ -47,7 +44,7 @@
               </div>
 
               <!-- Company Website -->
-              <div class="mb-6">
+              <div class="col-span-2">
                 <label for="website" class="block text-sm font-medium text-gray-700 mb-2">
                   {{ i18n "partner_website" }}
                 </label>
@@ -55,7 +52,7 @@
               </div>
 
               <!-- Partnership Type -->
-              <div class="mb-6">
+              <div class="col-span-2">
                 <label for="partnershipType" class="block text-sm font-medium text-gray-700 mb-2">
                   {{ i18n "partner_type" }}
                 </label>
@@ -70,24 +67,26 @@
               </div>
 
               <!-- Message -->
-              <div class="mb-6">
+              <div class="col-span-2">
                 <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
                   {{ i18n "partner_message" }}
                 </label>
                 <textarea id="message" name="message" x-model="submitData.message" rows="4" class="block input-box w-full" maxlength="2000" placeholder="{{ i18n "partner_message_placeholder" }}"></textarea>
               </div>
 
-              <!-- Terms & Privacy Acceptance -->
-              <p class="font-p text-sm mb-2">
-                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
-              </p>
+              <div class="col-span-2">
+                <!-- Terms & Privacy Acceptance -->
+                <p class="font-p text-sm mb-2">
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
+                </p>
 
-              <!-- Optional Newsletter -->
-              <p class="font-p text-sm mb-2">
-                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
-              </p>
+                <!-- Optional Newsletter -->
+                <p class="font-p text-sm mb-2">
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+                </p>
+              </div>
 
-              <div class="mt-8">
+              <div class="col-span-2">
                 <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                 <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="become-partner-form" x-cloak>
                   <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
@@ -138,6 +137,46 @@
                       <h4 class="font-medium text-gray-900 mb-1">{{ i18n "partner_step_3_title" }}</h4>
                       <p class="text-sm text-gray-600">{{ i18n "partner_step_3_description" }}</p>
                     </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Divider -->
+              <hr class="border-gray-200">
+
+              <!-- Looking for something else section -->
+              <div>
+                <h3 class="font-h3 mb-6">{{ i18n "book_demo_looking_for_title" }}</h3>
+                
+                <ul class="space-y-6">
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" class="flex items-start group">
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "other_contact_link_contact_sales" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "other_contact_link_contact_sales_description" }}</p>
+                      </div>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" class="flex items-start group">
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "other_contact_link_book_demo" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "other_contact_link_book_demo_description" }}</p>
+                      </div>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/contact/" class="flex items-start group">
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "other_contact_link_contact" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "other_contact_link_contact_description" }}</p>
+                      </div>
+                    </a>
                   </li>
                 </ul>
               </div>

@@ -1137,20 +1137,6 @@
   translation: "Follow up"
 - id: book_demo_step_4_description
   translation: "We'll provide additional resources and answer any questions you may have."
-- id: book_demo_looking_for_title
-  translation: "Looking for something else?"
-- id: book_demo_link_contact_sales
-  translation: "Contact sales"
-- id: book_demo_link_contact_sales_description
-  translation: "Discuss pricing, technical integration, and compliance requirements with our sales team."
-- id: book_demo_link_partner
-  translation: "Become a partner"
-- id: book_demo_link_partner_description
-  translation: "Join our partner program and integrate Cryptomator into your business offerings."
-- id: book_demo_link_contact
-  translation: "General contact"
-- id: book_demo_link_contact_description
-  translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
 
 # Contact Sales
 - id: contact_sales_first_name
@@ -1197,20 +1183,6 @@
   translation: "Personal response"
 - id: contact_sales_step_3_description
   translation: "Get a detailed, personalized response within one business day."
-- id: contact_sales_sidebar_title
-  translation: "Looking for something else?"
-- id: contact_sales_link_demo
-  translation: "Book a demo"
-- id: contact_sales_link_demo_description
-  translation: "See Cryptomator Hub in action with a demo tailored to your use case."
-- id: contact_sales_link_partner
-  translation: "Become a partner"
-- id: contact_sales_link_partner_description
-  translation: "Integrate Cryptomator into your business through our partner program."
-- id: contact_sales_link_general
-  translation: "General contact"
-- id: contact_sales_link_general_description
-  translation: "Reach out for support, general inquiries, or other questions."
 
 # Partner Form
 - id: partner_first_name
@@ -1263,6 +1235,26 @@
   translation: "Personal contact"
 - id: partner_step_3_description
   translation: "You'll receive a detailed response within 2-3 business days about next steps."
+
+# Other Contact
+- id: other_contact_looking_for_title
+  translation: "Looking for something else?"
+- id: other_contact_link_contact_sales
+  translation: "Contact sales"
+- id: other_contact_link_contact_sales_description
+  translation: "Discuss pricing, technical integration, and compliance requirements with our sales team."
+- id: other_contact_link_book_demo
+  translation: "Book a demo"
+- id: other_contact_link_book_demo_description
+  translation: "See Cryptomator Hub in action with a demo tailored to your use case."
+- id: other_contact_link_partner
+  translation: "Become a partner"
+- id: other_contact_link_partner_description
+  translation: "Join our partner program and integrate Cryptomator into your business offerings."
+- id: other_contact_link_contact
+  translation: "General contact"
+- id: other_contact_link_contact_description
+  translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
 
 # Sale
 - id: nav_promotion
