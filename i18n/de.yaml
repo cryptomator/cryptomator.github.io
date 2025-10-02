@@ -378,19 +378,15 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Sichere Zusammenarbeit in eurem Team"
+  translation: "Datensicherheit statt bloßem Datenschutz"
 - id: hub_header_description
-  translation: "Cryptomator Hub erweitert Cryptomator für euer Team oder eure Organisation – mit Zero-Knowledge-Verschlüsselung, Zugriff nur für autorisierte Personen und nahtloser Integration in eure IT-Infrastruktur. So behaltet ihr die volle Kontrolle, egal welche Cloud ihr nutzt."
-- id: hub_header_managed_title
-  translation: "Managed"
-- id: hub_header_managed_cta
-  translation: "Jetzt loslegen"
-- id: hub_header_self_hosted_title
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_cta
-  translation: "Jetzt einrichten"
-- id: hub_header_cta_description
-  translation: "Startet eure kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
+  translation: "Verlasse dich nicht nur auf die Versprechen deines Cloud-Anbieters. Cryptomator Hub verschlüsselt deine vertraulichen Unternehmensdaten wie personenbezogene Kundendaten oder interne Geschäftsdokumente."
+- id: hub_header_demo_cta
+  translation: "Live-Demo buchen"
+- id: hub_header_contact_cta
+  translation: "Vertrieb kontaktieren"
+- id: hub_header_deployment_link
+  translation: "Bereit, mit Cryptomator Hub zu starten?"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -453,6 +449,25 @@
   translation: "Finde den richtigen Plan für dein Unternehmen. Vergleiche die Funktionen und wähle die beste Option für die sichere Verwaltung deines verschlüsselten Speichers mit Cryptomator Hub."
 - id: hub_pricing_button
   translation: "Preisgestaltung anzeigen"
+
+- id: hub_deployment_title
+  translation: "Bereit, mit Cryptomator Hub zu starten?"
+- id: hub_deployment_managed_subtitle
+  translation: "Von Skymatic gehostet und gewartet"
+- id: hub_deployment_managed_benefit_1
+  translation: "Keine Infrastruktur-Einrichtung erforderlich"
+- id: hub_deployment_managed_benefit_2
+  translation: "Automatische Updates und Wartung"
+- id: hub_deployment_managed_benefit_3
+  translation: "ISO/IEC 27001 zertifiziertes Rechenzentrum in der EU"
+- id: hub_deployment_self_hosted_subtitle
+  translation: "Volle Kontrolle über deine Infrastruktur"
+- id: hub_deployment_self_hosted_benefit_1
+  translation: "Bereitstellung auf eigenen Servern oder in der Cloud"
+- id: hub_deployment_self_hosted_benefit_2
+  translation: "Flexible Integration in bestehende Systeme"
+- id: hub_deployment_self_hosted_benefit_3
+  translation: "Vollständige Datenhoheit"
 
 - id: hub_contact_us_title
   translation: "Weitere Fragen?"
@@ -903,7 +918,7 @@
 - id: pricing_hub_managed_title
   translation: "Managed"
 - id: pricing_hub_managed_cta
-  translation: "Jetzt loslegen"
+  translation: "Jetzt anmelden"
 
 - id: pricing_hub_community_title
   translation: "Community"
@@ -1060,17 +1075,15 @@
 - id: coming_soon
   translation: "Bald verfügbar"
 - id: solutions_contact_title
-  translation: "Deine Branche nicht aufgelistet?"
+  translation: "Hast du einen spezifischen Anwendungsfall?"
 - id: solutions_contact_description
-  translation: "Wir arbeiten mit Organisationen aller Branchen zusammen. Teile uns deine Anforderungen mit und wir finden die passende Verschlüsselungslösung."
+  translation: "Teile uns deine Anforderungen mit und wir helfen dir, die passende Verschlüsselungslösung zu finden."
 - id: solutions_contact_button
   translation: "Kontaktiere uns"
 
 # Solutions Single
 - id: solutions_hero_get_started
   translation: "Jetzt loslegen"
-- id: solutions_hero_book_demo
-  translation: "Demo buchen"
 - id: solutions_trusted_by_title
   translation: "Vertrauen von 100+ Organisationen weltweit"
 - id: solutions_single_contact_title
@@ -1143,20 +1156,6 @@
   translation: "Nachbereitung"
 - id: book_demo_step_4_description
   translation: "Wir stellen zusätzliche Ressourcen zur Verfügung und beantworten alle deine Fragen."
-- id: book_demo_looking_for_title
-  translation: "Suchst du nach etwas anderem?"
-- id: book_demo_link_contact_sales
-  translation: "Vertrieb kontaktieren"
-- id: book_demo_link_contact_sales_description
-  translation: "Besprich Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
-- id: book_demo_link_partner
-  translation: "Partner werden"
-- id: book_demo_link_partner_description
-  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
-- id: book_demo_link_contact
-  translation: "Allgemeine Kontakt"
-- id: book_demo_link_contact_description
-  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Contact Sales
 - id: contact_sales_first_name
@@ -1203,20 +1202,6 @@
   translation: "Persönliche Antwort"
 - id: contact_sales_step_3_description
   translation: "Du erhältst innerhalb eines Werktages eine detaillierte Antwort von unserem Team."
-- id: contact_sales_sidebar_title
-  translation: "Suchst du nach etwas anderem?"
-- id: contact_sales_link_demo
-  translation: "Demo buchen"
-- id: contact_sales_link_demo_description
-  translation: "Buche eine personalisierte Demo, um Cryptomator Hub in Aktion mit deinem Anwendungsfall zu sehen."
-- id: contact_sales_link_partner
-  translation: "Partner werden"
-- id: contact_sales_link_partner_description
-  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
-- id: contact_sales_link_general
-  translation: "Allgemeine Kontakt"
-- id: contact_sales_link_general_description
-  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Partner Form
 - id: partner_first_name
@@ -1269,6 +1254,26 @@
   translation: "Persönliche Kontaktaufnahme"
 - id: partner_step_3_description
   translation: "Du erhältst innerhalb von 2-3 Werktagen eine detaillierte Antwort über die nächsten Schritte."
+
+# Other Contact
+- id: other_contact_looking_for_title
+  translation: "Suchst du nach etwas anderem?"
+- id: other_contact_link_contact_sales
+  translation: "Vertrieb kontaktieren"
+- id: other_contact_link_contact_sales_description
+  translation: "Besprich Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
+- id: other_contact_link_book_demo
+  translation: "Demo buchen"
+- id: other_contact_link_book_demo_description
+  translation: "Buche eine personalisierte Demo, um Cryptomator Hub in Aktion mit deinem Anwendungsfall zu sehen."
+- id: other_contact_link_partner
+  translation: "Partner werden"
+- id: other_contact_link_partner_description
+  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
+- id: other_contact_link_contact
+  translation: "Allgemeine Kontakt"
+- id: other_contact_link_contact_description
+  translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
 
 # Sale
 - id: nav_promotion
