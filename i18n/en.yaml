@@ -385,6 +385,8 @@
   translation: "Book a Live Demo"
 - id: hub_header_contact_cta
   translation: "Contact Sales"
+- id: hub_header_deployment_link
+  translation: "Ready to get started with Cryptomator Hub?"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -447,6 +449,25 @@
   translation: "Find the right plan for your organization. Compare features and choose the best option to securely manage your encrypted storage with Cryptomator Hub."
 - id: hub_pricing_button
   translation: "View Pricing Plans"
+
+- id: hub_deployment_title
+  translation: "Ready to Get Started with Cryptomator Hub?"
+- id: hub_deployment_managed_subtitle
+  translation: "Hosted and maintained by Skymatic"
+- id: hub_deployment_managed_benefit_1
+  translation: "No infrastructure setup required"
+- id: hub_deployment_managed_benefit_2
+  translation: "Automatic updates and maintenance"
+- id: hub_deployment_managed_benefit_3
+  translation: "ISO/IEC 27001 certified data center in the EU"
+- id: hub_deployment_self_hosted_subtitle
+  translation: "Full control over your infrastructure"
+- id: hub_deployment_self_hosted_benefit_1
+  translation: "Deploy on your own servers or cloud"
+- id: hub_deployment_self_hosted_benefit_2
+  translation: "Flexible integration with existing systems"
+- id: hub_deployment_self_hosted_benefit_3
+  translation: "Complete data sovereignty"
 
 - id: hub_contact_us_title
   translation: "More questions?"
@@ -897,7 +918,7 @@
 - id: pricing_hub_managed_title
   translation: "Managed"
 - id: pricing_hub_managed_cta
-  translation: "Get Started"
+  translation: "Sign Up Now"
 
 - id: pricing_hub_community_title
   translation: "Community"
