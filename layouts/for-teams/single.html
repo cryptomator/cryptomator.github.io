@@ -18,16 +18,14 @@
         <h1 class="font-h1 mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
         <p class="lead mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-4">
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">{{ i18n "hub_header_managed_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">{{ i18n "hub_header_self_hosted_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-self-hosted-cta">{{ i18n "hub_header_self_hosted_cta" . }}</a>
-          </div>
+          <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-demo-cta">{{ i18n "hub_header_demo_cta" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary text-lg w-full md:w-64" data-umami-event="hub-header-contact-cta">{{ i18n "hub_header_contact_cta" . }}</a>
         </div>
-        <p class="font-p">{{ i18n "hub_header_cta_description" . | safeHTML }}</p>
+        <p class="font-p">
+          <a href="#deployment" class="text-gray-700 hover:text-gray-900" data-umami-event="hub-header-deployment-link">
+            <i class="fa-solid fa-arrow-down"></i> {{ i18n "hub_header_deployment_link" . }}
+          </a>
+        </p>
       </div>
     </header>
   </section>
@@ -150,6 +148,90 @@
     </div>
   </section>
 
+  <section class="container pt-12 pb-24">
+    <h2 id="deployment" class="text-center font-h2 mb-4">{{ i18n "hub_deployment_title" . }}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col white-box">
+        <div class="flex justify-between items-center p-4 border-b border-primary">
+          <h3>
+            <div class="flex items-center">
+              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+              <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+            </div>
+          </h3>
+          <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+            <i class="fa-solid fa-cloud"></i>
+            {{ i18n "pricing_hub_managed_title" . }}
+          </div>
+        </div>
+        <div class="flex flex-col justify-between h-full gap-8 px-4 py-8">
+          <div class="flex flex-col gap-4">
+            <h4 class="font-medium lg:text-lg leading-relaxed">
+              {{ i18n "hub_deployment_managed_subtitle" . }}
+            </h4>
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "hub_deployment_managed_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "hub_deployment_managed_benefit_2" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "hub_deployment_managed_benefit_3" . }}</span>
+              </li>
+            </ul>
+          </div>
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary w-full lg:w-96" data-umami-event="hub-deployment-managed-cta">
+            {{ i18n "pricing_hub_managed_cta" . }}
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col white-box">
+        <div class="flex justify-between items-center p-4 border-b border-primary">
+          <h3>
+            <div class="flex items-center">
+              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+              <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+            </div>
+          </h3>
+          <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+            <i class="fa-solid fa-server"></i>
+            {{ i18n "pricing_hub_self_hosted_title" . }}
+          </div>
+        </div>
+        <div class="flex flex-col justify-between h-full gap-8 px-4 py-8">
+          <div class="flex flex-col gap-4">
+            <h4 class="font-medium lg:text-lg leading-relaxed">
+              {{ i18n "hub_deployment_self_hosted_subtitle" . }}
+            </h4>
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "hub_deployment_self_hosted_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "hub_deployment_self_hosted_benefit_2" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "hub_deployment_self_hosted_benefit_3" . }}</span>
+              </li>
+            </ul>
+          </div>
+          <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary w-full lg:w-96" data-umami-event="hub-deployment-self-hosted-cta">
+            {{ i18n "pricing_hub_self_hosted_cta" . }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="container py-12">
     <header class="text-center">
       <h2 id="faq" class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
@@ -174,7 +256,7 @@
   <section class="container text-center py-12">
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "hub_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_contact_us_description" . | safeHTML }}</p>
-    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-contact-us">
+    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-contact-us">
       <i class="fa-solid fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
     </a>
   </section>

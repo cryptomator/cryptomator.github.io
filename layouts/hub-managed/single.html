@@ -215,7 +215,7 @@
   <section class="container text-center pt-12 pb-24">
     <h2 class="font-h2 mb-4">{{ i18n "hub_managed_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_managed_contact_us_description" . | safeHTML }}</p>
-    <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-managed-contact-us">
+    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-managed-contact-us">
       <i class="fa-solid fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
     </a>
   </section>
