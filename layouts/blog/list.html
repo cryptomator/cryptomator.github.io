@@ -35,10 +35,10 @@
         {{ end }}
       {{ end }}
 
-      <!-- Section 2: Next 2 Posts (2-column cards) (only on Page 1) -->
-      {{ $card_posts := first 2 (after 1 $paginator.Pages) }}
+      <!-- Section 2: Next 3 Posts (3-column cards) (only on Page 1) -->
+      {{ $card_posts := first 3 (after 1 $paginator.Pages) }}
       {{ if $card_posts }}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 py-0 md:py-6 lg:py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 py-0 md:py-6 lg:py-12">
           {{ range $page := $card_posts }}
             <article class="white-box overflow-hidden mb-6">
               <figure class="relative h-48 w-full bg-primary-l2">
@@ -62,8 +62,8 @@
         </div>
       {{ end }}
 
-      <!-- Section 3: Remaining 7 Posts (on Page 1) -->
-      {{ $list_posts_page1 := after 3 $paginator.Pages }}
+      <!-- Section 3: Remaining 6 Posts (on Page 1) -->
+      {{ $list_posts_page1 := after 4 $paginator.Pages }}
       {{ if $list_posts_page1 }}
         <div class="space-y-6 mb-12">
           {{ range $page := $list_posts_page1 }}
