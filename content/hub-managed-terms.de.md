@@ -3,7 +3,7 @@ title: "AGB für Cryptomator Hub (SaaS)"
 url: "/de/hub/managed/terms"
 ---
 
-_Stand: Juli 2025_
+_Stand: Oktober 2025_
 
 Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ als Software as a Service (SaaS) Dienstleistung.
 {.text-lg .leading-relaxed .text-gray-700}
@@ -66,7 +66,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 {type=a}
 
 ## §5 Support {#support}
-5.1 Der Provider richtet für Anfragen des Kunden zu Funktionen der Software einen Support-Service ein. Anfragen können über die auf der Website (https://cryptomator.org/de/contact/) des Providers angegebene Support-Kanäle zu den dort angegebenen Zeiten oder per E-Mail gestellt werden. Die Anfragen werden in zeitlicher Reihenfolge ihres Eingangs bearbeitet.
+5.1 Der Provider richtet für Anfragen des Kunden zu Funktionen der Software einen Support-Service ein. Anfragen können per E-Mail auf Deutsch oder Englisch an hub-support@cryptomator.org gestellt werden. Die Anfragen werden in zeitlicher Reihenfolge ihres Eingangs bearbeitet.
 
 5.2 Der Support erstreckt sich nicht auf Probleme mit oder Schäden an der Software, soweit diese verursacht wurden durch
 
