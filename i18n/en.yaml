@@ -17,7 +17,7 @@
 - id: success_story_cta_get_started
   translation: "Get Started"
 - id: success_story_cta_book_demo
-  translation: "Book Demo"
+  translation: "Book a Demo"
 - id: nav_cta
   translation: "Get Started"
 - id: nav_products
@@ -1138,7 +1138,7 @@
 - id: book_demo_message_placeholder
   translation: "Tell us more about your specific needs or questions..."
 - id: book_demo_submit
-  translation: "Book Demo"
+  translation: "Book a Demo"
 - id: book_demo_success_title
   translation: "Demo Request Received!"
 - id: book_demo_success_message
