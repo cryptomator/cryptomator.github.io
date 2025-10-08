@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: July 2025_
+_Effective date: October 2025_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -70,7 +70,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 
 ## §5 Support {#support}
-5.1 The Provider shall set up a support service for inquiries of the Customer regarding functions of the Software. Requests can be made via the support channels indicated on the Provider's website (https://cryptomator.org/contact/) at the times indicated there or by email. The requests will be processed in the chronological order of their receipt.
+5.1 The Provider shall set up a support service for inquiries of the Customer regarding functions of the Software. Requests can be made via email in German or English to hub-support@cryptomator.org. The requests will be processed in the chronological order of their receipt.
 
 5.2 The support does not cover problems with or damage to the software, insofar as these were caused by
 
