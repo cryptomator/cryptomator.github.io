@@ -1,6 +1,7 @@
 # API
-baseApiUrl: http://api.cryptomator.org
-storeApiUrl: https://store.cryptomator.org/api
+apiBaseURL: https://api.cryptomator.org
+legacyApiUrl: https://api.cryptomator.org
+legacyStoreUrl: https://store.cryptomator.org/api
 
 # UMAMI
 umamiWebsiteId: 8d451e39-ffb2-4697-82c9-9f69eff497f1

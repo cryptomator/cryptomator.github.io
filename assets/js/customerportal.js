@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_CUSTOMER_PORTAL_URL = BASE_API_URL + '/stripe/request_customer_portal.php';
+const REQUEST_CUSTOMER_PORTAL_URL = LEGACY_API_URL + '/stripe/request_customer_portal.php';
 
 class CustomerPortal {
 

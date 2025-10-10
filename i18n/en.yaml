@@ -396,19 +396,15 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Secure&nbsp;collaboration in&nbsp;your&nbsp;team"
+  translation: "Data security, not just data protection"
 - id: hub_header_description
-  translation: "Cryptomator Hub extends Cryptomator for your team or organization – with zero-knowledge encryption, access restricted to authorized users, and seamless integration into your IT infrastructure. This way, you retain full control, no matter which cloud you use."
-- id: hub_header_managed_title
-  translation: "Managed"
-- id: hub_header_managed_cta
-  translation: "Get Started"
-- id: hub_header_self_hosted_title
-  translation: "Self-Hosted"
-- id: hub_header_self_hosted_cta
-  translation: "Deploy Now"
-- id: hub_header_cta_description
-  translation: "Start your free 30-day trial today, no credit card required."
+  translation: "Don't rely solely on your cloud provider's promises. Cryptomator Hub encrypts your confidential company data, including personally identifiable information and internal business documents."
+- id: hub_header_demo_cta
+  translation: "Book a Live Demo"
+- id: hub_header_contact_cta
+  translation: "Contact Sales"
+- id: hub_header_deployment_link
+  translation: "Ready to get started with Cryptomator Hub?"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -471,6 +467,25 @@
   translation: "Find the right plan for your organization. Compare features and choose the best option to securely manage your encrypted storage with Cryptomator Hub."
 - id: hub_pricing_button
   translation: "View Pricing Plans"
+
+- id: hub_deployment_title
+  translation: "Ready to Get Started with Cryptomator Hub?"
+- id: hub_deployment_managed_subtitle
+  translation: "Hosted and maintained by Skymatic"
+- id: hub_deployment_managed_benefit_1
+  translation: "No infrastructure setup required"
+- id: hub_deployment_managed_benefit_2
+  translation: "Automatic updates and maintenance"
+- id: hub_deployment_managed_benefit_3
+  translation: "ISO/IEC 27001 certified data center in the EU"
+- id: hub_deployment_self_hosted_subtitle
+  translation: "Full control over your infrastructure"
+- id: hub_deployment_self_hosted_benefit_1
+  translation: "Deploy on your own servers or cloud"
+- id: hub_deployment_self_hosted_benefit_2
+  translation: "Flexible integration with existing systems"
+- id: hub_deployment_self_hosted_benefit_3
+  translation: "Complete data sovereignty"
 
 - id: hub_contact_us_title
   translation: "More questions?"
@@ -921,7 +936,7 @@
 - id: pricing_hub_managed_title
   translation: "Managed"
 - id: pricing_hub_managed_cta
-  translation: "Get Started"
+  translation: "Sign Up Now"
 
 - id: pricing_hub_community_title
   translation: "Community"
@@ -1078,17 +1093,15 @@
 - id: coming_soon
   translation: "Coming Soon"
 - id: solutions_contact_title
-  translation: "Your Industry Not Listed?"
+  translation: "Have a Specific Use Case?"
 - id: solutions_contact_description
-  translation: "We work with organizations across all sectors. Let us know your specific requirements and we'll help you implement the right encryption solution."
+  translation: "We work with organizations across all sectors to implement tailored encryption solutions. Let us know your requirements and we'll help you find the right approach."
 - id: solutions_contact_button
   translation: "Contact Us"
 
 # Solutions Single
 - id: solutions_hero_get_started
   translation: "Get Started"
-- id: solutions_hero_book_demo
-  translation: "Book a Demo"
 - id: solutions_trusted_by_title
   translation: "Trusted by 100+ organizations worldwide"
 - id: solutions_single_contact_title
@@ -1161,20 +1174,6 @@
   translation: "Follow up"
 - id: book_demo_step_4_description
   translation: "We'll provide additional resources and answer any questions you may have."
-- id: book_demo_looking_for_title
-  translation: "Looking for something else?"
-- id: book_demo_link_contact_sales
-  translation: "Contact sales"
-- id: book_demo_link_contact_sales_description
-  translation: "Discuss pricing, technical integration, and compliance requirements with our sales team."
-- id: book_demo_link_partner
-  translation: "Become a partner"
-- id: book_demo_link_partner_description
-  translation: "Join our partner program and integrate Cryptomator into your business offerings."
-- id: book_demo_link_contact
-  translation: "General contact"
-- id: book_demo_link_contact_description
-  translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
 
 # Contact Sales
 - id: contact_sales_first_name
@@ -1221,20 +1220,6 @@
   translation: "Personal response"
 - id: contact_sales_step_3_description
   translation: "Get a detailed, personalized response within one business day."
-- id: contact_sales_sidebar_title
-  translation: "Looking for something else?"
-- id: contact_sales_link_demo
-  translation: "Book a demo"
-- id: contact_sales_link_demo_description
-  translation: "See Cryptomator Hub in action with a demo tailored to your use case."
-- id: contact_sales_link_partner
-  translation: "Become a partner"
-- id: contact_sales_link_partner_description
-  translation: "Integrate Cryptomator into your business through our partner program."
-- id: contact_sales_link_general
-  translation: "General contact"
-- id: contact_sales_link_general_description
-  translation: "Reach out for support, general inquiries, or other questions."
 
 # Partner Form
 - id: partner_first_name
@@ -1288,17 +1273,37 @@
 - id: partner_step_3_description
   translation: "You'll receive a detailed response within 2-3 business days about next steps."
 
+# Other Contact
+- id: other_contact_looking_for_title
+  translation: "Looking for something else?"
+- id: other_contact_link_contact_sales
+  translation: "Contact sales"
+- id: other_contact_link_contact_sales_description
+  translation: "Discuss pricing, technical integration, and compliance requirements with our sales team."
+- id: other_contact_link_book_demo
+  translation: "Book a demo"
+- id: other_contact_link_book_demo_description
+  translation: "See Cryptomator Hub in action with a demo tailored to your use case."
+- id: other_contact_link_partner
+  translation: "Become a partner"
+- id: other_contact_link_partner_description
+  translation: "Join our partner program and integrate Cryptomator into your business offerings."
+- id: other_contact_link_contact
+  translation: "General contact"
+- id: other_contact_link_contact_description
+  translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
+
 # Sale
 - id: nav_promotion
-  translation: ":sunny: Summer Sale: 25%* Off Cryptomator – All&nbsp;June&nbsp;Long!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/06/01/summer-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+  translation: ":maple_leaf: Autumn Sale: 25%* Off Cryptomator – Until&nbsp;September&nbsp;30!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/09/22/autumn-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: sale_off
   translation: "Off"
 - id: for_individuals_header_kicker_sale
-  translation: "25%* Off – Summer Sale"
+  translation: "25%* Off – Autumn Sale"
 - id: home_header_kicker_sale
-  translation: "25%* Off – Summer Sale"
+  translation: "25%* Off – Autumn Sale"
 - id: hub_header_kicker_sale
-  translation: "25% Off in the First Year – Summer Sale"
+  translation: "25% Off in the First Year – Autumn Sale"
 - id: pricing_android_price_discounted
   translation: "€14.99"
 - id: pricing_ios_price_discounted
