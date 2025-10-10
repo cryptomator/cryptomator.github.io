@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {{ range .Pages }}
+        <article class="white-box">
+          <figure class="border-b border-primary h-48 w-full">
+            <a href="{{ .RelPermalink }}">
+              {{ if .Params.cardimage }}
+                <img class="size-full object-cover" src="{{ .Params.cardimage }}" alt="{{ .Title }}">
+              {{ else }}
+                <img class="size-full object-contain p-6" src="/img/logo.svg" alt="{{ .Title }}">
+              {{ end }}
+            </a>
+          </figure>
+          <div class="p-4">
+            <h2 class="font-h2 mb-4">
+              <a class="text-link" href="{{ .RelPermalink }}">{{ .Params.cardtitle }}</a>
+            </h2>
+            <p class="font-p">{{ .Params.cardtext }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

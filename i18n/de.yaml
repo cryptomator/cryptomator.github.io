@@ -46,6 +46,10 @@
   translation: "Häufig gestellte Fragen"
 - id: modal_cancel
   translation: "Abbrechen"
+- id: quote_start
+  translation: "„"
+- id: quote_end
+  translation: "“"
 
 # Android
 - id: android_getkey_title
@@ -1274,6 +1278,30 @@
   translation: "Allgemeine Kontakt"
 - id: other_contact_link_contact_description
   translation: "Nimm Kontakt auf für allgemeine Anfragen, Support-Fragen oder andere nicht-vertriebsbezogene Angelegenheiten."
+
+# Success Story
+- id: success_story_title
+  translation: "Erfolgsgeschichte"
+- id: success_story_company_size
+  translation: "Unternehmensgröße"
+- id: success_story_headquarters
+  translation: "Hauptsitz"
+- id: success_story_industry
+  translation: "Branche"
+- id: success_story_table_of_contents
+  translation: "Inhaltsverzeichnis"
+- id: success_story_download_pdf
+  translation: "PDF herunterladen"
+- id: success_story_cta_title
+  translation: "Interessiert an einer ähnlichen Lösung?"
+- id: success_story_cta_description
+  translation: "Entdecken Sie, wie Cryptomator Hub auch Ihr Unternehmen bei der sicheren Verwaltung sensibler Daten unterstützen kann."
+- id: success_story_cta_get_started
+  translation: "Jetzt starten"
+- id: success_story_cta_book_demo
+  translation: "Demo buchen"
+- id: success_story_read_link
+  translation: "Erfolgsgeschichte lesen"
 
 # Sale
 - id: nav_promotion

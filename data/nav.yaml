@@ -20,6 +20,7 @@
   - Path: "/comparisons"
   - Path: "/compliance"
   - Separator: true
+  - Path: "/success-stories"
   - Path: "/coop"
   - Path: "/enterprise"
   - Separator: true
