@@ -8,13 +8,13 @@ tags: [cryptomator, desktop, beta]
 summary: "The 1.18.0 beta of Cryptomator Desktop is here: new features, key fixes, and a new Windows installer certificate that needs your support. Try it now and share your feedback!"
 
 ogimage:
-  relsrc: /img/blog/desktop-1-18-0.png
+  relsrc: /img/blog/desktop-1.18.0-beta.png
   width: 1200
   height: 675
 ---
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/desktop-1-18-0.png" alt="Cryptomator Desktop 1.18.0 Beta" />
+  <img class="inline-block rounded-sm" src="/img/blog/desktop-1.18.0-beta.png" alt="Cryptomator Desktop 1.18.0 Beta" />
 </figure>
 
 The next release of Cryptomator Desktop is right around the corner – and before we publish the final version, we'd like to invite you to test the beta of version 1.18.0. Along with useful new features and important bug fixes, this release also comes with a special call to our community.
