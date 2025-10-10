@@ -1,23 +1,5 @@
 - id: site_meta_description
   translation: "Cryptomator is an open-source encryption tool for secure cloud storage. Protect your privacy for free on Dropbox, Google Drive, OneDrive, and more."
-- id: success_story_company_size
-  translation: "Company Size"
-- id: success_story_headquarters
-  translation: "Headquarters"
-- id: success_story_industry
-  translation: "Industry"
-- id: success_story_table_of_contents
-  translation: "Table of Contents"
-- id: success_story_download_pdf
-  translation: "Download PDF"
-- id: success_story_cta_title
-  translation: "Interested in a similar solution?"
-- id: success_story_cta_description
-  translation: "Discover how Cryptomator Hub can help your company securely manage sensitive data."
-- id: success_story_cta_get_started
-  translation: "Get Started"
-- id: success_story_cta_book_demo
-  translation: "Book a Demo"
 - id: nav_cta
   translation: "Get Started"
 - id: nav_products
@@ -64,6 +46,10 @@
   translation: "Frequently Asked Questions"
 - id: modal_cancel
   translation: "Cancel"
+- id: quote_start
+  translation: "“"
+- id: quote_end
+  translation: "”"
 
 # Android
 - id: android_getkey_title
@@ -1292,6 +1278,30 @@
   translation: "General contact"
 - id: other_contact_link_contact_description
   translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
+
+# Success Story
+- id: success_story_title
+  translation: "Success Story"
+- id: success_story_company_size
+  translation: "Company Size"
+- id: success_story_headquarters
+  translation: "Headquarters"
+- id: success_story_industry
+  translation: "Industry"
+- id: success_story_table_of_contents
+  translation: "Table of Contents"
+- id: success_story_download_pdf
+  translation: "Download PDF"
+- id: success_story_cta_title
+  translation: "Interested in a similar solution?"
+- id: success_story_cta_description
+  translation: "Discover how Cryptomator Hub can help your company securely manage sensitive data."
+- id: success_story_cta_get_started
+  translation: "Get Started"
+- id: success_story_cta_book_demo
+  translation: "Book a Demo"
+- id: success_story_read_link
+  translation: "Read success story"
 
 # Sale
 - id: nav_promotion
