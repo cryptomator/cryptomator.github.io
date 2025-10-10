@@ -14,6 +14,10 @@ ogimage:
 
 With the start of the new winter semester, lecture halls are filling up again—as are the **digital platforms of universities**. Learning management systems, research platforms, cloud storage solutions, and digital administrative processes have long been part of everyday life at universities. But while digitalization opens up new opportunities, it also carries risks: **cyberattacks, data breaches, and inadequately protected cloud data** jeopardize the integrity and confidentiality of highly sensitive information. In this article, we show why encryption is essential for universities – and how it helps make **research, teaching, and administration more secure**.
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/back-to-school.png" alt="Back to School – Data Security for Universities" />
+</figure>
+
 ## Why Universities Are a Lucrative Target for Cyberattacks
 
 Universities and colleges process a wide range of sensitive data:
