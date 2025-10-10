@@ -14,6 +14,10 @@ ogimage:
 
 Mit dem Start des neuen Wintersemesters füllen sich wieder die Hörsäle – und auch die **digitalen Plattformen der Hochschulen**. Lernmanagementsysteme, Forschungsplattformen, Cloud-Speicherlösungen und digitale Verwaltungsprozesse gehören längst zum Alltag an Universitäten. Doch während die Digitalisierung neue Möglichkeiten eröffnet, birgt sie auch Risiken: **Cyberangriffe, Datenschutzverletzungen und unzureichend geschützte Cloud-Daten** gefährden die Integrität und Vertraulichkeit hochsensibler Informationen. In diesem Beitrag zeigen wir, warum Verschlüsselung für Universitäten essenziell ist – und wie sie dabei hilft, **Forschung, Lehre und Verwaltung sicherer zu machen**.
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/back-to-school.png" alt="Zurück in den Hörsaal – Datensicherheit für Universitäten" />
+</figure>
+
 ### Warum Universitäten ein lukratives Ziel für Cyberangriffe sind
 
 Universitäten und Hochschulen verarbeiten eine große Bandbreite an sensiblen Daten:
