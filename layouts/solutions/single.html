@@ -11,8 +11,9 @@
         </div>
         <h1 class="font-h1 mb-6">{{ .Params.hero_title | default .Title }}</h1>
         <p class="lead mb-8 max-w-4xl mx-auto">{{ .Params.hero_description | default .Description | safeHTML }}</p>
-        <div class="flex justify-center mb-6">
+        <div class="flex flex-col md:flex-row gap-6 mb-6 justify-center">
           <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="solutions-get-started">{{ i18n "solutions_hero_get_started" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-outline-primary text-lg w-full md:w-64" data-umami-event="solutions-book-demo">{{ i18n "solutions_hero_book_demo" . }}</a>
         </div>
       </div>
     </header>

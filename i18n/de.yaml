@@ -1086,6 +1086,8 @@
 # Solutions Single
 - id: solutions_hero_get_started
   translation: "Jetzt loslegen"
+- id: solutions_hero_book_demo
+  translation: "Demo buchen"
 - id: solutions_trusted_by_title
   translation: "Vertrauen von 100+ Organisationen weltweit"
 - id: solutions_single_contact_title
