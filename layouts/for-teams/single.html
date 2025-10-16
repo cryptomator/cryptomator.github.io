@@ -18,14 +18,9 @@
         <h1 class="font-h1 mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
         <p class="lead mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-4">
-          <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-demo-cta">{{ i18n "hub_header_demo_cta" . }}</a>
-          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary text-lg w-full md:w-64" data-umami-event="hub-header-contact-cta">{{ i18n "hub_header_contact_cta" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
         </div>
-        <p class="font-p">
-          <a href="#deployment" class="text-gray-700 hover:text-gray-900" data-umami-event="hub-header-deployment-link">
-            <i class="fa-solid fa-arrow-down"></i> {{ i18n "hub_header_deployment_link" . }}
-          </a>
-        </p>
+        <p class="font-p">{{ i18n "hub_header_managed_cta_description" . | safeHTML }}</p>
       </div>
     </header>
   </section>

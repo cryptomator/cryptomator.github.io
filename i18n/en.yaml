@@ -385,12 +385,10 @@
   translation: "Data security, not just data protection"
 - id: hub_header_description
   translation: "Don't rely solely on your cloud provider's promises. Cryptomator Hub encrypts your confidential company data, including personally identifiable information and internal business documents."
-- id: hub_header_demo_cta
-  translation: "Book a Live Demo"
-- id: hub_header_contact_cta
-  translation: "Contact Sales"
-- id: hub_header_deployment_link
-  translation: "Ready to get started with Cryptomator Hub?"
+- id: hub_header_managed_cta
+  translation: "Sign Up Now"
+- id: hub_header_managed_cta_description
+  translation: "Start your free 30-day trial today, no credit card required."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
