@@ -112,7 +112,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 7\n\n';
+    result += '# Generated using script version 8\n\n';
 
     return result;
   }
@@ -246,7 +246,7 @@ GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
           email: "system@localhost",
           enabled: true,
           serviceAccountClientId: "cryptomatorhub-system",
-          clientRoles: { 'realm-management' : ['realm-admin'] }
+          clientRoles: { 'realm-management' : ['realm-admin', 'view-system'] }
         }
       ],
       scopeMappings: [
@@ -428,7 +428,7 @@ EOF`;
         'init-config': {condition: 'service_completed_successfully'},
         'postgres': {condition: 'service_healthy'}
       },
-      image: 'ghcr.io/cryptomator/keycloak:26.3.5',
+      image: 'ghcr.io/cryptomator/keycloak:26.4.1',
       command: startCmd,
       volumes: ['kc-config:/opt/keycloak/data/import'],
       deploy: {
@@ -799,7 +799,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
             }],
             containers: [{
               name: 'keycloak',
-              image: 'ghcr.io/cryptomator/keycloak:26.3.5',
+              image: 'ghcr.io/cryptomator/keycloak:26.4.1',
               command: startCmd,
               ports: [{containerPort: 8080}],
               resources: {
