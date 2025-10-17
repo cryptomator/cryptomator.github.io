@@ -20,7 +20,7 @@ What exactly happened, why is this incident so explosive, and what can you learn
   <img class="inline-block rounded-sm" src="/img/blog/onedrive-security-breach.png" alt="OneDrive Security Breach Shows: Why Zero-Knowledge Matters" />
 </figure>
 
-## What Went Wrong With Onedrive File Picker?
+## What Went Wrong With OneDrive File Picker?
 
 OneDrive File Picker is a popular interface that allows apps to access files from personal cloud storage. However, Oasis Security discovered that **certain configuration** errors allowed applications to view and download files that they did not officially have access to – even sensitive content such as tax documents, project plans, or confidential meeting minutes.
 
