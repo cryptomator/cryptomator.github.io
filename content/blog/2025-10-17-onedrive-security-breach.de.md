@@ -1,6 +1,6 @@
 ---
-title: "OneDrive-Sicherheitslücke zeigt: Zero-Knowledge-Verschlüsselung ist unverzichtbar"
-slug: onedrive-sicherheitluecke
+title: "OneDrive-Sicherheitslücke zeigt: Warum Zero-Knowledge zählt"
+slug: onedrive-security-breach
 date: 2025-10-17
 tags: [cryptomator, onedrive]
 
