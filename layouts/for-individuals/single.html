@@ -17,9 +17,7 @@
         <h1 class="font-h1 mb-6">{{ i18n "for_individuals_header_title" . | safeHTML }}</h1>
         <p class="lead mb-6">{{ i18n "for_individuals_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-4">
-          <div class="flex flex-col gap-2">
-            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="for-individuals-header-cta">{{ i18n "for_individuals_header_cta" . }}</a>
-          </div>
+          <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="for-individuals-header-cta">{{ i18n "for_individuals_header_cta" . }}</a>
       </div>
       <p class="font-p">{{ i18n "for_individuals_header_cta_description" . | safeHTML }}</p>
     </header>

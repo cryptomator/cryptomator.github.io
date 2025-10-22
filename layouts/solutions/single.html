@@ -11,8 +11,9 @@
         </div>
         <h1 class="font-h1 mb-6">{{ .Params.hero_title | default .Title }}</h1>
         <p class="lead mb-8 max-w-4xl mx-auto">{{ .Params.hero_description | default .Description | safeHTML }}</p>
-        <div class="flex justify-center mb-6">
+        <div class="flex flex-col md:flex-row gap-6 mb-6 justify-center">
           <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="solutions-get-started">{{ i18n "solutions_hero_get_started" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-outline-primary text-lg w-full md:w-64" data-umami-event="solutions-book-demo">{{ i18n "solutions_hero_book_demo" . }}</a>
         </div>
       </div>
     </header>
@@ -107,15 +108,15 @@
     {{ end }}
   </section>
 
-  {{ if .Params.case_studies_show }}
+  {{ if .Params.success_stories_show }}
   <section class="container py-16">
     <header class="text-center mb-12">
-      <h2 class="font-h2 mb-4">{{ .Params.case_studies_title }}</h2>
-      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.case_studies_subtitle | safeHTML }}</p>
+      <h2 class="font-h2 mb-4">{{ .Params.success_stories_title }}</h2>
+      <p class="font-p text-gray-600 max-w-3xl mx-auto">{{ .Params.success_stories_subtitle | safeHTML }}</p>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {{ range .Params.case_studies }}
+      {{ range .Params.success_stories }}
       <article class="white-box overflow-hidden relative {{ if not .comingsoon }}group cursor-pointer{{ end }}">
         <figure class="aspect-video relative">
           {{ if .comingsoon }}

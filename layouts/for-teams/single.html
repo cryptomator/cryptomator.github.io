@@ -18,17 +18,36 @@
         <h1 class="font-h1 mb-6">{{ i18n "hub_header_title" . | safeHTML }}</h1>
         <p class="lead mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
         <div class="flex flex-col md:flex-row gap-6 mb-4">
-          <a href="{{ .Site.LanguagePrefix }}/book-a-demo/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-demo-cta">{{ i18n "hub_header_demo_cta" . }}</a>
-          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary text-lg w-full md:w-64" data-umami-event="hub-header-contact-cta">{{ i18n "hub_header_contact_cta" . }}</a>
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
         </div>
-        <p class="font-p">
-          <a href="#deployment" class="text-gray-700 hover:text-gray-900" data-umami-event="hub-header-deployment-link">
-            <i class="fa-solid fa-arrow-down"></i> {{ i18n "hub_header_deployment_link" . }}
-          </a>
-        </p>
+        <p class="font-p">{{ i18n "hub_header_managed_cta_description" . | safeHTML }}</p>
       </div>
     </header>
   </section>
+
+  {{ $walbuschPage := .Site.GetPage (printf "/success-stories/walbusch.%s.html" .Language.Lang) }}
+  {{ if $walbuschPage }}
+  <section class="container py-12">
+    <div class="text-center max-w-5xl mx-auto">
+      <div class="flex justify-center mb-6">
+        <img src="{{ $walbuschPage.Params.hero_image_company_logo }}" alt="{{ $walbuschPage.Params.company }} Logo" class="h-8"/>
+      </div>
+      <blockquote class="text-balance text-lg md:text-xl font-medium text-gray-700 leading-relaxed mb-6">
+        {{ i18n "quote_start" . }}{{ $walbuschPage.Params.quote }}{{ i18n "quote_end" . }}
+      </blockquote>
+      <p class="font-p mb-6">
+        <cite class="text-gray-600">
+          {{ $walbuschPage.Params.quote_author }}
+        </cite>
+      </p>
+      <p class="font-p">
+        <a href="{{ $walbuschPage.RelPermalink }}" class="text-link" data-umami-event="hub-success-story-link">
+          {{ i18n "success_story_read_link" . }} <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </p>
+    </div>
+  </section>
+  {{ end }}
 
   <section class="container py-12">
     <header class="text-center">

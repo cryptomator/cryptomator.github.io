@@ -46,6 +46,10 @@
   translation: "Frequently Asked Questions"
 - id: modal_cancel
   translation: "Cancel"
+- id: quote_start
+  translation: "“"
+- id: quote_end
+  translation: "”"
 
 # Android
 - id: android_getkey_title
@@ -364,12 +368,10 @@
   translation: "Data security, not just data protection"
 - id: hub_header_description
   translation: "Don't rely solely on your cloud provider's promises. Cryptomator Hub encrypts your confidential company data, including personally identifiable information and internal business documents."
-- id: hub_header_demo_cta
-  translation: "Book a Live Demo"
-- id: hub_header_contact_cta
-  translation: "Contact Sales"
-- id: hub_header_deployment_link
-  translation: "Ready to get started with Cryptomator Hub?"
+- id: hub_header_managed_cta
+  translation: "Sign Up Now"
+- id: hub_header_managed_cta_description
+  translation: "Start your free 30-day trial today, no credit card required."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -1056,6 +1058,8 @@
 # Solutions Single
 - id: solutions_hero_get_started
   translation: "Get Started"
+- id: solutions_hero_book_demo
+  translation: "Book a Demo"
 - id: solutions_trusted_by_title
   translation: "Trusted by 100+ organizations worldwide"
 - id: solutions_single_contact_title
@@ -1105,7 +1109,7 @@
 - id: book_demo_message_placeholder
   translation: "Tell us more about your specific needs or questions..."
 - id: book_demo_submit
-  translation: "Book Demo"
+  translation: "Book a Demo"
 - id: book_demo_success_title
   translation: "Demo Request Received!"
 - id: book_demo_success_message
@@ -1246,6 +1250,30 @@
   translation: "General contact"
 - id: other_contact_link_contact_description
   translation: "Get in touch for general inquiries, support questions, or other non-sales related matters."
+
+# Success Story
+- id: success_story_title
+  translation: "Success Story"
+- id: success_story_company_size
+  translation: "Company Size"
+- id: success_story_headquarters
+  translation: "Headquarters"
+- id: success_story_industry
+  translation: "Industry"
+- id: success_story_table_of_contents
+  translation: "Table of Contents"
+- id: success_story_download_pdf
+  translation: "Download PDF"
+- id: success_story_cta_title
+  translation: "Interested in a similar solution?"
+- id: success_story_cta_description
+  translation: "Discover how Cryptomator Hub can help your company securely manage sensitive data."
+- id: success_story_cta_get_started
+  translation: "Get Started"
+- id: success_story_cta_book_demo
+  translation: "Book a Demo"
+- id: success_story_read_link
+  translation: "Read success story"
 
 # Sale
 - id: nav_promotion
