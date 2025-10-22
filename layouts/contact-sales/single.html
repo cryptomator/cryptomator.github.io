@@ -1,3 +1,6 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
 {{ define "main" }}
   <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {firstName: '', lastName: '', email: '', website: '', topic: '', message: '', captcha: null, acceptNewsletter: false, formType: 'contact-sales'}, acceptTerms: false, hubContact: null, captchaState: null}" x-init="hubContact = new HubContact($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="mb-6">
@@ -190,9 +193,6 @@
       </section>
     </form>
   </section>
-{{ end }}
-{{ define "preloads" }}
-  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}

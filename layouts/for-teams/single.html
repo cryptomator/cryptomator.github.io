@@ -1,6 +1,7 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/managed/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/">
+  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
   <section class="flex items-center min-h-[66vh]">
@@ -314,10 +315,14 @@
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}
