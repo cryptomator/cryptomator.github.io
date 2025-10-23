@@ -1102,8 +1102,8 @@
   translation: "Management"
 - id: book_demo_attendee_procurement
   translation: "Procurement"
-- id: book_demo_attendee_not_sure
-  translation: "Not sure"
+- id: book_demo_attendee_other
+  translation: "Other"
 - id: book_demo_message
   translation: "Message"
 - id: book_demo_message_placeholder

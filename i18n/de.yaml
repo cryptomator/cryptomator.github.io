@@ -1102,7 +1102,7 @@
   translation: "Management"
 - id: book_demo_attendee_procurement
   translation: "Beschaffung"
-- id: book_demo_attendee_not_sure
+- id: book_demo_attendee_other
   translation: "Nicht sicher"
 - id: book_demo_message
   translation: "Nachricht"
