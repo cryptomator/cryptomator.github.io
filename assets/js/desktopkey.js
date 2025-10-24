@@ -36,6 +36,7 @@ class DesktopLicense {
         this._checkoutData.prices = result.data.details.lineItems.map(item => {
           return {
             priceId: item.price.id,
+            currencyCode: result.data.currencyCode,
             amount: item.totals.total,
             formattedAmount: item.formattedTotals.total
           }

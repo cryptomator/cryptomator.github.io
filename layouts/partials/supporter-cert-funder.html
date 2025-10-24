@@ -2,7 +2,12 @@
   <form x-show="!checkoutData.success" x-ref="funderForm" @submit.prevent="checkoutData.acceptNewsletter && subscribeToNewsletter(checkoutData.email, 'cryptomator', checkoutData.captcha); desktopLicense.checkout(checkoutData.prices[checkoutData.selectedPriceIndex].priceId, '{{ .Site.Language.Lang }}'); $refs.captcha.reset()">
     <div class="flex flex-wrap md:flex-nowrap">
       <fieldset class="w-full mb-4 md:w-2/3 md:pr-3">
-        <legend class="label-uppercase mb-2">{{ i18n "supporter_cert_funder_price" }}</legend>
+        <legend class="label-uppercase mb-2">
+          {{ i18n "supporter_cert_funder_price" }}
+          <span x-show="checkoutData.prices[checkoutData.selectedPriceIndex]?.currencyCode" x-cloak>
+            (in <span x-text="checkoutData.prices[checkoutData.selectedPriceIndex].currencyCode"></span>)
+          </span>
+        </legend>
         <div class="grid grid-cols-3 gap-2 mb-2">
           <template x-for="(price, index) in checkoutData.prices">
             <label :class="{'border-gray-300 hover:border-primary': checkoutData.selectedPriceIndex != index, 'border-primary bg-primary text-white': checkoutData.selectedPriceIndex == index}" class="relative flex items-center justify-center rounded-sm px-3 py-2 cursor-pointer border focus:ring-0 focus:border-secondary" @click="checkoutData.selectedPriceIndex = index">

@@ -34,6 +34,7 @@ class AndroidLicense {
       };
       paddle.PricePreview(request).then(result => {
         this._checkoutData.price = {
+          currencyCode: result.data.currencyCode,
           amount: result.data.details.lineItems[0].totals.total,
           formattedAmount: result.data.details.lineItems[0].formattedTotals.total
         };

@@ -5,7 +5,12 @@
 
   <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8" @submit.prevent="checkoutData.acceptNewsletter && subscribeToNewsletter(checkoutData.email, 'cryptomator', checkoutData.captcha); androidLicense.checkout('{{ .Site.Language.Lang }}'); $refs.captcha.reset()">
     <div class="mb-4">
-      <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
+      <label class="label-uppercase mb-2">
+        {{ i18n "android_getkey_price" }}
+        <span x-show="checkoutData.price" x-cloak>
+          (in <span x-text="checkoutData.price ? checkoutData.price.currencyCode : ''"></span>)
+        </span>
+      </label>
       <div class="relative input-box flex items-center gap-2 w-full lg:w-1/2">
         <span x-show="checkoutData.discountedPrice && checkoutData.price" x-text="checkoutData.price ? checkoutData.price.formattedAmount : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
         <span x-text="checkoutData.discountedPrice ? checkoutData.discountedPrice.formattedAmount : checkoutData.price ? checkoutData.price.formattedAmount : '…'">…</span>
