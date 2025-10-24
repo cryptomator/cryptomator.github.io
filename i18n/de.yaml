@@ -991,8 +991,6 @@
 
 - id: supporter_cert_funder_quantity
   translation: "Anzahl Lizenzen"
-- id: supporter_cert_funder_quantity_help
-  translation: "Eine Lizenz gilt für einen Nutzer und kann auf mehreren Computern verwendet werden."
 - id: supporter_cert_funder_price
   translation: "Preis pro Lizenz"
 - id: supporter_cert_funder_price_help

@@ -991,8 +991,6 @@
 
 - id: supporter_cert_funder_quantity
   translation: "Number of Licenses"
-- id: supporter_cert_funder_quantity_help
-  translation: "One license is valid for one user and can be used on multiple computers."
 - id: supporter_cert_funder_price
   translation: "Price per License"
 - id: supporter_cert_funder_price_help
