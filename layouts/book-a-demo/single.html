@@ -1,3 +1,6 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
 {{ define "main" }}
   <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {firstName: '', lastName: '', email: '', company: '', interests: [], attendees: [], message: '', captcha: null, acceptNewsletter: false, formType: 'book-demo'}, acceptTerms: false, hubContact: null, captchaState: null}" x-init="hubContact = new HubContact($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="mb-6">
@@ -98,8 +101,8 @@
                       <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_procurement" }}</span>
                     </label>
                     <label class="flex items-start">
-                      <input type="checkbox" name="attendees[]" value="not-sure" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
-                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_not_sure" }}</span>
+                      <input type="checkbox" name="attendees[]" value="other" x-model="submitData.attendees" class="mr-3 mt-0.5 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary">
+                      <span class="text-sm text-gray-700">{{ i18n "book_demo_attendee_other" }}</span>
                     </label>
                   </div>
                 </fieldset>
@@ -131,7 +134,8 @@
                   <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                   {{ i18n "book_demo_submit" }}
                 </button>
-                {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+                {{ $captchaUrl := printf "%s/connect/contact/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $captchaUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
               </div>
             </div>
           </div>
@@ -247,9 +251,6 @@
       </section>
     </form>
   </section>
-{{ end }}
-{{ define "preloads" }}
-  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}

@@ -69,7 +69,7 @@ jobs:
 
   # DEPLOY STAGING
   deploy-staging:
-    if: github.ref == 'refs/heads/feature/api-migration'
+    if: github.ref == 'refs/heads/develop'
     name: Deploy Staging to GitHub Pages
     runs-on: ubuntu-latest
     needs: [build]

@@ -1,3 +1,6 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
     <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, monthlyPrice: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
@@ -450,9 +453,6 @@
       </template>
     </form>
   </div>
-{{ end }}
-{{ define "preloads" }}
-  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
