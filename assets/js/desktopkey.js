@@ -74,7 +74,7 @@ class DesktopLicense {
     this._paddle.then(paddle => {
       paddle.Checkout.open({
         settings: { locale: locale },
-        items: [{ priceId: priceId, quantity: this._checkoutData.quantity }],
+        items: [{ priceId: priceId, quantity: Number.parseInt(this._checkoutData.quantity) }],
         customer: { email: this._checkoutData.email }
       });
     });
