@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_CUSTOMER_PORTAL_URL = LEGACY_API_URL + '/stripe/request_customer_portal.php';
+const REQUEST_CUSTOMER_PORTAL_URL = API_BASE_URL + '/donations/stripe/portal/request-link';
 
 class CustomerPortal {
 

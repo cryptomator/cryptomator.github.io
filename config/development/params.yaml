@@ -1,5 +1,5 @@
 # API
-apiBaseURL: http://localhost:3300
+apiBaseUrl: http://localhost:3300
 legacyApiUrl: http://localhost
 legacyStoreUrl: http://localhost:8787/api
 
@@ -8,18 +8,19 @@ umamiWebsiteId: 57a36f3a-bd97-4d8a-9563-0e8d39ddb20c
 
 # PADDLE
 paddleEnableSandbox: true
-paddleDesktopProductIds:
-  - 54582
-  - 54583
-  - 54584
-paddleAndroidProductId: 9642
+paddleToken: test_693d7082cf217f0c0d3cc21f888
+paddleDesktopPriceIds: 
+  - pri_01jb24dee06jaxrsz6xhfakkvy
+  - pri_01jb24dvt2cj55r7p8agebef65
+  - pri_01jb24e3z1zkzsq5yrhm5252bd
+paddleAndroidPriceId: pri_01jb24ewyc6fbhnzt26jdj9qp1
 paddleVendorId: 1385
 paddleHubSelfHostedSubscriptionPlanId: 23141
 paddleHubManagedSubscriptionPlanId: 42235
 paddlePricesUrl: https://sandbox-checkout.paddle.com/api/2.0/prices
 
 # STRIPE
-stripePk: pk_test_JhF3MoFQGw2Is0DB3BSv345P
+stripePk: pk_test_51RCM24IBZmkR4F9UiLBiSmsAnJvWqmHcDLxXR8ABKK1MNsZk3zCk2VJW7ZfaBlD81zpQxCX243sS3LEp9dABwiG800kJnGykDF
 stripePlans:
   EUR: plan_GgVY2JfD49bc02
   USD: plan_GgVZwj545E0uH3

@@ -1,15 +1,20 @@
-<div x-data="{checkoutData: {price: null, email: '', errorMessage: '', success: false, inProgress: false, licenseKey: null, acceptNewsletter: false}, acceptTerms: false, androidLicense: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="white-box">
+<div x-data="{checkoutData: {price: null, discountedPrice: null, email: '', errorMessage: '', success: false, inProgress: false, acceptNewsletter: false, captcha: null}, acceptTerms: false, androidLicense: null, captchaState: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="white-box">
   <div class="px-4 py-2 border-b border-primary text-center">
     <h3 class="font-h3 text-lg">{{ i18n "android_getkey_title" }}</h3>
   </div>
 
-  <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8">
+  <form x-show="!checkoutData.success" x-ref="form" class="px-4 py-8" @submit.prevent="checkoutData.acceptNewsletter && subscribeToNewsletter(checkoutData.email, 'cryptomator', checkoutData.captcha); androidLicense.checkout('{{ .Site.Language.Lang }}'); $refs.captcha.reset()">
     <div class="mb-4">
-      <label class="label-uppercase mb-2">{{ i18n "android_getkey_price" }}</label>
+      <label class="label-uppercase mb-2">
+        {{ i18n "android_getkey_price" }}
+        <span x-show="checkoutData.price" x-cloak>
+          (in <span x-text="checkoutData.price ? checkoutData.price.currencyCode : ''"></span>)
+        </span>
+      </label>
       <div class="relative input-box flex items-center gap-2 w-full lg:w-1/2">
-        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" x-text="checkoutData.price ? checkoutData.price.listAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
-        <span x-text="checkoutData.price ? checkoutData.price.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: checkoutData.price.currency }) : '…'">…</span>
-        <span x-show="checkoutData.price && checkoutData.price.amount != checkoutData.price.listAmount" class="absolute top-0 left-0 -translate-2 -rotate-5 px-1 rounded-xs text-xs text-white bg-red-600 z-10" x-cloak>-<span x-text="checkoutData.price && checkoutData.price.listAmount > 0 ? ((1 - checkoutData.price.amount / checkoutData.price.listAmount) * 100).toFixed(0) : '0'"></span>%</span>
+        <span x-show="checkoutData.discountedPrice && checkoutData.price" x-text="checkoutData.price ? checkoutData.price.formattedAmount : '…'" class="text-gray-500 line-through decoration-red-600" x-cloak></span>
+        <span x-text="checkoutData.discountedPrice ? checkoutData.discountedPrice.formattedAmount : checkoutData.price ? checkoutData.price.formattedAmount : '…'">…</span>
+        <span x-show="checkoutData.discountedPrice && checkoutData.price" class="absolute top-0 left-0 -translate-2 -rotate-5 px-1 rounded-xs text-xs text-white bg-red-600 z-10" x-cloak>-<span x-text="checkoutData.discountedPrice && checkoutData.price && checkoutData.price.amount > 0 ? ((1 - checkoutData.discountedPrice.amount / checkoutData.price.amount) * 100).toFixed(0) : '0'"></span>%</span>
       </div>
     </div>
     <div class="mb-4">
@@ -20,18 +25,17 @@
       <p class="font-p mb-4">{{ i18n "android_getkey_instruction" }}</p>
       <p class="font-p mb-2">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "checkoutData.acceptNewsletter" "label" (i18n "accept_newsletter_optional")) }}</p>
-      <button :disabled="checkoutData.inProgress || !acceptTerms" @click.prevent="androidLicense.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="android-getkey-checkout">
+      <button :disabled="checkoutData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="android-getkey-checkout">
         <i x-show="!checkoutData.inProgress" class="fa-solid fa-shopping-cart" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> {{ i18n "android_getkey_checkout" }}
       </button>
+      {{ $captchaUrl := printf "%s/connect/newsletter/challenge" .Site.Params.apiBaseUrl }}
+      {{ partial "captcha.html" (dict "challengeUrl" $captchaUrl "captchaPayload" "checkoutData.captcha" "captchaState" "captchaState") }}
       <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
     </div>
   </form>
 
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
-    <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success" }}</h3>
-    <label class="label-uppercase mb-2">{{ i18n "android_getkey_key" }}</label>
-    <textarea x-model="checkoutData.licenseKey" class="input-box w-full text-sm md:text-base leading-relaxed break-all mb-2" rows="6" placeholder="{{ i18n "android_getkey_key_placeholder" }}" readonly></textarea>
-    <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="checkoutData.errorMessage"></p>
-    <p class="font-p">{{ i18n "android_getkey_key_instruction" }}</p>
+    <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success_title" }}</h3>
+    <p class="font-p">{{ i18n "android_getkey_success_description" }}</p>
   </div>
 </div>

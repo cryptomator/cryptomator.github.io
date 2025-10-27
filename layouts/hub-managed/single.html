@@ -1,3 +1,6 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
 {{ define "main" }}
   <section x-data="{steps: ['{{ i18n "hub_managed_step_1_nav_title" }}', '{{ i18n "hub_managed_step_2_nav_title" }}', '{{ i18n "hub_managed_step_3_nav_title" }}', '{{ i18n "hub_managed_step_4_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, email: '', subdomain: '', quantity: null, message: null, acceptNewsletter: false}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null, captchaState: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="mb-6">
@@ -219,9 +222,6 @@
       <i class="fa-solid fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
     </a>
   </section>
-{{ end }}
-{{ define "preloads" }}
-  {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}

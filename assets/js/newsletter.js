@@ -1,6 +1,6 @@
 "use strict";
 
-const SUBSCRIBE_NEWSLETTER_URL = LEGACY_API_URL + '/listmonk/subscribe.php';
+const SUBSCRIBE_NEWSLETTER_URL = API_BASE_URL + '/connect/newsletter/subscribe';
 
 class Newsletter {
 
@@ -20,7 +20,7 @@ class Newsletter {
     this._data.errorMessage = '';
     this._data.success = false;
     subscribeToNewsletter(
-      this._data.email, this._data.listId
+      this._data.email, this._data.listId, this._data.captcha
     ).done(() => {
       this.onSubscribeSucceeded();
     }).fail(xhr => {
@@ -41,24 +41,16 @@ class Newsletter {
   }
 }
 
-function subscribeToNewsletter(email, listId) {
+function subscribeToNewsletter(email, listId, captcha) {
   return $.ajax({
     url: SUBSCRIBE_NEWSLETTER_URL,
-    type: 'GET',
-    xhrFields: {
-      withCredentials: true
-    }
-  }).then(() => {
-    return $.ajax({
-      url: SUBSCRIBE_NEWSLETTER_URL,
-      type: 'POST',
-      data: {
-        email: email,
-        listid: listId
-      },
-      xhrFields: {
-        withCredentials: true
-      }
-    });
-  });
+    type: 'POST',
+    data: JSON.stringify({
+      email: email,
+      listIds: [listId],
+      captcha: captcha
+    }),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json"
+});
 }

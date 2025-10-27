@@ -1,6 +1,6 @@
 "use strict";
 
-const REQUEST_SUPPORTER_CERT_URL = LEGACY_STORE_URL + '/desktop/request-supporter-cert';
+const REQUEST_SUPPORTER_CERT_URL = API_BASE_URL + '/connect/contact/request-supporter-cert';
 
 class SupporterCertificate {
 
@@ -23,7 +23,9 @@ class SupporterCertificate {
     $.ajax({
       url: REQUEST_SUPPORTER_CERT_URL,
       type: 'POST',
-      data: this._submitData
+      data: JSON.stringify(this._submitData),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
     }).done(_ => {
       this.onRequestSucceeded();
     }).fail(xhr => {

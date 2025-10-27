@@ -1,5 +1,5 @@
 # API
-apiBaseURL: https://api.cryptomator.org
+apiBaseUrl: https://api.cryptomator.org
 legacyApiUrl: https://api.cryptomator.org
 legacyStoreUrl: https://store.cryptomator.org/api
 
@@ -8,11 +8,12 @@ umamiWebsiteId: 8d451e39-ffb2-4697-82c9-9f69eff497f1
 
 # PADDLE
 paddleEnableSandbox: false
-paddleDesktopProductIds:
-  - 840163
-  - 840164
-  - 840165
-paddleAndroidProductId: 578277
+paddleToken: live_0af4126c5788dcda805e8389b96
+paddleDesktopPriceIds: 
+  - pri_01jb23tj1jxp88jt6yphast6th
+  - pri_01jb23w0s2c2j3jebwtr5htwzj
+  - pri_01jb23wh9vjqdskxyz96zhc4yk
+paddleAndroidPriceId: pri_01jb2432chrz583xtxb029g40m
 paddleVendorId: 39223
 paddleHubSelfHostedSubscriptionPlanId: 770132
 paddleHubManagedSubscriptionPlanId: 807339

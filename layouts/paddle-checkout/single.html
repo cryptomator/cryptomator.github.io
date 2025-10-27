@@ -1,0 +1,31 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <div x-data="{checkoutData: {transactionId: null, errorMessage: '', success: false, inProgress: false}, paddleCheckout: null}" x-init="paddleCheckout = new PaddleCheckout(checkoutData); paddleCheckout.checkout('{{ .Site.Language.Lang }}')" class="rounded shadow bg-white">
+      <div class="prose prose-sm max-w-none md:max-w-none px-4 py-2 border-b border-primary text-center">
+        <h3>{{ .Title }}</h3>
+      </div>
+    
+      <div x-show="!checkoutData.success" class="px-4 py-8">
+        <div class="text-center">
+          <button :disabled="checkoutData.inProgress" @click.prevent="paddleCheckout.checkout('{{ .Site.Language.Lang }}')" type="submit" class="btn btn-primary w-full md:w-64">
+            <i x-show="!checkoutData.inProgress" class="fas fa-shopping-cart fa-fw" aria-hidden="true"></i><i x-show="checkoutData.inProgress" class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i> {{ i18n "paddle_checkout" }}
+          </button>
+          <p :class="{'hidden': !checkoutData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="checkoutData.errorMessage"></p>
+        </div>
+      </div>
+    
+      <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
+        <h3 class="font-headline text-lg md:text-xl leading-relaxed mb-4">{{ ":+1:" | emojify }} {{ i18n "paddle_checkout_success" }}</h3>
+      </div>
+    </div>
+  </div>
+{{ end }}
+{{ define "script" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $paddleCheckoutJs := resources.Get "js/paddlecheckout.js" }}
+    <script type="text/javascript" src="{{ $paddleCheckoutJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $paddleCheckoutJs := resources.Get "js/paddlecheckout.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $paddleCheckoutJs.RelPermalink }}" integrity="{{ $paddleCheckoutJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}
