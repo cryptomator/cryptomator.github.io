@@ -53,7 +53,7 @@
 
 # Android
 - id: android_getkey_title
-  translation: "Buy a license key"
+  translation: "Buy a lifetime license"
 - id: android_getkey_price
   translation: "Price"
 - id: android_getkey_email
@@ -994,7 +994,7 @@
 - id: supporter_cert_funder_price
   translation: "Price per License"
 - id: supporter_cert_funder_price_help
-  translation: "Choose a price that you think is fair. Thank you for your support!"
+  translation: "Choose a price that you believe is fair for a lifetime license. Thank you for your support!"
 - id: supporter_cert_funder_instruction
   translation: "Payments are securely handled by Paddle."
 - id: supporter_cert_funder_checkout
