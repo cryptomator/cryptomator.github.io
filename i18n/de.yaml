@@ -53,7 +53,7 @@
 
 # Android
 - id: android_getkey_title
-  translation: "Lizenzschlüssel kaufen"
+  translation: "Lebenslange Lizenz kaufen"
 - id: android_getkey_price
   translation: "Preis"
 - id: android_getkey_email
@@ -994,7 +994,7 @@
 - id: supporter_cert_funder_price
   translation: "Preis pro Lizenz"
 - id: supporter_cert_funder_price_help
-  translation: "Wähle einen Preis, den du für angemessen hältst. Vielen Dank für deine Unterstützung!"
+  translation: "Wähle einen Preis, den du für eine lebenslange Lizenz als angemessen erachtest. Vielen Dank für deine Unterstützung!"
 - id: supporter_cert_funder_instruction
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: supporter_cert_funder_checkout
