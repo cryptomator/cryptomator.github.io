@@ -6,5 +6,3 @@ release: "exe"
 build:
   list: never
 ---
-
-Nach dem Download einfach _{{< siteparam releases.exe.filename >}}_ doppelklicken und den Installationswizard starten.
