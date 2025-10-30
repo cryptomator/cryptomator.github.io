@@ -188,7 +188,7 @@
                     {{ i18n "hub_managed_step_4_submit" }}
                   </button>
                   {{ $captchaUrl := printf "%s/connect/contact/challenge" .Site.Params.apiBaseUrl }}
-                  {{ partial "captcha.html" (dict "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+                  {{ partial "captcha.html" (dict "challengeUrl" $captchaUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
                 </div>
               </div>
             </div>
