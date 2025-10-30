@@ -219,7 +219,7 @@
 - id: for_individuals_header_title
   translation: "Keep your cloud data truly yours"
 - id: for_individuals_header_description
-  translation: "Data in the cloud is often not sufficiently protected. Cryptomator encrypts your documents, photos, and personal files with just a few clicks - ensuring that only you have access. No one else."
+  translation: "Data in the cloud is often not sufficiently protected. Cryptomator encrypts your documents, photos, and personal files with just a few clicks – ensuring that only you have access. No one else."
 - id: for_individuals_header_cta
   translation: "Download Now"
 - id: for_individuals_header_cta_description
@@ -373,9 +373,9 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Data security, not just data protection"
+  translation: "Secure collaboration in the cloud"
 - id: hub_header_description
-  translation: "Don't rely solely on your cloud provider's promises. Cryptomator Hub encrypts your confidential company data, including personally identifiable information and internal business documents."
+  translation: "Cryptomator Hub encrypts your company's confidential data, from personal customer information to internal documents – fully GDPR-compliant, simple to use, and always under your control."
 - id: hub_header_managed_cta
   translation: "Sign Up Now"
 - id: hub_header_managed_cta_description

@@ -373,9 +373,9 @@
 
 # Hub
 - id: hub_header_title
-  translation: "Datensicherheit statt bloßem Datenschutz"
+  translation: "Souveräne Zusammenarbeit in der Cloud"
 - id: hub_header_description
-  translation: "Verlasse dich nicht nur auf die Versprechen deines Cloud-Anbieters. Cryptomator Hub verschlüsselt deine vertraulichen Unternehmensdaten wie personenbezogene Kundendaten oder interne Geschäftsdokumente."
+  translation: "Cryptomator Hub verschlüsselt deine vertraulichen Unternehmensdaten wie personenbezogene Kundendaten oder interne Geschäftsdokumente – DSGVO-konform, einfach und unter deiner Kontrolle."
 - id: hub_header_managed_cta
   translation: "Jetzt anmelden"
 - id: hub_header_managed_cta_description
