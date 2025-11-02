@@ -2,7 +2,6 @@
 title: "Cryptomator Desktop 1.18.0 Beta – Jetzt testen!"
 slug: desktop-beta-1.18.0
 date: 2025-09-26
-notice: 
 tags: [cryptomator, desktop, beta]
 
 summary: "Die Beta 1.18.0 von Cryptomator Desktop ist da: neue Features, wichtige Fixes und ein neues Windows-Zertifikat. Testet sie jetzt und gebt uns Feedback!"
