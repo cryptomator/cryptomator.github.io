@@ -112,7 +112,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 8\n\n';
+    result += '# Generated using script version 9\n\n';
 
     return result;
   }
@@ -475,7 +475,7 @@ EOF`;
       },
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.hub.publicUrl)}:8080`]}),
       healthcheck: {
-        test: ['CMD-SHELL', '(curl -f http://localhost:9000/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
+        test: ['CMD-SHELL', '(curl -f http://localhost:8080/q/health/live && curl -f http://localhost:8080/api/config) || exit 1'],
         interval: '10s',
         timeout: '3s',
       },
