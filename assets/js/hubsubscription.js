@@ -1,10 +1,63 @@
 "use strict";
 
+const COMMUNITY_EDITION_REGISTER_URL = API_BASE_URL + '/licenses/hub/register';
+
 const BILLING_PORTAL_SESSION_URL = LEGACY_STORE_URL + '/hub/billing-portal-session';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
+
+class CommunityEdition {
+  
+  constructor(form, registrationData, searchParams) {
+    this._form = form;
+    this._registrationData = registrationData;
+    this._registrationData.hubId = searchParams.get('hub_id');
+    this._registrationData.returnUrl = searchParams.get('return_url');
+  }
+
+  register() {
+    if (!this._registrationData.captcha) {
+      this._registrationData.errorMessage = 'Please complete the CAPTCHA challenge.';
+      return;
+    }
+
+    this._registrationData.inProgress = true;
+    this._registrationData.errorMessage = '';
+    $.ajax({
+      url: COMMUNITY_EDITION_REGISTER_URL,
+      type: 'POST',
+      data: {
+        captcha: this._registrationData.captcha,
+        hubId: this._registrationData.hubId,
+        email: this._registrationData.email
+      }
+    }).done(token => {
+      this.onRegisterSucceeded(token);
+    }).fail(xhr => {
+      this.onRegisterFailed('Registering Hub failed.');
+    });
+  }
+
+  onRegisterSucceeded(token) {
+    this._registrationData.inProgress = false;
+    this._registrationData.errorMessage = '';
+    if (this._registrationData.returnUrl && this._registrationData.returnUrl.length > 0) {
+      const returnUrl = new URL(this._registrationData.returnUrl);
+      returnUrl.searchParams.set('token', token);
+      window.location.href = returnUrl;
+    } else {
+      console.warn('No return URL specified, cannot transfer token to Hub.', token);
+    }
+  }
+
+  onRegisterFailed(error) {
+    this._registrationData.inProgress = false;
+    this._registrationData.errorMessage = error;
+  }
+
+}
 
 class HubSubscription {
 

@@ -453,6 +453,34 @@
         </div>
       </template>
     </form>
+
+    <!-- COMMUNITY EDITION -->
+    <form x-data="{data: {captcha: null, hubId: null, email: null, returnUrl: null, inProgress: false, errorMessage: null}, captchaState: null}" x-init="communityEdition = new CommunityEdition($refs.form, data, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="communityEdition.register(); $refs.captcha.reset()">
+      <div class="w-full mb-4 md:w-1/2 md:pr-3">
+        <label class="label-uppercase mb-2">
+          {{ i18n "hub_billing_checkout_standard_hubid" . }}
+        </label>
+        <input x-model="data.hubId" type="text" class="input-box w-full mb-2" readonly/>
+        <p class="text-xs text-gray-600">
+          {{ i18n "hub_billing_checkout_standard_hubid_description" . }}
+        </p>
+      </div>
+      <div>
+        <label class="label-uppercase mb-2">
+          {{ i18n "hub_billing_checkout_standard_email" . }}
+        </label>
+        <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
+      </div>
+
+      <button :disabled="data.inProgress || captchaState == 'verifying' || !/^\S+@\S+\.\S+$/.test(data.email)" type="submit" class="btn btn-primary w-full md:w-64">
+        <i :class="{'fa-paper-plane': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fa-solid" aria-hidden="true"></i>
+        Create Community Edition License
+      </button>
+      {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
+      {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "data.captcha" "captchaState" "captchaState") }}
+      <p :class="{'hidden': !data.errorMessage}" class="text-sm text-red-600 mt-2" x-text="data.errorMessage"></p>
+    </form>
+
   </div>
 {{ end }}
 {{ define "script" }}
