@@ -445,6 +445,8 @@
 
 - id: hub_deployment_title
   translation: "Bereit, mit Cryptomator Hub zu starten?"
+- id: hub_deployment_recommended
+  translation: "Empfohlen"
 - id: hub_deployment_managed_subtitle
   translation: "Von Skymatic gehostet und gewartet"
 - id: hub_deployment_managed_benefit_1
@@ -917,7 +919,7 @@
 - id: pricing_hub_managed_title
   translation: "Managed"
 - id: pricing_hub_managed_cta
-  translation: "Jetzt anmelden"
+  translation: "Kostenlose 30-Tage-Testversion starten"
 
 - id: pricing_hub_community_title
   translation: "Community"
@@ -940,8 +942,6 @@
   translation: "Standard"
 - id: pricing_hub_standard_price_description
   translation: "pro Sitz, pro Monat"
-- id: pricing_hub_standard_trial
-  translation: "30 Tage kostenlos"
 - id: pricing_hub_standard_benefit_1
   translation: "Alles in Community"
 - id: pricing_hub_standard_benefit_2

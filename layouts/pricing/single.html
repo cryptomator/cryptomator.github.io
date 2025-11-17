@@ -5,7 +5,7 @@
       <p class="lead">{{ .Description }}</p>
     </header>
 
-    <div x-data="{planOption: location.hash}" x-init="location.hash = planOption || '#for-individuals'" @hashchange.window="planOption = location.hash" class="py-12">
+    <div x-data="{planOption: location.hash}" x-init="location.hash = planOption || '#for-teams'" @hashchange.window="planOption = location.hash" class="py-12">
       <header class="text-center">
         <h2 class="text-center font-h2 mb-4">
           {{ i18n "pricing_title" . }}
@@ -262,15 +262,15 @@
               </ul>
             </div>
           </div>
-          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="white-box">
+          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="white-box" :class="infrastructure === 'managed' && 'ring-2 ring-secondary'">
             <div class="p-4 border-b border-primary">
               <div class="flex gap-2 mb-8">
                 <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
                   {{ i18n "pricing_hub_standard_title" . }}
                 </h3>
-                <p class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-gray-300 text-gray-700">
-                  <i class="fa-solid fa-calendar-star"></i>
-                  {{ i18n "pricing_hub_standard_trial" . }}
+                <p x-show="infrastructure === 'managed'" class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-secondary text-white">
+                  <i class="fa-solid fa-star"></i>
+                  {{ i18n "hub_deployment_recommended" . }}
                 </p>
               </div>
               <div class="flex items-center gap-2">
