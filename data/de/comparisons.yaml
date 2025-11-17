@@ -3,16 +3,34 @@
   Features:
   - Key: "cloudStorageOptimized"
     Content: "Optimiert für Cloudspeicher"
+    Explanation: |
+      <p class="label-uppercase mb-2">Was bedeutet das?</p>
+      <p>Verwendet dateibasierte Verschlüsselung statt Container-Dateien. Wenn du eine Datei in deinem Tresor änderst, wird nur die entsprechende verschlüsselte Datei in die Cloud hochgeladen – nicht der gesamte Tresor.</p>
   - Key: "cloudProviderAgnostic"
     Content: "Kompatibel mit großen Cloud-Anbietern"
+    Explanation: |
+      <p class="label-uppercase mb-2">Was bedeutet das?</p>
+      <p>Funktioniert mit jedem Cloud-Speicheranbieter (Dropbox, Google Drive, OneDrive usw.) oder lokalem Speicher, ohne an einen bestimmten Dienst gebunden zu sein.</p>
   - Key: "unlimitedDevices"
     Content: "Unbeschränkte Anzahl Geräte"
+    Explanation: |
+      <p class="label-uppercase mb-2">Was bedeutet das?</p>
+      <p>Du kannst auf deine verschlüsselten Tresore von beliebig vielen Geräten aus zugreifen, ohne zusätzliche Kosten oder Einschränkungen.</p>
   - Key: "integratedSharing"
     Content: "Direktes Teilen von Dateien"
+    Explanation: |
+      <p class="label-uppercase mb-2">Was bedeutet das?</p>
+      <p>Integrierte Funktionalität zum direkten Teilen verschlüsselter Dateien oder Ordner mit anderen über die Anwendungsoberfläche.</p>
   - Key: "syncConflictDetection"
     Content: "Erkennung von Sync-Konflikten"
+    Explanation: |
+      <p class="label-uppercase mb-2">Was bedeutet das?</p>
+      <p>Erkennt Sync-Konflikte, die von deinem Cloud-Anbieter erstellt wurden, und macht sie mit lesbaren Dateinamen in deinem entschlüsselten Tresor sichtbar, sodass du Konflikte einfach identifizieren und lösen kannst.</p>
   - Key: "crossPlatformSupport"
     Content: "Unterstützung aller gängigen Betriebssysteme"
+    Explanation: |
+      <p class="label-uppercase mb-2">Was bedeutet das?</p>
+      <p>Verfügbar für Windows, macOS, Linux, Android und iOS, sodass du dieselben verschlüsselten Tresore auf allen deinen Geräten verwenden kannst.</p>
 - Key: "securityRelevantFeatures"
   Content: "Sicherheitsrelevante Features"
   Features:
