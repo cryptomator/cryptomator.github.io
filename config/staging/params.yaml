@@ -1,6 +1,5 @@
 # API
 apiBaseUrl: https://api.staging.cryptomator.org
-legacyApiUrl: https://api.cryptomator.org
 legacyStoreUrl: https://store.staging.cryptomator.org/api
 
 # UMAMI

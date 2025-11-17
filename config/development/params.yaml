@@ -1,6 +1,5 @@
 # API
 apiBaseUrl: http://localhost:3300
-legacyApiUrl: http://localhost
 legacyStoreUrl: http://localhost:8787/api
 
 # UMAMI

@@ -42,7 +42,8 @@
             <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
             {{ i18n "hub_billing_createsession_submit" . }}
           </button>
-          {{ partial "captcha.html" (dict "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState") }}
+          {{ $challengeUrl := printf "%s/connect/store/challenge" .Site.Params.apiBaseUrl }}
+          {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState") }}
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
       </template>
