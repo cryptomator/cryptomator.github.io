@@ -3,16 +3,34 @@
   Features:
   - Key: "cloudStorageOptimized"
     Content: "Optimized for Cloud Storage"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p>Uses file-based encryption instead of container files. When you change one file in your vault, only the corresponding encrypted file gets uploaded to the cloud – not the entire vault.</p>
   - Key: "cloudProviderAgnostic"
     Content: "Compatible with Major Cloud Providers"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p>Works with any cloud storage provider (Dropbox, Google Drive, OneDrive, etc.) or local storage without being tied to a specific service.</p>
   - Key: "unlimitedDevices"
     Content: "Unlimited Number of Devices"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p>You can access your encrypted vaults from as many devices as you want without additional costs or restrictions.</p>
   - Key: "integratedSharing"
     Content: "Direct File Sharing"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p>Built-in functionality to share encrypted files or folders with others directly through the application interface.</p>
   - Key: "syncConflictDetection"
     Content: "Sync Conflict Detection"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p>Recognizes sync conflicts created by your cloud provider and makes them visible with readable filenames in your decrypted vault, so you can identify and resolve conflicts easily.</p>
   - Key: "crossPlatformSupport"
     Content: "Support for All Common Operating Systems"
+    Explanation: |
+      <p class="label-uppercase mb-2">What does that mean?</p>
+      <p>Available for Windows, macOS, Linux, Android, and iOS, allowing you to use the same encrypted vaults across all your devices.</p>
 - Key: "securityRelevantFeatures"
   Content: "Security-Relevant Features"
   Features:
