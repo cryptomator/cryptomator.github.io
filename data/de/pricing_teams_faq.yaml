@@ -8,6 +8,8 @@
   Answer: "Nein, du musst für alle Sitze in deinem Plan bezahlen. Wir berechnen jeden Sitz, weil alle Nutzer von den zusätzlichen Funktionen profitieren, die in den kostenpflichtigen Plänen enthalten sind. Zum Beispiel haben alle Nutzer vollen Zugriff auf die Tresore über die mobilen Apps, ohne die Vollversion freischalten zu müssen."
 - Question: "Bietet ihr Rabatte an?"
   Answer: "Ja, wir bieten Rabatte für gemeinnützige Organisationen und Bildungseinrichtungen an. Bitte kontaktiere uns, um zu prüfen, ob ihr euch qualifiziert."
+- Question: "Kann ich per Rechnung oder Banküberweisung bezahlen?"
+  Answer: "Momentan unterstützt unser automatisches Abrechnungssystem nur die von unserem Zahlungsdienstleister Paddle angebotenen Zahlungsmethoden wie PayPal und Kreditkarte. Wenn du alternative Zahlungsmethoden wie Banküberweisung oder Rechnung benötigst, [kontaktiere bitte unser Vertriebsteam](/de/contact-sales/)."
 - Question: "Bietet ihr Cloud-Speicher an?"
   Answer: "Nein, Cryptomator Hub erweitert Cryptomator ausschließlich um ein Zero-Knowledge Schlüsselmanagement. Und Cryptomator kümmert sich um die Verschlüsselung deiner Dateien auf deinem Endgerät. Wir empfehlen dir, deine Tresore auf einem Cloud-Speicher deiner Wahl zu speichern."
 - Question: "Wie kann ich auf den Inhalt eines Tresors zugreifen?"
