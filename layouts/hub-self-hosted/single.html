@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="container space-y-6 py-12" x-data="{cfg: HubSetup.defaultConfig(), deploymentType: '', output: ''}" x-init="output = HubSetup.generateOutput(cfg); $watch('cfg', _ => output = HubSetup.generateOutput(cfg))">
+  <div class="container space-y-6 py-12" x-data="{cfg: HubSetup.defaultConfig(), deploymentType: '', output: '', trialData: {hubId: null, licenseKey: null, captcha: null, captchaState: null, inProgress: false, errorMessage: null}, hubTrial: null}" x-init="output = HubSetup.generateOutput(cfg, trialData); hubTrial = new HubTrial(trialData); $watch('trialData.captcha', _ => hubTrial.getTrialLicense()); $watch('trialData', () => output = HubSetup.generateOutput(cfg, trialData)); $watch('cfg', () => output = HubSetup.generateOutput(cfg, trialData))">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead mb-8">{{ i18n "hub_setup_description" . }}</p>
@@ -284,6 +284,8 @@
           <p class="mt-1 text-sm text-gray-500">
             {{ i18n "hub_setup_output_header_description" . }}
           </p>
+          {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
+          {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "trialData.captcha" "captchaState" "trialData.captchaState" "auto" "onload") }}
         </header>
         <div class="mt-5 md:mt-0 md:col-span-2 grid grid-cols-6 gap-6">
           <div class="col-span-6" x-show="deploymentType == 'kubernetes'">
@@ -319,10 +321,22 @@
   {{ $jsYaml := resources.Get "js/js-yaml/js-yaml.min.js" | fingerprint }}
   <script type="text/javascript" src="{{ $jsYaml.RelPermalink }}" integrity="{{ $jsYaml.Data.Integrity }}"></script>
   {{ if hugo.IsDevelopment }}
+    {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" }}
+    <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" defer></script>
     {{ $setupJs := resources.Get "js/hubsetup.js" }}
     <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
+    {{ $hubSubscriptionJs := resources.Get "js/hubsubscription.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubSubscriptionJs.RelPermalink }}" integrity="{{ $hubSubscriptionJs.Data.Integrity }}" defer></script>
     {{ $setupJs := resources.Get "js/hubsetup.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $setupJs.RelPermalink }}" integrity="{{ $setupJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
   {{ end }}
 {{ end }}

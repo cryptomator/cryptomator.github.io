@@ -34,6 +34,8 @@ class HubSetup {
         adminUser: 'admin',
         adminPw: 'admin',
         systemClientSecret: HubSetup.uuid(),
+        hubId: null,
+        licenseKey: null,
       }
     }
   }
@@ -43,7 +45,9 @@ class HubSetup {
    * @param {*} cfg The customized config
    * @returns output
    */
-  static generateOutput(cfg) {
+  static generateOutput(cfg, trialData) {
+    cfg.hub.hubId = trialData.hubId;
+    cfg.hub.licenseKey = trialData.licenseKey;
     return {
       k8s: HubSetup.writeHeader(cfg) + HubSetup.writeK8sConfig(cfg),
       compose: HubSetup.writeHeader(cfg) + HubSetup.writeComposeConfig(cfg),
@@ -482,6 +486,8 @@ EOF`;
       restart: 'unless-stopped',
       environment: {
         HUB_PUBLIC_ROOT_PATH: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl),
+        HUB_INITIAL_ID: this.cfg.hub.hubId,
+        HUB_INITIAL_LICENSE: this.cfg.hub.licenseKey,
         HUB_KEYCLOAK_PUBLIC_URL: this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_LOCAL_URL: !this.cfg.keycloak.useExternal ? `http://keycloak:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl,
         HUB_KEYCLOAK_REALM: this.cfg.keycloak.realmId,
@@ -676,6 +682,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
               },
               env: [
                 {name: 'HUB_PUBLIC_ROOT_PATH', value: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl)},
+                {name: 'HUB_INITIAL_ID', value: this.cfg.hub.hubId},
+                {name: 'HUB_INITIAL_LICENSE', value: this.cfg.hub.licenseKey},
                 {name: 'HUB_KEYCLOAK_PUBLIC_URL', value: this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_LOCAL_URL', value: !this.cfg.keycloak.useExternal ? `http://keycloak-svc:8080${this.getPathname(this.cfg.keycloak.publicUrl)}` : this.cfg.keycloak.publicUrl},
                 {name: 'HUB_KEYCLOAK_REALM', value: this.cfg.keycloak.realmId},

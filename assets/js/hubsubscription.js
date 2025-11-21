@@ -1,10 +1,45 @@
 "use strict";
 
+const TRIAL_APPLY_URL = API_BASE_URL + '/licenses/hub/trial';
+
 const BILLING_PORTAL_SESSION_URL = LEGACY_STORE_URL + '/hub/billing-portal-session';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
+
+class HubTrial {
+  
+  constructor(trialData) {
+    this._trialData = trialData;
+  }
+
+  getTrialLicense() {
+    if (!this._trialData.captcha) {
+      this._trialData.errorMessage = 'Please complete the CAPTCHA challenge.';
+      return;
+    }
+
+    this._trialData.inProgress = true;
+    this._trialData.errorMessage = '';
+    return $.ajax({
+      url: TRIAL_APPLY_URL,
+      type: 'POST',
+      data: {
+        captcha: this._trialData.captcha
+      }
+    }).done(data => {
+      this._trialData.hubId = data.hubId;
+      this._trialData.licenseKey = data.licenseKey;
+      this._trialData.inProgress = false;
+    }).fail((xhr, textStatus, error) => {
+      console.error('Trial registration failed:', error);
+      this._trialData.errorMessage = textStatus;
+      this._trialData.inProgress = false;
+    });
+  }
+
+}
 
 class HubSubscription {
 
