@@ -42,5 +42,3 @@ Wenn du also schon länger mit dem Gedanken spielst, Cryptomator zu holen: **Jet
 ***„Winter is coming“*** – aber deine Daten können vorbereitet sein. Nutze den Dezember, um deine digitalen Daten zu sichern und von unserem größten Rabatt des Jahres zu profitieren.
 
 Nach dem 31. Dezember ist der Winter Sale vorbei – und der Preis steigt. **Jetzt kaufen und dauerhaft schützen**.
-
-*\*Hinweis: Der Rabatt und der Preis können je nach Region variieren.*
