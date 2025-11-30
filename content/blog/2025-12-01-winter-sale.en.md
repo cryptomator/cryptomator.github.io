@@ -1,5 +1,5 @@
 ---
-title: "Cryptomator Winter Sale"
+title: "Winter Is Coming: 50% off Cryptomator"
 slug: winter-sale
 date: 2025-12-01
 notice: "*Note: Discount and pricing may vary by region."
