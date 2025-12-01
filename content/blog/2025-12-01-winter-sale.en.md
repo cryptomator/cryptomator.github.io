@@ -20,9 +20,9 @@ That means: only **€9.99 instead of €19.99** — and as a **one-time purchas
 [**Cryptomator Hub**](https://cryptomator.org/for-teams/) is also available at a **50% discount** for the first year! Contact us for more detailed terms and conditions or take a look at our [**price list**](https://cryptomator.org/de/pricing/#for-teams).
 
 <figure class="text-center">
-<a href="/pricing/" target="\_blank" rel="noopener">
-<img class="inline-block rounded-sm" src="/img/blog/winter-2025-sale.png" alt="Cryptomator Winter Sale 50% Off" />
-</a>
+  <a href="/pricing/" target="_blank" rel="noopener">
+    <img class="inline-block rounded-sm" src="/img/blog/winter-2025-sale.png" alt="Cryptomator Winter Sale 50% Off" />
+  </a>
 </figure>
 
 ## Pay Once, Stay Protected Forever
