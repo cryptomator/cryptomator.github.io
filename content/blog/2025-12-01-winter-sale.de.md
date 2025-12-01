@@ -1,5 +1,5 @@
 ---
-title: "Cryptomator Winter-Sale"
+title: "Der Winter naht: 50 % Rabatt auf Cryptomator"
 slug: winter-sale
 date: 2025-12-01
 notice: "*Hinweis: Der Rabatt und der Preis können je nach Region variieren."
@@ -17,10 +17,12 @@ Der Winter naht – und diesmal bringt er nicht nur Kälte, sondern auch Datensi
 
 Das heißt: **Nur 9,99 € statt 19,99 €** – und das als dauerhafte Lizenz, kein Abo, keine monatlichen Kosten.
 
+Auch [**Cryptomator Hub**](https://cryptomator.org/de/for-teams/) gibt es für das erste Jahr **50 %\* günstiger**! Kontaktiert uns für genauere Konditionen oder werft einen Blick in unsere [**Preisliste**](https://cryptomator.org/de/pricing/).
+
 <figure class="text-center">
-  <a href="/pricing/" target="_blank" rel="noopener">
-    <img class="inline-block rounded-sm" src="/img/blog/winter-2025-sale.png" alt="Cryptomator Winter-Sale 50 % Rabatt" />
-  </a>
+<a href="/pricing/" target="\_blank" rel="noopener">
+<img class="inline-block rounded-sm" src="/img/blog/winter-2025-sale.png" alt="Cryptomator Winter-Sale 50 % Rabatt" />
+</a>
 </figure>
 
 ## Einmal zahlen, dauerhaft geschützt
