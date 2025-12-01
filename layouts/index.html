@@ -13,13 +13,17 @@
 {{ end }}
 {{ define "main" }}
   <section class="flex items-center header-bg bg-dark bg-center min-h-[66vh] bg-repeat-x">
-    <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
+    <header class="container flex items-center text-white pt-40 pb-24 md:pt-56 md:pb-48 lg:pt-72 lg:pb-64">
       <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
         <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
         <div class="flex items-center gap-4 mb-4">
-          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
+          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-red-600 text-white">
+            <i class="fa-solid fa-snowflake"></i>
+            {{ i18n "home_header_kicker_sale" }}
+          </div>
+          <div class="hidden md:flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
             <i class="fa-solid fa-cloud-download"></i>
             {{ i18n "home_header_kicker" }}
           </div>
@@ -51,6 +55,9 @@
             <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-teams-cta">{{ i18n "home_header_for_teams_cta" . }}</a>
           </div>
         </div>
+        <p class="text-sm mt-6">
+          * {{ i18n "pricing_discount_note" }}
+        </p>
       </div>
     </header>
   </section>

@@ -9,6 +9,7 @@ const PADDLE_ANDROID_PRICE_ID = '{{ .Site.Params.paddleAndroidPriceId }}';
 const PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID = {{ .Site.Params.paddleHubSelfHostedSubscriptionPlanId }};
 const PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID = {{ .Site.Params.paddleHubManagedSubscriptionPlanId }};
 const PADDLE_PRICES_URL = '{{ .Site.Params.paddlePricesUrl }}';
+const PADDLE_DISCOUNT_ID = '{{ .Site.Params.paddleDiscountId }}';
 const LEGACY_STORE_URL = '{{ .Site.Params.legacyStoreUrl }}';
 const STRIPE_PK = '{{ .Site.Params.stripePk }}';
 const STRIPE_PLANS = {{ .Site.Params.stripePlans | jsonify }};
