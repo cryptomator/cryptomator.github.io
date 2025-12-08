@@ -28,7 +28,9 @@ Falls du vorhast, personenbezogene Daten (z.B. Mitarbeiter-, Kunden-, Patientend
 Der Einsatz von Cryptomator ist daher eine solche technische Sicherungsmaßnahme, die geeignet ist, Daten verschlüsselt in deiner Cloud abzulegen. Beachte, dass du in der Regel zusätzlich einen AVV mit deinem Cloudspeicher-Anbieter schließen musst.
 
 ## Benötige ich einen Auftragsverarbeitungsvertrag (AVV)?
-Cryptomator läuft als Anwendung nur auf deinem PC oder Smartphone. Wir sind nur Hersteller der Software, aber kein Dienstleister der in Kontakt mit deinen Daten kommt. Insofern wird zur Nutzung von Cryptomator kein AVV benötigt. Du behältst die volle Kontrolle über die Daten und den Zugriff darauf!
+**Cryptomator** läuft als Anwendung nur auf deinem PC oder Smartphone. Wir sind nur Hersteller der Software, aber kein Dienstleister der in Kontakt mit deinen Daten kommt. Insofern wird zur Nutzung von Cryptomator kein AVV benötigt. Du behältst die volle Kontrolle über die Daten und den Zugriff darauf!
+
+**Cryptomator Hub** hängt von deiner Installationsart ab: Wenn du Cryptomator Hub selbst hostest, wird kein AVV benötigt. Wenn du unseren verwalteten Cryptomator Hub-Dienst nutzt, [kontaktiere uns](/de/contact-sales) bitte für einen AVV.
 
 ## Benötige ich einen Auftragsverarbeitungsvertrag (AVV) mit meinem Cloud-Hoster?
 Auch wenn ohne den Schlüssel kein Personenbezug herstellbar ist, kann ein AVV notwendig sein. Wir empfehlen daher, mit deinem Cloud-Hoster einen AVV abzuschließen.
