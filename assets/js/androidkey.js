@@ -73,7 +73,7 @@ class AndroidLicense {
         settings: { locale: locale },
         items: [{ priceId: PADDLE_ANDROID_PRICE_ID, quantity: 1 }],
         customer: { email: this._checkoutData.email },
-        discountId: PADDLE_DISCOUNT_ID
+        discountCode: PADDLE_DISCOUNT_CODE
       });
     });
   }

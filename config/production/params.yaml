@@ -18,6 +18,7 @@ paddleHubSelfHostedSubscriptionPlanId: 770132
 paddleHubManagedSubscriptionPlanId: 807339
 paddlePricesUrl: https://checkout.paddle.com/api/2.0/prices
 paddleDiscountId: dsc_01kba2vjmspm92sx2jhq4s2082
+paddleDiscountCode: WINTER2025
 
 # STRIPE
 stripePk: pk_live_eSasX216vGvC26GdbVwA011V
