@@ -30,7 +30,7 @@ The use of Cryptomator is therefore such a technical security measure, which is 
 ## Do I need a Data Processing Agreement (DPA)?
 **Cryptomator** runs as an application only on your PC or Smartphone. While we are the manufacturer of this software, we are no service provider and neither store, process or otherwise get in touch with your data. Therefore no DPA is needed to use Cryptomator. You keep full control over the data and are the sole person able to access to it!
 
-**Cryptomator Hub** depends on your deployment type: If you self-host Cryptomator Hub, no DPA is needed. If you use our managed Cryptomator Hub service, please [contact us](/contact-sales) for a DPA.
+**Cryptomator Hub** depends on your deployment type: If you self-host Cryptomator Hub, no DPA with us is needed, but you may need one with your hosting provider. If you use our managed Cryptomator Hub service, please [contact us](/contact-sales) for a DPA.
 
 ## Do I need a Data Processing Agreement (DPA) with my cloud storage provider?
 Even if it is impossible to relate data to a person without the decryption key, a DPA might be necessary. We therefore recommend that you conclude a DPA with your cloud storage provider.
