@@ -10,6 +10,7 @@ const PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID = {{ .Site.Params.paddleHubSel
 const PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID = {{ .Site.Params.paddleHubManagedSubscriptionPlanId }};
 const PADDLE_PRICES_URL = '{{ .Site.Params.paddlePricesUrl }}';
 const PADDLE_DISCOUNT_ID = '{{ .Site.Params.paddleDiscountId }}';
+const PADDLE_DISCOUNT_CODE = '{{ .Site.Params.paddleDiscountCode }}';
 const LEGACY_STORE_URL = '{{ .Site.Params.legacyStoreUrl }}';
 const STRIPE_PK = '{{ .Site.Params.stripePk }}';
 const STRIPE_PLANS = {{ .Site.Params.stripePlans | jsonify }};

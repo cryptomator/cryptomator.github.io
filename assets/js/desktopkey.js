@@ -76,7 +76,7 @@ class DesktopLicense {
         settings: { locale: locale },
         items: [{ priceId: priceId, quantity: Number.parseInt(this._checkoutData.quantity) }],
         customer: { email: this._checkoutData.email },
-        discountId: PADDLE_DISCOUNT_ID
+        discountCode: PADDLE_DISCOUNT_CODE
       });
     });
   }
