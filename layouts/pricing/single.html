@@ -1,4 +1,611 @@
 {{ define "main" }}
+<div class="bg-white py-24 sm:py-32 dark:bg-gray-900">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <header class="mx-auto text-center">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="mx-auto mt-6 text-center text-lg font-medium tracking-tight text-balance lead">{{ .Description }}</p>
+    </header>
+
+    <!-- lg+ -->
+    <div class="isolate mt-20 hidden lg:block">
+      <div class="relative -mx-8">
+        <div class="absolute inset-x-4 inset-y-0 -z-10 flex">
+          <div style="margin-left: 60%" aria-hidden="true" class="flex w-1/5 px-4">
+            <div class="w-full rounded-t-xl border-x border-t border-gray-900/10 bg-gray-400/5 dark:border-white/10 dark:bg-gray-800/50"></div>
+          </div>
+        </div>
+        <table class="w-full table-fixed border-separate border-spacing-x-8 text-left">
+          <caption class="sr-only">
+            Pricing plan comparison
+          </caption>
+          <colgroup>
+            <col class="w-1/5" />
+            <col class="w-1/5" />
+            <col class="w-1/5" />
+            <col class="w-1/5" />
+            <col class="w-1/5" />
+          </colgroup>
+          <thead>
+            <tr>
+              <td></td>
+              <th scope="col" class="px-6 pt-6 xl:px-8 xl:pt-8">
+                <div class="text-sm/7 font-semibold text-gray-900 dark:text-white">Cryptomator</div>
+              </th>
+              <th scope="col" class="px-6 pt-6 xl:px-8 xl:pt-8">
+                <div class="text-sm/7 font-semibold text-gray-900 dark:text-white">Hub CE</div>
+              </th>
+              <th scope="col" class="px-6 pt-6 xl:px-8 xl:pt-8">
+                <div class="text-sm/7 font-semibold text-gray-900 dark:text-white">Hub Standard</div>
+              </th>
+              <th scope="col" class="px-6 pt-6 xl:px-8 xl:pt-8">
+                <div class="text-sm/7 font-semibold text-gray-900 dark:text-white">Hub Enterprise</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="sr-only">Price</span></th>
+              <td class="px-6 pt-2 xl:px-8">
+                <div class="flex items-baseline gap-x-1 text-gray-900 dark:text-white">
+                  <span class="text-4xl font-semibold">Free</span>
+                </div>
+                <a href="#" class="mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-primary inset-ring inset-ring-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1">Download</a>
+              </td>
+              <td class="px-6 pt-2 xl:px-8">
+                <div class="flex items-baseline gap-x-1 text-gray-900 dark:text-white">
+                  <span class="text-4xl font-semibold">Free</span>
+                </div>
+                <a href="#" class="mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-primary inset-ring inset-ring-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1">Deploy</a>
+              </td>
+              <td class="px-6 pt-2 xl:px-8">
+                <div class="flex items-baseline gap-x-1 text-gray-900 dark:text-white">
+                  <span class="text-4xl font-semibold">€30</span>
+                  <span class="text-sm/6 font-semibold">/month</span>
+                </div>
+                <a href="#" class="mt-8 block rounded-md bg-primary px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-primary-l1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500">Free Trial</a>
+              </td>
+              <td class="px-6 pt-2 xl:px-8">
+                <div class="flex items-baseline gap-x-1 text-gray-900 dark:text-white">
+                  <span class="text-4xl font-semibold">€60</span>
+                  <span class="text-sm/6 font-semibold">/month</span>
+                </div>
+                <a href="#" class="mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-primary inset-ring inset-ring-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1">Contact Sales</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="colgroup" colspan="5" class="pt-8 pb-4 text-sm/6 font-semibold text-gray-900 dark:text-white">
+                Features
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/10 dark:bg-white/10"></div>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Unlimited Vaults
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Unlimited Clouds
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Users
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">Single User</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">5</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">unlimited</div>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">3 included</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">unlimited</div>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">3 included</div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Audit Logs
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">7 day retention</div>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">unlimited: +0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">unlimited retention</div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Emergency Access
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">+0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Syslog Export
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">+0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="colgroup" colspan="5" class="pt-16 pb-4 text-sm/6 font-semibold text-gray-900 dark:text-white">
+                Infrastructure
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/10 dark:bg-white/10"></div>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Accounts
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">No Accounts</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">Self-Hosted</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">SaaS or On-Prem</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">SaaS or On-Prem</div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Databases
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">Self-Hosted</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">Shared</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">Dedicated</div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Keycloak Realm Admin
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">+0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Active Directory
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">+0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+
+
+            <tr>
+              <th scope="colgroup" colspan="5" class="pt-16 pb-4 text-sm/6 font-semibold text-gray-900 dark:text-white">
+                Mobile Apps
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/10 dark:bg-white/10"></div>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Read Access on iOS
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Write Access on iOS
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">15€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">15€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">+ 0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Read Access on Android
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Write Access on Android
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">15€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">15€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-500">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">+ 0,50€</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="colgroup" colspan="4" class="pt-16 pb-4 text-sm/6 font-semibold text-gray-900 dark:text-white">
+                Support
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/10 dark:bg-white/10"></div>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Community Support
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Email Support
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                Priority Support
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-primary">
+                  <path d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Included</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" class="py-4 text-sm/6 font-normal text-gray-900 dark:text-gray-200">
+                SLA
+                <div class="absolute inset-x-8 mt-4 h-px bg-gray-900/5 dark:bg-white/5"></div>
+              </th>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-5 text-gray-400 dark:text-gray-500">
+                  <path d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Not Included</span>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">99.5%</div>
+              </td>
+              <td class="px-6 py-4 xl:px-8">
+                <div class="text-center text-sm/6 text-gray-500 dark:text-gray-400">99.9%</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <div class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
