@@ -112,7 +112,7 @@ ${e}`;
       result += '#  * KC_DB\n#  * KC_HEALTH_ENABLED\n#  * KC_HTTP_RELATIVE_PATH\n\n';
     }
 
-    result += '# Generated using script version 9\n\n';
+    result += '# Generated using script version 10\n\n';
 
     return result;
   }
@@ -451,7 +451,7 @@ EOF`;
         KC_DB_USERNAME: 'keycloak',
         KC_DB_PASSWORD: this.cfg.db.keycloakPw,
         KC_HEALTH_ENABLED: 'true',
-        KC_HOSTNAME: devMode ? null : 'https://' + this.getHostname(this.cfg.keycloak.publicUrl),
+        KC_HOSTNAME: devMode ? null : this.cfg.keycloak.publicUrl,
         // KC_HOSTNAME_PORT: devMode ? null : this.getPort(this.cfg.keycloak.publicUrl), // FIXME as string!! FIXME does not work at all!!
         KC_HTTP_ENABLED: 'true',
         KC_PROXY_HEADERS: 'xforwarded',
@@ -775,7 +775,7 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       {name: 'KC_HTTP_RELATIVE_PATH', value: this.getPathname(this.cfg.keycloak.publicUrl)}
     ];
     if (!devMode) {
-      env.push({name: 'KC_HOSTNAME', value: 'https://' + this.getHostname(this.cfg.keycloak.publicUrl)});
+      env.push({name: 'KC_HOSTNAME', value: this.cfg.keycloak.publicUrl});
       // env.push({name: 'KC_HOSTNAME_PORT', value: '' + this.getPort(this.cfg.keycloak.publicUrl)}); // FIXME as string!! FIXME does not work at all!!
     }
     let deployment = {
