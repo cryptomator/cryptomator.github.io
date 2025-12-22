@@ -60,6 +60,10 @@
   translation: "Email"
 - id: android_getkey_email_placeholder
   translation: "Email address"
+- id: android_getkey_email_confirm
+  translation: "Confirm Email"
+- id: android_getkey_email_confirm_placeholder
+  translation: "Confirm email address"
 - id: android_getkey_instruction
   translation: "Payments are securely handled by Paddle."
 - id: android_getkey_checkout
@@ -990,6 +994,10 @@
   translation: "Email"
 - id: supporter_cert_common_email_placeholder
   translation: "Email address"
+- id: supporter_cert_common_email_confirm
+  translation: "Confirm Email"
+- id: supporter_cert_common_email_confirm_placeholder
+  translation: "Confirm email address"
 - id: supporter_cert_common_submit
   translation: "Send Request"
 - id: supporter_cert_common_success_title

@@ -1,4 +1,4 @@
-<div x-data="{checkoutData: {price: null, discountedPrice: null, email: '', errorMessage: '', success: false, inProgress: false, acceptNewsletter: false, captcha: null}, acceptTerms: false, androidLicense: null, captchaState: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="white-box">
+<div x-data="{checkoutData: {price: null, discountedPrice: null, email: '', emailConfirm: '', errorMessage: '', success: false, inProgress: false, acceptNewsletter: false, captcha: null}, acceptTerms: false, androidLicense: null, captchaState: null}" x-init="androidLicense = new AndroidLicense($refs.form, checkoutData); androidLicense.loadPrice()" class="white-box">
   <div class="px-4 py-2 border-b border-primary text-center">
     <h3 class="font-h3 text-lg">{{ i18n "android_getkey_title" }}</h3>
   </div>
@@ -20,6 +20,10 @@
     <div class="mb-4">
       <label class="label-uppercase mb-2">{{ i18n "android_getkey_email" }}</label>
       <input x-model="checkoutData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "android_getkey_email_placeholder" }}" required/>
+    </div>
+    <div class="mb-4">
+      <label class="label-uppercase mb-2">{{ i18n "android_getkey_email_confirm" }}</label>
+      <input x-model="checkoutData.emailConfirm" x-ref="emailConfirm" @blur="$refs.emailConfirm.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "android_getkey_email_confirm_placeholder" }}" required/>
     </div>
     <div class="text-center mt-8">
       <p class="font-p mb-4">{{ i18n "android_getkey_instruction" }}</p>
