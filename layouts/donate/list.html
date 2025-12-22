@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div x-data="{showTab: location.hash}" x-init="location.hash = showTab || '#paypal'" @hashchange.window="showTab = location.hash" class="flex flex-col space-y-4 w-full relative lg:h-412px">
+    <div x-data="{showTab: location.hash}" x-init="location.hash = showTab || '#paypal'" @hashchange.window="showTab = location.hash" class="flex flex-col space-y-4 w-full relative lg:min-h-[402px]">
       {{ range .Pages }}
         <div class="space-y-2 lg:space-y-0">
           <div class="w-full lg:pr-3 lg:w-1/2">

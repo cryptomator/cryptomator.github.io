@@ -68,6 +68,11 @@ class DesktopLicense {
       return;
     }
 
+    if (this._checkoutData.email !== this._checkoutData.emailConfirm) {
+      this._checkoutData.errorMessage = 'Email addresses do not match.';
+      return;
+    }
+
     this._checkoutData.inProgress = true;
     this._checkoutData.errorMessage = '';
     this._checkoutData.success = false;
