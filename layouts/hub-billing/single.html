@@ -320,15 +320,6 @@
                 </h2>
                 <div x-show="audience === 'business'">
                   <p class="flex items-baseline gap-2">
-                    <span x-text="(subscriptionData.monthlyPrice.netAmount * 0.5).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="font-bold leading-relaxed"></span>
-                    <span class="text-xs text-gray-700">
-                      {{ i18n "pricing_hub_standard_price_first_year" . }}
-                    </span>
-                    <span class="self-center px-1 rounded-xs text-xs text-white bg-red-600">
-                      -50% Winter Sale
-                    </span>
-                  </p>
-                  <p class="flex items-baseline gap-2">
                     <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
                     <span class="text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
                   </p>
@@ -339,15 +330,6 @@
                   </p>
                 </div>
                 <div x-show="audience === 'consumer'">
-                  <p class="flex items-baseline gap-2">
-                    <span x-text="(subscriptionData.monthlyPrice.grossAmount * 0.5).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="font-bold leading-relaxed"></span>
-                    <span class="text-xs text-gray-700">
-                      {{ i18n "pricing_hub_standard_price_first_year" . }}
-                    </span>
-                    <span class="self-center px-1 rounded-xs text-xs text-white bg-red-600">
-                      -50% Winter Sale
-                    </span>
-                  </p>
                   <p class="flex items-baseline gap-2">
                     <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
                     <span class="text-gray-700">{{ i18n "pricing_vat_included" . }}</span>
@@ -408,7 +390,6 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
                 </h2>
-                <div class="md:h-[26px]"></div>
                 <p class="text-5xl font-bold">
                   {{ i18n "hub_billing_checkout_enterprise_statement" . }}
                 </p>

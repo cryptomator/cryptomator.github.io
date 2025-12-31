@@ -305,7 +305,7 @@
 
 # Home
 - id: home_header_kicker
-  translation: "3,000,000+ Downloads"
+  translation: "4,000,000+ Downloads"
 - id: home_header_title
   translation: "Protect your privacy in"
 - id: home_header_title_last_item
@@ -884,7 +884,7 @@
   translation: "No accounts, no data shared"
 
 - id: pricing_android_price
-  translation: "€19.99"
+  translation: "€29.99"
 - id: pricing_android_price_description
   translation: "Lifetime License"
 - id: pricing_android_cta
@@ -901,7 +901,7 @@
 - id: pricing_ios_free_description
   translation: "Read-Only Mode"
 - id: pricing_ios_price
-  translation: "€19.99"
+  translation: "€29.99"
 - id: pricing_ios_price_description
   translation: "Lifetime License"
 - id: pricing_ios_cta
