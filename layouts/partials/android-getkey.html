@@ -40,6 +40,6 @@
 
   <div x-show="checkoutData.success" x-cloak class="px-4 py-8">
     <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "android_getkey_success_title" }}</h3>
-    <p class="font-p">{{ i18n "android_getkey_success_description" }}</p>
+    <p class="font-p">{{ i18n "android_getkey_success_description" | safeHTML }}</p>
   </div>
 </div>

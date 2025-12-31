@@ -47,6 +47,6 @@
 
   <div x-show="checkoutData.success" x-cloak>
     <h3 class="font-h3 mb-4">{{ ":+1:" | emojify }} {{ i18n "supporter_cert_funder_success_title" }}</h3>
-    <p class="font-p">{{ i18n "supporter_cert_funder_success_description" }}</p>
+    <p class="font-p">{{ i18n "supporter_cert_funder_success_description" | safeHTML }}</p>
   </div>
 </div>
