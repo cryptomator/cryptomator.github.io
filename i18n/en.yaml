@@ -72,7 +72,7 @@
 - id: android_getkey_success_title
   translation: "Your payment was successful!"
 - id: android_getkey_success_description
-  translation: "The license key has been sent to your email address."
+  translation: "The license key has been sent to your email address. Please also check your spam folder. If you don't receive the email, please <a href=\"/contact/\">contact us</a>."
 
 - id: android_download_title
   translation: "Download APK"
@@ -1018,7 +1018,7 @@
 - id: supporter_cert_funder_success_title
   translation: "Your payment was successful!"
 - id: supporter_cert_funder_success_description
-  translation: "The supporter certificate has been sent to your email address."
+  translation: "The supporter certificate has been sent to your email address. Please also check your spam folder. If you don't receive the email, please <a href=\"/contact/\">contact us</a>."
 
 - id: supporter_cert_contributor_github_username
   translation: "GitHub Username"
