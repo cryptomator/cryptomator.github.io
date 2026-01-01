@@ -13,4 +13,3 @@ const PADDLE_DISCOUNT_ID = '{{ .Site.Params.paddleDiscountId }}';
 const PADDLE_DISCOUNT_CODE = '{{ .Site.Params.paddleDiscountCode }}';
 const LEGACY_STORE_URL = '{{ .Site.Params.legacyStoreUrl }}';
 const STRIPE_PK = '{{ .Site.Params.stripePk }}';
-const STRIPE_PLANS = {{ .Site.Params.stripePlans | jsonify }};

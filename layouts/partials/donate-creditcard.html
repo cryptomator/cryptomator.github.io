@@ -1,4 +1,4 @@
-<div x-data="{amount: 30, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment(), acceptTerms: false, captchaState: null}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
+<div x-data="{amount: 30, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: null, recurringPaymentStatus: {captcha: null, errorMessage: '', inProgress: false}, acceptTerms: false, oneTimeCaptchaState: null, recurringCaptchaState: null}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus); recurringPayment = new RecurringPayment(recurringPaymentStatus)">
   <div x-show="!oneTimePaymentStatus.success">
     <div class="flex flex-wrap md:flex-nowrap">
       <div class="w-full mb-4 md:w-1/2 md:pr-3">
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <form x-show="frequency === 'once'" @submit.prevent="oneTimePayment.charge(amount, currency); $refs.captcha.reset()">
+    <form x-show="frequency === 'once'" @submit.prevent="oneTimePayment.charge(amount, currency); $refs.oneTimeCaptcha.reset()">
       <div class="mb-4">
         <label class="label-uppercase mb-2">{{ i18n "donate_creditcard_number" }}</label>
         <div> <!-- wrapper needed for stripe text field -->
@@ -43,25 +43,30 @@
 
         <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
 
-        <button :disabled="oneTimePaymentStatus.inProgress || !oneTimePaymentStatus.validCardNum || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-onetime-checkout">
+        <button :disabled="oneTimePaymentStatus.inProgress || !oneTimePaymentStatus.validCardNum || !acceptTerms || oneTimeCaptchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-onetime-checkout">
           <i :class="{'fa-credit-card': !oneTimePaymentStatus.inProgress, 'fa-spinner fa-spin': oneTimePaymentStatus.inProgress}" class="fa-solid" aria-hidden="true"></i>
           {{ i18n "donate_creditcard_once_paynow" }}
         </button>
 
-        {{ $challengeUrl := printf "%s/donations/stripe/payments/challenge" .Site.Params.apiBaseUrl }}
-        {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "oneTimePaymentStatus.captcha" "captchaState" "captchaState") }}
+        {{ $oneTimeChallengeUrl := printf "%s/donations/stripe/payments/challenge" .Site.Params.apiBaseUrl }}
+        {{ partial "captcha.html" (dict "challengeUrl" $oneTimeChallengeUrl "captchaPayload" "oneTimePaymentStatus.captcha" "captchaState" "oneTimeCaptchaState" "ref" "oneTimeCaptcha") }}
 
         <p class="text-sm text-red-600 mt-2" x-text="oneTimePaymentStatus.errorMessage"></p>
       </div>
     </form>
 
-    <div x-show="frequency === 'recurring'" class="text-center">
+    <form x-show="frequency === 'recurring'" @submit.prevent="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}'); $refs.recurringCaptcha.reset()" class="text-center">
       <p class="font-p mb-4">{{ i18n "donate_creditcard_recurring_instruction" | safeHTML }}</p>
       <p class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}</p>
-      <button type="button" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-recurring-checkout" @click="recurringPayment.checkout(amount, currency, '{{ .Site.Language.Lang }}')" :disabled="!acceptTerms">
-        <i class="fa-solid fa-external-link" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
+      <button type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="donate-creditcard-recurring-checkout" :disabled="!acceptTerms || recurringPaymentStatus.inProgress || recurringCaptchaState == 'verifying'">
+        <i :class="{'fa-external-link': !recurringPaymentStatus.inProgress, 'fa-spinner fa-spin': recurringPaymentStatus.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "donate_creditcard_recurring_calltoaction" }}
       </button>
-    </div>
+
+      {{ $recurringChallengeUrl := printf "%s/donations/stripe/subscriptions/challenge" .Site.Params.apiBaseUrl }}
+      {{ partial "captcha.html" (dict "challengeUrl" $recurringChallengeUrl "captchaPayload" "recurringPaymentStatus.captcha" "captchaState" "recurringCaptchaState" "ref" "recurringCaptcha") }}
+
+      <p class="text-sm text-red-600 mt-2" x-text="recurringPaymentStatus.errorMessage"></p>
+    </form>
   </div>
 
   <div x-show="oneTimePaymentStatus.success" x-cloak>

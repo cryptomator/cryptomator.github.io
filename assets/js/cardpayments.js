@@ -1,6 +1,7 @@
 "use strict";
 
 const STRIPE_PREPARE_PAYMENT_URL = API_BASE_URL + '/donations/stripe/payments/prepare';
+const STRIPE_SUBSCRIPTION_CHECKOUT_URL = API_BASE_URL + '/donations/stripe/subscriptions/checkout';
 
 class OneTimePayment {
 
@@ -135,32 +136,47 @@ class OneTimePayment {
 class RecurringPayment {
 
   /**
-   * Creates a new recurring payment object.
-   * @param {number} amount integer $$$
-   * @param {string} currency EUR or USD
-   * @param {string} languageCode The IETF language tag of the locale to display Stripe placeholders and error strings in
+   * Initializes the recurring payment helper and stores a reference to the status object
+   * @param {Object} status
+   * @param {string} status.captcha The captcha (if captcha validation finished) or null
+   * @param {string} status.errorMessage An error message or null
+   * @param {boolean} status.inProgress Whether an async payment task is currently running
+   */
+  constructor(status) {
+    this._status = status;
+  }
+
+  /**
+   * Creates a Stripe Checkout Session and redirects to it
+   * @param {number} amount How many units of the given currency to pay per month
+   * @param {string} currency Which currency to pay in (EUR or USD)
+   * @param {string} languageCode The IETF language tag for Stripe Checkout UI locale
    */
   checkout(amount, currency, languageCode) {
-    let plan = STRIPE_PLANS[currency];
+    this._status.inProgress = true;
+    this._status.errorMessage = '';
+
+    const successUrl = window.location.href.split('#')[0] + 'thanks';
+    const cancelUrl = window.location.href;
+
     $.ajax({
-      url: 'https://js.stripe.com/v3/',
-      cache: true,
-      dataType: 'script'
+      url: STRIPE_SUBSCRIPTION_CHECKOUT_URL,
+      type: 'POST',
+      data: {
+        amount: parseInt(amount),
+        currency: currency,
+        successUrl: successUrl,
+        cancelUrl: cancelUrl,
+        locale: languageCode,
+        captcha: this._status.captcha
+      }
     }).then(response => {
-      return window.Stripe(STRIPE_PK);
-    }).then(stripe => {
-      stripe.redirectToCheckout({
-        items: [
-          {plan: plan, quantity: parseInt(amount)}
-        ],
-        successUrl: window.location.href.split('#')[0] + 'thanks',
-        cancelUrl: window.location.href,
-        locale: languageCode
-      }).then(result => {
-        if (result.error) {
-          console.log(result.error.message);
-        }
-      });
+      // Redirect to Stripe Checkout
+      window.location.href = response.url;
+    }).catch(error => {
+      console.error('Failed to create checkout session:', error);
+      this._status.errorMessage = error.responseJSON?.message || 'Failed to create checkout session';
+      this._status.inProgress = false;
     });
   }
 

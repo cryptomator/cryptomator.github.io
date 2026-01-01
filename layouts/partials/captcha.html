@@ -12,5 +12,5 @@
     verifying: '{{ i18n "altcha_verifying" }}',
     waitAlert: '{{ i18n "altcha_waitAlert" }}'
   })"
-  x-ref="captcha"
+  x-ref="{{ with .ref }}{{ . }}{{ else }}captcha{{ end }}"
 ></altcha-widget>
