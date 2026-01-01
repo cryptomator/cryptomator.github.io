@@ -1,4 +1,4 @@
-<div x-data="{amount: 20, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment(), acceptTerms: false, captchaState: null}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
+<div x-data="{amount: 30, currency: 'EUR', frequency: 'once', oneTimePayment: null, oneTimePaymentStatus: {validCardNum: false, captcha: null, errorMessage: '', inProgress: false, success: false}, recurringPayment: new RecurringPayment(), acceptTerms: false, captchaState: null}" x-init="oneTimePayment = new OneTimePayment(oneTimePaymentStatus)">
   <div x-show="!oneTimePaymentStatus.success">
     <div class="flex flex-wrap md:flex-nowrap">
       <div class="w-full mb-4 md:w-1/2 md:pr-3">

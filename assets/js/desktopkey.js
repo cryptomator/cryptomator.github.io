@@ -44,20 +44,20 @@ class DesktopLicense {
       }).catch(() => {
         this._checkoutData.errorMessage = 'Retrieving prices failed. Please try again later.';
       });
-      let discountedRequest = {
-        items: [{ priceId: PADDLE_DESKTOP_PRICE_IDS[0], quantity: 1 }],
-        discountId: PADDLE_DISCOUNT_ID
-      };
-      paddle.PricePreview(discountedRequest).then(discountedResult => {
-        if (Number(discountedResult.data.details.lineItems[0].totals.discount) > 0) {
-          this._checkoutData.discountedPrice = {
-            amount: discountedResult.data.details.lineItems[0].totals.total,
-            formattedAmount: discountedResult.data.details.lineItems[0].formattedTotals.total
-          };
-        }
-      }).catch(() => {
-        this._checkoutData.errorMessage = 'Retrieving discounted price failed. Please try again later.';
-      });
+      // let discountedRequest = {
+      //   items: [{ priceId: PADDLE_DESKTOP_PRICE_IDS[0], quantity: 1 }],
+      //   discountId: PADDLE_DISCOUNT_ID
+      // };
+      // paddle.PricePreview(discountedRequest).then(discountedResult => {
+      //   if (Number(discountedResult.data.details.lineItems[0].totals.discount) > 0) {
+      //     this._checkoutData.discountedPrice = {
+      //       amount: discountedResult.data.details.lineItems[0].totals.total,
+      //       formattedAmount: discountedResult.data.details.lineItems[0].formattedTotals.total
+      //     };
+      //   }
+      // }).catch(() => {
+      //   this._checkoutData.errorMessage = 'Retrieving discounted price failed. Please try again later.';
+      // });
     });
   }
 
@@ -80,8 +80,7 @@ class DesktopLicense {
       paddle.Checkout.open({
         settings: { locale: locale },
         items: [{ priceId: priceId, quantity: Number.parseInt(this._checkoutData.quantity) }],
-        customer: { email: this._checkoutData.email },
-        discountCode: PADDLE_DISCOUNT_CODE
+        customer: { email: this._checkoutData.email }
       });
     });
   }
