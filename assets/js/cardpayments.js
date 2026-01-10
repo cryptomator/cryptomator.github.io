@@ -33,7 +33,7 @@ class OneTimePayment {
     $(placeholder).attr('placeholder', placeholderLoading);
     $(placeholder).attr('disabled', true);
     this._stripe = $.ajax({
-      url: 'https://js.stripe.com/v3/',
+      url: 'https://js.stripe.com/clover/stripe.js',
       cache: true,
       dataType: 'script'
     }).then(response => {
