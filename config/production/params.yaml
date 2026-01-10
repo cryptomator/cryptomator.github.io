@@ -22,6 +22,3 @@ paddleDiscountCode: WINTER2025
 
 # STRIPE
 stripePk: pk_live_eSasX216vGvC26GdbVwA011V
-stripePlans:
-  EUR: plan_GgW4ovr7c6upzx
-  USD: plan_GejOEdJtfL3kdH
