@@ -2,6 +2,8 @@
   Answer: "Cryptomator is free to use on Windows, macOS, Linux, and iOS, but not Android (yet). However, the free version on iOS is read-only. If you purchase a license key for one platform, it is not valid for another. A bundle license does not exist."
 - Question: "Why is Cryptomator free to use on some platforms, but not on others?"
   Answer: "Our licensing strategy differs across platforms because of constraints imposed by App Store / Google Play policies, and technical differences across operating systems."
+- Question: "Why is the price at checkout different from the price shown on the website?"
+  Answer: "The base price shown on our website is in EUR and reflects pricing in Germany. At checkout, you may see a different price based on your region. We apply regional pricing adjustments using purchasing power parity (PPP) indices, which means prices can be lower or higher than the base price depending on your country. Additionally, pricing configurations differ across platforms (App Store, Google Play, and Paddle), so we cannot offer identical pricing everywhere despite our best efforts."
 - Question: "Do I need a supporter certificate to use Cryptomator on Desktop?"
   Answer: "All functional and encryption features are absolutely free to use on the desktop. By obtaining a supporter certificate, you can unlock the dark mode on desktop apps and also help accelerate Cryptomator's development. Please note, a supporter certificate is not a license key that can be used to unlock mobile apps."
 - Question: "What does number of licenses mean for a supporter certificate?"
