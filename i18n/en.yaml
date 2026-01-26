@@ -659,6 +659,35 @@
 - id: hub_demo_contact_us_button
   translation: "Contact Us"
 
+# Hub CE Registration
+- id: hub_ce_registration_description
+  translation: "Register your Cryptomator Hub instance for a free Community Edition license."
+
+- id: hub_ce_registration_steps_title
+  translation: "Step <span x-text=\"feedbackData.currentStep + 1\"></span> of <span x-text=\"steps.length\"></span>"
+- id: hub_ce_registration_steps_next
+  translation: "Next"
+
+- id: hub_ce_registration_step_1_nav_title
+  translation: "Email Address"
+- id: hub_ce_registration_step_1_title
+  translation: "What's your email address?"
+- id: hub_ce_registration_step_1_email_placeholder
+  translation: "Email address"
+
+- id: hub_ce_registration_step_2_confirmation_nav_title
+  translation: "Confirmation"
+- id: hub_ce_registration_step_2_confirmation_title
+  translation: "Please confirm your email address"
+- id: hub_ce_registration_step_2_instructions
+  translation: "We are going to send a confirmation email to <span x-text=\"submitData.email\"></span>"
+
+- id: hub_ce_registration_step_3_license_nav_title
+  translation: "License Key"
+- id: hub_ce_registration_step_3_license_title
+  translation: "Your Community Edition License Key"
+
+
 # Hub Managed
 - id: hub_managed_description
   translation: "Request access to a managed instance of Cryptomator Hub and get your team on board with client-side encryption for your cloud storage."
