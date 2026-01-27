@@ -17,6 +17,10 @@ An **jedem ersten Sonntag im Monat** in diesem Jahr nehmen sich Menschen weltwei
 
 Doch was bedeutet **digitale Unabhängigkeit** eigentlich genau? Und viel wichtiger: Wie kann man erste Schritte gehen, ohne den kompletten digitalen Alltag umzukrempeln oder viel Zeit und Energie zu investieren?
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/digital-independence-day-2026.png" alt="Digital Independence Day 2026 - Digitale Unabhängigkeit" />
+</figure>
+
 ## Was ist der Digital Independence Day?
 
 Der Digital Independence Day ist eine Initiative, die dazu aufruft, **die eigene Abhängigkeit von großen, zentralisierten Tech-Plattformen zu reduzieren** – insbesondere von solchen, deren Geschäftsmodelle auf Datensammlung, Lock-in-Effekten und Intransparenz basieren.
