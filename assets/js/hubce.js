@@ -2,7 +2,7 @@
 
 // requires newsletter.js
 const VERIFY_EMAIL_URL = API_BASE_URL + '/connect/email/verify';
-const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
+const CLAIM_LICENSE_URL = API_BASE_URL + '/licenses/hub/prod';
 
 class HubCE {
 
@@ -17,6 +17,15 @@ class HubCE {
     if (searchParams.get('verifiedEmail')) {
       feedbackData.currentStep = 2;
       feedbackData.success = true;
+    }
+  }
+
+  submit() {
+    if (this._feedbackData.currentStep === 0) {
+      this.validateEmail();
+    } else if (this._feedbackData.currentStep === 1) {
+      this.sendConfirmationEmail();
+    } else if (this._feedbackData.currentStep === 2) {
       this.getHubLicense();
     }
   }
@@ -73,10 +82,11 @@ class HubCE {
 
   getHubLicense() {
     $.ajax({
-      url: GET_LICENSE_URL,
-      type: 'GET',
+      url: CLAIM_LICENSE_URL,
+      type: 'POST',
       data: {
-        hubId: this._submitData.hubId
+        hubId: this._submitData.hubId,
+        captcha: this._submitData.captcha
       }
     }).done(response => {
       this._feedbackData.licenseText = response;

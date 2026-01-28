@@ -8,59 +8,70 @@
       <p class="lead">{{ i18n "hub_ce_registration_description" }}</p>
     </header>
 
-    <form x-ref="form" @submit.prevent="hubCE.sendConfirmationEmail(); $refs.captcha.reset()">
-      <section class="white-box md:min-h-110 px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
-        <header class="mb-8 md:col-span-1 md:mt-4">
-          <nav class="flex items-center justify-center gap-6" aria-label="Progress">
-            <p class="font-p text-sm text-gray-500 md:hidden">
-              {{ i18n "hub_ce_registration_steps_title" | safeHTML }}
-            </p>
-            <ol role="list" class="flex items-center gap-3 md:flex-col md:items-start md:gap-6">
-              <template x-for="(step, index) in steps" :key="index">
-                <li>
-                  <!-- Complete Step -->
-                  <template x-if="index < feedbackData.currentStep">
-                    <a href="#" class="group" @click.prevent="feedbackData.currentStep = index" :data-umami-event="`hub-managed-nav-step-${index + 1}`">
-                      <span class="flex items-center gap-3">
-                        <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
-                          <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
-                          </svg>
-                        </div>
-                        <p class="hidden md:block font-p text-sm text-gray-500 group-hover:text-gray-900" x-text="step"></p>
-                      </span>
-                    </a>
-                  </template>
 
-                  <!-- Current Step -->
-                  <template x-if="index === feedbackData.currentStep">
-                    <div class="flex items-center gap-3" aria-current="step">
-                      <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
-                        <span class="absolute w-4 h-4 rounded-full bg-primary-l2"></span>
-                        <span class="relative block w-2 h-2 rounded-full bg-primary"></span>
+    <section class="white-box md:min-h-110 px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+      <header class="mb-8 md:col-span-1 md:mt-4">
+        <nav class="flex items-center justify-center gap-6" aria-label="Progress">
+          <p class="font-p text-sm text-gray-500 md:hidden">
+            {{ i18n "hub_ce_registration_steps_title" | safeHTML }}
+          </p>
+          <ol role="list" class="flex items-center gap-3 md:flex-col md:items-start md:gap-6">
+            <template x-for="(step, index) in steps" :key="index">
+              <li>
+                <!-- Complete Step -->
+                <template x-if="index < feedbackData.currentStep &amp;&amp; !feedbackData.success">
+                  <a href="#" class="group" @click.prevent="feedbackData.currentStep = index" :data-umami-event="`hub-managed-nav-step-${index + 1}`">
+                    <span class="flex items-center gap-3">
+                      <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
+                        <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                        </svg>
                       </div>
-                      <p class="hidden md:block font-p text-sm font-medium text-primary" x-text="step"></p>
+                      <p class="hidden md:block font-p text-sm text-gray-500 group-hover:text-gray-900" x-text="step"></p>
+                    </span>
+                  </a>
+                </template>
+                <template x-if="index < feedbackData.currentStep &amp;&amp; feedbackData.success">
+                  <span class="flex items-center gap-3">
+                    <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
+                      <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                      </svg>
                     </div>
-                  </template>
+                    <p class="hidden md:block font-p text-sm text-gray-500 group-hover:text-gray-900" x-text="step"></p>
+                  </span>
+                </template>
 
-                  <!-- Upcoming Step -->
-                  <template x-if="index > feedbackData.currentStep">
-                    <div class="flex items-center gap-3">
-                      <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
-                        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
-                      </div>
-                      <p class="hidden md:block font-p text-sm text-gray-500" x-text="step"></p>
+                <!-- Current Step -->
+                <template x-if="index === feedbackData.currentStep">
+                  <div class="flex items-center gap-3" aria-current="step">
+                    <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
+                      <span class="absolute w-4 h-4 rounded-full bg-primary-l2"></span>
+                      <span class="relative block w-2 h-2 rounded-full bg-primary"></span>
                     </div>
-                  </template>
-                </li>
-              </template>
-            </ol>
-          </nav>
-        </header>
+                    <p class="hidden md:block font-p text-sm font-medium text-primary" x-text="step"></p>
+                  </div>
+                </template>
 
+                <!-- Upcoming Step -->
+                <template x-if="index > feedbackData.currentStep">
+                  <div class="flex items-center gap-3">
+                    <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
+                      <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                    </div>
+                    <p class="hidden md:block font-p text-sm text-gray-500" x-text="step"></p>
+                  </div>
+                </template>
+              </li>
+            </template>
+          </ol>
+        </nav>
+      </header>
+
+      <form x-ref="form" class="md:col-span-2" @submit.prevent="hubCE.submit(); $refs.captcha.reset()">
         <!-- Step 1: Email Address -->
         <template x-if="feedbackData.currentStep == 0">
-          <div class="md:col-span-2 grid grid-cols-6 gap-6">
+          <div class="grid grid-cols-6 gap-6">
             <div class="flex flex-col col-span-6 lg:col-span-4">
               <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
                 {{ i18n "hub_managed_steps_title" | safeHTML }}
@@ -110,7 +121,7 @@
           </div>
         </template>
 
-        <!-- Step 3: License Key (loading...) -->
+        <!-- Step 3a: License Key (loading...) -->
         <template x-if="feedbackData.currentStep == 2 &amp;&amp; !feedbackData.success">
           <div class="md:col-span-2 grid grid-cols-6 gap-6">
             <div class="flex flex-col col-span-6 lg:col-span-4">
@@ -125,7 +136,7 @@
           </div>
         </template>
 
-        <!-- Step 3: License Key (success) -->
+        <!-- Step 3b: License Key (success) -->
         <template x-if="feedbackData.currentStep == 2 &amp;&amp; feedbackData.success">
           <div class="md:col-span-2 grid grid-cols-6 gap-6">
             <div class="flex flex-col col-span-6 lg:col-span-4">
@@ -136,6 +147,8 @@
                 {{ i18n "hub_ce_registration_step_3_license_title" }}
               </h2>
               <p>Todo: return URL</p>
+              {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
+              {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
               <textarea class="block input-box w-full h-48 mb-8" x-text="feedbackData.licenseText" readonly></textarea>
              
               <div class="mt-auto">
@@ -148,8 +161,8 @@
             </div>
           </div>
         </template>
-      </section>
-    </form>
+      </form>
+    </section>
   </section>
 {{ end }}
 {{ define "script" }}
