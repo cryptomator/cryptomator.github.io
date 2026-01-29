@@ -2,7 +2,7 @@
 
 // requires newsletter.js
 const VERIFY_EMAIL_URL = API_BASE_URL + '/connect/email/verify';
-const CLAIM_LICENSE_URL = API_BASE_URL + '/licenses/hub/prod';
+const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
 
 class HubCE {
 
@@ -11,7 +11,7 @@ class HubCE {
     this._feedbackData = feedbackData;
     this._submitData = submitData;
     this._searchParams = searchParams;
-    this._submitData.hubId = searchParams.get('hubId');
+    this._submitData.oldLicense = searchParams.get('oldLicense');
 
     // continue after email verified:
     if (searchParams.get('verifiedEmail')) {
@@ -65,7 +65,7 @@ class HubCE {
       type: 'POST',
       data: {
         email: this._submitData.email,
-        hubId: this._submitData.hubId,
+        oldLicense: this._submitData.oldLicense,
         verifyCaptcha: this._submitData.captcha,
         verifyEmail: this._submitData.email,
         verifyTarget: 'registerhubce'
@@ -82,11 +82,10 @@ class HubCE {
 
   getHubLicense() {
     $.ajax({
-      url: CLAIM_LICENSE_URL,
+      url: REFRESH_LICENSE_URL,
       type: 'POST',
       data: {
-        hubId: this._submitData.hubId,
-        captcha: this._submitData.captcha
+        token: this._submitData.oldLicense
       }
     }).done(response => {
       this._feedbackData.licenseText = response;

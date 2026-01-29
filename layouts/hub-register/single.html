@@ -2,7 +2,7 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', licenseText: null}, submitData: {captcha: null, hubId: '', email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null}" x-init="hubCE = new HubCE($refs.form, feedbackData, submitData, new URLSearchParams(location.search))" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', licenseText: null}, submitData: {captcha: null, oldLicense: '', email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null}" x-init="hubCE = new HubCE($refs.form, feedbackData, submitData, new URLSearchParams(location.hash.substring(1)))" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_ce_registration_description" }}</p>
@@ -82,7 +82,7 @@
               <input type="email" id="email" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_ce_registration_step_1_email_placeholder" }}" x-init="$el.focus()" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
               <div class="mt-auto">
                 <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                <button :disabled="feedbackData.inProgress || !submitData.hubId" @click.prevent="hubCE.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-step-1">
+                <button :disabled="feedbackData.inProgress || !submitData.oldLicense" @click.prevent="hubCE.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-step-1">
                   <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                   {{ i18n "hub_ce_registration_steps_next" }}
                 </button>
