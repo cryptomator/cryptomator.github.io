@@ -585,6 +585,14 @@
   translation: "Standard"
 - id: hub_billing_checkout_standard_description
   translation: "pro Sitz, pro Monat, jährlich abgerechnet"
+- id: hub_billing_checkout_standard_description_monthly
+  translation: "pro Sitz, monatlich abgerechnet"
+- id: hub_billing_monthly
+  translation: "Monatlich"
+- id: hub_billing_yearly
+  translation: "Jährlich"
+- id: hub_billing_save
+  translation: "Spare"
 
 - id: hub_billing_checkout_standard_hubid
   translation: "Hub-ID"

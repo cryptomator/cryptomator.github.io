@@ -11,7 +11,7 @@ class HubPricing {
       url: PADDLE_PRICES_URL,
       dataType: 'jsonp',
       data: {
-        product_ids: `${PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID},${PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID}`
+        product_ids: `${PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID},${PADDLE_HUB_MANAGED_YEARLY_PLAN_ID}`
       },
     }).done(data => {
       this._data.selfHostedMonthlyPrice = {

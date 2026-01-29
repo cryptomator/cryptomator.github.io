@@ -585,6 +585,14 @@
   translation: "Standard"
 - id: hub_billing_checkout_standard_description
   translation: "per seat, per month, billed yearly"
+- id: hub_billing_checkout_standard_description_monthly
+  translation: "per seat, billed monthly"
+- id: hub_billing_monthly
+  translation: "Monthly"
+- id: hub_billing_yearly
+  translation: "Yearly"
+- id: hub_billing_save
+  translation: "Save"
 
 - id: hub_billing_checkout_standard_hubid
   translation: "Hub ID"

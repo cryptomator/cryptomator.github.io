@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, monthlyPrice: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -318,30 +318,47 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
                 </h2>
-                <div x-show="audience === 'business'">
+                <div x-show="!subscriptionData.customBilling?.override" class="flex items-center gap-2">
+                  <span class="uppercase tracking-wide text-xs font-bold cursor-pointer" :class="subscriptionData.billingInterval === 'monthly' ? 'text-gray-700' : 'text-gray-500'" @click="subscriptionData.billingInterval = 'monthly'">
+                    {{ i18n "hub_billing_monthly" . }}
+                  </span>
+                  <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" @click.prevent="subscriptionData.billingInterval = subscriptionData.billingInterval === 'monthly' ? 'yearly' : 'monthly'">
+                    <span class="sr-only">Toggle billing interval</span>
+                    <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out" :class="subscriptionData.billingInterval === 'monthly' ? 'translate-x-0' : 'translate-x-4'"></span>
+                  </button>
+                  <span class="uppercase tracking-wide text-xs font-bold cursor-pointer" :class="subscriptionData.billingInterval === 'yearly' ? 'text-gray-700' : 'text-gray-500'" @click="subscriptionData.billingInterval = 'yearly'">
+                    {{ i18n "hub_billing_yearly" . }}
+                  </span>
+                  <span x-show="subscriptionData.savingsPercent > 0" class="px-2 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
+                    {{ i18n "hub_billing_save" . }} <span x-text="subscriptionData.savingsPercent"></span>%
+                  </span>
+                </div>
+                <div x-show="subscriptionData.billingInterval === 'monthly'">
                   <p class="flex items-baseline gap-2">
-                    <span x-text="subscriptionData.monthlyPrice.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
-                    <span class="text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
-                  </p>
-                  <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
-                    <span x-text="subscriptionData.monthlyPrice.recurringNetAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
-                    <span>{{ i18n "pricing_vat_excluded" . }}</span>
-                    <span>{{ i18n "pricing_different_recurring_description" . }}</span>
+                    <span x-show="audience === 'business'" x-text="subscriptionData.monthlyPlanPrice?.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPlanPrice?.currency })" class="text-5xl font-bold"></span>
+                    <span x-show="audience === 'consumer'" x-text="subscriptionData.monthlyPlanPrice?.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPlanPrice?.currency })" class="text-5xl font-bold"></span>
+                    <span x-show="audience === 'business'" class="text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
+                    <span x-show="audience === 'consumer'" class="text-gray-700">{{ i18n "pricing_vat_included" . }}</span>
                   </p>
                 </div>
-                <div x-show="audience === 'consumer'">
+                <div x-show="subscriptionData.billingInterval === 'yearly'">
                   <p class="flex items-baseline gap-2">
-                    <span x-text="subscriptionData.monthlyPrice.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })" class="text-5xl font-bold"></span>
-                    <span class="text-gray-700">{{ i18n "pricing_vat_included" . }}</span>
+                    <span x-show="audience === 'business'" x-text="subscriptionData.yearlyPlanPrice?.netAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.yearlyPlanPrice?.currency })" class="text-5xl font-bold"></span>
+                    <span x-show="audience === 'consumer'" x-text="subscriptionData.yearlyPlanPrice?.grossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.yearlyPlanPrice?.currency })" class="text-5xl font-bold"></span>
+                    <span x-show="audience === 'business'" class="text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
+                    <span x-show="audience === 'consumer'" class="text-gray-700">{{ i18n "pricing_vat_included" . }}</span>
                   </p>
-                  <p x-show="subscriptionData.monthlyPrice.netAmount != subscriptionData.monthlyPrice.recurringNetAmount" class="text-gray-700 mb-2">
-                    <span x-text="subscriptionData.monthlyPrice.recurringGrossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.monthlyPrice.currency })"></span>
-                    <span>{{ i18n "pricing_vat_included" . }}</span>
+                  <p x-show="subscriptionData.yearlyPlanPrice?.netAmount != subscriptionData.yearlyPlanPrice?.recurringNetAmount" class="text-gray-700 mb-2">
+                    <span x-show="audience === 'business'" x-text="subscriptionData.yearlyPlanPrice?.recurringNetAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.yearlyPlanPrice?.currency })"></span>
+                    <span x-show="audience === 'consumer'" x-text="subscriptionData.yearlyPlanPrice?.recurringGrossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.yearlyPlanPrice?.currency })"></span>
+                    <span x-show="audience === 'business'">{{ i18n "pricing_vat_excluded" . }}</span>
+                    <span x-show="audience === 'consumer'">{{ i18n "pricing_vat_included" . }}</span>
                     <span>{{ i18n "pricing_different_recurring_description" . }}</span>
                   </p>
                 </div>
                 <p class="text-lg text-gray-500 mb-4">
-                  {{ i18n "hub_billing_checkout_standard_description" . }}
+                  <span x-show="subscriptionData.billingInterval === 'monthly'">{{ i18n "hub_billing_checkout_standard_description_monthly" . }}</span>
+                  <span x-show="subscriptionData.billingInterval === 'yearly'">{{ i18n "hub_billing_checkout_standard_description" . }}</span>
                 </p>
               </div>
               <div class="px-4 py-8">
@@ -390,6 +407,7 @@
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
                 </h2>
+                <div x-show="!subscriptionData.customBilling?.override" class="lg:h-[22px]"></div>
                 <p class="text-5xl font-bold">
                   {{ i18n "hub_billing_checkout_enterprise_statement" . }}
                 </p>
