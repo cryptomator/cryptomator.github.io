@@ -14,8 +14,10 @@ paddleDesktopPriceIds:
   - pri_01jb24e3z1zkzsq5yrhm5252bd
 paddleAndroidPriceId: pri_01jb24ewyc6fbhnzt26jdj9qp1
 paddleVendorId: 1385
-paddleHubSelfHostedSubscriptionPlanId: 23141
-paddleHubManagedSubscriptionPlanId: 42235
+paddleHubSelfHostedYearlyPlanId: 23141
+paddleHubSelfHostedMonthlyPlanId: 82378
+paddleHubManagedYearlyPlanId: 42235
+paddleHubManagedMonthlyPlanId: 82379
 paddlePricesUrl: https://sandbox-checkout.paddle.com/api/2.0/prices
 paddleDiscountId: dsc_01kba2drz2yg4v6h3d5f2687tw
 paddleDiscountCode: WINTER2025

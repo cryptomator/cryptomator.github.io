@@ -1,7 +1,7 @@
 - Question: "How are seats calculated?"
   Answer: "Only users who are granted access to vaults count towards the seats limit. For example, you can buy 10 seats and still connect your Keycloak instance to an Active Directory with thousands of users. Each user with vault access occupies one seat, regardless of their number of devices."
 - Question: "How is the subscription fee calculated for paid plans?"
-  Answer: "You will be charged a yearly fee for each seat. This fee applies even if you have unused seats."
+  Answer: "You can choose between monthly or yearly billing. With yearly billing, you save compared to paying monthly. The fee applies to each seat, even if some seats are unused. If you need to change your billing interval after subscribing, please [contact our sales team](/contact-sales/)."
 - Question: "Can I add more seats during the current billing cycle?"
   Answer: "Yes, you can add more seats at any time. You can also reduce seats if you no longer need them. Changes are either prorated immediately or deducted in the following year."
 - Question: "Do the paid plans include 5 free seats?"

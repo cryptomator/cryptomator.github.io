@@ -161,54 +161,61 @@ class HubSubscription {
   loadPrice(continueHandler) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    let product_id;
-    if (this._subscriptionData.customBilling?.managed) {
-      product_id = PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID;
-    } else {
-      product_id = PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID;
-    }
+    let isManaged = this._subscriptionData.customBilling?.managed;
+    let yearlyPlanId = isManaged ? PADDLE_HUB_MANAGED_YEARLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
+    let monthlyPlanId = isManaged ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID;
     $.ajax({
       url: PADDLE_PRICES_URL,
       dataType: 'jsonp',
       data: {
-        product_ids: product_id
+        product_ids: yearlyPlanId + ',' + monthlyPlanId
       },
     }).done(data => {
-      this.onLoadPriceSucceeded(data);
+      this.onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId);
       continueHandler();
     }).fail(xhr => {
       this.onLoadPriceFailed(xhr.responseJSON?.message || 'Loading price failed.');
     });
   }
 
-  onLoadPriceSucceeded(data) {
-    let product = data.response.products[0];
-    let currency = product.currency;
-    let netAmount;
-    let recurringNetAmount;
-    let grossAmount;
-    let recurringGrossAmount;
-    if (this._subscriptionData.customBilling?.override?.prices) {
-      netAmount = this.getAmount(this._subscriptionData.customBilling.override.prices, currency) / 12;
-      recurringNetAmount = this.getAmount(this._subscriptionData.customBilling.override.recurring_prices, currency) / 12;
-      let taxRate = product.subscription.price.gross / product.subscription.price.net;
-      grossAmount = netAmount * taxRate;
-      recurringGrossAmount = recurringNetAmount * taxRate;
-    } else {
-      netAmount = product.subscription.price.net / 12;
-      recurringNetAmount = netAmount;
-      grossAmount = product.subscription.price.gross / 12;
-      recurringGrossAmount = grossAmount;
-    }
-    this._subscriptionData.monthlyPrice = {
-      netAmount: netAmount,
-      recurringNetAmount: recurringNetAmount,
-      grossAmount: grossAmount,
-      recurringGrossAmount: recurringGrossAmount,
+  onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId) {
+    let products = data.response.products;
+    let yearlyProduct = products.find(p => p.product_id == yearlyPlanId);
+    let monthlyProduct = products.find(p => p.product_id == monthlyPlanId);
+    let yearlyPrice = yearlyProduct.subscription.price;
+    let monthlyPrice = monthlyProduct.subscription.price;
+    let currency = yearlyProduct.currency;
+    this._subscriptionData.yearlyPlanPrice = this.calculateYearlyPlanPrice(yearlyPrice, currency);
+    this._subscriptionData.monthlyPlanPrice = {
+      netAmount: monthlyPrice.net,
+      recurringNetAmount: monthlyPrice.net,
+      grossAmount: monthlyPrice.gross,
+      recurringGrossAmount: monthlyPrice.gross,
       currency: currency
     };
+    this._subscriptionData.savingsPercent = Math.round((1 - yearlyPrice.net / (monthlyPrice.net * 12)) * 100);
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
+  }
+
+  calculateYearlyPlanPrice(yearlyPrice, currency) {
+    let taxRate = yearlyPrice.gross / yearlyPrice.net;
+    let customBillingOverride = this._subscriptionData.customBilling?.override;
+    let customPriceAmount = customBillingOverride?.prices
+      ? this.getAmount(customBillingOverride.prices, currency)
+      : null;
+    let netAmount = (customPriceAmount ?? yearlyPrice.net) / 12;
+    let customRecurringAmount = customBillingOverride?.recurring_prices
+      ? this.getAmount(customBillingOverride.recurring_prices, currency)
+      : null;
+    let recurringNetAmount = customRecurringAmount ? customRecurringAmount / 12 : netAmount;
+    return {
+      netAmount: netAmount,
+      recurringNetAmount: recurringNetAmount,
+      grossAmount: netAmount * taxRate,
+      recurringGrossAmount: recurringNetAmount * taxRate,
+      currency: currency
+    };
   }
 
   getAmount(prices, currency) {
@@ -231,11 +238,15 @@ class HubSubscription {
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    if (this._subscriptionData.customBilling?.managed) {
-      this.customCheckout(PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID, locale);
+    let isManaged = this._subscriptionData.customBilling?.managed;
+    let isMonthly = this._subscriptionData.billingInterval === 'monthly';
+    let planId;
+    if (isManaged) {
+      planId = isMonthly ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_MANAGED_YEARLY_PLAN_ID;
     } else {
-      this.customCheckout(PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID, locale);
+      planId = isMonthly ? PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
     }
+    this.customCheckout(planId, locale);
   }
 
   customCheckout(productId, locale) {
