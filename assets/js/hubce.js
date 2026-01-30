@@ -85,7 +85,8 @@ class HubCE {
       url: REFRESH_LICENSE_URL,
       type: 'POST',
       data: {
-        token: this._submitData.oldLicense
+        token: this._submitData.oldLicense,
+        captcha: this._submitData.captcha
       }
     }).done(response => {
       this._feedbackData.licenseText = response;
