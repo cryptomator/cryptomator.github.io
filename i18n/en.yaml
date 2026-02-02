@@ -667,6 +667,8 @@
   translation: "Step <span x-text=\"feedbackData.currentStep + 1\"></span> of <span x-text=\"steps.length\"></span>"
 - id: hub_ce_registration_steps_next
   translation: "Next"
+- id: hub_ce_registration_steps_continue
+  translation: "Continue"
 
 - id: hub_ce_registration_step_1_nav_title
   translation: "Email Address"
@@ -681,11 +683,19 @@
   translation: "Please confirm your email address"
 - id: hub_ce_registration_step_2_instructions
   translation: "We are going to send a confirmation email to <span x-text=\"submitData.email\"></span>"
+- id: hub_ce_registration_step_2_check_email
+  translation: "Please check your e-mails."
+- id: hub_ce_registration_step_2_email_verified
+  translation: "Your email has been verified successfully."
 
 - id: hub_ce_registration_step_3_license_nav_title
   translation: "License Key"
 - id: hub_ce_registration_step_3_license_title
   translation: "Your Community Edition License Key"
+- id: hub_ce_registration_step_3_loading
+  translation: "Loading license key..."
+- id: hub_ce_registration_step_3_success
+  translation: "Your new license key:"
 
 
 # Hub Managed

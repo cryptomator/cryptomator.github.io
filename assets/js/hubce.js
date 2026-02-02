@@ -15,8 +15,8 @@ class HubCE {
 
     // continue after email verified:
     if (searchParams.get('verifiedEmail')) {
-      feedbackData.currentStep = 2;
-      feedbackData.success = true;
+      feedbackData.currentStep = 1;
+      feedbackData.emailVerified = true;
     }
   }
 
@@ -81,6 +81,8 @@ class HubCE {
   }
 
   getHubLicense() {
+    this._feedbackData.inProgress = true;
+    this._feedbackData.errorMessage = '';
     $.ajax({
       url: REFRESH_LICENSE_URL,
       type: 'POST',
@@ -90,6 +92,7 @@ class HubCE {
       }
     }).done(response => {
       this._feedbackData.licenseText = response;
+      this._feedbackData.inProgress = false;
     }).fail(xhr => {
       this.onRequestFailed(xhr.responseJSON?.message || 'Fetching license failed.');
     });
@@ -101,7 +104,7 @@ class HubCE {
   }
 
   onRequestSucceeded() {
-    this._feedbackData.currentStep++;
+    this._feedbackData.emailSent = true;
     this._feedbackData.inProgress = false;
     this._feedbackData.errorMessage = '';
   }
