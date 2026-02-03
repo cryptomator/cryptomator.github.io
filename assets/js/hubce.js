@@ -12,6 +12,7 @@ class HubCE {
     this._submitData = submitData;
     this._searchParams = searchParams;
     this._submitData.oldLicense = searchParams.get('oldLicense');
+    this._submitData.returnUrl = searchParams.get('returnUrl');
 
     // continue after email verified:
     if (searchParams.get('verifiedEmail')) {
@@ -66,6 +67,7 @@ class HubCE {
       data: {
         email: this._submitData.email,
         oldLicense: this._submitData.oldLicense,
+        returnUrl: this._submitData.returnUrl,
         verifyCaptcha: this._submitData.captcha,
         verifyEmail: this._submitData.email,
         verifyTarget: 'registerhubce'

@@ -2,7 +2,7 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', licenseText: null, emailSent: false, emailVerified: false}, submitData: {captcha: null, oldLicense: '', email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null}" x-init="hubCE = new HubCE($refs.form, feedbackData, submitData, new URLSearchParams(location.hash.substring(1)))" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', licenseText: null, emailSent: false, emailVerified: false}, submitData: {captcha: null, oldLicense: '', email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null, returnUrl: null}" x-init="const params = new URLSearchParams(location.hash.substring(1)); returnUrl = params.get('returnUrl'); hubCE = new HubCE($refs.form, feedbackData, submitData, params)" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_ce_registration_description" }}</p>
@@ -202,7 +202,7 @@
                 <p class="font-p mb-4">{{ i18n "hub_ce_registration_step_3_success" }}</p>
                 <textarea class="block input-box w-full h-32 md:h-48 mb-8" x-text="feedbackData.licenseText" readonly></textarea>
                 <div class="mt-auto">
-                  <button class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-step-1">
+                  <button @click="window.location.href = returnUrl + '/app/admin/settings?token=' + encodeURIComponent(feedbackData.licenseText)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     Todo: Return to Hub
                   </button>
