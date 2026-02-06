@@ -518,6 +518,7 @@ class HubSubscription {
       }
     }).fail(xhr => {
       this._subscriptionData.errorMessage = xhr.responseJSON?.message || 'Refreshing license failed.';
+      this._subscriptionData.needsTokenRefresh = false;
       this._subscriptionData.inProgress = false;
     });
   }
