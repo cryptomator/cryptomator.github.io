@@ -546,6 +546,8 @@
   translation: "This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically."
 - id: hub_billing_manage_license_key_transfer_action
   translation: "Transfer to Hub"
+- id: hub_billing_manage_license_key_retry_action
+  translation: "Retry"
 
 - id: hub_billing_manage_modal_charge_amount_description
   translation: "Charge Amount"
