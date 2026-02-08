@@ -1,0 +1,238 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
+{{ define "main" }}
+  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', licenseText: null, emailSent: false, emailVerified: false}, submitData: {captcha: null, oldLicense: '', email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null, returnUrl: null}" x-init="const params = new URLSearchParams(location.hash.substring(1)); returnUrl = params.get('returnUrl'); hubCE = new HubCE($refs.form, feedbackData, submitData, params)" class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ i18n "hub_ce_registration_description" }}</p>
+    </header>
+
+
+    <section class="white-box md:min-h-110 px-4 py-5 md:p-6 md:grid md:grid-cols-3 md:gap-6">
+      <header class="mb-8 md:col-span-1 md:mt-4">
+        <nav class="flex items-center justify-center gap-6" aria-label="Progress">
+          <p class="font-p text-sm text-gray-500 md:hidden">
+            {{ i18n "hub_ce_registration_steps_title" | safeHTML }}
+          </p>
+          <ol role="list" class="flex items-center gap-3 md:flex-col md:items-start md:gap-6">
+            <template x-for="(step, index) in steps" :key="index">
+              <li>
+                <!-- Complete Step (clickable) -->
+                <template x-if="index < feedbackData.currentStep &amp;&amp; !feedbackData.success &amp;&amp; !feedbackData.emailSent">
+                  <a href="#" class="group" @click.prevent="feedbackData.currentStep = index" :data-umami-event="`hub-managed-nav-step-${index + 1}`">
+                    <span class="flex items-center gap-3">
+                      <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
+                        <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <p class="hidden md:block font-p text-sm text-gray-500 group-hover:text-gray-900" x-text="step"></p>
+                    </span>
+                  </a>
+                </template>
+                <!-- Complete Step (not clickable) -->
+                <template x-if="index < feedbackData.currentStep &amp;&amp; (feedbackData.success || feedbackData.emailSent)">
+                  <span class="flex items-center gap-3">
+                    <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
+                      <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <p class="hidden md:block font-p text-sm text-gray-500 group-hover:text-gray-900" x-text="step"></p>
+                  </span>
+                </template>
+
+                <!-- Current Step -->
+                <template x-if="index === feedbackData.currentStep">
+                  <div class="flex items-center gap-3" aria-current="step">
+                    <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
+                      <span class="absolute w-4 h-4 rounded-full bg-primary-l2"></span>
+                      <span class="relative block w-2 h-2 rounded-full bg-primary"></span>
+                    </div>
+                    <p class="hidden md:block font-p text-sm font-medium text-primary" x-text="step"></p>
+                  </div>
+                </template>
+
+                <!-- Upcoming Step -->
+                <template x-if="index > feedbackData.currentStep">
+                  <div class="flex items-center gap-3">
+                    <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
+                      <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                    </div>
+                    <p class="hidden md:block font-p text-sm text-gray-500" x-text="step"></p>
+                  </div>
+                </template>
+              </li>
+            </template>
+          </ol>
+        </nav>
+      </header>
+
+      <form x-ref="form" class="md:col-span-2" @submit.prevent="hubCE.submit(); $refs.captcha.reset()">
+        <!-- Step 1: Email Address -->
+        <template x-if="feedbackData.currentStep == 0">
+          <div class="grid grid-cols-6 gap-6">
+            <div class="flex flex-col col-span-6 lg:col-span-4">
+              <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                {{ i18n "hub_managed_steps_title" | safeHTML }}
+              </p>
+              <h2 class="font-h2 mb-6">
+                {{ i18n "hub_ce_registration_step_1_title" }}
+              </h2>
+              <input type="email" id="email" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_ce_registration_step_1_email_placeholder" }}" x-init="$el.focus()" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
+              <div class="mt-auto">
+                <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                <button :disabled="feedbackData.inProgress || !submitData.oldLicense" @click.prevent="hubCE.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-step-1">
+                  <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                  {{ i18n "hub_ce_registration_steps_next" }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+
+          <!-- Step 2a: Confirmation (form with checkboxes) -->
+        <template x-if="feedbackData.currentStep == 1 &amp;&amp; !feedbackData.emailSent &amp;&amp; !feedbackData.emailVerified">
+          <div class="md:col-span-2 gap-6">
+            <div class="flex flex-col">
+              <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                {{ i18n "hub_managed_steps_title" | safeHTML }}
+              </p>
+              <h2 class="font-h2 mb-6">
+                {{ i18n "hub_ce_registration_step_2_confirmation_title" }}
+              </h2>
+              <p class="font-p mb-6">{{ i18n "hub_ce_registration_step_2_instructions" | safeHTML }}</p>
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
+              </p>
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+              </p>
+              <div class="mt-auto">
+                <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-form" x-cloak>
+                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                  {{ i18n "hub_managed_step_4_submit" }}
+                </button>
+                {{ $challengeUrl := printf "%s/connect/email/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Step 2b: Confirmation (email sent, waiting for verification) -->
+        <template x-if="feedbackData.currentStep == 1 &amp;&amp; feedbackData.emailSent &amp;&amp; !feedbackData.emailVerified">
+          <div class="md:col-span-2 gap-6">
+            <div class="flex flex-col">
+              <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                {{ i18n "hub_managed_steps_title" | safeHTML }}
+              </p>
+              <h2 class="font-h2 mb-6">
+                {{ i18n "hub_ce_registration_step_2_confirmation_title" }}
+              </h2>
+              <p class="font-p mb-6">{{ i18n "hub_ce_registration_step_2_check_email" | safeHTML }}</p>
+            </div>
+          </div>
+        </template>
+
+        <!-- Step 2c: Confirmation (email verified, show continue button) -->
+        <template x-if="feedbackData.currentStep == 1 &amp;&amp; feedbackData.emailVerified">
+          <div class="md:col-span-2 gap-6">
+            <div class="flex flex-col">
+              <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                {{ i18n "hub_managed_steps_title" | safeHTML }}
+              </p>
+              <h2 class="font-h2 mb-6">
+                {{ i18n "hub_ce_registration_step_2_confirmation_title" }}
+              </h2>
+              <p class="font-p mb-6">{{ i18n "hub_ce_registration_step_2_email_verified" | safeHTML }}</p>
+              <div class="mt-auto">
+                <button @click.prevent="feedbackData.currentStep++; feedbackData.success = true" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-continue">
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  {{ i18n "hub_ce_registration_steps_continue" }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Step 3: License Key -->
+        <template x-if="feedbackData.currentStep == 2">
+          <div class="md:col-span-2 grid grid-cols-6 gap-6">
+            <div class="flex flex-col col-span-6 lg:col-span-4">
+              <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
+                {{ i18n "hub_managed_steps_title" | safeHTML }}
+              </p>
+              <h2 class="font-h2 mb-6">
+                {{ i18n "hub_ce_registration_step_3_license_title" }}
+              </h2>
+
+              <!-- Captcha (auto-starts on load, hidden when done) -->
+              <div x-show="!feedbackData.licenseText" class="mb-4">
+                <altcha-widget
+                  challengeurl="{{ .Site.Params.apiBaseUrl }}/licenses/hub/challenge"
+                  hidelogo
+                  hidefooter
+                  auto="onload"
+                  @statechange="captchaState = $event.detail.state; if ($event.detail.state === 'verified') { submitData.captcha = $event.detail.payload; hubCE.getHubLicense() }"
+                  :strings="JSON.stringify({
+                    label: '{{ i18n "altcha_label" }}',
+                    error: '{{ i18n "altcha_error" }}',
+                    expired: '{{ i18n "altcha_expired" }}',
+                    verified: '{{ i18n "altcha_verified" }}',
+                    verifying: '{{ i18n "altcha_verifying" }}',
+                    waitAlert: '{{ i18n "altcha_waitAlert" }}'
+                  })"
+                  x-ref="licenseCaptcha"
+                ></altcha-widget>
+              </div>
+
+              <!-- Loading state -->
+              <div x-show="captchaState === 'verified' &amp;&amp; !feedbackData.licenseText &amp;&amp; !feedbackData.errorMessage" class="mb-8">
+                <p class="font-p text-gray-500">
+                  <i class="fa-solid fa-spinner fa-spin mr-2" aria-hidden="true"></i>
+                  {{ i18n "hub_ce_registration_step_3_loading" }}
+                </p>
+              </div>
+
+              <!-- License Key display -->
+              <div x-show="feedbackData.licenseText">
+                <p class="font-p mb-4">{{ i18n "hub_ce_registration_step_3_success" }}</p>
+                <textarea class="block input-box w-full h-32 md:h-48 mb-8" x-text="feedbackData.licenseText" readonly></textarea>
+                <div class="mt-auto">
+                  <a :href="returnUrl + '?token=' + encodeURIComponent(feedbackData.licenseText)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    Todo: Return to Hub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </form>
+    </section>
+  </section>
+{{ end }}
+{{ define "script" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" defer></script>
+    {{ $hubCeJs := resources.Get "js/hubce.js" }}
+    <script type="text/javascript" src="{{ $hubCeJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $newsletterJs.RelPermalink }}" integrity="{{ $newsletterJs.Data.Integrity }}" defer></script>
+    {{ $hubCeJs := resources.Get "js/hubce.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $hubCeJs.RelPermalink }}" integrity="{{ $hubCeJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" | minify | fingerprint }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}
