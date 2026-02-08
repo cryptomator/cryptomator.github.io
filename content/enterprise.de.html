@@ -49,7 +49,7 @@ description: "Setze Cryptomator und unsere Technologien in deinem Unternehmen ei
           <li>Ver- und Entschlüsselung von Cryptomator-Tresoren direkt aus der Cloud</li>
           <li>Anwendbar für direkten Cloudzugriff ohne Synchronisierung, z.B. für Apps für Android</li>
           <li>High-Level-Funktionen für Ver- und Entschlüsselung</li>
-          <li>Java 7+ kompatibel</li>
+          <li>Java 8+ kompatibel</li>
         </ul>
       </div>
     </div>
@@ -64,7 +64,7 @@ description: "Setze Cryptomator und unsere Technologien in deinem Unternehmen ei
           <li>Ver- und Entschlüsselung von Cryptomator-Tresoren im lokalen Dateisystem</li>
           <li>Nutzbar für den Zugriff auf Daten, die in ein lokales Verzeichnis synchronisiert wurden</li>
           <li>Implementiert <code class="font-code text-xs">java.nio.file.spi.FileSystemProvider</code> entsprechend JSR-203 durch Nutzung von CryptoLib</li>
-          <li>Java 8+ kompatibel</li>
+          <li>Java 25+ kompatibel</li>
         </ul>
       </div>
     </div>
@@ -78,7 +78,7 @@ description: "Setze Cryptomator und unsere Technologien in deinem Unternehmen ei
         <ul class="list-primary list-primary-sm">
           <li>Inhalte eines lokalen Verzeichnisses (jeder <code class="font-code text-xs">java.nio.file.Path</code>) werden per WebDAV bereitgestellt</li>
           <li>Implementiert ein JEE-Servlet</li>
-          <li>Java 8+ kompatibel</li>
+          <li>Java 11+ kompatibel</li>
         </ul>
       </div>
     </div>
@@ -92,7 +92,7 @@ description: "Setze Cryptomator und unsere Technologien in deinem Unternehmen ei
         <ul class="list-primary list-primary-sm">
           <li>Laufwerkseinbindung auf Windows, macOS und Linux</li>
           <li>Basiert auf WebDAV-NIO-Adapter-Servlet</li>
-          <li>Java 8+ kompatibel</li>
+          <li>Java 21+ kompatibel</li>
         </ul>
       </div>
     </div>
@@ -105,22 +105,64 @@ description: "Setze Cryptomator und unsere Technologien in deinem Unternehmen ei
         <p class="font-p text-sm mb-4">Stelle ein FUSE-Laufwerk aus deiner Java-Anwendung bereit.</p>
         <ul class="list-primary list-primary-sm">
           <li>Inhalte eines lokalen Verzeichnisses (jeder <code class="font-code text-xs">java.nio.file.Path</code>) werden per FUSE bereitgestellt</li>
-          <li>Laufwerkseinbindung auf macOS und Linux</li>
-          <li>Java 9+ kompatibel</li>
+          <li>Basiert auf jFUSE, Laufwerkseinbindung auf macOS, Linux und Windows</li>
+          <li>Java 25+ kompatibel</li>
         </ul>
       </div>
     </div>
-  
+
     <div class="white-box">
       <div class="px-4 py-2 border-b border-primary">
-        <h3 class="font-h3 text-lg"><a class="text-link" href="https://github.com/cryptomator/dokany-nio-adapter" target="_blank" rel="noopener">Dokany-NIO-Adapter</a></h3>
+        <h3 class="font-h3 text-lg"><a class="text-link" href="https://github.com/cryptomator/jfuse" target="_blank" rel="noopener">jFUSE</a></h3>
       </div>
       <div class="p-4">
-        <p class="font-p text-sm mb-4">Stelle ein Dokany-Laufwerk aus deiner Java-Anwendung bereit.</p>
+        <p class="font-p text-sm mb-4">Java-Bindings für FUSE ohne Abhängigkeiten über die Foreign Function &amp; Memory API.</p>
         <ul class="list-primary list-primary-sm">
-          <li>Inhalte eines lokalen Verzeichnisses (jeder <code class="font-code text-xs">java.nio.file.Path</code>) werden per Dokany bereitgestellt</li>
-          <li>Laufwerkseinbindung auf Windows</li>
+          <li>Unterstützt macOS (macFUSE), Linux (libfuse3) und Windows (WinFsp)</li>
+          <li>Nutzt JEP 454 (Foreign Function &amp; Memory API), kein JNI erforderlich</li>
+          <li>JDK 25+ kompatibel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="white-box">
+      <div class="px-4 py-2 border-b border-primary">
+        <h3 class="font-h3 text-lg"><a class="text-link" href="https://github.com/cryptomator/siv-mode" target="_blank" rel="noopener">SIV-Mode</a></h3>
+      </div>
+      <div class="p-4">
+        <p class="font-p text-sm mb-4">RFC 5297 SIV Authenticated Encryption für Java.</p>
+        <ul class="list-primary list-primary-sm">
+          <li>Keine Abhängigkeiten, besteht offizielle RFC-5297-Testvektoren</li>
+          <li>Constant-Time-Authentifizierung, auditiert von Cure53</li>
           <li>Java 8+ kompatibel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="white-box">
+      <div class="px-4 py-2 border-b border-primary">
+        <h3 class="font-h3 text-lg"><a class="text-link" href="https://github.com/cryptomator/cryptolib-swift" target="_blank" rel="noopener">CryptoLib Swift</a></h3>
+      </div>
+      <div class="p-4">
+        <p class="font-p text-sm mb-4">Ver- und Entschlüsselung entsprechend des <a class="text-link" href="https://docs.cryptomator.org/security/architecture/" target="_blank" rel="noopener">Cryptomator-Verschlüsselungsschemas</a> in Swift.</p>
+        <ul class="list-primary list-primary-sm">
+          <li>Swift-Pendant zu CryptoLib für iOS- und macOS-Apps</li>
+          <li>Verfügbar als Swift Package</li>
+          <li>iOS 13+, macOS 10.15+</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="white-box">
+      <div class="px-4 py-2 border-b border-primary">
+        <h3 class="font-h3 text-lg"><a class="text-link" href="https://github.com/cryptomator/cloud-access-swift" target="_blank" rel="noopener">Cloud Access Swift</a></h3>
+      </div>
+      <div class="p-4">
+        <p class="font-p text-sm mb-4">Zugriff auf verschiedene Cloud-Speicheranbieter aus deiner Swift-Anwendung.</p>
+        <ul class="list-primary list-primary-sm">
+          <li>Definiert die Cloud-Access-API von Cryptomator für iOS</li>
+          <li>Grundlage für Tresorformat-Dekorationsschichten</li>
+          <li>iOS 14+</li>
         </ul>
       </div>
     </div>
