@@ -438,13 +438,14 @@ EOF`;
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`]}),
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:9000${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
-        interval: '60s',
+        start_period: '60s',
+        interval: '10s',
         timeout: '3s',
       },
       restart: 'unless-stopped',
       environment: {
-        KEYCLOAK_ADMIN: this.cfg.keycloak.adminUser,
-        KEYCLOAK_ADMIN_PASSWORD: this.cfg.keycloak.adminPw,
+        KC_BOOTSTRAP_ADMIN_USERNAME: this.cfg.keycloak.adminUser,
+        KC_BOOTSTRAP_ADMIN_PASSWORD: this.cfg.keycloak.adminPw,
         KC_DB: 'postgres',
         KC_DB_URL: 'jdbc:postgresql://postgres:5432/keycloak',
         KC_DB_USERNAME: 'keycloak',
@@ -762,8 +763,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       startCmd = ['/opt/keycloak/bin/kc.sh', 'start', '--import-realm'];  // prod mode without build time optimizations (requires a proper TLS termination proxy)
     }
     let env = [
-      {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
-      {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
+      {name: 'KC_BOOTSTRAP_ADMIN_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
+      {name: 'KC_BOOTSTRAP_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
       {name: 'KC_DB', value: 'postgres'},
       {name: 'KC_DB_URL', value: 'jdbc:postgresql://postgres-svc:5432/keycloak'},
       {name: 'KC_DB_USERNAME', value: 'keycloak'},
