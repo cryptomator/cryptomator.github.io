@@ -669,10 +669,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/q/health/started', port: 8080},
               },
               livenessProbe: {
-                httpGet: {path: '/api/config', port: 8080}, httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
+                httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
               },
               readinessProbe: {
-                httpGet: {path: '/q/health/ready', port: 8080}, httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
+                httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
               },
               env: [
                 {name: 'HUB_PUBLIC_ROOT_PATH', value: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl)},
