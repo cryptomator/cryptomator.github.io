@@ -187,12 +187,10 @@ class ConfigBuilder {
     let sql = [];
     if (!this.cfg.keycloak.useExternal) {
       sql.push(`CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
-CREATE DATABASE keycloak WITH ENCODING 'UTF8';
-GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;`)
+CREATE DATABASE keycloak WITH ENCODING 'UTF8' OWNER keycloak;`)
     }
     sql.push(`CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
-CREATE DATABASE hub WITH ENCODING 'UTF8';
-GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
+CREATE DATABASE hub WITH ENCODING 'UTF8' OWNER hub;`);
     return sql.join('\n');
   }
 
@@ -388,15 +386,16 @@ EOF`;
   getPostgresService() {
     return {
       depends_on: {'init-config': {condition: 'service_completed_successfully'}},
-      image: 'postgres:14-alpine',
+      image: 'postgres:17-alpine',
       volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
       deploy: {
         resources: {
-          limits: {cpus: '1.0', memory: '256M'}
+          limits: {cpus: '1.0', memory: '128M'}
         }
       },
       healthcheck: {
         test: ['CMD', 'pg_isready', '-U', 'postgres'],
+        start_period: '30s',
         interval: '10s',
         timeout: '3s',
       },
@@ -714,10 +713,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
           spec: {
             containers: [{
               name: 'postgres',
-              image: 'postgres:14-alpine',
+              image: 'postgres:17-alpine',
               ports: [{containerPort: 5432}],
               resources: {
-                requests: {cpu: '25m', memory: '64Mi'},
+                requests: {cpu: '25m', memory: '32Mi'},
                 limits: {cpu: '1000m', memory: '256Mi'},
               },
               livenessProbe: {
