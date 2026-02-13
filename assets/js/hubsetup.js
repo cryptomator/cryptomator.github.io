@@ -390,7 +390,7 @@ EOF`;
       volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
       deploy: {
         resources: {
-          limits: {cpus: '1.0', memory: '128M'}
+          limits: {cpus: '1.0', memory: '256M'}
         }
       },
       healthcheck: {
