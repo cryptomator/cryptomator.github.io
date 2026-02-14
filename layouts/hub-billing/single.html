@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: ''}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -176,9 +176,22 @@
             {{ i18n "hub_billing_manage_license_key_instruction" . }}
           </p>
           <textarea x-model="subscriptionData.token" class="input-box w-full text-sm md:text-base leading-relaxed break-all" rows="6" readonly></textarea>
-          <button :disabled="subscriptionData.inProgress || !subscriptionData.token" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
+          <button x-show="!subscriptionData.token && !subscriptionData.needsTokenRefresh" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.errorMessage = ''; subscriptionData.needsTokenRefresh = true" class="btn btn-primary text-center w-full md:w-64 mt-4">
+            {{ i18n "hub_billing_manage_license_key_retry_action" . }}
+          </button>
+          <button x-show="subscriptionData.token" :disabled="subscriptionData.inProgress" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
             {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
           </button>
+          <template x-if="subscriptionData.needsTokenRefresh && !subscriptionData.inProgress">
+            <div class="mt-4">
+              {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
+              {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState" "ref" "refreshCaptcha" "auto" "onload" "onVerified" "hubSubscription.refreshToken()") }}
+            </div>
+          </template>
+          <p x-show="subscriptionData.needsTokenRefresh && subscriptionData.inProgress" class="text-sm text-gray-600 mt-4">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            {{ i18n "hub_billing_loading_description" . }}
+          </p>
 
           <div x-show="subscriptionData.restartModal.open" class="relative z-10" aria-labelledby="restart-modal-title" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-500/75"></div>
