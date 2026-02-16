@@ -1,11 +1,10 @@
 ---
-title: "Bitlocker, the FBI, and the Illusion of Control – What the Microsoft Case Reveals About Encryption in the Cloud"
+title: "BitLocker, the FBI, and the Illusion of Control"
 slug: bitlocker-fbi-and-the-illusion-of-control
 date: 2026-02-15
-notice: 
 tags: [cryptomator, microsoft, bitlocker]
 
-summary: "xx"
+summary: "Microsoft helped the FBI decrypt BitLocker-encrypted devices – not through a backdoor, but via recovery keys stored in the cloud. What this reveals about key control, cloud trust, and true data sovereignty."
 
 ogimage:
   relsrc: /img/blog/microsoft-bitlocker.png
