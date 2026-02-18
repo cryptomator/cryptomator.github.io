@@ -64,6 +64,53 @@
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    <div id="startup-popup" class="hidden fixed inset-0 bg-green-500 z-[9999]" role="dialog" aria-modal="true" aria-hidden="true">
+      <canvas id="startup-popup-confetti" class="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true"></canvas>
+      <button id="startup-popup-close" type="button" class="absolute top-4 right-4 z-20 text-white text-4xl leading-none cursor-pointer p-1" aria-label="Close popup">
+        &times;
+      </button>
+      <div class="relative z-10 flex h-full flex-col px-6 py-10 md:px-12 md:py-14">
+        <div class="flex-1 flex flex-col justify-center">
+          <h2 class="font-headline font-bold text-3xl md:text-5xl text-white text-center">The vault opens in...</h2>
+          <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-center gap-8 md:gap-12">
+            <div class="flex justify-center">
+              <img src="/img/cryptobot-party.png" alt="Cryptobot Party" class="w-40 md:w-56 h-auto">
+            </div>
+            <div class="text-center md:text-left">
+              <div id="startup-popup-countdown" class="grid grid-cols-4 gap-3 sm:gap-4 w-fit mx-auto md:mx-0" aria-live="polite">
+                <div class="flex flex-col items-center">
+                  <span data-unit="days" class="font-headline font-bold text-white text-3xl md:text-6xl tracking-wide">00</span>
+                  <span class="mt-2 text-white/90 text-[10px] md:text-sm uppercase whitespace-nowrap tracking-normal md:tracking-wide">Days</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <span data-unit="hours" class="font-headline font-bold text-white text-3xl md:text-6xl tracking-wide">00</span>
+                  <span class="mt-2 text-white/90 text-[10px] md:text-sm uppercase whitespace-nowrap tracking-normal md:tracking-wide">Hours</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <span data-unit="minutes" class="font-headline font-bold text-white text-3xl md:text-6xl tracking-wide">00</span>
+                  <span class="mt-2 text-white/90 text-[10px] md:text-sm uppercase whitespace-nowrap tracking-normal md:tracking-wide">Minutes</span>
+                </div>
+                <div class="flex flex-col items-center">
+                  <span data-unit="seconds" class="font-headline font-bold text-white text-3xl md:text-6xl tracking-wide">00</span>
+                  <span class="mt-2 text-white/90 text-[10px] md:text-sm uppercase whitespace-nowrap tracking-normal md:tracking-wide">Seconds</span>
+                </div>
+              </div>
+              <p class="text-white text-base md:text-lg mt-3 text-center">Something special is unlucking soon!</p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-5">
+          <div class="mt-1 flex items-center justify-center gap-6">
+            <a class="text-white/90 hover:text-white no-underline hover:no-underline" href="https://mastodon.online/@cryptomator" aria-label="Cryptomator on Mastodon" target="_blank" rel="noopener me" data-umami-event="popup-mastodon">
+              <i class="fa-brands fa-mastodon text-2xl"></i>
+            </a>
+            <a class="text-white/90 hover:text-white no-underline hover:no-underline" href="https://www.linkedin.com/company/skymatic/" aria-label="Skymatic on LinkedIn" target="_blank" rel="noopener" data-umami-event="popup-linkedin">
+              <i class="fa-brands fa-linkedin text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     {{ partial "nav.html" . }}
     {{- $topPadding := cond .IsHome "" "pt-12" -}}
     <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">

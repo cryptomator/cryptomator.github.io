@@ -197,10 +197,14 @@ textarea:read-only {
 }
 
 /* offsetting anchor targets to adjust for fixed navbar */
-[id]::before {
+[id]:not(#startup-popup-countdown)::before {
   content: '';
   display: block;
   height: 96px;
   margin-top: -96px;
   visibility: hidden;
+}
+
+body.popup-open {
+  overflow: hidden;
 }
