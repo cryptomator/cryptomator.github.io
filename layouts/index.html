@@ -2,7 +2,8 @@
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-individuals/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-teams/">
   <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
-  <link rel="preload" fetchpriority="high" as="image" href="/img/home/woman-cloud.png" type="image/png">
+  <link rel="preload" fetchpriority="high" as="image" href="/img/logo.svg" type="image/svg+xml">
+  <link rel="preload" fetchpriority="auto" as="image" href="/img/ubuntu.svg" type="image/svg+xml">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-regular.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-medium.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-bold.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -12,47 +13,380 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section class="flex items-center header-bg bg-dark bg-center min-h-[66vh] bg-repeat-x">
-    <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
-      <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
-        <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
-      </div>
-      <div class="w-full md:w-2/3 lg:w-3/5">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
-            <i class="fa-solid fa-cloud-download"></i>
-            {{ i18n "home_header_kicker" }}
-          </div>
-        </div>
-        <h1 class="font-h1 mb-6">
-          {{ i18n "home_header_title" }}
-          <span class="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
-            <ul class="animate-slide">
-              <li><i class="fa-brands fa-google-drive"></i> Google Drive</li>
-              <li><i class="fa-kit fa-icloud"></i> iCloud Drive</li>
-              <li><i class="fa-kit fa-onedrive"></i> OneDrive</li>
-              <li><i class="fa-kit fa-sharepoint"></i> SharePoint</li>
-              <li><i class="fa-brands fa-dropbox"></i> Dropbox</li>
-              <li><i class="fa-kit fa-pcloud"></i> pCloud</li>
-              <li><i class="fa-kit fa-nextcloud"></i> Nextcloud</li>
-              <li>{{ i18n "home_header_title_last_item" }}</li>
-              <li aria-hidden="true"><i class="fa-brands fa-google-drive"></i> Google Drive</li>
-            </ul>
-          </span>
-        </h1>
-        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
-        <div class="flex flex-col md:flex-row gap-6">
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_individuals_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/for-individuals/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-individuals-cta">{{ i18n "home_header_for_individuals_cta" . }}</a>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_teams_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-teams-cta">{{ i18n "home_header_for_teams_cta" . }}</a>
+  <section class="flex items-stretch header-bg bg-center min-h-[66vh] bg-repeat-x">
+    <header class="w-full flex items-stretch text-white min-h-[66vh] pt-12">
+      <div class="embla w-full h-full" data-embla-swipe-header data-active="left">
+        <div class="embla__viewport">
+          <div class="embla__container select-none min-h-[66vh]">
+            <article class="embla__slide">
+              <div class="swipe-panel swipe-panel--left p-6 md:p-10" data-panel="left" tabindex="0" role="button" aria-pressed="true">
+                <div class="swipe-panel__compact">
+                  <div class="swipe-panel__compact-row swipe-panel__compact-row--left">
+                    <i class="fa-solid fa-chevron-left swipe-panel__compact-chevron" aria-hidden="true"></i>
+                    <div class="swipe-panel__compact-brand">
+                      <img src="/img/logo.svg" class="swipe-panel__compact-logo" alt="Logo"/>
+                      <span class="swipe-panel__product">CRYPTOMATOR</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="swipe-panel__expanded">
+                  <div class="swipe-panel__full">
+                    <div class="swipe-panel__body">
+                    <div class="swipe-panel__logo-wrap">
+                      <div class="swipe-panel__logo-brand">
+                        <img src="/img/logo.svg" class="swipe-panel__logo w-auto mx-auto" alt="Logo"/>
+                        <span class="swipe-panel__product">CRYPTOMATOR</span>
+                      </div>
+                    </div>
+                    <div class="swipe-panel__content">
+                      <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
+                          <i class="fa-solid fa-cloud-download"></i>
+                          {{ i18n "home_header_for_individuals_title" . }}
+                        </div>
+                      </div>
+                      <h1 class="font-h1 mb-6">
+                        {{ i18n "home_header_title" }}
+                        <span class="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+                          <ul class="animate-slide">
+                            <li><i class="fa-brands fa-google-drive"></i> Google Drive</li>
+                            <li><i class="fa-kit fa-icloud"></i> iCloud Drive</li>
+                            <li><i class="fa-kit fa-onedrive"></i> OneDrive</li>
+                            <li><i class="fa-kit fa-sharepoint"></i> SharePoint</li>
+                            <li><i class="fa-brands fa-dropbox"></i> Dropbox</li>
+                            <li><i class="fa-kit fa-pcloud"></i> pCloud</li>
+                            <li><i class="fa-kit fa-nextcloud"></i> Nextcloud</li>
+                            <li>{{ i18n "home_header_title_last_item" }}</li>
+                            <li aria-hidden="true"><i class="fa-brands fa-google-drive"></i> Google Drive</li>
+                          </ul>
+                        </span>
+                      </h1>
+                      <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6 max-w">{{ i18n "home_header_description" . | safeHTML }}</p>
+                      <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex flex-col gap-2">
+                          <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_individuals_title" . }}</p>
+                          <a href="{{ .Site.LanguagePrefix }}/for-individuals/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-individuals-cta">{{ i18n "home_header_for_individuals_cta" . }}</a>
+                        </div>
+                      </div>
+                      <div class="swipe-mobile-controls md:hidden" aria-label="Header slide controls">
+                        <div class="swipe-mobile-nav">
+                          <button type="button" class="swipe-mobile-dot" data-swipe-dot="left" aria-label="Show individuals slide"></button>
+                          <button type="button" class="swipe-mobile-dot" data-swipe-dot="right" aria-label="Show teams slide"></button>
+                        </div>
+                        <p class="swipe-mobile-hint"><i class="fa-solid fa-arrows-left-right"></i> Swipe</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="embla__slide">
+              <div class="swipe-panel swipe-panel--right bg-black/40 p-6 md:p-10" data-panel="right" tabindex="0" role="button" aria-pressed="false">
+                <div class="swipe-panel__compact">
+                  <div class="swipe-panel__compact-row swipe-panel__compact-row--right">
+                    <div class="swipe-panel__compact-brand">
+                      <img src="/img/hub-logo-handstogether_blue.png" class="swipe-panel__compact-logo" alt="Hub logo"/>
+                      <span class="swipe-panel__product">CRYPTOMATOR HUB</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right swipe-panel__compact-chevron" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="swipe-panel__expanded">
+                  <div class="swipe-panel__full">
+                    <div class="swipe-panel__body">
+                    <div class="swipe-panel__logo-wrap">
+                      <div class="swipe-panel__logo-brand">
+                        <img src="/img/hub-logo-handstogether_blue.png" class="swipe-panel__logo w-auto mx-auto" alt="Hub logo"/>
+                        <span class="swipe-panel__product">CRYPTOMATOR HUB</span>
+                      </div>
+                    </div>
+                    <div class="swipe-panel__content">
+                      <div class="flex items-center gap-4 mb-4">
+                        <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
+                          <i class="fa-solid fa-cloud-download"></i>
+                          {{ i18n "home_header_for_teams_title" . }}
+                        </div>
+                      </div>
+                      <h1 class="font-h1 mb-6">
+                        {{ i18n "home_header_title" }}
+                        <span class="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+                          <ul class="animate-slide">
+                            <li><i class="fa-brands fa-google-drive"></i> Google Drive</li>
+                            <li><i class="fa-kit fa-icloud"></i> iCloud Drive</li>
+                            <li><i class="fa-kit fa-onedrive"></i> OneDrive</li>
+                            <li><i class="fa-kit fa-sharepoint"></i> SharePoint</li>
+                            <li><i class="fa-brands fa-dropbox"></i> Dropbox</li>
+                            <li><i class="fa-kit fa-pcloud"></i> pCloud</li>
+                            <li><i class="fa-kit fa-nextcloud"></i> Nextcloud</li>
+                            <li>{{ i18n "home_header_title_last_item" }}</li>
+                            <li aria-hidden="true"><i class="fa-brands fa-google-drive"></i> Google Drive</li>
+                          </ul>
+                        </span>
+                      </h1>
+                      <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6 max-w-lg">{{ i18n "home_header_description" . | safeHTML }}</p>
+                      <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex flex-col gap-2">
+                          <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_teams_title" . }}</p>
+                          <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-teams-cta">{{ i18n "home_header_for_teams_cta" . }}</a>
+                        </div>
+                      </div>
+                      <div class="swipe-mobile-controls md:hidden" aria-label="Header slide controls">
+                        <div class="swipe-mobile-nav">
+                          <button type="button" class="swipe-mobile-dot" data-swipe-dot="left" aria-label="Show individuals slide"></button>
+                          <button type="button" class="swipe-mobile-dot" data-swipe-dot="right" aria-label="Show teams slide"></button>
+                        </div>
+                        <p class="swipe-mobile-hint"><i class="fa-solid fa-arrows-left-right"></i> Swipe</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </header>
+    <style>
+      [data-embla-swipe-header] .embla__viewport {
+        overflow: hidden;
+      }
+
+      [data-embla-swipe-header] .embla__container {
+        display: flex;
+      }
+
+      [data-embla-swipe-header] .embla__slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        display: flex;
+      }
+
+      [data-embla-swipe-header] .swipe-panel {
+        position: relative;
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        cursor: pointer;
+        overflow: hidden;
+        background-clip: padding-box;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__expanded {
+        display: none;
+        width: 100%;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__full {
+        display: flex;
+        width: 100%;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__logo-wrap {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__logo-brand,
+      [data-embla-swipe-header] .swipe-panel__compact-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__logo {
+        height: 5rem;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__content {
+        display: block;
+        width: 100%;
+        max-width: 42rem;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__compact {
+        display: none;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__compact-logo {
+        height: 5rem;
+        width: auto;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__compact-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__compact-chevron {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.15rem;
+        line-height: 1;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__compact-row--left .swipe-panel__compact-chevron {
+        left: 0.75rem;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__compact-row--right .swipe-panel__compact-chevron {
+        right: 0.75rem;
+      }
+
+      [data-embla-swipe-header] .swipe-panel__product {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        font-size: 0.9rem;
+        line-height: 1.1;
+        text-align: center;
+      }
+
+      [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__expanded,
+      [data-embla-swipe-header][data-active="right"] .swipe-panel--right .swipe-panel__expanded {
+        display: flex;
+      }
+
+      [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__content,
+      [data-embla-swipe-header][data-active="right"] .swipe-panel--right .swipe-panel__content {
+        display: block;
+      }
+
+      [data-embla-swipe-header] .swipe-mobile-controls {
+        margin-top: 0.75rem;
+      }
+
+      [data-embla-swipe-header] .swipe-mobile-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.9rem;
+      }
+
+      [data-embla-swipe-header] .swipe-mobile-dot {
+        width: 0.65rem;
+        height: 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid var(--color-primary);
+        background: rgba(73, 176, 74, 0.2);
+        transition: background-color 180ms ease, transform 180ms ease;
+      }
+
+      [data-embla-swipe-header][data-active="left"] [data-swipe-dot="left"],
+      [data-embla-swipe-header][data-active="right"] [data-swipe-dot="right"] {
+        background: var(--color-primary);
+        transform: scale(1.15);
+      }
+
+      [data-embla-swipe-header] .swipe-mobile-hint {
+        margin-top: 0.4rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      @media (min-width: 768px) {
+        [data-embla-swipe-header] .swipe-mobile-nav,
+        [data-embla-swipe-header] .swipe-mobile-hint {
+          display: none;
+        }
+
+        [data-embla-swipe-header] {
+          --swipe-logo-column-width: 20%;
+          --swipe-compact-width: 25%;
+        }
+
+        [data-embla-swipe-header] .embla__slide {
+          flex: 0 0 80%;
+        }
+
+        [data-embla-swipe-header] .swipe-panel__logo,
+        [data-embla-swipe-header] .swipe-panel__compact-logo {
+          height: 6rem;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__body,
+        [data-embla-swipe-header][data-active="right"] .swipe-panel--right .swipe-panel__body {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__content {
+          order: 1;
+          text-align: right;
+          margin-left: auto;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__logo-wrap {
+          order: 2;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__logo-wrap,
+        [data-embla-swipe-header][data-active="right"] .swipe-panel--right .swipe-panel__logo-wrap {
+          flex: 0 0 var(--swipe-logo-column-width);
+          max-width: var(--swipe-logo-column-width);
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__content > .flex {
+          justify-content: flex-end;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--left .swipe-panel__content .btn {
+          margin-left: auto;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--right .swipe-panel__expanded,
+        [data-embla-swipe-header][data-active="right"] .swipe-panel--left .swipe-panel__expanded {
+          display: none;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--right .swipe-panel__compact,
+        [data-embla-swipe-header][data-active="right"] .swipe-panel--left .swipe-panel__compact {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: var(--swipe-compact-width);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        [data-embla-swipe-header][data-active="left"] .swipe-panel--right .swipe-panel__compact {
+          left: 0;
+        }
+
+        [data-embla-swipe-header][data-active="right"] .swipe-panel--left .swipe-panel__compact {
+          right: 0;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        [data-embla-swipe-header] .swipe-panel__logo,
+        [data-embla-swipe-header] .swipe-panel__compact-logo {
+          height: 7rem;
+        }
+      }
+    </style>
   </section>
 
   <div>
@@ -255,6 +589,11 @@
 {{ end }}
 {{ define "script" }}
   {{ if hugo.IsDevelopment }}
+    {{ with resources.Get "js/embla/embla-carousel.umd.js" }}
+      <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
+    {{ end }}
+    {{ $homeEmblaJs := resources.Get "js/home-embla.js" }}
+    <script type="text/javascript" src="{{ $homeEmblaJs.RelPermalink }}" defer></script>
     {{ $indexJs := resources.Get "js/index.js" }}
     <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" }}
@@ -264,6 +603,12 @@
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
     <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
   {{ else }}
+    {{ with resources.Get "js/embla/embla-carousel.umd.js" }}
+      {{ $emblaJs := . | minify | fingerprint }}
+      <script type="text/javascript" src="{{ $emblaJs.RelPermalink }}" integrity="{{ $emblaJs.Data.Integrity }}" defer></script>
+    {{ end }}
+    {{ $homeEmblaJs := resources.Get "js/home-embla.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $homeEmblaJs.RelPermalink }}" integrity="{{ $homeEmblaJs.Data.Integrity }}" defer></script>
     {{ $indexJs := resources.Get "js/index.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $indexJs.RelPermalink }}" integrity="{{ $indexJs.Data.Integrity }}" defer></script>
     {{ $newsletterJs := resources.Get "js/newsletter.js" | minify | fingerprint }}

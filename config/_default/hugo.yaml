@@ -46,6 +46,8 @@ module:
       target: assets/js/alpinejs
     - source: node_modules/lazysizes
       target: assets/js/lazysizes
+    - source: node_modules/embla-carousel
+      target: assets/js/embla
     - source: node_modules/js-yaml/dist
       target: assets/js/js-yaml
     - source: node_modules/altcha/dist_external
