@@ -2,7 +2,7 @@
 type: article
 weight: 2
 
-title: "Encrypt Cloud Storage: How Open-Source Strengthens Security"
+title: "Encrypt Cloud Storage: How Open Source Strengthens Security"
 description: "Trust, but verify: If you want to encrypt your cloud storage, open-source encryption software offers you even more protection."
 aliases: ["/open-source", "/faq/security", "/faq/security/opensource", "/faq/security/audits"]
 
@@ -11,7 +11,7 @@ ctatext: "Cryptomator secures your personal files in the cloud and can be used w
 ctalink: /#get-started
 ctabutton: "Encrypt Your Cloud Storage Now"
 
-cardtitle: "Security Through Open-Source"
+cardtitle: "Security Through Open Source"
 cardtext: "Discover how open-source encryption significantly boosts your cloud security – and why you shouldn't blindly trust cloud providers."
 cardimage: /img/open-source/bartender-vs-stranger.png
 
@@ -21,13 +21,13 @@ ogimage:
   height: 541
 ---
 
-# Encrypt Your Data Securely in the Cloud: How You Can Further Increase Your Data Security Through Open-Source
+# Encrypt Your Data Securely in the Cloud: How You Can Further Increase Your Data Security Through Open Source
 
-<p class="lead">Maybe you've been looking into encrypting your cloud storage for a while now, and you've come across "open-source" solutions. Maybe you're wondering why open-source is so important if you want to encrypt your files? Here we explain it to you.</p>
+<p class="lead">Maybe you've been looking into encrypting your cloud storage for a while now, and you've come across "open-source" solutions. Maybe you're wondering why open source is so important if you want to encrypt your files? Here we explain it to you.</p>
 
 <img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="The security-conscious customer opts for products whose composition and quality he can check. Non-verifiable alternatives seem shady." />
 
-To help you understand what open-source actually means, let's start with an example.
+To help you understand what open source actually means, let's start with an example.
 
 Imagine you are in a foreign city. In the evening, you visit a part of town that is considered a bit shady. There, you go to a bar and want to have a drink.
 
@@ -78,11 +78,11 @@ And it's exactly this advantage of verification that open-source software offers
 
 To come back to the example with the bar: In fact, it would even be possible for you to mix your own drink.
 
-Because open-source allows you to do just that: The instructions and all the ingredients are available. In addition, you even have the option of adapting and further improving the recipe if necessary.
+Because open source allows you to do just that: The instructions and all the ingredients are available. In addition, you even have the option of adapting and further improving the recipe if necessary.
 
 ## Exactly How Open-Source Software Increases Your Data Security {#advantages}
 
-At first glance, you don't "see" the aspects of open-source in the software itself. This is because the advantages lie in the security-related criteria for the development of the software.
+At first glance, you don't "see" the aspects of open source in the software itself. This is because the advantages lie in the security-related criteria for the development of the software.
 
 Before we go any further, let's now briefly look at the following axiom of data encryption (cryptography):
 
@@ -95,7 +95,7 @@ The security of an encryption process must depend solely on the key and must not
 
 Thus, since security depends only on the key, there is no disadvantage in publishing the algorithm.
 
-At the same time, however, open-source has many security-enhancing advantages:
+At the same time, however, open source has many security-enhancing advantages:
 
 <div class="not-prose flex my-6">
   <div class="fa-stack shrink-0 text-xl text-secondary mr-3">
