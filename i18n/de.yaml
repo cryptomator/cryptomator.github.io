@@ -895,6 +895,8 @@
   translation: "Unbegrenzte Tresore"
 - id: pricing_individual_benefit_2
   translation: "Kompatibel mit jedem Cloud-Speicher"
+- id: pricing_individual_benefit_2_tooltip
+  translation: "Unterstützte Dienste variieren je nach Plattform. <a href='https://docs.cryptomator.org/misc/supported-cloud-services/' target='_blank' rel='noopener' class='text-link'>Mehr erfahren</a>"
 - id: pricing_individual_benefit_3
   translation: "Voller Zugriff über Desktop-App"
 - id: pricing_individual_benefit_4

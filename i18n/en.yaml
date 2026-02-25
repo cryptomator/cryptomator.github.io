@@ -933,7 +933,9 @@
 - id: pricing_individual_benefit_1
   translation: "Unlimited vaults"
 - id: pricing_individual_benefit_2
-  translation: "Works with any cloud"
+  translation: "Works with any cloud storage"
+- id: pricing_individual_benefit_2_tooltip
+  translation: "Supported services vary by platform. <a href='https://docs.cryptomator.org/misc/supported-cloud-services/' target='_blank' rel='noopener' class='text-link'>Learn more</a>"
 - id: pricing_individual_benefit_3
   translation: "Full access via Desktop app"
 - id: pricing_individual_benefit_4
