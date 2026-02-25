@@ -5,415 +5,393 @@
       <p class="lead">{{ .Description }}</p>
     </header>
 
-    <div x-data="{planOption: location.hash}" x-init="location.hash = planOption || '#for-teams'" @hashchange.window="planOption = location.hash" class="py-12">
+    <div x-data="{
+      hosting: 'managed',
+      billing: 'yearly',
+      data: {selfHostedMonthlyPrice: null, selfHostedYearlyPrice: null, managedMonthlyPrice: null, managedYearlyPrice: null, savingsPercent: 0},
+      get currentPrice() {
+        if (this.hosting === 'managed') {
+          return this.billing === 'yearly' ? this.data.managedYearlyPrice : this.data.managedMonthlyPrice;
+        }
+        return this.billing === 'yearly' ? this.data.selfHostedYearlyPrice : this.data.selfHostedMonthlyPrice;
+      },
+      get formattedPrice() {
+        const p = this.currentPrice;
+        return p ? p.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: p.currency }) : '\u2026';
+      }
+    }" x-init="new HubPricing(data).loadPrices()" class="py-12">
       <header class="text-center">
         <h2 class="text-center font-h2 mb-4">
           {{ i18n "pricing_title" . }}
         </h2>
-        <div class="flex justify-center mb-4">
-          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" data-umami-event="pricing-individuals-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption !== '#for-teams'}" @click="location.hash = '#for-individuals'">
-            <i class="fa-user" :class="{'fas': planOption !== '#for-teams', 'far': planOption === '#for-teams'}"></i>
-            {{ i18n "pricing_individuals" . }}
-          </button>
-          <button class="w-1/2 md:w-1/4 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" data-umami-event="pricing-teams-tab" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': planOption === '#for-teams'}" @click="location.hash = '#for-teams'">
-            <i class="fa-building" :class="{'fas': planOption === '#for-teams', 'far': planOption !== '#for-teams'}"></i>
-            {{ i18n "pricing_teams" . }}
-          </button>
+        <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
+          <div class="flex">
+            <button type="button" class="py-2 px-4 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': hosting === 'managed'}" @click="hosting = 'managed'" data-umami-event="pricing-toggle-managed">
+              <i class="fa-solid fa-check" x-show="hosting === 'managed'" x-cloak></i>
+              {{ i18n "pricing_hub_managed_title" . }}
+            </button>
+            <button type="button" class="py-2 px-4 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': hosting === 'self-hosted'}" @click="hosting = 'self-hosted'" data-umami-event="pricing-toggle-self-hosted">
+              <i class="fa-solid fa-check" x-show="hosting === 'self-hosted'" x-cloak></i>
+              {{ i18n "pricing_hub_self_hosted_title" . }}
+            </button>
+          </div>
+          <div class="flex">
+            <button type="button" class="py-2 px-4 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': billing === 'monthly'}" @click="billing = 'monthly'" data-umami-event="pricing-toggle-monthly">
+              <i class="fa-solid fa-check" x-show="billing === 'monthly'" x-cloak></i>
+              {{ i18n "pricing_billing_monthly" . }}
+            </button>
+            <button type="button" class="inline-flex items-center gap-1 py-2 px-4 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': billing === 'yearly'}" @click="billing = 'yearly'" data-umami-event="pricing-toggle-yearly">
+              <i class="fa-solid fa-check" x-show="billing === 'yearly'" x-cloak></i>
+              {{ i18n "pricing_billing_yearly" . }}
+              <span x-show="data.savingsPercent > 0" x-cloak class="px-2 py-0.5 rounded-full text-xs font-medium bg-primary text-white leading-none">
+                {{ i18n "pricing_billing_save" . }} <span x-text="data.savingsPercent"></span>%
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
-      <div x-show="planOption !== '#for-teams'">
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div class="white-box">
-            <div class="p-4 border-b border-primary">
-              <div class="flex gap-2 mb-4">
-                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fa-brands fa-windows"></i>
-                  Windows
-                </div>
-                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fa-brands fa-apple"></i>
-                  macOS
-                </div>
-                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fa-brands fa-linux"></i>
-                  Linux
-                </div>
+      {{/* Pricing Grid */}}
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+        {{/* Individual Card */}}
+        <div class="white-box">
+          <div class="flex justify-between items-center p-4 border-b border-primary">
+            <h3>
+              <div class="flex items-center">
+                <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+                <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR</span>
               </div>
-              <p class="font-bold text-2xl md:text-3xl leading-relaxed">
-                {{ i18n "pricing_free" . }}
-              </p>
-              <p class="text-sm md:text-base text-gray-500 mb-4">
-                {{ i18n "pricing_desktop_price_description" . }}
-              </p>
-              <div class="flex gap-2">
-                <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="flex-1 btn btn-primary" data-umami-event="pricing-desktop-cta-1">
-                  {{ i18n "pricing_desktop_cta_1" . }}
-                </a>
-                <a href="{{ .Site.LanguagePrefix }}/supporter-cert/" role="button" class="flex-1 btn btn-outline-primary" data-umami-event="pricing-desktop-cta-2">
-                  {{ i18n "pricing_desktop_cta_2" . }}
-                </a>
-              </div>
-            </div>
-            <div class="px-4 py-8">
-              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_desktop_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_desktop_benefit_2" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_desktop_benefit_3" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_desktop_benefit_4" . }}</span>
-                </li>
-              </ul>
+            </h3>
+            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+              {{ i18n "pricing_individual_title" . }}
             </div>
           </div>
-          <div class="white-box">
-            <div class="p-4 border-b border-primary">
-              <div class="flex gap-2 mb-4">
-                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fa-brands fa-android"></i>
-                  Android
-                </div>
-              </div>
-              <p class="flex items-baseline gap-2">
-                <span class="font-bold text-2xl md:text-3xl leading-relaxed">
-                  {{ i18n "pricing_android_price" . }}
-                </span>
-                <span class="text-xs md:text-sm text-gray-700">
-                  {{ i18n "pricing_vat_included" . }}
-                </span>
-              </p>
-              <p class="text-sm md:text-base text-gray-500 mb-4">
-                {{ i18n "pricing_android_price_description" . }}
-              </p>
-              <a href="{{ .Site.LanguagePrefix }}/downloads/#android" role="button" class="btn btn-primary w-full" data-umami-event="pricing-android-cta">
-                {{ i18n "pricing_android_cta" . }}
-              </a>
-            </div>
-            <div class="px-4 py-8">
-              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_android_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_android_benefit_2" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_android_benefit_3" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_android_benefit_4" . }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="white-box">
-            <div class="p-4 border-b border-primary">
-              <div class="flex gap-2 mb-4">
-                <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-primary-l2 text-dark">
-                  <i class="fa-brands fa-apple"></i>
-                  iOS
-                </div>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-gray-300 mb-4">
-                <div class="pr-4">
-                  <div class="font-bold text-2xl md:text-3xl leading-relaxed">
-                    {{ i18n "pricing_free" . }}
-                  </div>
-                  <p class="text-sm md:text-base text-gray-500">
-                    {{ i18n "pricing_ios_free_description" . }}
-                  </p>
-                </div>
-                <div class="pl-4">
-                  <p class="flex items-baseline gap-2">
-                    <span class="font-bold text-2xl md:text-3xl leading-relaxed">
-                      {{ i18n "pricing_ios_price" . }}
-                    </span>
-                    <span class="text-xs md:text-sm text-gray-700">
-                      {{ i18n "pricing_vat_included" . }}
-                    </span>
-                  </p>
-                  <p class="text-sm md:text-base text-gray-500">
-                    {{ i18n "pricing_ios_price_description" . }}
-                  </p>
-                </div>
-              </div>
-              <a href="{{ .Site.LanguagePrefix }}/downloads/#ios" role="button" class="btn btn-primary w-full" data-umami-event="pricing-ios-cta">
-                {{ i18n "pricing_ios_cta" . }}
-              </a>
-            </div>
-            <div class="px-4 py-8">
-              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_ios_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_ios_benefit_2" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_ios_benefit_3" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_ios_benefit_4" . }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="container py-12">
-          <header class="text-center">
-            <h2 class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
-          </header>
-
-          {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
-            {{- range $index, $element := $data.pricing_individuals_faq }}
-            <dt class="font-p p-4">
-              <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
-                <span>{{ .Question }}</span>
-              </a>
-            </dt>
-            <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              {{ .Answer | markdownify }}
-            </dd>
-            {{- end }}
-          </dl>
-        </section>
-
-        <section class="container text-center py-12">
-          <h2 class="font-h2 mb-4">{{ i18n "pricing_support_us_title" . }}</h2>
-          <p class="font-p mb-4">{{ i18n "pricing_support_us_description" . }}</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="{{ .Site.LanguagePrefix }}/donate/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-donate">
-              <i class="fa-solid fa-donate"></i> {{ i18n "pricing_support_us_donate_button" . }}
-            </a>
-            <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-sponsors">
-              <i class="fa-solid fa-handshake"></i> {{ i18n "pricing_support_us_sponsor_button" . }}
+          <div class="p-4 border-b border-gray-200">
+            <p class="font-p mb-6">
+              {{ i18n "pricing_individual_subtitle" . }}
+            </p>
+            <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+              {{ i18n "pricing_free" . }}
+            </p>
+            <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+              {{ i18n "pricing_individual_price_description" . }}
+            </p>
+            <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-individual-cta">
+              {{ i18n "pricing_individual_cta" . }}
             </a>
           </div>
-        </section>
-      </div>
+          <div class="px-4 py-8 border-b border-gray-200">
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_individual_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_individual_benefit_2" . }}</span>
+                <div class="has-tooltip">
+                  <i class="fa-solid fa-info-circle text-gray-600"></i>
+                  <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_individual_benefit_2_tooltip" . | safeHTML }}</div>
+                </div>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_individual_benefit_3" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_individual_benefit_4" . }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-4">
+            <p class="label-uppercase mb-3">
+              {{ i18n "pricing_individual_mobile_upgrades_title" . }}
+            </p>
+            <div class="space-y-2">
+              <a href="{{ .Site.LanguagePrefix }}/supporter-cert/" class="btn btn-outline-primary flex items-center justify-between text-sm">
+                <span>{{ i18n "pricing_individual_upgrade_dark_mode" . }}</span>
+                <span class="font-bold">{{ i18n "pricing_supporter_cert_price" . }}</span>
+              </a>
+              <a href="{{ .Site.LanguagePrefix }}/downloads/#android" class="btn btn-outline-primary flex items-center justify-between text-sm">
+                <span>{{ i18n "pricing_individual_mobile_android" . }}</span>
+                <span class="font-bold">{{ i18n "pricing_android_price" . }}</span>
+              </a>
+              <a href="{{ .Site.LanguagePrefix }}/downloads/#ios" class="btn btn-outline-primary flex items-center justify-between text-sm">
+                <span>{{ i18n "pricing_individual_mobile_ios" . }}</span>
+                <span class="font-bold">{{ i18n "pricing_ios_price" . }}</span>
+              </a>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">
+              {{ i18n "pricing_individual_upgrades_note" . }}
+            </p>
+          </div>
+        </div>
 
-      <div x-show="planOption === '#for-teams'" x-cloak>
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-          <div class="white-box">
-            <div class="p-4 border-b border-primary">
-              <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
-                {{ i18n "pricing_hub_community_title" . }}
-              </h3>
-              <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
-                {{ i18n "pricing_hub_self_hosted_title" . }}
-              </p>
-              <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
-                {{ i18n "pricing_free" . }}
-              </p>
-              <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-                {{ i18n "pricing_hub_community_price_description" . }}
-              </p>
-              <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-community-self-hosted-cta">
+        {{/* Standard Card */}}
+        <div class="white-box" :class="hosting === 'managed' && 'ring-2 ring-secondary'">
+          <div class="flex justify-between items-center p-4 border-b border-primary">
+            <h3>
+              <div class="flex items-center">
+                <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+                <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+              </div>
+            </h3>
+            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+              {{ i18n "pricing_hub_standard_title" . }}
+            </div>
+          </div>
+          <div class="p-4 border-b border-gray-200">
+            <p class="font-p mb-6">
+              {{ i18n "pricing_hub_standard_subtitle" . }}
+            </p>
+            <p class="flex items-baseline gap-2">
+              <span x-text="formattedPrice" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
+              <span class="text-xs md:text-sm lg:text-base text-gray-700">
+                {{ i18n "pricing_vat_excluded" . }}
+              </span>
+            </p>
+            <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+              {{ i18n "pricing_hub_standard_price_description" . }}
+            </p>
+            <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-standard-managed-cta">
+              {{ i18n "pricing_hub_managed_cta" . }}
+            </a>
+            <a x-show="hosting === 'self-hosted'" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
+              {{ i18n "pricing_hub_self_hosted_cta" . }}
+            </a>
+          </div>
+          <div class="px-4 py-8">
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-plus text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_standard_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_standard_benefit_2" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_standard_benefit_3" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_standard_benefit_4" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_standard_benefit_5" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid" :class="hosting === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                <span :class="hosting === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid" :class="hosting === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
+                <span :class="hosting === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_2" . }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {{/* Enterprise Card */}}
+        <div class="white-box">
+          <div class="flex justify-between items-center p-4 border-b border-primary">
+            <h3>
+              <div class="flex items-center">
+                <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+                <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+              </div>
+            </h3>
+            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+              {{ i18n "pricing_hub_enterprise_title" . }}
+            </div>
+          </div>
+          <div class="p-4 border-b border-gray-200">
+            <p class="font-p mb-6">
+              {{ i18n "pricing_hub_enterprise_subtitle" . }}
+            </p>
+            <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+              {{ i18n "pricing_hub_enterprise_price" . }}
+            </p>
+            <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
+              {{ i18n "pricing_hub_enterprise_price_description" . }}
+            </p>
+            <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-enterprise-cta">
+              <i class="fa-solid fa-envelope"></i>
+              {{ i18n "pricing_hub_enterprise_cta" . }}
+            </a>
+          </div>
+          <div class="px-4 py-8">
+            <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-plus text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_enterprise_benefit_1" . }}</span>
+              </li>
+              <li class="flex items-center">
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_enterprise_benefit_2" . }}</span>
+                <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-primary-l2 text-dark ml-2">
+                  {{ i18n "coming_soon" . }}
+                </span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_enterprise_benefit_3" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_enterprise_benefit_4" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_enterprise_benefit_5" . }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {{/* Community Section */}}
+      <section class="mt-8 mb-4">
+        <div class="white-box">
+          {{/* Mobile: card header (matches other pricing cards) */}}
+          <div class="md:hidden flex justify-between items-center p-4 border-b border-primary">
+            <h3>
+              <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+            </h3>
+            <div class="inline-flex px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+              {{ i18n "pricing_hub_community_title" . }}
+            </div>
+          </div>
+          {{/* Mobile: price + CTA block (matches other pricing cards) */}}
+          <div class="md:hidden p-4 border-b border-gray-200">
+            <p class="font-p mb-6">{{ i18n "pricing_hub_community_subtitle" . }}</p>
+            <p class="font-bold text-2xl leading-relaxed">{{ i18n "pricing_free" . }}</p>
+            <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-primary w-full mt-4" data-umami-event="pricing-hub-community-self-hosted-cta">
+              {{ i18n "pricing_hub_self_hosted_cta" . }}
+            </a>
+          </div>
+          {{/* Mobile: benefits block (matches other pricing cards) */}}
+          <div class="md:hidden px-4 py-8">
+            <ul role="list" class="fa-ul text-sm ml-7 space-y-4">
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
+              </li>
+              <li>
+                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
+              </li>
+            </ul>
+          </div>
+          {{/* Desktop: horizontal layout */}}
+          <div class="hidden md:flex p-4 items-center gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="flex items-center">
+                  <img src="/img/logo.svg" class="h-8 mr-2 aspect-1110/942" alt="Logo"/>
+                  <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+                </div>
+                <div class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+                  {{ i18n "pricing_hub_community_title" . }}
+                </div>
+              </div>
+              <p class="font-p mb-4">{{ i18n "pricing_hub_community_subtitle" . }}</p>
+              <div class="flex flex-wrap gap-x-6 gap-y-2 text-base">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-primary"></i>
+                  <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-primary"></i>
+                  <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="shrink-0 flex flex-col items-end text-right">
+              <p class="font-bold text-3xl lg:text-4xl leading-relaxed">{{ i18n "pricing_free" . }}</p>
+              <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-primary px-8 mt-4" data-umami-event="pricing-hub-community-self-hosted-cta">
                 {{ i18n "pricing_hub_self_hosted_cta" . }}
               </a>
             </div>
-            <div class="px-4 py-8">
-              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_community_benefit_3" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_community_benefit_4" . }}</span>
-                  <div class="has-tooltip">
-                    <i class="fa-solid fa-info-circle text-gray-600"></i>
-                    <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_community_benefit_4_tooltip" . }}</div>
-                  </div>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_community_benefit_5" . }}</span>
-                </li>
-              </ul>
-            </div>
           </div>
-          <div x-data="{infrastructure: 'managed', data: {selfHostedMonthlyPrice: null, managedMonthlyPrice: null}}" x-init="new HubPricing(data).loadPrice()" class="white-box" :class="infrastructure === 'managed' && 'ring-2 ring-secondary'">
-            <div class="p-4 border-b border-primary">
-              <div class="flex gap-2 mb-8">
-                <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
-                  {{ i18n "pricing_hub_standard_title" . }}
-                </h3>
-                <p x-show="infrastructure === 'managed'" class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-secondary text-white">
-                  <i class="fa-solid fa-star"></i>
-                  {{ i18n "hub_deployment_recommended" . }}
-                </p>
-              </div>
-              <div class="flex items-center gap-2">
-                <span id="hub-standard-managed-label" class="block uppercase tracking-wide text-xs font-bold" :class="infrastructure === 'managed' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'managed'">
-                  {{ i18n "pricing_hub_managed_title" . }}
-                </span>
-                <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" aria-checked="false" aria-labelledby="hub-standard-managed-label hub-standard-self-hosted-label" data-umami-event="pricing-hub-standard-infrastructure-switch" @click="infrastructure = infrastructure === 'managed' ? 'self-hosted' : 'managed'">
-                  <span class="sr-only">Use setting</span>
-                  <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out" :class="infrastructure === 'managed' ? 'translate-x-0' : 'translate-x-4'"></span>
-                </button>
-                <span id="hub-standard-self-hosted-label" class="block uppercase tracking-wide text-gray-500 text-xs font-bold" :class="infrastructure === 'self-hosted' ? 'text-gray-700' : 'text-gray-500'" @click="infrastructure = 'self-hosted'">
-                  {{ i18n "pricing_hub_self_hosted_title" . }}
-                </span>
-              </div>
-              <div x-show="infrastructure === 'managed'">
-                <p class="flex items-baseline gap-2">
-                  <span x-text="data.managedMonthlyPrice ? data.managedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.managedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
-                  <span class="text-xs md:text-sm lg:text-base text-gray-700">
-                    {{ i18n "pricing_vat_excluded" . }}
-                  </span>
-                </p>
-                <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-                  {{ i18n "pricing_hub_standard_price_description" . }}
-                </p>
-                <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-standard-managed-cta">
-                  {{ i18n "pricing_hub_managed_cta" . }}
-                </a>
-              </div>
-              <div x-show="infrastructure === 'self-hosted'">
-                <p class="flex items-baseline gap-2">
-                  <span x-text="data.selfHostedMonthlyPrice ? data.selfHostedMonthlyPrice.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: data.selfHostedMonthlyPrice.currency }) : '…'" class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed"></span>
-                  <span class="text-xs md:text-sm lg:text-base text-gray-700">
-                    {{ i18n "pricing_vat_excluded" . }}
-                  </span>
-                </p>
-                <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-                  {{ i18n "pricing_hub_standard_price_description" . }}
-                </p>
-                <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
-                  {{ i18n "pricing_hub_self_hosted_cta" . }}
-                </a>
-              </div>
-            </div>
-            <div class="px-4 py-8">
-              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-plus text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_standard_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_standard_benefit_2" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_standard_benefit_3" . }}</span>
-                  <div class="has-tooltip">
-                    <i class="fa-solid fa-info-circle text-gray-600"></i>
-                    <div class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n "pricing_hub_standard_benefit_3_tooltip" . }}</div>
-                  </div>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_standard_benefit_4" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_standard_benefit_5" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
-                  <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid" :class="infrastructure === 'managed' ? 'fa-check text-primary' : 'fa-times text-red-600'"></i></span>
-                  <span :class="infrastructure === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_2" . }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="white-box">
-            <div class="p-4 border-b border-primary">
-              <h3 class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-8">
-                {{ i18n "pricing_hub_enterprise_title" . }}
-              </h3>
-              <p class="block uppercase tracking-wide text-gray-700 text-xs font-bold">
-                {{ i18n "pricing_hub_managed_title" . }} & {{ i18n "pricing_hub_self_hosted_title" . }}
-              </p>
-              <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
-                {{ i18n "pricing_hub_enterprise_price" . }}
-              </p>
-              <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
-                {{ i18n "pricing_hub_enterprise_price_description" . }}
-              </p>
-              <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-primary w-full" data-umami-event="pricing-hub-enterprise-cta">
-                <i class="fa-solid fa-envelope"></i>
-                {{ i18n "pricing_hub_enterprise_cta" . }}
-              </a>
-            </div>
-            <div class="px-4 py-8">
-              <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-plus text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_enterprise_benefit_1" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_enterprise_benefit_2" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_enterprise_benefit_3" . }}</span>
-                </li>
-                <li>
-                  <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
-                  <span>{{ i18n "pricing_hub_enterprise_benefit_4" . }}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="container py-12">
-          <header class="text-center">
-            <h2 class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
-          </header>
-      
-          {{- $data := index $.Site.Data $.Site.Language.Lang }}
-          <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
-            {{- range $index, $element := $data.pricing_teams_faq }}
-            <dt class="font-p p-4">
-              <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
-                <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
-                <span>{{ .Question }}</span>
-              </a>
-            </dt>
-            <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
-              {{ .Answer | markdownify }}
-            </dd>
-            {{- end }}
-          </dl>
-        </section>
-      </div>
+      {{/* Support Us Section */}}
+      <section class="container text-center py-12">
+        <h2 class="font-h2 mb-4">{{ i18n "pricing_support_us_title" . }}</h2>
+        <p class="font-p mb-4">{{ i18n "pricing_support_us_description" . }}</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="{{ .Site.LanguagePrefix }}/donate/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-donate">
+            <i class="fa-solid fa-donate"></i> {{ i18n "pricing_support_us_donate_button" . }}
+          </a>
+          <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-primary px-8" data-umami-event="pricing-sponsors">
+            <i class="fa-solid fa-handshake"></i> {{ i18n "pricing_support_us_sponsor_button" . }}
+          </a>
+        </div>
+      </section>
+
+      {{/* FAQ Sections */}}
+      <section class="py-12">
+        <header class="text-center mb-8">
+          <h2 class="font-h2">{{ i18n "faq_title" . }}</h2>
+        </header>
+
+        {{- $data := index $.Site.Data $.Site.Language.Lang }}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <h3 class="flex items-center gap-3 mb-4">
+              <div class="flex items-center">
+                <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+                <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR</span>
+              </div>
+              <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+                {{ i18n "pricing_faq_individual_badge" . }}
+              </div>
+            </h3>
+            <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200">
+              {{- range $index, $element := $data.pricing_individuals_faq }}
+              <dt class="font-p p-4">
+                <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
+                  <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
+                  <span>{{ .Question }}</span>
+                </a>
+              </dt>
+              <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+                {{ .Answer | markdownify }}
+              </dd>
+              {{- end }}
+            </dl>
+          </div>
+          <div>
+            <h3 class="flex items-center gap-3 mb-4">
+              <div class="flex items-center">
+                <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+                <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+              </div>
+              <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+                {{ i18n "pricing_faq_teams_badge" . }}
+              </div>
+            </h3>
+            <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_teams_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200">
+              {{- range $index, $element := $data.pricing_teams_faq }}
+              <dt class="font-p p-4">
+                <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
+                  <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
+                  <span>{{ .Question }}</span>
+                </a>
+              </dt>
+              <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+                {{ .Answer | markdownify }}
+              </dd>
+              {{- end }}
+            </dl>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 {{ end }}

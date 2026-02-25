@@ -863,10 +863,12 @@
 # Pricing
 - id: pricing_title
   translation: "Finde die passende Option für dich"
-- id: pricing_individuals
-  translation: "Für Einzelnutzer"
-- id: pricing_teams
-  translation: "Für Teams"
+- id: pricing_billing_monthly
+  translation: "Monatlich"
+- id: pricing_billing_yearly
+  translation: "Jährlich"
+- id: pricing_billing_save
+  translation: "Spare"
 - id: pricing_vat_excluded
   translation: "zzgl. USt."
 - id: pricing_vat_included
@@ -876,52 +878,41 @@
 - id: hub_different_recurring_description
   translation: "nach dem ersten Jahr"
 
-- id: pricing_desktop_price_description
-  translation: "Donationware"
-- id: pricing_desktop_cta_1
-  translation: "Jetzt herunterladen"
-- id: pricing_desktop_cta_2
-  translation: "Unterstütze uns"
-- id: pricing_desktop_benefit_1
-  translation: "Kompatibel mit jedem Cloud-Speicher mit Dateisystem-Synchronisierung, z.B. Dropbox, Google Drive, OneDrive, Nextcloud uvm."
-- id: pricing_desktop_benefit_2
-  translation: "Clientseitige Verschlüsselung für Privatsphäre"
-- id: pricing_desktop_benefit_3
-  translation: "Zugriff über virtuelles Laufwerk"
-- id: pricing_desktop_benefit_4
-  translation: "Keine Accounts, keine Datenweitergabe"
-
 - id: pricing_android_price
   translation: "29,99 €"
-- id: pricing_android_price_description
-  translation: "Lebenslange Lizenz"
-- id: pricing_android_cta
-  translation: "Jetzt herunterladen"
-- id: pricing_android_benefit_1
-  translation: "Kompatibel mit Dropbox, Google Drive, OneDrive, pCloud, WebDAV- und S3-basiertem Cloud-Speicher"
-- id: pricing_android_benefit_2
-  translation: "Mobiler Zugriff auf verschlüsselte Dateien"
-- id: pricing_android_benefit_3
-  translation: "Tresore mit biometrischer Auth entsperren"
-- id: pricing_android_benefit_4
-  translation: "Keine Accounts, keine Datenweitergabe"
-
-- id: pricing_ios_free_description
-  translation: "Lesezugriff"
 - id: pricing_ios_price
   translation: "29,99 €"
-- id: pricing_ios_price_description
-  translation: "Lebenslange Lizenz"
-- id: pricing_ios_cta
+
+- id: pricing_individual_title
+  translation: "Individuell"
+- id: pricing_individual_subtitle
+  translation: "Verschlüssele deine persönlichen Cloud-Dateien. Open Source und für immer kostenlos."
+- id: pricing_individual_price_description
+  translation: "für den persönlichen Gebrauch"
+- id: pricing_individual_cta
   translation: "Jetzt herunterladen"
-- id: pricing_ios_benefit_1
-  translation: "Kompatibel mit iCloud Drive, Dropbox, Google Drive, OneDrive, pCloud, Box, WebDAV- und S3-basiertem Cloud-Speicher"
-- id: pricing_ios_benefit_2
-  translation: "Vollständig in die Dateien-App integriert"
-- id: pricing_ios_benefit_3
-  translation: "Tresore mit Face ID / Touch ID entsperren"
-- id: pricing_ios_benefit_4
-  translation: "Keine Accounts, keine Datenweitergabe"
+- id: pricing_individual_benefit_1
+  translation: "Unbegrenzte Tresore"
+- id: pricing_individual_benefit_2
+  translation: "Kompatibel mit jedem Cloud-Speicher"
+- id: pricing_individual_benefit_2_tooltip
+  translation: "Unterstützte Dienste variieren je nach Plattform. <a href='https://docs.cryptomator.org/misc/supported-cloud-services/' target='_blank' rel='noopener' class='text-link'>Mehr erfahren</a>"
+- id: pricing_individual_benefit_3
+  translation: "Voller Zugriff über Desktop-App"
+- id: pricing_individual_benefit_4
+  translation: "Community-Support"
+- id: pricing_individual_mobile_upgrades_title
+  translation: "Optionale Upgrades"
+- id: pricing_individual_upgrade_dark_mode
+  translation: "Dark Mode auf dem Desktop"
+- id: pricing_supporter_cert_price
+  translation: "ab 29,99 €"
+- id: pricing_individual_mobile_android
+  translation: "Voller Zugriff auf Android"
+- id: pricing_individual_mobile_ios
+  translation: "Voller Zugriff auf iOS"
+- id: pricing_individual_upgrades_note
+  translation: "Separate Einmalkäufe je Plattform. Preise können je nach Region variieren."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -935,33 +926,25 @@
 
 - id: pricing_hub_community_title
   translation: "Community"
-- id: pricing_hub_community_price_description
-  translation: "zum Loslegen"
+- id: pricing_hub_community_subtitle
+  translation: "Kostenlos und Open Source für kleine Teams. Auf eigener Infrastruktur deployen mit voller Kontrolle über die Daten."
 - id: pricing_hub_community_benefit_1
-  translation: "Unbegrenzte Tresore"
+  translation: "Inklusive 5 Sitze"
 - id: pricing_hub_community_benefit_2
-  translation: "5 Sitze"
-- id: pricing_hub_community_benefit_3
-  translation: "Voller Zugriff über Desktop-App"
-- id: pricing_hub_community_benefit_4
-  translation: "Lesender Zugriff über Mobile-Apps"
-- id: pricing_hub_community_benefit_4_tooltip
-  translation: "Wenn du die Vollversion der mobilen App freigeschaltet hast, erhältst du vollen Zugriff."
-- id: pricing_hub_community_benefit_5
-  translation: "Community-Support"
+  translation: "Nur Self-Hosted"
 
 - id: pricing_hub_standard_title
   translation: "Standard"
+- id: pricing_hub_standard_subtitle
+  translation: "Für Teams, die skalierbare und sichere Dateiverschlüsselung benötigen."
 - id: pricing_hub_standard_price_description
   translation: "pro Sitz, pro Monat"
 - id: pricing_hub_standard_benefit_1
-  translation: "Alles in Community"
+  translation: "Alle Cryptomator-Features, plus:"
 - id: pricing_hub_standard_benefit_2
-  translation: "Ab 3 Sitze"
+  translation: "Benutzer- und Gruppenverwaltung"
 - id: pricing_hub_standard_benefit_3
   translation: "Voller Zugriff über Mobile-Apps"
-- id: pricing_hub_standard_benefit_3_tooltip
-  translation: "Du erhältst vollen Zugriff, ohne die Vollversion der mobilen App freischalten zu müssen."
 - id: pricing_hub_standard_benefit_4
   translation: "Audit-Logs"
 - id: pricing_hub_standard_benefit_5
@@ -973,6 +956,8 @@
 
 - id: pricing_hub_enterprise_title
   translation: "Enterprise"
+- id: pricing_hub_enterprise_subtitle
+  translation: "Für großflächige Deployments mit Premium-Support."
 - id: pricing_hub_enterprise_price
   translation: "Individuell"
 - id: pricing_hub_enterprise_price_description
@@ -982,10 +967,12 @@
 - id: pricing_hub_enterprise_benefit_1
   translation: "Alles in Standard"
 - id: pricing_hub_enterprise_benefit_2
-  translation: "Beratung und Unterstützung durch Experten"
+  translation: "Notfallzugriff"
 - id: pricing_hub_enterprise_benefit_3
-  translation: "Dedizierter Kundenbetreuer"
+  translation: "Beratung und Unterstützung durch Experten"
 - id: pricing_hub_enterprise_benefit_4
+  translation: "Dedizierter Kundenbetreuer"
+- id: pricing_hub_enterprise_benefit_5
   translation: "Vorrangiger E-Mail-Support"
 
 - id: pricing_support_us_title
@@ -996,6 +983,11 @@
   translation: "Spende"
 - id: pricing_support_us_sponsor_button
   translation: "Werde Sponsor"
+
+- id: pricing_faq_individual_badge
+  translation: "Für Einzelnutzer"
+- id: pricing_faq_teams_badge
+  translation: "Für Teams"
 
 # Supporter Certificate
 - id: supporter_cert_common_email

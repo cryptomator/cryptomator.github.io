@@ -902,10 +902,12 @@
 # Pricing
 - id: pricing_title
   translation: "Find the Right Plan for You"
-- id: pricing_individuals
-  translation: "For Individuals"
-- id: pricing_teams
-  translation: "For Teams"
+- id: pricing_billing_monthly
+  translation: "Monthly"
+- id: pricing_billing_yearly
+  translation: "Yearly"
+- id: pricing_billing_save
+  translation: "Save"
 - id: pricing_vat_excluded
   translation: "excl. VAT"
 - id: pricing_vat_included
@@ -915,52 +917,41 @@
 - id: hub_different_recurring_description
   translation: "after the first year"
 
-- id: pricing_desktop_price_description
-  translation: "Donationware"
-- id: pricing_desktop_cta_1
-  translation: "Download Now"
-- id: pricing_desktop_cta_2
-  translation: "Support Us"
-- id: pricing_desktop_benefit_1
-  translation: "Works with any cloud storage that syncs to your file system, incl. Dropbox, Google Drive, OneDrive, Nextcloud, and more"
-- id: pricing_desktop_benefit_2
-  translation: "Client-side encryption for ultimate privacy"
-- id: pricing_desktop_benefit_3
-  translation: "Transparent access via virtual drive"
-- id: pricing_desktop_benefit_4
-  translation: "No accounts, no data shared"
-
 - id: pricing_android_price
   translation: "€29.99"
-- id: pricing_android_price_description
-  translation: "Lifetime License"
-- id: pricing_android_cta
-  translation: "Download Now"
-- id: pricing_android_benefit_1
-  translation: "Works with Dropbox, Google Drive, OneDrive, pCloud, WebDAV- and S3-based cloud storage"
-- id: pricing_android_benefit_2
-  translation: "Access and encrypt cloud files on the go"
-- id: pricing_android_benefit_3
-  translation: "Unlock vaults with biometric authentication"
-- id: pricing_android_benefit_4
-  translation: "No accounts, no data shared"
-
-- id: pricing_ios_free_description
-  translation: "Read-Only Mode"
 - id: pricing_ios_price
   translation: "€29.99"
-- id: pricing_ios_price_description
-  translation: "Lifetime License"
-- id: pricing_ios_cta
+
+- id: pricing_individual_title
+  translation: "Individual"
+- id: pricing_individual_subtitle
+  translation: "Encrypt your personal cloud files. Open source and free forever."
+- id: pricing_individual_price_description
+  translation: "for personal use"
+- id: pricing_individual_cta
   translation: "Download Now"
-- id: pricing_ios_benefit_1
-  translation: "Works with iCloud Drive, Dropbox, Google Drive, OneDrive, pCloud, Box, WebDAV- and S3-based cloud storage"
-- id: pricing_ios_benefit_2
-  translation: "Fully integrated into the Files app"
-- id: pricing_ios_benefit_3
-  translation: "Unlock vaults with Face ID / Touch ID"
-- id: pricing_ios_benefit_4
-  translation: "No accounts, no data shared"
+- id: pricing_individual_benefit_1
+  translation: "Unlimited vaults"
+- id: pricing_individual_benefit_2
+  translation: "Works with any cloud storage"
+- id: pricing_individual_benefit_2_tooltip
+  translation: "Supported services vary by platform. <a href='https://docs.cryptomator.org/misc/supported-cloud-services/' target='_blank' rel='noopener' class='text-link'>Learn more</a>"
+- id: pricing_individual_benefit_3
+  translation: "Full access via Desktop app"
+- id: pricing_individual_benefit_4
+  translation: "Community support"
+- id: pricing_individual_mobile_upgrades_title
+  translation: "Optional Upgrades"
+- id: pricing_individual_upgrade_dark_mode
+  translation: "Dark Mode on Desktop"
+- id: pricing_supporter_cert_price
+  translation: "from €29.99"
+- id: pricing_individual_mobile_android
+  translation: "Full access on Android"
+- id: pricing_individual_mobile_ios
+  translation: "Full access on iOS"
+- id: pricing_individual_upgrades_note
+  translation: "Separate one-time purchases per platform. Prices may vary by region."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -974,33 +965,25 @@
 
 - id: pricing_hub_community_title
   translation: "Community"
-- id: pricing_hub_community_price_description
-  translation: "to get started"
+- id: pricing_hub_community_subtitle
+  translation: "Free and open source for small teams. Deploy on your own infrastructure with full control over your data."
 - id: pricing_hub_community_benefit_1
-  translation: "Unlimited vaults"
+  translation: "Includes 5 seats"
 - id: pricing_hub_community_benefit_2
-  translation: "5 seats"
-- id: pricing_hub_community_benefit_3
-  translation: "Full access via Desktop app"
-- id: pricing_hub_community_benefit_4
-  translation: "Read-only access via Mobile apps"
-- id: pricing_hub_community_benefit_4_tooltip
-  translation: "If you unlocked the full version of the mobile app, you will be granted full access."
-- id: pricing_hub_community_benefit_5
-  translation: "Community support"
+  translation: "Self-hosted only"
 
 - id: pricing_hub_standard_title
   translation: "Standard"
+- id: pricing_hub_standard_subtitle
+  translation: "For teams that need scalable, secure file encryption."
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_benefit_1
-  translation: "Everything in Community"
+  translation: "All Cryptomator features, plus:"
 - id: pricing_hub_standard_benefit_2
-  translation: "Starts from 3 seats"
+  translation: "User and group management"
 - id: pricing_hub_standard_benefit_3
   translation: "Full access via Mobile apps"
-- id: pricing_hub_standard_benefit_3_tooltip
-  translation: "You will be granted full access without having to unlock the full version of the mobile app."
 - id: pricing_hub_standard_benefit_4
   translation: "Audit logs"
 - id: pricing_hub_standard_benefit_5
@@ -1012,6 +995,8 @@
 
 - id: pricing_hub_enterprise_title
   translation: "Enterprise"
+- id: pricing_hub_enterprise_subtitle
+  translation: "For large-scale deployments with premium support."
 - id: pricing_hub_enterprise_price
   translation: "Custom"
 - id: pricing_hub_enterprise_price_description
@@ -1021,10 +1006,12 @@
 - id: pricing_hub_enterprise_benefit_1
   translation: "Everything in Standard"
 - id: pricing_hub_enterprise_benefit_2
-  translation: "Expert training and assistance"
+  translation: "Emergency Access"
 - id: pricing_hub_enterprise_benefit_3
-  translation: "Dedicated account manager"
+  translation: "Expert training and assistance"
 - id: pricing_hub_enterprise_benefit_4
+  translation: "Dedicated account manager"
+- id: pricing_hub_enterprise_benefit_5
   translation: "Priority email support"
 
 - id: pricing_support_us_title
@@ -1035,6 +1022,11 @@
   translation: "Donate"
 - id: pricing_support_us_sponsor_button
   translation: "Become a Sponsor"
+
+- id: pricing_faq_individual_badge
+  translation: "For Individuals"
+- id: pricing_faq_teams_badge
+  translation: "For Teams"
 
 # Supporter Certificate
 - id: supporter_cert_common_email

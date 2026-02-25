@@ -3,7 +3,7 @@ type: article
 weight: 2
 
 title: "Encrypt Cloud Storage: How Open Source Strengthens Security"
-description: "Trust, but verify: If you want to encrypt your cloud storage, open source encryption software offers you even more protection."
+description: "Trust, but verify: If you want to encrypt your cloud storage, open-source encryption software offers you even more protection."
 aliases: ["/open-source", "/faq/security", "/faq/security/opensource", "/faq/security/audits"]
 
 ctatitle: "You want to encrypt your cloud storage with Cryptomator?"
@@ -23,7 +23,7 @@ ogimage:
 
 # Encrypt Your Data Securely in the Cloud: How You Can Further Increase Your Data Security Through Open Source
 
-<p class="lead">Maybe you've been looking into encrypting your cloud storage for a while now, and you've come across "open source" solutions. Maybe you're wondering why open source is so important if you want to encrypt your files? Here we explain it to you.</p>
+<p class="lead">Maybe you've been looking into encrypting your cloud storage for a while now, and you've come across "open-source" solutions. Maybe you're wondering why open source is so important if you want to encrypt your files? Here we explain it to you.</p>
 
 <img class="inline-block" src="/img/open-source/bartender-vs-stranger.png" srcset="/img/open-source/bartender-vs-stranger.png 1x, /img/open-source/bartender-vs-stranger@2x.png 2x" alt="The security-conscious customer opts for products whose composition and quality he can check. Non-verifiable alternatives seem shady." />
 
@@ -74,13 +74,13 @@ And maybe the old saying comes to your mind: Trust, but verify.
 
 ## Trust, but Verify – Especially if You Want to Encrypt Sensitive Data in the Cloud {#trust-but-verify}
 
-And it's exactly this advantage of verification that open source software offers you when you want to encrypt your cloud storage (such as Dropbox).
+And it's exactly this advantage of verification that open-source software offers you when you want to encrypt your cloud storage (such as Dropbox).
 
 To come back to the example with the bar: In fact, it would even be possible for you to mix your own drink.
 
 Because open source allows you to do just that: The instructions and all the ingredients are available. In addition, you even have the option of adapting and further improving the recipe if necessary.
 
-## Exactly How Open Source Software Increases Your Data Security {#advantages}
+## Exactly How Open-Source Software Increases Your Data Security {#advantages}
 
 At first glance, you don't "see" the aspects of open source in the software itself. This is because the advantages lie in the security-related criteria for the development of the software.
 
@@ -156,9 +156,9 @@ At the same time, however, open source has many security-enhancing advantages:
   </div>
 </div>
 
-## Encrypt Cloud Storage With Open Source Software: On the Safe Side With Cryptomator {#robust-crypto}
+## Encrypt Cloud Storage With Open-Source Software: On the Safe Side With Cryptomator {#robust-crypto}
 
-Cryptomator is just such an open source encryption software. Thanks to its open source nature, maximum transparency is guaranteed. Thus, the security of your data is secured on many levels and constantly increased:
+Cryptomator is just such an open-source encryption software. Thanks to its open-source nature, maximum transparency is guaranteed. Thus, the security of your data is secured on many levels and constantly increased:
 
 1. In addition to the actual code, quality metrics from automated tests as well as bug reports are publicly available.
 2. The code is constantly adapted to the latest standards.
@@ -172,6 +172,6 @@ All this leads to an outstanding robustness of the cryptographic implementation,
 
 – {{< extlink "/audits/2017-11-27%20crypto%20cure53.pdf" "Audit by Cure53" >}}
 
-**In other words: This robustness increases your data security many times over when you encrypt your files in the cloud with open source software.**
+**In other words: This robustness increases your data security many times over when you encrypt your files in the cloud with open-source software.**
 
 With Cryptomator, we also put a focus on high user-friendliness. You can use [Dropbox](/guides/encrypt-dropbox/), Google Drive, OneDrive, etc. as usual and at the same time know that all your sensitive data is safe.
