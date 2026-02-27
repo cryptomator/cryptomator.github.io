@@ -5,6 +5,7 @@ const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
+const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
 
 class HubSubscription {
 
@@ -56,7 +57,7 @@ class HubSubscription {
   }
 
   onLoadSubscriptionSucceeded(data) {
-    this._subscriptionData.token = data.token;
+    this._subscriptionData.verificationToken = data.token;
     this._subscriptionData.details = data.subscription;
     if (data.subscription.quantity) {
       this._subscriptionData.quantity = data.subscription.quantity;
@@ -64,6 +65,7 @@ class HubSubscription {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
+    this._subscriptionData.needsTokenRefresh = true;
   }
 
   onLoadSubscriptionFailed(status, error) {
@@ -271,7 +273,7 @@ class HubSubscription {
         override: payLink,
         email: this._subscriptionData.email,
         locale: locale,
-        passthrough: '{"hub_id": ' + this._subscriptionData.hubId + '}',
+        passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId }),
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
         closeCallback: () => {
           this._subscriptionData.inProgress = false;
@@ -311,7 +313,7 @@ class HubSubscription {
 
   onPostSucceeded(data) {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
-    this._subscriptionData.token = data.token;
+    this._subscriptionData.verificationToken = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.session = data.session;
     var searchParams = new URLSearchParams(window.location.search)
@@ -320,7 +322,8 @@ class HubSubscription {
     history.pushState(null, '', newRelativePathQuery);
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this.transferTokenToHub();
+    this._subscriptionData.shouldTransferToHub = true;
+    this._subscriptionData.needsTokenRefresh = true;
   }
 
   onPostFailed(error) {
@@ -477,12 +480,13 @@ class HubSubscription {
   }
 
   onPutSucceeded(data, shouldOpenReturnUrl) {
-    this._subscriptionData.token = data.token;
+    this._subscriptionData.verificationToken = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
     if (shouldOpenReturnUrl) {
-      this.transferTokenToHub();
+      this._subscriptionData.shouldTransferToHub = true;
+      this._subscriptionData.needsTokenRefresh = true;
     }
   }
 
@@ -492,6 +496,31 @@ class HubSubscription {
     }
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
+  }
+
+  refreshToken() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: REFRESH_LICENSE_URL,
+      type: 'POST',
+      data: {
+        token: this._subscriptionData.verificationToken,
+        captcha: this._subscriptionData.captcha
+      }
+    }).done(token => {
+      this._subscriptionData.token = token;
+      this._subscriptionData.needsTokenRefresh = false;
+      this._subscriptionData.errorMessage = '';
+      this._subscriptionData.inProgress = false;
+      if (this._subscriptionData.shouldTransferToHub) {
+        this.transferTokenToHub();
+      }
+    }).fail(xhr => {
+      this._subscriptionData.errorMessage = xhr.responseJSON?.message || 'Refreshing license failed.';
+      this._subscriptionData.needsTokenRefresh = false;
+      this._subscriptionData.inProgress = false;
+    });
   }
 
   transferTokenToHub() {
