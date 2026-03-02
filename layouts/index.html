@@ -1,8 +1,8 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-individuals/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-teams/">
-  <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
-  <link rel="preload" fetchpriority="high" as="image" href="/img/home/woman-cloud.png" type="image/png">
+  <link rel="preload" fetchpriority="high" as="image" href="/img/for-individuals/screenshot-1.png" type="image/png">
+  <link rel="preload" fetchpriority="low" as="image" href="/img/hub/screenshot-2.png" type="image/png">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-regular.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-medium.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-bold.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -12,47 +12,195 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section class="flex items-center header-bg bg-dark bg-center min-h-[66vh] bg-repeat-x">
-    <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
-      <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
-        <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
-      </div>
-      <div class="w-full md:w-2/3 lg:w-3/5">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
-            <i class="fa-solid fa-cloud-download"></i>
-            {{ i18n "home_header_kicker" }}
+  <section class="hero-split-contrast relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-primary/10 via-secondary/5 to-transparent"></div>
+      <svg class="absolute top-20 left-[6%] w-20 h-12 text-white" viewBox="0 0 100 60" fill="currentColor">
+        <path d="M90,50 H20 A15,15 0 0 1 10,35 A20,20 0 0 1 30,15 A25,25 0 0 1 75,20 A15,15 0 0 1 90,35 A10,10 0 0 1 90,50 Z"/>
+      </svg>
+      <svg class="absolute top-32 right-[8%] w-16 h-10 text-white" viewBox="0 0 100 60" fill="currentColor">
+        <path d="M90,50 H20 A15,15 0 0 1 10,35 A20,20 0 0 1 30,15 A25,25 0 0 1 75,20 A15,15 0 0 1 90,35 A10,10 0 0 1 90,50 Z"/>
+      </svg>
+      <svg class="absolute top-48 left-[15%] w-12 h-7 text-white" viewBox="0 0 100 60" fill="currentColor">
+        <path d="M90,50 H20 A15,15 0 0 1 10,35 A20,20 0 0 1 30,15 A25,25 0 0 1 75,20 A15,15 0 0 1 90,35 A10,10 0 0 1 90,50 Z"/>
+      </svg>
+      <svg class="absolute bottom-48 right-[15%] w-14 h-8 text-gray-200" viewBox="0 0 100 60" fill="currentColor">
+        <path d="M90,50 H20 A15,15 0 0 1 10,35 A20,20 0 0 1 30,15 A25,25 0 0 1 75,20 A15,15 0 0 1 90,35 A10,10 0 0 1 90,50 Z"/>
+      </svg>
+      <svg class="absolute bottom-36 left-[10%] w-16 h-10 text-gray-200" viewBox="0 0 100 60" fill="currentColor">
+        <path d="M90,50 H20 A15,15 0 0 1 10,35 A20,20 0 0 1 30,15 A25,25 0 0 1 75,20 A15,15 0 0 1 90,35 A10,10 0 0 1 90,50 Z"/>
+      </svg>
+      <svg class="absolute bottom-24 right-[6%] w-10 h-6 text-gray-200" viewBox="0 0 100 60" fill="currentColor">
+        <path d="M90,50 H20 A15,15 0 0 1 10,35 A20,20 0 0 1 30,15 A25,25 0 0 1 75,20 A15,15 0 0 1 90,35 A10,10 0 0 1 90,50 Z"/>
+      </svg>
+    </div>
+    <div class="hero-split-header relative z-10">
+      <h1 class="font-headline font-medium text-3xl md:text-4xl leading-tight mb-4">
+        {{ i18n "home_header_title" }}
+        <span class="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden text-primary">
+          <ul class="animate-slide">
+            <li><i class="fa-brands fa-google-drive" aria-hidden="true"></i> Google Drive</li>
+            <li><i class="fa-kit fa-icloud" aria-hidden="true"></i> iCloud Drive</li>
+            <li><i class="fa-kit fa-onedrive" aria-hidden="true"></i> OneDrive</li>
+            <li><i class="fa-kit fa-sharepoint" aria-hidden="true"></i> SharePoint</li>
+            <li><i class="fa-brands fa-dropbox" aria-hidden="true"></i> Dropbox</li>
+            <li><i class="fa-kit fa-pcloud" aria-hidden="true"></i> pCloud</li>
+            <li><i class="fa-kit fa-nextcloud" aria-hidden="true"></i> Nextcloud</li>
+            <li>{{ i18n "home_header_title_last_item" }}</li>
+            <li aria-hidden="true"><i class="fa-brands fa-google-drive" aria-hidden="true"></i> Google Drive</li>
+          </ul>
+        </span>
+      </h1>
+      <p class="lead max-w-2xl mx-auto">{{ i18n "home_header_description" }}</p>
+    </div>
+
+    <p class="relative z-10 text-center text-lg font-medium text-gray-500 mt-8 mb-10 px-4">{{ i18n "home_hero_question" }}</p>
+
+    <div class="hero-split-panels relative z-10">
+      <div class="hero-panel">
+        <span class="label-uppercase text-primary mb-4">{{ i18n "home_get_started_for_individuals_title" }}</span>
+        <div class="hero-panel-visual py-8">
+          <div class="flex items-center justify-center gap-3 relative">
+            <div class="text-center w-14">
+              <i class="fa-solid fa-user text-4xl text-gray-400"></i>
+              <div class="text-xs text-gray-500 mt-2">You</div>
+            </div>
+            <div class="w-16 h-10 relative">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 64 40">
+                <line x1="0" y1="20" x2="64" y2="20" stroke="#49b04a" stroke-width="2" stroke-dasharray="6 4" opacity="0.3"/>
+              </svg>
+              <i class="fa-solid fa-file text-2xl text-gray-400 absolute animate-file-to-logo"></i>
+            </div>
+            <div class="text-center w-16 animate-logo-shake">
+              <img src="/img/logo.svg" alt="" class="h-14 mx-auto"/>
+            </div>
+            <div class="w-16 h-10 relative">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 64 40">
+                <line x1="0" y1="20" x2="64" y2="20" stroke="#49b04a" stroke-width="2" stroke-dasharray="6 4" opacity="0.3"/>
+              </svg>
+              <i class="fa-solid fa-file-shield text-2xl text-primary absolute animate-file-to-cloud"></i>
+            </div>
+            <div class="text-center w-14">
+              <i class="fa-solid fa-cloud text-4xl text-gray-400"></i>
+              <div class="text-xs text-gray-500 mt-2">Cloud</div>
+            </div>
           </div>
         </div>
-        <h1 class="font-h1 mb-6">
-          {{ i18n "home_header_title" }}
-          <span class="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
-            <ul class="animate-slide">
-              <li><i class="fa-brands fa-google-drive"></i> Google Drive</li>
-              <li><i class="fa-kit fa-icloud"></i> iCloud Drive</li>
-              <li><i class="fa-kit fa-onedrive"></i> OneDrive</li>
-              <li><i class="fa-kit fa-sharepoint"></i> SharePoint</li>
-              <li><i class="fa-brands fa-dropbox"></i> Dropbox</li>
-              <li><i class="fa-kit fa-pcloud"></i> pCloud</li>
-              <li><i class="fa-kit fa-nextcloud"></i> Nextcloud</li>
-              <li>{{ i18n "home_header_title_last_item" }}</li>
-              <li aria-hidden="true"><i class="fa-brands fa-google-drive"></i> Google Drive</li>
-            </ul>
-          </span>
-        </h1>
-        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
-        <div class="flex flex-col md:flex-row gap-6">
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_individuals_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/for-individuals/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-individuals-cta">{{ i18n "home_header_for_individuals_cta" . }}</a>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_teams_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-teams-cta">{{ i18n "home_header_for_teams_cta" . }}</a>
-          </div>
+        <div class="hero-panel-content">
+          <h2 class="font-headline font-bold text-2xl text-primary mb-2">CRYPTOMATOR</h2>
+          <p class="hero-panel-tagline">{{ i18n "home_hero_cryptomator_tagline" }}</p>
+          <p class="text-sm text-gray-500 mb-6">{{ i18n "home_hero_cryptomator_description" }}</p>
+          <a href="{{ .Site.LanguagePrefix }}/for-individuals/" class="btn btn-primary" data-umami-event="home-hero-individuals-cta">
+            {{ i18n "home_hero_cryptomator_cta" }}
+          </a>
         </div>
       </div>
-    </header>
+
+      <div class="hero-panel">
+        <span class="label-uppercase text-secondary mb-4">{{ i18n "home_get_started_for_teams_title" }}</span>
+        <div class="hero-panel-visual py-8">
+          <div class="relative w-72 h-44 mx-auto">
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 288 176" fill="none">
+              <g stroke="#008a7b" stroke-width="1.15" fill="none" opacity="0.55" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M36 88 H112"/>
+                <path d="M112 88 H148 V40 H188"/>
+                <path d="M112 88 H188"/>
+                <path d="M112 88 H148 V136 H188"/>
+              </g>
+              <g stroke="#008a7b" stroke-width="1.1" fill="none" opacity="0.55" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M188 40 H220 V56 H252"/>
+                <path d="M188 88 H220 V56 H252"/>
+                <path d="M188 88 H220 V120 H252"/>
+                <path d="M188 136 H220 V120 H252"/>
+              </g>
+
+              <circle cx="112" cy="88" r="2.2" fill="#49b04a" opacity="0.7"/>
+              <circle cx="188" cy="40" r="1.6" fill="#008a7b" opacity="0.25"/>
+              <circle cx="188" cy="88" r="1.6" fill="#008a7b" opacity="0.25"/>
+              <circle cx="188" cy="136" r="1.6" fill="#008a7b" opacity="0.25"/>
+              <circle cx="252" cy="56" r="2" fill="#49b04a" opacity="0.5"/>
+              <circle cx="252" cy="120" r="2" fill="#49b04a" opacity="0.5"/>
+            </svg>
+
+            <i class="fa-solid fa-circle-check text-sm text-secondary animate-hub-auth"></i>
+            <i class="fa-solid fa-key text-xs text-secondary animate-hub-key-1"></i>
+            <i class="fa-solid fa-key text-xs text-secondary animate-hub-key-2"></i>
+            <i class="fa-solid fa-key text-xs text-secondary animate-hub-key-3"></i>
+            <i class="fa-solid fa-file-shield text-xs text-secondary animate-hub-file-u1-cloud"></i>
+            <i class="fa-solid fa-file-shield text-xs text-secondary animate-hub-file-u2-local"></i>
+            <i class="fa-solid fa-file-shield text-xs text-secondary animate-hub-file-u3-local"></i>
+
+            <div class="absolute top-[88px] left-[20px] -translate-x-1/2 -translate-y-1/2 text-center">
+              <i class="fa-solid fa-id-card text-xl text-gray-400 leading-none"></i>
+              <div class="text-[11px] text-gray-500 mt-1">IdP</div>
+            </div>
+
+            <div class="absolute top-[88px] left-[112px] -translate-x-1/2 -translate-y-1/2 text-center animate-hub-pulse-center">
+              <img src="/img/logo-hub.svg" alt="" class="h-12 mx-auto"/>
+            </div>
+
+            <div class="absolute top-[40px] left-[188px] -translate-x-1/2 -translate-y-1/2">
+              <div class="w-7 h-7 rounded-full border border-secondary/20 bg-white/92 flex items-center justify-center">
+                <i class="fa-solid fa-user text-xs text-gray-500 leading-none"></i>
+              </div>
+            </div>
+
+            <div class="absolute top-[88px] left-[188px] -translate-x-1/2 -translate-y-1/2">
+              <div class="w-7 h-7 rounded-full border border-secondary/20 bg-white/92 flex items-center justify-center">
+                <i class="fa-solid fa-user text-xs text-gray-500 leading-none"></i>
+              </div>
+            </div>
+
+            <div class="absolute top-[136px] left-[188px] -translate-x-1/2 -translate-y-1/2">
+              <div class="w-7 h-7 rounded-full border border-secondary/20 bg-white/92 flex items-center justify-center">
+                <i class="fa-solid fa-user text-xs text-gray-500 leading-none"></i>
+              </div>
+            </div>
+
+            <div class="absolute top-[42px] left-[252px] -translate-x-1/2 w-16">
+              <div class="w-7 h-7 mx-auto rounded-full border border-secondary/20 bg-white/92 flex items-center justify-center">
+                <i class="fa-solid fa-cloud text-xs text-gray-500"></i>
+              </div>
+              <div class="text-[11px] text-gray-500 mt-1 text-center">Cloud</div>
+            </div>
+
+            <div class="absolute top-[106px] left-[252px] -translate-x-1/2 w-16">
+              <div class="w-7 h-7 mx-auto rounded-full border border-secondary/20 bg-white/92 flex items-center justify-center">
+                <i class="fa-solid fa-hard-drive text-xs text-gray-500"></i>
+              </div>
+              <div class="text-[11px] text-gray-500 mt-1 text-center">On-Prem</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel-content">
+          <h2 class="font-headline font-bold text-2xl text-secondary mb-2">CRYPTOMATOR HUB</h2>
+          <p class="hero-panel-tagline">{{ i18n "home_hero_hub_tagline" }}</p>
+          <p class="text-sm text-gray-500 mb-6">{{ i18n "home_hero_hub_description" }}</p>
+          <a href="{{ .Site.LanguagePrefix }}/for-teams/" class="btn btn-secondary" data-umami-event="home-hero-teams-cta">
+            {{ i18n "home_hero_hub_cta" }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 flex flex-wrap justify-center items-center gap-6 md:gap-10 mt-12 px-4 text-sm text-gray-500">
+      <div class="flex items-center gap-2">
+        <i class="fa-brands fa-github text-lg"></i>
+        <span><strong class="text-gray-700" x-text="globalData.githubStargazers"></strong> GitHub Stars</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-lock-open text-lg text-primary"></i>
+        <span class="text-gray-700 font-medium">100% Open Source</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-trophy text-lg text-yellow-500"></i>
+        <span>CeBIT Innovation Award</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-lg text-primary"></i>
+        <span>{{ i18n "home_hero_social_proof_audited" }}</span>
+      </div>
+    </div>
   </section>
 
   <div>

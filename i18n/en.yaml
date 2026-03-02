@@ -322,6 +322,24 @@
   translation: "Free 30-Day Trial"
 - id: home_header_for_teams_cta
   translation: "For Teams"
+
+- id: home_hero_question
+  translation: "How do you want to encrypt?"
+- id: home_hero_cryptomator_tagline
+  translation: "Your files. Your privacy."
+- id: home_hero_cryptomator_description
+  translation: "Don't let cloud providers peek at your private files. Encrypt before you sync – no one but you can access your data."
+- id: home_hero_cryptomator_cta
+  translation: "Download Free"
+- id: home_hero_hub_tagline
+  translation: "Secure teams. No password chaos."
+- id: home_hero_hub_description
+  translation: "Stop sharing passwords on sticky notes. Grant and revoke vault access instantly – without ever sharing a single key."
+- id: home_hero_hub_cta
+  translation: "Start Free Trial"
+- id: home_hero_social_proof_audited
+  translation: "Security Audited"
+
 - id: home_get_started_title
   translation: "How will you use Cryptomator?"
 - id: home_get_started_for_individuals_title

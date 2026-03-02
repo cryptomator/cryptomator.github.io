@@ -30,14 +30,225 @@
   @apply bg-primary border-primary text-white;
 }
 
+.btn-secondary {
+  @apply bg-secondary border-secondary text-white;
+}
+
 .btn-primary:hover,
-.btn-primary:focus {
+.btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus {
   @apply text-white transition transform duration-200 ease-in-out shadow-md -translate-y-px;
 }
 
-.btn-primary:disabled {
+.btn-primary:disabled,
+.btn-secondary:disabled {
   @apply shadow-none translate-y-0;
 }
+
+.hero-split-contrast {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
+.hero-split-header {
+  @apply text-center mb-10 md:mb-14 px-4;
+}
+
+.animate-slide li i {
+  @apply inline-block w-8 text-center;
+}
+
+.hero-split-panels {
+  @apply relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto px-4;
+  align-items: stretch;
+}
+
+.hero-panel {
+  @apply flex flex-col items-center text-center p-8 rounded-2xl bg-white;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08);
+}
+
+.hero-panel-visual {
+  @apply flex items-center justify-center;
+  height: 200px;
+}
+
+.hero-panel-content {
+  @apply flex flex-col items-center flex-1;
+}
+
+.hero-panel-content h2 {
+  @apply font-headline font-bold text-2xl mb-2;
+}
+
+.hero-panel-content .hero-panel-tagline {
+  @apply text-gray-700 font-medium mb-2;
+}
+
+.hero-panel-content p.text-sm {
+  @apply flex-1;
+}
+
+.hero-panel-content a.btn {
+  @apply mt-auto;
+}
+
+@keyframes file-to-logo {
+  0% { left: 0; top: 50%; transform: translateY(-50%); opacity: 1; }
+  40% { left: 100%; top: 50%; transform: translateY(-50%); opacity: 1; }
+  45%, 100% { left: 100%; opacity: 0; }
+}
+
+@keyframes logo-shake {
+  0%, 35% { transform: rotate(0deg); }
+  40% { transform: rotate(-5deg); }
+  45% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  55% { transform: rotate(5deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes file-to-cloud {
+  0%, 55% { left: 0; top: 50%; transform: translateY(-50%); opacity: 0; }
+  60% { left: 0; top: 50%; transform: translateY(-50%); opacity: 1; }
+  95% { left: 100%; top: 50%; transform: translateY(-50%); opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.animate-file-to-logo {
+  opacity: 0;
+}
+
+.animate-logo-shake {
+  transform: rotate(0deg);
+}
+
+.animate-file-to-cloud {
+  opacity: 0;
+}
+
+.hero-panel:hover .animate-file-to-logo {
+  animation: file-to-logo 3s ease-in-out infinite;
+}
+
+.hero-panel:hover .animate-logo-shake {
+  animation: logo-shake 3s ease-in-out infinite;
+}
+
+.hero-panel:hover .animate-file-to-cloud {
+  animation: file-to-cloud 3s ease-in-out infinite;
+}
+
+@keyframes hub-pulse-center {
+  0%, 25% { transform: scale(1); }
+  35% { transform: scale(1.1); }
+  45% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+.animate-hub-pulse-center {
+  transform: scale(1);
+}
+
+.hero-panel:hover .animate-hub-pulse-center {
+  animation: hub-pulse-center 3s ease-in-out infinite;
+}
+
+@keyframes hub-flow-auth {
+  0%, 5% { opacity: 0; offset-distance: 0%; }
+  10% { opacity: 1; offset-distance: 0%; }
+  32% { opacity: 1; offset-distance: 100%; }
+  38%, 100% { opacity: 0; offset-distance: 100%; }
+}
+
+@keyframes hub-flow-key {
+  0%, 30% { opacity: 0; offset-distance: 0%; }
+  35% { opacity: 1; offset-distance: 0%; }
+  55% { opacity: 1; offset-distance: 100%; }
+  60%, 100% { opacity: 0; offset-distance: 100%; }
+}
+
+@keyframes hub-flow-file {
+  0%, 56% { opacity: 0; offset-distance: 0%; }
+  61% { opacity: 1; offset-distance: 0%; }
+  86% { opacity: 1; offset-distance: 100%; }
+  92%, 100% { opacity: 0; offset-distance: 100%; }
+}
+
+.animate-hub-auth,
+.animate-hub-key-1,
+.animate-hub-key-2,
+.animate-hub-key-3,
+.animate-hub-file-u1-cloud,
+.animate-hub-file-u2-local,
+.animate-hub-file-u3-local {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  offset-rotate: 0deg;
+  -webkit-offset-rotate: 0deg;
+}
+
+.animate-hub-auth {
+  offset-path: path("M36 88 H112");
+  -webkit-offset-path: path("M36 88 H112");
+}
+
+.animate-hub-key-1 {
+  offset-path: path("M112 88 H148 V40 H188");
+  -webkit-offset-path: path("M112 88 H148 V40 H188");
+}
+
+.animate-hub-key-2 {
+  offset-path: path("M112 88 H188");
+  -webkit-offset-path: path("M112 88 H188");
+}
+
+.animate-hub-key-3 {
+  offset-path: path("M112 88 H148 V136 H188");
+  -webkit-offset-path: path("M112 88 H148 V136 H188");
+}
+
+.animate-hub-file-u1-cloud {
+  offset-path: path("M188 40 H220 V56 H252");
+  -webkit-offset-path: path("M188 40 H220 V56 H252");
+}
+
+.animate-hub-file-u2-local {
+  offset-path: path("M188 88 H220 V120 H252");
+  -webkit-offset-path: path("M188 88 H220 V120 H252");
+}
+
+.animate-hub-file-u3-local {
+  offset-path: path("M188 136 H220 V120 H252");
+  -webkit-offset-path: path("M188 136 H220 V120 H252");
+}
+
+.hero-panel:hover .animate-hub-auth {
+  animation: hub-flow-auth 3.5s ease-in-out infinite;
+}
+
+.hero-panel:hover .animate-hub-key-1,
+.hero-panel:hover .animate-hub-key-2,
+.hero-panel:hover .animate-hub-key-3 {
+  animation: hub-flow-key 3.5s linear infinite;
+}
+
+.hero-panel:hover .animate-hub-key-1 { animation-delay: 0.1s; }
+.hero-panel:hover .animate-hub-key-2 { animation-delay: 0.35s; }
+.hero-panel:hover .animate-hub-key-3 { animation-delay: 0.6s; }
+
+.hero-panel:hover .animate-hub-file-u1-cloud,
+.hero-panel:hover .animate-hub-file-u2-local,
+.hero-panel:hover .animate-hub-file-u3-local {
+  animation: hub-flow-file 3.5s linear infinite;
+}
+
+.hero-panel:hover .animate-hub-file-u1-cloud { animation-delay: 0.95s; }
+.hero-panel:hover .animate-hub-file-u2-local { animation-delay: 1.35s; }
+.hero-panel:hover .animate-hub-file-u3-local { animation-delay: 1.75s; }
 
 .btn-outline-primary {
   @apply border border-primary text-primary;
@@ -87,14 +298,17 @@
 
 .font-h1 {
   @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
+  text-wrap: balance;
 }
 
 .font-h2 {
   @apply font-headline font-medium text-xl md:text-2xl leading-snug;
+  text-wrap: balance;
 }
 
 .font-h3 {
   @apply font-headline text-lg md:text-xl leading-relaxed;
+  text-wrap: balance;
 }
 
 .font-p {

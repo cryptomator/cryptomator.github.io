@@ -322,6 +322,24 @@
   translation: "Kostenlose 30-Tage-Testversion"
 - id: home_header_for_teams_cta
   translation: "Für Teams"
+
+- id: home_hero_question
+  translation: "Wie möchtest du verschlüsseln?"
+- id: home_hero_cryptomator_tagline
+  translation: "Deine Dateien. Deine Privatsphäre."
+- id: home_hero_cryptomator_description
+  translation: "Lass Cloud-Anbieter nicht in deine privaten Dateien schauen. Verschlüssle vor dem Sync – nur du hast Zugriff."
+- id: home_hero_cryptomator_cta
+  translation: "Kostenlos laden"
+- id: home_hero_hub_tagline
+  translation: "Sichere Teams. Kein Passwort-Chaos."
+- id: home_hero_hub_description
+  translation: "Schluss mit Passwörtern auf Klebezetteln. Vergib und entziehe Vault-Zugriff sofort – ohne je einen Schlüssel zu teilen."
+- id: home_hero_hub_cta
+  translation: "Kostenlos testen"
+- id: home_hero_social_proof_audited
+  translation: "Sicherheitsgeprüft"
+
 - id: home_get_started_title
   translation: "Wie wirst du Cryptomator nutzen?"
 - id: home_get_started_for_individuals_title
