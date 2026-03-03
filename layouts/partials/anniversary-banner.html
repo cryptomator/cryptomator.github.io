@@ -1,0 +1,24 @@
+{{- $banner := .Site.Params.anniversaryBanner -}}
+{{- $url := $banner.url | default "https://www.reddit.com/r/Cryptomator/" -}}
+<section class="absolute inset-x-0 top-16 z-40 pointer-events-none" role="region" aria-label="{{ i18n "anniversary_banner_aria_label" . }}">
+  <div class="container py-1.5 md:py-2">
+    <div class="pointer-events-auto mx-auto flex w-full items-center justify-start gap-1 rounded-md bg-primary px-3 py-1.5 text-xs text-white shadow-sm md:justify-center md:gap-3 md:px-4 md:py-2 md:text-sm">
+      {{- if fileExists "static/img/logo-anniversary.svg" -}}
+      <img src="/img/logo-anniversary.svg" class="h-9 w-auto shrink-0 mr-2 md:h-7 md:mr-0" alt="10 years anniversary logo" loading="lazy">
+      {{- else -}}
+      <i class="fa-solid fa-cake-candles text-xl shrink-0 mr-2 md:mr-0" aria-hidden="true"></i>
+      {{- end -}}
+      <p class="m-0 flex flex-wrap items-center justify-start gap-x-1 gap-y-0.5 text-left leading-normal text-white md:justify-center md:text-center">
+        <span class="font-semibold">{{ i18n "anniversary_banner_lead" . }}</span>
+        <span class="hidden text-white/80 md:inline" aria-hidden="true">•</span>
+        {{ with $url }}
+        <a href="{{ . }}" class="font-normal text-white no-underline underline-offset-2 hover:underline focus-visible:underline focus-visible:outline-hidden" target="_blank" rel="noopener" data-umami-event="anniversary-banner-reddit">
+          <span class="md:hidden">{{ i18n "anniversary_banner_cta_mobile" $ }}</span>
+          <span class="hidden md:inline">{{ i18n "anniversary_banner_cta_desktop" $ }}</span>
+          <span class="ml-0.5" aria-hidden="true">→</span>
+        </a>
+        {{ end }}
+      </p>
+    </div>
+  </div>
+</section>
