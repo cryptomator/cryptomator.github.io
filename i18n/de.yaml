@@ -1310,3 +1310,13 @@
   translation: "Die Höhe des Rabatts kann je nach Region variieren."
 - id: pricing_hub_standard_price_first_year
   translation: "im ersten Jahr"
+
+# Anniversary Banner
+- id: anniversary_banner_aria_label
+  translation: "Ankündigung zum 10-jährigen Jubiläum von Cryptomator"
+- id: anniversary_banner_lead
+  translation: "Wir feiern 10 Jahre Cryptomator"
+- id: anniversary_banner_cta_mobile
+  translation: "AMA auf Reddit am 09. März 2026, 16:00 CET"
+- id: anniversary_banner_cta_desktop
+  translation: "AMA auf Reddit am 09. März 2026, 16:00 CET"

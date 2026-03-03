@@ -1,6 +1,13 @@
 # set to true in frontmatter if required
 math: false
 
+anniversaryBanner:
+  enabled: true
+  excludePaths:
+    - /downloads-thanks/
+    - /paddle-checkout/
+    - /hub/billing/
+
 releases:
   exe:
     version: 1.18.1

@@ -64,8 +64,26 @@
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    {{- $anniversaryBanner := .Site.Params.anniversaryBanner -}}
+    {{- $showAnniversaryBanner := false -}}
+    {{- if and $anniversaryBanner $anniversaryBanner.enabled -}}
+      {{- $showAnniversaryBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $anniversaryBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showAnniversaryBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "anniversaryBannerActive" $showAnniversaryBanner -}}
     {{ partial "nav.html" . }}
+    {{- if $showAnniversaryBanner -}}
+      {{ partial "anniversary-banner.html" . }}
+    {{- end -}}
     {{- $topPadding := cond .IsHome "" "pt-12" -}}
+    {{- if $showAnniversaryBanner -}}
+      {{- $topPadding = cond .IsHome "" "pt-28 md:pt-24" -}}
+    {{- end -}}
     <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
