@@ -3,7 +3,6 @@ math: false
 
 anniversaryBanner:
   enabled: true
-  url: https://www.reddit.com/r/Cryptomator/
   excludePaths:
     - /downloads-thanks/
     - /paddle-checkout/
