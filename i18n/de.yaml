@@ -34,6 +34,8 @@
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub zu erhalten, und akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_hub_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
+- id: accept_hub_managed_early_access_optional
+  translation: "Early access"
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
