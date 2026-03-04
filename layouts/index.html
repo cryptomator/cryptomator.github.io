@@ -56,6 +56,132 @@
     </header>
   </section>
 
+  <section class="container py-6 md:py-10" aria-label="Cryptomator network visualization">
+    <div class="pcb-network" aria-hidden="true">
+      <div class="pcb-network__layer pcb-network__layer--bg"></div>
+
+      <div class="pcb-network__layer pcb-network__layer--traces">
+        <svg class="pcb-network__svg pcb-network__svg--back" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M46 16 L46 34 L22 34 L22 46"></path>
+          <path d="M50 16 L50 46"></path>
+          <path d="M54 16 L54 34 L78 34 L78 46"></path>
+          <path d="M22 46 L14 46 L14 62"></path>
+          <path d="M22 46 L32 46 L32 62"></path>
+          <path d="M50 46 L50 62"></path>
+          <path d="M78 46 L68 46 L68 62"></path>
+          <path d="M78 46 L86 46 L86 62"></path>
+          <path d="M12 12 L38 12 L38 28"></path>
+          <path d="M62 12 L88 12 L88 30"></path>
+          <path d="M6 32 L18 32 L18 58"></path>
+          <path d="M94 34 L86 34 L86 62"></path>
+          <path d="M20 62 L40 62 L40 88"></path>
+          <path d="M60 62 L76 62 L76 88"></path>
+          <path d="M12 86 L34 86"></path>
+          <path d="M52 86 L88 86"></path>
+          <path d="M34 52 L58 52"></path>
+          <path d="M70 24 L70 40"></path>
+          <path d="M16 70 L24 70"></path>
+          <path d="M72 70 L86 70"></path>
+          <path d="M4 18 L14 18 L14 10"></path>
+          <path d="M24 10 L24 22 L34 22"></path>
+          <path d="M40 8 L52 8 L52 18"></path>
+          <path d="M58 8 L72 8 L72 18"></path>
+          <path d="M90 10 L90 22 L96 22"></path>
+          <path d="M4 44 L12 44 L12 56"></path>
+          <path d="M14 60 L26 60 L26 72"></path>
+          <path d="M34 66 L34 82 L44 82"></path>
+          <path d="M48 60 L56 60 L56 74"></path>
+          <path d="M68 60 L68 76 L78 76"></path>
+          <path d="M88 58 L96 58 L96 74"></path>
+          <path d="M6 92 L22 92"></path>
+          <path d="M30 92 L46 92"></path>
+          <path d="M54 92 L70 92"></path>
+          <path d="M78 92 L94 92"></path>
+          <path d="M38 36 L44 36 L44 48"></path>
+          <path d="M56 36 L62 36 L62 48"></path>
+          <path d="M74 52 L74 64"></path>
+        </svg>
+
+        <svg class="pcb-network__svg pcb-network__svg--front" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M50 16 L84 16"></path>
+          <path d="M50 16 L54 16 L54 34 L78 34 L78 46"></path>
+          <path d="M50 16 L46 16 L46 34 L22 34 L22 46"></path>
+          <path d="M50 16 L50 46"></path>
+          <path d="M22 46 L14 46 L14 62"></path>
+          <path d="M22 46 L32 46 L32 62"></path>
+          <path d="M50 46 L50 62"></path>
+          <path d="M78 46 L68 46 L68 62"></path>
+          <path d="M78 46 L86 46 L86 62"></path>
+        </svg>
+
+        <div class="pcb-network__via pcb-network__via--a"></div>
+        <div class="pcb-network__via pcb-network__via--b"></div>
+        <div class="pcb-network__via pcb-network__via--c"></div>
+
+        <div class="pcb-network__bit pcb-network__bit--route-a" style="--delay: -0.0s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-b" style="--delay: -0.9s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-c" style="--delay: -1.8s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-d" style="--delay: -2.7s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-e" style="--delay: -3.6s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-g" style="--delay: -5.4s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-h" style="--delay: -6.3s;"></div>
+        <div class="pcb-network__bit pcb-network__bit--route-i" style="--delay: -7.2s;"></div>
+      </div>
+
+      <div class="pcb-network__layer pcb-network__layer--nodes">
+        <div class="pcb-node pcb-node--hub">
+          <img src="/img/hub/heimdal.png" alt="" class="pcb-node__hub-logo">
+          <span class="pcb-node__tag">CRYPTOMATOR HUB</span>
+        </div>
+
+        <div class="pcb-node pcb-node--client-a">
+          <img src="/img/hub/Vault-Icon.png" alt="" class="pcb-node__logo">
+          <span class="pcb-node__tag">Vault A</span>
+        </div>
+
+        <div class="pcb-node pcb-node--client-b">
+          <img src="/img/hub/Vault-Icon.png" alt="" class="pcb-node__logo">
+          <span class="pcb-node__tag">Vault B</span>
+        </div>
+
+        <div class="pcb-node pcb-node--client-c">
+          <img src="/img/hub/Vault-Icon.png" alt="" class="pcb-node__logo">
+          <span class="pcb-node__tag">Vault C</span>
+        </div>
+
+        <div class="pcb-node pcb-node--user-a">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span class="pcb-node__tag">User 1</span>
+        </div>
+
+        <div class="pcb-node pcb-node--user-b">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span class="pcb-node__tag">User 2</span>
+        </div>
+
+        <div class="pcb-node pcb-node--user-c">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span class="pcb-node__tag">User 3</span>
+        </div>
+
+        <div class="pcb-node pcb-node--user-d">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span class="pcb-node__tag">User 4</span>
+        </div>
+
+        <div class="pcb-node pcb-node--user-e">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span class="pcb-node__tag">User 5</span>
+        </div>
+
+        <div class="pcb-node pcb-node--keycloak">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          <span class="pcb-node__tag">Keycloak</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div>
     {{ .Content }}
   </div>
