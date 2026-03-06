@@ -1,8 +1,8 @@
 ---
-title: "10 years of Cryptomator – Thank you all"
+title: "10 Years of Cryptomator – Thank You All"
 slug: 10-years-cryptomator
-date: 2026-03-06
-notice: 
+date: 2026-03-09
+publishDate: 2026-03-06
 tags: [cryptomator, anniversary]
 
 summary: "For Cryptomator’s 10th anniversary, we look back at key milestones, celebrate community voices, and share what’s next—including our AMA, new features, and a special anniversary sale."
@@ -21,9 +21,13 @@ What once began as a small idea has become **a tool trusted by millions of peopl
 
 Today, we are not only celebrating an anniversary. We are looking back on the history of Cryptomator, saying thank you to all our supporters, and looking ahead to what the future holds for the Cryptomator project.
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-cryptomator.png" alt="10 Years of Cryptomator – Thank You All" />
+</figure>
+
 ## How It All Began
 
-About ten years ago, **cloud storage** became part of everyday life. Dropbox, Google Drive, OneDrive, and many others promised convenience: anytime access to files, easy sharing, seamless collaboration. And they delivered exactly that—but at a hidden price: the surrender of your privacy. Analyzing the uploaded data.
+About ten years ago, **cloud storage** became part of everyday life. Dropbox, Google Drive, OneDrive, and many others promised convenience: anytime access to files, easy sharing, seamless collaboration. And they delivered exactly that—but at a hidden price: the surrender of your privacy – the analysis of uploaded data.
 
 The only protection against this was encryption. But **encryption was either non-existent, optional, or so complicated** that it was not a realistic option for many people. Using the cloud often meant **relinquishing control over your own data**, often without really noticing.
 
@@ -127,7 +131,7 @@ This is particularly important for reducing conflicts or data loss when files ar
 
 **New Cryptomator logo for iOS (desktop & mobile)**
 
-To mark its anniversary, Cryptomator is also getting a minor visual update: **A new Cryptomator logo is appearing on iOS**—both in the **mobile app** and in the **deskto
+To mark its anniversary, Cryptomator is also getting a minor visual update: **A new Cryptomator logo is appearing on iOS**—both in the **mobile app** and in the **desktop application**.
 
 ## Voices From the Community
 
@@ -171,7 +175,7 @@ As part of our 10th anniversary celebration, we are hosting an **Ask Me Anything
 
 📅 March 9, 2026  
 🕓 4:00 p.m. CET  
-📍 r/Cryptomator
+📍 [r/Cryptomator](https://www.reddit.com/r/Cryptomator/comments/1rjt0yh/join_our_10year_anniversary_ama_with_the/)
 
 **Tobias Hagemann** (CEO) and **Sebastian Stenzel** (CTO) will answer your questions live.
 

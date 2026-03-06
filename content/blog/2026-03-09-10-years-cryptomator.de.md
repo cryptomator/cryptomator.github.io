@@ -1,9 +1,9 @@
 ---
 title: "10 Jahre Cryptomator – Danke an euch"
 slug: 10-jahre-cryptomator
-date: 2026-03-06
-notice: 
-tags: [cryptomator, Jubiläum]
+date: 2026-03-09
+publishDate: 2026-03-06
+tags: [cryptomator, anniversary]
 
 summary: "Zum 10. Jubiläum blicken wir auf die wichtigsten Meilensteine von Cryptomator zurück, teilen Community-Stimmen und zeigen, was als Nächstes kommt – inklusive AMA, neuer Features und Jubiläums-Sale."
 
@@ -19,11 +19,15 @@ Es fühlt sich unwirklich an, diesen Satz zu lesen.
 
 Was einst als kleine Idee begann, ist zu **einem Werkzeug** geworden, dem **Millionen Menschen weltweit vertrauen**. Menschen mit ganz unterschiedlichen Hintergründen und Geschichten: Journalist:innen, die ihre Quellen schützen. NGOs, die sensible Informationen sichern. Forschende, Studierende, Selbstständige, Unternehmen – alle **vereint durch ein gemeinsames Bedürfnis**: ihre Daten in einer zunehmend vernetzten Welt privat zu halten.
 
-Heute feiern wir nicht nur ein Jubiläum. Wir blicken zurück auf die Geschichte von Cryptomator, sagen Danke an alle Unterstützer:innen und  schauen noch vorne, was für die Zukunft für das Cryptomator Projekt bereithält.
+Heute feiern wir nicht nur ein Jubiläum. Wir blicken zurück auf die Geschichte von Cryptomator, sagen Danke an alle Unterstützer:innen und schauen nach vorne, was die Zukunft für das Cryptomator-Projekt bereithält.
+
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-cryptomator.png" alt="10 Jahre Cryptomator – Danke an euch" />
+</figure>
 
 ## Wie alles begann
 
-Vor etwa zehn Jahren waren **Cloud-Speicher** im Alltag angekommen. Dropbox, Google Drive, OneDrive und viele andere versprachen Komfort: jederzeit Zugriff auf Dateien, einfache Freigaben, nahtlose Zusammenarbeit. Und sie lieferten genau das – jedoch mit einem versteckten Preis: Die Aufgabe deiner PrivatDas Analysieren der hochgeladenen Daten.
+Vor etwa zehn Jahren waren **Cloud-Speicher** im Alltag angekommen. Dropbox, Google Drive, OneDrive und viele andere versprachen Komfort: jederzeit Zugriff auf Dateien, einfache Freigaben, nahtlose Zusammenarbeit. Und sie lieferten genau das – jedoch mit einem versteckten Preis: Die Aufgabe deiner Privatsphäre – das Analysieren der hochgeladenen Daten.
 
 Schutz davor versprach nur Verschlüsselung. Doch **Verschlüsselung war entweder nicht vorhanden, optional oder so kompliziert**, dass sie für viele Menschen keine realistische Option darstellte. Die Cloud zu nutzen bedeutete häufig, **die Kontrolle über die eigenen Daten abzugeben**, oft ohne es wirklich zu bemerken.
 
@@ -35,7 +39,7 @@ Cryptomator entstand aus genau diesem Spannungsfeld.
 
 Von Anfang an wurde Cryptomator als **Open-Source-Software** entwickelt. Transparenz war kein Marketingversprechen, sondern Voraussetzung. Jede und jeder konnte nachvollziehen, wie die Verschlüsselung funktioniert, auf Schwachstellen prüfen und Verbesserungen beitragen.
 
-> “Zu Beginn war Open Source sogar unser wichtigstes Alleinstellungsmerkmal gegenüber unserem Hauptkonkurrenten Boxcryptor – ich wollte schlichtweg nicht blind vertrauen. Open Source bedeutet theoretisch: Man muss uns gar nicht vertrauen. Und neue Verfahren wie Provenance Attestation – also kryptografische Nachweise darüber, wie ein Build entstanden ist – kann zukünftig auch die Integrität von bereits herstellerseitig kompilierter Software sicherstellen.“
+> „Zu Beginn war Open Source sogar unser wichtigstes Alleinstellungsmerkmal gegenüber unserem Hauptkonkurrenten Boxcryptor – ich wollte schlichtweg nicht blind vertrauen. Open Source bedeutet theoretisch: Man muss uns gar nicht vertrauen. Und neue Verfahren wie Provenance Attestation – also kryptografische Nachweise darüber, wie ein Build entstanden ist – kann zukünftig auch die Integrität von bereits herstellerseitig kompilierter Software sicherstellen.“
 >
 > — Sebastian Stenzel, CTO
 
@@ -121,9 +125,9 @@ Das **verbessert besonders in organisatorischen Kontexten die Ausfallsicherheit*
 
 Auch in der Desktop-Anwendung gibt es ein neues Feature mit **Update 1.19.0**, das für Hub-Tresore wichtig ist: **„Files-in-Use“**.
 
-Ist eine Datei in ein Hub Tresor auf einem Gerät geöffnet, dann werden andere Benutzer beim Öffnen auf ihren Geräten durch eine Benachrichtigung gewarnt.
+Ist eine Datei in einem Hub-Tresor auf einem Gerät geöffnet, dann werden andere Benutzer beim Öffnen auf ihren Geräten durch eine Benachrichtigung gewarnt.
 
-Das ist besonders wichtig, um Konflikte oder Datenverlust zu reduzieren, wenn Dateien gleichzeitig bearbeitet und verbessert die Zusammenarbeit in Teams.
+Das ist besonders wichtig, um Konflikte oder Datenverlust zu reduzieren, wenn Dateien gleichzeitig bearbeitet werden, und verbessert die Zusammenarbeit in Teams.
 
 **Neues Cryptomator-Logo für iOS (Desktop & Mobile)**
 
@@ -134,13 +138,13 @@ Zum Jubiläum bekommt Cryptomator auch ein kleines visuelles Update: **Auf iOS e
 > „Inzwischen freue ich mich vor allem, wenn ich in freier Wildbahn über Nutzer\*innen stolpere oder Berichte lese.“   
 > — Sebastian Stenzel, CTO
 
-In den vergangenen 10 Jahren ist Cryptomator weit mehr geworden als nur ein Verschlüsselungstool. Für viele Menschen ist es heute ein **fester Bestandteil ihres Arbeitsalltags** und ihres Sicherheitskonzepts. Durch Cryptomator haben Sie ein gutes Gefühl, wenn es um den Schutz ihrer Daten geht. Hier sind einige Stimmen aus unserer Community:
+In den vergangenen 10 Jahren ist Cryptomator weit mehr geworden als nur ein Verschlüsselungstool. Für viele Menschen ist es heute ein **fester Bestandteil ihres Arbeitsalltags** und ihres Sicherheitskonzepts. Durch Cryptomator haben sie ein gutes Gefühl, wenn es um den Schutz ihrer Daten geht. Hier sind einige Stimmen aus unserer Community:
 
 > „Ich wollte einfach nur Danke sagen für dieses großartige Tool!“  
->  — Luke (@nuk3, Mastodon)
+> — Luke (@nuk3, Mastodon)
 
 > „Deshalb liebe ich Cryptomator: Die Dateien sind verschlüsselt und selbst wenn der Cloud-Anbieter ein Datenleck hat, weiß ich, dass meine Dateien sicher sind.“  
->  — mbeddedDev (Mastodon)
+> — mbeddedDev (Mastodon)
 
 > Auch hier gilt: Cryptomator ist kostenlos nutzbar. Wer also das Programm unterstützen kann, sollte dies auf jeden Fall tun. Es ist eine großartige Software.  
 > — Techlore (YouTube)
@@ -148,7 +152,7 @@ In den vergangenen 10 Jahren ist Cryptomator weit mehr geworden als nur ein Vers
 Für viele Nutzer:innen macht vor allem die **Kombination aus Transparenz und Benutzerfreundlichkeit** den Unterschied:
 
 > „Open Source und weit verbreitet, geprüft und stabil, mit einer schönen und einfachen Oberfläche. Für Cloud-Speicher ist es immer meine erste allgemeine Empfehlung.“  
->  — Fit_Flower_8982 (Reddit)
+> — Fit_Flower_8982 (Reddit)
 
 Auch Organisationen und Unternehmen setzen auf unsere Verschlüsselungslösung, allen voran auf **Cryptomator Hub**:
 
@@ -158,10 +162,10 @@ Auch Organisationen und Unternehmen setzen auf unsere Verschlüsselungslösung, 
 Und für viele Nutzer:innen gehört Cryptomator inzwischen einfach zum **Alltag**:
 
 > „Ich schlafe nachts ruhig, weil ich weiß, dass meine Dateien privat und sicher sind – egal, wo sie gespeichert oder gesichert werden.“  
->  — @paired_electron (X)
+> — @paired_electron (X)
 
 > „Auf meinem iPad funktioniert alles mühelos … biometrische Anmeldung oder Passwort direkt auf demselben Bildschirm ist eine tolle Lösung.“  
->  — Jack Ouzzi (App-Store)
+> — Jack Ouzzi (App-Store)
 
 Egal ob auf Desktop oder Smartphone, privat oder im Unternehmen – das Vertrauen, das Feedback und die Unterstützung unserer Community haben Cryptomator zu dem gemacht, was es heute ist. Vielen Dank dafür!
 
