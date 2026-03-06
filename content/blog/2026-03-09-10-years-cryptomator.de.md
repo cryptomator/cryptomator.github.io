@@ -93,9 +93,9 @@ XXX
 
 ## Was kommt jetzt? – Neue Updates & Features 
 
-### Neue Cryptomator Hub Features – Beta / Jubiläums-Launch
+### Neue Cryptomator Hub Features – Early Access / Jubiläums-Launch
 
-Im Rahmen des 10. Jubiläums gehen **mehrere zentrale Erweiterungen für Cryptomator Hub in eine Beta-Phase** bzw. werden erstmals öffentlich verfügbar gemacht. Diese sollen Teams und Organisationen mehr Kontrolle, Sicherheit und Flexibilität geben.
+Im Rahmen des 10. Jubiläums gehen **mehrere zentrale Erweiterungen für Cryptomator Hub in eine Early-Access-Phase** bzw. werden erstmals öffentlich verfügbar gemacht. Diese sollen Teams und Organisationen mehr Kontrolle, Sicherheit und Flexibilität geben. Zum Jubiläum bieten wir eine besondere **100-tägige kostenlose Testphase** (statt der üblichen 30 Tage) für [Cryptomator Hub Managed](/de/hub/managed/) an. Weitere Details gibt es in der [Early-Access-Dokumentation](https://docs.cryptomator.org/hub/early-access/).
 
 **User & Group Management** 
 
@@ -106,8 +106,12 @@ Damit können Administrator:innen:
 - Gruppen anlegen und Rollen zuweisen
 - Rechte strukturierter und granular vergeben
 
-Das ermöglicht eine **bessere Kontrolle über Zugriffe innerhalb von Teams und Organisationen**, was besonders wichtig bei größeren Gruppen oder Abteilungen ist. Diese Funktion markiert einen wichtigen Schritt von einfacher Zugangskontrolle hin zu einer echten Team- und Organisations-Rolle-Verwaltung.  
-  
+Das ermöglicht eine **bessere Kontrolle über Zugriffe innerhalb von Teams und Organisationen**, was besonders wichtig bei größeren Gruppen oder Abteilungen ist. Diese Funktion markiert einen wichtigen Schritt von einfacher Zugangskontrolle hin zu einer echten Team- und Organisations-Rolle-Verwaltung.
+
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-user-management-preview.png" alt="Cryptomator Hub – User/Group Management Vorschau" />
+</figure>
+
 **Emergency Access** 
 
 Ein weiterer großer Schritt: **Emergency Access** wird eingeführt.  
@@ -118,6 +122,10 @@ Damit lassen sich:
 - Zugriff im Falle verlorener Zugangsdaten oder Schlüssel ermöglichen
 
 Das **verbessert besonders in organisatorischen Kontexten die Ausfallsicherheit** und stellt sicher, dass kein Datenzugriff verloren geht, selbst wenn Individuen nicht mehr verfügbar sind.
+
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-emergency-access-preview.png" alt="Cryptomator Hub – Emergency Access Vorschau" />
+</figure>
 
 ### Cryptomator Desktop und iOS
 

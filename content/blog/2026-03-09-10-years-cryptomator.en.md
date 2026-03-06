@@ -93,9 +93,9 @@ XXX
 
 ## What’s Next? – New Updates & Features
 
-### New Cryptomator Hub Features – Beta / Anniversary Launch
+### New Cryptomator Hub Features – Early Access / Anniversary Launch
 
-As part of its 10th anniversary, **several key enhancements for Cryptomator Hub are entering a beta phase** or being made publicly available for the first time. These are designed to give teams and organizations more control, security, and flexibility.
+As part of its 10th anniversary, **several key enhancements for Cryptomator Hub are entering early access** or being made publicly available for the first time. These are designed to give teams and organizations more control, security, and flexibility. To celebrate, we're offering a special **100-day free trial** (instead of the usual 30 days) for [Cryptomator Hub Managed](/hub/managed/). For more details, check out the [Early Access documentation](https://docs.cryptomator.org/hub/early-access/).
 
 **User & Group Management**
 
@@ -108,6 +108,10 @@ This allows administrators to:
 
 This enables **better control over access within teams and organizations**, which is particularly important for larger groups or departments. This feature marks an important step from simple access control to true team and organizational role management.
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-user-management-preview.png" alt="Cryptomator Hub – User/Group Management Preview" />
+</figure>
+
 **Emergency Access**
 
 Another big step: **Emergency Access** is being introduced.  
@@ -118,6 +122,10 @@ This allows you to:
 - Enable access in case of lost access data or keys
 
 This **improves reliability, especially in organizational contexts**, and ensures that no data access is lost, even if individuals are no longer available.
+
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-emergency-access-preview.png" alt="Cryptomator Hub – Emergency Access Preview" />
+</figure>
 
 ### Cryptomator Desktop and iOS
 
