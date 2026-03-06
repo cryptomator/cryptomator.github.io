@@ -34,6 +34,8 @@
   translation: "I agree to get updates from Cryptomator Hub and accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_hub_newsletter_optional
   translation: "I agree to get updates from Cryptomator Hub via email (optional)."
+- id: accept_hub_managed_early_access_optional
+  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">BETA</span> Try out <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">early access of Cryptomator Hub 1.5.0</a> with brand new features and an extended 100-day trial (optional)."
 - id: accept_privacy
   translation: "I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
@@ -612,6 +614,19 @@
   translation: "Payments are securely handled by Paddle."
 - id: hub_billing_checkout_standard_submit
   translation: "Checkout"
+
+- id: hub_billing_checkout_community_title
+  translation: "Community"
+- id: hub_billing_checkout_community_statement
+  translation: "Free"
+- id: hub_billing_checkout_community_description
+  translation: "up to 5 seats included"
+- id: hub_billing_checkout_community_subtitle
+  translation: "Get Started for Free"
+- id: hub_billing_checkout_community_cta
+  translation: "Your Hub instance supports the Community Edition. Register for a free license with up to 5 seats."
+- id: hub_billing_checkout_community_action
+  translation: "Register for Free"
 
 - id: hub_billing_checkout_enterprise_title
   translation: "Enterprise"
