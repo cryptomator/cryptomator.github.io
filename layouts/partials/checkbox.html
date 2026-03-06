@@ -1,3 +1,5 @@
 {{ $unique_id := printf "id-%s" (delimit (shuffle (seq 1 9)) "") }}
-<input class="mr-1 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="{{ $unique_id }}" x-model="{{ .alpineVariable }}" />
-<label for="{{ $unique_id }}">{{ .label }}</label>
+{{/* pl-6 + -indent-6: wrapped lines align with text, not checkbox. [&_*]:indent-0: reset for child elements (e.g. pills). */}}
+<label class="inline-block pl-6 -indent-6 [&_*]:indent-0" for="{{ $unique_id }}">
+  <input class="mr-2 rounded-sm text-primary focus:ring-0 focus:ring-offset-0 focus:border-secondary" type="checkbox" id="{{ $unique_id }}" x-model="{{ .alpineVariable }}" />{{ .label | safeHTML }}
+</label>
