@@ -24,9 +24,9 @@ class HubSubscription {
       }
     }
     this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
-    let encodedReturnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
-    if (encodedReturnUrl) {
-      this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);
+    let returnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
+    if (returnUrl) {
+      this._subscriptionData.returnUrl = returnUrl;
     }
     this._subscriptionData.session = searchParams.get('session');
     if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
