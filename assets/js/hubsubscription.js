@@ -28,7 +28,7 @@ class HubSubscription {
     if (encodedReturnUrl) {
       this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);
     }
-    this._subscriptionData.session = fragmentParams.get('session') ?? searchParams.get('session');
+    this._subscriptionData.session = searchParams.get('session');
     if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
       this._subscriptionData.state = 'LOADING';
       this.loadSubscription();
