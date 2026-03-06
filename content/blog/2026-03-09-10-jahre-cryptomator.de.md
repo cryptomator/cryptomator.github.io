@@ -1,11 +1,11 @@
 ---
 title: "10 Jahre Cryptomator – Danke an euch"
 slug: 10-jahre-cryptomator
-date: 2026-03-09
+date: 2026-03-06
 notice: 
 tags: [cryptomator, Jubiläum]
 
-summary: "xx"
+summary: "Zum 10. Jubiläum blicken wir auf die wichtigsten Meilensteine von Cryptomator zurück, teilen Community-Stimmen und zeigen, was als Nächstes kommt – inklusive AMA, neuer Features und Jubiläums-Sale."
 
 ogimage:
   relsrc: /img/blog/10-years-cryptomator.png
@@ -85,9 +85,11 @@ Cryptomator erreicht neue Zielgruppen durch größere Medienpräsenz und Empfehl
 
 ## Logo-Evolution: Von der “Waschmaschine” zum Cryptobot
 
+XXX
+
 ## Was kommt jetzt? – Neue Updates & Features 
 
-##### Neue Cryptomator Hub Features – Beta / Jubiläums-Launch
+### Neue Cryptomator Hub Features – Beta / Jubiläums-Launch
 
 Im Rahmen des 10. Jubiläums gehen **mehrere zentrale Erweiterungen für Cryptomator Hub in eine Beta-Phase** bzw. werden erstmals öffentlich verfügbar gemacht. Diese sollen Teams und Organisationen mehr Kontrolle, Sicherheit und Flexibilität geben.
 
@@ -113,7 +115,7 @@ Damit lassen sich:
 
 Das **verbessert besonders in organisatorischen Kontexten die Ausfallsicherheit** und stellt sicher, dass kein Datenzugriff verloren geht, selbst wenn Individuen nicht mehr verfügbar sind.
 
-##### Cryptomator Desktop und iOS
+### Cryptomator Desktop und iOS
 
 **Files-in-Use (Dateien in Verwendung)**
 

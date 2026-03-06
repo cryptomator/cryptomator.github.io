@@ -1,11 +1,11 @@
 ---
 title: "10 years of Cryptomator – Thank you all"
 slug: 10-years-cryptomator
-date: 2026-03-09
+date: 2026-03-06
 notice: 
 tags: [cryptomator, anniversary]
 
-summary: "xx"
+summary: "For Cryptomator’s 10th anniversary, we look back at key milestones, celebrate community voices, and share what’s next—including our AMA, new features, and a special anniversary sale."
 
 ogimage:
   relsrc: /img/blog/10-years-cryptomator.png
@@ -85,9 +85,11 @@ Cryptomator reaches new target groups through greater media presence and recomme
 
 ## Logo Evolution: From the “Washing Machine” to the Cryptobot
 
+XXX
+
 ## What’s Next? – New Updates & Features
 
-##### New Cryptomator Hub Features – Beta / Anniversary Launch
+### New Cryptomator Hub Features – Beta / Anniversary Launch
 
 As part of its 10th anniversary, **several key enhancements for Cryptomator Hub are entering a beta phase** or being made publicly available for the first time. These are designed to give teams and organizations more control, security, and flexibility.
 
@@ -113,7 +115,7 @@ This allows you to:
 
 This **improves reliability, especially in organizational contexts**, and ensures that no data access is lost, even if individuals are no longer available.
 
-##### Cryptomator Desktop and iOS
+### Cryptomator Desktop and iOS
 
 **Files in Use**
 
@@ -123,9 +125,9 @@ If a file is open in a Hub vault on one device, other users are notified when th
 
 This is particularly important for reducing conflicts or data loss when files are being edited simultaneously and improves collaboration in teams.
 
-**New icon for iOS**
+**New Cryptomator logo for iOS (desktop & mobile)**
 
-XXX
+To mark its anniversary, Cryptomator is also getting a minor visual update: **A new Cryptomator logo is appearing on iOS**—both in the **mobile app** and in the **deskto
 
 ## Voices From the Community
 
