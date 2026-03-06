@@ -15,8 +15,13 @@ class HubSubscription {
     let fragmentParams = new URLSearchParams(location.hash.substring(1));
     this._subscriptionData.hubToken = fragmentParams.get('oldLicense');
     if (this._subscriptionData.hubToken) {
-      let base64 = this._subscriptionData.hubToken.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
-      this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
+      try {
+        let base64 = this._subscriptionData.hubToken.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+        this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
+      } catch (e) {
+        console.error('Failed to parse hub token:', e);
+        this._subscriptionData.hubToken = null;
+      }
     }
     this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
     let encodedReturnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
