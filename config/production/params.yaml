@@ -1,6 +1,7 @@
 # API
 apiBaseUrl: https://api.cryptomator.org
 legacyStoreUrl: https://store.cryptomator.org/api
+hubManagedDomain: cryptomator.cloud
 
 # UMAMI
 umamiWebsiteId: 8d451e39-ffb2-4697-82c9-9f69eff497f1
