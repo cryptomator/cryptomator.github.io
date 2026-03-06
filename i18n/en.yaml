@@ -615,6 +615,19 @@
 - id: hub_billing_checkout_standard_submit
   translation: "Checkout"
 
+- id: hub_billing_checkout_community_title
+  translation: "Community"
+- id: hub_billing_checkout_community_statement
+  translation: "Free"
+- id: hub_billing_checkout_community_description
+  translation: "up to 5 seats included"
+- id: hub_billing_checkout_community_subtitle
+  translation: "Get Started for Free"
+- id: hub_billing_checkout_community_cta
+  translation: "Your Hub instance supports the Community Edition. Register for a free license with up to 5 seats."
+- id: hub_billing_checkout_community_action
+  translation: "Register for Free"
+
 - id: hub_billing_checkout_enterprise_title
   translation: "Enterprise"
 - id: hub_billing_checkout_enterprise_statement

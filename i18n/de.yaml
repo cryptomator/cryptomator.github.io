@@ -615,6 +615,19 @@
 - id: hub_billing_checkout_standard_submit
   translation: "Zur Zahlung"
 
+- id: hub_billing_checkout_community_title
+  translation: "Community"
+- id: hub_billing_checkout_community_statement
+  translation: "Kostenlos"
+- id: hub_billing_checkout_community_description
+  translation: "bis zu 5 Sitze inklusive"
+- id: hub_billing_checkout_community_subtitle
+  translation: "Kostenlos starten"
+- id: hub_billing_checkout_community_cta
+  translation: "Deine Hub-Instanz unterstützt die Community Edition. Registriere dich für eine kostenlose Lizenz mit bis zu 5 Sitzen."
+- id: hub_billing_checkout_community_action
+  translation: "Kostenlos registrieren"
+
 - id: hub_billing_checkout_enterprise_title
   translation: "Enterprise"
 - id: hub_billing_checkout_enterprise_statement

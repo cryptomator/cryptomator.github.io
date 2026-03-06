@@ -12,12 +12,18 @@ class HubSubscription {
   constructor(form, subscriptionData, searchParams) {
     this._form = form;
     this._subscriptionData = subscriptionData;
-    this._subscriptionData.hubId = searchParams.get('hub_id');
-    let encodedReturnUrl = searchParams.get('return_url');
-    if (encodedReturnUrl) {
-      this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);  
+    let fragmentParams = new URLSearchParams(location.hash.substring(1));
+    this._subscriptionData.hubToken = fragmentParams.get('oldLicense');
+    if (this._subscriptionData.hubToken) {
+      let base64 = this._subscriptionData.hubToken.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+      this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
     }
-    this._subscriptionData.session = searchParams.get('session');
+    this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
+    let encodedReturnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
+    if (encodedReturnUrl) {
+      this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);
+    }
+    this._subscriptionData.session = fragmentParams.get('session') ?? searchParams.get('session');
     if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
       this._subscriptionData.state = 'LOADING';
       this.loadSubscription();

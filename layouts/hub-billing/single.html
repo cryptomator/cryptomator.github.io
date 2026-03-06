@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, hubToken: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -314,7 +314,8 @@
             <h1 class="font-h1 mb-8">{{ .Title }}</h1>
             <p class="lead">{{ i18n "hub_billing_checkout_description" . }}</p>
           </header>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+          <div class="grid grid-cols-1 gap-4 mb-12" :class="subscriptionData.hubToken && !subscriptionData.customBilling?.managed ? 'md:grid-cols-3' : 'md:grid-cols-2'">
+            <div x-show="subscriptionData.hubToken && !subscriptionData.customBilling?.managed" class="hidden md:block"></div>
             <div class="flex justify-center">
               <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'business'}" @click.prevent="audience = 'business'">
                 <i class="fa-building" :class="{'fas': audience === 'business', 'far': audience !== 'business'}"></i>
@@ -326,6 +327,40 @@
               </button>
             </div>
             <div class="hidden md:block"></div>
+            <div x-show="subscriptionData.hubToken && !subscriptionData.customBilling?.managed" class="flex flex-col white-box">
+              <div class="p-4 border-b border-primary">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
+                  {{ i18n "hub_billing_checkout_community_title" . }}
+                </h2>
+                <div x-show="!subscriptionData.customBilling?.override?.prices" class="lg:h-[22px]"></div>
+                <p class="text-5xl font-bold">
+                  {{ i18n "hub_billing_checkout_community_statement" . }}
+                </p>
+                <p class="text-lg text-gray-500 mb-4">
+                  {{ i18n "hub_billing_checkout_community_description" . }}
+                </p>
+              </div>
+              <div class="grow">
+                <div class="flex flex-col items-center text-center h-full px-4 py-8">
+                  <h3 class="font-h3 mb-4 md:mb-0">
+                    {{ i18n "hub_billing_checkout_community_subtitle" . }}
+                  </h3>
+                  <div class="mb-4 md:my-auto lg:max-w-sm">
+                    <div class="fa-stack text-5xl text-primary-l2 mb-4">
+                      <i class="fa-solid fa-circle fa-stack-2x"></i>
+                      <i class="fa-solid fa-people-group fa-stack-1x text-primary"></i>
+                    </div>
+                    <p class="font-p">
+                      {{ i18n "hub_billing_checkout_community_cta" . }}
+                    </p>
+                  </div>
+                  <a :href="`{{ "hub/register" | relLangURL }}#oldLicense=${encodeURIComponent(subscriptionData.hubToken)}&returnUrl=${encodeURIComponent(subscriptionData.returnUrl)}`" role="button" class="btn btn-primary w-full">
+                    <i class="fa-solid fa-user-plus"></i>
+                    {{ i18n "hub_billing_checkout_community_action" . }}
+                  </a>
+                </div>
+              </div>
+            </div>
             <div class="white-box">
               <div class="p-4 border-b border-primary">
                 <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark mb-4">
@@ -407,7 +442,7 @@
                   </p>
                   <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
                   <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
-                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full lg:w-1/2">
+                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full" :class="!(subscriptionData.hubToken && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                     <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_billing_checkout_standard_submit" . }}
                   </button>
@@ -442,7 +477,7 @@
                       {{ i18n "hub_billing_checkout_enterprise_cta" . }}
                     </p>
                   </div>
-                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2">
+                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full" :class="!(subscriptionData.hubToken && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                     <i class="fa-solid fa-envelope"></i>
                     {{ i18n "hub_billing_checkout_enterprise_action" . }}
                   </a>
