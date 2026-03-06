@@ -13,14 +13,14 @@ class HubSubscription {
     this._form = form;
     this._subscriptionData = subscriptionData;
     let fragmentParams = new URLSearchParams(location.hash.substring(1));
-    this._subscriptionData.hubToken = fragmentParams.get('oldLicense');
-    if (this._subscriptionData.hubToken) {
+    this._subscriptionData.oldLicense = fragmentParams.get('oldLicense');
+    if (this._subscriptionData.oldLicense) {
       try {
-        let base64 = this._subscriptionData.hubToken.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+        let base64 = this._subscriptionData.oldLicense.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
         this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
       } catch (e) {
         console.error('Failed to parse hub token:', e);
-        this._subscriptionData.hubToken = null;
+        this._subscriptionData.oldLicense = null;
       }
     }
     this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
@@ -68,7 +68,7 @@ class HubSubscription {
   }
 
   onLoadSubscriptionSucceeded(data) {
-    this._subscriptionData.verificationToken = data.token;
+    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     if (data.subscription.quantity) {
       this._subscriptionData.quantity = data.subscription.quantity;
@@ -324,7 +324,7 @@ class HubSubscription {
 
   onPostSucceeded(data) {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
-    this._subscriptionData.verificationToken = data.token;
+    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.session = data.session;
     var searchParams = new URLSearchParams(window.location.search)
@@ -491,7 +491,7 @@ class HubSubscription {
   }
 
   onPutSucceeded(data, shouldOpenReturnUrl) {
-    this._subscriptionData.verificationToken = data.token;
+    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
@@ -516,7 +516,7 @@ class HubSubscription {
       url: REFRESH_LICENSE_URL,
       type: 'POST',
       data: {
-        token: this._subscriptionData.verificationToken,
+        token: this._subscriptionData.oldLicense,
         captcha: this._subscriptionData.captcha
       }
     }).done(token => {
