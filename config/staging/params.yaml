@@ -20,8 +20,8 @@ paddleHubSelfHostedMonthlyPlanId: 82378
 paddleHubManagedYearlyPlanId: 42235
 paddleHubManagedMonthlyPlanId: 82379
 paddlePricesUrl: https://sandbox-checkout.paddle.com/api/2.0/prices
-paddleDiscountId: dsc_01kba2drz2yg4v6h3d5f2687tw
-paddleDiscountCode: WINTER2025
+paddleDesktopSalePriceId: pri_01kk1z8f8cb5f6fnf9x7bv4xg9
+paddleAndroidSalePriceId: pri_01kk243hedea8mbabs8q22ygdn
 
 # STRIPE
 stripePk: pk_test_51RCM24IBZmkR4F9UiLBiSmsAnJvWqmHcDLxXR8ABKK1MNsZk3zCk2VJW7ZfaBlD81zpQxCX243sS3LEp9dABwiG800kJnGykDF

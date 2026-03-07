@@ -20,8 +20,8 @@ paddleHubSelfHostedMonthlyPlanId: 914172
 paddleHubManagedYearlyPlanId: 807339
 paddleHubManagedMonthlyPlanId: 914173
 paddlePricesUrl: https://checkout.paddle.com/api/2.0/prices
-paddleDiscountId: dsc_01kba2vjmspm92sx2jhq4s2082
-paddleDiscountCode: WINTER2025
+paddleDesktopSalePriceId: pri_01kk4gejs06jg0m0n9tghk0ktr
+paddleAndroidSalePriceId: pri_01kk4gg6c3pj0tq0vvpf4x4vw2
 
 # STRIPE
 stripePk: pk_live_eSasX216vGvC26GdbVwA011V

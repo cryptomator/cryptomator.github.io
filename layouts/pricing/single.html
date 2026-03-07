@@ -107,24 +107,53 @@
           <div class="p-4">
             <p class="label-uppercase mb-3">
               {{ i18n "pricing_individual_mobile_upgrades_title" . }}
+              {{ if .Site.Params.paddleDesktopSalePriceId }}
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-red-600 text-white ml-1">{{ i18n "for_individuals_header_kicker_sale" . }}</span>
+              {{ end }}
             </p>
             <div class="space-y-2">
               <a href="{{ .Site.LanguagePrefix }}/supporter-cert/" class="btn btn-outline-primary flex items-center justify-between text-sm">
                 <span>{{ i18n "pricing_individual_upgrade_dark_mode" . }}</span>
-                <span class="font-bold">{{ i18n "pricing_supporter_cert_price" . }}</span>
+                <span class="font-bold">
+                  {{- if .Site.Params.paddleDesktopSalePriceId -}}
+                    <span class="text-gray-500 line-through decoration-red-600">{{ i18n "pricing_supporter_cert_price" . }}</span>
+                    <span class="text-green-600">{{ i18n "pricing_supporter_cert_price_discounted" . }}</span>
+                  {{- else -}}
+                    {{ i18n "pricing_supporter_cert_price" . }}
+                  {{- end -}}
+                </span>
               </a>
               <a href="{{ .Site.LanguagePrefix }}/downloads/#android" class="btn btn-outline-primary flex items-center justify-between text-sm">
                 <span>{{ i18n "pricing_individual_mobile_android" . }}</span>
-                <span class="font-bold">{{ i18n "pricing_android_price" . }}</span>
+                <span class="font-bold">
+                  {{- if .Site.Params.paddleAndroidSalePriceId -}}
+                    <span class="text-gray-500 line-through decoration-red-600">{{ i18n "pricing_android_price" . }}</span>
+                    <span class="text-green-600">{{ i18n "pricing_android_price_discounted" . }}</span>
+                  {{- else -}}
+                    {{ i18n "pricing_android_price" . }}
+                  {{- end -}}
+                </span>
               </a>
               <a href="{{ .Site.LanguagePrefix }}/downloads/#ios" class="btn btn-outline-primary flex items-center justify-between text-sm">
                 <span>{{ i18n "pricing_individual_mobile_ios" . }}</span>
-                <span class="font-bold">{{ i18n "pricing_ios_price" . }}</span>
+                <span class="font-bold">
+                  {{- if .Site.Params.paddleAndroidSalePriceId -}}
+                    <span class="text-gray-500 line-through decoration-red-600">{{ i18n "pricing_ios_price" . }}</span>
+                    <span class="text-green-600">{{ i18n "pricing_ios_price_discounted" . }}</span>
+                  {{- else -}}
+                    {{ i18n "pricing_ios_price" . }}
+                  {{- end -}}
+                </span>
               </a>
             </div>
             <p class="text-xs text-gray-500 mt-2">
               {{ i18n "pricing_individual_upgrades_note" . }}
             </p>
+            {{ if .Site.Params.paddleDesktopSalePriceId }}
+            <p class="text-xs text-gray-500 mt-1">
+              * {{ i18n "pricing_discount_note" . }}
+            </p>
+            {{ end }}
           </div>
         </div>
 
