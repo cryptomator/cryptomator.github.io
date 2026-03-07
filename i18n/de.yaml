@@ -1292,24 +1292,20 @@
   translation: "Erfolgsgeschichte lesen"
 
 # Sale
-- id: nav_promotion
-  translation: ":snowflake: Winter-Sale: 50 %* Rabatt auf Cryptomator – den&nbsp;ganzen&nbsp;Dezember!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2025/12/01/winter-sale/\">Mehr erfahren&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: sale_off
   translation: "Rabatt"
 - id: for_individuals_header_kicker_sale
-  translation: "50 %* Rabatt – Winter-Sale"
+  translation: "Jubiläums-Sale*"
 - id: home_header_kicker_sale
-  translation: "50 %* Rabatt – Winter-Sale"
-- id: hub_header_kicker_sale
-  translation: "50 % Rabatt im ersten Jahr – Winter-Sale"
+  translation: "Jubiläums-Sale*"
+- id: pricing_supporter_cert_price_discounted
+  translation: "ab 10 €"
 - id: pricing_android_price_discounted
-  translation: "9,99 €"
+  translation: "10 €"
 - id: pricing_ios_price_discounted
-  translation: "9,99 €"
+  translation: "10 €"
 - id: pricing_discount_note
   translation: "Die Höhe des Rabatts kann je nach Region variieren."
-- id: pricing_hub_standard_price_first_year
-  translation: "im ersten Jahr"
 
 # Anniversary Banner
 - id: anniversary_banner_aria_label
