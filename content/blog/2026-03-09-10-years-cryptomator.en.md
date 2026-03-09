@@ -2,7 +2,6 @@
 title: "10 Years of Cryptomator – Thank You All"
 slug: 10-years-cryptomator
 date: 2026-03-09
-publishDate: 2026-03-06
 tags: [cryptomator, anniversary]
 
 summary: "For Cryptomator’s 10th anniversary, we look back at key milestones, celebrate community voices, and share what’s next—including our AMA, new features, and a special anniversary sale."
@@ -185,6 +184,10 @@ Whether on desktop or smartphone, privately or in business, the trust, feedback,
 
 ## 10 Years of Cryptomator – Join Our Live AMA
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/ama.png" alt="Join our 10-Year Anniversary AMA on Reddit" />
+</figure>
+
 As part of our 10th anniversary celebration, we are hosting an **Ask Me Anything (AMA) on Reddit!** We would love for you to join us.
 
 📅 March 9, 2026  
@@ -204,6 +207,11 @@ Follow us on Reddit and join the discussion on r/Cryptomator.
 Can't join us live? Don't worry, **we'll make the questions and answers available afterwards**, and of course, we're always available via email, social media, or the community forum if you still have a burning question.
 
 ## Special Anniversary Sale
+
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/anniversary-sale.png" alt="10-Year Anniversary Sale" />
+  <figcaption>* The discount amount may vary by region.</figcaption>
+</figure>
 
 Ten years of Cryptomator would not have been possible without you. To mark this anniversary, we would like to **express our gratitude with a special thank you**:
 

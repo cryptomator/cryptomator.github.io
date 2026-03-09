@@ -1373,7 +1373,7 @@
 - id: for_individuals_header_kicker_sale
   translation: "10-Year Anniversary Sale*"
 - id: home_header_kicker_sale
-  translation: "10-Year Anniversary Sale*"
+  translation: "10-Year Anniversary"
 - id: pricing_supporter_cert_price_discounted
   translation: "from €10"
 - id: pricing_android_price_discounted

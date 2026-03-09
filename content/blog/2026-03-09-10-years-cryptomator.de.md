@@ -1,8 +1,7 @@
 ---
 title: "10 Jahre Cryptomator – Danke an euch"
-slug: 10-jahre-cryptomator
+slug: 10-years-cryptomator
 date: 2026-03-09
-publishDate: 2026-03-06
 tags: [cryptomator, anniversary]
 
 summary: "Zum 10. Jubiläum blicken wir auf die wichtigsten Meilensteine von Cryptomator zurück, teilen Community-Stimmen und zeigen, was als Nächstes kommt – inklusive AMA, neuer Features und Jubiläums-Sale."
@@ -185,6 +184,10 @@ Egal ob auf Desktop oder Smartphone, privat oder im Unternehmen – das Vertraue
 
 ## 10 Jahre Cryptomator – Macht mit bei unserem Live-AMA
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/ama.png" alt="Macht mit bei unserem 10-Jahres-Jubiläums-AMA auf Reddit" />
+</figure>
+
 Im Rahmen unserer Feier zum 10-jährigen Jubiläum veranstalten wir ein **Ask Me Anything (AMA) auf Reddit**! Wir würden uns freuen, wenn ihr dabei seid.
 
 📅 9. März 2026  
@@ -204,6 +207,11 @@ Folgt uns auf Reddit und beteiligt euch an der Diskussion auf r/Cryptomator.
 Ihr könnt nicht live dabei sein? Keine Sorge, wir stellen euch im **Nachhinein die Fragen & Antworten zur Verfügung** und natürlich sind wir immer via E-Mail, Social Media oder im Community Forum erreichbar, wenn euch doch noch eine Frage auf der Seele brennt.
 
 ## Besonderer Sale zum Jubiläum
+
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/anniversary-sale.png" alt="10-Jahres-Jubiläums-Sale" />
+  <figcaption>* Der Rabatt und der Preis können je nach Region variieren.</figcaption>
+</figure>
 
 Zehn Jahre Cryptomator wären ohne euch nicht möglich gewesen. Zum Jubiläum möchten wir uns deshalb mit einem **besonderen Dankeschön** erkenntlich zeigen:
 
