@@ -35,7 +35,7 @@
 - id: accept_hub_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
 - id: accept_hub_managed_early_access_optional
-  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">BETA</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access von Cryptomator Hub 1.5.0</a> mit brandneuen Features und einer verlängerten kostenlosen 100-Tage-Testphase testen (optional)."
+  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">Early Access</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Cryptomator Hub 1.5.0</a> mit brandneuen Features und einer verlängerten kostenlosen 100-Tage-Testphase testen (optional)."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
@@ -1332,9 +1332,9 @@
 - id: sale_off
   translation: "Rabatt"
 - id: for_individuals_header_kicker_sale
-  translation: "Jubiläums-Sale*"
+  translation: "10-Jahres-Jubiläums-Sale*"
 - id: home_header_kicker_sale
-  translation: "Jubiläums-Sale*"
+  translation: "10-Jahres-Jubiläums-Sale*"
 - id: pricing_supporter_cert_price_discounted
   translation: "ab 10 €"
 - id: pricing_android_price_discounted

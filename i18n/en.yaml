@@ -35,7 +35,7 @@
 - id: accept_hub_newsletter_optional
   translation: "I agree to get updates from Cryptomator Hub via email (optional)."
 - id: accept_hub_managed_early_access_optional
-  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">BETA</span> Try out <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">early access of Cryptomator Hub 1.5.0</a> with brand new features and an extended 100-day free trial (optional)."
+  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">Early Access</span> Try out <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Cryptomator Hub 1.5.0</a> with brand new features and an extended 100-day free trial (optional)."
 - id: accept_privacy
   translation: "I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
@@ -1371,9 +1371,9 @@
 - id: sale_off
   translation: "Off"
 - id: for_individuals_header_kicker_sale
-  translation: "Anniversary Sale*"
+  translation: "10-Year Anniversary Sale*"
 - id: home_header_kicker_sale
-  translation: "Anniversary Sale*"
+  translation: "10-Year Anniversary Sale*"
 - id: pricing_supporter_cert_price_discounted
   translation: "from €10"
 - id: pricing_android_price_discounted
