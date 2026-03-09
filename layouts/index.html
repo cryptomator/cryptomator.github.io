@@ -13,7 +13,7 @@
 {{ end }}
 {{ define "main" }}
   {{- $homeHeroPadding := cond (.Scratch.Get "anniversaryBannerActive") "pt-28 md:pt-0" "" -}}
-  <section class="flex items-center header-bg bg-dark bg-center min-h-[66vh] bg-repeat-x {{ $homeHeroPadding }}">
+  <section class="flex items-center header-bg bg-dark bg-center md:min-h-[66vh] bg-repeat-x {{ $homeHeroPadding }}">
     <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
       <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
         <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>

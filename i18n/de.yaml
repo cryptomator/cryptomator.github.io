@@ -35,7 +35,7 @@
 - id: accept_hub_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
 - id: accept_hub_managed_early_access_optional
-  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">BETA</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access von Cryptomator Hub 1.5.0</a> mit brandneuen Features und einer verlängerten 100-Tage-Testphase testen (optional)."
+  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">BETA</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access von Cryptomator Hub 1.5.0</a> mit brandneuen Features und einer verlängerten kostenlosen 100-Tage-Testphase testen (optional)."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
@@ -386,6 +386,10 @@
   translation: "Jetzt anmelden"
 - id: hub_header_managed_cta_description
   translation: "Startet eure kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
+- id: hub_header_kicker_early_access
+  translation: "Hub 1.5.0 Early Access*"
+- id: hub_header_early_access_note
+  translation: "<a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access</a> beinhaltet brandneue Features und eine verlängerte kostenlose 100-Tage-Testphase."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
