@@ -1,6 +1,7 @@
 "use strict";
 
 // requires newsletter.js
+const VERIFY_EMAIL_URL = 'https://api.staging.cryptomator.org/connect/email/verify';
 const REQUEST_HUB_MANAGED_URL = LEGACY_STORE_URL + '/hub/request-managed';
 const VALIDATE_HUB_MANAGED_REQUEST_URL = LEGACY_STORE_URL + '/hub/validate-managed-request';
 
@@ -105,9 +106,14 @@ class HubManaged {
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
     $.ajax({
-      url: REQUEST_HUB_MANAGED_URL,
+      url: VERIFY_EMAIL_URL, // REQUEST_HUB_MANAGED_URL,
       type: 'POST',
-      data: this._submitData
+      data: {
+        ...this._submitData,
+        verifyCaptcha: this._submitData.captcha,
+        verifyEmail: this._submitData.email,
+        verifyTarget: 'hubmanaged'
+      }
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
