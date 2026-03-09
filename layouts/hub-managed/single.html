@@ -2,7 +2,7 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section x-data="{steps: ['{{ i18n "hub_managed_step_1_nav_title" }}', '{{ i18n "hub_managed_step_2_nav_title" }}', '{{ i18n "hub_managed_step_3_nav_title" }}', '{{ i18n "hub_managed_step_4_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, email: '', subdomain: '', quantity: null, message: null, acceptNewsletter: false}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null, captchaState: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData)" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_managed_step_1_nav_title" }}', '{{ i18n "hub_managed_step_2_nav_title" }}', '{{ i18n "hub_managed_step_3_nav_title" }}', '{{ i18n "hub_managed_step_4_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: ''}, submitData: {captcha: null, email: '', subdomain: '', quantity: null, phone: null, message: null, acceptNewsletter: false, earlyaccess: false}, acceptTerms: false, lowQuantityModalIsOpen: false, hubManaged: null, captchaState: null}" x-init="hubManaged = new HubManaged($refs.form, feedbackData, submitData)" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_managed_description" }}</p>
@@ -98,7 +98,7 @@
                 <p class="font-p text-sm mb-2">
                   {{ i18n "hub_managed_step_2_url_description" }}
                 </p>
-                <input type="text" class="block input-box w-full mb-8" :value="submitData.subdomain ? subdomainToURL(submitData.subdomain) : 'https://<{{ i18n "hub_managed_step_2_subdomain_placeholder" }}>.cryptomator.cloud'" readonly>
+                <input type="text" class="block input-box w-full mb-8" :value="submitData.subdomain ? subdomainToURL(submitData.subdomain) : 'https://<{{ i18n "hub_managed_step_2_subdomain_placeholder" }}>.{{ .Site.Params.hubManagedDomain }}'" readonly>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
                   <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateSubdomain()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-2">
@@ -166,6 +166,16 @@
                   </li>
                   <li class="flex justify-between gap-2">
                     <span class="font-p text-sm text-gray-500">
+                      {{ i18n "hub_managed_step_4_phone" }}
+                    </span>
+                    <a x-show="submitData.phone == null" href="#" class="font-p text-link text-sm" @click.prevent="submitData.phone = ''">
+                      <i class="fa-solid fa-plus-circle"></i>
+                      {{ i18n "hub_managed_step_4_phone_add" }}
+                    </a>
+                    <input x-show="submitData.phone != null" type="tel" id="phone" pattern="\+?[\d\s]{6,}" maxlength="30" class="input-box text-sm w-full max-w-xs" placeholder="{{ i18n "hub_managed_step_4_phone_placeholder" }}" x-model="submitData.phone" x-cloak>
+                  </li>
+                  <li class="flex justify-between gap-2">
+                    <span class="font-p text-sm text-gray-500">
                       {{ i18n "hub_managed_step_4_message" }}
                     </span>
                     <a x-show="submitData.message == null" href="#" class="font-p text-link text-sm" @click.prevent="submitData.message = ''">
@@ -180,6 +190,9 @@
                 </p>
                 <p class="font-p text-sm mb-2">
                   {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+                </p>
+                <p class="font-p text-sm mb-2">
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.earlyaccess" "label" (i18n "accept_hub_managed_early_access_optional")) }}
                 </p>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>

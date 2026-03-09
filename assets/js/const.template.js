@@ -14,4 +14,5 @@ const PADDLE_PRICES_URL = '{{ .Site.Params.paddlePricesUrl }}';
 const PADDLE_DESKTOP_SALE_PRICE_ID = '{{ .Site.Params.paddleDesktopSalePriceId }}';
 const PADDLE_ANDROID_SALE_PRICE_ID = '{{ .Site.Params.paddleAndroidSalePriceId }}';
 const LEGACY_STORE_URL = '{{ .Site.Params.legacyStoreUrl }}';
+const HUB_MANAGED_DOMAIN = '{{ .Site.Params.hubManagedDomain }}';
 const STRIPE_PK = '{{ .Site.Params.stripePk }}';
