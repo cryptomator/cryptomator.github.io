@@ -109,7 +109,7 @@ Damit können Administrator:innen:
 Das ermöglicht eine **bessere Kontrolle über Zugriffe innerhalb von Teams und Organisationen**, was besonders wichtig bei größeren Gruppen oder Abteilungen ist. Diese Funktion markiert einen wichtigen Schritt von einfacher Zugangskontrolle hin zu einer echten Team- und Organisations-Rolle-Verwaltung.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/10-years-hub-user-management.png" alt="Cryptomator Hub – User/Group Management Vorschau" />
+  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-user-management-preview.png" alt="Cryptomator Hub – User/Group Management Vorschau" />
 </figure>
 
 **Emergency Access** 
@@ -124,7 +124,7 @@ Damit lassen sich:
 Das **verbessert besonders in organisatorischen Kontexten die Ausfallsicherheit** und stellt sicher, dass kein Datenzugriff verloren geht, selbst wenn Individuen nicht mehr verfügbar sind.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/10-years-hub-emergency-access.png" alt="Cryptomator Hub – Emergency Access Vorschau" />
+  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-emergency-access-preview.png" alt="Cryptomator Hub – Emergency Access Vorschau" />
 </figure>
 
 ### Cryptomator Desktop und iOS
