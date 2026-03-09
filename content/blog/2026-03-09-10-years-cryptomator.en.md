@@ -63,7 +63,7 @@ Below, we have compiled a **timeline** showing the most important milestones of 
 ## Timeline
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/evolution-of-an-icon.png" alt="Evolution of the Cryptomator icon from the early 'washing machine' design to today's Cryptobot" />
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-evolution-of-an-icon.png" alt="Evolution of the Cryptomator icon from the early 'washing machine' design to today's Cryptobot" />
   <figcaption>Evolution of an Icon: From the "Washing Machine" to the Cryptobot</figcaption>
 </figure>
 
@@ -109,7 +109,7 @@ This allows administrators to:
 This enables **better control over access within teams and organizations**, which is particularly important for larger groups or departments. This feature marks an important step from simple access control to true team and organizational role management.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-user-management-preview.png" alt="Cryptomator Hub – User/Group Management Preview" />
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-hub-user-management.png" alt="Cryptomator Hub – User/Group Management Preview" />
 </figure>
 
 **Emergency Access**
@@ -124,7 +124,7 @@ This allows you to:
 This **improves reliability, especially in organizational contexts**, and ensures that no data access is lost, even if individuals are no longer available.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/hub-anniversary-2025-emergency-access-preview.png" alt="Cryptomator Hub – Emergency Access Preview" />
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-hub-emergency-access.png" alt="Cryptomator Hub – Emergency Access Preview" />
 </figure>
 
 ### Cryptomator Desktop and iOS
@@ -142,7 +142,7 @@ This is particularly important for reducing conflicts or data loss when files ar
 To mark its anniversary, Cryptomator is also getting a minor visual update: **A new Cryptomator logo is appearing on iOS**—both in the **mobile app** and in the **desktop application**.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/new-macos-ios-app-icons.png" alt="New Cryptomator app icons for macOS and iOS" />
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-new-app-icons.png" alt="New Cryptomator app icons for macOS and iOS" />
   <figcaption>New Cryptomator App Icons for macOS and iOS</figcaption>
 </figure>
 
@@ -185,7 +185,7 @@ Whether on desktop or smartphone, privately or in business, the trust, feedback,
 ## 10 Years of Cryptomator – Join Our Live AMA
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/ama.png" alt="Join our 10-Year Anniversary AMA on Reddit" />
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-ama.png" alt="Join our 10-Year Anniversary AMA on Reddit" />
 </figure>
 
 As part of our 10th anniversary celebration, we are hosting an **Ask Me Anything (AMA) on Reddit!** We would love for you to join us.
@@ -209,7 +209,7 @@ Can't join us live? Don't worry, **we'll make the questions and answers availabl
 ## Special Anniversary Sale
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/anniversary-sale.png" alt="10-Year Anniversary Sale" />
+  <img class="inline-block rounded-sm" src="/img/blog/10-years-sale.png" alt="10-Year Anniversary Sale" />
   <figcaption>* The discount amount may vary by region.</figcaption>
 </figure>
 
