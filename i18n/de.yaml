@@ -1117,6 +1117,10 @@
   translation: "Nachname"
 - id: book_demo_email
   translation: "E-Mail-Adresse"
+- id: book_demo_phone
+  translation: "Telefonnummer (optional)"
+- id: book_demo_phone_placeholder
+  translation: "z.B. +49 123 4567890"
 - id: book_demo_company
   translation: "Unternehmen (optional)"
 - id: book_demo_learn_about
@@ -1181,6 +1185,10 @@
   translation: "Nachname"
 - id: contact_sales_email
   translation: "E-Mail-Adresse"
+- id: contact_sales_phone
+  translation: "Telefonnummer (optional)"
+- id: contact_sales_phone_placeholder
+  translation: "z.B. +49 123 4567890"
 - id: contact_sales_website
   translation: "Unternehmens-Website (optional)"
 - id: contact_sales_topic
@@ -1227,6 +1235,10 @@
   translation: "Nachname"
 - id: partner_email
   translation: "E-Mail-Adresse"
+- id: partner_phone
+  translation: "Telefonnummer (optional)"
+- id: partner_phone_placeholder
+  translation: "z.B. +49 123 4567890"
 - id: partner_company
   translation: "Unternehmen"
 - id: partner_website
