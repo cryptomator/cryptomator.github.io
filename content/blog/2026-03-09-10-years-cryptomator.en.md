@@ -210,7 +210,6 @@ Can't join us live? Don't worry, **we'll make the questions and answers availabl
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/10-years-sale.png" alt="10-Year Anniversary Sale" />
-  <figcaption>* The discount amount may vary by region.</figcaption>
 </figure>
 
 Ten years of Cryptomator would not have been possible without you. To mark this anniversary, we would like to **express our gratitude with a special thank you**:

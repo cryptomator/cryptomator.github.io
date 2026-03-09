@@ -210,7 +210,6 @@ Ihr könnt nicht live dabei sein? Keine Sorge, wir stellen euch im **Nachhinein 
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/10-years-sale.png" alt="10-Jahres-Jubiläums-Sale" />
-  <figcaption>* Der Rabatt und der Preis können je nach Region variieren.</figcaption>
 </figure>
 
 Zehn Jahre Cryptomator wären ohne euch nicht möglich gewesen. Zum Jubiläum möchten wir uns deshalb mit einem **besonderen Dankeschön** erkenntlich zeigen:
