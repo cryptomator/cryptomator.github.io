@@ -63,6 +63,11 @@ Im Folgenden haben wir euch eine **Timeline** zusammengestellt, in der ihr die w
 
 ## Timeline
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/evolution-of-an-icon.png" alt="Evolution des Cryptomator-Icons von der frühen 'Waschmaschine' zum heutigen Cryptobot" />
+  <figcaption>Evolution of an Icon: Von der „Waschmaschine" zum Cryptobot</figcaption>
+</figure>
+
 **2013–2014 – Die Idee entsteht, die Entwicklung startet**  
 Aus einem ganz praktischen Bedürfnis heraus entsteht die Vision: Cloud nutzen können, ohne dem Anbieter Klartextdaten anzuvertrauen. 2014 beginnt die aktive Entwicklung – mit dem Fokus auf lokale Verschlüsselung und gute Bedienbarkeit.
 
@@ -84,12 +89,8 @@ Cryptomator erreicht **1 Million Downloads**. Gleichzeitig markiert ein großes 
 **2021–2023 – Mehr Open Source, mehr Teams: iOS & Cryptomator Hub**  
 Die iOS-App wird Open Source und mit **Cryptomator 2.0** technisch grundlegend erneuert. Parallel wächst der Bedarf in Unternehmen und Organisationen: Mit **Cryptomator Hub 1.0 (2022)** kommt eine Lösung für Teams und Institutionen hinzu – inklusive zentraler Verwaltung und Team-Vaults. In den Folgeversionen wird Hub weiter ausgebaut (z. B. Recovery Keys).
 
-**2024–2025 – Reichweite & Zukunftsfähigkeit**  
+**2024–2025 – Reichweite & Zukunftsfähigkeit**
 Cryptomator erreicht neue Zielgruppen durch größere Medienpräsenz und Empfehlungen. Gleichzeitig richtet sich der Blick klar nach vorn: Mit der **Post-Quantum-Roadmap** wird die langfristige kryptografische Zukunft vorbereitet, und Integrationen (z. B. **Mountain Duck**) stärken das Ökosystem rund um verschlüsselte Cloud-Workflows.
-
-## Logo-Evolution: Von der “Waschmaschine” zum Cryptobot
-
-XXX
 
 ## Was kommt jetzt? – Neue Updates & Features 
 
