@@ -773,6 +773,12 @@
   translation: "URL"
 - id: hub_managed_step_4_quantity
   translation: "Expected Users"
+- id: hub_managed_step_4_phone
+  translation: "Phone Number"
+- id: hub_managed_step_4_phone_add
+  translation: "Add phone number (optional)"
+- id: hub_managed_step_4_phone_placeholder
+  translation: "e.g., +49 123 4567890"
 - id: hub_managed_step_4_message
   translation: "Message"
 - id: hub_managed_step_4_message_add

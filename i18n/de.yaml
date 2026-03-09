@@ -734,6 +734,12 @@
   translation: "URL"
 - id: hub_managed_step_4_quantity
   translation: "Erwartete Nutzer"
+- id: hub_managed_step_4_phone
+  translation: "Telefonnummer"
+- id: hub_managed_step_4_phone_add
+  translation: "Telefonnummer hinzufügen (optional)"
+- id: hub_managed_step_4_phone_placeholder
+  translation: "z.B. +49 123 4567890"
 - id: hub_managed_step_4_message
   translation: "Nachricht"
 - id: hub_managed_step_4_message_add
