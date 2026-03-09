@@ -142,6 +142,11 @@ Das ist besonders wichtig, um Konflikte oder Datenverlust zu reduzieren, wenn Da
 
 Zum Jubiläum bekommt Cryptomator auch ein kleines visuelles Update: **Auf iOS erscheint ein neues Cryptomator-Logo** – sowohl in der **mobilen App** als auch in der **Desktop-Anwendung**.
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/new-macos-ios-app-icons.png" alt="Neue Cryptomator App-Icons für macOS und iOS" />
+  <figcaption>Neue Cryptomator App-Icons für macOS und iOS</figcaption>
+</figure>
+
 ## Stimmen aus der Community
 
 > „Inzwischen freue ich mich vor allem, wenn ich in freier Wildbahn über Nutzer\*innen stolpere oder Berichte lese.“   

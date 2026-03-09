@@ -142,6 +142,11 @@ This is particularly important for reducing conflicts or data loss when files ar
 
 To mark its anniversary, Cryptomator is also getting a minor visual update: **A new Cryptomator logo is appearing on iOS**—both in the **mobile app** and in the **desktop application**.
 
+<figure class="text-center">
+  <img class="inline-block rounded-sm" src="/img/blog/new-macos-ios-app-icons.png" alt="New Cryptomator app icons for macOS and iOS" />
+  <figcaption>New Cryptomator App Icons for macOS and iOS</figcaption>
+</figure>
+
 ## Voices From the Community
 
 > “Nowadays, I'm especially happy when I come across users in the wild or read reports.”  
