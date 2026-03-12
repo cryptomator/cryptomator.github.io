@@ -52,8 +52,8 @@ releases:
     checksum: 05af34b8c6430d4e033f029eb20071ec718e529715f15e41f91230665d146849
     requiredOS: ""
   android:
-    version: 1.11.1
-    filename: Cryptomator-1.11.1.apk
-    downloadUrl: https://static.cryptomator.org/android/1.11.1/Cryptomator-1.11.1.apk
-    checksum: cd779e929277920e65b282f166e9c693fe560927215428796e100bcc7427132a
+    version: 1.12.3
+    filename: Cryptomator-1.12.3.apk
+    downloadUrl: https://static.cryptomator.org/android/1.12.3/Cryptomator-1.12.3.apk
+    checksum: 69c6d6175c8f5d05b3c3dcb6b2f03d2c541f4a98fa71d481abd5f5ff08173d86
     requiredOS: Android 8.0
