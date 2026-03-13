@@ -32,7 +32,7 @@ Entry is made by completing the survey form at [forms.skymatic.de](https://forms
 
 ### 5. Prizes
 
-A total of 10 goodie packages will be raffled among all valid entries.
+A total of 10 goodie bags will be given away among all valid entries.
 
 Each goodie package includes:
 - a sticker
