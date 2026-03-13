@@ -1,8 +1,5 @@
 ---
 title: "Teilnahmebedingungen Gewinnspiel"
-url: "/de/sweepstakes-terms"
-sitemap_exclude: true
-robots: "noindex, nofollow"
 ---
 
 ## Teilnahmebedingungen für das Gewinnspiel zum 10-jährigen Jubiläum von Cryptomator

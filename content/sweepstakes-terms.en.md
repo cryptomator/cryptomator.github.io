@@ -1,8 +1,5 @@
 ---
 title: "Sweepstakes Terms and Conditions"
-url: "/en/sweepstakes-terms"
-sitemap_exclude: true
-robots: "noindex, nofollow"
 ---
 
 ## Terms and Conditions for the Cryptomator 10th Anniversary Sweepstakes
