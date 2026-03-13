@@ -6,11 +6,11 @@ title: "Teilnahmebedingungen Gewinnspiel"
 
 ### 1. Veranstalter
 
-Veranstalter des Gewinnspiels ist die Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, eingetragen im Handelsregister des Amtsgerichts Bonn unter HRB 22635 (nachfolgend „Veranstalter").
+Veranstalter des Gewinnspiels ist die Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, eingetragen im Handelsregister des Amtsgerichts Bonn unter HRB 22635 (nachfolgend "Veranstalter").
 
 ### 2. Teilnahmezeitraum
 
-Das Gewinnspiel beginnt am 13.03.2026 und endet am 19.03.2026 um 23:59 Uhr (MEZ). Teilnahmen, die nach Ablauf des Teilnahmezeitraums eingehen, werden nicht berücksichtigt.
+Das Gewinnspiel beginnt am 13.03.2026 und endet am 18.03.2026 um 23:59 Uhr (MEZ). Teilnahmen, die nach Ablauf des Teilnahmezeitraums eingehen, werden nicht berücksichtigt.
 
 ### 3. Teilnahmeberechtigung
 
@@ -52,7 +52,8 @@ Eine Veröffentlichung der Gewinner erfolgt nicht. Nur mit ausdrücklicher Einwi
 
 ### 7. Gewinnversand
 
-Der Versand der Gewinne erfolgt weltweit über Redbubble und kann mehrere Wochen bis wenige Monate in Anspruch nehmen. Die Gewinner werden im Rahmen der Gewinnbenachrichtigung um die Angabe einer gültigen Postadresse gebeten. Der Veranstalter übernimmt die Versandkosten. Das Versandrisiko ab Übergabe an den Versanddienstleister trägt der Gewinner. Ein Anspruch auf Zustellung besteht nicht, soweit der Veranstalter den Versand ordnungsgemäß veranlasst hat. Eventuelle Zoll- oder Einfuhrabgaben im Empfängerland gehen zu Lasten des Gewinners.  
+Der Versand der Gewinne erfolgt weltweit über Redbubble und kann mehrere Wochen bis wenige Monate in Anspruch nehmen. Die Gewinner werden im Rahmen der Gewinnbenachrichtigung um die Angabe einer gültigen Postadresse gebeten. Der Veranstalter übernimmt die Versandkosten. Das Versandrisiko ab Übergabe an den Versanddienstleister trägt der Gewinner. Ein Anspruch auf Zustellung besteht nicht, soweit der Veranstalter den Versand ordnungsgemäß veranlasst hat. Eventuelle Zoll- oder Einfuhrabgaben im Empfängerland gehen zu Lasten des Gewinners.
+
 Der Versand physischer Gewinne setzt eine gesonderte Bestätigung der Gewinnannahme und, soweit für die Abwicklung erforderlich, eine ausdrückliche Einwilligung in eine etwaige internationale Übermittlung personenbezogener Daten voraus.
 
 ### 8. Datenschutz

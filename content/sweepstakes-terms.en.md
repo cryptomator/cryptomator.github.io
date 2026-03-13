@@ -10,7 +10,7 @@ The organizer of the sweepstakes is Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn
 
 ### 2. Participation Period
 
-The sweepstakes begins on March 13, 2026 and ends on March 19, 2026 at 11:59 PM (CET). Entries received after the end of the participation period will not be considered.
+The sweepstakes begins on March 13, 2026 and ends on March 18, 2026 at 11:59 PM (CET). Entries received after the end of the participation period will not be considered.
 
 ### 3. Eligibility
 
