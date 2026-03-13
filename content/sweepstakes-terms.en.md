@@ -13,11 +13,11 @@ The organizer of the sweepstakes is Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn
 
 ### 2. Participation Period
 
-The sweepstakes begins on March 9, 2026 and ends on March 19, 2026 at 11:59 PM (CET). Entries received after the end of the participation period will not be considered.
+The sweepstakes begins on March 13, 2026 and ends on March 19, 2026 at 11:59 PM (CET). Entries received after the end of the participation period will not be considered.
 
 ### 3. Eligibility
 
-Eligible participants are natural persons who are at least 18 years of age at the time of entry. Participation is open worldwide. Please note, however, that the physical shipment of prizes is handled by Redbubble and is currently not available to the following countries and territories: Crimea, Cuba, Iran, North Korea, Russia, Sudan, Syria, and Ukraine (per Redbubble; the current list can be viewed at https://help.redbubble.com/hc/en-us/articles/206705143). Winners residing in one of these territories will receive a digital alternative gift (Cryptomator Supporter Certificate) instead of the goodie package. The following persons are excluded from participation:
+Eligible participants are natural persons who are at least 18 years of age at the time of entry. Participation is open worldwide. Please note, however, that the physical shipment of prizes is handled by Redbubble and is currently not available to the following countries and territories: Crimea, Cuba, Iran, North Korea, Russia, Sudan, Syria, and Ukraine (per Redbubble; the current list can be viewed at https://help.redbubble.com/hc/en-us/articles/206705143). Winners residing in one of these territories will receive a digital alternative gift (Cryptomator Supporter Certificate and Cryptomator Android License Key) instead of the goodie package. The following persons are excluded from participation:
 
 - Employees and managing directors of Skymatic GmbH and their relatives
 - Persons who use unauthorized tools or otherwise gain advantages through manipulation
@@ -37,11 +37,15 @@ Entry is made by completing the survey form at [forms.skymatic.de](https://forms
 
 A total of 10 goodie packages will be raffled among all valid entries.
 
-<!-- TODO: List contents of the goodie packages so participants can assess whether entering is worth the effort -->
+Each goodie package includes:
+- a sticker
+- a bag
+- a mug
+- a T-shirt
 
-- Cash payment of prizes or any prize equivalent is not possible under any circumstances.
-- Prizes are non-transferable and cannot be exchanged.
-- Should a prize be unavailable for reasons beyond the Organizer's control, the Organizer reserves the right to provide a prize of equivalent value. No further claims by the winner shall be accepted.
+Cash payment of prizes or any prize equivalent is not possible under any circumstances.
+Prizes are non-transferable and cannot be exchanged.
+Should a prize be unavailable for reasons beyond the Organizer's control, the Organizer reserves the right to provide a prize of equivalent value. No further claims by the winner shall be accepted.
 
 ### 6. Winner Selection and Notification
 
@@ -53,7 +57,8 @@ Winners will not be published. Publication in anonymized form (e.g., first name 
 
 ### 7. Prize Shipment
 
-Prizes will be shipped worldwide via Redbubble. Shipping to the following countries and territories is not possible: Crimea, Cuba, Iran, North Korea, Russia, Sudan, Syria, and Ukraine. Winners residing in one of these territories will receive a digital alternative gift (Cryptomator Supporter Certificate) via email instead of the physical goodie package. All other winners will be asked to provide a valid postal address upon notification. The Organizer will cover shipping costs. The risk of loss or damage during shipping transfers to the winner upon handover to the shipping provider. The Organizer is not liable for delivery, provided the shipment was properly dispatched. Any customs duties or import taxes in the recipient's country are the responsibility of the winner.
+Prizes will be shipped worldwide via Redbubble and may take several weeks to a few months to arrive. The winners will be asked to provide a valid postal address upon notification. The Organizer will cover shipping costs. The risk of loss or damage during shipping transfers to the winner upon handover to the shipping provider. The Organizer is not liable for delivery, provided the shipment was properly dispatched. Any customs duties or import taxes in the recipient's country are the responsibility of the winner.   
+Shipment of physical prizes requires separate confirmation of prize acceptance and, where necessary for fulfillment, express consent to any international transfer of personal data.
 
 ### 8. Data Privacy
 
@@ -63,13 +68,15 @@ Personal data collected in connection with the sweepstakes will be processed by 
 - **Postal address (winners only):** for shipping the prizes
 - **Survey responses:** for anonymized evaluation of community feedback
 
-**Legal basis** for data processing is Art. 6(1)(b) GDPR (performance of the sweepstakes) and Art. 6(1)(f) GDPR (legitimate interest in conducting the sweepstakes).
+Legal basis for data processing is Art. 6(1)(b) GDPR (performance of the sweepstakes) and Art. 6(1)(f) GDPR (legitimate interest in conducting the sweepstakes and evaluating community feedback in anonymized form).
 
-**Disclosure to third parties:** For the purpose of shipping the prizes, the postal address of winners will be shared with Redbubble (Redbubble Ltd., Melbourne, Australia). Australia does not currently have an EU adequacy decision. The data transfer is based on Art. 49(1)(c) GDPR (performance of a contract concluded in the interest of the data subject between the Organizer and Redbubble). Redbubble's privacy policy applies: https://www.redbubble.com/privacy. No other personal data will be shared with third parties.
+Disclosure to third parties: If a participant wins a physical prize, the Organizer may disclose the winner’s name and shipping address to Redbubble for the purpose of prize fulfillment and shipment. Redbubble may in turn share this data with production, printing, logistics, or fulfillment service providers to the extent necessary for delivery.
 
-**Retention period:** Personal data will be deleted no later than 30 days after all prizes have been shipped, unless statutory retention obligations apply. Data of non-winners will be deleted no later than 30 days after the winner selection has been completed.
+International transfers: In connection with prize fulfillment, personal data may be transferred to recipients in countries outside the EU/EEA, including countries for which no adequacy decision by the European Commission exists. Where such a transfer is necessary for fulfillment, the Organizer will request the winner’s separate express consent before the data is transferred.
 
-**Data subject rights:** The provisions of our [Privacy Policy](/en/privacy/) apply additionally. Participants have the following rights under the GDPR at any time:
+Retention period: Personal data will be deleted no later than 30 days after all prizes have been shipped, unless statutory retention obligations apply. Data of non-winners will be deleted no later than 30 days after the winner selection has been completed.
+
+Data subject rights: The provisions of our [Privacy Policy](/en/privacy/) apply additionally. Participants have the following rights under the GDPR at any time:
 
 - Right of access (Art. 15 GDPR)
 - Right to rectification (Art. 16 GDPR)
@@ -101,11 +108,11 @@ Participants shall have no claims against the Organizer in such cases.
 
 ### 12. Final Provisions
 
-- Legal recourse is excluded.
-- The laws of the Federal Republic of Germany shall apply.
-- The place of jurisdiction, to the extent permitted by law, is Bonn, Germany.
-- Should any provision of these terms and conditions be or become invalid in whole or in part, the validity of the remaining provisions shall not be affected.
-- By participating in the sweepstakes, the participant agrees to these terms and conditions.
+Legal recourse is excluded.
+The laws of the Federal Republic of Germany shall apply.
+The place of jurisdiction, to the extent permitted by law, is Bonn, Germany.
+Should any provision of these terms and conditions be or become invalid in whole or in part, the validity of the remaining provisions shall not be affected.
+By participating in the sweepstakes, the participant agrees to these terms and conditions.
 
 ---
 
