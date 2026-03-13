@@ -6,7 +6,7 @@ title: "Testimonial Consent Information"
 
 ### 1. Voluntary Consent
 
-Giving consent to the use of your testimonial is entirely voluntary and is not part of the sweepstakes.
+Giving consent to the use of your testimonial is entirely voluntary and is not part of the sweepstake.
 
 Your decision has no effect on your participation, your chances of winning, or any prize notification.
 
@@ -28,7 +28,7 @@ The legal basis for this processing is your consent pursuant to Art. 6(1)(a) GDP
 
 You may withdraw your consent at any time with effect for the future by contacting us at privacy [at] cryptomator [dot] org.
 
-Withdrawal of consent does not affect your participation in the sweepstakes or your chances of winning.
+Withdrawal of consent does not affect your participation in the sweepstake or your chances of winning.
 
 ### 6. Further Information
 

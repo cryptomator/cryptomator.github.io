@@ -1,16 +1,16 @@
 ---
-title: "Sweepstakes Terms and Conditions"
+title: "Sweepstake Terms and Conditions"
 ---
 
-## Terms and Conditions for the Cryptomator 10th Anniversary Sweepstakes
+## Terms and Conditions for the Cryptomator 10th Anniversary Sweepstake
 
 ### 1. Organizer
 
-The organizer of the sweepstakes is Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, Germany, registered in the commercial register of the Bonn District Court under HRB 22635 (hereinafter "Organizer").
+The organizer of the sweepstake is Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, Germany, registered in the commercial register of the Bonn District Court under HRB 22635 (hereinafter "Organizer").
 
 ### 2. Participation Period
 
-The sweepstakes begins on March 13, 2026 and ends on March 18, 2026 at 11:59 PM (CET). Entries received after the end of the participation period will not be considered.
+The sweepstake begins on March 13, 2026 and ends on March 18, 2026 at 11:59 PM (CET). Entries received after the end of the participation period will not be considered.
 
 ### 3. Eligibility
 
@@ -18,9 +18,9 @@ Eligible participants are natural persons who are at least 18 years of age at th
 
 - Employees and managing directors of Skymatic GmbH and their relatives
 - Persons who use unauthorized tools or otherwise gain advantages through manipulation
-- Entries submitted via sweepstakes services, automated processes (e.g., bots), or other third parties
+- Entries submitted via sweepstake services, automated processes (e.g., bots), or other third parties
 
-The Organizer reserves the right to exclude persons who violate these terms and conditions, provide false information, or manipulate or attempt to manipulate the sweepstakes. In such cases, prizes may also be revoked and reclaimed retroactively.
+The Organizer reserves the right to exclude persons who violate these terms and conditions, provide false information, or manipulate or attempt to manipulate the sweepstake. In such cases, prizes may also be revoked and reclaimed retroactively.
 
 ### 4. How to Enter
 
@@ -28,7 +28,7 @@ Entry is made by completing the survey form at [forms.skymatic.de](https://forms
 
 - Each person may enter only once. Multiple entries by the same person will result in disqualification.
 - Participation is free of charge and not contingent on the purchase of any goods or services.
-- Subscribing to the newsletter is voluntary and not a requirement for entering the sweepstakes.
+- Subscribing to the newsletter is voluntary and not a requirement for entering the sweepstake.
 
 ### 5. Prizes
 
@@ -59,13 +59,13 @@ Shipment of physical prizes requires separate confirmation of prize acceptance a
 
 ### 8. Data Privacy
 
-Personal data collected in connection with the sweepstakes will be processed by the Organizer solely for the purpose of conducting and administering the sweepstakes. This includes in particular:
+Personal data collected in connection with the sweepstake will be processed by the Organizer solely for the purpose of conducting and administering the sweepstake. This includes in particular:
 
-- **Email address:** for winner notification and communication regarding the sweepstakes
+- **Email address:** for winner notification and communication regarding the sweepstake
 - **Postal address (winners only):** for shipping the prizes
 - **Survey responses:** for anonymized evaluation of community feedback
 
-Legal basis for data processing is Art. 6(1)(b) GDPR (performance of the sweepstakes) and Art. 6(1)(f) GDPR (legitimate interest in conducting the sweepstakes and evaluating community feedback in anonymized form).
+Legal basis for data processing is Art. 6(1)(b) GDPR (performance of the sweepstake) and Art. 6(1)(f) GDPR (legitimate interest in conducting the sweepstake and evaluating community feedback in anonymized form).
 
 Disclosure to third parties: If a participant wins a physical prize, the Organizer may disclose the winner’s name and shipping address to Redbubble for the purpose of prize fulfillment and shipment. Redbubble may in turn share this data with production, printing, logistics, or fulfillment service providers to the extent necessary for delivery.
 
@@ -83,21 +83,21 @@ Data subject rights: The provisions of our [Privacy Policy](/en/privacy/) apply 
 - Right to object (Art. 21 GDPR)
 - Right to lodge a complaint with a supervisory authority (Art. 77 GDPR), in particular with the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia
 
-Requests should be directed to: privacy [at] cryptomator [dot] org. Deletion of data before the conclusion of the sweepstakes will be treated as a withdrawal from participation.
+Requests should be directed to: privacy [at] cryptomator [dot] org. Deletion of data before the conclusion of the sweepstake will be treated as a withdrawal from participation.
 
 ### 9. Social Media
 
-The sweepstakes may be promoted via social networks (including Mastodon, LinkedIn, X, Facebook). The sweepstakes is in no way associated with, sponsored, supported, or organized by the respective platform operators. The sole point of contact for the sweepstakes is the Organizer.
+The sweepstake may be promoted via social networks (including Mastodon, LinkedIn, X, Facebook). The sweepstake is in no way associated with, sponsored, supported, or organized by the respective platform operators. The sole point of contact for the sweepstake is the Organizer.
 
 ### 10. Liability
 
-The Organizer shall only be liable in connection with the sweepstakes for damages caused by intentional or grossly negligent conduct on the part of the Organizer, its legal representatives, or agents. This limitation of liability does not apply to damages resulting from injury to life, body, or health. The Organizer assumes no liability for technical disruptions that may affect participation in the sweepstakes, or for the loss or damage of prizes during shipping.
+The Organizer shall only be liable in connection with the sweepstake for damages caused by intentional or grossly negligent conduct on the part of the Organizer, its legal representatives, or agents. This limitation of liability does not apply to damages resulting from injury to life, body, or health. The Organizer assumes no liability for technical disruptions that may affect participation in the sweepstake, or for the loss or damage of prizes during shipping.
 
 ### 11. Early Termination and Modifications
 
-The Organizer reserves the right to cancel, terminate, or modify the sweepstakes or these terms and conditions at any time without prior notice. This applies in particular if:
+The Organizer reserves the right to cancel, terminate, or modify the sweepstake or these terms and conditions at any time without prior notice. This applies in particular if:
 
-- proper conduct of the sweepstakes cannot be guaranteed for technical or legal reasons
+- proper conduct of the sweepstake cannot be guaranteed for technical or legal reasons
 - there is suspicion of manipulation or abuse
 - circumstances of force majeure arise
 
@@ -109,10 +109,10 @@ Legal recourse is excluded.
 The laws of the Federal Republic of Germany shall apply.
 The place of jurisdiction, to the extent permitted by law, is Bonn, Germany.
 Should any provision of these terms and conditions be or become invalid in whole or in part, the validity of the remaining provisions shall not be affected.
-By participating in the sweepstakes, the participant agrees to these terms and conditions.
+By participating in the sweepstake, the participant agrees to these terms and conditions.
 
 ---
 
 _Last updated: March 2026_
 
-_For questions about the sweepstakes: support [at] cryptomator [dot] org_
+_For questions about the sweepstake: support [at] cryptomator [dot] org_
