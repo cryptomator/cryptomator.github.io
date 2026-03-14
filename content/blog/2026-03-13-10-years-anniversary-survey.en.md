@@ -11,7 +11,7 @@ ogimage:
   width: 1200
   height: 675
 ---
-As part of our **10-year anniversary**, we'd love to hear directly from you.
+As part of our [10-year anniversary](/blog/2026/03/09/10-years-cryptomator/), we'd love to hear directly from you.
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/10-years-sweepstake.png" alt="Anniversary Survey – Tell Us What You Want Next" />
@@ -26,5 +26,9 @@ As a small thank-you, **everyone who completes the survey can enter our sweepsta
 ➡️ [Take the survey here](https://forms.skymatic.de/s/uuw0hgwfnxuzui137nptu3nf)!
 
 The survey only takes a few minutes — and every response makes a difference.
+
+## Anniversary Sale
+
+To celebrate our 10-year anniversary, we're also running a **special sale until March 18th**! Get Cryptomator at a reduced price and support the future of open-source encryption. Head over to our [downloads page](/downloads/) to grab the deal before it's gone.
 
 Thanks for being part of the Cryptomator community and for helping shape what comes next!
