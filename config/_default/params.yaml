@@ -2,7 +2,7 @@
 math: false
 
 anniversaryBanner:
-  enabled: true
+  enabled: false
   excludePaths:
     - /downloads-thanks/
     - /paddle-checkout/
