@@ -1289,6 +1289,48 @@
 - id: success_story_read_link
   translation: "Erfolgsgeschichte lesen"
 
+# Live Webinar Banner
+- id: webinar_banner
+  translation: "Live-Webinar – Cryptomator für Unternehmen&nbsp; <a class=\"whitespace-nowrap font-bold\" href=\"/de/webinar/\">Jetzt anmelden&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+
+# Webinar Form
+- id: webinar_first_name
+  translation: "Vorname"
+- id: webinar_last_name
+  translation: "Nachname"
+- id: webinar_email
+  translation: "E-Mail-Adresse"
+- id: webinar_company
+  translation: "Unternehmen"
+- id: webinar_submit
+  translation: "Jetzt anmelden"
+- id: webinar_success_title
+  translation: "Du bist angemeldet!"
+- id: webinar_success_message
+  translation: "Vielen Dank für deine Anmeldung. Du erhältst in Kürze eine Bestätigungs-E-Mail mit den Webinar-Details."
+- id: webinar_details_title
+  translation: "Webinar-Details"
+- id: webinar_date_label
+  translation: "Datum"
+- id: webinar_date_value
+  translation: "15. März 2026"
+- id: webinar_time_label
+  translation: "Uhrzeit"
+- id: webinar_time_value
+  translation: "14:00 Uhr MEZ"
+- id: webinar_language_label
+  translation: "Sprache"
+- id: webinar_language_value
+  translation: "Englisch"
+- id: webinar_learn_title
+  translation: "Das lernst du"
+- id: webinar_learn_1
+  translation: "Cloud-Speicher für dein Unternehmen verschlüsseln"
+- id: webinar_learn_2
+  translation: "Cryptomator Hub einrichten und verwalten"
+- id: webinar_learn_3
+  translation: "Best Practices für den unternehmensweiten Einsatz"
+
 # Sale
 - id: nav_promotion
   translation: ":snowflake: Winter-Sale: 50 %* Rabatt auf Cryptomator – den&nbsp;ganzen&nbsp;Dezember!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2025/12/01/winter-sale/\">Mehr erfahren&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
