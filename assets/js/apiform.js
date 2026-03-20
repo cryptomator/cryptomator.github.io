@@ -1,13 +1,12 @@
 "use strict";
 
-const REQUEST_HUB_CONTACT_URL = API_BASE_URL + '/connect/contact/request-contact';
+class ApiForm {
 
-class HubContact {
-
-  constructor(form, feedbackData, submitData) {
+  constructor(form, feedbackData, submitData, url) {
     this._form = form;
     this._feedbackData = feedbackData;
     this._submitData = submitData;
+    this._url = url;
   }
 
   request() {
@@ -22,7 +21,7 @@ class HubContact {
     this._feedbackData.errorMessage = '';
 
     $.ajax({
-      url: REQUEST_HUB_CONTACT_URL,
+      url: this._url,
       type: 'POST',
       data: JSON.stringify(this._submitData),
       contentType: "application/json; charset=utf-8",
