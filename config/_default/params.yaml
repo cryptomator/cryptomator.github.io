@@ -10,46 +10,46 @@ anniversaryBanner:
 
 releases:
   exe:
-    version: 1.19.1
-    filename: Cryptomator-1.19.1-x64.exe
-    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-x64.exe
-    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-x64.exe.asc
-    checksum: 08beab0e625339aa8525339388a1317987dc0f2f70d114737cbaf66d0ce62a1a
+    version: 1.19.2
+    filename: Cryptomator-1.19.2-x64.exe
+    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-x64.exe
+    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-x64.exe.asc
+    checksum: 5de9271f8f11f5c3226d95e25ba6f477515d48e6e768c7d14744ed947efb098f
     requiredOS: Windows 10, Version 1803
   msi:
-    version: 1.19.1
-    filename: Cryptomator-1.19.1-x64.msi
-    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-x64.msi
-    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-x64.msi.asc
-    checksum: 77ff121b725938bc05efaa842cfd7db2bbe0f32ca76c93b98c65b225d226d7fd
+    version: 1.19.2
+    filename: Cryptomator-1.19.2-x64.msi
+    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-x64.msi
+    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-x64.msi.asc
+    checksum: 4b34ba8d6525ad258de34c8098f9af2240b1874c6151862f1db1f4f2193911d4
     requiredOS: Windows 10, Version 1803
   dmg:
-    version: 1.19.1
-    filename: Cryptomator-1.19.1.dmg
-    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-x64.dmg
-    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-x64.dmg.asc
-    checksum: 14e3273f02268c6abf9a9962dbf35a01f45f4dd75ea90973af3827fcf88b96cb
+    version: 1.19.2
+    filename: Cryptomator-1.19.2.dmg
+    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-x64.dmg
+    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-x64.dmg.asc
+    checksum: 6f9ba5aa6deb5ef095926e6dcd7e6935d40791ff213dbbad14cd0ab375983a16
     requiredOS: macOS 11
   dmg-arm64:
-    version: 1.19.1
-    filename: Cryptomator-1.19.1-arm64.dmg
-    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-arm64.dmg
-    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/Cryptomator-1.19.1-arm64.dmg.asc
-    checksum: c208184d36b1570e00c2929b3b230679191235742385e883863135ee67e9c581
+    version: 1.19.2
+    filename: Cryptomator-1.19.2-arm64.dmg
+    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-arm64.dmg
+    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/Cryptomator-1.19.2-arm64.dmg.asc
+    checksum: e978a2da545d8aaca1192faf6dadf4c51bdf5e9bdc232a227618401c0b833f9a
     requiredOS: macOS 11
   appimage:
-    version: 1.19.1
-    filename: cryptomator-1.19.1-x86_64.AppImage
-    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/cryptomator-1.19.1-x86_64.AppImage
-    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/cryptomator-1.19.1-x86_64.AppImage.asc
-    checksum: 6acfccb9368731a96c375a1ec26666c93fd5735c03d200b9bf37d6e290a18116
+    version: 1.19.2
+    filename: cryptomator-1.19.2-x86_64.AppImage
+    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/cryptomator-1.19.2-x86_64.AppImage
+    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/cryptomator-1.19.2-x86_64.AppImage.asc
+    checksum: 5689d8cfbc60c0f2440d338a58362568d91d2d928fa3489d825a60fd0914c428
     requiredOS: ""
   appimage-aarch64:
-    version: 1.19.1
-    filename: cryptomator-1.19.1-aarch64.AppImage
-    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/cryptomator-1.19.1-aarch64.AppImage
-    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.1/cryptomator-1.19.1-aarch64.AppImage.asc
-    checksum: 05af34b8c6430d4e033f029eb20071ec718e529715f15e41f91230665d146849
+    version: 1.19.2
+    filename: cryptomator-1.19.2-aarch64.AppImage
+    downloadUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/cryptomator-1.19.2-aarch64.AppImage
+    signatureUrl: https://github.com/cryptomator/cryptomator/releases/download/1.19.2/cryptomator-1.19.2-aarch64.AppImage.asc
+    checksum: 9295c9c7fef6e7ec0a9d6cc1561a930e127ff83e6d98d5b14b6c01199399af75
     requiredOS: ""
   android:
     version: 1.12.3
