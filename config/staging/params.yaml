@@ -1,6 +1,7 @@
 # API
 apiBaseUrl: https://api.staging.cryptomator.org
 legacyStoreUrl: https://store.staging.cryptomator.org/api
+hubManagedDomain: staging.cryptomator.cloud
 
 # UMAMI
 umamiWebsiteId: 57a36f3a-bd97-4d8a-9563-0e8d39ddb20c
@@ -14,11 +15,11 @@ paddleDesktopPriceIds:
   - pri_01jb24e3z1zkzsq5yrhm5252bd
 paddleAndroidPriceId: pri_01jb24ewyc6fbhnzt26jdj9qp1
 paddleVendorId: 1385
-paddleHubSelfHostedSubscriptionPlanId: 23141
-paddleHubManagedSubscriptionPlanId: 42235
+paddleHubSelfHostedYearlyPlanId: 23141
+paddleHubSelfHostedMonthlyPlanId: 82378
+paddleHubManagedYearlyPlanId: 42235
+paddleHubManagedMonthlyPlanId: 82379
 paddlePricesUrl: https://sandbox-checkout.paddle.com/api/2.0/prices
-paddleDiscountId: dsc_01kba2drz2yg4v6h3d5f2687tw
-paddleDiscountCode: WINTER2025
 
 # STRIPE
 stripePk: pk_test_51RCM24IBZmkR4F9UiLBiSmsAnJvWqmHcDLxXR8ABKK1MNsZk3zCk2VJW7ZfaBlD81zpQxCX243sS3LEp9dABwiG800kJnGykDF

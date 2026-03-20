@@ -5,16 +5,28 @@ const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
+const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
 
 class HubSubscription {
 
   constructor(form, subscriptionData, searchParams) {
     this._form = form;
     this._subscriptionData = subscriptionData;
-    this._subscriptionData.hubId = searchParams.get('hub_id');
-    let encodedReturnUrl = searchParams.get('return_url');
-    if (encodedReturnUrl) {
-      this._subscriptionData.returnUrl = decodeURIComponent(encodedReturnUrl);  
+    let fragmentParams = new URLSearchParams(location.hash.substring(1));
+    this._subscriptionData.oldLicense = fragmentParams.get('oldLicense');
+    if (this._subscriptionData.oldLicense) {
+      try {
+        let base64 = this._subscriptionData.oldLicense.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+        this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
+      } catch (e) {
+        console.error('Failed to parse hub token:', e);
+        this._subscriptionData.oldLicense = null;
+      }
+    }
+    this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
+    let returnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
+    if (returnUrl) {
+      this._subscriptionData.returnUrl = returnUrl;
     }
     this._subscriptionData.session = searchParams.get('session');
     if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
@@ -56,7 +68,7 @@ class HubSubscription {
   }
 
   onLoadSubscriptionSucceeded(data) {
-    this._subscriptionData.token = data.token;
+    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     if (data.subscription.quantity) {
       this._subscriptionData.quantity = data.subscription.quantity;
@@ -64,6 +76,7 @@ class HubSubscription {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
+    this._subscriptionData.needsTokenRefresh = true;
   }
 
   onLoadSubscriptionFailed(status, error) {
@@ -161,54 +174,61 @@ class HubSubscription {
   loadPrice(continueHandler) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    let product_id;
-    if (this._subscriptionData.customBilling?.managed) {
-      product_id = PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID;
-    } else {
-      product_id = PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID;
-    }
+    let isManaged = this._subscriptionData.customBilling?.managed;
+    let yearlyPlanId = isManaged ? PADDLE_HUB_MANAGED_YEARLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
+    let monthlyPlanId = isManaged ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID;
     $.ajax({
       url: PADDLE_PRICES_URL,
       dataType: 'jsonp',
       data: {
-        product_ids: product_id
+        product_ids: yearlyPlanId + ',' + monthlyPlanId
       },
     }).done(data => {
-      this.onLoadPriceSucceeded(data);
+      this.onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId);
       continueHandler();
     }).fail(xhr => {
       this.onLoadPriceFailed(xhr.responseJSON?.message || 'Loading price failed.');
     });
   }
 
-  onLoadPriceSucceeded(data) {
-    let product = data.response.products[0];
-    let currency = product.currency;
-    let netAmount;
-    let recurringNetAmount;
-    let grossAmount;
-    let recurringGrossAmount;
-    if (this._subscriptionData.customBilling?.override?.prices) {
-      netAmount = this.getAmount(this._subscriptionData.customBilling.override.prices, currency) / 12;
-      recurringNetAmount = this.getAmount(this._subscriptionData.customBilling.override.recurring_prices, currency) / 12;
-      let taxRate = product.subscription.price.gross / product.subscription.price.net;
-      grossAmount = netAmount * taxRate;
-      recurringGrossAmount = recurringNetAmount * taxRate;
-    } else {
-      netAmount = product.subscription.price.net / 12;
-      recurringNetAmount = netAmount;
-      grossAmount = product.subscription.price.gross / 12;
-      recurringGrossAmount = grossAmount;
-    }
-    this._subscriptionData.monthlyPrice = {
-      netAmount: netAmount,
-      recurringNetAmount: recurringNetAmount,
-      grossAmount: grossAmount,
-      recurringGrossAmount: recurringGrossAmount,
+  onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId) {
+    let products = data.response.products;
+    let yearlyProduct = products.find(p => p.product_id == yearlyPlanId);
+    let monthlyProduct = products.find(p => p.product_id == monthlyPlanId);
+    let yearlyPrice = yearlyProduct.subscription.price;
+    let monthlyPrice = monthlyProduct.subscription.price;
+    let currency = yearlyProduct.currency;
+    this._subscriptionData.yearlyPlanPrice = this.calculateYearlyPlanPrice(yearlyPrice, currency);
+    this._subscriptionData.monthlyPlanPrice = {
+      netAmount: monthlyPrice.net,
+      recurringNetAmount: monthlyPrice.net,
+      grossAmount: monthlyPrice.gross,
+      recurringGrossAmount: monthlyPrice.gross,
       currency: currency
     };
+    this._subscriptionData.savingsPercent = Math.round((1 - yearlyPrice.net / (monthlyPrice.net * 12)) * 100);
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
+  }
+
+  calculateYearlyPlanPrice(yearlyPrice, currency) {
+    let taxRate = yearlyPrice.gross / yearlyPrice.net;
+    let customBillingOverride = this._subscriptionData.customBilling?.override;
+    let customPriceAmount = customBillingOverride?.prices
+      ? this.getAmount(customBillingOverride.prices, currency)
+      : null;
+    let netAmount = (customPriceAmount ?? yearlyPrice.net) / 12;
+    let customRecurringAmount = customBillingOverride?.recurring_prices
+      ? this.getAmount(customBillingOverride.recurring_prices, currency)
+      : null;
+    let recurringNetAmount = customRecurringAmount ? customRecurringAmount / 12 : netAmount;
+    return {
+      netAmount: netAmount,
+      recurringNetAmount: recurringNetAmount,
+      grossAmount: netAmount * taxRate,
+      recurringGrossAmount: recurringNetAmount * taxRate,
+      currency: currency
+    };
   }
 
   getAmount(prices, currency) {
@@ -231,11 +251,15 @@ class HubSubscription {
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    if (this._subscriptionData.customBilling?.managed) {
-      this.customCheckout(PADDLE_HUB_MANAGED_SUBSCRIPTION_PLAN_ID, locale);
+    let isManaged = this._subscriptionData.customBilling?.managed;
+    let isMonthly = this._subscriptionData.billingInterval === 'monthly';
+    let planId;
+    if (isManaged) {
+      planId = isMonthly ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_MANAGED_YEARLY_PLAN_ID;
     } else {
-      this.customCheckout(PADDLE_HUB_SELF_HOSTED_SUBSCRIPTION_PLAN_ID, locale);
+      planId = isMonthly ? PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
     }
+    this.customCheckout(planId, locale);
   }
 
   customCheckout(productId, locale) {
@@ -260,7 +284,7 @@ class HubSubscription {
         override: payLink,
         email: this._subscriptionData.email,
         locale: locale,
-        passthrough: '{"hub_id": ' + this._subscriptionData.hubId + '}',
+        passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId }),
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
         closeCallback: () => {
           this._subscriptionData.inProgress = false;
@@ -300,7 +324,7 @@ class HubSubscription {
 
   onPostSucceeded(data) {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
-    this._subscriptionData.token = data.token;
+    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.session = data.session;
     var searchParams = new URLSearchParams(window.location.search)
@@ -309,7 +333,8 @@ class HubSubscription {
     history.pushState(null, '', newRelativePathQuery);
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this.transferTokenToHub();
+    this._subscriptionData.shouldTransferToHub = true;
+    this._subscriptionData.needsTokenRefresh = true;
   }
 
   onPostFailed(error) {
@@ -466,12 +491,13 @@ class HubSubscription {
   }
 
   onPutSucceeded(data, shouldOpenReturnUrl) {
-    this._subscriptionData.token = data.token;
+    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
     if (shouldOpenReturnUrl) {
-      this.transferTokenToHub();
+      this._subscriptionData.shouldTransferToHub = true;
+      this._subscriptionData.needsTokenRefresh = true;
     }
   }
 
@@ -481,6 +507,31 @@ class HubSubscription {
     }
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
+  }
+
+  refreshToken() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: REFRESH_LICENSE_URL,
+      type: 'POST',
+      data: {
+        token: this._subscriptionData.oldLicense,
+        captcha: this._subscriptionData.captcha
+      }
+    }).done(token => {
+      this._subscriptionData.token = token;
+      this._subscriptionData.needsTokenRefresh = false;
+      this._subscriptionData.errorMessage = '';
+      this._subscriptionData.inProgress = false;
+      if (this._subscriptionData.shouldTransferToHub) {
+        this.transferTokenToHub();
+      }
+    }).fail(xhr => {
+      this._subscriptionData.errorMessage = xhr.responseJSON?.message || 'Refreshing license failed.';
+      this._subscriptionData.needsTokenRefresh = false;
+      this._subscriptionData.inProgress = false;
+    });
   }
 
   transferTokenToHub() {

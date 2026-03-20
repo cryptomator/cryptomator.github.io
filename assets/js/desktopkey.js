@@ -44,20 +44,20 @@ class DesktopLicense {
       }).catch(() => {
         this._checkoutData.errorMessage = 'Retrieving prices failed. Please try again later.';
       });
-      // let discountedRequest = {
-      //   items: [{ priceId: PADDLE_DESKTOP_PRICE_IDS[0], quantity: 1 }],
-      //   discountId: PADDLE_DISCOUNT_ID
-      // };
-      // paddle.PricePreview(discountedRequest).then(discountedResult => {
-      //   if (Number(discountedResult.data.details.lineItems[0].totals.discount) > 0) {
-      //     this._checkoutData.discountedPrice = {
-      //       amount: discountedResult.data.details.lineItems[0].totals.total,
-      //       formattedAmount: discountedResult.data.details.lineItems[0].formattedTotals.total
-      //     };
-      //   }
-      // }).catch(() => {
-      //   this._checkoutData.errorMessage = 'Retrieving discounted price failed. Please try again later.';
-      // });
+      if (PADDLE_DESKTOP_SALE_PRICE_ID) {
+        let saleRequest = {
+          items: [{ priceId: PADDLE_DESKTOP_SALE_PRICE_ID, quantity: 1 }]
+        };
+        paddle.PricePreview(saleRequest).then(saleResult => {
+          this._checkoutData.discountedPrice = {
+            priceId: PADDLE_DESKTOP_SALE_PRICE_ID,
+            amount: saleResult.data.details.lineItems[0].totals.total,
+            formattedAmount: saleResult.data.details.lineItems[0].formattedTotals.total
+          };
+        }).catch(() => {
+          // sale price not available, proceed with regular price
+        });
+      }
     });
   }
 
@@ -76,10 +76,11 @@ class DesktopLicense {
     this._checkoutData.inProgress = true;
     this._checkoutData.errorMessage = '';
     this._checkoutData.success = false;
+    let checkoutPriceId = (priceId === PADDLE_DESKTOP_PRICE_IDS[0] && this._checkoutData.discountedPrice) ? this._checkoutData.discountedPrice.priceId : priceId;
     this._paddle.then(paddle => {
       paddle.Checkout.open({
         settings: { locale: locale },
-        items: [{ priceId: priceId, quantity: Number.parseInt(this._checkoutData.quantity) }],
+        items: [{ priceId: checkoutPriceId, quantity: Number.parseInt(this._checkoutData.quantity) }],
         customer: { email: this._checkoutData.email }
       });
     });

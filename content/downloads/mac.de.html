@@ -25,16 +25,46 @@ screenshot2x: /img/downloads/mac-screenshot@2x.png
     <div class="px-4 py-2 border-b border-primary">
       <h3 class="font-h3 text-lg">DMG Image</h3>
     </div>
-    <div class="p-4">
+    <div class="p-4" x-data="{ macArch: 'unknown' }" x-init="macArch = detectMacArchitecture()">
       <p class="font-p text-sm mb-4">Minimum: {{< siteparam releases.dmg.requiredOS >}}</p>
-      <a itemprop="downloadUrl" href="/de/downloads/mac-arm64/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-mac-arm64">
-        <span class="fa-solid fa-download" aria-hidden="true"></span> Download <span class="text-xs">(Apple Silicon)</span>
-      </a>
-      <p class="font-p text-sm mb-6">Wir empfehlen die Installation von <a class="text-link" href="https://www.fuse-t.org/" target="_blank" rel="noopener">FUSE-T</a>.</p>
-      <a itemprop="downloadUrl" href="/de/downloads/mac/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-mac">
-        <span class="fa-solid fa-download" aria-hidden="true"></span> Download <span class="text-xs">(Intel)</span>
-      </a>
-      <p class="font-p text-sm">Wir empfehlen die Installation von <a class="text-link" href="https://osxfuse.github.io/" target="_blank" rel="noopener">macFUSE</a>.</p>
+
+      <!-- Apple Silicon: Primary when detected or unknown -->
+      <template x-if="macArch === 'apple-silicon' || macArch === 'unknown'">
+        <div>
+          <a itemprop="downloadUrl" href="/de/downloads/mac-arm64/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-mac-arm64">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download<span x-show="macArch === 'unknown'" class="text-xs"> (Apple Silicon)</span>
+          </a>
+          <p class="font-p text-sm mb-4">Wir empfehlen die Installation von <a class="text-link" href="https://www.fuse-t.org/" target="_blank" rel="noopener">FUSE-T</a>.</p>
+        </div>
+      </template>
+
+      <!-- Intel: Primary when detected or unknown -->
+      <template x-if="macArch === 'intel' || macArch === 'unknown'">
+        <div>
+          <a itemprop="downloadUrl" href="/de/downloads/mac/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-mac">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download<span x-show="macArch === 'unknown'" class="text-xs"> (Intel)</span>
+          </a>
+          <p class="font-p text-sm">Wir empfehlen die Installation von <a class="text-link" href="https://osxfuse.github.io/" target="_blank" rel="noopener">macFUSE</a>.</p>
+        </div>
+      </template>
+
+      <!-- Secondary download option (de-emphasized) -->
+      <template x-if="macArch === 'apple-silicon'">
+        <div class="mt-4 pt-4 border-t border-gray-200">
+          <p class="font-p text-sm mb-2">Du suchst die Intel-Version?</p>
+          <a href="/de/downloads/mac/thanks/" rel="nofollow" class="btn btn-outline-primary w-full md:w-56" role="button" data-umami-event="downloads-mac">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download
+          </a>
+        </div>
+      </template>
+      <template x-if="macArch === 'intel'">
+        <div class="mt-4 pt-4 border-t border-gray-200">
+          <p class="font-p text-sm mb-2">Du suchst die Apple Silicon-Version?</p>
+          <a href="/de/downloads/mac-arm64/thanks/" rel="nofollow" class="btn btn-outline-primary w-full md:w-56" role="button" data-umami-event="downloads-mac-arm64">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download
+          </a>
+        </div>
+      </template>
     </div>
   </div>
 </div>

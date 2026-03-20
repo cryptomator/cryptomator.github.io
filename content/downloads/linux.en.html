@@ -25,15 +25,46 @@ screenshot2x: /img/downloads/linux-screenshot@2x.png
     <div class="px-4 py-2 border-b border-primary">
       <h3 class="font-h3 text-lg">AppImage</h3>
     </div>
-    <div class="p-4">
+    <div class="p-4" x-data="{ linuxArch: 'unknown' }" x-init="linuxArch = detectLinuxArchitecture()">
       <p class="font-p text-sm mb-4">See {{< extlink "https://www.oracle.com/java/technologies/javase/products-doc-jdk21certconfig.html" "System Requirements" >}}</p>
-      <a itemprop="downloadUrl" href="/downloads/linux/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-linux">
-        <span class="fa-solid fa-download" aria-hidden="true"></span> Download <span class="text-xs">(x86_x64)</span>
-      </a>
-      <a itemprop="downloadUrl" href="/downloads/linux-aarch64/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-linux-aarch64">
-        <span class="fa-solid fa-download" aria-hidden="true"></span> Download <span class="text-xs">(AArch64)</span>
-      </a>
+
+      <!-- x86_64: Primary when detected or unknown -->
+      <template x-if="linuxArch === 'x86_64' || linuxArch === 'unknown'">
+        <div>
+          <a itemprop="downloadUrl" href="/downloads/linux/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-linux">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download<span x-show="linuxArch === 'unknown'" class="text-xs"> (x86_64)</span>
+          </a>
+        </div>
+      </template>
+
+      <!-- AArch64: Primary when detected or unknown -->
+      <template x-if="linuxArch === 'aarch64' || linuxArch === 'unknown'">
+        <div>
+          <a itemprop="downloadUrl" href="/downloads/linux-aarch64/thanks/" rel="nofollow" class="btn btn-primary w-full mb-4 md:w-56" role="button" data-umami-event="downloads-linux-aarch64">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download<span x-show="linuxArch === 'unknown'" class="text-xs"> (AArch64)</span>
+          </a>
+        </div>
+      </template>
+
       <p class="font-p text-sm">After downloading, make {{< extlink "https://docs.appimage.org/introduction/quickstart.html#ref-how-to-run-appimage" "the AppImage executable" >}}.</p>
+
+      <!-- Secondary download option -->
+      <template x-if="linuxArch === 'x86_64'">
+        <div class="mt-4 pt-4 border-t border-gray-200">
+          <p class="font-p text-sm mb-2">Looking for the AArch64 version?</p>
+          <a href="/downloads/linux-aarch64/thanks/" rel="nofollow" class="btn btn-outline-primary w-full md:w-56" role="button" data-umami-event="downloads-linux-aarch64">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download
+          </a>
+        </div>
+      </template>
+      <template x-if="linuxArch === 'aarch64'">
+        <div class="mt-4 pt-4 border-t border-gray-200">
+          <p class="font-p text-sm mb-2">Looking for the x86_64 version?</p>
+          <a href="/downloads/linux/thanks/" rel="nofollow" class="btn btn-outline-primary w-full md:w-56" role="button" data-umami-event="downloads-linux">
+            <span class="fa-solid fa-download" aria-hidden="true"></span> Download
+          </a>
+        </div>
+      </template>
     </div>
   </div>
 

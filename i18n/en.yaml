@@ -34,6 +34,8 @@
   translation: "I agree to get updates from Cryptomator Hub and accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_hub_newsletter_optional
   translation: "I agree to get updates from Cryptomator Hub via email (optional)."
+- id: accept_hub_managed_early_access_optional
+  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">Early Access</span> Try out <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Cryptomator Hub 1.5.0</a> with brand new features and an extended 100-day free trial (optional)."
 - id: accept_privacy
   translation: "I accept the <a class=\"text-link\" href=\"/privacy/\" target=\"_blank\">Privacy Policy</a>."
 - id: accept_privacy_implicitly
@@ -384,6 +386,10 @@
   translation: "Sign Up Now"
 - id: hub_header_managed_cta_description
   translation: "Start your free 30-day trial today, no credit card required."
+- id: hub_header_kicker_early_access
+  translation: "Hub 1.5.0 Early Access*"
+- id: hub_header_early_access_note
+  translation: "<a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early access</a> includes brand new features and an extended 100-day free trial."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 
@@ -546,6 +552,8 @@
   translation: "This is your license key that is bound to your Hub ID. Press the button below to transfer it to your Hub instance automatically."
 - id: hub_billing_manage_license_key_transfer_action
   translation: "Transfer to Hub"
+- id: hub_billing_manage_license_key_retry_action
+  translation: "Retry"
 
 - id: hub_billing_manage_modal_charge_amount_description
   translation: "Charge Amount"
@@ -585,6 +593,14 @@
   translation: "Standard"
 - id: hub_billing_checkout_standard_description
   translation: "per seat, per month, billed yearly"
+- id: hub_billing_checkout_standard_description_monthly
+  translation: "per seat, billed monthly"
+- id: hub_billing_monthly
+  translation: "Monthly"
+- id: hub_billing_yearly
+  translation: "Yearly"
+- id: hub_billing_save
+  translation: "Save"
 
 - id: hub_billing_checkout_standard_hubid
   translation: "Hub ID"
@@ -602,6 +618,19 @@
   translation: "Payments are securely handled by Paddle."
 - id: hub_billing_checkout_standard_submit
   translation: "Checkout"
+
+- id: hub_billing_checkout_community_title
+  translation: "Community"
+- id: hub_billing_checkout_community_statement
+  translation: "Free"
+- id: hub_billing_checkout_community_description
+  translation: "up to 5 seats included"
+- id: hub_billing_checkout_community_subtitle
+  translation: "Get Started for Free"
+- id: hub_billing_checkout_community_cta
+  translation: "Your Hub instance supports the Community Edition. Register for a free license with up to 5 seats."
+- id: hub_billing_checkout_community_action
+  translation: "Register for Free"
 
 - id: hub_billing_checkout_enterprise_title
   translation: "Enterprise"
@@ -659,6 +688,45 @@
 - id: hub_demo_contact_us_button
   translation: "Contact Us"
 
+# Hub CE Registration
+- id: hub_ce_registration_description
+  translation: "Register your Cryptomator Hub instance for a free Community Edition license."
+
+- id: hub_ce_registration_steps_title
+  translation: "Step <span x-text=\"feedbackData.currentStep + 1\"></span> of <span x-text=\"steps.length\"></span>"
+- id: hub_ce_registration_steps_next
+  translation: "Next"
+- id: hub_ce_registration_steps_continue
+  translation: "Continue"
+
+- id: hub_ce_registration_step_1_nav_title
+  translation: "Email Address"
+- id: hub_ce_registration_step_1_title
+  translation: "What's your email address?"
+- id: hub_ce_registration_step_1_email_placeholder
+  translation: "Email address"
+
+- id: hub_ce_registration_step_2_confirmation_nav_title
+  translation: "Confirmation"
+- id: hub_ce_registration_step_2_confirmation_title
+  translation: "Please confirm your email address"
+- id: hub_ce_registration_step_2_instructions
+  translation: "We are going to send a confirmation email to <span x-text=\"submitData.email\"></span>"
+- id: hub_ce_registration_step_2_check_email
+  translation: "Please check your e-mails."
+- id: hub_ce_registration_step_2_email_verified
+  translation: "Your email has been verified successfully."
+
+- id: hub_ce_registration_step_3_license_nav_title
+  translation: "License Key"
+- id: hub_ce_registration_step_3_license_title
+  translation: "Your Community Edition License Key"
+- id: hub_ce_registration_step_3_loading
+  translation: "Loading license key..."
+- id: hub_ce_registration_step_3_success
+  translation: "Your new license key:"
+
+
 # Hub Managed
 - id: hub_managed_description
   translation: "Request access to a managed instance of Cryptomator Hub and get your team on board with client-side encryption for your cloud storage."
@@ -705,6 +773,12 @@
   translation: "URL"
 - id: hub_managed_step_4_quantity
   translation: "Expected Users"
+- id: hub_managed_step_4_phone
+  translation: "Phone Number"
+- id: hub_managed_step_4_phone_add
+  translation: "Add phone number (optional)"
+- id: hub_managed_step_4_phone_placeholder
+  translation: "e.g., +49 123 4567890"
 - id: hub_managed_step_4_message
   translation: "Message"
 - id: hub_managed_step_4_message_add
@@ -855,10 +929,12 @@
 # Pricing
 - id: pricing_title
   translation: "Find the Right Plan for You"
-- id: pricing_individuals
-  translation: "For Individuals"
-- id: pricing_teams
-  translation: "For Teams"
+- id: pricing_billing_monthly
+  translation: "Monthly"
+- id: pricing_billing_yearly
+  translation: "Yearly"
+- id: pricing_billing_save
+  translation: "Save"
 - id: pricing_vat_excluded
   translation: "excl. VAT"
 - id: pricing_vat_included
@@ -868,52 +944,41 @@
 - id: hub_different_recurring_description
   translation: "after the first year"
 
-- id: pricing_desktop_price_description
-  translation: "Donationware"
-- id: pricing_desktop_cta_1
-  translation: "Download Now"
-- id: pricing_desktop_cta_2
-  translation: "Support Us"
-- id: pricing_desktop_benefit_1
-  translation: "Works with any cloud storage that syncs to your file system, incl. Dropbox, Google Drive, OneDrive, Nextcloud, and more"
-- id: pricing_desktop_benefit_2
-  translation: "Client-side encryption for ultimate privacy"
-- id: pricing_desktop_benefit_3
-  translation: "Transparent access via virtual drive"
-- id: pricing_desktop_benefit_4
-  translation: "No accounts, no data shared"
-
 - id: pricing_android_price
   translation: "€29.99"
-- id: pricing_android_price_description
-  translation: "Lifetime License"
-- id: pricing_android_cta
-  translation: "Download Now"
-- id: pricing_android_benefit_1
-  translation: "Works with Dropbox, Google Drive, OneDrive, pCloud, WebDAV- and S3-based cloud storage"
-- id: pricing_android_benefit_2
-  translation: "Access and encrypt cloud files on the go"
-- id: pricing_android_benefit_3
-  translation: "Unlock vaults with biometric authentication"
-- id: pricing_android_benefit_4
-  translation: "No accounts, no data shared"
-
-- id: pricing_ios_free_description
-  translation: "Read-Only Mode"
 - id: pricing_ios_price
   translation: "€29.99"
-- id: pricing_ios_price_description
-  translation: "Lifetime License"
-- id: pricing_ios_cta
+
+- id: pricing_individual_title
+  translation: "Individual"
+- id: pricing_individual_subtitle
+  translation: "Encrypt your personal cloud files. Open source and free forever."
+- id: pricing_individual_price_description
+  translation: "for personal use"
+- id: pricing_individual_cta
   translation: "Download Now"
-- id: pricing_ios_benefit_1
-  translation: "Works with iCloud Drive, Dropbox, Google Drive, OneDrive, pCloud, Box, WebDAV- and S3-based cloud storage"
-- id: pricing_ios_benefit_2
-  translation: "Fully integrated into the Files app"
-- id: pricing_ios_benefit_3
-  translation: "Unlock vaults with Face ID / Touch ID"
-- id: pricing_ios_benefit_4
-  translation: "No accounts, no data shared"
+- id: pricing_individual_benefit_1
+  translation: "Unlimited vaults"
+- id: pricing_individual_benefit_2
+  translation: "Works with any cloud storage"
+- id: pricing_individual_benefit_2_tooltip
+  translation: "Supported services vary by platform. <a href='https://docs.cryptomator.org/misc/supported-cloud-services/' target='_blank' rel='noopener' class='text-link'>Learn more</a>"
+- id: pricing_individual_benefit_3
+  translation: "Full access via Desktop app"
+- id: pricing_individual_benefit_4
+  translation: "Community support"
+- id: pricing_individual_mobile_upgrades_title
+  translation: "Optional Upgrades"
+- id: pricing_individual_upgrade_dark_mode
+  translation: "Dark Mode on Desktop"
+- id: pricing_supporter_cert_price
+  translation: "from €29.99"
+- id: pricing_individual_mobile_android
+  translation: "Full access on Android"
+- id: pricing_individual_mobile_ios
+  translation: "Full access on iOS"
+- id: pricing_individual_upgrades_note
+  translation: "Separate one-time purchases per platform. Prices may vary by region."
 
 - id: pricing_hub_self_hosted_title
   translation: "Self-Hosted"
@@ -927,33 +992,25 @@
 
 - id: pricing_hub_community_title
   translation: "Community"
-- id: pricing_hub_community_price_description
-  translation: "to get started"
+- id: pricing_hub_community_subtitle
+  translation: "Free and open source for small teams. Deploy on your own infrastructure with full control over your data."
 - id: pricing_hub_community_benefit_1
-  translation: "Unlimited vaults"
+  translation: "Includes 5 seats"
 - id: pricing_hub_community_benefit_2
-  translation: "5 seats"
-- id: pricing_hub_community_benefit_3
-  translation: "Full access via Desktop app"
-- id: pricing_hub_community_benefit_4
-  translation: "Read-only access via Mobile apps"
-- id: pricing_hub_community_benefit_4_tooltip
-  translation: "If you unlocked the full version of the mobile app, you will be granted full access."
-- id: pricing_hub_community_benefit_5
-  translation: "Community support"
+  translation: "Self-hosted only"
 
 - id: pricing_hub_standard_title
   translation: "Standard"
+- id: pricing_hub_standard_subtitle
+  translation: "For teams that need scalable, secure file encryption."
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_benefit_1
-  translation: "Everything in Community"
+  translation: "All Cryptomator features, plus:"
 - id: pricing_hub_standard_benefit_2
-  translation: "Starts from 3 seats"
+  translation: "User and group management"
 - id: pricing_hub_standard_benefit_3
   translation: "Full access via Mobile apps"
-- id: pricing_hub_standard_benefit_3_tooltip
-  translation: "You will be granted full access without having to unlock the full version of the mobile app."
 - id: pricing_hub_standard_benefit_4
   translation: "Audit logs"
 - id: pricing_hub_standard_benefit_5
@@ -965,6 +1022,8 @@
 
 - id: pricing_hub_enterprise_title
   translation: "Enterprise"
+- id: pricing_hub_enterprise_subtitle
+  translation: "For large-scale deployments with premium support."
 - id: pricing_hub_enterprise_price
   translation: "Custom"
 - id: pricing_hub_enterprise_price_description
@@ -974,10 +1033,12 @@
 - id: pricing_hub_enterprise_benefit_1
   translation: "Everything in Standard"
 - id: pricing_hub_enterprise_benefit_2
-  translation: "Expert training and assistance"
+  translation: "Emergency Access"
 - id: pricing_hub_enterprise_benefit_3
-  translation: "Dedicated account manager"
+  translation: "Expert training and assistance"
 - id: pricing_hub_enterprise_benefit_4
+  translation: "Dedicated account manager"
+- id: pricing_hub_enterprise_benefit_5
   translation: "Priority email support"
 
 - id: pricing_support_us_title
@@ -988,6 +1049,11 @@
   translation: "Donate"
 - id: pricing_support_us_sponsor_button
   translation: "Become a Sponsor"
+
+- id: pricing_faq_individual_badge
+  translation: "For Individuals"
+- id: pricing_faq_teams_badge
+  translation: "For Teams"
 
 # Supporter Certificate
 - id: supporter_cert_common_email
@@ -1090,6 +1156,10 @@
   translation: "Last Name"
 - id: book_demo_email
   translation: "Email Address"
+- id: book_demo_phone
+  translation: "Phone Number (optional)"
+- id: book_demo_phone_placeholder
+  translation: "e.g., +49 123 4567890"
 - id: book_demo_company
   translation: "Company (optional)"
 - id: book_demo_learn_about
@@ -1154,6 +1224,10 @@
   translation: "Last Name"
 - id: contact_sales_email
   translation: "Email Address"
+- id: contact_sales_phone
+  translation: "Phone Number (optional)"
+- id: contact_sales_phone_placeholder
+  translation: "e.g., +49 123 4567890"
 - id: contact_sales_website
   translation: "Company Website (optional)"
 - id: contact_sales_topic
@@ -1200,6 +1274,10 @@
   translation: "Last Name"
 - id: partner_email
   translation: "Email Address"
+- id: partner_phone
+  translation: "Phone Number (optional)"
+- id: partner_phone_placeholder
+  translation: "e.g., +49 123 4567890"
 - id: partner_company
   translation: "Company"
 - id: partner_website
@@ -1332,21 +1410,27 @@
   translation: "Best practices for company-wide deployment"
 
 # Sale
-- id: nav_promotion
-  translation: ":snowflake: Winter Sale: 50%* Off Cryptomator – All&nbsp;December&nbsp;Long!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2025/12/01/winter-sale/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: sale_off
   translation: "Off"
 - id: for_individuals_header_kicker_sale
-  translation: "50%* Off – Winter Sale"
+  translation: "10-Year Anniversary Sale*"
 - id: home_header_kicker_sale
-  translation: "50%* Off – Winter Sale"
-- id: hub_header_kicker_sale
-  translation: "50% Off in the First Year – Winter Sale"
+  translation: "10-Year Anniversary"
+- id: pricing_supporter_cert_price_discounted
+  translation: "from €10"
 - id: pricing_android_price_discounted
-  translation: "€9.99"
+  translation: "€10"
 - id: pricing_ios_price_discounted
-  translation: "€9.99"
+  translation: "€10"
 - id: pricing_discount_note
   translation: "The discount amount may vary by region."
-- id: pricing_hub_standard_price_first_year
-  translation: "in the first year"
+
+# Anniversary Banner
+- id: anniversary_banner_aria_label
+  translation: "Announcement for Cryptomator's 10-year anniversary"
+- id: anniversary_banner_lead
+  translation: "Celebrating 10 years of Cryptomator"
+- id: anniversary_banner_cta_mobile
+  translation: "Take our survey, win goodie bags & enjoy our sale until March 18"
+- id: anniversary_banner_cta_desktop
+  translation: "Take our survey, win goodie bags & enjoy our anniversary sale until March 18"
