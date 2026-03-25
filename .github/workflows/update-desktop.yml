@@ -9,6 +9,8 @@ jobs:
   create-pr:
     name: Create PR for aur repo
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       DESKTOP_VERSION: ${{ github.event.client_payload.version }}
     steps:
