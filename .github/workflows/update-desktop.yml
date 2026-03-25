@@ -2,7 +2,7 @@ name: Updates download urls to latest version
 
 on:
   repository_dispatch:
-    types: [desktop-update]
+    types: [desktop-release]
 
 jobs:
   create-pr:
