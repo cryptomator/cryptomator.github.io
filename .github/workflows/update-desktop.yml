@@ -5,7 +5,6 @@ on:
     types: [desktop-update]
 
 jobs:
-
   create-pr:
     name: Create PR for aur repo
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
       - name: Create new branch
         run: |
           git config --global safe.directory '*'
-          git checkout -b "feature/desktop-$DESKTOP_VERSION"
+          git checkout -b "feature/desktop-${DESKTOP_VERSION}"
       - name: Update params.yaml
         run: |
            echo "TODO $DESKTOP_VERSION" > config/_default/params.yaml
@@ -29,13 +28,13 @@ jobs:
           git config user.email "cryptobot@users.noreply.github.com"
           git config push.autoSetupRemote true
           git stage config/_default/params.yaml
-          git commit -m "Update desktop download urls to version ${DESKTOP_VERSION}"
+          git commit -m "Update desktop download urls to release ${DESKTOP_VERSION}"
           git push
       - name: Create pull request
         id: create-pr
         run: |
           printf "Created by $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > pr_body.md
-          PR_URL=$(gh pr create --title "Update desktop download to $DESKTOP_VERSION" --body-file pr_body.md)
+          PR_URL=$(gh pr create --title "Desktop release ${DESKTOP_VERSION}" --body-file pr_body.md)
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.CRYPTOBOT_PR_TOKEN }}
@@ -48,7 +47,7 @@ jobs:
           SLACK_ICON: false
           SLACK_ICON_EMOJI: ':bot:'
           SLACK_CHANNEL: 'cryptomator-desktop'
-          SLACK_TITLE: "AUR release PR created for ${{ github.event.repository.name }} ${{ github.event.client_payload.version }} ."
+          SLACK_TITLE: "Website update PR created for release ${{ github.event.client_payload.version }} ."
           SLACK_MESSAGE: "See <${{ steps.create-pr.outputs.url }}|PR> on how to proceed."
           SLACK_FOOTER: false
           MSG_MINIMAL: true
