@@ -18,6 +18,10 @@ jobs:
       - name: Create new branch
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          if [[ ! "$DESKTOP_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z]+)*$ ]]; then
+            echo "Invalid version in payload: $DESKTOP_VERSION" >&2
+            exit 1;
+          fi
           git checkout -b "feature/desktop-${DESKTOP_VERSION}"
       - name: Update params.yaml
         run: |
