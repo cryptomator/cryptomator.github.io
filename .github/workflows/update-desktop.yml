@@ -70,15 +70,23 @@ jobs:
         env:
           ASSETS_JSON: ${{ toJson(github.event.client_payload.release.assets ) }}
       - name: Commit and push
+        id: commit-and-push
         run: |
           git config user.name "cryptobot"
           git config user.email "cryptobot@users.noreply.github.com"
           git config push.autoSetupRemote true
           git stage config/_default/params.yaml
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           git commit -m "Update desktop download urls to release ${DESKTOP_VERSION}"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Create pull request
         id: create-pr
+        if: steps.commit-and-push.outputs.changed == 'true'
         run: |
           printf "Created by $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > pr_body.md
           PR_URL=$(gh pr create --title "Desktop release ${DESKTOP_VERSION}" --body-file pr_body.md)
@@ -86,6 +94,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.CRYPTOBOT_PR_TOKEN }}
       - name: Slack Notification
+        if: steps.commit-and-push.outputs.changed == 'true'
         uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # v2.3.3
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CRYPTOMATOR_DESKTOP }}
