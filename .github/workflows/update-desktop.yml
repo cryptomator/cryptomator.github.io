@@ -50,6 +50,11 @@ jobs:
               return
             fi
 
+            if [[ "$url" != https://github.com/cryptomator/cryptomator/releases/download/* ]]; then
+              echo "Unexpected download URL: $url" >&2
+              exit 1
+            fi
+
             UPDATED_ASSETS=1
             RELEASE_URL="$url" RELEASE_DIGEST="${digest#sha256:}" yq -i "
               .releases.${key}.version = env(DESKTOP_VERSION) |
