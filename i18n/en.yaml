@@ -1382,20 +1382,26 @@
   translation: "Company"
 - id: webinar_submit
   translation: "Register Now"
+- id: webinar_form_title
+  translation: "Reserve your seat"
+- id: webinar_form_subtitle
+  translation: "We'll email you a confirmation and a reminder before the session."
 - id: webinar_success_title
   translation: "You're registered!"
 - id: webinar_success_message
   translation: "Thank you for registering. You will receive a confirmation email with the webinar details shortly."
+- id: webinar_success_inbox_hint
+  translation: "Please also check your spam folder."
 - id: webinar_details_title
   translation: "Webinar Details"
 - id: webinar_date_label
   translation: "Date"
 - id: webinar_date_value
-  translation: "March 15, 2026"
+  translation: "March 27, 2026"
 - id: webinar_time_label
   translation: "Time"
 - id: webinar_time_value
-  translation: "2:00 PM CET"
+  translation: "11:30 AM CET"
 - id: webinar_language_label
   translation: "Language"
 - id: webinar_language_value

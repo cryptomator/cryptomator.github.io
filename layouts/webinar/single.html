@@ -13,6 +13,10 @@
         <!-- Left Side - Registration Form -->
         <section class="white-box md:col-span-2">
           <div class="px-4 py-5 md:p-6">
+            <div class="mb-6">
+              <h2 class="font-h3 mb-2">{{ i18n "webinar_form_title" }}</h2>
+              <p class="text-sm text-gray-600">{{ i18n "webinar_form_subtitle" }}</p>
+            </div>
             <div class="grid grid-cols-2 gap-6">
               <!-- First Name -->
               <div class="col-span-2 md:col-span-1">
@@ -74,32 +78,38 @@
         <!-- Sidebar -->
         <aside class="white-box md:col-span-1">
           <div class="px-4 py-5 md:p-6">
-            <div class="space-y-6">
+            <div class="space-y-8">
               <div>
-                <h3 class="font-h3 mb-4">{{ i18n "webinar_details_title" }}</h3>
+                <h3 class="font-h3 mb-6">{{ i18n "webinar_details_title" }}</h3>
 
-                <ul class="space-y-4">
+                <ul role="list" class="space-y-5">
                   <li class="flex items-start">
-                    <i class="fa-solid fa-calendar text-primary mr-3 mt-1"></i>
+                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i class="fa-solid fa-calendar text-primary" aria-hidden="true"></i>
+                    </div>
                     <div>
-                      <div class="font-medium text-gray-900">{{ i18n "webinar_date_label" }}</div>
-                      <p class="text-sm text-gray-600">{{ i18n "webinar_date_value" }}</p>
+                      <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_date_label" }}</div>
+                      <p class="font-medium text-gray-900">{{ i18n "webinar_date_value" }}</p>
                     </div>
                   </li>
 
                   <li class="flex items-start">
-                    <i class="fa-solid fa-clock text-primary mr-3 mt-1"></i>
+                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i class="fa-solid fa-clock text-primary" aria-hidden="true"></i>
+                    </div>
                     <div>
-                      <div class="font-medium text-gray-900">{{ i18n "webinar_time_label" }}</div>
-                      <p class="text-sm text-gray-600">{{ i18n "webinar_time_value" }}</p>
+                      <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_time_label" }}</div>
+                      <p class="font-medium text-gray-900">{{ i18n "webinar_time_value" }}</p>
                     </div>
                   </li>
 
                   <li class="flex items-start">
-                    <i class="fa-solid fa-globe text-primary mr-3 mt-1"></i>
+                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i class="fa-solid fa-globe text-primary" aria-hidden="true"></i>
+                    </div>
                     <div>
-                      <div class="font-medium text-gray-900">{{ i18n "webinar_language_label" }}</div>
-                      <p class="text-sm text-gray-600">{{ i18n "webinar_language_value" }}</p>
+                      <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_language_label" }}</div>
+                      <p class="font-medium text-gray-900">{{ i18n "webinar_language_value" }}</p>
                     </div>
                   </li>
                 </ul>
@@ -110,20 +120,26 @@
 
               <!-- What You'll Learn -->
               <div>
-                <h3 class="font-h3 mb-4">{{ i18n "webinar_learn_title" }}</h3>
+                <h3 class="font-h3 mb-6">{{ i18n "webinar_learn_title" }}</h3>
 
-                <ul class="space-y-3">
+                <ul role="list" class="space-y-4">
                   <li class="flex items-start">
-                    <i class="fa-solid fa-check text-primary mr-3 mt-1"></i>
-                    <span class="text-sm text-gray-600">{{ i18n "webinar_learn_1" }}</span>
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fa-solid fa-check text-white text-xs" aria-hidden="true"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">{{ i18n "webinar_learn_1" }}</p>
                   </li>
                   <li class="flex items-start">
-                    <i class="fa-solid fa-check text-primary mr-3 mt-1"></i>
-                    <span class="text-sm text-gray-600">{{ i18n "webinar_learn_2" }}</span>
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fa-solid fa-check text-white text-xs" aria-hidden="true"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">{{ i18n "webinar_learn_2" }}</p>
                   </li>
                   <li class="flex items-start">
-                    <i class="fa-solid fa-check text-primary mr-3 mt-1"></i>
-                    <span class="text-sm text-gray-600">{{ i18n "webinar_learn_3" }}</span>
+                    <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                      <i class="fa-solid fa-check text-white text-xs" aria-hidden="true"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">{{ i18n "webinar_learn_3" }}</p>
                   </li>
                 </ul>
               </div>
@@ -134,12 +150,16 @@
 
       <section x-show="feedbackData.success" class="white-box" x-cloak>
         <div class="flex flex-col items-center justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6">
-          <i class="fa-solid fa-check-circle text-7xl text-secondary"></i>
+          <i class="fa-solid fa-check-circle text-7xl text-secondary" aria-hidden="true"></i>
           <h3 class="font-h3">
             {{ i18n "webinar_success_title" }}
           </h3>
-          <p class="font-p">
+          <p class="font-p max-w-md text-gray-600">
             {{ i18n "webinar_success_message" }}
+          </p>
+          <p class="text-sm text-gray-500 inline-flex items-center gap-2">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            {{ i18n "webinar_success_inbox_hint" }}
           </p>
         </div>
       </section>
