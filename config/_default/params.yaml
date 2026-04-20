@@ -8,6 +8,13 @@ anniversaryBanner:
     - /paddle-checkout/
     - /hub/billing/
 
+webinarBanner:
+  enabled: false
+  excludePaths:
+    - /downloads-thanks/
+    - /paddle-checkout/
+    - /hub/billing/
+
 releases:
   exe:
     version: 1.19.2
