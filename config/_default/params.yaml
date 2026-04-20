@@ -9,7 +9,7 @@ anniversaryBanner:
     - /hub/billing/
 
 webinarBanner:
-  enabled: true
+  enabled: false
   excludePaths:
     - /downloads-thanks/
     - /paddle-checkout/
