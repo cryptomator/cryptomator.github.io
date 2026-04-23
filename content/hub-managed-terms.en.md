@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: October 2025_
+_Effective date: April 2026_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -46,6 +46,8 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 3.9 The Customer remains the owner of the data stored on the Provider's servers and may demand their return at any time.
 
 3.10 The Provider may provide its services and support through third parties as subcontractors. It shall be liable for the performance of services by subcontractors as for its own actions.
+
+3.11 The Provider is entitled to collect, process and store aggregated, non-personal statistical and technical data about the use of the Software (e.g. total number of active users, number of vaults, number of groups, feature usage counters, error rates and similar technical metrics) for the purposes of operating, securing, maintaining, and improving the Software as well as capacity planning. Such data does not contain personal data within the meaning of Art. 4 No. 1 GDPR, in particular no user identifiers, email addresses, IP addresses or vault names. The Provider shall not disclose this data to third parties.
 
 ## §4 Scope and Rights of Usage {#scope-and-rights}
 4.1 The software shall not be physically transferred to the Customer.
@@ -111,9 +113,9 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 7.5 The Customer shall regularly make appropriate data backups on its own responsibility.
 
 ## §8 Reference Marketing / Logo Use {#reference-marketing}
-8.1 The Customer has the option of giving its express consent for the Provider to name and use the Customer as a reference customer (including case studies, work references, success stories, etc.) in digital and analog form, free of charge and unlimited in terms of time and content, using the company mark (esp. logo) and the company name for marketing purposes.
+8.1 Upon conclusion of the contract, the Customer grants its express consent that the Provider may name and use the Customer as a reference customer (including case studies, work references, success stories, etc.) in digital and analog form, free of charge and unlimited in terms of time and content, using the company mark (esp. logo) and the company name for marketing purposes.
 
-8.2 The Customer may revoke their consent to reference marketing at any time by sending an email to hub-support@cryptomator.org. The revocation is only valid for the future.
+8.2 The Customer may revoke the consent to reference marketing at any time by email to hub-support@cryptomator.org for good cause, unless the Provider's legitimate interest prevails. The revocation is only valid for the future.
 
 ## §9 Warranty {#warranty}
 9.1 With regard to the granting of the use of the Software, the warranty provisions of the German "Mietrecht" shall apply (§§ 535 ff. BGB).
