@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: April 2026_
+_Effective date: May 2026_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}

@@ -3,7 +3,7 @@ title: "AGB für Cryptomator Hub (SaaS)"
 url: "/de/hub/managed/terms"
 ---
 
-_Stand: April 2026_
+_Stand: Mai 2026_
 
 Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ als Software as a Service (SaaS) Dienstleistung.
 {.text-lg .leading-relaxed .text-gray-700}
