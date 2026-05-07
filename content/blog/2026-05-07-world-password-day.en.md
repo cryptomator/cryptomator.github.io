@@ -40,7 +40,7 @@ With Cryptomator Hub, **team vaults** are provisioned, and it is determined whic
 
 For teams, this is a significant difference. Permissions are managed in the IdP and are therefore auditable. When someone leaves the team, the offboarding process in the IdP automatically revokes access—**eliminating the need for manual distribution, documentation, or rotation of vault passwords.**
 
-#### Also Suitable for Small Teams Without Their Own It Department
+## Also Suitable for Small Teams Without Their Own It Department
 
 Not every organization has an IT department—and not every team wants to deal with terms like OpenID Connect or Identity Provider. A **dental practice, a law firm, or a small consulting firm** works with highly sensitive data, but usually doesn’t have anyone on staff who would set up a complex security infrastructure.
 

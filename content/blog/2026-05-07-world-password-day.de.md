@@ -40,7 +40,7 @@ Mit Cryptomator Hub werden **Team-Tresore** bereitgestellt und es wird festgeleg
 
 Für Teams ist das ein wesentlicher Unterschied. Berechtigungen sind im IdP gepflegt und damit auditierbar. Wenn jemand das Team verlässt, entzieht das Offboarding im IdP automatisch den Zugriff – **manuelles Verteilen, Dokumentieren oder Rotieren von Tresor-Passwörtern entfällt.**
 
-#### Auch für kleine Teams ohne eigene IT geeignet
+## Auch für kleine Teams ohne eigene IT geeignet
 
 Nicht jede Organisation hat eine IT-Abteilung – und nicht jedes Team möchte sich mit Begriffen wie OpenID Connect oder Identity Provider auseinandersetzen. Eine **Zahnarztpraxis, eine Kanzlei oder ein kleines Beratungsbüro** arbeitet mit hochsensiblen Daten, hat aber meist niemanden im Haus, der eine komplexe Sicherheitsinfrastruktur aufsetzen würde.
 
