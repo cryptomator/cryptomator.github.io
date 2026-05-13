@@ -19,13 +19,14 @@ jobs:
       with:
         hugo-version: '0.148.1'
         extended: true
+    - uses: pnpm/action-setup@v4
     - uses: actions/setup-node@v4
       with:
         node-version: 22
-        cache: 'npm'
-        cache-dependency-path: package-lock.json
-    - name: NPM install
-      run: npm ci --ignore-scripts
+        cache: 'pnpm'
+        cache-dependency-path: pnpm-lock.yaml
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
       env:
         FONTAWESOME_AUTH_TOKEN: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
     - name: Build production

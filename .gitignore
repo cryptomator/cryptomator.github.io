@@ -3,3 +3,4 @@ node_modules/
 public/
 *.DS_Store
 .hugo_build.lock
+package-lock.json

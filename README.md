@@ -7,11 +7,15 @@
   variable
 
 ## Building
-1. `npm install`
+1. `pnpm install`
 1. run hugo
-  * for production builds simply run `npm run build`
-  * for local development run `npm run dev`
-  * for local production tests `npm run serve`
+  * for production builds simply run `pnpm build`
+  * for local development run `pnpm dev`
+  * for local production tests `pnpm serve`
+
+The `packageManager` field in `package.json` pins the pnpm version;
+enable Corepack (`corepack enable`) once on your machine and it will
+auto-provision the right pnpm release on first use.
 
 ## Optional Dependencies for Size Optimizations
 
