@@ -16,3 +16,11 @@ allowBuilds:
 # Fail the install  when a dependency ships a
 # lifecycle script not present in `allowBuilds`.
 strictDepBuilds: true
+
+# Cooldown for new releases of 3 days (4320 min). Most malicious package versions are
+# unpublished within hours to a few days;
+minimumReleaseAge: 4320
+# Font Awesome Pro lives on a private single-publisher registry, so
+# exclude it from the cooldown
+minimumReleaseAgeExclude:
+  - "@awesome.me/*"

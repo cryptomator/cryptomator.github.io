@@ -2,20 +2,24 @@
 
 # Usage
 ## Requirements
+* pnpm
 * Hugo
 * Font Awesome Pro auth token, stored in the `FONTAWESOME_AUTH_TOKEN` environment
   variable
 
 ## Building
+
+The `packageManager` field in `package.json` pins the pnpm version;
+enable Corepack (`corepack enable`) once on your machine and it will
+auto-provision the right pnpm release on first use.
+
 1. `pnpm install`
 1. run hugo
   * for production builds simply run `pnpm build`
   * for local development run `pnpm dev`
   * for local production tests `pnpm serve`
 
-The `packageManager` field in `package.json` pins the pnpm version;
-enable Corepack (`corepack enable`) once on your machine and it will
-auto-provision the right pnpm release on first use.
+brand-new dependency upgrades are held back until the set cooldown in `pnpm-workspace.yml` elapses. For an urgent exemption, add the package to `minimumReleaseAgeExclude`.
 
 ## Optional Dependencies for Size Optimizations
 
