@@ -3,7 +3,8 @@
 # Usage
 ## Requirements
 * Hugo
-* Font Awesome Pro `npm config set "@awesome.me:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" TOKEN`
+* Font Awesome Pro auth token, stored in the `FONTAWESOME_AUTH_TOKEN` environment
+  variable
 
 ## Building
 1. `npm install`

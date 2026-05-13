@@ -24,13 +24,10 @@ jobs:
         node-version: 22
         cache: 'npm'
         cache-dependency-path: package-lock.json
-        registry-url: 'https://npm.fontawesome.com/'
     - name: NPM install
-      run: |
-        npm config set "@awesome.me:registry" https://npm.fontawesome.com/
-        npm ci --ignore-scripts
+      run: npm ci --ignore-scripts
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+        FONTAWESOME_AUTH_TOKEN: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
     - name: Build production
       run: hugo --minify --destination public/prod
     - name: Build staging
