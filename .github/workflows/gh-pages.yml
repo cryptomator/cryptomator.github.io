@@ -25,6 +25,8 @@ jobs:
         node-version: 22
         cache: 'pnpm'
         cache-dependency-path: pnpm-lock.yaml
+    - name: Check lockfile
+      run: bash scripts/check-lockfile.sh
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
       env:

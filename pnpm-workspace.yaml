@@ -17,6 +17,10 @@ allowBuilds:
 # lifecycle script not present in `allowBuilds`.
 strictDepBuilds: true
 
+# Reject transitive deps pulled from git/tarball/local sources;
+# pair to scripts/check-lockfile.sh which gates the lockfile itself.
+blockExoticSubdeps: true
+
 # Cooldown for new releases of 3 days (4320 min). Most malicious package versions are
 # unpublished within hours to a few days;
 minimumReleaseAge: 4320
