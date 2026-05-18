@@ -1367,6 +1367,54 @@
 - id: success_story_read_link
   translation: "Read success story"
 
+# Live Webinar Banner
+- id: webinar_banner
+  translation: "Live Webinar – Cryptomator for Companies&nbsp; <a class=\"whitespace-nowrap font-bold\" href=\"/webinar/\">Sign up&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+
+# Webinar Form
+- id: webinar_first_name
+  translation: "First Name"
+- id: webinar_last_name
+  translation: "Last Name"
+- id: webinar_email
+  translation: "Email Address"
+- id: webinar_company
+  translation: "Company"
+- id: webinar_submit
+  translation: "Register Now"
+- id: webinar_form_title
+  translation: "Reserve your seat"
+- id: webinar_form_subtitle
+  translation: "We'll email you a confirmation and a reminder before the session."
+- id: webinar_success_title
+  translation: "You're registered!"
+- id: webinar_success_message
+  translation: "Thank you for registering. You will receive a confirmation email with the webinar details shortly."
+- id: webinar_success_inbox_hint
+  translation: "Please also check your spam folder."
+- id: webinar_details_title
+  translation: "Webinar Details"
+- id: webinar_date_label
+  translation: "Date"
+- id: webinar_date_value
+  translation: "March 27, 2026"
+- id: webinar_time_label
+  translation: "Time"
+- id: webinar_time_value
+  translation: "11:30 AM CET"
+- id: webinar_language_label
+  translation: "Language"
+- id: webinar_language_value
+  translation: "English"
+- id: webinar_learn_title
+  translation: "What You'll Learn"
+- id: webinar_learn_1
+  translation: "Encrypt cloud storage for your company"
+- id: webinar_learn_2
+  translation: "Set up and manage Cryptomator Hub"
+- id: webinar_learn_3
+  translation: "Best practices for company-wide deployment"
+
 # Sale
 - id: sale_off
   translation: "Off"

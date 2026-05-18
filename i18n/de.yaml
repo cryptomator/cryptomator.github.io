@@ -1328,6 +1328,54 @@
 - id: success_story_read_link
   translation: "Erfolgsgeschichte lesen"
 
+# Live Webinar Banner
+- id: webinar_banner
+  translation: "Live-Webinar – Cryptomator für Unternehmen&nbsp; <a class=\"whitespace-nowrap font-bold\" href=\"/de/webinar/\">Jetzt anmelden&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+
+# Webinar Form
+- id: webinar_first_name
+  translation: "Vorname"
+- id: webinar_last_name
+  translation: "Nachname"
+- id: webinar_email
+  translation: "E-Mail-Adresse"
+- id: webinar_company
+  translation: "Unternehmen"
+- id: webinar_submit
+  translation: "Jetzt anmelden"
+- id: webinar_form_title
+  translation: "Sichere dir deinen Platz"
+- id: webinar_form_subtitle
+  translation: "Du erhältst die Bestätigung und vor dem Termin eine Erinnerung per E-Mail."
+- id: webinar_success_title
+  translation: "Du bist angemeldet!"
+- id: webinar_success_message
+  translation: "Vielen Dank für deine Anmeldung. Du erhältst in Kürze eine Bestätigungs-E-Mail mit den Webinar-Details."
+- id: webinar_success_inbox_hint
+  translation: "Bitte prüfe auch deinen Spam-Ordner."
+- id: webinar_details_title
+  translation: "Webinar-Details"
+- id: webinar_date_label
+  translation: "Datum"
+- id: webinar_date_value
+  translation: "27. März 2026"
+- id: webinar_time_label
+  translation: "Uhrzeit"
+- id: webinar_time_value
+  translation: "11:30 Uhr MEZ"
+- id: webinar_language_label
+  translation: "Sprache"
+- id: webinar_language_value
+  translation: "Englisch"
+- id: webinar_learn_title
+  translation: "Das lernst du"
+- id: webinar_learn_1
+  translation: "Cloud-Speicher für dein Unternehmen verschlüsseln"
+- id: webinar_learn_2
+  translation: "Cryptomator Hub einrichten und verwalten"
+- id: webinar_learn_3
+  translation: "Best Practices für den unternehmensweiten Einsatz"
+
 # Sale
 - id: sale_off
   translation: "Rabatt"
