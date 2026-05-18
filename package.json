@@ -5,10 +5,11 @@
   "main": "index.js",
   "packageManager": "pnpm@10.33.4",
   "scripts": {
+    "preinstall": "node scripts/check-pm.js",
     "clean": "rm -r public",
-    "build": "hugo",
-    "dev": "hugo server --environment=development",
-    "serve": "hugo server --environment=staging --minify",
+    "build": "node scripts/check-pm.js && hugo",
+    "dev": "node scripts/check-pm.js && hugo server --environment=development",
+    "serve": "node scripts/check-pm.js && hugo server --environment=staging --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sebastian Stenzel",
