@@ -19,7 +19,11 @@ auto-provision the right pnpm release on first use.
   * for local development run `pnpm dev`
   * for local production tests `pnpm serve`
 
-brand-new dependency upgrades are held back until the set cooldown in `pnpm-workspace.yml` elapses. For an urgent exemption, add the package to `minimumReleaseAgeExclude`.
+### Update policy
+
+Due to supply chain attacks, brand-new dependency upgrades are held back until the set cooldown in `pnpm-workspace.yml` elapses. For an urgent exemption, add the package to `minimumReleaseAgeExclude`.
+
+Routine upgrades land via Dependabot PRs (see `.github/dependabot.yml`); don't run `pnpm up --latest` on `develop` or `main` — review the Dependabot PR or open a PR with explicit version pins.
 
 ## Optional Dependencies for Size Optimizations
 

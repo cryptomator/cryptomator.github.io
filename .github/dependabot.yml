@@ -1,0 +1,33 @@
+version: 2
+
+# Private registry for Font Awesome Pro so Dependabot can resolve
+# @awesome.me/* metadata. The token is a Dependabot secret (separate
+# from Actions secrets), configured in repo settings.
+registries:
+  fontawesome:
+    type: npm-registry
+    url: https://npm.fontawesome.com
+    token: ${{secrets.FONTAWESOME_AUTH_TOKEN}}
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    registries:
+      - fontawesome
+    # Matches the pnpm minimumReleaseAge in pnpm-workspace.yaml so
+    # Dependabot does not propose versions pnpm would refuse to install.
+    cooldown:
+      default-days: 3
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
