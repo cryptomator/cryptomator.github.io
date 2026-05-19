@@ -1369,7 +1369,7 @@
 
 # Live Webinar Banner
 - id: webinar_banner
-  translation: "Live Webinar – Cryptomator for Companies&nbsp; <a class=\"whitespace-nowrap font-bold\" href=\"/webinar/\">Sign up&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+  translation: "Live Webinar – <a class=\"whitespace-nowrap font-bold\" href=\"/webinar/\">Sign up<i class=\"fa-regular fa-arrow-right ml-1\" aria-hidden=\"true\"></i></a>"
 
 # Webinar Form
 - id: webinar_first_name
