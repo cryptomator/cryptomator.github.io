@@ -8,12 +8,14 @@ anniversaryBanner:
     - /paddle-checkout/
     - /hub/billing/
 
-webinarBanner:
-  enabled: false
-  excludePaths:
-    - /downloads-thanks/
-    - /paddle-checkout/
-    - /hub/billing/
+webinar:
+  webinarId: "6a0427f47bf7eebc0"
+  banner:
+    enabled: false
+    excludePaths:
+      - /downloads-thanks/
+      - /paddle-checkout/
+      - /hub/billing/
 
 releases:
   exe:

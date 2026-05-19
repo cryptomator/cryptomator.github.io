@@ -76,7 +76,7 @@
       {{- end -}}
     {{- end -}}
     {{- .Scratch.Set "anniversaryBannerActive" $showAnniversaryBanner -}}
-    {{- $webinarBanner := .Site.Params.webinarBanner -}}
+    {{- $webinarBanner := .Site.Params.webinar.banner -}}
     {{- $showWebinarBanner := false -}}
     {{- if and $webinarBanner $webinarBanner.enabled -}}
       {{- $showWebinarBanner = true -}}
