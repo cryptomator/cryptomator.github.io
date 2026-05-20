@@ -1,0 +1,178 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
+{{ define "main" }}
+  {{- $lang := .Site.Language.Lang }}
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {webinarId: '{{ .Site.Params.webinar.webinarId }}', firstName: '', lastName: '', email: '', company: '', captcha: null, acceptNewsletter: false}, webinar: {name: '', language: '', dateStart: null, lead: '', learnTitle: '', learnItems: []}, acceptTerms: false, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/register-webinar'); new Webinar(submitData.webinarId, '{{ $lang }}', {en: '{{ i18n "webinar_language_en" }}', de: '{{ i18n "webinar_language_de" }}'}, webinar)" class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8" x-show="webinar.name" x-text="'Webinar: ' + webinar.name" x-cloak></h1>
+      <p class="lead" x-show="webinar.lead" x-text="webinar.lead" x-cloak></p>
+    </header>
+
+    <form x-ref="form" @submit.prevent="apiForm.request(); $refs.captcha.reset()">
+      <div x-show="!feedbackData.success" class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+        <!-- Left Side - Registration Form -->
+        <section class="white-box md:col-span-3">
+          <div class="px-4 py-5 md:p-6">
+            <div class="mb-6">
+              <h3 class="font-h3">{{ i18n "webinar_form_title" }}</h3>
+              <p class="mt-1 text-sm text-gray-500">{{ i18n "webinar_form_subtitle" }}</p>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+              <!-- First Name -->
+              <div class="col-span-2 md:col-span-1">
+                <label for="firstName" class="label-uppercase mb-2">
+                  {{ i18n "webinar_first_name" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="firstName" name="firstName" x-model="submitData.firstName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Last Name -->
+              <div class="col-span-2 md:col-span-1">
+                <label for="lastName" class="label-uppercase mb-2">
+                  {{ i18n "webinar_last_name" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="lastName" name="lastName" x-model="submitData.lastName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Company -->
+              <div class="col-span-2">
+                <label for="company" class="label-uppercase mb-2">
+                  {{ i18n "webinar_company" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="company" name="company" x-model="submitData.company" class="block input-box w-full" maxlength="200" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Email -->
+              <div class="col-span-2">
+                <label for="email" class="label-uppercase mb-2">
+                  {{ i18n "webinar_email" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" x-model="submitData.email" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <div class="col-span-2">
+                <!-- Terms & Privacy Acceptance -->
+                <p class="font-p text-sm mb-2">
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "webinar_accept_privacy" | safeHTML)) }}
+                </p>
+
+                <!-- Optional Newsletter -->
+                <p class="font-p text-sm mb-2">
+                  {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+                </p>
+              </div>
+
+              <div class="col-span-2">
+                <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="webinar-form" x-cloak>
+                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                  {{ i18n "webinar_submit" }}
+                </button>
+                {{ $challengeUrl := printf "%s/connect/contact/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="white-box md:col-span-2">
+          <div class="px-4 py-5 md:p-6">
+            <div class="space-y-8">
+              <div>
+                <h3 class="font-h3 mb-6">{{ i18n "webinar_details_title" }}</h3>
+
+                <ul role="list" class="space-y-5">
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i class="fa-solid fa-calendar text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_date_label" }}</div>
+                      <p class="font-medium text-gray-900"><time :datetime="webinar.dateStart" x-text="webinar.dateStart ? Webinar.formatBerlin(webinar.dateStart, { dateStyle: 'long' }) : ''"></time></p>
+                    </div>
+                  </li>
+
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i class="fa-solid fa-clock text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_time_label" }}</div>
+                      <p class="font-medium text-gray-900"><time :datetime="webinar.dateStart" x-text="webinar.dateStart ? Webinar.formatBerlin(webinar.dateStart, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }) : ''"></time></p>
+                    </div>
+                  </li>
+
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i class="fa-solid fa-globe text-primary" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_language_label" }}</div>
+                      <p class="font-medium text-gray-900" x-show="webinar.language" x-text="webinar.language" x-cloak></p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Divider -->
+              <hr class="border-gray-200">
+
+              <!-- What You'll Learn -->
+              <div x-show="webinar.learnItems.length" x-cloak>
+                <h3 class="font-h3 mb-6" x-text="webinar.learnTitle"></h3>
+
+                <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
+                  <template x-for="item in webinar.learnItems" :key="item">
+                    <li>
+                      <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                      <span x-text="item"></span>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section x-show="feedbackData.success" class="white-box" x-cloak>
+        <div class="flex flex-col items-center justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6">
+          <i class="fa-solid fa-check-circle text-7xl text-secondary" aria-hidden="true"></i>
+          <h3 class="font-h3">
+            {{ i18n "webinar_success_title" }}
+          </h3>
+          <p class="font-p max-w-md text-gray-600">
+            {{ i18n "webinar_success_message" }}
+          </p>
+          <p class="text-sm text-gray-500 inline-flex items-center gap-2">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            {{ i18n "webinar_success_inbox_hint" }}
+          </p>
+        </div>
+      </section>
+    </form>
+  </section>
+{{ end }}
+{{ define "script" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $apiFormJs := resources.Get "js/apiform.js" }}
+    <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" defer></script>
+    {{ $webinarJs := resources.Get "js/webinar.js" }}
+    <script type="text/javascript" src="{{ $webinarJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $apiFormJs := resources.Get "js/apiform.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" integrity="{{ $apiFormJs.Data.Integrity }}" defer></script>
+    {{ $webinarJs := resources.Get "js/webinar.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $webinarJs.RelPermalink }}" integrity="{{ $webinarJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}
