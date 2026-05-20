@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   {{- $lang := .Site.Language.Lang }}
-  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {webinarId: '{{ .Site.Params.webinar.webinarId }}', firstName: '', lastName: '', email: '', company: '', captcha: null, acceptNewsletter: false}, webinar: {name: '', language: '', dateStart: null, lead: '', learnTitle: '', learnItems: []}, acceptTerms: false, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/register-webinar'); fetch(API_BASE_URL + '/connect/contact/webinar/' + submitData.webinarId).then(r => r.json()).then(d => { const lang = '{{ $lang }}'; const languageNames = {en: '{{ i18n "webinar_language_en" }}', de: '{{ i18n "webinar_language_de" }}'}; webinar = {name: d.name, language: languageNames[d.language] || d.language, dateStart: d.dateStart.replace(' ', 'T') + 'Z', lead: d.metadata?.lead?.[lang] || '', learnTitle: d.metadata?.learn?.title?.[lang] || '', learnItems: (d.metadata?.learn?.items || []).map(i => i[lang])}; })" class="container py-12">
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {webinarId: '{{ .Site.Params.webinar.webinarId }}', firstName: '', lastName: '', email: '', company: '', captcha: null, acceptNewsletter: false}, webinar: {name: '', language: '', dateStart: null, lead: '', learnTitle: '', learnItems: []}, acceptTerms: false, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/register-webinar'); new Webinar(submitData.webinarId, '{{ $lang }}', {en: '{{ i18n "webinar_language_en" }}', de: '{{ i18n "webinar_language_de" }}'}, webinar)" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8" x-show="webinar.name" x-text="'Webinar: ' + webinar.name" x-cloak></h1>
       <p class="lead" x-show="webinar.lead" x-text="webinar.lead" x-cloak></p>
@@ -90,7 +90,7 @@
                     </div>
                     <div>
                       <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_date_label" }}</div>
-                      <p class="font-medium text-gray-900"><time :datetime="webinar.dateStart" x-text="webinar.dateStart ? formatBerlin(webinar.dateStart, { dateStyle: 'long' }) : ''"></time></p>
+                      <p class="font-medium text-gray-900"><time :datetime="webinar.dateStart" x-text="webinar.dateStart ? Webinar.formatBerlin(webinar.dateStart, { dateStyle: 'long' }) : ''"></time></p>
                     </div>
                   </li>
 
@@ -100,7 +100,7 @@
                     </div>
                     <div>
                       <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_time_label" }}</div>
-                      <p class="font-medium text-gray-900"><time :datetime="webinar.dateStart" x-text="webinar.dateStart ? formatBerlin(webinar.dateStart, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }) : ''"></time></p>
+                      <p class="font-medium text-gray-900"><time :datetime="webinar.dateStart" x-text="webinar.dateStart ? Webinar.formatBerlin(webinar.dateStart, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }) : ''"></time></p>
                     </div>
                   </li>
 
@@ -159,8 +159,8 @@
   {{ if hugo.IsDevelopment }}
     {{ $apiFormJs := resources.Get "js/apiform.js" }}
     <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" defer></script>
-    {{ $webinarDateTimeJs := resources.Get "js/webinar-datetime.js" }}
-    <script type="text/javascript" src="{{ $webinarDateTimeJs.RelPermalink }}" defer></script>
+    {{ $webinarJs := resources.Get "js/webinar.js" }}
+    <script type="text/javascript" src="{{ $webinarJs.RelPermalink }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
@@ -168,8 +168,8 @@
   {{ else }}
     {{ $apiFormJs := resources.Get "js/apiform.js" | minify | fingerprint }}
     <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" integrity="{{ $apiFormJs.Data.Integrity }}" defer></script>
-    {{ $webinarDateTimeJs := resources.Get "js/webinar-datetime.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $webinarDateTimeJs.RelPermalink }}" integrity="{{ $webinarDateTimeJs.Data.Integrity }}" defer></script>
+    {{ $webinarJs := resources.Get "js/webinar.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $webinarJs.RelPermalink }}" integrity="{{ $webinarJs.Data.Integrity }}" defer></script>
     {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
     <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
     {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
