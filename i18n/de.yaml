@@ -1367,6 +1367,12 @@
   translation: "Deutsch"
 - id: webinar_accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: webinar_none_title
+  translation: "Aktuell ist kein Webinar geplant"
+- id: webinar_none_lead
+  translation: "Derzeit ist kein Webinar geplant, aber wir kündigen regelmäßig neue Termine an."
+- id: webinar_none_newsletter_instruction
+  translation: "Abonniere unseren Hub-Newsletter und wir informieren dich, sobald das nächste Webinar feststeht."
 
 # Sale
 - id: sale_off
