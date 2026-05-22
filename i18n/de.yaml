@@ -1328,6 +1328,52 @@
 - id: success_story_read_link
   translation: "Erfolgsgeschichte lesen"
 
+# Live Webinar Banner
+- id: webinar_banner
+  translation: "Live-Webinar – <a class=\"whitespace-nowrap font-bold\" href=\"/de/webinar/\">Jetzt anmelden<i class=\"fa-regular fa-arrow-right ml-1\" aria-hidden=\"true\"></i></a>"
+
+# Webinar Form
+- id: webinar_first_name
+  translation: "Vorname"
+- id: webinar_last_name
+  translation: "Nachname"
+- id: webinar_email
+  translation: "E-Mail-Adresse"
+- id: webinar_company
+  translation: "Unternehmen / Organisation"
+- id: webinar_submit
+  translation: "Jetzt anmelden"
+- id: webinar_form_title
+  translation: "Sichere dir deinen Platz"
+- id: webinar_form_subtitle
+  translation: "Du erhältst die Bestätigung und vor dem Termin eine Erinnerung per E-Mail."
+- id: webinar_success_title
+  translation: "Du bist angemeldet!"
+- id: webinar_success_message
+  translation: "Vielen Dank für deine Anmeldung. Du erhältst in Kürze eine Bestätigungs-E-Mail mit den Webinar-Details."
+- id: webinar_success_inbox_hint
+  translation: "Bitte prüfe auch deinen Spam-Ordner."
+- id: webinar_details_title
+  translation: "Webinar-Details"
+- id: webinar_date_label
+  translation: "Datum"
+- id: webinar_time_label
+  translation: "Uhrzeit"
+- id: webinar_language_label
+  translation: "Sprache"
+- id: webinar_language_en
+  translation: "Englisch"
+- id: webinar_language_de
+  translation: "Deutsch"
+- id: webinar_accept_privacy
+  translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
+- id: webinar_none_title
+  translation: "Aktuell ist kein Webinar geplant"
+- id: webinar_none_lead
+  translation: "Derzeit ist kein Webinar geplant, aber wir kündigen regelmäßig neue Termine an."
+- id: webinar_none_newsletter_instruction
+  translation: "Abonniere unseren Hub-Newsletter und wir informieren dich, sobald das nächste Webinar feststeht."
+
 # Sale
 - id: sale_off
   translation: "Rabatt"
