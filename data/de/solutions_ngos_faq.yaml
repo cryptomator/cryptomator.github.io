@@ -7,6 +7,6 @@
 - Question: "Können wir verschlüsselte Daten mit Partnern und Prüfstellen teilen?"
   Answer: "Ja. Mit [Cryptomator Hub](/for-teams/) gibst du internen Teams, Geldgebern, Partnern oder externen Prüfstellen Zugriff auf Vaults – pro Person oder Gruppe und jederzeit widerrufbar. Jede Änderung am Zugriff ist nachvollziehbar."
 - Question: "Ist Cryptomator für gemeinnützige Organisationen erschwinglich?"
-  Answer: "Die Cryptomator-Apps sind für alle Plattformen kostenlos und Open Source. Für die zentrale Verwaltung von Teamzugriffen ist [Cryptomator Hub](/for-teams/) kostenpflichtig. Über [Kontakt zum Vertrieb](/contact-sales/) besprechen wir gern Optionen für gemeinnützige Organisationen."
+  Answer: "Cryptomator ist Open Source, und die Desktop-App ist kostenlos nutzbar. Der volle Zugriff auf Android und iOS ist Teil eines kostenpflichtigen Plans. Für die zentrale Verwaltung von Teamzugriffen ist [Cryptomator Hub](/for-teams/) ein separates kostenpflichtiges Produkt. Über [Kontakt zum Vertrieb](/contact-sales/) besprechen wir gern Optionen für gemeinnützige Organisationen."
 - Question: "Ist die Verschlüsselung unabhängig von einem einzelnen Cloud-Anbieter?"
   Answer: "Ja. Cryptomator ist cloud-unabhängig und funktioniert mit OneDrive, Google Drive, Nextcloud, ownCloud, S3 und lokalen Servern. Da es [Open Source](/open-source/) ist, lässt sich die Verschlüsselung unabhängig überprüfen."

@@ -7,6 +7,6 @@
 - Question: "Can we share encrypted data with partners and auditors?"
   Answer: "Yes. With [Cryptomator Hub](/for-teams/) you grant vault access to internal teams, funders, partners, or external auditors per person or group, and revoke it at any time. Every access change is traceable."
 - Question: "Is Cryptomator affordable for non-profits?"
-  Answer: "The Cryptomator apps are free and open source for all platforms. For centrally managed team access, [Cryptomator Hub](/for-teams/) is a paid product; reach out through [contact sales](/contact-sales/) to discuss options for non-profit organizations."
+  Answer: "Cryptomator is open source, and the desktop app is free to use. Full access on Android and iOS is part of a paid plan. For centrally managed team access, [Cryptomator Hub](/for-teams/) is a separate paid product; reach out through [contact sales](/contact-sales/) to discuss options for non-profit organizations."
 - Question: "Is the encryption independent of any single cloud provider?"
   Answer: "Yes. Cryptomator is cloud-independent and works with OneDrive, Google Drive, Nextcloud, ownCloud, S3, and local servers. Because it is [open source](/open-source/), the encryption can be independently audited."
