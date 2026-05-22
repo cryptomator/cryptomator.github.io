@@ -5,6 +5,7 @@ class Webinar {
   constructor(webinarId, lang, languageNames, data) {
     $.getJSON(`${API_BASE_URL}/connect/contact/webinar/${webinarId}`).done(d => {
       data.name = d.name;
+      data.status = d.status;
       data.language = languageNames[d.language];
       data.dateStart = d.dateStart.replace(' ', 'T') + 'Z';
       data.lead = d.metadata.lead[lang];
