@@ -7,7 +7,7 @@
 
     <section class="mb-20">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {{ range .Pages.ByParam "comingsoon" }}
+        {{ range .Pages.ByWeight }}
           {{ $iconClass := .Params.cardicon | default "fa-solid fa-image" }}
           <article class="white-box relative h-full flex flex-col overflow-hidden group">
             <figure class="h-48 w-full relative flex-shrink-0">
