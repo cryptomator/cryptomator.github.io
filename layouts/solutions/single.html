@@ -151,6 +151,31 @@
   </section>
   {{ end }}
 
+  {{ with .Params.faq_key }}
+    {{ $data := index $.Site.Data $.Site.Language.Lang }}
+    {{ with index $data . }}
+    <section class="container py-12">
+      <header class="text-center">
+        <h2 id="faq" class="font-h2 mb-4">{{ i18n "faq_title" $ }}</h2>
+      </header>
+
+      <dl x-data="{isOpen: [{{ range $i, $e := . }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
+        {{- range $index, $element := . }}
+        <dt class="font-p p-4">
+          <a class="flex items-center" href="#" @click.prevent="isOpen[{{ $index }}] = !isOpen[{{ $index }}]">
+            <i :class="{ 'fa-chevron-circle-right': !isOpen[{{ $index }}], 'fa-chevron-circle-down': isOpen[{{ $index }}] }" class="shrink-0 fa-solid text-gray-600 mr-2"></i>
+            <span>{{ .Question }}</span>
+          </a>
+        </dt>
+        <dd x-show="isOpen[{{ $index }}]" class="prose prose-sm md:prose max-w-none md:max-w-none p-4">
+          {{ .Answer | markdownify }}
+        </dd>
+        {{- end }}
+      </dl>
+    </section>
+    {{ partial "solutions-faq-schema.html" . }}
+    {{ end }}
+  {{ end }}
 
   <section class="container text-center py-12">
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "solutions_single_contact_title" . }}</h2>
