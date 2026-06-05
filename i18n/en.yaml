@@ -513,8 +513,6 @@
   translation: "Status"
 - id: hub_billing_manage_status_active
   translation: "Active"
-- id: hub_billing_manage_status_pastdue
-  translation: "Past Due"
 - id: hub_billing_manage_status_trialing
   translation: "Trialing"
 - id: hub_billing_manage_status_paused
@@ -537,12 +535,10 @@
 
 - id: hub_billing_manage_payment_info_title
   translation: "Payment Information"
-- id: hub_billing_manage_payment_info_credit_card
-  translation: "Credit Card"
-- id: hub_billing_manage_payment_info_credit_card_last_four_digits_description
-  translation: "Ending with"
-- id: hub_billing_manage_payment_info_paypal
-  translation: "PayPal"
+- id: hub_billing_manage_payment_info_card
+  translation: "Card / PayPal"
+- id: hub_billing_manage_payment_info_invoice
+  translation: "Invoice"
 - id: hub_billing_manage_payment_info_update_action
   translation: "Update Payment Method"
 
@@ -555,8 +551,6 @@
 - id: hub_billing_manage_license_key_retry_action
   translation: "Retry"
 
-- id: hub_billing_manage_modal_charge_amount_description
-  translation: "Charge Amount"
 - id: hub_billing_manage_modal_continue
   translation: "Continue"
 - id: hub_billing_manage_modal_confirm
@@ -579,8 +573,12 @@
   translation: "New Number of Seats"
 - id: hub_billing_manage_change_quantity_confirmation_increase_warning
   translation: "You are about to increase the seats limit. By confirming, you will be immediately charged for the difference."
+- id: hub_billing_manage_change_quantity_confirmation_increase_warning_invoice
+  translation: "You are about to increase the seats limit. By confirming, the additional seats will be billed by invoice."
 - id: hub_billing_manage_change_quantity_confirmation_decrease_warning
   translation: "You are about to decrease the seats limit. By confirming, your next payment will be reduced by the difference."
+- id: hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice
+  translation: "You are about to decrease the seats limit. By confirming, the reduction will be reflected on your next invoice."
 
 - id: hub_billing_checkout_description
   translation: "Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage."
@@ -588,6 +586,8 @@
   translation: "For Business"
 - id: hub_billing_checkout_audience_consumer
   translation: "For Home"
+- id: hub_billing_checkout_manage_existing_action
+  translation: "Manage an existing subscription"
 
 - id: hub_billing_checkout_standard_title
   translation: "Standard"
@@ -618,6 +618,51 @@
   translation: "Payments are securely handled by Paddle."
 - id: hub_billing_checkout_standard_submit
   translation: "Checkout"
+
+- id: hub_billing_checkout_payment_method
+  translation: "Payment Method"
+- id: hub_billing_checkout_payment_method_card
+  translation: "Pay by Card"
+- id: hub_billing_checkout_payment_method_invoice
+  translation: "Pay by Invoice"
+
+- id: hub_billing_checkout_invoice_contact_first_name
+  translation: "First Name"
+- id: hub_billing_checkout_invoice_contact_last_name
+  translation: "Last Name"
+- id: hub_billing_checkout_invoice_contact_email
+  translation: "Email"
+- id: hub_billing_checkout_invoice_contact_email_hint
+  translation: "You'll use this email address to manage your subscription later."
+- id: hub_billing_checkout_invoice_account_name
+  translation: "Company Name"
+- id: hub_billing_checkout_invoice_address_street
+  translation: "Street and Number"
+- id: hub_billing_checkout_invoice_address_postal_code
+  translation: "Postal Code"
+- id: hub_billing_checkout_invoice_address_city
+  translation: "City"
+- id: hub_billing_checkout_invoice_address_country
+  translation: "Country"
+- id: hub_billing_checkout_invoice_address_country_placeholder
+  translation: "Please select"
+- id: hub_billing_checkout_invoice_non_eu_hint
+  translation: "Invoice payment is available within the EU only. Outside the EU? Please contact us via the Enterprise option."
+- id: hub_billing_checkout_invoice_vat_id
+  translation: "VAT ID"
+- id: hub_billing_checkout_invoice_vat_id_hint
+  translation: "Required for EU countries outside Germany."
+- id: hub_billing_checkout_invoice_instruction
+  translation: "An invoice will be issued and sent to your email address."
+- id: hub_billing_checkout_invoice_submit
+  translation: "Buy on Invoice"
+
+- id: hub_billing_checkout_success_description
+  translation: "Thank you for your purchase! Your subscription is now active."
+- id: hub_billing_checkout_success_invoice_description
+  translation: "An invoice will be issued and sent to your email address."
+- id: hub_billing_checkout_success_relicense_description
+  translation: "To receive your license, please return to your Hub instance and start the subscription process again."
 
 - id: hub_billing_checkout_community_title
   translation: "Community"

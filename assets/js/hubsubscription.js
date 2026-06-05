@@ -1,10 +1,11 @@
 "use strict";
 
-const BILLING_PORTAL_SESSION_URL = LEGACY_STORE_URL + '/hub/billing-portal-session';
+const CARD_CHECKOUT_URL = API_BASE_URL + '/paddle-classic/checkout';
+const INVOICE_CHECKOUT_URL = API_BASE_URL + '/espocrm/checkout';
+const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/manage/subscription';
+const SESSION_REQUEST_URL = API_BASE_URL + '/manage/session/request';
+const SESSION_CONFIRM_URL = API_BASE_URL + '/manage/session/confirm';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
-const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
-const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
-const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
 const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
 
 class HubSubscription {
@@ -15,23 +16,25 @@ class HubSubscription {
     let fragmentParams = new URLSearchParams(location.hash.substring(1));
     this._subscriptionData.oldLicense = fragmentParams.get('oldLicense');
     if (this._subscriptionData.oldLicense) {
-      try {
-        let base64 = this._subscriptionData.oldLicense.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
-        this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
-      } catch (e) {
-        console.error('Failed to parse hub token:', e);
+      this._subscriptionData.hubId = this.extractHubId(this._subscriptionData.oldLicense);
+      if (!this._subscriptionData.hubId) {
         this._subscriptionData.oldLicense = null;
       }
     }
-    this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
+    this._subscriptionData.hubId = this._subscriptionData.hubId ?? fragmentParams.get('hub_id') ?? searchParams.get('hub_id');
     let returnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
     if (returnUrl) {
       this._subscriptionData.returnUrl = returnUrl;
     }
-    this._subscriptionData.session = searchParams.get('session');
-    if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
+    let nonce = fragmentParams.get('nonce');
+    if (nonce) {
+      this.restoreHubContext();
+      history.replaceState(null, '', location.pathname + location.search);
       this._subscriptionData.state = 'LOADING';
-      this.loadSubscription();
+      this.confirmSession(nonce);
+    } else if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
+      this._subscriptionData.state = 'LOADING';
+      this.loadCheckoutPrerequisites();
     }
     this._paddle = $.ajax({
       url: 'https://cdn.paddle.com/paddle/paddle.js',
@@ -46,46 +49,85 @@ class HubSubscription {
     });
   }
 
-  loadSubscription() {
+  extractHubId(license) {
+    try {
+      let base64 = license.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)).jti;
+    } catch (e) {
+      console.error('Failed to parse hub token:', e);
+      return null;
+    }
+  }
+
+  authHeaders() {
+    return { Authorization: 'Bearer ' + this._subscriptionData.sessionToken };
+  }
+
+  restoreHubContext() {
+    let hubId = this._subscriptionData.hubId;
+    let oldLicense = sessionStorage.getItem(`hubOldLicense:${hubId}`);
+    if (oldLicense) {
+      this._subscriptionData.oldLicense = oldLicense;
+    }
+    let returnUrl = sessionStorage.getItem(`hubReturnUrl:${hubId}`);
+    if (returnUrl) {
+      this._subscriptionData.returnUrl = returnUrl;
+    }
+  }
+
+  loadCheckoutPrerequisites() {
     this.loadCustomBilling(() => {
+      if (this._subscriptionData.customBilling?.manual_invoice) {
+        this._subscriptionData.state = 'MANUAL_INVOICE';
+        return;
+      }
       this.loadPrice(() => {
-        this._subscriptionData.inProgress = true;
+        this._subscriptionData.state = 'NEW_CUSTOMER';
         this._subscriptionData.errorMessage = '';
-        $.ajax({
-          url: MANAGE_SUBSCRIPTION_URL,
-          type: 'GET',
-          data: {
-            hub_id: this._subscriptionData.hubId,
-            session: this._subscriptionData.session
-          }
-        }).done(data => {
-          this.onLoadSubscriptionSucceeded(data);
-        }).fail(xhr => {
-          this.onLoadSubscriptionFailed(xhr.status, xhr.responseJSON?.message || 'Loading subscription failed.');
-        });
+        this._subscriptionData.inProgress = false;
+      });
+    });
+  }
+
+  loadManageSubscription() {
+    this.loadCustomBilling(() => {
+      this._subscriptionData.inProgress = true;
+      this._subscriptionData.errorMessage = '';
+      $.ajax({
+        url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}`,
+        type: 'GET',
+        headers: this.authHeaders()
+      }).done(data => {
+        this.onLoadSubscriptionSucceeded(data);
+      }).fail(xhr => {
+        this.onLoadSubscriptionFailed(xhr.status, xhr.responseJSON?.message || 'Loading subscription failed.');
       });
     });
   }
 
   onLoadSubscriptionSucceeded(data) {
-    this._subscriptionData.oldLicense = data.token;
-    this._subscriptionData.details = data.subscription;
-    if (data.subscription.quantity) {
-      this._subscriptionData.quantity = data.subscription.quantity;
-    }
+    this._subscriptionData.details = {
+      processor: data.processor,
+      status: data.status,
+      seats: data.seats,
+      current_period_end: data.current_period_end
+    };
+    this._subscriptionData.quantity = data.seats;
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this._subscriptionData.needsTokenRefresh = true;
+    this._subscriptionData.needsTokenRefresh = !!this._subscriptionData.oldLicense;
   }
 
   onLoadSubscriptionFailed(status, error) {
-    if (status == 404) {
-      this._subscriptionData.state = 'NEW_CUSTOMER';
-      this._subscriptionData.errorMessage = '';
-    } else if (status == 400) {
-      // Assuming that the error is due to the session being missing.
+    if (status == 401) {
       this._subscriptionData.state = 'CREATE_SESSION';
+      this._subscriptionData.errorMessage = '';
+    } else if (status == 404 && this._subscriptionData.returnUrl) {
+      this.loadCheckoutPrerequisites();
+      return;
+    } else if (status == 404) {
+      this._subscriptionData.state = 'MISSING_PARAMS';
       this._subscriptionData.errorMessage = '';
     } else {
       this._subscriptionData.state = 'CREATE_SESSION';
@@ -101,20 +143,26 @@ class HubSubscription {
       return;
     }
 
+    let hubId = this._subscriptionData.hubId;
+    if (this._subscriptionData.oldLicense) {
+      sessionStorage.setItem(`hubOldLicense:${hubId}`, this._subscriptionData.oldLicense);
+    }
+    if (this._subscriptionData.returnUrl) {
+      sessionStorage.setItem(`hubReturnUrl:${hubId}`, this._subscriptionData.returnUrl);
+    }
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: BILLING_PORTAL_SESSION_URL,
+      url: SESSION_REQUEST_URL,
       type: 'POST',
       data: {
         captcha: this._subscriptionData.captcha,
-        hub_id: this._subscriptionData.hubId,
-        return_url: this._subscriptionData.returnUrl
+        hub_id: this._subscriptionData.hubId
       }
     }).done(_ => {
       this.onCreateSessionSucceeded();
     }).fail(xhr => {
-      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Creating billing portal session failed.');
+      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Requesting access failed.');
     });
   }
 
@@ -129,6 +177,29 @@ class HubSubscription {
     this._subscriptionData.errorMessage = error;
   }
 
+  confirmSession(nonce) {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: SESSION_CONFIRM_URL,
+      type: 'POST',
+      data: {
+        nonce: nonce
+      }
+    }).done(data => {
+      this._subscriptionData.sessionToken = data.token;
+      this.loadManageSubscription();
+    }).fail(xhr => {
+      this.onConfirmSessionFailed(xhr.responseJSON?.message || 'Confirming access failed.');
+    });
+  }
+
+  onConfirmSessionFailed(error) {
+    this._subscriptionData.state = 'CREATE_SESSION';
+    this._subscriptionData.errorMessage = error;
+    this._subscriptionData.inProgress = false;
+  }
+
   loadCustomBilling(continueHandler) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
@@ -140,11 +211,7 @@ class HubSubscription {
       }
     }).done(data => {
       this.onLoadCustomBillingSucceeded(data);
-      if (data.custom_billing.manual_invoice) {
-        this._subscriptionData.state = 'MANUAL_INVOICE';
-      } else {
-        continueHandler();
-      }
+      continueHandler();
     }).fail(xhr => {
       this.onLoadCustomBillingFailed(xhr.status, xhr.responseJSON?.message || 'Loading custom billing options failed.');
       if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
@@ -242,6 +309,16 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
+  selectedPlanId() {
+    let isManaged = this._subscriptionData.customBilling?.managed;
+    let isMonthly = this._subscriptionData.billingInterval === 'monthly';
+    if (isManaged) {
+      return isMonthly ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_MANAGED_YEARLY_PLAN_ID;
+    } else {
+      return isMonthly ? PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
+    }
+  }
+
   checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
@@ -251,22 +328,15 @@ class HubSubscription {
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    let isManaged = this._subscriptionData.customBilling?.managed;
-    let isMonthly = this._subscriptionData.billingInterval === 'monthly';
-    let planId;
-    if (isManaged) {
-      planId = isMonthly ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_MANAGED_YEARLY_PLAN_ID;
-    } else {
-      planId = isMonthly ? PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
-    }
-    this.customCheckout(planId, locale);
+    this.customCheckout(this.selectedPlanId(), locale);
   }
 
   customCheckout(productId, locale) {
     $.ajax({
-      url: GENERATE_PAY_LINK_URL,
+      url: CARD_CHECKOUT_URL,
       type: 'POST',
       data: {
+        captcha: this._subscriptionData.cardCaptcha,
         hub_id: this._subscriptionData.hubId,
         product_id: productId,
         quantity: this._subscriptionData.quantity
@@ -274,7 +344,7 @@ class HubSubscription {
     }).done(data => {
       this.openPaddleCheckout(data.pay_link, locale);
     }).fail(xhr => {
-      this.onPostFailed(xhr.responseJSON?.message || 'Generating pay link failed.');
+      this.onPostFailed(xhr.responseJSON?.message || 'Checkout failed.');
     });
   }
 
@@ -298,7 +368,7 @@ class HubSubscription {
       paddle.Order.details(checkoutId, data => {
         let subscriptionId = data.order.subscription_id;
         if (subscriptionId) {
-          this.post(subscriptionId);
+          this.onCheckoutSucceeded();
         } else {
           this._subscriptionData.errorMessage = 'Retrieving subscription failed. Please check your emails instead.';
         }
@@ -306,35 +376,49 @@ class HubSubscription {
     });
   }
 
-  post(subscriptionId) {
+  invoiceCheckout() {
+    if (!$(this._form)[0].checkValidity()) {
+      $(this._form).find(':input').addClass('show-invalid');
+      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      return;
+    }
+
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    let invoice = this._subscriptionData.invoice;
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
+      url: INVOICE_CHECKOUT_URL,
       type: 'POST',
       data: {
+        captcha: this._subscriptionData.invoiceCaptcha,
         hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        subscription_id: subscriptionId
+        product_id: this.selectedPlanId(),
+        quantity: this._subscriptionData.quantity,
+        account_name: invoice.account_name,
+        vat_id: invoice.vat_id,
+        address_street: invoice.address_street,
+        address_postal_code: invoice.address_postal_code,
+        address_city: invoice.address_city,
+        address_country: invoice.address_country,
+        contact_first_name: invoice.contact_first_name,
+        contact_last_name: invoice.contact_last_name,
+        contact_email: invoice.contact_email
       }
-    }).done(data => {
-      this.onPostSucceeded(data);
+    }).done(_ => {
+      this.onCheckoutSucceeded();
     }).fail(xhr => {
-      this.onPostFailed(xhr.responseJSON?.message || 'Adding subscription failed.');
+      this.onPostFailed(xhr.responseJSON?.message || 'Creating subscription failed.');
     });
   }
 
-  onPostSucceeded(data) {
-    this._subscriptionData.state = 'EXISTING_CUSTOMER';
-    this._subscriptionData.oldLicense = data.token;
-    this._subscriptionData.details = data.subscription;
-    this._subscriptionData.session = data.session;
-    var searchParams = new URLSearchParams(window.location.search)
-    searchParams.set('session', data.session);
-    var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
-    history.pushState(null, '', newRelativePathQuery);
+  onCheckoutSucceeded() {
+    this._subscriptionData.state = 'CHECKOUT_SUCCESS';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this._subscriptionData.shouldTransferToHub = true;
-    this._subscriptionData.needsTokenRefresh = true;
+    if (this._subscriptionData.oldLicense) {
+      this._subscriptionData.needsTokenRefresh = true;
+      this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+    }
   }
 
   onPostFailed(error) {
@@ -346,19 +430,15 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: UPDATE_PAYMENT_METHOD_URL,
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/payment-method`,
       type: 'GET',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        subscription_id: this._subscriptionData.details.subscription_id
-      }
+      headers: this.authHeaders()
     }).done(data => {
       this._paddle.then(paddle => {
         paddle.Checkout.open({
           override: data.url,
           locale: locale,
-          successCallback: _ => this.loadSubscription(),
+          successCallback: _ => this.loadManageSubscription(),
           closeCallback: () => {
             this._subscriptionData.inProgress = false;
           }
@@ -373,68 +453,39 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        pause: true
-      }
-    }).done(data => {
-      this.onPutSucceeded(data, false);
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/pause`,
+      type: 'POST',
+      headers: this.authHeaders()
+    }).done(_ => {
+      this.loadManageSubscription();
     }).fail(xhr => {
       this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
     });
   }
 
   askForRestartConfirmation() {
-    this._subscriptionData.restartModal.nextPayment = null;
     this._subscriptionData.restartModal.open = true;
-    this.previewRestart();
-  }
-
-  previewRestart() {
-    this._subscriptionData.inProgress = true;
-    this._subscriptionData.errorMessage = '';
-    $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        pause: false,
-        preview: true
-      }
-    }).done(data => {
-      this._subscriptionData.restartModal.nextPayment = data.subscription.next_payment;
-      this._subscriptionData.errorMessage = '';
-      this._subscriptionData.inProgress = false;
-    }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Calculating price failed.');
-    });
   }
 
   restart() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        pause: false
-      }
-    }).done(data => {
-      this.onPutSucceeded(data, this._subscriptionData.details.state == 'paused');
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/resume`,
+      type: 'POST',
+      headers: this.authHeaders()
+    }).done(_ => {
+      this._subscriptionData.restartModal.open = false;
+      this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+      this.loadManageSubscription();
     }).fail(xhr => {
       this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
     });
   }
 
   openChangeSeatsModal() {
-    this._subscriptionData.quantity = this._subscriptionData.details.quantity;
-    this._subscriptionData.changeSeatsModal.immediatePayment = null;
+    this._subscriptionData.quantity = this._subscriptionData.details.seats;
+    this._subscriptionData.changeSeatsModal.nextPayment = null;
     this._subscriptionData.changeSeatsModal.confirmation = false;
     this._subscriptionData.changeSeatsModal.open = true;
   }
@@ -447,23 +498,23 @@ class HubSubscription {
     }
 
     this._subscriptionData.changeSeatsModal.confirmation = true;
-    this.previewChangeQuantity();
+    if (this._subscriptionData.details.processor == 'PADDLE_CLASSIC') {
+      this.previewChangeQuantity();
+    }
   }
 
   previewChangeQuantity() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/seats/preview`,
+      type: 'POST',
+      headers: this.authHeaders(),
       data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        quantity: this._subscriptionData.quantity,
-        preview: true
+        quantity: this._subscriptionData.quantity
       }
     }).done(data => {
-      this._subscriptionData.changeSeatsModal.immediatePayment = data.subscription.immediate_payment;
+      this._subscriptionData.changeSeatsModal.nextPayment = data.next_payment;
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {
@@ -475,30 +526,19 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/seats`,
+      type: 'POST',
+      headers: this.authHeaders(),
       data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
         quantity: this._subscriptionData.quantity
       }
-    }).done(data => {
+    }).done(_ => {
       this._subscriptionData.changeSeatsModal.open = false;
-      this.onPutSucceeded(data, true);
+      this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+      this.loadManageSubscription();
     }).fail(xhr => {
       this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
     });
-  }
-
-  onPutSucceeded(data, shouldOpenReturnUrl) {
-    this._subscriptionData.oldLicense = data.token;
-    this._subscriptionData.details = data.subscription;
-    this._subscriptionData.errorMessage = '';
-    this._subscriptionData.inProgress = false;
-    if (shouldOpenReturnUrl) {
-      this._subscriptionData.shouldTransferToHub = true;
-      this._subscriptionData.needsTokenRefresh = true;
-    }
   }
 
   onPutFailed(status, error) {

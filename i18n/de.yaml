@@ -513,8 +513,6 @@
   translation: "Status"
 - id: hub_billing_manage_status_active
   translation: "Aktiv"
-- id: hub_billing_manage_status_pastdue
-  translation: "Überfällig"
 - id: hub_billing_manage_status_trialing
   translation: "Testphase"
 - id: hub_billing_manage_status_paused
@@ -537,12 +535,10 @@
 
 - id: hub_billing_manage_payment_info_title
   translation: "Zahlungsinformationen"
-- id: hub_billing_manage_payment_info_credit_card
-  translation: "Kreditkarte"
-- id: hub_billing_manage_payment_info_credit_card_last_four_digits_description
-  translation: "Endet mit"
-- id: hub_billing_manage_payment_info_paypal
-  translation: "PayPal"
+- id: hub_billing_manage_payment_info_card
+  translation: "Karte / PayPal"
+- id: hub_billing_manage_payment_info_invoice
+  translation: "Rechnung"
 - id: hub_billing_manage_payment_info_update_action
   translation: "Zahlungsmethode aktualisieren"
 
@@ -555,8 +551,6 @@
 - id: hub_billing_manage_license_key_retry_action
   translation: "Erneut versuchen"
 
-- id: hub_billing_manage_modal_charge_amount_description
-  translation: "Rechnungsbetrag"
 - id: hub_billing_manage_modal_continue
   translation: "Weiter"
 - id: hub_billing_manage_modal_confirm
@@ -579,8 +573,12 @@
   translation: "Neue Anzahl der Sitze"
 - id: hub_billing_manage_change_quantity_confirmation_increase_warning
   translation: "Du bist dabei, das Sitzplatzlimit zu erhöhen. Wenn du dies bestätigst, wird die die Differenz sofort in Rechnung gestellt."
+- id: hub_billing_manage_change_quantity_confirmation_increase_warning_invoice
+  translation: "Du bist dabei, das Sitzplatzlimit zu erhöhen. Wenn du dies bestätigst, werden die zusätzlichen Sitze per Rechnung abgerechnet."
 - id: hub_billing_manage_change_quantity_confirmation_decrease_warning
   translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird deine nächste Zahlung um die Differenz reduziert."
+- id: hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice
+  translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird die Reduzierung auf deiner nächsten Rechnung berücksichtigt."
 
 - id: hub_billing_checkout_description
   translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
@@ -588,6 +586,8 @@
   translation: "Für Unternehmen"
 - id: hub_billing_checkout_audience_consumer
   translation: "Für zu Hause"
+- id: hub_billing_checkout_manage_existing_action
+  translation: "Ein bestehendes Abonnement verwalten"
 
 - id: hub_billing_checkout_standard_title
   translation: "Standard"
@@ -618,6 +618,51 @@
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: hub_billing_checkout_standard_submit
   translation: "Zur Zahlung"
+
+- id: hub_billing_checkout_payment_method
+  translation: "Zahlungsmethode"
+- id: hub_billing_checkout_payment_method_card
+  translation: "Per Karte zahlen"
+- id: hub_billing_checkout_payment_method_invoice
+  translation: "Kauf auf Rechnung"
+
+- id: hub_billing_checkout_invoice_contact_first_name
+  translation: "Vorname"
+- id: hub_billing_checkout_invoice_contact_last_name
+  translation: "Nachname"
+- id: hub_billing_checkout_invoice_contact_email
+  translation: "E-Mail"
+- id: hub_billing_checkout_invoice_contact_email_hint
+  translation: "Mit dieser E-Mail-Adresse verwaltest du später dein Abonnement."
+- id: hub_billing_checkout_invoice_account_name
+  translation: "Firmenname"
+- id: hub_billing_checkout_invoice_address_street
+  translation: "Straße und Hausnummer"
+- id: hub_billing_checkout_invoice_address_postal_code
+  translation: "Postleitzahl"
+- id: hub_billing_checkout_invoice_address_city
+  translation: "Stadt"
+- id: hub_billing_checkout_invoice_address_country
+  translation: "Land"
+- id: hub_billing_checkout_invoice_address_country_placeholder
+  translation: "Bitte auswählen"
+- id: hub_billing_checkout_invoice_non_eu_hint
+  translation: "Kauf auf Rechnung ist nur innerhalb der EU möglich. Außerhalb der EU? Kontaktiere uns bitte über die Enterprise-Option."
+- id: hub_billing_checkout_invoice_vat_id
+  translation: "USt-IdNr."
+- id: hub_billing_checkout_invoice_vat_id_hint
+  translation: "Erforderlich für EU-Länder außerhalb Deutschlands."
+- id: hub_billing_checkout_invoice_instruction
+  translation: "Eine Rechnung wird ausgestellt und an deine E-Mail-Adresse gesendet."
+- id: hub_billing_checkout_invoice_submit
+  translation: "Auf Rechnung kaufen"
+
+- id: hub_billing_checkout_success_description
+  translation: "Vielen Dank für deinen Kauf! Dein Abonnement ist jetzt aktiv."
+- id: hub_billing_checkout_success_invoice_description
+  translation: "Eine Rechnung wird ausgestellt und an deine E-Mail-Adresse gesendet."
+- id: hub_billing_checkout_success_relicense_description
+  translation: "Um deine Lizenz zu erhalten, kehre bitte zu deiner Hub-Instanz zurück und starte den Abonnementvorgang erneut."
 
 - id: hub_billing_checkout_community_title
   translation: "Community"
