@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, returnUrlFromFragment: false, session: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -354,7 +354,7 @@
                       {{ i18n "hub_billing_checkout_community_cta" . }}
                     </p>
                   </div>
-                  <a :href="`{{ "hub/register" | relLangURL }}#oldLicense=${encodeURIComponent(subscriptionData.oldLicense)}&returnUrl=${encodeURIComponent(subscriptionData.returnUrl)}`" role="button" class="btn btn-primary w-full">
+                  <a :href="`{{ "hub/register" | relLangURL }}#oldLicense=${encodeURIComponent(subscriptionData.oldLicense)}&returnUrl=${encodeURIComponent(subscriptionData.returnUrl)}&returnUrlFromFragment=${subscriptionData.returnUrlFromFragment}`" role="button" class="btn btn-primary w-full">
                     <i class="fa-solid fa-user-plus"></i>
                     {{ i18n "hub_billing_checkout_community_action" . }}
                   </a>

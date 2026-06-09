@@ -6,14 +6,15 @@ const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
 const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
+const FRAGMENT_PARAMS_STORAGE_KEY = 'hubSubscriptionParams';
 
 class HubSubscription {
 
   constructor(form, subscriptionData, searchParams) {
     this._form = form;
     this._subscriptionData = subscriptionData;
-    let fragmentParams = new URLSearchParams(location.hash.substring(1));
-    this._subscriptionData.oldLicense = fragmentParams.get('oldLicense');
+    let restoredParams = this.resolveParams();
+    this._subscriptionData.oldLicense = restoredParams.oldLicense;
     if (this._subscriptionData.oldLicense) {
       try {
         let base64 = this._subscriptionData.oldLicense.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
@@ -24,9 +25,10 @@ class HubSubscription {
       }
     }
     this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
-    let returnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
+    let returnUrl = restoredParams.returnUrl ?? searchParams.get('return_url');
     if (returnUrl) {
       this._subscriptionData.returnUrl = returnUrl;
+      this._subscriptionData.returnUrlFromFragment = restoredParams.returnUrlFromFragment;
     }
     this._subscriptionData.session = searchParams.get('session');
     if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
@@ -44,6 +46,39 @@ class HubSubscription {
       window.Paddle.Setup({ vendor: PADDLE_VENDOR_ID });
       return window.Paddle;
     });
+  }
+
+  resolveParams() {
+    let fragmentParams = new URLSearchParams(location.hash.substring(1));
+    let oldLicense = fragmentParams.get('oldLicense');
+    let returnUrl = fragmentParams.get('returnUrl');
+    if (oldLicense || returnUrl) {
+      let params = { oldLicense: oldLicense, returnUrl: returnUrl, returnUrlFromFragment: returnUrl != null };
+      try {
+        sessionStorage.setItem(FRAGMENT_PARAMS_STORAGE_KEY, JSON.stringify(params));
+      } catch (e) {
+        console.error('Failed to persist hub billing parameters:', e);
+      }
+      // The oldLicense token is long enough that leaving it in the page URL breaks Paddle checkout, so we drop the fragment regardless of whether the stash succeeded.
+      history.replaceState(null, '', location.pathname + location.search);
+      return params;
+    }
+    let searchParams = new URLSearchParams(location.search);
+    let emptyParams = { oldLicense: null, returnUrl: null, returnUrlFromFragment: false };
+    try {
+      if (searchParams.has('hub_id') || searchParams.has('return_url')) {
+        // A fresh flow carries its own query params, so any stashed fragment from an earlier, abandoned flow is stale and must not override it.
+        sessionStorage.removeItem(FRAGMENT_PARAMS_STORAGE_KEY);
+        return emptyParams;
+      }
+      let stored = sessionStorage.getItem(FRAGMENT_PARAMS_STORAGE_KEY);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (e) {
+      console.error('Failed to restore hub billing parameters:', e);
+    }
+    return emptyParams;
   }
 
   loadSubscription() {
@@ -535,7 +570,13 @@ class HubSubscription {
   }
 
   transferTokenToHub() {
-    window.open(this._subscriptionData.returnUrl + '?token=' + this._subscriptionData.token, '_self');
+    try {
+      sessionStorage.removeItem(FRAGMENT_PARAMS_STORAGE_KEY);
+    } catch (e) {
+      console.error('Failed to clear hub billing parameters:', e);
+    }
+    let separator = this._subscriptionData.returnUrlFromFragment ? '#' : '?';
+    location.href = this._subscriptionData.returnUrl + separator + 'token=' + this._subscriptionData.token;
   }
 
 }
