@@ -13,6 +13,7 @@ class HubCE {
     this._searchParams = searchParams;
     this._submitData.oldLicense = searchParams.get('oldLicense');
     this._submitData.returnUrl = searchParams.get('returnUrl');
+    this._submitData.returnUrlFromFragment = searchParams.get('returnUrlFromFragment') === 'true';
 
     // continue after email verified:
     if (searchParams.get('verifiedEmail')) {
@@ -109,6 +110,16 @@ class HubCE {
     this._feedbackData.emailSent = true;
     this._feedbackData.inProgress = false;
     this._feedbackData.errorMessage = '';
+  }
+
+  returnToHubUrl() {
+    let url = new URL(this._submitData.returnUrl);
+    if (this._submitData.returnUrlFromFragment) {
+      url.hash = 'token=' + encodeURIComponent(this._feedbackData.licenseText);
+    } else {
+      url.searchParams.set('token', this._feedbackData.licenseText);
+    }
+    return url.href;
   }
 
 }

@@ -7,6 +7,7 @@ const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
 const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
 const FRAGMENT_PARAMS_STORAGE_KEY = 'hubSubscriptionParams';
+const EMPTY_PARAMS = { oldLicense: null, returnUrl: null, returnUrlFromFragment: false };
 
 class HubSubscription {
 
@@ -49,28 +50,54 @@ class HubSubscription {
   }
 
   resolveParams() {
+    let fragmentParams = this.parseFragmentParams();
+    if (fragmentParams) {
+      this.persistParams(fragmentParams);
+      return fragmentParams;
+    }
+    if (this.isFreshFlow()) {
+      // A fresh flow carries its own query params, so any stashed fragment from an earlier, abandoned flow is stale and must not override it.
+      this.clearPersistedParams();
+      return EMPTY_PARAMS;
+    }
+    return this.restorePersistedParams();
+  }
+
+  parseFragmentParams() {
     let fragmentParams = new URLSearchParams(location.hash.substring(1));
     let oldLicense = fragmentParams.get('oldLicense');
     let returnUrl = fragmentParams.get('returnUrl');
-    if (oldLicense || returnUrl) {
-      let params = { oldLicense: oldLicense, returnUrl: returnUrl, returnUrlFromFragment: returnUrl != null };
-      try {
-        sessionStorage.setItem(FRAGMENT_PARAMS_STORAGE_KEY, JSON.stringify(params));
-      } catch (e) {
-        console.error('Failed to persist hub billing parameters:', e);
-      }
-      // The oldLicense token is long enough that leaving it in the page URL breaks Paddle checkout, so we drop the fragment regardless of whether the stash succeeded.
-      history.replaceState(null, '', location.pathname + location.search);
-      return params;
+    if (!oldLicense && !returnUrl) {
+      return null;
     }
-    let searchParams = new URLSearchParams(location.search);
-    let emptyParams = { oldLicense: null, returnUrl: null, returnUrlFromFragment: false };
+    return { oldLicense: oldLicense, returnUrl: returnUrl, returnUrlFromFragment: returnUrl != null };
+  }
+
+  persistParams(params) {
     try {
-      if (searchParams.has('hub_id') || searchParams.has('return_url')) {
-        // A fresh flow carries its own query params, so any stashed fragment from an earlier, abandoned flow is stale and must not override it.
-        sessionStorage.removeItem(FRAGMENT_PARAMS_STORAGE_KEY);
-        return emptyParams;
-      }
+      sessionStorage.setItem(FRAGMENT_PARAMS_STORAGE_KEY, JSON.stringify(params));
+    } catch (e) {
+      console.error('Failed to persist hub billing parameters:', e);
+    }
+    // The oldLicense token is long enough that leaving it in the page URL breaks Paddle checkout, so we drop the fragment regardless of whether the stash succeeded.
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+
+  isFreshFlow() {
+    let searchParams = new URLSearchParams(location.search);
+    return searchParams.has('hub_id') || searchParams.has('return_url');
+  }
+
+  clearPersistedParams() {
+    try {
+      sessionStorage.removeItem(FRAGMENT_PARAMS_STORAGE_KEY);
+    } catch (e) {
+      console.error('Failed to clear hub billing parameters:', e);
+    }
+  }
+
+  restorePersistedParams() {
+    try {
       let stored = sessionStorage.getItem(FRAGMENT_PARAMS_STORAGE_KEY);
       if (stored) {
         return JSON.parse(stored);
@@ -78,7 +105,7 @@ class HubSubscription {
     } catch (e) {
       console.error('Failed to restore hub billing parameters:', e);
     }
-    return emptyParams;
+    return EMPTY_PARAMS;
   }
 
   loadSubscription() {
@@ -570,13 +597,14 @@ class HubSubscription {
   }
 
   transferTokenToHub() {
-    try {
-      sessionStorage.removeItem(FRAGMENT_PARAMS_STORAGE_KEY);
-    } catch (e) {
-      console.error('Failed to clear hub billing parameters:', e);
+    this.clearPersistedParams();
+    let url = new URL(this._subscriptionData.returnUrl);
+    if (this._subscriptionData.returnUrlFromFragment) {
+      url.hash = 'token=' + encodeURIComponent(this._subscriptionData.token);
+    } else {
+      url.searchParams.set('token', this._subscriptionData.token);
     }
-    let separator = this._subscriptionData.returnUrlFromFragment ? '#' : '?';
-    location.href = this._subscriptionData.returnUrl + separator + 'token=' + this._subscriptionData.token;
+    location.href = url.href;
   }
 
 }
