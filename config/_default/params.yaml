@@ -11,7 +11,7 @@ anniversaryBanner:
 webinar:
   webinarId: "6a0427f47bf7eebc0"
   banner:
-    enabled: false
+    enabled: true
     excludePaths:
       - /downloads-thanks/
       - /paddle-checkout/
