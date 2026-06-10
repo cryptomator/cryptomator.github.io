@@ -1,10 +1,10 @@
 ---
-title: "Cybercrime in 2025: What Businesses Can Learn from the BKA's National Situation Report"
+title: "Cybercrime in 2025: What Businesses Can Learn from Germany's BKA Report"
 slug: cybercrime-report-2025
 date: 2026-06-10
 tags: [cryptomator, hub, cybercrime]
 
-summary: "The BKA's 2025 Cybercrime Report shows that companies must not only protect sensitive cloud data from attacks, but also use encryption to prevent its misuse if an attack succeeds."
+summary: "Germany's 2025 BKA Cybercrime Report shows that companies must not only protect sensitive cloud data from attacks, but also use encryption to prevent its misuse if an attack succeeds."
 
 ogimage:
   relsrc: /img/blog/cybercrime-report-2025.png
@@ -12,12 +12,12 @@ ogimage:
   height: 675
 ---
 
-**Cyberattacks are no longer the exception**. They have become part of the everyday threat landscape for businesses, organizations, and public institutions. This is also evident in the Federal Criminal Police Office's latest report, "[**Federal Cybercrime Situation Report 2025**](https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/JahresberichteUndLagebilder/Cybercrime/cybercrimeBundeslagebild2025.html?nn=28110)." The trends described in the report make it clear that cybercrime is becoming more professional, scalable, and potentially more damaging for those affected. **Ransomware, data extortion, phishing**, and the misuse of artificial intelligence are particularly defining the current landscape.
+**Cyberattacks are no longer the exception**. They have become part of the everyday threat landscape for businesses, organizations, and public institutions. This is also evident in the latest report from **Germany's Federal Criminal Police Office (Bundeskriminalamt, or BKA)**, its "[**Federal Cybercrime Situation Report 2025**](https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/JahresberichteUndLagebilder/Cybercrime/cybercrimeBundeslagebild2025.html?nn=28110)." While the report focuses on Germany, the trends it describes are playing out internationally: cybercrime is becoming more professional, scalable, and potentially more damaging for those affected. **Ransomware, data extortion, phishing**, and the misuse of artificial intelligence are particularly defining the current landscape.
 
 This raises a key question for **companies**: **How can sensitive data be protected** when attacks are increasingly targeting not just systems, but the information itself?
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/cybercrime-report-2025.png" alt="Cybercrime in 2025: What Businesses Can Learn from the BKA's National Situation Report" />
+  <img class="inline-block rounded-sm" src="/img/blog/cybercrime-report-2025.png" alt="Cybercrime in 2025: What Businesses Can Learn from Germany's BKA Report" />
 </figure>
 
 ## Cybercrime Remains at High Levels
