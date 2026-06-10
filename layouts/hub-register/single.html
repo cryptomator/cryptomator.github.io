@@ -188,11 +188,11 @@
                 <p class="font-p mb-4">{{ i18n "hub_ce_registration_step_3_success" }}</p>
                 <textarea class="block input-box w-full h-32 md:h-48 mb-8" x-text="feedbackData.licenseText" readonly></textarea>
                 <div class="mt-auto">
-                  <a :href="returnUrl + (returnUrlFromFragment ? '#' : '?') + 'token=' + encodeURIComponent(feedbackData.licenseText)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
+                  <a :href="(() => { const u = new URL(returnUrl); if (returnUrlFromFragment) { u.hash = new URLSearchParams({token: feedbackData.licenseText}).toString(); } else { u.searchParams.set('token', feedbackData.licenseText); } return u.toString(); })()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
                     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     Todo: Return to Hub
                   </a>
-                </div>
+
               </div>
             </div>
           </div>

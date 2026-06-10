@@ -354,7 +354,7 @@
                       {{ i18n "hub_billing_checkout_community_cta" . }}
                     </p>
                   </div>
-                  <a :href="`{{ "hub/register" | relLangURL }}#oldLicense=${encodeURIComponent(subscriptionData.oldLicense)}&returnUrl=${encodeURIComponent(subscriptionData.returnUrl)}&returnUrlFromFragment=${subscriptionData.returnUrlFromFragment}`" role="button" class="btn btn-primary w-full">
+                  <a :href="(() => { const u = new URL('{{ "hub/register" | relLangURL }}', location.href); u.hash = new URLSearchParams({oldLicense: subscriptionData.oldLicense, returnUrl: subscriptionData.returnUrl, returnUrlFromFragment: subscriptionData.returnUrlFromFragment}).toString(); return u.toString(); })()" role="button" class="btn btn-primary w-full">
                     <i class="fa-solid fa-user-plus"></i>
                     {{ i18n "hub_billing_checkout_community_action" . }}
                   </a>

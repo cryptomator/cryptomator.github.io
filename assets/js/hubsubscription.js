@@ -575,8 +575,13 @@ class HubSubscription {
     } catch (e) {
       console.error('Failed to clear hub billing parameters:', e);
     }
-    let separator = this._subscriptionData.returnUrlFromFragment ? '#' : '?';
-    location.href = this._subscriptionData.returnUrl + separator + 'token=' + this._subscriptionData.token;
+    let url = new URL(this._subscriptionData.returnUrl);
+    if (this._subscriptionData.returnUrlFromFragment) {
+      url.hash = new URLSearchParams({token: this._subscriptionData.token}).toString();
+    } else {
+      url.searchParams.set('token', this._subscriptionData.token);
+    }
+    location.href = url.toString();
   }
 
 }
