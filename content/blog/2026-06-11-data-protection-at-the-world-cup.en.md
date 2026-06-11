@@ -92,7 +92,7 @@ Cryptomator Hub enables organizations to **share encrypted vaults within a team*
 
 This is particularly helpful when multiple people need to access confidential files, for example in companies, research institutions, universities, NGOs, or agencies.
 
-[**[Try Cryptomator Hub for 30 Days]**](https://cryptomator.org/hub/managed/)
+[**Try Cryptomator Hub for 30 Days**](https://cryptomator.org/hub/managed/)
 
 ## 5. Check Access Rights Regularly
 
@@ -153,4 +153,4 @@ This way, your files stay protected whether you’re on the go, working in a tea
 
 Ready for a strong digital defense? Protect your files now with Cryptomator — and secure team collaboration with Cryptomator Hub.
 
-[**[Request a demo now]**](https://cryptomator.org/contact-sales/)
+[**Request a demo now**](https://cryptomator.org/contact-sales/)
