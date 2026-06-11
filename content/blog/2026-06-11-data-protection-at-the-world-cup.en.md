@@ -1,6 +1,6 @@
 ---
-title: "Data Protection During the World Cup: How to Protect Your Data While Traveling and as Part of a Team"
-slug: data-protection-at-the-world-cup
+title: "World Cup Season: A Data Protection Guide for Travelers and Teams"
+slug: world-cup-season-a-data-protection-guide
 date: 2026-06-11
 tags: [cryptomator, cryptomator hub, worldcup2026]
 
