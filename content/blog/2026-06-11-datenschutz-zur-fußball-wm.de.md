@@ -7,7 +7,7 @@ tags: [cryptomator, cryptomator hub, wm2026]
 summary: "Erfahre, wie du sensible Daten zur Fußball-WM auf Reisen, in der Cloud und bei der Teamarbeit mit Cryptomator und Cryptomator Hub sicher schützt."
 
 ogimage:
-  relsrc: /img/blog/checklist-dataprotection-worldcup_de.png
+  relsrc: /img/blog/worldcup-2026-banner.png
   width: 1200
   height: 675
 ---
@@ -19,7 +19,7 @@ Der **Fußballsommer** steht vor der Tür. Für viele bedeutet das: **gemeinsam 
 Mit ein paar **einfachen Maßnahmen** kannst du dafür sorgen, dass deine Daten auch während des Fußballfiebers geschützt bleiben. Und genau hier kommen **Cryptomator** und **Cryptomator Hub** ins Spiel.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/checklist-dataprotection-worldcup_de.png" alt="Data protection checklist for the world cup" />
+  <img class="inline-block rounded-sm" src="/img/blog/worldcup-2026-checklist-dataprotection_de.png" alt="Datenschutz Checkliste für die WM" />
 </figure>
 
 ## Warum der Fußballsommer ein guter Anlass für mehr Datensicherheit ist
@@ -37,7 +37,7 @@ Große Sportereignisse bringen Menschen zusammen. Gleichzeitig **verändern sie 
 
 **Cloud-Speicher** ist praktisch, aber er ersetzt keine Verschlüsselung. Wer sensible Dateien in der Cloud speichert, sollte sicherstellen, dass diese Daten bereits verschlüsselt sind, bevor sie hochgeladen werden.
 
-### 1. Reisedokumente und Tickets nur verschlüsselt speichern
+## 1. Reisedokumente und Tickets nur verschlüsselt speichern
 
 Gerade **auf Reisen ist die Cloud praktisch**. Flug- oder Zugtickets, Hotelbuchungen, Ausweiskopien, Versicherungsunterlagen oder Event-Tickets sind schnell verfügbar, wenn sie online gespeichert sind. Gleichzeitig enthalten diese Dokumente oft sehr persönliche Informationen.
 
@@ -49,7 +49,7 @@ Das bedeutet: Du kannst weiterhin deine bevorzugte Cloud nutzen, aber **deine Da
 
 Du hast die App bereits, weißt aber nicht, wie ein Tresor erstellt wird? Dann wirf einen Blick in unserer [Dokumentation](https://docs.cryptomator.org/desktop/getting-started/).
 
-### 2. Öffentliches WLAN mit Vorsicht nutzen
+## 2. Öffentliches WLAN mit Vorsicht nutzen
 
 Während des Fußballsommers wird viel von unterwegs erledigt: schnell noch eine Datei verschicken, ein Dokument öffnen, eine Präsentation prüfen oder private Unterlagen abrufen. **Öffentliches WLAN** in Hotels, Cafés, Zügen oder Flughäfen sind dafür verlockend, aber nicht immer vertrauenswürdig.
 
@@ -79,7 +79,7 @@ Darum lohnt es sich, vor dem Reisebeginn einige Dinge zu prüfen:
 
 Mit **Cryptomator** kannst du private und berufliche Dateien in verschlüsselten Tresoren ablegen. Selbst wenn jemand Zugriff auf deinen Cloud-Speicher oder auf synchronisierte Dateien erhält, bleiben die Inhalte ohne dein Passwort geschützt.
 
-### 4. Teamarbeit braucht mehr als nur geteilte Ordner
+## 4. Teamarbeit braucht mehr als nur geteilte Ordner
 
 Nicht nur Privatpersonen profitieren von verschlüsseltem Cloud-Speicher. Auch **Teams, Unternehmen, Hochschulen, NGOs und Vereine** arbeiten häufig mit sensiblen Dokumenten. Gerade während großer Ereignisse oder saisonaler Kampagnen wird oft intensiver zusammengearbeitet: Marketingmaterialien, Presseunterlagen, Budgetpläne, Reisedokumente, interne Listen oder Projektdateien müssen schnell verfügbar sein.
 
@@ -93,7 +93,7 @@ Das ist besonders hilfreich, wenn mehrere Personen auf vertrauliche Dateien zugr
 
 [**[Testen Sie Cryptomator Hub 30 Tage lang]**](https://cryptomator.org/de/hub/managed/)
 
-### 5. Zugriffsrechte regelmäßig prüfen
+## 5. Zugriffsrechte regelmäßig prüfen
 
 In vielen Organisationen wachsen Cloud-Ordner mit der Zeit. Personen werden hinzugefügt, Projekte ändern sich, externe Partner erhalten Zugriff und ehemalige Teammitglieder bleiben manchmal länger berechtigt, als sie sollten.
 
@@ -109,7 +109,7 @@ Der Fußball kennt dafür ein gutes Bild: Nicht jede Person gehört dauerhaft zu
 
 Mit **Cryptomator Hub** lässt sich **der Zugriff auf verschlüsselte Tresore zentral organisieren**. Das erleichtert die sichere Zusammenarbeit, ohne auf die Vorteile von Cloud-Speicher verzichten zu müssen.
 
-### 6. Backups nicht vergessen
+## 6. Backups nicht vergessen
 
 Datenschutz bedeutet nicht nur, Dateien vor fremdem Zugriff zu schützen. Es bedeutet auch, wichtige Daten nicht zu verlieren. Gerade vor Reisen, Events oder intensiven Arbeitsphasen lohnt sich ein **Backup**.
 
@@ -117,7 +117,7 @@ Ein gutes Backup **schützt dich vor Geräteverlust, versehentlichem Löschen, t
 
 Für besonders sensible Dateien ist es sinnvoll, auch **Backups verschlüsselt zu speichern**. Mit Cryptomator kannst du dafür einen verschlüsselten Tresor nutzen und diesen mit einem Cloud-Dienst deiner Wahl synchronisieren. So bleiben deine Dateien verfügbar, aber geschützt.
 
-### 7. Private und berufliche Daten trennen
+## 7. Private und berufliche Daten trennen
 
 Während eines großen Sportereignisses **verschwimmen private und berufliche Nutzung schnell**: Das private Smartphone wird für Arbeitsmails genutzt, der Arbeitslaptop für Reiseunterlagen, oder Teamdateien landen in privaten Cloud-Ordnern.
 
@@ -132,7 +132,7 @@ Eine **einfache Struktur** kann helfen:
 
 So bleibt klar, welche Dateien wohin gehören und wer Zugriff darauf haben sollte.
 
-### 8. Verschlüsselung sollte einfach sein
+## 8. Verschlüsselung sollte einfach sein
 
 Viele Menschen wissen, dass Verschlüsselung wichtig ist. Trotzdem wird sie im Alltag oft nicht genutzt, weil sie kompliziert wirkt. Genau das möchte Cryptomator ändern.
 

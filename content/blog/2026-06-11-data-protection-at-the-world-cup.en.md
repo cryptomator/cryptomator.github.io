@@ -7,7 +7,7 @@ tags: [cryptomator, cryptomator hub, worldcup2026]
 summary: "Learn how to securely protect sensitive data related to the World Cup while traveling, in the cloud, and when collaborating with others using Cryptomator and Cryptomator Hub."
 
 ogimage:
-  relsrc: 
+  relsrc: /img/blog/worldcup-2026-banner.png
   width: 1200
   height: 675
 ---
@@ -19,7 +19,7 @@ In the process, **data protection and IT security can easily take a back seat**.
 With a few **simple steps**, you can ensure that your data stays secure even during the soccer frenzy. And that’s exactly where **Cryptomator** and **Cryptomator Hub** come in.
 
 <figure class="text-center">
-  <img class="inline-block rounded-sm" src="/img/blog/checklist-dataprotection-worldcup_en.png" alt="Data protection checklist for the world cup" />
+  <img class="inline-block rounded-sm" src="/img/blog/worldcup-2026-checklist-dataprotection_en.png" alt="Data protection checklist for the world cup" />
 </figure>
 
 
@@ -38,7 +38,7 @@ Major sporting events bring people together. At the same time, they often **disr
 
 **Cloud storage** is convenient, but it is no substitute for encryption. Anyone storing sensitive files in the cloud should ensure that this data is already encrypted before it is uploaded.
 
-### 1. Store Travel Documents and Tickets Only in Encrypted Form
+## 1. Store Travel Documents and Tickets Only in Encrypted Form
 
 **The cloud is especially handy when traveling**. Flight or train tickets, hotel reservations, copies of ID, insurance documents, and event tickets are quickly accessible when stored online. At the same time, these documents often contain very personal information.
 
@@ -50,7 +50,7 @@ This means you can continue to use your preferred cloud service, but **your file
 
 Already have the app but don't know how to create a vault? Then take a look at our [documentation](https://docs.cryptomator.org/desktop/getting-started/).
 
-### 2. Use Public Wi-Fi With Caution
+## 2. Use Public Wi-Fi With Caution
 
 During soccer season, people often get a lot of work done on the go: quickly sending a file, opening a document, reviewing a presentation, or accessing personal files. **Public Wi-Fi** in hotels, cafés, trains, or airports is tempting for this, but it isn’t always trustworthy.
 
@@ -66,7 +66,7 @@ Here are a few basic rules to follow:
 
 **Cryptomator** protects your files regardless of the network used to sync them. Even when your cloud files are being transferred or stored, they remain encrypted.
 
-### 3. Plan Ahead for Device Loss
+## 3. Plan Ahead for Device Loss
 
 When traveling or attending events, things can go wrong in the blink of an eye: a smartphone gets left behind, a laptop gets stolen, or a tablet goes missing from a backpack. It’s always frustrating. But it becomes a serious problem **if sensitive files are stored on the device without protection**.
 
@@ -80,7 +80,7 @@ That’s why it’s a good idea to check a few things before you start your trip
 
 With **Cryptomator**, you can store personal and work files in encrypted vaults. Even if someone gains access to your cloud storage or synced files, the contents remain protected without your password.
 
-### 4. Teamwork Requires More Than Just Shared Folders
+## 4. Teamwork Requires More Than Just Shared Folders
 
 It’s not just individuals who benefit from encrypted cloud storage. **Teams, companies, universities, NGOs, and organizations** also frequently work with sensitive documents. Collaboration often intensifies during major events or seasonal campaigns: marketing materials, press kits, budget plans, travel documents, internal lists, and project files need to be readily available.
 
@@ -94,7 +94,7 @@ This is particularly helpful when multiple people need to access confidential fi
 
 [**[Try Cryptomator Hub for 30 Days]**](https://cryptomator.org/hub/managed/)
 
-### 5. Check Access Rights Regularly
+## 5. Check Access Rights Regularly
 
 In many organizations, cloud folders grow over time. People are added, projects change, external partners are granted access, and former team members sometimes retain access longer than they should.
 
@@ -110,7 +110,7 @@ Soccer offers a good analogy for this: Not everyone belongs in the starting line
 
 With **Cryptomator Hub**, **access to encrypted vaults can be managed centrally**. This makes secure collaboration easier without having to sacrifice the benefits of cloud storage.
 
-### 6. Don’t Forget to Back Up Your Data
+## 6. Don’t Forget to Back Up Your Data
 
 Data protection isn’t just about safeguarding files from unauthorized access. It’s also about making sure you don’t lose important data. It’s especially worth creating a **backup** before trips, events, or busy work periods.
 
@@ -118,7 +118,7 @@ A **good backup protects you against device loss, accidental deletion, technical
 
 For particularly sensitive files, it makes sense to **store backups in an encrypted format**. With Cryptomator, you can use an encrypted vault for this purpose and sync it with a cloud service of your choice. This way, your files remain accessible but protected.
 
-### 7. Keep Personal and Professional Information Separate
+## 7. Keep Personal and Professional Information Separate
 
 During a major sporting event, **the lines between personal and professional use can quickly blur**: personal smartphones are used for work emails, work laptops for travel documents, and team files end up in personal cloud folders.
 
@@ -133,7 +133,7 @@ A **simple structure** can help:
 
 This makes it clear which files belong where and who should have access to them.
 
-### 8. Encryption Should Be Simple
+## 8. Encryption Should Be Simple
 
 Many people know that encryption is important. Yet it’s often not used in everyday life because it seems complicated. That’s exactly what Cryptomator aims to change.
 
