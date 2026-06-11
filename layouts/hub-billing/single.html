@@ -42,7 +42,7 @@
             <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
             {{ i18n "hub_billing_createsession_submit" . }}
           </button>
-          {{ $challengeUrl := printf "%s/manage/session/challenge" .Site.Params.apiBaseUrl }}
+          {{ $challengeUrl := printf "%s/billing/manage/session/challenge" .Site.Params.apiBaseUrl }}
           {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState") }}
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
@@ -435,7 +435,7 @@
                       </p>
                       <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
                       <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
-                      {{ $cardChallengeUrl := printf "%s/paddle-classic/checkout/challenge" .Site.Params.apiBaseUrl }}
+                      {{ $cardChallengeUrl := printf "%s/billing/paddle-classic/checkout/challenge" .Site.Params.apiBaseUrl }}
                       {{ partial "captcha.html" (dict "challengeUrl" $cardChallengeUrl "captchaPayload" "subscriptionData.cardCaptcha" "captchaState" "captchaState" "ref" "cardCaptcha") }}
                       <button :disabled="subscriptionData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                         <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
@@ -525,7 +525,7 @@
                       </p>
                       <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
                       <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
-                      {{ $invoiceChallengeUrl := printf "%s/espocrm/checkout/challenge" .Site.Params.apiBaseUrl }}
+                      {{ $invoiceChallengeUrl := printf "%s/billing/espocrm/checkout/challenge" .Site.Params.apiBaseUrl }}
                       {{ partial "captcha.html" (dict "challengeUrl" $invoiceChallengeUrl "captchaPayload" "subscriptionData.invoiceCaptcha" "captchaState" "captchaState" "ref" "invoiceCaptcha") }}
                       <button :disabled="subscriptionData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                         <i :class="{'fa-file-invoice': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>

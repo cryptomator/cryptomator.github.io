@@ -1,10 +1,10 @@
 "use strict";
 
-const CARD_CHECKOUT_URL = API_BASE_URL + '/paddle-classic/checkout';
-const INVOICE_CHECKOUT_URL = API_BASE_URL + '/espocrm/checkout';
-const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/manage/subscription';
-const SESSION_REQUEST_URL = API_BASE_URL + '/manage/session/request';
-const SESSION_CONFIRM_URL = API_BASE_URL + '/manage/session/confirm';
+const CARD_CHECKOUT_URL = API_BASE_URL + '/billing/paddle-classic/checkout';
+const INVOICE_CHECKOUT_URL = API_BASE_URL + '/billing/espocrm/checkout';
+const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/billing/manage/subscription';
+const SESSION_REQUEST_URL = API_BASE_URL + '/billing/manage/session/request';
+const SESSION_CONFIRM_URL = API_BASE_URL + '/billing/manage/session/confirm';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
 
