@@ -12,11 +12,11 @@ ogimage:
   height: 675
 ---
 
-Der **Fußballsommer** steht vor der Tür. Für viele bedeutet das: **gemeinsam Spiele schauen, unterwegs sein, reisen, mobil arbeiten oder einfach zwischendurch vom Laptop aus die wichtigsten Dinge erledigen.** Ob im Hotel, im Café, am Flughafen oder im Büro mit Kolleg:innen. Gerade in solchen Phasen werden Dateien oft schnell geteilt, Geräte häufiger unterwegs genutzt und sensible Informationen in der Cloud gespeichert.
+**Die Fußball-WM startet heute.** Für viele bedeutet das: gemeinsam Spiele schauen, unterwegs sein, reisen, mobil arbeiten oder einfach zwischendurch die wichtigsten Dinge erledigen. Ob im Hotel, im Café, am Flughafen oder im Büro mit Kolleg:innen: Gerade in solchen Phasen werden Dateien schnell geteilt, Geräte häufiger unterwegs genutzt und sensible Informationen in der Cloud gespeichert.
 
 **Dabei geraten Datenschutz und IT-Sicherheit leicht in den Hintergrund**. Ein Ticket wird in der Cloud abgelegt, Reisedokumente werden auf dem Smartphone gespeichert, Projektdateien werden mit Kolleg:innen geteilt oder wichtige Unterlagen liegen unverschlüsselt in einem Cloud-Ordner. Bequem ist das allemal. Sicher ist es aber nicht automatisch.
 
-Mit ein paar **einfachen Maßnahmen** kannst du dafür sorgen, dass deine Daten auch während des Fußballfiebers geschützt bleiben. Und genau hier kommen **Cryptomator** und **Cryptomator Hub** ins Spiel.
+Ob du privat reist, mobil arbeitest oder Dateien im Team koordinierst: Mit ein paar **einfachen Maßnahmen** kannst du dafür sorgen, dass deine Daten auch während des Fußballfiebers geschützt bleiben. Und genau hier kommen **Cryptomator** und **Cryptomator Hub** ins Spiel.
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/worldcup-2026-checklist-dataprotection_de.png" alt="Datenschutz Checkliste für die WM" />

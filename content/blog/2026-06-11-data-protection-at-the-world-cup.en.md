@@ -12,11 +12,11 @@ ogimage:
   height: 675
 ---
 
-**Soccer season** is just around the corner. For many people, that means **watching games together, being on the go, traveling, working remotely, or simply taking care of important tasks on their laptop in between activities**—whether at a hotel, a café, the airport, or the office with colleagues. It’s precisely during these times that files are often shared quickly, devices are used more frequently while on the go, and sensitive information is stored in the cloud.
+**The World Cup kicks off today.** For many people, that means watching games together, being on the go, traveling, working remotely, or simply taking care of important tasks in between activities. Whether at a hotel, a café, the airport, or the office with colleagues, files are often shared quickly, devices are used more frequently on the go, and sensitive information is stored in the cloud.
 
 In the process, **data protection and IT security can easily take a back seat**. A ticket is stored in the cloud, travel documents are saved on a smartphone, project files are shared with colleagues, or important documents are left unencrypted in a cloud folder. It’s certainly convenient. But it’s not automatically secure.
 
-With a few **simple steps**, you can ensure that your data stays secure even during the soccer frenzy. And that’s exactly where **Cryptomator** and **Cryptomator Hub** come in.
+Whether you are traveling privately, working remotely, or coordinating files in a team, a few **simple steps** can help keep your data secure during the soccer frenzy. And that’s exactly where **Cryptomator** and **Cryptomator Hub** come in.
 
 <figure class="text-center">
   <img class="inline-block rounded-sm" src="/img/blog/worldcup-2026-checklist-dataprotection_en.png" alt="Data protection checklist for the world cup" />
