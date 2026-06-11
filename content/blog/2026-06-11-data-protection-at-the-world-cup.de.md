@@ -91,7 +91,7 @@ Cryptomator Hub ermöglicht es Organisationen, **verschlüsselte Tresore gemeins
 
 Das ist besonders hilfreich, wenn mehrere Personen auf vertrauliche Dateien zugreifen müssen, zum Beispiel in Unternehmen, Forschungseinrichtungen, Hochschulen, NGOs oder Agenturen.
 
-[**[Testen Sie Cryptomator Hub 30 Tage lang]**](https://cryptomator.org/de/hub/managed/)
+[**Jetzt Cryptomator Hub für 30 Tage testen**](https://cryptomator.org/de/hub/managed/)
 
 ## 5. Zugriffsrechte regelmäßig prüfen
 
@@ -152,4 +152,4 @@ So bleiben deine Dateien auch dann geschützt, wenn du unterwegs bist, im Team a
 
 Bereit für eine starke digitale Verteidigung? Schütze deine Dateien jetzt mit Cryptomator — und sichere Teamarbeit mit Cryptomator Hub.
 
-[**__\[Demo jetzt anfragen\]__**](https://cryptomator.org/de/contact-sales/)
+[**Demo jetzt anfragen**](https://cryptomator.org/de/contact-sales/)
