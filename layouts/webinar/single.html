@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   {{- $lang := .Site.Language.Lang }}
-  <div x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {webinarId: '{{ .Site.Params.webinar.webinarId }}', firstName: '', lastName: '', email: '', company: '', captcha: null, acceptNewsletter: false}, webinar: {status: null, name: '', language: '', dateStart: null, lead: '', learnTitle: '', learnItems: []}, acceptTerms: false, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/register-webinar'); new Webinar(submitData.webinarId, '{{ $lang }}', {en: '{{ i18n "webinar_language_en" }}', de: '{{ i18n "webinar_language_de" }}'}, webinar)">
+  <div x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {webinarId: '{{ .Site.Params.webinar.webinarId }}', firstName: '', lastName: '', email: '', company: '', captcha: null, acceptNewsletter: false}, webinar: {status: null, name: '', language: '', dateStart: null, lead: '', speakerName: '', speakerTitle: '', speakerImage: '', learnTitle: '', learnItems: []}, acceptTerms: false, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/register-webinar'); new Webinar(submitData.webinarId, '{{ $lang }}', {en: '{{ i18n "webinar_language_en" }}', de: '{{ i18n "webinar_language_de" }}'}, webinar)">
     <!-- Webinar Planned: Registration -->
     <section x-show="webinar.status === 'Planned'" class="container py-12" x-cloak>
       <header class="mb-6">
@@ -113,6 +113,15 @@
                       <div>
                         <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_language_label" }}</div>
                         <p class="font-medium text-gray-900" x-show="webinar.language" x-text="webinar.language" x-cloak></p>
+                      </div>
+                    </li>
+
+                    <li class="flex items-start" x-show="webinar.speakerName && webinar.speakerImage" x-cloak>
+                      <img class="flex-shrink-0 w-10 h-10 rounded-full object-cover mr-4" :src="webinar.speakerImage" :alt="webinar.speakerName">
+                      <div>
+                        <div class="text-xs uppercase tracking-wide text-gray-500 mb-0.5">{{ i18n "webinar_speaker_label" }}</div>
+                        <p class="font-medium text-gray-900" x-text="webinar.speakerName"></p>
+                        <p class="text-sm text-gray-500" x-show="webinar.speakerTitle" x-text="webinar.speakerTitle"></p>
                       </div>
                     </li>
                   </ul>

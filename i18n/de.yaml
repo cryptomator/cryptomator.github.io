@@ -1361,6 +1361,8 @@
   translation: "Uhrzeit"
 - id: webinar_language_label
   translation: "Sprache"
+- id: webinar_speaker_label
+  translation: "Speaker"
 - id: webinar_language_en
   translation: "Englisch"
 - id: webinar_language_de
