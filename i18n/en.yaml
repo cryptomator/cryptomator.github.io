@@ -1400,6 +1400,8 @@
   translation: "Time"
 - id: webinar_language_label
   translation: "Language"
+- id: webinar_speaker_label
+  translation: "Speaker"
 - id: webinar_language_en
   translation: "English"
 - id: webinar_language_de

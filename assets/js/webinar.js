@@ -9,6 +9,9 @@ class Webinar {
       data.language = languageNames[d.language];
       data.dateStart = d.dateStart.replace(' ', 'T') + 'Z';
       data.lead = d.metadata.lead[lang];
+      data.speakerName = d.speaker.name;
+      data.speakerTitle = d.speaker.title;
+      data.speakerImage = d.speaker.avatarUrl;
       data.learnTitle = d.metadata.learn.title[lang];
       data.learnItems = (d.metadata.learn.items).map(i => i[lang]);
     }).fail(xhr => {
