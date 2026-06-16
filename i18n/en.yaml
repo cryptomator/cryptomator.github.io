@@ -503,13 +503,13 @@
   translation: "Please wait while we're loading your subscription information."
 
 - id: hub_billing_createsession_description
-  translation: "Looking up Hub instance details..."
+  translation: "Looking up Hub instance details…"
 - id: hub_billing_createsession_success_description
   translation: "Please check your email for the link to manage your Hub subscription."
 - id: hub_billing_createsession_submit
-  translation: "Request Access"
+  translation: "Send Link"
 - id: hub_billing_createsession_email_description
-  translation: "This looks like a new Hub instance. Confirm your email address to proceed."
+  translation: "Ready to subscribe? To set up billing for this Hub, enter your email address and we'll send you a link to continue to checkout."
 - id: hub_billing_createsession_email_placeholder
   translation: "Your email address"
 - id: hub_billing_createsession_found_description
