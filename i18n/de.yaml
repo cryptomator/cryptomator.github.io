@@ -508,6 +508,15 @@
   translation: "Bitte überprüfe deine E-Mails auf den Link zur Verwaltung deines Hub-Abonnements."
 - id: hub_billing_createsession_submit
   translation: "Zugang anfordern"
+- id: hub_billing_createsession_email_description
+  translation: "Wir konnten diesem Hub kein bestehendes Abonnement zuordnen. Bitte gib die E-Mail-Adresse ein, die du für den Kauf verwendet hast, damit wir dir den Bestätigungslink senden können."
+- id: hub_billing_createsession_email_placeholder
+  translation: "Deine E-Mail-Adresse"
+- id: hub_billing_createsession_found_description
+  translation: "Wir haben ein bestehendes Abonnement für diesen Hub gefunden. Wir senden den Bestätigungslink an:"
+
+- id: hub_billing_linkexpired_description
+  translation: "Dieser Link ist nicht mehr gültig. Bestätigungslinks können nur einmal verwendet werden und verfallen nach einer Weile. Bitte fordere über deine Hub-Instanz einen neuen Link an."
 
 - id: hub_billing_manage_status_title
   translation: "Status"

@@ -503,11 +503,20 @@
   translation: "Please wait while we're loading your subscription information."
 
 - id: hub_billing_createsession_description
-  translation: "To access your subscription information, a confirmation link will be sent to the email you used to make your purchase."
+  translation: "Looking up Hub instance details..."
 - id: hub_billing_createsession_success_description
   translation: "Please check your email for the link to manage your Hub subscription."
 - id: hub_billing_createsession_submit
   translation: "Request Access"
+- id: hub_billing_createsession_email_description
+  translation: "This looks like a new Hub instance. Confirm your email address to proceed."
+- id: hub_billing_createsession_email_placeholder
+  translation: "Your email address"
+- id: hub_billing_createsession_found_description
+  translation: "We found an existing subscription for this Hub. We'll send the confirmation link to:"
+
+- id: hub_billing_linkexpired_description
+  translation: "This link is no longer valid. Confirmation links can only be used once and expire after a while. Please request a new link from your Hub instance."
 
 - id: hub_billing_manage_status_title
   translation: "Status"
