@@ -1,0 +1,30 @@
+# Reviewed lifecycle-script allowlist for dependencies.
+allowBuilds:
+  # Sets up Tailwind v4's native Rust engine. Required for any
+  # Tailwind build to produce CSS. Maintained by Tailwind Labs.
+  "@tailwindcss/oxide": true
+  # Fetches or builds the prebuilt native filesystem-watcher binary.
+  # Pulled in transitively by @tailwindcss/cli. Maintained by the
+  # Parcel team.
+  "@parcel/watcher": true
+  # Copies node_modules/@ovx/svelte over node_modules/svelte — a
+  # Svelte-packaging workaround on altcha's side. Irrelevant to our
+  # usage (we only consume altcha/dist_external). Allowed so contributors
+  # don't trip strictDepBuilds on a script that has no effect for us.
+  altcha: true
+
+# Fail the install  when a dependency ships a
+# lifecycle script not present in `allowBuilds`.
+strictDepBuilds: true
+
+# Reject transitive deps pulled from git/tarball/local sources;
+# pair to scripts/check-lockfile.sh which gates the lockfile itself.
+blockExoticSubdeps: true
+
+# Cooldown for new releases of 3 days (4320 min). Most malicious package versions are
+# unpublished within hours to a few days;
+minimumReleaseAge: 4320
+# Font Awesome Pro lives on a private single-publisher registry, so
+# exclude it from the cooldown
+minimumReleaseAgeExclude:
+  - "@awesome.me/*"

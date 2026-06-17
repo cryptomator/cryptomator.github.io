@@ -4,6 +4,11 @@
 {{- $backgroundColor := cond .Params.darkNav "bg-dark" "bg-white" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
 <nav class="w-full max-h-screen {{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
+  {{- if .Scratch.Get "webinarBannerActive" -}}
+  <div class="w-full bg-primary text-center text-sm text-white p-0.5">
+    <p>{{ i18n "webinar_banner" | safeHTML }}</p>
+  </div>
+  {{- end -}}
   <div class="flex justify-between items-stretch w-full lg:px-8">
     <!-- Regular Navigation -->
     <div class="flex items-stretch">
@@ -20,7 +25,30 @@
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
         {{- range .Site.Data.nav }}
-        {{- if .Dropdown }}
+        {{- if .DropdownFromSection }}
+        <!-- Dropdown generated from a section's child pages (e.g. Solutions) -->
+        {{- with $.Site.GetPage .Path }}
+        <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2 border-b-2 border-transparent" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
+          <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
+            <span>{{ .Title }}</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </button>
+          <div class="absolute">
+            <ul x-show="isDropdownOpen" x-cloak class="absolute mt-6 py-2 whitespace-nowrap bg-white rounded-sm shadow-md z-50">
+              {{- range .Pages.ByWeight }}
+              {{- if not .Params.comingsoon }}
+              <li>
+                <a href="{{ .RelPermalink }}" class="flex items-center px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+                  <span>{{ .Params.cardtitle | default .Title }}</span>
+                </a>
+              </li>
+              {{- end }}
+              {{- end }}
+            </ul>
+          </div>
+        </li>
+        {{- end }}
+        {{- else if .Dropdown }}
         <!-- Dropdown item -->
         <li x-data="{ isDropdownOpen: false, openedByHover: false }" class="flex items-center mx-2 border-b-2 border-transparent" @mouseenter="isDropdownOpen = true; openedByHover = true" @mouseleave="isDropdownOpen = false; openedByHover = false" @click.outside="isDropdownOpen = false">
           <button @click="if (!openedByHover) { isDropdownOpen = !isDropdownOpen }" class="whitespace-nowrap p-2">
@@ -113,9 +141,24 @@
   </div>
   
   <!-- Smartphone Navigation -->
-  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden max-h-[calc(100vh-48px)] overflow-y-auto">
+  <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden {{ cond (.Scratch.Get "webinarBannerActive") "max-h-[calc(100vh-72px)]" "max-h-[calc(100vh-48px)]" }} overflow-y-auto">
     {{- range .Site.Data.nav }}
-    {{- if .Dropdown }}
+    {{- if .DropdownFromSection }}
+    <!-- Dropdown generated from a section's child pages (e.g. Solutions) -->
+    {{- with $.Site.GetPage .Path }}
+    <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
+      {{ .Title }}
+    </div>
+    {{- range .Pages.ByWeight }}
+    {{- if not .Params.comingsoon }}
+    <a class="flex items-center py-2 mx-2 hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}" data-umami-event="nav-{{ replaceRE "^.*/([^/]+)/?$" "$1" .RelPermalink }}">
+      <span>{{ .Params.cardtitle | default .Title }}</span>
+    </a>
+    {{- end }}
+    {{- end }}
+    <hr class="border-primary my-2"/>
+    {{- end }}
+    {{- else if .Dropdown }}
     <div class="uppercase tracking-wide text-gray-500 text-xs font-bold p-2">
       {{ i18n .Title . }}
     </div>

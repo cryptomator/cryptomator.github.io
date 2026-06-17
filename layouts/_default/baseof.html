@@ -64,8 +64,43 @@
     {{ end }}
   </head>
   <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    {{- $anniversaryBanner := .Site.Params.anniversaryBanner -}}
+    {{- $showAnniversaryBanner := false -}}
+    {{- if and $anniversaryBanner $anniversaryBanner.enabled -}}
+      {{- $showAnniversaryBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $anniversaryBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showAnniversaryBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "anniversaryBannerActive" $showAnniversaryBanner -}}
+    {{- $webinarBanner := .Site.Params.webinar.banner -}}
+    {{- $showWebinarBanner := false -}}
+    {{- if and $webinarBanner $webinarBanner.enabled -}}
+      {{- $showWebinarBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $webinarBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showWebinarBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "webinarBannerActive" $showWebinarBanner -}}
     {{ partial "nav.html" . }}
-    {{- $topPadding := cond (or .IsHome .Params.flushHero) "" "pt-12" -}}
+    {{- if $showAnniversaryBanner -}}
+      {{ partial "anniversary-banner.html" . }}
+    {{- end -}}
+    {{- $flushHero := or .IsHome .Params.flushHero -}}
+    {{- $topPadding := cond $flushHero "" "pt-12" -}}
+    {{- if and $showWebinarBanner (not $showAnniversaryBanner) -}}
+      {{- $topPadding = cond $flushHero "" "pt-24 md:pt-18" -}}
+    {{- else if and (not $showWebinarBanner) $showAnniversaryBanner -}}
+      {{- $topPadding = cond $flushHero "" "pt-28 md:pt-24" -}}
+    {{- else if and $showWebinarBanner $showAnniversaryBanner -}}
+      {{- $topPadding = cond $flushHero "" "pt-40 md:pt-32" -}}
+    {{- end -}}
     <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
@@ -76,7 +111,7 @@
     <script
       src="https://umami.skymatic.de/script.js"
       data-website-id="{{ .Site.Params.umamiWebsiteId }}"
-      integrity="sha384-6PHtXKae10+dZuA/fcmjkSTDco+NPBE5fZ4eS/Em2lVIsS6FdDZIgs06MBJLEcSW"
+      integrity="sha384-LTPPwaLbU0osA3KlbZu0gbKM+OX2/iNJYVcdtY6ZFUJfsuj7LJ+40McwiPCPpKad"
       crossorigin="anonymous"
       defer
       {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>

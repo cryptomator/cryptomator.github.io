@@ -1,0 +1,16 @@
+{{- /* Emits FAQPage JSON-LD from a slice of {Question, Answer} entries (the page's faq_key data). */ -}}
+{{- $items := slice -}}
+{{- range . -}}
+  {{- $items = $items | append (dict
+    "@type" "Question"
+    "name" (.Question | markdownify | plainify | chomp)
+    "acceptedAnswer" (dict
+      "@type" "Answer"
+      "text" (.Answer | markdownify | plainify | chomp)
+    )
+  ) -}}
+{{- end -}}
+{{- $schema := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $items -}}
+<script type="application/ld+json">
+{{ jsonify (dict "indent" "  ") $schema | safeJS }}
+</script>

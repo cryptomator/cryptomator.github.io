@@ -7,6 +7,7 @@
   - Separator: true
   - Path: "/downloads"
 - Path: "/solutions"
+  DropdownFromSection: true
 - Path: "/pricing"
 - Title: nav_support_us
   Dropdown:  

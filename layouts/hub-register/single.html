@@ -171,22 +171,8 @@
 
               <!-- Captcha (auto-starts on load, hidden when done) -->
               <div x-show="!feedbackData.licenseText" class="mb-4">
-                <altcha-widget
-                  challengeurl="{{ .Site.Params.apiBaseUrl }}/licenses/hub/challenge"
-                  hidelogo
-                  hidefooter
-                  auto="onload"
-                  @statechange="captchaState = $event.detail.state; if ($event.detail.state === 'verified') { submitData.captcha = $event.detail.payload; hubCE.getHubLicense() }"
-                  :strings="JSON.stringify({
-                    label: '{{ i18n "altcha_label" }}',
-                    error: '{{ i18n "altcha_error" }}',
-                    expired: '{{ i18n "altcha_expired" }}',
-                    verified: '{{ i18n "altcha_verified" }}',
-                    verifying: '{{ i18n "altcha_verifying" }}',
-                    waitAlert: '{{ i18n "altcha_waitAlert" }}'
-                  })"
-                  x-ref="licenseCaptcha"
-                ></altcha-widget>
+                {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState" "ref" "licenseCaptcha" "auto" "onload" "onVerified" "hubCE.getHubLicense()") }}
               </div>
 
               <!-- Loading state -->

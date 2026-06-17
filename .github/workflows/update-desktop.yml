@@ -1,0 +1,117 @@
+name: Updates download urls to latest version
+
+on:
+  repository_dispatch:
+    types: [desktop-release]
+
+jobs:
+  create-pr:
+    name: Create PR for desktop release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      DESKTOP_VERSION: ${{ github.event.client_payload.version }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - name: Create new branch
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          if [[ ! "$DESKTOP_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z]+)*$ ]]; then
+            echo "Invalid version in payload: $DESKTOP_VERSION" >&2
+            exit 1;
+          fi
+          git checkout -b "feature/desktop-${DESKTOP_VERSION}"
+      - name: Update params.yaml
+        run: |
+          MSI_URL=$(jq -r '[.[] | select(.name | endswith(".msi"))][0].browser_download_url // "null"' <<< "$ASSETS_JSON")
+          MSI_DIGEST=$(jq -r '[.[] | select(.name | endswith(".msi"))][0].digest // "null"' <<< "$ASSETS_JSON")
+          EXE_URL=$(jq -r '[.[] | select(.name | endswith(".exe"))][0].browser_download_url // "null"' <<< "$ASSETS_JSON")
+          EXE_DIGEST=$(jq -r '[.[] | select(.name | endswith(".exe"))][0].digest // "null"' <<< "$ASSETS_JSON")
+          DMG_X64_URL=$(jq -r '[.[] | select(.name | endswith("-x64.dmg"))][0].browser_download_url // "null"' <<< "$ASSETS_JSON")
+          DMG_X64_DIGEST=$(jq -r '[.[] | select(.name | endswith("-x64.dmg"))][0].digest // "null"' <<< "$ASSETS_JSON")
+          DMG_ARM64_URL=$(jq -r '[.[] | select(.name | endswith("-arm64.dmg"))][0].browser_download_url // "null"' <<< "$ASSETS_JSON")
+          DMG_ARM64_DIGEST=$(jq -r '[.[] | select(.name | endswith("-arm64.dmg"))][0].digest // "null"' <<< "$ASSETS_JSON")
+          APPIMAGE_AARCH64_URL=$(jq -r '[.[] | select(.name | endswith("-aarch64.AppImage"))][0].browser_download_url // "null"' <<< "$ASSETS_JSON")
+          APPIMAGE_AARCH64_DIGEST=$(jq -r '[.[] | select(.name | endswith("-aarch64.AppImage"))][0].digest // "null"' <<< "$ASSETS_JSON")
+          APPIMAGE_X64_URL=$(jq -r '[.[] | select(.name | endswith("-x86_64.AppImage"))][0].browser_download_url // "null"' <<< "$ASSETS_JSON")
+          APPIMAGE_X64_DIGEST=$(jq -r '[.[] | select(.name | endswith("-x86_64.AppImage"))][0].digest // "null"' <<< "$ASSETS_JSON")
+
+          UPDATED_ASSETS=0
+
+          update_release() {
+            local key="$1"
+            local url="$2"
+            local digest="$3"
+            local filename_expr="${4:-(env(RELEASE_URL) | split(\"/\") | .[-1])}"
+
+            if [ "$url" = "null" ] || [ -z "$url" ]; then
+              return
+            fi
+
+            if [[ "$url" != https://github.com/cryptomator/cryptomator/releases/download/* ]]; then
+              echo "Unexpected download URL: $url" >&2
+              exit 1
+            fi
+
+            UPDATED_ASSETS=1
+            RELEASE_URL="$url" RELEASE_DIGEST="${digest#sha256:}" yq -i "
+              .releases.${key}.version = env(DESKTOP_VERSION) |
+              .releases.${key}.filename = ${filename_expr} |
+              .releases.${key}.downloadUrl = env(RELEASE_URL) |
+              .releases.${key}.signatureUrl = (env(RELEASE_URL) + \".asc\") |
+              .releases.${key}.checksum = env(RELEASE_DIGEST)
+            " config/_default/params.yaml
+          }
+
+          update_release "exe" "$EXE_URL" "$EXE_DIGEST"
+          update_release "msi" "$MSI_URL" "$MSI_DIGEST"
+          update_release "dmg" "$DMG_X64_URL" "$DMG_X64_DIGEST" '("Cryptomator-" + env(DESKTOP_VERSION) + ".dmg")'
+          update_release '"dmg-arm64"' "$DMG_ARM64_URL" "$DMG_ARM64_DIGEST"
+          update_release "appimage" "$APPIMAGE_X64_URL" "$APPIMAGE_X64_DIGEST"
+          update_release '"appimage-aarch64"' "$APPIMAGE_AARCH64_URL" "$APPIMAGE_AARCH64_DIGEST"
+
+          if [ "$UPDATED_ASSETS" -eq 0 ]; then
+            echo "No supported desktop assets found in release payload"
+            exit 1
+          fi
+        env:
+          ASSETS_JSON: ${{ toJson(github.event.client_payload.release.assets ) }}
+      - name: Commit and push
+        id: commit-and-push
+        run: |
+          git config user.name "cryptobot"
+          git config user.email "cryptobot@users.noreply.github.com"
+          git config push.autoSetupRemote true
+          git stage config/_default/params.yaml
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Update desktop download urls to release ${DESKTOP_VERSION}"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Create pull request
+        id: create-pr
+        if: steps.commit-and-push.outputs.changed == 'true'
+        run: |
+          printf "Created by $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > pr_body.md
+          PR_URL=$(gh pr create --title "Desktop release ${DESKTOP_VERSION}" --body-file pr_body.md)
+          echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.CRYPTOBOT_PR_TOKEN }}
+      - name: Slack Notification
+        if: steps.commit-and-push.outputs.changed == 'true'
+        uses: rtCamp/action-slack-notify@e31e87e03dd19038e411e38ae27cbad084a90661 # v2.3.3
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_CRYPTOMATOR_DESKTOP }}
+          SLACK_USERNAME: 'Cryptobot'
+          SLACK_ICON: ''
+          SLACK_ICON_EMOJI: ':bot:'
+          SLACK_CHANNEL: 'cryptomator-desktop'
+          SLACK_TITLE: "Website update PR created for release ${{ github.event.client_payload.version }}."
+          SLACK_MESSAGE: "See <${{ steps.create-pr.outputs.url }}|PR> on how to proceed."
+          SLACK_FOOTER: ''
+          MSG_MINIMAL: true
