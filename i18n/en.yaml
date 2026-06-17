@@ -304,14 +304,12 @@
   translation: "Join Community"
 
 # Home
-- id: home_header_kicker
-  translation: "4,000,000+ Downloads"
 - id: home_header_title
-  translation: "Protect your privacy in"
-- id: home_header_title_last_item
-  translation: "any cloud"
+  translation: "Protect your privacy in any cloud."
 - id: home_header_description
-  translation: "With Cryptomator, the key to your data is in your hands. Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
+  translation: "Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
+- id: home_header_supported_clouds
+  translation: "See compatible clouds"
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
 - id: home_header_for_individuals_title
@@ -323,22 +321,28 @@
 - id: home_header_for_teams_cta
   translation: "For Teams"
 
-- id: home_hero_question
-  translation: "How do you want to encrypt?"
-- id: home_hero_cryptomator_tagline
-  translation: "Your files. Your privacy."
+- id: home_hero_card_just_me
+  translation: "For Individuals"
+- id: home_hero_card_our_team
+  translation: "For Teams"
+- id: home_hero_hub_node_team
+  translation: "Team"
 - id: home_hero_cryptomator_description
-  translation: "Don't let cloud providers peek at your private files. Encrypt before you sync – no one but you can access your data."
+  translation: "Only you can open your files — encrypted before they reach the cloud."
 - id: home_hero_cryptomator_cta
   translation: "Download Free"
-- id: home_hero_hub_tagline
-  translation: "Secure teams. No password chaos."
+- id: home_hero_cryptomator_link
+  translation: "Explore all features"
 - id: home_hero_hub_description
-  translation: "Stop sharing passwords on sticky notes. Grant and revoke vault access instantly – without ever sharing a single key."
+  translation: "Give your team access to shared files — and revoke it for anyone, anytime."
 - id: home_hero_hub_cta
   translation: "Start Free Trial"
-- id: home_hero_social_proof_audited
-  translation: "Security Audited"
+- id: home_hero_hub_link
+  translation: "See how Hub works"
+- id: home_hero_cryp_label_you
+  translation: "You"
+- id: home_hero_cryp_label_cloud
+  translation: "Cloud"
 
 - id: home_get_started_title
   translation: "How will you use Cryptomator?"

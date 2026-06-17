@@ -304,14 +304,12 @@
   translation: "Community beitreten"
 
 # Home
-- id: home_header_kicker
-  translation: "4.000.000+ Downloads"
 - id: home_header_title
-  translation: "Privatsphäre schützen in"
-- id: home_header_title_last_item
-  translation: "jeder Cloud"
+  translation: "Schütze deine Privatsphäre in jeder Cloud."
 - id: home_header_description
-  translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator sicherst und verschlüsselst du deine sensiblen Daten in deiner Lieblingscloud. So bleiben sie privat und vor unbefugtem Zugriff geschützt."
+  translation: "Cryptomator sichert und verschlüsselt deine sensiblen Daten in deiner Lieblingscloud. So bleiben sie privat und vor unbefugtem Zugriff geschützt."
+- id: home_header_supported_clouds
+  translation: "Kompatible Clouds ansehen"
 - id: home_header_woman_cloud_alt
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
 - id: home_header_for_individuals_title
@@ -323,22 +321,28 @@
 - id: home_header_for_teams_cta
   translation: "Für Teams"
 
-- id: home_hero_question
-  translation: "Wie möchtest du verschlüsseln?"
-- id: home_hero_cryptomator_tagline
-  translation: "Deine Dateien. Deine Privatsphäre."
+- id: home_hero_card_just_me
+  translation: "Für Einzelnutzer"
+- id: home_hero_card_our_team
+  translation: "Für Teams"
+- id: home_hero_hub_node_team
+  translation: "Team"
 - id: home_hero_cryptomator_description
-  translation: "Lass Cloud-Anbieter nicht in deine privaten Dateien schauen. Verschlüssle vor dem Sync – nur du hast Zugriff."
+  translation: "Nur du kannst deine Dateien öffnen – verschlüsselt, bevor sie in die Cloud kommen."
 - id: home_hero_cryptomator_cta
   translation: "Kostenlos laden"
-- id: home_hero_hub_tagline
-  translation: "Sichere Teams. Kein Passwort-Chaos."
+- id: home_hero_cryptomator_link
+  translation: "Alle Funktionen entdecken"
 - id: home_hero_hub_description
-  translation: "Schluss mit Passwörtern auf Klebezetteln. Vergib und entziehe Vault-Zugriff sofort – ohne je einen Schlüssel zu teilen."
+  translation: "Gib deinem Team Zugriff auf gemeinsame Dateien – und entzieh ihn jeder Person jederzeit."
 - id: home_hero_hub_cta
   translation: "Kostenlos testen"
-- id: home_hero_social_proof_audited
-  translation: "Sicherheitsgeprüft"
+- id: home_hero_hub_link
+  translation: "So funktioniert Hub"
+- id: home_hero_cryp_label_you
+  translation: "Du"
+- id: home_hero_cryp_label_cloud
+  translation: "Cloud"
 
 - id: home_get_started_title
   translation: "Wie wirst du Cryptomator nutzen?"
