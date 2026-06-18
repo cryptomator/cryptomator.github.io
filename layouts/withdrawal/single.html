@@ -76,40 +76,22 @@
         <!-- Right Side - Sidebar -->
         <aside class="white-box md:col-span-1">
           <div class="px-4 py-5 md:p-6">
-            <div>
-              <h3 class="font-h3 mb-6">{{ i18n "withdrawal_what_happens_title" }}</h3>
+            <div class="space-y-8">
+              <div>
+                <h3 class="font-h3 mb-6">{{ i18n "other_contact_looking_for_title" }}</h3>
 
-              <ul class="space-y-4">
-                <li class="flex items-start">
-                  <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
-                    <i class="fa-solid fa-check text-white text-xs"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-gray-900 mb-1">{{ i18n "withdrawal_step_1_title" }}</h4>
-                    <p class="text-sm text-gray-600">{{ i18n "withdrawal_step_1_description" }}</p>
-                  </div>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
-                    <i class="fa-solid fa-check text-white text-xs"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-gray-900 mb-1">{{ i18n "withdrawal_step_2_title" }}</h4>
-                    <p class="text-sm text-gray-600">{{ i18n "withdrawal_step_2_description" }}</p>
-                  </div>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
-                    <i class="fa-solid fa-check text-white text-xs"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-medium text-gray-900 mb-1">{{ i18n "withdrawal_step_3_title" }}</h4>
-                    <p class="text-sm text-gray-600">{{ i18n "withdrawal_step_3_description" }}</p>
-                  </div>
-                </li>
-              </ul>
+                <ul class="space-y-6">
+                  <li>
+                    <a href="{{ .Site.LanguagePrefix }}/contact/" class="flex items-start group">
+                      <i class="fa-solid fa-arrow-right text-primary group-hover:translate-x-1 transition-transform duration-200 mr-3 mt-1"></i>
+                      <div>
+                        <div class="font-medium text-link group-hover:underline">{{ i18n "other_contact_link_contact" }}</div>
+                        <p class="text-sm text-gray-600 mt-1">{{ i18n "other_contact_link_contact_description" }}</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </aside>

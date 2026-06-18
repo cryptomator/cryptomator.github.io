@@ -1292,18 +1292,6 @@
   translation: "Thanks for reaching out. We'll process the refund and confirm by email."
 - id: withdrawal_what_happens_title
   translation: "What happens next?"
-- id: withdrawal_step_1_title
-  translation: "Withdrawal received"
-- id: withdrawal_step_1_description
-  translation: "We'll acknowledge receipt of your withdrawal within a few hours."
-- id: withdrawal_step_2_title
-  translation: "Order verification"
-- id: withdrawal_step_2_description
-  translation: "We match your details against your order and process the refund."
-- id: withdrawal_step_3_title
-  translation: "Confirmation"
-- id: withdrawal_step_3_description
-  translation: "You'll receive an email confirming your withdrawal and refund."
 
 # Partner Form
 - id: partner_first_name
