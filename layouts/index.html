@@ -13,16 +13,23 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section class="hero-split-contrast relative overflow-hidden">
+  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners; desktop padding already covers all banner combos, so only the mobile value scales below */ -}}
+  {{- $showWebinarBanner := .Scratch.Get "webinarBannerActive" -}}
+  {{- $showAnniversaryBanner := .Scratch.Get "anniversaryBannerActive" -}}
+  {{- $heroTopPad := "pt-16" -}}
+  {{- if and $showWebinarBanner $showAnniversaryBanner -}}
+    {{- $heroTopPad = "pt-40" -}}
+  {{- else if or $showWebinarBanner $showAnniversaryBanner -}}
+    {{- $heroTopPad = "pt-28" -}}
+  {{- end -}}
+  <section class="hero-split-contrast relative overflow-hidden {{ $heroTopPad }} md:pt-24 lg:pt-24">
     <div class="hero-aura-wrap absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div class="hero-aura hero-aura-primary"></div>
       <div class="hero-aura hero-aura-secondary"></div>
     </div>
     <div class="hero-split-header relative z-10">
-      <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight mb-4 text-balance">{{ i18n "home_header_title" }}</h1>
-      <p class="max-w-2xl mx-auto text-pretty text-lg leading-relaxed text-gray-600">{{ i18n "home_header_description" }}</p>
-
-      <div class="mt-8 flex flex-col items-center gap-3">
+      <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance text-gray-800">{{ i18n "home_header_title" }}</h1>
+      <div class="mt-6 flex flex-col items-center gap-3">
         <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-2xl text-gray-400">
           <li><i class="fa-brands fa-google-drive" role="img" aria-label="Google Drive" title="Google Drive"></i></li>
           <li><i class="fa-kit fa-icloud" role="img" aria-label="iCloud Drive" title="iCloud Drive"></i></li>

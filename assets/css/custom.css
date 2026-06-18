@@ -54,7 +54,7 @@
 }
 
 .hero-split-contrast {
-  @apply pt-16 md:pt-24 lg:pt-24 pb-12 md:pb-16 lg:pb-20;
+  @apply pb-6 md:pb-8 lg:pb-10;
 }
 
 .hero-split-header {
