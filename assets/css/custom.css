@@ -897,7 +897,8 @@ textarea:read-only {
   @apply relative inline-block;
 }
 
-.has-tooltip:hover .tooltip {
+.has-tooltip:hover .tooltip,
+.has-tooltip:focus-within .tooltip {
   @apply block;
 }
 
@@ -910,8 +911,8 @@ textarea:read-only {
   left: 50%;
 }
 
-/* offsetting anchor targets to adjust for fixed navbar */
-[id]::before {
+/* offsetting anchor targets to adjust for fixed navbar; tooltips carry an id only for aria-describedby, not as scroll anchors */
+[id]:not([role="tooltip"])::before {
   content: '';
   display: block;
   height: 96px;

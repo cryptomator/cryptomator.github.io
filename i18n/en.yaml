@@ -310,6 +310,8 @@
   translation: "Protect your privacy in any cloud."
 - id: home_header_description
   translation: "Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
+- id: home_clouds_sharepoint_tooltip
+  translation: "Includes Microsoft Teams"
 - id: home_header_supported_clouds
   translation: "See compatible clouds"
 - id: home_header_woman_cloud_alt
