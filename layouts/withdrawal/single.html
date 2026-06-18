@@ -1,0 +1,148 @@
+{{ define "preloads" }}
+  {{ partial "altcha-css.html" . }}
+{{ end }}
+{{ define "main" }}
+  <section x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {name: '', email: '', po_number: '', product: '', reason: '', captcha: null}, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/withdrawal')" class="container py-12">
+    <header class="mb-6">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead">{{ .Description }}</p>
+    </header>
+
+    <form x-ref="form" @submit.prevent="apiForm.request(); $refs.captcha.reset()">
+      <div x-show="!feedbackData.success" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <!-- Left Side - Withdrawal Form -->
+        <section class="white-box md:col-span-2">
+          <div class="px-4 py-5 md:p-6">
+            <div class="grid grid-cols-2 gap-6">
+              <!-- Name -->
+              <div class="col-span-2">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "withdrawal_name" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="name" name="name" x-model="submitData.name" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Email -->
+              <div class="col-span-2">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "withdrawal_email" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" x-model="submitData.email" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Order Number -->
+              <div class="col-span-2">
+                <label for="po_number" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "withdrawal_po_number" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <input type="text" id="po_number" name="po_number" x-model="submitData.po_number" class="block input-box w-full" maxlength="100" required aria-required="true" placeholder="{{ i18n "withdrawal_po_number_placeholder" }}" @blur="$el.classList.add('show-invalid')">
+              </div>
+
+              <!-- Product -->
+              <div class="col-span-2">
+                <label for="product" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "withdrawal_product" }} <span class="text-red-500" aria-label="required">*</span>
+                </label>
+                <select id="product" name="product" x-model="submitData.product" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                  <option value="">{{ i18n "withdrawal_product_placeholder" }}</option>
+                  <option value="DESKTOP">Cryptomator Desktop</option>
+                  <option value="ANDROID">Cryptomator Android</option>
+                  <option value="IOS">Cryptomator iOS</option>
+                  <option value="HUB">Cryptomator Hub</option>
+                </select>
+              </div>
+
+              <!-- Reason (optional) -->
+              <div class="col-span-2">
+                <label for="reason" class="block text-sm font-medium text-gray-700 mb-2">
+                  {{ i18n "withdrawal_reason" }}
+                </label>
+                <textarea id="reason" name="reason" x-model="submitData.reason" rows="4" class="block input-box w-full" maxlength="2000" placeholder="{{ i18n "withdrawal_reason_placeholder" }}"></textarea>
+              </div>
+
+              <div class="col-span-2">
+                <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+                <button :disabled="feedbackData.inProgress || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="withdrawal-form" x-cloak>
+                  <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                  {{ i18n "withdrawal_submit" }}
+                </button>
+                {{ $challengeUrl := printf "%s/connect/contact/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Side - Sidebar -->
+        <aside class="white-box md:col-span-1">
+          <div class="px-4 py-5 md:p-6">
+            <div>
+              <h3 class="font-h3 mb-6">{{ i18n "withdrawal_what_happens_title" }}</h3>
+
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                    <i class="fa-solid fa-check text-white text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">{{ i18n "withdrawal_step_1_title" }}</h4>
+                    <p class="text-sm text-gray-600">{{ i18n "withdrawal_step_1_description" }}</p>
+                  </div>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                    <i class="fa-solid fa-check text-white text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">{{ i18n "withdrawal_step_2_title" }}</h4>
+                    <p class="text-sm text-gray-600">{{ i18n "withdrawal_step_2_description" }}</p>
+                  </div>
+                </li>
+
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5">
+                    <i class="fa-solid fa-check text-white text-xs"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-900 mb-1">{{ i18n "withdrawal_step_3_title" }}</h4>
+                    <p class="text-sm text-gray-600">{{ i18n "withdrawal_step_3_description" }}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section x-show="feedbackData.success" class="white-box" x-cloak>
+        <div class="flex flex-col items-center justify-center gap-4 text-center md:min-h-110 px-4 py-5 md:p-6">
+          <i class="fa-solid fa-check-circle text-7xl text-secondary"></i>
+          <h3 class="font-h3">
+            {{ i18n "withdrawal_success_title" }}
+          </h3>
+          <p class="font-p">
+            {{ i18n "withdrawal_success_message" }}
+          </p>
+        </div>
+      </section>
+    </form>
+  </section>
+{{ end }}
+{{ define "script" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $apiFormJs := resources.Get "js/apiform.js" }}
+    <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $apiFormJs := resources.Get "js/apiform.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" integrity="{{ $apiFormJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}
