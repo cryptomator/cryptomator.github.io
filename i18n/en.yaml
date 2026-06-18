@@ -1267,6 +1267,32 @@
 - id: contact_sales_step_3_description
   translation: "Get a detailed, personalized response within one business day."
 
+# Withdrawal Form
+- id: withdrawal_name
+  translation: "Name"
+- id: withdrawal_email
+  translation: "Email Address"
+- id: withdrawal_po_number
+  translation: "Order Number"
+- id: withdrawal_po_number_placeholder
+  translation: "The order number from your purchase confirmation"
+- id: withdrawal_product
+  translation: "Product"
+- id: withdrawal_product_placeholder
+  translation: "Please select a product"
+- id: withdrawal_reason
+  translation: "Reason (optional)"
+- id: withdrawal_reason_placeholder
+  translation: "If you'd like, let us know why you're withdrawing..."
+- id: withdrawal_submit
+  translation: "Submit Withdrawal"
+- id: withdrawal_success_title
+  translation: "Withdrawal Received!"
+- id: withdrawal_success_message
+  translation: "Thanks for reaching out. We'll process the refund requst and confirm the request by email."
+- id: withdrawal_what_happens_title
+  translation: "What happens next?"
+
 # Partner Form
 - id: partner_first_name
   translation: "First Name"

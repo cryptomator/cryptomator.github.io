@@ -32,6 +32,9 @@
         {{- with .Site.GetPage "/contact" }}
         <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}" data-umami-event="footer-contact">{{ .Title }}</a></li>
         {{- end }}
+        {{- with .Site.GetPage "/withdrawal" }}
+        <li><a class="text-white hover:text-secondary hover:no-underline" href="{{ .RelPermalink }}" data-umami-event="footer-withdrawal">{{ .Title }}</a></li>
+        {{- end }}
       </ul>
     </div>
     

@@ -1228,6 +1228,32 @@
 - id: contact_sales_step_3_description
   translation: "Du erhältst innerhalb eines Werktages eine detaillierte Antwort von unserem Team."
 
+# Withdrawal Form
+- id: withdrawal_name
+  translation: "Name"
+- id: withdrawal_email
+  translation: "E-Mail-Adresse"
+- id: withdrawal_po_number
+  translation: "Bestellnummer"
+- id: withdrawal_po_number_placeholder
+  translation: "Die Bestellnummer aus deiner Kaufbestätigung"
+- id: withdrawal_product
+  translation: "Produkt"
+- id: withdrawal_product_placeholder
+  translation: "Bitte wähle ein Produkt"
+- id: withdrawal_reason
+  translation: "Grund (optional)"
+- id: withdrawal_reason_placeholder
+  translation: "Wenn du möchtest, teile uns mit, warum du widerrufst..."
+- id: withdrawal_submit
+  translation: "Widerruf absenden"
+- id: withdrawal_success_title
+  translation: "Widerruf erhalten!"
+- id: withdrawal_success_message
+  translation: "Vielen Dank für deinen Widerruf. Wir bearbeiten deine Rückerstattungsanfrage und bestätigen dir den Eingang per E-Mail."
+- id: withdrawal_what_happens_title
+  translation: "Was passiert als Nächstes?"
+
 # Partner Form
 - id: partner_first_name
   translation: "Vorname"
