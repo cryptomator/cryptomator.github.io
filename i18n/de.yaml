@@ -1250,7 +1250,7 @@
 - id: withdrawal_success_title
   translation: "Widerruf erhalten!"
 - id: withdrawal_success_message
-  translation: "Vielen Dank für deinen Widerruf. Wir bearbeiten die Rückerstattung und bestätigen dir alles per E-Mail."
+  translation: "Vielen Dank für deinen Widerruf. Wir bearbeiten deine Rückerstattungsanfrage und bestätigen dir den Eingang per E-Mail."
 - id: withdrawal_what_happens_title
   translation: "Was passiert als Nächstes?"
 

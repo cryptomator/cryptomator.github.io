@@ -1289,7 +1289,7 @@
 - id: withdrawal_success_title
   translation: "Withdrawal Received!"
 - id: withdrawal_success_message
-  translation: "Thanks for reaching out. We'll process the refund and confirm by email."
+  translation: "Thanks for reaching out. We'll process the refund requst and confirm the request by email."
 - id: withdrawal_what_happens_title
   translation: "What happens next?"
 
