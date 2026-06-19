@@ -25,10 +25,10 @@ class HubSubscription {
       }
     }
     this._subscriptionData.hubId = this._subscriptionData.hubId ?? fragmentParams.get('hub_id') ?? searchParams.get('hub_id');
-    // Record whether the returnUrl arrived in the URL fragment or the query string as `fragmentOrQuery`
-    // ('#' or '?'), so the billing API knows how to reconstruct the redirect later. If both carry it, the
-    // fragment wins.
-    let returnUrlInFragment = fragmentParams.get('returnUrl');
+    // The Hub's redirect and the query string both use snake_case `return_url`. Record whether it arrived
+    // in the fragment or the query string as `fragmentOrQuery` ('#' or '?'), so the billing API knows how to
+    // reconstruct the redirect later. If both carry it, the fragment wins.
+    let returnUrlInFragment = fragmentParams.get('return_url');
     let returnUrl = returnUrlInFragment ?? searchParams.get('return_url');
     if (returnUrl) {
       this._subscriptionData.returnUrl = returnUrl;
