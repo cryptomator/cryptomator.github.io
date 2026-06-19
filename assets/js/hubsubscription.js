@@ -34,10 +34,10 @@ class HubSubscription {
       this._subscriptionData.returnUrl = returnUrl;
       this._subscriptionData.fragmentOrQuery = returnUrlInFragment ? '#' : '?';
     }
-    this._subscriptionData.session = searchParams.get('session');
+    this._subscriptionData.session = fragmentParams.get('session') ?? searchParams.get('session');
     if (this._subscriptionData.session) {
-      // We returned from the confirmation link (/hub/billing?session=<id>): resolve the
-      // verified billing session and continue into the existing subscription flow.
+      // We returned from the confirmation link (/hub/billing?session=<id> or #session=<id>): resolve
+      // the verified billing session and continue into the existing subscription flow.
       this._subscriptionData.state = 'LOADING';
       this.loadBillingSession();
     } else if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
