@@ -596,7 +596,8 @@ class HubSubscription {
       url: GET_LICENSE_URL,
       type: 'GET',
       data: {
-        session: this._subscriptionData.session
+        session: this._subscriptionData.session,
+        legacy: this._subscriptionData.tokenTransfer === 'queryParam'
       }
     }).done(token => {
       this._subscriptionData.token = token;
@@ -614,10 +615,10 @@ class HubSubscription {
   }
 
   transferTokenToHub() {
-    if (this._subscriptionData.tokenTransfer == 'queryParam') {
+    if (this._subscriptionData.tokenTransfer === 'queryParam') {
       // Deliver the refreshed license to the Hub directly as a query parameter.
       location.href = this._subscriptionData.returnUrl + '?token=' + encodeURIComponent(this._subscriptionData.token);
-    } else if (this._subscriptionData.tokenTransfer == 'session') {
+    } else if (this._subscriptionData.tokenTransfer === 'session') {
       // Hand the Hub the billing session id instead; it resolves the license itself.
       location.href = this._subscriptionData.returnUrl + '?session=' + encodeURIComponent(this._subscriptionData.session);
     } else {
