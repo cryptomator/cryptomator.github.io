@@ -13,8 +13,7 @@ class HubSubscription {
   constructor(form, subscriptionData, searchParams) {
     this._form = form;
     this._subscriptionData = subscriptionData;
-    let fragmentParams = new URLSearchParams(location.hash.substring(1));
-    this._subscriptionData.oldLicense = fragmentParams.get('oldLicense');
+    this._subscriptionData.oldLicense = searchParams.get('oldLicense');
     if (this._subscriptionData.oldLicense) {
       try {
         let base64 = this._subscriptionData.oldLicense.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
@@ -24,20 +23,18 @@ class HubSubscription {
         this._subscriptionData.oldLicense = null;
       }
     }
-    this._subscriptionData.hubId = this._subscriptionData.hubId ?? fragmentParams.get('hub_id') ?? searchParams.get('hub_id');
-    // The Hub's redirect and the query string both use snake_case `return_url`. Record whether it arrived
-    // in the fragment or the query string as `fragmentOrQuery` ('#' or '?'), so the billing API knows how to
-    // reconstruct the redirect later. If both carry it, the fragment wins.
-    let returnUrlInFragment = fragmentParams.get('return_url');
-    let returnUrl = returnUrlInFragment ?? searchParams.get('return_url');
+    this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
+    let returnUrl = searchParams.get('return_url');
     if (returnUrl) {
       this._subscriptionData.returnUrl = returnUrl;
-      this._subscriptionData.fragmentOrQuery = returnUrlInFragment ? '#' : '?';
     }
-    this._subscriptionData.session = fragmentParams.get('session') ?? searchParams.get('session');
+    // Capture the Hub's `token_transfer` value (how the license should be delivered) so it can be stored in
+    // the billing session; default to delivering it as a query parameter.
+    this._subscriptionData.tokenTransfer = searchParams.get('token_transfer') ?? 'queryParam';
+    this._subscriptionData.session = searchParams.get('session');
     if (this._subscriptionData.session) {
-      // We returned from the confirmation link (/hub/billing?session=<id> or #session=<id>): resolve
-      // the verified billing session and continue into the existing subscription flow.
+      // We returned from the confirmation link (/hub/billing?session=<id>): resolve the verified
+      // billing session and continue into the existing subscription flow.
       this._subscriptionData.state = 'LOADING';
       this.loadBillingSession();
     } else if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
@@ -122,7 +119,7 @@ class HubSubscription {
     this._subscriptionData.hubId = data.hubId;
     this._subscriptionData.email = data.email;
     this._subscriptionData.returnUrl = data.returnUrl;
-    this._subscriptionData.fragmentOrQuery = data.fragmentOrQuery;
+    this._subscriptionData.tokenTransfer = data.tokenTransfer;
     this._subscriptionData.errorMessage = '';
     // The session is verified; hand off to the existing subscription flow (store + Paddle).
     this.loadSubscription();
@@ -190,7 +187,7 @@ class HubSubscription {
     let body = {
       hubId: this._subscriptionData.hubId,
       returnUrl: this._subscriptionData.returnUrl,
-      fragmentOrQuery: this._subscriptionData.fragmentOrQuery,
+      tokenTransfer: this._subscriptionData.tokenTransfer,
       captcha: this._subscriptionData.captcha
     };
     if (this._subscriptionData.email) {
@@ -617,7 +614,15 @@ class HubSubscription {
   }
 
   transferTokenToHub() {
-    window.open(this._subscriptionData.returnUrl + '?token=' + this._subscriptionData.token, '_self');
+    if (this._subscriptionData.tokenTransfer == 'queryParam') {
+      // Deliver the refreshed license to the Hub directly as a query parameter.
+      location.href = this._subscriptionData.returnUrl + '?token=' + encodeURIComponent(this._subscriptionData.token);
+    } else if (this._subscriptionData.tokenTransfer == 'session') {
+      // Hand the Hub the billing session id instead; it resolves the license itself.
+      location.href = this._subscriptionData.returnUrl + '?session=' + encodeURIComponent(this._subscriptionData.session);
+    } else {
+      console.error('Unknown token transfer method:', this._subscriptionData.tokenTransfer);
+    }
   }
 
 }
