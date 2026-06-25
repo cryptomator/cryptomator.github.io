@@ -503,11 +503,20 @@
   translation: "Bitte warten, während wir deine Abonnement-Informationen laden."
 
 - id: hub_billing_createsession_description
-  translation: "Um auf deine Abonnement-Informationen zuzugreifen, wird ein Bestätigungslink an die E-Mail-Adresse gesendet, die du für den Kauf verwendet hast."
+  translation: "Hub-Instanz-Details werden abgerufen …"
 - id: hub_billing_createsession_success_description
   translation: "Bitte überprüfe deine E-Mails auf den Link zur Verwaltung deines Hub-Abonnements."
 - id: hub_billing_createsession_submit
-  translation: "Zugang anfordern"
+  translation: "Link senden"
+- id: hub_billing_createsession_email_description
+  translation: "Bereit zum Abonnieren? Um die Abrechnung für diesen Hub einzurichten, gib deine E-Mail-Adresse ein und wir senden dir einen Link, um zur Zahlung zu gelangen."
+- id: hub_billing_createsession_email_placeholder
+  translation: "Deine E-Mail-Adresse"
+- id: hub_billing_createsession_found_description
+  translation: "Wir haben ein bestehendes Abonnement für diesen Hub gefunden. Wir senden den Bestätigungslink an:"
+
+- id: hub_billing_linkexpired_description
+  translation: "Dieser Link ist nicht mehr gültig. Bestätigungslinks können nur einmal verwendet werden und verfallen nach einer Weile. Bitte fordere über deine Hub-Instanz einen neuen Link an."
 
 - id: hub_billing_manage_status_title
   translation: "Status"

@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -34,17 +34,58 @@
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
             {{ i18n "hub_billing_generic_title" . }}
           </h3>
-          <p class="font-p mb-4">
-            <i class="fa-solid fa-sign-in"></i>
-            {{ i18n "hub_billing_createsession_description" . }}
-          </p>
-          <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64">
-            <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
-            {{ i18n "hub_billing_createsession_submit" . }}
-          </button>
-          {{ $challengeUrl := printf "%s/connect/store/challenge" .Site.Params.apiBaseUrl }}
-          {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState") }}
-          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+          <template x-if="!subscriptionData.lookupDone">
+            <div>
+              <p class="font-p mb-4">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                {{ i18n "hub_billing_createsession_description" . }}
+              </p>
+              {{ $lookupChallengeUrl := printf "%s/billing/customers/challenge" .Site.Params.apiBaseUrl }}
+              {{/* The challenge is solved automatically on load (auto=onload), so the widget needs no
+                   interaction; keep it hidden while the spinner above signals progress (altcha solves the
+                   proof-of-work in a worker regardless of visibility). Reveal it only on error so the user
+                   sees altcha's own error message instead of an endless spinner. */}}
+              <div x-show="captchaState == 'error'" x-cloak>
+                {{ partial "captcha.html" (dict "challengeUrl" $lookupChallengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState" "ref" "lookupCaptcha" "auto" "onload" "onVerified" "hubSubscription.lookupCustomer()") }}
+              </div>
+              <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+            </div>
+          </template>
+          <template x-if="subscriptionData.lookupDone">
+            <div>
+              <template x-if="!subscriptionData.needsEmail">
+                <div>
+                  <p class="font-p mb-4">
+                    <i class="fa-solid fa-envelope"></i>
+                    {{ i18n "hub_billing_createsession_found_description" . }}
+                    <span x-text="subscriptionData.redactedEmail" class="font-medium whitespace-nowrap"></span>
+                  </p>
+                  <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64">
+                    <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                    {{ i18n "hub_billing_createsession_submit" . }}
+                  </button>
+                </div>
+              </template>
+              <template x-if="subscriptionData.needsEmail">
+                <div>
+                  <p class="font-p mb-4">
+                    <i class="fa-solid fa-envelope"></i>
+                    {{ i18n "hub_billing_createsession_email_description" . }}
+                  </p>
+                  <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
+                    <input x-model="subscriptionData.email" :required="subscriptionData.needsEmail" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "hub_billing_createsession_email_placeholder" . }}"/>
+                    <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="shrink-0 flex items-center gap-1 btn btn-primary rounded-l-none px-4">
+                      <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                      {{ i18n "hub_billing_createsession_submit" . }}
+                    </button>
+                  </div>
+                </div>
+              </template>
+              {{ $sessionChallengeUrl := printf "%s/billing/session/challenge" .Site.Params.apiBaseUrl }}
+              {{ partial "captcha.html" (dict "challengeUrl" $sessionChallengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState") }}
+              <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+            </div>
+          </template>
         </div>
       </template>
 
@@ -56,6 +97,18 @@
           <p class="font-p mb-4">
             <i class="fa-solid fa-envelope"></i>
             {{ i18n "hub_billing_createsession_success_description" . }}
+          </p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'LINK_EXPIRED'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="font-p mb-4">
+            <i class="fa-solid fa-link-slash"></i>
+            {{ i18n "hub_billing_linkexpired_description" . }}
           </p>
         </div>
       </template>

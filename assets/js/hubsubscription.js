@@ -1,6 +1,7 @@
 "use strict";
 
-const BILLING_PORTAL_SESSION_URL = LEGACY_STORE_URL + '/hub/billing-portal-session';
+const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
+const BILLING_CUSTOMER_URL = API_BASE_URL + '/billing/customers/by-hub-id';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
@@ -23,15 +24,26 @@ class HubSubscription {
         this._subscriptionData.oldLicense = null;
       }
     }
-    this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
-    let returnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
+    this._subscriptionData.hubId = this._subscriptionData.hubId ?? fragmentParams.get('hub_id') ?? searchParams.get('hub_id');
+    // The Hub's redirect and the query string both use snake_case `return_url`. Record whether it arrived
+    // in the fragment or the query string as `fragmentOrQuery` ('#' or '?'), so the billing API knows how to
+    // reconstruct the redirect later. If both carry it, the fragment wins.
+    let returnUrlInFragment = fragmentParams.get('return_url');
+    let returnUrl = returnUrlInFragment ?? searchParams.get('return_url');
     if (returnUrl) {
       this._subscriptionData.returnUrl = returnUrl;
+      this._subscriptionData.fragmentOrQuery = returnUrlInFragment ? '#' : '?';
     }
-    this._subscriptionData.session = searchParams.get('session');
-    if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
+    this._subscriptionData.session = fragmentParams.get('session') ?? searchParams.get('session');
+    if (this._subscriptionData.session) {
+      // We returned from the confirmation link (/hub/billing?session=<id> or #session=<id>): resolve
+      // the verified billing session and continue into the existing subscription flow.
       this._subscriptionData.state = 'LOADING';
-      this.loadSubscription();
+      this.loadBillingSession();
+    } else if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
+      // Opened from the Hub without a verified session yet: ask the customer to request a
+      // confirmation link before we can manage their subscription.
+      this._subscriptionData.state = 'CREATE_SESSION';
     }
     this._paddle = $.ajax({
       url: 'https://cdn.paddle.com/paddle/paddle.js',
@@ -94,6 +106,79 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
+  loadBillingSession() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: BILLING_SESSION_URL + '/' + encodeURIComponent(this._subscriptionData.session),
+      type: 'GET'
+    }).done(data => {
+      this.onLoadBillingSessionSucceeded(data);
+    }).fail(xhr => {
+      this.onLoadBillingSessionFailed(xhr.status, xhr.responseJSON?.message || 'Loading billing session failed.');
+    });
+  }
+
+  onLoadBillingSessionSucceeded(data) {
+    this._subscriptionData.hubId = data.hubId;
+    this._subscriptionData.email = data.email;
+    this._subscriptionData.returnUrl = data.returnUrl;
+    this._subscriptionData.fragmentOrQuery = data.fragmentOrQuery;
+    this._subscriptionData.errorMessage = '';
+    // The session is verified; hand off to the existing subscription flow (store + Paddle).
+    this.loadSubscription();
+  }
+
+  onLoadBillingSessionFailed(status, error) {
+    if (status == 404) {
+      this._subscriptionData.state = 'LINK_EXPIRED';
+      this._subscriptionData.errorMessage = '';
+    } else {
+      this._subscriptionData.state = 'CREATE_SESSION';
+      this._subscriptionData.errorMessage = error;
+    }
+    this._subscriptionData.inProgress = false;
+  }
+
+  lookupCustomer() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    // First challenge (from /billing/customers/challenge) gates this lookup: it tells us whether
+    // the Hub is already linked to a customer before we ask for a confirmation link.
+    $.ajax({
+      url: BILLING_CUSTOMER_URL + '/' + encodeURIComponent(this._subscriptionData.hubId) + '?captcha=' + encodeURIComponent(this._subscriptionData.captcha),
+      type: 'GET'
+    }).done(data => {
+      this.onLookupCustomerSucceeded(data);
+    }).fail(xhr => {
+      this.onLookupCustomerFailed(xhr.status, xhr.responseJSON?.message || 'Looking up your subscription failed.');
+    });
+  }
+
+  onLookupCustomerSucceeded(data) {
+    // The Hub is already linked to a customer: the API returns their redacted email so we can
+    // show where the confirmation link will be sent without revealing the full address.
+    this._subscriptionData.redactedEmail = data.email;
+    this._subscriptionData.needsEmail = false;
+    this._subscriptionData.lookupDone = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+  }
+
+  onLookupCustomerFailed(status, error) {
+    this._subscriptionData.inProgress = false;
+    if (status == 404) {
+      // The Hub is not linked to a customer yet: ask for the purchase email so the session
+      // request can be created for that address.
+      this._subscriptionData.needsEmail = true;
+      this._subscriptionData.redactedEmail = null;
+      this._subscriptionData.lookupDone = true;
+      this._subscriptionData.errorMessage = '';
+    } else {
+      this._subscriptionData.errorMessage = error;
+    }
+  }
+
   createSession() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
@@ -103,18 +188,24 @@ class HubSubscription {
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
+    let body = {
+      hubId: this._subscriptionData.hubId,
+      returnUrl: this._subscriptionData.returnUrl,
+      fragmentOrQuery: this._subscriptionData.fragmentOrQuery,
+      captcha: this._subscriptionData.captcha
+    };
+    if (this._subscriptionData.email) {
+      body.email = this._subscriptionData.email;
+    }
     $.ajax({
-      url: BILLING_PORTAL_SESSION_URL,
+      url: BILLING_SESSION_URL,
       type: 'POST',
-      data: {
-        captcha: this._subscriptionData.captcha,
-        hub_id: this._subscriptionData.hubId,
-        return_url: this._subscriptionData.returnUrl
-      }
+      contentType: 'application/json',
+      data: JSON.stringify(body)
     }).done(_ => {
       this.onCreateSessionSucceeded();
     }).fail(xhr => {
-      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Creating billing portal session failed.');
+      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Requesting confirmation link failed.');
     });
   }
 
