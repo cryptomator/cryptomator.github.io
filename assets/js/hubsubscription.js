@@ -6,7 +6,7 @@ const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
 const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
 const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
-const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
+const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
 
 class HubSubscription {
 
@@ -80,7 +80,6 @@ class HubSubscription {
   }
 
   onLoadSubscriptionSucceeded(data) {
-    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     if (data.subscription.quantity) {
       this._subscriptionData.quantity = data.subscription.quantity;
@@ -375,7 +374,7 @@ class HubSubscription {
         override: payLink,
         email: this._subscriptionData.email,
         locale: locale,
-        passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId }),
+        passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId, session: this._subscriptionData.session }),
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
         closeCallback: () => {
           this._subscriptionData.inProgress = false;
@@ -415,13 +414,7 @@ class HubSubscription {
 
   onPostSucceeded(data) {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
-    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
-    this._subscriptionData.session = data.session;
-    var searchParams = new URLSearchParams(window.location.search)
-    searchParams.set('session', data.session);
-    var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
-    history.pushState(null, '', newRelativePathQuery);
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
     this._subscriptionData.shouldTransferToHub = true;
@@ -582,7 +575,6 @@ class HubSubscription {
   }
 
   onPutSucceeded(data, shouldOpenReturnUrl) {
-    this._subscriptionData.oldLicense = data.token;
     this._subscriptionData.details = data.subscription;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
@@ -604,11 +596,10 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: REFRESH_LICENSE_URL,
-      type: 'POST',
+      url: GET_LICENSE_URL,
+      type: 'GET',
       data: {
-        token: this._subscriptionData.oldLicense,
-        captcha: this._subscriptionData.captcha
+        session: this._subscriptionData.session
       }
     }).done(token => {
       this._subscriptionData.token = token;
