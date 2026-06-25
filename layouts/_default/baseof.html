@@ -92,13 +92,14 @@
     {{- if $showAnniversaryBanner -}}
       {{ partial "anniversary-banner.html" . }}
     {{- end -}}
-    {{- $topPadding := cond .IsHome "" "pt-12" -}}
+    {{- $flushHero := or .IsHome .Params.flushHero -}}
+    {{- $topPadding := cond $flushHero "" "pt-12" -}}
     {{- if and $showWebinarBanner (not $showAnniversaryBanner) -}}
-      {{- $topPadding = cond .IsHome "" "pt-24 md:pt-18" -}}
+      {{- $topPadding = cond $flushHero "" "pt-24 md:pt-18" -}}
     {{- else if and (not $showWebinarBanner) $showAnniversaryBanner -}}
-      {{- $topPadding = cond .IsHome "" "pt-28 md:pt-24" -}}
+      {{- $topPadding = cond $flushHero "" "pt-28 md:pt-24" -}}
     {{- else if and $showWebinarBanner $showAnniversaryBanner -}}
-      {{- $topPadding = cond .IsHome "" "pt-40 md:pt-32" -}}
+      {{- $topPadding = cond $flushHero "" "pt-40 md:pt-32" -}}
     {{- end -}}
     <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
     <!-- Code that all your templates share, like a header -->

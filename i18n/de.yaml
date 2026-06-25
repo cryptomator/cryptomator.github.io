@@ -306,14 +306,12 @@
   translation: "Community beitreten"
 
 # Home
-- id: home_header_kicker
-  translation: "4.000.000+ Downloads"
 - id: home_header_title
-  translation: "Privatsphäre schützen in"
-- id: home_header_title_last_item
-  translation: "jeder Cloud"
-- id: home_header_description
-  translation: "Mit Cryptomator liegt der Schlüssel zu deinen Daten bei dir. Durch Cryptomator sicherst und verschlüsselst du deine sensiblen Daten in deiner Lieblingscloud. So bleiben sie privat und vor unbefugtem Zugriff geschützt."
+  translation: "Schütze deine Privatsphäre in jeder Cloud"
+- id: home_clouds_sharepoint_tooltip
+  translation: "Inklusive Microsoft Teams"
+- id: home_header_supported_clouds
+  translation: "Kompatible Clouds ansehen"
 - id: home_header_woman_cloud_alt
   translation: "Entspannte Frau auf einer Wolke, die durch ein Schloss gesichert ist"
 - id: home_header_for_individuals_title
@@ -324,6 +322,30 @@
   translation: "Kostenlose 30-Tage-Testversion"
 - id: home_header_for_teams_cta
   translation: "Für Teams"
+
+- id: home_hero_card_just_me
+  translation: "Für Einzelnutzer"
+- id: home_hero_card_our_team
+  translation: "Für Teams"
+- id: home_hero_hub_node_team
+  translation: "Team"
+- id: home_hero_cryptomator_description
+  translation: "Nur du kannst deine Dateien öffnen – verschlüsselt, bevor sie in die Cloud kommen."
+- id: home_hero_cryptomator_cta
+  translation: "Kostenlos laden"
+- id: home_hero_cryptomator_link
+  translation: "Alle Funktionen entdecken"
+- id: home_hero_hub_description
+  translation: "Gib deinem Team Zugriff auf gemeinsame Dateien – und entzieh ihn jeder Person jederzeit."
+- id: home_hero_hub_cta
+  translation: "Kostenlos testen"
+- id: home_hero_hub_link
+  translation: "So funktioniert Hub"
+- id: home_hero_cryp_label_you
+  translation: "Du"
+- id: home_hero_cryp_label_cloud
+  translation: "Cloud"
+
 - id: home_get_started_title
   translation: "Wie wirst du Cryptomator nutzen?"
 - id: home_get_started_for_individuals_title

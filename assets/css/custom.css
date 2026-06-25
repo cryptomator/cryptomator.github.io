@@ -30,13 +30,724 @@
   @apply bg-primary border-primary text-white;
 }
 
+.btn-secondary {
+  @apply bg-secondary border-secondary text-white;
+}
+
+.btn-tertiary2 {
+  @apply bg-tertiary2 border-tertiary2 text-white;
+}
+
 .btn-primary:hover,
-.btn-primary:focus {
+.btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-tertiary2:hover,
+.btn-tertiary2:focus {
   @apply text-white transition transform duration-200 ease-in-out shadow-md -translate-y-px;
 }
 
-.btn-primary:disabled {
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-tertiary2:disabled {
   @apply shadow-none translate-y-0;
+}
+
+.hero-split-contrast {
+  @apply pb-6 md:pb-8 lg:pb-10;
+}
+
+.hero-split-header {
+  @apply text-center mb-12 md:mb-16 lg:mb-12 px-4;
+}
+
+/* Backdrop — a soft green/teal glow per edition, anchoring the two panels
+   without the visual noise of literal clouds. */
+/* Fade the aura glows out toward the hero's bottom so the tint dissolves into
+   the section below instead of being hard-clipped by overflow-hidden. */
+.hero-aura-wrap {
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 90%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 90%);
+}
+
+.hero-aura {
+  position: absolute;
+  top: 30%;
+  width: 55%;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.7;
+}
+
+.hero-aura-primary {
+  left: -12%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 14%, transparent) 0%, transparent 70%);
+}
+
+.hero-aura-secondary {
+  right: -12%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-tertiary2) 14%, transparent) 0%, transparent 70%);
+}
+
+/* Uses the same `container` constraint as the content sections below, so the
+   cards' outer edges line up with the "Take the security…" section at every
+   width (the `gap-*` matches the other multi-column sections). */
+.hero-split-panels {
+  @apply container relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12;
+  align-items: stretch;
+}
+
+.hero-panel {
+  @apply relative flex flex-col items-center text-center p-10 md:p-12 rounded-sm shadow-sm overflow-hidden;
+  background:
+    linear-gradient(to bottom, transparent 60%, color-mix(in srgb, var(--accent, transparent) 4%, transparent)),
+    #fff;
+}
+
+.hero-panel-primary   { --accent: var(--color-primary); }
+.hero-panel-secondary { --accent: var(--color-tertiary2); }
+
+.hero-panel-visual {
+  @apply flex items-center justify-center mt-6 mb-4 h-[180px];
+}
+
+.hero-panel-content {
+  @apply flex flex-col items-center flex-1;
+}
+
+.hero-panel-content h2 {
+  @apply font-headline font-bold text-xl uppercase tracking-wide mb-1;
+}
+
+
+.hero-panel-content .hero-panel-description {
+  @apply flex-1 text-balance;
+}
+
+.hero-panel-content a.btn {
+  @apply mt-auto;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Shared hero scene system — both Cryp and Hub illustrations use
+   a fixed 320×180 canvas with absolutely positioned anchors so
+   the two visuals share dimensions, spacing, and easing.
+   ───────────────────────────────────────────────────────────── */
+
+.hero-scene {
+  @apply lg:scale-[1.1];
+  position: relative;
+  width: 320px;
+  height: 180px;
+  margin: 0 auto;
+  transform-origin: center;
+}
+
+/* Below 400px the fixed 320px scene crowds (≤352px: clips at) the panel's
+   padding box (viewport − 32px container padding). Scale the scene down
+   visually and relax the side padding; layout height stays 180px. Uses the
+   `scale` property to match the lg:scale-[1.1] utility above (no conflict —
+   lg is 1280px). */
+@media (max-width: 399px) {
+  .hero-panel {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero-scene {
+    scale: 0.85;
+  }
+}
+
+.hero-scene-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tier 1 — data-flow lines. Same stroke language across both scenes. */
+.hero-scene-links path {
+  fill: none;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  stroke-linecap: round;
+  opacity: 0.42;
+}
+
+/* Color logic per segment (identical across both scenes):
+   - clear / decrypted data  → primary (green)  — the left segment
+   - encrypted vault / key    → secondary (teal) — the right segment */
+.hero-cryp-link-you   { stroke: var(--color-primary); }
+.hero-cryp-link-cloud { stroke: var(--color-secondary); }
+
+.hero-hub-link-team   { stroke: var(--color-tertiary2); }
+.hero-hub-link-cloud  { stroke: var(--color-tertiary2); }
+
+/* Hub oversight lines (Hub → Team / Cloud / Cryptomator). Same stroke style as
+   the data lines (uniform dash) — only a slightly lower opacity keeps the
+   hierarchy subtle. */
+.hero-scene-links .hero-hub-link-mgmt {
+  stroke: var(--color-tertiary2);
+  opacity: 0.28;
+}
+
+/* Anchor: the icon/logo is centered on its declared point so the connecting
+   dashed lines (drawn to that point) pass through the disc's centre. The label
+   floats below the disc, out of flow, so it never shifts the disc off-centre. */
+.hero-scene-anchor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Fixed anchor icons (You / Cloud / Team) sit in a soft tinted disc that adopts
+   their card's pill colour — green on the Cryptomator scene, teal on the Hub
+   scene — mirroring the pill's `bg-{color}/10 text-{color}`. The bot logos and
+   travelling icons are unaffected (they're <img>/their own colours). */
+.hero-cryp-scene { --scene-accent: var(--color-primary); }
+.hero-hub-scene  { --scene-accent: var(--color-tertiary2); }
+
+/* Descendant selector (0,2,0) so the explicit box beats FontAwesome's own
+   `.fa-*` width rule (0,1,0) — otherwise the width collapses to the glyph and
+   the disc renders as a vertical capsule instead of a circle. */
+.hero-scene-anchor .hero-scene-icon {
+  display: flex;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--scene-accent, var(--color-gray-400));
+  background: color-mix(in srgb, var(--scene-accent, transparent) 10%, transparent);
+}
+
+.hero-scene-label {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-gray-500);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Logo: identical halo + wobble on both scenes */
+.hero-scene-logo {
+  position: absolute;
+  top: 90px;
+  left: 160px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(73, 176, 74, 0.14) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-scene-logo-img {
+  width: 64px;
+  height: auto;
+  transform-origin: center bottom;
+  animation: hero-cryp-logo-wobble 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* ───── Cryptomator scene: horizontal flow You → Logo → Cloud ───── */
+
+.hero-cryp-anchor-you   { top: 90px; left: 40px;  }
+.hero-cryp-anchor-cloud { top: 90px; left: 280px; }
+
+.hero-cryp-traveler {
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -14px;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: hero-cryp-travel 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+/* Two faces of the travelling token. Each leg the active form starts small,
+   swells to its biggest at the leg's mid-point, then shrinks + fades as it
+   reaches the next node and disappears behind it. file shows on the User↔Crypto
+   legs, vault on the Crypto↔Cloud legs; they swap (hidden) behind Cryptomator.
+   Each face carries a soft glow in its own colour so the glow follows the form. */
+.hero-cryp-traveler-file,
+.hero-cryp-traveler-vault {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  transition: opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.hero-cryp-traveler-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(73, 176, 74, 0.40));
+  animation: hero-cryp-file-arc 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.hero-cryp-traveler-vault {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 24px;
+  line-height: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(73, 176, 74, 0.40));
+  animation: hero-cryp-vault-arc 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* Container path. The token travels out to near the dashed line ends (x66 near
+   User / x248 near Cloud — a touch short so it doesn't crowd those icons) and
+   fully onto the Cryptomator centre (translate 120px → centre x160, behind the
+   bot). Holds at each end while the form fades out/in. */
+@keyframes hero-cryp-travel {
+  0%,  4%   { transform: translate3d(26px, 0, 0); }   /* User — file sets off */
+  18%, 30%  { transform: translate3d(120px, 0, 0); }  /* Cryptomator — file encrypts, vault sets off */
+  48%, 56%  { transform: translate3d(208px, 0, 0); }  /* Cloud — vault arrives, holds, then melts in */
+  70%, 100% { transform: translate3d(26px, 0, 0); }   /* invisible return to User, pause, restart */
+}
+
+/* file — visible only on its outbound User→Cryptomator leg (4–20%): fades in at
+   the User-end, travels to the bot and melts in (encrypt). Hidden the rest of the
+   cycle while the vault carries on to the Cloud (no return leg). */
+@keyframes hero-cryp-file-arc {
+  0%   { opacity: 0; } /* User-end, invisible (pause) */
+  4%   { opacity: 1; } /* fade in at User-end */
+  16%  { opacity: 1; } /* travelling to the bot */
+  20%  { opacity: 0; } /* melts into the bot (encrypt) */
+  100% { opacity: 0; }
+}
+
+/* vault — appears only after the file has encrypted, on its outbound bot→Cloud
+   leg (32–50%): fades in at the bot, travels to the Cloud and melts in. Hidden the
+   rest of the cycle (no return leg). */
+@keyframes hero-cryp-vault-arc {
+  0%,  30% { opacity: 0; } /* hidden behind the bot */
+  34%      { opacity: 1; } /* emerges at the bot */
+  44%      { opacity: 1; } /* travelling to the cloud */
+  48%      { opacity: 0; } /* melts into the cloud exactly on arrival (like the hub) */
+  100%     { opacity: 0; }
+}
+
+/* Cryptomator reacts the moment the file is absorbed behind it (~20%) — a subtle
+   rock/wobble (tilt around its base) instead of a pulse, signalling the encrypt.
+   One event per cycle now (outbound only). */
+@keyframes hero-cryp-logo-wobble {
+  0%, 16%   { transform: rotate(0deg); }
+  19%       { transform: rotate(-5deg); }
+  22%       { transform: rotate(4deg); }
+  25%       { transform: rotate(-2deg); }
+  28%, 100% { transform: rotate(0deg); }
+}
+
+/* Hub bot wobble — reacts twice per sequence: once when the file lands (~20%)
+   and once when the key lands (~56%), matching the hub's sequential timing. */
+@keyframes hero-hub-logo-wobble {
+  0%, 18%   { transform: rotate(0deg); }
+  21%       { transform: rotate(-5deg); }
+  24%       { transform: rotate(4deg); }
+  27%       { transform: rotate(-2deg); }
+  30%       { transform: rotate(0deg); }
+  56%       { transform: rotate(0deg); }
+  59%       { transform: rotate(-5deg); }
+  62%       { transform: rotate(4deg); }
+  65%       { transform: rotate(-2deg); }
+  68%, 100% { transform: rotate(0deg); }
+}
+
+/* Hub apex wobble — the Hub bot reacts once per sequence, when the fingerprint
+   reaches it (~38%). */
+@keyframes hero-hub-apex-wobble {
+  0%, 35%   { transform: rotate(0deg); }
+  38%       { transform: rotate(-5deg); }
+  41%       { transform: rotate(4deg); }
+  44%       { transform: rotate(-2deg); }
+  47%, 100% { transform: rotate(0deg); }
+}
+
+/* ───── Hub scene: a diamond/prism of the four nodes ─────
+   Hub (top), Team (left), Cloud (right) and Cryptomator (bottom) form a
+   diamond, keeping the same outer width as the Cryptomator card. Data flows
+   along the lower V (Team → Cryptomator → Cloud); the Hub oversees from the
+   apex, connected down the top edges and a center axis to all three, and
+   issues the vault key down that axis to the bot. */
+
+.hero-hub-anchor-team  { top: 92px;  left: 40px;  }
+.hero-hub-anchor-cloud { top: 92px;  left: 280px; }
+.hero-hub-anchor-hub   { top: 26px;  left: 160px; }
+
+/* Hub is the subject of this card — its logo sits above the center, shown
+   large and full-strength with a soft secondary glow + drop-shadow. */
+.hero-hub-anchor-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 3px 9px rgba(47, 72, 88, 0.30))
+    drop-shadow(0 0 1px rgba(47, 72, 88, 0.35));
+  transform-origin: center bottom;
+  animation: hero-hub-apex-wobble 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* Cryptomator sits at the bottom vertex of the diamond — same size, halo and
+   full strength as the bot on the Cryptomator card (only the position differs),
+   so the bot reads identically across both illustrations. */
+.hero-hub-scene .hero-scene-logo {
+  top: 150px;
+  width: 78px;
+  height: 78px;
+}
+
+.hero-hub-scene .hero-scene-logo-img {
+  width: 52px;
+}
+
+/* ─── Cryp scene anchor glows ───────────────────────────────────────
+   One burst per anchor per 10s travel cycle: the You-glow fires as the
+   file is dispatched (~4 %), the Cloud-glow as the vault is delivered
+   (~48 %). Single bursts keep the scene calm. */
+
+.hero-cryp-anchor-you::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%) scale(0.85);
+  background: radial-gradient(circle, rgba(73, 176, 74, 0.22) 0%, transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: hero-cryp-departure-you 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* You-glow: single burst as the file is dispatched (travel leg 1 starts at 4%). */
+@keyframes hero-cryp-departure-you {
+  0%, 2%    { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+  7%        { opacity: 1; transform: translate(-50%, -50%) scale(1);    }
+  16%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2);  }
+}
+
+.hero-cryp-anchor-cloud::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%) scale(0.85);
+  background: radial-gradient(circle, rgba(0, 138, 123, 0.22) 0%, transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: hero-cryp-arrival-cloud 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Cloud-glow: single burst as the vault is delivered (travel hits Cloud at 48%). */
+@keyframes hero-cryp-arrival-cloud {
+  0%, 36%   { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+  41%       { opacity: 1; transform: translate(-50%, -50%) scale(1);    }
+  50%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2);  }
+}
+
+/* Idle breathing — the three outer anchors scale gently, offset in time so the
+   scene feels alive between travel cycles without ever drawing focus. */
+@keyframes hero-scene-anchor-idle {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.025); }
+}
+
+.hero-hub-anchor-team  .hero-scene-icon,
+.hero-hub-anchor-cloud .hero-scene-icon,
+.hero-cryp-anchor-you  .hero-scene-icon,
+.hero-cryp-anchor-cloud .hero-scene-icon {
+  transform-origin: center;
+  animation: hero-scene-anchor-idle 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.hero-hub-anchor-cloud  .hero-scene-icon { animation-delay: -2s; }
+.hero-cryp-anchor-cloud .hero-scene-icon { animation-delay: -4s; }
+
+/* Hub traveler — same mechanism as the Cryptomator card (translate3d round
+   trip), mapped onto the lower V of the diamond: Team (40,92) → bot (160,150)
+   → Cloud (280,92). The container is anchored on the Team anchor and carries
+   the position only; the file/vault faces handle fade/scale and only ever fade
+   while the container holds at a node (never mid-leg). Rest stops sit 26px
+   inward along each edge, on the dashed-line tips. */
+.hero-hub-traveler {
+  position: absolute;
+  top: 92px;
+  left: 40px;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -14px;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: hero-hub-travel 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+.hero-hub-traveler-file,
+.hero-hub-traveler-vault {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  transition: opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.hero-hub-traveler-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(113, 128, 150, 0.40));
+  /* Own hub arc (decoupled from the Cryptomator card) so the hub runs its own
+     sequential timing; same calm no-scale fade style. */
+  animation: hero-hub-file-arc 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.hero-hub-traveler-vault {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+  font-size: 24px;
+  line-height: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(113, 128, 150, 0.40));
+  animation: hero-hub-vault-arc 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* Position-only round trip along the lower V (visibility is owned by the
+   container's opacity transition; fade/scale by the faces). Same rhythm as the
+   Cryptomator card — short holds, the token is almost always in motion:
+   Team-side → bot (4–18) → Cloud-side (22–40) → back (54–68) → home (72–90). */
+/* Sequential story (one encrypt cycle per loop): the container carries the file
+   Team→bot (4–20%), HOLDS at the bot through the fingerprint (22–38%) and key
+   (40–56%) steps, then carries the vault bot→Cloud (58–74%), and returns to Team
+   to restart. */
+@keyframes hero-hub-travel {
+  0%, 4%    { transform: translate3d(23px, 11px, 0); }   /* Team side — file sets off */
+  20%, 58%  { transform: translate3d(120px, 58px, 0); }  /* bot — hold through fingerprint + key */
+  74%, 84%  { transform: translate3d(217px, 11px, 0); }  /* Cloud side — vault arrived */
+  100%      { transform: translate3d(23px, 11px, 0); }   /* return to Team for the next cycle */
+}
+
+/* File face — visible only on its Team→bot leg (4–20%); hidden the rest of the
+   cycle while the fingerprint, key and vault steps play out. */
+@keyframes hero-hub-file-arc {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; } /* fade in at Team */
+  16%  { opacity: 1; } /* travelling to the bot */
+  20%  { opacity: 0; } /* melts into the bot (encrypt) */
+  100% { opacity: 0; }
+}
+
+/* Vault face — appears only after the key has landed, on its bot→Cloud leg
+   (58–74%). */
+@keyframes hero-hub-vault-arc {
+  0%, 56% { opacity: 0; } /* hidden until the key has landed on the bot */
+  58%     { opacity: 1; } /* fade in at the bot */
+  70%     { opacity: 1; } /* travelling to the cloud */
+  74%     { opacity: 0; } /* melts into the cloud */
+  100%    { opacity: 0; }
+}
+
+/* Hub key — the Hub issues the vault key down the centre axis (the vertical
+   mgmt line, x160 y62→118) to the Cryptomator bot, once before each transform:
+   drop 1 falls at ~8–18% and lands together with the file (encrypt); drop 2 at
+   ~58–68% together with the returning vault (decrypt). */
+.hero-hub-key {
+  position: absolute;
+  top: 26px;
+  left: 160px;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  margin-left: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+  font-size: 22px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(113, 128, 150, 0.40));
+  transition: opacity 0.3s ease;
+  animation: hero-hub-key-drop 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes hero-hub-key-drop {
+  /* Step 3: only AFTER the fingerprint reaches the Hub does the key drop
+     Hub -> bot (40-56%). Constant size, single eased fall. */
+  0%, 40%  { opacity: 0; transform: translate3d(0, 0, 0); }
+  42%      { opacity: 1; }
+  56%      { opacity: 1; }
+  58%      { opacity: 0; transform: translate3d(0, 124px, 0); }
+  80%      { opacity: 0; transform: translate3d(0, 0, 0); }
+  100%     { opacity: 0; transform: translate3d(0, 0, 0); }
+}
+
+/* Auth request — per the Hub security docs the member authenticates against
+   Hub, which then issues the key; Hub itself NEVER talks to the cloud storage
+   (zero knowledge), so the Hub↔Cloud edge deliberately stays static. A small
+   fingerprint runs Team → Hub along the mgmt edge right before each key drop
+   (~0–8% ahead of encrypt, ~46–54% ahead of decrypt while the vault rests in
+   the cloud), and the edge brightens as the request passes. */
+.hero-hub-auth {
+  position: absolute;
+  top: 92px;
+  left: 40px;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-700);
+  font-size: 22px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(113, 128, 150, 0.40));
+  transition: opacity 0.3s ease;
+  animation: hero-hub-auth-run 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform, opacity;
+}
+
+/* Runs the Team→Hub edge (x62 y80 → x128 y43), stopping ~88% along so it is
+   absorbed at the Hub rather than crowding its logo. */
+@keyframes hero-hub-auth-run {
+  /* Step 2: only AFTER the file reaches the bot does the fingerprint run
+     Team -> Hub (22-38%). Constant size, single eased run. */
+  0%, 20%  { opacity: 0; transform: translate3d(0, 0, 0); }
+  22%      { opacity: 1; }
+  38%      { opacity: 1; }
+  40%      { opacity: 0; transform: translate3d(120px, -66px, 0); }
+  62%      { opacity: 0; transform: translate3d(0, 0, 0); }
+  100%     { opacity: 0; transform: translate3d(0, 0, 0); }
+}
+
+.hero-hub-link-mgmt-team {
+  animation: hero-hub-authorize-team 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes hero-hub-authorize-team {
+  /* Edge brightens while the fingerprint runs Team -> Hub (20-40%). */
+  0%, 20%   { opacity: 0.28; }
+  24%       { opacity: 0.6;  }
+  38%       { opacity: 0.6;  }
+  40%, 100% { opacity: 0.28; }
+}
+
+/* Calm at rest, alive on hover. Animations are disabled by default
+   (animation-name: none) so the resting scene is just the static nodes, center
+   logo, and dashed lines — travelers/glows are hidden via their base opacity.
+   On hover the names switch on and play from 0%; on mouse-leave they drop and
+   the traveler containers fade out (0.3s) while the scene returns to rest (no
+   frozen mid-frame). The hover block is gated on
+   prefers-reduced-motion:no-preference, so reduced-motion users always get the
+   calm static scene. */
+.hero-cryp-traveler,
+.hero-cryp-traveler-file,
+.hero-cryp-traveler-vault,
+.hero-scene-logo-img,
+.hero-hub-traveler,
+.hero-hub-traveler-file,
+.hero-hub-traveler-vault,
+.hero-hub-key,
+.hero-hub-auth,
+.hero-hub-link-mgmt-team,
+.hero-hub-anchor-team  .hero-scene-icon,
+.hero-hub-anchor-cloud .hero-scene-icon,
+.hero-cryp-anchor-you  .hero-scene-icon,
+.hero-cryp-anchor-cloud .hero-scene-icon,
+.hero-cryp-anchor-you::after,
+.hero-hub-anchor-img,
+.hero-cryp-anchor-cloud::after { animation-name: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Cryptomator scene — round trip: file (User↔Crypto) + vault (Crypto↔Cloud),
+     with the centre logo pulsing as each form arrives behind it. */
+  .hero-panel:hover .hero-cryp-traveler       { animation-name: hero-cryp-travel; }
+  .hero-panel:hover .hero-cryp-traveler-file  { animation-name: hero-cryp-file-arc; }
+  .hero-panel:hover .hero-cryp-traveler-vault { animation-name: hero-cryp-vault-arc; }
+  .hero-panel:hover .hero-cryp-scene .hero-scene-logo-img { animation-name: hero-cryp-logo-wobble; }
+  .hero-panel:hover .hero-cryp-anchor-you::after   { animation-name: hero-cryp-departure-you; }
+  .hero-panel:hover .hero-cryp-anchor-cloud::after { animation-name: hero-cryp-arrival-cloud; }
+
+  /* Hub scene — same rhythm and wobble as the Cryptomator card on the
+     diamond's lower V, with the auth/key accents riding the same cycle:
+     auth → key + file in (encrypt) → vault to cloud → auth → key + vault
+     back (decrypt) → file home. */
+  .hero-panel:hover .hero-hub-traveler       { animation-name: hero-hub-travel; }
+  .hero-panel:hover .hero-hub-traveler-file  { animation-name: hero-hub-file-arc; }
+  .hero-panel:hover .hero-hub-traveler-vault { animation-name: hero-hub-vault-arc; }
+  .hero-panel:hover .hero-hub-key            { animation-name: hero-hub-key-drop; }
+  .hero-panel:hover .hero-hub-auth           { animation-name: hero-hub-auth-run; }
+  .hero-panel:hover .hero-hub-link-mgmt-team { animation-name: hero-hub-authorize-team; }
+  .hero-panel:hover .hero-hub-scene .hero-scene-logo-img { animation-name: hero-hub-logo-wobble; }
+  .hero-panel:hover .hero-hub-anchor-img { animation-name: hero-hub-apex-wobble; }
+
+  /* The traveler containers fade in/out (0.3s) so mouse-leave never pops a
+     token away mid-leg. */
+  .hero-panel:hover .hero-cryp-traveler,
+  .hero-panel:hover .hero-hub-traveler { opacity: 1; }
+
+  /* Gentle idle breathing on the outer icons (both scenes). */
+  .hero-panel:hover .hero-hub-anchor-team  .hero-scene-icon,
+  .hero-panel:hover .hero-hub-anchor-cloud .hero-scene-icon,
+  .hero-panel:hover .hero-cryp-anchor-you  .hero-scene-icon,
+  .hero-panel:hover .hero-cryp-anchor-cloud .hero-scene-icon { animation-name: hero-scene-anchor-idle; }
 }
 
 .btn-outline-primary {
@@ -87,14 +798,17 @@
 
 .font-h1 {
   @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
+  text-wrap: balance;
 }
 
 .font-h2 {
   @apply font-headline font-medium text-xl md:text-2xl leading-snug;
+  text-wrap: balance;
 }
 
 .font-h3 {
   @apply font-headline text-lg md:text-xl leading-relaxed;
+  text-wrap: balance;
 }
 
 .font-p {
@@ -183,7 +897,8 @@ textarea:read-only {
   @apply relative inline-block;
 }
 
-.has-tooltip:hover .tooltip {
+.has-tooltip:hover .tooltip,
+.has-tooltip:focus-within .tooltip {
   @apply block;
 }
 
@@ -196,8 +911,8 @@ textarea:read-only {
   left: 50%;
 }
 
-/* offsetting anchor targets to adjust for fixed navbar */
-[id]::before {
+/* offsetting anchor targets to adjust for fixed navbar; tooltips carry an id only for aria-describedby, not as scroll anchors */
+[id]:not([role="tooltip"])::before {
   content: '';
   display: block;
   height: 96px;

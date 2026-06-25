@@ -1,8 +1,9 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-individuals/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-teams/">
-  <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
-  <link rel="preload" fetchpriority="high" as="image" href="/img/home/woman-cloud.png" type="image/png">
+  <link rel="preload" fetchpriority="high" as="image" href="/img/for-individuals/screenshot-1.png" type="image/png">
+  <link rel="preload" fetchpriority="low" as="image" href="/img/hub/screenshot-1.png" type="image/png">
+  <link rel="preload" fetchpriority="low" as="image" href="/img/hub/screenshot-2.png" type="image/png">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-regular.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-medium.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" fetchpriority="auto" href="/fonts/opensans-bold.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -12,47 +13,140 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section class="flex items-center header-bg bg-dark bg-center md:min-h-[66vh] bg-repeat-x">
-    <header class="container flex items-center text-white py-24 md:py-48 lg:py-64">
-      <div class="hidden pr-6 md:block md:w-1/3 lg:w-2/5">
-        <img data-src="/img/home/woman-cloud.png" class="lazyload aspect-714/622 w-full object-scale-down mx-auto lg:w-3/4 animate-hover" alt="{{ i18n "home_header_woman_cloud_alt" . }}"/>
+  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners; desktop padding already covers all banner combos, so only the mobile value scales below */ -}}
+  {{- $showWebinarBanner := .Scratch.Get "webinarBannerActive" -}}
+  {{- $showAnniversaryBanner := .Scratch.Get "anniversaryBannerActive" -}}
+  {{- $heroTopPad := "pt-16" -}}
+  {{- if and $showWebinarBanner $showAnniversaryBanner -}}
+    {{- $heroTopPad = "pt-40" -}}
+  {{- else if or $showWebinarBanner $showAnniversaryBanner -}}
+    {{- $heroTopPad = "pt-28" -}}
+  {{- end -}}
+  <section class="hero-split-contrast relative overflow-hidden {{ $heroTopPad }} md:pt-24 lg:pt-24">
+    <div class="hero-aura-wrap absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+      <div class="hero-aura hero-aura-primary"></div>
+      <div class="hero-aura hero-aura-secondary"></div>
+    </div>
+    <div class="hero-split-header relative z-10">
+      <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance text-gray-800">{{ i18n "home_header_title" }}</h1>
+      <div class="mt-6 flex flex-col items-center gap-3">
+        <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-2xl text-gray-400">
+          <li><i class="fa-brands fa-google-drive" role="img" aria-label="Google Drive" title="Google Drive"></i></li>
+          <li><i class="fa-kit fa-icloud" role="img" aria-label="iCloud Drive" title="iCloud Drive"></i></li>
+          <li><i class="fa-kit fa-onedrive" role="img" aria-label="OneDrive" title="OneDrive"></i></li>
+          <li class="has-tooltip"><i class="fa-kit fa-sharepoint" role="img" aria-label="SharePoint" tabindex="0" aria-describedby="tooltip-sharepoint"></i><div id="tooltip-sharepoint" role="tooltip" class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs whitespace-nowrap p-2 text-gray-600">{{ i18n "home_clouds_sharepoint_tooltip" }}</div></li>
+          <li><i class="fa-brands fa-dropbox" role="img" aria-label="Dropbox" title="Dropbox"></i></li>
+          <li class="hidden md:block"><i class="fa-kit fa-pcloud" role="img" aria-label="pCloud" title="pCloud"></i></li>
+          <li><i class="fa-kit fa-nextcloud" role="img" aria-label="Nextcloud" title="Nextcloud"></i></li>
+        </ul>
+        <a href="https://docs.cryptomator.org/misc/supported-cloud-services/" target="_blank" rel="noopener" class="group inline-flex items-center gap-1.5 text-sm text-gray-500 no-underline hover:text-gray-700" data-umami-event="home-hero-supported-clouds">
+          {{ i18n "home_header_supported_clouds" }}
+          <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
+        </a>
       </div>
-      <div class="w-full md:w-2/3 lg:w-3/5">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
-            <i class="fa-solid fa-cloud-download"></i>
-            {{ i18n "home_header_kicker" }}
+    </div>
+
+    <div class="hero-split-panels relative z-10">
+      <div class="hero-panel hero-panel-primary">
+        <span class="absolute top-5 left-1/2 -translate-x-1/2 inline-flex whitespace-nowrap px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-primary/10 text-primary">{{ i18n "home_hero_card_just_me" }}</span>
+        <div class="hero-panel-visual">
+          <div class="hero-scene hero-cryp-scene">
+            <svg class="hero-scene-links" viewBox="0 0 320 180" aria-hidden="true">
+              <path class="hero-cryp-link-you"   d="M66 90 H126"/>
+              <path class="hero-cryp-link-cloud" d="M194 90 H254"/>
+            </svg>
+
+            <div class="hero-scene-anchor hero-cryp-anchor-you">
+              <i class="fa-solid fa-user hero-scene-icon" aria-hidden="true"></i>
+              <span class="hero-scene-label">{{ i18n "home_hero_cryp_label_you" }}</span>
+            </div>
+
+            <div class="hero-scene-logo">
+              <img src="/img/logo.svg" alt="" class="hero-scene-logo-img"/>
+            </div>
+
+            <div class="hero-scene-anchor hero-cryp-anchor-cloud">
+              <i class="fa-solid fa-cloud hero-scene-icon" aria-hidden="true"></i>
+              <span class="hero-scene-label">{{ i18n "home_hero_cryp_label_cloud" }}</span>
+            </div>
+
+            <div class="hero-cryp-traveler" aria-hidden="true">
+              <i class="fa-solid fa-file-lines hero-cryp-traveler-file"></i>
+              <i class="fa-solid fa-lock hero-cryp-traveler-vault"></i>
+            </div>
           </div>
         </div>
-        <h1 class="font-h1 mb-6">
-          {{ i18n "home_header_title" }}
-          <span class="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
-            <ul class="animate-slide">
-              <li><i class="fa-brands fa-google-drive"></i> Google Drive</li>
-              <li><i class="fa-kit fa-icloud"></i> iCloud Drive</li>
-              <li><i class="fa-kit fa-onedrive"></i> OneDrive</li>
-              <li><i class="fa-kit fa-sharepoint"></i> SharePoint</li>
-              <li><i class="fa-brands fa-dropbox"></i> Dropbox</li>
-              <li><i class="fa-kit fa-pcloud"></i> pCloud</li>
-              <li><i class="fa-kit fa-nextcloud"></i> Nextcloud</li>
-              <li>{{ i18n "home_header_title_last_item" }}</li>
-              <li aria-hidden="true"><i class="fa-brands fa-google-drive"></i> Google Drive</li>
-            </ul>
-          </span>
-        </h1>
-        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">{{ i18n "home_header_description" . | safeHTML }}</p>
-        <div class="flex flex-col md:flex-row gap-6">
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_individuals_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/for-individuals/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-individuals-cta">{{ i18n "home_header_for_individuals_cta" . }}</a>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="block uppercase tracking-wide text-gray-300 text-xs font-bold">{{ i18n "home_header_for_teams_title" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary text-lg w-full md:w-64" data-umami-event="home-header-teams-cta">{{ i18n "home_header_for_teams_cta" . }}</a>
-          </div>
+        <div class="hero-panel-content">
+          <h2 class="text-primary">CRYPTOMATOR</h2>
+          <p class="hero-panel-description text-base text-gray-600 leading-relaxed mb-6">{{ i18n "home_hero_cryptomator_description" }}</p>
+          <a href="{{ .Site.LanguagePrefix }}/downloads/" class="btn btn-primary min-w-[16rem] py-3" data-umami-event="home-hero-individuals-cta">
+            {{ i18n "home_hero_cryptomator_cta" }}
+          </a>
+          <a href="{{ .Site.LanguagePrefix }}/for-individuals/" class="group inline-flex items-center gap-1.5 mt-4 text-sm text-gray-600 no-underline hover:text-primary" data-umami-event="home-hero-individuals-link">
+            {{ i18n "home_hero_cryptomator_link" }}<span class="sr-only"> – Cryptomator</span>
+            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
-    </header>
+
+      <div class="hero-panel hero-panel-secondary">
+        <span class="absolute top-5 left-1/2 -translate-x-1/2 inline-flex whitespace-nowrap px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">{{ i18n "home_hero_card_our_team" }}</span>
+        <div class="hero-panel-visual">
+          <div class="hero-scene hero-hub-scene">
+            <svg class="hero-scene-links" viewBox="0 0 320 180" aria-hidden="true">
+              <path class="hero-hub-link-team"  d="M63 103 L137 139"/>
+              <path class="hero-hub-link-cloud" d="M183 139 L258 103"/>
+              <path class="hero-hub-link-mgmt hero-hub-link-mgmt-team"  d="M128 43 L62 80"/>
+              <path class="hero-hub-link-mgmt"  d="M192 43 L258 80"/>
+              <path class="hero-hub-link-mgmt"  d="M160 62 L160 125"/>
+            </svg>
+
+            <div class="hero-scene-anchor hero-hub-anchor-hub">
+              <img src="/img/logo-hub.svg" alt="" class="hero-hub-anchor-img"/>
+            </div>
+
+            <div class="hero-scene-anchor hero-hub-anchor-team">
+              <i class="fa-solid fa-users hero-scene-icon" aria-hidden="true"></i>
+              <span class="hero-scene-label">{{ i18n "home_hero_hub_node_team" }}</span>
+            </div>
+
+            <div class="hero-scene-anchor hero-hub-anchor-cloud">
+              <i class="fa-solid fa-cloud hero-scene-icon" aria-hidden="true"></i>
+              <span class="hero-scene-label">{{ i18n "home_hero_cryp_label_cloud" }}</span>
+            </div>
+
+            <div class="hero-scene-logo">
+              <img src="/img/logo.svg" alt="" class="hero-scene-logo-img"/>
+            </div>
+
+            <div class="hero-hub-traveler" aria-hidden="true">
+              <i class="fa-solid fa-file-lines hero-hub-traveler-file"></i>
+              <i class="fa-solid fa-lock hero-hub-traveler-vault"></i>
+            </div>
+
+            <div class="hero-hub-key" aria-hidden="true">
+              <i class="fa-solid fa-key"></i>
+            </div>
+
+            <div class="hero-hub-auth" aria-hidden="true">
+              <i class="fa-solid fa-fingerprint"></i>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel-content">
+          <h2 class="text-tertiary2">CRYPTOMATOR HUB</h2>
+          <p class="hero-panel-description text-base text-gray-600 leading-relaxed mb-6">{{ i18n "home_hero_hub_description" }}</p>
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" class="btn btn-tertiary2 min-w-[16rem] py-3" data-umami-event="home-hero-teams-cta">
+            {{ i18n "home_hero_hub_cta" }}
+          </a>
+          <a href="{{ .Site.LanguagePrefix }}/for-teams/" class="group inline-flex items-center gap-1.5 mt-4 text-sm text-gray-600 no-underline hover:text-tertiary2" data-umami-event="home-hero-teams-link">
+            {{ i18n "home_hero_hub_link" }}
+            <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <div>
@@ -71,7 +165,7 @@
               <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR</span>
             </div>
           </h3>
-          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary/10 text-primary">
             {{ i18n "home_get_started_for_individuals_title" . }}
           </div>
         </div>
@@ -102,14 +196,14 @@
       </div>
     
       <div class="flex flex-col white-box">
-        <div class="flex justify-between items-center p-4 border-b border-primary">
+        <div class="flex justify-between items-center p-4 border-b border-tertiary2">
           <h3>
             <div class="flex items-center">
               <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
-              <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR HUB</span>
+              <span class="font-headline font-bold text-tertiary2 pb-px">CRYPTOMATOR HUB</span>
             </div>
           </h3>
-          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-primary-l2 text-dark">
+          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
             {{ i18n "home_get_started_for_teams_title" . }}
           </div>
         </div>
@@ -120,20 +214,20 @@
             </h4>
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "home_get_started_for_teams_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "home_get_started_for_teams_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "home_get_started_for_teams_benefit_3" . }}</span>
               </li>
             </ul>
           </div>
-          <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-primary w-full lg:w-96" data-umami-event="home-get-started-teams-cta">
+          <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-tertiary2 w-full lg:w-96" data-umami-event="home-get-started-teams-cta">
             {{ i18n "home_get_started_for_teams_cta" . }}
           </a>
         </div>

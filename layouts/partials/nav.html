@@ -1,7 +1,7 @@
-{{- $textColor := cond .IsHome "text-white" "text-primary" -}}
-{{- $borderColor := cond .IsHome "border-white" "border-primary" -}}
-{{- $hoverBorderColor := cond .IsHome "hover:border-white" "hover:border-primary" -}}
-{{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
+{{- $textColor := cond .Params.darkNav "text-white" "text-primary" -}}
+{{- $borderColor := cond .Params.darkNav "border-white" "border-primary" -}}
+{{- $hoverBorderColor := cond .Params.darkNav "hover:border-white" "hover:border-primary" -}}
+{{- $backgroundColor := cond .Params.darkNav "bg-dark" "bg-white" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
 <nav class="w-full max-h-screen {{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
   {{- if .Scratch.Get "webinarBannerActive" -}}
