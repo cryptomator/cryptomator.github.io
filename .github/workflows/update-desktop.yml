@@ -77,7 +77,7 @@ jobs:
             exit 1
           fi
         env:
-          ASSETS_JSON: ${{ toJson(github.event.client_payload.release.assets ) }}
+          ASSETS_JSON: ${{ toJson(github.event.client_payload.release ) }}
       - name: Commit and push
         id: commit-and-push
         run: |
