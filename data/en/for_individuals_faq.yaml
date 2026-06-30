@@ -27,7 +27,7 @@
 - Question: "Is Cryptomator free?"
   Answer: "Cryptomator is free to use on Windows, macOS, Linux, iOS, and Android. However, the free versions on iOS and Android are read-only."
 - Question: "How is Cryptomator funded if it's free?"
-  Answer: "Cryptomator is funded through paid mobile apps and voluntary donations. As an open-source project, we place great emphasis on transparency."
+  Answer: "Cryptomator is funded through in-app purchases in its mobile apps and voluntary donations. As an open-source project, we place great emphasis on transparency."
 - Question: "Is there support if I have issues with Cryptomator?"
   Answer: "Yes, there is comprehensive [documentation](https://docs.cryptomator.org/) and a [community forum](https://community.cryptomator.org/) to help with any questions."
 - Question: "How does Cryptomator differ from other encryption tools like VeraCrypt?"

@@ -241,4 +241,4 @@ Berücksichtige deine spezifischen Anforderungen, um das für dich passende Tool
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Stand September 2025. Funktionen und Preise können sich geändert haben.</p>
+<p class="text-sm text-gray-600 italic mt-8">Stand Juli 2026. Funktionen und Preise können sich geändert haben.</p>

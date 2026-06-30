@@ -244,4 +244,4 @@ Consider your specific needs to choose the tool that suits you best. No matter w
 
 ---
 
-<p class="text-sm text-gray-600 italic mt-8">Information as of September 2025. Features and pricing may have changed.</p>
+<p class="text-sm text-gray-600 italic mt-8">Information as of July 2026. Features and pricing may have changed.</p>
