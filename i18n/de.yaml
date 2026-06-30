@@ -1406,15 +1406,15 @@
 - id: sale_off
   translation: "Rabatt"
 - id: for_individuals_header_kicker_sale
-  translation: "10-Jahres-Jubiläums-Sale*"
+  translation: "Summer Sale*"
 - id: home_header_kicker_sale
-  translation: "10-Jahres-Jubiläum"
+  translation: "Summer Sale"
 - id: pricing_supporter_cert_price_discounted
-  translation: "ab 10 €"
+  translation: "ab 14.99 €"
 - id: pricing_android_price_discounted
-  translation: "10 €"
+  translation: "14.99 €"
 - id: pricing_ios_price_discounted
-  translation: "10 €"
+  translation: "14.99 €"
 - id: pricing_discount_note
   translation: "Die Höhe des Rabatts kann je nach Region variieren."
 
