@@ -155,7 +155,7 @@ Tresorit ist ein Cloud-Speicherdienst mit integriertem Sicherheitsansatz. Es bie
       </tr>
       <tr>
         <td class="font-p font-bold p-2 lg:p-4">Kosten</td>
-        <td class="font-p p-2 lg:p-4">Desktop-Apps kostenlos (Donationware); Mobile Apps einmaliger Kauf; Hub verfügbar als self-hosted (kostenlos bis 5 Nutzer) oder managed (kostenpflichtig)</td>
+        <td class="font-p p-2 lg:p-4">Desktop-Apps kostenlos (Donationware); Mobile Apps kostenlos (schreibgeschützt), voller Zugriff per einmaligem In-App-Kauf; Hub verfügbar als self-hosted (kostenlos bis 5 Nutzer) oder managed (kostenpflichtig)</td>
         <td class="font-p p-2 lg:p-4">Abonnement (14-Tage-Test; Basic-Version mit eingeschränkten Funktionen)</td>
       </tr>
       <tr>
@@ -197,7 +197,7 @@ Tresorit ist ein kommerzieller Anbieter mit Rechenzentren in der Schweiz und der
 
 ### Kostenstruktur
 
-Die Desktop-Apps von Cryptomator sind kostenlos nutzbar (Donationware), während die mobilen Apps einen einmaligen Kauf erfordern. Der Cryptomator Hub für Teams ist als self-hosted Lösung (kostenlos für bis zu 5 Nutzer, kostenpflichtige Lizenz für größere Teams) oder als managed Lösung (kostenpflichtig) verfügbar.
+Die Desktop-Apps von Cryptomator sind kostenlos nutzbar (Donationware), während die mobilen Apps im schreibgeschützten Modus kostenlos sind und der volle Zugriff per einmaligem In-App-Kauf freigeschaltet wird. Der Cryptomator Hub für Teams ist als self-hosted Lösung (kostenlos für bis zu 5 Nutzer, kostenpflichtige Lizenz für größere Teams) oder als managed Lösung (kostenpflichtig) verfügbar.
 Tresorit ist primär abonnementbasiert und bietet eine 14-tägige Testphase; zusätzlich existiert eine Basic-Version mit eingeschränkten Funktionen.
 
 ## Zusammenfassung: Welches Tool passt besser zu dir?

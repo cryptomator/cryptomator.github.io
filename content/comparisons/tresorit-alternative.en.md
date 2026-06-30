@@ -156,7 +156,7 @@ Tresorit is a cloud storage service with a built-in security-first approach. It 
       </tr>
       <tr>
         <td class="font-p font-bold p-2 lg:p-4">Cost</td>
-        <td class="font-p p-2 lg:p-4">Desktop apps free (donationware); mobile apps one-time purchase; Hub available self-hosted (free up to 5 users) or managed (paid)</td>
+        <td class="font-p p-2 lg:p-4">Desktop apps free (donationware); mobile apps free (read-only), with a one-time in-app purchase to unlock full access; Hub available self-hosted (free up to 5 users) or managed (paid)</td>
         <td class="font-p p-2 lg:p-4">Subscription (14-day trial; Basic tier with limited features)</td>
       </tr>
       <tr>
@@ -200,7 +200,7 @@ Tresorit is a commercial provider with data centers located in Switzerland and t
 
 ### Cost Structure
 
-Cryptomator's desktop apps are free to use (donationware), while mobile apps require a one-time purchase. Cryptomator Hub, the team-focused extension, is available as self-hosted solution (free for up to 5 users, paid license for larger teams) or as managed solution (paid).
+Cryptomator's desktop apps are free to use (donationware), while the mobile apps are free in read-only mode, with a one-time in-app purchase to unlock full access. Cryptomator Hub, the team-focused extension, is available as self-hosted solution (free for up to 5 users, paid license for larger teams) or as managed solution (paid).
 Tresorit is primarily subscription-based and includes a 14-day trial; a Basic tier with limited features is also available.
 
 ## Summary: Which Tool Is Right for You?
