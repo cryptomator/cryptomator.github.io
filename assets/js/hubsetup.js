@@ -187,12 +187,10 @@ class ConfigBuilder {
     let sql = [];
     if (!this.cfg.keycloak.useExternal) {
       sql.push(`CREATE USER keycloak WITH ENCRYPTED PASSWORD '${this.cfg.db.keycloakPw}';
-CREATE DATABASE keycloak WITH ENCODING 'UTF8';
-GRANT ALL PRIVILEGES ON DATABASE keycloak TO keycloak;`)
+CREATE DATABASE keycloak WITH ENCODING 'UTF8' OWNER keycloak;`)
     }
     sql.push(`CREATE USER hub WITH ENCRYPTED PASSWORD '${this.cfg.db.hubPw}';
-CREATE DATABASE hub WITH ENCODING 'UTF8';
-GRANT ALL PRIVILEGES ON DATABASE hub TO hub;`);
+CREATE DATABASE hub WITH ENCODING 'UTF8' OWNER hub;`);
     return sql.join('\n');
   }
 
@@ -388,7 +386,7 @@ EOF`;
   getPostgresService() {
     return {
       depends_on: {'init-config': {condition: 'service_completed_successfully'}},
-      image: 'postgres:14-alpine',
+      image: 'postgres:17-alpine',
       volumes: ['db-init:/docker-entrypoint-initdb.d', 'db-data:/var/lib/postgresql/data'],
       deploy: {
         resources: {
@@ -397,6 +395,7 @@ EOF`;
       },
       healthcheck: {
         test: ['CMD', 'pg_isready', '-U', 'postgres'],
+        start_period: '30s',
         interval: '10s',
         timeout: '3s',
       },
@@ -439,13 +438,14 @@ EOF`;
       ...(!this.cfg.compose.includeTraefik && {ports: [`${this.getPort(this.cfg.keycloak.publicUrl)}:8080`]}),
       healthcheck: {
         test: ['CMD', 'curl', '-f', `http://localhost:9000${this.getPathname(HubSetup.urlWithTrailingSlash(this.cfg.keycloak.publicUrl))}health/live`],
-        interval: '60s',
+        start_period: '60s',
+        interval: '10s',
         timeout: '3s',
       },
       restart: 'unless-stopped',
       environment: {
-        KEYCLOAK_ADMIN: this.cfg.keycloak.adminUser,
-        KEYCLOAK_ADMIN_PASSWORD: this.cfg.keycloak.adminPw,
+        KC_BOOTSTRAP_ADMIN_USERNAME: this.cfg.keycloak.adminUser,
+        KC_BOOTSTRAP_ADMIN_PASSWORD: this.cfg.keycloak.adminPw,
         KC_DB: 'postgres',
         KC_DB_URL: 'jdbc:postgresql://postgres:5432/keycloak',
         KC_DB_USERNAME: 'keycloak',
@@ -669,10 +669,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
                 httpGet: {path: '/q/health/started', port: 8080},
               },
               livenessProbe: {
-                httpGet: {path: '/api/config', port: 8080}, httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
+                httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
               },
               readinessProbe: {
-                httpGet: {path: '/q/health/ready', port: 8080}, httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
+                httpGet: {path: '/api/config', port: 8080}, initialDelaySeconds: 10, periodSeconds: 3
               },
               env: [
                 {name: 'HUB_PUBLIC_ROOT_PATH', value: this.getPathnameWithTrailingSlash(this.cfg.hub.publicUrl)},
@@ -714,10 +714,10 @@ class KubernetesConfigBuilder extends ConfigBuilder {
           spec: {
             containers: [{
               name: 'postgres',
-              image: 'postgres:14-alpine',
+              image: 'postgres:17-alpine',
               ports: [{containerPort: 5432}],
               resources: {
-                requests: {cpu: '25m', memory: '64Mi'},
+                requests: {cpu: '25m', memory: '32Mi'},
                 limits: {cpu: '1000m', memory: '256Mi'},
               },
               livenessProbe: {
@@ -763,8 +763,8 @@ class KubernetesConfigBuilder extends ConfigBuilder {
       startCmd = ['/opt/keycloak/bin/kc.sh', 'start', '--import-realm'];  // prod mode without build time optimizations (requires a proper TLS termination proxy)
     }
     let env = [
-      {name: 'KEYCLOAK_ADMIN', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
-      {name: 'KEYCLOAK_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
+      {name: 'KC_BOOTSTRAP_ADMIN_USERNAME', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_user'}}},
+      {name: 'KC_BOOTSTRAP_ADMIN_PASSWORD', valueFrom: {secretKeyRef: {name: 'hub-secrets', key: 'kc_admin_pass'}}},
       {name: 'KC_DB', value: 'postgres'},
       {name: 'KC_DB_URL', value: 'jdbc:postgresql://postgres-svc:5432/keycloak'},
       {name: 'KC_DB_USERNAME', value: 'keycloak'},
