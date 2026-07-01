@@ -1,7 +1,7 @@
 ---
 title: "Cryptomator für Android: Freemium ab sofort verfügbar"
 slug: cryptomator-android-freemium
-date: 2026-07-01T07:00:00
+date: 2026-07-01T00:00:00Z
 tags: [cryptomator, android freemium]
 
 summary: "Cryptomator für Android gibt es ab sofort als Freemium: kostenlos ausprobieren und bei Bedarf auf die Vollversion upgraden."
