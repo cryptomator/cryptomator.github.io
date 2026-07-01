@@ -36,7 +36,7 @@ Wer den kompletten Funktionsumfang vorab testen möchte, kann das ebenfalls: Die
 
 ### Wo es die Freemium-Version gibt
 
-Sowohl die [neue Cryptomator-App](https://play.google.com/store/apps/details?id=org.cryptomator.freemium) als auch die bereits existierenden Lizenzschlüsselvarianten, wie z.B. die aus unserem [APK-Store](https://cryptomator.org/android/), dem [Cryptomator-F-Droid-Repository](https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD), dem [F-Droid-Hauptrepository](https://f-droid.org/en/packages/org.cryptomator.lite) oder [Accrescent](https://accrescent.app/app/org.cryptomator), unterstützen ab sofort das Freemium-Modell. Du kannst die App kostenlos herunterladen und bei Bedarf auf die Vollversion upgraden.
+Sowohl die [neue Cryptomator-App](https://play.google.com/store/apps/details?id=org.cryptomator.freemium) als auch die bereits existierenden Lizenzschlüsselvarianten, wie z.B. die aus unserem [APK-Store](/de/android/), dem [Cryptomator-F-Droid-Repository](https://static.cryptomator.org/android/fdroid/repo?fingerprint=F7C3EC3B0D588D3CB52983E9EB1A7421C93D4339A286398E71D7B651E8D8ECDD), dem [F-Droid-Hauptrepository](https://f-droid.org/en/packages/org.cryptomator.lite) oder [Accrescent](https://accrescent.app/app/org.cryptomator), unterstützen ab sofort das Freemium-Modell. Du kannst die App kostenlos herunterladen und bei Bedarf auf die Vollversion upgraden.
 
 Einen Überblick über alle Varianten findest du in unserer [Dokumentation zur Android-Einrichtung](https://docs.cryptomator.org/android/setup/).
 

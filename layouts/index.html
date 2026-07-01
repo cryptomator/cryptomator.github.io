@@ -19,7 +19,13 @@
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
         <div class="flex items-center gap-4 mb-4">
-          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
+          {{ if .Site.Params.paddleDesktopSalePriceId }}
+          <div class="flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-red-600 text-white">
+            <i class="fa-solid fa-sun"></i>
+            {{ i18n "home_header_kicker_sale" }}
+          </div>
+          {{ end }}
+          <div class="{{ if .Site.Params.paddleDesktopSalePriceId }}hidden md:flex{{ else }}flex{{ end }} items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-transparent border border-primary text-primary">
             <i class="fa-solid fa-cloud-download"></i>
             {{ i18n "home_header_kicker" }}
           </div>

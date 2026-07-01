@@ -1442,6 +1442,8 @@
   translation: "Subscribe to our Hub mailing list and we'll let you know as soon as the next webinar is scheduled."
 
 # Sale
+- id: nav_promotion
+  translation: ":sunny: Summer Sale: 50%* Off Cryptomator – Until&nbsp;July&nbsp;7!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2026/07/01/summer-sale-2026/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: sale_off
   translation: "Off"
 - id: for_individuals_header_kicker_sale
