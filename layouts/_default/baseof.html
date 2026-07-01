@@ -88,16 +88,29 @@
       {{- end -}}
     {{- end -}}
     {{- .Scratch.Set "webinarBannerActive" $showWebinarBanner -}}
+    {{- $saleBanner := .Site.Params.salePromotion.banner -}}
+    {{- $showSaleBanner := false -}}
+    {{- if and $saleBanner $saleBanner.enabled -}}
+      {{- $showSaleBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $saleBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showSaleBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "saleBannerActive" $showSaleBanner -}}
     {{ partial "nav.html" . }}
     {{- if $showAnniversaryBanner -}}
       {{ partial "anniversary-banner.html" . }}
     {{- end -}}
+    {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
     {{- $topPadding := cond .IsHome "" "pt-12" -}}
-    {{- if and $showWebinarBanner (not $showAnniversaryBanner) -}}
+    {{- if and $showThinStrip (not $showAnniversaryBanner) -}}
       {{- $topPadding = cond .IsHome "" "pt-24 md:pt-18" -}}
-    {{- else if and (not $showWebinarBanner) $showAnniversaryBanner -}}
+    {{- else if and (not $showThinStrip) $showAnniversaryBanner -}}
       {{- $topPadding = cond .IsHome "" "pt-28 md:pt-24" -}}
-    {{- else if and $showWebinarBanner $showAnniversaryBanner -}}
+    {{- else if and $showThinStrip $showAnniversaryBanner -}}
       {{- $topPadding = cond .IsHome "" "pt-40 md:pt-32" -}}
     {{- end -}}
     <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
