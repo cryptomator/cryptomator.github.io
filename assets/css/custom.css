@@ -407,11 +407,12 @@
 .hero-hub-anchor-cloud { top: 92px;  left: 280px; }
 .hero-hub-anchor-hub   { top: 26px;  left: 160px; }
 
-/* Hub is the subject of this card — its logo sits above the center, shown
-   large and full-strength with a soft secondary glow + drop-shadow. */
+/* Hub is the subject of this card — its bot sits above the center at a slightly
+   reduced size (the tight viewBox makes it read large) so it stays balanced
+   within the scene, with a soft secondary glow + drop-shadow. */
 .hero-hub-anchor-img {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   filter:
     drop-shadow(0 3px 9px rgba(47, 72, 88, 0.30))
@@ -421,9 +422,8 @@
   will-change: transform;
 }
 
-/* Cryptomator sits at the bottom vertex of the diamond — same size, halo and
-   full strength as the bot on the Cryptomator card (only the position differs),
-   so the bot reads identically across both illustrations. */
+/* Cryptomator sits at the bottom vertex of the diamond at full size, the same
+   as the bot on the Cryptomator card (only the position differs). */
 .hero-hub-scene .hero-scene-logo {
   top: 150px;
   width: 78px;
