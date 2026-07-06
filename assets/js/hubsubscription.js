@@ -1,40 +1,43 @@
 "use strict";
 
+const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
+const BILLING_CUSTOMER_URL = API_BASE_URL + '/billing/customers/by-hub-id';
 const CARD_CHECKOUT_URL = API_BASE_URL + '/billing/paddle-classic/checkout';
 const INVOICE_CHECKOUT_URL = API_BASE_URL + '/billing/espocrm/checkout';
 const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/billing/manage/subscription';
-const SESSION_REQUEST_URL = API_BASE_URL + '/billing/manage/session/request';
-const SESSION_CONFIRM_URL = API_BASE_URL + '/billing/manage/session/confirm';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
-const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
+const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
 
 class HubSubscription {
 
   constructor(form, subscriptionData, searchParams) {
     this._form = form;
     this._subscriptionData = subscriptionData;
-    let fragmentParams = new URLSearchParams(location.hash.substring(1));
-    this._subscriptionData.oldLicense = fragmentParams.get('oldLicense');
+    this._subscriptionData.oldLicense = searchParams.get('oldLicense');
     if (this._subscriptionData.oldLicense) {
       this._subscriptionData.hubId = this.extractHubId(this._subscriptionData.oldLicense);
       if (!this._subscriptionData.hubId) {
         this._subscriptionData.oldLicense = null;
       }
     }
-    this._subscriptionData.hubId = this._subscriptionData.hubId ?? fragmentParams.get('hub_id') ?? searchParams.get('hub_id');
-    let returnUrl = fragmentParams.get('returnUrl') ?? searchParams.get('return_url');
+    this._subscriptionData.hubId = this._subscriptionData.hubId ?? searchParams.get('hub_id');
+    let returnUrl = searchParams.get('return_url');
     if (returnUrl) {
       this._subscriptionData.returnUrl = returnUrl;
     }
-    let nonce = fragmentParams.get('nonce');
-    if (nonce) {
-      this.restoreHubContext();
-      history.replaceState(null, '', location.pathname + location.search);
+    // Capture the Hub's `token_transfer` value (how the license should be delivered) so it can be stored in
+    // the billing session.
+    this._subscriptionData.tokenTransfer = searchParams.get('token_transfer') ?? 'queryParam';
+    this._subscriptionData.session = searchParams.get('session');
+    if (this._subscriptionData.session) {
+      // We returned from the confirmation link (/hub/billing?session=<id>): resolve the verified
+      // billing session and continue into the manage or checkout flow.
       this._subscriptionData.state = 'LOADING';
-      this.confirmSession(nonce);
+      this.loadBillingSession();
     } else if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
-      this._subscriptionData.state = 'LOADING';
-      this.loadCheckoutPrerequisites();
+      // Opened from the Hub without a verified session yet: ask the customer to request a
+      // confirmation link before we can manage their subscription or check out.
+      this._subscriptionData.state = 'CREATE_SESSION';
     }
     this._paddle = $.ajax({
       url: 'https://cdn.paddle.com/paddle/paddle.js',
@@ -60,19 +63,7 @@ class HubSubscription {
   }
 
   authHeaders() {
-    return { Authorization: 'Bearer ' + this._subscriptionData.sessionToken };
-  }
-
-  restoreHubContext() {
-    let hubId = this._subscriptionData.hubId;
-    let oldLicense = sessionStorage.getItem(`hubOldLicense:${hubId}`);
-    if (oldLicense) {
-      this._subscriptionData.oldLicense = oldLicense;
-    }
-    let returnUrl = sessionStorage.getItem(`hubReturnUrl:${hubId}`);
-    if (returnUrl) {
-      this._subscriptionData.returnUrl = returnUrl;
-    }
+    return { Authorization: 'Bearer ' + this._subscriptionData.session };
   }
 
   loadCheckoutPrerequisites() {
@@ -116,7 +107,7 @@ class HubSubscription {
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this._subscriptionData.needsTokenRefresh = !!this._subscriptionData.oldLicense;
+    this.refreshToken();
   }
 
   onLoadSubscriptionFailed(status, error) {
@@ -136,6 +127,91 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
+  loadBillingSession() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: BILLING_SESSION_URL + '/' + encodeURIComponent(this._subscriptionData.session),
+      type: 'GET'
+    }).done(data => {
+      this.onLoadBillingSessionSucceeded(data);
+    }).fail(xhr => {
+      this.onLoadBillingSessionFailed(xhr.status, xhr.responseJSON?.message || 'Loading billing session failed.');
+    });
+  }
+
+  onLoadBillingSessionSucceeded(data) {
+    this._subscriptionData.hubId = data.hubId;
+    this._subscriptionData.email = data.email;
+    this._subscriptionData.returnUrl = data.returnUrl;
+    this._subscriptionData.tokenTransfer = data.tokenTransfer;
+    if (!this._subscriptionData.invoice.contact_email) {
+      this._subscriptionData.invoice.contact_email = data.email;
+    }
+    this._subscriptionData.errorMessage = '';
+    // The session is verified; a session already linked to a billing manages it (the manage endpoints
+    // only accept linked sessions), an unlinked one belongs to a new customer heading into checkout.
+    if (data.billingId) {
+      this.loadManageSubscription();
+    } else {
+      this.loadCheckoutPrerequisites();
+    }
+  }
+
+  onLoadBillingSessionFailed(status, error) {
+    if (status == 404) {
+      this._subscriptionData.state = 'LINK_EXPIRED';
+      this._subscriptionData.errorMessage = '';
+    } else if (this._subscriptionData.hubId) {
+      this._subscriptionData.state = 'CREATE_SESSION';
+      this._subscriptionData.errorMessage = error;
+    } else {
+      this._subscriptionData.state = 'MISSING_PARAMS';
+      this._subscriptionData.errorMessage = '';
+    }
+    this._subscriptionData.inProgress = false;
+  }
+
+  lookupCustomer() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    // First challenge (from /billing/customers/challenge) gates this lookup: it tells us whether
+    // the Hub is already linked to a customer before we ask for a confirmation link.
+    $.ajax({
+      url: BILLING_CUSTOMER_URL + '/' + encodeURIComponent(this._subscriptionData.hubId),
+      type: 'GET',
+      data: {
+        captcha: this._subscriptionData.captcha
+      }
+    }).done(data => {
+      this.onLookupCustomerSucceeded(data);
+    }).fail(xhr => {
+      this.onLookupCustomerFailed(xhr.status, xhr.responseJSON?.message || 'Looking up your subscription failed.');
+    });
+  }
+
+  onLookupCustomerSucceeded(data) {
+    // The Hub is already linked to a customer: the API returns their redacted email so we can
+    // show where the confirmation link will be sent without revealing the full address.
+    this._subscriptionData.redactedEmail = data.email;
+    this._subscriptionData.needsEmail = false;
+    this._subscriptionData.lookupDone = true;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+  }
+
+  onLookupCustomerFailed(status, error) {
+    // 404 means the Hub is not linked to a customer yet: ask for the purchase email. Any other
+    // failure falls back to the same manual entry (the lookup captcha solves only once, so a
+    // transient failure cannot re-trigger the lookup, and for a known hub the server ignores the
+    // entered address and mails the one on file) — but keeps the error visible.
+    this._subscriptionData.inProgress = false;
+    this._subscriptionData.needsEmail = true;
+    this._subscriptionData.redactedEmail = null;
+    this._subscriptionData.lookupDone = true;
+    this._subscriptionData.errorMessage = status == 404 ? '' : error;
+  }
+
   createSession() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
@@ -143,26 +219,26 @@ class HubSubscription {
       return;
     }
 
-    let hubId = this._subscriptionData.hubId;
-    if (this._subscriptionData.oldLicense) {
-      sessionStorage.setItem(`hubOldLicense:${hubId}`, this._subscriptionData.oldLicense);
-    }
-    if (this._subscriptionData.returnUrl) {
-      sessionStorage.setItem(`hubReturnUrl:${hubId}`, this._subscriptionData.returnUrl);
-    }
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
+    let body = {
+      hubId: this._subscriptionData.hubId,
+      returnUrl: this._subscriptionData.returnUrl,
+      tokenTransfer: this._subscriptionData.tokenTransfer,
+      captcha: this._subscriptionData.captcha
+    };
+    if (this._subscriptionData.email) {
+      body.email = this._subscriptionData.email;
+    }
     $.ajax({
-      url: SESSION_REQUEST_URL,
+      url: BILLING_SESSION_URL,
       type: 'POST',
-      data: {
-        captcha: this._subscriptionData.captcha,
-        hub_id: this._subscriptionData.hubId
-      }
+      contentType: 'application/json',
+      data: JSON.stringify(body)
     }).done(_ => {
       this.onCreateSessionSucceeded();
     }).fail(xhr => {
-      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Requesting access failed.');
+      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Requesting confirmation link failed.');
     });
   }
 
@@ -175,29 +251,6 @@ class HubSubscription {
   onCreateSessionFailed(error) {
     this._subscriptionData.inProgress = false;
     this._subscriptionData.errorMessage = error;
-  }
-
-  confirmSession(nonce) {
-    this._subscriptionData.inProgress = true;
-    this._subscriptionData.errorMessage = '';
-    $.ajax({
-      url: SESSION_CONFIRM_URL,
-      type: 'POST',
-      data: {
-        nonce: nonce
-      }
-    }).done(data => {
-      this._subscriptionData.sessionToken = data.token;
-      this.loadManageSubscription();
-    }).fail(xhr => {
-      this.onConfirmSessionFailed(xhr.responseJSON?.message || 'Confirming access failed.');
-    });
-  }
-
-  onConfirmSessionFailed(error) {
-    this._subscriptionData.state = 'CREATE_SESSION';
-    this._subscriptionData.errorMessage = error;
-    this._subscriptionData.inProgress = false;
   }
 
   loadCustomBilling(continueHandler) {
@@ -339,7 +392,8 @@ class HubSubscription {
         captcha: this._subscriptionData.cardCaptcha,
         hub_id: this._subscriptionData.hubId,
         product_id: productId,
-        quantity: this._subscriptionData.quantity
+        quantity: this._subscriptionData.quantity,
+        session: this._subscriptionData.session
       }
     }).done(data => {
       this.openPaddleCheckout(data.pay_link, locale);
@@ -354,7 +408,7 @@ class HubSubscription {
         override: payLink,
         email: this._subscriptionData.email,
         locale: locale,
-        passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId }),
+        passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId, session: this._subscriptionData.session }),
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
         closeCallback: () => {
           this._subscriptionData.inProgress = false;
@@ -394,6 +448,7 @@ class HubSubscription {
         hub_id: this._subscriptionData.hubId,
         product_id: this.selectedPlanId(),
         quantity: this._subscriptionData.quantity,
+        session: this._subscriptionData.session,
         account_name: invoice.account_name,
         vat_id: invoice.vat_id,
         address_street: invoice.address_street,
@@ -415,10 +470,8 @@ class HubSubscription {
     this._subscriptionData.state = 'CHECKOUT_SUCCESS';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    if (this._subscriptionData.oldLicense) {
-      this._subscriptionData.needsTokenRefresh = true;
-      this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
-    }
+    this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+    this.refreshToken();
   }
 
   onPostFailed(error) {
@@ -429,6 +482,7 @@ class HubSubscription {
   updatePaymentMethod(locale) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
+    this._subscriptionData.shouldTransferToHub = false;
     $.ajax({
       url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/payment-method`,
       type: 'GET',
@@ -452,6 +506,8 @@ class HubSubscription {
   pause() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
+    // a stale transfer intent from an earlier action must not redirect after this refresh
+    this._subscriptionData.shouldTransferToHub = false;
     $.ajax({
       url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/pause`,
       type: 'POST',
@@ -550,14 +606,15 @@ class HubSubscription {
   }
 
   refreshToken() {
+    this._subscriptionData.needsTokenRefresh = true;
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: REFRESH_LICENSE_URL,
-      type: 'POST',
+      url: GET_LICENSE_URL,
+      type: 'GET',
       data: {
-        token: this._subscriptionData.oldLicense,
-        captcha: this._subscriptionData.captcha
+        session: this._subscriptionData.session,
+        legacy: this._subscriptionData.tokenTransfer === 'queryParam'
       }
     }).done(token => {
       this._subscriptionData.token = token;
@@ -568,6 +625,8 @@ class HubSubscription {
         this.transferTokenToHub();
       }
     }).fail(xhr => {
+      // Expected for a card checkout until Paddle's payment webhook links the session to the new
+      // billing; the license block then offers a retry.
       this._subscriptionData.errorMessage = xhr.responseJSON?.message || 'Refreshing license failed.';
       this._subscriptionData.needsTokenRefresh = false;
       this._subscriptionData.inProgress = false;
@@ -575,7 +634,14 @@ class HubSubscription {
   }
 
   transferTokenToHub() {
-    window.open(this._subscriptionData.returnUrl + '?token=' + this._subscriptionData.token, '_self');
+    if (this._subscriptionData.tokenTransfer === 'queryParam') {
+      location.href = this._subscriptionData.returnUrl + '?token=' + encodeURIComponent(this._subscriptionData.token);
+    } else if (this._subscriptionData.tokenTransfer === 'session') {
+      // Hand the Hub the billing session id instead; it resolves the license itself.
+      location.href = this._subscriptionData.returnUrl + '?session=' + encodeURIComponent(this._subscriptionData.session);
+    } else {
+      console.error('Unknown token transfer method:', this._subscriptionData.tokenTransfer);
+    }
   }
 
 }
