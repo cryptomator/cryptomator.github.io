@@ -143,11 +143,12 @@
     opacity: 0.42;
   }
 
+  .anchor-backdrop { fill: white; }
+
   /* Color logic per segment (identical across both scenes):
      - clear / decrypted data  → primary (green)  — the left segment
      - encrypted vault / key    → secondary (teal) — the right segment */
-  .hero-cryp-link-you   { stroke: var(--color-primary); }
-  .hero-cryp-link-cloud { stroke: var(--color-secondary); }
+  .hero-cryp-link   { stroke: var(--color-primary); }
 
   .hero-hub-link-team   { stroke: var(--color-tertiary2); }
   .hero-hub-link-cloud  { stroke: var(--color-tertiary2); }
@@ -169,12 +170,14 @@
     z-index: 2;
   }
 
-  /* Fixed anchor icons (You / Cloud / Team) sit in a soft tinted disc that adopts
-     their card's pill colour — green on the Cryptomator scene, teal on the Hub
-     scene — mirroring the pill's `bg-{color}/10 text-{color}`. The bot logos and
-     travelling icons are unaffected (they're <img>/their own colours). */
-  .hero-cryp-scene { --scene-accent: var(--color-primary); }
-  .hero-hub-scene  { --scene-accent: var(--color-tertiary2); }
+  /* Fixed anchor icons (You / Cloud / Team) sit in a soft opaque disc tinted per
+     scene (pale green on the Cryptomator scene, pale blue on the Hub scene); the
+     glyph adopts the card's pill colour. The disc is opaque so the travelers
+     (z-index 1) actually vanish behind it (z-index 2) instead of shining through
+     a translucent tint. The bot logos and travelling icons are unaffected
+     (they're <img>/their own colours). */
+  .hero-cryp-scene { --scene-accent: var(--color-primary); --scene-disc: #EBF5EB; }
+  .hero-hub-scene  { --scene-accent: var(--color-tertiary2); --scene-disc: #f1f6fb; }
 
   /* Descendant selector (0,2,0) so the explicit box beats FontAwesome's own
      `.fa-*` width rule (0,1,0) — otherwise the width collapses to the glyph and
@@ -192,7 +195,7 @@
     font-size: 22px;
     line-height: 1;
     color: var(--scene-accent, var(--color-gray-400));
-    background: color-mix(in srgb, var(--scene-accent, transparent) 10%, transparent);
+    background: var(--scene-disc, #EBF5EB);
   }
 
   .hero-scene-label {
@@ -237,6 +240,12 @@
   .hero-cryp-anchor-you   { top: 90px; left: 40px;  }
   .hero-cryp-anchor-cloud { top: 90px; left: 280px; }
 
+  /* The Cryp scene runs its whole story on a faster 5s clock (the shared logo
+     rule above defaults to the Hub's 10s cycle). */
+  .hero-cryp-scene .hero-scene-logo-img {
+    animation-duration: 5s;
+  }
+
   .hero-cryp-traveler {
     position: absolute;
     top: 90px;
@@ -250,15 +259,14 @@
     transform: translate3d(0, 0, 0);
     opacity: 0;
     transition: opacity 0.3s ease;
-    animation: hero-cryp-travel 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation: hero-cryp-travel 5s ease-in-out infinite;
     will-change: transform;
   }
 
-  /* Two faces of the travelling token. Each leg the active form starts small,
-     swells to its biggest at the leg's mid-point, then shrinks + fades as it
-     reaches the next node and disappears behind it. file shows on the User↔Crypto
-     legs, vault on the Crypto↔Cloud legs; they swap (hidden) behind Cryptomator.
-     Each face carries a soft glow in its own colour so the glow follows the form. */
+  /* Two faces of the travelling token: file on the User→Crypto leg, vault on the
+     Crypto→Cloud leg. They hard-swap at 50%, hidden behind the Cryptomator bot —
+     no fades. Each face carries a soft glow in its own colour so the glow follows
+     the form. */
   .hero-cryp-traveler-file,
   .hero-cryp-traveler-vault {
     position: absolute;
@@ -277,7 +285,7 @@
     line-height: 1;
     opacity: 0;
     filter: drop-shadow(0 0 5px rgba(73, 176, 74, 0.40));
-    animation: hero-cryp-file-arc 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation: hero-cryp-file-arc 5s ease-in-out infinite;
   }
 
   .hero-cryp-traveler-vault {
@@ -289,51 +297,44 @@
     line-height: 1;
     opacity: 0;
     filter: drop-shadow(0 0 5px rgba(73, 176, 74, 0.40));
-    animation: hero-cryp-vault-arc 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation: hero-cryp-vault-arc 5s ease-in-out infinite;
   }
 
   /* Container path. The token travels out to near the dashed line ends (x66 near
      User / x248 near Cloud — a touch short so it doesn't crowd those icons) and
      fully onto the Cryptomator centre (translate 120px → centre x160, behind the
-     bot). Holds at each end while the form fades out/in. */
+     bot). No fades and no idle time: the token pops in at the User side at 0%,
+     holds only briefly behind the bot for the file→vault swap, arrives at the
+     Cloud exactly at 100% and pops away with the loop's snap back to 0%. */
   @keyframes hero-cryp-travel {
-    0%,  4%   { transform: translate3d(26px, 0, 0); }   /* User — file sets off */
-    18%, 30%  { transform: translate3d(120px, 0, 0); }  /* Cryptomator — file encrypts, vault sets off */
-    48%, 56%  { transform: translate3d(208px, 0, 0); }  /* Cloud — vault arrives, holds, then melts in */
-    70%, 100% { transform: translate3d(26px, 0, 0); }   /* invisible return to User, pause, restart */
+    0%       { left: 40px; }   /* User — file sets off immediately */
+    48%, 52% { left: 50%; }  /* Cryptomator — file→vault swap behind the bot */
+    100%     { left: 280px; }  /* Cloud — vault arrives, invisible snap-back on loop */
   }
 
-  /* file — visible only on its outbound User→Cryptomator leg (4–20%): fades in at
-     the User-end, travels to the bot and melts in (encrypt). Hidden the rest of the
-     cycle while the vault carries on to the Cloud (no return leg). */
+  /* file — visible from 0% on its outbound User→Cryptomator leg; hard swap to the
+     vault at 50%, mid-hold, while hidden behind the bot (no fades). */
   @keyframes hero-cryp-file-arc {
-    0%   { opacity: 0; } /* User-end, invisible (pause) */
-    4%   { opacity: 1; } /* fade in at User-end */
-    16%  { opacity: 1; } /* travelling to the bot */
-    20%  { opacity: 0; } /* melts into the bot (encrypt) */
-    100% { opacity: 0; }
+    0%, 50%      { opacity: 1; } /* pops in at the User side, travels to the bot */
+    50.01%, 100% { opacity: 0; } /* swapped for the vault behind the bot */
   }
 
-  /* vault — appears only after the file has encrypted, on its outbound bot→Cloud
-     leg (32–50%): fades in at the bot, travels to the Cloud and melts in. Hidden the
-     rest of the cycle (no return leg). */
+  /* vault — takes over from the file at 50% behind the bot and stays visible until
+     the loop ends at the Cloud, where it vanishes with the 100%→0% snap. */
   @keyframes hero-cryp-vault-arc {
-    0%,  30% { opacity: 0; } /* hidden behind the bot */
-    34%      { opacity: 1; } /* emerges at the bot */
-    44%      { opacity: 1; } /* travelling to the cloud */
-    48%      { opacity: 0; } /* melts into the cloud exactly on arrival (like the hub) */
-    100%     { opacity: 0; }
+    0%, 50%      { opacity: 0; } /* hidden while the file is en route */
+    50.01%, 100% { opacity: 1; } /* carries on to the cloud until the loop snaps */
   }
 
-  /* Cryptomator reacts the moment the file is absorbed behind it (~20%) — a subtle
-     rock/wobble (tilt around its base) instead of a pulse, signalling the encrypt.
-     One event per cycle now (outbound only). */
+  /* Cryptomator reacts while the file is absorbed behind it (the 48–52% hold) —
+     a slight ±1.5° rock (tilt around its base), signalling the encrypt. */
   @keyframes hero-cryp-logo-wobble {
-    0%, 16%   { transform: rotate(0deg); }
-    19%       { transform: rotate(-5deg); }
-    22%       { transform: rotate(4deg); }
-    25%       { transform: rotate(-2deg); }
-    28%, 100% { transform: rotate(0deg); }
+    0%, 47%   { transform: rotate(0deg); }
+    48%       { transform: rotate(-1.5deg); }
+    49%       { transform: rotate(1.5deg); }
+    50%       { transform: rotate(-1.5deg); }
+    51%       { transform: rotate(1.5deg); }
+    53%, 100% { transform: rotate(0deg); }
   }
 
   /* Hub bot wobble — reacts twice per sequence: once when the file lands (~20%)
@@ -397,57 +398,6 @@
 
   .hero-hub-scene .hero-scene-logo-img {
     width: 52px;
-  }
-
-  /* ─── Cryp scene anchor glows ───────────────────────────────────────
-     One burst per anchor per 10s travel cycle: the You-glow fires as the
-     file is dispatched (~4 %), the Cloud-glow as the vault is delivered
-     (~48 %). Single bursts keep the scene calm. */
-
-  .hero-cryp-anchor-you::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    width: 64px;
-    height: 64px;
-    border-radius: 9999px;
-    transform: translate(-50%, -50%) scale(0.85);
-    background: radial-gradient(circle, rgba(73, 176, 74, 0.22) 0%, transparent 60%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-    animation: hero-cryp-departure-you 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-
-  /* You-glow: single burst as the file is dispatched (travel leg 1 starts at 4%). */
-  @keyframes hero-cryp-departure-you {
-    0%, 2%    { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
-    7%        { opacity: 1; transform: translate(-50%, -50%) scale(1);    }
-    16%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2);  }
-  }
-
-  .hero-cryp-anchor-cloud::after {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    width: 64px;
-    height: 64px;
-    border-radius: 9999px;
-    transform: translate(-50%, -50%) scale(0.85);
-    background: radial-gradient(circle, rgba(0, 138, 123, 0.22) 0%, transparent 60%);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-    animation: hero-cryp-arrival-cloud 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-
-  /* Cloud-glow: single burst as the vault is delivered (travel hits Cloud at 48%). */
-  @keyframes hero-cryp-arrival-cloud {
-    0%, 36%   { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
-    41%       { opacity: 1; transform: translate(-50%, -50%) scale(1);    }
-    50%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2);  }
   }
 
   /* Idle breathing — the three outer anchors scale gently, offset in time so the
@@ -676,19 +626,15 @@
   .hero-hub-anchor-cloud .hero-scene-icon,
   .hero-cryp-anchor-you  .hero-scene-icon,
   .hero-cryp-anchor-cloud .hero-scene-icon,
-  .hero-cryp-anchor-you::after,
-  .hero-hub-anchor-img,
-  .hero-cryp-anchor-cloud::after { animation-name: none; }
+  .hero-hub-anchor-img { animation-name: none; }
 
   @media (prefers-reduced-motion: no-preference) {
-    /* Cryptomator scene — round trip: file (User↔Crypto) + vault (Crypto↔Cloud),
-       with the centre logo pulsing as each form arrives behind it. */
+    /* Cryptomator scene — one outbound story per 5s cycle: file (User→Crypto) +
+       vault (Crypto→Cloud), with the centre logo wobbling as the file melts in. */
     .hero-panel:hover .hero-cryp-traveler       { animation-name: hero-cryp-travel; }
     .hero-panel:hover .hero-cryp-traveler-file  { animation-name: hero-cryp-file-arc; }
     .hero-panel:hover .hero-cryp-traveler-vault { animation-name: hero-cryp-vault-arc; }
     .hero-panel:hover .hero-cryp-scene .hero-scene-logo-img { animation-name: hero-cryp-logo-wobble; }
-    .hero-panel:hover .hero-cryp-anchor-you::after   { animation-name: hero-cryp-departure-you; }
-    .hero-panel:hover .hero-cryp-anchor-cloud::after { animation-name: hero-cryp-arrival-cloud; }
 
     /* Hub scene — same rhythm and wobble as the Cryptomator card on the
        diamond's lower V, with the auth/key accents riding the same cycle:
