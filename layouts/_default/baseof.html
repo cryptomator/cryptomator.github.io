@@ -57,6 +57,9 @@
       {{ $css := resources.Get "css/main.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
+    {{ block "styles" . }}
+      <!-- optional additional page-specific stylesheets, loaded after the main stylesheet -->
+    {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
     {{ partial "hreflang.html" . }}
     {{ if eq hugo.Environment "staging" }}

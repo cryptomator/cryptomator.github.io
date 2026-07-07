@@ -12,6 +12,16 @@
   <link rel="preload" fetchpriority="high" href="/fonts/quicksand-bold.reduced.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   {{ partial "altcha-css.html" . }}
 {{ end }}
+{{ define "styles" }}
+  {{ if hugo.IsDevelopment }}
+    {{ $heroCss := resources.Get "css/hero.css" | css.TailwindCSS }}
+    <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" media="screen" />
+  {{ else }}
+    {{ $tailwindOpts := dict "minify" true }}
+    {{ $heroCss := resources.Get "css/hero.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
+    <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" media="screen" />
+  {{ end }}
+{{ end }}
 {{ define "main" }}
   {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners; desktop padding already covers all banner combos, so only the mobile value scales below */ -}}
   {{- $showWebinarBanner := .Scratch.Get "webinarBannerActive" -}}
