@@ -73,12 +73,8 @@
   .hero-panel-primary   { --accent: var(--color-primary); }
   .hero-panel-secondary { --accent: var(--color-tertiary2); }
 
-  .hero-panel-visual {
-    @apply flex items-center justify-center mt-6 mb-4 h-[180px];
-  }
-
   .hero-panel-content {
-    @apply flex flex-col items-center flex-1;
+    @apply flex flex-col items-center;
   }
 
   .hero-panel-content h2 {
@@ -102,10 +98,10 @@
 
   .hero-scene {
     @apply lg:scale-[1.1];
+    @apply mt-6 mb-4 mx-auto;
     position: relative;
     width: 320px;
     height: 180px;
-    margin: 0 auto;
     transform-origin: center;
   }
 
@@ -150,8 +146,7 @@
      - encrypted vault / key    → secondary (teal) — the right segment */
   .hero-cryp-link   { stroke: var(--color-primary); }
 
-  .hero-hub-link-team   { stroke: var(--color-tertiary2); }
-  .hero-hub-link-cloud  { stroke: var(--color-tertiary2); }
+  .hero-hub-link { stroke: var(--color-tertiary2); }
 
   /* Hub oversight lines (Hub → Team / Cloud / Cryptomator). Same stroke style as
      the data lines (uniform dash) — only a slightly lower opacity keeps the
@@ -369,9 +364,9 @@
      apex, connected down the top edges and a center axis to all three, and
      issues the vault key down that axis to the bot. */
 
-  .hero-hub-anchor-team  { top: 92px;  left: 40px;  }
-  .hero-hub-anchor-cloud { top: 92px;  left: 280px; }
-  .hero-hub-anchor-hub   { top: 26px;  left: 160px; }
+  .hero-hub-anchor-team  { top: 90px;  left: 40px;  }
+  .hero-hub-anchor-cloud { top: 90px;  left: 280px; }
+  .hero-hub-anchor-hub   { top: 30px;  left: 160px; }
 
   /* Hub is the subject of this card — its bot sits above the center at a slightly
      reduced size (the tight viewBox makes it read large) so it stays balanced
