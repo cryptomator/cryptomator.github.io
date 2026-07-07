@@ -330,13 +330,13 @@
 - id: home_hero_hub_node_team
   translation: "Team"
 - id: home_hero_cryptomator_description
-  translation: "Only you can open your files — encrypted before they reach the cloud."
+  translation: "Protect personal documents, photos, and work files in any cloud."
 - id: home_hero_cryptomator_cta
   translation: "Download Free"
 - id: home_hero_cryptomator_link
   translation: "Explore all features"
 - id: home_hero_hub_description
-  translation: "Give your team access to shared files — and revoke it for anyone, anytime."
+  translation: "Collaborate securely using centralized access management and zero-knowledge encryption."
 - id: home_hero_hub_cta
   translation: "Start Free Trial"
 - id: home_hero_hub_link

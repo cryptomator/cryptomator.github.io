@@ -74,7 +74,7 @@
   .hero-panel-secondary { --accent: var(--color-tertiary2); }
 
   .hero-panel-content {
-    @apply flex flex-col items-center;
+    @apply flex-1 flex flex-col items-center;
   }
 
   .hero-panel-content h2 {
