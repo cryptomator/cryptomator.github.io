@@ -193,7 +193,7 @@
     /* Idle breathing (keyframes below the scene sections) — deliberately on its
        own 8s clock, off the scene cycle, so it never looks coupled to the
        travel choreography. */
-    animation: hero-scene-anchor-idle 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: hero-scene-anchor-idle 8s linear infinite;
   }
 
   .hero-scene-label {
@@ -279,7 +279,7 @@
   .hero-cryp-anchor-you   { top: 90px; left: 40px;  }
   .hero-cryp-anchor-cloud { top: 90px; left: 280px; }
 
-  .hero-cryp-scene .hero-scene-logo-img { animation: hero-cryp-logo-wobble var(--scene-cycle) cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+  .hero-cryp-scene .hero-scene-logo-img { animation: hero-cryp-logo-wobble var(--scene-cycle) ease-in-out infinite; }
 
   /* Two faces of the travelling token: file on the User→Crypto leg, vault on the
      Crypto→Cloud leg. They hard-swap at 50%, hidden behind the Cryptomator bot —
@@ -374,7 +374,7 @@
       drop-shadow(0 3px 9px rgba(47, 72, 88, 0.30))
       drop-shadow(0 0 1px rgba(47, 72, 88, 0.35));
     transform-origin: center bottom;
-    animation: hero-hub-apex-wobble var(--scene-cycle) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: hero-hub-apex-wobble var(--scene-cycle) ease-in-out infinite;
   }
 
   /* Cryptomator sits at the bottom vertex of the diamond at full size, the same
@@ -387,7 +387,7 @@
 
   .hero-hub-scene .hero-scene-logo-img {
     width: 52px;
-    animation: hero-hub-logo-wobble var(--scene-cycle) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: hero-hub-logo-wobble var(--scene-cycle) ease-in-out infinite;
   }
 
   /* Idle breathing — the outer anchor icons scale gently, offset in time so the
