@@ -588,6 +588,12 @@
   translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird deine nächste Zahlung um die Differenz reduziert."
 - id: hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice
   translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird die Reduzierung auf deiner nächsten Rechnung berücksichtigt."
+- id: hub_billing_manage_change_quantity_confirmation_prorated_invoice
+  translation: "Anteiliger Betrag für den laufenden Zeitraum (wird jetzt in Rechnung gestellt)"
+- id: hub_billing_manage_change_quantity_confirmation_prorated_credit_invoice
+  translation: "Anteilige Gutschrift für den laufenden Zeitraum"
+- id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
+  translation: "Neuer Jahresbetrag (netto)"
 
 - id: hub_billing_checkout_description
   translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
@@ -665,6 +671,22 @@
   translation: "Eine Rechnung wird ausgestellt und an deine E-Mail-Adresse gesendet."
 - id: hub_billing_checkout_invoice_submit
   translation: "Auf Rechnung kaufen"
+- id: hub_billing_checkout_invoice_total
+  translation: "Gesamtbetrag"
+- id: hub_billing_checkout_invoice_total_suffix
+  translation: "pro Jahr (netto)"
+- id: hub_billing_checkout_invoice_total_vat_hint
+  translation: "zzgl. 19 % USt."
+- id: hub_billing_checkout_invoice_total_reverse_charge_hint
+  translation: "Reverse-Charge-Verfahren – Steuerschuldnerschaft des Leistungsempfängers"
+- id: hub_billing_checkout_invoice_confirm_title
+  translation: "Bestellübersicht"
+- id: hub_billing_checkout_invoice_confirm_product
+  translation: "Produkt"
+- id: hub_billing_checkout_invoice_confirm_unit_price
+  translation: "Preis pro Seat"
+- id: hub_billing_checkout_invoice_confirm_billing_address
+  translation: "Rechnungsadresse"
 
 - id: hub_billing_checkout_success_description
   translation: "Vielen Dank für deinen Kauf! Dein Abonnement ist jetzt aktiv."

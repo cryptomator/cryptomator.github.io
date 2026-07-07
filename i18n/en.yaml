@@ -588,6 +588,12 @@
   translation: "You are about to decrease the seats limit. By confirming, your next payment will be reduced by the difference."
 - id: hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice
   translation: "You are about to decrease the seats limit. By confirming, the reduction will be reflected on your next invoice."
+- id: hub_billing_manage_change_quantity_confirmation_prorated_invoice
+  translation: "Prorated amount for the current period (invoiced now)"
+- id: hub_billing_manage_change_quantity_confirmation_prorated_credit_invoice
+  translation: "Prorated credit for the current period"
+- id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
+  translation: "New yearly total (net)"
 
 - id: hub_billing_checkout_description
   translation: "Unlock the full potential of your Hub instance and get your team on board with client-side encryption for your cloud storage."
@@ -665,6 +671,22 @@
   translation: "An invoice will be issued and sent to your email address."
 - id: hub_billing_checkout_invoice_submit
   translation: "Buy on Invoice"
+- id: hub_billing_checkout_invoice_total
+  translation: "Total"
+- id: hub_billing_checkout_invoice_total_suffix
+  translation: "per year (net)"
+- id: hub_billing_checkout_invoice_total_vat_hint
+  translation: "plus 19% German VAT"
+- id: hub_billing_checkout_invoice_total_reverse_charge_hint
+  translation: "reverse charge – VAT to be accounted for by the recipient"
+- id: hub_billing_checkout_invoice_confirm_title
+  translation: "Order Summary"
+- id: hub_billing_checkout_invoice_confirm_product
+  translation: "Product"
+- id: hub_billing_checkout_invoice_confirm_unit_price
+  translation: "Price per Seat"
+- id: hub_billing_checkout_invoice_confirm_billing_address
+  translation: "Billing Address"
 
 - id: hub_billing_checkout_success_description
   translation: "Thank you for your purchase! Your subscription is now active."

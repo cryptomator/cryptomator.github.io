@@ -4,6 +4,7 @@ const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
 const BILLING_CUSTOMER_URL = API_BASE_URL + '/billing/customers/by-hub-id';
 const CARD_CHECKOUT_URL = API_BASE_URL + '/billing/paddle-classic/checkout';
 const INVOICE_CHECKOUT_URL = API_BASE_URL + '/billing/espocrm/checkout';
+const INVOICE_PRICE_URL = API_BASE_URL + '/billing/espocrm/checkout/price';
 const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/billing/manage/subscription';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
@@ -430,6 +431,35 @@ class HubSubscription {
     });
   }
 
+  invoiceProductId() {
+    return this._subscriptionData.customBilling?.managed ? ESPOCRM_HUB_MANAGED_PRODUCT_ID : ESPOCRM_HUB_SELF_HOSTED_PRODUCT_ID;
+  }
+
+  loadInvoicePrice() {
+    if (this._subscriptionData.invoicePrice || !this.invoiceProductId()) {
+      return;
+    }
+    $.ajax({
+      url: INVOICE_PRICE_URL,
+      type: 'GET',
+      data: {
+        product_id: this.invoiceProductId()
+      }
+    }).done(data => {
+      this._subscriptionData.invoicePrice = data;
+    });
+  }
+
+  askForInvoiceConfirmation() {
+    if (!$(this._form)[0].checkValidity()) {
+      $(this._form).find(':input').addClass('show-invalid');
+      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      return;
+    }
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.invoiceConfirmModal.open = true;
+  }
+
   invoiceCheckout() {
     if (!$(this._form)[0].checkValidity()) {
       $(this._form).find(':input').addClass('show-invalid');
@@ -446,7 +476,7 @@ class HubSubscription {
       data: {
         captcha: this._subscriptionData.invoiceCaptcha,
         hub_id: this._subscriptionData.hubId,
-        product_id: this.selectedPlanId(),
+        product_id: this.invoiceProductId(),
         quantity: this._subscriptionData.quantity,
         session: this._subscriptionData.session,
         account_name: invoice.account_name,
@@ -468,6 +498,7 @@ class HubSubscription {
 
   onCheckoutSucceeded() {
     this._subscriptionData.state = 'CHECKOUT_SUCCESS';
+    this._subscriptionData.invoiceConfirmModal.open = false;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
     this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
@@ -542,6 +573,7 @@ class HubSubscription {
   openChangeSeatsModal() {
     this._subscriptionData.quantity = this._subscriptionData.details.seats;
     this._subscriptionData.changeSeatsModal.nextPayment = null;
+    this._subscriptionData.changeSeatsModal.invoicePreview = null;
     this._subscriptionData.changeSeatsModal.confirmation = false;
     this._subscriptionData.changeSeatsModal.open = true;
   }
@@ -554,7 +586,7 @@ class HubSubscription {
     }
 
     this._subscriptionData.changeSeatsModal.confirmation = true;
-    if (this._subscriptionData.details.processor == 'PADDLE_CLASSIC') {
+    if (this._subscriptionData.details.processor == 'PADDLE_CLASSIC' || this._subscriptionData.details.processor == 'ESPOCRM') {
       this.previewChangeQuantity();
     }
   }
@@ -571,6 +603,7 @@ class HubSubscription {
       }
     }).done(data => {
       this._subscriptionData.changeSeatsModal.nextPayment = data.next_payment;
+      this._subscriptionData.changeSeatsModal.invoicePreview = data.prorated_amount != null ? data : null;
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {

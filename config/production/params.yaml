@@ -23,5 +23,9 @@ paddlePricesUrl: https://checkout.paddle.com/api/2.0/prices
 paddleDesktopSalePriceId: pri_01kk4gejs06jg0m0n9tghk0ktr
 paddleAndroidSalePriceId: pri_01kk4gg6c3pj0tq0vvpf4x4vw2
 
+# ESPOCRM
+espocrmHubSelfHostedProductId:  # TODO: set production EspoCRM Self-Hosted Standard product id
+espocrmHubManagedProductId:  # TODO: set production EspoCRM Managed Standard product id
+
 # STRIPE
 stripePk: pk_live_eSasX216vGvC26GdbVwA011V
