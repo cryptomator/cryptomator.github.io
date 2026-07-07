@@ -100,18 +100,15 @@
 }
 
 .font-h1 {
-  @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
-  text-wrap: balance;
+  @apply font-headline font-medium text-3xl md:text-4xl leading-tight text-balance;
 }
 
 .font-h2 {
-  @apply font-headline font-medium text-xl md:text-2xl leading-snug;
-  text-wrap: balance;
+  @apply font-headline font-medium text-xl md:text-2xl leading-snug text-balance;
 }
 
 .font-h3 {
-  @apply font-headline text-lg md:text-xl leading-relaxed;
-  text-wrap: balance;
+  @apply font-headline text-lg md:text-xl leading-relaxed text-balance;
 }
 
 .font-p {
