@@ -1,6 +1,8 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-individuals/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/for-teams/">
+  <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/downloads/">
+  <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/managed/">
   <link rel="preload" fetchpriority="high" as="image" href="/img/for-individuals/screenshot-1.png" type="image/png">
   <link rel="preload" fetchpriority="low" as="image" href="/img/hub/screenshot-1.png" type="image/png">
   <link rel="preload" fetchpriority="low" as="image" href="/img/hub/screenshot-2.png" type="image/png">
@@ -32,7 +34,7 @@
   {{- else if or $showWebinarBanner $showAnniversaryBanner -}}
     {{- $heroTopPad = "pt-28" -}}
   {{- end -}}
-  <section class="hero-split-contrast relative overflow-hidden {{ $heroTopPad }} md:pt-24 lg:pt-24">
+  <header class="hero-split-contrast relative overflow-hidden {{ $heroTopPad }} md:pt-24 lg:pt-24">
     <div class="hero-aura-wrap absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div class="hero-aura hero-aura-primary"></div>
       <div class="hero-aura hero-aura-secondary"></div>
@@ -158,7 +160,7 @@
       </section>
     </div>
 
-  </section>
+  </header>
 
   <div>
     {{ .Content }}
