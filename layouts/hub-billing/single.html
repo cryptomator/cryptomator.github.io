@@ -454,7 +454,7 @@
                     <span x-show="audience === 'consumer'" x-text="subscriptionData.yearlyPlanPrice?.recurringGrossAmount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.yearlyPlanPrice?.currency })"></span>
                     <span x-show="audience === 'business'">{{ i18n "pricing_vat_excluded" . }}</span>
                     <span x-show="audience === 'consumer'">{{ i18n "pricing_vat_included" . }}</span>
-                    <span>{{ i18n "pricing_different_recurring_description" . }}</span>
+                    <span>{{ i18n "hub_different_recurring_description" . }}</span>
                   </p>
                 </div>
                 <p class="text-lg text-gray-500 mb-4">
