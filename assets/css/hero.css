@@ -169,7 +169,7 @@
   .hero-hub-scene {
     --scene-accent: var(--color-tertiary2);
     --scene-disc: #f1f6fb;
-    --scene-token: var(--color-gray-700);
+    --scene-token: var(--color-tertiary2);
     --scene-glow: color-mix(in srgb, var(--color-gray-600) 40%, transparent);
     --scene-cycle: 10s;
   }
