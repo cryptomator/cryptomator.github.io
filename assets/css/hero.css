@@ -63,7 +63,7 @@
   }
 
   .hero-panel {
-    @apply relative flex flex-col items-center text-center p-10 md:p-6 lg:p-12 pt-6 lg:pt-6 rounded-sm shadow-sm;
+    @apply relative flex flex-col items-center text-center p-10 md:p-6 lg:p-16 pt-6 lg:pt-6 rounded-sm shadow-sm;
     background:
       linear-gradient(to bottom, transparent 60%, color-mix(in srgb, var(--accent, transparent) 4%, transparent)),
       #fff;

@@ -307,7 +307,7 @@
 
 # Home
 - id: home_header_title
-  translation: "Schütze deine Privatsphäre in jeder Cloud"
+  translation: "Schütze deine Cloud-Daten"
 - id: home_clouds_sharepoint_tooltip
   translation: "Inklusive Microsoft Teams"
 - id: home_header_supported_clouds
@@ -330,13 +330,13 @@
 - id: home_hero_hub_node_team
   translation: "Team"
 - id: home_hero_cryptomator_description
-  translation: "Schütze persönliche Dokumente, Fotos und Arbeitsdateien in jeder Cloud."
+  translation: "Verschlüssele persönliche Dokumente, Fotos und Arbeitsdateien in jeder Cloud."
 - id: home_hero_cryptomator_cta
   translation: "Kostenlos laden"
 - id: home_hero_cryptomator_link
   translation: "Alle Funktionen entdecken"
 - id: home_hero_hub_description
-  translation: "Arbeite sicher im Team – mit zentraler Zugriffsverwaltung und Zero-Knowledge-Verschlüsselung."
+  translation: "Arbeite sicher im Team – mit zentraler Zugriffs­verwaltung und Zero-Knowledge-Verschlüsselung."
 - id: home_hero_hub_cta
   translation: "Kostenlos testen"
 - id: home_hero_hub_link

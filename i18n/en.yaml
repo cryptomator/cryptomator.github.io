@@ -307,7 +307,7 @@
 
 # Home
 - id: home_header_title
-  translation: "Protect your privacy in any cloud"
+  translation: "Protect your Cloud Data"
 - id: home_clouds_sharepoint_tooltip
   translation: "Includes Microsoft Teams"
 - id: home_header_supported_clouds
@@ -330,7 +330,7 @@
 - id: home_hero_hub_node_team
   translation: "Team"
 - id: home_hero_cryptomator_description
-  translation: "Protect personal documents, photos, and work files in any cloud."
+  translation: "Encrypt personal documents, photos, and work files in any cloud."
 - id: home_hero_cryptomator_cta
   translation: "Download Free"
 - id: home_hero_cryptomator_link
