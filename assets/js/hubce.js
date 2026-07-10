@@ -2,7 +2,8 @@
 
 // requires newsletter.js
 const VERIFY_EMAIL_URL = API_BASE_URL + '/connect/email/verify';
-const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
+const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
+const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
 
 class HubCE {
 
@@ -11,13 +12,15 @@ class HubCE {
     this._feedbackData = feedbackData;
     this._submitData = submitData;
     this._searchParams = searchParams;
-    this._submitData.oldLicense = searchParams.get('oldLicense');
-    this._submitData.returnUrl = searchParams.get('returnUrl');
+    this._submitData.hubId = searchParams.get('hub_id');
+    this._submitData.returnUrl = searchParams.get('return_url');
+    this._submitData.session = searchParams.get('session');
 
-    // continue after email verified:
-    if (searchParams.get('verifiedEmail')) {
+    // continue after email verified (returned from the confirmation link with ?session=<id>):
+    if (this._submitData.session) {
       feedbackData.currentStep = 1;
       feedbackData.emailVerified = true;
+      this.loadBillingSession();
     }
   }
 
@@ -66,8 +69,9 @@ class HubCE {
       type: 'POST',
       data: {
         email: this._submitData.email,
-        oldLicense: this._submitData.oldLicense,
+        hubId: this._submitData.hubId,
         returnUrl: this._submitData.returnUrl,
+        tokenTransfer: 'session', // Community Edition always delivers the license via the billing session
         verifyCaptcha: this._submitData.captcha,
         verifyEmail: this._submitData.email,
         verifyTarget: 'registerhubce'
@@ -82,15 +86,33 @@ class HubCE {
     });
   }
 
+  loadBillingSession() {
+    this._feedbackData.inProgress = true;
+    this._feedbackData.errorMessage = '';
+    $.ajax({
+      url: BILLING_SESSION_URL + '/' + encodeURIComponent(this._submitData.session),
+      type: 'GET'
+    }).done(data => {
+      // The session is verified; restore its context for the license step and the return to the Hub.
+      this._submitData.hubId = data.hubId;
+      this._submitData.email = data.email;
+      this._submitData.returnUrl = data.returnUrl;
+      this._feedbackData.inProgress = false;
+      this._feedbackData.errorMessage = '';
+    }).fail(xhr => {
+      this.onRequestFailed(xhr.responseJSON?.message || 'Loading billing session failed.');
+    });
+  }
+
   getHubLicense() {
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
     $.ajax({
-      url: REFRESH_LICENSE_URL,
-      type: 'POST',
+      url: GET_LICENSE_URL,
+      type: 'GET',
       data: {
-        token: this._submitData.oldLicense,
-        captcha: this._submitData.captcha
+        session: this._submitData.session,
+        legacy: false
       }
     }).done(response => {
       this._feedbackData.licenseText = response;
