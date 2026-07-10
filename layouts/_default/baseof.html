@@ -63,7 +63,6 @@
       <meta name="robots" content="noindex">
     {{ end }}
   </head>
-  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{- $anniversaryBanner := .Site.Params.anniversaryBanner -}}
     {{- $showAnniversaryBanner := false -}}
     {{- if and $anniversaryBanner $anniversaryBanner.enabled -}}
@@ -100,6 +99,7 @@
       {{- end -}}
     {{- end -}}
     {{- .Scratch.Set "saleBannerActive" $showSaleBanner -}}
+  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null }, webinar: { state: 'loading', name: '', dateStart: null, label: '' } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData){{ if $showWebinarBanner }}; determineWebinarBanner('{{ .Site.Params.webinar.webinarId }}', '{{ .Site.Language.Lang }}', { upcoming: {{ i18n "webinar_banner_upcoming" | jsonify }}, live: {{ i18n "webinar_banner_live" | jsonify }} }, webinar){{ end }}" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
     {{- if $showAnniversaryBanner -}}
       {{ partial "anniversary-banner.html" . }}
@@ -113,7 +113,13 @@
     {{- else if and $showThinStrip $showAnniversaryBanner -}}
       {{- $topPadding = cond .IsHome "" "pt-40 md:pt-32" -}}
     {{- end -}}
-    <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
+    {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match. */ -}}
+    {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
+    {{- $paddingNoStrip := cond .IsHome "" "pt-12" -}}
+    {{- if $showAnniversaryBanner -}}
+      {{- $paddingNoStrip = cond .IsHome "" "pt-28 md:pt-24" -}}
+    {{- end -}}
+    <div class="bg-gray-100 min-h-[80vh]{{ if not $webinarIsThinStrip }} {{ $topPadding }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $paddingNoStrip }}' : '{{ $topPadding }}'"{{ end }}>
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->

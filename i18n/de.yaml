@@ -1366,6 +1366,14 @@
 # Live Webinar Banner
 - id: webinar_banner
   translation: "Live-Webinar – <a class=\"whitespace-nowrap font-bold\" href=\"/de/webinar/\">Jetzt anmelden<i class=\"fa-regular fa-arrow-right ml-1\" aria-hidden=\"true\"></i></a>"
+- id: webinar_banner_upcoming
+  translation: "Live-Webinar: %NAME% · %WHEN%"
+- id: webinar_banner_live
+  translation: "Jetzt live: %NAME%"
+- id: webinar_banner_cta
+  translation: "Jetzt anmelden"
+- id: webinar_banner_cta_live
+  translation: "Jetzt beitreten"
 
 # Webinar Form
 - id: webinar_first_name
