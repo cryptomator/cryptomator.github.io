@@ -1,7 +1,6 @@
 "use strict";
 
 // requires newsletter.js
-const VERIFY_EMAIL_URL = API_BASE_URL + '/connect/email/verify';
 const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
 const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
 
@@ -65,17 +64,17 @@ class HubCE {
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
     $.ajax({
-      url: VERIFY_EMAIL_URL,
+      url: BILLING_SESSION_URL,
       type: 'POST',
-      data: {
-        email: this._submitData.email,
+      contentType: 'application/json',
+      data: JSON.stringify({
         hubId: this._submitData.hubId,
         returnUrl: this._submitData.returnUrl,
         tokenTransfer: 'session', // Community Edition always delivers the license via the billing session
-        verifyCaptcha: this._submitData.captcha,
-        verifyEmail: this._submitData.email,
-        verifyTarget: 'registerhubce'
-      }
+        verificationLinkTarget: 'registerhubce',
+        email: this._submitData.email,
+        captcha: this._submitData.captcha
+      })
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
