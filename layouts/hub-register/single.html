@@ -2,7 +2,7 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', emailSent: false, sessionVerified: false}, submitData: {captcha: null, hubId: null, returnUrl: null, session: null, email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null}" x-init="hubCE = new HubCE($refs.form, feedbackData, submitData, new URLSearchParams(location.search))" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', emailSent: false, sessionVerified: false, registered: false}, submitData: {captcha: null, hubId: null, returnUrl: null, session: null, email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null}" x-init="hubCE = new HubCE($refs.form, feedbackData, submitData, new URLSearchParams(location.search))" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_ce_registration_description" }}</p>
@@ -148,24 +148,25 @@
                 {{ i18n "hub_ce_registration_step_3_license_title" }}
               </h2>
 
-              <!-- Loading state (resolving the billing session) -->
-              <div x-show="feedbackData.inProgress" class="mb-8">
-                <p class="font-p text-gray-500">
-                  <i class="fa-solid fa-spinner fa-spin mr-2" aria-hidden="true"></i>
-                  {{ i18n "hub_ce_registration_step_3_loading" }}
-                </p>
+              <!-- Invisible captcha (auto-solves on load), then registers the Hub CE license -->
+              <div class="hidden" aria-hidden="true">
+                {{ $challengeUrl := printf "%s/billing/hub-ce/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState" "ref" "registerCaptcha" "auto" "onload" "onVerified" "hubCE.registerHubCE()") }}
               </div>
 
+              <p x-show="feedbackData.sessionVerified &amp;&amp; feedbackData.registered" class="font-p mb-8">{{ i18n "hub_ce_registration_step_3_success" }}</p>
               <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
 
-              <div x-show="feedbackData.sessionVerified">
-                <p class="font-p mb-8">{{ i18n "hub_ce_registration_step_3_success" }}</p>
-                <div class="mt-auto">
-                  <a :href="submitData.returnUrl + '?session=' + encodeURIComponent(submitData.session)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
-                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    {{ i18n "hub_billing_manage_license_key_transfer_action" }}
-                  </a>
-                </div>
+              <div class="mt-auto">
+                <!-- Disabled while the challenge is solved and the registration request runs -->
+                <button x-show="!(feedbackData.sessionVerified &amp;&amp; feedbackData.registered)" disabled class="btn btn-primary w-full md:w-64">
+                  <i x-show="!feedbackData.errorMessage" class="fa-solid fa-spinner fa-spin mr-2" aria-hidden="true"></i>
+                  {{ i18n "hub_billing_manage_license_key_transfer_action" }}
+                </button>
+                <a x-show="feedbackData.sessionVerified &amp;&amp; feedbackData.registered" :href="submitData.returnUrl + '?session=' + encodeURIComponent(submitData.session)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  {{ i18n "hub_billing_manage_license_key_transfer_action" }}
+                </a>
               </div>
             </div>
           </div>

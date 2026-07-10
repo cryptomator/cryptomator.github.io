@@ -2,6 +2,7 @@
 
 // requires newsletter.js
 const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
+const HUB_CE_REGISTER_URL = API_BASE_URL + '/billing/hub-ce/register';
 
 class HubCE {
 
@@ -102,6 +103,25 @@ class HubCE {
       this._feedbackData.errorMessage = '';
     }).fail(xhr => {
       this.onRequestFailed(xhr.responseJSON?.message || 'Loading billing session failed.');
+    });
+  }
+
+  registerHubCE() {
+    this._feedbackData.inProgress = true;
+    this._feedbackData.errorMessage = '';
+    $.ajax({
+      url: HUB_CE_REGISTER_URL,
+      type: 'POST',
+      data: {
+        session: this._submitData.session,
+        captcha: this._submitData.captcha
+      }
+    }).done(_ => {
+      this._feedbackData.registered = true;
+      this._feedbackData.inProgress = false;
+      this._feedbackData.errorMessage = '';
+    }).fail(xhr => {
+      this.onRequestFailed(xhr.responseJSON?.message || 'Registering your Hub failed.');
     });
   }
 

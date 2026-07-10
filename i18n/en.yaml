@@ -726,8 +726,6 @@
   translation: "License Key"
 - id: hub_ce_registration_step_3_license_title
   translation: "Your Community Edition License"
-- id: hub_ce_registration_step_3_loading
-  translation: "Verifying your registration..."
 - id: hub_ce_registration_step_3_success
   translation: "Your email has been verified successfully. Return to your Hub instance, which will collect your license key automatically."
 
