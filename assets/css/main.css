@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import './fonts.css';
+@import './theme.css';
 
 @layer components {
   @import './custom.css';
@@ -11,8 +12,6 @@
 @plugin '@tailwindcss/typography';
 
 @config './tailwind.config.js';
-
-@import './theme.css';
 
 @media (prefers-reduced-motion: reduce) {
   *,
