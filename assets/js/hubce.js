@@ -2,7 +2,6 @@
 
 // requires newsletter.js
 const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
-const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
 
 class HubCE {
 
@@ -15,10 +14,10 @@ class HubCE {
     this._submitData.returnUrl = searchParams.get('return_url');
     this._submitData.session = searchParams.get('session');
 
-    // continue after email verified (returned from the confirmation link with ?session=<id>):
+    // returned from the confirmation link with ?session=<id>: resolve the session and finish on the last step
     if (this._submitData.session) {
-      feedbackData.currentStep = 1;
-      feedbackData.emailVerified = true;
+      feedbackData.currentStep = 2;
+      feedbackData.success = true;
       this.loadBillingSession();
     }
   }
@@ -28,8 +27,6 @@ class HubCE {
       this.validateEmail();
     } else if (this._feedbackData.currentStep === 1) {
       this.sendConfirmationEmail();
-    } else if (this._feedbackData.currentStep === 2) {
-      this.getHubLicense();
     }
   }
 
@@ -92,32 +89,19 @@ class HubCE {
       url: BILLING_SESSION_URL + '/' + encodeURIComponent(this._submitData.session),
       type: 'GET'
     }).done(data => {
-      // The session is verified; restore its context for the license step and the return to the Hub.
+      if (data.tokenTransfer !== 'session') {
+        this.onRequestFailed('Unsupported token transfer method: ' + data.tokenTransfer);
+        return;
+      }
+      // The session is verified; restore its context for the return to the Hub, which collects the license itself.
       this._submitData.hubId = data.hubId;
       this._submitData.email = data.email;
       this._submitData.returnUrl = data.returnUrl;
+      this._feedbackData.sessionVerified = true;
       this._feedbackData.inProgress = false;
       this._feedbackData.errorMessage = '';
     }).fail(xhr => {
       this.onRequestFailed(xhr.responseJSON?.message || 'Loading billing session failed.');
-    });
-  }
-
-  getHubLicense() {
-    this._feedbackData.inProgress = true;
-    this._feedbackData.errorMessage = '';
-    $.ajax({
-      url: GET_LICENSE_URL,
-      type: 'GET',
-      data: {
-        session: this._submitData.session,
-        legacy: false
-      }
-    }).done(response => {
-      this._feedbackData.licenseText = response;
-      this._feedbackData.inProgress = false;
-    }).fail(xhr => {
-      this.onRequestFailed(xhr.responseJSON?.message || 'Fetching license failed.');
     });
   }
 
