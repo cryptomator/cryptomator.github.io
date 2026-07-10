@@ -211,11 +211,17 @@ textarea:read-only {
   left: 50%;
 }
 
-/* offsetting anchor targets to adjust for fixed navbar; tooltips carry an id only for aria-describedby, not as scroll anchors */
+/* offsetting anchor targets to adjust for fixed navbar; the offset grows when the
+   nav banner strip (.nav-promo-strip) is rendered, detected via :has() below;
+   tooltips carry an id only for aria-describedby, not as scroll anchors */
 [id]:not([role="tooltip"])::before {
   content: '';
   display: block;
-  height: 96px;
-  margin-top: -96px;
+  height: var(--anchor-offset, 96px);
+  margin-top: calc(-1 * var(--anchor-offset, 96px));
   visibility: hidden;
+}
+
+body:has(.nav-promo-strip) {
+  --anchor-offset: 138px;
 }

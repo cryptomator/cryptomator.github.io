@@ -66,7 +66,6 @@
       <meta name="robots" content="noindex">
     {{ end }}
   </head>
-  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{- $anniversaryBanner := .Site.Params.anniversaryBanner -}}
     {{- $showAnniversaryBanner := false -}}
     {{- if and $anniversaryBanner $anniversaryBanner.enabled -}}
@@ -91,20 +90,40 @@
       {{- end -}}
     {{- end -}}
     {{- .Scratch.Set "webinarBannerActive" $showWebinarBanner -}}
+    {{- $saleBanner := .Site.Params.salePromotion.banner -}}
+    {{- $showSaleBanner := false -}}
+    {{- if and $saleBanner $saleBanner.enabled -}}
+      {{- $showSaleBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $saleBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showSaleBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "saleBannerActive" $showSaleBanner -}}
+  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null }, webinar: { state: 'loading', name: '', dateStart: null, label: '' } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData){{ if $showWebinarBanner }}; determineWebinarBanner('{{ .Site.Params.webinar.webinarId }}', '{{ .Site.Language.Lang }}', { upcoming: {{ i18n "webinar_banner_upcoming" | jsonify }}, live: {{ i18n "webinar_banner_live" | jsonify }} }, webinar){{ end }}" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
     {{- if $showAnniversaryBanner -}}
       {{ partial "anniversary-banner.html" . }}
     {{- end -}}
+    {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
     {{- $flushHero := or .IsHome .Params.flushHero -}}
     {{- $topPadding := cond $flushHero "" "pt-12" -}}
-    {{- if and $showWebinarBanner (not $showAnniversaryBanner) -}}
+    {{- if and $showThinStrip (not $showAnniversaryBanner) -}}
       {{- $topPadding = cond $flushHero "" "pt-24 md:pt-18" -}}
-    {{- else if and (not $showWebinarBanner) $showAnniversaryBanner -}}
+    {{- else if and (not $showThinStrip) $showAnniversaryBanner -}}
       {{- $topPadding = cond $flushHero "" "pt-28 md:pt-24" -}}
-    {{- else if and $showWebinarBanner $showAnniversaryBanner -}}
+    {{- else if and $showThinStrip $showAnniversaryBanner -}}
       {{- $topPadding = cond $flushHero "" "pt-40 md:pt-32" -}}
     {{- end -}}
-    <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
+    {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match. */ -}}
+    {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
+    {{- $paddingNoStrip := cond $flushHero "" "pt-12" -}}
+    {{- if $showAnniversaryBanner -}}
+      {{- $paddingNoStrip = cond $flushHero "" "pt-28 md:pt-24" -}}
+    {{- end -}}
+    <div class="bg-gray-100 min-h-[80vh]{{ if not $webinarIsThinStrip }} {{ $topPadding }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $paddingNoStrip }}' : '{{ $topPadding }}'"{{ end }}>
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
@@ -114,7 +133,7 @@
     <script
       src="https://umami.skymatic.de/script.js"
       data-website-id="{{ .Site.Params.umamiWebsiteId }}"
-      integrity="sha384-LTPPwaLbU0osA3KlbZu0gbKM+OX2/iNJYVcdtY6ZFUJfsuj7LJ+40McwiPCPpKad"
+      integrity="sha384-KovSIPpdrAZNHs+M91d7FOrLat5rqcpTtQUq/GLIzYwAt+eN0EQHlgdUgm/0U2j+"
       crossorigin="anonymous"
       defer
       {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>

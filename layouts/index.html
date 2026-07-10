@@ -27,14 +27,19 @@
 {{ define "main" }}
   {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners; desktop padding already covers all banner combos, so only the mobile value scales below */ -}}
   {{- $showWebinarBanner := .Scratch.Get "webinarBannerActive" -}}
+  {{- $showSaleBanner := .Scratch.Get "saleBannerActive" -}}
   {{- $showAnniversaryBanner := .Scratch.Get "anniversaryBannerActive" -}}
+  {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
   {{- $heroTopPad := "pt-16" -}}
-  {{- if and $showWebinarBanner $showAnniversaryBanner -}}
+  {{- if and $showThinStrip $showAnniversaryBanner -}}
     {{- $heroTopPad = "pt-40" -}}
-  {{- else if or $showWebinarBanner $showAnniversaryBanner -}}
+  {{- else if or $showThinStrip $showAnniversaryBanner -}}
     {{- $heroTopPad = "pt-28" -}}
   {{- end -}}
-  <header class="hero-split-contrast relative overflow-hidden {{ $heroTopPad }} md:pt-24 lg:pt-24">
+  {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match (mirrors baseof.html). */ -}}
+  {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
+  {{- $heroPadNoStrip := cond $showAnniversaryBanner "pt-28" "pt-16" -}}
+  <header class="hero-split-contrast relative overflow-hidden{{ if not $webinarIsThinStrip }} {{ $heroTopPad }}{{ end }} md:pt-24 lg:pt-24"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $heroPadNoStrip }}' : '{{ $heroTopPad }}'"{{ end }}>
     <div class="hero-aura-wrap absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div class="hero-aura hero-aura-primary"></div>
       <div class="hero-aura hero-aura-secondary"></div>
@@ -159,6 +164,12 @@
         </div>
       </section>
     </div>
+
+    {{ if .Site.Params.paddleDesktopSalePriceId }}
+    <p class="relative z-10 text-center text-sm text-gray-500 mt-6">
+      * {{ i18n "pricing_discount_note" }}
+    </p>
+    {{ end }}
 
   </header>
 

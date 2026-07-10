@@ -35,7 +35,7 @@
 - id: accept_hub_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
 - id: accept_hub_managed_early_access_optional
-  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">Early Access</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Cryptomator Hub 1.5.0</a> mit brandneuen Features und einer verlängerten kostenlosen 100-Tage-Testphase testen (optional)."
+  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">Early Access</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Cryptomator Hub 1.5.0</a> mit brandneuen Features und einer verlängerten kostenlosen 60-Tage-Testphase testen (optional)."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
@@ -411,7 +411,7 @@
 - id: hub_header_kicker_early_access
   translation: "Hub 1.5.0 Early Access*"
 - id: hub_header_early_access_note
-  translation: "<a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access</a> beinhaltet brandneue Features und eine verlängerte kostenlose 100-Tage-Testphase."
+  translation: "<a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access</a> beinhaltet brandneue Features und eine verlängerte kostenlose 60-Tage-Testphase."
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -525,11 +525,20 @@
   translation: "Bitte warten, während wir deine Abonnement-Informationen laden."
 
 - id: hub_billing_createsession_description
-  translation: "Um auf deine Abonnement-Informationen zuzugreifen, wird ein Bestätigungslink an die E-Mail-Adresse gesendet, die du für den Kauf verwendet hast."
+  translation: "Hub-Instanz-Details werden abgerufen …"
 - id: hub_billing_createsession_success_description
   translation: "Bitte überprüfe deine E-Mails auf den Link zur Verwaltung deines Hub-Abonnements."
 - id: hub_billing_createsession_submit
-  translation: "Zugang anfordern"
+  translation: "Link senden"
+- id: hub_billing_createsession_email_description
+  translation: "Bereit zum Abonnieren? Um die Abrechnung für diesen Hub einzurichten, gib deine E-Mail-Adresse ein und wir senden dir einen Link, um zur Zahlung zu gelangen."
+- id: hub_billing_createsession_email_placeholder
+  translation: "Deine E-Mail-Adresse"
+- id: hub_billing_createsession_found_description
+  translation: "Wir haben ein bestehendes Abonnement für diesen Hub gefunden. Wir senden den Bestätigungslink an:"
+
+- id: hub_billing_linkexpired_description
+  translation: "Dieser Link ist nicht mehr gültig. Bestätigungslinks können nur einmal verwendet werden und verfallen nach einer Weile. Bitte fordere über deine Hub-Instanz einen neuen Link an."
 
 - id: hub_billing_manage_status_title
   translation: "Status"
@@ -1250,6 +1259,32 @@
 - id: contact_sales_step_3_description
   translation: "Du erhältst innerhalb eines Werktages eine detaillierte Antwort von unserem Team."
 
+# Withdrawal Form
+- id: withdrawal_name
+  translation: "Name"
+- id: withdrawal_email
+  translation: "E-Mail-Adresse"
+- id: withdrawal_po_number
+  translation: "Bestellnummer"
+- id: withdrawal_po_number_placeholder
+  translation: "Die Bestellnummer aus deiner Kaufbestätigung"
+- id: withdrawal_product
+  translation: "Produkt"
+- id: withdrawal_product_placeholder
+  translation: "Bitte wähle ein Produkt"
+- id: withdrawal_reason
+  translation: "Grund (optional)"
+- id: withdrawal_reason_placeholder
+  translation: "Wenn du möchtest, teile uns mit, warum du widerrufst..."
+- id: withdrawal_submit
+  translation: "Widerruf absenden"
+- id: withdrawal_success_title
+  translation: "Widerruf erhalten!"
+- id: withdrawal_success_message
+  translation: "Vielen Dank für deinen Widerruf. Wir bearbeiten deine Rückerstattungsanfrage und bestätigen dir den Eingang per E-Mail."
+- id: withdrawal_what_happens_title
+  translation: "Was passiert als Nächstes?"
+
 # Partner Form
 - id: partner_first_name
   translation: "Vorname"
@@ -1353,6 +1388,14 @@
 # Live Webinar Banner
 - id: webinar_banner
   translation: "Live-Webinar – <a class=\"whitespace-nowrap font-bold\" href=\"/de/webinar/\">Jetzt anmelden<i class=\"fa-regular fa-arrow-right ml-1\" aria-hidden=\"true\"></i></a>"
+- id: webinar_banner_upcoming
+  translation: "Live-Webinar: %NAME% · %WHEN%"
+- id: webinar_banner_live
+  translation: "Jetzt live: %NAME%"
+- id: webinar_banner_cta
+  translation: "Jetzt anmelden"
+- id: webinar_banner_cta_live
+  translation: "Jetzt beitreten"
 
 # Webinar Form
 - id: webinar_first_name
@@ -1399,18 +1442,20 @@
   translation: "Abonniere unseren Hub-Newsletter und wir informieren dich, sobald das nächste Webinar feststeht."
 
 # Sale
+- id: nav_promotion
+  translation: ":sunny: Summer Sale: 50 %* Rabatt auf Cryptomator – Bis&nbsp;zum&nbsp;07.&nbsp;Juli!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/de/blog/2026/07/01/summer-sale-2026/\">Mehr erfahren&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: sale_off
   translation: "Rabatt"
 - id: for_individuals_header_kicker_sale
-  translation: "10-Jahres-Jubiläums-Sale*"
+  translation: "Summer Sale*"
 - id: home_header_kicker_sale
-  translation: "10-Jahres-Jubiläum"
+  translation: "Summer Sale"
 - id: pricing_supporter_cert_price_discounted
-  translation: "ab 10 €"
+  translation: "ab 14.99 €"
 - id: pricing_android_price_discounted
-  translation: "10 €"
+  translation: "14.99 €"
 - id: pricing_ios_price_discounted
-  translation: "10 €"
+  translation: "14.99 €"
 - id: pricing_discount_note
   translation: "Die Höhe des Rabatts kann je nach Region variieren."
 
