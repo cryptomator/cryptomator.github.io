@@ -209,20 +209,27 @@
     white-space: nowrap;
   }
 
-  /* Logo: identical halo on both scenes; the wobble animation is assigned per
-     scene (name + clock) next to each scene's other rules. */
+  /* Halo: the same soft radial glow behind every haloed bot, tinted per scene
+     accent (green on the Cryptomator card, teal on the Hub card); each element
+     keeps only its own size and position. */
+  .hero-scene-logo,
+  .hero-hub-anchor-cryp {
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--scene-accent, var(--color-primary)) 14%, transparent) 0%, transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Logo: the scene's centre bot; the wobble animation is assigned per scene
+     (name + clock) next to each scene's other rules. */
   .hero-scene-logo {
     position: absolute;
     top: 90px;
     left: 160px;
     width: 96px;
     height: 96px;
-    border-radius: 50%;
-    background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 14%, transparent) 0%, transparent 70%);
     transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 2;
   }
 
@@ -324,10 +331,10 @@
     53%, 100% { transform: rotate(0deg); }
   }
 
-  /* Hub bot wobble — the same quick ±1.5° rock as the Cryptomator card (0.5%
-     steps ≈ the cryp scene's 1% steps on its half-length 5s clock), twice per
-     sequence: when the file lands (25%) and when the key lands (75%). */
-  @keyframes hero-hub-logo-wobble {
+  /* Cryptomator (top) wobble — the same quick ±1.5° rock as the Cryptomator
+     card (0.5% steps ≈ the cryp scene's 1% steps on its half-length 5s clock),
+     twice per sequence: when the file lands (25%) and when the key lands (75%). */
+  @keyframes hero-hub-top-wobble {
     0%, 25%   { transform: rotate(0deg); }
     25.5%     { transform: rotate(-1.5deg); }
     26%       { transform: rotate(1.5deg); }
@@ -341,9 +348,9 @@
     78%, 100% { transform: rotate(0deg); }
   }
 
-  /* Hub apex wobble — same rock, once per sequence, when the fingerprint
-     reaches it (50%). */
-  @keyframes hero-hub-apex-wobble {
+  /* Hub bot (bottom) wobble — same rock, once per sequence, when the
+     fingerprint reaches it (50%). */
+  @keyframes hero-hub-bot-wobble {
     0%, 50%   { transform: rotate(0deg); }
     50.5%     { transform: rotate(-1.5deg); }
     51%       { transform: rotate(1.5deg); }
@@ -353,32 +360,33 @@
   }
 
   /* ───── Hub scene: a diamond/prism of the four nodes ─────
-     Hub (top), Team (left), Cloud (right) and Cryptomator (bottom) form a
-     diamond, keeping the same outer width as the Cryptomator card. Data flows
-     along the lower V (Team → Cryptomator → Cloud); the Hub oversees from the
-     apex, connected down the top edges and a center axis to all three, and
-     issues the vault key down that axis to the bot. */
+     Cryptomator (top), Team (left), Cloud (right) and the Hub bot (bottom)
+     form a diamond, keeping the same outer width as the Cryptomator card. Data
+     flows along the upper V (Team → Cryptomator → Cloud); the Hub oversees
+     from the bottom, connected along the lower edges and the center axis, and
+     issues the vault key up that axis to the Cryptomator bot. */
 
   .hero-hub-anchor-team  { top: 90px;  left: 40px;  }
   .hero-hub-anchor-cloud { top: 90px;  left: 280px; }
-  .hero-hub-anchor-hub   { top: 30px;  left: 160px; }
+  .hero-hub-anchor-cryp  { top: 30px;  left: 160px; }
 
-  /* Hub is the subject of this card — its bot sits above the center at a slightly
-     reduced size (the tight viewBox makes it read large) so it stays balanced
-     within the scene, with a soft secondary glow + drop-shadow. */
+  /* The Cryptomator bot sits above the center at a slightly reduced size so it
+     stays balanced within the scene; both hub nodes keep the halo at 1.5× their
+     bot's width. */
+  .hero-hub-anchor-cryp {
+    width: 66px;
+    height: 66px;
+  }
+
   .hero-hub-anchor-img {
     width: 44px;
     height: 44px;
     object-fit: contain;
-    filter:
-      drop-shadow(0 3px 9px rgba(47, 72, 88, 0.30))
-      drop-shadow(0 0 1px rgba(47, 72, 88, 0.35));
     transform-origin: center bottom;
-    animation: hero-hub-apex-wobble var(--scene-cycle) ease-in-out infinite;
+    animation: hero-hub-top-wobble var(--scene-cycle) ease-in-out infinite;
   }
 
-  /* Cryptomator sits at the bottom vertex of the diamond at full size, the same
-     as the bot on the Cryptomator card (only the position differs). */
+  /* Hub bot — bottom vertex of the diamond. */
   .hero-hub-scene .hero-scene-logo {
     top: 150px;
     width: 78px;
@@ -387,7 +395,7 @@
 
   .hero-hub-scene .hero-scene-logo-img {
     width: 52px;
-    animation: hero-hub-logo-wobble var(--scene-cycle) ease-in-out infinite;
+    animation: hero-hub-bot-wobble var(--scene-cycle) ease-in-out infinite;
   }
 
   /* Idle breathing — the outer anchor icons scale gently, offset in time so the
@@ -402,33 +410,34 @@
   .hero-cryp-anchor-cloud .hero-scene-icon { animation-delay: -4s; }
 
   /* Hub traveler — same shared scaffold as the Cryptomator card, mapped onto
-     the lower V of the diamond: Team (40,90) → bot (160,150) → Cloud (280,90).
-     Legs start and end exactly on the anchor centres, so the pops are hidden
-     behind the discs/logos. */
+     the upper V of the diamond: Team (40,90) → Cryptomator (160,30) → Cloud
+     (280,90). Legs start and end exactly on the anchor centres, so the pops
+     are hidden behind the discs/logos. */
   .hero-hub-traveler       { animation: hero-hub-travel var(--scene-cycle) ease-in-out infinite; }
   .hero-hub-traveler-file  { animation: hero-hub-file-arc var(--scene-cycle) ease-in-out infinite; }
   .hero-hub-traveler-vault { animation: hero-hub-vault-arc var(--scene-cycle) ease-in-out infinite; }
 
   /* Sequential story — four back-to-back quarter legs, no pause: the container
-     carries the file Team→bot (0–25%), HOLDS behind the bot through the
-     fingerprint (25–50%) and key (50–75%) steps, then carries the vault
-     bot→Cloud (75–100%). The loop's 100%→0% snap back to Team happens while
-     both faces are invisible behind the Cloud disc / Team disc. */
+     carries the file Team→Cryptomator (0–25%), HOLDS behind the Cryptomator
+     logo through the fingerprint (25–50%) and key (50–75%) steps, then carries
+     the vault Cryptomator→Cloud (75–100%). The loop's 100%→0% snap back to
+     Team happens while both faces are invisible behind the Cloud disc / Team
+     disc. */
   @keyframes hero-hub-travel {
-    0%       { transform: translate3d(0, 0, 0); }        /* Team (40,90) — file sets off immediately */
-    25%, 75% { transform: translate3d(120px, 60px, 0); } /* bot (160,150) — hold through fingerprint + key */
-    100%     { transform: translate3d(240px, 0, 0); }    /* Cloud (280,90) — vault arrives, invisible snap-back */
+    0%       { transform: translate3d(0, 0, 0); }         /* Team (40,90) — file sets off immediately */
+    25%, 75% { transform: translate3d(120px, -60px, 0); } /* Cryptomator (160,30) — hold through fingerprint + key */
+    100%     { transform: translate3d(240px, 0, 0); }     /* Cloud (280,90) — vault arrives, invisible snap-back */
   }
 
-  /* File face — visible from 0% on its Team→bot leg; pops away at 25% while
-     hidden behind the bot (no fades). */
+  /* File face — visible from 0% on its Team→Cryptomator leg; pops away at 25%
+     while hidden behind the Cryptomator logo (no fades). */
   @keyframes hero-hub-file-arc {
-    0%, 25%      { opacity: 1; } /* pops in behind the Team disc, travels to the bot */
-    25.01%, 100% { opacity: 0; } /* absorbed by the bot (encrypt) */
+    0%, 25%      { opacity: 1; } /* pops in behind the Team disc, travels to the Cryptomator logo */
+    25.01%, 100% { opacity: 0; } /* absorbed by the Cryptomator bot (encrypt) */
   }
 
-  /* Vault face — pops in behind the bot at 75%, after the key has landed, and
-     stays visible until the loop ends behind the Cloud disc. */
+  /* Vault face — pops in behind the Cryptomator logo at 75%, after the key has
+     landed, and stays visible until the loop ends behind the Cloud disc. */
   @keyframes hero-hub-vault-arc {
     0%, 75%      { opacity: 0; } /* hidden through the file, fingerprint and key steps */
     75.01%, 100% { opacity: 1; } /* carries on to the cloud until the loop snaps */
@@ -453,26 +462,27 @@
     transition: opacity 0.3s ease;
   }
 
-  /* Hub key — the Hub issues the vault key down the centre axis to the
-     Cryptomator bot on the third quarter leg (50–75%), after the fingerprint has
-     reached the Hub and before the vault sets off. Pops in behind the Hub bot,
-     pops away behind the Cryptomator bot. */
+  /* Hub key — the Hub issues the vault key up the centre axis to the
+     Cryptomator bot on the third quarter leg (50–75%), after the fingerprint
+     has reached the Hub and before the vault sets off. Pops in behind the Hub
+     bot, pops away behind the Cryptomator logo. */
   .hero-hub-key {
-    top: 30px;
+    top: 150px;
     left: 160px;
     width: 28px;
     height: 28px;
     margin-top: -14px;
     margin-left: -14px;
-    animation: hero-hub-key-drop var(--scene-cycle) ease-in-out infinite;
+    animation: hero-hub-key-rise var(--scene-cycle) ease-in-out infinite;
   }
 
-  @keyframes hero-hub-key-drop {
-    /* Step 3: only AFTER the fingerprint reaches the Hub does the key drop
-       Hub (160,30) -> bot (160,150), 50-75%. Constant size, single eased fall. */
+  @keyframes hero-hub-key-rise {
+    /* Step 3: only AFTER the fingerprint reaches the Hub does the key rise
+       Hub (160,150) -> Cryptomator (160,30), 50-75%. Constant size, single
+       eased climb. */
     0%, 50%      { opacity: 0; transform: translate3d(0, 0, 0); }
     50.01%       { opacity: 1; }
-    75%          { opacity: 1; transform: translate3d(0, 120px, 0); }
+    75%          { opacity: 1; transform: translate3d(0, -120px, 0); }
     75.01%, 100% { opacity: 0; transform: translate3d(0, 0, 0); }
   }
 
@@ -480,7 +490,8 @@
      Hub, which then issues the key; Hub itself NEVER talks to the cloud storage
      (zero knowledge), so the Hub↔Cloud edge deliberately stays static. A small
      fingerprint runs Team → Hub along the mgmt edge on the second quarter leg
-     (25–50%), between the file landing on the bot and the key drop. */
+     (25–50%), between the file landing on the Cryptomator logo and the key
+     rise. */
   .hero-hub-auth {
     top: 90px;
     left: 40px;
@@ -492,12 +503,13 @@
   }
 
   @keyframes hero-hub-auth-run {
-    /* Step 2: only AFTER the file reaches the bot does the fingerprint run
-       Team (40,90) -> Hub (160,30), 25-50%. Pops in behind the Team disc, pops
-       away behind the Hub bot. Constant size, single eased run. */
+    /* Step 2: only AFTER the file reaches the Cryptomator logo does the
+       fingerprint run Team (40,90) -> Hub (160,150), 25-50%. Pops in behind
+       the Team disc, pops away behind the Hub bot. Constant size, single
+       eased run. */
     0%, 25%      { opacity: 0; transform: translate3d(0, 0, 0); }
     25.01%       { opacity: 1; }
-    50%          { opacity: 1; transform: translate3d(120px, -60px, 0); }
+    50%          { opacity: 1; transform: translate3d(120px, 60px, 0); }
     50.01%, 100% { opacity: 0; transform: translate3d(0, 0, 0); }
   }
 
