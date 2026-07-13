@@ -57,6 +57,9 @@
       {{ $css := resources.Get "css/main.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
+    {{ block "styles" . }}
+      <!-- optional additional page-specific stylesheets, loaded after the main stylesheet -->
+    {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
     {{ partial "hreflang.html" . }}
     {{ if eq hugo.Environment "staging" }}
@@ -105,19 +108,20 @@
       {{ partial "anniversary-banner.html" . }}
     {{- end -}}
     {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
-    {{- $topPadding := cond .IsHome "" "pt-12" -}}
+    {{- $flushHero := or .IsHome .Params.flushHero -}}
+    {{- $topPadding := cond $flushHero "" "pt-12" -}}
     {{- if and $showThinStrip (not $showAnniversaryBanner) -}}
-      {{- $topPadding = cond .IsHome "" "pt-24 md:pt-18" -}}
+      {{- $topPadding = cond $flushHero "" "pt-24 md:pt-18" -}}
     {{- else if and (not $showThinStrip) $showAnniversaryBanner -}}
-      {{- $topPadding = cond .IsHome "" "pt-28 md:pt-24" -}}
+      {{- $topPadding = cond $flushHero "" "pt-28 md:pt-24" -}}
     {{- else if and $showThinStrip $showAnniversaryBanner -}}
-      {{- $topPadding = cond .IsHome "" "pt-40 md:pt-32" -}}
+      {{- $topPadding = cond $flushHero "" "pt-40 md:pt-32" -}}
     {{- end -}}
     {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match. */ -}}
     {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
-    {{- $paddingNoStrip := cond .IsHome "" "pt-12" -}}
+    {{- $paddingNoStrip := cond $flushHero "" "pt-12" -}}
     {{- if $showAnniversaryBanner -}}
-      {{- $paddingNoStrip = cond .IsHome "" "pt-28 md:pt-24" -}}
+      {{- $paddingNoStrip = cond $flushHero "" "pt-28 md:pt-24" -}}
     {{- end -}}
     <div class="bg-gray-100 min-h-[80vh]{{ if not $webinarIsThinStrip }} {{ $topPadding }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $paddingNoStrip }}' : '{{ $topPadding }}'"{{ end }}>
     <!-- Code that all your templates share, like a header -->
