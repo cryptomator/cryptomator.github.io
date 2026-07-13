@@ -10,7 +10,7 @@
   </div>
   {{- else if .Scratch.Get "webinarBannerActive" -}}
   {{- $webinarPath := printf "%s/webinar/" .Site.LanguagePrefix -}}
-  <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5" x-show="webinar.state !== 'none'" x-cloak>
+  <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5" x-show="webinar.state !== 'none'">
     <p>
       <span x-show="webinar.state !== 'upcoming' && webinar.state !== 'live'">{{ i18n "webinar_banner" | safeHTML }}</span>
       <span x-show="webinar.state === 'upcoming'" x-cloak>
