@@ -394,7 +394,9 @@
   }
 
   .hero-hub-scene .hero-scene-logo-img {
-    width: 52px;
+    /* 52px like the old unpadded asset would get, scaled up by the canvas's
+       key-centering padding (988/887) so the drawn bot keeps its size. */
+    width: 58px;
     animation: hero-hub-bot-wobble var(--scene-cycle) ease-in-out infinite;
   }
 
