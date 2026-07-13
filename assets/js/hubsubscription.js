@@ -188,6 +188,7 @@ class HubSubscription {
       hubId: this._subscriptionData.hubId,
       returnUrl: this._subscriptionData.returnUrl,
       tokenTransfer: this._subscriptionData.tokenTransfer,
+      verificationLinkTarget: 'billing',
       captcha: this._subscriptionData.captcha
     };
     if (this._subscriptionData.email) {

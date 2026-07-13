@@ -306,14 +306,12 @@
   translation: "Join Community"
 
 # Home
-- id: home_header_kicker
-  translation: "4,000,000+ Downloads"
 - id: home_header_title
-  translation: "Protect your privacy in"
-- id: home_header_title_last_item
-  translation: "any cloud"
-- id: home_header_description
-  translation: "With Cryptomator, the key to your data is in your hands. Cryptomator secures and encrypts your sensitive data in your favorite cloud service. So you can rest assured that only you can access your data."
+  translation: "Protect your Cloud Data"
+- id: home_clouds_sharepoint_tooltip
+  translation: "Includes Microsoft Teams"
+- id: home_header_supported_clouds
+  translation: "See compatible clouds"
 - id: home_header_woman_cloud_alt
   translation: "Relaxed woman on a cloud secured by a lock"
 - id: home_header_for_individuals_title
@@ -324,6 +322,30 @@
   translation: "Free 30-Day Trial"
 - id: home_header_for_teams_cta
   translation: "For Teams"
+
+- id: home_hero_card_just_me
+  translation: "For Individuals"
+- id: home_hero_card_our_team
+  translation: "For Teams"
+- id: home_hero_hub_node_team
+  translation: "Team"
+- id: home_hero_cryptomator_description
+  translation: "Encrypt personal documents, photos, and work files in any cloud."
+- id: home_hero_cryptomator_cta
+  translation: "Download Free"
+- id: home_hero_cryptomator_link
+  translation: "Explore all features"
+- id: home_hero_hub_description
+  translation: "Collaborate securely using centralized access management and zero-knowledge encryption."
+- id: home_hero_hub_cta
+  translation: "Start Free Trial"
+- id: home_hero_hub_link
+  translation: "See how Hub works"
+- id: home_hero_cryp_label_you
+  translation: "You"
+- id: home_hero_cryp_label_cloud
+  translation: "Cloud"
+
 - id: home_get_started_title
   translation: "How will you use Cryptomator?"
 - id: home_get_started_for_individuals_title
@@ -705,8 +727,6 @@
   translation: "Step <span x-text=\"feedbackData.currentStep + 1\"></span> of <span x-text=\"steps.length\"></span>"
 - id: hub_ce_registration_steps_next
   translation: "Next"
-- id: hub_ce_registration_steps_continue
-  translation: "Continue"
 
 - id: hub_ce_registration_step_1_nav_title
   translation: "Email Address"
@@ -723,17 +743,13 @@
   translation: "We are going to send a confirmation email to <span x-text=\"submitData.email\"></span>"
 - id: hub_ce_registration_step_2_check_email
   translation: "Please check your e-mails."
-- id: hub_ce_registration_step_2_email_verified
-  translation: "Your email has been verified successfully."
 
 - id: hub_ce_registration_step_3_license_nav_title
   translation: "License Key"
 - id: hub_ce_registration_step_3_license_title
-  translation: "Your Community Edition License Key"
-- id: hub_ce_registration_step_3_loading
-  translation: "Loading license key..."
+  translation: "Your Community Edition License"
 - id: hub_ce_registration_step_3_success
-  translation: "Your new license key:"
+  translation: "Your email has been verified successfully. Return to your Hub instance, which will collect your license key automatically."
 
 
 # Hub Managed
