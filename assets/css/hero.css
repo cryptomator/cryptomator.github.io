@@ -209,18 +209,6 @@
     white-space: nowrap;
   }
 
-  /* Halo: the same soft radial glow behind every haloed bot, tinted per scene
-     accent (green on the Cryptomator card, teal on the Hub card); each element
-     keeps only its own size and position. */
-  .hero-scene-logo,
-  .hero-hub-anchor-cryp {
-    border-radius: 50%;
-    background: radial-gradient(circle, color-mix(in srgb, var(--scene-accent, var(--color-primary)) 14%, transparent) 0%, transparent 70%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   /* Logo: the scene's centre bot; the wobble animation is assigned per scene
      (name + clock) next to each scene's other rules. */
   .hero-scene-logo {
@@ -230,6 +218,9 @@
     width: 96px;
     height: 96px;
     transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 2;
   }
 
@@ -371,13 +362,7 @@
   .hero-hub-anchor-cryp  { top: 30px;  left: 160px; }
 
   /* The Cryptomator bot sits above the center at a slightly reduced size so it
-     stays balanced within the scene; both hub nodes keep the halo at 1.5× their
-     bot's width. */
-  .hero-hub-anchor-cryp {
-    width: 66px;
-    height: 66px;
-  }
-
+     stays balanced within the scene. */
   .hero-hub-anchor-img {
     width: 44px;
     height: 44px;
