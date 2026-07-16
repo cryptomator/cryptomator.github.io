@@ -30,6 +30,8 @@ class HubSubscription {
     // the billing session.
     this._subscriptionData.tokenTransfer = searchParams.get('token_transfer') ?? 'queryParam';
     this._subscriptionData.session = searchParams.get('session');
+    this._invoicePriceRequestId = 0;
+    this._awaitingInvoiceCaptcha = false;
     if (this._subscriptionData.session) {
       // We returned from the confirmation link (/hub/billing?session=<id>): resolve the verified
       // billing session and continue into the manage or checkout flow.
@@ -215,8 +217,7 @@ class HubSubscription {
 
   createSession() {
     if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      this.showInvalidFields();
       return;
     }
 
@@ -226,6 +227,7 @@ class HubSubscription {
       hubId: this._subscriptionData.hubId,
       returnUrl: this._subscriptionData.returnUrl,
       tokenTransfer: this._subscriptionData.tokenTransfer,
+      verificationLinkTarget: 'billing',
       captcha: this._subscriptionData.captcha
     };
     if (this._subscriptionData.email) {
@@ -375,14 +377,16 @@ class HubSubscription {
 
   checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      this.showInvalidFields();
       return;
     }
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     this.customCheckout(this.selectedPlanId(), locale);
+    // refresh the card captcha for a potential retry; it is the only altcha element rendered
+    // while the card method is selected
+    this._form.querySelector('altcha-widget')?.reset();
   }
 
   customCheckout(productId, locale) {
@@ -436,34 +440,111 @@ class HubSubscription {
   }
 
   loadInvoicePrice() {
-    if (this._subscriptionData.invoicePrice || !this.invoiceProductId()) {
+    if (!this.invoiceProductId()) {
       return;
     }
+    // Keep the previous price visible (dimmed) while reloading, so the summary doesn't jump on seat changes.
+    this._subscriptionData.invoicePriceLoading = true;
+    this._subscriptionData.invoicePriceError = false;
+    // Stale-response guard: only the latest request may populate the summary after rapid seat changes.
+    let requestId = ++this._invoicePriceRequestId;
     $.ajax({
       url: INVOICE_PRICE_URL,
       type: 'GET',
       data: {
-        product_id: this.invoiceProductId()
+        hub_id: this._subscriptionData.hubId,
+        product_id: this.invoiceProductId(),
+        quantity: this._subscriptionData.quantity,
+        session: this._subscriptionData.session
       }
     }).done(data => {
-      this._subscriptionData.invoicePrice = data;
+      if (requestId === this._invoicePriceRequestId) {
+        this._subscriptionData.invoicePrice = data;
+        this._subscriptionData.invoicePriceLoading = false;
+      }
+    }).fail(_ => {
+      if (requestId === this._invoicePriceRequestId) {
+        this._subscriptionData.invoicePrice = null;
+        this._subscriptionData.invoicePriceError = true;
+        this._subscriptionData.invoicePriceLoading = false;
+      }
     });
   }
 
-  askForInvoiceConfirmation() {
-    if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+  invoiceQuantityMin() {
+    return this._subscriptionData.customBilling?.quantity_min || 1;
+  }
+
+  invoiceQuantityMax() {
+    return this._subscriptionData.customBilling?.quantity_max || 10000;
+  }
+
+  setInvoiceQuantity(quantity) {
+    this._subscriptionData.quantity = Math.min(this.invoiceQuantityMax(), Math.max(this.invoiceQuantityMin(), quantity || this.invoiceQuantityMin()));
+    this.loadInvoicePrice();
+  }
+
+  changeInvoiceQuantity(delta) {
+    this.setInvoiceQuantity(parseInt(this._subscriptionData.quantity, 10) + delta);
+  }
+
+  openInvoiceCheckoutModal() {
+    if (!this.invoiceFieldsValid()) {
+      this.showInvalidFields();
       return;
     }
     this._subscriptionData.errorMessage = '';
-    this._subscriptionData.invoiceConfirmModal.open = true;
+    this._awaitingInvoiceCaptcha = false;
+    this._subscriptionData.invoiceCheckoutModal.open = true;
+    this.loadInvoicePrice();
+  }
+
+  showInvalidFields() {
+    $(this._form).find(':input').addClass('show-invalid');
+    this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+  }
+
+  // Excludes the altcha widget's internal checkbox, whose checked state is mid-flight while the
+  // buy button re-solves a challenge.
+  invoiceFieldsValid() {
+    return $(this._form).find(':input').toArray().filter(el => !el.closest('altcha-widget')).every(el => el.checkValidity());
+  }
+
+  startInvoiceCheckout() {
+    if (!this.invoiceFieldsValid()) {
+      this.showInvalidFields();
+      return;
+    }
+    // Challenges expire server-side within a minute, so solve one fresh at buy time; the widget's
+    // verified event then triggers onInvoiceCaptchaVerified() with the new payload. The modal's
+    // widget is the only altcha element rendered while the invoice method is selected.
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    this._awaitingInvoiceCaptcha = true;
+    let captchaWidget = this._form.querySelector('altcha-widget');
+    captchaWidget?.reset();
+    captchaWidget?.verify();
+  }
+
+  // One-shot: altcha's reset() does not abort an in-flight solve, so a stale solve and the fresh
+  // one can both fire a verified event — only the first may trigger the checkout, and only while
+  // the modal is still open (a solve settling after cancel must not buy anything).
+  onInvoiceCaptchaVerified() {
+    if (!this._subscriptionData.invoiceCheckoutModal.open) {
+      this._awaitingInvoiceCaptcha = false;
+      return;
+    }
+    if (!this._awaitingInvoiceCaptcha) {
+      return;
+    }
+    this._awaitingInvoiceCaptcha = false;
+    this.invoiceCheckout();
   }
 
   invoiceCheckout() {
-    if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+    if (!this.invoiceFieldsValid()) {
+      this.showInvalidFields();
+      this._subscriptionData.inProgress = false;
       return;
     }
 
@@ -498,7 +579,7 @@ class HubSubscription {
 
   onCheckoutSucceeded() {
     this._subscriptionData.state = 'CHECKOUT_SUCCESS';
-    this._subscriptionData.invoiceConfirmModal.open = false;
+    this._subscriptionData.invoiceCheckoutModal.open = false;
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
     this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
@@ -580,8 +661,7 @@ class HubSubscription {
 
   askForChangeSeatsConfirmation() {
     if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      this.showInvalidFields();
       return;
     }
 

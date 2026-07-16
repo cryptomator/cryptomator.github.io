@@ -44,6 +44,8 @@ module:
       target: assets/js/jquery
     - source: node_modules/alpinejs/dist
       target: assets/js/alpinejs
+    - source: node_modules/@alpinejs/focus/dist
+      target: assets/js/alpinejs-focus
     - source: node_modules/lazysizes
       target: assets/js/lazysizes
     - source: node_modules/js-yaml/dist

@@ -601,8 +601,6 @@
   translation: "For Business"
 - id: hub_billing_checkout_audience_consumer
   translation: "For Home"
-- id: hub_billing_checkout_manage_existing_action
-  translation: "Manage an existing subscription"
 
 - id: hub_billing_checkout_standard_title
   translation: "Standard"
@@ -671,8 +669,6 @@
   translation: "An invoice will be issued and sent to your email address."
 - id: hub_billing_checkout_invoice_submit
   translation: "Buy on Invoice"
-- id: hub_billing_checkout_invoice_total
-  translation: "Total"
 - id: hub_billing_checkout_invoice_total_suffix
   translation: "per year (net)"
 - id: hub_billing_checkout_invoice_total_vat_hint
@@ -681,12 +677,18 @@
   translation: "reverse charge – VAT to be accounted for by the recipient"
 - id: hub_billing_checkout_invoice_confirm_title
   translation: "Order Summary"
-- id: hub_billing_checkout_invoice_confirm_product
-  translation: "Product"
 - id: hub_billing_checkout_invoice_confirm_unit_price
   translation: "Price per Seat"
-- id: hub_billing_checkout_invoice_confirm_billing_address
-  translation: "Billing Address"
+- id: hub_billing_checkout_invoice_quantity_decrease
+  translation: "Decrease number of seats"
+- id: hub_billing_checkout_invoice_quantity_increase
+  translation: "Increase number of seats"
+- id: hub_billing_checkout_invoice_price_loading
+  translation: "Loading price…"
+- id: hub_billing_checkout_invoice_price_error
+  translation: "Loading the price failed."
+- id: hub_billing_checkout_invoice_price_retry
+  translation: "Try again"
 
 - id: hub_billing_checkout_success_description
   translation: "Thank you for your purchase! Your subscription is now active."

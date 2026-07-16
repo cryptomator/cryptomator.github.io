@@ -601,8 +601,6 @@
   translation: "Für Unternehmen"
 - id: hub_billing_checkout_audience_consumer
   translation: "Für zu Hause"
-- id: hub_billing_checkout_manage_existing_action
-  translation: "Ein bestehendes Abonnement verwalten"
 
 - id: hub_billing_checkout_standard_title
   translation: "Standard"
@@ -671,8 +669,6 @@
   translation: "Eine Rechnung wird ausgestellt und an deine E-Mail-Adresse gesendet."
 - id: hub_billing_checkout_invoice_submit
   translation: "Auf Rechnung kaufen"
-- id: hub_billing_checkout_invoice_total
-  translation: "Gesamtbetrag"
 - id: hub_billing_checkout_invoice_total_suffix
   translation: "pro Jahr (netto)"
 - id: hub_billing_checkout_invoice_total_vat_hint
@@ -681,12 +677,18 @@
   translation: "Reverse-Charge-Verfahren – Steuerschuldnerschaft des Leistungsempfängers"
 - id: hub_billing_checkout_invoice_confirm_title
   translation: "Bestellübersicht"
-- id: hub_billing_checkout_invoice_confirm_product
-  translation: "Produkt"
 - id: hub_billing_checkout_invoice_confirm_unit_price
   translation: "Preis pro Seat"
-- id: hub_billing_checkout_invoice_confirm_billing_address
-  translation: "Rechnungsadresse"
+- id: hub_billing_checkout_invoice_quantity_decrease
+  translation: "Anzahl der Seats verringern"
+- id: hub_billing_checkout_invoice_quantity_increase
+  translation: "Anzahl der Seats erhöhen"
+- id: hub_billing_checkout_invoice_price_loading
+  translation: "Preis wird geladen …"
+- id: hub_billing_checkout_invoice_price_error
+  translation: "Der Preis konnte nicht geladen werden."
+- id: hub_billing_checkout_invoice_price_retry
+  translation: "Erneut versuchen"
 
 - id: hub_billing_checkout_success_description
   translation: "Vielen Dank für deinen Kauf! Dein Abonnement ist jetzt aktiv."
