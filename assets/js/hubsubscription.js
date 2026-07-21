@@ -269,28 +269,23 @@ class HubSubscription {
       this.onLoadCustomBillingSucceeded(data);
       continueHandler();
     }).fail(xhr => {
-      this.onLoadCustomBillingFailed(xhr.status, xhr.responseJSON?.message || 'Loading custom billing options failed.');
-      if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
-        continueHandler();
-      }
+      this.onLoadCustomBillingFailed(xhr.responseJSON?.message || 'Loading custom billing options failed.');
     });
   }
 
   onLoadCustomBillingSucceeded(data) {
-    this._subscriptionData.customBilling = data.custom_billing;
-    this._subscriptionData.quantity = this._subscriptionData.customBilling.quantity || this._subscriptionData.quantity;
-    this._subscriptionData.email = this._subscriptionData.customBilling.email || this._subscriptionData.email;
+    // custom_billing is null when the hub has no custom billing
+    this._subscriptionData.customBilling = data.custom_billing || null;
+    if (this._subscriptionData.customBilling) {
+      this._subscriptionData.quantity = this._subscriptionData.customBilling.quantity || this._subscriptionData.quantity;
+      this._subscriptionData.email = this._subscriptionData.customBilling.email || this._subscriptionData.email;
+    }
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
   }
 
-  onLoadCustomBillingFailed(status, error) {
-    if (status == 404) {
-      this._subscriptionData.customBilling = null;
-      this._subscriptionData.errorMessage = '';
-    } else {
-      this._subscriptionData.errorMessage = error;
-    }
+  onLoadCustomBillingFailed(error) {
+    this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }
 
