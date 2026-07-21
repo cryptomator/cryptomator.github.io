@@ -94,7 +94,7 @@ class HubSubscription {
       }).done(data => {
         this.onLoadSubscriptionSucceeded(data);
       }).fail(xhr => {
-        this.onLoadSubscriptionFailed(xhr.status, xhr.responseJSON?.message || 'Loading subscription failed.');
+        this.onLoadSubscriptionFailed(xhr.status, 'Loading subscription failed.');
       });
     });
   }
@@ -139,7 +139,7 @@ class HubSubscription {
     }).done(data => {
       this.onLoadBillingSessionSucceeded(data);
     }).fail(xhr => {
-      this.onLoadBillingSessionFailed(xhr.status, xhr.responseJSON?.message || 'Loading billing session failed.');
+      this.onLoadBillingSessionFailed(xhr.status, 'Loading billing session failed.');
     });
   }
 
@@ -189,7 +189,7 @@ class HubSubscription {
     }).done(data => {
       this.onLookupCustomerSucceeded(data);
     }).fail(xhr => {
-      this.onLookupCustomerFailed(xhr.status, xhr.responseJSON?.message || 'Looking up your subscription failed.');
+      this.onLookupCustomerFailed(xhr.status, 'Looking up your subscription failed.');
     });
   }
 
@@ -241,7 +241,7 @@ class HubSubscription {
     }).done(_ => {
       this.onCreateSessionSucceeded();
     }).fail(xhr => {
-      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Requesting confirmation link failed.');
+      this.onCreateSessionFailed('Requesting confirmation link failed.');
     });
   }
 
@@ -269,7 +269,7 @@ class HubSubscription {
       this.onLoadCustomBillingSucceeded(data);
       continueHandler();
     }).fail(xhr => {
-      this.onLoadCustomBillingFailed(xhr.responseJSON?.message || 'Loading custom billing options failed.');
+      this.onLoadCustomBillingFailed('Loading custom billing options failed.');
     });
   }
 
@@ -305,7 +305,7 @@ class HubSubscription {
       this.onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId);
       continueHandler();
     }).fail(xhr => {
-      this.onLoadPriceFailed(xhr.responseJSON?.message || 'Loading price failed.');
+      this.onLoadPriceFailed('Loading price failed.');
     });
   }
 
@@ -398,7 +398,7 @@ class HubSubscription {
     }).done(data => {
       this.openPaddleCheckout(data.pay_link, locale);
     }).fail(xhr => {
-      this.onPostFailed(xhr.responseJSON?.message || 'Checkout failed.');
+      this.onPostFailed('Checkout failed.');
     });
   }
 
@@ -568,7 +568,7 @@ class HubSubscription {
     }).done(_ => {
       this.onCheckoutSucceeded();
     }).fail(xhr => {
-      this.onPostFailed(xhr.responseJSON?.message || 'Creating subscription failed.');
+      this.onPostFailed('Creating subscription failed.');
     });
   }
 
@@ -606,7 +606,7 @@ class HubSubscription {
         });
       });
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating payment method failed.');
+      this.onPutFailed(xhr.status, 'Updating payment method failed.');
     });
   }
 
@@ -622,7 +622,7 @@ class HubSubscription {
     }).done(_ => {
       this.loadManageSubscription();
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, 'Updating subscription failed.');
     });
   }
 
@@ -642,7 +642,7 @@ class HubSubscription {
       this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
       this.loadManageSubscription();
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, 'Updating subscription failed.');
     });
   }
 
@@ -682,7 +682,7 @@ class HubSubscription {
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Calculating price failed.');
+      this.onPutFailed(xhr.status, 'Calculating price failed.');
     });
   }
 
@@ -701,7 +701,7 @@ class HubSubscription {
       this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
       this.loadManageSubscription();
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, 'Updating subscription failed.');
     });
   }
 
@@ -735,7 +735,7 @@ class HubSubscription {
     }).fail(xhr => {
       // Expected for a card checkout until Paddle's payment webhook links the session to the new
       // billing; the license block then offers a retry.
-      this._subscriptionData.errorMessage = xhr.responseJSON?.message || 'Refreshing license failed.';
+      this._subscriptionData.errorMessage = 'Refreshing license failed.';
       this._subscriptionData.needsTokenRefresh = false;
       this._subscriptionData.inProgress = false;
     });
