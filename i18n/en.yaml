@@ -225,13 +225,64 @@
 - id: for_individuals_header_title
   translation: "Keep your cloud data truly yours"
 - id: for_individuals_header_description
-  translation: "Data in the cloud is often not sufficiently protected. Cryptomator encrypts your documents, photos, and personal files with just a few clicks – ensuring that only you have access. No one else."
+  translation: "Cryptomator encrypts your documents, photos, and personal files in just a few clicks – so only you have access. No one else."
 - id: for_individuals_header_cta
   translation: "Download Now"
 - id: for_individuals_header_cta_description
   translation: "Available for Windows, macOS, Linux, Android, and iOS."
-- id: for_individuals_header_woman_laptop_alt
-  translation: "Person sitting in front of a laptop while Cryptobot next to the person is pointing at the laptop"
+- id: for_individuals_header_link
+  translation: "See how it works"
+
+- id: for_individuals_finder_locked_path_suffix
+  translation: " › Vault"
+- id: for_individuals_finder_unlocked_path
+  translation: "Your Drive › Vault"
+- id: for_individuals_finder_col_name
+  translation: "Name"
+- id: for_individuals_finder_col_size
+  translation: "Size"
+- id: for_individuals_finder_col_modified
+  translation: "Date Modified"
+- id: for_individuals_finder_file_1_name
+  translation: "Vacation Photos"
+- id: for_individuals_finder_file_1_modified
+  translation: "Today, 9:41 AM"
+- id: for_individuals_finder_file_2_name
+  translation: "Tax-Return-2025.pdf"
+- id: for_individuals_finder_file_2_size
+  translation: "2.4 MB"
+- id: for_individuals_finder_file_2_modified
+  translation: "Yesterday, 6:07 PM"
+- id: for_individuals_finder_file_3_name
+  translation: "Passport-Scan.jpg"
+- id: for_individuals_finder_file_3_size
+  translation: "1.8 MB"
+- id: for_individuals_finder_file_3_modified
+  translation: "07/12/2026"
+- id: for_individuals_finder_file_4_name
+  translation: "Finances.xlsx"
+- id: for_individuals_finder_file_4_size
+  translation: "96 KB"
+- id: for_individuals_finder_file_4_modified
+  translation: "07/08/2026"
+- id: for_individuals_finder_file_5_name
+  translation: "Lease-Agreement.pdf"
+- id: for_individuals_finder_file_5_size
+  translation: "640 KB"
+- id: for_individuals_finder_file_5_modified
+  translation: "06/27/2026"
+- id: for_individuals_finder_file_7_name
+  translation: "Resume.docx"
+- id: for_individuals_finder_file_7_size
+  translation: "88 KB"
+- id: for_individuals_finder_file_7_modified
+  translation: "06/05/2026"
+- id: for_individuals_hero_pill
+  translation: "End-to-end encrypted – only you hold the key"
+- id: for_individuals_finder_items
+  translation: "6 items"
+- id: for_individuals_stats_title
+  translation: "Trusted by millions worldwide"
 
 - id: for_individuals_downloads_title
   translation: "3M+"
@@ -403,15 +454,51 @@
 - id: hub_header_title
   translation: "Secure collaboration in the cloud"
 - id: hub_header_description
-  translation: "Cryptomator Hub encrypts your company's confidential data, from personal customer information to internal documents – fully GDPR-compliant, simple to use, and always under your control."
+  translation: "Cryptomator Hub encrypts your company's confidential data – GDPR-compliant, simple to use, and always under your control."
 - id: hub_header_managed_cta
-  translation: "Sign Up Now"
+  translation: "Start Free Trial"
 - id: hub_header_managed_cta_description
   translation: "Start your free 30-day trial today, no credit card required."
 - id: hub_header_kicker_early_access
   translation: "Hub 2.0.0 Early Access*"
 - id: hub_header_early_access_note
   translation: "<a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early access</a> includes brand new features and an extended 60-day free trial."
+- id: hub_header_link
+  translation: "See how it works"
+- id: hub_hero_scene_vault
+  translation: "Shared Vault"
+- id: hub_hero_card_vault_name
+  translation: "Finance"
+- id: hub_hero_group_name
+  translation: "Accounting Team"
+- id: hub_hero_group_subtitle
+  translation: "Group · 8 members"
+- id: hub_hero_tile_groups
+  translation: "Groups"
+- id: hub_hero_tile_audit
+  translation: "Audit Log"
+- id: hub_hero_tile_devices
+  translation: "Devices"
+- id: hub_hero_node_revoked
+  translation: "Access revoked"
+- id: hub_hero_audit_row_1
+  translation: "Access granted · Lena"
+- id: hub_hero_audit_row_2
+  translation: "Device registered · Jonas"
+- id: hub_hero_audit_row_3
+  translation: "Access revoked · Michael"
+- id: hub_hero_ad_row_users
+  translation: "128 users"
+- id: hub_hero_ad_row_groups
+  translation: "12 groups"
+- id: hub_hero_tag_external
+  translation: "External"
+- id: hub_hero_tag_owner
+  translation: "Owner"
+- id: hub_hero_row_external_desc
+  translation: "Tax Advisor"
+- id: hub_hero_unlock_subtitle
+  translation: "Unlock with your company login – no vault password"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 

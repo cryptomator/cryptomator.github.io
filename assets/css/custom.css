@@ -1,7 +1,14 @@
 /* custom classes: */
 .header-bg {
-  background-image: url(/img/home/header-background.avif), linear-gradient(to bottom, rgb(4.31% 5.88% 9.02%) 0%, rgb(7.84% 20.39% 32.94%) 38%, rgb(24.71% 54.51% 85.1%) 72%, rgb(60.39% 78.04% 96.08%) 90%);
+  background-image: url(/img/home/header-background.avif), linear-gradient(to bottom, #1e2b33 0%, rgb(7.84% 20.39% 32.94%) 38%, rgb(24.71% 54.51% 85.1%) 72%, rgb(60.39% 78.04% 96.08%) 90%);
   background-size: auto 100%;
+}
+
+.header-bg-hub {
+  background-image: url(/img/hub/header-clouds.png), url(/img/home/header-background.avif), linear-gradient(to bottom, #ffffff 0%, #eef3f7 55%, #dce8ee 100%);
+  background-size: auto 240px, auto 620px, 100% 100%;
+  background-repeat: repeat-x;
+  background-position: 50% 70px, bottom, center;
 }
 
 .container-prose {

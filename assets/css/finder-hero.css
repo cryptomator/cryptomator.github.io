@@ -1,0 +1,75 @@
+/* Finder-window hero styles — loaded only by layouts/for-individuals/single.html
+   as a separate Tailwind sheet, so other pages do not ship the split-flap rules.
+
+   @reference imports Tailwind and the shared theme/utilities for @apply
+   resolution only — nothing from them is re-emitted here. Hugo pipes this file
+   to the Tailwind CLI with the project root as cwd and does not rewrite
+   @reference like it does @import, so the theme path is root-relative. The
+   @layer components wrapper keeps these rules in the same cascade layer they
+   would have inside main.css, so utility classes in the markup still win over
+   component rules. */
+@reference "tailwindcss";
+@reference "./assets/css/theme.css";
+
+/* Re-declare main.css's cascade layer order: layer order is fixed by first
+   occurrence per document, so without this a bare `@layer components` block
+   would corrupt the order if this sheet were ever loaded before main.css. */
+@layer properties, theme, base, components, utilities;
+
+@layer components {
+  /* Two stacked icons per slot; `.is-locked` on the .finder-hero root decides
+     which face shows. finder-hero.js toggles the class on each flap cycle. */
+  .finder-swap-icon {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .finder-swap-icon i,
+  .finder-swap-icon img {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+  }
+
+  .finder-hero.is-locked .finder-when-unlocked,
+  .finder-hero:not(.is-locked) .finder-when-locked {
+    opacity: 0;
+  }
+
+  .finder-hero.is-locked .finder-flap-name {
+    @apply font-mono text-[13px] text-gray-600;
+  }
+
+  /* The title-bar path flips as one whole panel (departure-board segment)
+     between its locked and unlocked label instead of per-letter flapping. */
+  .finder-path {
+    display: inline-flex;
+    min-width: 0;
+    perspective: 400px;
+  }
+
+  .finder-path-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .finder-path-front,
+  .finder-path-back {
+    backface-visibility: hidden;
+  }
+
+  .finder-path-back {
+    transform: rotateX(180deg);
+  }
+
+  .finder-hero:not(.is-locked) .finder-path-inner {
+    transform: rotateX(180deg);
+  }
+}
