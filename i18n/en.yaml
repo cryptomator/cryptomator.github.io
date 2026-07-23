@@ -487,10 +487,10 @@
   translation: "Device registered · Jonas"
 - id: hub_hero_audit_row_3
   translation: "Access revoked · Michael"
-- id: hub_hero_ad_row_users
-  translation: "128 users"
-- id: hub_hero_ad_row_groups
-  translation: "12 groups"
+- id: hub_hero_row_owner_desc
+  translation: "CFO"
+- id: hub_hero_tile_integrations
+  translation: "Integrations"
 - id: hub_hero_tag_external
   translation: "External"
 - id: hub_hero_tag_owner

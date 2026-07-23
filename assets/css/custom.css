@@ -69,6 +69,15 @@
   @apply bg-primary text-white transition transform duration-200 ease-in-out;
 }
 
+.btn-outline-tertiary2 {
+  @apply border border-tertiary2 text-tertiary2;
+}
+
+.btn-outline-tertiary2:hover,
+.btn-outline-tertiary2:focus {
+  @apply bg-tertiary2 text-white transition transform duration-200 ease-in-out;
+}
+
 .btn-outline-secondary {
   @apply border border-secondary text-secondary;
 }
@@ -104,6 +113,10 @@
 
 .text-link {
   @apply text-primary no-underline hover:underline;
+}
+
+.text-link-tertiary2 {
+  @apply text-tertiary2 no-underline hover:underline;
 }
 
 .font-h1 {
@@ -198,6 +211,42 @@ textarea:read-only {
 .img-muted:hover {
   filter: none;
   opacity: 1;
+}
+
+.idp-swap {
+  display: inline-grid;
+}
+
+.idp-swap > span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: idp-cycle 12s infinite backwards;
+}
+
+.idp-swap > span:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.idp-swap > span:nth-child(3) {
+  animation-delay: 8s;
+}
+
+@keyframes idp-cycle {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  29% { opacity: 1; }
+  33% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .idp-swap > span {
+    animation: none;
+  }
+
+  .idp-swap > span:first-child {
+    opacity: 1;
+  }
 }
 
 .has-tooltip {
