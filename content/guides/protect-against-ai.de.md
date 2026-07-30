@@ -4,7 +4,7 @@ weight: 3
 
 title: "Wie du deine Cloud-Daten vor KI-Bedrohungen schützt: Der ultimative Leitfaden mit Cryptomator"
 description: "Sichere deine Cloud-Daten zuverlässig mit der Ende-zu-Ende-Verschlüsselung von Cryptomator gegen moderne KI-Bedrohungen."
-aliases: ["/de/protecting-data-against-ai"]
+aliases: ["/protecting-data-against-ai"]
 
 ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
