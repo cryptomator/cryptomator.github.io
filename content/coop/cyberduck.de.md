@@ -6,7 +6,6 @@ img2x: /img/coop/cyberduck@2x.png
 description: "Cyberduck ist ein freier Remote-Dateibrowser für Mac und Windows. Ab Version 6.0 unterstützt Cyberduck Cryptomator-Tresore und ist somit perfekt für alle, die ihre Cloud-Daten nicht lokal synchronisieren wollen."
 ctalink: https://cyberduck.io/cryptomator
 ctatext: "Weitere Infos unter cyberduck.io"
-aliases: ["/coop/cyberduck_de.html"]
 ---
 
 <figure class="text-center">

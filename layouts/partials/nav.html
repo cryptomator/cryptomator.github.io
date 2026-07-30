@@ -42,7 +42,7 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        {{- range .Site.Data.nav }}
+        {{- range hugo.Data.nav }}
         {{- if .DropdownFromSection }}
         <!-- Dropdown generated from a section's child pages (e.g. Solutions) -->
         {{- with $.Site.GetPage .Path }}
@@ -148,7 +148,7 @@
               {{- range .Translations }}
               {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
               <li>
-                <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+                <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.Label }}</a>
               </li>
               {{- end }}
             </ul>
@@ -160,7 +160,7 @@
   
   <!-- Smartphone Navigation -->
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden {{ cond (or (.Scratch.Get "saleBannerActive") (.Scratch.Get "webinarBannerActive")) "max-h-[calc(100vh-72px)]" "max-h-[calc(100vh-48px)]" }} overflow-y-auto">
-    {{- range .Site.Data.nav }}
+    {{- range hugo.Data.nav }}
     {{- if .DropdownFromSection }}
     <!-- Dropdown generated from a section's child pages (e.g. Solutions) -->
     {{- with $.Site.GetPage .Path }}
@@ -219,7 +219,7 @@
     <div class="mt-1">
       {{ range .Translations }}
       {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
-      <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+      <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.Label }}</a>
       {{ end }}
     </div>
 

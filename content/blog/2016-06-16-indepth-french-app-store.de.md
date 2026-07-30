@@ -7,7 +7,6 @@ authorlink: https://github.com/tobihagemann
 authorimg: https://avatars.githubusercontent.com/u/2924160?s=96
 notice: Aufgrund der technischen Natur dieses Blog-Beitrags, haben wir diesen nicht übersetzt. Viel Spaß beim Lesen!
 tags: [cryptomator, in-depth, ios]
-aliases: ["/blog/2016/06/16/indepth-french-app-store_de.html"]
 discourseEmbedUrl: https://cryptomator.org/blog/2016/06/16/indepth-french-app-store_en.html
 
 summary: Cryptomator for iOS is now available in the French App Store after gaining French encryption approval. Beyond the U.S. ERN, apps using non-standard cryptography require approval from France's ANSSI, involving a mailed application in French. The process can take a few months, so be prepared for some translation work and waiting.
