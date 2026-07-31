@@ -20,6 +20,7 @@
   - Path: "/guides"
   - Path: "/comparisons"
   - Path: "/compliance"
+  - Path: "/whitepaper"
   - Separator: true
   - Path: "/success-stories"
   - Path: "/coop"
