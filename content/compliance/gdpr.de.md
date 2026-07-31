@@ -4,7 +4,7 @@ weight: 1
 
 title: "DSGVO-Konformität"
 description: "Verschlüsselte Daten mit Cryptomator dürfen auch außerhalb der EU gespeichert werden – datenschutzkonform und sicher."
-aliases: ["/de/gdpr", "/de/faq/gdpr", "/de/faq/gdpr/gdpr-compliant", "/de/faq/gdpr/dpa-cryptomator", "/de/faq/gdpr/dpa-cloudprovider"]
+aliases: ["/gdpr", "/faq/gdpr", "/faq/gdpr/gdpr-compliant", "/faq/gdpr/dpa-cryptomator", "/faq/gdpr/dpa-cloudprovider"]
 
 ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine vertraulichen Dateien in der Cloud mit Ende-zu-Ende-Verschlüsselung. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."

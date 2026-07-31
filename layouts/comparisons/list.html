@@ -19,7 +19,7 @@
             </tr>
           </thead>
           <tbody x-data="{ isExplanationOpen: {} }" class="divide-y divide-gray-200">
-            {{ $data := index $.Site.Data $.Site.Language.Lang }}
+            {{ $data := index hugo.Data $.Site.Language.Lang }}
             {{ range $category := $data.comparisons }}
               <tr>
                 {{ $colspan := add (len $.Pages) 1 }}
