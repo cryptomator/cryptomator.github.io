@@ -299,6 +299,11 @@
 
     <section class="container text-center py-12 md:py-16 lg:py-20">
       <h2 class="font-h2 mb-8 md:mb-12 lg:mb-16">{{ i18n "home_sponsors_title" . }}</h2>
+      <div class="grid grid-cols-1 gap-8 md:w-3/4 lg:w-2/3 mb-8 md:mb-12 lg:mb-16 mx-auto">
+        <a href="https://uruky.com/" target="_blank" rel="noopener">
+          <img class="inline-block h-20 lazyload aspect-261/90" data-src="/img/sponsors/uruky-white.svg" alt="Uruky Logo"/>
+        </a>
+      </div>
       <a href="{{ .Site.LanguagePrefix }}/sponsors/" role="button" class="btn btn-outline-secondary px-8" data-umami-event="home-become-sponsor">
         <i class="fa-solid fa-heart"></i> {{ i18n "donate_become_sponsor_button" . }}
       </a>
@@ -313,7 +318,7 @@
           </svg>
         </button>
         <ul class="list-none w-full m-0 flex flex-nowrap overflow-hidden">
-          {{ range $.Site.Data.testimonials }}
+          {{ range hugo.Data.testimonials }}
           <li class="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
             <div class="rounded-lg border border-secondary p-4">
               <div class="flex justify-between mb-4">
@@ -346,7 +351,7 @@
     <section class="container text-center py-12 md:py-16 lg:py-20">
       <h2 class="font-h2 mb-8 md:mb-12 lg:mb-16">{{ i18n "home_reception_title" . }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {{ $data := index $.Site.Data $.Site.Language.Lang }}
+        {{ $data := index hugo.Data $.Site.Language.Lang }}
         {{ range $data.reception }}
         <div>
           <a href="{{ .URL }}" target="_blank" rel="noopener">

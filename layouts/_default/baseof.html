@@ -44,9 +44,9 @@
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
     {{ end }}
-    <meta property="og:locale" content="{{ replace .Site.Language.LanguageCode "-" "_" }}" />
+    <meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}" />
     {{ range .Translations }}
-      <meta property="og:locale:alternate" content="{{ replace .Language.LanguageCode "-" "_" }}" />
+      <meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}" />
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
     {{ if hugo.IsDevelopment }}

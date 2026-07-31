@@ -4,7 +4,7 @@ weight: 2
 
 title: "Cloud-Speicher verschlüsseln: Wie Open Source die Sicherheit stärkt"
 description: "Vertrauen ist gut, Kontrolle ist besser: Willst du deinen Cloud-Speicher verschlüsseln, bietet dir Open-Source-Verschlüsselungssoftware noch mehr Schutz."
-aliases: ["/de/open-source", "/de/faq/security", "/de/faq/security/opensource", "/de/faq/security/audits"]
+aliases: ["/open-source", "/faq/security", "/faq/security/opensource", "/faq/security/audits"]
 
 ctatitle: "Du willst deinen Cloud-Speicher mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."

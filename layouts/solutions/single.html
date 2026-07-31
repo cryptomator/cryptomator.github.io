@@ -152,7 +152,7 @@
   {{ end }}
 
   {{ with .Params.faq_key }}
-    {{ $data := index $.Site.Data $.Site.Language.Lang }}
+    {{ $data := index hugo.Data $.Site.Language.Lang }}
     {{ with index $data . }}
     <section class="container py-12">
       <header class="text-center">

@@ -1,7 +1,7 @@
 ---
 title: "Kontakt"
 type: contact
-aliases: ["/de/support"]
+aliases: ["/support"]
 
 build:
   render: true

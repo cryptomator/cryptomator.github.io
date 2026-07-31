@@ -28,3 +28,9 @@ minimumReleaseAge: 4320
 # exclude it from the cooldown
 minimumReleaseAgeExclude:
   - "@awesome.me/*"
+
+# Link node_modules/.bin entries as symlinks rather than shell shims.
+# Hugo runs Node tools as `node <script>` and follows the .bin entry to
+# find that script; it understands a symlink but not pnpm's shim, and
+# otherwise fails with `binary "tailwindcss" is not a Node.js script`.
+preferSymlinkedExecutables: true

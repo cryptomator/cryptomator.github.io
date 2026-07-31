@@ -4,7 +4,7 @@ weight: 1
 
 title: "Dropbox verschlüsseln: Deine Daten sicher schützen mit Cryptomator"
 description: "Schutz für deine Cloud: Wie du mit Cryptomator deine sensiblen Dateien in Dropbox verschlüsseln kannst."
-aliases: ["/de/encrypt-dropbox", "/de/faq/usage/encrypt-dropbox"]
+aliases: ["/encrypt-dropbox", "/faq/usage/encrypt-dropbox"]
 
 ctatitle: "Du willst deine Dropbox mit Cryptomator verschlüsseln?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."
