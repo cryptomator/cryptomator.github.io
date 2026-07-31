@@ -20,9 +20,9 @@
     </div>
     <p class="text-sm text-gray-500">* {{ i18n "hub_header_early_access_note" . | safeHTML }}</p>
 
-    <div class="mt-10 md:mt-12 mb-6 w-full mx-auto">
-      <div class="relative h-[200px] md:h-[400px] overflow-visible">
-        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">
+    <div class="mt-8 mb-6 w-full mx-auto">
+      <div class="relative h-[200px] md:h-[368px] overflow-visible">
+        <div class="hub-scene absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">
           <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[360px] bg-[radial-gradient(ellipse_at_center,rgba(53,73,96,0.07),transparent_70%)] pointer-events-none" aria-hidden="true"></div>
           <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 720 400" aria-hidden="true">
             <path d="M360 175 C340 70 300 30 248 37" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
@@ -30,7 +30,19 @@
             <path d="M360 175 C260 175 180 115 85 115" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
             <path d="M360 175 C420 175 505 220 505 300" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
             <path d="M360 168 C430 160 490 158 553 160" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
-            <path d="M420 330 C440 320 452 310 466 300" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <path class="ad-link" d="M338 282 C290 230 240 140 226 70" fill="none" stroke="#b9c6d4" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
+            <path class="ad-link" d="M382 282 C430 230 480 140 494 70" fill="none" stroke="#b9c6d4" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
+            <path class="ad-link" d="M328 293 C260 260 170 190 112 128" fill="none" stroke="#b9c6d4" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
+            <path d="M332 302 C305 300 275 296 246 292" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <path d="M388 302 C415 300 445 296 474 292" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <circle class="ad-pulse" r="2.5" fill="#8fa3b8">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M388 302 C415 300 445 296 474 292"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle class="ad-pulse" r="2.5" fill="#8fa3b8">
+              <animateMotion dur="3.5s" begin="1.75s" repeatCount="indefinite" path="M332 302 C305 300 275 296 246 292"/>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
             <defs>
               <linearGradient id="severed" gradientUnits="userSpaceOnUse" x1="360" y1="175" x2="215" y2="310">
                 <stop offset="0" stop-color="#b3bfce" stop-opacity="1"/>
@@ -107,6 +119,13 @@
             <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_group_subtitle" }}</span>
           </div>
 
+          <div class="ad-node absolute left-[360px] top-[320px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-44 text-center">
+            <span class="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[130px] bg-[radial-gradient(ellipse_at_center,rgba(53,73,96,0.09),transparent_70%)] pointer-events-none" aria-hidden="true"></span>
+            <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-tertiary2 text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
+            <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight idp-swap"><span>Active Directory</span><span>Entra ID</span><span>Okta</span></span>
+            <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_ad_row_users" }} · {{ i18n "hub_hero_ad_row_groups" }}</span>
+          </div>
+
           <div class="absolute left-[215px] top-[310px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-36 text-center">
             <span class="relative">
               <img src="/img/hub/avatar-4.svg" class="w-14 h-14 rounded-full ring-4 ring-white shadow-md grayscale opacity-60" alt=""/>
@@ -125,18 +144,10 @@
             </div>
           </div>
 
-          <div class="absolute left-[360px] top-[345px] -translate-x-1/2 -translate-y-1/2 z-10 w-32">
-            <div class="rounded-lg bg-white shadow-sm ring-1 ring-gray-200 p-2.5 text-left">
-              <div class="flex items-center gap-1.5 mb-2 text-[9px] font-semibold uppercase tracking-wide text-gray-400"><i class="fa-solid fa-plug" aria-hidden="true"></i>{{ i18n "hub_hero_tile_integrations" }}</div>
-              <div class="flex items-center gap-1.5 mb-1 text-[9px] text-gray-500"><i class="fa-solid fa-sitemap text-[8px] text-gray-300" aria-hidden="true"></i><span class="idp-swap"><span>Active Directory</span><span>Entra ID</span><span>Okta</span></span></div>
-              <div class="flex items-center gap-1.5 mb-1 text-[9px] text-gray-500"><i class="fa-kit fa-sharepoint text-[8px] text-gray-300" aria-hidden="true"></i>SharePoint</div>
-              <div class="flex items-center gap-1.5 text-[9px] text-gray-500"><i class="fa-kit fa-onedrive text-[8px] text-gray-300" aria-hidden="true"></i>OneDrive</div>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div class="flex justify-center mt-4">
+      <div class="flex justify-center mt-3">
         <div class="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-700 shadow-lg ring-1 ring-black/5">
           <i class="fa-solid fa-fingerprint text-primary" aria-hidden="true"></i> {{ i18n "hub_hero_unlock_subtitle" }}
         </div>
