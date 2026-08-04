@@ -37,13 +37,13 @@
       </button>
 
       <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="{{ .Site.LanguagePrefix }}/">
-        {{- $hubNav := or .Params.hubNav (in .RelPermalink "/hub/") -}}
+        {{- $hubNav := or .Params.hubNav (in .RelPermalink "/hub/") (eq .Type "solutions") -}}
         {{ if $hubNav }}
-        <img src="/img/zero-knowledge-bot.svg" class="h-8 aspect-988/877" alt="Logo"/>
+        <img src="/img/zero-knowledge-bot.svg" class="h-8 aspect-988/877" alt=""/>
         {{ else }}
-        <img src="/img/logo.svg" class="h-8 aspect-1110/942" alt="Logo"/>
+        <img src="/img/logo.svg" class="h-8 aspect-1110/942" alt=""/>
         {{ end }}
-        <span class="{{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/for-individuals") (in .RelPermalink "/for-teams") $hubNav) }}hidden{{ end }} md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR{{ if $hubNav }} HUB{{ end }}</span>
+        <span class="{{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/for-individuals") (in .RelPermalink "/for-teams") $hubNav) }}hidden{{ end }} md:block font-headline font-bold{{ if and $hubNav (not .Params.darkNav) }} text-tertiary2{{ end }} ml-2 pb-px">CRYPTOMATOR{{ if $hubNav }} HUB{{ end }}</span>
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">

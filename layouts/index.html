@@ -15,14 +15,7 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "styles" }}
-  {{ if hugo.IsDevelopment }}
-    {{ $heroCss := resources.Get "css/hero.css" | css.TailwindCSS }}
-    <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" media="screen" />
-  {{ else }}
-    {{ $tailwindOpts := dict "minify" true }}
-    {{ $heroCss := resources.Get "css/hero.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
-    <link rel="stylesheet" href="{{ $heroCss.RelPermalink }}" integrity="{{ $heroCss.Data.Integrity }}" media="screen" />
-  {{ end }}
+  {{ partial "page-css.html" "css/hero.css" }}
 {{ end }}
 {{ define "main" }}
   {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners; desktop padding already covers all banner combos, so only the mobile value scales below */ -}}
@@ -185,7 +178,7 @@
         <div class="flex justify-between items-center p-4 border-b border-primary">
           <h3>
             <div class="flex items-center">
-              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt="Logo"/>
+              <img src="/img/logo.svg" class="hidden md:block h-8 mr-2 aspect-1110/942" alt=""/>
               <span class="font-headline font-bold text-primary pb-px">CRYPTOMATOR</span>
             </div>
           </h3>
@@ -223,8 +216,7 @@
         <div class="flex justify-between items-center p-4 border-b border-tertiary2">
           <h3>
             <div class="flex items-center">
-              <img src="/img/zero-knowledge-bot.svg" class="hidden md:block h-8 mr-2 aspect-988/877" alt="Logo"/>
-              <span class="font-headline font-bold text-tertiary2 pb-px">CRYPTOMATOR HUB</span>
+              {{ partial "hub-wordmark.html" "hidden md:block h-8 mr-2" }}
             </div>
           </h3>
           <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
