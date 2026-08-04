@@ -1,3 +1,48 @@
-<svg viewBox="0 90 512 332" xmlns="http://www.w3.org/2000/svg">
-<defs><linearGradient id="ic" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#71c8f4"/><stop offset="1" stop-color="#2f81ed"/></linearGradient></defs><path fill="url(#ic)" d="M293.6 91.5a138.9 138.9 0 0 0 -120.9 71.1 76.2 76.2 0 0 0 -33.2-7.7 76.2 76.2 0 0 0 -75 64 104.9 104.9 0 0 0 -64.4 96.7 104.9 104.9 0 0 0 105 104.8 105.2 105.2 0 0 0 13.2-1h307.6c49.2-5.8 86.2-48.2 86.3-97.9v-.2A98 98 0 0 0 432.5 225.3 138.9 138.9 0 0 0 293.6 91.5z"/>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   viewBox="0 0 80 52"
+   version="1.1"
+   id="svg2">
+  <defs
+     id="defs57">
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern" />
+    <linearGradient
+       xlink:href="#linearGradient1070"
+       id="linearGradient1072"
+       x1="-108.90347"
+       y1="2124.834"
+       x2="-1137.1982"
+       y2="2110.6506"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.07740541,0,0,0.07740541,88.373952,-128.02586)" />
+    <linearGradient
+       id="linearGradient1070">
+      <stop
+         style="stop-color:#3e82f4;stop-opacity:1"
+         offset="0"
+         id="stop1066" />
+      <stop
+         style="stop-color:#93dcf7;stop-opacity:1"
+         offset="1"
+         id="stop1068" />
+    </linearGradient>
+  </defs>
+  <g
+     id="#ffffffff"
+     transform="translate(0,-1089)" />
+  <g
+     id="#2acbffff-4"
+     transform="matrix(0.74035173,0,0,0.75447038,-840.95699,-775.15387)"
+     style="fill:#00ff00" />
+  <path
+     style="opacity:1;fill:url(#linearGradient1072);fill-opacity:1;stroke:none;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 45.864371,0.751258 A 21.518704,21.518704 0 0 0 27.127725,11.764594 11.804325,11.804325 0 0 0 21.976186,10.573131 11.804325,11.804325 0 0 0 10.35494,20.48888 16.255137,16.255137 0 0 0 0.37795502,35.481798 16.255137,16.255137 0 0 0 16.640956,51.721206 16.255137,16.255137 0 0 0 18.679799,51.57426 h 45.187983 a 15.130063,15.202083 0 0 0 0.712824,0.03447 15.130063,15.202083 0 0 0 0.679264,-0.03447 h 1.082164 V 51.49383 A 15.130063,15.202083 0 0 0 79.703385,36.406573 V 36.3774 A 15.130063,15.202083 0 0 0 67.386251,21.477308 21.518704,21.518704 0 0 0 45.864371,0.751258 Z"
+     id="rect955" />
 </svg>
