@@ -804,6 +804,37 @@
 - id: hub_demo_contact_us_button
   translation: "Kontaktiere uns"
 
+# Hub CE Registration
+- id: hub_ce_registration_description
+  translation: "Registriere deine Cryptomator-Hub-Instanz für eine kostenlose Community-Edition-Lizenz."
+
+- id: hub_ce_registration_steps_title
+  translation: "Schritt <span x-text=\"feedbackData.currentStep + 1\"></span> von <span x-text=\"steps.length\"></span>"
+- id: hub_ce_registration_steps_next
+  translation: "Weiter"
+
+- id: hub_ce_registration_step_1_nav_title
+  translation: "E-Mail-Adresse"
+- id: hub_ce_registration_step_1_title
+  translation: "Wie lautet deine E-Mail-Adresse?"
+- id: hub_ce_registration_step_1_email_placeholder
+  translation: "E-Mail-Adresse"
+
+- id: hub_ce_registration_step_2_confirmation_nav_title
+  translation: "Bestätigung"
+- id: hub_ce_registration_step_2_confirmation_title
+  translation: "Bitte bestätige deine E-Mail-Adresse"
+- id: hub_ce_registration_step_2_instructions
+  translation: "Wir senden eine Bestätigungs-E-Mail an <span x-text=\"submitData.email\"></span>"
+- id: hub_ce_registration_step_2_check_email
+  translation: "Bitte prüfe deine E-Mails."
+
+- id: hub_ce_registration_step_3_license_nav_title
+  translation: "Lizenzschlüssel"
+- id: hub_ce_registration_step_3_license_title
+  translation: "Deine Community-Edition-Lizenz"
+- id: hub_ce_registration_step_3_success
+  translation: "Deine E-Mail-Adresse wurde erfolgreich verifiziert. Kehre zu deiner Hub-Instanz zurück – sie holt deinen Lizenzschlüssel automatisch ab."
 
 # Hub Managed
 - id: hub_managed_description
