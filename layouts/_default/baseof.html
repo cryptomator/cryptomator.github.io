@@ -49,14 +49,7 @@
       <meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}" />
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
-    {{ if hugo.IsDevelopment }}
-      {{ $css := resources.Get "css/main.css" | css.TailwindCSS }}
-      <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen" />
-    {{ else }}
-      {{ $tailwindOpts := dict "minify" true }}
-      {{ $css := resources.Get "css/main.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
-      <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
-    {{ end }}
+    {{ partial "page-css.html" "css/main.css" }}
     {{ block "styles" . }}
       <!-- optional additional page-specific stylesheets, loaded after the main stylesheet -->
     {{ end }}
