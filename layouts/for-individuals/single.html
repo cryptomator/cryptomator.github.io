@@ -1,17 +1,14 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/downloads/">
   <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
+  {{- /* Rotation icons for the finder hero; google-drive.svg is the initial src in the markup. */ -}}
+  <link rel="preload" fetchpriority="low" as="image" href="/img/clouds/icloud.svg" type="image/svg+xml">
+  <link rel="preload" fetchpriority="low" as="image" href="/img/clouds/onedrive.svg" type="image/svg+xml">
+  <link rel="preload" fetchpriority="low" as="image" href="/img/clouds/dropbox.svg" type="image/svg+xml">
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "styles" }}
-  {{ if hugo.IsDevelopment }}
-    {{ $finderCss := resources.Get "css/finder-hero.css" | css.TailwindCSS }}
-    <link rel="stylesheet" href="{{ $finderCss.RelPermalink }}" media="screen" />
-  {{ else }}
-    {{ $tailwindOpts := dict "minify" true }}
-    {{ $finderCss := resources.Get "css/finder-hero.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
-    <link rel="stylesheet" href="{{ $finderCss.RelPermalink }}" integrity="{{ $finderCss.Data.Integrity }}" media="screen" />
-  {{ end }}
+  {{ partial "page-css.html" "css/finder-hero.css" }}
 {{ end }}
 {{ define "main" }}
   {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners (mirrors index.html). */ -}}
@@ -54,7 +51,7 @@
       <path d="M0,88 C320,112 640,56 920,68 C1140,78 1300,96 1440,78 L1440,120 L0,120 Z"/>
     </svg>
     {{- $finderRow := "grid grid-cols-[minmax(0,1fr)_4.5rem_6.5rem] md:grid-cols-[minmax(0,1fr)_5rem_8.5rem] gap-3 items-center px-5" -}}
-    <div class="finder-hero is-locked relative z-10 mt-14 md:mt-16 -mb-20 md:-mb-24 w-full max-w-lg mx-auto px-4 md:px-0">
+    <div class="finder-hero is-locked relative z-10 mt-16 md:mt-20 -mb-20 md:-mb-24 w-full max-w-xl mx-auto px-4 md:px-0">
       <div class="relative text-left">
         <div class="absolute inset-x-0 -top-12 flex justify-center gap-10 translate-x-12 pointer-events-none" aria-hidden="true">
           <div class="relative w-20 h-24 rounded-md bg-white shadow-md ring-1 ring-black/5 -rotate-6 p-2.5 [clip-path:polygon(0_0,calc(100%-14px)_0,100%_14px,100%_100%,0_100%)]">
@@ -77,8 +74,8 @@
             <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
           </div>
           <div class="flex items-center gap-3 px-5 pt-3 pb-3.5 border-b border-gray-100">
-            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <span class="finder-swap-icon"><i class="fa-brands fa-google-drive finder-when-locked" data-finder-provider-icon aria-hidden="true"></i><img src="/img/logo.svg" class="finder-when-unlocked" alt="" aria-hidden="true"/></span>
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gray-100">
+              <span class="finder-swap-icon"><img src="/img/clouds/google-drive.svg" class="finder-when-locked" data-finder-provider-icon alt="" aria-hidden="true"/><img src="/img/logo.svg" class="finder-when-unlocked" alt="" aria-hidden="true"/></span>
             </span>
             <div class="min-w-0">
               <span class="finder-path min-w-0 font-headline font-medium text-gray-800 leading-tight">
@@ -148,7 +145,7 @@
           </ul>
         </div>
 
-        <div class="absolute z-20 -bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-700 shadow-lg ring-1 ring-black/5">
+        <div class="absolute z-20 -bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 w-max max-w-[calc(100vw-2.5rem)] justify-center text-center md:whitespace-nowrap rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-700 shadow-lg ring-1 ring-black/5">
           <i class="fa-solid fa-key text-primary" aria-hidden="true"></i> {{ i18n "for_individuals_hero_pill" }}
         </div>
       </div>

@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const flaps = Array.from(root.querySelectorAll('.finder-flap')).map((el) => ({ el, flap: new FinderFlap(el) }));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const providers = [
-    { name: 'Google Drive', icon: 'fa-brands fa-google-drive' },
-    { name: 'iCloud Drive', icon: 'fa-kit fa-icloud' },
-    { name: 'OneDrive', icon: 'fa-kit fa-onedrive' },
-    { name: 'Dropbox', icon: 'fa-brands fa-dropbox' },
+    { name: 'Google Drive', src: '/img/clouds/google-drive.svg' },
+    { name: 'iCloud Drive', src: '/img/clouds/icloud.svg' },
+    { name: 'OneDrive', src: '/img/clouds/onedrive.svg' },
+    { name: 'Dropbox', src: '/img/clouds/dropbox.svg' },
   ];
   const providerName = root.querySelector('[data-finder-provider-name]');
   const providerIcon = root.querySelector('[data-finder-provider-icon]');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (locked && providerName && providerIcon) {
       providerIndex = (providerIndex + 1) % providers.length;
       providerName.textContent = providers[providerIndex].name;
-      providerIcon.className = providers[providerIndex].icon + ' finder-when-locked';
+      providerIcon.src = providers[providerIndex].src;
     }
     root.classList.toggle('is-locked', locked);
     flaps.forEach(({ el, flap }, index) => {
