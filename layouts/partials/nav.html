@@ -1,7 +1,7 @@
-{{- $textColor := cond .IsHome "text-white" "text-primary" -}}
-{{- $borderColor := cond .IsHome "border-white" "border-primary" -}}
-{{- $hoverBorderColor := cond .IsHome "hover:border-white" "hover:border-primary" -}}
-{{- $backgroundColor := cond .IsHome "bg-dark" "bg-white" -}}
+{{- $textColor := cond .Params.darkNav "text-white" "text-primary" -}}
+{{- $borderColor := cond .Params.darkNav "border-white" "border-primary" -}}
+{{- $hoverBorderColor := cond .Params.darkNav "hover:border-white" "hover:border-primary" -}}
+{{- $backgroundColor := cond .Params.darkNav "bg-dark" "bg-white" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
 <nav class="w-full max-h-screen {{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
   {{- if .Scratch.Get "saleBannerActive" -}}
@@ -9,8 +9,22 @@
     <p>{{ i18n "nav_promotion" . | emojify }}</p>
   </div>
   {{- else if .Scratch.Get "webinarBannerActive" -}}
-  <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5">
-    <p>{{ i18n "webinar_banner" | safeHTML }}</p>
+  {{- $webinarPath := printf "%s/webinar/" .Site.LanguagePrefix -}}
+  <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5" x-show="webinar.state !== 'none'">
+    <p>
+      <span x-show="webinar.state !== 'upcoming' && webinar.state !== 'live'">{{ i18n "webinar_banner" | safeHTML }}</span>
+      <span x-show="webinar.state === 'upcoming'" x-cloak>
+        <span x-text="webinar.label"></span>
+        <span aria-hidden="true"> – </span>
+        <a class="whitespace-nowrap font-bold" href="{{ $webinarPath }}">{{ i18n "webinar_banner_cta" }}<i class="fa-regular fa-arrow-right ml-1" aria-hidden="true"></i></a>
+      </span>
+      <span x-show="webinar.state === 'live'" x-cloak>
+        <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse align-middle" aria-hidden="true"></span>
+        <span class="ml-1" x-text="webinar.label"></span>
+        <span aria-hidden="true"> – </span>
+        <a class="whitespace-nowrap font-bold" href="{{ $webinarPath }}">{{ i18n "webinar_banner_cta_live" }}<i class="fa-regular fa-arrow-right ml-1" aria-hidden="true"></i></a>
+      </span>
+    </p>
   </div>
   {{- end -}}
   <div class="flex justify-between items-stretch w-full lg:px-8">
@@ -28,7 +42,7 @@
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
-        {{- range .Site.Data.nav }}
+        {{- range hugo.Data.nav }}
         {{- if .DropdownFromSection }}
         <!-- Dropdown generated from a section's child pages (e.g. Solutions) -->
         {{- with $.Site.GetPage .Path }}
@@ -134,7 +148,7 @@
               {{- range .Translations }}
               {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
               <li>
-                <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+                <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-4 py-2 text-gray-800 hover:bg-secondary hover:text-white hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.Label }}</a>
               </li>
               {{- end }}
             </ul>
@@ -146,7 +160,7 @@
   
   <!-- Smartphone Navigation -->
   <div :class="isNavOpen ? 'block' : 'hidden'" x-cloak class="lg:hidden {{ cond (or (.Scratch.Get "saleBannerActive") (.Scratch.Get "webinarBannerActive")) "max-h-[calc(100vh-72px)]" "max-h-[calc(100vh-48px)]" }} overflow-y-auto">
-    {{- range .Site.Data.nav }}
+    {{- range hugo.Data.nav }}
     {{- if .DropdownFromSection }}
     <!-- Dropdown generated from a section's child pages (e.g. Solutions) -->
     {{- with $.Site.GetPage .Path }}
@@ -205,7 +219,7 @@
     <div class="mt-1">
       {{ range .Translations }}
       {{ $translationURL := partial "translation-url.html" (dict "context" $ "translation" .) }}
-      <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.LanguageName }}</a>
+      <a :href="'{{ $translationURL }}' + (window.location.search ?? '')" lang="{{ .Lang }}" class="block px-2 py-1 hover:text-secondary hover:no-underline" data-umami-event="nav-lang-{{ .Lang }}">{{ .Language.Label }}</a>
       {{ end }}
     </div>
 

@@ -3,7 +3,6 @@ title: "Ein neues Zuhause für unsere Community"
 slug: community
 date: 2017-09-13
 tags: [cryptomator, community]
-aliases: ["/blog/2017/09/13/community_de.html"]
 discourseEmbedUrl: https://cryptomator.org/blog/2017/09/13/community_en.html
 
 summary: Unsere Online-Community hat ein neues Zuhause! Schließen Sie sich uns an für technischen Support und Diskussionen mit anderen Nutzern. Langfristig wollen wir eine umfassende Knowledge Base aufbauen, um Fragen schnell zu beantworten. Wir freuen uns auf Ihre Beiträge!

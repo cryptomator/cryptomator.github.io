@@ -2,7 +2,7 @@
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', licenseText: null, emailSent: false, emailVerified: false}, submitData: {captcha: null, oldLicense: '', email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null, returnUrl: null}" x-init="const params = new URLSearchParams(location.hash.substring(1)); returnUrl = params.get('returnUrl'); hubCE = new HubCE($refs.form, feedbackData, submitData, params)" class="container py-12">
+  <section x-data="{steps: ['{{ i18n "hub_ce_registration_step_1_nav_title" }}', '{{ i18n "hub_ce_registration_step_2_confirmation_nav_title" }}', '{{ i18n "hub_ce_registration_step_3_license_nav_title" }}'], feedbackData: {currentStep: 0, success: false, inProgress: false, errorMessage: '', emailSent: false, sessionVerified: false, registered: false}, submitData: {captcha: null, hubId: null, returnUrl: null, session: null, email: '', acceptNewsletter: false}, acceptTerms: false, hubCE: null, captchaState: null}" x-init="hubCE = new HubCE($refs.form, feedbackData, submitData, new URLSearchParams(location.search))" class="container py-12">
     <header class="mb-6">
       <h1 class="font-h1 mb-8">{{ .Title }}</h1>
       <p class="lead">{{ i18n "hub_ce_registration_description" }}</p>
@@ -83,7 +83,7 @@
               <input type="email" id="email" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_ce_registration_step_1_email_placeholder" }}" x-init="$el.focus()" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
               <div class="mt-auto">
                 <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                <button :disabled="feedbackData.inProgress || !submitData.oldLicense" @click.prevent="hubCE.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-step-1">
+                <button :disabled="feedbackData.inProgress || !submitData.hubId || !submitData.returnUrl" @click.prevent="hubCE.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-step-1">
                   <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                   {{ i18n "hub_ce_registration_steps_next" }}
                 </button>
@@ -93,7 +93,7 @@
         </template>
 
           <!-- Step 2a: Confirmation (form with checkboxes) -->
-        <template x-if="feedbackData.currentStep == 1 &amp;&amp; !feedbackData.emailSent &amp;&amp; !feedbackData.emailVerified">
+        <template x-if="feedbackData.currentStep == 1 &amp;&amp; !feedbackData.emailSent">
           <div class="md:col-span-2 gap-6">
             <div class="flex flex-col">
               <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
@@ -115,7 +115,7 @@
                   <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                   {{ i18n "hub_managed_step_4_submit" }}
                 </button>
-                {{ $challengeUrl := printf "%s/connect/email/challenge" .Site.Params.apiBaseUrl }}
+                {{ $challengeUrl := printf "%s/billing/session/challenge" .Site.Params.apiBaseUrl }}
                 {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
               </div>
             </div>
@@ -123,7 +123,7 @@
         </template>
 
         <!-- Step 2b: Confirmation (email sent, waiting for verification) -->
-        <template x-if="feedbackData.currentStep == 1 &amp;&amp; feedbackData.emailSent &amp;&amp; !feedbackData.emailVerified">
+        <template x-if="feedbackData.currentStep == 1 &amp;&amp; feedbackData.emailSent">
           <div class="md:col-span-2 gap-6">
             <div class="flex flex-col">
               <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
@@ -137,28 +137,7 @@
           </div>
         </template>
 
-        <!-- Step 2c: Confirmation (email verified, show continue button) -->
-        <template x-if="feedbackData.currentStep == 1 &amp;&amp; feedbackData.emailVerified">
-          <div class="md:col-span-2 gap-6">
-            <div class="flex flex-col">
-              <p class="hidden md:block font-p text-sm text-gray-500 mb-2">
-                {{ i18n "hub_managed_steps_title" | safeHTML }}
-              </p>
-              <h2 class="font-h2 mb-6">
-                {{ i18n "hub_ce_registration_step_2_confirmation_title" }}
-              </h2>
-              <p class="font-p mb-6">{{ i18n "hub_ce_registration_step_2_email_verified" | safeHTML }}</p>
-              <div class="mt-auto">
-                <button @click.prevent="feedbackData.currentStep++; feedbackData.success = true" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-continue">
-                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                  {{ i18n "hub_ce_registration_steps_continue" }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </template>
-
-        <!-- Step 3: License Key -->
+        <!-- Step 3: License (session verified, Hub collects the license itself) -->
         <template x-if="feedbackData.currentStep == 2">
           <div class="md:col-span-2 grid grid-cols-6 gap-6">
             <div class="flex flex-col col-span-6 lg:col-span-4">
@@ -169,30 +148,25 @@
                 {{ i18n "hub_ce_registration_step_3_license_title" }}
               </h2>
 
-              <!-- Captcha (auto-starts on load, hidden when done) -->
-              <div x-show="!feedbackData.licenseText" class="mb-4">
-                {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
-                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState" "ref" "licenseCaptcha" "auto" "onload" "onVerified" "hubCE.getHubLicense()") }}
+              <!-- Invisible captcha (auto-solves on load), then registers the Hub CE license -->
+              <div class="hidden" aria-hidden="true">
+                {{ $challengeUrl := printf "%s/billing/hub-ce/challenge" .Site.Params.apiBaseUrl }}
+                {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState" "ref" "registerCaptcha" "auto" "onload" "onVerified" "hubCE.registerHubCE()") }}
               </div>
 
-              <!-- Loading state -->
-              <div x-show="captchaState === 'verified' &amp;&amp; !feedbackData.licenseText &amp;&amp; !feedbackData.errorMessage" class="mb-8">
-                <p class="font-p text-gray-500">
-                  <i class="fa-solid fa-spinner fa-spin mr-2" aria-hidden="true"></i>
-                  {{ i18n "hub_ce_registration_step_3_loading" }}
-                </p>
-              </div>
+              <p x-show="feedbackData.sessionVerified &amp;&amp; feedbackData.registered" class="font-p mb-8">{{ i18n "hub_ce_registration_step_3_success" }}</p>
+              <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
 
-              <!-- License Key display -->
-              <div x-show="feedbackData.licenseText">
-                <p class="font-p mb-4">{{ i18n "hub_ce_registration_step_3_success" }}</p>
-                <textarea class="block input-box w-full h-32 md:h-48 mb-8" x-text="feedbackData.licenseText" readonly></textarea>
-                <div class="mt-auto">
-                  <a :href="returnUrl + '?token=' + encodeURIComponent(feedbackData.licenseText)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
-                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    Todo: Return to Hub
-                  </a>
-                </div>
+              <div class="mt-auto">
+                <!-- Disabled while the challenge is solved and the registration request runs -->
+                <button x-show="!(feedbackData.sessionVerified &amp;&amp; feedbackData.registered)" disabled class="btn btn-primary w-full md:w-64">
+                  <i x-show="!feedbackData.errorMessage" class="fa-solid fa-spinner fa-spin mr-2" aria-hidden="true"></i>
+                  {{ i18n "hub_billing_manage_license_key_transfer_action" }}
+                </button>
+                <a x-show="feedbackData.sessionVerified &amp;&amp; feedbackData.registered" :href="submitData.returnUrl + '?session=' + encodeURIComponent(submitData.session)" class="btn btn-primary w-full md:w-64" data-umami-event="hub-ce-registration-return-to-hub">
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  {{ i18n "hub_billing_manage_license_key_transfer_action" }}
+                </a>
               </div>
             </div>
           </div>

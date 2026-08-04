@@ -30,7 +30,7 @@
       </div>
       <div class="w-full md:w-2/3 lg:w-3/5">
         <div class="flex items-center mb-4">
-          <img src="/img/logo.svg" class="h-7 aspect-1110/942" alt="Logo"/>
+          <img src="/img/zero-knowledge-bot.svg" class="h-7 aspect-988/877" alt="Logo"/>
           <span class="font-headline font-bold text-primary ml-2 pb-px">CRYPTOMATOR HUB</span>
         </div>
         <h2 class="font-h2 text-white mb-4">{{ i18n "hub_header_title" . | safeHTML }}</h2>
@@ -60,7 +60,7 @@
       <h2 id="faq" class="font-h2 mb-4">{{ i18n "faq_title" . }}</h2>
     </header>
 
-    {{- $data := index $.Site.Data $.Site.Language.Lang }}
+    {{- $data := index hugo.Data $.Site.Language.Lang }}
     <dl x-data="{isOpen: [{{ range $i, $e := $data.pricing_individuals_faq }}{{ if $i }}, {{ end }}false{{ end }}]}" class="white-box divide-y divide-gray-200 max-w-3xl mx-auto">
       {{- range $index, $element := $data.pricing_individuals_faq }}
       <dt class="font-p p-4">

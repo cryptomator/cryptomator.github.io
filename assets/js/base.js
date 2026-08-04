@@ -45,6 +45,41 @@ function determineMastodonFollowersCount(locale, globalData) {
   });
 }
 
+function determineWebinarBanner(webinarId, lang, labels, webinar) {
+  $.getJSON(`${API_BASE_URL}/connect/contact/webinar/${webinarId}`).done(d => {
+    if (d.status !== 'Planned' || !d.dateStart) {
+      webinar.state = 'none';
+      return;
+    }
+    const start = new Date(d.dateStart.replace(' ', 'T') + 'Z');
+    const end = d.dateEnd ? new Date(d.dateEnd.replace(' ', 'T') + 'Z') : null;
+    const now = new Date();
+    if (end && now >= end) {
+      webinar.state = 'none';
+      return;
+    }
+    webinar.name = d.name;
+    webinar.dateStart = start.toISOString();
+    if (now >= start) {
+      webinar.state = 'live';
+      webinar.label = labels.live.replace('%NAME%', d.name);
+    } else {
+      webinar.state = 'upcoming';
+      webinar.label = labels.upcoming.replace('%NAME%', d.name).replace('%WHEN%', formatWebinarWhen(start, lang));
+    }
+  }).fail(xhr => {
+    console.error('Fetching webinar banner data failed:', xhr.responseJSON?.message || xhr.statusText);
+  });
+}
+
+function formatWebinarWhen(date, lang) {
+  return new Intl.DateTimeFormat(lang || 'en', {
+    timeZone: 'Europe/Berlin',
+    month: 'long', day: 'numeric',
+    hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
+  }).format(date);
+}
+
 function formatNumber(num, locale) {
   let formatted = num;
   if (num >= 1000 && num < 1000000) {
