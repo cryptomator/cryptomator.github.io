@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const providerName = root.querySelector('[data-finder-provider-name]');
   const providerIcon = root.querySelector('[data-finder-provider-icon]');
+  if (reducedMotion) {
+    return;
+  }
   let providerIndex = 0;
   let locked = true;
   setInterval(() => {
@@ -78,11 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     root.classList.toggle('is-locked', locked);
     flaps.forEach(({ el, flap }, index) => {
       const text = locked ? el.dataset.locked : el.dataset.unlocked;
-      if (reducedMotion) {
-        el.textContent = text;
-      } else {
-        setTimeout(() => flap.setText(text), index * 140);
-      }
+      setTimeout(() => flap.setText(text), index * 140);
     });
   }, 5000);
 });

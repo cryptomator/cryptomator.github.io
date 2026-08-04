@@ -23,16 +23,16 @@
   {{- $showSaleBanner := .Scratch.Get "saleBannerActive" -}}
   {{- $showAnniversaryBanner := .Scratch.Get "anniversaryBannerActive" -}}
   {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
-  {{- $heroTopPad := "pt-16" -}}
+  {{- $heroTopPad := "pt-16 md:pt-24" -}}
   {{- if and $showThinStrip $showAnniversaryBanner -}}
-    {{- $heroTopPad = "pt-40" -}}
+    {{- $heroTopPad = "pt-40 md:pt-40" -}}
   {{- else if or $showThinStrip $showAnniversaryBanner -}}
-    {{- $heroTopPad = "pt-28" -}}
+    {{- $heroTopPad = "pt-28 md:pt-28" -}}
   {{- end -}}
   {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match (mirrors baseof.html). */ -}}
   {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
-  {{- $heroPadNoStrip := cond $showAnniversaryBanner "pt-28" "pt-16" -}}
-  <header class="hero-split-contrast relative overflow-hidden{{ if not $webinarIsThinStrip }} {{ $heroTopPad }}{{ end }} md:pt-24 lg:pt-24"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $heroPadNoStrip }}' : '{{ $heroTopPad }}'"{{ end }}>
+  {{- $heroPadNoStrip := cond $showAnniversaryBanner "pt-28 md:pt-28" "pt-16 md:pt-24" -}}
+  <header class="hero-split-contrast relative overflow-hidden{{ if not $webinarIsThinStrip }} {{ $heroTopPad }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $heroPadNoStrip }}' : '{{ $heroTopPad }}'"{{ end }}>
     <div class="hero-aura-wrap absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div class="hero-aura hero-aura-primary"></div>
       <div class="hero-aura hero-aura-secondary"></div>
