@@ -523,6 +523,12 @@
   translation: "Ladet euren Tresor über Cryptomator Hub herunter und öffnet ihn direkt in der Cryptomator App als bestehenden Tresor. Statt ein Passwort einzugeben, erfolgt die Authentifizierung sicher über Hub – so bleibt alles geschützt und trotzdem komfortabel zugänglich."
 - id: hub_workflow_step_3_alt
   translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
+- id: hub_workflow_step_4_title
+  translation: "4. Lückenlos nachvollziehbar"
+- id: hub_workflow_step_4_description
+  translation: "Wer hat wann welchen Tresor entsperrt, ein Gerät registriert oder Zugriff erhalten? Das Audit-Log protokolliert alle sicherheitsrelevanten Ereignisse – Compliance-Nachweise gibt es damit auf Knopfdruck."
+- id: hub_workflow_step_4_alt
+  translation: "Audit-Log in Cryptomator Hub mit protokollierten Ereignissen"
 
 - id: hub_features_title
   translation: "Warum Cryptomator Hub?"

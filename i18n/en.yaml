@@ -523,6 +523,12 @@
   translation: "Download your vault via Cryptomator Hub and open it directly in the Cryptomator app as an existing vault. Instead of entering a password, authentication is securely handled through Hub – keeping everything protected while ensuring easy access."
 - id: hub_workflow_step_3_alt
   translation: "Cryptomator app interface with multiple vaults"
+- id: hub_workflow_step_4_title
+  translation: "4. Fully Traceable"
+- id: hub_workflow_step_4_description
+  translation: "Who unlocked which vault, registered a device, or was granted access – and when? The audit log records all security-relevant events, giving you compliance evidence at the push of a button."
+- id: hub_workflow_step_4_alt
+  translation: "Audit log in Cryptomator Hub with recorded events"
 
 - id: hub_features_title
   translation: "Why Cryptomator Hub?"
