@@ -473,8 +473,6 @@
   translation: "Accounting Team"
 - id: hub_hero_group_subtitle
   translation: "Group · 8 members"
-- id: hub_hero_tile_groups
-  translation: "Groups"
 - id: hub_hero_tile_audit
   translation: "Audit Log"
 - id: hub_hero_tile_devices
@@ -499,8 +497,6 @@
   translation: "Owner"
 - id: hub_hero_row_external_desc
   translation: "Tax Advisor"
-- id: hub_hero_unlock_subtitle
-  translation: "Unlock with your company login – no vault password"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot connects a group of people with its magical abilities through zero-knowledge encryption"
 

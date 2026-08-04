@@ -473,8 +473,6 @@
   translation: "Team Buchhaltung"
 - id: hub_hero_group_subtitle
   translation: "Gruppe · 8 Mitglieder"
-- id: hub_hero_tile_groups
-  translation: "Gruppen"
 - id: hub_hero_tile_audit
   translation: "Audit-Log"
 - id: hub_hero_tile_devices
@@ -499,8 +497,6 @@
   translation: "Owner"
 - id: hub_hero_row_external_desc
   translation: "Steuerberaterin"
-- id: hub_hero_unlock_subtitle
-  translation: "Entsperren per Firmen-Login – ohne Tresor-Passwort"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -807,6 +803,7 @@
   translation: "Wenn du Fragen hast, lass sie uns bitte wissen."
 - id: hub_demo_contact_us_button
   translation: "Kontaktiere uns"
+
 
 # Hub Managed
 - id: hub_managed_description

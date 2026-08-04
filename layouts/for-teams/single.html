@@ -3,6 +3,9 @@
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/">
   {{ partial "altcha-css.html" . }}
 {{ end }}
+{{ define "styles" }}
+  {{ partial "page-css.html" "css/hub-scene.css" }}
+{{ end }}
 {{ define "main" }}
   <div class="header-bg-hub relative overflow-x-clip pb-24 md:pb-32">
   <header class="container flex flex-col items-center text-center pt-10 md:pt-12">
@@ -20,37 +23,33 @@
     </div>
     <p class="text-sm text-gray-500">* {{ i18n "hub_header_early_access_note" . | safeHTML }}</p>
 
-    <div class="mt-8 mb-6 w-full mx-auto">
-      <div class="relative h-[200px] md:h-[368px] overflow-visible">
-        <div class="hub-scene absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">
+    <div class="relative mt-8 mb-6 h-[200px] md:h-[368px] overflow-visible">
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">
           <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[360px] bg-[radial-gradient(ellipse_at_center,rgba(53,73,96,0.07),transparent_70%)] pointer-events-none" aria-hidden="true"></div>
           <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 720 400" aria-hidden="true">
-            <path d="M360 175 C340 70 300 30 248 37" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 175 C380 70 420 30 472 37" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 175 C260 175 180 115 85 115" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 175 C420 175 505 220 505 300" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+            <path d="M360 175 C330 105 288 55 248 40" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+            <path d="M360 175 C390 105 432 55 472 40" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+            <path d="M360 175 C280 168 175 140 112 118" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+            <path d="M360 175 C420 195 470 235 492 272" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
             <path d="M360 168 C430 160 490 158 553 160" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
-            <path class="ad-link" d="M338 282 C290 230 240 140 226 70" fill="none" stroke="#b9c6d4" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-            <path class="ad-link" d="M382 282 C430 230 480 140 494 70" fill="none" stroke="#b9c6d4" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-            <path class="ad-link" d="M328 293 C260 260 170 190 112 128" fill="none" stroke="#b9c6d4" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-            <path d="M332 302 C305 300 275 296 246 292" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <path d="M332 302 C305 300 275 296 246 292" fill="none" stroke="url(#severed-ad)" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
             <path d="M388 302 C415 300 445 296 474 292" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
             <circle class="ad-pulse" r="2.5" fill="#8fa3b8">
               <animateMotion dur="3.5s" repeatCount="indefinite" path="M388 302 C415 300 445 296 474 292"/>
               <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.5s" repeatCount="indefinite"/>
             </circle>
-            <circle class="ad-pulse" r="2.5" fill="#8fa3b8">
-              <animateMotion dur="3.5s" begin="1.75s" repeatCount="indefinite" path="M332 302 C305 300 275 296 246 292"/>
-              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.5s" repeatCount="indefinite"/>
-            </circle>
             <defs>
-              <linearGradient id="severed" gradientUnits="userSpaceOnUse" x1="360" y1="175" x2="215" y2="310">
+              <linearGradient id="severed-ad" gradientUnits="userSpaceOnUse" x1="332" y1="302" x2="246" y2="292">
+                <stop offset="0" stop-color="#cbd5e1" stop-opacity="0.8"/>
+                <stop offset="0.85" stop-color="#cbd5e1" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="severed" gradientUnits="userSpaceOnUse" x1="360" y1="175" x2="238" y2="270">
                 <stop offset="0" stop-color="#b3bfce" stop-opacity="1"/>
                 <stop offset="0.85" stop-color="#b3bfce" stop-opacity="0"/>
               </linearGradient>
             </defs>
-            <path d="M360 175 C300 175 215 230 215 310" fill="none" stroke="url(#severed)" stroke-width="1.5" stroke-dasharray="4 5"/>
-            <path d="M245 224 L253 232 M253 224 L245 232" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M360 175 C305 195 258 232 238 270" fill="none" stroke="url(#severed)" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <path d="M270 222 L278 230 M278 222 L270 230" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
 
           <div class="absolute left-[360px] top-[175px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10">
@@ -70,6 +69,9 @@
               </span>
             </span>
             <span class="relative flex flex-col items-center justify-center rounded-2xl bg-white shadow-xl ring-1 ring-black/5 px-6 py-4">
+              <span class="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-black/5" aria-hidden="true">
+                <span class="idp-swap"><img src="/img/clouds/sharepoint.svg" class="h-3.5 w-3.5" alt=""/><img src="/img/clouds/onedrive.svg" class="h-3 w-auto" alt=""/><img src="/img/clouds/google-drive.svg" class="h-3.5 w-auto" alt=""/></span>
+              </span>
               <i class="fa-solid fa-lock text-tertiary2 text-3xl" aria-hidden="true"></i>
               <span class="mt-2 text-xs font-semibold text-gray-700 leading-tight">{{ i18n "hub_hero_card_vault_name" }}</span>
               <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_scene_vault" }}</span>
@@ -119,7 +121,7 @@
             <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_group_subtitle" }}</span>
           </div>
 
-          <div class="ad-node absolute left-[360px] top-[320px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-44 text-center">
+          <div class="absolute left-[360px] top-[320px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-44 text-center">
             <span class="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[130px] bg-[radial-gradient(ellipse_at_center,rgba(53,73,96,0.09),transparent_70%)] pointer-events-none" aria-hidden="true"></span>
             <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-tertiary2 text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
             <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight idp-swap"><span>Active Directory</span><span>Entra ID</span><span>Okta</span></span>
@@ -145,13 +147,6 @@
           </div>
 
         </div>
-      </div>
-
-      <div class="flex justify-center mt-3">
-        <div class="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 py-2 text-xs font-medium text-gray-700 shadow-lg ring-1 ring-black/5">
-          <i class="fa-solid fa-fingerprint text-primary" aria-hidden="true"></i> {{ i18n "hub_hero_unlock_subtitle" }}
-        </div>
-      </div>
     </div>
   </header>
   <svg class="absolute -bottom-px inset-x-0 w-full h-16 md:h-24 text-gray-100 pointer-events-none" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
@@ -322,15 +317,15 @@
             </h4>
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "hub_deployment_managed_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "hub_deployment_managed_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "hub_deployment_managed_benefit_3" . }}</span>
               </li>
             </ul>
@@ -354,15 +349,15 @@
             </h4>
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "hub_deployment_self_hosted_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "hub_deployment_self_hosted_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-primary"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
                 <span>{{ i18n "hub_deployment_self_hosted_benefit_3" . }}</span>
               </li>
             </ul>
