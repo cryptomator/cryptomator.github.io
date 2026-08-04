@@ -526,7 +526,7 @@
 - id: hub_workflow_step_4_title
   translation: "4. Fully Traceable"
 - id: hub_workflow_step_4_description
-  translation: "Who unlocked which vault, registered a device, or was granted access – and when? The audit log records all security-relevant events, giving you compliance evidence at the push of a button."
+  translation: "Who unlocked which vault, registered a device, or was granted access, and when? The audit log records all security-relevant events and gives you compliance evidence at the push of a button."
 - id: hub_workflow_step_4_alt
   translation: "Audit log in Cryptomator Hub with recorded events"
 

@@ -526,7 +526,7 @@
 - id: hub_workflow_step_4_title
   translation: "4. Lückenlos nachvollziehbar"
 - id: hub_workflow_step_4_description
-  translation: "Wer hat wann welchen Tresor entsperrt, ein Gerät registriert oder Zugriff erhalten? Das Audit-Log protokolliert alle sicherheitsrelevanten Ereignisse – Compliance-Nachweise gibt es damit auf Knopfdruck."
+  translation: "Wer hat wann welchen Tresor entsperrt, ein Gerät registriert oder Zugriff erhalten? Das Audit-Log protokolliert alle sicherheitsrelevanten Ereignisse. Compliance-Nachweise gibt es damit auf Knopfdruck."
 - id: hub_workflow_step_4_alt
   translation: "Audit-Log in Cryptomator Hub mit protokollierten Ereignissen"
 
@@ -840,7 +840,7 @@
 - id: hub_ce_registration_step_3_license_title
   translation: "Deine Community-Edition-Lizenz"
 - id: hub_ce_registration_step_3_success
-  translation: "Deine E-Mail-Adresse wurde erfolgreich verifiziert. Kehre zu deiner Hub-Instanz zurück – sie holt deinen Lizenzschlüssel automatisch ab."
+  translation: "Deine E-Mail-Adresse wurde erfolgreich verifiziert. Kehre zu deiner Hub-Instanz zurück, sie holt deinen Lizenzschlüssel automatisch ab."
 
 # Hub Managed
 - id: hub_managed_description
