@@ -308,13 +308,13 @@
                           </div>
                           <template x-if="subscriptionData.details.processor == 'ESPOCRM' && subscriptionData.changeSeatsModal.invoicePreview">
                             <div>
-                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.prorated_amount >= 0" class="font-p mb-4">
+                              <p class="font-p mb-4">
                                 <i class="fa-solid fa-money-bill text-primary"></i>
                                 {{ i18n "hub_billing_manage_change_quantity_confirmation_prorated_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.prorated_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
                               </p>
-                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.prorated_amount < 0" class="font-p mb-4">
-                                <i class="fa-solid fa-money-bill text-primary"></i>
-                                {{ i18n "hub_billing_manage_change_quantity_confirmation_prorated_credit_invoice" . }}: <span class="font-bold" x-text="Math.abs(subscriptionData.changeSeatsModal.invoicePreview.prorated_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
+                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.available_credit > 0" class="font-p mb-4">
+                                <i class="fa-solid fa-info-circle text-primary"></i>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_available_credit_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.available_credit).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
                               </p>
                               <p class="font-p mb-4">
                                 <i class="fa-solid fa-rotate text-primary"></i>

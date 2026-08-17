@@ -612,8 +612,8 @@
   translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird die Reduzierung auf deiner nächsten Rechnung berücksichtigt."
 - id: hub_billing_manage_change_quantity_confirmation_prorated_invoice
   translation: "Anteiliger Betrag für den laufenden Zeitraum (wird jetzt in Rechnung gestellt)"
-- id: hub_billing_manage_change_quantity_confirmation_prorated_credit_invoice
-  translation: "Anteilige Gutschrift für den laufenden Zeitraum"
+- id: hub_billing_manage_change_quantity_confirmation_available_credit_invoice
+  translation: "Verfügbares Guthaben (wird mit deinen offenen Rechnungen verrechnet, keine Rückzahlung)"
 - id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
   translation: "Neuer Jahresbetrag (netto)"
 
