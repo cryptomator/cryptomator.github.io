@@ -306,12 +306,19 @@
                               {{ i18n "hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice" . }}
                             </p>
                           </div>
+                          {{/* jsonify keeps a translated apostrophe from terminating the JS string literal */}}
+                          {{ $inclVat := printf `<span x-show="subscriptionData.changeSeatsModal.invoicePreview.tax_rate" class="text-sm text-gray-700" x-text="' (' + %s.replace('{rate}', Number(subscriptionData.changeSeatsModal.invoicePreview.tax_rate)) + ')'"></span>` (i18n "hub_billing_manage_change_quantity_confirmation_incl_vat" . | jsonify | htmlEscape) | safeHTML }}
                           <template x-if="subscriptionData.details.processor == 'ESPOCRM' && subscriptionData.changeSeatsModal.invoicePreview">
                             <div>
-                              <p class="font-p mb-4">
+                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.prorated_amount > 0" class="font-p mb-4">
                                 <i class="fa-solid fa-money-bill text-primary"></i>
-                                {{ i18n "hub_billing_manage_change_quantity_confirmation_prorated_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.prorated_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_prorated_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.prorated_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>{{ $inclVat }}
                               </p>
+                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.credited_amount > 0" class="font-p mb-4">
+                                <i class="fa-solid fa-money-bill text-primary"></i>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_credited_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.credited_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>{{ $inclVat }}
+                              </p>
+                              {{/* no VAT note here: available credit pools the account's credit notes, which need not share this subscription's tax */}}
                               <p x-show="subscriptionData.changeSeatsModal.invoicePreview.available_credit > 0" class="font-p mb-4">
                                 <i class="fa-solid fa-info-circle text-primary"></i>
                                 {{ i18n "hub_billing_manage_change_quantity_confirmation_available_credit_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.available_credit).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>

@@ -611,7 +611,11 @@
 - id: hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice
   translation: "You are about to decrease the seats limit. By confirming, the reduction will be reflected on your next invoice."
 - id: hub_billing_manage_change_quantity_confirmation_prorated_invoice
-  translation: "Prorated amount for the current period (invoiced now)"
+  translation: "Amount invoiced now"
+- id: hub_billing_manage_change_quantity_confirmation_credited_invoice
+  translation: "Credit added to your account"
+- id: hub_billing_manage_change_quantity_confirmation_incl_vat
+  translation: "incl. {rate}% VAT"
 - id: hub_billing_manage_change_quantity_confirmation_available_credit_invoice
   translation: "Available credit (offset against your open invoices, not refunded)"
 - id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
