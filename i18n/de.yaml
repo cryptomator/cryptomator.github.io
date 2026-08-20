@@ -617,7 +617,7 @@
 - id: hub_billing_manage_change_quantity_confirmation_incl_vat
   translation: "inkl. {rate} % USt."
 - id: hub_billing_manage_change_quantity_confirmation_available_credit_invoice
-  translation: "Verfügbares Guthaben (wird mit deinen offenen Rechnungen verrechnet, keine Rückzahlung)"
+  translation: "Verfügbares Guthaben (wird mit einer künftigen Rechnung verrechnet, keine Rückzahlung)"
 - id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
   translation: "Neuer Jahresbetrag (netto)"
 
@@ -689,6 +689,8 @@
   translation: "Kauf auf Rechnung ist nur innerhalb der EU möglich. Außerhalb der EU? Kontaktiere uns bitte über die Enterprise-Option."
 - id: hub_billing_checkout_invoice_vat_id
   translation: "USt-IdNr."
+- id: hub_billing_checkout_invoice_details_on_file
+  translation: "Dies sind die Rechnungsdaten, die wir zu deiner E-Mail-Adresse gespeichert haben. Melde dich bei uns, wenn sie geändert werden müssen."
 - id: hub_billing_checkout_invoice_vat_id_hint
   translation: "Erforderlich für EU-Länder außerhalb Deutschlands."
 - id: hub_billing_checkout_invoice_instruction

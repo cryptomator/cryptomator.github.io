@@ -5,6 +5,7 @@ const BILLING_CUSTOMER_URL = API_BASE_URL + '/billing/customers/by-hub-id';
 const CARD_CHECKOUT_URL = API_BASE_URL + '/billing/paddle-classic/checkout';
 const INVOICE_CHECKOUT_URL = API_BASE_URL + '/billing/espocrm/checkout';
 const INVOICE_PRICE_URL = API_BASE_URL + '/billing/espocrm/checkout/price';
+const CHECKOUT_CONTEXT_URL = API_BASE_URL + '/billing/espocrm/checkout/context';
 const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/billing/manage/subscription';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
@@ -75,10 +76,12 @@ class HubSubscription {
         this._subscriptionData.state = 'MANUAL_INVOICE';
         return;
       }
-      this.loadPrice(() => {
-        this._subscriptionData.state = 'NEW_CUSTOMER';
-        this._subscriptionData.errorMessage = '';
-        this._subscriptionData.inProgress = false;
+      this.loadCheckoutContext(() => {
+        this.loadPrice(() => {
+          this._subscriptionData.state = 'NEW_CUSTOMER';
+          this._subscriptionData.errorMessage = '';
+          this._subscriptionData.inProgress = false;
+        });
       });
     });
   }
@@ -148,9 +151,6 @@ class HubSubscription {
     this._subscriptionData.email = data.email;
     this._subscriptionData.returnUrl = data.returnUrl;
     this._subscriptionData.tokenTransfer = data.tokenTransfer;
-    if (!this._subscriptionData.invoice.contact_email) {
-      this._subscriptionData.invoice.contact_email = data.email;
-    }
     this._subscriptionData.errorMessage = '';
     // The session is verified; a session already linked to a billing manages it (the manage endpoints
     // only accept linked sessions), an unlinked one belongs to a new customer heading into checkout.
@@ -466,16 +466,13 @@ class HubSubscription {
     });
   }
 
-  invoiceQuantityMin() {
-    return this._subscriptionData.customBilling?.quantity_min || 1;
-  }
-
-  invoiceQuantityMax() {
-    return this._subscriptionData.customBilling?.quantity_max || 10000;
+  clampInvoiceQuantity(quantity) {
+    let context = this._subscriptionData.checkoutContext;
+    this._subscriptionData.quantity = Math.min(context.quantity_max, Math.max(context.quantity_min, quantity || context.quantity_min));
   }
 
   setInvoiceQuantity(quantity) {
-    this._subscriptionData.quantity = Math.min(this.invoiceQuantityMax(), Math.max(this.invoiceQuantityMin(), quantity || this.invoiceQuantityMin()));
+    this.clampInvoiceQuantity(quantity);
     this.loadInvoicePrice();
   }
 
@@ -492,6 +489,51 @@ class HubSubscription {
     this._awaitingInvoiceCaptcha = false;
     this._subscriptionData.invoiceCheckoutModal.open = true;
     this.loadInvoicePrice();
+  }
+
+  // The purchase bills a returning customer to the account already on file, so the page shows those details
+  // instead of collecting ones the purchase discards.
+  loadCheckoutContext(continueHandler) {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: CHECKOUT_CONTEXT_URL,
+      type: 'GET',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session
+      }
+    }).done(data => {
+      this.onLoadCheckoutContextSucceeded(data);
+      continueHandler();
+    }).fail(xhr => {
+      this.onLoadCheckoutContextFailed('Loading the checkout options failed.');
+    });
+  }
+
+  onLoadCheckoutContextSucceeded(data) {
+    this._subscriptionData.checkoutContext = data;
+    this.clampInvoiceQuantity(this._subscriptionData.quantity);
+    let details = data.billing_details;
+    if (details) {
+      // an account may carry no VAT id or no address, and the form binds strings
+      this._subscriptionData.invoice = {
+        ...this._subscriptionData.invoice,
+        account_name: details.account_name ?? '',
+        vat_id: details.vat_id ?? '',
+        address_street: details.address_street ?? '',
+        address_postal_code: details.address_postal_code ?? '',
+        address_city: details.address_city ?? '',
+        address_country: details.address_country ?? ''
+      };
+    }
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+  }
+
+  onLoadCheckoutContextFailed(error) {
+    this._subscriptionData.errorMessage = error;
+    this._subscriptionData.inProgress = false;
   }
 
   showInvalidFields() {
@@ -562,13 +604,13 @@ class HubSubscription {
         address_city: invoice.address_city,
         address_country: invoice.address_country,
         contact_first_name: invoice.contact_first_name,
-        contact_last_name: invoice.contact_last_name,
-        contact_email: invoice.contact_email
+        contact_last_name: invoice.contact_last_name
       }
     }).done(_ => {
       this.onCheckoutSucceeded();
     }).fail(xhr => {
-      this.onPostFailed('Creating subscription failed.');
+      // EspoCRM refused the records as duplicates: only sales can merge them.
+      this.onPostFailed(xhr.status === 409 ? 'We already hold a record for these billing details. Please contact us so we can complete your purchase.' : 'Creating subscription failed.');
     });
   }
 

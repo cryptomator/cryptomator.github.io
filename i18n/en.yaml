@@ -617,7 +617,7 @@
 - id: hub_billing_manage_change_quantity_confirmation_incl_vat
   translation: "incl. {rate}% VAT"
 - id: hub_billing_manage_change_quantity_confirmation_available_credit_invoice
-  translation: "Available credit (offset against your open invoices, not refunded)"
+  translation: "Available credit (applied to a future invoice, not refunded)"
 - id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
   translation: "New yearly total (net)"
 
@@ -689,6 +689,8 @@
   translation: "Invoice payment is available within the EU only. Outside the EU? Please contact us via the Enterprise option."
 - id: hub_billing_checkout_invoice_vat_id
   translation: "VAT ID"
+- id: hub_billing_checkout_invoice_details_on_file
+  translation: "These are the billing details we have on file for your email address. Contact us if they need to change."
 - id: hub_billing_checkout_invoice_vat_id_hint
   translation: "Required for EU countries outside Germany."
 - id: hub_billing_checkout_invoice_instruction
