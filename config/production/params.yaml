@@ -22,8 +22,8 @@ paddleHubManagedMonthlyPlanId: 914173
 paddlePricesUrl: https://checkout.paddle.com/api/2.0/prices
 
 # ESPOCRM
-espocrmHubSelfHostedProductId:  # TODO: set production EspoCRM Self-Hosted Standard product id
-espocrmHubManagedProductId:  # TODO: set production EspoCRM Managed Standard product id
+espocrmHubSelfHostedProductId: 6a4fd3f914e21a1a7
+espocrmHubManagedProductId: 6a4fd3f9039df8c27
 
 # STRIPE
 stripePk: pk_live_eSasX216vGvC26GdbVwA011V
