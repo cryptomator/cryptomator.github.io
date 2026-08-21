@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, cardCaptcha: null, invoiceCaptcha: null, session: null, tokenTransfer: null, hubId: null, returnUrl: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false}, invoiceCheckoutModal: {open: false}, changeSeatsModal: {open: false, confirmation: false, nextPayment: null, invoicePreview: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, paymentMethod: 'card', invoicePrice: null, invoicePriceLoading: false, invoicePriceError: false, invoicePriceErrorMessage: '', checkoutContext: null, invoice: {account_name: '', vat_id: '', address_street: '', address_postal_code: '', address_city: '', address_country: '', contact_first_name: '', contact_last_name: ''}, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="if (subscriptionData.state === 'NEW_CUSTOMER' && subscriptionData.paymentMethod === 'card') { hubSubscription.checkout('{{ .Site.Language.Lang }}'); } else if (subscriptionData.state === 'CREATE_SESSION') { hubSubscription.createSession(); $refs.captcha.reset(); }">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, cardCaptcha: null, invoiceCaptcha: null, session: null, tokenTransfer: null, hubId: null, returnUrl: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false}, invoiceCheckoutModal: {open: false}, changeSeatsModal: {open: false, confirmation: false, nextPayment: null, invoicePreview: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, paymentMethod: 'card', invoicePrice: null, invoicePriceLoading: false, invoicePriceError: false, checkoutContext: null, invoice: {account_name: '', vat_id: '', address_street: '', address_postal_code: '', address_city: '', address_country: '', contact_first_name: '', contact_last_name: ''}, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="if (subscriptionData.state === 'NEW_CUSTOMER' && subscriptionData.paymentMethod === 'card') { hubSubscription.checkout('{{ .Site.Language.Lang }}'); } else if (subscriptionData.state === 'CREATE_SESSION') { hubSubscription.createSession(); $refs.captcha.reset(); }">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -410,7 +410,9 @@
                         </template>
                         <template x-if="subscriptionData.invoicePriceError">
                           <div>
-                            <p class="text-sm text-red-600 mb-2" x-text="subscriptionData.invoicePriceErrorMessage || '{{ i18n "hub_billing_checkout_invoice_price_error" . }}'"></p>
+                            <p class="text-sm text-red-600 mb-2">
+                              {{ i18n "hub_billing_checkout_invoice_price_error" . }}
+                            </p>
                             <button type="button" @click.prevent="hubSubscription.loadInvoicePrice()" class="text-sm text-btn text-primary">
                               <i class="fa-solid fa-rotate-right"></i>
                               {{ i18n "hub_billing_checkout_invoice_price_retry" . }}
