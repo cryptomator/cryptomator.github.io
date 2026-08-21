@@ -441,6 +441,7 @@ class HubSubscription {
     // Keep the previous price visible (dimmed) while reloading, so the summary doesn't jump on seat changes.
     this._subscriptionData.invoicePriceLoading = true;
     this._subscriptionData.invoicePriceError = false;
+    this._subscriptionData.invoicePriceErrorMessage = '';
     // Stale-response guard: only the latest request may populate the summary after rapid seat changes.
     let requestId = ++this._invoicePriceRequestId;
     $.ajax({
@@ -457,10 +458,13 @@ class HubSubscription {
         this._subscriptionData.invoicePrice = data;
         this._subscriptionData.invoicePriceLoading = false;
       }
-    }).fail(_ => {
+    }).fail(xhr => {
       if (requestId === this._invoicePriceRequestId) {
         this._subscriptionData.invoicePrice = null;
         this._subscriptionData.invoicePriceError = true;
+        // The API names what is wrong (e.g. the contractual seat minimum); a generic failure would leave the
+        // customer retrying a request that cannot succeed.
+        this._subscriptionData.invoicePriceErrorMessage = xhr.responseJSON?.cause ?? '';
         this._subscriptionData.invoicePriceLoading = false;
       }
     });
