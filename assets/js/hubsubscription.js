@@ -88,17 +88,22 @@ class HubSubscription {
 
   loadManageSubscription() {
     this.loadCustomBilling(() => {
-      this._subscriptionData.inProgress = true;
-      this._subscriptionData.errorMessage = '';
-      $.ajax({
-        url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}`,
-        type: 'GET',
-        headers: this.authHeaders()
-      }).done(data => {
-        this.onLoadSubscriptionSucceeded(data);
-      }).fail(xhr => {
-        this.onLoadSubscriptionFailed(xhr.status, 'Loading subscription failed.');
-      });
+      // the change-seats stepper bounds itself by the same contractual range the checkout uses
+      this.loadCheckoutContext(() => this.loadManageSubscriptionDetails(), () => this.loadManageSubscriptionDetails());
+    });
+  }
+
+  loadManageSubscriptionDetails() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}`,
+      type: 'GET',
+      headers: this.authHeaders()
+    }).done(data => {
+      this.onLoadSubscriptionSucceeded(data);
+    }).fail(xhr => {
+      this.onLoadSubscriptionFailed(xhr.status, 'Loading subscription failed.');
     });
   }
 
@@ -493,7 +498,7 @@ class HubSubscription {
 
   // The purchase bills a returning customer to the account already on file, so the page shows those details
   // instead of collecting ones the purchase discards.
-  loadCheckoutContext(continueHandler) {
+  loadCheckoutContext(continueHandler, failureHandler) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
@@ -507,7 +512,11 @@ class HubSubscription {
       this.onLoadCheckoutContextSucceeded(data);
       continueHandler();
     }).fail(xhr => {
-      this.onLoadCheckoutContextFailed('Loading the checkout options failed.');
+      if (failureHandler) {
+        failureHandler();
+      } else {
+        this.onLoadCheckoutContextFailed('Loading the checkout options failed.');
+      }
     });
   }
 
