@@ -614,9 +614,21 @@ class HubSubscription {
     }).done(_ => {
       this.onCheckoutSucceeded();
     }).fail(xhr => {
-      // EspoCRM refused the records as duplicates: only sales can merge them.
-      this.onPostFailed(xhr.status === 409 ? 'We already hold a record for these billing details. Please contact us so we can complete your purchase.' : 'Creating subscription failed.');
+      this.onPostFailed(this.invoiceCheckoutError(xhr.status));
     });
+  }
+
+  invoiceCheckoutError(status) {
+    // EspoCRM refused the records as duplicates: only sales can merge them.
+    if (status === 409) {
+      return 'We already hold a record for these billing details. Please contact us so we can complete your purchase.';
+    }
+    // The account on file supplies the billing details, and this form shows them read-only, so nothing the
+    // customer can reach here explains the refusal.
+    if (status === 400 && this._subscriptionData.checkoutContext?.billing_details) {
+      return 'We cannot complete this purchase automatically. Please contact us and we will finish it for you.';
+    }
+    return 'Creating subscription failed.';
   }
 
   onCheckoutSucceeded() {
