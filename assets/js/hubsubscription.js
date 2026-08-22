@@ -72,10 +72,6 @@ class HubSubscription {
 
   loadCheckoutPrerequisites() {
     this.loadCustomBilling(() => {
-      if (this._subscriptionData.customBilling?.manual_invoice) {
-        this._subscriptionData.state = 'MANUAL_INVOICE';
-        return;
-      }
       this.loadCheckoutContext(() => {
         this.loadPrice(() => {
           this._subscriptionData.state = 'NEW_CUSTOMER';

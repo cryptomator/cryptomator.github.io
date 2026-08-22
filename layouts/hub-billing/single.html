@@ -758,22 +758,6 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.state == 'MANUAL_INVOICE'">
-        <div class="text-center max-w-xl mx-auto">
-          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
-            {{ i18n "hub_billing_generic_title" . }}
-          </h3>
-          <p class="font-p mb-4">
-            <i class="fa-solid fa-info-circle"></i>
-            {{ i18n "hub_billing_manualinvoice_description" . }}
-          </p>
-          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2">
-            <i class="fa-solid fa-envelope"></i>
-            {{ i18n "hub_billing_manualinvoice_action" . }}
-          </a>
-        </div>
-      </template>
-
       <template x-if="subscriptionData.state == 'CHECKOUT_SUCCESS'">
         <div class="max-w-xl mx-auto">
           <header class="mb-6">
