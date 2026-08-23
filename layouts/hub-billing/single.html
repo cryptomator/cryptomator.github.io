@@ -338,7 +338,8 @@
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_continue" . }}
                     </button>
-                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    {{/* Paddle Classic fills nextPayment and EspoCRM fills invoicePreview, so a quote arrived when either is set. The customer must not commit a change whose price the page cannot show. */}}
+                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress || !(subscriptionData.changeSeatsModal.invoicePreview || subscriptionData.changeSeatsModal.nextPayment)" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
