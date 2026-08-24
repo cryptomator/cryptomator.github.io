@@ -651,8 +651,6 @@
   translation: "Only users who are granted access to vaults count towards the seats limit."
 - id: hub_billing_checkout_standard_email
   translation: "Email"
-- id: hub_billing_checkout_standard_email_placeholder
-  translation: "Email address"
 - id: hub_billing_checkout_standard_instruction
   translation: "Payments are securely handled by Paddle."
 - id: hub_billing_checkout_standard_submit

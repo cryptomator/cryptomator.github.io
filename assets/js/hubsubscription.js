@@ -408,6 +408,7 @@ class HubSubscription {
       paddle.Checkout.open({
         override: payLink,
         email: this._subscriptionData.email,
+        disableLogout: true,
         locale: locale,
         passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId, session: this._subscriptionData.session }),
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),

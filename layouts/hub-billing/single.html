@@ -654,10 +654,10 @@
                 <template x-if="subscriptionData.paymentMethod == 'card'">
                   <div>
                     <div>
-                      <label class="label-uppercase mb-2">
+                      <label class="label-uppercase mb-2" for="card-email">
                         {{ i18n "hub_billing_checkout_standard_email" . }}
                       </label>
-                      <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
+                      <input x-model="subscriptionData.email" id="card-email" readonly type="email" class="input-box w-full"/>
                     </div>
                     <div class="text-center mt-8">
                       <p class="font-p mb-4">

@@ -651,8 +651,6 @@
   translation: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet."
 - id: hub_billing_checkout_standard_email
   translation: "E-Mail"
-- id: hub_billing_checkout_standard_email_placeholder
-  translation: "E-Mail-Adresse"
 - id: hub_billing_checkout_standard_instruction
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: hub_billing_checkout_standard_submit
