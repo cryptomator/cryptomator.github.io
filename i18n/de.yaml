@@ -665,13 +665,9 @@
 - id: hub_billing_checkout_payment_method_invoice
   translation: "Kauf auf Rechnung"
 
-- id: hub_billing_checkout_invoice_contact_first_name
-  translation: "Vorname"
-- id: hub_billing_checkout_invoice_contact_last_name
-  translation: "Nachname"
-- id: hub_billing_checkout_invoice_contact_email
+- id: hub_billing_checkout_invoice_email
   translation: "E-Mail"
-- id: hub_billing_checkout_invoice_contact_email_hint
+- id: hub_billing_checkout_invoice_email_hint
   translation: "Mit dieser E-Mail-Adresse verwaltest du später dein Abonnement."
 - id: hub_billing_checkout_invoice_account_name
   translation: "Firmenname"

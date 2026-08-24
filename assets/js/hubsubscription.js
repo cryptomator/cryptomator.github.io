@@ -523,7 +523,6 @@ class HubSubscription {
     if (details) {
       // an account may carry no VAT id or no address, and the form binds strings
       this._subscriptionData.invoice = {
-        ...this._subscriptionData.invoice,
         account_name: details.account_name ?? '',
         vat_id: details.vat_id ?? '',
         address_street: details.address_street ?? '',
@@ -607,9 +606,7 @@ class HubSubscription {
         address_street: invoice.address_street,
         address_postal_code: invoice.address_postal_code,
         address_city: invoice.address_city,
-        address_country: invoice.address_country,
-        contact_first_name: invoice.contact_first_name,
-        contact_last_name: invoice.contact_last_name
+        address_country: invoice.address_country
       }
     }).done(_ => {
       this.onCheckoutSucceeded();
@@ -619,7 +616,7 @@ class HubSubscription {
   }
 
   invoiceCheckoutError(status) {
-    // EspoCRM refused the records as duplicates: only sales can merge them.
+    // EspoCRM refused the account as a duplicate: only sales can merge it.
     if (status === 409) {
       return 'We already hold a record for these billing details. Please contact us so we can complete your purchase.';
     }

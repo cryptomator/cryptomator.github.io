@@ -665,13 +665,9 @@
 - id: hub_billing_checkout_payment_method_invoice
   translation: "Pay by Invoice"
 
-- id: hub_billing_checkout_invoice_contact_first_name
-  translation: "First Name"
-- id: hub_billing_checkout_invoice_contact_last_name
-  translation: "Last Name"
-- id: hub_billing_checkout_invoice_contact_email
+- id: hub_billing_checkout_invoice_email
   translation: "Email"
-- id: hub_billing_checkout_invoice_contact_email_hint
+- id: hub_billing_checkout_invoice_email_hint
   translation: "You'll use this email address to manage your subscription later."
 - id: hub_billing_checkout_invoice_account_name
   translation: "Company Name"

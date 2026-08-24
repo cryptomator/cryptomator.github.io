@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, cardCaptcha: null, invoiceCaptcha: null, session: null, tokenTransfer: null, hubId: null, returnUrl: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false}, invoiceCheckoutModal: {open: false}, changeSeatsModal: {open: false, confirmation: false, nextPayment: null, invoicePreview: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, paymentMethod: 'card', invoicePrice: null, invoicePriceLoading: false, invoicePriceError: false, checkoutContext: null, invoice: {account_name: '', vat_id: '', address_street: '', address_postal_code: '', address_city: '', address_country: '', contact_first_name: '', contact_last_name: ''}, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="if (subscriptionData.state === 'NEW_CUSTOMER' && subscriptionData.paymentMethod === 'card') { hubSubscription.checkout('{{ .Site.Language.Lang }}'); } else if (subscriptionData.state === 'CREATE_SESSION') { hubSubscription.createSession(); $refs.captcha.reset(); }">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, cardCaptcha: null, invoiceCaptcha: null, session: null, tokenTransfer: null, hubId: null, returnUrl: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false}, invoiceCheckoutModal: {open: false}, changeSeatsModal: {open: false, confirmation: false, nextPayment: null, invoicePreview: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, paymentMethod: 'card', invoicePrice: null, invoicePriceLoading: false, invoicePriceError: false, checkoutContext: null, invoice: {account_name: '', vat_id: '', address_street: '', address_postal_code: '', address_city: '', address_country: ''}, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="if (subscriptionData.state === 'NEW_CUSTOMER' && subscriptionData.paymentMethod === 'card') { hubSubscription.checkout('{{ .Site.Language.Lang }}'); } else if (subscriptionData.state === 'CREATE_SESSION') { hubSubscription.createSession(); $refs.captcha.reset(); }">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -422,27 +422,13 @@
                         </template>
                       </div>
                       <div class="p-4 md:col-span-3">
-                        <div class="flex flex-wrap md:flex-nowrap">
-                          <div class="w-full mb-4 md:w-1/2 md:pr-3">
-                            <label class="label-uppercase mb-2" for="invoice-contact-first-name">
-                              {{ i18n "hub_billing_checkout_invoice_contact_first_name" . }}
-                            </label>
-                            <input x-model="subscriptionData.invoice.contact_first_name" id="invoice-contact-first-name" maxlength="100" :required="subscriptionData.invoiceCheckoutModal.open" type="text" class="input-box w-full"/>
-                          </div>
-                          <div class="w-full mb-4 md:w-1/2 md:pl-3">
-                            <label class="label-uppercase mb-2" for="invoice-contact-last-name">
-                              {{ i18n "hub_billing_checkout_invoice_contact_last_name" . }}
-                            </label>
-                            <input x-model="subscriptionData.invoice.contact_last_name" id="invoice-contact-last-name" maxlength="100" :required="subscriptionData.invoiceCheckoutModal.open" type="text" class="input-box w-full"/>
-                          </div>
-                        </div>
                         <div class="mb-4">
-                          <label class="label-uppercase mb-2" for="invoice-contact-email">
-                            {{ i18n "hub_billing_checkout_invoice_contact_email" . }}
+                          <label class="label-uppercase mb-2" for="invoice-email">
+                            {{ i18n "hub_billing_checkout_invoice_email" . }}
                           </label>
-                          <input x-model="subscriptionData.email" id="invoice-contact-email" readonly type="email" class="input-box w-full"/>
+                          <input x-model="subscriptionData.email" id="invoice-email" readonly type="email" class="input-box w-full"/>
                           <p class="text-xs text-gray-600 mt-1">
-                            {{ i18n "hub_billing_checkout_invoice_contact_email_hint" . }}
+                            {{ i18n "hub_billing_checkout_invoice_email_hint" . }}
                           </p>
                         </div>
                         <p x-show="subscriptionData.checkoutContext?.billing_details" class="text-xs text-gray-600 mb-4">
