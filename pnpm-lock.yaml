@@ -15,8 +15,8 @@ importers:
         specifier: ^3.14.9
         version: 3.14.9
       altcha:
-        specifier: ^1.5.1
-        version: 1.5.1
+        specifier: ^3.0.9
+        version: 3.0.9
       jquery:
         specifier: ^3.7.1
         version: 3.7.1
@@ -44,9 +44,6 @@ importers:
         version: 4.1.11
 
 packages:
-
-  '@altcha/crypto@0.0.1':
-    resolution: {integrity: sha512-qZMdnoD3lAyvfSUMNtC2adRi666Pxdcw9zqfMU5qBOaJWqpN9K+eqQGWqeiKDMqL0SF+EytNG4kR/Pr/99GJ6g==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -165,12 +162,6 @@ packages:
     resolution: {integrity: sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg==}
     engines: {node: '>= 10.0.0'}
 
-  '@rollup/rollup-linux-x64-gnu@4.18.0':
-    resolution: {integrity: sha512-xuglR2rBVHA5UsI8h8UbX4VJ470PtGCf5Vpswh7p2ukaqBGFTnsfzxUBetoWBWymHMxbIG0Cmx7Y9qDZzr648w==}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
-
   '@tailwindcss/cli@4.1.11':
     resolution: {integrity: sha512-7RAFOrVaXCFz5ooEG36Kbh+sMJiI2j4+Ozp71smgjnLfBRu7DTfoq8DsTvzse2/6nDeo2M3vS/FGaxfDgr3rtQ==}
     hasBin: true
@@ -283,8 +274,8 @@ packages:
   alpinejs@3.14.9:
     resolution: {integrity: sha512-gqSOhTEyryU9FhviNqiHBHzgjkvtukq9tevew29fTj+ofZtfsYriw4zPirHHOAy9bw8QoL3WGhyk7QqCh5AYlw==}
 
-  altcha@1.5.1:
-    resolution: {integrity: sha512-o3+k9uETJ/p5FgzsG8sbRFqtzMbywAh2bAcsHanfMUUj0WXT8+h87dZ8ZISM7E/ufidZLUI5TCiO97eJDTwayg==}
+  altcha@3.0.9:
+    resolution: {integrity: sha512-VTBUxypBWQuhaOwgZc148t7pmTq1mQRbMM+segqdcqTUzuTNRNs/TX1BYMtip7y6YprPZ+YqlMgqXU0bzFOlJQ==}
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -321,6 +312,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  hash-wasm@4.12.0:
+    resolution: {integrity: sha512-+/2B2rYLb48I/evdOIhP+K/DD2ca2fgBjp6O+GBEnCDk2e4rpeXIK8GvIyRPjTezgmWn9gmKwkQjjx6BtqDHVQ==}
 
   is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
@@ -493,8 +487,6 @@ packages:
 
 snapshots:
 
-  '@altcha/crypto@0.0.1': {}
-
   '@ampproject/remapping@2.3.0':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.12
@@ -583,9 +575,6 @@ snapshots:
       '@parcel/watcher-win32-arm64': 2.5.1
       '@parcel/watcher-win32-ia32': 2.5.1
       '@parcel/watcher-win32-x64': 2.5.1
-
-  '@rollup/rollup-linux-x64-gnu@4.18.0':
-    optional: true
 
   '@tailwindcss/cli@4.1.11':
     dependencies:
@@ -684,11 +673,9 @@ snapshots:
     dependencies:
       '@vue/reactivity': 3.1.5
 
-  altcha@1.5.1:
+  altcha@3.0.9:
     dependencies:
-      '@altcha/crypto': 0.0.1
-    optionalDependencies:
-      '@rollup/rollup-linux-x64-gnu': 4.18.0
+      hash-wasm: 4.12.0
 
   argparse@2.0.1: {}
 
@@ -714,6 +701,8 @@ snapshots:
       to-regex-range: 5.0.1
 
   graceful-fs@4.2.11: {}
+
+  hash-wasm@4.12.0: {}
 
   is-extglob@2.1.1: {}
 
