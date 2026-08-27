@@ -21,5 +21,9 @@ paddleHubManagedYearlyPlanId: 42235
 paddleHubManagedMonthlyPlanId: 82379
 paddlePricesUrl: https://sandbox-checkout.paddle.com/api/2.0/prices
 
+# ESPOCRM
+espocrmHubSelfHostedProductId: 69bd302d5c65eabaa
+espocrmHubManagedProductId: 69bd302d521a70103
+
 # STRIPE
 stripePk: pk_test_51RCM24IBZmkR4F9UiLBiSmsAnJvWqmHcDLxXR8ABKK1MNsZk3zCk2VJW7ZfaBlD81zpQxCX243sS3LEp9dABwiG800kJnGykDF
