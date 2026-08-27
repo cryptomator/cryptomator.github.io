@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
   <div class="container pt-12 pb-24">
-    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, hubId: null, returnUrl: null, session: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false, nextPayment: null}, changeSeatsModal: {open: false, confirmation: false, immediatePayment: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="hubSubscription.createSession(); $refs.captcha.reset()">
+    <form x-data="{subscriptionData: {state: 'MISSING_PARAMS', captcha: null, cardCaptcha: null, invoiceCaptcha: null, session: null, tokenTransfer: null, hubId: null, returnUrl: null, oldLicense: null, customBilling: null, billingInterval: 'yearly', savingsPercent: null, errorMessage: '', inProgress: false, restartModal: {open: false}, invoiceCheckoutModal: {open: false}, changeSeatsModal: {open: false, confirmation: false, nextPayment: null, invoicePreview: null}, token: null, details: null, quantity: 5, email: '', needsEmail: false, lookupDone: false, redactedEmail: null, paymentMethod: 'card', invoicePrice: null, invoicePriceLoading: false, invoicePriceError: false, checkoutContext: null, invoice: {account_name: '', vat_id: '', address_street: '', address_postal_code: '', address_city: '', address_country: ''}, needsTokenRefresh: false, shouldTransferToHub: false}, acceptTerms: false, hubSubscription: null, captchaState: null}" x-init="hubSubscription = new HubSubscription($refs.form, subscriptionData, new URLSearchParams(location.search))" x-ref="form" @submit.prevent="if (subscriptionData.state === 'NEW_CUSTOMER' && subscriptionData.paymentMethod === 'card') { hubSubscription.checkout('{{ .Site.Language.Lang }}'); } else if (subscriptionData.state === 'CREATE_SESSION') { hubSubscription.createSession(); $refs.captcha.reset(); }">
       <template x-if="subscriptionData.state == 'MISSING_PARAMS'">
         <div class="text-center max-w-xl mx-auto">
           <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
@@ -25,7 +25,6 @@
             <i class="fa-solid fa-spinner fa-spin"></i>
             {{ i18n "hub_billing_loading_description" . }}
           </p>
-          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
       </template>
 
@@ -113,6 +112,22 @@
         </div>
       </template>
 
+      <template x-if="subscriptionData.state == 'LOAD_FAILED'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="font-p mb-4">
+            <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
+            {{ i18n "hub_billing_loadfailed_description" . }}
+          </p>
+          <p class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
+          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8">
+            <i class="fa-solid fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
+          </a>
+        </div>
+      </template>
+
       <template x-if="subscriptionData.state == 'EXISTING_CUSTOMER'">
         <div>
           <header class="mb-6">
@@ -124,31 +139,27 @@
                 {{ i18n "hub_billing_manage_status_title" . }}
               </dt>
               <dd>
-                <p x-show="subscriptionData.details.state == 'active'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                <p x-show="subscriptionData.details.status == 'ACTIVE'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                   {{ i18n "hub_billing_manage_status_active" . }}
                   <i class="fa-solid fa-check text-primary"></i>
                 </p>
-                <p x-show="subscriptionData.details.state == 'past_due'" class=" font-bold text-2xl md:text-3xl lg:text-4xl">
-                  {{ i18n "hub_billing_manage_status_pastdue" . }}
-                  <i class="fa-solid fa-clock text-red-600"></i>
-                </p>
-                <p x-show="subscriptionData.details.state == 'trialing'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                <p x-show="subscriptionData.details.status == 'TRIAL'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                   {{ i18n "hub_billing_manage_status_trialing" . }}
                   <i class="fa-solid fa-check text-primary"></i>
                 </p>
-                <p x-show="subscriptionData.details.state == 'paused'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                <p x-show="subscriptionData.details.status == 'PAUSED'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
                   {{ i18n "hub_billing_manage_status_paused" . }}
                   <i class="fa-solid fa-pause text-yellow-500"></i>
                 </p>
-                <p x-show="subscriptionData.details.state == 'deleted'" class="text-red-600 font-bold text-2xl md:text-3xl lg:text-4xl">
+                <p x-show="subscriptionData.details.status == 'CANCELLED'" class="text-red-600 font-bold text-2xl md:text-3xl lg:text-4xl">
                   {{ i18n "hub_billing_manage_status_deleted" . }}
                   <i class="fa-solid fa-times text-red-600"></i>
                 </p>
                 <p class="text-xs text-gray-600 mt-1">
-                  {{ i18n "hub_billing_manage_status_quantity_description" . }}: <span x-text="subscriptionData.details.quantity"></span>
+                  {{ i18n "hub_billing_manage_status_quantity_description" . }}: <span x-text="subscriptionData.details.seats"></span>
                 </p>
                 <p class="mt-2">
-                  <button :disabled="!subscriptionData.details.next_payment || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-primary">
+                  <button type="button" :disabled="subscriptionData.details.status == 'CANCELLED' || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-primary">
                     <i class="fa-solid fa-arrows-v"></i>
                     {{ i18n "hub_billing_manage_status_quantity_action" . }}
                   </button>
@@ -160,26 +171,26 @@
                 {{ i18n "hub_billing_manage_next_payment_title" . }}
               </dt>
               <dd>
-                <template x-if="subscriptionData.details.next_payment">
+                <template x-if="subscriptionData.details.current_period_end">
                   <div>
-                    <p x-text="subscriptionData.details.next_payment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.details.next_payment.currency })" class="font-bold text-2xl md:text-3xl lg:text-4xl"></p>
+                    <p x-text="new Date(subscriptionData.details.current_period_end).toLocaleDateString('{{ .Site.Language.Lang }}')" class="font-bold text-2xl md:text-3xl lg:text-4xl"></p>
                     <p class="text-xs text-gray-600 mt-1">
-                      {{ i18n "hub_billing_manage_next_payment_date_description" . }}: <span x-text="subscriptionData.details.next_payment.date"></span>
+                      {{ i18n "hub_billing_manage_next_payment_date_description" . }}
                     </p>
                   </div>
                 </template>
-                <template x-if="!subscriptionData.details.next_payment">
+                <template x-if="!subscriptionData.details.current_period_end">
                   <div>
                     <p class="font-bold text-2xl md:text-3xl lg:text-4xl">–</p>
-                    <p class="text-xs text-gray-600 mt-1">{{ i18n "hub_billing_manage_next_payment_date_description" . }}: N/A</p>
+                    <p class="text-xs text-gray-600 mt-1">{{ i18n "hub_billing_manage_next_payment_date_description" . }}</p>
                   </div>
                 </template>
-                <p class="mt-2">
-                  <button x-show="subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-primary">
+                <p x-show="subscriptionData.details.processor == 'PADDLE_CLASSIC'" class="mt-2">
+                  <button type="button" x-show="subscriptionData.details.status == 'ACTIVE' || subscriptionData.details.status == 'TRIAL'" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-primary">
                     <i class="fa-solid fa-pause"></i>
                     {{ i18n "hub_billing_manage_next_payment_pause_action" . }}
                   </button>
-                  <button x-show="!subscriptionData.details.next_payment" :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" @click.prevent="subscriptionData.details.state == 'paused' ? hubSubscription.askForRestartConfirmation() : hubSubscription.restart()" class="text-xs text-btn text-primary">
+                  <button type="button" x-show="subscriptionData.details.status == 'PAUSED'" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.askForRestartConfirmation()" class="text-xs text-btn text-primary">
                     <i class="fa-solid fa-play"></i>
                     {{ i18n "hub_billing_manage_next_payment_restart_action" . }}
                   </button>
@@ -191,28 +202,14 @@
                 {{ i18n "hub_billing_manage_payment_info_title" . }}
               </dt>
               <dd>
-                <template x-if="subscriptionData.details.payment_information">
-                  <div>
-                    <div x-show="subscriptionData.details.payment_information.payment_method.toLowerCase() == 'card'">
-                      <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
-                        {{ i18n "hub_billing_manage_payment_info_credit_card" . }}
-                      </p>
-                      <p class="text-xs text-gray-600 mt-1">
-                        {{ i18n "hub_billing_manage_payment_info_credit_card_last_four_digits_description" . }}: <span x-text="subscriptionData.details.payment_information.last_four_digits"></span>
-                      </p>
-                    </div>
-                    <p x-show="subscriptionData.details.payment_information.payment_method.toLowerCase() == 'paypal'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
-                      {{ i18n "hub_billing_manage_payment_info_paypal" . }}
-                    </p>
-                  </div>
-                </template>
-                <template x-if="!subscriptionData.details.payment_information">
-                  <p class="font-bold text-2xl md:text-3xl lg:text-4xl">
-                    –
-                  </p>
-                </template>
-                <p class="mt-2">
-                  <button :disabled="subscriptionData.inProgress || subscriptionData.details.state == 'deleted'" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
+                <p x-show="subscriptionData.details.processor == 'PADDLE_CLASSIC'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  {{ i18n "hub_billing_manage_payment_info_card" . }}
+                </p>
+                <p x-show="subscriptionData.details.processor == 'ESPOCRM'" class="font-bold text-2xl md:text-3xl lg:text-4xl">
+                  {{ i18n "hub_billing_manage_payment_info_invoice" . }}
+                </p>
+                <p x-show="subscriptionData.details.processor == 'PADDLE_CLASSIC'" class="mt-2">
+                  <button type="button" :disabled="subscriptionData.inProgress || subscriptionData.details.status == 'CANCELLED'" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-primary">
                     <i class="fa-solid fa-external-link"></i>
                     {{ i18n "hub_billing_manage_payment_info_update_action" . }}
                   </button>
@@ -222,35 +219,13 @@
           </dl>
           <p class="text-sm text-gray-700">{{ i18n "hub_billing_pricing_vat_included" . }}</p>
           <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
-          <h2 class="font-h2 mb-4 mt-12">
-            {{ i18n "hub_billing_manage_license_key_title" . }}
-          </h2>
-          <p class="font-p mb-4">
-            {{ i18n "hub_billing_manage_license_key_instruction" . }}
-          </p>
-          <textarea x-model="subscriptionData.token" class="input-box w-full text-sm md:text-base leading-relaxed break-all" rows="6" readonly></textarea>
-          <button x-show="!subscriptionData.token && !subscriptionData.needsTokenRefresh" :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.errorMessage = ''; subscriptionData.needsTokenRefresh = true" class="btn btn-primary text-center w-full md:w-64 mt-4">
-            {{ i18n "hub_billing_manage_license_key_retry_action" . }}
-          </button>
-          <button x-show="subscriptionData.token" :disabled="subscriptionData.inProgress" class="btn btn-primary text-center w-full md:w-64 mt-4" @click.prevent="hubSubscription.transferTokenToHub()">
-            {{ i18n "hub_billing_manage_license_key_transfer_action" . }}
-          </button>
-          <template x-if="subscriptionData.needsTokenRefresh && !subscriptionData.inProgress">
-            <div class="mt-4">
-              {{ $challengeUrl := printf "%s/licenses/hub/challenge" .Site.Params.apiBaseUrl }}
-              {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "subscriptionData.captcha" "captchaState" "captchaState" "ref" "refreshCaptcha" "auto" "onload" "onVerified" "hubSubscription.refreshToken()") }}
-            </div>
-          </template>
-          <p x-show="subscriptionData.needsTokenRefresh && subscriptionData.inProgress" class="text-sm text-gray-600 mt-4">
-            <i class="fa-solid fa-spinner fa-spin"></i>
-            {{ i18n "hub_billing_loading_description" . }}
-          </p>
+          {{ partial "hub-license-block.html" . }}
 
-          <div x-show="subscriptionData.restartModal.open" class="relative z-10" aria-labelledby="restart-modal-title" role="dialog" aria-modal="true">
+          <div x-show="subscriptionData.restartModal.open" @keydown.escape.window="if (!subscriptionData.inProgress) subscriptionData.restartModal.open = false" class="relative z-10" aria-labelledby="restart-modal-title" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-500/75"></div>
             <div class="fixed z-10 inset-0 overflow-y-auto">
               <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-                <div class="relative white-box text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                <div x-trap="subscriptionData.restartModal.open" class="relative white-box text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
                   <div class="p-4">
                     <div class="md:flex md:items-start">
                       <div class="shrink-0 text-center">
@@ -266,10 +241,6 @@
                         <p class="font-p mb-4">
                           <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
                           {{ i18n "hub_billing_manage_restart_subscription_warning" . }}
-                        </p>
-                        <p class="font-p mb-4">
-                          <i class="fa-solid fa-credit-card text-primary"></i>
-                          {{ i18n "hub_billing_manage_modal_charge_amount_description" . }}: <span x-text="subscriptionData.restartModal.nextPayment ? subscriptionData.restartModal.nextPayment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.restartModal.nextPayment.currency }) : '…'"></span>
                         </p>
                       </div>
                     </div>
@@ -289,11 +260,11 @@
             </div>
           </div>
 
-          <div x-show="subscriptionData.changeSeatsModal.open" class="relative z-10" aria-labelledby="change-seats-modal-title" role="dialog" aria-modal="true">
+          <div x-show="subscriptionData.changeSeatsModal.open" @keydown.escape.window="if (!subscriptionData.inProgress) subscriptionData.changeSeatsModal.open = false" class="relative z-10" aria-labelledby="change-seats-modal-title" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-500/75"></div>
             <div class="fixed z-10 inset-0 overflow-y-auto">
               <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
-                <div class="relative white-box text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
+                <div x-trap="subscriptionData.changeSeatsModal.open" class="relative white-box text-left overflow-hidden md:my-8 md:max-w-lg md:w-full">
                   <div class="p-4">
                     <div class="md:flex md:items-start">
                       <div class="shrink-0 text-center">
@@ -310,42 +281,80 @@
                           <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_description" . }}
                           </p>
-                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
+                          <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.checkoutContext?.quantity_min" :max="subscriptionData.checkoutContext?.quantity_max" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
                           <p class="text-xs text-gray-600 mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_amount_description" . }}
                           </p>
                         </div>
                         <div x-show="subscriptionData.changeSeatsModal.confirmation">
                           <p class="font-p mb-4">
-                            {{ i18n "hub_billing_manage_change_quantity_confirmation_current_amount_description" . }}: <span x-text="subscriptionData.details.quantity"></span>
+                            {{ i18n "hub_billing_manage_change_quantity_confirmation_current_amount_description" . }}: <span x-text="subscriptionData.details.seats"></span>
                           </p>
                           <p class="font-p mb-4">
                             {{ i18n "hub_billing_manage_change_quantity_confirmation_new_amount_description" . }}: <span x-text="subscriptionData.quantity"></span>
                           </p>
-                          <div x-show="subscriptionData.quantity > subscriptionData.details.quantity">
-                            <p class="font-p mb-4">
-                              <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
-                              {{ i18n "hub_billing_manage_change_quantity_confirmation_increase_warning" . }}
-                            </p>
-                            <p class="font-p mb-4">
-                              <i class="fa-solid fa-credit-card text-primary"></i>
-                              {{ i18n "hub_billing_manage_modal_charge_amount_description" . }}: <span x-text="subscriptionData.changeSeatsModal.immediatePayment ? subscriptionData.changeSeatsModal.immediatePayment.amount.toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.immediatePayment.currency }) : '…'"></span>
+                          <div x-show="subscriptionData.quantity > subscriptionData.details.seats">
+                            <template x-if="subscriptionData.details.processor == 'PADDLE_CLASSIC'">
+                              <div>
+                                <p class="font-p mb-4">
+                                  <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
+                                  {{ i18n "hub_billing_manage_change_quantity_confirmation_increase_warning" . }}
+                                </p>
+                                <p class="font-p mb-4">
+                                  <i class="fa-solid fa-calendar text-primary"></i>
+                                  {{ i18n "hub_billing_manage_next_payment_date_description" . }}: <span x-text="subscriptionData.changeSeatsModal.nextPayment ? new Date(subscriptionData.changeSeatsModal.nextPayment.date).toLocaleDateString('{{ .Site.Language.Lang }}') : '…'"></span>
+                                </p>
+                              </div>
+                            </template>
+                            <p x-show="subscriptionData.details.processor == 'ESPOCRM'" class="font-p mb-4">
+                              <i class="fa-solid fa-file-invoice text-primary"></i>
+                              {{ i18n "hub_billing_manage_change_quantity_confirmation_increase_warning_invoice" . }}
                             </p>
                           </div>
-                          <p x-show="subscriptionData.quantity < subscriptionData.details.quantity" class="font-p mb-4">
-                            <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
-                            {{ i18n "hub_billing_manage_change_quantity_confirmation_decrease_warning" . }}
-                          </p>
+                          <div x-show="subscriptionData.quantity < subscriptionData.details.seats">
+                            <p x-show="subscriptionData.details.processor == 'PADDLE_CLASSIC'" class="font-p mb-4">
+                              <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
+                              {{ i18n "hub_billing_manage_change_quantity_confirmation_decrease_warning" . }}
+                            </p>
+                            <p x-show="subscriptionData.details.processor == 'ESPOCRM'" class="font-p mb-4">
+                              <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
+                              {{ i18n "hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice" . }}
+                            </p>
+                          </div>
+                          {{/* jsonify keeps a translated apostrophe from terminating the JS string literal */}}
+                          {{ $inclVat := printf `<span x-show="subscriptionData.changeSeatsModal.invoicePreview.tax_rate" class="text-sm text-gray-700" x-text="' (' + %s.replace('{rate}', Number(subscriptionData.changeSeatsModal.invoicePreview.tax_rate)) + ')'"></span>` (i18n "hub_billing_manage_change_quantity_confirmation_incl_vat" . | jsonify | htmlEscape) | safeHTML }}
+                          <template x-if="subscriptionData.details.processor == 'ESPOCRM' && subscriptionData.changeSeatsModal.invoicePreview">
+                            <div>
+                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.prorated_amount > 0" class="font-p mb-4">
+                                <i class="fa-solid fa-money-bill text-primary"></i>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_prorated_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.prorated_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>{{ $inclVat }}
+                              </p>
+                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.credited_amount > 0" class="font-p mb-4">
+                                <i class="fa-solid fa-money-bill text-primary"></i>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_credited_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.credited_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>{{ $inclVat }}
+                              </p>
+                              {{/* no VAT note here: available credit pools the account's credit notes, which need not share this subscription's tax */}}
+                              <p x-show="subscriptionData.changeSeatsModal.invoicePreview.available_credit > 0" class="font-p mb-4">
+                                <i class="fa-solid fa-info-circle text-primary"></i>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_available_credit_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.available_credit).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
+                              </p>
+                              <p class="font-p mb-4">
+                                <i class="fa-solid fa-rotate text-primary"></i>
+                                {{ i18n "hub_billing_manage_change_quantity_confirmation_new_recurring_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.recurring_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
+                              </p>
+                            </div>
+                          </template>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.quantity" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.seats" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_continue" . }}
                     </button>
-                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    {{/* Paddle Classic fills nextPayment and EspoCRM fills invoicePreview, so a quote arrived when either is set. The customer must not commit a change whose price the page cannot show. */}}
+                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress || !(subscriptionData.changeSeatsModal.invoicePreview || subscriptionData.changeSeatsModal.nextPayment)" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
@@ -363,6 +372,165 @@
 
       <template x-if="subscriptionData.state == 'NEW_CUSTOMER'">
         <div x-data="{audience: 'business'}">
+          <template x-if="subscriptionData.paymentMethod == 'invoice'">
+            <div x-show="subscriptionData.invoiceCheckoutModal.open" @keydown.escape.window="if (!subscriptionData.inProgress) subscriptionData.invoiceCheckoutModal.open = false" class="relative z-10" aria-labelledby="invoice-checkout-modal-title" role="dialog" aria-modal="true">
+              <div class="fixed inset-0 bg-gray-500/75"></div>
+              <div class="fixed z-10 inset-0 overflow-y-auto">
+                <div class="flex items-end md:items-center justify-center min-h-full p-4 text-center md:p-0">
+                  <div x-trap="subscriptionData.invoiceCheckoutModal.open" @keydown.enter="if (['INPUT', 'SELECT'].includes($event.target.tagName)) { $event.preventDefault(); document.getElementById('invoice-buy-button')?.click(); }" class="relative white-box text-left overflow-hidden md:my-8 md:max-w-3xl md:w-full">
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.invoiceCheckoutModal.open = false" type="button" class="absolute top-3 right-4 text-gray-500 hover:text-gray-700" aria-label="{{ i18n "modal_cancel" . }}">
+                      <i class="fa-solid fa-times" aria-hidden="true"></i>
+                    </button>
+                    <div class="md:grid md:grid-cols-5">
+                      <div class="bg-gray-100 p-4 md:col-span-2 md:border-r md:border-gray-200">
+                        <h3 class="label-uppercase mb-4" id="invoice-checkout-modal-title">
+                          {{ i18n "hub_billing_checkout_invoice_confirm_title" . }}
+                        </h3>
+                        <template x-if="subscriptionData.invoicePrice">
+                          <div :class="subscriptionData.invoicePriceLoading && 'opacity-50'">
+                            <p class="text-3xl md:text-4xl font-bold" x-text="Number(subscriptionData.invoicePrice.total).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.invoicePrice.currency })"></p>
+                            <p class="text-gray-700">
+                              {{ i18n "hub_billing_checkout_invoice_total_suffix" . }}
+                              <span x-show="subscriptionData.invoice.address_country == 'DE'">{{ i18n "hub_billing_checkout_invoice_total_vat_hint" . }}</span>
+                            </p>
+                            <p x-show="subscriptionData.invoice.address_country != '' && subscriptionData.invoice.address_country != 'DE'" class="text-xs text-gray-600 mt-1">
+                              {{ i18n "hub_billing_checkout_invoice_total_reverse_charge_hint" . }}
+                            </p>
+                            <p x-show="subscriptionData.invoicePrice.recurring_total != subscriptionData.invoicePrice.total" class="text-sm text-gray-700 mt-1">
+                              <span x-text="Number(subscriptionData.invoicePrice.recurring_total).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.invoicePrice.currency })"></span>
+                              {{ i18n "hub_different_recurring_description" . }}
+                            </p>
+                            <div class="border-t border-gray-200 my-4"></div>
+                            <p class="font-medium mb-2" x-text="subscriptionData.invoicePrice.product_name"></p>
+                            <div class="flex items-center gap-2 mb-2">
+                              <button type="button" @click.prevent="hubSubscription.changeInvoiceQuantity(-1)" class="shrink-0 px-3 py-2 border border-gray-300 rounded-sm bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" aria-label="{{ i18n "hub_billing_checkout_invoice_quantity_decrease" . }}">
+                                <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                              </button>
+                              <input x-model="subscriptionData.quantity" @change="hubSubscription.setInvoiceQuantity(parseInt(subscriptionData.quantity, 10))" :min="subscriptionData.checkoutContext?.quantity_min" :max="subscriptionData.checkoutContext?.quantity_max" type="number" step="1" class="input-box w-16 text-center" aria-label="{{ i18n "hub_billing_manage_status_quantity_description" . }}" required/>
+                              <button type="button" @click.prevent="hubSubscription.changeInvoiceQuantity(1)" class="shrink-0 px-3 py-2 border border-gray-300 rounded-sm bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" aria-label="{{ i18n "hub_billing_checkout_invoice_quantity_increase" . }}">
+                                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                              {{ i18n "hub_billing_checkout_invoice_confirm_unit_price" . }}:
+                              <s x-show="subscriptionData.invoicePrice.list_unit_price != subscriptionData.invoicePrice.unit_price" class="text-gray-500" x-text="Number(subscriptionData.invoicePrice.list_unit_price).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.invoicePrice.currency })"></s>
+                              <span class="font-medium" x-text="Number(subscriptionData.invoicePrice.unit_price).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.invoicePrice.currency })"></span>
+                            </p>
+                          </div>
+                        </template>
+                        <template x-if="!subscriptionData.invoicePrice && subscriptionData.invoicePriceLoading">
+                          <p class="font-p text-gray-700">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                            {{ i18n "hub_billing_checkout_invoice_price_loading" . }}
+                          </p>
+                        </template>
+                        <template x-if="subscriptionData.invoicePriceError">
+                          <div>
+                            <p class="text-sm text-red-600 mb-2">
+                              {{ i18n "hub_billing_checkout_invoice_price_error" . }}
+                            </p>
+                            <button type="button" @click.prevent="hubSubscription.loadInvoicePrice()" class="text-sm text-btn text-primary">
+                              <i class="fa-solid fa-rotate-right"></i>
+                              {{ i18n "hub_billing_checkout_invoice_price_retry" . }}
+                            </button>
+                          </div>
+                        </template>
+                      </div>
+                      <div class="p-4 md:col-span-3">
+                        <div class="mb-4">
+                          <label class="label-uppercase mb-2" for="invoice-email">
+                            {{ i18n "hub_billing_checkout_invoice_email" . }}
+                          </label>
+                          <input x-model="subscriptionData.email" id="invoice-email" readonly type="email" class="input-box w-full"/>
+                          <p class="text-xs text-gray-600 mt-1">
+                            {{ i18n "hub_billing_checkout_invoice_email_hint" . }}
+                          </p>
+                        </div>
+                        <p x-show="subscriptionData.checkoutContext?.billing_details" class="text-xs text-gray-600 mb-4">
+                          {{ i18n "hub_billing_checkout_invoice_details_on_file" . }}
+                        </p>
+                        <div class="mb-4">
+                          <label class="label-uppercase mb-2" for="invoice-account-name">
+                            {{ i18n "hub_billing_checkout_invoice_account_name" . }}
+                          </label>
+                          <input x-model="subscriptionData.invoice.account_name" id="invoice-account-name" maxlength="200" :readonly="subscriptionData.checkoutContext?.billing_details" :required="subscriptionData.invoiceCheckoutModal.open" type="text" class="input-box w-full"/>
+                        </div>
+                        <div class="mb-4">
+                          <label class="label-uppercase mb-2" for="invoice-address-street">
+                            {{ i18n "hub_billing_checkout_invoice_address_street" . }}
+                          </label>
+                          <input x-model="subscriptionData.invoice.address_street" id="invoice-address-street" maxlength="200" :readonly="subscriptionData.checkoutContext?.billing_details" :required="subscriptionData.invoiceCheckoutModal.open" type="text" class="input-box w-full"/>
+                        </div>
+                        <div class="flex flex-wrap md:flex-nowrap">
+                          <div class="w-full mb-4 md:w-1/2 md:pr-3">
+                            <label class="label-uppercase mb-2" for="invoice-address-postal-code">
+                              {{ i18n "hub_billing_checkout_invoice_address_postal_code" . }}
+                            </label>
+                            <input x-model="subscriptionData.invoice.address_postal_code" id="invoice-address-postal-code" maxlength="20" :readonly="subscriptionData.checkoutContext?.billing_details" :required="subscriptionData.invoiceCheckoutModal.open" type="text" class="input-box w-full"/>
+                          </div>
+                          <div class="w-full mb-4 md:w-1/2 md:pl-3">
+                            <label class="label-uppercase mb-2" for="invoice-address-city">
+                              {{ i18n "hub_billing_checkout_invoice_address_city" . }}
+                            </label>
+                            <input x-model="subscriptionData.invoice.address_city" id="invoice-address-city" maxlength="100" :readonly="subscriptionData.checkoutContext?.billing_details" :required="subscriptionData.invoiceCheckoutModal.open" type="text" class="input-box w-full"/>
+                          </div>
+                        </div>
+                        <div class="mb-4">
+                          <label class="label-uppercase mb-2" for="invoice-address-country">
+                            {{ i18n "hub_billing_checkout_invoice_address_country" . }}
+                          </label>
+                          <select id="invoice-address-country" x-model="subscriptionData.invoice.address_country" :disabled="subscriptionData.checkoutContext?.billing_details" :required="subscriptionData.invoiceCheckoutModal.open" class="input-box w-full">
+                            <option value="">{{ i18n "hub_billing_checkout_invoice_address_country_placeholder" . }}</option>
+                            {{ range (index $.Site.Data $.Site.Language.Lang).eu_countries }}
+                            <option value="{{ .code }}">{{ .name }}</option>
+                            {{ end }}
+                          </select>
+                          <p class="text-xs text-gray-600 mt-1">
+                            {{ i18n "hub_billing_checkout_invoice_non_eu_hint" . }}
+                          </p>
+                        </div>
+                        <div class="mb-4">
+                          <label class="label-uppercase mb-2" for="invoice-vat-id">
+                            {{ i18n "hub_billing_checkout_invoice_vat_id" . }}
+                          </label>
+                          <input x-model="subscriptionData.invoice.vat_id" id="invoice-vat-id" maxlength="14" :readonly="subscriptionData.checkoutContext?.billing_details" @input="subscriptionData.invoice.vat_id = subscriptionData.invoice.vat_id.toUpperCase()" type="text" class="input-box w-full" pattern="[A-Z]{2}[A-Z0-9]{2,12}" :required="subscriptionData.invoiceCheckoutModal.open && subscriptionData.invoice.address_country != '' && subscriptionData.invoice.address_country != 'DE'"/>
+                          <p class="text-xs text-gray-600 mt-1">
+                            {{ i18n "hub_billing_checkout_invoice_vat_id_hint" . }}
+                          </p>
+                        </div>
+                        <div class="text-center">
+                          <p class="font-p mb-4">
+                            {{ i18n "hub_billing_checkout_invoice_instruction" . }}
+                          </p>
+                          <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
+                          <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
+                          {{ $invoiceChallengeUrl := printf "%s/billing/espocrm/checkout/challenge" .Site.Params.apiBaseUrl }}
+                          {{/* Challenges expire within a minute — too short to fill the form — so the buy button
+                               solves a fresh one (reset+verify) and the verified event submits the checkout via a
+                               one-shot guard; the initial auto=onload solve only keeps the widget's own required
+                               checkbox from blocking form submits. Reveal the widget only on error so the user
+                               sees altcha's own error message. */}}
+                          <div x-show="captchaState == 'error'" x-cloak x-effect="if (captchaState === 'error') subscriptionData.inProgress = false">
+                            {{ partial "captcha.html" (dict "challengeUrl" $invoiceChallengeUrl "captchaPayload" "subscriptionData.invoiceCaptcha" "captchaState" "captchaState" "ref" "invoiceCaptcha" "auto" "onload" "onVerified" "hubSubscription.onInvoiceCaptchaVerified()") }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-t border-primary p-4 md:flex md:flex-row-reverse md:items-center">
+                      <button id="invoice-buy-button" :disabled="subscriptionData.inProgress || !acceptTerms || !subscriptionData.invoicePrice || subscriptionData.invoicePriceLoading" @click.prevent="hubSubscription.startInvoiceCheckout()" type="button" class="btn btn-primary shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                        <i :class="{'fa-file-invoice': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                        {{ i18n "hub_billing_checkout_invoice_submit" . }}
+                      </button>
+                      <button :disabled="subscriptionData.inProgress" @click.prevent="subscriptionData.invoiceCheckoutModal.open = false" type="button" class="btn btn-outline-gray-500 shrink-0 w-full md:w-auto">
+                        {{ i18n "modal_cancel" . }}
+                      </button>
+                      <p x-show="subscriptionData.errorMessage" class="text-center text-sm text-red-600 mt-4 md:text-left md:mr-3 md:mt-0" x-text="subscriptionData.errorMessage"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
           <header class="mb-6">
             <h1 class="font-h1 mb-8">{{ .Title }}</h1>
             <p class="lead">{{ i18n "hub_billing_checkout_description" . }}</p>
@@ -370,11 +538,11 @@
           <div class="grid grid-cols-1 gap-4 mb-12" :class="subscriptionData.oldLicense && !subscriptionData.customBilling?.managed ? 'md:grid-cols-3' : 'md:grid-cols-2'">
             <div x-show="subscriptionData.oldLicense && !subscriptionData.customBilling?.managed" class="hidden md:block"></div>
             <div class="flex justify-center">
-              <button class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'business'}" @click.prevent="audience = 'business'">
+              <button type="button" class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'business'}" @click.prevent="audience = 'business'">
                 <i class="fa-building" :class="{'fas': audience === 'business', 'far': audience !== 'business'}"></i>
                 {{ i18n "hub_billing_checkout_audience_business" . }}
               </button>
-              <button class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
+              <button type="button" class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': audience === 'consumer'}" @click.prevent="audience = 'consumer'">
                 <i class="fa-house" :class="{'fas': audience === 'consumer', 'far': audience !== 'consumer'}"></i>
                 {{ i18n "hub_billing_checkout_audience_consumer" . }}
               </button>
@@ -420,10 +588,10 @@
                   {{ i18n "hub_billing_checkout_standard_title" . }}
                 </h2>
                 <div x-show="!subscriptionData.customBilling?.override?.prices" class="flex items-center gap-2">
-                  <span class="uppercase tracking-wide text-xs font-bold cursor-pointer" :class="subscriptionData.billingInterval === 'monthly' ? 'text-gray-700' : 'text-gray-500'" @click="subscriptionData.billingInterval = 'monthly'">
+                  <span class="uppercase tracking-wide text-xs font-bold cursor-pointer" :class="subscriptionData.billingInterval === 'monthly' ? 'text-gray-700' : 'text-gray-500'" @click="if (subscriptionData.paymentMethod !== 'invoice') subscriptionData.billingInterval = 'monthly'">
                     {{ i18n "hub_billing_monthly" . }}
                   </span>
-                  <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" @click.prevent="subscriptionData.billingInterval = subscriptionData.billingInterval === 'monthly' ? 'yearly' : 'monthly'">
+                  <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-primary focus:ring-offset-1" role="switch" :disabled="subscriptionData.paymentMethod === 'invoice'" :class="subscriptionData.paymentMethod === 'invoice' && 'opacity-50 cursor-not-allowed'" @click.prevent="if (subscriptionData.paymentMethod !== 'invoice') subscriptionData.billingInterval = subscriptionData.billingInterval === 'monthly' ? 'yearly' : 'monthly'">
                     <span class="sr-only">Toggle billing interval</span>
                     <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out" :class="subscriptionData.billingInterval === 'monthly' ? 'translate-x-0' : 'translate-x-4'"></span>
                   </button>
@@ -477,30 +645,66 @@
                     <label class="label-uppercase mb-2">
                       {{ i18n "hub_billing_checkout_standard_quantity" . }}
                     </label>
-                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.customBilling?.quantity_min || 1" :max="subscriptionData.customBilling?.quantity_max || 10000" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
+                    <input x-model="subscriptionData.quantity" x-ref="quantity" :min="subscriptionData.checkoutContext?.quantity_min" :max="subscriptionData.checkoutContext?.quantity_max" :placeholder="`min. ${$el.min}`" @blur="$refs.quantity.classList.add('show-invalid')" type="number" step="1" class="input-box w-full mb-2" required/>
                     <p class="text-xs text-gray-600">
                       {{ i18n "hub_billing_checkout_standard_quantity_description" . }}
                     </p>
                   </div>
                 </div>
-                <div>
+                <div class="mb-4">
                   <label class="label-uppercase mb-2">
-                    {{ i18n "hub_billing_checkout_standard_email" . }}
+                    {{ i18n "hub_billing_checkout_payment_method" . }}
                   </label>
-                  <input x-model="subscriptionData.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="input-box w-full" placeholder="{{ i18n "hub_billing_checkout_standard_email_placeholder" . }}" required/>
+                  <div class="flex">
+                    <button type="button" class="w-1/2 py-2 border border-gray-300 rounded-l bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': subscriptionData.paymentMethod === 'card'}" @click.prevent="subscriptionData.paymentMethod = 'card'">
+                      <i class="fa-solid fa-credit-card"></i>
+                      {{ i18n "hub_billing_checkout_payment_method_card" . }}
+                    </button>
+                    <button type="button" class="w-1/2 py-2 border border-gray-300 rounded-r bg-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-400 focus:bg-gray-400 focus:border-secondary" :class="{'border-gray-400 bg-gray-400 text-gray-800 font-medium': subscriptionData.paymentMethod === 'invoice'}" @click.prevent="subscriptionData.paymentMethod = 'invoice'; subscriptionData.billingInterval = 'yearly'">
+                      <i class="fa-solid fa-file-invoice"></i>
+                      {{ i18n "hub_billing_checkout_payment_method_invoice" . }}
+                    </button>
+                  </div>
                 </div>
-                <div class="text-center mt-8">
-                  <p class="font-p mb-4">
-                    {{ i18n "hub_billing_checkout_standard_instruction" . }}
-                  </p>
-                  <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
-                  <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
-                  <button :disabled="subscriptionData.inProgress || !acceptTerms" @click.prevent="hubSubscription.checkout('{{ .Site.Language.Lang }}')" type="button" class="btn btn-primary w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
-                    <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
-                    {{ i18n "hub_billing_checkout_standard_submit" . }}
-                  </button>
-                  <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
-                </div>
+                <template x-if="subscriptionData.paymentMethod == 'card'">
+                  <div>
+                    <div>
+                      <label class="label-uppercase mb-2" for="card-email">
+                        {{ i18n "hub_billing_checkout_standard_email" . }}
+                      </label>
+                      <input x-model="subscriptionData.email" id="card-email" readonly type="email" class="input-box w-full"/>
+                    </div>
+                    <div class="text-center mt-8">
+                      <p class="font-p mb-4">
+                        {{ i18n "hub_billing_checkout_standard_instruction" . }}
+                      </p>
+                      <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
+                      <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
+                      {{ $cardChallengeUrl := printf "%s/billing/paddle-classic/checkout/challenge" .Site.Params.apiBaseUrl }}
+                      {{ partial "captcha.html" (dict "challengeUrl" $cardChallengeUrl "captchaPayload" "subscriptionData.cardCaptcha" "captchaState" "captchaState" "ref" "cardCaptcha") }}
+                      <button :disabled="subscriptionData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
+                        <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                        {{ i18n "hub_billing_checkout_standard_submit" . }}
+                      </button>
+                      <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+                    </div>
+                  </div>
+                </template>
+                <template x-if="subscriptionData.paymentMethod == 'invoice'">
+                  <div class="text-center mt-8">
+                    <p class="font-p mb-4">
+                      {{ i18n "hub_billing_checkout_invoice_instruction" . }}
+                    </p>
+                    <p class="text-xs text-gray-600 mb-4">
+                      {{ i18n "hub_billing_checkout_invoice_non_eu_hint" . }}
+                    </p>
+                    <button type="button" @click.prevent="hubSubscription.openInvoiceCheckoutModal()" class="btn btn-primary w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
+                      <i class="fa-solid fa-shopping-cart" aria-hidden="true"></i>
+                      {{ i18n "hub_billing_checkout_standard_submit" . }}
+                    </button>
+                    <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
+                  </div>
+                </template>
               </div>
             </div>
             <div class="flex flex-col white-box">
@@ -556,19 +760,27 @@
         </div>
       </template>
 
-      <template x-if="subscriptionData.state == 'MANUAL_INVOICE'">
-        <div class="text-center max-w-xl mx-auto">
-          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
-            {{ i18n "hub_billing_generic_title" . }}
-          </h3>
+      <template x-if="subscriptionData.state == 'CHECKOUT_SUCCESS'">
+        <div class="max-w-xl mx-auto">
+          <header class="mb-6">
+            <h1 class="font-h1">{{ .Title }}</h1>
+          </header>
           <p class="font-p mb-4">
-            <i class="fa-solid fa-info-circle"></i>
-            {{ i18n "hub_billing_manualinvoice_description" . }}
+            <i class="fa-solid fa-circle-check text-primary"></i>
+            {{ i18n "hub_billing_checkout_success_description" . }}
           </p>
-          <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-primary w-full lg:w-1/2">
-            <i class="fa-solid fa-envelope"></i>
-            {{ i18n "hub_billing_manualinvoice_action" . }}
-          </a>
+          <p x-show="subscriptionData.paymentMethod == 'invoice'" class="font-p mb-4">
+            <i class="fa-solid fa-file-invoice text-primary"></i>
+            {{ i18n "hub_billing_checkout_success_invoice_description" . }}
+          </p>
+          {{ partial "hub-license-block.html" . }}
+          <template x-if="!subscriptionData.oldLicense">
+            <p class="font-p mb-4">
+              <i class="fa-solid fa-info-circle"></i>
+              {{ i18n "hub_billing_checkout_success_relicense_description" . }}
+            </p>
+          </template>
+          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
       </template>
     </form>

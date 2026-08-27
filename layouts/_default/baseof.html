@@ -161,6 +161,9 @@
     {{ end }}
     {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
+    {{/* plugins must load before the Alpine core so they register on alpine:init */}}
+    {{ $alpineFocus := resources.Get "js/alpinejs-focus/cdn.min.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $alpineFocus.RelPermalink }}" integrity="{{ $alpineFocus.Data.Integrity }}" defer></script>
     {{ $alpine := resources.Get "js/alpinejs/cdn.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}" defer></script>
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}
