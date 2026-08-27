@@ -534,6 +534,9 @@
 - id: hub_billing_linkexpired_description
   translation: "Dieser Link ist nicht mehr gültig. Bestätigungslinks können nur einmal verwendet werden und verfallen nach einer Weile. Bitte fordere über deine Hub-Instanz einen neuen Link an."
 
+- id: hub_billing_loadfailed_description
+  translation: "Wir konnten deine Abonnement-Informationen nicht laden. Bitte kontaktiere uns, falls das Problem weiterhin besteht."
+
 - id: hub_billing_manage_status_title
   translation: "Status"
 - id: hub_billing_manage_status_active

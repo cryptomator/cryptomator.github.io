@@ -25,7 +25,6 @@
             <i class="fa-solid fa-spinner fa-spin"></i>
             {{ i18n "hub_billing_loading_description" . }}
           </p>
-          <p :class="{'hidden': !subscriptionData.errorMessage}" class="text-sm text-red-600 mt-2" x-text="subscriptionData.errorMessage"></p>
         </div>
       </template>
 
@@ -110,6 +109,22 @@
             <i class="fa-solid fa-link-slash"></i>
             {{ i18n "hub_billing_linkexpired_description" . }}
           </p>
+        </div>
+      </template>
+
+      <template x-if="subscriptionData.state == 'LOAD_FAILED'">
+        <div class="text-center max-w-xl mx-auto">
+          <h3 class="font-headline text-xl md:text-2xl leading-relaxed mb-4">
+            {{ i18n "hub_billing_generic_title" . }}
+          </h3>
+          <p class="font-p mb-4">
+            <i class="fa-solid fa-exclamation-triangle text-yellow-500"></i>
+            {{ i18n "hub_billing_loadfailed_description" . }}
+          </p>
+          <p class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
+          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8">
+            <i class="fa-solid fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
+          </a>
         </div>
       </template>
 

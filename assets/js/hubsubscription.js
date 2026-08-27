@@ -10,6 +10,9 @@ const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/billing/manage/subscriptio
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
 const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
 
+// EspoCRM holds more than one account for these details, and only sales can merge them.
+const DUPLICATE_RECORD_ERROR = 'We already hold a record for these billing details. Please contact us so we can complete your purchase.';
+
 class HubSubscription {
 
   constructor(form, subscriptionData, searchParams) {
@@ -128,8 +131,9 @@ class HubSubscription {
       this._subscriptionData.state = 'MISSING_PARAMS';
       this._subscriptionData.errorMessage = '';
     } else {
-      this._subscriptionData.state = 'CREATE_SESSION';
-      this._subscriptionData.errorMessage = error;
+      // A transient fault leaves the session valid, so another confirmation link would change nothing.
+      this.onLoadFailed(error);
+      return;
     }
     this._subscriptionData.inProgress = false;
   }
@@ -269,8 +273,8 @@ class HubSubscription {
     }).done(data => {
       this.onLoadCustomBillingSucceeded(data);
       continueHandler();
-    }).fail(xhr => {
-      this.onLoadCustomBillingFailed('Loading custom billing options failed.');
+    }).fail(() => {
+      this.onLoadFailed('Loading custom billing options failed.');
     });
   }
 
@@ -285,7 +289,13 @@ class HubSubscription {
     this._subscriptionData.inProgress = false;
   }
 
-  onLoadCustomBillingFailed(error) {
+  // While the page is still on the spinner there is no screen to fall back to, so the failure gets its own
+  // screen. The loaders also re-run from the rendered manage screen, where the error belongs inline instead
+  // of replacing it.
+  onLoadFailed(error) {
+    if (this._subscriptionData.state === 'LOADING') {
+      this._subscriptionData.state = 'LOAD_FAILED';
+    }
     this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }
@@ -305,8 +315,8 @@ class HubSubscription {
     }).done(data => {
       this.onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId);
       continueHandler();
-    }).fail(xhr => {
-      this.onLoadPriceFailed('Loading price failed.');
+    }).fail(() => {
+      this.onLoadFailed('Loading price failed.');
     });
   }
 
@@ -354,11 +364,6 @@ class HubSubscription {
     let regex = new RegExp(`^${currency}:`);
     let price = prices.find(price => regex.test(price));
     return price ? parseFloat(price.split(':')[1]) : null;
-  }
-
-  onLoadPriceFailed(error) {
-    this._subscriptionData.errorMessage = error;
-    this._subscriptionData.inProgress = false;
   }
 
   selectedPlanId() {
@@ -512,9 +517,16 @@ class HubSubscription {
       if (failureHandler) {
         failureHandler();
       } else {
-        this.onLoadCheckoutContextFailed('Loading the checkout options failed.');
+        this.onLoadFailed(this.checkoutContextError(xhr.status));
       }
     });
+  }
+
+  checkoutContextError(status) {
+    if (status === 409) {
+      return DUPLICATE_RECORD_ERROR;
+    }
+    return 'Loading the checkout options failed.';
   }
 
   onLoadCheckoutContextSucceeded(data) {
@@ -533,11 +545,6 @@ class HubSubscription {
       };
     }
     this._subscriptionData.errorMessage = '';
-    this._subscriptionData.inProgress = false;
-  }
-
-  onLoadCheckoutContextFailed(error) {
-    this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }
 
@@ -617,9 +624,8 @@ class HubSubscription {
   }
 
   invoiceCheckoutError(status) {
-    // EspoCRM refused the account as a duplicate: only sales can merge it.
     if (status === 409) {
-      return 'We already hold a record for these billing details. Please contact us so we can complete your purchase.';
+      return DUPLICATE_RECORD_ERROR;
     }
     // The account on file supplies the billing details, and this form shows them read-only, so nothing the
     // customer can reach here explains the refusal.
