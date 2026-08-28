@@ -24,7 +24,7 @@
     {{ end }}
     {{ $altURL = printf "%spage/%d/" $baseURL $pageNumber }}
   {{ end }}
-  <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ $altURL }}" />
+  <link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ $altURL }}" />
   {{ if eq .Language.Lang "en" }}
     <link rel="alternate" hreflang="x-default" href="{{ $altURL }}" />
   {{ end }}

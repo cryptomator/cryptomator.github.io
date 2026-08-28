@@ -134,5 +134,5 @@ class HubManaged {
 }
 
 function subdomainToURL(subdomain) {
-  return `https://${subdomain}.cryptomator.cloud`;
+  return `https://${subdomain}.${HUB_MANAGED_DOMAIN}`;
 }

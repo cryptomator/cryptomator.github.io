@@ -44,9 +44,9 @@
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
     {{ end }}
-    <meta property="og:locale" content="{{ replace .Site.Language.LanguageCode "-" "_" }}" />
+    <meta property="og:locale" content="{{ replace .Site.Language.Locale "-" "_" }}" />
     {{ range .Translations }}
-      <meta property="og:locale:alternate" content="{{ replace .Language.LanguageCode "-" "_" }}" />
+      <meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}" />
     {{ end }}
     <meta name="apple-itunes-app" content="app-id=1560822163">
     {{ if hugo.IsDevelopment }}
@@ -57,16 +57,73 @@
       {{ $css := resources.Get "css/main.css" | css.TailwindCSS $tailwindOpts | fingerprint }}
       <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
     {{ end }}
+    {{ block "styles" . }}
+      <!-- optional additional page-specific stylesheets, loaded after the main stylesheet -->
+    {{ end }}
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ .Site.LanguagePrefix }}/feed.xml" />
     {{ partial "hreflang.html" . }}
     {{ if eq hugo.Environment "staging" }}
       <meta name="robots" content="noindex">
     {{ end }}
   </head>
-  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData)" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
+    {{- $anniversaryBanner := .Site.Params.anniversaryBanner -}}
+    {{- $showAnniversaryBanner := false -}}
+    {{- if and $anniversaryBanner $anniversaryBanner.enabled -}}
+      {{- $showAnniversaryBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $anniversaryBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showAnniversaryBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "anniversaryBannerActive" $showAnniversaryBanner -}}
+    {{- $webinarBanner := .Site.Params.webinar.banner -}}
+    {{- $showWebinarBanner := false -}}
+    {{- if and $webinarBanner $webinarBanner.enabled -}}
+      {{- $showWebinarBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $webinarBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showWebinarBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "webinarBannerActive" $showWebinarBanner -}}
+    {{- $saleBanner := .Site.Params.salePromotion.banner -}}
+    {{- $showSaleBanner := false -}}
+    {{- if and $saleBanner $saleBanner.enabled -}}
+      {{- $showSaleBanner = true -}}
+      {{- $currentPath := .RelPermalink -}}
+      {{- range $saleBanner.excludePaths -}}
+        {{- if hasPrefix $currentPath . -}}
+          {{- $showSaleBanner = false -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- .Scratch.Set "saleBannerActive" $showSaleBanner -}}
+  <body x-data="{ isNavOpen: false, globalData: { githubStargazers: null, mastodonFollowers: null }, webinar: { state: 'loading', name: '', dateStart: null, label: '' } }" x-init="determineGlobalData('{{ .Site.Language.Lang }}', globalData){{ if $showWebinarBanner }}; determineWebinarBanner('{{ .Site.Params.webinar.webinarId }}', '{{ .Site.Language.Lang }}', { upcoming: {{ i18n "webinar_banner_upcoming" | jsonify }}, live: {{ i18n "webinar_banner_live" | jsonify }} }, webinar){{ end }}" :class="isNavOpen && 'overflow-hidden'" class="bg-dark font-body text-gray-900">
     {{ partial "nav.html" . }}
-    {{- $topPadding := cond .IsHome "" "pt-12" -}}
-    <div class="bg-gray-100 min-h-[80vh] {{ $topPadding }}">
+    {{- if $showAnniversaryBanner -}}
+      {{ partial "anniversary-banner.html" . }}
+    {{- end -}}
+    {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
+    {{- $flushHero := or .IsHome .Params.flushHero -}}
+    {{- $topPadding := cond $flushHero "" "pt-12" -}}
+    {{- if and $showThinStrip (not $showAnniversaryBanner) -}}
+      {{- $topPadding = cond $flushHero "" "pt-24 md:pt-18" -}}
+    {{- else if and (not $showThinStrip) $showAnniversaryBanner -}}
+      {{- $topPadding = cond $flushHero "" "pt-28 md:pt-24" -}}
+    {{- else if and $showThinStrip $showAnniversaryBanner -}}
+      {{- $topPadding = cond $flushHero "" "pt-40 md:pt-32" -}}
+    {{- end -}}
+    {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match. */ -}}
+    {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
+    {{- $paddingNoStrip := cond $flushHero "" "pt-12" -}}
+    {{- if $showAnniversaryBanner -}}
+      {{- $paddingNoStrip = cond $flushHero "" "pt-28 md:pt-24" -}}
+    {{- end -}}
+    <div class="bg-gray-100 min-h-[80vh]{{ if not $webinarIsThinStrip }} {{ $topPadding }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $paddingNoStrip }}' : '{{ $topPadding }}'"{{ end }}>
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
@@ -76,10 +133,17 @@
     <script
       src="https://umami.skymatic.de/script.js"
       data-website-id="{{ .Site.Params.umamiWebsiteId }}"
-      integrity="sha384-6PHtXKae10+dZuA/fcmjkSTDco+NPBE5fZ4eS/Em2lVIsS6FdDZIgs06MBJLEcSW"
+      integrity="sha384-FeSgFWhRpNmUWqmtRLZpDSRTuxgovbVqlyM0OaJpq2IanhF2u3xjYziXsyXR9Kg/"
       crossorigin="anonymous"
       defer
       {{ if in .RelPermalink "/hub/billing/" }}data-auto-track="false"{{ end }}>
+    </script>
+    <script
+      src="https://umami.skymatic.de/recorder.js"
+      data-website-id="{{ .Site.Params.umamiWebsiteId }}"
+      integrity="sha384-RFbJB7wXp6wvtb7Yj7euqgFcWmpCYnwbQM8RHA4TiyV8qukjCB/YV9blThgO/M5Z"
+      crossorigin="anonymous"
+      defer>
     </script>
     {{ if hugo.IsDevelopment }}
       {{ $constJs := resources.Get "js/const.template.js" | resources.ExecuteAsTemplate "js/const.js" . }}
@@ -97,6 +161,9 @@
     {{ end }}
     {{ $jquery := resources.Get "js/jquery/jquery.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}"></script>
+    {{/* plugins must load before the Alpine core so they register on alpine:init */}}
+    {{ $alpineFocus := resources.Get "js/alpinejs-focus/cdn.min.js" | fingerprint }}
+    <script type="text/javascript" src="{{ $alpineFocus.RelPermalink }}" integrity="{{ $alpineFocus.Data.Integrity }}" defer></script>
     {{ $alpine := resources.Get "js/alpinejs/cdn.min.js" | fingerprint }}
     <script type="text/javascript" src="{{ $alpine.RelPermalink }}" integrity="{{ $alpine.Data.Integrity }}" defer></script>
     {{ $lazysizes := resources.Get "js/lazysizes/lazysizes.min.js" | fingerprint }}

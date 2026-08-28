@@ -30,12 +30,26 @@
   @apply bg-primary border-primary text-white;
 }
 
+.btn-secondary {
+  @apply bg-secondary border-secondary text-white;
+}
+
+.btn-tertiary2 {
+  @apply bg-tertiary2 border-tertiary2 text-white;
+}
+
 .btn-primary:hover,
-.btn-primary:focus {
+.btn-primary:focus,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-tertiary2:hover,
+.btn-tertiary2:focus {
   @apply text-white transition transform duration-200 ease-in-out shadow-md -translate-y-px;
 }
 
-.btn-primary:disabled {
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-tertiary2:disabled {
   @apply shadow-none translate-y-0;
 }
 
@@ -86,15 +100,15 @@
 }
 
 .font-h1 {
-  @apply font-headline font-medium text-3xl md:text-4xl leading-tight;
+  @apply font-headline font-medium text-3xl md:text-4xl leading-tight text-balance;
 }
 
 .font-h2 {
-  @apply font-headline font-medium text-xl md:text-2xl leading-snug;
+  @apply font-headline font-medium text-xl md:text-2xl leading-snug text-balance;
 }
 
 .font-h3 {
-  @apply font-headline text-lg md:text-xl leading-relaxed;
+  @apply font-headline text-lg md:text-xl leading-relaxed text-balance;
 }
 
 .font-p {
@@ -183,7 +197,8 @@ textarea:read-only {
   @apply relative inline-block;
 }
 
-.has-tooltip:hover .tooltip {
+.has-tooltip:hover .tooltip,
+.has-tooltip:focus-within .tooltip {
   @apply block;
 }
 
@@ -196,11 +211,17 @@ textarea:read-only {
   left: 50%;
 }
 
-/* offsetting anchor targets to adjust for fixed navbar */
-[id]::before {
+/* offsetting anchor targets to adjust for fixed navbar; the offset grows when the
+   nav banner strip (.nav-promo-strip) is rendered, detected via :has() below;
+   tooltips carry an id only for aria-describedby, not as scroll anchors */
+[id]:not([role="tooltip"])::before {
   content: '';
   display: block;
-  height: 96px;
-  margin-top: -96px;
+  height: var(--anchor-offset, 96px);
+  margin-top: calc(-1 * var(--anchor-offset, 96px));
   visibility: hidden;
+}
+
+body:has(.nav-promo-strip) {
+  --anchor-offset: 138px;
 }

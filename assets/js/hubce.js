@@ -1,8 +1,8 @@
 "use strict";
 
 // requires newsletter.js
-const VERIFY_EMAIL_URL = API_BASE_URL + '/connect/email/verify';
-const REFRESH_LICENSE_URL = API_BASE_URL + '/licenses/hub/refresh';
+const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
+const HUB_CE_REGISTER_URL = API_BASE_URL + '/billing/hub-ce/register';
 
 class HubCE {
 
@@ -11,13 +11,15 @@ class HubCE {
     this._feedbackData = feedbackData;
     this._submitData = submitData;
     this._searchParams = searchParams;
-    this._submitData.oldLicense = searchParams.get('oldLicense');
-    this._submitData.returnUrl = searchParams.get('returnUrl');
+    this._submitData.hubId = searchParams.get('hub_id');
+    this._submitData.returnUrl = searchParams.get('return_url');
+    this._submitData.session = searchParams.get('session');
 
-    // continue after email verified:
-    if (searchParams.get('verifiedEmail')) {
-      feedbackData.currentStep = 1;
-      feedbackData.emailVerified = true;
+    // returned from the confirmation link with ?session=<id>: resolve the session and finish on the last step
+    if (this._submitData.session) {
+      feedbackData.currentStep = 2;
+      feedbackData.success = true;
+      this.loadBillingSession();
     }
   }
 
@@ -26,8 +28,6 @@ class HubCE {
       this.validateEmail();
     } else if (this._feedbackData.currentStep === 1) {
       this.sendConfirmationEmail();
-    } else if (this._feedbackData.currentStep === 2) {
-      this.getHubLicense();
     }
   }
 
@@ -62,16 +62,17 @@ class HubCE {
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
     $.ajax({
-      url: VERIFY_EMAIL_URL,
+      url: BILLING_SESSION_URL,
       type: 'POST',
-      data: {
-        email: this._submitData.email,
-        oldLicense: this._submitData.oldLicense,
+      contentType: 'application/json',
+      data: JSON.stringify({
+        hubId: this._submitData.hubId,
         returnUrl: this._submitData.returnUrl,
-        verifyCaptcha: this._submitData.captcha,
-        verifyEmail: this._submitData.email,
-        verifyTarget: 'registerhubce'
-      }
+        tokenTransfer: 'session', // Community Edition always delivers the license via the billing session
+        verificationLinkTarget: 'registerhubce',
+        email: this._submitData.email,
+        captcha: this._submitData.captcha
+      })
     }).done(_ => {
       this.onRequestSucceeded();
       if (this._submitData.acceptNewsletter) {
@@ -82,21 +83,45 @@ class HubCE {
     });
   }
 
-  getHubLicense() {
+  loadBillingSession() {
     this._feedbackData.inProgress = true;
     this._feedbackData.errorMessage = '';
     $.ajax({
-      url: REFRESH_LICENSE_URL,
+      url: BILLING_SESSION_URL + '/' + encodeURIComponent(this._submitData.session),
+      type: 'GET'
+    }).done(data => {
+      if (data.tokenTransfer !== 'session') {
+        this.onRequestFailed('Unsupported token transfer method: ' + data.tokenTransfer);
+        return;
+      }
+      // The session is verified; restore its context for the return to the Hub, which collects the license itself.
+      this._submitData.hubId = data.hubId;
+      this._submitData.email = data.email;
+      this._submitData.returnUrl = data.returnUrl;
+      this._feedbackData.sessionVerified = true;
+      this._feedbackData.inProgress = false;
+      this._feedbackData.errorMessage = '';
+    }).fail(xhr => {
+      this.onRequestFailed(xhr.responseJSON?.message || 'Loading billing session failed.');
+    });
+  }
+
+  registerHubCE() {
+    this._feedbackData.inProgress = true;
+    this._feedbackData.errorMessage = '';
+    $.ajax({
+      url: HUB_CE_REGISTER_URL,
       type: 'POST',
       data: {
-        token: this._submitData.oldLicense,
+        session: this._submitData.session,
         captcha: this._submitData.captcha
       }
-    }).done(response => {
-      this._feedbackData.licenseText = response;
+    }).done(_ => {
+      this._feedbackData.registered = true;
       this._feedbackData.inProgress = false;
+      this._feedbackData.errorMessage = '';
     }).fail(xhr => {
-      this.onRequestFailed(xhr.responseJSON?.message || 'Fetching license failed.');
+      this.onRequestFailed(xhr.responseJSON?.message || 'Registering your Hub failed.');
     });
   }
 

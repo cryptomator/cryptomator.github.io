@@ -2,15 +2,28 @@
 
 # Usage
 ## Requirements
+* pnpm
 * Hugo
-* Font Awesome Pro `npm config set "@awesome.me:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" TOKEN`
+* Font Awesome Pro auth token, stored in the `FONTAWESOME_AUTH_TOKEN` environment
+  variable
 
 ## Building
-1. `npm install`
+
+The `packageManager` field in `package.json` pins the pnpm version;
+enable Corepack (`corepack enable`) once on your machine and it will
+auto-provision the right pnpm release on first use.
+
+1. `pnpm install`
 1. run hugo
-  * for production builds simply run `npm run build`
-  * for local development run `npm run dev`
-  * for local production tests `npm run serve`
+  * for production builds simply run `pnpm build`
+  * for local development run `pnpm dev`
+  * for local production tests `pnpm serve`
+
+### Update policy
+
+Due to supply chain attacks, brand-new dependency upgrades are held back until the set cooldown in `pnpm-workspace.yaml` elapses. For an urgent exemption, add the package to `minimumReleaseAgeExclude`.
+
+Routine upgrades land via Dependabot PRs (see `.github/dependabot.yml`); don't run `pnpm up --latest` on `develop` or `main` — review the Dependabot PR or open a PR with explicit version pins.
 
 ## Optional Dependencies for Size Optimizations
 

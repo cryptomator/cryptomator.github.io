@@ -2,7 +2,6 @@
 title: "Digital Independence Day: Why Digital Independence Is Important "
 slug: digital-independence-day-2026
 date: 2026-02-01
-notice: 
 tags: [cryptomator, did]
 
 summary: "Digital Independence Day highlights why digital self-determination matters and how small, everyday actions — like choosing privacy-friendly tools and encrypting your data — can help you regain control over your digital life."

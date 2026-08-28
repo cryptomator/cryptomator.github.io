@@ -1,6 +1,6 @@
 ---
 title: "Datenschutzerklärung"
-aliases: ["/de/privacy-ios", "/de/privacy-android"]
+aliases: ["/privacy-ios", "/privacy-android"]
 ---
 
 _Stand: April 2025_

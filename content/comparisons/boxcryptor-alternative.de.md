@@ -4,7 +4,7 @@ weight: 2
 
 title: "Kostenlose Alternative zu Boxcryptor: Cryptomator"
 description: "Du willst deine Daten in der Cloud verschlüsseln und suchst die beste Alternative? Wir vergleichen für dich Boxcryptor mit der Open-Source-Lösung Cryptomator."
-aliases: ["/de/boxcryptor-alternative"]
+aliases: ["/boxcryptor-alternative"]
 
 ctatitle: "Möchtest du Cryptomator als Alternative zu Boxcryptor testen?"
 ctatext: "Cryptomator sichert deine persönlichen Dateien in der Cloud und ist ohne Account nutzbar. Cryptomator Hub verwaltet den Teamzugriff und ist ideal für Teams und Organisationen."

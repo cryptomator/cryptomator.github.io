@@ -9,12 +9,19 @@ theme:
 languages:
   en:
     weight: 1
-    languageName: English
-    languageCode: en-US
+    label: English
+    locale: en-US
   de:
     weight: 2
-    languageName: Deutsch
-    languageCode: de-DE
+    label: Deutsch
+    locale: de-DE
+
+# Hugo denies text/html content by default, since it emits such bodies verbatim.
+# Our content is first-party and includes .html pages, so allow it back in.
+security:
+  allowContent:
+    - ^text/html$
+    - ^text/markdown$
 
 build:
   cachebusters:
@@ -44,6 +51,8 @@ module:
       target: assets/js/jquery
     - source: node_modules/alpinejs/dist
       target: assets/js/alpinejs
+    - source: node_modules/@alpinejs/focus/dist
+      target: assets/js/alpinejs-focus
     - source: node_modules/lazysizes
       target: assets/js/lazysizes
     - source: node_modules/js-yaml/dist
