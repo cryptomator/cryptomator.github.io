@@ -903,102 +903,55 @@
 - id: hub_managed_low_quantity_submit
   translation: "Go to Downloads"
 
-# Hub Setup
-- id: hub_setup_description
-  translation: "Generate the necessary configuration templates for your Hub deployment and get your team on board with client-side encryption for your cloud storage."
-- id: hub_setup_more_info
-  translation: "You can find more documentation at <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/deployment/\">docs.cryptomator.org</a>."
+# Hub Self-Hosted
+- id: hub_self_hosted_description
+  translation: "Run Cryptomator Hub on your own infrastructure and get your team on board with client-side encryption for your cloud storage."
 
-- id: hub_setup_deployment_header_title
-  translation: "Deployment"
-- id: hub_setup_deployment_header_description
-  translation: "On what type of infrastructure do you want to deploy Cryptomator Hub?"
-- id: hub_setup_deployment_kubernetes_namespace_description
-  translation: "Namespace for the Kubernetes resources."
-- id: hub_setup_deployment_kubernetes_ingress_include
-  translation: "Include Ingress object in Kubernetes config."
-- id: hub_setup_deployment_compose_traefik_include
-  translation: "Include Traefik in Docker Compose config."
-- id: hub_setup_deployment_compose_traefik_public_network_description
-  translation: "Name of the publicly exposed network of Traefik."
-- id: hub_setup_deployment_compose_test_description
-  translation: "This deployment type is only intended for testing purposes on `localhost`. This can be used as-is without any further configuration."
-
-- id: hub_setup_hub_header_title
-  translation: "Cryptomator Hub"
-- id: hub_setup_hub_header_description
-  translation: "General information about your Hub installation."
-- id: hub_setup_hub_version_description
-  translation: "For production deployments, use the stable lane."
-- id: hub_setup_hub_public_url
-  translation: "Public Hub URL"
-- id: hub_setup_hub_public_url_description
-  translation: "The full URL including protocol, port, and path of your Hub installation."
-- id: hub_setup_hub_admin_user
-  translation: "Admin User"
-- id: hub_setup_hub_admin_user_description
-  translation: "User name of the initial user that will be created."
-- id: hub_setup_hub_admin_pw
-  translation: "Admin Password"
-- id: hub_setup_hub_admin_pw_description
-  translation: "Password for the initial user. You will be asked to change this on your first login."
-
-- id: hub_setup_keycloak_header_title
+- id: hub_self_hosted_components_title
+  translation: "Components"
+- id: hub_self_hosted_components_description
+  translation: "Hub consists of three services. You can find more documentation at <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/\">docs.cryptomator.org</a>."
+- id: hub_self_hosted_components_hub_title
+  translation: "Hub"
+- id: hub_self_hosted_components_hub_description
+  translation: "Hub manages your team members, their devices, and their access to shared vaults."
+- id: hub_self_hosted_components_keycloak_title
   translation: "Keycloak"
-- id: hub_setup_keycloak_header_description
-  translation: "Cryptomator Hub depends on Keycloak for identity management."
-- id: hub_setup_keycloak_external
-  translation: "External Keycloak"
-- id: hub_setup_keycloak_external_use
-  translation: "Use an existing Keycloak installation."
-- id: hub_setup_keycloak_public_url
-  translation: "Public Keycloak URL"
-- id: hub_setup_keycloak_public_url_external_description
-  translation: "The full URL including protocol, port, and path of your Keycloak installation."
-- id: hub_setup_keycloak_public_url_internal_description
-  translation: "Internal Keycloak container will be deployed to this URL."
-- id: hub_setup_keycloak_realm_id
-  translation: "Realm ID"
-- id: hub_setup_keycloak_realm_id_description
-  translation: "Part of the URL used to login to the correct realm. Therefore it must be an URL-safe string, unique per Keycloak instance."
-- id: hub_setup_keycloak_admin_user
-  translation: "Admin User"
-- id: hub_setup_keycloak_admin_user_description
-  translation: "User name of the admin user that will be created."
-- id: hub_setup_keycloak_admin_pw
-  translation: "Initial Admin Password"
-- id: hub_setup_keycloak_admin_pw_description
-  translation: "Temporary password for the admin user. You should change this on your first login."
+- id: hub_self_hosted_components_keycloak_description
+  translation: "Keycloak is the identity provider. It authenticates your team members for Hub."
+- id: hub_self_hosted_components_database_title
+  translation: "PostgreSQL"
+- id: hub_self_hosted_components_database_description
+  translation: "PostgreSQL is the database shared by both the Hub application and Keycloak."
 
-- id: hub_setup_database_header_title
-  translation: "Database"
-- id: hub_setup_database_header_description
-  translation: "Cryptomator Hub depends on PostgreSQL for persisting data."
-- id: hub_setup_database_admin_pw
-  translation: "Admin Password"
-- id: hub_setup_database_admin_pw_description
-  translation: "Superuser password for default `postgres` user."
-- id: hub_setup_database_hub_pw
-  translation: "Hub Password"
-- id: hub_setup_database_hub_pw_description
-  translation: "Password for `hub` user with access to `hub` database."
-- id: hub_setup_database_keycloak_pw
-  translation: "Keycloak Password"
-- id: hub_setup_database_keycloak_pw_description
-  translation: "Password for `keycloak` user with access to `keycloak` database."
+- id: hub_self_hosted_options_title
+  translation: "Deployment Options"
+- id: hub_self_hosted_options_description
+  translation: "Each option below is a complete, tested walkthrough. Pick the one closest to your environment. Every setting these guides use is a regular chart value or Compose setting, so you can mix and match them as your environment requires."
+- id: hub_self_hosted_options_local_title
+  translation: "Local Test"
+- id: hub_self_hosted_options_local_description
+  translation: "Try Hub locally with one Docker Compose command. It uses plain HTTP and well-known passwords. It is not for production."
+- id: hub_self_hosted_options_compose_title
+  translation: "Docker Compose"
+- id: hub_self_hosted_options_compose_description
+  translation: "Run Hub with bundled Keycloak and PostgreSQL on a single Docker host, behind Traefik with certificates from Let's Encrypt."
+- id: hub_self_hosted_options_kubernetes_title
+  translation: "Kubernetes"
+- id: hub_self_hosted_options_kubernetes_description
+  translation: "Deploy Hub with the published Helm chart, bundled Keycloak and PostgreSQL included, behind an nginx or Traefik Ingress."
+- id: hub_self_hosted_options_cta
+  translation: "Read the Guide"
+- id: hub_self_hosted_options_keycloak
+  translation: "Do you already operate your own Keycloak? Then deploy Hub without the bundled one and connect it to yours instead. The <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">guide for an existing Keycloak</a> shows how."
+- id: hub_self_hosted_options_more
+  translation: "Do you want to develop Hub itself or the Helm chart? The <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/README.md\" target=\"_blank\" rel=\"noopener\">deployment examples</a> also cover the development setups."
 
-- id: hub_setup_output_header_title
-  translation: "Config"
-- id: hub_setup_output_header_description
-  translation: "Use this configuration template to deploy Cryptomator Hub."
-- id: hub_setup_output_hint
-  translation: "Hint: Hub and Keycloak requires proper TLS termination in production. Only for tests with localhost or 127.0.0.1 this is not necessary. In the setup wizard you can add the config for the reverse proxies Ingress or Traefik. The deployment for the respective proxy is not included. There are some proxy deployment examples in the <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/deployment/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">documentation</a>."
-
-- id: hub_setup_contact_us_title
-  translation: "Need some help with your configuration?"
-- id: hub_setup_contact_us_description
-  translation: "This wizard creates a sensible default for common configurations. Feel free to contact us if you want us to tailor the setup to your specific needs."
-- id: hub_setup_contact_us_button
+- id: hub_self_hosted_contact_us_title
+  translation: "Need some help with your deployment?"
+- id: hub_self_hosted_contact_us_description
+  translation: "These guides cover common scenarios. Feel free to contact us if you want us to tailor the setup to your specific needs."
+- id: hub_self_hosted_contact_us_button
   translation: "Contact Us"
 
 # Pagination

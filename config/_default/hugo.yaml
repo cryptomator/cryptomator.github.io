@@ -55,8 +55,6 @@ module:
       target: assets/js/alpinejs-focus
     - source: node_modules/lazysizes
       target: assets/js/lazysizes
-    - source: node_modules/js-yaml/dist
-      target: assets/js/js-yaml
     - source: node_modules/altcha/dist_external
       target: assets/js/altcha
     - source: node_modules/mathjax/es5

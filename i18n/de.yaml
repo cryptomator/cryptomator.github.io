@@ -870,102 +870,55 @@
 - id: hub_managed_low_quantity_submit
   translation: "Zu Downloads"
 
-# Hub Setup
-- id: hub_setup_description
-  translation: "Generiere die erforderlichen Konfigurationsvorlagen für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
-- id: hub_setup_more_info
-  translation: "Weitere Dokumentation findest du unter <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/deployment/\">docs.cryptomator.org</a>."
+# Hub Self-Hosted
+- id: hub_self_hosted_description
+  translation: "Betreibe Cryptomator Hub auf deiner eigenen Infrastruktur und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 
-- id: hub_setup_deployment_header_title
-  translation: "Deployment"
-- id: hub_setup_deployment_header_description
-  translation: "Auf welcher Art von Infrastruktur möchtest du Cryptomator Hub einsetzen?"
-- id: hub_setup_deployment_kubernetes_namespace_description
-  translation: "Namespace für die Kubernetes-Ressourcen."
-- id: hub_setup_deployment_kubernetes_ingress_include
-  translation: "Ingress-Objekt in die Kubernetes-Konfiguration aufnehmen."
-- id: hub_setup_deployment_compose_traefik_include
-  translation: "Traefik in die Docker-Compose-Konfiguration aufnehmen."
-- id: hub_setup_deployment_compose_traefik_public_network_description
-  translation: "Name des öffentlich zugänglichen Netzwerks von Traefik."
-- id: hub_setup_deployment_compose_test_description
-  translation: "Diese Deployment-Art ist nur für Testzwecke auf `localhost` gedacht. Sie kann ohne weitere Konfiguration verwendet werden."
-
-- id: hub_setup_hub_header_title
-  translation: "Cryptomator Hub"
-- id: hub_setup_hub_header_description
-  translation: "Allgemeine Informationen über deine Hub-Installation."
-- id: hub_setup_hub_version_description
-  translation: "Für den Produktiveinsatz verwende die stabile Version."
-- id: hub_setup_hub_public_url
-  translation: "Öffentliche Hub-URL"
-- id: hub_setup_hub_public_url_description
-  translation: "Die vollständige URL einschließlich Protokoll, Port und Pfad deiner Hub-Installation."
-- id: hub_setup_hub_admin_user
-  translation: "Admin-Benutzer"
-- id: hub_setup_hub_admin_user_description
-  translation: "Benutzername des ersten Benutzers, der erstellt wird."
-- id: hub_setup_hub_admin_pw
-  translation: "Admin-Passwort"
-- id: hub_setup_hub_admin_pw_description
-  translation: "Passwort für den Erstbenutzer. Bei der ersten Anmeldung wirst du aufgefordert, dieses zu ändern."
-
-- id: hub_setup_keycloak_header_title
+- id: hub_self_hosted_components_title
+  translation: "Komponenten"
+- id: hub_self_hosted_components_description
+  translation: "Hub besteht aus drei Diensten. Weitere Dokumentation findest du unter <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/\">docs.cryptomator.org</a>."
+- id: hub_self_hosted_components_hub_title
+  translation: "Hub"
+- id: hub_self_hosted_components_hub_description
+  translation: "Mit Hub verwaltest du Mitglieder, ihre Geräte und ihren Zugriff auf geteilte Tresore."
+- id: hub_self_hosted_components_keycloak_title
   translation: "Keycloak"
-- id: hub_setup_keycloak_header_description
-  translation: "Cryptomator Hub verwendet Keycloak für das Identitätsmanagement."
-- id: hub_setup_keycloak_external
-  translation: "Externes Keycloak"
-- id: hub_setup_keycloak_external_use
-  translation: "Verwende eine bestehende Keycloak-Installation."
-- id: hub_setup_keycloak_public_url
-  translation: "Öffentliche Keycloak-URL"
-- id: hub_setup_keycloak_public_url_external_description
-  translation: "Die vollständige URL einschließlich Protokoll, Port und Pfad deiner Keycloak-Installation."
-- id: hub_setup_keycloak_public_url_internal_description
-  translation: "Der interne Keycloak-Container wird unter dieser URL bereitgestellt."
-- id: hub_setup_keycloak_realm_id
-  translation: "Realm ID"
-- id: hub_setup_keycloak_realm_id_description
-  translation: "Eine Zeichenkette, welche als Teil der URL während des Logins dazu dient, sich beim richtigen Realm einzuloggen. Sie muss daher pro Keycloak-Instanz einzigartig sein."
-- id: hub_setup_keycloak_admin_user
-  translation: "Admin-Benutzer"
-- id: hub_setup_keycloak_admin_user_description
-  translation: "Benutzername des zu erstellenden Admin-Benutzers."
-- id: hub_setup_keycloak_admin_pw
-  translation: "Anfängliches Admin-Passwort"
-- id: hub_setup_keycloak_admin_pw_description
-  translation: "Temporäres Passwort für den Admin-Benutzer. Du solltest es bei deiner ersten Anmeldung ändern."
+- id: hub_self_hosted_components_keycloak_description
+  translation: "Keycloak ist der Identity Provider von Hub und authentifiziert deine Teammitglieder."
+- id: hub_self_hosted_components_database_title
+  translation: "PostgreSQL"
+- id: hub_self_hosted_components_database_description
+  translation: "PostgreSQL ist die gemeinsame Datenbank, die Hub-Anwendung und Keycloak verwenden."
 
-- id: hub_setup_database_header_title
-  translation: "Datenbank"
-- id: hub_setup_database_header_description
-  translation: "Cryptomator Hub verwendet PostgreSQL für die Speicherung von Daten."
-- id: hub_setup_database_admin_pw
-  translation: "Admin-Passwort"
-- id: hub_setup_database_admin_pw_description
-  translation: "Superuser-Passwort für den Standardbenutzer `postgres`."
-- id: hub_setup_database_hub_pw
-  translation: "Hub-Passwort"
-- id: hub_setup_database_hub_pw_description
-  translation: "Passwort für den Benutzer `hub` mit Zugriff zur Datenbank `hub`."
-- id: hub_setup_database_keycloak_pw
-  translation: "Keycloak-Passwort"
-- id: hub_setup_database_keycloak_pw_description
-  translation: "Passwort für den Benutzer `keycloak` mit Zugriff auf die Datenbank `keycloak`."
+- id: hub_self_hosted_options_title
+  translation: "Deployment-Optionen"
+- id: hub_self_hosted_options_description
+  translation: "Jede Option unten ist eine vollständige, getestete Anleitung. Wähle die Option, die deiner Umgebung am nächsten kommt. Jede Einstellung in diesen Anleitungen ist ein normaler Chart-Wert oder eine Compose-Einstellung, du kannst sie also nach Bedarf kombinieren."
+- id: hub_self_hosted_options_local_title
+  translation: "Lokaler Test"
+- id: hub_self_hosted_options_local_description
+  translation: "Teste Hub mit einem Docker-Compose-Befehl. Die Option nutzt nur HTTP und ist nicht für den Produktivbetrieb gedacht."
+- id: hub_self_hosted_options_compose_title
+  translation: "Docker Compose"
+- id: hub_self_hosted_options_compose_description
+  translation: "Betreibe Hub mit Keycloak und PostgreSQL auf einem einzelnen Docker-Host, hinter Traefik mit Let's-Encrypt-Zertifikaten."
+- id: hub_self_hosted_options_kubernetes_title
+  translation: "Kubernetes"
+- id: hub_self_hosted_options_kubernetes_description
+  translation: "Installiere Hub samt Keycloak und PostgreSQL aus dem veröffentlichten Helm-Chart, hinter nginx- oder Traefik-Ingress."
+- id: hub_self_hosted_options_cta
+  translation: "Zur Anleitung"
+- id: hub_self_hosted_options_keycloak
+  translation: "Betreibst du bereits ein eigenes Keycloak? Dann deploye Hub ohne das mitgelieferte Keycloak und verbinde es stattdessen mit deinem. Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">Anleitung für ein bestehendes Keycloak</a> zeigt, wie das geht."
+- id: hub_self_hosted_options_more
+  translation: "Willst du Hub selbst oder das Helm-Chart weiterentwickeln? Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/README.md\" target=\"_blank\" rel=\"noopener\">Deployment-Beispiele</a> decken auch die Entwicklungs-Setups ab."
 
-- id: hub_setup_output_header_title
-  translation: "Konfig"
-- id: hub_setup_output_header_description
-  translation: "Verwende diese Konfigurationsvorlage, um Cryptomator Hub zu deployen."
-- id: hub_setup_output_hint
-  translation: "Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten. In der <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/deployment/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">Dokumentation</a> gibt es einige Beispiele für die Einrichtung eines Proxy."
-
-- id: hub_setup_contact_us_title
-  translation: "Brauchst du Hilfe bei deiner Konfiguration?"
-- id: hub_setup_contact_us_description
-  translation: "Dieser Assistent erstellt sinnvolle Voreinstellungen für gängige Konfigurationen. Wenn du möchtest, dass wir das Deployment an deine speziellen Bedürfnisse anpassen, kannst du uns gerne kontaktieren."
-- id: hub_setup_contact_us_button
+- id: hub_self_hosted_contact_us_title
+  translation: "Brauchst du Hilfe bei deinem Deployment?"
+- id: hub_self_hosted_contact_us_description
+  translation: "Diese Anleitungen decken gängige Szenarien ab. Wenn du möchtest, dass wir das Deployment an deine speziellen Bedürfnisse anpassen, kannst du uns gerne kontaktieren."
+- id: hub_self_hosted_contact_us_button
   translation: "Kontaktiere uns"
 
 # Pagination
