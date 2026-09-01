@@ -9,9 +9,6 @@
 {{ define "main" }}
   <div class="header-bg-hub relative overflow-x-clip pb-24 md:pb-32">
   <header class="container flex flex-col items-center text-center pt-10 md:pt-12">
-    <div class="px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-red-600 text-white mb-6">
-      {{ i18n "hub_header_kicker_early_access" . }}
-    </div>
     <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance text-gray-800 mb-5">{{ i18n "hub_header_title" . | safeHTML }}</h1>
     <p class="text-lg leading-relaxed text-balance text-gray-600 max-w-2xl mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
     <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-4">
@@ -21,7 +18,6 @@
         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
       </a>
     </div>
-    <p class="text-sm text-gray-500">* {{ i18n "hub_header_early_access_note" . | safeHTML }}</p>
 
     <div class="relative mt-8 mb-6 h-[200px] md:h-[368px] overflow-visible">
         <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">

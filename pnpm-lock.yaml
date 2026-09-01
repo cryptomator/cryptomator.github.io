@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@alpinejs/focus':
+        specifier: ^3.15.12
+        version: 3.15.12
       '@awesome.me/kit-628503cc21':
         specifier: ^1.0.18
         version: 1.0.18
@@ -20,9 +23,6 @@ importers:
       jquery:
         specifier: ^3.7.1
         version: 3.7.1
-      js-yaml:
-        specifier: ^4.3.0
-        version: 4.3.0
       lazysizes:
         specifier: ^5.3.2
         version: 5.3.2
@@ -44,6 +44,9 @@ importers:
         version: 4.1.11
 
 packages:
+
+  '@alpinejs/focus@3.15.12':
+    resolution: {integrity: sha512-lmqbFTlbQGywDgsW4dY0pv18CKhuHJrq8mffU1OO14J34uUk+lCQElmSgJdRGHYv9qBezE6zdvmhN6n2tg0A1A==}
 
   '@altcha/crypto@0.0.1':
     resolution: {integrity: sha512-qZMdnoD3lAyvfSUMNtC2adRi666Pxdcw9zqfMU5qBOaJWqpN9K+eqQGWqeiKDMqL0SF+EytNG4kR/Pr/99GJ6g==}
@@ -286,9 +289,6 @@ packages:
   altcha@1.5.1:
     resolution: {integrity: sha512-o3+k9uETJ/p5FgzsG8sbRFqtzMbywAh2bAcsHanfMUUj0WXT8+h87dZ8ZISM7E/ufidZLUI5TCiO97eJDTwayg==}
 
-  argparse@2.0.1:
-    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
@@ -319,6 +319,9 @@ packages:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
 
+  focus-trap@8.2.2:
+    resolution: {integrity: sha512-qV0g8hRYBqgACcFOH3f9wXc4zPKhr/0z9RI2a6ZijZ72EeBi4g8oBy8zAWuUR1TsMpOzwpUMFvjdasrC41Joug==}
+
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
@@ -340,10 +343,6 @@ packages:
 
   jquery@3.7.1:
     resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
-
-  js-yaml@4.3.0:
-    resolution: {integrity: sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q==}
-    hasBin: true
 
   lazysizes@5.3.2:
     resolution: {integrity: sha512-22UzWP+Vedi/sMeOr8O7FWimRVtiNJV2HCa+V8+peZOw6QbswN9k58VUhd7i6iK5bw5QkYrF01LJbeJe0PV8jg==}
@@ -469,6 +468,9 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
+  tabbable@6.5.0:
+    resolution: {integrity: sha512-wieBHXygIm7OyQOu5hQlkk62/WyCFYGlWg7L6/ZCUZwx0o398Zkn4pVmMyfYhfMG8kGrj/Krt8eIk6UKC6VzwA==}
+
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
 
@@ -492,6 +494,11 @@ packages:
     engines: {node: '>=18'}
 
 snapshots:
+
+  '@alpinejs/focus@3.15.12':
+    dependencies:
+      focus-trap: 8.2.2
+      tabbable: 6.5.0
 
   '@altcha/crypto@0.0.1': {}
 
@@ -690,8 +697,6 @@ snapshots:
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu': 4.18.0
 
-  argparse@2.0.1: {}
-
   braces@3.0.3:
     dependencies:
       fill-range: 7.1.1
@@ -713,6 +718,10 @@ snapshots:
     dependencies:
       to-regex-range: 5.0.1
 
+  focus-trap@8.2.2:
+    dependencies:
+      tabbable: 6.5.0
+
   graceful-fs@4.2.11: {}
 
   is-extglob@2.1.1: {}
@@ -726,10 +735,6 @@ snapshots:
   jiti@2.5.1: {}
 
   jquery@3.7.1: {}
-
-  js-yaml@4.3.0:
-    dependencies:
-      argparse: 2.0.1
 
   lazysizes@5.3.2: {}
 
@@ -817,6 +822,8 @@ snapshots:
       util-deprecate: 1.0.2
 
   source-map-js@1.2.1: {}
+
+  tabbable@6.5.0: {}
 
   tailwindcss@4.1.11: {}
 

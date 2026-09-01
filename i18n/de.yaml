@@ -34,8 +34,6 @@
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub zu erhalten, und akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_hub_newsletter_optional
   translation: "Ich bin damit einverstanden, Neuigkeiten von Cryptomator Hub per E-Mail zu erhalten (optional)."
-- id: accept_hub_managed_early_access_optional
-  translation: "<span class=\"inline-flex px-2 py-0.5 rounded-full text-xs font-medium uppercase bg-primary-l2 text-dark\">Early Access</span> <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Cryptomator Hub 2.0.0</a> mit brandneuen Features und einer verlängerten kostenlosen 60-Tage-Testphase testen (optional)."
 - id: accept_privacy
   translation: "Ich akzeptiere die <a class=\"text-link\" href=\"/de/privacy/\">Datenschutzerklärung</a>."
 - id: accept_privacy_implicitly
@@ -285,7 +283,7 @@
   translation: "Vertraut von Millionen weltweit"
 
 - id: for_individuals_downloads_title
-  translation: "3M+"
+  translation: "4M+"
 - id: for_individuals_downloads_description
   translation: "Downloads"
 - id: for_individuals_expertise_title
@@ -436,7 +434,7 @@
 - id: home_trustingbrands_title
   translation: "Marken, die unserer Technologie vertrauen"
 - id: home_sponsors_title
-  translation: "Mit Stolz gesponsert von"
+  translation: "Möchtest du ein offizieller Sponsor werden?"
 - id: home_sponsors_button
   translation: "Werde Sponsor"
 - id: home_testimonials_title
@@ -459,10 +457,6 @@
   translation: "Kostenlos testen"
 - id: hub_header_managed_cta_description
   translation: "Startet eure kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
-- id: hub_header_kicker_early_access
-  translation: "Hub 2.0.0 Early Access*"
-- id: hub_header_early_access_note
-  translation: "<a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/early-access/\" target=\"_blank\">Early Access</a> beinhaltet brandneue Features und eine verlängerte kostenlose 60-Tage-Testphase."
 - id: hub_header_link
   translation: "So funktioniert's"
 - id: hub_hero_scene_vault
@@ -631,12 +625,13 @@
 - id: hub_billing_linkexpired_description
   translation: "Dieser Link ist nicht mehr gültig. Bestätigungslinks können nur einmal verwendet werden und verfallen nach einer Weile. Bitte fordere über deine Hub-Instanz einen neuen Link an."
 
+- id: hub_billing_loadfailed_description
+  translation: "Wir konnten deine Abonnement-Informationen nicht laden. Bitte kontaktiere uns, falls das Problem weiterhin besteht."
+
 - id: hub_billing_manage_status_title
   translation: "Status"
 - id: hub_billing_manage_status_active
   translation: "Aktiv"
-- id: hub_billing_manage_status_pastdue
-  translation: "Überfällig"
 - id: hub_billing_manage_status_trialing
   translation: "Testphase"
 - id: hub_billing_manage_status_paused
@@ -659,12 +654,10 @@
 
 - id: hub_billing_manage_payment_info_title
   translation: "Zahlungsinformationen"
-- id: hub_billing_manage_payment_info_credit_card
-  translation: "Kreditkarte"
-- id: hub_billing_manage_payment_info_credit_card_last_four_digits_description
-  translation: "Endet mit"
-- id: hub_billing_manage_payment_info_paypal
-  translation: "PayPal"
+- id: hub_billing_manage_payment_info_card
+  translation: "Karte / PayPal"
+- id: hub_billing_manage_payment_info_invoice
+  translation: "Rechnung"
 - id: hub_billing_manage_payment_info_update_action
   translation: "Zahlungsmethode aktualisieren"
 
@@ -677,8 +670,6 @@
 - id: hub_billing_manage_license_key_retry_action
   translation: "Erneut versuchen"
 
-- id: hub_billing_manage_modal_charge_amount_description
-  translation: "Rechnungsbetrag"
 - id: hub_billing_manage_modal_continue
   translation: "Weiter"
 - id: hub_billing_manage_modal_confirm
@@ -701,8 +692,22 @@
   translation: "Neue Anzahl der Sitze"
 - id: hub_billing_manage_change_quantity_confirmation_increase_warning
   translation: "Du bist dabei, das Sitzplatzlimit zu erhöhen. Wenn du dies bestätigst, wird die die Differenz sofort in Rechnung gestellt."
+- id: hub_billing_manage_change_quantity_confirmation_increase_warning_invoice
+  translation: "Du bist dabei, das Sitzplatzlimit zu erhöhen. Wenn du dies bestätigst, werden die zusätzlichen Sitze per Rechnung abgerechnet."
 - id: hub_billing_manage_change_quantity_confirmation_decrease_warning
   translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird deine nächste Zahlung um die Differenz reduziert."
+- id: hub_billing_manage_change_quantity_confirmation_decrease_warning_invoice
+  translation: "Du bist dabei, das Sitzplatzlimit zu verringern. Wenn du dies bestätigst, wird die Reduzierung auf deiner nächsten Rechnung berücksichtigt."
+- id: hub_billing_manage_change_quantity_confirmation_prorated_invoice
+  translation: "Jetzt in Rechnung gestellter Betrag"
+- id: hub_billing_manage_change_quantity_confirmation_credited_invoice
+  translation: "Gutschrift auf dein Konto"
+- id: hub_billing_manage_change_quantity_confirmation_incl_vat
+  translation: "inkl. {rate} % USt."
+- id: hub_billing_manage_change_quantity_confirmation_available_credit_invoice
+  translation: "Verfügbares Guthaben (wird mit einer künftigen Rechnung verrechnet, keine Rückzahlung)"
+- id: hub_billing_manage_change_quantity_confirmation_new_recurring_invoice
+  translation: "Neuer Jahresbetrag (netto)"
 
 - id: hub_billing_checkout_description
   translation: "Schöpfe das volle Potenzial deiner Hub-Instanz aus und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
@@ -734,12 +739,73 @@
   translation: "Nur Nutzer, die Zugang zu Tresoren haben, werden auf die Anzahl der Sitze angerechnet."
 - id: hub_billing_checkout_standard_email
   translation: "E-Mail"
-- id: hub_billing_checkout_standard_email_placeholder
-  translation: "E-Mail-Adresse"
 - id: hub_billing_checkout_standard_instruction
   translation: "Zahlungen werden über Paddle abgewickelt."
 - id: hub_billing_checkout_standard_submit
   translation: "Zur Zahlung"
+
+- id: hub_billing_checkout_payment_method
+  translation: "Zahlungsmethode"
+- id: hub_billing_checkout_payment_method_card
+  translation: "Per Karte zahlen"
+- id: hub_billing_checkout_payment_method_invoice
+  translation: "Kauf auf Rechnung"
+
+- id: hub_billing_checkout_invoice_email
+  translation: "E-Mail"
+- id: hub_billing_checkout_invoice_email_hint
+  translation: "Mit dieser E-Mail-Adresse verwaltest du später dein Abonnement."
+- id: hub_billing_checkout_invoice_account_name
+  translation: "Firmenname"
+- id: hub_billing_checkout_invoice_address_street
+  translation: "Straße und Hausnummer"
+- id: hub_billing_checkout_invoice_address_postal_code
+  translation: "Postleitzahl"
+- id: hub_billing_checkout_invoice_address_city
+  translation: "Stadt"
+- id: hub_billing_checkout_invoice_address_country
+  translation: "Land"
+- id: hub_billing_checkout_invoice_address_country_placeholder
+  translation: "Bitte auswählen"
+- id: hub_billing_checkout_invoice_non_eu_hint
+  translation: "Kauf auf Rechnung ist nur innerhalb der EU möglich. Außerhalb der EU? Kontaktiere uns bitte über die Enterprise-Option."
+- id: hub_billing_checkout_invoice_vat_id
+  translation: "USt-IdNr."
+- id: hub_billing_checkout_invoice_details_on_file
+  translation: "Dies sind die Rechnungsdaten, die wir zu deiner E-Mail-Adresse gespeichert haben. Melde dich bei uns, wenn sie geändert werden müssen."
+- id: hub_billing_checkout_invoice_vat_id_hint
+  translation: "Erforderlich für EU-Länder außerhalb Deutschlands."
+- id: hub_billing_checkout_invoice_instruction
+  translation: "Eine Rechnung wird ausgestellt und an deine E-Mail-Adresse gesendet."
+- id: hub_billing_checkout_invoice_submit
+  translation: "Auf Rechnung kaufen"
+- id: hub_billing_checkout_invoice_total_suffix
+  translation: "pro Jahr (netto)"
+- id: hub_billing_checkout_invoice_total_vat_hint
+  translation: "zzgl. 19 % USt."
+- id: hub_billing_checkout_invoice_total_reverse_charge_hint
+  translation: "Reverse-Charge-Verfahren – Steuerschuldnerschaft des Leistungsempfängers"
+- id: hub_billing_checkout_invoice_confirm_title
+  translation: "Bestellübersicht"
+- id: hub_billing_checkout_invoice_confirm_unit_price
+  translation: "Preis pro Seat"
+- id: hub_billing_checkout_invoice_quantity_decrease
+  translation: "Anzahl der Seats verringern"
+- id: hub_billing_checkout_invoice_quantity_increase
+  translation: "Anzahl der Seats erhöhen"
+- id: hub_billing_checkout_invoice_price_loading
+  translation: "Preis wird geladen …"
+- id: hub_billing_checkout_invoice_price_error
+  translation: "Der Preis konnte nicht geladen werden."
+- id: hub_billing_checkout_invoice_price_retry
+  translation: "Erneut versuchen"
+
+- id: hub_billing_checkout_success_description
+  translation: "Vielen Dank für deinen Kauf! Dein Abonnement ist jetzt aktiv."
+- id: hub_billing_checkout_success_invoice_description
+  translation: "Eine Rechnung wird ausgestellt und an deine E-Mail-Adresse gesendet."
+- id: hub_billing_checkout_success_relicense_description
+  translation: "Um deine Lizenz zu erhalten, kehre bitte zu deiner Hub-Instanz zurück und starte den Abonnementvorgang erneut."
 
 - id: hub_billing_checkout_community_title
   translation: "Community"
@@ -768,10 +834,6 @@
 - id: hub_billing_checkout_enterprise_action
   translation: "Kontaktiere uns"
 
-- id: hub_billing_manualinvoice_description
-  translation: "Um dein Abonnement zu verwalten, wende dich bitte an unser Support-Team."
-- id: hub_billing_manualinvoice_action
-  translation: "Kontaktiere uns"
 
 # Hub Demo
 - id: hub_demo_description
@@ -931,102 +993,55 @@
 - id: hub_managed_low_quantity_submit
   translation: "Zu Downloads"
 
-# Hub Setup
-- id: hub_setup_description
-  translation: "Generiere die erforderlichen Konfigurationsvorlagen für deine Hub-Installation und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
-- id: hub_setup_more_info
-  translation: "Weitere Dokumentation findest du unter <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/deployment/\">docs.cryptomator.org</a>."
+# Hub Self-Hosted
+- id: hub_self_hosted_description
+  translation: "Betreibe Cryptomator Hub auf deiner eigenen Infrastruktur und hol dein Team mit der clientseitigen Verschlüsselung für deinen Cloud-Speicher an Bord."
 
-- id: hub_setup_deployment_header_title
-  translation: "Deployment"
-- id: hub_setup_deployment_header_description
-  translation: "Auf welcher Art von Infrastruktur möchtest du Cryptomator Hub einsetzen?"
-- id: hub_setup_deployment_kubernetes_namespace_description
-  translation: "Namespace für die Kubernetes-Ressourcen."
-- id: hub_setup_deployment_kubernetes_ingress_include
-  translation: "Ingress-Objekt in die Kubernetes-Konfiguration aufnehmen."
-- id: hub_setup_deployment_compose_traefik_include
-  translation: "Traefik in die Docker-Compose-Konfiguration aufnehmen."
-- id: hub_setup_deployment_compose_traefik_public_network_description
-  translation: "Name des öffentlich zugänglichen Netzwerks von Traefik."
-- id: hub_setup_deployment_compose_test_description
-  translation: "Diese Deployment-Art ist nur für Testzwecke auf `localhost` gedacht. Sie kann ohne weitere Konfiguration verwendet werden."
-
-- id: hub_setup_hub_header_title
-  translation: "Cryptomator Hub"
-- id: hub_setup_hub_header_description
-  translation: "Allgemeine Informationen über deine Hub-Installation."
-- id: hub_setup_hub_version_description
-  translation: "Für den Produktiveinsatz verwende die stabile Version."
-- id: hub_setup_hub_public_url
-  translation: "Öffentliche Hub-URL"
-- id: hub_setup_hub_public_url_description
-  translation: "Die vollständige URL einschließlich Protokoll, Port und Pfad deiner Hub-Installation."
-- id: hub_setup_hub_admin_user
-  translation: "Admin-Benutzer"
-- id: hub_setup_hub_admin_user_description
-  translation: "Benutzername des ersten Benutzers, der erstellt wird."
-- id: hub_setup_hub_admin_pw
-  translation: "Admin-Passwort"
-- id: hub_setup_hub_admin_pw_description
-  translation: "Passwort für den Erstbenutzer. Bei der ersten Anmeldung wirst du aufgefordert, dieses zu ändern."
-
-- id: hub_setup_keycloak_header_title
+- id: hub_self_hosted_components_title
+  translation: "Komponenten"
+- id: hub_self_hosted_components_description
+  translation: "Hub besteht aus drei Diensten. Weitere Dokumentation findest du unter <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/\">docs.cryptomator.org</a>."
+- id: hub_self_hosted_components_hub_title
+  translation: "Hub"
+- id: hub_self_hosted_components_hub_description
+  translation: "Mit Hub verwaltest du Mitglieder, ihre Geräte und ihren Zugriff auf geteilte Tresore."
+- id: hub_self_hosted_components_keycloak_title
   translation: "Keycloak"
-- id: hub_setup_keycloak_header_description
-  translation: "Cryptomator Hub verwendet Keycloak für das Identitätsmanagement."
-- id: hub_setup_keycloak_external
-  translation: "Externes Keycloak"
-- id: hub_setup_keycloak_external_use
-  translation: "Verwende eine bestehende Keycloak-Installation."
-- id: hub_setup_keycloak_public_url
-  translation: "Öffentliche Keycloak-URL"
-- id: hub_setup_keycloak_public_url_external_description
-  translation: "Die vollständige URL einschließlich Protokoll, Port und Pfad deiner Keycloak-Installation."
-- id: hub_setup_keycloak_public_url_internal_description
-  translation: "Der interne Keycloak-Container wird unter dieser URL bereitgestellt."
-- id: hub_setup_keycloak_realm_id
-  translation: "Realm ID"
-- id: hub_setup_keycloak_realm_id_description
-  translation: "Eine Zeichenkette, welche als Teil der URL während des Logins dazu dient, sich beim richtigen Realm einzuloggen. Sie muss daher pro Keycloak-Instanz einzigartig sein."
-- id: hub_setup_keycloak_admin_user
-  translation: "Admin-Benutzer"
-- id: hub_setup_keycloak_admin_user_description
-  translation: "Benutzername des zu erstellenden Admin-Benutzers."
-- id: hub_setup_keycloak_admin_pw
-  translation: "Anfängliches Admin-Passwort"
-- id: hub_setup_keycloak_admin_pw_description
-  translation: "Temporäres Passwort für den Admin-Benutzer. Du solltest es bei deiner ersten Anmeldung ändern."
+- id: hub_self_hosted_components_keycloak_description
+  translation: "Keycloak ist der Identity Provider von Hub und authentifiziert deine Teammitglieder."
+- id: hub_self_hosted_components_database_title
+  translation: "PostgreSQL"
+- id: hub_self_hosted_components_database_description
+  translation: "PostgreSQL ist die gemeinsame Datenbank, die Hub-Anwendung und Keycloak verwenden."
 
-- id: hub_setup_database_header_title
-  translation: "Datenbank"
-- id: hub_setup_database_header_description
-  translation: "Cryptomator Hub verwendet PostgreSQL für die Speicherung von Daten."
-- id: hub_setup_database_admin_pw
-  translation: "Admin-Passwort"
-- id: hub_setup_database_admin_pw_description
-  translation: "Superuser-Passwort für den Standardbenutzer `postgres`."
-- id: hub_setup_database_hub_pw
-  translation: "Hub-Passwort"
-- id: hub_setup_database_hub_pw_description
-  translation: "Passwort für den Benutzer `hub` mit Zugriff zur Datenbank `hub`."
-- id: hub_setup_database_keycloak_pw
-  translation: "Keycloak-Passwort"
-- id: hub_setup_database_keycloak_pw_description
-  translation: "Passwort für den Benutzer `keycloak` mit Zugriff auf die Datenbank `keycloak`."
+- id: hub_self_hosted_options_title
+  translation: "Deployment-Optionen"
+- id: hub_self_hosted_options_description
+  translation: "Jede Option unten ist eine vollständige, getestete Anleitung. Wähle die Option, die deiner Umgebung am nächsten kommt. Jede Einstellung in diesen Anleitungen ist ein normaler Chart-Wert oder eine Compose-Einstellung, du kannst sie also nach Bedarf kombinieren."
+- id: hub_self_hosted_options_local_title
+  translation: "Lokaler Test"
+- id: hub_self_hosted_options_local_description
+  translation: "Teste Hub mit einem Docker-Compose-Befehl. Die Option nutzt nur HTTP und ist nicht für den Produktivbetrieb gedacht."
+- id: hub_self_hosted_options_compose_title
+  translation: "Docker Compose"
+- id: hub_self_hosted_options_compose_description
+  translation: "Betreibe Hub mit Keycloak und PostgreSQL auf einem einzelnen Docker-Host, hinter Traefik mit Let's-Encrypt-Zertifikaten."
+- id: hub_self_hosted_options_kubernetes_title
+  translation: "Kubernetes"
+- id: hub_self_hosted_options_kubernetes_description
+  translation: "Installiere Hub samt Keycloak und PostgreSQL aus dem veröffentlichten Helm-Chart, hinter nginx- oder Traefik-Ingress."
+- id: hub_self_hosted_options_cta
+  translation: "Zur Anleitung"
+- id: hub_self_hosted_options_keycloak
+  translation: "Betreibst du bereits ein eigenes Keycloak? Dann deploye Hub ohne das mitgelieferte Keycloak und verbinde es stattdessen mit deinem. Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">Anleitung für ein bestehendes Keycloak</a> zeigt, wie das geht."
+- id: hub_self_hosted_options_more
+  translation: "Willst du Hub selbst oder das Helm-Chart weiterentwickeln? Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/README.md\" target=\"_blank\" rel=\"noopener\">Deployment-Beispiele</a> decken auch die Entwicklungs-Setups ab."
 
-- id: hub_setup_output_header_title
-  translation: "Konfig"
-- id: hub_setup_output_header_description
-  translation: "Verwende diese Konfigurationsvorlage, um Cryptomator Hub zu deployen."
-- id: hub_setup_output_hint
-  translation: "Hinweis: Für den produktiven Einsatz benötigt Cryptomator Hub und Keycloak eine gültige TLS-Terminierung. Nur für Tests mit localhost oder 127.0.0.1 ist dies nicht erforderlich. Im Setup-Assistenten kannst du die Konfiguration für die Reverse-Proxies Ingress oder Traefik hinzufügen. Das Deployment für den jeweiligen Proxy ist nicht enthalten. In der <a class=\"text-link\" href=\"https://docs.cryptomator.org/hub/deployment/#reverse-proxy\" target=\"_blank\" rel=\"noopener\">Dokumentation</a> gibt es einige Beispiele für die Einrichtung eines Proxy."
-
-- id: hub_setup_contact_us_title
-  translation: "Brauchst du Hilfe bei deiner Konfiguration?"
-- id: hub_setup_contact_us_description
-  translation: "Dieser Assistent erstellt sinnvolle Voreinstellungen für gängige Konfigurationen. Wenn du möchtest, dass wir das Deployment an deine speziellen Bedürfnisse anpassen, kannst du uns gerne kontaktieren."
-- id: hub_setup_contact_us_button
+- id: hub_self_hosted_contact_us_title
+  translation: "Brauchst du Hilfe bei deinem Deployment?"
+- id: hub_self_hosted_contact_us_description
+  translation: "Diese Anleitungen decken gängige Szenarien ab. Wenn du möchtest, dass wir das Deployment an deine speziellen Bedürfnisse anpassen, kannst du uns gerne kontaktieren."
+- id: hub_self_hosted_contact_us_button
   translation: "Kontaktiere uns"
 
 # Pagination
