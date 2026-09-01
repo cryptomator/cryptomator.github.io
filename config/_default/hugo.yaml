@@ -22,6 +22,16 @@ security:
   allowContent:
     - ^text/html$
     - ^text/markdown$
+  # Hugo 0.165 dropped tailwindcss from the default exec allowlist. This key replaces
+  # the defaults, so repeat them and add our own trusted Tailwind build back in.
+  exec:
+    allow:
+      - ^(dart-)?sass$
+      - ^go$
+      - ^git$
+      - ^node$
+      - ^postcss$
+      - ^tailwindcss$
 
 build:
   cachebusters:
