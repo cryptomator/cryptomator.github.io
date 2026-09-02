@@ -9,7 +9,7 @@
 {{- $showAnniversaryBanner := .context.Scratch.Get "anniversaryBannerActive" -}}
 {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
 {{- $thinStrip := .thinStrip | default "pt-28 md:pt-28" -}}
-{{- $anniversary := .anniversary | default "pt-28 md:pt-28" -}}
+{{- $anniversary := .anniversary | default "pt-40 md:pt-32" -}}
 {{- $both := .both | default "pt-40 md:pt-40" -}}
 {{- $padding := .base -}}
 {{- if and $showThinStrip $showAnniversaryBanner -}}

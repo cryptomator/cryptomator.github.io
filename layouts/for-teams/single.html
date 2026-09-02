@@ -1,51 +1,52 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/managed/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/">
-  <link rel="preload" fetchpriority="high" as="image" href="/img/hub/header-clouds.png" type="image/png">
   <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
   {{ partial "altcha-css.html" . }}
 {{ end }}
 {{ define "main" }}
-  <div class="header-bg-hub relative overflow-x-clip pb-24 md:pb-32">
-    <header class="container flex flex-col items-center text-center pt-10 md:pt-12">
-      <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance text-gray-800 mb-5">{{ i18n "hub_header_title" . | safeHTML }}</h1>
-      <p class="text-lg leading-relaxed text-balance text-gray-600 max-w-2xl mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
+  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners. */ -}}
+  <div {{ partial "banner-padding.html" (dict "context" . "classes" "header-bg bg-dark bg-center bg-repeat-x relative overflow-x-clip pb-24 md:pb-32" "base" "pt-16") }}>
+    <header class="container flex flex-col items-center text-center text-white pt-6 md:pt-8">
+      <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance mb-5">{{ i18n "hub_header_title" . | safeHTML }}</h1>
+      <p class="text-lg leading-relaxed text-balance text-gray-300 max-w-2xl mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
       <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-4">
-        <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub text-lg min-w-[16rem] py-3" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
-        <a href="#introduction" class="group inline-flex items-center gap-1.5 text-sm text-gray-600 no-underline hover:text-hub" data-umami-event="hub-header-how-it-works">
+        <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-primary text-lg min-w-[16rem] py-3" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
+        <a href="#introduction" class="group inline-flex items-center gap-1.5 text-sm text-gray-300 no-underline hover:text-white" data-umami-event="hub-header-how-it-works">
           {{ i18n "hub_header_link" . }}
           <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
         </a>
       </div>
+      <p class="text-sm text-gray-400">{{ i18n "hub_header_managed_cta_description" . | safeHTML }}</p>
 
       <div class="relative mt-8 mb-6 h-[200px] md:h-[368px]">
         <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">
-          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[360px] bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-hub)_7%,transparent),transparent_70%)] pointer-events-none" aria-hidden="true"></div>
           <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 720 400" aria-hidden="true">
-            <path d="M360 175 C330 105 288 55 248 40" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
-            <path d="M360 175 C390 105 432 55 472 40" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
-            <path d="M360 175 C280 168 175 140 112 118" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
-            <path d="M360 175 C420 195 470 235 492 272" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
-            <path d="M360 168 C430 160 490 158 553 160" class="stroke-gray-400" fill="none" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <path d="M360 175 C330 105 288 55 248 40" class="stroke-white/60" fill="none" stroke-width="1.5"/>
+            <path d="M360 175 C390 105 432 55 472 40" class="stroke-white/60" fill="none" stroke-width="1.5"/>
+            <path d="M360 175 C280 168 175 140 112 118" class="stroke-white/60" fill="none" stroke-width="1.5"/>
+            <path d="M360 175 C420 195 470 235 492 272" class="stroke-white/60" fill="none" stroke-width="1.5"/>
+            <path d="M360 168 C430 160 490 158 553 160" class="stroke-white/60" fill="none" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
             <path d="M332 302 C305 300 275 296 246 292" fill="none" stroke="url(#severed-ad)" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-            <path d="M388 302 C415 300 445 296 474 292" class="stroke-gray-400" fill="none" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
-            <circle class="ad-pulse" r="2.5" fill="#8fa3b8">
+            <path d="M388 302 C415 300 445 296 474 292" class="stroke-white/60" fill="none" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            {{- /* opacity="0" hides the dot until its motion animation places it; without it the dot flashes at the SVG origin on load. */ -}}
+            <circle class="ad-pulse fill-white/70" r="2.5" opacity="0">
               <animateMotion dur="3.5s" repeatCount="indefinite" path="M388 302 C415 300 445 296 474 292"/>
               <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.5s" repeatCount="indefinite"/>
             </circle>
             <defs>
-              {{- /* Tailwind has no stop-color utility, so the stops take the gray via currentColor. */ -}}
-              <linearGradient id="severed-ad" class="text-gray-400" gradientUnits="userSpaceOnUse" x1="332" y1="302" x2="246" y2="292">
+              {{- /* Tailwind has no stop-color utility, so the stops take the color via currentColor. */ -}}
+              <linearGradient id="severed-ad" class="text-white" gradientUnits="userSpaceOnUse" x1="332" y1="302" x2="246" y2="292">
                 <stop offset="0" stop-color="currentColor" stop-opacity="0.8"/>
                 <stop offset="0.85" stop-color="currentColor" stop-opacity="0"/>
               </linearGradient>
-              <linearGradient id="severed" gradientUnits="userSpaceOnUse" x1="360" y1="175" x2="238" y2="270">
-                <stop offset="0" stop-color="#b3bfce" stop-opacity="1"/>
-                <stop offset="0.85" stop-color="#b3bfce" stop-opacity="0"/>
+              <linearGradient id="severed" class="text-white" gradientUnits="userSpaceOnUse" x1="360" y1="175" x2="238" y2="270">
+                <stop offset="0" stop-color="currentColor" stop-opacity="0.6"/>
+                <stop offset="0.85" stop-color="currentColor" stop-opacity="0"/>
               </linearGradient>
             </defs>
             <path d="M360 175 C305 195 258 232 238 270" fill="none" stroke="url(#severed)" stroke-width="1.5" stroke-dasharray="4 5"/>
-            <path d="M270 222 L278 230 M278 222 L270 230" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M270 222 L278 230 M278 222 L270 230" class="stroke-white/60" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
 
           <div class="absolute left-[360px] top-[175px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10">
@@ -79,9 +80,9 @@
               <img src="/img/hub/avatar-1.svg" class="w-14 h-14 rounded-full ring-4 ring-white shadow-md" alt=""/>
               <span class="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-[10px] ring-2 ring-white"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
             </span>
-            <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">Anna</span>
-            <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_row_owner_desc" }}</span>
-            <span class="mt-1 rounded border border-hub/40 bg-hub/5 px-1 text-[8px] uppercase tracking-wide text-hub">{{ i18n "hub_hero_tag_owner" }}</span>
+            <span class="mt-1.5 text-xs font-medium text-white leading-tight">Anna</span>
+            <span class="text-[10px] text-gray-300 leading-tight">{{ i18n "hub_hero_row_owner_desc" }}</span>
+            <span class="mt-1 rounded border border-white/40 bg-white/10 px-1 text-[8px] uppercase tracking-wide text-white">{{ i18n "hub_hero_tag_owner" }}</span>
           </div>
 
           <div class="absolute left-[500px] top-[55px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-32 text-center">
@@ -89,9 +90,9 @@
               <img src="/img/hub/avatar-3.svg" class="w-14 h-14 rounded-full ring-4 ring-white shadow-md" alt=""/>
               <span class="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-[10px] ring-2 ring-white"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
             </span>
-            <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">Lena</span>
-            <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_row_external_desc" }}</span>
-            <span class="mt-1 rounded border border-hub/40 bg-hub/5 px-1 text-[8px] uppercase tracking-wide text-hub">{{ i18n "hub_hero_tag_external" }}</span>
+            <span class="mt-1.5 text-xs font-medium text-white leading-tight">Lena</span>
+            <span class="text-[10px] text-gray-300 leading-tight">{{ i18n "hub_hero_row_external_desc" }}</span>
+            <span class="mt-1 rounded border border-white/40 bg-white/10 px-1 text-[8px] uppercase tracking-wide text-white">{{ i18n "hub_hero_tag_external" }}</span>
           </div>
 
           <div class="absolute left-[85px] top-[160px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-28 text-center">
@@ -99,7 +100,7 @@
               <img src="/img/hub/avatar-2.svg" class="w-14 h-14 rounded-full ring-4 ring-white shadow-md" alt=""/>
               <span class="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-[10px] ring-2 ring-white"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
             </span>
-            <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">Jonas</span>
+            <span class="mt-1.5 text-xs font-medium text-white leading-tight">Jonas</span>
             <div class="relative mt-2 w-full rounded-lg bg-white shadow-sm ring-1 ring-gray-200 p-2.5 text-left">
               <span class="absolute -top-[5px] left-1/2 -translate-x-1/2 h-2.5 w-2.5 rotate-45 bg-white border-t border-l border-gray-200" aria-hidden="true"></span>
               <div class="flex items-center gap-1.5 mb-2 text-[9px] font-semibold uppercase tracking-wide text-gray-400"><i class="fa-solid fa-laptop" aria-hidden="true"></i>Jonas' {{ i18n "hub_hero_tile_devices" }}</div>
@@ -113,15 +114,14 @@
               <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-hub text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
               <span class="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-[10px] ring-2 ring-white"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
             </span>
-            <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">{{ i18n "hub_hero_group_name" }}</span>
-            <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_group_subtitle" }}</span>
+            <span class="mt-1.5 text-xs font-medium text-white leading-tight">{{ i18n "hub_hero_group_name" }}</span>
+            <span class="text-[10px] text-gray-300 leading-tight">{{ i18n "hub_hero_group_subtitle" }}</span>
           </div>
 
           <div class="absolute left-[360px] top-[320px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-44 text-center">
-            <span class="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[130px] bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-hub)_9%,transparent),transparent_70%)] pointer-events-none" aria-hidden="true"></span>
             <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-hub text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
-            <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight idp-swap"><span>Active Directory</span><span>Entra ID</span><span>Okta</span></span>
-            <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_ad_row_users" }} · {{ i18n "hub_hero_ad_row_groups" }}</span>
+            <span class="mt-1.5 text-xs font-medium text-white leading-tight idp-swap"><span>Active Directory</span><span>Entra ID</span><span>Okta</span></span>
+            <span class="text-[10px] text-gray-300 leading-tight">{{ i18n "hub_hero_ad_row_users" }} · {{ i18n "hub_hero_ad_row_groups" }}</span>
           </div>
 
           <div class="absolute left-[215px] top-[310px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-36 text-center">
@@ -129,7 +129,7 @@
               <img src="/img/hub/avatar-4.svg" class="w-14 h-14 rounded-full ring-4 ring-white shadow-md grayscale opacity-60" alt=""/>
               <span class="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-gray-400 text-white text-[10px] ring-2 ring-white"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span>
             </span>
-            <span class="mt-1.5 text-xs font-medium text-gray-400 leading-tight">Michael</span>
+            <span class="mt-1.5 text-xs font-medium text-gray-300 leading-tight">Michael</span>
             <span class="text-[10px] text-gray-400 leading-tight">{{ i18n "hub_hero_node_revoked" }}</span>
           </div>
 
