@@ -223,13 +223,64 @@
 - id: for_individuals_header_title
   translation: "Deine Daten in der Cloud gehören dir allein"
 - id: for_individuals_header_description
-  translation: "Daten in der Cloud sind oft nicht ausreichend geschützt. Cryptomator verschlüsselt deine Dokumente, Fotos und persönlichen Dateien mit wenigen Klicks – so hast nur du Zugriff. Niemand sonst."
+  translation: "Cryptomator verschlüsselt deine Dokumente, Fotos und persönlichen Dateien mit wenigen Klicks – so hast nur du Zugriff. Niemand sonst."
 - id: for_individuals_header_cta
   translation: "Jetzt herunterladen"
 - id: for_individuals_header_cta_description
   translation: "Verfügbar für Windows, macOS, Linux, Android und iOS."
-- id: for_individuals_header_woman_laptop_alt
-  translation: "Person, die vor einem Laptop sitzt, während Cryptobot neben der Person auf den Laptop zeigt"
+- id: for_individuals_header_link
+  translation: "So funktioniert's"
+
+- id: for_individuals_finder_locked_path_suffix
+  translation: " › Tresor"
+- id: for_individuals_finder_unlocked_path
+  translation: "Dein Laufwerk › Tresor"
+- id: for_individuals_finder_col_name
+  translation: "Name"
+- id: for_individuals_finder_col_size
+  translation: "Größe"
+- id: for_individuals_finder_col_modified
+  translation: "Geändert"
+- id: for_individuals_finder_file_1_name
+  translation: "Urlaubsfotos"
+- id: for_individuals_finder_file_1_modified
+  translation: "Heute, 09:41"
+- id: for_individuals_finder_file_2_name
+  translation: "Steuererklärung-2025.pdf"
+- id: for_individuals_finder_file_2_size
+  translation: "2,4 MB"
+- id: for_individuals_finder_file_2_modified
+  translation: "Gestern, 18:07"
+- id: for_individuals_finder_file_3_name
+  translation: "Reisepass-Scan.jpg"
+- id: for_individuals_finder_file_3_size
+  translation: "1,8 MB"
+- id: for_individuals_finder_file_3_modified
+  translation: "12.07.2026"
+- id: for_individuals_finder_file_4_name
+  translation: "Finanzen.xlsx"
+- id: for_individuals_finder_file_4_size
+  translation: "96 KB"
+- id: for_individuals_finder_file_4_modified
+  translation: "08.07.2026"
+- id: for_individuals_finder_file_5_name
+  translation: "Mietvertrag.pdf"
+- id: for_individuals_finder_file_5_size
+  translation: "640 KB"
+- id: for_individuals_finder_file_5_modified
+  translation: "27.06.2026"
+- id: for_individuals_finder_file_6_name
+  translation: "Bewerbung.docx"
+- id: for_individuals_finder_file_6_size
+  translation: "88 KB"
+- id: for_individuals_finder_file_6_modified
+  translation: "05.06.2026"
+- id: for_individuals_hero_pill
+  translation: "Ende-zu-Ende verschlüsselt – nur du hast den Schlüssel"
+- id: for_individuals_finder_items
+  translation: "6 Objekte"
+- id: for_individuals_stats_title
+  translation: "Vertraut von Millionen weltweit"
 
 - id: for_individuals_downloads_title
   translation: "4M+"
@@ -401,11 +452,45 @@
 - id: hub_header_title
   translation: "Souveräne Zusammenarbeit in der Cloud"
 - id: hub_header_description
-  translation: "Cryptomator Hub verschlüsselt deine vertraulichen Unternehmensdaten wie personenbezogene Kundendaten oder interne Geschäftsdokumente – DSGVO-konform, einfach und unter deiner Kontrolle."
+  translation: "Cryptomator Hub verschlüsselt die vertraulichen Daten deines Unternehmens – DSGVO-konform, einfach und unter deiner Kontrolle."
 - id: hub_header_managed_cta
-  translation: "Jetzt anmelden"
+  translation: "Kostenlos testen"
 - id: hub_header_managed_cta_description
   translation: "Startet eure kostenlose 30-Tage-Testversion noch heute, keine Kreditkarte erforderlich."
+- id: hub_header_link
+  translation: "So funktioniert's"
+- id: hub_hero_scene_vault
+  translation: "Gemeinsamer Tresor"
+- id: hub_hero_card_vault_name
+  translation: "Finanzen"
+- id: hub_hero_group_name
+  translation: "Team Buchhaltung"
+- id: hub_hero_group_subtitle
+  translation: "Gruppe · 8 Mitglieder"
+- id: hub_hero_tile_audit
+  translation: "Audit-Log"
+- id: hub_hero_tile_devices
+  translation: "Geräte"
+- id: hub_hero_ad_row_users
+  translation: "128 Benutzer"
+- id: hub_hero_ad_row_groups
+  translation: "12 Gruppen"
+- id: hub_hero_node_revoked
+  translation: "Zugriff entzogen"
+- id: hub_hero_audit_row_1
+  translation: "Zugriff erteilt · Lena"
+- id: hub_hero_audit_row_2
+  translation: "Gerät registriert · Jonas"
+- id: hub_hero_audit_row_3
+  translation: "Zugriff entzogen · Michael"
+- id: hub_hero_row_owner_desc
+  translation: "CFO"
+- id: hub_hero_tag_external
+  translation: "Extern"
+- id: hub_hero_tag_owner
+  translation: "Owner"
+- id: hub_hero_row_external_desc
+  translation: "Steuerberaterin"
 - id: hub_header_group_magic_alt
   translation: "Cryptobot verbindet eine Gruppe von Menschen mit seinen magischen Fähigkeiten durch Zero-Knowledge-Verschlüsselung"
 
@@ -432,6 +517,12 @@
   translation: "Ladet euren Tresor über Cryptomator Hub herunter und öffnet ihn direkt in der Cryptomator App als bestehenden Tresor. Statt ein Passwort einzugeben, erfolgt die Authentifizierung sicher über Hub – so bleibt alles geschützt und trotzdem komfortabel zugänglich."
 - id: hub_workflow_step_3_alt
   translation: "Cryptomator-App-Oberfläche mit mehreren Tresoren"
+- id: hub_workflow_step_4_title
+  translation: "4. Lückenlos nachvollziehbar"
+- id: hub_workflow_step_4_description
+  translation: "Wer hat wann welchen Tresor entsperrt, ein Gerät registriert oder Zugriff erhalten? Das Audit-Log protokolliert alle sicherheitsrelevanten Ereignisse. Compliance-Nachweise gibt es damit auf Knopfdruck."
+- id: hub_workflow_step_4_alt
+  translation: "Audit-Log in Cryptomator Hub mit protokollierten Ereignissen"
 
 - id: hub_features_title
   translation: "Warum Cryptomator Hub?"
@@ -780,6 +871,38 @@
   translation: "Wenn du Fragen hast, lass sie uns bitte wissen."
 - id: hub_demo_contact_us_button
   translation: "Kontaktiere uns"
+
+# Hub CE Registration
+- id: hub_ce_registration_description
+  translation: "Registriere deine Cryptomator-Hub-Instanz für eine kostenlose Community-Edition-Lizenz."
+
+- id: hub_ce_registration_steps_title
+  translation: "Schritt <span x-text=\"feedbackData.currentStep + 1\"></span> von <span x-text=\"steps.length\"></span>"
+- id: hub_ce_registration_steps_next
+  translation: "Weiter"
+
+- id: hub_ce_registration_step_1_nav_title
+  translation: "E-Mail-Adresse"
+- id: hub_ce_registration_step_1_title
+  translation: "Wie lautet deine E-Mail-Adresse?"
+- id: hub_ce_registration_step_1_email_placeholder
+  translation: "E-Mail-Adresse"
+
+- id: hub_ce_registration_step_2_confirmation_nav_title
+  translation: "Bestätigung"
+- id: hub_ce_registration_step_2_confirmation_title
+  translation: "Bitte bestätige deine E-Mail-Adresse"
+- id: hub_ce_registration_step_2_instructions
+  translation: "Wir senden eine Bestätigungs-E-Mail an <span x-text=\"submitData.email\"></span>"
+- id: hub_ce_registration_step_2_check_email
+  translation: "Bitte prüfe deine E-Mails."
+
+- id: hub_ce_registration_step_3_license_nav_title
+  translation: "Lizenzschlüssel"
+- id: hub_ce_registration_step_3_license_title
+  translation: "Deine Community-Edition-Lizenz"
+- id: hub_ce_registration_step_3_success
+  translation: "Deine E-Mail-Adresse wurde erfolgreich verifiziert. Kehre zu deiner Hub-Instanz zurück, sie holt deinen Lizenzschlüssel automatisch ab."
 
 # Hub Managed
 - id: hub_managed_description

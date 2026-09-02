@@ -1,0 +1,9 @@
+{{- /* Context is the asset path: {{ partial "page-css.html" "css/hero.css" }} */ -}}
+{{ if hugo.IsDevelopment }}
+  {{ $css := resources.Get . | css.TailwindCSS }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" media="screen" />
+{{ else }}
+  {{ $tailwindOpts := dict "minify" true }}
+  {{ $css := resources.Get . | css.TailwindCSS $tailwindOpts | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" media="screen" />
+{{ end }}
