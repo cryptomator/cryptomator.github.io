@@ -159,13 +159,13 @@
 
         {{/* Standard Card */}}
         <div class="white-box" :class="hosting === 'managed' && 'ring-2 ring-secondary'">
-          <div class="flex justify-between items-center p-4 border-b border-tertiary2">
+          <div class="flex justify-between items-center p-4 border-b border-hub">
             <h3>
               <div class="flex items-center">
                 {{ partial "hub-wordmark.html" "hidden md:block h-8 mr-2" }}
               </div>
             </h3>
-            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
+            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub">
               {{ i18n "pricing_hub_standard_title" . }}
             </div>
           </div>
@@ -182,41 +182,41 @@
             <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
               {{ i18n "pricing_hub_standard_price_description" . }}
             </p>
-            <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-tertiary2 w-full" data-umami-event="pricing-hub-standard-managed-cta">
+            <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-managed-cta">
               {{ i18n "pricing_hub_managed_cta" . }}
             </a>
-            <a x-show="hosting === 'self-hosted'" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-tertiary2 w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
+            <a x-show="hosting === 'self-hosted'" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
               {{ i18n "pricing_hub_self_hosted_cta" . }}
             </a>
           </div>
           <div class="px-4 py-8">
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-plus text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-plus text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_standard_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_standard_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_standard_benefit_3" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_standard_benefit_4" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_standard_benefit_5" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid" :class="hosting === 'managed' ? 'fa-check text-tertiary2' : 'fa-times text-red-600'"></i></span>
+                <span class="fa-li"><i class="fa-solid" :class="hosting === 'managed' ? 'fa-check text-hub' : 'fa-times text-red-600'"></i></span>
                 <span :class="hosting === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid" :class="hosting === 'managed' ? 'fa-check text-tertiary2' : 'fa-times text-red-600'"></i></span>
+                <span class="fa-li"><i class="fa-solid" :class="hosting === 'managed' ? 'fa-check text-hub' : 'fa-times text-red-600'"></i></span>
                 <span :class="hosting === 'self-hosted' && 'text-gray-500'">{{ i18n "pricing_hub_standard_managed_benefit_2" . }}</span>
               </li>
             </ul>
@@ -225,13 +225,13 @@
 
         {{/* Enterprise Card */}}
         <div class="white-box">
-          <div class="flex justify-between items-center p-4 border-b border-tertiary2">
+          <div class="flex justify-between items-center p-4 border-b border-hub">
             <h3>
               <div class="flex items-center">
                 {{ partial "hub-wordmark.html" "hidden md:block h-8 mr-2" }}
               </div>
             </h3>
-            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
+            <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub">
               {{ i18n "pricing_hub_enterprise_title" . }}
             </div>
           </div>
@@ -245,7 +245,7 @@
             <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
               {{ i18n "pricing_hub_enterprise_price_description" . }}
             </p>
-            <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-tertiary2 w-full" data-umami-event="pricing-hub-enterprise-cta">
+            <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-enterprise-cta">
               <i class="fa-solid fa-envelope"></i>
               {{ i18n "pricing_hub_enterprise_cta" . }}
             </a>
@@ -253,26 +253,26 @@
           <div class="px-4 py-8">
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-plus text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-plus text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_1" . }}</span>
               </li>
               <li class="flex items-center">
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_2" . }}</span>
-                <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-tertiary2/10 text-tertiary2 ml-2">
+                <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-hub/10 text-hub ml-2">
                   {{ i18n "coming_soon" . }}
                 </span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_3" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_4" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_5" . }}</span>
               </li>
             </ul>
@@ -284,11 +284,11 @@
       <section class="mt-8 mb-4">
         <div class="white-box">
           {{/* Mobile: card header (matches other pricing cards) */}}
-          <div class="md:hidden flex justify-between items-center p-4 border-b border-tertiary2">
+          <div class="md:hidden flex justify-between items-center p-4 border-b border-hub">
             <h3>
               {{ partial "hub-wordmark.html" "" }}
             </h3>
-            <div class="inline-flex px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
+            <div class="inline-flex px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-hub/10 text-hub">
               {{ i18n "pricing_hub_community_title" . }}
             </div>
           </div>
@@ -296,7 +296,7 @@
           <div class="md:hidden p-4 border-b border-gray-200">
             <p class="font-p mb-6">{{ i18n "pricing_hub_community_subtitle" . }}</p>
             <p class="font-bold text-2xl leading-relaxed">{{ i18n "pricing_free" . }}</p>
-            <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-tertiary2 w-full mt-4" data-umami-event="pricing-hub-community-self-hosted-cta">
+            <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-hub w-full mt-4" data-umami-event="pricing-hub-community-self-hosted-cta">
               {{ i18n "pricing_hub_self_hosted_cta" . }}
             </a>
           </div>
@@ -304,11 +304,11 @@
           <div class="md:hidden px-4 py-8">
             <ul role="list" class="fa-ul text-sm ml-7 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
               </li>
             </ul>
@@ -320,25 +320,25 @@
                 <div class="flex items-center">
                   {{ partial "hub-wordmark.html" "h-8 mr-2" }}
                 </div>
-                <div class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
+                <div class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub">
                   {{ i18n "pricing_hub_community_title" . }}
                 </div>
               </div>
               <p class="font-p mb-4">{{ i18n "pricing_hub_community_subtitle" . }}</p>
               <div class="flex flex-wrap gap-x-6 gap-y-2 text-base">
                 <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-tertiary2"></i>
+                  <i class="fa-solid fa-check text-hub"></i>
                   <span>{{ i18n "pricing_hub_community_benefit_1" . }}</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-tertiary2"></i>
+                  <i class="fa-solid fa-check text-hub"></i>
                   <span>{{ i18n "pricing_hub_community_benefit_2" . }}</span>
                 </div>
               </div>
             </div>
             <div class="shrink-0 flex flex-col items-end text-right">
               <p class="font-bold text-3xl lg:text-4xl leading-relaxed">{{ i18n "pricing_free" . }}</p>
-              <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-tertiary2 px-8 mt-4" data-umami-event="pricing-hub-community-self-hosted-cta">
+              <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-hub px-8 mt-4" data-umami-event="pricing-hub-community-self-hosted-cta">
                 {{ i18n "pricing_hub_self_hosted_cta" . }}
               </a>
             </div>
@@ -397,7 +397,7 @@
               <div class="flex items-center">
                 {{ partial "hub-wordmark.html" "hidden md:block h-8 mr-2" }}
               </div>
-              <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
+              <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub">
                 {{ i18n "pricing_faq_teams_badge" . }}
               </div>
             </h3>

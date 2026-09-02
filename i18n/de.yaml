@@ -269,11 +269,11 @@
   translation: "640 KB"
 - id: for_individuals_finder_file_5_modified
   translation: "27.06.2026"
-- id: for_individuals_finder_file_7_name
+- id: for_individuals_finder_file_6_name
   translation: "Bewerbung.docx"
-- id: for_individuals_finder_file_7_size
+- id: for_individuals_finder_file_6_size
   translation: "88 KB"
-- id: for_individuals_finder_file_7_modified
+- id: for_individuals_finder_file_6_modified
   translation: "05.06.2026"
 - id: for_individuals_hero_pill
   translation: "Ende-zu-Ende verschlüsselt – nur du hast den Schlüssel"

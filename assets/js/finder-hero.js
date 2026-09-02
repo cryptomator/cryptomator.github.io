@@ -1,17 +1,19 @@
-/* Split-flap animation for the for-individuals finder hero: every element with
-   a `finder-flap` class cycles between its data-locked and data-unlocked text
-   like an airport departure board, while `.is-locked` on the `.finder-hero`
-   root swaps the accompanying icons and flips the title-bar path panel (see
-   finder-hero.css). */
+"use strict";
+
+/* One interval drives both halves of the effect: the per-element split-flap
+   text here, and the `.is-locked` icon and panel swap done in CSS. */
 
 class FinderFlap {
   constructor(el) {
     this.el = el;
+    this.lockedText = el.dataset.locked;
+    this.unlockedText = el.dataset.unlocked;
     this.chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     this.raf = null;
   }
 
-  setText(newText) {
+  show(locked) {
+    const newText = locked ? this.lockedText : this.unlockedText;
     const oldText = this.el.textContent;
     const length = Math.max(oldText.length, newText.length);
     this.queue = [];
@@ -51,13 +53,20 @@ class FinderFlap {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initFinderHero() {
   const root = document.querySelector('.finder-hero');
   if (!root) {
     return;
   }
-  const flaps = Array.from(root.querySelectorAll('.finder-flap')).map((el) => ({ el, flap: new FinderFlap(el) }));
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const flapElements = root.querySelectorAll('.finder-flap');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    root.classList.remove('is-locked');
+    flapElements.forEach((el) => {
+      el.textContent = el.dataset.unlocked;
+    });
+    return;
+  }
+  const flaps = Array.from(flapElements, (el) => new FinderFlap(el));
   const providers = [
     { name: 'Google Drive', src: '/img/clouds/google-drive.svg' },
     { name: 'iCloud Drive', src: '/img/clouds/icloud.svg' },
@@ -66,22 +75,20 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const providerName = root.querySelector('[data-finder-provider-name]');
   const providerIcon = root.querySelector('[data-finder-provider-icon]');
-  if (reducedMotion) {
-    return;
-  }
   let providerIndex = 0;
   let locked = true;
   setInterval(() => {
     locked = !locked;
-    if (locked && providerName && providerIcon) {
+    if (locked) {
       providerIndex = (providerIndex + 1) % providers.length;
       providerName.textContent = providers[providerIndex].name;
       providerIcon.src = providers[providerIndex].src;
     }
     root.classList.toggle('is-locked', locked);
-    flaps.forEach(({ el, flap }, index) => {
-      const text = locked ? el.dataset.locked : el.dataset.unlocked;
-      setTimeout(() => flap.setText(text), index * 140);
+    flaps.forEach((flap, index) => {
+      setTimeout(() => flap.show(locked), index * 140);
     });
   }, 5000);
-});
+}
+
+initFinderHero();

@@ -269,11 +269,11 @@
   translation: "640 KB"
 - id: for_individuals_finder_file_5_modified
   translation: "06/27/2026"
-- id: for_individuals_finder_file_7_name
+- id: for_individuals_finder_file_6_name
   translation: "Resume.docx"
-- id: for_individuals_finder_file_7_size
+- id: for_individuals_finder_file_6_size
   translation: "88 KB"
-- id: for_individuals_finder_file_7_modified
+- id: for_individuals_finder_file_6_modified
   translation: "06/05/2026"
 - id: for_individuals_hero_pill
   translation: "End-to-end encrypted – only you hold the key"

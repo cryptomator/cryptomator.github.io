@@ -59,7 +59,7 @@
                     {{ i18n "hub_billing_createsession_found_description" . }}
                     <span x-text="subscriptionData.redactedEmail" class="font-medium whitespace-nowrap"></span>
                   </p>
-                  <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="btn btn-tertiary2 w-full md:w-64">
+                  <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="btn btn-hub w-full md:w-64">
                     <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_billing_createsession_submit" . }}
                   </button>
@@ -73,7 +73,7 @@
                   </p>
                   <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
                     <input x-model="subscriptionData.email" :required="subscriptionData.needsEmail" type="email" class="grow rounded-l border-gray-300 focus:ring-0 focus:border-secondary" placeholder="{{ i18n "hub_billing_createsession_email_placeholder" . }}"/>
-                    <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="shrink-0 flex items-center gap-1 btn btn-tertiary2 rounded-l-none px-4">
+                    <button :disabled="subscriptionData.inProgress || captchaState == 'verifying'" type="submit" class="shrink-0 flex items-center gap-1 btn btn-hub rounded-l-none px-4">
                       <i :class="{'fa-paper-plane': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                       {{ i18n "hub_billing_createsession_submit" . }}
                     </button>
@@ -122,7 +122,7 @@
             {{ i18n "hub_billing_loadfailed_description" . }}
           </p>
           <p class="text-sm text-red-600 mb-4" x-text="subscriptionData.errorMessage"></p>
-          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-tertiary2 px-8">
+          <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-hub px-8">
             <i class="fa-solid fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
           </a>
         </div>
@@ -159,7 +159,7 @@
                   {{ i18n "hub_billing_manage_status_quantity_description" . }}: <span x-text="subscriptionData.details.seats"></span>
                 </p>
                 <p class="mt-2">
-                  <button type="button" :disabled="subscriptionData.details.status == 'CANCELLED' || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-tertiary2">
+                  <button type="button" :disabled="subscriptionData.details.status == 'CANCELLED' || subscriptionData.inProgress" @click.prevent="hubSubscription.openChangeSeatsModal()" class="text-xs text-btn text-hub">
                     <i class="fa-solid fa-arrows-v"></i>
                     {{ i18n "hub_billing_manage_status_quantity_action" . }}
                   </button>
@@ -186,11 +186,11 @@
                   </div>
                 </template>
                 <p x-show="subscriptionData.details.processor == 'PADDLE_CLASSIC'" class="mt-2">
-                  <button type="button" x-show="subscriptionData.details.status == 'ACTIVE' || subscriptionData.details.status == 'TRIAL'" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-tertiary2">
+                  <button type="button" x-show="subscriptionData.details.status == 'ACTIVE' || subscriptionData.details.status == 'TRIAL'" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.pause()" class="text-xs text-btn text-hub">
                     <i class="fa-solid fa-pause"></i>
                     {{ i18n "hub_billing_manage_next_payment_pause_action" . }}
                   </button>
-                  <button type="button" x-show="subscriptionData.details.status == 'PAUSED'" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.askForRestartConfirmation()" class="text-xs text-btn text-tertiary2">
+                  <button type="button" x-show="subscriptionData.details.status == 'PAUSED'" :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.askForRestartConfirmation()" class="text-xs text-btn text-hub">
                     <i class="fa-solid fa-play"></i>
                     {{ i18n "hub_billing_manage_next_payment_restart_action" . }}
                   </button>
@@ -209,7 +209,7 @@
                   {{ i18n "hub_billing_manage_payment_info_invoice" . }}
                 </p>
                 <p x-show="subscriptionData.details.processor == 'PADDLE_CLASSIC'" class="mt-2">
-                  <button type="button" :disabled="subscriptionData.inProgress || subscriptionData.details.status == 'CANCELLED'" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-tertiary2">
+                  <button type="button" :disabled="subscriptionData.inProgress || subscriptionData.details.status == 'CANCELLED'" @click.prevent="hubSubscription.updatePaymentMethod('{{ .Site.Language.Lang }}')" class="text-xs text-btn text-hub">
                     <i class="fa-solid fa-external-link"></i>
                     {{ i18n "hub_billing_manage_payment_info_update_action" . }}
                   </button>
@@ -229,9 +229,9 @@
                   <div class="p-4">
                     <div class="md:flex md:items-start">
                       <div class="shrink-0 text-center">
-                        <div class="fa-stack text-2xl text-tertiary2/15 md:text-xl">
+                        <div class="fa-stack text-2xl text-hub/15 md:text-xl">
                           <i class="fa-solid fa-circle fa-stack-2x"></i>
-                          <i class="fa-solid fa-play fa-stack-1x text-tertiary2"></i>
+                          <i class="fa-solid fa-play fa-stack-1x text-hub"></i>
                         </div>
                       </div>
                       <div class="mt-3 text-center md:mt-0 md:ml-4 md:text-left">
@@ -245,8 +245,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="border-t border-tertiary2 p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="button" class="btn btn-tertiary2 shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                  <div class="border-t border-hub p-4 md:flex md:flex-row-reverse md:items-center">
+                    <button :disabled="subscriptionData.inProgress" @click.prevent="hubSubscription.restart()" type="button" class="btn btn-hub shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
@@ -268,9 +268,9 @@
                   <div class="p-4">
                     <div class="md:flex md:items-start">
                       <div class="shrink-0 text-center">
-                        <div class="fa-stack text-2xl text-tertiary2/15 md:text-xl">
+                        <div class="fa-stack text-2xl text-hub/15 md:text-xl">
                           <i class="fa-solid fa-circle fa-stack-2x"></i>
-                          <i class="fa-solid fa-arrows-v fa-stack-1x text-tertiary2"></i>
+                          <i class="fa-solid fa-arrows-v fa-stack-1x text-hub"></i>
                         </div>
                       </div>
                       <div class="mt-3 text-center md:mt-0 md:ml-4 md:text-left">
@@ -301,13 +301,13 @@
                                   {{ i18n "hub_billing_manage_change_quantity_confirmation_increase_warning" . }}
                                 </p>
                                 <p class="font-p mb-4">
-                                  <i class="fa-solid fa-calendar text-tertiary2"></i>
+                                  <i class="fa-solid fa-calendar text-hub"></i>
                                   {{ i18n "hub_billing_manage_next_payment_date_description" . }}: <span x-text="subscriptionData.changeSeatsModal.nextPayment ? new Date(subscriptionData.changeSeatsModal.nextPayment.date).toLocaleDateString('{{ .Site.Language.Lang }}') : '…'"></span>
                                 </p>
                               </div>
                             </template>
                             <p x-show="subscriptionData.details.processor == 'ESPOCRM'" class="font-p mb-4">
-                              <i class="fa-solid fa-file-invoice text-tertiary2"></i>
+                              <i class="fa-solid fa-file-invoice text-hub"></i>
                               {{ i18n "hub_billing_manage_change_quantity_confirmation_increase_warning_invoice" . }}
                             </p>
                           </div>
@@ -326,20 +326,20 @@
                           <template x-if="subscriptionData.details.processor == 'ESPOCRM' && subscriptionData.changeSeatsModal.invoicePreview">
                             <div>
                               <p x-show="subscriptionData.changeSeatsModal.invoicePreview.prorated_amount > 0" class="font-p mb-4">
-                                <i class="fa-solid fa-money-bill text-tertiary2"></i>
+                                <i class="fa-solid fa-money-bill text-hub"></i>
                                 {{ i18n "hub_billing_manage_change_quantity_confirmation_prorated_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.prorated_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>{{ $inclVat }}
                               </p>
                               <p x-show="subscriptionData.changeSeatsModal.invoicePreview.credited_amount > 0" class="font-p mb-4">
-                                <i class="fa-solid fa-money-bill text-tertiary2"></i>
+                                <i class="fa-solid fa-money-bill text-hub"></i>
                                 {{ i18n "hub_billing_manage_change_quantity_confirmation_credited_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.credited_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>{{ $inclVat }}
                               </p>
                               {{/* no VAT note here: available credit pools the account's credit notes, which need not share this subscription's tax */}}
                               <p x-show="subscriptionData.changeSeatsModal.invoicePreview.available_credit > 0" class="font-p mb-4">
-                                <i class="fa-solid fa-info-circle text-tertiary2"></i>
+                                <i class="fa-solid fa-info-circle text-hub"></i>
                                 {{ i18n "hub_billing_manage_change_quantity_confirmation_available_credit_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.available_credit).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
                               </p>
                               <p class="font-p mb-4">
-                                <i class="fa-solid fa-rotate text-tertiary2"></i>
+                                <i class="fa-solid fa-rotate text-hub"></i>
                                 {{ i18n "hub_billing_manage_change_quantity_confirmation_new_recurring_invoice" . }}: <span class="font-bold" x-text="Number(subscriptionData.changeSeatsModal.invoicePreview.recurring_amount).toLocaleString('{{ .Site.Language.Lang }}', { style: 'currency', currency: subscriptionData.changeSeatsModal.invoicePreview.currency })"></span>
                               </p>
                             </div>
@@ -348,13 +348,13 @@
                       </div>
                     </div>
                   </div>
-                  <div class="border-t border-tertiary2 p-4 md:flex md:flex-row-reverse md:items-center">
-                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.seats" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-tertiary2 shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                  <div class="border-t border-hub p-4 md:flex md:flex-row-reverse md:items-center">
+                    <button x-show="!subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.quantity == subscriptionData.details.seats" @click.prevent="hubSubscription.askForChangeSeatsConfirmation()" type="button" class="btn btn-hub shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_continue" . }}
                     </button>
                     {{/* Paddle Classic fills nextPayment and EspoCRM fills invoicePreview, so a quote arrived when either is set. The customer must not commit a change whose price the page cannot show. */}}
-                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress || !(subscriptionData.changeSeatsModal.invoicePreview || subscriptionData.changeSeatsModal.nextPayment)" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-tertiary2 shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <button x-show="subscriptionData.changeSeatsModal.confirmation" :disabled="subscriptionData.inProgress || !(subscriptionData.changeSeatsModal.invoicePreview || subscriptionData.changeSeatsModal.nextPayment)" @click.prevent="hubSubscription.changeQuantity()" type="button" class="btn btn-hub shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                       <i :class="{'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                       {{ i18n "hub_billing_manage_modal_confirm" . }}
                     </button>
@@ -429,7 +429,7 @@
                             <p class="text-sm text-red-600 mb-2">
                               {{ i18n "hub_billing_checkout_invoice_price_error" . }}
                             </p>
-                            <button type="button" @click.prevent="hubSubscription.loadInvoicePrice()" class="text-sm text-btn text-tertiary2">
+                            <button type="button" @click.prevent="hubSubscription.loadInvoicePrice()" class="text-sm text-btn text-hub">
                               <i class="fa-solid fa-rotate-right"></i>
                               {{ i18n "hub_billing_checkout_invoice_price_retry" . }}
                             </button>
@@ -516,8 +516,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="border-t border-tertiary2 p-4 md:flex md:flex-row-reverse md:items-center">
-                      <button id="invoice-buy-button" :disabled="subscriptionData.inProgress || !acceptTerms || !subscriptionData.invoicePrice || subscriptionData.invoicePriceLoading" @click.prevent="hubSubscription.startInvoiceCheckout()" type="button" class="btn btn-tertiary2 shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
+                    <div class="border-t border-hub p-4 md:flex md:flex-row-reverse md:items-center">
+                      <button id="invoice-buy-button" :disabled="subscriptionData.inProgress || !acceptTerms || !subscriptionData.invoicePrice || subscriptionData.invoicePriceLoading" @click.prevent="hubSubscription.startInvoiceCheckout()" type="button" class="btn btn-hub shrink-0 w-full mb-4 md:w-auto md:ml-3 md:mb-0">
                         <i :class="{'fa-file-invoice': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                         {{ i18n "hub_billing_checkout_invoice_submit" . }}
                       </button>
@@ -549,8 +549,8 @@
             </div>
             <div class="hidden md:block"></div>
             <div x-show="subscriptionData.oldLicense && !subscriptionData.customBilling?.managed" class="flex flex-col white-box">
-              <div class="p-4 border-b border-tertiary2">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2 mb-4">
+              <div class="p-4 border-b border-hub">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub mb-4">
                   {{ i18n "hub_billing_checkout_community_title" . }}
                 </h2>
                 <div x-show="!subscriptionData.customBilling?.override?.prices" class="lg:h-[22px]"></div>
@@ -567,15 +567,15 @@
                     {{ i18n "hub_billing_checkout_community_subtitle" . }}
                   </h3>
                   <div class="mb-4 md:my-auto lg:max-w-sm">
-                    <div class="fa-stack text-5xl text-tertiary2/15 mb-4">
+                    <div class="fa-stack text-5xl text-hub/15 mb-4">
                       <i class="fa-solid fa-circle fa-stack-2x"></i>
-                      <i class="fa-solid fa-people-group fa-stack-1x text-tertiary2"></i>
+                      <i class="fa-solid fa-people-group fa-stack-1x text-hub"></i>
                     </div>
                     <p class="font-p">
                       {{ i18n "hub_billing_checkout_community_cta" . }}
                     </p>
                   </div>
-                  <a :href="`{{ "hub/register" | relLangURL }}#oldLicense=${encodeURIComponent(subscriptionData.oldLicense)}&returnUrl=${encodeURIComponent(subscriptionData.returnUrl)}`" role="button" class="btn btn-tertiary2 w-full">
+                  <a :href="`{{ "hub/register" | relLangURL }}#oldLicense=${encodeURIComponent(subscriptionData.oldLicense)}&returnUrl=${encodeURIComponent(subscriptionData.returnUrl)}`" role="button" class="btn btn-hub w-full">
                     <i class="fa-solid fa-user-plus"></i>
                     {{ i18n "hub_billing_checkout_community_action" . }}
                   </a>
@@ -583,15 +583,15 @@
               </div>
             </div>
             <div class="white-box">
-              <div class="p-4 border-b border-tertiary2">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2 mb-4">
+              <div class="p-4 border-b border-hub">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub mb-4">
                   {{ i18n "hub_billing_checkout_standard_title" . }}
                 </h2>
                 <div x-show="!subscriptionData.customBilling?.override?.prices" class="flex items-center gap-2">
                   <span class="uppercase tracking-wide text-xs font-bold cursor-pointer" :class="subscriptionData.billingInterval === 'monthly' ? 'text-gray-700' : 'text-gray-500'" @click="if (subscriptionData.paymentMethod !== 'invoice') subscriptionData.billingInterval = 'monthly'">
                     {{ i18n "hub_billing_monthly" . }}
                   </span>
-                  <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-tertiary2 transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-tertiary2 focus:ring-offset-1" role="switch" :disabled="subscriptionData.paymentMethod === 'invoice'" :class="subscriptionData.paymentMethod === 'invoice' && 'opacity-50 cursor-not-allowed'" @click.prevent="if (subscriptionData.paymentMethod !== 'invoice') subscriptionData.billingInterval = subscriptionData.billingInterval === 'monthly' ? 'yearly' : 'monthly'">
+                  <button type="button" class="relative inline-flex h-4 w-8 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-hub transition-colors duration-200 ease-in-out focus:outline-hidden focus:ring-1 focus:ring-hub focus:ring-offset-1" role="switch" :disabled="subscriptionData.paymentMethod === 'invoice'" :class="subscriptionData.paymentMethod === 'invoice' && 'opacity-50 cursor-not-allowed'" @click.prevent="if (subscriptionData.paymentMethod !== 'invoice') subscriptionData.billingInterval = subscriptionData.billingInterval === 'monthly' ? 'yearly' : 'monthly'">
                     <span class="sr-only">Toggle billing interval</span>
                     <span aria-hidden="true" class="pointer-events-none inline-block size-3 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out" :class="subscriptionData.billingInterval === 'monthly' ? 'translate-x-0' : 'translate-x-4'"></span>
                   </button>
@@ -682,7 +682,7 @@
                       <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
                       {{ $cardChallengeUrl := printf "%s/billing/paddle-classic/checkout/challenge" .Site.Params.apiBaseUrl }}
                       {{ partial "captcha.html" (dict "challengeUrl" $cardChallengeUrl "captchaPayload" "subscriptionData.cardCaptcha" "captchaState" "captchaState" "ref" "cardCaptcha") }}
-                      <button :disabled="subscriptionData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-tertiary2 w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
+                      <button :disabled="subscriptionData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-hub w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                         <i :class="{'fa-shopping-cart': !subscriptionData.inProgress, 'fa-check': !subscriptionData.inProgress, 'fa-spinner fa-spin': subscriptionData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                         {{ i18n "hub_billing_checkout_standard_submit" . }}
                       </button>
@@ -698,7 +698,7 @@
                     <p class="text-xs text-gray-600 mb-4">
                       {{ i18n "hub_billing_checkout_invoice_non_eu_hint" . }}
                     </p>
-                    <button type="button" @click.prevent="hubSubscription.openInvoiceCheckoutModal()" class="btn btn-tertiary2 w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
+                    <button type="button" @click.prevent="hubSubscription.openInvoiceCheckoutModal()" class="btn btn-hub w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                       <i class="fa-solid fa-shopping-cart" aria-hidden="true"></i>
                       {{ i18n "hub_billing_checkout_standard_submit" . }}
                     </button>
@@ -708,8 +708,8 @@
               </div>
             </div>
             <div class="flex flex-col white-box">
-              <div class="p-4 border-b border-tertiary2">
-                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2 mb-4">
+              <div class="p-4 border-b border-hub">
+                <h2 class="inline-flex px-4 py-1 rounded-full text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub mb-4">
                   {{ i18n "hub_billing_checkout_enterprise_title" . }}
                 </h2>
                 <div x-show="!subscriptionData.customBilling?.override?.prices" class="lg:h-[22px]"></div>
@@ -726,15 +726,15 @@
                     {{ i18n "hub_billing_checkout_enterprise_subtitle" . }}
                   </h3>
                   <div class="mb-4 md:my-auto lg:max-w-sm">
-                    <div class="fa-stack text-5xl text-tertiary2/15 mb-4">
+                    <div class="fa-stack text-5xl text-hub/15 mb-4">
                       <i class="fa-solid fa-circle fa-stack-2x"></i>
-                      <i class="fa-solid fa-building fa-stack-1x text-tertiary2"></i>
+                      <i class="fa-solid fa-building fa-stack-1x text-hub"></i>
                     </div>
                     <p class="font-p">
                       {{ i18n "hub_billing_checkout_enterprise_cta" . }}
                     </p>
                   </div>
-                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-tertiary2 w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
+                  <a href="mailto:hub@cryptomator.org" role="button" class="btn btn-hub w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">
                     <i class="fa-solid fa-envelope"></i>
                     {{ i18n "hub_billing_checkout_enterprise_action" . }}
                   </a>
@@ -766,11 +766,11 @@
             <h1 class="font-h1">{{ .Title }}</h1>
           </header>
           <p class="font-p mb-4">
-            <i class="fa-solid fa-circle-check text-tertiary2"></i>
+            <i class="fa-solid fa-circle-check text-hub"></i>
             {{ i18n "hub_billing_checkout_success_description" . }}
           </p>
           <p x-show="subscriptionData.paymentMethod == 'invoice'" class="font-p mb-4">
-            <i class="fa-solid fa-file-invoice text-tertiary2"></i>
+            <i class="fa-solid fa-file-invoice text-hub"></i>
             {{ i18n "hub_billing_checkout_success_invoice_description" . }}
           </p>
           {{ partial "hub-license-block.html" . }}

@@ -1,0 +1,27 @@
+{{- /* Returns the element's class attributes with the top padding that clears
+   the fixed nav and the active banners. The webinar banner hides itself
+   client-side, so when it is the only strip the padding comes as an Alpine
+   :class as well. Context: "context" (the page), "classes" (the element's other
+   classes), "base", and optionally "thinStrip", "anniversary", and "both", which
+   default to a flush hero's clearance. */ -}}
+{{- $showWebinarBanner := .context.Scratch.Get "webinarBannerActive" -}}
+{{- $showSaleBanner := .context.Scratch.Get "saleBannerActive" -}}
+{{- $showAnniversaryBanner := .context.Scratch.Get "anniversaryBannerActive" -}}
+{{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
+{{- $thinStrip := .thinStrip | default "pt-28 md:pt-28" -}}
+{{- $anniversary := .anniversary | default "pt-28 md:pt-28" -}}
+{{- $both := .both | default "pt-40 md:pt-40" -}}
+{{- $padding := .base -}}
+{{- if and $showThinStrip $showAnniversaryBanner -}}
+  {{- $padding = $both -}}
+{{- else if $showThinStrip -}}
+  {{- $padding = $thinStrip -}}
+{{- else if $showAnniversaryBanner -}}
+  {{- $padding = $anniversary -}}
+{{- end -}}
+{{- $attrs := printf "class=\"%s %s\"" .classes $padding -}}
+{{- if and $showWebinarBanner (not $showSaleBanner) -}}
+  {{- $paddingNoStrip := cond $showAnniversaryBanner $anniversary .base -}}
+  {{- $attrs = printf "class=\"%s\" :class=\"webinar.state === 'none' ? '%s' : '%s'\"" .classes $paddingNoStrip $padding -}}
+{{- end -}}
+{{- return ($attrs | safeHTMLAttr) -}}

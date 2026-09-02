@@ -1,43 +1,43 @@
 {{ define "preloads" }}
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/managed/">
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/">
+  <link rel="preload" fetchpriority="high" as="image" href="/img/hub/header-clouds.png" type="image/png">
+  <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
   {{ partial "altcha-css.html" . }}
-{{ end }}
-{{ define "styles" }}
-  {{ partial "page-css.html" "css/hub-scene.css" }}
 {{ end }}
 {{ define "main" }}
   <div class="header-bg-hub relative overflow-x-clip pb-24 md:pb-32">
-  <header class="container flex flex-col items-center text-center pt-10 md:pt-12">
-    <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance text-gray-800 mb-5">{{ i18n "hub_header_title" . | safeHTML }}</h1>
-    <p class="text-lg leading-relaxed text-balance text-gray-600 max-w-2xl mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
-    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-4">
-      <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-tertiary2 text-lg min-w-[16rem] py-3" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
-      <a href="#introduction" class="group inline-flex items-center gap-1.5 text-sm text-gray-600 no-underline hover:text-tertiary2" data-umami-event="hub-header-how-it-works">
-        {{ i18n "hub_header_link" . }}
-        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
-      </a>
-    </div>
+    <header class="container flex flex-col items-center text-center pt-10 md:pt-12">
+      <h1 class="font-headline font-medium text-4xl md:text-5xl leading-tight tracking-tight text-balance text-gray-800 mb-5">{{ i18n "hub_header_title" . | safeHTML }}</h1>
+      <p class="text-lg leading-relaxed text-balance text-gray-600 max-w-2xl mb-6">{{ i18n "hub_header_description" . | safeHTML }}</p>
+      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-4">
+        <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub text-lg min-w-[16rem] py-3" data-umami-event="hub-header-managed-cta">{{ i18n "hub_header_managed_cta" . }}</a>
+        <a href="#introduction" class="group inline-flex items-center gap-1.5 text-sm text-gray-600 no-underline hover:text-hub" data-umami-event="hub-header-how-it-works">
+          {{ i18n "hub_header_link" . }}
+          <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
+        </a>
+      </div>
 
-    <div class="relative mt-8 mb-6 h-[200px] md:h-[368px] overflow-visible">
+      <div class="relative mt-8 mb-6 h-[200px] md:h-[368px]">
         <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[720px] h-[400px] origin-top scale-[0.5] md:scale-100">
-          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[360px] bg-[radial-gradient(ellipse_at_center,rgba(53,73,96,0.07),transparent_70%)] pointer-events-none" aria-hidden="true"></div>
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[360px] bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-hub)_7%,transparent),transparent_70%)] pointer-events-none" aria-hidden="true"></div>
           <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 720 400" aria-hidden="true">
-            <path d="M360 175 C330 105 288 55 248 40" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 175 C390 105 432 55 472 40" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 175 C280 168 175 140 112 118" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 175 C420 195 470 235 492 272" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
-            <path d="M360 168 C430 160 490 158 553 160" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <path d="M360 175 C330 105 288 55 248 40" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
+            <path d="M360 175 C390 105 432 55 472 40" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
+            <path d="M360 175 C280 168 175 140 112 118" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
+            <path d="M360 175 C420 195 470 235 492 272" class="stroke-gray-400" fill="none" stroke-width="1.5"/>
+            <path d="M360 168 C430 160 490 158 553 160" class="stroke-gray-400" fill="none" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
             <path d="M332 302 C305 300 275 296 246 292" fill="none" stroke="url(#severed-ad)" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-            <path d="M388 302 C415 300 445 296 474 292" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
+            <path d="M388 302 C415 300 445 296 474 292" class="stroke-gray-400" fill="none" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" opacity="0.8"/>
             <circle class="ad-pulse" r="2.5" fill="#8fa3b8">
               <animateMotion dur="3.5s" repeatCount="indefinite" path="M388 302 C415 300 445 296 474 292"/>
               <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.5s" repeatCount="indefinite"/>
             </circle>
             <defs>
-              <linearGradient id="severed-ad" gradientUnits="userSpaceOnUse" x1="332" y1="302" x2="246" y2="292">
-                <stop offset="0" stop-color="#cbd5e1" stop-opacity="0.8"/>
-                <stop offset="0.85" stop-color="#cbd5e1" stop-opacity="0"/>
+              {{- /* Tailwind has no stop-color utility, so the stops take the gray via currentColor. */ -}}
+              <linearGradient id="severed-ad" class="text-gray-400" gradientUnits="userSpaceOnUse" x1="332" y1="302" x2="246" y2="292">
+                <stop offset="0" stop-color="currentColor" stop-opacity="0.8"/>
+                <stop offset="0.85" stop-color="currentColor" stop-opacity="0"/>
               </linearGradient>
               <linearGradient id="severed" gradientUnits="userSpaceOnUse" x1="360" y1="175" x2="238" y2="270">
                 <stop offset="0" stop-color="#b3bfce" stop-opacity="1"/>
@@ -68,7 +68,7 @@
               <span class="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-black/5" aria-hidden="true">
                 <span class="idp-swap"><img src="/img/clouds/sharepoint.svg" class="h-3.5 w-3.5" alt=""/><img src="/img/clouds/onedrive.svg" class="h-3 w-auto" alt=""/><img src="/img/clouds/google-drive.svg" class="h-3.5 w-auto" alt=""/></span>
               </span>
-              <i class="fa-solid fa-lock text-tertiary2 text-3xl" aria-hidden="true"></i>
+              <i class="fa-solid fa-lock text-hub text-3xl" aria-hidden="true"></i>
               <span class="mt-2 text-xs font-semibold text-gray-700 leading-tight">{{ i18n "hub_hero_card_vault_name" }}</span>
               <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_scene_vault" }}</span>
             </span>
@@ -81,7 +81,7 @@
             </span>
             <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">Anna</span>
             <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_row_owner_desc" }}</span>
-            <span class="mt-1 rounded border border-tertiary2/40 bg-tertiary2/5 px-1 text-[8px] uppercase tracking-wide text-tertiary2">{{ i18n "hub_hero_tag_owner" }}</span>
+            <span class="mt-1 rounded border border-hub/40 bg-hub/5 px-1 text-[8px] uppercase tracking-wide text-hub">{{ i18n "hub_hero_tag_owner" }}</span>
           </div>
 
           <div class="absolute left-[500px] top-[55px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-32 text-center">
@@ -91,7 +91,7 @@
             </span>
             <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">Lena</span>
             <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_row_external_desc" }}</span>
-            <span class="mt-1 rounded border border-tertiary2/40 bg-tertiary2/5 px-1 text-[8px] uppercase tracking-wide text-tertiary2">{{ i18n "hub_hero_tag_external" }}</span>
+            <span class="mt-1 rounded border border-hub/40 bg-hub/5 px-1 text-[8px] uppercase tracking-wide text-hub">{{ i18n "hub_hero_tag_external" }}</span>
           </div>
 
           <div class="absolute left-[85px] top-[160px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-28 text-center">
@@ -110,7 +110,7 @@
 
           <div class="absolute left-[505px] top-[310px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-32 text-center">
             <span class="relative">
-              <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-tertiary2 text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+              <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-hub text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
               <span class="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-[10px] ring-2 ring-white"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
             </span>
             <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight">{{ i18n "hub_hero_group_name" }}</span>
@@ -118,8 +118,8 @@
           </div>
 
           <div class="absolute left-[360px] top-[320px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 w-44 text-center">
-            <span class="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[130px] bg-[radial-gradient(ellipse_at_center,rgba(53,73,96,0.09),transparent_70%)] pointer-events-none" aria-hidden="true"></span>
-            <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-tertiary2 text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
+            <span class="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[130px] bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-hub)_9%,transparent),transparent_70%)] pointer-events-none" aria-hidden="true"></span>
+            <span class="flex w-14 h-14 items-center justify-center rounded-full bg-[#ebedef] text-hub text-lg ring-4 ring-white shadow-md"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span>
             <span class="mt-1.5 text-xs font-medium text-gray-700 leading-tight idp-swap"><span>Active Directory</span><span>Entra ID</span><span>Okta</span></span>
             <span class="text-[10px] text-gray-500 leading-tight">{{ i18n "hub_hero_ad_row_users" }} · {{ i18n "hub_hero_ad_row_groups" }}</span>
           </div>
@@ -143,11 +143,9 @@
           </div>
 
         </div>
-    </div>
-  </header>
-  <svg class="absolute -bottom-px inset-x-0 w-full h-16 md:h-24 text-gray-100 pointer-events-none" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
-    <path d="M0,88 C320,112 640,56 920,68 C1140,78 1300,96 1440,78 L1440,120 L0,120 Z"/>
-  </svg>
+      </div>
+    </header>
+    {{ partial "hero-wave.html" }}
   </div>
 
   {{ $walbuschPage := .Site.GetPage (printf "/success-stories/walbusch.%s.html" .Language.Lang) }}
@@ -166,7 +164,7 @@
         </cite>
       </p>
       <p class="font-p">
-        <a href="{{ $walbuschPage.RelPermalink }}" class="text-link-tertiary2" data-umami-event="hub-success-story-link">
+        <a href="{{ $walbuschPage.RelPermalink }}" class="text-link-hub" data-umami-event="hub-success-story-link">
           {{ i18n "success_story_read_link" . }} <i class="fa-solid fa-arrow-right"></i>
         </a>
       </p>
@@ -237,8 +235,8 @@
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="white-box">
-        <div class="px-4 py-2 border-b border-tertiary2">
-          <h3 class="font-h3"><i class="fa-solid fa-key text-tertiary2"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-hub">
+          <h3 class="font-h3"><i class="fa-solid fa-key text-hub"></i> {{ i18n "hub_features_feature_1_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_1_description" . | safeHTML }}</p>
@@ -246,8 +244,8 @@
       </div>
     
       <div class="white-box">
-        <div class="px-4 py-2 border-b border-tertiary2">
-          <h3 class="font-h3"><i class="fa-solid fa-shield-check text-tertiary2"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-hub">
+          <h3 class="font-h3"><i class="fa-solid fa-shield-check text-hub"></i> {{ i18n "hub_features_feature_2_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_2_description" . | safeHTML }}</p>
@@ -255,8 +253,8 @@
       </div>
     
       <div class="white-box">
-        <div class="px-4 py-2 border-b border-tertiary2">
-          <h3 class="font-h3"><i class="fa-solid fa-lock-alt text-tertiary2"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-hub">
+          <h3 class="font-h3"><i class="fa-solid fa-lock-alt text-hub"></i> {{ i18n "hub_features_feature_3_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_3_description" . | safeHTML }}</p>
@@ -264,8 +262,8 @@
       </div>
 
       <div class="white-box">
-        <div class="px-4 py-2 border-b border-tertiary2">
-          <h3 class="font-h3"><i class="fa-solid fa-cloud text-tertiary2"></i> {{ i18n "hub_features_feature_4_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-hub">
+          <h3 class="font-h3"><i class="fa-solid fa-cloud text-hub"></i> {{ i18n "hub_features_feature_4_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_4_description" . | safeHTML }}</p>
@@ -273,8 +271,8 @@
       </div>
     
       <div class="white-box">
-        <div class="px-4 py-2 border-b border-tertiary2">
-          <h3 class="font-h3"><i class="fa-solid fa-code text-tertiary2"></i> {{ i18n "hub_features_feature_5_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-hub">
+          <h3 class="font-h3"><i class="fa-solid fa-code text-hub"></i> {{ i18n "hub_features_feature_5_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_5_description" . | safeHTML }}</p>
@@ -282,8 +280,8 @@
       </div>
     
       <div class="white-box">
-        <div class="px-4 py-2 border-b border-tertiary2">
-          <h3 class="font-h3"><i class="fa-solid fa-shield-alt text-tertiary2"></i> {{ i18n "hub_features_feature_6_title" . }}</h3>
+        <div class="px-4 py-2 border-b border-hub">
+          <h3 class="font-h3"><i class="fa-solid fa-shield-alt text-hub"></i> {{ i18n "hub_features_feature_6_title" . }}</h3>
         </div>
         <div class="p-4">
           <p class="font-p">{{ i18n "hub_features_feature_6_description" . | safeHTML }}</p>
@@ -296,7 +294,7 @@
     <div class="max-w-3xl mx-auto">
       <h2 id="pricing-plans" class="font-h2 mb-4">{{ i18n "hub_pricing_title" . }}</h2>
       <p class="font-p mb-4">{{ i18n "hub_pricing_description" . }}</p>
-      <a href="{{ .Site.LanguagePrefix }}/pricing/" role="button" class="btn btn-tertiary2 px-8" data-umami-event="hub-pricing">
+      <a href="{{ .Site.LanguagePrefix }}/pricing/" role="button" class="btn btn-hub px-8" data-umami-event="hub-pricing">
         {{ i18n "hub_pricing_button" . }}
       </a>
     </div>
@@ -307,9 +305,9 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="flex flex-col white-box ring-2 ring-secondary">
-        <div class="flex justify-between items-center p-4 border-b border-tertiary2">
+        <div class="flex justify-between items-center p-4 border-b border-hub">
           <h3 class="font-h3">
-            <i class="fa-solid fa-cloud text-tertiary2"></i> {{ i18n "pricing_hub_managed_title" . }}
+            <i class="fa-solid fa-cloud text-hub"></i> {{ i18n "pricing_hub_managed_title" . }}
           </h3>
           <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-secondary text-white">
             <i class="fa-solid fa-star"></i>
@@ -323,29 +321,29 @@
             </h4>
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "hub_deployment_managed_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "hub_deployment_managed_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "hub_deployment_managed_benefit_3" . }}</span>
               </li>
             </ul>
           </div>
-          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-tertiary2 w-full lg:w-96" data-umami-event="hub-deployment-managed-cta">
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub w-full lg:w-96" data-umami-event="hub-deployment-managed-cta">
             {{ i18n "pricing_hub_managed_cta" . }}
           </a>
         </div>
       </div>
 
       <div class="flex flex-col white-box">
-        <div class="p-4 border-b border-tertiary2">
+        <div class="p-4 border-b border-hub">
           <h3 class="font-h3">
-            <i class="fa-solid fa-server text-tertiary2"></i> {{ i18n "pricing_hub_self_hosted_title" . }}
+            <i class="fa-solid fa-server text-hub"></i> {{ i18n "pricing_hub_self_hosted_title" . }}
           </h3>
         </div>
         <div class="flex flex-col justify-between h-full gap-8 px-4 py-8">
@@ -355,20 +353,20 @@
             </h4>
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "hub_deployment_self_hosted_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "hub_deployment_self_hosted_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "hub_deployment_self_hosted_benefit_3" . }}</span>
               </li>
             </ul>
           </div>
-          <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-tertiary2 w-full lg:w-96" data-umami-event="hub-deployment-self-hosted-cta">
+          <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full lg:w-96" data-umami-event="hub-deployment-self-hosted-cta">
             {{ i18n "pricing_hub_self_hosted_cta" . }}
           </a>
         </div>
@@ -400,7 +398,7 @@
   <section class="container text-center py-12">
     <h2 id="contact" class="font-h2 mb-4">{{ i18n "hub_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_contact_us_description" . | safeHTML }}</p>
-    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-tertiary2 px-8" data-umami-event="hub-contact-us">
+    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-hub px-8" data-umami-event="hub-contact-us">
       <i class="fa-solid fa-envelope"></i> {{ i18n "hub_contact_us_button" . }}
     </a>
   </section>
@@ -412,7 +410,7 @@
       <p class="font-p mb-4">{{ i18n "hub_newsletter_instruction" . | safeHTML }}</p>
       <div class="flex justify-center items-center rounded-sm bg-gray-300 mb-4">
         <input x-model="data.email" x-ref="email" @blur="$refs.email.classList.add('show-invalid')" type="email" class="grow input-box rounded-r-none focus:border-secondary" placeholder="{{ i18n "hub_newsletter_email_placeholder" }}" required/>
-        <button :disabled="data.inProgress || !data.acceptTerms || captchaState == 'verifying'" type="submit" class="shrink-0 flex items-center gap-1 btn btn-tertiary2 rounded-l-none px-4" data-umami-event="hub-newsletter-form">
+        <button :disabled="data.inProgress || !data.acceptTerms || captchaState == 'verifying'" type="submit" class="shrink-0 flex items-center gap-1 btn btn-hub rounded-l-none px-4" data-umami-event="hub-newsletter-form">
           <i :class="{'fa-envelope': !data.inProgress, 'fa-spinner fa-spin': data.inProgress}" class="fa-solid" aria-hidden="true"></i> {{ i18n "hub_newsletter_subscribe" }}
         </button>
 
@@ -428,8 +426,8 @@
     </div>
 
     <div class="flex justify-center gap-2">
-      <a class="text-gray-600 hover:text-tertiary2" href="https://mastodon.online/@cryptomator" aria-label="Cryptomator on Mastodon" target="_blank" rel="noopener" data-umami-event="hub-mastodon"><i class="fa-brands fa-mastodon text-2xl"></i></a>
-      <a class="text-gray-600 hover:text-tertiary2" href="https://www.linkedin.com/company/skymatic/" aria-label="Skymatic on LinkedIn" target="_blank" rel="noopener" data-umami-event="hub-linkedin"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+      <a class="text-gray-600 hover:text-hub" href="https://mastodon.online/@cryptomator" aria-label="Cryptomator on Mastodon" target="_blank" rel="noopener" data-umami-event="hub-mastodon"><i class="fa-brands fa-mastodon text-2xl"></i></a>
+      <a class="text-gray-600 hover:text-hub" href="https://www.linkedin.com/company/skymatic/" aria-label="Skymatic on LinkedIn" target="_blank" rel="noopener" data-umami-event="hub-linkedin"><i class="fa-brands fa-linkedin text-2xl"></i></a>
     </div>
   </section>
 {{ end }}

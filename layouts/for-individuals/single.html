@@ -2,30 +2,14 @@
   <link rel="prefetch" href="{{ .Site.LanguagePrefix }}/downloads/">
   <link rel="preload" fetchpriority="high" as="image" href="/img/home/header-background.avif" type="image/avif">
   {{- /* Rotation icons for the finder hero; google-drive.svg is the initial src in the markup. */ -}}
-  <link rel="preload" fetchpriority="low" as="image" href="/img/clouds/icloud.svg" type="image/svg+xml">
-  <link rel="preload" fetchpriority="low" as="image" href="/img/clouds/onedrive.svg" type="image/svg+xml">
-  <link rel="preload" fetchpriority="low" as="image" href="/img/clouds/dropbox.svg" type="image/svg+xml">
+  <link rel="prefetch" href="/img/clouds/icloud.svg">
+  <link rel="prefetch" href="/img/clouds/onedrive.svg">
+  <link rel="prefetch" href="/img/clouds/dropbox.svg">
   {{ partial "altcha-css.html" . }}
 {{ end }}
-{{ define "styles" }}
-  {{ partial "page-css.html" "css/finder-hero.css" }}
-{{ end }}
 {{ define "main" }}
-  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners (mirrors index.html). */ -}}
-  {{- $showWebinarBanner := .Scratch.Get "webinarBannerActive" -}}
-  {{- $showSaleBanner := .Scratch.Get "saleBannerActive" -}}
-  {{- $showAnniversaryBanner := .Scratch.Get "anniversaryBannerActive" -}}
-  {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
-  {{- $heroTopPad := "pt-16 md:pt-20" -}}
-  {{- if and $showThinStrip $showAnniversaryBanner -}}
-    {{- $heroTopPad = "pt-40 md:pt-40" -}}
-  {{- else if or $showThinStrip $showAnniversaryBanner -}}
-    {{- $heroTopPad = "pt-28 md:pt-28" -}}
-  {{- end -}}
-  {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match (mirrors baseof.html). */ -}}
-  {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
-  {{- $heroPadNoStrip := cond $showAnniversaryBanner "pt-28 md:pt-28" "pt-16 md:pt-20" -}}
-  <header class="header-bg bg-dark bg-center bg-repeat-x relative{{ if not $webinarIsThinStrip }} {{ $heroTopPad }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $heroPadNoStrip }}' : '{{ $heroTopPad }}'"{{ end }}>
+  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners. */ -}}
+  <header {{ partial "banner-padding.html" (dict "context" . "classes" "header-bg bg-dark bg-center bg-repeat-x relative" "base" "pt-16 md:pt-20") }}>
     <div class="container flex flex-col items-center text-center text-white pt-6 md:pt-8">
     {{ if .Site.Params.paddleDesktopSalePriceId }}
     <div class="px-4 py-1 rounded-full text-xs lg:text-sm font-medium bg-red-600 text-white mb-6">
@@ -47,9 +31,7 @@
     {{ end }}
     </div>
 
-    <svg class="absolute -bottom-px inset-x-0 w-full h-16 md:h-24 text-gray-100 pointer-events-none" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
-      <path d="M0,88 C320,112 640,56 920,68 C1140,78 1300,96 1440,78 L1440,120 L0,120 Z"/>
-    </svg>
+    {{ partial "hero-wave.html" }}
     {{- $finderRow := "grid grid-cols-[minmax(0,1fr)_4.5rem_6.5rem] md:grid-cols-[minmax(0,1fr)_5rem_8.5rem] gap-3 items-center px-5" -}}
     <div class="finder-hero is-locked relative z-10 mt-16 md:mt-20 -mb-20 md:-mb-24 w-full max-w-xl mx-auto px-4 md:px-0">
       <div class="relative text-left">
@@ -78,7 +60,7 @@
               <span class="finder-swap-icon"><img src="/img/clouds/google-drive.svg" class="finder-when-locked" data-finder-provider-icon alt="" aria-hidden="true"/><img src="/img/logo.svg" class="finder-when-unlocked" alt="" aria-hidden="true"/></span>
             </span>
             <div class="min-w-0">
-              <span class="finder-path min-w-0 font-headline font-medium text-gray-800 leading-tight">
+              <span class="finder-path font-headline font-medium text-gray-800 leading-tight">
                 <span class="finder-path-inner inline-grid">
                   <span class="finder-path-front col-start-1 row-start-1 truncate"><span data-finder-provider-name>Google Drive</span>{{ i18n "for_individuals_finder_locked_path_suffix" }}</span>
                   <span class="finder-path-back col-start-1 row-start-1 truncate">{{ i18n "for_individuals_finder_unlocked_path" }}</span>
@@ -93,55 +75,29 @@
             <span class="text-right">{{ i18n "for_individuals_finder_col_size" }}</span>
             <span>{{ i18n "for_individuals_finder_col_modified" }}</span>
           </div>
+          {{- $finderFiles := slice
+            (dict "key" "for_individuals_finder_file_1" "name" "T6KQ3ZVW9J2RXA5M4YD7CB" "folder" true "icon" "fa-folder text-secondary")
+            (dict "key" "for_individuals_finder_file_2" "name" "ZK5R7Q2W9M3T8J1C4XA6VB.c9r" "folder" false "icon" "fa-file-pdf text-red-400")
+            (dict "key" "for_individuals_finder_file_3" "name" "P8W2NM4KQ7ZR5TC1J9XY3A.c9r" "folder" false "icon" "fa-file-image text-secondary")
+            (dict "key" "for_individuals_finder_file_4" "name" "C4XJ9A1MT5ZK2Q8RW6VN0B.c9r" "folder" false "icon" "fa-file-excel text-primary")
+            (dict "key" "for_individuals_finder_file_5" "name" "V0BN6W3RQ8ZT2MK5AJ7XC9.c9r" "folder" false "icon" "fa-file-pdf text-red-400")
+            (dict "key" "for_individuals_finder_file_6" "name" "X9AT4CJ1WQ6ZK3RB8MV2N5.c9r" "folder" false "icon" "fa-file-word text-hub")
+          -}}
           <ul class="divide-y divide-gray-100 text-sm text-gray-700 pb-4">
+            {{- range $file := $finderFiles }}
             <li class="{{ $finderRow }} py-2.5">
               <span class="flex items-center gap-2.5 min-w-0">
-                <span class="finder-swap-icon"><i class="fa-solid fa-folder text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid fa-folder text-secondary finder-when-unlocked" aria-hidden="true"></i></span>
-                <span class="finder-flap finder-flap-name truncate" data-locked="T6KQ3ZVW9J2RXA5M4YD7CB" data-unlocked="{{ i18n "for_individuals_finder_file_1_name" }}">T6KQ3ZVW9J2RXA5M4YD7CB</span>
+                <span class="finder-swap-icon"><i class="fa-solid {{ if $file.folder }}fa-folder{{ else }}fa-file{{ end }} text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid {{ $file.icon }} finder-when-unlocked" aria-hidden="true"></i></span>
+                <span class="finder-flap finder-flap-name truncate" data-locked="{{ $file.name }}" data-unlocked="{{ i18n (printf "%s_name" $file.key) }}">{{ $file.name }}</span>
               </span>
+              {{- if $file.folder }}
               <span class="text-right text-gray-500">&mdash;</span>
-              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_1_modified" }}">&mdash;</span>
+              {{- else }}
+              <span class="finder-flap text-right text-gray-500" data-locked="&mdash;" data-unlocked="{{ i18n (printf "%s_size" $file.key) }}">&mdash;</span>
+              {{- end }}
+              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n (printf "%s_modified" $file.key) }}">&mdash;</span>
             </li>
-            <li class="{{ $finderRow }} py-2.5">
-              <span class="flex items-center gap-2.5 min-w-0">
-                <span class="finder-swap-icon"><i class="fa-solid fa-file text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid fa-file-pdf text-red-400 finder-when-unlocked" aria-hidden="true"></i></span>
-                <span class="finder-flap finder-flap-name truncate" data-locked="ZK5R7Q2W9M3T8J1C4XA6VB.c9r" data-unlocked="{{ i18n "for_individuals_finder_file_2_name" }}">ZK5R7Q2W9M3T8J1C4XA6VB.c9r</span>
-              </span>
-              <span class="finder-flap text-right text-gray-500" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_2_size" }}">&mdash;</span>
-              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_2_modified" }}">&mdash;</span>
-            </li>
-            <li class="{{ $finderRow }} py-2.5">
-              <span class="flex items-center gap-2.5 min-w-0">
-                <span class="finder-swap-icon"><i class="fa-solid fa-file text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid fa-file-image text-secondary finder-when-unlocked" aria-hidden="true"></i></span>
-                <span class="finder-flap finder-flap-name truncate" data-locked="P8W2NM4KQ7ZR5TC1J9XY3A.c9r" data-unlocked="{{ i18n "for_individuals_finder_file_3_name" }}">P8W2NM4KQ7ZR5TC1J9XY3A.c9r</span>
-              </span>
-              <span class="finder-flap text-right text-gray-500" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_3_size" }}">&mdash;</span>
-              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_3_modified" }}">&mdash;</span>
-            </li>
-            <li class="{{ $finderRow }} py-2.5">
-              <span class="flex items-center gap-2.5 min-w-0">
-                <span class="finder-swap-icon"><i class="fa-solid fa-file text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid fa-file-excel text-primary finder-when-unlocked" aria-hidden="true"></i></span>
-                <span class="finder-flap finder-flap-name truncate" data-locked="C4XJ9A1MT5ZK2Q8RW6VN0B.c9r" data-unlocked="{{ i18n "for_individuals_finder_file_4_name" }}">C4XJ9A1MT5ZK2Q8RW6VN0B.c9r</span>
-              </span>
-              <span class="finder-flap text-right text-gray-500" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_4_size" }}">&mdash;</span>
-              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_4_modified" }}">&mdash;</span>
-            </li>
-            <li class="{{ $finderRow }} py-2.5">
-              <span class="flex items-center gap-2.5 min-w-0">
-                <span class="finder-swap-icon"><i class="fa-solid fa-file text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid fa-file-pdf text-red-400 finder-when-unlocked" aria-hidden="true"></i></span>
-                <span class="finder-flap finder-flap-name truncate" data-locked="V0BN6W3RQ8ZT2MK5AJ7XC9.c9r" data-unlocked="{{ i18n "for_individuals_finder_file_5_name" }}">V0BN6W3RQ8ZT2MK5AJ7XC9.c9r</span>
-              </span>
-              <span class="finder-flap text-right text-gray-500" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_5_size" }}">&mdash;</span>
-              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_5_modified" }}">&mdash;</span>
-            </li>
-            <li class="{{ $finderRow }} py-2.5">
-              <span class="flex items-center gap-2.5 min-w-0">
-                <span class="finder-swap-icon"><i class="fa-solid fa-file text-gray-400 finder-when-locked" aria-hidden="true"></i><i class="fa-solid fa-file-word text-tertiary2 finder-when-unlocked" aria-hidden="true"></i></span>
-                <span class="finder-flap finder-flap-name truncate" data-locked="X9AT4CJ1WQ6ZK3RB8MV2N5.c9r" data-unlocked="{{ i18n "for_individuals_finder_file_7_name" }}">X9AT4CJ1WQ6ZK3RB8MV2N5.c9r</span>
-              </span>
-              <span class="finder-flap text-right text-gray-500" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_7_size" }}">&mdash;</span>
-              <span class="finder-flap text-gray-500 truncate" data-locked="&mdash;" data-unlocked="{{ i18n "for_individuals_finder_file_7_modified" }}">&mdash;</span>
-            </li>
+            {{- end }}
           </ul>
         </div>
 
@@ -179,41 +135,41 @@
   </section>
 
   <section id="how-it-works" class="mt-10 md:mt-12 scroll-mt-24">
-    <div class="h-12 md:h-16 bg-gradient-to-b from-gray-100 to-white" aria-hidden="true"></div>
+    <div class="h-12 md:h-16 bg-linear-to-b from-gray-100 to-white" aria-hidden="true"></div>
     <div class="bg-white">
-    <div class="container pb-16 md:pb-20">
-    <div class="flex flex-wrap mb-24">
-      <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pr-6">
-        <img data-src="/img/for-individuals/screenshot-1.png" class="lazyload w-full h-auto" alt="{{i18n "for_individuals_workflow_step_1_alt" }}"/>
-      </figure>
-      <div class="w-full md:w-1/2 md:pl-6">
-        <h2 class="font-h2 mb-6">{{ i18n "for_individuals_workflow_step_1_title" }}</h2>
-        <p class="lead">{{ i18n "for_individuals_workflow_step_1_description" }}</p>
-      </div>
-    </div>
+      <div class="container pb-16 md:pb-20">
+        <div class="flex flex-wrap mb-24">
+          <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pr-6">
+            <img data-src="/img/for-individuals/screenshot-1.png" class="lazyload w-full h-auto" alt="{{i18n "for_individuals_workflow_step_1_alt" }}"/>
+          </figure>
+          <div class="w-full md:w-1/2 md:pl-6">
+            <h2 class="font-h2 mb-6">{{ i18n "for_individuals_workflow_step_1_title" }}</h2>
+            <p class="lead">{{ i18n "for_individuals_workflow_step_1_description" }}</p>
+          </div>
+        </div>
     
-    <div class="flex flex-wrap mb-24 md:flex-row-reverse">
-      <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pl-6">
-        <img data-src="/img/for-individuals/screenshot-2.png" class="lazyload w-full h-auto" alt="{{i18n "for_individuals_workflow_step_2_alt" }}"/>
-      </figure>
-      <div class="w-full md:w-1/2 md:pr-6">
-        <h2 class="font-h2 mb-6">{{ i18n "for_individuals_workflow_step_2_title" }}</h2>
-        <p class="lead">{{ i18n "for_individuals_workflow_step_2_description" }}</p>
-      </div>
-    </div>
+        <div class="flex flex-wrap mb-24 md:flex-row-reverse">
+          <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pl-6">
+            <img data-src="/img/for-individuals/screenshot-2.png" class="lazyload w-full h-auto" alt="{{i18n "for_individuals_workflow_step_2_alt" }}"/>
+          </figure>
+          <div class="w-full md:w-1/2 md:pr-6">
+            <h2 class="font-h2 mb-6">{{ i18n "for_individuals_workflow_step_2_title" }}</h2>
+            <p class="lead">{{ i18n "for_individuals_workflow_step_2_description" }}</p>
+          </div>
+        </div>
     
-    <div class="flex flex-wrap">
-      <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pr-6">
-        <img data-src="/img/for-individuals/screenshot-3.png" class="lazyload w-full h-auto" alt="{{i18n "for_individuals_workflow_step_3_alt" }}"/>
-      </figure>
-      <div class="w-full md:w-1/2 md:pl-6">
-        <h2 class="font-h2 mb-6">{{ i18n "for_individuals_workflow_step_3_title" }}</h2>
-        <p class="lead">{{ i18n "for_individuals_workflow_step_3_description" }}</p>
+        <div class="flex flex-wrap">
+          <figure class="w-full mb-12 md:w-1/2 md:mb-0 md:pr-6">
+            <img data-src="/img/for-individuals/screenshot-3.png" class="lazyload w-full h-auto" alt="{{i18n "for_individuals_workflow_step_3_alt" }}"/>
+          </figure>
+          <div class="w-full md:w-1/2 md:pl-6">
+            <h2 class="font-h2 mb-6">{{ i18n "for_individuals_workflow_step_3_title" }}</h2>
+            <p class="lead">{{ i18n "for_individuals_workflow_step_3_description" }}</p>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
-    </div>
-    <div class="h-16 md:h-24 bg-gradient-to-t from-gray-100 to-white" aria-hidden="true"></div>
+    <div class="h-16 md:h-24 bg-linear-to-t from-gray-100 to-white" aria-hidden="true"></div>
   </section>
 
   <section class="container py-12">

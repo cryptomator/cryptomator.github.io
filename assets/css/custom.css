@@ -1,6 +1,6 @@
 /* custom classes: */
 .header-bg {
-  background-image: url(/img/home/header-background.avif), linear-gradient(to bottom, #1e2b33 0%, rgb(7.84% 20.39% 32.94%) 38%, rgb(24.71% 54.51% 85.1%) 72%, rgb(60.39% 78.04% 96.08%) 90%);
+  background-image: url(/img/home/header-background.avif), linear-gradient(to bottom, var(--color-dark) 0%, rgb(7.84% 20.39% 32.94%) 38%, rgb(24.71% 54.51% 85.1%) 72%, rgb(60.39% 78.04% 96.08%) 90%);
   background-size: auto 100%;
 }
 
@@ -9,6 +9,90 @@
   background-size: auto 240px, auto 620px, 100% 100%;
   background-repeat: repeat-x;
   background-position: 50% 70px, bottom, center;
+}
+
+/* Two stacked icons per slot; `.is-locked` on the .finder-hero root, set by
+   script, picks the visible face. */
+.finder-swap-icon {
+  @apply relative inline-flex flex-none size-5;
+}
+
+.finder-swap-icon i,
+.finder-swap-icon img {
+  @apply absolute inset-0 flex items-center justify-center object-contain;
+  transition: opacity 0.4s ease;
+}
+
+.finder-hero.is-locked .finder-when-unlocked,
+.finder-hero:not(.is-locked) .finder-when-locked {
+  opacity: 0;
+}
+
+.finder-hero.is-locked .finder-flap-name {
+  @apply font-mono text-[13px] text-gray-600;
+}
+
+/* The title-bar path flips as one whole panel between its locked and unlocked
+   label instead of per-letter flapping. */
+.finder-path {
+  @apply inline-flex min-w-0 perspective-[400px];
+}
+
+.finder-path-inner {
+  @apply transform-3d transition-transform duration-600 ease-in-out;
+}
+
+.finder-path-front,
+.finder-path-back {
+  @apply backface-hidden;
+}
+
+.finder-path-back,
+.finder-hero:not(.is-locked) .finder-path-inner {
+  @apply rotate-x-180;
+}
+
+/* Crossfade rotator for exactly three children: the :nth-child delays carve the
+   12s cycle into three 4s slots, so a fourth child fades in on top of the first. */
+.idp-swap {
+  display: inline-grid;
+  place-items: center;
+}
+
+.idp-swap > * {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: idp-cycle 12s infinite backwards;
+}
+
+.idp-swap > :nth-child(2) {
+  animation-delay: 4s;
+}
+
+.idp-swap > :nth-child(3) {
+  animation-delay: 8s;
+}
+
+@keyframes idp-cycle {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  33% { opacity: 1; }
+  37% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ad-pulse {
+    display: none;
+  }
+
+  .idp-swap > * {
+    animation: none;
+  }
+
+  .idp-swap > :first-child {
+    opacity: 1;
+  }
 }
 
 .container-prose {
@@ -41,22 +125,22 @@
   @apply bg-secondary border-secondary text-white;
 }
 
-.btn-tertiary2 {
-  @apply bg-tertiary2 border-tertiary2 text-white;
+.btn-hub {
+  @apply bg-hub border-hub text-white;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-secondary:hover,
 .btn-secondary:focus,
-.btn-tertiary2:hover,
-.btn-tertiary2:focus {
+.btn-hub:hover,
+.btn-hub:focus {
   @apply text-white transition transform duration-200 ease-in-out shadow-md -translate-y-px;
 }
 
 .btn-primary:disabled,
 .btn-secondary:disabled,
-.btn-tertiary2:disabled {
+.btn-hub:disabled {
   @apply shadow-none translate-y-0;
 }
 
@@ -69,13 +153,13 @@
   @apply bg-primary text-white transition transform duration-200 ease-in-out;
 }
 
-.btn-outline-tertiary2 {
-  @apply border border-tertiary2 text-tertiary2;
+.btn-outline-hub {
+  @apply border border-hub text-hub;
 }
 
-.btn-outline-tertiary2:hover,
-.btn-outline-tertiary2:focus {
-  @apply bg-tertiary2 text-white transition transform duration-200 ease-in-out;
+.btn-outline-hub:hover,
+.btn-outline-hub:focus {
+  @apply bg-hub text-white transition transform duration-200 ease-in-out;
 }
 
 .btn-outline-secondary {
@@ -115,8 +199,8 @@
   @apply text-primary no-underline hover:underline;
 }
 
-.text-link-tertiary2 {
-  @apply text-tertiary2 no-underline hover:underline;
+.text-link-hub {
+  @apply text-hub no-underline hover:underline;
 }
 
 .font-h1 {

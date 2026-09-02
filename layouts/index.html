@@ -16,21 +16,8 @@
   {{ partial "page-css.html" "css/hero.css" }}
 {{ end }}
 {{ define "main" }}
-  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners; desktop padding already covers all banner combos, so only the mobile value scales below */ -}}
-  {{- $showWebinarBanner := .Scratch.Get "webinarBannerActive" -}}
-  {{- $showSaleBanner := .Scratch.Get "saleBannerActive" -}}
-  {{- $showAnniversaryBanner := .Scratch.Get "anniversaryBannerActive" -}}
-  {{- $showThinStrip := or $showWebinarBanner $showSaleBanner -}}
-  {{- $heroTopPad := "pt-16 md:pt-24" -}}
-  {{- if and $showThinStrip $showAnniversaryBanner -}}
-    {{- $heroTopPad = "pt-40 md:pt-40" -}}
-  {{- else if or $showThinStrip $showAnniversaryBanner -}}
-    {{- $heroTopPad = "pt-28 md:pt-28" -}}
-  {{- end -}}
-  {{- /* The webinar banner hides itself client-side when no webinar is live/upcoming; collapse its reserved padding to match (mirrors baseof.html). */ -}}
-  {{- $webinarIsThinStrip := and $showWebinarBanner (not $showSaleBanner) -}}
-  {{- $heroPadNoStrip := cond $showAnniversaryBanner "pt-28 md:pt-28" "pt-16 md:pt-24" -}}
-  <header class="hero-split-contrast relative overflow-hidden{{ if not $webinarIsThinStrip }} {{ $heroTopPad }}{{ end }}"{{ if $webinarIsThinStrip }} :class="webinar.state === 'none' ? '{{ $heroPadNoStrip }}' : '{{ $heroTopPad }}'"{{ end }}>
+  {{- /* baseof emits no padding for flush heroes, so the hero self-clears the fixed nav + banners. */ -}}
+  <header {{ partial "banner-padding.html" (dict "context" . "classes" "hero-split-contrast relative overflow-hidden" "base" "pt-16 md:pt-24") }}>
     <div class="hero-aura-wrap absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div class="hero-aura hero-aura-primary"></div>
       <div class="hero-aura hero-aura-secondary"></div>
@@ -100,7 +87,7 @@
 
       <!-- CRYPTOMATOR HUB -->
       <section class="hero-panel hero-panel-secondary">
-        <span class="inline-flex whitespace-nowrap px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">{{ i18n "home_hero_card_our_team" }}</span>
+        <span class="inline-flex whitespace-nowrap px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-hub/10 text-hub">{{ i18n "home_hero_card_our_team" }}</span>
         <div class="hero-scene hero-hub-scene">
           <svg class="hero-scene-links" viewBox="0 0 320 180" aria-hidden="true">
             <path class="hero-hub-link" d="M40 90 L160 30 L280 90 L160 150 Z"/>
@@ -143,12 +130,12 @@
           </div>
         </div>
         <div class="hero-panel-content">
-          <h2 class="text-tertiary2">CRYPTOMATOR HUB</h2>
+          <h2 class="text-hub">CRYPTOMATOR HUB</h2>
           <p class="hero-panel-description text-base text-gray-600 leading-relaxed mb-6">{{ i18n "home_hero_hub_description" }}</p>
-          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" class="btn btn-tertiary2 min-w-[16rem] py-3" data-umami-event="home-hero-teams-cta">
+          <a href="{{ .Site.LanguagePrefix }}/hub/managed/" class="btn btn-hub min-w-[16rem] py-3" data-umami-event="home-hero-teams-cta">
             {{ i18n "home_hero_hub_cta" }}
           </a>
-          <a href="{{ .Site.LanguagePrefix }}/for-teams/" class="group inline-flex items-center gap-1.5 mt-4 text-sm text-gray-600 no-underline hover:text-tertiary2" data-umami-event="home-hero-teams-link">
+          <a href="{{ .Site.LanguagePrefix }}/for-teams/" class="group inline-flex items-center gap-1.5 mt-4 text-sm text-gray-600 no-underline hover:text-hub" data-umami-event="home-hero-teams-link">
             {{ i18n "home_hero_hub_link" }}
             <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true"></i>
           </a>
@@ -211,13 +198,13 @@
       </div>
     
       <div class="flex flex-col white-box">
-        <div class="flex justify-between items-center p-4 border-b border-tertiary2">
+        <div class="flex justify-between items-center p-4 border-b border-hub">
           <h3>
             <div class="flex items-center">
               {{ partial "hub-wordmark.html" "hidden md:block h-8 mr-2" }}
             </div>
           </h3>
-          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-tertiary2/10 text-tertiary2">
+          <div class="inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub">
             {{ i18n "home_get_started_for_teams_title" . }}
           </div>
         </div>
@@ -228,20 +215,20 @@
             </h4>
             <ul role="list" class="fa-ul text-sm lg:text-base ml-7 lg:ml-8 space-y-4">
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "home_get_started_for_teams_benefit_1" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "home_get_started_for_teams_benefit_2" . }}</span>
               </li>
               <li>
-                <span class="fa-li"><i class="fa-solid fa-check text-tertiary2"></i></span>
+                <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "home_get_started_for_teams_benefit_3" . }}</span>
               </li>
             </ul>
           </div>
-          <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-tertiary2 w-full lg:w-96" data-umami-event="home-get-started-teams-cta">
+          <a href="{{ .Site.LanguagePrefix }}/for-teams/" role="button" class="btn btn-hub w-full lg:w-96" data-umami-event="home-get-started-teams-cta">
             {{ i18n "home_get_started_for_teams_cta" . }}
           </a>
         </div>
