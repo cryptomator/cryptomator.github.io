@@ -35,9 +35,15 @@
   @apply transform-3d transition-transform duration-600 ease-in-out;
 }
 
+/* Safari honors `backface-visibility` only on an element that carries a
+   transform itself, so the front face needs the identity rotation. */
 .finder-path-front,
 .finder-path-back {
   @apply backface-hidden;
+}
+
+.finder-path-front {
+  @apply rotate-x-0;
 }
 
 .finder-path-back,
