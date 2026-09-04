@@ -1555,7 +1555,7 @@
   translation: "You're registered!"
 - id: webinar_success_message
   translation: "Thank you for registering. You will receive a confirmation email with the webinar details shortly."
-- id: webinar_success_inbox_hint
+- id: success_inbox_hint
   translation: "Please also check your spam folder."
 - id: webinar_details_title
   translation: "Webinar Details"
@@ -1579,6 +1579,32 @@
   translation: "There's no webinar planned at the moment, but we announce new sessions regularly."
 - id: webinar_none_newsletter_instruction
   translation: "Subscribe to our Hub mailing list and we'll let you know as soon as the next webinar is scheduled."
+
+# Whitepaper
+- id: whitepaper_eyebrow
+  translation: "Whitepaper"
+- id: whitepaper_first_name
+  translation: "First Name"
+- id: whitepaper_last_name
+  translation: "Last Name"
+- id: whitepaper_email
+  translation: "Email Address"
+- id: whitepaper_company
+  translation: "Company / Organization"
+- id: whitepaper_submit
+  translation: "Download"
+- id: whitepaper_success_title
+  translation: "Thank You!"
+- id: whitepaper_success_message
+  translation: "We've sent the download link to your email address."
+- id: whitepaper_contact_title
+  translation: "Questions About Our Whitepapers?"
+- id: whitepaper_contact_description
+  translation: "Want to dive deeper into a topic or discuss how it applies to your organization? Our team is happy to help."
+- id: whitepaper_contact_button
+  translation: "Contact Us"
+- id: whitepaper_more
+  translation: "More Whitepapers"
 
 # Sale
 - id: nav_promotion

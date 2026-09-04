@@ -1554,7 +1554,7 @@
   translation: "Du bist angemeldet!"
 - id: webinar_success_message
   translation: "Vielen Dank für deine Anmeldung. Du erhältst in Kürze eine Bestätigungs-E-Mail mit den Webinar-Details."
-- id: webinar_success_inbox_hint
+- id: success_inbox_hint
   translation: "Bitte prüfe auch deinen Spam-Ordner."
 - id: webinar_details_title
   translation: "Webinar-Details"
@@ -1578,6 +1578,32 @@
   translation: "Derzeit ist kein Webinar geplant, aber wir kündigen regelmäßig neue Termine an."
 - id: webinar_none_newsletter_instruction
   translation: "Abonniere unseren Hub-Newsletter und wir informieren dich, sobald das nächste Webinar feststeht."
+
+# Whitepaper
+- id: whitepaper_eyebrow
+  translation: "Whitepaper"
+- id: whitepaper_first_name
+  translation: "Vorname"
+- id: whitepaper_last_name
+  translation: "Nachname"
+- id: whitepaper_email
+  translation: "E-Mail-Adresse"
+- id: whitepaper_company
+  translation: "Unternehmen / Organisation"
+- id: whitepaper_submit
+  translation: "Download"
+- id: whitepaper_success_title
+  translation: "Vielen Dank!"
+- id: whitepaper_success_message
+  translation: "Wir haben dir den Download-Link per E-Mail geschickt."
+- id: whitepaper_contact_title
+  translation: "Fragen zu unseren Whitepapern?"
+- id: whitepaper_contact_description
+  translation: "Du möchtest tiefer in ein Thema einsteigen oder besprechen, was es für deine Organisation bedeutet? Unser Team hilft gerne weiter."
+- id: whitepaper_contact_button
+  translation: "Kontakt aufnehmen"
+- id: whitepaper_more
+  translation: "Weitere Whitepaper"
 
 # Sale
 - id: nav_promotion
