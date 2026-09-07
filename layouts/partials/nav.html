@@ -3,6 +3,7 @@
 {{- $hoverBorderColor := cond .Params.darkNav "hover:border-white" "hover:border-primary" -}}
 {{- $backgroundColor := cond .Params.darkNav "bg-dark" "bg-white" -}}
 {{- $currentRelPermalink := .RelPermalink -}}
+{{- $productPage := or (in .RelPermalink "/downloads") (in .RelPermalink "/for-individuals") (in .RelPermalink "/for-teams") -}}
 <nav class="w-full max-h-screen {{ $textColor }} fixed {{ $backgroundColor }} shadow-sm z-50">
   {{- if .Scratch.Get "saleBannerActive" -}}
   <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5">
@@ -37,8 +38,14 @@
       </button>
 
       <a class="flex items-center hover:no-underline p-2 lg:mr-2" href="{{ .Site.LanguagePrefix }}/">
-        <img src="/img/logo.svg" class="h-8 aspect-1110/942" alt="Logo"/>
-        <span class="{{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/for-individuals") (in .RelPermalink "/for-teams")) }}hidden{{ end }} md:block font-headline font-bold ml-2 pb-px">CRYPTOMATOR</span>
+        {{- $hubNav := partial "hub-nav.html" . -}}
+        {{- $wordmarkOnMobile := or $productPage $hubNav -}}
+        {{ if $hubNav }}
+        <img src="/img/zero-knowledge-bot.svg" class="h-8 aspect-988/877" alt=""/>
+        {{ else }}
+        <img src="/img/logo.svg" class="h-8 aspect-1110/942" alt=""/>
+        {{ end }}
+        <span class="{{ if not $wordmarkOnMobile }}sr-only md:not-sr-only md:ml-2 {{ end }}font-headline font-bold{{ if and $hubNav (not .Params.darkNav) }} text-hub{{ end }} ml-2 pb-px">CRYPTOMATOR{{ if $hubNav }} HUB{{ end }}</span>
       </a>
 
       <ul class="hidden lg:flex items-stretch list-none m-0">
@@ -128,7 +135,7 @@
         </li>
       </ul>
 
-      {{ if not (or (in .RelPermalink "/downloads") (in .RelPermalink "/for-individuals") (in .RelPermalink "/for-teams")) -}}
+      {{ if not $productPage -}}
       <ul class="flex items-stretch list-none m-0">
         <li class="flex items-center mx-2">
           <a href="{{ .Site.LanguagePrefix }}/#get-started" role="button" class="self-center btn btn-primary py-1" data-umami-event="nav-cta">{{ i18n "nav_cta" . }}</a>

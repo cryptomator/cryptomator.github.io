@@ -52,7 +52,7 @@
 
   .hero-aura-secondary {
     right: -12%;
-    background: radial-gradient(circle, color-mix(in srgb, var(--color-tertiary2) 14%, transparent) 0%, transparent 70%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--color-hub) 14%, transparent) 0%, transparent 70%);
   }
 
   /* Uses the same `container` constraint as the content sections below, so the
@@ -70,7 +70,7 @@
   }
 
   .hero-panel-primary   { --accent: var(--color-primary); }
-  .hero-panel-secondary { --accent: var(--color-tertiary2); }
+  .hero-panel-secondary { --accent: var(--color-hub); }
 
   .hero-panel-content {
     @apply flex-1 flex flex-col items-center;
@@ -142,7 +142,7 @@
      - encrypted vault / key    → secondary (teal) — the right segment */
   .hero-cryp-link   { stroke: var(--color-primary); }
 
-  .hero-hub-link { stroke: var(--color-tertiary2); }
+  .hero-hub-link { stroke: var(--color-hub); }
 
   /* Anchor: the icon/logo is centered on its declared point so the connecting
      dashed lines (drawn to that point) pass through the disc's centre. The label
@@ -167,9 +167,9 @@
   }
 
   .hero-hub-scene {
-    --scene-accent: var(--color-tertiary2);
+    --scene-accent: var(--color-hub);
     --scene-disc: #f1f6fb;
-    --scene-token: var(--color-tertiary2);
+    --scene-token: var(--color-hub);
     --scene-glow: color-mix(in srgb, var(--color-gray-600) 40%, transparent);
     --scene-cycle: 10s;
   }

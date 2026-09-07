@@ -39,6 +39,8 @@ Using WebP (for smaller images) or AVIF (for >80 kiB due to larger overhead) may
 * `brew install libavif` (see [GitHub Project Page](https://github.com/AOMediaCodec/libavif?tab=readme-ov-file#installation) for other installation methods)
   * Example (lossless): `avifenc -l input.png output.avif`
   * Example (lossy): `avifenc --qcolor 70 --qalpha 100 --depth 8 input.png output.avif`
+  * Example (lossy, mostly transparent image): `avifenc --qcolor 60 --qalpha 50 --depth 10 -s 0 input.png output.avif`
+  * Alpha is coded separately. For an image with large transparent areas, `--qalpha 100` can be most of the file, and a lower `--qalpha` (around 50) shrinks it several times over with no visible difference. Speed `-s 0` is slow but gives the smallest file.
 * `brew install libwebm`
   * Example (lossless): `cwebp -preset drawing -lossless -z 6 -metadata all input.png -o output.webp`
   * Example (lossy): `cwebp -preset drawing -q 90 -alpha_q 100 -metadata all input.png -o output.webp`

@@ -1,0 +1,1 @@
+{{- return (or .Params.hubNav (hasPrefix .RelPermalink (printf "%s/hub/" .Site.LanguagePrefix)) (eq .Type "solutions")) -}}

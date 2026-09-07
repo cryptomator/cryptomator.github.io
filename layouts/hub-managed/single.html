@@ -24,7 +24,7 @@
                       <a href="#" class="group" @click.prevent="feedbackData.currentStep = index" :data-umami-event="`hub-managed-nav-step-${index + 1}`">
                         <span class="flex items-center gap-3">
                           <div class="relative flex w-5 h-5 shrink-0 items-center justify-center">
-                            <svg class="w-full h-full text-primary group-hover:text-secondary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg class="w-full h-full text-hub group-hover:text-dark" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                               <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
                             </svg>
                           </div>
@@ -37,10 +37,10 @@
                     <template x-if="index === feedbackData.currentStep">
                       <div class="flex items-center gap-3" aria-current="step">
                         <div class="relative flex w-5 h-5 shrink-0 items-center justify-center" aria-hidden="true">
-                          <span class="absolute w-4 h-4 rounded-full bg-primary-l2"></span>
-                          <span class="relative block w-2 h-2 rounded-full bg-primary"></span>
+                          <span class="absolute w-4 h-4 rounded-full bg-hub/15"></span>
+                          <span class="relative block w-2 h-2 rounded-full bg-hub"></span>
                         </div>
-                        <p class="hidden md:block font-p text-sm font-medium text-primary" x-text="step"></p>
+                        <p class="hidden md:block font-p text-sm font-medium text-hub" x-text="step"></p>
                       </div>
                     </template>
 
@@ -72,7 +72,7 @@
                 <input type="email" id="email" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_managed_step_1_email_placeholder" }}" x-init="$el.focus()" x-model="submitData.email" @blur="$el.classList.add('show-invalid')" required>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateEmail()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-1">
+                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateEmail()" class="btn btn-hub w-full md:w-64" data-umami-event="hub-managed-step-1">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
@@ -101,7 +101,7 @@
                 <input type="text" class="block input-box w-full mb-8" :value="submitData.subdomain ? subdomainToURL(submitData.subdomain) : 'https://<{{ i18n "hub_managed_step_2_subdomain_placeholder" }}>.{{ .Site.Params.hubManagedDomain }}'" readonly>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateSubdomain()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-2">
+                  <button :disabled="feedbackData.inProgress" @click.prevent="hubManaged.validateSubdomain()" class="btn btn-hub w-full md:w-64" data-umami-event="hub-managed-step-2">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
@@ -126,7 +126,7 @@
                 <input type="number" id="quantity" min="1" max="10000" step="1" class="block input-box w-full mb-8" placeholder="{{ i18n "hub_managed_step_3_quantity_placeholder" }}" x-init="$el.focus()" x-model="submitData.quantity" @blur="$el.classList.add('show-invalid')" required>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress" @click.prevent="submitData.quantity > 0 && submitData.quantity < 3 ? lowQuantityModalIsOpen = true : hubManaged.validateQuantity()" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-step-3">
+                  <button :disabled="feedbackData.inProgress" @click.prevent="submitData.quantity > 0 && submitData.quantity < 3 ? lowQuantityModalIsOpen = true : hubManaged.validateQuantity()" class="btn btn-hub w-full md:w-64" data-umami-event="hub-managed-step-3">
                     <i :class="{'fa-chevron-right': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_steps_next" }}
                   </button>
@@ -168,7 +168,7 @@
                     <span class="font-p text-sm text-gray-500">
                       {{ i18n "hub_managed_step_4_phone" }}
                     </span>
-                    <a x-show="submitData.phone == null" href="#" class="font-p text-link text-sm" @click.prevent="submitData.phone = ''">
+                    <a x-show="submitData.phone == null" href="#" class="font-p text-link-hub text-sm" @click.prevent="submitData.phone = ''">
                       <i class="fa-solid fa-plus-circle"></i>
                       {{ i18n "hub_managed_step_4_phone_add" }}
                     </a>
@@ -178,7 +178,7 @@
                     <span class="font-p text-sm text-gray-500">
                       {{ i18n "hub_managed_step_4_message" }}
                     </span>
-                    <a x-show="submitData.message == null" href="#" class="font-p text-link text-sm" @click.prevent="submitData.message = ''">
+                    <a x-show="submitData.message == null" href="#" class="font-p text-link-hub text-sm" @click.prevent="submitData.message = ''">
                       <i class="fa-solid fa-plus-circle"></i>
                       {{ i18n "hub_managed_step_4_message_add" }}
                     </a>
@@ -193,7 +193,7 @@
                 </p>
                 <div class="mt-auto">
                   <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
-                  <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="hub-managed-form" x-cloak>
+                  <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-hub w-full md:w-64" data-umami-event="hub-managed-form" x-cloak>
                     <i :class="{'fa-paper-plane': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
                     {{ i18n "hub_managed_step_4_submit" }}
                   </button>
@@ -229,7 +229,7 @@
   <section class="container text-center pt-12 pb-24">
     <h2 class="font-h2 mb-4">{{ i18n "hub_managed_contact_us_title" . }}</h2>
     <p class="font-p mb-4">{{ i18n "hub_managed_contact_us_description" . | safeHTML }}</p>
-    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-primary px-8" data-umami-event="hub-managed-contact-us">
+    <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-hub px-8" data-umami-event="hub-managed-contact-us">
       <i class="fa-solid fa-envelope"></i> {{ i18n "hub_managed_contact_us_button" . }}
     </a>
   </section>
