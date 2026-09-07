@@ -185,7 +185,7 @@
             <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-managed-cta">
               {{ i18n "pricing_hub_managed_cta" . }}
             </a>
-            <a x-show="hosting === 'self-hosted'" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
+            <a x-show="hosting === 'self-hosted'" x-cloak href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
               {{ i18n "pricing_hub_self_hosted_cta" . }}
             </a>
           </div>
@@ -346,7 +346,128 @@
         </div>
       </section>
 
+      {{/* Feature Comparison Section */}}
+      <section class="py-12">
+        <header class="text-center mb-8">
+          <h2 id="pricing-comparison-title" class="font-h2 mb-2">{{ i18n "pricing_compare_title" . }}</h2>
+          <p class="font-p text-gray-700">{{ i18n "pricing_compare_subtitle" . }}</p>
+        </header>
+        <div role="region" aria-labelledby="pricing-comparison-title" tabindex="0" class="white-box overflow-x-auto lg:overflow-x-clip">
+          <table class="w-full border-separate border-spacing-0 min-w-[880px] lg:min-w-full text-sm">
+            {{- $cryptomatorBrand := dict "brand" "Cryptomator" "logo" "/img/logo.svg" "logoAspect" "aspect-1110/942" "brandColor" "text-primary" }}
+            {{- $hubBrand := dict "brand" "Cryptomator Hub" "logo" "/img/zero-knowledge-bot.svg" "logoAspect" "aspect-988/877" "brandColor" "text-hub" }}
+            {{- $plans := slice
+              (merge $cryptomatorBrand (dict "dataKey" "Cryptomator" "titleKey" "pricing_individual_title" "highlight" false))
+              (merge $hubBrand (dict "dataKey" "Community" "titleKey" "pricing_hub_community_title" "highlight" false))
+              (merge $hubBrand (dict "dataKey" "Standard" "titleKey" "pricing_hub_standard_title" "highlight" true))
+              (merge $hubBrand (dict "dataKey" "Enterprise" "titleKey" "pricing_hub_enterprise_title" "highlight" false))
+            }}
+            <thead>
+              <tr>
+                <th scope="col" class="compare-th bg-white w-[28%] px-5 py-3.5 text-left">
+                  <span class="sr-only">{{ i18n "pricing_compare_features" . }}</span>
+                </th>
+                {{- range $plans }}
+                <th scope="col" class="compare-th px-4 py-3.5 text-center {{ if .highlight }}bg-hub-l2 border-t-[3px] border-t-hub{{ else }}bg-white{{ end }}">
+                  <img src="{{ .logo }}" class="h-8 mx-auto mb-2 {{ .logoAspect }}" alt=""/>
+                  <span class="block font-headline font-bold text-xs uppercase tracking-wide mb-1 {{ .brandColor }}">{{ .brand }}</span>
+                  <span class="block font-headline font-medium">{{ i18n .titleKey $ }}</span>
+                </th>
+                {{- end }}
+              </tr>
+            </thead>
+            <tbody>
+              {{- range $sectionIndex, $section := hugo.Data.pricing_comparison }}
+              <tr>
+                <th scope="row" class="px-5 pt-4 pb-1.5 text-left text-xs font-bold tracking-wide uppercase text-gray-500">{{ i18n .SectionKey $ }}</th>
+                {{- /* empty cells exist solely to carry the highlighted column's tint across section rows */}}
+                {{- range $plans }}
+                <td{{ if .highlight }} class="bg-hub/5"{{ end }}></td>
+                {{- end }}
+              </tr>
+              {{- range $rowIndex, $row := .Rows }}
+              <tr>
+                <th scope="row" class="border-t border-gray-200 px-5 py-3 text-left font-medium text-gray-700">
+                  <span>{{ i18n .LabelKey $ }}</span>
+                  {{- with .TooltipKey }}
+                  {{- $tooltipId := printf "tooltip-compare-%d-%d" $sectionIndex $rowIndex }}
+                  <div class="has-tooltip">
+                    <i class="fa-solid fa-info-circle text-gray-600" tabindex="0" role="img" aria-label="{{ i18n "more_information" $ }}" aria-describedby="{{ $tooltipId }}"></i>
+                    <div id="{{ $tooltipId }}" role="tooltip" class="tooltip tooltip-center rounded-sm shadow-md bg-white text-xs w-40 p-2">{{ i18n . $ | safeHTML }}</div>
+                  </div>
+                  {{- end }}
+                </th>
+                {{- range $plans }}
+                {{- $plan := . }}
+                {{- $cell := index $row $plan.dataKey }}
+                <td class="border-t border-gray-200 px-4 py-3 text-center align-middle{{ if $plan.highlight }} bg-hub/5{{ end }}">
+                  {{- if eq $cell true }}
+                  <i class="fa-solid fa-check {{ $plan.brandColor }}"></i>
+                  <span class="sr-only">{{ i18n "pricing_compare_included" $ }}</span>
+                  {{- else if eq $cell false }}
+                  <span class="text-gray-400" aria-hidden="true">&mdash;</span>
+                  <span class="sr-only">{{ i18n "pricing_compare_not_included" $ }}</span>
+                  {{- else if eq (printf "%T" $cell) "string" }}
+                  <span class="font-medium">{{ i18n $cell $ }}</span>
+                  {{- else if $cell }}
+                  <span class="font-medium">{{ $cell }}</span>
+                  {{- else }}
+                  {{- errorf "pricing_comparison: row %q is missing a value for plan %q" $row.LabelKey $plan.dataKey }}
+                  {{- end }}
+                </td>
+                {{- end }}
+              </tr>
+              {{- end }}
+              {{- end }}
+            </tbody>
+            {{- /* The tfoot below is hand-written per plan, so it silently desyncs if $plans changes. */}}
+            {{- $footerPlans := "Cryptomator:false,Community:false,Standard:true,Enterprise:false" }}
+            {{- $actualParts := slice }}
+            {{- range $plans }}{{ $actualParts = $actualParts | append (printf "%v:%v" .dataKey .highlight) }}{{ end }}
+            {{- $actualPlans := delimit $actualParts "," }}
+            {{- if ne $actualPlans $footerPlans }}{{ errorf "pricing_comparison: $plans is %q but the tfoot is hand-written for %q — update the tfoot cells to match" $actualPlans $footerPlans }}{{ end }}
+            <tfoot>
+              <tr>
+                <td class="border-t border-gray-200 px-5 py-4"></td>
+                <td class="border-t border-gray-200 px-4 py-4 text-center align-top">
+                  <span class="block font-bold text-lg leading-tight">{{ i18n "pricing_free" . }}</span>
+                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_individual_price_description" . }}</span>
+                  <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-outline-primary w-full text-sm" data-umami-event="pricing-compare-individual-cta">
+                    {{ i18n "pricing_individual_cta" . }}
+                  </a>
+                </td>
+                <td class="border-t border-gray-200 px-4 py-4 text-center align-top">
+                  <span class="block font-bold text-lg leading-tight">{{ i18n "pricing_free" . }}</span>
+                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_hub_community_price_description" . }}</span>
+                  <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-hub w-full text-sm" data-umami-event="pricing-compare-hub-community-self-hosted-cta">
+                    {{ i18n "pricing_hub_self_hosted_cta" . }}
+                  </a>
+                </td>
+                <td class="border-t border-gray-200 px-4 py-4 text-center align-top bg-hub/5">
+                  <span x-text="formattedPrice" class="block font-bold text-lg leading-tight"></span>
+                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_hub_standard_price_description" . }}</span>
+                  <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub w-full text-sm" data-umami-event="pricing-compare-hub-standard-managed-cta">
+                    {{ i18n "pricing_hub_managed_cta" . }}
+                  </a>
+                  <a x-show="hosting === 'self-hosted'" x-cloak href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full text-sm" data-umami-event="pricing-compare-hub-standard-self-hosted-cta">
+                    {{ i18n "pricing_hub_self_hosted_cta" . }}
+                  </a>
+                </td>
+                <td class="border-t border-gray-200 px-4 py-4 text-center align-top">
+                  <span class="block font-bold text-lg leading-tight">{{ i18n "pricing_hub_enterprise_price" . }}</span>
+                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_hub_enterprise_price_description" . }}</span>
+                  <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-hub w-full text-sm" data-umami-event="pricing-compare-hub-enterprise-cta">
+                    {{ i18n "pricing_hub_enterprise_cta" . }}
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
       {{/* Support Us Section */}}
+      {{- $data := index hugo.Data $.Site.Language.Lang }}
       <section class="container text-center py-12">
         <h2 class="font-h2 mb-4">{{ i18n "pricing_support_us_title" . }}</h2>
         <p class="font-p mb-4">{{ i18n "pricing_support_us_description" . }}</p>
@@ -366,7 +487,6 @@
           <h2 class="font-h2">{{ i18n "faq_title" . }}</h2>
         </header>
 
-        {{- $data := index hugo.Data $.Site.Language.Lang }}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
             <h3 class="flex items-center gap-3 mb-4">

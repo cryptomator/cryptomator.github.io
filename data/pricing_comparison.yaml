@@ -1,0 +1,90 @@
+# Shared across languages: a plan capability is a product fact, not a
+# translation. Booleans render as a check or a dash, numbers render as they are,
+# and every other cell is an i18n key.
+- SectionKey: "pricing_compare_section_basics"
+  Rows:
+    - LabelKey: "pricing_compare_seats"
+      Cryptomator: 1
+      Community: 5
+      Standard: "pricing_compare_unlimited"
+      Enterprise: "pricing_compare_unlimited"
+    - LabelKey: "pricing_compare_unlimited_vaults"
+      Cryptomator: true
+      Community: true
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_any_cloud"
+      TooltipKey: "pricing_individual_benefit_2_tooltip"
+      Cryptomator: true
+      Community: true
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_desktop_access"
+      Cryptomator: true
+      Community: true
+      Standard: true
+      Enterprise: true
+- SectionKey: "pricing_compare_section_collaboration"
+  Rows:
+    - LabelKey: "pricing_compare_user_management"
+      Cryptomator: false
+      Community: true
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_key_management"
+      Cryptomator: false
+      Community: true
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_mobile_access"
+      Cryptomator: "pricing_compare_one_time_purchase"
+      Community: "pricing_compare_one_time_purchase"
+      Standard: true
+      Enterprise: true
+- SectionKey: "pricing_compare_section_hosting"
+  Rows:
+    - LabelKey: "pricing_compare_self_hosted"
+      Cryptomator: false
+      Community: true
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_managed_hosting"
+      TooltipKey: "pricing_compare_managed_hosting_tooltip"
+      Cryptomator: false
+      Community: false
+      Standard: true
+      Enterprise: true
+- SectionKey: "pricing_compare_section_security"
+  Rows:
+    - LabelKey: "pricing_compare_audit_logs"
+      Cryptomator: false
+      Community: false
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_emergency_access"
+      Cryptomator: false
+      Community: false
+      Standard: false
+      Enterprise: "pricing_compare_coming_soon"
+- SectionKey: "pricing_compare_section_support"
+  Rows:
+    - LabelKey: "pricing_compare_community_support"
+      Cryptomator: true
+      Community: true
+      Standard: true
+      Enterprise: true
+    - LabelKey: "pricing_compare_email_support"
+      Cryptomator: false
+      Community: false
+      Standard: true
+      Enterprise: "pricing_compare_priority"
+    - LabelKey: "pricing_compare_expert_training"
+      Cryptomator: false
+      Community: false
+      Standard: false
+      Enterprise: true
+    - LabelKey: "pricing_compare_account_manager"
+      Cryptomator: false
+      Community: false
+      Standard: false
+      Enterprise: true

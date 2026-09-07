@@ -1125,6 +1125,8 @@
   translation: "Community"
 - id: pricing_hub_community_subtitle
   translation: "Free and open source for small teams. Deploy on your own infrastructure with full control over your data."
+- id: pricing_hub_community_price_description
+  translation: "self-hosted"
 - id: pricing_hub_community_benefit_1
   translation: "Includes 5 seats"
 - id: pricing_hub_community_benefit_2
@@ -1171,6 +1173,69 @@
   translation: "Dedicated account manager"
 - id: pricing_hub_enterprise_benefit_5
   translation: "Priority email support"
+
+- id: pricing_compare_title
+  translation: "Compare All Features"
+- id: pricing_compare_subtitle
+  translation: "Every plan includes everything from the plans before it."
+- id: more_information
+  translation: "More information"
+- id: pricing_compare_features
+  translation: "Features"
+- id: pricing_compare_included
+  translation: "Included"
+- id: pricing_compare_not_included
+  translation: "Not included"
+- id: pricing_compare_managed_hosting_tooltip
+  translation: "Maintained and updated by our team in an ISO/IEC 27001:2022 certified data center in the EU."
+- id: pricing_compare_section_basics
+  translation: "Basics"
+- id: pricing_compare_section_collaboration
+  translation: "Team Collaboration"
+- id: pricing_compare_section_hosting
+  translation: "Hosting"
+- id: pricing_compare_section_security
+  translation: "Security & Compliance"
+- id: pricing_compare_section_support
+  translation: "Support"
+- id: pricing_compare_seats
+  translation: "Seats"
+- id: pricing_compare_unlimited_vaults
+  translation: "Unlimited vaults"
+- id: pricing_compare_any_cloud
+  translation: "Works with any cloud storage"
+- id: pricing_compare_desktop_access
+  translation: "Full access via Desktop app"
+- id: pricing_compare_user_management
+  translation: "User and group management"
+- id: pricing_compare_key_management
+  translation: "Zero-knowledge key management"
+- id: pricing_compare_mobile_access
+  translation: "Full access via Mobile apps for all users"
+- id: pricing_compare_self_hosted
+  translation: "Self-hosted deployment"
+- id: pricing_compare_managed_hosting
+  translation: "Managed hosting available"
+- id: pricing_compare_audit_logs
+  translation: "Audit logs"
+- id: pricing_compare_emergency_access
+  translation: "Emergency Access"
+- id: pricing_compare_community_support
+  translation: "Community support"
+- id: pricing_compare_email_support
+  translation: "Email support"
+- id: pricing_compare_expert_training
+  translation: "Expert training and assistance"
+- id: pricing_compare_account_manager
+  translation: "Dedicated account manager"
+- id: pricing_compare_unlimited
+  translation: "Unlimited"
+- id: pricing_compare_one_time_purchase
+  translation: "One-time purchase"
+- id: pricing_compare_coming_soon
+  translation: "Coming Soon"
+- id: pricing_compare_priority
+  translation: "Priority"
 
 - id: pricing_support_us_title
   translation: "Want to support our open-source project?"
