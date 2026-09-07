@@ -1034,9 +1034,9 @@
 - id: hub_self_hosted_options_cta
   translation: "Read the Guide"
 - id: hub_self_hosted_options_keycloak
-  translation: "Do you already operate your own Keycloak? Then deploy Hub without the bundled one and connect it to yours instead. The <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">guide for an existing Keycloak</a> shows how."
+  translation: "Do you already operate your own Keycloak? Then deploy Hub without the bundled one and connect it to yours instead. The <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/main/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">guide for an existing Keycloak</a> shows how."
 - id: hub_self_hosted_options_more
-  translation: "Do you want to develop Hub itself or the Helm chart? The <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/README.md\" target=\"_blank\" rel=\"noopener\">deployment examples</a> also cover the development setups."
+  translation: "Do you want to develop Hub itself or the Helm chart? The <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/main/deploy/README.md\" target=\"_blank\" rel=\"noopener\">deployment examples</a> also cover the development setups."
 
 - id: hub_self_hosted_contact_us_title
   translation: "Need some help with your deployment?"
