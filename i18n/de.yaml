@@ -1033,9 +1033,9 @@
 - id: hub_self_hosted_options_cta
   translation: "Zur Anleitung"
 - id: hub_self_hosted_options_keycloak
-  translation: "Betreibst du bereits ein eigenes Keycloak? Dann deploye Hub ohne das mitgelieferte Keycloak und verbinde es stattdessen mit deinem. Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">Anleitung für ein bestehendes Keycloak</a> zeigt, wie das geht."
+  translation: "Betreibst du bereits ein eigenes Keycloak? Dann deploye Hub ohne das mitgelieferte Keycloak und verbinde es stattdessen mit deinem. Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/main/deploy/helm/existing-keycloak/README.md\" target=\"_blank\" rel=\"noopener\">Anleitung für ein bestehendes Keycloak</a> zeigt, wie das geht."
 - id: hub_self_hosted_options_more
-  translation: "Willst du Hub selbst oder das Helm-Chart weiterentwickeln? Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/develop/deploy/README.md\" target=\"_blank\" rel=\"noopener\">Deployment-Beispiele</a> decken auch die Entwicklungs-Setups ab."
+  translation: "Willst du Hub selbst oder das Helm-Chart weiterentwickeln? Die <a class=\"text-link\" href=\"https://github.com/cryptomator/hub/blob/main/deploy/README.md\" target=\"_blank\" rel=\"noopener\">Deployment-Beispiele</a> decken auch die Entwicklungs-Setups ab."
 
 - id: hub_self_hosted_contact_us_title
   translation: "Brauchst du Hilfe bei deinem Deployment?"
