@@ -14,7 +14,7 @@
         {{ range $page := $featured_post }}
           <div class="py-0 md:py-12 lg:py-24">
             <article class="white-box grid grid-cols-1 lg:grid-cols-2 overflow-hidden mb-6">
-              <figure class="relative h-48 w-full md:h-72 lg:h-96 bg-primary-l2">
+              <figure class="relative h-48 w-full md:h-72 lg:h-full lg:min-h-96 bg-primary-l2">
                 <a href="{{ .RelPermalink }}">
                   {{ if .Params.ogimage }}
                     <img class="absolute inset-0 size-full object-cover" src="{{ .Params.ogimage.relsrc }}" alt="{{ .Title }}">
