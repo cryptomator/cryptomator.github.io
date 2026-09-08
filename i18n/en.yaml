@@ -1023,6 +1023,8 @@
   translation: "Local Test"
 - id: hub_self_hosted_options_local_description
   translation: "Try Hub locally with one Docker Compose command. It uses plain HTTP and well-known passwords. It is not for production."
+- id: hub_self_hosted_options_local_badge
+  translation: "Quick Start"
 - id: hub_self_hosted_options_compose_title
   translation: "Docker Compose"
 - id: hub_self_hosted_options_compose_description

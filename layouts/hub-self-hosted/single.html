@@ -51,13 +51,16 @@
       <h2 id="deployment-options" class="font-h2 mb-4">{{ i18n "hub_self_hosted_options_title" . }}</h2>
       <p class="font-p mb-8">{{ i18n "hub_self_hosted_options_description" . }}</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <!-- LOCAL TEST -->
-        <div class="flex flex-col white-box">
-          <div class="p-4 border-b border-hub">
+        <div class="flex flex-col white-box ring-2 ring-hub">
+          <div class="flex justify-between items-center gap-2 p-4 border-b border-hub">
             <h3 class="font-h3">
               <i class="fa-solid fa-laptop-code text-hub"></i> {{ i18n "hub_self_hosted_options_local_title" . }}
             </h3>
+            <div class="shrink-0 inline-flex px-4 py-1 rounded-full text-xs lg:text-sm font-medium tracking-wide uppercase bg-hub/10 text-hub">
+              {{ i18n "hub_self_hosted_options_local_badge" . }}
+            </div>
           </div>
           <div class="flex flex-col justify-between h-full gap-8 p-4">
             <p class="font-p">{{ i18n "hub_self_hosted_options_local_description" . }}</p>
