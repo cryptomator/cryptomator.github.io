@@ -1022,6 +1022,8 @@
   translation: "Lokaler Test"
 - id: hub_self_hosted_options_local_description
   translation: "Teste Hub mit einem Docker-Compose-Befehl. Die Option nutzt nur HTTP und ist nicht für den Produktivbetrieb gedacht."
+- id: hub_self_hosted_options_local_badge
+  translation: "Schnellstart"
 - id: hub_self_hosted_options_compose_title
   translation: "Docker Compose"
 - id: hub_self_hosted_options_compose_description
