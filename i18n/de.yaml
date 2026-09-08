@@ -1124,6 +1124,8 @@
   translation: "Community"
 - id: pricing_hub_community_subtitle
   translation: "Kostenlos und Open Source für kleine Teams. Auf eigener Infrastruktur deployen mit voller Kontrolle über die Daten."
+- id: pricing_hub_community_price_description
+  translation: "Self-Hosted"
 - id: pricing_hub_community_benefit_1
   translation: "Inklusive 5 Sitze"
 - id: pricing_hub_community_benefit_2
@@ -1170,6 +1172,69 @@
   translation: "Dedizierter Kundenbetreuer"
 - id: pricing_hub_enterprise_benefit_5
   translation: "Vorrangiger E-Mail-Support"
+
+- id: pricing_compare_title
+  translation: "Alle Funktionen im Vergleich"
+- id: pricing_compare_subtitle
+  translation: "Jeder Plan enthält alles aus den vorherigen Plänen."
+- id: more_information
+  translation: "Weitere Informationen"
+- id: pricing_compare_features
+  translation: "Funktionen"
+- id: pricing_compare_included
+  translation: "Enthalten"
+- id: pricing_compare_not_included
+  translation: "Nicht enthalten"
+- id: pricing_compare_managed_hosting_tooltip
+  translation: "Gewartet und aktualisiert von unserem Team in einem ISO/IEC 27001:2022-zertifizierten Rechenzentrum in der EU."
+- id: pricing_compare_section_basics
+  translation: "Grundlagen"
+- id: pricing_compare_section_collaboration
+  translation: "Teamarbeit"
+- id: pricing_compare_section_hosting
+  translation: "Hosting"
+- id: pricing_compare_section_security
+  translation: "Sicherheit & Compliance"
+- id: pricing_compare_section_support
+  translation: "Support"
+- id: pricing_compare_seats
+  translation: "Sitze"
+- id: pricing_compare_unlimited_vaults
+  translation: "Unbegrenzte Tresore"
+- id: pricing_compare_any_cloud
+  translation: "Kompatibel mit jedem Cloud-Speicher"
+- id: pricing_compare_desktop_access
+  translation: "Voller Zugriff über Desktop-App"
+- id: pricing_compare_user_management
+  translation: "Benutzer- und Gruppenverwaltung"
+- id: pricing_compare_key_management
+  translation: "Zero-Knowledge-Schlüsselverwaltung"
+- id: pricing_compare_mobile_access
+  translation: "Voller Zugriff über Mobile-Apps für alle Nutzer"
+- id: pricing_compare_self_hosted
+  translation: "Self-Hosted-Deployment"
+- id: pricing_compare_managed_hosting
+  translation: "Managed Hosting verfügbar"
+- id: pricing_compare_audit_logs
+  translation: "Audit-Logs"
+- id: pricing_compare_emergency_access
+  translation: "Notfallzugriff"
+- id: pricing_compare_community_support
+  translation: "Community-Support"
+- id: pricing_compare_email_support
+  translation: "E-Mail-Support"
+- id: pricing_compare_expert_training
+  translation: "Beratung und Unterstützung durch Experten"
+- id: pricing_compare_account_manager
+  translation: "Dedizierter Kundenbetreuer"
+- id: pricing_compare_unlimited
+  translation: "Unbegrenzt"
+- id: pricing_compare_one_time_purchase
+  translation: "Einmalkauf"
+- id: pricing_compare_coming_soon
+  translation: "Bald verfügbar"
+- id: pricing_compare_priority
+  translation: "Vorrangig"
 
 - id: pricing_support_us_title
   translation: "Möchtest du unser Open-Source-Projekt unterstützen?"

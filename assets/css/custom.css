@@ -259,6 +259,12 @@ ul.list-primary li::marker {
   @apply rounded-sm shadow-sm bg-white;
 }
 
+/* The container's overflow-x-clip leaves the y axis visible, so it cannot clip
+   the opaque corner cells to its own radius — they round themselves. */
+.compare-th {
+  @apply sticky top-[var(--nav-height,48px)] z-10 align-bottom border-b border-gray-200 first:rounded-tl-sm last:rounded-tr-sm;
+}
+
 .input-box {
   @apply rounded-sm border border-gray-300 focus:ring-0 focus:border-secondary px-3 py-2;
 }
@@ -317,9 +323,9 @@ textarea:read-only {
   left: 50%;
 }
 
-/* offsetting anchor targets to adjust for fixed navbar; the offset grows when the
-   nav banner strip (.nav-promo-strip) is rendered, detected via :has() below;
-   tooltips carry an id only for aria-describedby, not as scroll anchors */
+/* offsetting anchor targets to adjust for fixed navbar; the offset grows with the
+   nav banner strip, see the :has() rule below; tooltips carry an id only for
+   aria-describedby, not as scroll anchors */
 [id]:not([role="tooltip"])::before {
   content: '';
   display: block;
@@ -328,6 +334,9 @@ textarea:read-only {
   visibility: hidden;
 }
 
-body:has(.nav-promo-strip) {
+/* The webinar strip stays in the DOM when Alpine hides it, so the marker class —
+   not its presence — decides whether the nav is one strip taller. */
+body:has(.nav-promo-strip:not(.nav-promo-strip-collapsed)) {
   --anchor-offset: 138px;
+  --nav-height: 72px;
 }
