@@ -1,0 +1,35 @@
+<section class="mb-20">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+    {{ range .page.Pages.ByWeight }}
+      <article class="relative h-full">
+        {{ if .Params.comingsoon }}
+          <div class="absolute top-4 left-6 z-20">
+            <div class="inline-flex items-center gap-x-1.5 px-4 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-white text-primary">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <span>{{ i18n "coming_soon" }}</span>
+            </div>
+          </div>
+          <div class="h-full flex flex-col">
+            <div class="opacity-60">
+              {{ partial "whitepaper-cover.html" (dict "page" .) }}
+            </div>
+            <h2 class="font-h3 mt-6 mb-2 text-gray-600">{{ .Params.cardtitle }}</h2>
+            <p class="font-p text-sm leading-relaxed text-gray-500 flex-1">
+              {{ .Params.cardtext }}
+            </p>
+          </div>
+        {{ else }}
+          <a href="{{ .RelPermalink }}" class="group h-full flex flex-col hover:no-underline">
+            <div class="transition duration-300 ease-out group-hover:-translate-y-1.5 group-hover:drop-shadow-lg">
+              {{ partial "whitepaper-cover.html" (dict "page" .) }}
+            </div>
+            <h2 class="font-h3 mt-6 mb-2 text-dark group-hover:text-primary transition-colors duration-200">{{ .Params.cardtitle }}</h2>
+            <p class="font-p text-sm leading-relaxed text-gray-700 flex-1">
+              {{ .Params.cardtext }}
+            </p>
+          </a>
+        {{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>

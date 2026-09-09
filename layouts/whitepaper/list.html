@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <div class="container py-12">
+    <section class="text-center mb-20">
+      <h1 class="font-h1 mb-8">{{ .Title }}</h1>
+      <p class="lead mb-6 max-w-4xl mx-auto">{{ .Description }}</p>
+    </section>
+
+    {{ partial "whitepaper-grid.html" (dict "page" .) }}
+
+    <section class="text-center mt-20 p-8">
+      <h3 class="font-h2 mb-4 text-dark">{{ i18n "whitepaper_contact_title" }}</h3>
+      <p class="font-p text-gray-700 mb-6 max-w-2xl mx-auto">
+        {{ i18n "whitepaper_contact_description" }}
+      </p>
+      <a href="{{ .Site.LanguagePrefix }}/contact-sales/" class="btn btn-outline-primary px-8">
+        <i class="fa-solid fa-envelope mr-2"></i>
+        {{ i18n "whitepaper_contact_button" }}
+      </a>
+    </section>
+  </div>
+{{ end }}

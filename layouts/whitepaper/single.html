@@ -1,0 +1,129 @@
+{{ define "preloads" }}
+  {{ if not .Params.comingsoon }}
+    {{ partial "altcha-css.html" . }}
+  {{ end }}
+{{ end }}
+{{ define "main" }}
+  <div {{ if not .Params.comingsoon }}x-data="{feedbackData: {success: false, inProgress: false, errorMessage: ''}, submitData: {whitepaperId: '{{ .Params.espoId }}', firstName: '', lastName: '', email: '', company: '', captcha: null, acceptNewsletter: false}, acceptTerms: false, apiForm: null, captchaState: null}" x-init="apiForm = new ApiForm($refs.form, feedbackData, submitData, API_BASE_URL + '/connect/contact/request-whitepaper')"{{ end }}>
+    <section class="container py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="mb-4">
+            <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium uppercase tracking-wide">{{ i18n "whitepaper_eyebrow" }}</span>
+          </div>
+          <h1 class="font-h1 mb-6">{{ .Title }}</h1>
+
+          <p class="lead mb-10">{{ .Params.abstract }}</p>
+
+          {{ if not .Params.comingsoon }}
+          <form x-ref="form" @submit.prevent="apiForm.request(); $refs.captcha.reset()">
+            <div x-show="!feedbackData.success" class="max-w-xl">
+              <div class="grid grid-cols-2 gap-6 mb-6">
+                <div class="col-span-2 md:col-span-1">
+                  <label for="firstName" class="label-uppercase mb-2">
+                    {{ i18n "whitepaper_first_name" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="text" id="firstName" name="firstName" x-model="submitData.firstName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                  <label for="lastName" class="label-uppercase mb-2">
+                    {{ i18n "whitepaper_last_name" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="text" id="lastName" name="lastName" x-model="submitData.lastName" class="block input-box w-full" maxlength="100" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                  <label for="company" class="label-uppercase mb-2">
+                    {{ i18n "whitepaper_company" }}
+                  </label>
+                  <input type="text" id="company" name="company" x-model="submitData.company" class="block input-box w-full" maxlength="200">
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                  <label for="email" class="label-uppercase mb-2">
+                    {{ i18n "whitepaper_email" }} <span class="text-red-500" aria-label="required">*</span>
+                  </label>
+                  <input type="email" id="email" name="email" x-model="submitData.email" class="block input-box w-full" required aria-required="true" @blur="$el.classList.add('show-invalid')">
+                </div>
+              </div>
+
+              <p class="font-p text-sm mb-2">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_privacy" | safeHTML)) }}
+              </p>
+              <p class="font-p text-sm mb-6">
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
+              </p>
+
+              <p :class="{'hidden': !feedbackData.errorMessage}" class="text-sm text-red-600 mb-2" x-text="feedbackData.errorMessage"></p>
+              <button :disabled="feedbackData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-primary w-full md:w-64" data-umami-event="whitepaper-form" x-cloak>
+                <i :class="{'fa-download': !feedbackData.inProgress, 'fa-spinner fa-spin': feedbackData.inProgress}" class="fa-solid" aria-hidden="true"></i>
+                {{ i18n "whitepaper_submit" }}
+              </button>
+              {{ $challengeUrl := printf "%s/connect/contact/challenge" .Site.Params.apiBaseUrl }}
+              {{ partial "captcha.html" (dict "challengeUrl" $challengeUrl "captchaPayload" "submitData.captcha" "captchaState" "captchaState") }}
+            </div>
+
+            <div x-show="feedbackData.success" class="max-w-xl white-box" x-cloak>
+              <div class="flex flex-col items-center justify-center gap-4 text-center px-4 py-5 md:p-6">
+                <i class="fa-solid fa-check-circle text-7xl text-secondary" aria-hidden="true"></i>
+                <h3 class="font-h3">
+                  {{ i18n "whitepaper_success_title" }}
+                </h3>
+                <p class="font-p max-w-md text-gray-600">
+                  {{ i18n "whitepaper_success_message" }}
+                </p>
+                <p class="text-sm text-gray-500 inline-flex items-center gap-2">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  {{ i18n "success_inbox_hint" }}
+                </p>
+              </div>
+            </div>
+          </form>
+          {{ end }}
+        </div>
+
+        <figure class="max-w-sm w-full mx-auto drop-shadow-xl">
+          {{ if .Params.cover }}
+            <img class="w-full" src="{{ .Params.cover }}" alt="{{ .Params.cardtitle }}">
+          {{ else }}
+            {{ partial "whitepaper-cover.html" (dict "page" .) }}
+          {{ end }}
+        </figure>
+      </div>
+    </section>
+
+    {{ $others := where (where .CurrentSection.RegularPages "Permalink" "ne" .Permalink) "Params.comingsoon" "ne" true }}
+    {{ with $others }}
+      <section class="container pb-24 pt-4">
+        <h2 class="font-h2 mb-8">
+          <a class="text-link" href="{{ $.CurrentSection.RelPermalink }}">{{ i18n "whitepaper_more" }} <i class="fa-solid fa-arrow-right ml-1" aria-hidden="true"></i></a>
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+          {{ range . }}
+            <a href="{{ .RelPermalink }}" class="group block hover:no-underline" aria-label="{{ .Params.cardtitle }}">
+              <div class="transition duration-300 ease-out group-hover:-translate-y-1.5 group-hover:drop-shadow-lg">
+                {{ partial "whitepaper-cover.html" (dict "page" .) }}
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+  </div>
+{{ end }}
+{{ define "script" }}
+  {{ if .Params.comingsoon }}
+  {{ else if hugo.IsDevelopment }}
+    {{ $apiFormJs := resources.Get "js/apiform.js" }}
+    <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" defer></script>
+  {{ else }}
+    {{ $apiFormJs := resources.Get "js/apiform.js" | minify | fingerprint }}
+    <script type="text/javascript" src="{{ $apiFormJs.RelPermalink }}" integrity="{{ $apiFormJs.Data.Integrity }}" defer></script>
+    {{ $altchaJs := resources.Get "js/altcha/altcha.js" }}
+    <script type="module" src="{{ $altchaJs.RelPermalink }}" integrity="{{ $altchaJs.Data.Integrity }}" defer></script>
+    {{ $altchaWorkerJs := resources.Get "js/altcha/worker.js" }}
+    <script type="module" src="{{ $altchaWorkerJs.RelPermalink }}" integrity="{{ $altchaWorkerJs.Data.Integrity }}" defer></script>
+  {{ end }}
+{{ end }}

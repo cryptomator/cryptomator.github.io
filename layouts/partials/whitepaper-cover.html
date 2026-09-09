@@ -1,0 +1,18 @@
+{{/* Proportional cover: all sizes derive from the container width (cqw), so
+     small teaser covers render as exact scale-downs of the large hero cover. */}}
+<div class="@container">
+  <div class="relative aspect-[3/4] w-full rounded-md shadow-md bg-primary overflow-hidden p-[7.3cqw] pl-[9.4cqw] flex flex-col text-left">
+    <div class="absolute inset-y-0 left-0 w-[2cqw] bg-black/15"></div>
+    <div class="absolute inset-y-0 left-[2cqw] w-px bg-black/20"></div>
+    <div class="absolute inset-y-0 left-[calc(2cqw+1px)] w-px bg-white/30"></div>
+    <div class="relative flex items-center gap-[2cqw] mb-[10.4cqw]">
+      <img src="/img/logo.svg" class="h-[6.25cqw]" alt=""/>
+      <span class="font-headline font-bold text-white text-[3.65cqw] pb-px">CRYPTOMATOR</span>
+    </div>
+    <p class="relative uppercase tracking-widest text-white/70 text-[3.125cqw] mb-[3.1cqw]">
+      {{ i18n "whitepaper_eyebrow" }}
+    </p>
+    <p class="relative font-headline text-white text-[6.25cqw]">{{ .page.Title }}</p>
+    <p class="relative mt-auto text-white/70 text-[3.125cqw]">cryptomator.org</p>
+  </div>
+</div>
