@@ -95,7 +95,7 @@ Cryptomator erreicht neue Zielgruppen durch größere Medienpräsenz und Empfehl
 
 ### Neue Cryptomator Hub Features – Early Access / Jubiläums-Launch
 
-Im Rahmen des 10. Jubiläums gehen **mehrere zentrale Erweiterungen für Cryptomator Hub in eine Early-Access-Phase** bzw. werden erstmals öffentlich verfügbar gemacht. Diese sollen Teams und Organisationen mehr Kontrolle, Sicherheit und Flexibilität geben. Zum Jubiläum bieten wir eine besondere **100-tägige kostenlose Testphase** (statt der üblichen 30 Tage) für [Cryptomator Hub Managed](/de/hub/managed/) an. Weitere Details gibt es in der [Early-Access-Dokumentation](https://docs.cryptomator.org/hub/early-access/).
+Im Rahmen des 10. Jubiläums gehen **mehrere zentrale Erweiterungen für Cryptomator Hub in eine Early-Access-Phase** bzw. werden erstmals öffentlich verfügbar gemacht. Diese sollen Teams und Organisationen mehr Kontrolle, Sicherheit und Flexibilität geben. Zum Jubiläum bieten wir eine besondere **100-tägige kostenlose Testphase** (statt der üblichen 30 Tage) für [Cryptomator Hub Managed](/de/hub/managed/) an. Weitere Details gibt es in der [Dokumentation zu den neuen Hub-Funktionen](https://docs.cryptomator.org/hub/new-features/).
 
 **User & Group Management** 
 

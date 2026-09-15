@@ -2,11 +2,16 @@
 
 const BILLING_SESSION_URL = API_BASE_URL + '/billing/session';
 const BILLING_CUSTOMER_URL = API_BASE_URL + '/billing/customers/by-hub-id';
+const CARD_CHECKOUT_URL = API_BASE_URL + '/billing/paddle-classic/checkout';
+const INVOICE_CHECKOUT_URL = API_BASE_URL + '/billing/espocrm/checkout';
+const INVOICE_PRICE_URL = API_BASE_URL + '/billing/espocrm/checkout/price';
+const CHECKOUT_CONTEXT_URL = API_BASE_URL + '/billing/espocrm/checkout/context';
+const MANAGE_SUBSCRIPTION_BASE_URL = API_BASE_URL + '/billing/manage/subscription';
 const CUSTOM_BILLING_URL = LEGACY_STORE_URL + '/hub/custom-billing';
-const GENERATE_PAY_LINK_URL = LEGACY_STORE_URL + '/hub/generate-pay-link';
-const MANAGE_SUBSCRIPTION_URL = LEGACY_STORE_URL + '/hub/manage-subscription';
-const UPDATE_PAYMENT_METHOD_URL = LEGACY_STORE_URL + '/hub/update-payment-method';
 const GET_LICENSE_URL = API_BASE_URL + '/licenses/hub';
+
+// EspoCRM holds more than one account for these details, and only sales can merge them.
+const DUPLICATE_RECORD_ERROR = 'We already hold a record for these billing details. Please contact us so we can complete your purchase.';
 
 class HubSubscription {
 
@@ -15,11 +20,8 @@ class HubSubscription {
     this._subscriptionData = subscriptionData;
     this._subscriptionData.oldLicense = searchParams.get('oldLicense');
     if (this._subscriptionData.oldLicense) {
-      try {
-        let base64 = this._subscriptionData.oldLicense.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
-        this._subscriptionData.hubId = JSON.parse(atob(base64)).jti;
-      } catch (e) {
-        console.error('Failed to parse hub token:', e);
+      this._subscriptionData.hubId = this.extractHubId(this._subscriptionData.oldLicense);
+      if (!this._subscriptionData.hubId) {
         this._subscriptionData.oldLicense = null;
       }
     }
@@ -29,17 +31,19 @@ class HubSubscription {
       this._subscriptionData.returnUrl = returnUrl;
     }
     // Capture the Hub's `token_transfer` value (how the license should be delivered) so it can be stored in
-    // the billing session; default to delivering it as a query parameter.
+    // the billing session.
     this._subscriptionData.tokenTransfer = searchParams.get('token_transfer') ?? 'queryParam';
     this._subscriptionData.session = searchParams.get('session');
+    this._invoicePriceRequestId = 0;
+    this._awaitingInvoiceCaptcha = false;
     if (this._subscriptionData.session) {
       // We returned from the confirmation link (/hub/billing?session=<id>): resolve the verified
-      // billing session and continue into the existing subscription flow.
+      // billing session and continue into the manage or checkout flow.
       this._subscriptionData.state = 'LOADING';
       this.loadBillingSession();
     } else if (this._subscriptionData.hubId && this._subscriptionData.hubId.length > 0 && this._subscriptionData.returnUrl && this._subscriptionData.returnUrl.length > 0) {
       // Opened from the Hub without a verified session yet: ask the customer to request a
-      // confirmation link before we can manage their subscription.
+      // confirmation link before we can manage their subscription or check out.
       this._subscriptionData.state = 'CREATE_SESSION';
     }
     this._paddle = $.ajax({
@@ -55,49 +59,81 @@ class HubSubscription {
     });
   }
 
-  loadSubscription() {
+  extractHubId(license) {
+    try {
+      let base64 = license.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64)).jti;
+    } catch (e) {
+      console.error('Failed to parse hub token:', e);
+      return null;
+    }
+  }
+
+  authHeaders() {
+    return { Authorization: 'Bearer ' + this._subscriptionData.session };
+  }
+
+  loadCheckoutPrerequisites() {
     this.loadCustomBilling(() => {
-      this.loadPrice(() => {
-        this._subscriptionData.inProgress = true;
-        this._subscriptionData.errorMessage = '';
-        $.ajax({
-          url: MANAGE_SUBSCRIPTION_URL,
-          type: 'GET',
-          data: {
-            hub_id: this._subscriptionData.hubId,
-            session: this._subscriptionData.session
-          }
-        }).done(data => {
-          this.onLoadSubscriptionSucceeded(data);
-        }).fail(xhr => {
-          this.onLoadSubscriptionFailed(xhr.status, xhr.responseJSON?.message || 'Loading subscription failed.');
+      this.loadCheckoutContext(() => {
+        this.loadPrice(() => {
+          this._subscriptionData.state = 'NEW_CUSTOMER';
+          this._subscriptionData.errorMessage = '';
+          this._subscriptionData.inProgress = false;
         });
       });
     });
   }
 
+  loadManageSubscription() {
+    this.loadCustomBilling(() => {
+      // the change-seats stepper bounds itself by the same contractual range the checkout uses
+      this.loadCheckoutContext(() => this.loadManageSubscriptionDetails(), () => this.loadManageSubscriptionDetails());
+    });
+  }
+
+  loadManageSubscriptionDetails() {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}`,
+      type: 'GET',
+      headers: this.authHeaders()
+    }).done(data => {
+      this.onLoadSubscriptionSucceeded(data);
+    }).fail(xhr => {
+      this.onLoadSubscriptionFailed(xhr.status, 'Loading subscription failed.');
+    });
+  }
+
   onLoadSubscriptionSucceeded(data) {
-    this._subscriptionData.details = data.subscription;
-    if (data.subscription.quantity) {
-      this._subscriptionData.quantity = data.subscription.quantity;
-    }
+    this._subscriptionData.details = {
+      processor: data.processor,
+      status: data.status,
+      seats: data.seats,
+      current_period_end: data.current_period_end
+    };
+    this._subscriptionData.quantity = data.seats;
     this._subscriptionData.state = 'EXISTING_CUSTOMER';
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this._subscriptionData.needsTokenRefresh = true;
+    this.refreshToken();
   }
 
   onLoadSubscriptionFailed(status, error) {
-    if (status == 404) {
-      this._subscriptionData.state = 'NEW_CUSTOMER';
-      this._subscriptionData.errorMessage = '';
-    } else if (status == 400) {
-      // Assuming that the error is due to the session being missing.
+    if (status == 401) {
       this._subscriptionData.state = 'CREATE_SESSION';
+      this._subscriptionData.errorMessage = '';
+    } else if (status == 404 && this._subscriptionData.returnUrl) {
+      this.loadCheckoutPrerequisites();
+      return;
+    } else if (status == 404) {
+      this._subscriptionData.state = 'MISSING_PARAMS';
       this._subscriptionData.errorMessage = '';
     } else {
-      this._subscriptionData.state = 'CREATE_SESSION';
-      this._subscriptionData.errorMessage = error;
+      // A transient fault leaves the session valid, so another confirmation link would change nothing.
+      this.onLoadFailed(error);
+      return;
     }
     this._subscriptionData.inProgress = false;
   }
@@ -111,7 +147,7 @@ class HubSubscription {
     }).done(data => {
       this.onLoadBillingSessionSucceeded(data);
     }).fail(xhr => {
-      this.onLoadBillingSessionFailed(xhr.status, xhr.responseJSON?.message || 'Loading billing session failed.');
+      this.onLoadBillingSessionFailed(xhr.status, 'Loading billing session failed.');
     });
   }
 
@@ -121,17 +157,25 @@ class HubSubscription {
     this._subscriptionData.returnUrl = data.returnUrl;
     this._subscriptionData.tokenTransfer = data.tokenTransfer;
     this._subscriptionData.errorMessage = '';
-    // The session is verified; hand off to the existing subscription flow (store + Paddle).
-    this.loadSubscription();
+    // The session is verified; a session already linked to a billing manages it (the manage endpoints
+    // only accept linked sessions), an unlinked one belongs to a new customer heading into checkout.
+    if (data.billingId) {
+      this.loadManageSubscription();
+    } else {
+      this.loadCheckoutPrerequisites();
+    }
   }
 
   onLoadBillingSessionFailed(status, error) {
     if (status == 404) {
       this._subscriptionData.state = 'LINK_EXPIRED';
       this._subscriptionData.errorMessage = '';
-    } else {
+    } else if (this._subscriptionData.hubId) {
       this._subscriptionData.state = 'CREATE_SESSION';
       this._subscriptionData.errorMessage = error;
+    } else {
+      this._subscriptionData.state = 'MISSING_PARAMS';
+      this._subscriptionData.errorMessage = '';
     }
     this._subscriptionData.inProgress = false;
   }
@@ -142,12 +186,15 @@ class HubSubscription {
     // First challenge (from /billing/customers/challenge) gates this lookup: it tells us whether
     // the Hub is already linked to a customer before we ask for a confirmation link.
     $.ajax({
-      url: BILLING_CUSTOMER_URL + '/' + encodeURIComponent(this._subscriptionData.hubId) + '?captcha=' + encodeURIComponent(this._subscriptionData.captcha),
-      type: 'GET'
+      url: BILLING_CUSTOMER_URL + '/' + encodeURIComponent(this._subscriptionData.hubId),
+      type: 'GET',
+      data: {
+        captcha: this._subscriptionData.captcha
+      }
     }).done(data => {
       this.onLookupCustomerSucceeded(data);
     }).fail(xhr => {
-      this.onLookupCustomerFailed(xhr.status, xhr.responseJSON?.message || 'Looking up your subscription failed.');
+      this.onLookupCustomerFailed(xhr.status, 'Looking up your subscription failed.');
     });
   }
 
@@ -162,23 +209,20 @@ class HubSubscription {
   }
 
   onLookupCustomerFailed(status, error) {
+    // 404 means the Hub is not linked to a customer yet: ask for the purchase email. Any other
+    // failure falls back to the same manual entry (the lookup captcha solves only once, so a
+    // transient failure cannot re-trigger the lookup, and for a known hub the server ignores the
+    // entered address and mails the one on file) — but keeps the error visible.
     this._subscriptionData.inProgress = false;
-    if (status == 404) {
-      // The Hub is not linked to a customer yet: ask for the purchase email so the session
-      // request can be created for that address.
-      this._subscriptionData.needsEmail = true;
-      this._subscriptionData.redactedEmail = null;
-      this._subscriptionData.lookupDone = true;
-      this._subscriptionData.errorMessage = '';
-    } else {
-      this._subscriptionData.errorMessage = error;
-    }
+    this._subscriptionData.needsEmail = true;
+    this._subscriptionData.redactedEmail = null;
+    this._subscriptionData.lookupDone = true;
+    this._subscriptionData.errorMessage = status == 404 ? '' : error;
   }
 
   createSession() {
     if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      this.showInvalidFields();
       return;
     }
 
@@ -202,7 +246,7 @@ class HubSubscription {
     }).done(_ => {
       this.onCreateSessionSucceeded();
     }).fail(xhr => {
-      this.onCreateSessionFailed(xhr.responseJSON?.message || 'Requesting confirmation link failed.');
+      this.onCreateSessionFailed('Requesting confirmation link failed.');
     });
   }
 
@@ -228,34 +272,31 @@ class HubSubscription {
       }
     }).done(data => {
       this.onLoadCustomBillingSucceeded(data);
-      if (data.custom_billing.manual_invoice) {
-        this._subscriptionData.state = 'MANUAL_INVOICE';
-      } else {
-        continueHandler();
-      }
-    }).fail(xhr => {
-      this.onLoadCustomBillingFailed(xhr.status, xhr.responseJSON?.message || 'Loading custom billing options failed.');
-      if (xhr.status == 404 && xhr.responseJSON?.status == 'error') {
-        continueHandler();
-      }
+      continueHandler();
+    }).fail(() => {
+      this.onLoadFailed('Loading custom billing options failed.');
     });
   }
 
   onLoadCustomBillingSucceeded(data) {
-    this._subscriptionData.customBilling = data.custom_billing;
-    this._subscriptionData.quantity = this._subscriptionData.customBilling.quantity || this._subscriptionData.quantity;
-    this._subscriptionData.email = this._subscriptionData.customBilling.email || this._subscriptionData.email;
+    // custom_billing is null when the hub has no custom billing
+    this._subscriptionData.customBilling = data.custom_billing || null;
+    if (this._subscriptionData.customBilling) {
+      this._subscriptionData.quantity = this._subscriptionData.customBilling.quantity || this._subscriptionData.quantity;
+      this._subscriptionData.email = this._subscriptionData.customBilling.email || this._subscriptionData.email;
+    }
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
   }
 
-  onLoadCustomBillingFailed(status, error) {
-    if (status == 404) {
-      this._subscriptionData.customBilling = null;
-      this._subscriptionData.errorMessage = '';
-    } else {
-      this._subscriptionData.errorMessage = error;
+  // While the page is still on the spinner there is no screen to fall back to, so the failure gets its own
+  // screen. The loaders also re-run from the rendered manage screen, where the error belongs inline instead
+  // of replacing it.
+  onLoadFailed(error) {
+    if (this._subscriptionData.state === 'LOADING') {
+      this._subscriptionData.state = 'LOAD_FAILED';
     }
+    this._subscriptionData.errorMessage = error;
     this._subscriptionData.inProgress = false;
   }
 
@@ -274,8 +315,8 @@ class HubSubscription {
     }).done(data => {
       this.onLoadPriceSucceeded(data, yearlyPlanId, monthlyPlanId);
       continueHandler();
-    }).fail(xhr => {
-      this.onLoadPriceFailed(xhr.responseJSON?.message || 'Loading price failed.');
+    }).fail(() => {
+      this.onLoadFailed('Loading price failed.');
     });
   }
 
@@ -325,44 +366,45 @@ class HubSubscription {
     return price ? parseFloat(price.split(':')[1]) : null;
   }
 
-  onLoadPriceFailed(error) {
-    this._subscriptionData.errorMessage = error;
-    this._subscriptionData.inProgress = false;
+  selectedPlanId() {
+    let isManaged = this._subscriptionData.customBilling?.managed;
+    let isMonthly = this._subscriptionData.billingInterval === 'monthly';
+    if (isManaged) {
+      return isMonthly ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_MANAGED_YEARLY_PLAN_ID;
+    } else {
+      return isMonthly ? PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
+    }
   }
 
   checkout(locale) {
     if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      this.showInvalidFields();
       return;
     }
 
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
-    let isManaged = this._subscriptionData.customBilling?.managed;
-    let isMonthly = this._subscriptionData.billingInterval === 'monthly';
-    let planId;
-    if (isManaged) {
-      planId = isMonthly ? PADDLE_HUB_MANAGED_MONTHLY_PLAN_ID : PADDLE_HUB_MANAGED_YEARLY_PLAN_ID;
-    } else {
-      planId = isMonthly ? PADDLE_HUB_SELF_HOSTED_MONTHLY_PLAN_ID : PADDLE_HUB_SELF_HOSTED_YEARLY_PLAN_ID;
-    }
-    this.customCheckout(planId, locale);
+    this.customCheckout(this.selectedPlanId(), locale);
+    // refresh the card captcha for a potential retry; it is the only altcha element rendered
+    // while the card method is selected
+    this._form.querySelector('altcha-widget')?.reset();
   }
 
   customCheckout(productId, locale) {
     $.ajax({
-      url: GENERATE_PAY_LINK_URL,
+      url: CARD_CHECKOUT_URL,
       type: 'POST',
       data: {
+        captcha: this._subscriptionData.cardCaptcha,
         hub_id: this._subscriptionData.hubId,
         product_id: productId,
-        quantity: this._subscriptionData.quantity
+        quantity: this._subscriptionData.quantity,
+        session: this._subscriptionData.session
       }
     }).done(data => {
       this.openPaddleCheckout(data.pay_link, locale);
     }).fail(xhr => {
-      this.onPostFailed(xhr.responseJSON?.message || 'Generating pay link failed.');
+      this.onPostFailed('Checkout failed.');
     });
   }
 
@@ -371,6 +413,7 @@ class HubSubscription {
       paddle.Checkout.open({
         override: payLink,
         email: this._subscriptionData.email,
+        disableLogout: true,
         locale: locale,
         passthrough: JSON.stringify({ hub_id: this._subscriptionData.hubId, session: this._subscriptionData.session }),
         successCallback: data => this.getPaddleOrderDetails(data.checkout.id),
@@ -386,7 +429,7 @@ class HubSubscription {
       paddle.Order.details(checkoutId, data => {
         let subscriptionId = data.order.subscription_id;
         if (subscriptionId) {
-          this.post(subscriptionId);
+          this.onCheckoutSucceeded();
         } else {
           this._subscriptionData.errorMessage = 'Retrieving subscription failed. Please check your emails instead.';
         }
@@ -394,29 +437,211 @@ class HubSubscription {
     });
   }
 
-  post(subscriptionId) {
+  invoiceProductId() {
+    return this._subscriptionData.customBilling?.managed ? ESPOCRM_HUB_MANAGED_PRODUCT_ID : ESPOCRM_HUB_SELF_HOSTED_PRODUCT_ID;
+  }
+
+  loadInvoicePrice() {
+    if (!this.invoiceProductId()) {
+      return;
+    }
+    // Keep the previous price visible (dimmed) while reloading, so the summary doesn't jump on seat changes.
+    this._subscriptionData.invoicePriceLoading = true;
+    this._subscriptionData.invoicePriceError = false;
+    // Stale-response guard: only the latest request may populate the summary after rapid seat changes.
+    let requestId = ++this._invoicePriceRequestId;
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'POST',
+      url: INVOICE_PRICE_URL,
+      type: 'GET',
       data: {
         hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        subscription_id: subscriptionId
+        product_id: this.invoiceProductId(),
+        quantity: this._subscriptionData.quantity,
+        session: this._subscriptionData.session
       }
     }).done(data => {
-      this.onPostSucceeded(data);
-    }).fail(xhr => {
-      this.onPostFailed(xhr.responseJSON?.message || 'Adding subscription failed.');
+      if (requestId === this._invoicePriceRequestId) {
+        this._subscriptionData.invoicePrice = data;
+        this._subscriptionData.invoicePriceLoading = false;
+      }
+    }).fail(_ => {
+      if (requestId === this._invoicePriceRequestId) {
+        this._subscriptionData.invoicePrice = null;
+        this._subscriptionData.invoicePriceError = true;
+        this._subscriptionData.invoicePriceLoading = false;
+      }
     });
   }
 
-  onPostSucceeded(data) {
-    this._subscriptionData.state = 'EXISTING_CUSTOMER';
-    this._subscriptionData.details = data.subscription;
+  clampInvoiceQuantity(quantity) {
+    let context = this._subscriptionData.checkoutContext;
+    this._subscriptionData.quantity = Math.min(context.quantity_max, Math.max(context.quantity_min, quantity || context.quantity_min));
+  }
+
+  setInvoiceQuantity(quantity) {
+    this.clampInvoiceQuantity(quantity);
+    this.loadInvoicePrice();
+  }
+
+  changeInvoiceQuantity(delta) {
+    this.setInvoiceQuantity(parseInt(this._subscriptionData.quantity, 10) + delta);
+  }
+
+  openInvoiceCheckoutModal() {
+    if (!this.invoiceFieldsValid()) {
+      this.showInvalidFields();
+      return;
+    }
+    this._subscriptionData.errorMessage = '';
+    this._awaitingInvoiceCaptcha = false;
+    this._subscriptionData.invoiceCheckoutModal.open = true;
+    this.loadInvoicePrice();
+  }
+
+  // The purchase bills a returning customer to the account already on file, so the page shows those details
+  // instead of collecting ones the purchase discards.
+  loadCheckoutContext(continueHandler, failureHandler) {
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    $.ajax({
+      url: CHECKOUT_CONTEXT_URL,
+      type: 'GET',
+      data: {
+        hub_id: this._subscriptionData.hubId,
+        session: this._subscriptionData.session
+      }
+    }).done(data => {
+      this.onLoadCheckoutContextSucceeded(data);
+      continueHandler();
+    }).fail(xhr => {
+      if (failureHandler) {
+        failureHandler();
+      } else {
+        this.onLoadFailed(this.checkoutContextError(xhr.status));
+      }
+    });
+  }
+
+  checkoutContextError(status) {
+    if (status === 409) {
+      return DUPLICATE_RECORD_ERROR;
+    }
+    return 'Loading the checkout options failed.';
+  }
+
+  onLoadCheckoutContextSucceeded(data) {
+    this._subscriptionData.checkoutContext = data;
+    this.clampInvoiceQuantity(this._subscriptionData.quantity);
+    let details = data.billing_details;
+    if (details) {
+      // an account may carry no VAT id or no address, and the form binds strings
+      this._subscriptionData.invoice = {
+        account_name: details.account_name ?? '',
+        vat_id: details.vat_id ?? '',
+        address_street: details.address_street ?? '',
+        address_postal_code: details.address_postal_code ?? '',
+        address_city: details.address_city ?? '',
+        address_country: details.address_country ?? ''
+      };
+    }
     this._subscriptionData.errorMessage = '';
     this._subscriptionData.inProgress = false;
-    this._subscriptionData.shouldTransferToHub = true;
-    this._subscriptionData.needsTokenRefresh = true;
+  }
+
+  showInvalidFields() {
+    $(this._form).find(':input').addClass('show-invalid');
+    this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+  }
+
+  // Excludes the altcha widget's internal checkbox, whose checked state is mid-flight while the
+  // buy button re-solves a challenge.
+  invoiceFieldsValid() {
+    return $(this._form).find(':input').toArray().filter(el => !el.closest('altcha-widget')).every(el => el.checkValidity());
+  }
+
+  startInvoiceCheckout() {
+    if (!this.invoiceFieldsValid()) {
+      this.showInvalidFields();
+      return;
+    }
+    // Challenges expire server-side within a minute, so solve one fresh at buy time; the widget's
+    // verified event then triggers onInvoiceCaptchaVerified() with the new payload. The modal's
+    // widget is the only altcha element rendered while the invoice method is selected.
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    this._awaitingInvoiceCaptcha = true;
+    let captchaWidget = this._form.querySelector('altcha-widget');
+    captchaWidget?.reset();
+    captchaWidget?.verify();
+  }
+
+  // One-shot: altcha's reset() does not abort an in-flight solve, so a stale solve and the fresh
+  // one can both fire a verified event — only the first may trigger the checkout, and only while
+  // the modal is still open (a solve settling after cancel must not buy anything).
+  onInvoiceCaptchaVerified() {
+    if (!this._subscriptionData.invoiceCheckoutModal.open) {
+      this._awaitingInvoiceCaptcha = false;
+      return;
+    }
+    if (!this._awaitingInvoiceCaptcha) {
+      return;
+    }
+    this._awaitingInvoiceCaptcha = false;
+    this.invoiceCheckout();
+  }
+
+  invoiceCheckout() {
+    if (!this.invoiceFieldsValid()) {
+      this.showInvalidFields();
+      this._subscriptionData.inProgress = false;
+      return;
+    }
+
+    this._subscriptionData.inProgress = true;
+    this._subscriptionData.errorMessage = '';
+    let invoice = this._subscriptionData.invoice;
+    $.ajax({
+      url: INVOICE_CHECKOUT_URL,
+      type: 'POST',
+      data: {
+        captcha: this._subscriptionData.invoiceCaptcha,
+        hub_id: this._subscriptionData.hubId,
+        product_id: this.invoiceProductId(),
+        quantity: this._subscriptionData.quantity,
+        session: this._subscriptionData.session,
+        account_name: invoice.account_name,
+        vat_id: invoice.vat_id,
+        address_street: invoice.address_street,
+        address_postal_code: invoice.address_postal_code,
+        address_city: invoice.address_city,
+        address_country: invoice.address_country
+      }
+    }).done(_ => {
+      this.onCheckoutSucceeded();
+    }).fail(xhr => {
+      this.onPostFailed(this.invoiceCheckoutError(xhr.status));
+    });
+  }
+
+  invoiceCheckoutError(status) {
+    if (status === 409) {
+      return DUPLICATE_RECORD_ERROR;
+    }
+    // The account on file supplies the billing details, and this form shows them read-only, so nothing the
+    // customer can reach here explains the refusal.
+    if (status === 400 && this._subscriptionData.checkoutContext?.billing_details) {
+      return 'We cannot complete this purchase automatically. Please contact us and we will finish it for you.';
+    }
+    return 'Creating subscription failed.';
+  }
+
+  onCheckoutSucceeded() {
+    this._subscriptionData.state = 'CHECKOUT_SUCCESS';
+    this._subscriptionData.invoiceCheckoutModal.open = false;
+    this._subscriptionData.errorMessage = '';
+    this._subscriptionData.inProgress = false;
+    this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+    this.refreshToken();
   }
 
   onPostFailed(error) {
@@ -427,129 +652,100 @@ class HubSubscription {
   updatePaymentMethod(locale) {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
+    this._subscriptionData.shouldTransferToHub = false;
     $.ajax({
-      url: UPDATE_PAYMENT_METHOD_URL,
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/payment-method`,
       type: 'GET',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        subscription_id: this._subscriptionData.details.subscription_id
-      }
+      headers: this.authHeaders()
     }).done(data => {
       this._paddle.then(paddle => {
         paddle.Checkout.open({
           override: data.url,
           locale: locale,
-          successCallback: _ => this.loadSubscription(),
+          successCallback: _ => this.loadManageSubscription(),
           closeCallback: () => {
             this._subscriptionData.inProgress = false;
           }
         });
       });
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating payment method failed.');
+      this.onPutFailed(xhr.status, 'Updating payment method failed.');
     });
   }
 
   pause() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
+    // a stale transfer intent from an earlier action must not redirect after this refresh
+    this._subscriptionData.shouldTransferToHub = false;
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        pause: true
-      }
-    }).done(data => {
-      this.onPutSucceeded(data, false);
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/pause`,
+      type: 'POST',
+      headers: this.authHeaders()
+    }).done(_ => {
+      this.loadManageSubscription();
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, 'Updating subscription failed.');
     });
   }
 
   askForRestartConfirmation() {
-    this._subscriptionData.restartModal.nextPayment = null;
     this._subscriptionData.restartModal.open = true;
-    this.previewRestart();
-  }
-
-  previewRestart() {
-    this._subscriptionData.inProgress = true;
-    this._subscriptionData.errorMessage = '';
-    $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        pause: false,
-        preview: true
-      }
-    }).done(data => {
-      this._subscriptionData.restartModal.nextPayment = data.subscription.next_payment;
-      this._subscriptionData.errorMessage = '';
-      this._subscriptionData.inProgress = false;
-    }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Calculating price failed.');
-    });
   }
 
   restart() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
-      data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        pause: false
-      }
-    }).done(data => {
-      this.onPutSucceeded(data, this._subscriptionData.details.state == 'paused');
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/resume`,
+      type: 'POST',
+      headers: this.authHeaders()
+    }).done(_ => {
+      this._subscriptionData.restartModal.open = false;
+      this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+      this.loadManageSubscription();
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, 'Updating subscription failed.');
     });
   }
 
   openChangeSeatsModal() {
-    this._subscriptionData.quantity = this._subscriptionData.details.quantity;
-    this._subscriptionData.changeSeatsModal.immediatePayment = null;
+    this._subscriptionData.quantity = this._subscriptionData.details.seats;
+    this._subscriptionData.changeSeatsModal.nextPayment = null;
+    this._subscriptionData.changeSeatsModal.invoicePreview = null;
     this._subscriptionData.changeSeatsModal.confirmation = false;
     this._subscriptionData.changeSeatsModal.open = true;
   }
 
   askForChangeSeatsConfirmation() {
     if (!$(this._form)[0].checkValidity()) {
-      $(this._form).find(':input').addClass('show-invalid');
-      this._subscriptionData.errorMessage = 'Please fill in all required fields.';
+      this.showInvalidFields();
       return;
     }
 
     this._subscriptionData.changeSeatsModal.confirmation = true;
-    this.previewChangeQuantity();
+    if (this._subscriptionData.details.processor == 'PADDLE_CLASSIC' || this._subscriptionData.details.processor == 'ESPOCRM') {
+      this.previewChangeQuantity();
+    }
   }
 
   previewChangeQuantity() {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/seats/preview`,
+      type: 'POST',
+      headers: this.authHeaders(),
       data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
-        quantity: this._subscriptionData.quantity,
-        preview: true
+        quantity: this._subscriptionData.quantity
       }
     }).done(data => {
-      this._subscriptionData.changeSeatsModal.immediatePayment = data.subscription.immediate_payment;
+      this._subscriptionData.changeSeatsModal.nextPayment = data.next_payment;
+      this._subscriptionData.changeSeatsModal.invoicePreview = data.prorated_amount != null ? data : null;
       this._subscriptionData.errorMessage = '';
       this._subscriptionData.inProgress = false;
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Calculating price failed.');
+      this.onPutFailed(xhr.status, 'Calculating price failed.');
     });
   }
 
@@ -557,29 +753,19 @@ class HubSubscription {
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
-      url: MANAGE_SUBSCRIPTION_URL,
-      type: 'PUT',
+      url: `${MANAGE_SUBSCRIPTION_BASE_URL}/${this._subscriptionData.hubId}/seats`,
+      type: 'POST',
+      headers: this.authHeaders(),
       data: {
-        hub_id: this._subscriptionData.hubId,
-        session: this._subscriptionData.session,
         quantity: this._subscriptionData.quantity
       }
-    }).done(data => {
+    }).done(_ => {
       this._subscriptionData.changeSeatsModal.open = false;
-      this.onPutSucceeded(data, true);
+      this._subscriptionData.shouldTransferToHub = !!this._subscriptionData.returnUrl;
+      this.loadManageSubscription();
     }).fail(xhr => {
-      this.onPutFailed(xhr.status, xhr.responseJSON?.message || 'Updating subscription failed.');
+      this.onPutFailed(xhr.status, 'Updating subscription failed.');
     });
-  }
-
-  onPutSucceeded(data, shouldOpenReturnUrl) {
-    this._subscriptionData.details = data.subscription;
-    this._subscriptionData.errorMessage = '';
-    this._subscriptionData.inProgress = false;
-    if (shouldOpenReturnUrl) {
-      this._subscriptionData.shouldTransferToHub = true;
-      this._subscriptionData.needsTokenRefresh = true;
-    }
   }
 
   onPutFailed(status, error) {
@@ -591,6 +777,7 @@ class HubSubscription {
   }
 
   refreshToken() {
+    this._subscriptionData.needsTokenRefresh = true;
     this._subscriptionData.inProgress = true;
     this._subscriptionData.errorMessage = '';
     $.ajax({
@@ -609,7 +796,9 @@ class HubSubscription {
         this.transferTokenToHub();
       }
     }).fail(xhr => {
-      this._subscriptionData.errorMessage = xhr.responseJSON?.message || 'Refreshing license failed.';
+      // Expected for a card checkout until Paddle's payment webhook links the session to the new
+      // billing; the license block then offers a retry.
+      this._subscriptionData.errorMessage = 'Refreshing license failed.';
       this._subscriptionData.needsTokenRefresh = false;
       this._subscriptionData.inProgress = false;
     });
@@ -617,7 +806,6 @@ class HubSubscription {
 
   transferTokenToHub() {
     if (this._subscriptionData.tokenTransfer === 'queryParam') {
-      // Deliver the refreshed license to the Hub directly as a query parameter.
       location.href = this._subscriptionData.returnUrl + '?token=' + encodeURIComponent(this._subscriptionData.token);
     } else if (this._subscriptionData.tokenTransfer === 'session') {
       // Hand the Hub the billing session id instead; it resolves the license itself.

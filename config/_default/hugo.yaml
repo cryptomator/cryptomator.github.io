@@ -22,6 +22,16 @@ security:
   allowContent:
     - ^text/html$
     - ^text/markdown$
+  # Hugo 0.165 dropped tailwindcss from the default exec allowlist. This key replaces
+  # the defaults, so repeat them and add our own trusted Tailwind build back in.
+  exec:
+    allow:
+      - ^(dart-)?sass$
+      - ^go$
+      - ^git$
+      - ^node$
+      - ^postcss$
+      - ^tailwindcss$
 
 build:
   cachebusters:
@@ -51,10 +61,10 @@ module:
       target: assets/js/jquery
     - source: node_modules/alpinejs/dist
       target: assets/js/alpinejs
+    - source: node_modules/@alpinejs/focus/dist
+      target: assets/js/alpinejs-focus
     - source: node_modules/lazysizes
       target: assets/js/lazysizes
-    - source: node_modules/js-yaml/dist
-      target: assets/js/js-yaml
     - source: node_modules/altcha/dist_external
       target: assets/js/altcha
     - source: node_modules/mathjax/es5

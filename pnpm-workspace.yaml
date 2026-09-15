@@ -34,3 +34,9 @@ minimumReleaseAgeExclude:
 # find that script; it understands a symlink but not pnpm's shim, and
 # otherwise fails with `binary "tailwindcss" is not a Node.js script`.
 preferSymlinkedExecutables: true
+
+# Lay out node_modules flat and without symlinks, like npm does. We mount
+# several node_modules packages into assets/, and Hugo (0.166+) drops any
+# mount whose source path goes through a symlink; pnpm's default isolated
+# layout links every package via node_modules/.pnpm/.
+nodeLinker: hoisted

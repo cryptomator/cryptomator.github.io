@@ -95,7 +95,7 @@ Cryptomator reaches new target groups through greater media presence and recomme
 
 ### New Cryptomator Hub Features – Early Access / Anniversary Launch
 
-As part of its 10th anniversary, **several key enhancements for Cryptomator Hub are entering early access** or being made publicly available for the first time. These are designed to give teams and organizations more control, security, and flexibility. To celebrate, we're offering a special **100-day free trial** (instead of the usual 30 days) for [Cryptomator Hub Managed](/hub/managed/). For more details, check out the [Early Access documentation](https://docs.cryptomator.org/hub/early-access/).
+As part of its 10th anniversary, **several key enhancements for Cryptomator Hub are entering early access** or being made publicly available for the first time. These are designed to give teams and organizations more control, security, and flexibility. To celebrate, we're offering a special **100-day free trial** (instead of the usual 30 days) for [Cryptomator Hub Managed](/hub/managed/). For more details, check out the [documentation on Hub's new features](https://docs.cryptomator.org/hub/new-features/).
 
 **User & Group Management**
 
