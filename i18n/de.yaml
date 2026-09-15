@@ -1581,31 +1581,31 @@
 - id: webinar_none_newsletter_instruction
   translation: "Abonniere unseren Hub-Newsletter und wir informieren dich, sobald das nächste Webinar feststeht."
 
-# Whitepaper
-- id: whitepaper_eyebrow
-  translation: "Whitepaper"
-- id: whitepaper_first_name
+# White Paper
+- id: white_paper_eyebrow
+  translation: "White Paper"
+- id: white_paper_first_name
   translation: "Vorname"
-- id: whitepaper_last_name
+- id: white_paper_last_name
   translation: "Nachname"
-- id: whitepaper_email
+- id: white_paper_email
   translation: "E-Mail-Adresse"
-- id: whitepaper_company
+- id: white_paper_company
   translation: "Unternehmen / Organisation"
-- id: whitepaper_submit
+- id: white_paper_submit
   translation: "Download"
-- id: whitepaper_success_title
+- id: white_paper_success_title
   translation: "Vielen Dank!"
-- id: whitepaper_success_message
+- id: white_paper_success_message
   translation: "Wir haben dir den Download-Link per E-Mail geschickt."
-- id: whitepaper_contact_title
-  translation: "Fragen zu unseren Whitepapern?"
-- id: whitepaper_contact_description
+- id: white_paper_contact_title
+  translation: "Fragen zu unseren White Papers?"
+- id: white_paper_contact_description
   translation: "Du möchtest tiefer in ein Thema einsteigen oder besprechen, was es für deine Organisation bedeutet? Unser Team hilft gerne weiter."
-- id: whitepaper_contact_button
+- id: white_paper_contact_button
   translation: "Kontakt aufnehmen"
-- id: whitepaper_more
-  translation: "Weitere Whitepaper"
+- id: white_paper_more
+  translation: "Weitere White Papers"
 
 # Sale
 - id: nav_promotion
