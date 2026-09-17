@@ -25,30 +25,22 @@
               <p class="font-headline text-xs font-bold uppercase tracking-wide {{ .brandColor }}">{{ .brand }}</p>
             </div>
             {{- end }}
-            {{- $other := cond (eq $side "first") "second" "first" }}
-            <span id="compare-{{ $side }}-label" class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}</span>
-            <div class="relative" x-data="{ open: false }" @click.outside="open = false">
-              <button type="button" x-ref="trigger" id="compare-{{ $side }}-value" aria-haspopup="listbox" :aria-expanded="open" aria-labelledby="compare-{{ $side }}-label compare-{{ $side }}-value"
-                class="input-box flex min-h-12 w-full items-center justify-between gap-1 bg-white text-left text-base font-medium"
-                @click="open = !open"
-                @keydown.escape="open = false"
-                @keydown.down.prevent="open = true; $nextTick(() => $focus.within($refs.list).first())">
-                <span class="min-w-0 truncate">
-                  {{- range $plans }}<span x-show="{{ $side }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</span>{{ end -}}
-                </span>
-                <i class="fa-solid fa-chevron-down shrink-0 text-hub" :class="open && 'rotate-180'" aria-hidden="true"></i>
-              </button>
-              <ul x-show="open" x-cloak x-ref="list" role="listbox" aria-labelledby="compare-{{ $side }}-label"
-                class="absolute inset-x-0 z-20 mt-1 rounded-sm border border-gray-300 bg-white py-1 shadow-md"
-                @keydown.down.prevent="$focus.wrap().next()"
-                @keydown.up.prevent="$focus.wrap().previous()"
-                @keydown.escape="open = false; $refs.trigger.focus()">
+            <div x-data="{ isDropdownOpen: false }" class="relative" @click.outside="isDropdownOpen = false" @focusout="if (!$el.contains($event.relatedTarget)) isDropdownOpen = false" @keydown.escape.stop.prevent="isDropdownOpen = false; $refs.trigger.focus()" @resize.window="isDropdownOpen = false">
+              <button id="compare-{{ $side }}" type="button" x-ref="trigger" aria-haspopup="menu" aria-controls="compare-{{ $side }}-options" :aria-expanded="isDropdownOpen" @click="isDropdownOpen = !isDropdownOpen; if (isDropdownOpen) $focus.within($refs.options).first()" @keydown.down.prevent="isDropdownOpen = true; $focus.within($refs.options).first()" @keydown.up.prevent="isDropdownOpen = true; $focus.within($refs.options).last()" class="input-box flex min-h-12 w-full min-w-0 items-center justify-between gap-2 bg-white px-2 text-left text-base font-medium">
+                <span class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}: </span>
                 {{- range $plans }}
-                <li role="option" tabindex="0" :aria-selected="{{ $side }} === '{{ .dataKey }}'" :aria-disabled="{{ $other }} === '{{ .dataKey }}'"
-                  class="cursor-pointer px-3 py-2 text-base font-medium hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden aria-selected:bg-hub/10 aria-selected:text-hub aria-disabled:cursor-not-allowed aria-disabled:text-gray-400 aria-disabled:hover:bg-transparent"
-                  @click="if ({{ $other }} !== '{{ .dataKey }}') { {{ $side }} = '{{ .dataKey }}'; open = false; $refs.trigger.focus() }"
-                  @keydown.enter.prevent="$el.click()"
-                  @keydown.space.prevent="$el.click()">{{ i18n .titleKey $ }}</li>
+                <span x-show="{{ $side }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</span>
+                {{- end }}
+                <i class="fa-solid fa-chevron-down shrink-0 text-hub" aria-hidden="true"></i>
+              </button>
+              <ul id="compare-{{ $side }}-options" x-ref="options" x-show="isDropdownOpen" x-cloak role="menu" aria-labelledby="compare-{{ $side }}" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" @keydown.home.prevent="$focus.first()" @keydown.end.prevent="$focus.last()" x-effect="if (isDropdownOpen) $nextTick(() => $el.scrollIntoView({ block: 'nearest' }))" class="absolute left-0 top-full z-20 mt-2 max-h-[calc(100dvh-var(--nav-height,48px)-10rem)] w-full overflow-y-auto rounded-sm border border-gray-200 bg-white py-1 shadow-md">
+                {{- range $plans }}
+                <li role="none">
+                  <button type="button" role="menuitemradio" tabindex="-1" :aria-checked="{{ $side }} === '{{ .dataKey }}'" :disabled="{{ if eq $side "first" }}second{{ else }}first{{ end }} === '{{ .dataKey }}'" @click="{{ $side }} = '{{ .dataKey }}'; isDropdownOpen = false; $refs.trigger.focus()" class="flex min-h-12 w-full items-center gap-2 px-2 text-left text-base text-gray-800 enabled:hover:bg-hub/10 focus-visible:bg-hub/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-secondary disabled:text-gray-400" :class="{ 'bg-hub/10': {{ $side }} === '{{ .dataKey }}' }">
+                    <i class="fa-solid fa-check w-4 shrink-0 text-hub" :class="{ 'invisible': {{ $side }} !== '{{ .dataKey }}' }" aria-hidden="true"></i>
+                    <span>{{ i18n .titleKey $ }}</span>
+                  </button>
+                </li>
                 {{- end }}
               </ul>
             </div>
