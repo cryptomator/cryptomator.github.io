@@ -262,7 +262,7 @@ ul.list-primary li::marker {
 /* The container's overflow-x-clip leaves the y axis visible, so it cannot clip
    the opaque corner cells to its own radius — they round themselves. */
 .compare-th {
-  @apply sticky top-[var(--nav-height,48px)] z-10 align-bottom border-b border-gray-200 first:rounded-tl-sm last:rounded-tr-sm;
+  @apply lg:sticky lg:top-[var(--nav-height,48px)] z-10 align-bottom border-b border-gray-200 first:rounded-tl-sm last:rounded-tr-sm;
 }
 
 .input-box {
