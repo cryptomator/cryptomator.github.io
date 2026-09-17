@@ -1177,7 +1177,13 @@
 - id: pricing_compare_title
   translation: "Compare All Features"
 - id: pricing_compare_subtitle
-  translation: "Every plan includes everything from the plans before it."
+  translation: "See which plan fits your needs, feature by feature."
+- id: pricing_compare_choose
+  translation: "Choose two plans to compare."
+- id: pricing_compare_first_plan
+  translation: "First plan"
+- id: pricing_compare_second_plan
+  translation: "Second plan"
 - id: more_information
   translation: "More information"
 - id: pricing_compare_features

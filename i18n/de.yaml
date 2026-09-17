@@ -1176,7 +1176,13 @@
 - id: pricing_compare_title
   translation: "Alle Funktionen im Vergleich"
 - id: pricing_compare_subtitle
-  translation: "Jeder Plan enthält alles aus den vorherigen Plänen."
+  translation: "Finde den passenden Plan – Funktion für Funktion."
+- id: pricing_compare_choose
+  translation: "Wähle zwei Pläne für den Vergleich."
+- id: pricing_compare_first_plan
+  translation: "Erster Plan"
+- id: pricing_compare_second_plan
+  translation: "Zweiter Plan"
 - id: more_information
   translation: "Weitere Informationen"
 - id: pricing_compare_features

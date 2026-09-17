@@ -1,0 +1,14 @@
+{{- $cell := index .row .plan.dataKey }}
+{{- if eq $cell true }}
+<i class="fa-solid fa-check {{ if eq .plan.dataKey "Cryptomator" }}text-green-700{{ else }}text-hub{{ end }}" aria-hidden="true"></i>
+<span class="sr-only">{{ i18n "pricing_compare_included" .page }}</span>
+{{- else if eq $cell false }}
+<span class="text-gray-600" aria-hidden="true">&mdash;</span>
+<span class="sr-only">{{ i18n "pricing_compare_not_included" .page }}</span>
+{{- else if eq (printf "%T" $cell) "string" }}
+{{ i18n $cell .page }}
+{{- else if $cell }}
+{{ $cell }}
+{{- else }}
+{{- errorf "pricing_comparison: row %q is missing a value for plan %q" .row.LabelKey .plan.dataKey }}
+{{- end }}
