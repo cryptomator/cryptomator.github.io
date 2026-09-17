@@ -25,14 +25,24 @@
               <p class="font-headline text-xs font-bold uppercase tracking-wide {{ .brandColor }}">{{ .brand }}</p>
             </div>
             {{- end }}
-            <label for="compare-{{ $side }}" class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}</label>
-            <div class="grid grid-cols-[1fr_--spacing(8)]">
-              <select id="compare-{{ $side }}" name="compare-{{ $side }}" x-model="{{ $side }}" class="input-box col-span-full row-start-1 min-h-12 w-full min-w-0 appearance-none bg-white bg-none pl-2 pr-7 text-base font-medium">
+            <div x-data="{ isDropdownOpen: false }" class="relative" @click.outside="isDropdownOpen = false" @focusout="if (!$el.contains($event.relatedTarget)) isDropdownOpen = false" @keydown.escape.stop.prevent="isDropdownOpen = false; $refs.trigger.focus()" @resize.window="isDropdownOpen = false">
+              <button id="compare-{{ $side }}" type="button" x-ref="trigger" aria-haspopup="menu" aria-controls="compare-{{ $side }}-options" :aria-expanded="isDropdownOpen" @click="isDropdownOpen = !isDropdownOpen; if (isDropdownOpen) $focus.within($refs.options).first()" @keydown.down.prevent="isDropdownOpen = true; $focus.within($refs.options).first()" @keydown.up.prevent="isDropdownOpen = true; $focus.within($refs.options).last()" class="input-box flex min-h-12 w-full min-w-0 items-center justify-between gap-2 bg-white px-2 text-left text-base font-medium">
+                <span class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}: </span>
                 {{- range $plans }}
-                <option value="{{ .dataKey }}" :disabled="{{ if eq $side "first" }}second{{ else }}first{{ end }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</option>
+                <span x-show="{{ $side }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</span>
                 {{- end }}
-              </select>
-              <i class="fa-solid fa-chevron-down pointer-events-none col-start-2 row-start-1 place-self-center text-hub" aria-hidden="true"></i>
+                <i class="fa-solid fa-chevron-down shrink-0 text-hub" aria-hidden="true"></i>
+              </button>
+              <ul id="compare-{{ $side }}-options" x-ref="options" x-show="isDropdownOpen" x-cloak role="menu" aria-labelledby="compare-{{ $side }}" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" @keydown.home.prevent="$focus.first()" @keydown.end.prevent="$focus.last()" x-effect="if (isDropdownOpen) $nextTick(() => $el.scrollIntoView({ block: 'nearest' }))" class="absolute left-0 top-full z-20 mt-2 max-h-[calc(100dvh-var(--nav-height,48px)-10rem)] w-full overflow-y-auto rounded-sm border border-gray-200 bg-white py-1 shadow-md">
+                {{- range $plans }}
+                <li role="none">
+                  <button type="button" role="menuitemradio" tabindex="-1" :aria-checked="{{ $side }} === '{{ .dataKey }}'" :disabled="{{ if eq $side "first" }}second{{ else }}first{{ end }} === '{{ .dataKey }}'" @click="{{ $side }} = '{{ .dataKey }}'; isDropdownOpen = false; $refs.trigger.focus()" class="flex min-h-12 w-full items-center gap-2 px-2 text-left text-base text-gray-800 enabled:hover:bg-hub/10 focus-visible:bg-hub/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-secondary disabled:text-gray-400" :class="{ 'bg-hub/10': {{ $side }} === '{{ .dataKey }}' }">
+                    <i class="fa-solid fa-check w-4 shrink-0 text-hub" :class="{ 'invisible': {{ $side }} !== '{{ .dataKey }}' }" aria-hidden="true"></i>
+                    <span>{{ i18n .titleKey $ }}</span>
+                  </button>
+                </li>
+                {{- end }}
+              </ul>
             </div>
           </div>
           {{- end }}
