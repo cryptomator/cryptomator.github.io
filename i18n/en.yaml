@@ -1232,8 +1232,6 @@
   translation: "Unlimited"
 - id: pricing_compare_one_time_purchase
   translation: "One-time purchase"
-- id: pricing_compare_coming_soon
-  translation: "Coming Soon"
 - id: pricing_compare_priority
   translation: "Priority"
 

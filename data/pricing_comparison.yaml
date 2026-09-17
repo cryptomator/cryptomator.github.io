@@ -65,7 +65,7 @@
       Cryptomator: false
       Community: false
       Standard: false
-      Enterprise: "pricing_compare_coming_soon"
+      Enterprise: "coming_soon"
 - SectionKey: "pricing_compare_section_support"
   Rows:
     - LabelKey: "pricing_compare_community_support"

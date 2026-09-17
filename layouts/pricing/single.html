@@ -368,7 +368,7 @@
                   <span class="sr-only">{{ i18n "pricing_compare_features" . }}</span>
                 </th>
                 {{- range $plans }}
-                <th scope="col" class="compare-th px-4 py-3.5 text-center {{ if .highlight }}bg-hub-l2 border-t-[3px] border-t-hub{{ else }}bg-white{{ end }}">
+                <th scope="col" class="compare-th bg-white px-4 py-3.5 text-center {{ if .highlight }}bg-linear-to-b from-hub/10 to-hub/10 border-t-[3px] border-t-hub{{ end }}">
                   <img src="{{ .logo }}" class="h-8 mx-auto mb-2 {{ .logoAspect }}" alt=""/>
                   <span class="block font-headline font-bold text-xs uppercase tracking-wide mb-1 {{ .brandColor }}">{{ .brand }}</span>
                   <span class="block font-headline font-medium">{{ i18n .titleKey $ }}</span>
@@ -379,7 +379,7 @@
             <tbody>
               {{- range $sectionIndex, $section := hugo.Data.pricing_comparison }}
               <tr>
-                <th scope="row" class="px-5 pt-4 pb-1.5 text-left text-xs font-bold tracking-wide uppercase text-gray-500">{{ i18n .SectionKey $ }}</th>
+                <th scope="row" class="px-5 pt-4 pb-1.5 text-left text-xs font-bold tracking-wide uppercase text-gray-700">{{ i18n .SectionKey $ }}</th>
                 {{- /* empty cells exist solely to carry the highlighted column's tint across section rows */}}
                 {{- range $plans }}
                 <td{{ if .highlight }} class="bg-hub/5"{{ end }}></td>
@@ -431,21 +431,22 @@
                 <td class="border-t border-gray-200 px-5 py-4"></td>
                 <td class="border-t border-gray-200 px-4 py-4 text-center align-top">
                   <span class="block font-bold text-lg leading-tight">{{ i18n "pricing_free" . }}</span>
-                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_individual_price_description" . }}</span>
+                  <span class="block text-xs text-gray-700 mb-3">{{ i18n "pricing_individual_price_description" . }}</span>
                   <a href="{{ .Site.LanguagePrefix }}/downloads/" role="button" class="btn btn-outline-primary w-full text-sm" data-umami-event="pricing-compare-individual-cta">
                     {{ i18n "pricing_individual_cta" . }}
                   </a>
                 </td>
                 <td class="border-t border-gray-200 px-4 py-4 text-center align-top">
                   <span class="block font-bold text-lg leading-tight">{{ i18n "pricing_free" . }}</span>
-                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_hub_community_price_description" . }}</span>
+                  <span class="block text-xs text-gray-700 mb-3">{{ i18n "pricing_hub_community_price_description" . }}</span>
                   <a href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-outline-hub w-full text-sm" data-umami-event="pricing-compare-hub-community-self-hosted-cta">
                     {{ i18n "pricing_hub_self_hosted_cta" . }}
                   </a>
                 </td>
                 <td class="border-t border-gray-200 px-4 py-4 text-center align-top bg-hub/5">
                   <span x-text="formattedPrice" class="block font-bold text-lg leading-tight"></span>
-                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_hub_standard_price_description" . }}</span>
+                  <span class="block text-xs text-gray-700">{{ i18n "pricing_vat_excluded" . }}</span>
+                  <span class="block text-xs text-gray-700 mb-3">{{ i18n "pricing_hub_standard_price_description" . }}</span>
                   <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub w-full text-sm" data-umami-event="pricing-compare-hub-standard-managed-cta">
                     {{ i18n "pricing_hub_managed_cta" . }}
                   </a>
@@ -455,7 +456,7 @@
                 </td>
                 <td class="border-t border-gray-200 px-4 py-4 text-center align-top">
                   <span class="block font-bold text-lg leading-tight">{{ i18n "pricing_hub_enterprise_price" . }}</span>
-                  <span class="block text-xs text-gray-500 mb-3">{{ i18n "pricing_hub_enterprise_price_description" . }}</span>
+                  <span class="block text-xs text-gray-700 mb-3">{{ i18n "pricing_hub_enterprise_price_description" . }}</span>
                   <a href="{{ .Site.LanguagePrefix }}/contact-sales/" role="button" class="btn btn-outline-hub w-full text-sm" data-umami-event="pricing-compare-hub-enterprise-cta">
                     {{ i18n "pricing_hub_enterprise_cta" . }}
                   </a>

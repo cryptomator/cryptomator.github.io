@@ -1224,15 +1224,13 @@
 - id: pricing_compare_email_support
   translation: "E-Mail-Support"
 - id: pricing_compare_expert_training
-  translation: "Beratung und Unterstützung durch Experten"
+  translation: "Schulungen und Unterstützung durch Experten"
 - id: pricing_compare_account_manager
   translation: "Dedizierter Kundenbetreuer"
 - id: pricing_compare_unlimited
   translation: "Unbegrenzt"
 - id: pricing_compare_one_time_purchase
   translation: "Einmalkauf"
-- id: pricing_compare_coming_soon
-  translation: "Bald verfügbar"
 - id: pricing_compare_priority
   translation: "Vorrangig"
 
