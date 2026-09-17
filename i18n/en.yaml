@@ -1194,6 +1194,8 @@
   translation: "Included"
 - id: pricing_compare_not_included
   translation: "Not included"
+- id: pricing_compare_hub_self_hosted_cta
+  translation: "Deploy Now"
 - id: pricing_compare_hub_managed_cta
   translation: "Try for Free"
 - id: pricing_compare_managed_hosting_tooltip

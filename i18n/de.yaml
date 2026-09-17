@@ -1193,6 +1193,8 @@
   translation: "Enthalten"
 - id: pricing_compare_not_included
   translation: "Nicht enthalten"
+- id: pricing_compare_hub_self_hosted_cta
+  translation: "Einrichten"
 - id: pricing_compare_hub_managed_cta
   translation: "Gratis testen"
 - id: pricing_compare_managed_hosting_tooltip

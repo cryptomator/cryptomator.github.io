@@ -2,7 +2,7 @@
 {{- $hubBrand := dict "logo" "/img/zero-knowledge-bot.svg" "logoAspect" "aspect-988/877" "brandColor" "text-hub" }}
 {{- $plans := slice
   (merge $cryptomatorBrand (dict "dataKey" "Cryptomator" "brand" "Cryptomator" "titleKey" "pricing_individual_title" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_individual_price_description" "href" "/downloads/" "ctaKey" "pricing_individual_cta" "event" "pricing-compare-individual-cta"))
-  (merge $hubBrand (dict "dataKey" "Community" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_community_title" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_hub_community_price_description" "href" "/hub/self-hosted/" "ctaKey" "pricing_hub_self_hosted_cta" "event" "pricing-compare-hub-community-self-hosted-cta"))
+  (merge $hubBrand (dict "dataKey" "Community" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_community_title" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_hub_community_price_description" "href" "/hub/self-hosted/" "ctaKey" "pricing_compare_hub_self_hosted_cta" "event" "pricing-compare-hub-community-self-hosted-cta"))
   (merge $hubBrand (dict "dataKey" "Standard" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_standard_title" "priceDescriptionKey" "pricing_hub_standard_price_description"))
   (merge $hubBrand (dict "dataKey" "Enterprise" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_enterprise_title" "priceKey" "pricing_hub_enterprise_price" "priceDescriptionKey" "pricing_hub_enterprise_price_description" "href" "/contact-sales/" "ctaKey" "pricing_hub_enterprise_cta" "event" "pricing-compare-hub-enterprise-cta"))
 }}
@@ -31,7 +31,7 @@
                 {{- range $plans }}
                 <span x-show="{{ $side }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</span>
                 {{- end }}
-                <i class="fa-solid fa-chevron-down shrink-0 text-hub" aria-hidden="true"></i>
+                <i class="fa-solid fa-chevron-down shrink-0 text-hub" :class="isDropdownOpen && 'rotate-180'" aria-hidden="true"></i>
               </button>
               <ul id="compare-{{ $side }}-options" x-ref="options" x-show="isDropdownOpen" x-cloak role="menu" aria-labelledby="compare-{{ $side }}" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" @keydown.home.prevent="$focus.first()" @keydown.end.prevent="$focus.last()" x-effect="if (isDropdownOpen) $nextTick(() => $el.scrollIntoView({ block: 'nearest' }))" class="absolute left-0 top-full z-20 mt-2 max-h-[calc(100dvh-var(--nav-height,48px)-10rem)] w-full overflow-y-auto rounded-sm border border-gray-200 bg-white py-1 shadow-md">
                 {{- range $plans }}
