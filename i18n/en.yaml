@@ -1192,6 +1192,8 @@
   translation: "Included"
 - id: pricing_compare_not_included
   translation: "Not included"
+- id: pricing_compare_hub_managed_cta
+  translation: "Try for Free"
 - id: pricing_compare_managed_hosting_tooltip
   translation: "Maintained and updated by our team in an ISO/IEC 27001:2022 certified data center in the EU."
 - id: pricing_compare_section_basics

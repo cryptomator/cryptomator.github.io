@@ -7,9 +7,9 @@
   (merge $hubBrand (dict "dataKey" "Enterprise" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_enterprise_title" "priceKey" "pricing_hub_enterprise_price" "priceDescriptionKey" "pricing_hub_enterprise_price_description" "href" "/contact-sales/" "ctaKey" "pricing_hub_enterprise_cta" "event" "pricing-compare-hub-enterprise-cta"))
 }}
 <section aria-labelledby="pricing-comparison-title" class="py-12" x-data="{ first: 'Community', second: 'Standard' }">
-  <div class="mb-8 lg:text-center">
+  <div class="mb-8 text-center">
     <h2 id="pricing-comparison-title" class="font-h2 mb-3 text-balance">{{ i18n "pricing_compare_title" . }}</h2>
-    <p class="max-w-[56ch] text-base text-pretty text-gray-700 lg:mx-auto">{{ i18n "pricing_compare_subtitle" . }}</p>
+    <p class="max-w-[56ch] text-base text-pretty text-gray-700 mx-auto">{{ i18n "pricing_compare_subtitle" . }}</p>
   </div>
   <div class="@container">
     <div class="@min-[72rem]:hidden" x-cloak>
@@ -25,29 +25,47 @@
               <p class="font-headline text-xs font-bold uppercase tracking-wide {{ .brandColor }}">{{ .brand }}</p>
             </div>
             {{- end }}
-            <label for="compare-{{ $side }}" class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}</label>
-            <div class="grid grid-cols-[1fr_--spacing(8)]">
-              <select id="compare-{{ $side }}" name="compare-{{ $side }}" x-model="{{ $side }}" class="input-box col-span-full row-start-1 min-h-12 w-full min-w-0 appearance-none bg-white bg-none pl-2 pr-7 text-base font-medium">
+            {{- $other := cond (eq $side "first") "second" "first" }}
+            <span id="compare-{{ $side }}-label" class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}</span>
+            <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+              <button type="button" x-ref="trigger" id="compare-{{ $side }}-value" aria-haspopup="listbox" :aria-expanded="open" aria-labelledby="compare-{{ $side }}-label compare-{{ $side }}-value"
+                class="input-box flex min-h-12 w-full items-center justify-between gap-1 bg-white text-left text-base font-medium"
+                @click="open = !open"
+                @keydown.escape="open = false"
+                @keydown.down.prevent="open = true; $nextTick(() => $focus.within($refs.list).first())">
+                <span class="min-w-0 truncate">
+                  {{- range $plans }}<span x-show="{{ $side }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</span>{{ end -}}
+                </span>
+                <i class="fa-solid fa-chevron-down shrink-0 text-hub" :class="open && 'rotate-180'" aria-hidden="true"></i>
+              </button>
+              <ul x-show="open" x-cloak x-ref="list" role="listbox" aria-labelledby="compare-{{ $side }}-label"
+                class="absolute inset-x-0 z-20 mt-1 rounded-sm border border-gray-300 bg-white py-1 shadow-md"
+                @keydown.down.prevent="$focus.wrap().next()"
+                @keydown.up.prevent="$focus.wrap().previous()"
+                @keydown.escape="open = false; $refs.trigger.focus()">
                 {{- range $plans }}
-                <option value="{{ .dataKey }}" :disabled="{{ if eq $side "first" }}second{{ else }}first{{ end }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</option>
+                <li role="option" tabindex="0" :aria-selected="{{ $side }} === '{{ .dataKey }}'" :aria-disabled="{{ $other }} === '{{ .dataKey }}'"
+                  class="cursor-pointer px-3 py-2 text-base font-medium hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden aria-selected:bg-hub/10 aria-selected:text-hub aria-disabled:cursor-not-allowed aria-disabled:text-gray-400 aria-disabled:hover:bg-transparent"
+                  @click="if ({{ $other }} !== '{{ .dataKey }}') { {{ $side }} = '{{ .dataKey }}'; open = false; $refs.trigger.focus() }"
+                  @keydown.enter.prevent="$el.click()"
+                  @keydown.space.prevent="$el.click()">{{ i18n .titleKey $ }}</li>
                 {{- end }}
-              </select>
-              <i class="fa-solid fa-chevron-down pointer-events-none col-start-2 row-start-1 place-self-center text-hub" aria-hidden="true"></i>
+              </ul>
             </div>
           </div>
           {{- end }}
         </div>
         {{- range hugo.Data.pricing_comparison }}
         <section>
-          <h3 class="border-b border-gray-200 bg-gray-100 px-4 py-3 font-headline text-base font-semibold text-hub">{{ i18n .SectionKey $ }}</h3>
+          <h3 class="border-b border-gray-200 bg-gray-100 px-4 py-3 text-center @min-[40rem]:text-left font-headline text-base font-semibold text-hub">{{ i18n .SectionKey $ }}</h3>
           <dl>
             {{- range .Rows }}
             {{- $row := . }}
             <div class="grid grid-cols-2 border-b border-gray-200 last:border-b-0 @min-[40rem]:grid-cols-[2fr_1fr_1fr]">
-              <dt class="col-span-full px-4 pt-4 pb-2 font-medium @min-[40rem]:col-span-1 @min-[40rem]:py-4">
+              <dt class="col-span-full px-4 pt-4 pb-2 font-medium text-center @min-[40rem]:text-left @min-[40rem]:col-span-1 @min-[40rem]:py-4">
                 {{ i18n .LabelKey $ }}
                 {{- with .TooltipKey }}
-                <p class="mt-1 text-base font-normal text-gray-700 [&_a]:text-hub [&_a]:underline">{{ i18n . $ | safeHTML }}</p>
+                <p class="mt-1 text-base text-pretty font-normal text-gray-700 [&_a]:text-hub [&_a]:underline">{{ i18n . $ | safeHTML }}</p>
                 {{- end }}
               </dt>
               {{- range $side := slice "first" "second" }}

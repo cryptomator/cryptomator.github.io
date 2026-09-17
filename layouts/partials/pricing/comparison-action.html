@@ -1,7 +1,7 @@
 {{- $page := .page }}
 {{- if eq .plan.dataKey "Standard" }}
 <a x-show="hosting === 'managed'" href="{{ $page.Site.LanguagePrefix }}/hub/managed/" class="btn btn-hub min-h-12 w-full content-center whitespace-normal break-words hyphens-auto" data-umami-event="pricing-compare-hub-standard-managed-cta">
-  {{ i18n "pricing_hub_managed_cta" $page }}
+  {{ i18n "pricing_compare_hub_managed_cta" $page }}
 </a>
 <a x-show="hosting === 'self-hosted'" x-cloak href="{{ $page.Site.LanguagePrefix }}/hub/self-hosted/" class="btn btn-hub min-h-12 w-full content-center whitespace-normal break-words hyphens-auto" data-umami-event="pricing-compare-hub-standard-self-hosted-cta">
   {{ i18n "pricing_hub_self_hosted_cta" $page }}
