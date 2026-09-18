@@ -1,0 +1,166 @@
+{{- $cryptomatorBrand := dict "logo" "/img/logo.svg" "logoAspect" "aspect-1110/942" "brandColor" "text-primary" }}
+{{- $hubBrand := dict "logo" "/img/zero-knowledge-bot.svg" "logoAspect" "aspect-988/877" "brandColor" "text-hub" }}
+{{- $plans := slice
+  (merge $cryptomatorBrand (dict "dataKey" "Cryptomator" "brand" "Cryptomator" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_individual_price_description" "href" "/downloads/" "ctaKey" "pricing_individual_cta" "event" "pricing-compare-individual-cta"))
+  (merge $hubBrand (dict "dataKey" "Community" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_community_title" .) "priceKey" "pricing_free" "priceDescriptionKey" "pricing_hub_community_price_description" "href" "/hub/self-hosted/" "ctaKey" "pricing_compare_hub_self_hosted_cta" "event" "pricing-compare-hub-community-self-hosted-cta"))
+  (merge $hubBrand (dict "dataKey" "Standard" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_standard_title" .) "vatExcluded" true "priceDescriptionKey" "pricing_hub_standard_price_description"))
+  (merge $hubBrand (dict "dataKey" "Enterprise" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_enterprise_title" .) "priceKey" "pricing_hub_enterprise_price" "pricePrefixKey" "pricing_hub_enterprise_price_prefix" "pricePeriodKey" "pricing_hub_enterprise_price_period" "vatExcluded" true "priceDescriptionKey" "pricing_hub_enterprise_price_description" "href" "/contact-sales/" "ctaKey" "pricing_hub_enterprise_cta" "event" "pricing-compare-hub-enterprise-cta"))
+}}
+<section aria-labelledby="pricing-comparison-title" class="py-12" x-data="{ first: 'Community', second: 'Standard' }">
+  <div class="mb-8 text-center">
+    <h2 id="pricing-comparison-title" class="font-h2 mb-3 text-balance">{{ i18n "pricing_compare_title" . }}</h2>
+    <p class="max-w-[56ch] text-base text-pretty text-gray-700 mx-auto">{{ i18n "pricing_compare_subtitle" . }}</p>
+  </div>
+  <div class="@container">
+    <div class="@min-[72rem]:hidden" x-cloak>
+      <p class="mb-4 text-base text-gray-700">{{ i18n "pricing_compare_choose" . }}</p>
+      <div class="white-box">
+        <div class="sticky top-[var(--nav-height,48px)] z-10 grid grid-cols-2 rounded-t-sm border-b border-gray-200 bg-white @min-[40rem]:grid-cols-[2fr_1fr_1fr]">
+          <div class="@max-[40rem]:hidden self-end p-4 font-medium text-gray-700">{{ i18n "pricing_compare_features" . }}</div>
+          {{- range $side := slice "first" "second" }}
+          <div class="min-w-0 border-t-[3px] border-transparent px-2 py-3 {{ if eq $side "first" }}rounded-tl-sm @min-[40rem]:rounded-tl-none{{ else }}rounded-tr-sm{{ end }} @min-[40rem]:px-4" :class="{ 'border-hub bg-hub/10': {{ $side }} === 'Standard', 'border-transparent': {{ $side }} !== 'Standard' }">
+            {{- range $plans }}
+            <div x-show="{{ $side }} === '{{ .dataKey }}'" class="mb-3 text-center">
+              <img src="{{ .logo }}" class="mx-auto mb-2 h-8 {{ .logoAspect }}" alt=""/>
+              <p class="font-headline text-xs font-bold uppercase tracking-wide {{ .brandColor }}">{{ .brand }}</p>
+            </div>
+            {{- end }}
+            <div x-data="{ isDropdownOpen: false }" class="relative" @click.outside="isDropdownOpen = false" @focusout="if (!$el.contains($event.relatedTarget)) isDropdownOpen = false" @keydown.escape.stop.prevent="isDropdownOpen = false; $refs.trigger.focus()" @resize.window="isDropdownOpen = false">
+              <button id="compare-{{ $side }}" type="button" x-ref="trigger" aria-haspopup="menu" aria-controls="compare-{{ $side }}-options" :aria-expanded="isDropdownOpen" @click="isDropdownOpen = !isDropdownOpen; if (isDropdownOpen) $focus.within($refs.options).first()" @keydown.down.prevent="isDropdownOpen = true; $focus.within($refs.options).first()" @keydown.up.prevent="isDropdownOpen = true; $focus.within($refs.options).last()" class="input-box flex min-h-12 w-full min-w-0 items-center justify-between gap-2 bg-white px-2 text-left text-base font-medium">
+                <span class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}: </span>
+                {{- range $plans }}
+                <span x-show="{{ $side }} === '{{ .dataKey }}'">{{ or .tier .brand }}</span>
+                {{- end }}
+                <i class="fa-solid fa-chevron-down shrink-0 text-hub" :class="isDropdownOpen && 'rotate-180'" aria-hidden="true"></i>
+              </button>
+              <ul id="compare-{{ $side }}-options" x-ref="options" x-show="isDropdownOpen" x-cloak role="menu" aria-labelledby="compare-{{ $side }}" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" @keydown.home.prevent="$focus.first()" @keydown.end.prevent="$focus.last()" x-effect="if (isDropdownOpen) $nextTick(() => $el.scrollIntoView({ block: 'nearest' }))" class="absolute left-0 top-full z-20 mt-2 max-h-[calc(100dvh-var(--nav-height,48px)-10rem)] w-full overflow-y-auto rounded-sm border border-gray-200 bg-white py-1 shadow-md">
+                {{- range $plans }}
+                <li role="none">
+                  <button type="button" role="menuitemradio" tabindex="-1" :aria-checked="{{ $side }} === '{{ .dataKey }}'" :disabled="{{ if eq $side "first" }}second{{ else }}first{{ end }} === '{{ .dataKey }}'" @click="{{ $side }} = '{{ .dataKey }}'; isDropdownOpen = false; $refs.trigger.focus()" class="flex min-h-12 w-full items-center gap-2 px-2 text-left text-base text-gray-800 enabled:hover:bg-hub/10 focus-visible:bg-hub/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-secondary disabled:text-gray-400" :class="{ 'bg-hub/10': {{ $side }} === '{{ .dataKey }}' }">
+                    <i class="fa-solid fa-check w-4 shrink-0 text-hub" :class="{ 'invisible': {{ $side }} !== '{{ .dataKey }}' }" aria-hidden="true"></i>
+                    <span>{{ or .tier .brand }}</span>
+                  </button>
+                </li>
+                {{- end }}
+              </ul>
+            </div>
+          </div>
+          {{- end }}
+        </div>
+        {{- range hugo.Data.pricing_comparison }}
+        <section>
+          <h3 class="border-b border-gray-200 bg-gray-100 px-4 py-3 text-center @min-[40rem]:text-left font-headline text-base font-semibold text-hub">{{ i18n .SectionKey $ }}</h3>
+          <dl>
+            {{- range .Rows }}
+            {{- $row := . }}
+            <div class="grid grid-cols-2 border-b border-gray-200 last:border-b-0 @min-[40rem]:grid-cols-[2fr_1fr_1fr]">
+              <dt class="col-span-full px-4 pt-4 pb-2 font-medium text-center @min-[40rem]:text-left @min-[40rem]:col-span-1 @min-[40rem]:py-4">
+                {{ i18n .LabelKey $ }}
+                {{- with .TooltipKey }}
+                <p class="mt-1 text-base text-pretty font-normal text-gray-700 [&_a]:text-hub [&_a]:underline">{{ i18n . $ | safeHTML }}</p>
+                {{- end }}
+              </dt>
+              {{- range $side := slice "first" "second" }}
+              <dd class="flex min-w-0 items-center justify-center px-2 py-3 text-center text-base text-gray-700 tabular-nums @min-[40rem]:p-4" :class="{ 'bg-hub/5': {{ $side }} === 'Standard' }">
+                {{- range $plans }}
+                <div x-show="{{ $side }} === '{{ .dataKey }}'">
+                  <span class="sr-only">{{ .brand }}{{ with .tier }} {{ . }}{{ end }}: </span>
+                  {{ partial "pricing/comparison-value.html" (dict "row" $row "plan" . "page" $) }}
+                </div>
+                {{- end }}
+              </dd>
+              {{- end }}
+            </div>
+            {{- end }}
+          </dl>
+        </section>
+        {{- end }}
+        <div class="grid grid-cols-2 border-t border-gray-200 @min-[40rem]:grid-cols-[2fr_1fr_1fr]">
+          <div class="@max-[40rem]:hidden"></div>
+          {{- range $side := slice "first" "second" }}
+          <div class="min-w-0 p-3 text-center @min-[40rem]:p-4" :class="{ 'bg-hub/5': {{ $side }} === 'Standard' }">
+            {{- range $plans }}
+            <div x-show="{{ $side }} === '{{ .dataKey }}'" class="flex h-full flex-col gap-3">
+              <h3 class="mx-auto w-fit rounded-full px-3 py-1 text-base font-medium {{ if eq .dataKey "Cryptomator" }}bg-primary/10 text-green-700{{ else }}bg-hub/10 text-hub{{ end }}">{{ or .tier .brand }}</h3>
+              <div class="grow">
+                {{ partial "pricing/comparison-price.html" (dict "plan" . "page" $) }}
+              </div>
+              {{ partial "pricing/comparison-action.html" (dict "plan" . "page" $) }}
+            </div>
+            {{- end }}
+          </div>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+    {{/* Without Alpine, the full table stays available as a scrollable fallback. */}}
+    <div class="-mx-4 -my-2 overflow-x-auto whitespace-nowrap @min-[72rem]:overflow-visible" :class="{ '@max-[72rem]:hidden': true }">
+      <div class="inline-block min-w-full px-4 py-2 align-middle">
+        <table class="white-box w-full min-w-[880px] border-separate border-spacing-0 text-sm @min-[72rem]:min-w-full" aria-labelledby="pricing-comparison-title">
+          <thead>
+            <tr>
+              <td class="compare-th w-[28%] px-5 py-3.5 text-left"><span class="sr-only">{{ i18n "pricing_compare_features" . }}</span></td>
+              {{- range $plans }}
+              <th scope="col" class="compare-th px-4 py-3.5 text-center{{ if eq .dataKey "Standard" }} bg-linear-to-b from-hub/10 to-hub/10 border-t-[3px] border-t-hub{{ end }}">
+                <img src="{{ .logo }}" class="mx-auto mb-2 h-8 {{ .logoAspect }}" alt=""/>
+                <p class="mb-1 font-headline text-xs font-bold uppercase tracking-wide {{ .brandColor }}">{{ .brand }}</p>
+                {{- /* Cryptomator has no plan name; the empty line keeps its logo level with the Hub columns. */}}
+                <p class="font-headline font-medium">{{ with .tier }}{{ . }}{{ else }}&nbsp;{{ end }}</p>
+              </th>
+              {{- end }}
+            </tr>
+          </thead>
+          {{- range $sectionIndex, $section := hugo.Data.pricing_comparison }}
+          <tbody aria-label="{{ i18n .SectionKey $ }}">
+            <tr>
+              <td class="px-5 pb-1.5 pt-4">
+                <h3 class="text-xs font-bold uppercase tracking-wide text-gray-700">{{ i18n .SectionKey $ }}</h3>
+              </td>
+              {{- range $plans }}
+              <td{{ if eq .dataKey "Standard" }} class="bg-hub/5"{{ end }}></td>
+              {{- end }}
+            </tr>
+            {{- range $rowIndex, $row := .Rows }}
+            <tr>
+              <th scope="row" class="whitespace-normal border-t border-gray-200 px-5 py-3 text-left font-medium text-gray-700">
+                {{ i18n .LabelKey $ }}
+                {{- with .TooltipKey }}
+                {{- $tooltipId := printf "tooltip-compare-%d-%d" $sectionIndex $rowIndex }}
+                <div class="has-tooltip">
+                  <i class="fa-solid fa-info-circle text-gray-700" tabindex="0" role="img" aria-label="{{ i18n "more_information" $ }}" aria-describedby="{{ $tooltipId }}"></i>
+                  <div id="{{ $tooltipId }}" role="tooltip" class="tooltip tooltip-center w-64 whitespace-normal rounded-sm bg-white p-3 text-sm font-normal shadow-md [&_a]:text-hub [&_a]:underline">{{ i18n . $ | safeHTML }}</div>
+                </div>
+                {{- end }}
+              </th>
+              {{- range $plans }}
+              <td class="border-t border-gray-200 px-4 py-3 text-center font-medium tabular-nums{{ if eq .dataKey "Standard" }} bg-hub/5{{ end }}">
+                {{ partial "pricing/comparison-value.html" (dict "row" $row "plan" . "page" $) }}
+              </td>
+              {{- end }}
+            </tr>
+            {{- end }}
+          </tbody>
+          {{- end }}
+          <tfoot>
+            <tr>
+              <td class="border-t border-gray-200"></td>
+              {{- range $plans }}
+              <td class="border-t border-gray-200 px-4 pt-4 text-center align-top whitespace-normal{{ if eq .dataKey "Standard" }} bg-hub/5{{ end }}">
+                {{ partial "pricing/comparison-price.html" (dict "plan" . "page" $) }}
+              </td>
+              {{- end }}
+            </tr>
+            <tr>
+              <td></td>
+              {{- range $plans }}
+              <td class="px-4 pb-4 pt-3 text-center align-top whitespace-normal{{ if eq .dataKey "Standard" }} bg-hub/5{{ end }}">
+                {{ partial "pricing/comparison-action.html" (dict "plan" . "page" $) }}
+              </td>
+              {{- end }}
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
