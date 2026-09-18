@@ -1141,7 +1141,7 @@
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_benefit_1
-  translation: "All Cryptomator features, plus:"
+  translation: "All Cryptomator features"
 - id: pricing_hub_standard_benefit_2
   translation: "User and group management"
 - id: pricing_hub_standard_benefit_3
@@ -1159,10 +1159,14 @@
   translation: "Enterprise"
 - id: pricing_hub_enterprise_subtitle
   translation: "For large-scale deployments with premium support."
+- id: pricing_hub_enterprise_price_prefix
+  translation: "from"
 - id: pricing_hub_enterprise_price
-  translation: "Custom"
+  translation: "€10,000"
+- id: pricing_hub_enterprise_price_period
+  translation: "/yr"
 - id: pricing_hub_enterprise_price_description
-  translation: "tailored pricing"
+  translation: "starts at 50 seats"
 - id: pricing_hub_enterprise_cta
   translation: "Contact Us"
 - id: pricing_hub_enterprise_benefit_1
@@ -1208,6 +1212,8 @@
   translation: "Hosting"
 - id: pricing_compare_section_security
   translation: "Security & Compliance"
+- id: pricing_compare_section_procurement
+  translation: "Procurement & Contracts"
 - id: pricing_compare_section_support
   translation: "Support"
 - id: pricing_compare_seats
@@ -1223,7 +1229,7 @@
 - id: pricing_compare_key_management
   translation: "Zero-knowledge key management"
 - id: pricing_compare_mobile_access
-  translation: "Full access via Mobile apps for all users"
+  translation: "Full access via Mobile apps"
 - id: pricing_compare_self_hosted
   translation: "Self-hosted deployment"
 - id: pricing_compare_managed_hosting
@@ -1232,6 +1238,12 @@
   translation: "Audit logs"
 - id: pricing_compare_emergency_access
   translation: "Emergency Access"
+- id: pricing_compare_security_questionnaires
+  translation: "Security questionnaire assistance"
+- id: pricing_compare_contract_terms
+  translation: "Individual contract terms"
+- id: pricing_compare_procurement
+  translation: "Procurement support"
 - id: pricing_compare_community_support
   translation: "Community support"
 - id: pricing_compare_email_support
@@ -1240,10 +1252,12 @@
   translation: "Expert training and assistance"
 - id: pricing_compare_account_manager
   translation: "Dedicated account manager"
-- id: pricing_compare_unlimited
-  translation: "Unlimited"
-- id: pricing_compare_one_time_purchase
-  translation: "One-time purchase"
+- id: pricing_compare_seats_standard
+  translation: "3+"
+- id: pricing_compare_seats_enterprise
+  translation: "50+"
+- id: pricing_compare_optional_upgrade
+  translation: "Optional upgrade"
 - id: pricing_compare_priority
   translation: "Priority"
 

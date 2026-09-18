@@ -6,8 +6,8 @@
     - LabelKey: "pricing_compare_seats"
       Cryptomator: 1
       Community: 5
-      Standard: "pricing_compare_unlimited"
-      Enterprise: "pricing_compare_unlimited"
+      Standard: "pricing_compare_seats_standard"
+      Enterprise: "pricing_compare_seats_enterprise"
     - LabelKey: "pricing_compare_unlimited_vaults"
       Cryptomator: true
       Community: true
@@ -37,8 +37,8 @@
       Standard: true
       Enterprise: true
     - LabelKey: "pricing_compare_mobile_access"
-      Cryptomator: "pricing_compare_one_time_purchase"
-      Community: "pricing_compare_one_time_purchase"
+      Cryptomator: "pricing_compare_optional_upgrade"
+      Community: "pricing_compare_optional_upgrade"
       Standard: true
       Enterprise: true
 - SectionKey: "pricing_compare_section_hosting"
@@ -65,7 +65,24 @@
       Cryptomator: false
       Community: false
       Standard: false
-      Enterprise: "coming_soon"
+      Enterprise: true
+    - LabelKey: "pricing_compare_security_questionnaires"
+      Cryptomator: false
+      Community: false
+      Standard: false
+      Enterprise: true
+- SectionKey: "pricing_compare_section_procurement"
+  Rows:
+    - LabelKey: "pricing_compare_contract_terms"
+      Cryptomator: false
+      Community: false
+      Standard: false
+      Enterprise: true
+    - LabelKey: "pricing_compare_procurement"
+      Cryptomator: false
+      Community: false
+      Standard: false
+      Enterprise: true
 - SectionKey: "pricing_compare_section_support"
   Rows:
     - LabelKey: "pricing_compare_community_support"

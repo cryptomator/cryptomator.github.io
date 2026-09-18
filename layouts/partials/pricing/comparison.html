@@ -1,10 +1,10 @@
 {{- $cryptomatorBrand := dict "logo" "/img/logo.svg" "logoAspect" "aspect-1110/942" "brandColor" "text-primary" }}
 {{- $hubBrand := dict "logo" "/img/zero-knowledge-bot.svg" "logoAspect" "aspect-988/877" "brandColor" "text-hub" }}
 {{- $plans := slice
-  (merge $cryptomatorBrand (dict "dataKey" "Cryptomator" "brand" "Cryptomator" "titleKey" "pricing_individual_title" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_individual_price_description" "href" "/downloads/" "ctaKey" "pricing_individual_cta" "event" "pricing-compare-individual-cta"))
-  (merge $hubBrand (dict "dataKey" "Community" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_community_title" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_hub_community_price_description" "href" "/hub/self-hosted/" "ctaKey" "pricing_compare_hub_self_hosted_cta" "event" "pricing-compare-hub-community-self-hosted-cta"))
-  (merge $hubBrand (dict "dataKey" "Standard" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_standard_title" "priceDescriptionKey" "pricing_hub_standard_price_description"))
-  (merge $hubBrand (dict "dataKey" "Enterprise" "brand" "Cryptomator Hub" "titleKey" "pricing_hub_enterprise_title" "priceKey" "pricing_hub_enterprise_price" "priceDescriptionKey" "pricing_hub_enterprise_price_description" "href" "/contact-sales/" "ctaKey" "pricing_hub_enterprise_cta" "event" "pricing-compare-hub-enterprise-cta"))
+  (merge $cryptomatorBrand (dict "dataKey" "Cryptomator" "brand" "Cryptomator" "priceKey" "pricing_free" "priceDescriptionKey" "pricing_individual_price_description" "href" "/downloads/" "ctaKey" "pricing_individual_cta" "event" "pricing-compare-individual-cta"))
+  (merge $hubBrand (dict "dataKey" "Community" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_community_title" .) "priceKey" "pricing_free" "priceDescriptionKey" "pricing_hub_community_price_description" "href" "/hub/self-hosted/" "ctaKey" "pricing_compare_hub_self_hosted_cta" "event" "pricing-compare-hub-community-self-hosted-cta"))
+  (merge $hubBrand (dict "dataKey" "Standard" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_standard_title" .) "vatExcluded" true "priceDescriptionKey" "pricing_hub_standard_price_description"))
+  (merge $hubBrand (dict "dataKey" "Enterprise" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_enterprise_title" .) "priceKey" "pricing_hub_enterprise_price" "pricePrefixKey" "pricing_hub_enterprise_price_prefix" "pricePeriodKey" "pricing_hub_enterprise_price_period" "vatExcluded" true "priceDescriptionKey" "pricing_hub_enterprise_price_description" "href" "/contact-sales/" "ctaKey" "pricing_hub_enterprise_cta" "event" "pricing-compare-hub-enterprise-cta"))
 }}
 <section aria-labelledby="pricing-comparison-title" class="py-12" x-data="{ first: 'Community', second: 'Standard' }">
   <div class="mb-8 text-center">
@@ -29,7 +29,7 @@
               <button id="compare-{{ $side }}" type="button" x-ref="trigger" aria-haspopup="menu" aria-controls="compare-{{ $side }}-options" :aria-expanded="isDropdownOpen" @click="isDropdownOpen = !isDropdownOpen; if (isDropdownOpen) $focus.within($refs.options).first()" @keydown.down.prevent="isDropdownOpen = true; $focus.within($refs.options).first()" @keydown.up.prevent="isDropdownOpen = true; $focus.within($refs.options).last()" class="input-box flex min-h-12 w-full min-w-0 items-center justify-between gap-2 bg-white px-2 text-left text-base font-medium">
                 <span class="sr-only">{{ i18n (printf "pricing_compare_%s_plan" $side) $ }}: </span>
                 {{- range $plans }}
-                <span x-show="{{ $side }} === '{{ .dataKey }}'">{{ i18n .titleKey $ }}</span>
+                <span x-show="{{ $side }} === '{{ .dataKey }}'">{{ or .tier .brand }}</span>
                 {{- end }}
                 <i class="fa-solid fa-chevron-down shrink-0 text-hub" :class="isDropdownOpen && 'rotate-180'" aria-hidden="true"></i>
               </button>
@@ -38,7 +38,7 @@
                 <li role="none">
                   <button type="button" role="menuitemradio" tabindex="-1" :aria-checked="{{ $side }} === '{{ .dataKey }}'" :disabled="{{ if eq $side "first" }}second{{ else }}first{{ end }} === '{{ .dataKey }}'" @click="{{ $side }} = '{{ .dataKey }}'; isDropdownOpen = false; $refs.trigger.focus()" class="flex min-h-12 w-full items-center gap-2 px-2 text-left text-base text-gray-800 enabled:hover:bg-hub/10 focus-visible:bg-hub/10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-secondary disabled:text-gray-400" :class="{ 'bg-hub/10': {{ $side }} === '{{ .dataKey }}' }">
                     <i class="fa-solid fa-check w-4 shrink-0 text-hub" :class="{ 'invisible': {{ $side }} !== '{{ .dataKey }}' }" aria-hidden="true"></i>
-                    <span>{{ i18n .titleKey $ }}</span>
+                    <span>{{ or .tier .brand }}</span>
                   </button>
                 </li>
                 {{- end }}
@@ -64,7 +64,7 @@
               <dd class="flex min-w-0 items-center justify-center px-2 py-3 text-center text-base text-gray-700 tabular-nums @min-[40rem]:p-4" :class="{ 'bg-hub/5': {{ $side }} === 'Standard' }">
                 {{- range $plans }}
                 <div x-show="{{ $side }} === '{{ .dataKey }}'">
-                  <span class="sr-only">{{ .brand }} {{ i18n .titleKey $ }}: </span>
+                  <span class="sr-only">{{ .brand }}{{ with .tier }} {{ . }}{{ end }}: </span>
                   {{ partial "pricing/comparison-value.html" (dict "row" $row "plan" . "page" $) }}
                 </div>
                 {{- end }}
@@ -81,7 +81,7 @@
           <div class="min-w-0 p-3 text-center @min-[40rem]:p-4" :class="{ 'bg-hub/5': {{ $side }} === 'Standard' }">
             {{- range $plans }}
             <div x-show="{{ $side }} === '{{ .dataKey }}'" class="flex h-full flex-col gap-3">
-              <h3 class="mx-auto w-fit rounded-full px-3 py-1 text-base font-medium {{ if eq .dataKey "Cryptomator" }}bg-primary/10 text-green-700{{ else }}bg-hub/10 text-hub{{ end }}">{{ i18n .titleKey $ }}</h3>
+              <h3 class="mx-auto w-fit rounded-full px-3 py-1 text-base font-medium {{ if eq .dataKey "Cryptomator" }}bg-primary/10 text-green-700{{ else }}bg-hub/10 text-hub{{ end }}">{{ or .tier .brand }}</h3>
               <div class="grow">
                 {{ partial "pricing/comparison-price.html" (dict "plan" . "page" $) }}
               </div>
@@ -104,7 +104,8 @@
               <th scope="col" class="compare-th px-4 py-3.5 text-center{{ if eq .dataKey "Standard" }} bg-linear-to-b from-hub/10 to-hub/10 border-t-[3px] border-t-hub{{ end }}">
                 <img src="{{ .logo }}" class="mx-auto mb-2 h-8 {{ .logoAspect }}" alt=""/>
                 <p class="mb-1 font-headline text-xs font-bold uppercase tracking-wide {{ .brandColor }}">{{ .brand }}</p>
-                <p class="font-headline font-medium">{{ i18n .titleKey $ }}</p>
+                {{- /* Cryptomator has no plan name; the empty line keeps its logo level with the Hub columns. */}}
+                <p class="font-headline font-medium">{{ with .tier }}{{ . }}{{ else }}&nbsp;{{ end }}</p>
               </th>
               {{- end }}
             </tr>
