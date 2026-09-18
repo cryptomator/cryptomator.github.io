@@ -1270,8 +1270,8 @@
 # Solutions Single
 - id: solutions_hero_get_started
   translation: "Jetzt loslegen"
-- id: solutions_hero_book_demo
-  translation: "Demo buchen"
+- id: solutions_hero_contact_sales
+  translation: "Vertrieb kontaktieren"
 - id: solutions_trusted_by_title
   translation: "Vertrauen von 100+ Organisationen weltweit"
 - id: solutions_single_contact_title
@@ -1280,74 +1280,6 @@
   translation: "Unser Team unterstützt dich bei der Umsetzung mit Beratung zu Konfiguration und Setup."
 - id: solutions_single_contact_button
   translation: "Kontaktiere uns"
-
-# Book a Demo
-- id: book_demo_first_name
-  translation: "Vorname"
-- id: book_demo_last_name
-  translation: "Nachname"
-- id: book_demo_email
-  translation: "E-Mail-Adresse"
-- id: book_demo_phone
-  translation: "Telefonnummer (optional)"
-- id: book_demo_phone_placeholder
-  translation: "z.B. +49 123 4567890"
-- id: book_demo_company
-  translation: "Unternehmen (optional)"
-- id: book_demo_learn_about
-  translation: "Worüber möchtest du mehr erfahren?"
-- id: book_demo_interest_setup
-  translation: "Setup"
-- id: book_demo_interest_features
-  translation: "Features & Arbeitsabläufe"
-- id: book_demo_interest_integration
-  translation: "Cloud-Speicher-Integration"
-- id: book_demo_interest_licensing
-  translation: "Lizenzierung"
-- id: book_demo_interest_security
-  translation: "Sicherheit"
-- id: book_demo_interest_other
-  translation: "Sonstiges"
-- id: book_demo_attendees
-  translation: "Wer wird teilnehmen?"
-- id: book_demo_attendee_it
-  translation: "IT / Entwicklung"
-- id: book_demo_attendee_compliance
-  translation: "Compliance / Sicherheit"
-- id: book_demo_attendee_management
-  translation: "Management"
-- id: book_demo_attendee_procurement
-  translation: "Beschaffung"
-- id: book_demo_attendee_other
-  translation: "Nicht sicher"
-- id: book_demo_message
-  translation: "Nachricht"
-- id: book_demo_message_placeholder
-  translation: "Erzähle uns mehr über deine spezifischen Bedürfnisse oder Fragen..."
-- id: book_demo_submit
-  translation: "Demo buchen"
-- id: book_demo_success_title
-  translation: "Demo-Anfrage erhalten!"
-- id: book_demo_success_message
-  translation: "Vielen Dank für dein Interesse an Cryptomator Hub. Wir werden uns bald bei dir melden, um deine persönliche Demo zu vereinbaren."
-- id: book_demo_sidebar_title
-  translation: "Was passiert nach dem Ausfüllen dieses Formulars?"
-- id: book_demo_step_1_title
-  translation: "Bestätigung deiner Anfrage"
-- id: book_demo_step_1_description
-  translation: "Wir werden uns innerhalb eines Werktages bei dir melden, um deine Demo-Anfrage zu bestätigen."
-- id: book_demo_step_2_title
-  translation: "Vorbereitung deiner Demo"
-- id: book_demo_step_2_description
-  translation: "Unser Team wird die Demo basierend auf deinen spezifischen Interessen und Bedürfnissen anpassen."
-- id: book_demo_step_3_title
-  translation: "Durchführung der Plattform-Demo"
-- id: book_demo_step_3_description
-  translation: "Erlebe die Features von Cryptomator Hub durch eine live, interaktive Demonstration."
-- id: book_demo_step_4_title
-  translation: "Nachbereitung"
-- id: book_demo_step_4_description
-  translation: "Wir stellen zusätzliche Ressourcen zur Verfügung und beantworten alle deine Fragen."
 
 # Contact Sales
 - id: contact_sales_first_name
@@ -1425,77 +1357,9 @@
 - id: withdrawal_what_happens_title
   translation: "Was passiert als Nächstes?"
 
-# Partner Form
-- id: partner_first_name
-  translation: "Vorname"
-- id: partner_last_name
-  translation: "Nachname"
-- id: partner_email
-  translation: "E-Mail-Adresse"
-- id: partner_phone
-  translation: "Telefonnummer (optional)"
-- id: partner_phone_placeholder
-  translation: "z.B. +49 123 4567890"
-- id: partner_company
-  translation: "Unternehmen"
-- id: partner_website
-  translation: "Unternehmens-Website (optional)"
-- id: partner_type
-  translation: "Partnerschaftstyp"
-- id: partner_type_placeholder
-  translation: "Bitte wähle einen Partnerschaftstyp"
-- id: partner_type_reseller
-  translation: "Reseller-Partner"
-- id: partner_type_technology
-  translation: "Technologie-Partner"
-- id: partner_type_consulting
-  translation: "Beratungs-Partner"
-- id: partner_type_distribution
-  translation: "Distributions-Partner"
-- id: partner_type_other
-  translation: "Andere"
-- id: partner_message
-  translation: "Partnerschaftsbeschreibung"
-- id: partner_message_placeholder
-  translation: "Bitte beschreibe dein Unternehmen, deine Dienstleistungen und wie du mit Cryptomator zusammenarbeiten möchtest..."
-- id: partner_submit
-  translation: "Anfrage senden"
-- id: partner_success_title
-  translation: "Partnerschaftsanfrage erhalten!"
-- id: partner_success_message
-  translation: "Vielen Dank für dein Interesse, Cryptomator-Partner zu werden."
-- id: partner_success_next_steps
-  translation: "Unser Partnership-Team wird deine Bewerbung prüfen und sich innerhalb von 2-3 Werktagen mit dir in Verbindung setzen, um die nächsten Schritte zu besprechen."
-- id: partner_what_happens_title
-  translation: "Was passiert nach dem Ausfüllen dieses Formulars?"
-- id: partner_step_1_title
-  translation: "Bewerbung erhalten"
-- id: partner_step_1_description
-  translation: "Wir bestätigen den Erhalt deiner Partnerschaftsanfrage innerhalb weniger Stunden."
-- id: partner_step_2_title
-  translation: "Prüfung durch unser Team"
-- id: partner_step_2_description
-  translation: "Unser Partnership-Team prüft deine Bewerbung und bereitet eine maßgeschneiderte Antwort vor."
-- id: partner_step_3_title
-  translation: "Persönliche Kontaktaufnahme"
-- id: partner_step_3_description
-  translation: "Du erhältst innerhalb von 2-3 Werktagen eine detaillierte Antwort über die nächsten Schritte."
-
 # Other Contact
 - id: other_contact_looking_for_title
   translation: "Suchst du nach etwas anderem?"
-- id: other_contact_link_contact_sales
-  translation: "Vertrieb kontaktieren"
-- id: other_contact_link_contact_sales_description
-  translation: "Besprich Preise, technische Integration und Compliance-Anforderungen mit unserem Vertriebsteam."
-- id: other_contact_link_book_demo
-  translation: "Demo buchen"
-- id: other_contact_link_book_demo_description
-  translation: "Buche eine personalisierte Demo, um Cryptomator Hub in Aktion mit deinem Anwendungsfall zu sehen."
-- id: other_contact_link_partner
-  translation: "Partner werden"
-- id: other_contact_link_partner_description
-  translation: "Tritt unserem Partnerprogramm bei und integriere Cryptomator in dein Geschäftsangebot."
 - id: other_contact_link_contact
   translation: "Allgemeine Kontakt"
 - id: other_contact_link_contact_description
@@ -1520,8 +1384,8 @@
   translation: "Entdecken Sie, wie Cryptomator Hub auch Ihr Unternehmen bei der sicheren Verwaltung sensibler Daten unterstützen kann."
 - id: success_story_cta_get_started
   translation: "Jetzt starten"
-- id: success_story_cta_book_demo
-  translation: "Demo buchen"
+- id: success_story_cta_contact_sales
+  translation: "Vertrieb kontaktieren"
 - id: success_story_read_link
   translation: "Erfolgsgeschichte lesen"
 
