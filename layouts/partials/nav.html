@@ -11,7 +11,8 @@
   </div>
   {{- else if .Scratch.Get "webinarBannerActive" -}}
   {{- $webinarPath := printf "%s/webinar/" .Site.LanguagePrefix -}}
-  <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5" x-show="webinar.state !== 'none'">
+  {{- /* x-show keeps the strip in the DOM, so mark it collapsed for the :has() nav-offset rule in custom.css. */ -}}
+  <div class="nav-promo-strip w-full bg-primary text-center text-sm text-white p-0.5" x-show="webinar.state !== 'none'" :class="webinar.state === 'none' && 'nav-promo-strip-collapsed'">
     <p>
       <span x-show="webinar.state !== 'upcoming' && webinar.state !== 'live'">{{ i18n "webinar_banner" | safeHTML }}</span>
       <span x-show="webinar.state === 'upcoming'" x-cloak>

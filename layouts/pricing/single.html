@@ -185,7 +185,7 @@
             <a x-show="hosting === 'managed'" href="{{ .Site.LanguagePrefix }}/hub/managed/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-managed-cta">
               {{ i18n "pricing_hub_managed_cta" . }}
             </a>
-            <a x-show="hosting === 'self-hosted'" href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
+            <a x-show="hosting === 'self-hosted'" x-cloak href="{{ .Site.LanguagePrefix }}/hub/self-hosted/" role="button" class="btn btn-hub w-full" data-umami-event="pricing-hub-standard-self-hosted-cta">
               {{ i18n "pricing_hub_self_hosted_cta" . }}
             </a>
           </div>
@@ -239,8 +239,16 @@
             <p class="font-p mb-6">
               {{ i18n "pricing_hub_enterprise_subtitle" . }}
             </p>
-            <p class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
-              {{ i18n "pricing_hub_enterprise_price" . }}
+            <p class="flex items-baseline gap-2">
+              <span class="font-bold text-2xl md:text-3xl lg:text-4xl leading-relaxed">
+                {{- /* The space after the prefix sits inside its span so it takes the label size, not the price size. */ -}}
+                <span class="text-xs md:text-sm lg:text-base font-normal text-gray-700">{{ i18n "pricing_hub_enterprise_price_prefix" . }} </span>
+                {{- i18n "pricing_hub_enterprise_price" . -}}
+                <span class="text-xs md:text-sm lg:text-base font-normal text-gray-700">{{ i18n "pricing_hub_enterprise_price_period" . }}</span>
+              </span>
+              <span class="text-xs md:text-sm lg:text-base text-gray-700">
+                {{ i18n "pricing_vat_excluded" . }}
+              </span>
             </p>
             <p class="text-sm md:text-base lg:text-lg text-gray-500 mb-4">
               {{ i18n "pricing_hub_enterprise_price_description" . }}
@@ -256,12 +264,9 @@
                 <span class="fa-li"><i class="fa-solid fa-plus text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_1" . }}</span>
               </li>
-              <li class="flex items-center">
+              <li>
                 <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
                 <span>{{ i18n "pricing_hub_enterprise_benefit_2" . }}</span>
-                <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-hub/10 text-hub ml-2">
-                  {{ i18n "coming_soon" . }}
-                </span>
               </li>
               <li>
                 <span class="fa-li"><i class="fa-solid fa-check text-hub"></i></span>
@@ -346,7 +351,10 @@
         </div>
       </section>
 
+      {{ partial "pricing/comparison.html" . }}
+
       {{/* Support Us Section */}}
+      {{- $data := index hugo.Data $.Site.Language.Lang }}
       <section class="container text-center py-12">
         <h2 class="font-h2 mb-4">{{ i18n "pricing_support_us_title" . }}</h2>
         <p class="font-p mb-4">{{ i18n "pricing_support_us_description" . }}</p>
@@ -366,7 +374,6 @@
           <h2 class="font-h2">{{ i18n "faq_title" . }}</h2>
         </header>
 
-        {{- $data := index hugo.Data $.Site.Language.Lang }}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
             <h3 class="flex items-center gap-3 mb-4">

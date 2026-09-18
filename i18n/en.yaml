@@ -1127,6 +1127,8 @@
   translation: "Community"
 - id: pricing_hub_community_subtitle
   translation: "Free and open source for small teams. Deploy on your own infrastructure with full control over your data."
+- id: pricing_hub_community_price_description
+  translation: "self-hosted"
 - id: pricing_hub_community_benefit_1
   translation: "Includes 5 seats"
 - id: pricing_hub_community_benefit_2
@@ -1139,7 +1141,7 @@
 - id: pricing_hub_standard_price_description
   translation: "per seat, per month"
 - id: pricing_hub_standard_benefit_1
-  translation: "All Cryptomator features, plus:"
+  translation: "All Cryptomator features"
 - id: pricing_hub_standard_benefit_2
   translation: "User and group management"
 - id: pricing_hub_standard_benefit_3
@@ -1157,10 +1159,14 @@
   translation: "Enterprise"
 - id: pricing_hub_enterprise_subtitle
   translation: "For large-scale deployments with premium support."
+- id: pricing_hub_enterprise_price_prefix
+  translation: "from"
 - id: pricing_hub_enterprise_price
-  translation: "Custom"
+  translation: "€10,000"
+- id: pricing_hub_enterprise_price_period
+  translation: "/yr"
 - id: pricing_hub_enterprise_price_description
-  translation: "tailored pricing"
+  translation: "starts at 50 seats"
 - id: pricing_hub_enterprise_cta
   translation: "Contact Us"
 - id: pricing_hub_enterprise_benefit_1
@@ -1173,6 +1179,87 @@
   translation: "Dedicated account manager"
 - id: pricing_hub_enterprise_benefit_5
   translation: "Priority email support"
+
+- id: pricing_compare_title
+  translation: "Compare All Features"
+- id: pricing_compare_subtitle
+  translation: "See which plan fits your needs, feature by feature."
+- id: pricing_compare_choose
+  translation: "Choose two plans to compare."
+- id: pricing_compare_first_plan
+  translation: "First plan"
+- id: pricing_compare_second_plan
+  translation: "Second plan"
+- id: more_information
+  translation: "More information"
+- id: pricing_compare_features
+  translation: "Features"
+- id: pricing_compare_included
+  translation: "Included"
+- id: pricing_compare_not_included
+  translation: "Not included"
+- id: pricing_compare_hub_self_hosted_cta
+  translation: "Deploy Now"
+- id: pricing_compare_hub_managed_cta
+  translation: "Try for Free"
+- id: pricing_compare_managed_hosting_tooltip
+  translation: "Maintained and updated by our team in an ISO/IEC 27001:2022 certified data center in the EU."
+- id: pricing_compare_section_basics
+  translation: "Basics"
+- id: pricing_compare_section_collaboration
+  translation: "Team Collaboration"
+- id: pricing_compare_section_hosting
+  translation: "Hosting"
+- id: pricing_compare_section_security
+  translation: "Security & Compliance"
+- id: pricing_compare_section_procurement
+  translation: "Procurement & Contracts"
+- id: pricing_compare_section_support
+  translation: "Support"
+- id: pricing_compare_seats
+  translation: "Seats"
+- id: pricing_compare_unlimited_vaults
+  translation: "Unlimited vaults"
+- id: pricing_compare_any_cloud
+  translation: "Works with any cloud storage"
+- id: pricing_compare_desktop_access
+  translation: "Full access via Desktop app"
+- id: pricing_compare_user_management
+  translation: "User and group management"
+- id: pricing_compare_key_management
+  translation: "Zero-knowledge key management"
+- id: pricing_compare_mobile_access
+  translation: "Full access via Mobile apps"
+- id: pricing_compare_self_hosted
+  translation: "Self-hosted deployment"
+- id: pricing_compare_managed_hosting
+  translation: "Managed hosting available"
+- id: pricing_compare_audit_logs
+  translation: "Audit logs"
+- id: pricing_compare_emergency_access
+  translation: "Emergency Access"
+- id: pricing_compare_security_questionnaires
+  translation: "Security questionnaire assistance"
+- id: pricing_compare_contract_terms
+  translation: "Individual contract terms"
+- id: pricing_compare_procurement
+  translation: "Procurement support"
+- id: pricing_compare_community_support
+  translation: "Community support"
+- id: pricing_compare_email_support
+  translation: "Email support"
+- id: pricing_compare_expert_training
+  translation: "Expert training and assistance"
+- id: pricing_compare_account_manager
+  translation: "Dedicated account manager"
+- id: pricing_compare_seats_standard
+  translation: "3+"
+- id: pricing_compare_seats_enterprise
+  translation: "50+"
+- id: pricing_compare_optional_upgrade
+  translation: "Optional upgrade"
+- id: pricing_compare_priority
+  translation: "Priority"
 
 - id: pricing_support_us_title
   translation: "Want to support our open-source project?"

@@ -1,0 +1,14 @@
+{{- if eq .plan.dataKey "Standard" }}
+<p x-text="formattedPrice" class="font-semibold text-2xl @min-[72rem]:text-lg tabular-nums"></p>
+{{- else }}
+<p class="font-semibold text-2xl @min-[72rem]:text-lg">
+  {{- /* The space after the prefix sits inside its span so it takes the label size, not the price size. */}}
+  {{- with .plan.pricePrefixKey }}<span class="text-base font-normal text-gray-700">{{ i18n . $.page }} </span>{{ end -}}
+  {{ i18n .plan.priceKey .page }}
+  {{- with .plan.pricePeriodKey }}<span class="text-base font-normal text-gray-700">{{ i18n . $.page }}</span>{{ end -}}
+</p>
+{{- end }}
+{{- if .plan.vatExcluded }}
+<p class="text-gray-700">{{ i18n "pricing_vat_excluded" .page }}</p>
+{{- end }}
+<p class="text-gray-700">{{ i18n .plan.priceDescriptionKey .page }}</p>
