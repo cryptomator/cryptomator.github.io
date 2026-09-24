@@ -17,6 +17,10 @@ webinar:
       - /paddle-checkout/
       - /hub/billing/
 
+whitePaperIds:
+  zero-knowledge-cloud-encryption: 6a6c7f263c8baba47
+  gdpr-compliant-cloud-collaboration: 6aa9482509159afdb
+
 salePromotion:
   banner:
     enabled: false
