@@ -7,6 +7,9 @@ on:
 jobs:
   # BUILD
   build:
+    permissions:
+      contents: read # Required for checkout
+      pages: read # Required for actions/configure-pages
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -73,6 +76,7 @@ jobs:
   deploy-staging:
     if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/develop'
     name: Deploy Staging to GitHub Pages
+    permissions: {}
     runs-on: ubuntu-latest
     needs: [build]
     steps:
