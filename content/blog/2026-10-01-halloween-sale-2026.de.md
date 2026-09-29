@@ -44,6 +44,8 @@ Aber eine Sache nimmt dir clientseitige Verschlüsselung zuverlässig ab: **Wer 
 
 Genau das ist die Schutzebene, die alle fünf Monster gleichzeitig ins Leere laufen lässt.
 
+Wer in der Cloud wofür verantwortlich ist und an welcher Stelle clientseitige Verschlüsselung dazugehört – all das schauen wir uns in unserem [Beitrag zum European Cybersecurity Month](/de/blog/2026/10/02/european-cybersecurity-month-2026/) genauer an.
+
 **Jetzt Angebot sichern – bis Halloween!**
 
 Bleib sicher. Bleib verschlüsselt.  
