@@ -19,7 +19,7 @@ webinar:
 
 salePromotion:
   banner:
-    enabled: false
+    enabled: true
     excludePaths:
       - /downloads-thanks/
       - /paddle-checkout/

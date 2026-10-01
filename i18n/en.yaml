@@ -1535,19 +1535,19 @@
 
 # Sale
 - id: nav_promotion
-  translation: ":sunny: Summer Sale: 50%* Off Cryptomator – Until&nbsp;July&nbsp;7!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2026/07/01/summer-sale-2026/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
+  translation: ":jack_o_lantern: Halloween Sale: 33%* Off Cryptomator – Until&nbsp;October&nbsp;31!&nbsp;<a class=\"whitespace-nowrap font-bold\" href=\"/blog/2026/10/01/halloween-sale-2026/\">Learn More&nbsp;<span aria-hidden=\"true\">&rarr;</span></a>"
 - id: sale_off
   translation: "Off"
 - id: for_individuals_header_kicker_sale
-  translation: "Summer Sale*"
+  translation: "Halloween Sale*"
 - id: home_header_kicker_sale
-  translation: "Summer Sale"
+  translation: "Halloween Sale"
 - id: pricing_supporter_cert_price_discounted
-  translation: "from €14.99"
+  translation: "from €19.99"
 - id: pricing_android_price_discounted
-  translation: "€14.99"
+  translation: "€19.99"
 - id: pricing_ios_price_discounted
-  translation: "€14.99"
+  translation: "€19.99"
 - id: pricing_discount_note
   translation: "The discount amount may vary by region."
 
