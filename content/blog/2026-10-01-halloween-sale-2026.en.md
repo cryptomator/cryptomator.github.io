@@ -44,6 +44,8 @@ But there's one thing client-side encryption reliably takes off your plate: **wh
 
 That's the one layer that sends all five monsters home empty-handed.
 
+Who's responsible for what in the cloud — and where client-side encryption fits into that — is something we take a closer look at in our [post for European Cybersecurity Month](/blog/2026/10/02/european-cybersecurity-month-2026/).
+
 **Grab the offer now — you have until Halloween!**
 
 Stay safe. Stay encrypted.  
