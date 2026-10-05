@@ -4,3 +4,4 @@ public/
 *.DS_Store
 .hugo_build.lock
 package-lock.json
+.vscode/
