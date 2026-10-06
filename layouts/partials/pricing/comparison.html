@@ -6,9 +6,9 @@
   (merge $hubBrand (dict "dataKey" "Standard" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_standard_title" .) "vatExcluded" true "priceDescriptionKey" "pricing_hub_standard_price_description"))
   (merge $hubBrand (dict "dataKey" "Enterprise" "brand" "Cryptomator Hub" "tier" (i18n "pricing_hub_enterprise_title" .) "priceKey" "pricing_hub_enterprise_price" "pricePrefixKey" "pricing_hub_enterprise_price_prefix" "pricePeriodKey" "pricing_hub_enterprise_price_period" "vatExcluded" true "priceDescriptionKey" "pricing_hub_enterprise_price_description" "href" "/contact-sales/" "ctaKey" "pricing_hub_enterprise_cta" "event" "pricing-compare-hub-enterprise-cta"))
 }}
-<section aria-labelledby="pricing-comparison-title" class="py-12" x-data="{ first: 'Community', second: 'Standard' }">
+<section aria-labelledby="features" class="py-12" x-data="{ first: 'Community', second: 'Standard' }">
   <div class="mb-8 text-center">
-    <h2 id="pricing-comparison-title" class="font-h2 mb-3 text-balance">{{ i18n "pricing_compare_title" . }}</h2>
+    <h2 id="features" class="font-h2 mb-3 text-balance">{{ i18n "pricing_compare_title" . }}</h2>
     <p class="max-w-[56ch] text-base text-pretty text-gray-700 mx-auto">{{ i18n "pricing_compare_subtitle" . }}</p>
   </div>
   <div class="@container">
@@ -96,7 +96,7 @@
     {{/* Without Alpine, the full table stays available as a scrollable fallback. */}}
     <div class="-mx-4 -my-2 overflow-x-auto whitespace-nowrap @min-[72rem]:overflow-visible" :class="{ '@max-[72rem]:hidden': true }">
       <div class="inline-block min-w-full px-4 py-2 align-middle">
-        <table class="white-box w-full min-w-[880px] border-separate border-spacing-0 text-sm @min-[72rem]:min-w-full" aria-labelledby="pricing-comparison-title">
+        <table class="white-box w-full min-w-[880px] border-separate border-spacing-0 text-sm @min-[72rem]:min-w-full" aria-labelledby="features">
           <thead>
             <tr>
               <td class="compare-th w-[28%] px-5 py-3.5 text-left"><span class="sr-only">{{ i18n "pricing_compare_features" . }}</span></td>
