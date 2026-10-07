@@ -283,7 +283,7 @@
   translation: "Vertraut von Millionen weltweit"
 
 - id: for_individuals_downloads_title
-  translation: "4M+"
+  translation: "6M+"
 - id: for_individuals_downloads_description
   translation: "Downloads"
 - id: for_individuals_expertise_title
@@ -295,7 +295,7 @@
 - id: for_individuals_open_source_description
   translation: "Engagement"
 - id: for_individuals_dau_title
-  translation: "150k+"
+  translation: "160k+"
 - id: for_individuals_dau_description
   translation: "Täglich aktive Nutzer"
 
