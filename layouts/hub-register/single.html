@@ -104,7 +104,7 @@
               </h2>
               <p class="font-p mb-6">{{ i18n "hub_ce_registration_step_2_instructions" | safeHTML }}</p>
               <p class="font-p text-sm mb-2">
-                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}
+                {{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_self_hosted_terms_and_privacy" | safeHTML)) }}
               </p>
               <p class="font-p text-sm mb-2">
                 {{ partial "checkbox.html" (dict "context" . "alpineVariable" "submitData.acceptNewsletter" "label" (i18n "accept_hub_newsletter_optional")) }}
