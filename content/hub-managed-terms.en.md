@@ -3,7 +3,7 @@ title: "Terms & Conditions for Cryptomator Hub (SaaS)"
 url: "/hub/managed/terms"
 ---
 
-_Effective date: May 2026_
+_Effective date: October 2026_
 
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -229,11 +229,22 @@ The right of withdrawal expires prematurely if
 ## §18 Out-of-Court Dispute Resolution as well as Information According to § 36 VSBG {#dispute-resolution}
 The Provider is neither obligated nor willing to participate in a dispute resolution procedure before a consumer arbitration board.
 
-## §19 Final Clauses {#final-clauses}
-19.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
+## §19 Changes to these Terms {#changes}
+19.1 The Provider is entitled to amend these Terms with effect for the future insofar as this is necessary for a valid reason and does not unreasonably disadvantage the Customer. A valid reason exists in particular in the event of changes in the legal situation or in supreme court case law, official orders, technical developments of the Software ([§ 3.5](#services-software)), the introduction of new functions or services, and to close regulatory gaps that have arisen subsequently.
+
+19.2 Changes that materially affect the main contractual obligations of the parties, in particular the type and scope of the services owed, the remuneration, and the contract duration and termination, are excluded. Price adjustments are governed exclusively by [§ 14.5](#fees).
+
+19.3 The Provider shall notify the Customer of the intended changes in text form (e.g. by email to the admin account holder) no later than six weeks before they take effect. The notification shall contain the amended provisions and the date on which they take effect.
+
+19.4 The changes shall be deemed approved if the Customer does not object to them in text form before they take effect. In the notification, the Provider shall specifically inform the Customer of the right to object, the deadline, and the consequences of failing to object.
+
+19.5 If the Customer objects, the contract shall continue under the previous terms; the right of both parties to ordinary termination ([§ 15](#termination)) remains unaffected. In addition, the Customer may terminate the contract with effect from the date on which the changes take effect.
+
+## §20 Final Clauses {#final-clauses}
+20.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
  
-19.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing.
+20.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing, unless they are made in accordance with [§ 19](#changes).
  
-19.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
+20.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
  
-19.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, insofar as the Customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.
+20.4 The place of jurisdiction for all disputes arising from or in connection with this contract shall be Bonn, insofar as the Customer is a merchant, a legal entity under public law or a special fund under public law. Any exclusive place of jurisdiction shall have priority.

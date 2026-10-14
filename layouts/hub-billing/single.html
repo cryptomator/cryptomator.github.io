@@ -503,7 +503,7 @@
                             {{ i18n "hub_billing_checkout_invoice_instruction" . }}
                           </p>
                           <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
-                          <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
+                          <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_self_hosted_terms_and_privacy" | safeHTML)) }}</p>
                           {{ $invoiceChallengeUrl := printf "%s/billing/espocrm/checkout/challenge" .Site.Params.apiBaseUrl }}
                           {{/* Challenges expire within a minute — too short to fill the form — so the buy button
                                solves a fresh one (reset+verify) and the verified event submits the checkout via a
@@ -679,7 +679,7 @@
                         {{ i18n "hub_billing_checkout_standard_instruction" . }}
                       </p>
                       <p x-show="subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_managed_terms_and_privacy" | safeHTML)) }}</p>
-                      <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_terms_and_privacy" | safeHTML)) }}</p>
+                      <p x-show="!subscriptionData.customBilling?.managed" class="font-p mb-4">{{ partial "checkbox.html" (dict "context" . "alpineVariable" "acceptTerms" "label" (i18n "accept_hub_self_hosted_terms_and_privacy" | safeHTML)) }}</p>
                       {{ $cardChallengeUrl := printf "%s/billing/paddle-classic/checkout/challenge" .Site.Params.apiBaseUrl }}
                       {{ partial "captcha.html" (dict "challengeUrl" $cardChallengeUrl "captchaPayload" "subscriptionData.cardCaptcha" "captchaState" "captchaState" "ref" "cardCaptcha") }}
                       <button :disabled="subscriptionData.inProgress || !acceptTerms || captchaState == 'verifying'" type="submit" class="btn btn-hub w-full" :class="!(subscriptionData.oldLicense && !subscriptionData.customBilling?.managed) && 'lg:w-1/2'">

@@ -3,7 +3,7 @@ title: "AGB für Cryptomator Hub (Self-Hosted)"
 url: "/de/hub/self-hosted/terms"
 ---
 
-_Stand: September 2026_
+_Stand: Oktober 2026_
 
 Die nachfolgenden allgemeinen Geschäftsbedingungen gelten ausschließlich im Rahmen der vertraglichen Beziehungen zwischen der Skymatic GmbH (nachfolgend „Provider“) und den Kundinnen und Kunden (m/w/d, nachfolgend „Kunde“) von „Cryptomator Hub“ zum Betrieb auf einer vom Kunden selbst bereitgestellten Infrastruktur (Self-Hosting).
 {.text-lg .leading-relaxed .text-gray-700}
@@ -113,7 +113,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 
 9.3 Die Gewährleistung für nur unerhebliche Minderungen der Tauglichkeit der Leistung wird ausgeschlossen. Die verschuldensunabhängige Haftung gem. § 536a Abs. 1 BGB für Mängel, die bereits bei Vertragsschluss vorlagen, ist ausgeschlossen.
 
-9.4 Für die unentgeltliche Überlassung nach § 2 lit. b gelten anstelle von § 9.1 die Vorschriften über die Leihe (§§ 598 ff. BGB).
+9.4 Für die unentgeltliche Überlassung nach § 2 lit. b gelten anstelle von § 9.1 die Vorschriften über die Leihe (§§ 598 ff. BGB) entsprechend.
 
 ## §10 Haftung {#liability}
 10.1 Die Parteien haften unbeschränkt bei Vorsatz, grober Fahrlässigkeit sowie bei schuldhafter Verletzung von Leben, Körper oder Gesundheit.
@@ -216,11 +216,22 @@ Das Widerrufsrecht erlischt vorzeitig, wenn
 ## §17 Außergerichtliche Streitschlichtung sowie Hinweis nach § 36 VSBG {#dispute-resolution}
 Der Provider ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
 
-## §18 Schlussbestimmungen {#final-clauses}
-18.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
+## §18 Änderungen dieser AGB {#changes}
+18.1 Der Provider ist berechtigt, diese AGB mit Wirkung für die Zukunft zu ändern, soweit dies aus triftigem Grund erforderlich ist und den Kunden nicht unangemessen benachteiligt. Ein triftiger Grund liegt insbesondere vor bei Änderungen der Rechtslage oder der höchstrichterlichen Rechtsprechung, behördlichen Anordnungen, technischen Weiterentwicklungen der Software ([§ 3.4](#services-software)), der Einführung neuer Funktionen oder Leistungen sowie zur Schließung nachträglich entstandener Regelungslücken.
+
+18.2 Ausgenommen sind Änderungen, die die Hauptleistungspflichten der Parteien wesentlich betreffen, insbesondere Art und Umfang der geschuldeten Leistungen, die Vergütung sowie Laufzeit und Kündigung. Preisanpassungen richten sich ausschließlich nach [§ 13.4](#fees).
+
+18.3 Der Provider teilt dem Kunden die beabsichtigten Änderungen spätestens sechs Wochen vor ihrem Wirksamwerden in Textform (z. B. per E-Mail an die bei Bezug der Lizenz angegebene E-Mail-Adresse) mit. Die Mitteilung enthält die geänderten Regelungen sowie den Zeitpunkt ihres Wirksamwerdens.
+
+18.4 Die Änderungen gelten als genehmigt, wenn der Kunde ihnen nicht bis zum Zeitpunkt ihres Wirksamwerdens in Textform widerspricht. Der Provider wird den Kunden in der Mitteilung auf das Widerspruchsrecht, die Frist und die Folgen eines unterlassenen Widerspruchs gesondert hinweisen.
+
+18.5 Widerspricht der Kunde, gilt der Vertrag zu den bisherigen Bedingungen fort; das Recht beider Parteien zur ordentlichen Kündigung ([§ 14](#termination)) bleibt unberührt. Darüber hinaus kann der Kunde den Vertrag auf den Zeitpunkt des Wirksamwerdens der Änderungen kündigen.
+
+## §19 Schlussbestimmungen {#final-clauses}
+19.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
  
-18.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Schriftform.
+19.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Schriftform, soweit sie nicht nach [§ 18](#changes) erfolgen.
  
-18.3 Es gilt deutsches Recht unter Ausschluss der kollisionsrechtlichen Bestimmungen und des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenverkauf vom 11.4.1980 (UN-Kaufrecht).
+19.3 Es gilt deutsches Recht unter Ausschluss der kollisionsrechtlichen Bestimmungen und des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenverkauf vom 11.4.1980 (UN-Kaufrecht).
  
-18.4 Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Bonn, soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder ein öffentlich-rechtliches Sondervermögen ist. Ein etwaiger ausschließlicher Gerichtsstand ist vorrangig.
+19.4 Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist Bonn, soweit der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder ein öffentlich-rechtliches Sondervermögen ist. Ein etwaiger ausschließlicher Gerichtsstand ist vorrangig.
