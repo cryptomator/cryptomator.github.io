@@ -19,15 +19,16 @@ Soweit nicht anders gekennzeichnet, sind die im Text genannten Ausdrücke wie fo
 * **Cryptomator Hub**: ist eine Software, welche im Kontext dieses Vertrages vom Provider zum Betrieb auf der Infrastruktur des Kunden bereitgestellt wird. Cryptomator Hub dient zur Verwaltung des Zugriffs auf Tresore und der damit verbundenen Speicherung von Metadaten, nicht jedoch zur Speicherung der verschlüsselten Tresorinhalte.
 * **Infrastruktur des Kunden**: bezeichnet die vom Kunden selbst betriebene oder für ihn durch Dritte bereitgestellte Hard- und Software (insb. Server, Betriebssystem, Container-Plattform, Datenbank und Identity Provider), auf welcher der Kunde Cryptomator Hub installiert und betreibt.
 * **Instanz**: ist die vom Kunden auf seiner Infrastruktur installierte und betriebene Ausfertigung von Cryptomator Hub.
-* **Lizenzschlüssel**: ist die vom Provider bereitgestellte Zeichenfolge, mit welcher der Kunde in seiner Instanz den vertraglich vereinbarten Funktionsumfang sowie die Anzahl der gebuchten aktiven Nutzer freischaltet.
+* **Lizenzschlüssel**: ist die vom Provider bereitgestellte Zeichenfolge, mit welcher der Kunde in seiner Instanz den vertraglich vereinbarten Funktionsumfang sowie die Anzahl der gebuchten Sitze freischaltet.
 * **Nutzer und Gruppen**: können in Cryptomator Hub angelegt oder über eine externe Software wie z.B. Active Directory importiert werden. Nutzern oder Gruppen kann mit Cryptomator Hub der Zugriff auf einen oder mehrere Tresore gewährt werden.
 * **Aktive Nutzer**: haben direkt oder durch eine Gruppenmitgliedschaft indirekt Zugriff auf mindestens einen Tresor erhalten.
+* **Sitze**: bezeichnen die vertraglich vereinbarte Höchstzahl aktiver Nutzer. Jeder aktive Nutzer belegt einen Sitz.
 
 ## §2 Vertragsgegenstand {#subject}
 Gegenstand des Vertrags ist die zeitlich auf die Dauer des Vertrags begrenzte Gewährung der Nutzung der Software „Cryptomator Hub“ (nachfolgend „Software“) zum Betrieb auf der Infrastruktur des Kunden. Die Überlassung erfolgt wahlweise
 
-a) entgeltlich gegen Bereitstellung eines Lizenzschlüssels mit dem vereinbarten Funktionsumfang und der vereinbarten Anzahl aktiver Nutzer, oder
-b) unentgeltlich als im Funktionsumfang und in der Anzahl aktiver Nutzer beschränkte Community-Edition.
+a) entgeltlich gegen Bereitstellung eines Lizenzschlüssels mit dem vereinbarten Funktionsumfang und der vereinbarten Anzahl an Sitzen, oder
+b) unentgeltlich als im Funktionsumfang und in der Anzahl der Sitze beschränkte Community-Edition.
 {type=a}
 
 Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fällen dem Kunden.
@@ -35,7 +36,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 ## §3 Leistungen des Providers; Software {#services-software}
 3.1 Der Provider stellt dem Kunden die jeweils aktuellste Version der Software in elektronischer Form (insb. als Container-Images) zum Bezug bereit. Die Installation und der Betrieb der Software erfolgen durch den Kunden auf dessen Infrastruktur. Die Software ist für den Einsatz gemeinsam mit der ebenfalls vom Provider bereitgestellten Anwendung Cryptomator konzipiert, welche zur Verschlüsselung von Daten auf vom Kunden selbst gewählten lokalen oder durch Dritte bereitstellten Speicherplatz dient.
 
-3.2 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form einen Lizenzschlüssel. Der Kunde verwaltet mithilfe des Admin-Accounts seiner Instanz die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der aktiven Nutzer der Software erhöhen oder reduzieren. Der Provider stellt sicher, dass die Anzahl der gebuchten aktiven Nutzer zeitnah über den Lizenzschlüssel nutzbar ist.
+3.2 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form einen Lizenzschlüssel. Der Kunde verwaltet mithilfe des Admin-Accounts seiner Instanz die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der Sitze erhöhen oder reduzieren. Der Provider stellt sicher, dass die Anzahl der gebuchten Sitze zeitnah über den Lizenzschlüssel nutzbar ist.
 
 3.3 Weiterhin stellt der Provider dem Kunden nach Vertragsschluss in elektronischer Form eine Benutzerdokumentation bereit. Diese ist in ihrer jeweils aktuellen Version jederzeit während der Nutzung der Software online einsehbar und beschreibt die vertraglich geschuldete Beschaffenheit der Software.
 
@@ -142,10 +143,10 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 ## §12 Community-Edition; Testphase {#trial}
 12.1 Unabhängig des Widerrufsrechts ([§ 15](#withdrawal)) steht dem Kunden, d.h. sowohl dem Verbraucher wie auch Unternehmer, das Recht zu, die Software 30 Tage kostenfrei und für beide Seiten unverbindlich zu nutzen (nachfolgend „Testphase“). In der Testphase hat der Kunde insbesondere keinen Anspruch auf uneingeschränkten Funktionsumfang der Software.
 
-12.2 Der Provider stellt darüber hinaus eine im Funktionsumfang und in der Anzahl aktiver Nutzer beschränkte Community-Edition der Software unentgeltlich bereit. Für deren Nutzung gelten die Regelungen zur Vergütung ([§ 13](#fees)) nicht; ein Anspruch auf Support ([§ 5](#support)) besteht nicht.
+12.2 Der Provider stellt darüber hinaus eine im Funktionsumfang und in der Anzahl der Sitze beschränkte Community-Edition der Software unentgeltlich bereit. Für deren Nutzung gelten die Regelungen zur Vergütung ([§ 13](#fees)) nicht; ein Anspruch auf Support ([§ 5](#support)) besteht nicht.
 
 ## §13 Vergütungs- und Zahlungsbedingungen {#fees}
-13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich das dort jeweils ausgewiesene Entgelt pro aktiven Nutzer an den Provider zu zahlen.
+13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich das dort jeweils ausgewiesene Entgelt pro gebuchtem Sitz an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
 
 13.2 Die Rechnungsstellung erfolgt je nach gewähltem Modell jeweils für einen Monat oder für zwölf Monate im Voraus. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) ist die Rechnung sofort zur Zahlung fällig.
 

@@ -22,6 +22,7 @@ Unless otherwise indicated, the expressions mentioned in the text are defined as
 * **Cryptomator Hub**: is software which, in the context of this Agreement, the Provider provides as a web application accessible via the browser. Cryptomator Hub is used to manage access to Vaults and the associated storage of metadata, but not to store the encrypted Vault contents.
 * **Users and Groups**: can be created in Cryptomator Hub or imported via external software such as Active Directory. Users or Groups can be granted access to one or more Vaults using Cryptomator Hub.
 * **Active Users**: have been given access to at least one Vault directly or indirectly through a Group membership.
+* **Seats**: refers to the contractually agreed maximum number of Active Users. Each Active User occupies one Seat.
 
 ## §2 Subject of Contract {#subject}
 The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter referred to as the "Software") and the required computing resources to it as a service hosted on the Provider's servers. The provision is against payment and limited in time to the duration of the contract.
@@ -31,7 +32,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 3.2 The Provider warrants the functionality and availability of the software for the duration of the contractual relationship and shall maintain it in a condition suitable for use in accordance with the contract.
 
-3.3 The Provider shall provide the Customer with access data for an admin account in electronic form upon request at the latest. The Customer shall manage the access data of the Users itself with the help of the admin account. The Customer may increase or decrease the number of Active Users of the Software as required. The Provider shall ensure that the number of booked Active Users is usable in a timely manner.
+3.3 The Provider shall provide the Customer with access data for an admin account in electronic form upon request at the latest. The Customer shall manage the access data of the Users itself with the help of the admin account. The Customer may increase or decrease the number of Seats as required. The Provider shall ensure that the number of booked Seats is usable in a timely manner.
 
 3.4 Furthermore, the Provider shall provide the Customer with user documentation in electronic form after conclusion of the contract. The current version of this documentation can be viewed online at any time during the use of the software.
 
@@ -153,7 +154,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 ## §14 Remuneration and Payment Conditions {#fees}
-14.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per Active User stated there to the Provider on a monthly basis.
+14.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per booked Seat stated there to the Provider on a monthly basis, irrespective of how many Seats are actually occupied by Active Users.
 
 14.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 

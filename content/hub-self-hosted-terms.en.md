@@ -22,15 +22,16 @@ Unless otherwise indicated, the expressions mentioned in the text are defined as
 * **Cryptomator Hub**: is software which, in the context of this Agreement, the Provider makes available for operation on the Customer's Infrastructure. Cryptomator Hub is used to manage access to Vaults and the associated storage of metadata, but not to store the encrypted Vault contents.
 * **Customer's Infrastructure**: refers to the hardware and software operated by the Customer itself or provided for the Customer by third parties (in particular servers, operating system, container platform, database and identity provider) on which the Customer installs and operates Cryptomator Hub.
 * **Instance**: is the copy of Cryptomator Hub installed and operated by the Customer on its Infrastructure.
-* **License Key**: is the character string provided by the Provider with which the Customer unlocks, in its Instance, the contractually agreed scope of functions as well as the number of booked Active Users.
+* **License Key**: is the character string provided by the Provider with which the Customer unlocks, in its Instance, the contractually agreed scope of functions as well as the number of booked Seats.
 * **Users and Groups**: can be created in Cryptomator Hub or imported via external software such as Active Directory. Users or Groups can be granted access to one or more Vaults using Cryptomator Hub.
 * **Active Users**: have been given access to at least one Vault directly or indirectly through a Group membership.
+* **Seats**: refers to the contractually agreed maximum number of Active Users. Each Active User occupies one Seat.
 
 ## §2 Subject of Contract {#subject}
 The subject of the agreement is the granting of the use of the software "Cryptomator Hub" (hereinafter referred to as the "Software") for operation on the Customer's Infrastructure, limited in time to the duration of the contract. The Software is provided at the Customer's option
 
-a) against payment, by provision of a License Key with the agreed scope of functions and the agreed number of Active Users, or
-b) free of charge, as a Community Edition limited in its scope of functions and in the number of Active Users.
+a) against payment, by provision of a License Key with the agreed scope of functions and the agreed number of Seats, or
+b) free of charge, as a Community Edition limited in its scope of functions and in the number of Seats.
 {type=a}
 
 In both cases, the provision of the resources required for operation is incumbent upon the Customer.
@@ -38,7 +39,7 @@ In both cases, the provision of the resources required for operation is incumben
 ## §3 Services of the Providers; Software {#services-software}
 3.1 The Provider makes the most current version of the Software available to the Customer for retrieval in electronic form (in particular as container images). Installation and operation of the Software are carried out by the Customer on its Infrastructure. The Software is designed to be used together with the Cryptomator application, also provided by the Provider, which is used to encrypt data on local storage space selected by the Customer or provided by third parties.
 
-3.2 The Provider shall provide the Customer with a License Key in electronic form at the latest upon request. The Customer shall manage the access data of the Users itself with the help of the admin account of its Instance. The Customer may increase or decrease the number of Active Users of the Software as required. The Provider shall ensure that the number of booked Active Users is usable in a timely manner via the License Key.
+3.2 The Provider shall provide the Customer with a License Key in electronic form at the latest upon request. The Customer shall manage the access data of the Users itself with the help of the admin account of its Instance. The Customer may increase or decrease the number of Seats as required. The Provider shall ensure that the number of booked Seats is usable in a timely manner via the License Key.
 
 3.3 Furthermore, the Provider shall provide the Customer with user documentation in electronic form after conclusion of the contract. The current version of this documentation can be viewed online at any time during the use of the Software and describes the contractually owed quality of the Software.
 
@@ -145,10 +146,10 @@ In both cases, the provision of the resources required for operation is incumben
 ## §12 Community Edition; Test Phase {#trial}
 12.1 Irrespective of the right of withdrawal ([§ 15](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the Software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the test phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software.
 
-12.2 In addition, the Provider provides a Community Edition of the Software free of charge, limited in its scope of functions and in the number of Active Users. The provisions on remuneration ([§ 13](#fees)) do not apply to its use; there is no claim to support ([§ 5](#support)).
+12.2 In addition, the Provider provides a Community Edition of the Software free of charge, limited in its scope of functions and in the number of Seats. The provisions on remuneration ([§ 13](#fees)) do not apply to its use; there is no claim to support ([§ 5](#support)).
 
 ## §13 Remuneration and Payment Conditions {#fees}
-13.1 The Customer can view the prices for the Software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay the fee per Active User stated there to the Provider on a monthly basis.
+13.1 The Customer can view the prices for the Software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay the fee per booked Seat stated there to the Provider on a monthly basis, irrespective of how many Seats are actually occupied by Active Users.
 
 13.2 Depending on the model chosen, invoices shall be issued either for one month or for twelve months in advance. Unless otherwise agreed (individual agreement, discount campaign or similar), the invoice shall be due for payment immediately.
 
