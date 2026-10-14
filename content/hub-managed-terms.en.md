@@ -8,7 +8,7 @@ _Effective date: October 2026_
 The following General Terms and Conditions apply exclusively within the framework of the contractual relationship between Skymatic GmbH (hereinafter "Provider") and the customers (m/f/d, hereinafter "Customer") of "Cryptomator Hub" provided as Software as a Service (SaaS).
 {.text-lg .leading-relaxed .text-gray-700}
 
-Conflicting or different general terms and conditions of the users do not become part of the contract. This also applies if the Provider does not expressly object to them.
+Conflicting or different general terms and conditions of the Customer do not become part of the contract. This also applies if the Provider does not expressly object to them.
 {.text-lg .leading-relaxed .text-gray-700}
 
 Contract language is German. This is a translation from our [German AGB](/de/hub/managed/terms/). German Version shall prevail.
@@ -18,10 +18,10 @@ Contract language is German. This is a translation from our [German AGB](/de/hub
 Unless otherwise indicated, the expressions mentioned in the text are defined as follows:
 
 * **Cryptomator**: refers to the application that can be installed on the Customer's devices and is used for client-side encryption of data. The encrypted data is stored in a location chosen by the user.
-* **Vaults**: are the storage locations created in Cryptomator, which can contain any number of encrypted documents and folders. Each vault is protected by an individual key.
-* **Cryptomator Hub**: is software which, in the context of this Agreement, the Provider provides as a web application accessible via the browser. Cryptomator Hub is used to manage access to vaults and the associated storage of metadata, but not to store the encrypted vault contents.
-* **Users and groups**: can be created in Cryptomator Hub or imported via external software such as Active Directory. Users or groups can be granted access to one or more vaults using Cryptomator Hub.
-* **Active users**: have been given access to at least one vault directly or indirectly through a group membership.
+* **Vaults**: are the storage locations created in Cryptomator, which can contain any number of encrypted documents and folders. Each Vault is protected by an individual key.
+* **Cryptomator Hub**: is software which, in the context of this Agreement, the Provider provides as a web application accessible via the browser. Cryptomator Hub is used to manage access to Vaults and the associated storage of metadata, but not to store the encrypted Vault contents.
+* **Users and Groups**: can be created in Cryptomator Hub or imported via external software such as Active Directory. Users or Groups can be granted access to one or more Vaults using Cryptomator Hub.
+* **Active Users**: have been given access to at least one Vault directly or indirectly through a Group membership.
 
 ## §2 Subject of Contract {#subject}
 The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter referred to as the "Software") and the required computing resources to it as a service hosted on the Provider's servers. The provision is against payment and limited in time to the duration of the contract.
@@ -31,7 +31,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 3.2 The Provider warrants the functionality and availability of the software for the duration of the contractual relationship and shall maintain it in a condition suitable for use in accordance with the contract.
 
-3.3 The Provider shall provide the Customer with access data for an admin account in electronic form upon request at the latest. The Customer shall manage the access data of the Users itself with the help of the admin account. The Customer may increase or decrease the number of active users of the Software as required. The Provider shall ensure that the number of booked active users is usable in a timely manner.
+3.3 The Provider shall provide the Customer with access data for an admin account in electronic form upon request at the latest. The Customer shall manage the access data of the Users itself with the help of the admin account. The Customer may increase or decrease the number of Active Users of the Software as required. The Provider shall ensure that the number of booked Active Users is usable in a timely manner.
 
 3.4 Furthermore, the Provider shall provide the Customer with user documentation in electronic form after conclusion of the contract. The current version of this documentation can be viewed online at any time during the use of the software.
 
@@ -47,7 +47,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 3.10 The Provider may provide its services and support through third parties as subcontractors. It shall be liable for the performance of services by subcontractors as for its own actions.
 
-3.11 The Provider is entitled to collect, process and store aggregated, non-personal statistical and technical data about the use of the Software (e.g. total number of active users, number of vaults, number of groups, feature usage counters, error rates and similar technical metrics) for the purposes of operating, securing, maintaining, and improving the Software as well as capacity planning. Such data does not contain personal data within the meaning of Art. 4 No. 1 GDPR, in particular no user identifiers, email addresses, IP addresses or vault names. The Provider shall not disclose this data to third parties. Processing by subcontractors engaged in accordance with §3.10, who are bound by equivalent confidentiality and data-protection obligations, shall remain unaffected.
+3.11 The Provider is entitled to collect, process and store aggregated, non-personal statistical and technical data about the use of the Software (e.g. total number of Active Users, number of Vaults, number of Groups, feature usage counters, error rates and similar technical metrics) for the purposes of operating, securing, maintaining, and improving the Software as well as capacity planning. Such data does not contain personal data within the meaning of Art. 4 No. 1 GDPR, in particular no user identifiers, email addresses, IP addresses or Vault names. The Provider shall not disclose this data to third parties. Processing by subcontractors engaged in accordance with §3.10, who are bound by equivalent confidentiality and data-protection obligations, shall remain unaffected.
 
 ## §4 Scope and Rights of Usage {#scope-and-rights}
 4.1 The software shall not be physically transferred to the Customer.
@@ -104,7 +104,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 ## §7 Obligations of the Customer {#customer-obligations}
 7.1 The Customer shall protect the access data transmitted to it against access by third parties and keep it safe in accordance with the state of the art. The Customer shall ensure that use only occurs to the contractually agreed extent. The Provider shall be notified immediately of any unauthorized access.
 
-7.2 Furthermore, the Customer is obliged to keep the recovery key generated by the software during the creation of the vault safe. It is pointed out that recovery of encrypted data without the key is technically impossible. Accordingly, the recovery key is the only means by which the Customer can recover its data in the event of a failure.
+7.2 Furthermore, the Customer is obliged to keep the recovery key generated by the software during the creation of the Vault safe. It is pointed out that recovery of encrypted data without the key is technically impossible. Accordingly, the recovery key is the only means by which the Customer can recover its data in the event of a failure.
 
 7.3 The Customer is obligated not to use the provided software for the storage or processing of data, the use of which violates applicable law, official orders, third party rights or agreements with third parties.
 
@@ -153,7 +153,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 ## §14 Remuneration and Payment Conditions {#fees}
-14.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per active user stated there to the Provider on a monthly basis.
+14.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per Active User stated there to the Provider on a monthly basis.
 
 14.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 
@@ -161,7 +161,7 @@ Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.
 
 14.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
 
-14.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the software (development costs) justified by legal changes (e.g. concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the User of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The User may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 15](#termination)). In the event that the Provider, through no fault of the User, notifies the User at a time when the User is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the User may terminate the contractual relationship as of the effective date of the price adjustment.
+14.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the software (development costs) justified by legal changes (e.g. concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 15](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
 
 ## §15 Contract Duration and Termination {#termination}
 15.1 The Agreement shall enter into force after the Customer's request and provision of access to the Software by the Provider and shall be concluded for an indefinite period of time.
