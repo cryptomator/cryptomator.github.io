@@ -20,7 +20,7 @@ Soweit nicht anders gekennzeichnet, sind die im Text genannten Ausdrücke wie fo
 * **Infrastruktur des Kunden**: bezeichnet die vom Kunden selbst betriebene oder für ihn durch Dritte bereitgestellte Hard- und Software (insb. Server, Betriebssystem, Container-Plattform, Datenbank und Identity Provider), auf welcher der Kunde Cryptomator Hub installiert und betreibt.
 * **Instanz**: ist die vom Kunden auf seiner Infrastruktur installierte und betriebene Ausfertigung von Cryptomator Hub.
 * **Lizenzschlüssel**: ist die vom Provider bereitgestellte Zeichenfolge, mit welcher der Kunde in seiner Instanz den vertraglich vereinbarten Funktionsumfang sowie die Anzahl der gebuchten Sitze freischaltet.
-* **Nutzer und Gruppen**: können in Cryptomator Hub angelegt oder über eine externe Software wie z.B. Active Directory importiert werden. Nutzern oder Gruppen kann mit Cryptomator Hub der Zugriff auf einen oder mehrere Tresore gewährt werden.
+* **Nutzer und Gruppen**: können in Cryptomator Hub angelegt oder über eine externe Software wie z. B. Active Directory importiert werden. Nutzern oder Gruppen kann mit Cryptomator Hub der Zugriff auf einen oder mehrere Tresore gewährt werden.
 * **Aktive Nutzer**: haben direkt oder durch eine Gruppenmitgliedschaft indirekt Zugriff auf mindestens einen Tresor erhalten.
 * **Sitze**: bezeichnen die vertraglich vereinbarte Höchstzahl aktiver Nutzer. Jeder aktive Nutzer belegt einen Sitz.
 
@@ -34,7 +34,7 @@ b) unentgeltlich als im Funktionsumfang und in der Anzahl der Sitze beschränkte
 Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fällen dem Kunden.
 
 ## §3 Leistungen des Providers; Software {#services-software}
-3.1 Der Provider stellt dem Kunden die jeweils aktuellste Version der Software in elektronischer Form (insb. als Container-Images) zum Bezug bereit. Die Installation und der Betrieb der Software erfolgen durch den Kunden auf dessen Infrastruktur. Die Software ist für den Einsatz gemeinsam mit der ebenfalls vom Provider bereitgestellten Anwendung Cryptomator konzipiert, welche zur Verschlüsselung von Daten auf vom Kunden selbst gewählten lokalen oder durch Dritte bereitstellten Speicherplatz dient.
+3.1 Der Provider stellt dem Kunden die jeweils aktuellste Version der Software in elektronischer Form (insb. als Container-Images) zum Bezug bereit. Die Installation und der Betrieb der Software erfolgen durch den Kunden auf dessen Infrastruktur. Die Software ist für den Einsatz gemeinsam mit der ebenfalls vom Provider bereitgestellten Anwendung Cryptomator konzipiert, welche zur Verschlüsselung von Daten auf vom Kunden selbst gewähltem lokalem oder durch Dritte bereitgestelltem Speicherplatz dient.
 
 3.2 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form einen Lizenzschlüssel. Der Kunde verwaltet mithilfe des Admin-Accounts seiner Instanz die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der Sitze erhöhen oder reduzieren. Der Provider stellt sicher, dass die Anzahl der gebuchten Sitze zeitnah über den Lizenzschlüssel nutzbar ist.
 
@@ -42,7 +42,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 
 3.4 Der Provider kann die Software jederzeit aktualisieren sowie weiterentwickeln und insbesondere aufgrund einer geänderten Rechtslage, technischer Entwicklungen oder zur Verbesserung der IT-Sicherheit anpassen. Der Provider wird dabei die berechtigten Interessen des Kunden angemessen berücksichtigen und den Kunden rechtzeitig über notwendige Updates informieren. Im Falle einer wesentlichen Beeinträchtigung der berechtigten Interessen des Kunden steht diesem ein Sonderkündigungsrecht zu.
 
-3.5 Eine Anpassung auf die individuellen Bedürfnisse oder die IT-Umgebung des Kunden schuldet der Provider nicht, es sei denn die Parteien haben abweichendes vereinbart.
+3.5 Eine Anpassung auf die individuellen Bedürfnisse oder die IT-Umgebung des Kunden schuldet der Provider nicht, es sei denn, die Parteien haben Abweichendes vereinbart.
 
 3.6 Der Provider kann seine Leistungen und den Support durch Dritte als Subunternehmer erbringen. Er haftet für die Leistungserbringung von Subunternehmern wie für eigenes Handeln.
 
@@ -53,12 +53,12 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 
 4.3 Der Kunde ist nicht berechtigt, Nutzer-Accounts durch mehr als jeweils eine natürliche Person nutzen zu lassen („Accountsharing“).
 
-4.4 Soweit nicht anders vereinbart oder aufgrund zwingenden Rechts oder vorgehenden Nutzungsbedingungen vorgeschrieben, ist der Kunde nicht berechtigt,
+4.4 Soweit nicht anders vereinbart oder aufgrund zwingenden Rechts oder vorgehender Nutzungsbedingungen vorgeschrieben, ist der Kunde nicht berechtigt,
 
-1. die Software über das für die vertragsgemäße Nutzung erforderliche hinausgehende Maß zu kopieren, weder im Ganzen noch teilweise;
+1. die Software über das für die vertragsgemäße Nutzung Erforderliche hinausgehende Maß zu kopieren, weder im Ganzen noch teilweise;
 2. die Software zu modifizieren, zu korrigieren, anzupassen, zu übersetzen, zu verbessern oder sonst abgeleitete Entwicklungen an der Software vorzunehmen;
 3. die Software zu vermieten, zu verleihen, zu verkaufen, zu lizenzieren, zu übertragen oder sonst Dritten zugänglich zu machen;
-4. die Software unberechtigt zurückzuentwickeln, zu dekompillieren, zu disassemblieren oder auf andere Weise zu versuchen, den Quellcode der Software zu entschlüsseln, weder im Ganzen noch teilweise;
+4. die Software unberechtigt zurückzuentwickeln, zu dekompilieren, zu disassemblieren oder auf andere Weise zu versuchen, den Quellcode der Software zu entschlüsseln, weder im Ganzen noch teilweise;
 5. Sicherheitseinrichtungen oder Schutzmechanismen, welche in der Software enthalten oder für sie genutzt werden, zu umgehen oder zu verletzen;
 6. Maßnahmen zu ergreifen, die geeignet sind, Schaden an der Software oder den Systemen des Providers hervorzurufen;
 7. Marken, Dokumentation, Garantien, Haftungsausschlüsse oder sonstige Rechte, wie etwa geistiges Eigentum, Zeichen, Mitteilungen, Markierungen oder Seriennummern, welche in Verbindung zur Software oder Dokumentation stehen, zu entfernen, zu löschen, zu tilgen, zu verändern, zu verdecken, zu übersetzen, zu kombinieren, zu ergänzen oder auf andere Weise abzuändern;
@@ -74,7 +74,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 
 5.2 Der Support erstreckt sich nicht auf Probleme mit oder Schäden an der Software, soweit diese verursacht wurden durch
 
-1. Fahrlässigkeit, Missbrauch oder unsachgemäße Bedienung seitens des Kunden,
+1. Fahrlässigkeit, Missbrauch oder unsachgemäße Bedienung seitens des Kunden;
 2. Bedienung, Nutzung oder Speicherung/Hosting der Software nicht im Einklang mit den Vorgaben des Providers;
 3. Modifikationen an der Software, die nicht vom Provider durchgeführt oder genehmigt wurden;
 4. Handlungen Dritter;
@@ -91,7 +91,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 
 6.3 Der Kunde ist verpflichtet, die zur Verfügung gestellte Software nicht zur Speicherung oder Verarbeitung von Daten zu nutzen, deren Nutzung gegen geltendes Recht, behördliche Anordnungen, Rechte Dritter oder Vereinbarungen mit Dritten verstößt.
 
-6.4 Der Kunde wird die Daten vor deren Ablage oder Nutzung in der Software auf Viren oder sonstige schädliche Komponenten prüfen und hierfür dem Stand der Technik entsprechende Maßnahmen (z.B. Virenschutzprogramme) einsetzen.
+6.4 Der Kunde wird die Daten vor deren Ablage oder Nutzung in der Software auf Viren oder sonstige schädliche Komponenten prüfen und hierfür dem Stand der Technik entsprechende Maßnahmen (z. B. Virenschutzprogramme) einsetzen.
 
 6.5 Der Kunde hat in eigener Verantwortung regelmäßig angemessene Datensicherungen vorzunehmen.
 
@@ -105,7 +105,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 ## §8 Kundenkommunikation {#customer-communication}
 8.1 Sofern der Kunde gesondert eingewilligt hat (etwa im Rahmen der Bestellung), darf der Provider die vom Kunden benannten Ansprechpartner (insbesondere die Person, die die Lizenz bezogen hat, sowie den benannten technischen Ansprechpartner) per E-Mail oder Telefon zu Feedback-Anfragen, Nutzerinterviews, Fragen zur Funktionsnutzung sowie Case-Study-Anfragen kontaktieren. Die Ansprache bleibt in Umfang und Häufigkeit angemessen.
 
-8.2 Die Einwilligung nach §8.1 kann jederzeit per E-Mail an hub-support@cryptomator.org widerrufen werden. Der Widerruf gilt nur für die Zukunft und berührt nicht Kommunikation, die für die Bereitstellung der Software oder des Supports erforderlich ist (§3, §5).
+8.2 Die Einwilligung nach § 8.1 kann jederzeit per E-Mail an hub-support@cryptomator.org widerrufen werden. Der Widerruf gilt nur für die Zukunft und berührt nicht Kommunikation, die für die Bereitstellung der Software oder des Supports erforderlich ist (§ 3, § 5).
 
 ## §9 Gewährleistung {#warranty}
 9.1 Hinsichtlich der Gewährung der Nutzung der Software gelten die Gewährleistungsvorschriften des Mietrechts (§§ 535 ff. BGB).
@@ -121,34 +121,34 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 
 10.2 Für mittelbare und Folgeschäden sowie für entgangenen Gewinn, Personalmehrkosten, nutzlose Aufwendungen und unterbliebene Einsparungen etc. haftet der Provider nur bei Vorsatz und grober Fahrlässigkeit.
 
-10.3 Unbeschadet der Fälle unbeschränkter Haftung gemäß § 10.1 und der Haftung für Folgeschäden § 10.2 haften die Parteien einander bei leicht fahrlässiger Pflichtverletzung nur bei Verletzung wesentlicher Vertragspflichten, also Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglicht oder deren Verletzung die Erreichung des Vertragszwecks gefährdet und auf deren Einhaltung die andere Partei regelmäßig vertrauen darf, allerdings beschränkt auf den bei Vertragsschluss vorhersehbaren, vertragstypischen Schaden.
+10.3 Unbeschadet der Fälle unbeschränkter Haftung gemäß § 10.1 und der Haftung für Folgeschäden gemäß § 10.2 haften die Parteien einander bei leicht fahrlässiger Pflichtverletzung nur bei Verletzung wesentlicher Vertragspflichten, also Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglicht oder deren Verletzung die Erreichung des Vertragszwecks gefährdet und auf deren Einhaltung die andere Partei regelmäßig vertrauen darf, allerdings beschränkt auf den bei Vertragsschluss vorhersehbaren, vertragstypischen Schaden.
 
 10.4 Verletzt der Kunde die ihm obliegende Pflicht zur ordnungsgemäßen Datensicherung, haftet der Provider im Rahmen der vorstehenden Bestimmungen bei Verlust von Daten der Höhe nach begrenzt auf diejenigen Schäden, die auch bei ordnungsgemäßer und regelmäßiger Datensicherung durch den Kunden aufgetreten wären.
 
 10.5 Der Provider haftet nicht für Schäden, die darauf beruhen, dass der Kunde seine Infrastruktur nicht angemessen absichert oder bereitgestellte Updates und Sicherheitsaktualisierungen nicht zeitnah einspielt.
 
-10.6 Die vorstehenden Haftungsbeschränkungen gelten nicht für die Haftung nach dem Produkthaftungsgesetz sowie im Rahmen schriftlich von einer Partei übernommene Garantien.
+10.6 Die vorstehenden Haftungsbeschränkungen gelten nicht für die Haftung nach dem Produkthaftungsgesetz sowie im Rahmen schriftlich von einer Partei übernommener Garantien.
 
 10.7 § 10 gilt auch zugunsten von Mitarbeitern, Vertretern und Organen der Parteien.
 
 10.8 Für die unentgeltliche Überlassung nach § 2 lit. b haftet der Provider nur für Vorsatz und grobe Fahrlässigkeit (§ 599 BGB). § 10.1 bleibt unberührt.
 
 ## §11 Rechtsmängel; Freistellung {#deficiencies-indemnification}
-11.1 Der Provider gewährleistet, dass die Software keine Rechte Dritter verletzt. Der Provider wird dem Kunden von allen Ansprüchen Dritter wegen von ihm zu vertretender Schutzrechtsverletzungen im Zusammenhang mit der vertragsgemäßen Nutzung der Software auf erstes Anfordern hin freistellen sowie die Kosten einer angemessenen Rechtsverfolgung ersetzen. Der Kunde wird den Provider unverzüglich über Ansprüche von Dritten, die diese aufgrund der vertragsgemäßen Nutzung der Software gegen ihn geltend machen, informieren und ihm sämtliche erforderlichen Vollmachten erteilen und Befugnisse einräumen, um die Ansprüche zu verteidigen.
+11.1 Der Provider gewährleistet, dass die Software keine Rechte Dritter verletzt. Der Provider wird den Kunden von allen Ansprüchen Dritter wegen von ihm zu vertretender Schutzrechtsverletzungen im Zusammenhang mit der vertragsgemäßen Nutzung der Software auf erstes Anfordern hin freistellen sowie die Kosten einer angemessenen Rechtsverfolgung ersetzen. Der Kunde wird den Provider unverzüglich über Ansprüche von Dritten, die diese aufgrund der vertragsgemäßen Nutzung der Software gegen ihn geltend machen, informieren und ihm sämtliche erforderlichen Vollmachten erteilen und Befugnisse einräumen, um die Ansprüche zu verteidigen.
 
 11.2 Der Kunde ist für sämtliche von ihm oder seinen Nutzern verwendeten Inhalte und verarbeiteten Daten sowie die hierfür gegebenenfalls erforderlichen Rechtspositionen allein verantwortlich. Der Provider nimmt von Inhalten des Kunden oder seiner Nutzer keine Kenntnis und prüft die mit der Software genutzten Inhalte nicht.
 
-11.3 Der Kunde sichert zu, dass die in seiner Instanz abgelegten Inhalte und Daten sowie deren Nutzung nicht gegen geltendes Recht, behördliche Anordnungen, Rechte Dritter oder Vereinbarungen mit Dritten verstoßen. Der Kunde wird den Provider von Ansprüchen, die Dritte aufgrund eines Verstoßes gegen diese Ziffer geltend machen, auf erstes Anfordern freistellen. Der Kunde verpflichtet sich in diesem Zusammenhang auch, den Provider von jeder Haftung und jeglichen Kosten, einschließlich möglicher und tatsächlicher Kosten eines gerichtlichen Verfahrens, freizustellen, falls der Provider von Dritten, auch von Mitarbeitern des Kunden persönlich, infolge von behaupteten Handlungen oder Unterlassungen des Kunden in Anspruch genommen wird. Der Provider wird dem Kunden über die Inanspruchnahme unterrichten und ihm, soweit dies rechtlich möglich ist, Gelegenheit zur Abwehr des geltend gemachten Anspruchs geben. Gleichzeitig wird der Kunde dem Provider unverzüglich alle ihm verfügbaren Informationen über den Sachverhalt, der Gegenstand der Inanspruchnahme ist, vollständig mitteilen. Darüberhinausgehende Schadensersatzansprüche des Anbieters bleiben unberührt.
+11.3 Der Kunde sichert zu, dass die in seiner Instanz abgelegten Inhalte und Daten sowie deren Nutzung nicht gegen geltendes Recht, behördliche Anordnungen, Rechte Dritter oder Vereinbarungen mit Dritten verstoßen. Der Kunde wird den Provider von Ansprüchen, die Dritte aufgrund eines Verstoßes gegen diese Ziffer geltend machen, auf erstes Anfordern freistellen. Der Kunde verpflichtet sich in diesem Zusammenhang auch, den Provider von jeder Haftung und jeglichen Kosten, einschließlich möglicher und tatsächlicher Kosten eines gerichtlichen Verfahrens, freizustellen, falls der Provider von Dritten, auch von Mitarbeitern des Kunden persönlich, infolge von behaupteten Handlungen oder Unterlassungen des Kunden in Anspruch genommen wird. Der Provider wird den Kunden über die Inanspruchnahme unterrichten und ihm, soweit dies rechtlich möglich ist, Gelegenheit zur Abwehr des geltend gemachten Anspruchs geben. Gleichzeitig wird der Kunde dem Provider unverzüglich alle ihm verfügbaren Informationen über den Sachverhalt, der Gegenstand der Inanspruchnahme ist, vollständig mitteilen. Darüber hinausgehende Schadensersatzansprüche des Providers bleiben unberührt.
 
 ## §12 Community-Edition; Testphase {#trial}
-12.1 Unabhängig des Widerrufsrechts ([§ 15](#withdrawal)) steht dem Kunden, d.h. sowohl dem Verbraucher wie auch Unternehmer, das Recht zu, die Software 30 Tage kostenfrei und für beide Seiten unverbindlich zu nutzen (nachfolgend „Testphase“). In der Testphase hat der Kunde insbesondere keinen Anspruch auf uneingeschränkten Funktionsumfang der Software.
+12.1 Unabhängig vom Widerrufsrecht ([§ 15](#withdrawal)) steht dem Kunden, d. h. sowohl dem Verbraucher wie auch Unternehmer, das Recht zu, die Software 30 Tage kostenfrei und für beide Seiten unverbindlich zu nutzen (nachfolgend „Testphase“). In der Testphase hat der Kunde insbesondere keinen Anspruch auf uneingeschränkten Funktionsumfang der Software.
 
 12.2 Der Provider stellt darüber hinaus eine im Funktionsumfang und in der Anzahl der Sitze beschränkte Community-Edition der Software unentgeltlich bereit. Für deren Nutzung gelten die Regelungen zur Vergütung ([§ 13](#fees)) nicht; ein Anspruch auf Support ([§ 5](#support)) besteht nicht.
 
 ## §13 Vergütungs- und Zahlungsbedingungen {#fees}
-13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich das dort jeweils ausgewiesene Entgelt pro gebuchtem Sitz an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
+13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich das dort jeweils ausgewiesene Entgelt pro gebuchtem Sitz an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
 
-13.2 Die Rechnungsstellung erfolgt je nach gewähltem Modell jeweils für einen Monat oder für zwölf Monate im Voraus. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o.ä.) ist die Rechnung sofort zur Zahlung fällig.
+13.2 Die Rechnungsstellung erfolgt je nach gewähltem Modell jeweils für einen Monat oder für zwölf Monate im Voraus. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) ist die Rechnung sofort zur Zahlung fällig.
 
 13.3 Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe fällig. Der Provider ist berechtigt, bei einem Zahlungsverzug von mehr als 30 Tagen den Lizenzschlüssel vorübergehend zu deaktivieren sowie die Bereitstellung von Updates und Support auszusetzen, bis die überfällige Rechnung bezahlt wurde.
 
@@ -212,7 +212,7 @@ Das Widerrufsrecht erlischt vorzeitig, wenn
  
 16.2 Da die Software auf der Infrastruktur des Kunden betrieben wird, hat der Provider regelmäßig keinen Zugriff auf personenbezogene Daten des Kunden. Sofern und soweit der Provider im Rahmen der Leistungserbringung, insbesondere im Rahmen des Supports ([§ 5](#support)), dennoch Zugriff auf personenbezogene Daten des Kunden hat, werden die Parteien vor Beginn der Verarbeitung einen entsprechenden Auftragsverarbeitungsvertrag abschließen und diese AGB als Anlage beifügen. Der Kunde ist dabei Verantwortlicher und der Provider ist ein Auftragsverarbeiter. In diesem Fall wird der Provider die entsprechenden personenbezogenen Daten allein nach den dort festgehaltenen Bestimmungen und nach den Weisungen des Kunden verarbeiten.
  
-16.3 Der Provider verpflichtet sich, über alle vertraulichen Informationen (einschließlich Geschäftsgeheimnissen), die er im Zusammenhang mit diesem Vertrag und dessen Durchführung erfährt, Stillschweigen zu bewahren und diese nicht gegenüber Dritten offenzulegen, weiterzugeben noch auf sonstige Art zu verwenden. Vertrauliche Informationen sind dabei solche, die als vertraulich gekennzeichnet sind oder deren Vertraulichkeit sich aus den Umständen ergibt, unabhängig davon, ob sie in schriftlicher, elektronischer, verkörperter oder mündlicher Form mitgeteilt worden sind. Die Geheimhaltungsverpflichtung gilt nicht, soweit der Provider gesetzlich oder aufgrund bestands- bzw. rechtskräftiger Behörden- oder Gerichtsentscheidung zur Offenlegung der vertraulichen Information verpflichtet ist. Der Provider verpflichtet sich, mit allen Mitarbeitern und Subunternehmern eine den vorstehenden Absatz inhaltgleiche Regelung zu vereinbaren.
+16.3 Der Provider verpflichtet sich, über alle vertraulichen Informationen (einschließlich Geschäftsgeheimnissen), die er im Zusammenhang mit diesem Vertrag und dessen Durchführung erfährt, Stillschweigen zu bewahren und diese nicht gegenüber Dritten offenzulegen, weiterzugeben noch auf sonstige Art zu verwenden. Vertrauliche Informationen sind dabei solche, die als vertraulich gekennzeichnet sind oder deren Vertraulichkeit sich aus den Umständen ergibt, unabhängig davon, ob sie in schriftlicher, elektronischer, verkörperter oder mündlicher Form mitgeteilt worden sind. Die Geheimhaltungsverpflichtung gilt nicht, soweit der Provider gesetzlich oder aufgrund bestands- bzw. rechtskräftiger Behörden- oder Gerichtsentscheidung zur Offenlegung der vertraulichen Information verpflichtet ist. Der Provider verpflichtet sich, mit allen Mitarbeitern und Subunternehmern eine dem vorstehenden Absatz inhaltgleiche Regelung zu vereinbaren.
 
 ## §17 Außergerichtliche Streitschlichtung sowie Hinweis nach § 36 VSBG {#dispute-resolution}
 Der Provider ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.

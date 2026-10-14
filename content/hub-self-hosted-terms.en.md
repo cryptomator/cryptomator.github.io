@@ -11,7 +11,7 @@ The following General Terms and Conditions apply exclusively within the framewor
 Conflicting or different general terms and conditions of the Customer do not become part of the contract. This also applies if the Provider does not expressly object to them.
 {.text-lg .leading-relaxed .text-gray-700}
 
-Contract language is German. This is a translation from our [German AGB](/de/hub/self-hosted/terms/). German Version shall prevail.
+Contract language is German. This is a translation from our [German AGB](/de/hub/self-hosted/terms/). The German version shall prevail.
 {.text-lg .leading-relaxed .text-gray-700}
 
 ## §1 Definitions {#definitions}
@@ -36,7 +36,7 @@ b) free of charge, as a Community Edition limited in its scope of functions and 
 
 In both cases, the provision of the resources required for operation is incumbent upon the Customer.
 
-## §3 Services of the Providers; Software {#services-software}
+## §3 Services of the Provider; Software {#services-software}
 3.1 The Provider makes the most current version of the Software available to the Customer for retrieval in electronic form (in particular as container images). Installation and operation of the Software are carried out by the Customer on its Infrastructure. The Software is designed to be used together with the Cryptomator application, also provided by the Provider, which is used to encrypt data on local storage space selected by the Customer or provided by third parties.
 
 3.2 The Provider shall provide the Customer with a License Key in electronic form at the latest upon request. The Customer shall manage the access data of the Users itself with the help of the admin account of its Instance. The Customer may increase or decrease the number of Seats as required. The Provider shall ensure that the number of booked Seats is usable in a timely manner via the License Key.
@@ -52,21 +52,21 @@ In both cases, the provision of the resources required for operation is incumben
 ## §4 Scope and Rights of Usage {#scope-and-rights}
 4.1 The Software is provided to the Customer exclusively in electronic form for installation and operation on its Infrastructure.
 
-4.2 The Customer shall receive simple, i.e. non-sublicensable and non-transferable rights to the most current version of the Software, limited in time to the term of the contract, to install the Software on its Infrastructure, to operate it and to use it for its intended purpose in accordance with the contractual provisions. The Customer may only use the Software for its own purposes. This does not include the use of the products for third parties, for example as a service provider or any other transfer or brokerage of use to third parties.
+4.2 The Customer shall receive simple, i.e., non-sublicensable and non-transferable rights to the most current version of the Software, limited in time to the term of the contract, to install the Software on its Infrastructure, to operate it and to use it for its intended purpose in accordance with the contractual provisions. The Customer may only use the Software for its own purposes. This does not include the use of the products for third parties, for example as a service provider or any other transfer or brokerage of use to third parties.
 
 4.3 The Customer is not entitled to have user accounts used by more than one natural person at a time ("account sharing").
 
 4.4 Unless otherwise agreed or required by mandatory law or preceding terms of use, the Customer is not entitled to
 
-1. to copy the Software beyond what is necessary for the contractual use, neither in whole nor in part;
+1. copy the Software beyond what is necessary for the contractual use, neither in whole nor in part;
 2. modify, correct, adapt, translate, improve or otherwise make derivative developments to the Software;
 3. rent, lend, sell, license, transfer or otherwise make the Software available to third parties;
 4. reverse engineer, decompile, disassemble or otherwise attempt to decipher the source code of the Software, in whole or in part, without authorization;
 5. circumvent or violate any security devices or protection mechanisms contained in or used for the Software;
 6. take any action that is likely to cause damage to the Software or the Provider's systems;
 7. remove, delete, obliterate, alter, obscure, translate, combine, add to or otherwise modify any trademarks, documentation, warranties, disclaimers or other rights, such as intellectual property, marks, notices, labels or serial numbers, associated with the Software or Documentation;
-8. to use the Software in a way that violates applicable law and/or the rights of third parties;
-9. use the Software for purposes of benchmarking or competitive analysis of the Software, for the development, use or provision of a competing software product or service, or for any other purpose that is detrimental to Provider; and/or
+8. use the Software in a way that violates applicable law and/or the rights of third parties;
+9. use the Software for purposes of benchmarking or competitive analysis of the Software, for the development, use or provision of a competing software product or service, or for any other purpose that is detrimental to the Provider; and/or
 10. use the Software for or in connection with the design, construction, maintenance, operation or use of hazardous environments, systems or applications or other safety-critical applications, or otherwise use the Software in a manner that could result in physical harm or serious property damage.
 {type=a}
 
@@ -77,9 +77,9 @@ In both cases, the provision of the resources required for operation is incumben
 
 5.2 The support does not cover problems with or damage to the Software, insofar as these were caused by
 
-1. negligence, misuse or improper operation on the part of the Customer,
-2. operation, use or storage/hosting of the Software not in accordance with Provider's specifications;
-3. modifications to the Software not made or approved by Provider;
+1. negligence, misuse or improper operation on the part of the Customer;
+2. operation, use or storage/hosting of the Software not in accordance with the Provider's specifications;
+3. modifications to the Software not made or approved by the Provider;
 4. actions of third parties;
 5. third party products; and/or
 6. force majeure.
@@ -94,7 +94,7 @@ In both cases, the provision of the resources required for operation is incumben
 
 6.3 The Customer is obligated not to use the provided Software for the storage or processing of data, the use of which violates applicable law, official orders, third party rights or agreements with third parties.
 
-6.4 The Customer shall check the data for viruses or other harmful components before storing them or using them in the Software and shall use state-of-the-art measures (e.g. virus protection programs) for this purpose.
+6.4 The Customer shall check the data for viruses or other harmful components before storing them or using them in the Software and shall use state-of-the-art measures (e.g., virus protection programs) for this purpose.
 
 6.5 The Customer shall regularly make appropriate data backups on its own responsibility.
 
@@ -106,9 +106,9 @@ In both cases, the provision of the resources required for operation is incumben
 7.2 The Customer may revoke the consent to reference marketing at any time by sending an email to hub-support@cryptomator.org. The revocation is only valid for the future.
 
 ## §8 Customer Communication {#customer-communication}
-8.1 If the Customer has separately consented (e.g. as part of the order), the Provider may contact the persons designated by the Customer as points of contact (in particular the person who obtained the license and the designated technical contact) by email or telephone for feedback requests, user research interviews, questions regarding feature usage, and case study inquiries. Any such outreach shall remain reasonable in scope and frequency.
+8.1 If the Customer has separately consented (e.g., as part of the order), the Provider may contact the persons designated by the Customer as points of contact (in particular the person who obtained the license and the designated technical contact) by email or telephone for feedback requests, user research interviews, questions regarding feature usage, and case study inquiries. Any such outreach shall remain reasonable in scope and frequency.
 
-8.2 The consent under §8.1 may be revoked at any time by sending an email to hub-support@cryptomator.org. The revocation is only valid for the future and does not affect communications required for the provision of the Software or support (§3, §5).
+8.2 The consent under § 8.1 may be revoked at any time by sending an email to hub-support@cryptomator.org. The revocation is only valid for the future and does not affect communications required for the provision of the Software or support (§ 3, § 5).
 
 ## §9 Warranty {#warranty}
 9.1 With regard to the granting of the use of the Software, the warranty provisions of the German "Mietrecht" shall apply (§§ 535 ff. BGB).
@@ -124,13 +124,13 @@ In both cases, the provision of the resources required for operation is incumben
 
 10.2 The Provider shall only be liable for indirect and consequential damages as well as for lost profits, additional personnel costs, useless expenses and omitted savings, etc. in the event of intent and gross negligence.
 
-10.3 Notwithstanding the cases of unlimited liability according to § 10.1 and liability for consequential damages § 10.2, the parties shall be liable to each other in case of slightly negligent breach of duty only in case of breach of essential contractual obligations, i.e. obligations the fulfillment of which enables the proper execution of the contract in the first place or the breach of which endangers the achievement of the purpose of the contract and the compliance with which the other party may regularly rely on, however, limited to the damage foreseeable at the time of conclusion of the contract and typical for the contract.
+10.3 Notwithstanding the cases of unlimited liability according to § 10.1 and liability for consequential damages pursuant to § 10.2, the parties shall be liable to each other in case of slightly negligent breach of duty only in case of breach of essential contractual obligations, i.e., obligations the fulfillment of which enables the proper execution of the contract in the first place or the breach of which endangers the achievement of the purpose of the contract and the compliance with which the other party may regularly rely on, however, limited to the damage foreseeable at the time of conclusion of the contract and typical for the contract.
 
 10.4 If the Customer violates its obligation to properly back up data, the Provider's liability for loss of data shall be limited to the amount of damage that would have occurred even if the Customer had properly and regularly backed up the data.
 
 10.5 The Provider shall not be liable for damages based on the Customer not adequately securing its Infrastructure or not installing provided updates and security updates in a timely manner.
 
-10.6 The above limitations of liability shall not apply to liability under the German Product Liability Act (Produkthaftungsgesetz) or to guarantees given in writing by one of the Parties.
+10.6 The above limitations of liability shall not apply to liability under the German Product Liability Act (Produkthaftungsgesetz) or to guarantees given in writing by one of the parties.
 
 10.7 § 10 shall also apply in favor of employees, representatives and bodies of the parties.
 
@@ -141,10 +141,10 @@ In both cases, the provision of the resources required for operation is incumben
 
 11.2 The Customer shall be solely responsible for all content and processed data used by it or its Users and any legal positions required for this purpose. The Provider does not take note of any content of the Customer or its Users and does not check the content used with the Software.
 
-11.3 The Customer warrants that the content and data stored in its Instance, as well as their use, do not violate applicable law, official orders, third-party rights or agreements with third parties. The Customer shall indemnify the Provider against claims asserted by third parties on the basis of a violation of this clause upon first request. In this context, Customer also agrees to indemnify Provider against any liability and any costs, including possible and actual costs of legal proceedings, in the event that a claim is made against Provider by third parties, including employees of Customer personally, as a result of alleged acts or omissions of Customer. The Provider shall notify the Customer of the claim and, to the extent legally possible, give the Customer the opportunity to defend the asserted claim. At the same time, the Customer shall immediately provide the Provider with all information available to him regarding the facts that are the subject of the claim. Any further claims for damages of the Provider shall remain unaffected.
+11.3 The Customer warrants that the content and data stored in its Instance, as well as their use, do not violate applicable law, official orders, third-party rights or agreements with third parties. The Customer shall indemnify the Provider against claims asserted by third parties on the basis of a violation of this clause upon first request. In this context, the Customer also agrees to indemnify the Provider against any liability and any costs, including possible and actual costs of legal proceedings, in the event that a claim is made against the Provider by third parties, including employees of the Customer personally, as a result of alleged acts or omissions of the Customer. The Provider shall notify the Customer of the claim and, to the extent legally possible, give the Customer the opportunity to defend the asserted claim. At the same time, the Customer shall immediately provide the Provider with all information available to it regarding the facts that are the subject of the claim. Any further claims for damages of the Provider shall remain unaffected.
 
 ## §12 Community Edition; Test Phase {#trial}
-12.1 Irrespective of the right of withdrawal ([§ 15](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the Software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the test phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software.
+12.1 Irrespective of the right of withdrawal ([§ 15](#withdrawal)), the Customer, i.e., both the consumer and the entrepreneur, shall be entitled to use the Software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the test phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software.
 
 12.2 In addition, the Provider provides a Community Edition of the Software free of charge, limited in its scope of functions and in the number of Seats. The provisions on remuneration ([§ 13](#fees)) do not apply to its use; there is no claim to support ([§ 5](#support)).
 
@@ -155,7 +155,7 @@ In both cases, the provision of the resources required for operation is incumben
 
 13.3 In the event of late payment, interest on arrears shall be due at the statutory rate. In case of a delay in payment of more than 30 days, the Provider is entitled to temporarily deactivate the License Key and to suspend the provision of updates and support until the overdue invoice has been paid.
 
-13.4 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the Software (development costs) justified by legal changes (e.g. concerning data protection); increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 14](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
+13.4 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the Software (development costs) justified by legal changes (e.g., concerning data protection); increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 14](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
 
 ## §14 Contract Duration and Termination {#termination}
 14.1 The Agreement shall enter into force after the Customer's request and provision of the License Key by the Provider and shall be concluded for an indefinite period of time.
@@ -172,7 +172,7 @@ If the Customer is a consumer, he has a right of withdrawal.
 ### Right of Withdrawal
 You have the right to revoke this contract within fourteen days without giving any reason. The revocation period is fourteen days from the day of the conclusion of the contract.  
 
-To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: hub-support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g. a letter sent by post or an email). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.
+To exercise your right of withdrawal, you must inform us (Skymatic GmbH, Am Hauptbahnhof 6, 53111 Bonn, email: hub-support@cryptomator.org, fax: 02241 / 2667424) of your decision to withdraw from this contract by means of a clear declaration (e.g., a letter sent by post or an email). You can use the attached sample withdrawal form for this purpose, which is, however, not mandatory.
 
 To comply with the withdrawal period, it is sufficient that you send the notice of exercise of the right of withdrawal before the expiry of the withdrawal period.
 
@@ -212,9 +212,9 @@ The right of withdrawal expires prematurely if
 * the Customer as a consumer confirms his knowledge of the loss of the right of withdrawal (§ 356 para. 5 no. 2 BGB).
 
 ## §16 Data Protection; Confidentiality {#data-protection-confidentiality}
-16.1 The Parties shall comply with the applicable data protection provisions applicable to them in each case.
+16.1 The parties shall comply with the applicable data protection provisions applicable to them in each case.
  
-16.2 Since the Software is operated on the Customer's Infrastructure, the Provider regularly has no access to personal data of the Customer. If and to the extent that the Provider nevertheless has access to personal data of the Customer in the context of the provision of services, in particular in the context of support ([§ 5](#support)), the Parties shall conclude a corresponding order processing agreement prior to the start of the processing and attach these GTC as an annex. In this case, the Customer is a controller and the Provider is a processor. In this case, the Provider shall process the relevant personal data solely in accordance with the provisions set forth therein and in accordance with the Customer's instructions.
+16.2 Since the Software is operated on the Customer's Infrastructure, the Provider regularly has no access to personal data of the Customer. If and to the extent that the Provider nevertheless has access to personal data of the Customer in the context of the provision of services, in particular in the context of support ([§ 5](#support)), the parties shall conclude a corresponding order processing agreement prior to the start of the processing and attach these GTC as an annex. In this case, the Customer is a controller and the Provider is a processor. In this case, the Provider shall process the relevant personal data solely in accordance with the provisions set forth therein and in accordance with the Customer's instructions.
  
 16.3 The Provider undertakes to maintain confidentiality about all confidential information (including business secrets) that it learns in connection with this Agreement and its performance and not to disclose, pass on or otherwise use such information to third parties. Confidential information is information which is marked as confidential or the confidentiality of which is evident from the circumstances, irrespective of whether it has been communicated in written, electronic, embodied or oral form. The confidentiality obligation does not apply if the Provider is obligated to disclose the confidential information by law or by virtue of a final or legally binding decision of an authority or court. The Provider undertakes to agree with all employees and subcontractors on a provision similar in content to the preceding paragraph.
 
@@ -226,7 +226,7 @@ The Provider is neither obligated nor willing to participate in a dispute resolu
 
 18.2 Changes that materially affect the main contractual obligations of the parties, in particular the type and scope of the services owed, the remuneration, and the contract duration and termination, are excluded. Price adjustments are governed exclusively by [§ 13.4](#fees).
 
-18.3 The Provider shall notify the Customer of the intended changes in text form (e.g. by email to the email address provided when obtaining the license) no later than six weeks before they take effect. The notification shall contain the amended provisions and the date on which they take effect.
+18.3 The Provider shall notify the Customer of the intended changes in text form (e.g., by email to the email address provided when obtaining the license) no later than six weeks before they take effect. The notification shall contain the amended provisions and the date on which they take effect.
 
 18.4 The changes shall be deemed approved if the Customer does not object to them in text form before they take effect. In the notification, the Provider shall specifically inform the Customer of the right to object, the deadline, and the consequences of failing to object.
 
