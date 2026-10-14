@@ -39,7 +39,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 3.6 The Provider shall not owe any adaptation to the Customer's individual needs or IT environment, unless the parties have agreed otherwise.
 
-3.7 The Provider shall regularly perform maintenance on the Software and inform the Customer thereof in due time. It shall attempt to perform maintenance regularly outside the Customer's usual business hours (GMT +1/+2). In exceptional cases and especially due to compelling reasons, maintenance may be performed at a different time.
+3.7 The Provider shall regularly perform maintenance on the Software during the contract term and inform the Customer thereof in due time. It shall attempt to perform maintenance regularly outside the Customer's usual business hours (GMT +1/+2). In exceptional cases and especially due to compelling reasons, maintenance may be performed at a different time.
 
 3.8 The Provider shall take state-of-the-art measures to protect the data. However, the Provider shall not be subject to any custodial or safekeeping obligations with respect to the data. The Customer shall be responsible for sufficient backup of the data.
 
@@ -153,11 +153,11 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e. both the consumer and the entrepreneur, shall be entitled to use the software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the Test Phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 ## §14 Remuneration and Payment Conditions {#fees}
-14.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay a monthly fee of EUR 12 per active user to the Provider.
+14.1 The Customer can view the prices for the software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per active user stated there to the Provider on a monthly basis.
 
 14.2 Contractual penalties forfeited by the Provider pursuant to [§ 6 (7)](#sla) shall be automatically offset against the payable fee on a monthly basis.
 
-14.3 Invoices shall be issued for 12 months in advance. Unless otherwise agreed (individual agreement, discount campaign or similar), the invoice shall be due for payment immediately.
+14.3 Depending on the model chosen, invoices shall be issued either for one month or for twelve months in advance. Unless otherwise agreed (individual agreement, discount campaign or similar), the invoice shall be due for payment immediately.
 
 14.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
 
