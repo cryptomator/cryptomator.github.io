@@ -39,7 +39,7 @@ In both cases, the provision of the resources required for operation is incumben
 ## §3 Services of the Provider; Software {#services-software}
 3.1 The Provider makes the most current version of the Software available to the Customer for retrieval in electronic form (in particular as container images). Installation and operation of the Software are carried out by the Customer on its Infrastructure. The Software is designed to be used together with the Cryptomator application, also provided by the Provider, which is used to encrypt data on local storage space selected by the Customer or provided by third parties.
 
-3.2 The Provider shall provide the Customer with a License Key in electronic form at the latest upon request. The Customer shall manage the access data of the Users itself with the help of the admin account of its Instance. The Customer may increase or decrease the number of Seats as required. The Provider shall ensure that the number of booked Seats is usable in a timely manner via the License Key.
+3.2 The Provider shall provide the Customer with a License Key in electronic form at the latest upon request. The Customer shall manage the access data of the Users itself with the help of the admin account of its Instance. The Customer may increase or decrease the number of Seats as required. Additional Seats are charged pro rata for the current billing period; a reduction is credited pro rata and offset against the next payment or invoice. The Provider shall ensure that the number of booked Seats is usable in a timely manner via the License Key.
 
 3.3 Furthermore, the Provider shall provide the Customer with user documentation in electronic form after conclusion of the contract. The current version of this documentation can be viewed online at any time during the use of the Software and describes the contractually owed quality of the Software.
 
@@ -149,20 +149,20 @@ In both cases, the provision of the resources required for operation is incumben
 12.2 In addition, the Provider provides a Community Edition of the Software free of charge, limited in its scope of functions and in the number of Seats. The provisions on remuneration ([§ 13](#fees)) do not apply to its use; there is no claim to support ([§ 5](#support)).
 
 ## §13 Remuneration and Payment Conditions {#fees}
-13.1 The Customer can view the prices for the Software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay the fee per booked Seat stated there to the Provider on a monthly basis, irrespective of how many Seats are actually occupied by Active Users.
+13.1 The Customer can view the prices for the Software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 12](#trial)) - pay the fee per booked Seat stated there at the conclusion of the contract to the Provider for the chosen billing period, irrespective of how many Seats are actually occupied by Active Users.
 
 13.2 Depending on the model chosen, invoices shall be issued either for one month or for twelve months in advance. Unless otherwise agreed (individual agreement, discount campaign or similar), the invoice shall be due for payment immediately.
 
 13.3 In the event of late payment, interest on arrears shall be due at the statutory rate. In case of a delay in payment of more than 30 days, the Provider is entitled to temporarily deactivate the License Key and to suspend the provision of updates and support until the overdue invoice has been paid.
 
-13.4 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the Software (development costs) justified by legal changes (e.g., concerning data protection); increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 14](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
+13.4 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the Software (development costs) justified by legal changes (e.g., concerning data protection); increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment only takes effect at the beginning of a billing period. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 14](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
 
 ## §14 Contract Duration and Termination {#termination}
 14.1 The Agreement shall enter into force after the Customer's request and provision of the License Key by the Provider and shall be concluded for an indefinite period of time.
 
-14.2 The contract may be terminated by either party with a notice period of one month to the end of the month.
+14.2 The contract may be terminated by either party with a notice period of one month to the end of the current billing period. If the Customer is a consumer, the Customer may instead terminate at any time with a notice period of one month. If the contract ends before the end of a billing period paid in advance, the Provider shall refund pro rata the fee attributable to the period after the end of the contract.
 
-14.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be in writing.
+14.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be made in text form.
 
 14.4 The License Key loses its validity upon termination of the contractual relationship. After termination of the contractual relationship, the Customer shall uninstall the Software and irretrievably delete all copies of the Software in its possession. The use of the Community Edition ([§ 12.2](#trial)) as well as rights arising from open source licenses ([§ 4.5](#scope-and-rights)) remain unaffected.
 
@@ -191,7 +191,7 @@ Germany
 Email: info@skymatic.de
 Fax: 02241 / 2667424
 
-I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
+I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods (*)/the provision of the following service (*):
 
 Ordered on (*) / received on (*): __________________
 Name of the customer: __________________
@@ -235,7 +235,7 @@ The Provider is neither obligated nor willing to participate in a dispute resolu
 ## §19 Final Clauses {#final-clauses}
 19.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
  
-19.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing, unless they are made in accordance with [§ 18](#changes).
+19.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in text form, unless they are made in accordance with [§ 18](#changes).
  
 19.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
  

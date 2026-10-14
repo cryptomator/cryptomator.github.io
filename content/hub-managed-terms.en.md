@@ -32,7 +32,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 3.2 The Provider warrants the functionality and availability of the Software for the duration of the contractual relationship and shall maintain it in a condition suitable for use in accordance with the contract.
 
-3.3 The Provider shall provide the Customer with access data for an admin account in electronic form upon request at the latest. The Customer shall manage the access data of the Users itself with the help of the admin account. The Customer may increase or decrease the number of Seats as required. The Provider shall ensure that the number of booked Seats is usable in a timely manner.
+3.3 The Provider shall provide the Customer with access data for an admin account in electronic form upon request at the latest. The Customer shall manage the access data of the Users itself with the help of the admin account. The Customer may increase or decrease the number of Seats as required. Additional Seats are charged pro rata for the current billing period; a reduction is credited pro rata and offset against the next payment or invoice. The Provider shall ensure that the number of booked Seats is usable in a timely manner.
 
 3.4 Furthermore, the Provider shall provide the Customer with user documentation in electronic form after conclusion of the contract. The current version of this documentation can be viewed online at any time during the use of the Software.
 
@@ -98,7 +98,7 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 
 6.6 The elimination of insignificant disruptions is at the Provider's discretion.
 
-6.7 For each full hour of falling short of the monthly availability of the services, the Provider shall forfeit a contractual penalty in the amount of 0.5% of the agreed monthly remuneration ([§ 14](#fees)). The amount of the contractual penalty is limited to three times the agreed monthly remuneration.
+6.7 For each full hour of falling short of the monthly availability of the services, the Provider shall forfeit a contractual penalty in the amount of 0.5% of the agreed monthly remuneration ([§ 14](#fees)). The amount of the contractual penalty is limited to three times the agreed monthly remuneration. For annual billing, one twelfth of the annual fee constitutes the monthly remuneration.
 
 6.8 Any other legal claims of the Customer against the Provider shall remain unaffected.
 
@@ -154,22 +154,22 @@ The subject of the agreement is the provision of "Cryptomator Hub" (hereinafter 
 Irrespective of the right of withdrawal ([§ 16](#withdrawal)), the Customer, i.e., both the consumer and the entrepreneur, shall be entitled to use the Software for 30 days free of charge and without obligation for both parties (hereinafter "test phase"). During the test phase, the Customer shall in particular have no claim to unrestricted functional scope of the Software or troubleshooting as well as contractual penalty pursuant to [§ 6](#sla).
 
 ## §14 Remuneration and Payment Conditions {#fees}
-14.1 The Customer can view the prices for the Software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per booked Seat stated there to the Provider on a monthly basis, irrespective of how many Seats are actually occupied by Active Users.
+14.1 The Customer can view the prices for the Software and services on the website ([https://cryptomator.org/pricing/](https://cryptomator.org/pricing/)). Unless otherwise agreed (individual agreement, discount campaign or similar), the Customer shall - after expiry of the test phase ([§ 13](#trial)) - pay the fee per booked Seat stated there at the conclusion of the contract to the Provider for the chosen billing period, irrespective of how many Seats are actually occupied by Active Users.
 
-14.2 Contractual penalties forfeited by the Provider pursuant to [§ 6.7](#sla) shall be automatically offset against the payable fee on a monthly basis.
+14.2 Contractual penalties forfeited by the Provider pursuant to [§ 6.7](#sla) shall be automatically offset against the next payable fee. To the extent that offsetting is not possible, particularly after termination of the contract, the Provider shall pay the remaining amount without undue delay.
 
 14.3 Depending on the model chosen, invoices shall be issued either for one month or for twelve months in advance. Unless otherwise agreed (individual agreement, discount campaign or similar), the invoice shall be due for payment immediately.
 
 14.4 In the event of late payment, interest on arrears shall be due at the statutory rate. The Provider is entitled to temporarily deactivate the Customer's access to the Software in case of a delay in payment of more than 30 days until the overdue invoice has been paid.
 
-14.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the Software (development costs) justified by legal changes (e.g., concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment does not affect a contractual relationship until the minimum contract period of one month has expired. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 15](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
+14.5 The Provider reserves the right to make an adjustment of the price even during an ongoing contract period. An adjustment can be made both in the form of a price increase and a price reduction. A price increase is only envisaged if cost-increasing circumstances occur that make proper maintenance significantly more difficult without this being compensated for by an increase in the price. Circumstances for which a price increase is considered are: cost-intensive adaptations in the Software (development costs) justified by legal changes (e.g., concerning data protection); increased server costs, due to strongly increasing energy costs; increased costs for copyright-protected contents or costs for the legal examination of the Provider's cooperation partners. The Provider shall inform the Customer of any price adjustment as soon as possible, but no later than three months before it takes effect, and shall explain the cost-increasing or cost-reducing factor in more detail. A price adjustment only takes effect at the beginning of a billing period. The Customer may terminate the contractual relationship existing with the Provider in the event of a price adjustment in accordance with the applicable regulations ([§ 15](#termination)). In the event that the Provider, through no fault of the Customer, notifies the Customer at a time when the Customer is no longer able to comply with the ordinary notice period until the effective date of the price adjustment, the Customer may terminate the contractual relationship as of the effective date of the price adjustment.
 
 ## §15 Contract Duration and Termination {#termination}
 15.1 The Agreement shall enter into force after the Customer's request and provision of access to the Software by the Provider and shall be concluded for an indefinite period of time.
 
-15.2 The contract may be terminated by either party with a notice period of one month to the end of the month.
+15.2 The contract may be terminated by either party with a notice period of one month to the end of the current billing period. If the Customer is a consumer, the Customer may instead terminate at any time with a notice period of one month. If the contract ends before the end of a billing period paid in advance, the Provider shall refund pro rata the fee attributable to the period after the end of the contract.
 
-15.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be in writing.
+15.3 The right to terminate without notice for good cause remains unaffected. In any case, the termination must be made in text form.
 
 15.4 The Provider shall provide the Customer with reasonable support for the retransfer or backup of the data at its own expense after termination of the Agreement.
 
@@ -200,7 +200,7 @@ Germany
 Email: info@skymatic.de
 Fax: 02241 / 2667424
 
-I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods:
+I/we (*) hereby revoke the contract concluded by me/us (*) for the purchase of the following goods (*)/the provision of the following service (*):
 
 Ordered on (*) / received on (*): __________________
 Name of the customer: __________________
@@ -244,7 +244,7 @@ The Provider is neither obligated nor willing to participate in a dispute resolu
 ## §20 Final Clauses {#final-clauses}
 20.1 Should individual provisions of this Agreement be invalid or unenforceable, this shall not affect the validity of the remaining provisions. The parties shall replace such provisions by effective and feasible provisions which correspond as closely as possible to the meaning and economic purpose as well as the intention of the parties at the time of conclusion of the contract. The same shall apply in the event of a gap in the contract.
  
-20.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in writing, unless they are made in accordance with [§ 19](#changes).
+20.2 There are no oral or written collateral agreements to this contract. Amendments to this contract and its annexes must be made in text form, unless they are made in accordance with [§ 19](#changes).
  
 20.3 German law shall apply to the exclusion of the conflict of laws provisions and the United Nations Convention on Contracts for the International Sale of Goods of 11.4.1980 (UN Sales Convention).
  

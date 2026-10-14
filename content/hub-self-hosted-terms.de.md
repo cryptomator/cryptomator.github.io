@@ -36,7 +36,7 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 ## §3 Leistungen des Providers; Software {#services-software}
 3.1 Der Provider stellt dem Kunden die jeweils aktuellste Version der Software in elektronischer Form (insb. als Container-Images) zum Bezug bereit. Die Installation und der Betrieb der Software erfolgen durch den Kunden auf dessen Infrastruktur. Die Software ist für den Einsatz gemeinsam mit der ebenfalls vom Provider bereitgestellten Anwendung Cryptomator konzipiert, welche zur Verschlüsselung von Daten auf vom Kunden selbst gewähltem lokalem oder durch Dritte bereitgestelltem Speicherplatz dient.
 
-3.2 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form einen Lizenzschlüssel. Der Kunde verwaltet mithilfe des Admin-Accounts seiner Instanz die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der Sitze erhöhen oder reduzieren. Der Provider stellt sicher, dass die Anzahl der gebuchten Sitze zeitnah über den Lizenzschlüssel nutzbar ist.
+3.2 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form einen Lizenzschlüssel. Der Kunde verwaltet mithilfe des Admin-Accounts seiner Instanz die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der Sitze erhöhen oder reduzieren. Zusätzliche Sitze werden anteilig für den laufenden Abrechnungszeitraum berechnet; eine Reduzierung wird anteilig gutgeschrieben und mit der nächsten Zahlung bzw. Rechnung verrechnet. Der Provider stellt sicher, dass die Anzahl der gebuchten Sitze zeitnah über den Lizenzschlüssel nutzbar ist.
 
 3.3 Weiterhin stellt der Provider dem Kunden nach Vertragsschluss in elektronischer Form eine Benutzerdokumentation bereit. Diese ist in ihrer jeweils aktuellen Version jederzeit während der Nutzung der Software online einsehbar und beschreibt die vertraglich geschuldete Beschaffenheit der Software.
 
@@ -146,20 +146,20 @@ Die Bereitstellung der zum Betrieb notwendigen Ressourcen obliegt in beiden Fäl
 12.2 Der Provider stellt darüber hinaus eine im Funktionsumfang und in der Anzahl der Sitze beschränkte Community-Edition der Software unentgeltlich bereit. Für deren Nutzung gelten die Regelungen zur Vergütung ([§ 13](#fees)) nicht; ein Anspruch auf Support ([§ 5](#support)) besteht nicht.
 
 ## §13 Vergütungs- und Zahlungsbedingungen {#fees}
-13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – monatlich das dort jeweils ausgewiesene Entgelt pro gebuchtem Sitz an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
+13.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) hat der Kunde – nach Ablauf der Testphase ([§ 12](#trial)) – das dort bei Vertragsschluss ausgewiesene Entgelt pro gebuchtem Sitz für den gewählten Abrechnungszeitraum an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
 
 13.2 Die Rechnungsstellung erfolgt je nach gewähltem Modell jeweils für einen Monat oder für zwölf Monate im Voraus. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) ist die Rechnung sofort zur Zahlung fällig.
 
 13.3 Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe fällig. Der Provider ist berechtigt, bei einem Zahlungsverzug von mehr als 30 Tagen den Lizenzschlüssel vorübergehend zu deaktivieren sowie die Bereitstellung von Updates und Support auszusetzen, bis die überfällige Rechnung bezahlt wurde.
 
-13.4 Der Provider behält sich vor, eine Anpassung des Preises auch während einer laufenden Vertragszeit vorzunehmen. Eine Anpassung kann sowohl in einer Preiserhöhung als auch einer Preissenkung vorgenommen werden. Eine Preiserhöhung ist nur dann vorgesehen, sofern kostensteigernde Umstände eintreten, die eine ordnungsgemäße Aufrechterhaltung wesentlich erschweren, ohne dass dies durch eine Erhöhung des Preises ausgeglichen wird. Umstände, bei denen eine Preiserhöhung in Betracht gezogen wird, sind: kostenaufwändige Anpassungen in der Software (Entwicklungskosten) begründet durch gesetzliche Änderungen (bspw. den Datenschutz betreffend); erhöhte Kosten für Copyright-geschützte Inhalte oder Kosten für die rechtliche Prüfung von den Kooperationspartnern von dem Provider. Auf eine Preisanpassung wird der Kunde durch den Provider so rechtzeitig wie möglich, spätestens jedoch drei Monate vor Geltung, hingewiesen und der kostensteigernde oder kostensenkende Faktor näher erläutert. Eine Preisanpassung wirkt sich erst auf ein Vertragsverhältnis aus, wenn die Mindestvertragslaufzeit von einem Monat abgelaufen ist. Der Kunde kann das mit dem Provider bestehende Vertragsverhältnis im Falle einer Preisanpassung nach den geltenden Vorschriften ([§ 14](#termination)) kündigen. Gesetzt den Fall, dass eine Mitteilung seitens des Providers ohne sein Verschulden erst zu einem Zeitpunkt erfolgt, zu welchem der Kunde die ordentliche Kündigungsfrist bis zum Geltungszeitpunkt der Preisanpassung nicht mehr einhalten kann, kann der Kunde das Vertragsverhältnis auf den Zeitpunkt des Wirksamwerdens der Preisanpassung kündigen.
+13.4 Der Provider behält sich vor, eine Anpassung des Preises auch während einer laufenden Vertragszeit vorzunehmen. Eine Anpassung kann sowohl in einer Preiserhöhung als auch einer Preissenkung vorgenommen werden. Eine Preiserhöhung ist nur dann vorgesehen, sofern kostensteigernde Umstände eintreten, die eine ordnungsgemäße Aufrechterhaltung wesentlich erschweren, ohne dass dies durch eine Erhöhung des Preises ausgeglichen wird. Umstände, bei denen eine Preiserhöhung in Betracht gezogen wird, sind: kostenaufwändige Anpassungen in der Software (Entwicklungskosten) begründet durch gesetzliche Änderungen (bspw. den Datenschutz betreffend); erhöhte Kosten für Copyright-geschützte Inhalte oder Kosten für die rechtliche Prüfung von den Kooperationspartnern von dem Provider. Auf eine Preisanpassung wird der Kunde durch den Provider so rechtzeitig wie möglich, spätestens jedoch drei Monate vor Geltung, hingewiesen und der kostensteigernde oder kostensenkende Faktor näher erläutert. Eine Preisanpassung wird nur zu Beginn eines Abrechnungszeitraums wirksam. Der Kunde kann das mit dem Provider bestehende Vertragsverhältnis im Falle einer Preisanpassung nach den geltenden Vorschriften ([§ 14](#termination)) kündigen. Gesetzt den Fall, dass eine Mitteilung seitens des Providers ohne sein Verschulden erst zu einem Zeitpunkt erfolgt, zu welchem der Kunde die ordentliche Kündigungsfrist bis zum Geltungszeitpunkt der Preisanpassung nicht mehr einhalten kann, kann der Kunde das Vertragsverhältnis auf den Zeitpunkt des Wirksamwerdens der Preisanpassung kündigen.
 
 ## §14 Vertragslaufzeit und Beendigung {#termination}
 14.1 Der Vertrag tritt nach Anfrage des Kunden und Bereitstellung des Lizenzschlüssels durch den Provider in Kraft und wird auf unbestimmte Zeit geschlossen.
 
-14.2 Der Vertrag kann von beiden Parteien mit einer Kündigungsfrist von einem Monat zum Monatsende gekündigt werden.
+14.2 Der Vertrag kann von beiden Parteien mit einer Frist von einem Monat zum Ende des jeweiligen Abrechnungszeitraums gekündigt werden. Ist der Kunde Verbraucher, kann er abweichend davon jederzeit mit einer Frist von einem Monat kündigen. Endet der Vertrag vor Ablauf eines im Voraus bezahlten Abrechnungszeitraums, erstattet der Provider das auf die Zeit nach Vertragsende entfallende Entgelt anteilig.
 
-14.3 Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt. Die Kündigung bedarf in jedem Fall der Schriftform.
+14.3 Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt. Die Kündigung bedarf in jedem Fall der Textform.
 
 14.4 Der Lizenzschlüssel verliert mit Beendigung des Vertragsverhältnisses seine Gültigkeit. Der Kunde hat die Software nach Beendigung des Vertragsverhältnisses zu deinstallieren und sämtliche in seinem Besitz befindlichen Kopien der Software unwiederbringlich zu löschen. Die Nutzung der Community-Edition ([§ 12.2](#trial)) sowie Rechte aus Open-Source-Lizenzen ([§ 4.5](#scope-and-rights)) bleiben hiervon unberührt.
 
@@ -187,7 +187,7 @@ Am Hauptbahnhof 6
 E-Mail: info@skymatic.de
 Fax: 02241 / 2667424
 
-Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
+Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*):
 
 Bestellt am (*) / erhalten am (*): __________________
 Name des/der Verbraucher(s): __________________
@@ -231,7 +231,7 @@ Der Provider ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verb
 ## §19 Schlussbestimmungen {#final-clauses}
 19.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
  
-19.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Schriftform, soweit sie nicht nach [§ 18](#changes) erfolgen.
+19.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Textform, soweit sie nicht nach [§ 18](#changes) erfolgen.
  
 19.3 Es gilt deutsches Recht unter Ausschluss der kollisionsrechtlichen Bestimmungen und des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenverkauf vom 11.4.1980 (UN-Kaufrecht).
  

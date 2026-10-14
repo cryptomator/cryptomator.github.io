@@ -29,7 +29,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 
 3.2 Der Provider gewährleistet die Funktionsfähigkeit und Verfügbarkeit der Software während der Dauer des Vertragsverhältnisses und wird diese in einem zum vertragsgemäßen Gebrauch geeigneten Zustand erhalten.
 
-3.3 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form Zugangsdaten für einen Admin-Account. Der Kunde verwaltet mithilfe des Admin-Accounts die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der Sitze erhöhen oder reduzieren. Der Provider stellt sicher, dass die Anzahl der gebuchten Sitze zeitnah nutzbar ist.
+3.3 Der Provider übermittelt dem Kunden spätestens auf Aufforderung hin in elektronischer Form Zugangsdaten für einen Admin-Account. Der Kunde verwaltet mithilfe des Admin-Accounts die Zugangsdaten der Nutzer selbst. Der Kunde kann nach Bedarf die Anzahl der Sitze erhöhen oder reduzieren. Zusätzliche Sitze werden anteilig für den laufenden Abrechnungszeitraum berechnet; eine Reduzierung wird anteilig gutgeschrieben und mit der nächsten Zahlung bzw. Rechnung verrechnet. Der Provider stellt sicher, dass die Anzahl der gebuchten Sitze zeitnah nutzbar ist.
 
 3.4 Weiterhin stellt der Provider dem Kunden nach Vertragsschluss in elektronischer Form eine Benutzerdokumentation bereit. Diese ist in ihrer jeweils aktuellen Version jederzeit während der Nutzung der Software online einsehbar.
 
@@ -94,7 +94,7 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 
 6.6 Die Beseitigung von unerheblichen Störungen liegt im Ermessen des Providers.
 
-6.7 Für jede vollendete Stunde der Unterschreitung der monatlichen Verfügbarkeit der Leistungen verwirkt der Provider eine Vertragsstrafe in Höhe von 0,5 % der vereinbarten monatlichen Vergütung ([§ 14](#fees)). Die Vertragsstrafe ist der Höhe nach beschränkt auf das Dreifache einer vereinbarten monatlichen Vergütung.
+6.7 Für jede vollendete Stunde der Unterschreitung der monatlichen Verfügbarkeit der Leistungen verwirkt der Provider eine Vertragsstrafe in Höhe von 0,5 % der vereinbarten monatlichen Vergütung ([§ 14](#fees)). Die Vertragsstrafe ist der Höhe nach beschränkt auf das Dreifache einer vereinbarten monatlichen Vergütung. Bei jährlicher Abrechnung gilt ein Zwölftel des Jahresentgelts als monatliche Vergütung.
 
 6.8 Etwaige sonstige gesetzliche Ansprüche des Kunden gegen den Provider bleiben unberührt.
 
@@ -150,22 +150,22 @@ Gegenstand des Vertrags ist die entgeltliche und zeitlich auf die Dauer des Vert
 Unabhängig vom Widerrufsrecht ([§ 16](#withdrawal)) steht dem Kunden, d. h. sowohl dem Verbraucher wie auch Unternehmer, das Recht zu, die Software 30 Tage kostenfrei und für beide Seiten unverbindlich zu nutzen (nachfolgend „Testphase“). In der Testphase hat der Kunde insbesondere keinen Anspruch auf uneingeschränkten Funktionsumfang der Software oder Störungsbehebung sowie Vertragsstrafe nach [§ 6](#sla).
 
 ## §14 Vergütungs- und Zahlungsbedingungen {#fees}
-14.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) hat der Kunde – nach Ablauf der Testphase ([§ 13](#trial)) – monatlich das dort jeweils ausgewiesene Entgelt pro gebuchtem Sitz an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
+14.1 Die Preise für die Software und Services kann der Kunde auf der Website ([https://cryptomator.org/de/pricing/](https://cryptomator.org/de/pricing/)) einsehen. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) hat der Kunde – nach Ablauf der Testphase ([§ 13](#trial)) – das dort bei Vertragsschluss ausgewiesene Entgelt pro gebuchtem Sitz für den gewählten Abrechnungszeitraum an den Provider zu zahlen, unabhängig davon, wie viele Sitze tatsächlich durch aktive Nutzer belegt sind.
 
-14.2 Vom Provider nach [§ 6.7](#sla) verwirkte Vertragsstrafen werden automatisch monatlich mit dem zu zahlenden Entgelt verrechnet.
+14.2 Vom Provider nach [§ 6.7](#sla) verwirkte Vertragsstrafen werden automatisch mit dem nächsten zu zahlenden Entgelt verrechnet. Soweit eine Verrechnung nicht möglich ist, insbesondere nach Vertragsende, zahlt der Provider den verbleibenden Betrag unverzüglich aus.
 
 14.3 Die Rechnungsstellung erfolgt je nach gewähltem Modell jeweils für einen Monat oder für zwölf Monate im Voraus. Soweit nicht anders vereinbart (Individualvereinbarung, Rabatt-Aktion o. Ä.) ist die Rechnung sofort zur Zahlung fällig.
 
 14.4 Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe fällig. Der Provider ist berechtigt, den Zugang des Kunden zur Software bei einem Zahlungsverzug von mehr als 30 Tagen vorübergehend zu deaktivieren, bis die überfällige Rechnung bezahlt wurde.
 
-14.5 Der Provider behält sich vor, eine Anpassung des Preises auch während einer laufenden Vertragszeit vorzunehmen. Eine Anpassung kann sowohl in einer Preiserhöhung als auch einer Preissenkung vorgenommen werden. Eine Preiserhöhung ist nur dann vorgesehen, sofern kostensteigernde Umstände eintreten, die eine ordnungsgemäße Aufrechterhaltung wesentlich erschweren, ohne dass dies durch eine Erhöhung des Preises ausgeglichen wird. Umstände, bei denen eine Preiserhöhung in Betracht gezogen wird, sind: kostenaufwändige Anpassungen in der Software (Entwicklungskosten) begründet durch gesetzliche Änderungen (bspw. den Datenschutz betreffend); erhöhte Serverkosten durch stark steigende Energiekosten; erhöhte Kosten für Copyright-geschützte Inhalte oder Kosten für die rechtliche Prüfung von den Kooperationspartnern von dem Provider. Auf eine Preisanpassung wird der Kunde durch den Provider so rechtzeitig wie möglich, spätestens jedoch drei Monate vor Geltung, hingewiesen und der kostensteigernde oder kostensenkende Faktor näher erläutert. Eine Preisanpassung wirkt sich erst auf ein Vertragsverhältnis aus, wenn die Mindestvertragslaufzeit von einem Monat abgelaufen ist. Der Kunde kann das mit dem Provider bestehende Vertragsverhältnis im Falle einer Preisanpassung nach den geltenden Vorschriften ([§ 15](#termination)) kündigen. Gesetzt den Fall, dass eine Mitteilung seitens des Providers ohne sein Verschulden erst zu einem Zeitpunkt erfolgt, zu welchem der Kunde die ordentliche Kündigungsfrist bis zum Geltungszeitpunkt der Preisanpassung nicht mehr einhalten kann, kann der Kunde das Vertragsverhältnis auf den Zeitpunkt des Wirksamwerdens der Preisanpassung kündigen.
+14.5 Der Provider behält sich vor, eine Anpassung des Preises auch während einer laufenden Vertragszeit vorzunehmen. Eine Anpassung kann sowohl in einer Preiserhöhung als auch einer Preissenkung vorgenommen werden. Eine Preiserhöhung ist nur dann vorgesehen, sofern kostensteigernde Umstände eintreten, die eine ordnungsgemäße Aufrechterhaltung wesentlich erschweren, ohne dass dies durch eine Erhöhung des Preises ausgeglichen wird. Umstände, bei denen eine Preiserhöhung in Betracht gezogen wird, sind: kostenaufwändige Anpassungen in der Software (Entwicklungskosten) begründet durch gesetzliche Änderungen (bspw. den Datenschutz betreffend); erhöhte Serverkosten durch stark steigende Energiekosten; erhöhte Kosten für Copyright-geschützte Inhalte oder Kosten für die rechtliche Prüfung von den Kooperationspartnern von dem Provider. Auf eine Preisanpassung wird der Kunde durch den Provider so rechtzeitig wie möglich, spätestens jedoch drei Monate vor Geltung, hingewiesen und der kostensteigernde oder kostensenkende Faktor näher erläutert. Eine Preisanpassung wird nur zu Beginn eines Abrechnungszeitraums wirksam. Der Kunde kann das mit dem Provider bestehende Vertragsverhältnis im Falle einer Preisanpassung nach den geltenden Vorschriften ([§ 15](#termination)) kündigen. Gesetzt den Fall, dass eine Mitteilung seitens des Providers ohne sein Verschulden erst zu einem Zeitpunkt erfolgt, zu welchem der Kunde die ordentliche Kündigungsfrist bis zum Geltungszeitpunkt der Preisanpassung nicht mehr einhalten kann, kann der Kunde das Vertragsverhältnis auf den Zeitpunkt des Wirksamwerdens der Preisanpassung kündigen.
 
 ## §15 Vertragslaufzeit und Beendigung {#termination}
 15.1 Der Vertrag tritt nach Anfrage des Kunden und Bereitstellung des Zugangs zu der Software durch den Provider in Kraft und wird auf unbestimmte Zeit geschlossen.
 
-15.2 Der Vertrag kann von beiden Parteien mit einer Kündigungsfrist von einem Monat zum Monatsende gekündigt werden.
+15.2 Der Vertrag kann von beiden Parteien mit einer Frist von einem Monat zum Ende des jeweiligen Abrechnungszeitraums gekündigt werden. Ist der Kunde Verbraucher, kann er abweichend davon jederzeit mit einer Frist von einem Monat kündigen. Endet der Vertrag vor Ablauf eines im Voraus bezahlten Abrechnungszeitraums, erstattet der Provider das auf die Zeit nach Vertragsende entfallende Entgelt anteilig.
 
-15.3 Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt. Die Kündigung bedarf in jedem Fall der Schriftform.
+15.3 Das Recht zur fristlosen Kündigung aus wichtigem Grund bleibt unberührt. Die Kündigung bedarf in jedem Fall der Textform.
 
 15.4 Der Provider wird den Kunden auf eigene Kosten nach Beendigung des Vertrags angemessen bei der Rückübertragung oder Sicherung der Daten unterstützen.
 
@@ -196,7 +196,7 @@ Am Hauptbahnhof 6
 E-Mail: info@skymatic.de
 Fax: 02241 / 2667424
 
-Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Ware:
+Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*):
 
 Bestellt am (*) / erhalten am (*): __________________
 Name des/der Verbraucher(s): __________________
@@ -240,7 +240,7 @@ Der Provider ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verb
 ## §20 Schlussbestimmungen {#final-clauses}
 20.1 Sollten einzelne Regelungen dieses Vertrags unwirksam oder nicht durchführbar sein, bleibt die Wirksamkeit der übrigen Regelungen hiervon unberührt. Die Parteien werden solche Regelungen durch wirksame und durchführbare Regelungen ersetzen, die dem Sinn und wirtschaftlichen Zweck sowie dem Willen der Parteien bei Vertragsschluss möglichst gleichkommen. Entsprechendes gilt im Falle einer Vertragslücke.
  
-20.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Schriftform, soweit sie nicht nach [§ 19](#changes) erfolgen.
+20.2 Mündliche oder schriftliche Nebenabreden zu diesem Vertrag bestehen nicht. Änderungen dieses Vertrags und seiner Anlagen bedürfen der Textform, soweit sie nicht nach [§ 19](#changes) erfolgen.
  
 20.3 Es gilt deutsches Recht unter Ausschluss der kollisionsrechtlichen Bestimmungen und des Übereinkommens der Vereinten Nationen über Verträge über den internationalen Warenverkauf vom 11.4.1980 (UN-Kaufrecht).
  
