@@ -25,7 +25,7 @@ Eingetragen im Handelsregister des Amtsgericht Bonn: HRB 22635
 gem. § 27 a Umsatzsteuergesetz: DE815664888
 
 ## Weitere Informationen
-Für von uns erbrachte Leistungen gelten unsere AGB. Sie finden sie unter [cryptomator.org/de/terms](/de/terms/) und [cryptomator.org/de/hub/managed/terms](/de/hub/managed/terms/). Darin ist geregelt, dass deutsches Recht Anwendung findet und dass, soweit zulässig, als Gerichtsstand Bonn vereinbart wird.
+Für von uns erbrachte Leistungen gelten unsere AGB. Sie finden sie unter [cryptomator.org/de/terms](/de/terms/), [cryptomator.org/de/hub/managed/terms](/de/hub/managed/terms/) und [cryptomator.org/de/hub/self-hosted/terms](/de/hub/self-hosted/terms/). Darin ist geregelt, dass deutsches Recht Anwendung findet und dass, soweit zulässig, als Gerichtsstand Bonn vereinbart wird.
 
 ## Berufshaftpflichtversicherung
 <strong>Name und Sitz des Versicherers:</strong><br/>
