@@ -1,0 +1,17 @@
+<section class="mb-20">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+    {{ range .page.Pages.ByWeight }}
+      <article class="h-full">
+        <a href="{{ .RelPermalink }}" class="group h-full flex flex-col hover:no-underline">
+          <div class="transition duration-300 ease-out group-hover:-translate-y-1.5 group-hover:drop-shadow-lg">
+            {{ partial "white-paper-cover.html" (dict "page" .) }}
+          </div>
+          <h2 class="font-h3 mt-6 mb-2 text-dark group-hover:text-primary transition-colors duration-200">{{ .Params.cardtitle }}</h2>
+          <p class="font-p text-sm leading-relaxed text-gray-700 flex-1">
+            {{ .Params.cardtext }}
+          </p>
+        </a>
+      </article>
+    {{ end }}
+  </div>
+</section>
