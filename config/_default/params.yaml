@@ -1,11 +1,13 @@
 # set to true in frontmatter if required
 math: false
+
 anniversaryBanner:
   enabled: false
   excludePaths:
     - /downloads-thanks/
     - /paddle-checkout/
     - /hub/billing/
+
 webinar:
   webinarId: "6a0427f47bf7eebc0"
   banner:
@@ -14,6 +16,7 @@ webinar:
       - /downloads-thanks/
       - /paddle-checkout/
       - /hub/billing/
+
 salePromotion:
   banner:
     enabled: true
@@ -21,6 +24,7 @@ salePromotion:
       - /downloads-thanks/
       - /paddle-checkout/
       - /hub/billing/
+
 releases:
   exe:
     version: 1.19.4
