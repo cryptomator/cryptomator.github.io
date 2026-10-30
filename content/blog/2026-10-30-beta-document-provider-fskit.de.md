@@ -18,9 +18,9 @@ ogimage:
 
 Es gibt nicht eine, sondern gleich zwei neue Betas. Die eine bringt ein Feature, das sich viele gewünscht haben. Die andere macht Cryptomator auf dem Mac deutlich einfacher. Bevor beide in stabilen Releases landen, kannst du sie schon jetzt testen und uns Feedback geben.
 
-## Android: Der Document Provider ist endlich da
+## Android: Der Document Provider ist da
 
-Der Document Provider ist das **meistgewünschte Feature** unserer Android-App. Viele haben auf GitHub, im Forum und in App-Bewertungen danach gefragt. **Jetzt ist er endlich da!**
+Der Document Provider ist das **meistgewünschte Feature** unserer Android-App. Viele haben auf GitHub, im Forum und in App-Bewertungen danach gefragt. **Jetzt ist er da!**
 
 Bisher brauchte es mehrere Schritte, um eine Datei aus deinem Tresor in einer anderen App zu öffnen. Du musstest Cryptomator öffnen, den Tresor entsperren, zur Datei navigieren und sie antippen, um sie in der anderen App zu öffnen.
 

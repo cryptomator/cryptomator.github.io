@@ -18,9 +18,9 @@ ogimage:
 
 There are not one, but two new betas. One brings a feature many of you have been asking for. The other makes using Cryptomator on your Mac a whole lot easier. Before both land in stable releases, you can test them now and share your feedback.
 
-## Android: The Document Provider Is Finally Here
+## Android: The Document Provider Is Here
 
-The Document Provider is the **most-requested feature** of our Android app. Many of you have asked for it on GitHub, in the forum, and in app reviews. **Now it's finally here!**
+The Document Provider is the **most-requested feature** of our Android app. Many of you have asked for it on GitHub, in the forum, and in app reviews. **Now it's here!**
 
 Until now, opening a file from your vault in another app took several steps. You had to open Cryptomator, unlock the vault, navigate to the file, and tap it to open it in the other app.
 
