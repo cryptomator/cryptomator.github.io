@@ -65,8 +65,8 @@ releases:
     checksum: 760bd64d85e956f1c0a5528e8b3e179a178074807415d44206d9c9a01161b19d
     requiredOS: ""
   android:
-    version: 2.0.0
-    filename: Cryptomator-2.0.0.apk
-    downloadUrl: https://static.cryptomator.org/android/2.0.0/Cryptomator-2.0.0.apk
-    checksum: 3d2549d8517f729c2bf4466bdc146711124381bb5aa41c49e7ffc31927335996
+    version: 2.1.0
+    filename: Cryptomator-2.1.0.apk
+    downloadUrl: https://static.cryptomator.org/android/2.1.0/Cryptomator-2.1.0.apk
+    checksum: 64bf21fe26eb73ee8235be40587cd4b73b56131f3e0b31ee538ce1d74c0c0591
     requiredOS: Android 8.0
