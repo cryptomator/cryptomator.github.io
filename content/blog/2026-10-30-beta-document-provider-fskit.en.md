@@ -72,7 +72,7 @@ That's it! The beta then arrives through the Play Store like any other update.
 
 ## Mac: Vaults as Drives with FSKit (Experimental)
 
-If you use Cryptomator on a Mac, you probably know the routine. To show an unlocked vault as a drive, you first had to install **macFUSE or FUSE-T**. That meant a second download, approving a kernel extension, and on Apple silicon even a trip into Recovery Mode to change security settings, followed by a restart. "Why do I need this?" is one of the most common questions our support team gets, and a very fair one.
+If you use Cryptomator on a Mac, you probably know the routine. To show an unlocked vault as a drive, you first had to install **macFUSE or FUSE-T**. Both meant a second download, and macFUSE also meant approving a kernel extension and, on Apple silicon, even a trip into Recovery Mode to change security settings, followed by a restart. "Why do I need this?" is one of the most common questions our support team gets, and a very fair one.
 
 And setup was only the beginning. Many of you have told us about Finder freezing, vaults that won't lock, and drives that stop working after a major macOS update until a fixed driver is released.
 

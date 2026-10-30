@@ -72,7 +72,7 @@ Das war's! Die Beta kommt dann wie jedes andere Update über den Play Store.
 
 ## Mac: Tresore als Laufwerk mit FSKit (experimentell)
 
-Wenn du Cryptomator auf dem Mac nutzt, kennst du das vermutlich. Um einen entsperrten Tresor als Laufwerk anzuzeigen, musstest du bisher erst **macFUSE oder FUSE-T** installieren. Das hieß ein zweiter Download, eine Kernel-Erweiterung erlauben und auf Apple Silicon sogar ein Ausflug in den Wiederherstellungsmodus, um Sicherheitseinstellungen zu ändern, gefolgt von einem Neustart. „Wofür brauche ich das?“ ist eine der häufigsten Fragen an unseren Support und auch sehr berechtigt.
+Wenn du Cryptomator auf dem Mac nutzt, kennst du das vermutlich. Um einen entsperrten Tresor als Laufwerk anzuzeigen, musstest du bisher erst **macFUSE oder FUSE-T** installieren. Beides bedeutete einen zweiten Download. Bei macFUSE musstest du außerdem eine Kernel-Erweiterung erlauben und auf Apple Silicon sogar in den Wiederherstellungsmodus, um Sicherheitseinstellungen zu ändern, gefolgt von einem Neustart. „Wofür brauche ich das?“ ist eine der häufigsten Fragen an unseren Support und auch sehr berechtigt.
 
 Und die Einrichtung war erst der Anfang. Viele haben uns von einfrierenden Finder-Fenstern erzählt, von Tresoren, die sich nicht sperren lassen, und von Laufwerken, die nach einem großen macOS-Update nicht mehr funktionieren, bis ein reparierter Treiber erscheint.
 
