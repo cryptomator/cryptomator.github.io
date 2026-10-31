@@ -16,7 +16,7 @@ webinar:
       - /hub/billing/
 salePromotion:
   banner:
-    enabled: true
+    enabled: false
     excludePaths:
       - /downloads-thanks/
       - /paddle-checkout/
