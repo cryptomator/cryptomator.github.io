@@ -1316,7 +1316,7 @@
 - id: supporter_cert_contributor_github_contribution_link_placeholder
   translation: "Link zur Contribution auf GitHub (https://github.com/...)"
 - id: supporter_cert_contributor_instruction
-  translation: "In unserem <a class=\"text-link\" href=\"https://github.com/cryptomator/cryptomator/blob/develop/.github/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">Contribution Guide</a> findest du die ersten Informationen."
+  translation: "In unserem <a class=\"text-link\" href=\"https://github.com/cryptomator/.github/blob/main/CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener\">Contribution Guide</a> findest du die ersten Informationen."
 
 - id: supporter_cert_influencer_reference
   translation: "Referenz"
